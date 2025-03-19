@@ -106,33 +106,7 @@ To enable Microsoft Entra SSO:
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Go to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties
-   1. Ener `B.Simon` in the **Display name** field.  
-   1. Enter the username@companydomain.extension in the **User principal name** field. (E.g., `B.Simon@contoso.com`).
-   1. Select the **Show password** check box and write down the value displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use SSO by granting access to Nulab Pass.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Go to **Identity** > **Applications** > **Enterprise applications** > **Nulab Pass**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group** and then **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the users list and then the **Select** button at the bottom of the screen.
-   1. If you’re expecting users to be assigned a role, select it from the **Select a role** dropdown. If no role has been set up for this app, **Default Access** role is selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Nulab Pass SSO
 

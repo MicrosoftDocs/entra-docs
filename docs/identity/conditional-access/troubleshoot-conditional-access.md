@@ -90,6 +90,7 @@ If you need to submit a support incident, provide the request ID and time and da
 | 53002 | ApplicationUsedIsNotAnApprovedApp |
 | 53003 | BlockedByConditionalAccess |
 | 53004 | ProofUpBlockedDueToRisk |
+| 53009 | Application needs to enforce Intune protection policies |
 
 More information about error codes can be found in the article [Microsoft Entra authentication and authorization error codes](~/identity-platform/reference-error-codes.md). Error codes in the list appear with a prefix of `AADSTS` followed by the code seen in the browser, for example `AADSTS53002`.
 

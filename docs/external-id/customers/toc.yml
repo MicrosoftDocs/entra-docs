@@ -201,13 +201,13 @@ items:
             - name: .NET MAUI
               items:
                 - name: Prepare tenant
-                  href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
+                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Create .NET MAUI app
-                  href: tutorial-mobile-app-maui-sign-in-prepare-app.md
+                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in and sign out
-                  href: tutorial-mobile-app-maui-sign-in-sign-out.md
+                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Use role-based access control
-                  href: tutorial-mobile-maui-role-based-access-control.md
+                  href: /entra/identity-platform/tutorial-mobile-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Android
               items:
                 - name: Prepare app
@@ -363,25 +363,25 @@ items:
                   - name:  Edit profile with MFA
                     items:
                       - name: Set up app 
-                        href: how-to-web-app-node-edit-profile-prepare-app.md 
+                        href: /entra/identity-platform/how-to-web-app-node-edit-profile-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                         displayName: Conditional Access, CA 
                       - name: Update profile
-                        href: how-to-web-app-node-edit-profile-update-profile.md  
+                        href: /entra/identity-platform/how-to-web-app-node-edit-profile-update-profile?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                         displayName: protect, multifactor authentication, MFA            
                   - name: Call API
                     items:
                       - name: Prepare tenant 
-                        href: how-to-web-app-node-sign-in-call-api-prepare-tenant.md
+                        href: /entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                       - name: Create Node.js client web app 
-                        href: how-to-web-app-node-sign-in-call-api-prepare-app.md
+                        href: /entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                       - name: Acquire access token
-                        href: how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md
+                        href: /entra/identity-platform/how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                       - name: Call API 
-                        href: how-to-web-app-node-sign-in-call-api-call-api.md
+                        href: /entra/identity-platform/how-to-web-app-node-sign-in-call-api-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                   - name: Use client certificate
-                    href: how-to-web-app-node-use-certificate.md 
+                    href: /entra/identity-platform/how-to-web-app-node-use-certificate?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                   - name: Use role-based access control
-                    href: how-to-web-app-role-based-access-control.md 
+                    href: /entra/identity-platform/how-to-web-app-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                     displayName: rbac, roles, roles claim, groups claim
           - name: Native authentication
             items:
