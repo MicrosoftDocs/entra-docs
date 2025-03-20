@@ -5,7 +5,7 @@ description: Secure your resources with Microsoft-managed policies and take acti
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/17/2025
+ms.date: 03/20/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -93,12 +93,23 @@ This policy covers all users and requires multifactor authentication and reauthe
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. The policy covers users in two different ways, depending on if you have more P2 licenses than users or if you have more users than P2 licenses. Guest users are not included in the policy.
 
-- If your P2 licenses equal or exceed the total MFA-registered active users, the policy covers *All Users*.
+- If all your active users have MFA and your P2 licenses equal or exceed the total active users, the policy covers *All Users*.
     - *All Users* could include service accounts or break-glass accounts, so you might want to exclude them.
-- If the MFA-registered active users exceed your P2 licenses, we create and assign the policy to a security group that is capped to your available P2 licenses.
+- If some active users do not have MFA, or if there are not enough P2 licenses to cover all MFA-registered users, we create and assign the policy to a security group that is capped to your available P2 licenses.
     - The policy applies only to that security group, so you can scope the policy by modifying the group itself.
     - To populate the group, we select users who can satisfy MFA, prioritizing users with a directly assigned P2 license.
-    - If there are remaining P2 licenses, we add additional users who have a strong authentication (MFA) sign-in within the past 60 days. This rule ensures that the policy won’t block legitimate users and that you’re getting maximum value on your P2 licenses.
+    - This setup ensures that the policy won’t block legitimate users and that you’re getting maximum value on your P2 licenses.
+
+The following table demonstrates how the policy is applied for some sample scenarios:
+
+
+| P2 licenses | Active users with MFA | Active users without MFA | Template   | Reason                                      |
+|-------------|-----------------------|--------------------------|------------|---------------------------------------------|
+| 100         | 100                  | 0                      | All Users  | Users will not be blocked                  |
+| 100         | 50                   | 50                     | Group      | Insufficient MFA-registered users          |
+| 100         | 200                  | 0                      | Group      | Insufficient P2 licenses to cover all users|
+| 100         | 200                  | 50                     | Group      | Insufficient MFA-registered users and P2 licenses to cover all users |
+
 
 To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for multifactor authentication.
 
