@@ -89,31 +89,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user named B.Simon.
-
-1. In the Microsoft Entra admin center, navigate to **Identity** > **Users** > **All users**.
-1. Select **New user** at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Name** field, enter **B.Simon**.  
-   1. In the **User name** field, enter your username in _username@companydomain.extension_ format. For example, enter **B.Simon@contoso.com**.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to Splan Visitor.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Splan Visitor** to open the app overview.
-1. Find the **Manage** section, and then select **Users and groups**.
-1. Select **Add user**, and then select **Users and groups** in the **Add Assignment** dialog box.
-1. In the **Users and groups** dialog box, select **B.Simon** from the **Users** list, and then click **Select** at the bottom of the screen.
-1. If the user will be assigned a role, select it from the **Select a role** drop-down menu. If no role has been set up for this app, leave the **Default Access** role selected.
-1. In the **Add Assignment** dialog box, select **Assign**.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Splan Visitor SSO
 

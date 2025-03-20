@@ -118,35 +118,7 @@ To enable Microsoft Entra SSO by using the Azure portal, complete these steps:
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable the user B.Simon to use Azure SSO by granting the user access to Citrix ADC SAML Connector for Microsoft Entra ID.
-
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-
-1. In the applications list, select **Citrix ADC SAML Connector for Microsoft Entra ID**.
-
-1. On the app overview, under **Manage**, select **Users and groups**.
-1. Select **Add user**. Then, in the **Add Assignment** dialog box, select **Users and groups**.
-1. In the **Users and groups** dialog box, select **B.Simon** from the **Users** list. Choose **Select**.
-1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-1. In the **Add Assignment** dialog box, select **Assign**.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 <a name='configure-citrix-adc-saml-connector-for-azure-ad-sso'></a>
 

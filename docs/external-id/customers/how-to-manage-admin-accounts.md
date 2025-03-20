@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 01/30/2025
+ms.date: 03/10/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -17,7 +17,11 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-In Microsoft Entra External ID, an external tenant represents your directory of consumer and guest accounts. With an administrator role, work and guest accounts can manage the tenant.
+Admin accounts are users in your Microsoft Entra external tenant who have been assigned admin roles. You can add an admin account to your tenant by creating or inviting a user via the Microsoft Entra admin center or Microsoft Graph and assigning them an admin role. If you don't assign an admin role, the user has [default user permissions](reference-user-permissions.md).
+
+This article focuses on managing admin accounts using the Microsoft Entra admin center. You must have at least [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) permissions to add or delete users.
+
+See also [Manage user accounts for consumers and business customers](how-to-manage-customer-accounts.md) for information about your app's end users. These users typically don't have admin roles assigned so they retain [default user permissions](reference-user-permissions.md).
 
 ## Prerequisites
 
