@@ -26,11 +26,11 @@ In this quickstart, you use a sample web app to show you how to protect an ASP.N
   * **Name**: *NewWebAPI1*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 
-### [ASP.NET](#tab/aspnet-workforce)
+### [ASP.NET](#tab/aspnet)
 
 * Visual Studio 2022. Download [Visual Studio for free](https://www.visualstudio.com/downloads/).
 
-### [ASP.NET Core](#tab/aspnet-core-workforce)
+### [ASP.NET Core](#tab/aspnet-core)
 
 * [Visual Studio Code](https://code.visualstudio.com/download)
 
@@ -187,9 +187,9 @@ Configure your TodoListClient project by adding the Application ID to the *app.c
 
     - `ClientId` - The identifier of the application, also referred to as the client. Replace the `value` text in quotes with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
     - `TenantId` - The identifier of the tenant where the application is registered. Replace the `value` text in quotes with **Directory (tenant) ID** value that was recorded earlier from the **Overview** page of the registered application.
-    - `Instance` - It specifies the directory from which the Microsoft Authentication Library (MSAL) can request tokens from. Replace `Enter_the_Authority_URL_Here` with your Authority URL as follows:
-        - For workforce tenants use "https://login.microsoftonline.com/"` as the instance.
-        - For external tenants, add authority URL in the form of "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/"
+    - `Instance` - It specifies the directory from which the Microsoft Authentication Library (MSAL) can request tokens from. Replace `Enter_the_Authority_URL_Here` with either of the following values depending on your scenario:
+        - For workforce tenants, use `https://login.microsoftonline.com/` as the instance.
+        - For external tenants, add an authority URL in the form of `https://<Enter_the_Tenant_Subdomain_Here>.ciamlogin.com/`
 
 ---
 
@@ -240,18 +240,22 @@ To specify who can sign in to your application, by changing the `TenantId` prope
 
 #### [ASP.NET Core](#tab/aspnet-core)
 
-1. Execute the following command to start the app:
+1. Run the following command from the root of your web API project directory to start the app:
 
    ```bash
    dotnet run
    ```
 
-1. An output like the following sample appears:
+1. If everything worked correctly, your terminal will display an output similar to the following:
 
    ```bash
-   ...
-   info: Microsoft.Hosting.Lifetime[14]
-         Now listening on: http://localhost:{port}
+    Building...
+        info: Microsoft.Hosting.Lifetime[14]
+              Now listening on: http://localhost:{port}
+        info: Microsoft.Hosting.Lifetime[0]
+              Application started. Press Ctrl+C to shut down.
+        info: Microsoft.Hosting.Lifetime[0]
+              Hosting environment: Development
    ...
    ```
 
@@ -260,37 +264,14 @@ To specify who can sign in to your application, by changing the `TenantId` prope
 1. To verify the endpoint is protected, update the base URL in the following cURL command to match the one you received in the previous step, and then run the command:
 
    ```bash
-   curl -X GET https://localhost:5001/weatherforecast -ki
+   curl -k -X GET http://localhost:<your-api-port>/api/todolist -w "%{http_code}\n"
    ```
 
-   The expected response is 401 Unauthorized with output similar to:
-
-   ```bash
-   user@host:~$ curl -X GET https://localhost:5001/weatherforecast -ki
-   HTTP/2 401
-   date: Fri, 23 Sep 2023 23:34:24 GMT
-   server: Kestrel
-   www-authenticate: Bearer
-   content-length: 0
-   ```
-
----
+   The expected response is 401 Unauthorized. 
 
 ## Next steps
 
-#### [ASP.NET](#tab/aspnet)
-
-Learn more by building a protected ASP.NET Core web api in the following tutorial series:
+Learn how to protect an ASP.NET Core web API with the Microsoft identity platform.
 
 > [!div class="nextstepaction"]
-> [Protected web API tutorial](tutorial-web-api-dotnet-register-app.md)
-
-
-#### [ASP.NET Core](#tab/aspnet-core)
-
-Proceed to the next article to learn how to call the protected web API using cURL.
-
-> [!div class="nextstepaction"]
-> [How-to: Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md)
-
----
+> [Tutorial: Build and secure an ASP.NET Core web API with the Microsoft identity platform](tutorial-web-api-dotnet-core-build-app.md)
