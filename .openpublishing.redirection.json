@@ -2195,6 +2195,12 @@
     "source_path_from_root": "/docs/external-id/customers/how-to-web-app-role-based-access-control.md",
     "redirect_url": "/entra/identity-platform/how-to-web-app-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
     "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/identity/users/licensing-ps-examples.md",
+    "redirect_url": "/entra/identity/users/licensing-powershell-graph-examples",
+    "redirect_document_id": false
   }
+
   ]
 }

@@ -726,4 +726,4 @@ To learn more about the feature set for license management through groups, see t
 * [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
 * [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](licensing-groups-change-licenses.md)
 * [Microsoft Entra group-based licensing additional scenarios](licensing-group-advanced.md)
-* [PowerShell examples for group-based licensing in Microsoft Entra ID](licensing-ps-examples.md)
+* [Licensing PowerShell examples](~/identity/users/licensing-powershell-graph-examples.md)
