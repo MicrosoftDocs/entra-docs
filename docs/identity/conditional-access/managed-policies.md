@@ -95,7 +95,7 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
 
 - If all your active users have MFA and your P2 licenses equal or exceed the total active users, the policy covers *All Users*.
     - *All Users* could include service accounts or break-glass accounts, so you might want to exclude them.
-- If some active users do not have MFA, or if there are not enough P2 licenses to cover all MFA-registered users, we create and assign the policy to a security group that is capped to your available P2 licenses.
+- If some active users do not have MFA, or if there are not enough P2 licenses to cover all MFA-registered users, we create and assign the policy to a security group called "Conditional Access: Risky sign-in multifactor authentication" that is capped to your available P2 licenses.
     - The policy applies only to that security group, so you can scope the policy by modifying the group itself.
     - To populate the group, we select users who can satisfy MFA, prioritizing users with a directly assigned P2 license.
     - This setup ensures that the policy won’t block legitimate users and that you’re getting maximum value on your P2 licenses.
