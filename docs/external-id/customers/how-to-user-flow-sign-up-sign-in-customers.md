@@ -111,7 +111,7 @@ If you want your customer users to only sign in and not sign up, you can disable
             "@odata.type": "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow",    
             "onInteractiveAuthFlowStart": {    
                 "@odata.type": "#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp",    
-                "isSignUpAllowed": "false"    
+                "isSignUpAllowed": false    
           }    
         }
     ```
