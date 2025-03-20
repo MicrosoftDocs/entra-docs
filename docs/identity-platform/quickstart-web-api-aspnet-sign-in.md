@@ -5,8 +5,8 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api, 
-ms.date: 01/31/2025
-ms.reviewer: jmprieur
+ms.date: 03/20/2025
+ms.reviewer: jmprieur, dmwendia
 ms.service: identity-platform
 
 ms.topic: quickstart
@@ -15,9 +15,9 @@ ms.topic: quickstart
 
 # Quickstart: Call a web API that is protected by the Microsoft identity platform
 
-[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-workforce-only.md)]
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-In this quickstart, you use a sample web app to show you how to protect an ASP.NET web API by using the Microsoft identity platform. The sample uses [Microsoft Authentication Library (MSAL)](msal-overview.md) to handle authentication.
+In this quickstart, you use a sample web app to show you how to protect an ASP.NET web API by using the Microsoft identity platform. The sample uses the [Microsoft Authentication Library (MSAL)](msal-overview.md) to handle authentication and authorization.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ In this quickstart, you use a sample web app to show you how to protect an ASP.N
 
 Once the API is registered, you can configure its permission by defining the scopes that the API exposes to client applications. Client applications request permission to perform operations by passing an access token along with its requests to the protected web API. The web API then performs the requested operation only if the access token it receives contains the required scopes.
 
-#### [ASP.NET](#tab/aspnet-workforce)
+#### [ASP.NET](#tab/aspnet)
 
 1. Under **Manage**, select **Expose an API** > **Add a scope**. Accept the proposed Application ID URI (`api://{clientId}`) by selecting **Save and continue**, and then enter the following information:
 
@@ -53,17 +53,15 @@ Once the API is registered, you can configure its permission by defining the sco
     1. For **State**, keep **Enabled**.
 1. Select **Add scope**.
 
-#### [ASP.NET Core](#tab/aspnet-core-workforce)
+#### [ASP.NET Core](#tab/aspnet-core)
 
-1. Under **Manage**, select **Expose an API > Add a scope**. Accept the proposed **Application ID URI** `(api://{clientId})` by selecting **Save and continue**. The `{clientId}` is the value recorded from the **Overview** page. Then enter the following information:
-    1. For **Scope name**, enter `Forecast.Read`.
-    1. For **Who can consent**, ensure that the **Admins and users** option is selected.
-    1. In the **Admin consent display name** box, enter `Read forecast data`.
-    1. In the **Admin consent description** box, enter `Allows the application to read weather forecast data`.
-    1. In the **User consent display name** box, enter `Read forecast data`.
-    1. In the **User consent description** box, enter `Allows the application to read weather forecast data`.
-    1. Ensure that the **State** is set to **Enabled**.
-1. Select **Add scope**. If the scope has been entered correctly, it's listed in the **Expose an API** pane.
+### Expose permissions
+
+[!INCLUDE [expose permissions](../external-id/customers/includes/register-app/add-api-scopes.md)]
+
+### Add app roles
+
+[!INCLUDE [configure app roles](../external-id/customers/includes/register-app/add-app-role.md)]
 
     :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
@@ -73,7 +71,7 @@ Once the API is registered, you can configure its permission by defining the sco
 
 To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
 
-#### [ASP.NET](#tab/aspnet-workforce)
+#### [ASP.NET](#tab/aspnet)
 
 ```console
 git clone https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git
@@ -83,13 +81,13 @@ git clone https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.g
 
 [!INCLUDE [active-directory-develop-path-length-tip](includes/error-handling-and-tips/path-length-tip.md)]
 
-#### [ASP.NET Core](#tab/aspnet-core-workforce)
+#### [ASP.NET Core](#tab/aspnet-core)
 
 ```console
-git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
+git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
 ```
 
-* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+* [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ---
 
@@ -97,7 +95,7 @@ git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
 
 Configure the code sample to match the registered web API.
 
-#### [ASP.NET](#tab/aspnet-workforce)
+#### [ASP.NET](#tab/aspnet)
 
 1. Open the solution in Visual Studio, and then open the *appsettings.json* file under the root of the TodoListService project.
 
@@ -161,23 +159,45 @@ Configure your TodoListClient project by adding the Application ID to the *app.c
 
 1. From the TodoListClient project root folder, open the *app.config* file, and then paste the Application ID value in the `ida:ClientId` parameter.
 
-#### [ASP.NET Core](#tab/aspnet-core-workforce)
+#### [ASP.NET Core](#tab/aspnet-core)
 
-1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet/web-api*, containing the sample.
+1. In your IDE, open the project folder, *ms-identity-ciam-dotnet-tutorial/2-Authorization/3-call-own-api-dotnet-core-daemon/ToDoListAPI*, containing the sample.
 1. Open `appsettings.json` file, which contains the following code snippet:
 
-    :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-api/appsettings.json" :::
-
+```json
+{
+  "AzureAd": {
+    "Instance": "Enter_the_Authority_URL_Here", //For external tenants, use instance in the form of "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/"
+    "TenantId": "Enter_the_Tenant_Id_Here",
+    "ClientId": "Enter_the_Application_Id_Here",
+    "Scopes": {
+      "Read": ["ToDoList.Read", "ToDoList.ReadWrite"],
+      "Write": ["ToDoList.ReadWrite"]
+    },
+    "AppPermissions": {
+      "Read": ["ToDoList.Read.All", "ToDoList.ReadWrite.All"],
+      "Write": ["ToDoList.ReadWrite.All"]
+    }
+  },
+  "Logging": {...},
+  "AllowedHosts": "*"
+}
+```
     Find the following `key`:
 
     - `ClientId` - The identifier of the application, also referred to as the client. Replace the `value` text in quotes with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
     - `TenantId` - The identifier of the tenant where the application is registered. Replace the `value` text in quotes with **Directory (tenant) ID** value that was recorded earlier from the **Overview** page of the registered application.
+    - `Instance` - It specifies the directory from which the Microsoft Authentication Library (MSAL) can request tokens from. Replace `Enter_the_Authority_URL_Here` with your Authority URL as follows:
+        - For workforce tenants use "https://login.microsoftonline.com/"` as the instance.
+        - For external tenants, add authority URL in the form of "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/"
+
+#### [ASP.NET Core](#tab/aspnet-core)
 
 ---
 
 ## Run the sample application
 
-#### [ASP.NET](#tab/aspnet-workforce)
+#### [ASP.NET](#tab/aspnet)
 
 Start both projects. For Visual Studio users;
 
@@ -220,7 +240,7 @@ By default, any personal accounts, such as *outlook.com* or *live.com* accounts,
 
 To specify who can sign in to your application, by changing the `TenantId` property in the *appsettings.json* file.
 
-#### [ASP.NET Core](#tab/aspnet-core-workforce)
+#### [ASP.NET Core](#tab/aspnet-core)
 
 1. Execute the following command to start the app:
 
@@ -260,7 +280,7 @@ To specify who can sign in to your application, by changing the `TenantId` prope
 
 ## Next steps
 
-#### [ASP.NET](#tab/aspnet-workforce)
+#### [ASP.NET](#tab/aspnet)
 
 Learn more by building a protected ASP.NET Core web api in the following tutorial series:
 
@@ -268,7 +288,7 @@ Learn more by building a protected ASP.NET Core web api in the following tutoria
 > [Protected web API tutorial](tutorial-web-api-dotnet-register-app.md)
 
 
-#### [ASP.NET Core](#tab/aspnet-core-workforce)
+#### [ASP.NET Core](#tab/aspnet-core)
 
 Proceed to the next article to learn how to call the protected web API using cURL.
 

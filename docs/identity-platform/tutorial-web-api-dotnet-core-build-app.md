@@ -29,9 +29,13 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- If you haven't already, complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external). In the quickstart, you don't have to clone and run the code sample.
+- If you haven't already, complete the steps in [Quickstart: Call a web API that is protected by the Microsoft identity platform](quickstart-web-api-aspnet-sign-in?tabs=aspnet-core). You don't have to clone and run the code sample, but ensure you have the following:
+    - The web API's app registration details from the Microsoft Entra admin center including the client ID and tenant ID.
+    - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](quickstart-web-api-aspnet-sign-in?tabs=aspnet-core#expose-the-api)
+    - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](quickstart-web-api-aspnet-sign-in?tabs=aspnet-core#expose-the-api)
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet) or later.
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+
 
 ## Create a new ASP.NET Core web API project
 

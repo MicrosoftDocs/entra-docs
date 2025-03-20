@@ -324,7 +324,7 @@
       href: index-web-api.yml
     - name: Quickstart
       items:
-        - name: Sign in users
+        - name: Call a protected web API
           href: quickstart-web-api-aspnet-sign-in.md
     - name: Tutorials
       items:
