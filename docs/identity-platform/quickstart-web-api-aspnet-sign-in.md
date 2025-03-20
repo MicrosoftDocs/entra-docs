@@ -55,15 +55,15 @@ Once the API is registered, you can configure its permission by defining the sco
 
 #### [ASP.NET Core](#tab/aspnet-core)
 
-### Expose permissions
+### Add delegated permissions (scopes)
 
 [!INCLUDE [expose permissions](../external-id/customers/includes/register-app/add-api-scopes.md)]
 
-### Add app roles
+### Add application permissions (app roles)
 
 [!INCLUDE [configure app roles](../external-id/customers/includes/register-app/add-app-role.md)]
 
-    :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
+:::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
 ---
 
@@ -164,25 +164,25 @@ Configure your TodoListClient project by adding the Application ID to the *app.c
 1. In your IDE, open the project folder, *ms-identity-ciam-dotnet-tutorial/2-Authorization/3-call-own-api-dotnet-core-daemon/ToDoListAPI*, containing the sample.
 1. Open `appsettings.json` file, which contains the following code snippet:
 
-```json
-{
-  "AzureAd": {
-    "Instance": "Enter_the_Authority_URL_Here", //For external tenants, use instance in the form of "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/"
-    "TenantId": "Enter_the_Tenant_Id_Here",
-    "ClientId": "Enter_the_Application_Id_Here",
-    "Scopes": {
-      "Read": ["ToDoList.Read", "ToDoList.ReadWrite"],
-      "Write": ["ToDoList.ReadWrite"]
-    },
-    "AppPermissions": {
-      "Read": ["ToDoList.Read.All", "ToDoList.ReadWrite.All"],
-      "Write": ["ToDoList.ReadWrite.All"]
+    ```json
+    {
+      "AzureAd": {
+        "Instance": "Enter_the_Authority_URL_Here", //For external tenants, use instance in the form of "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/"
+        "TenantId": "Enter_the_Tenant_Id_Here",
+        "ClientId": "Enter_the_Application_Id_Here",
+        "Scopes": {
+          "Read": ["ToDoList.Read", "ToDoList.ReadWrite"],
+          "Write": ["ToDoList.ReadWrite"]
+        },
+        "AppPermissions": {
+          "Read": ["ToDoList.Read.All", "ToDoList.ReadWrite.All"],
+          "Write": ["ToDoList.ReadWrite.All"]
+        }
+      },
+      "Logging": {...},
+      "AllowedHosts": "*"
     }
-  },
-  "Logging": {...},
-  "AllowedHosts": "*"
-}
-```
+    ```
     Find the following `key`:
 
     - `ClientId` - The identifier of the application, also referred to as the client. Replace the `value` text in quotes with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
@@ -190,8 +190,6 @@ Configure your TodoListClient project by adding the Application ID to the *app.c
     - `Instance` - It specifies the directory from which the Microsoft Authentication Library (MSAL) can request tokens from. Replace `Enter_the_Authority_URL_Here` with your Authority URL as follows:
         - For workforce tenants use "https://login.microsoftonline.com/"` as the instance.
         - For external tenants, add authority URL in the form of "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/"
-
-#### [ASP.NET Core](#tab/aspnet-core)
 
 ---
 
