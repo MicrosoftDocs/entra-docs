@@ -100,17 +100,6 @@ This policy targets Microsoft Entra ID P2 tenants where security defaults aren't
     - To populate the group, we select users who can satisfy MFA, prioritizing users with a directly assigned P2 license.
     - This setup ensures that the policy won’t block legitimate users and that you’re getting maximum value on your P2 licenses.
 
-The following table demonstrates how the policy is applied for some sample scenarios:
-
-
-| P2 licenses | Active users with MFA | Active users without MFA | Template   | Reason                                      |
-|-------------|-----------------------|--------------------------|------------|---------------------------------------------|
-| 100         | 100                  | 0                      | All Users  | Users will not be blocked                  |
-| 100         | 50                   | 50                     | Group      | Insufficient MFA-registered users          |
-| 100         | 200                  | 0                      | Group      | Insufficient P2 licenses to cover all users|
-| 100         | 200                  | 50                     | Group      | Insufficient MFA-registered users and P2 licenses to cover all users |
-
-
 To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for multifactor authentication.
 
 ## Security defaults policies
