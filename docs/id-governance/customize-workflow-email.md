@@ -45,8 +45,8 @@ When you're customizing an email sent via lifecycle workflows, you can choose to
 
 1. On the pane that lists tasks, select the task for which you want to customize the email.
 
-1. On the pane for the specific task, you can include email recipients outside the default audience.
-
+1. On the pane for the specific task under **Basics**, you can  edit the task name or description, along with configuring which recipient you want to send the email to outside the default audience.
+    :::image type="content" source="media/customize-workflow-email/email-recipient-list.png" alt-text="Screenshot of the recipient list for an email customization task.":::
 1. Select the **Email Customization** tab.
 
 1. Enter a custom subject, a message body, and the email language translation option that will be used to translate the message body of the email. 
