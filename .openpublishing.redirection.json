@@ -2198,7 +2198,7 @@
   },
   {
     "source_path_from_root": "/docs/identity/users/licensing-ps-examples.md",
-    "redirect_url": "/docs/identity/users/licensing-powershell-graph-examples",
+    "redirect_url": "/entra/identity/users/licensing-powershell-graph-examples",
     "redirect_document_id": false
   }
 
