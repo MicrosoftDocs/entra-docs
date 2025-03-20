@@ -15,7 +15,7 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services
 
-Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1, which have known vulnerabilities and are no longer considered secure. These older versions are being replaced by TLS 1.2 and TLS 1.3, which offer better security and performance. This change helps protect customer data and ensures compliance with industry standards.
+Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1 as communicated on November 10, 2023. While the Microsoft implementation of TLS 1.0 and TLS 1.1 versions is not known to have vulnerabilities, TLS 1.2 or later versions provide improved security features, including perfect forward secrecy and stronger cipher suites. This change helps protect customer data and ensures compliance with industry standards.
 
 Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they're disabled by default.
 Domain Services will use the following retirement path for TLS versions 1.0 and 1.1:
@@ -32,6 +32,9 @@ Use the Azure portal:
 2.	Go to the Security settings.
 3.	If the TLS 1.2 only mode is set to **Disable**, the instance enables TLS versions 1.0 and 1.1.
 4.	Set TLS 1.2 only mode to **Enable**, and then click **Save**.
+
+This may take about 10 minutes to complete as domain security updates are enforced.
+
 
 Use PowerShell:
 
@@ -73,9 +76,10 @@ Use PowerShell:
    Update-AzADDomainService -Name "name" -ResourceGroupName "resourceGroupName" -DomainSecuritySettingTlsV1 Disabled
    ```
 
-   This command may take about 10 minutes to complete.
+   This command may take about 10 minutes to complete as domain security updates are enforced.
 
-   <!--- add why it takes 10 minutes and how to recover if command fails--->
+Troubleshooting
+If the steps above fail, open an [Azure support request](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
 
 ## Related content
 
