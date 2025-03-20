@@ -46,8 +46,9 @@ To use this feature, you need:
       >[!NOTE]
       >Only some regions support Zone redundancy. Depending on your location, your Zone redundancy section might be automatically enabled or disabled. For more information, see [Protect logic apps from region failures with zone redundancy and availability zones](/azure/logic-apps/set-up-zone-redundancy-availability-zones).
 
-      :::image type="content" border="true" source="./media/tutorial-enable-security-notifications-for-audit-logs/app-name.png" alt-text="Screenshot of application name.":::
-
+    <!---
+   New Image needed where "Consumption" is selected from the Plan type as instructed
+   -->
     1. Select **Review + create**. Then, review your logic app settings and select **Create**.
     1. Wait for the deployment to be complete.
 
