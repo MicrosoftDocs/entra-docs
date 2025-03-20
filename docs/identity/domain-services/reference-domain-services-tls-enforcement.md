@@ -8,7 +8,7 @@ ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 03/17/2025
+ms.date: 03/20/2025
 ms.author: justinha
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -79,7 +79,7 @@ Use PowerShell:
    This command may take about 10 minutes to complete as domain security updates are enforced.
 
 Troubleshooting
-If the steps above fail, open an [Azure support request](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
+If the steps above fail, open an [Azure support request](/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
 
 ## Related content
 
