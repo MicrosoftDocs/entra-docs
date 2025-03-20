@@ -62,7 +62,7 @@ Tenant restrictions v2 can be scoped to specific users, groups, organizations, o
 - All Office apps (all versions/release channels).
 - Universal Windows Platform (UWP) .NET applications.
 - Auth plane protection for all applications that authenticate with Microsoft Entra ID, including all Microsoft first-party applications and any third-party applications that use Microsoft Entra ID for authentication.
-- Data plane protection for SharePoint Online and Exchange Online.
+- Data plane protection for SharePoint Online, Exchange Online and Microsoft Graph.
 - Anonymous access protection for SharePoint Online, OneDrive, and Teams (with Federation Controls configured).
 - Authentication and Data plane protection for Microsoft tenant or Consumer accounts.
 - When using Universal tenant restrictions in Global Secure Access, all browsers and platforms.
