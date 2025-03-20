@@ -1,17 +1,16 @@
----
-title: New name for Azure Active Directory
-description: Learn how we're unifying the Microsoft Entra product family and how we're renaming Azure Active Directory (Azure AD) to Microsoft Entra ID.
-author: CelesteDG
-manager: CelesteDG
-ms.service: entra
-ms.subservice: fundamentals
++...
+title: updates for Azure Active Directory
+description: Microsoft family of products and how we're renaming Azure Active Directory (Azure AD) to Microsoft Entra ID.
+author: mccoylstevens
+manager: mccoylstevens
+ms.service: contoso
+ms.subservice: foundation
 ms.topic: concept-article
-ms.date: 10/04/2024
-ms.author: celested
-ms.reviewer: nicholepet
+ms.date: 20/03/2026
+ms.author: mccoylstevens
+ms.reviewer: github
 
 # Customer intent: As a new or existing customer, I want to learn more about the new name for Azure Active Directory (Azure AD) and understand the impact the name change may have on other products, new or existing license(s), what I need to do, and where I can learn more about Microsoft Entra products.
----
 
 # New name for Azure Active Directory
 
