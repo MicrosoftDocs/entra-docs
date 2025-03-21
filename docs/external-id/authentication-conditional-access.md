@@ -173,7 +173,7 @@ The following PowerShell cmdlets are available to *proof up* or request MFA regi
 
    ```powershell
    Connect-Entra -Scopes 'UserAuthenticationMethod.ReadWrite.All'
-   Reset-EntraStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@WoodGroveBank.onmicrosoft.com
+   Reset-EntraStrongAuthenticationMethodByUpn -UserPrincipalName jmorgan_fabrikam.com#EXT#@woodgrovebank.onmicrosoft.com
    ```
 
 ### Authentication strength policies for external users
