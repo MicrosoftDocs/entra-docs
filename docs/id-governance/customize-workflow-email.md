@@ -17,7 +17,7 @@ Lifecycle workflows provide several tasks that send email notifications. You can
 
 Email tasks allow for the customization of:
 
-- Additional recipients
+- Recipients
 - Sender domain
 - Organizational branding
 - Subject
