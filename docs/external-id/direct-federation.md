@@ -164,7 +164,7 @@ Required claims for the SAML 2.0 token issued by the IdP:
 |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`      | emailaddress |
 
 > [!NOTE]
-> Ensure the value of the `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` claim is the UPN of the user as displayed in the Entra ID tenant
+> Ensure the value of the `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` claim is the UPN of the user as displayed in the Microsoft Entra ID tenant.
 
 ### WS-Fed configuration
 
