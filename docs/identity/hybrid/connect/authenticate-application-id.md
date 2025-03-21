@@ -16,13 +16,13 @@ ms.author: billmath
 
 Microsoft Entra Connect provides 2 options for certificate management: 
 
-1. Managed by Microsoft Entra Connect (Recommended) 
-2. Bring Your Own Certificate (BYOC) 
+1.[Managed by Microsoft Entra Connect (Recommended)](#managed-by-microsoft-entra-connect-recommended)
+2. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc) 
 
 ## Managed by Microsoft Entra Connect (Recommended) 
 Microsoft Entra Connect manages the application and certificate including creation, rotation and deletion of the certificate. The certificate is created in the Current User store with the private key securely stored inside the TPM. The private key is marked as non-exportable, which means it will never leave the TPM boundary. For more information on TPM, see [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview). 
 
- :::image type="content" source="media/authenticate-application-id/authenticate-1.png" alt-text="Diagram of authentication with application id." lightbox="media/authenticate-application-id/authenticate-1.png":::
+ :::image type="content" source="media/authenticate-application-id/auth-1.png" alt-text="Diagram of authentication with application id." lightbox="media/authenticate-application-id/auth-1.png":::
 
 Microsoft recommendeds this certificate management option as we manage the keys and automatically roll over the certificate on expiry.
 
@@ -53,7 +53,7 @@ The following are additional requirements depending on which certificate managem
     b.	KeyAlgorithm: RSA
     c.	KeyHashAlgorithm: SHA256
 
-For more information on creating a certificate on the local machine, see [Create a self-signed public certificate to authenticate your application](h/entra/identity-platform/howto-create-self-signed-certificate)
+For more information on creating a certificate on the local machine, see [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate)
 
 ## Onboarding to Certificate Based Authentication
 Microsoft Entra Connect uses username and password by default for authenticating to Microsoft Entra ID. To onboard to Certificate Based Authentication, an administrator needs to perform the following steps.
@@ -87,9 +87,9 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
   > [!NOTE] 
   > The certificate thumbprint needs to be provided when registering the application. 
 
-     ``` powershell
-     Add-EntraApplicationRegistration –UserPrincipalName &lt;AdminUserPrincipalName&gt; -CertificateThumbprint &lt;certificateThumbprint&gt;
-     ```
+   ``` powershell
+   Add-EntraApplicationRegistration –UserPrincipalName &lt;AdminUserPrincipalName&gt; -CertificateThumbprint &lt;certificateThumbprint&gt;
+   ```
 
 Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra administrator and &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
 
