@@ -161,7 +161,7 @@ See more details in the tutorial, [develop, and plan provisioning for a SCIM end
 
 ## Deploy PoC: SaaS sample-app provisioning
 
-Select up to four apps, when you configure the following apps for automatic user provisioning:
+The [Microsoft Entra ID application gallery](../identity/saas-apps/tutorial-list.md) displays available apps for user provisioning. Select up to four apps needed for your environment, when you configure the following popular apps for automatic user provisioning:
 
 * [ServiceNow](/azure/active-directory/saas-apps/servicenow-provisioning-tutorial)
 * [Salesforce](/azure/active-directory/saas-apps/salesforce-provisioning-tutorial)
