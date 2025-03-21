@@ -58,8 +58,8 @@ You'll create a test user called *B.Simon* to configure and test Microsoft Entra
 Perform the following steps:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
-    1. [Create a Microsoft Entra test user and group](#create-an-azure-ad-test-user-and-group) to test Microsoft Entra SSO with B.Simon.
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable B.Simon to use Microsoft Entra SSO.
+    1. Create a Microsoft Entra test user and group to test Microsoft Entra SSO with B.Simon.
+    1. Assign the Microsoft Entra test user to enable B.Simon to use Microsoft Entra SSO.
 1. [Configure Lenses.io SSO](#configure-lensesio-sso) to configure the SSO settings on the application side.
     1. [Create Lenses.io test group permissions](#create-lensesio-test-group-permissions) to control what B.Simon can access in Lenses.io (authorization).
 1. [Test SSO](#test-sso) to verify whether the configuration works.

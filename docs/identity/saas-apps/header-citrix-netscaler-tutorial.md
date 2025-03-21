@@ -61,9 +61,9 @@ To configure and test Microsoft Entra SSO with Citrix ADC, perform the following
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) - to enable your users to use this feature.
 
-    1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) - to test Microsoft Entra SSO with B.Simon.
+    1. Create a Microsoft Entra test user - to test Microsoft Entra SSO with B.Simon.
 
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) - to enable B.Simon to use Microsoft Entra SSO.
+    1. Assign the Microsoft Entra test user - to enable B.Simon to use Microsoft Entra SSO.
 
 1. [Configure Citrix ADC SSO](#configure-citrix-adc-sso) - to configure the SSO settings on the application side.
 
