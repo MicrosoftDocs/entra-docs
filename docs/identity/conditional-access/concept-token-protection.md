@@ -36,14 +36,14 @@ Token protection creates a cryptographically secure tie between the token and th
 [!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
 
 > [!NOTE]
-> Token protection enforcement is part of Microsoft Entra ID Protection and require Microsoft Entra ID P2 licenses at general availability. 
+> Token protection enforcement is part of Microsoft Entra ID Protection and requires Microsoft Entra ID P2 licenses at general availability.
 
 The following devices and applications support accessing resources on which a token protection Conditional Access policy is applied:
 
 ### Supported devices: 
 
 - Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the [known limitations section](#known-limitations) for unsupported device types.  
-- Windows Server 2019 or newer that are hybrid Microsoft Entra Joined 
+- Windows Server 2019 or newer that are hybrid Microsoft Entra joined.
 
 ### Supported applications: 
 
@@ -64,7 +64,7 @@ The following devices and applications support accessing resources on which a to
 - The following Windows client devices aren't supported: 
    - Surface Hub 
    - Windows-based Microsoft Teams Rooms (MTR) systems 
-- [External users](/entra/external-id/what-is-b2b) who meet the token protection device registration requirements in their home tenant are supported. However, users who don't meet these requirements encounter an unclear error message with no indication of the root cause.   
+- [External users](/entra/external-id/what-is-b2b) who meet the token protection device registration requirements in their home tenant are supported. However, users who don't meet these requirements see an unclear error message with no indication of the root cause.
 - Devices registered with Microsoft Entra ID using the following methods are unsupported:
    - Microsoft Entra joined [Azure Virtual Desktop session hosts](/azure/virtual-desktop/azure-ad-joined-session-hosts).
    - Windows devices deployed using [bulk enrollment](/mem/intune-service/enrollment/windows-bulk-enroll). 
@@ -72,7 +72,7 @@ The following devices and applications support accessing resources on which a to
    - Power Automate hosted machine groups that are [Microsoft Entra joined](/power-automate/desktop-flows/hosted-machine-groups#general-network-requirements). 
    - Windows Autopilot devices deployed using [self-deploying mode](/autopilot/self-deploying). 
    - Windows virtual machines deployed in Azure using the virtual machine (VM) extension that are enabled for [Microsoft Entra ID authentication](/entra/identity/devices/howto-vm-sign-in-azure-ad-windows).
-   - Devices registered with Microsoft Entra ID on Windows versions before 24H2 might be blocked if users didn't perform a fresh sign-in during registration. The Windows 24H2 release fixes this issue by ensuring a required fresh sign-in.  
+- Devices registered with Microsoft Entra ID on Windows versions before 24H2 might be blocked if users don't perform a fresh sign-in during registration. The Windows 24H2 release fixes this issue by requiring a fresh sign-in.
 
 To identify the impacted devices due to unsupported registration types listed previously, inspect `tokenProtectionStatusDetails` attribute in the Sign-in logs. Token requests that are blocked due to an unsupported device registration type, can be identified with a `signInSessionStatusCode` value of 1003. 
 
@@ -85,7 +85,7 @@ To prevent any disruption for new onboarding, you can modify the token protectio
 
 ## Deployment
 
-For users, the deployment of a Conditional Access policy to enforce token protection should be invisible when using compatible client platforms on registered devices and compatible applications.    
+For users, the deployment of a Conditional Access policy to enforce token protection should be invisible when using compatible client platforms on registered devices and compatible applications.
 
 To minimize the likelihood of user disruption due to app or device incompatibility, we highly recommend: 
 
@@ -146,6 +146,8 @@ Monitor Conditional Access enforcement of token protection before and after enfo
 
 Use Microsoft Entra sign-in log to verify the outcome of a token protection enforcement policy in report only mode or in enabled mode. 
 
+:::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Select a specific request to determine if the policy is applied or not.
@@ -160,7 +162,7 @@ Use Microsoft Entra sign-in log to verify the outcome of a token protection enfo
       1. 1006: The request is unbound because the OS version is unsupported. 
       1. 1008: The request is unbound because the client isn't integrated with the platform broker, such as Windows Account Manager (WAM). 
 
-:::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
+:::image type="content" source="media/concept-token-protection/sign-in-log-sample-unbound-status-code-1002.png" alt-text="Screenshot" lightbox="media/concept-token-protection/sign-in-log-sample-unbound-status-code-1002.png":::
 
 #### Log Analytics
 
