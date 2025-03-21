@@ -34,8 +34,7 @@ This article describes the steps you need to perform in both AWS IAM Identity Ce
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A SAML connection from your Microsoft Entra account to AWS IAM Identity Center, as described in Tutorial
 
 ## Step 1: Plan your provisioning deployment

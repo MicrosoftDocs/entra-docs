@@ -27,7 +27,7 @@ This article shows how to configure Elium and Microsoft Entra ID to automaticall
 
 This article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [An Elium tenant](https://www.elium.com/pricing/)
 * A user account in Elium, with admin permissions
 

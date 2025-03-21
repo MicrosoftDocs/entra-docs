@@ -21,7 +21,7 @@ The objective of this article is to show the steps required to perform in Salesf
 
 The scenario outlined in this article assumes that you already have the following items:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Salesforce.com tenant.
 * A Salesforce account username and password and the token. In future, if you reset the account password, Salesforce provides you with a new token and you'll need to edit the Salesforce provisioning settings.
 * A custom user profile in Salesforce. Once you have created a custom profile in the Salesforce portal, edit the profile's Administrative Permissions to enable the following:

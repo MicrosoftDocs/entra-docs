@@ -32,7 +32,7 @@ This article describes the steps you need to do in both Asana and Microsoft Entr
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An Asana tenant with an [Enterprise](https://www.asana.com/pricing) plan or better enabled
 * A user account in Asana with admin permissions
 

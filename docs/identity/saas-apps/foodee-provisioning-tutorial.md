@@ -27,7 +27,7 @@ This article shows you how to configure Microsoft Entra ID in Foodee and Microso
 
 This article assumes that you've met the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Foodee tenant](https://www.food.ee/about-us/)
 * A user account in Foodee with Admin permissions
 

@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in Dia
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Dialpad tenant](https://www.dialpad.com/pricing/).
 * A user account in Dialpad with Admin permissions.
 

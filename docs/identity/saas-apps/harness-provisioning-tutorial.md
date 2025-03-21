@@ -27,7 +27,7 @@ In this article, you learn how to configure Microsoft Entra ID to automatically 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Harness tenant](https://harness.io/pricing/)
 * A user account in Harness with *Admin* permissions
 

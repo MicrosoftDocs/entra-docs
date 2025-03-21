@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Sto
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Storegate tenant](https://www.storegate.com)
 * A user account on a Storegate with Administrator permissions.
 

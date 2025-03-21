@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in Lea
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A [Leapsome](https://www.Leapsome.com/pricing) tenant.
 * A user account in Leapsome with Admin permissions.
 

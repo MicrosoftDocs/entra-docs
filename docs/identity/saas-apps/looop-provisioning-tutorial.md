@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Loo
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Looop tenant](https://www.looop.co/pricing/)
 * A user account on a Looop with Administrator permissions.
 

@@ -22,7 +22,7 @@ The objective of this article is to show you the steps you need to perform in Th
 
 The scenario outlined in this article assumes that you already have the following items:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A ThousandEyes tenant with the [Standard plan](https://www.thousandeyes.com/pricing) or better enabled 
 * A user account in ThousandEyes with Admin permissions 
 

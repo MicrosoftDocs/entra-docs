@@ -22,7 +22,7 @@ The objective of this article is to show you the steps you need to perform in Li
 
 The scenario outlined in this article assumes that you already have the following items:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A LinkedIn Elevate tenant
 * An administrator account in LinkedIn Elevates with access to the LinkedIn Account Center
 
