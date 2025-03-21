@@ -138,7 +138,6 @@ To ease the setup of homogenous cross-tenant access settings applied to partner 
 The multitenant organization capability has been designed with the following constraints:
 
 - Any given tenant can only create or join a single multitenant organization.
-- Tenants that are in a [granular delegated admin privileges (GDAP)](/partner-center/customers/gdap-introduction) relationship cannot create or join a multitenant organization.
 - A multitenant organization is not allowed between a Cloud Solution Provider (CSP) and their customer tenants.
 - Any multitenant organization must have at least one active owner tenant.
 - Each active tenant must have cross-tenant access settings for all active tenants.
