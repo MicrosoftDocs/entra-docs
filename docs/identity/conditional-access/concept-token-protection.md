@@ -138,6 +138,14 @@ The steps that follow help create a Conditional Access policy to require token p
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 
+> [!TIP]
+> Since Conditional Access policies requiring token protection are currently only available for Windows devices, it's necessary to secure your environment against potential policy bypass when an attacker might appear to come from a different platform. 
+> 
+> In addition, you should configure the following policies: 
+> 
+> - [Block access from unknown platforms](policy-all-users-device-unknown-unsupported.md)
+> - [Require device compliance for all known platforms](policy-all-users-device-compliance.md)
+
 ### Capture logs and analyze
 
 Monitor Conditional Access enforcement of token protection before and after enforcement using features like [Policy impact (Preview)](concept-conditional-access-report-only.md#policy-impact-preview), [Sign-in logs](#sign-in-logs), or [Log Analytics](#log-analytics).
@@ -241,9 +249,4 @@ AADNonInteractiveUserSignInLogs
 
 ## Related content 
 
-Since Conditional Access policies requiring token protection are currently only available for Windows devices, it's necessary to secure your environment against potential policy bypass when an attacker might appear to come from a different platform. 
-
-In addition, you should configure the following policies: 
-
-- [Block access from unknown platforms](policy-all-users-device-unknown-unsupported.md)
-- [Require device compliance for all known platforms](policy-all-users-device-compliance.md)
+[What is a Primary Refresh Token?](../devices/concept-primary-refresh-token.md)
