@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/17/2025
+ms.date: 03/21/2025
 ms.author: gasinh
 
 #customer intent: My goal is to deliver a proof of concept for deployment of Microsoft Entra ID Governance in my test and production environments.
@@ -43,13 +43,15 @@ Timelines show approximate delivery stage duration and are based on scenario com
 * Use custom workflows for access lifecycles with Azure Logic Apps
 * Configure time-limited access  
 
+## Deploy PoC: Entitlement management
+
+1. Go to [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md).
+2. Use the instructions to create an access package.
+3. Create an automatic assignment policy.
+
 ### Separation of duties
 
 In entitlement management, you can configure policy for user groups and access packages. Conversely, with separation of duties, you can disable requests if a user is assigned to other access packages, or the user is a member of an incompatible group. Generate reports of users with incompatible access rights. Create alerts when users are granted access to applications. 
-
-In the following screenshot, see the **On-premises resources | Separation of Duties** dialog with the **Incompatible groups** tab. 
-
-   [ ![Screenshot of the Incompatible groups tab on the Separation of Duties dialog.](media/governance-deployment/separation-of-duties.png)](media/governance-deployment/separation-of-duties-expanded.png#lightbox)
 
 ### Create an autoassignment policy
 
@@ -65,11 +67,6 @@ See the following video to learn more about policy assignment.</br></br>
 
 > [!VIDEO 6ae11d17-51c8-4346-a9a3-098a9df0148f]
 
-## Deploy PoC: Access package assignment
-
-1. Go to [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md).
-2. Use the instructions to create an access package.
-3. Create an automatic assignment policy. 
 
 ### Custom workflows with Azure Logic Apps
 
@@ -97,16 +94,13 @@ To extend governance workflows, integrate Logic Apps with entitlement management
 
 ## Deploy PoC: Access package custom extensions
 
+ >[!NOTE]
+ >To consider custom extensions, ensure you understand Azure Logic Apps functionality. For more information, see the previous section.
+
 1. Go to [Trigger Azure Logic Apps with custom extensions in entitlement management](/azure/active-directory/governance/entitlement-management-logic-apps-integration). 
 2. Use the instructions to create and add a custom extension to a catalog.
 3. Edit the custom extension.
 3. Add custom extensions to an access package. 
-
-### My Access portal
-
-Administrators use the [My Access portal](../id-governance/my-access-portal-overview.md) to configure access and for users to review or request access (Requestors) to resources. In the My Access portal, Approvers can modify answers submitted by Requestors. 
-
-Learn how to [request an access package](../id-governance/entitlement-management-request-access.md).
 
 ## Access recertification: Access reviews
 
@@ -203,6 +197,12 @@ You can generate custom reports. Export data from Microsoft Entra ID to Azure Da
 ### Sample custom report: manager's view
 
 You can develop a manager dashboard with visibility into current, direct-report active assignments.  
+
+### Request access packages
+
+Administrators use the [My Access portal](../id-governance/my-access-portal-overview.md) to configure access and for users to review or request access (Requestors) to resources. In My Access portal, Approvers can modify answers submitted by Requestors.
+
+Learn how to [request an access package](../id-governance/entitlement-management-request-access.md).
 
 ## Next steps
 
