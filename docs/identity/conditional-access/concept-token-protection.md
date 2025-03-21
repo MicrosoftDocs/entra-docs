@@ -4,7 +4,7 @@ description: Learn how to secure your environment with token protection in Micro
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/19/2025
+ms.date: 03/21/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -38,9 +38,9 @@ Token protection creates a cryptographically secure tie between the token and th
 > [!NOTE]
 > Token protection enforcement is part of Microsoft Entra ID Protection and require Microsoft Entra ID P2 licenses at general availability. 
 
-### Supported devices: 
-
 The following devices and applications support accessing resources on which a token protection Conditional Access policy is applied:
+
+### Supported devices: 
 
 - Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the [known limitations section](#known-limitations) for unsupported device types.  
 - Windows Server 2019 or newer that are hybrid Microsoft Entra Joined 
@@ -56,6 +56,14 @@ The following devices and applications support accessing resources on which a to
 
 ### Known limitations
 
+- Office perpetual clients aren't supported.
+- The following applications don't support signing in using protected token flows and users are blocked when accessing Exchange and SharePoint: 
+   - PowerShell modules accessing Exchange, SharePoint, or Microsoft Graph scopes served by Exchange or SharePoint
+   - PowerQuery extension for Excel
+   - Extensions to Visual Studio Code which access Exchange or SharePoint 
+- The following Windows client devices aren't supported: 
+   - Surface Hub 
+   - Windows-based Microsoft Teams Rooms (MTR) systems 
 - [External users](/entra/external-id/what-is-b2b) who meet the token protection device registration requirements in their home tenant are supported. However, users who don't meet these requirements encounter an unclear error message with no indication of the root cause.   
 - Devices registered with Microsoft Entra ID using the following methods are unsupported:
    - Microsoft Entra joined [Azure Virtual Desktop session hosts](/azure/virtual-desktop/azure-ad-joined-session-hosts).
@@ -74,16 +82,6 @@ To prevent any disruption for new onboarding, you can modify the token protectio
 - Azure Virtual Desktops that are Microsoft Entra joined, you can use `systemLabels -eq "AzureVirtualDesktop" and trustType -eq "AzureAD"`. 
 - Power Automate hosted machine groups that are Microsoft Entra joined, you can use `systemLabels -eq "MicrosoftPowerAutomate" and trustType -eq "AzureAD"`. 
 - Windows virtual machines in Azure that are Microsoft Entra joined, you can use `systemLabels -eq "AzureResource" and trustType -eq "AzureAD"`. 
-
-- Office Perpetual clients aren't supported.
-- The following applications don't support signing in using protected token flows and users are blocked when accessing Exchange and SharePoint: 
-   - PowerShell modules accessing Exchange, SharePoint, or Microsoft Graph scopes served by Exchange or SharePoint
-   - PowerQuery extension for Excel
-   - Extensions to Visual Studio Code which access Exchange or SharePoint 
-
-- The following Windows client devices aren't supported: 
-   - Surface Hub 
-   - Windows-based Microsoft Teams Rooms (MTR) systems 
 
 ## Deployment
 
