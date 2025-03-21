@@ -47,7 +47,7 @@ The following are additional requirements depending on which certificate managem
 > [!NOTE]
 > If using Hyper-V VMs, the TPM can be enabled by checking Security > Enable Trusted Platform Module. This can only be done on a Gen 2 VMs. Gen 1 VMs cannot be converted to a Gen 2 VMs. 
 
-### II.	BYOC Prerequisites
+### BYOC Prerequisites
 - A certificate is created in an HSM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
     a.	KeyLength: 2048
     b.	KeyAlgorithm: RSA
@@ -87,23 +87,23 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
   > [!NOTE] 
   > The certificate thumbprint needs to be provided when registering the application. 
 
-   ``` powershell
-   Add-EntraApplicationRegistration –UserPrincipalName &lt;AdminUserPrincipalName&gt; -CertificateThumbprint &lt;certificateThumbprint&gt;
-   ```
+     ``` powershell
+     Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
+     ```
 
 Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra administrator and &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
   - Managed by Microsoft Entra Connect:
- ``` powershell
- Add-ADSyncApplicationRegistration –UserPrincipalName &lt;AdminUserPrincipalName&gt;
- ```
+     ``` powershell
+     Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName>
+     ```
   - Use BYOC:
  
- ``` powershell
- Add-ADSyncApplicationRegistration –UserPrincipalName &lt;AdminUserPrincipalName&gt; -CertificateThumbprint &lt;certificateThumbprint&gt; 
- ```
+     ``` powershell
+     Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint> 
+     ```
 Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra administrator, &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
 
 5. Run a verification to confirm that we are now using application identity. Run the cmdlet below to get the current authentication and ensure it has the Connector Identity Type as **Application**. 
@@ -116,3 +116,101 @@ Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra a
  ``` powershell
  Set-ADSyncScheduler -SyncCycleEnabled $true
  ```
+
+ ## Certificate Rollover
+Microsoft Entra Connect will warn if the certificate roll over is due. That is, expiring in less tha or equal to 150 days.  It will emit an error if certificate is already expired. These warning and errors can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler is not suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
+
+When you get a warning from Microsoft Entra Connect Sync when using the BYOC option, it is **highly recommended you generate a new key and certificate and roll over the certificate** used by Connect Sync using PowerShell.
+
+If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance disabled.  If this is the case, you will have to manually manage certificate rotation by going through the steps below.
+
+
+1. Disable the scheduler to ensure no sync cycles run until this change is completed. Use the following PowerShell cmdlet to disable the scheduler.
+
+ ``` powershell
+ Set-ADSyncScheduler -SyncCycleEnabled $false
+ ```
+2. Invoke certificate credential rotation. When the customer is in BYOC mode, the new certificate thumbprint must be provided.
+
+ ``` powershell
+ Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
+ ```
+
+Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Microsoft Entra ID hybrid administrator, <certificateThumbprint> with the CertificateThumbPrint 
+
+The new certificate thumbprint is optional if you have used the default mode but have maintenance disabled.
+
+3. Get the current authentication and confirm it has the Connector Identity Type as **Application**. Use the following PowerShell cmdlet to verify the current authentication.
+ 
+ ``` powershell
+ Get-ADSyncEntraConnectorCredential
+ ```
+4. Re-enable the scheduler to begin synchronization service. 
+
+ ``` powershell
+ Set-ADSyncScheduler -SyncCycleEnabled $true
+ ```
+5. Verify synchronization cycle is successful.
+6. Remove the old certificate from Local Machine store
+
+You may roll over the certificate at any point in time as deemed necessary, even if the current certificate is still not due for rotation or the current certificate has already expired.
+
+## Certificate revocation process
+The certificate revocation process allows Authentication Policy Administrators to revoke a previously issued certificate from being used for future authentication. The certificate revocation won't revoke already issued tokens of the user. For more information on this process see [Understanding the certificate revocation process](../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
+
+## Roll back to legacy service account
+If want to go back to the legacy servive account, you have the option to revert to using service account to mitigate the issue promptly using PowerShell.  Use the steps below to rollback to the service account.
+
+1. Disable the scheduler with below command to ensure no sync cycles run until this change is completed
+ 
+ ``` powershell
+ Set-ADSyncScheduler -SyncCycleEnabled $false
+ ```
+2. Add the service account username and password by entering below commands
+
+ ``` powershell 
+ $HACredential
+ ```
+3. You will be prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password.  Enter the username and password.
+
+4. Next, add the service account
+
+ ``` powershell
+Add-ADSyncAADServiceAccount -AADCredential $HACredential
+ ```
+
+5. Get the current authentication mechanism with below command and to confirm that the ConnectorIdentityType is back to **ServiceAccount**.
+ 
+ ``` powershell
+Get-ADSyncEntraConnectorCredential
+ ```
+6. Re-enable the scheduler to begin synchronization service using command below
+
+ ``` powershell
+ Set-ADSyncScheduler -SyncCycleEnabled $true
+ ```
+
+## Remove legacy service account
+Once you have transitioned to Certificate Based Authentication and Sync is working as expected, you may remove the old username and password service account using PowerShell.
+Use the steps below to remove the legacy service account.
+
+1. Add the service account username and password by entering below commands
+
+ ``` powershell 
+ $HACredential
+ ```
+ 2. You will be prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password.  Enter the username and password.
+
+ 3. Next, add the service account
+
+ ``` powershell
+ Remove-ADSyncAADServiceAccount -AADCredential $HACredential  -Name <$serviceAccountName>
+ ```
+
+The ServiceAccountName is the first part of the UserPrincipalName of the service account used in Microsoft Entra ID. You can find this user in the list of users in Entra Portal. If UPN is contoso@fabrikam.com then use **contoso** as the ServiceAccountName
+
+## Next steps
+
+- [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
+- [Microsoft Entra Connect cloud sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
+- [Microsoft Entra Connect version history](reference-connect-version-history.md)
