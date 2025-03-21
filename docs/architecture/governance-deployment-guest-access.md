@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/14/2025
+ms.date: 03/21/2025
 ms.author: gasinh
 
 #customer intent: My goal is understand deployment of Microsoft Entra ID Governance in my test and production environments.
@@ -171,60 +171,6 @@ To learn more about downloadable review-history reports, see [Scenario 2: Assign
 ## Deploy PoC: Access review guide
 
 For PoC deployment instructions, go to [Scenario 2: Assign employee access to resources](governance-deployment-employee-access.md).
-
-### (Sample) Use custom extensions with Azure Logic Apps and entitlement management
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as, at least, an Identity Governance Administrator.
-2. Browse to **Identity Governance**.
-3. Select **Entitlement management**.
-4. Select **Catalogs**.
-5. In Catalogs, select the catalog for the custom extension.
-6. In the left menu, select **Custom extensions**.
-7. Select **Add custom extension**. 
-8. For **Name**, type the custom extension name.
-9. Select **Send**.
-10. Select **Next**. 
-11. On the **Extension type** tab, select **Next**.
-12. On **Extension configuration**, select **Next**.
-13. On the **Details** tab, select a subscription and resource group.
-14. For **Logic app name**, type a name.
-15. Select **Create a logic app**. 
-
-    [ ![Screenshot of the Create a custom extension dialog with highlighted options.](media/governance-deployment/create-custom.png)](media/governance-deployment/create-custom-expanded.png#lightbox)
-
-16. The logic app is created.
-17. Select **Review** and **Create**.
-18. Select **Create**.
-
-### Customize a logic app
-
-1. Go to the [Azure portal](https://ms.portal.azure.com).
-2. Browse to **Logic apps**.
-3. Open **SendITNotification**.
-4. In the left menu, select **Logic app designer**.
-
-   [ ![Screenshot of the logic app designer.](media/governance-deployment/logic-app-designer.png)](media/governance-deployment/logic-app-designer-expanded.png#lightbox)
-
-5. On **Condition**, right-click and select **Delete**.
-6. An activity appears in Workflow designer.
-7. In Workflow designer, select the plus sign (**+**).
-8. Select **Add an action**.
-9. Select the **All** tab.
-10. Select **Office 365**.
-
-    [ ![Screenshot of the All tab and the Office 365 option.](media/governance-deployment/all-tab-office.png)](media/governance-deployment/all-tab-office-expanded.png#lightbox)
-
-11. On the **Actions** tab, select **Send an email (v2)**.
-12. On **Send an email Action v2**, for **To**, type a name.
-13. Select the subject text box.
-14. On **Add dynamic content**, select the **Add dynamic content** link.
-15. Search for Requestor.
-16. Select **DisplayName**.
-17. For **Body**, type **User added as an exception to Conditional Access policy**. 
-
-    [ ![Screenshot of the Add dynamic content diaglog and highlighted options.](media/governance-deployment/user-added.png)](media/governance-deployment/user-added-expanded.png#lightbox)
-
-18. Select **Save**.
 
 ## Next steps
 
