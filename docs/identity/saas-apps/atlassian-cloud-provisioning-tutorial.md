@@ -67,10 +67,9 @@ The scenario outlined in this article assumes that you already have the followin
 
 Add Atlassian Cloud from the Microsoft Entra application gallery to start managing provisioning to Atlassian Cloud. If you have previously setup Atlassian Cloud for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)] 
-
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configuring automatic user provisioning to Atlassian Cloud 
 

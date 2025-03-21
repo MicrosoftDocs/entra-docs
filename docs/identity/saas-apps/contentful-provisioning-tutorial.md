@@ -77,16 +77,9 @@ If you have questions while you configure provisioning in the Contentful admin c
 
 To manage provisioning to Contentful, add Contentful from the Microsoft Entra application gallery. If you have previously set up Contentful for single sign-on, you can use the same application. However, we recommend that you create a separate app to initially test the integration. Learn how to [add an application in the gallery](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Define who will be in scope for provisioning 
+## Define who is in scope for provisioning 
 
-You can use the Microsoft Entra provisioning service to scope who will be provisioned based on assignment to the application or based on attributes of the user or group. 
-
-If you choose to scope who will be provisioned to your app based on assignment, complete the steps to [assign users and groups to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
-
-If you choose to scope who will be provisioned based solely on attributes of the user or group, use a scoping filter to [define conditional rules for provisioning user accounts](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* When you assign users and groups to Contentful, you must select a role other than **Default Access**. Users who have the Default Access role are excluded from provisioning and are indicated in the provisioning logs as not effectively entitled. If the only role available on the application is the Default Access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add more roles. 
-* Start small. Test with a small set of users and groups before you roll out to everyone. When provisioning scope is set to assigned users and groups, you can control the scope by assigning one or two users or groups to the app. When the scope is set to all users and groups, you can specify an [attribute-based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Configure automatic user provisioning to Contentful 
 
@@ -160,11 +153,7 @@ This operation starts the initial sync cycle of all users and groups defined in 
 
 ## Monitor your deployment
 
-After you configure provisioning, use the following resources to monitor your deployment:
-
-* To determine which users have been provisioned successfully or unsuccessfully, view the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md).
-* To see the status of the provisioning cycle and how close it is to finishing, check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md).
-* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about [quarantine states](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Related content
 

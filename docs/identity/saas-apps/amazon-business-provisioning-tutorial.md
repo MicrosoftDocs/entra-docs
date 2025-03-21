@@ -70,19 +70,9 @@ Once your Default SCIM Groups have been identified, go to your Amazon Business a
 
 Add Amazon Business from the Microsoft Entra application gallery to start managing provisioning to Amazon Business. If you have previously setup Amazon Business for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* When assigning users and groups to Amazon Business, you must select a role other than **Default Access**. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the default access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add other roles.
-* Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-* You can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add Amazon Business roles. The user can have one of the following roles:
-   * **Requisitioner** (to place orders or submits order requests for approval).
-   * **Administrator** (to manage people, groups, roles and approvals. View orders. Run order reports)
-   * **Finance** (to access invoices, credit notes, analytics, and order history).
-   * **Tech** (to set up system integrations with the programs used at work).
-
-![Screenshot of the application roles list.](media/amazon-business-provisioning-tutorial/roles.png)
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to Amazon Business
 
@@ -175,11 +165,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 ## Step 6: Monitor your deployment
 
-Once you've configured provisioning, use the following resources to monitor your deployment:
-
-* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
-* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Feature limitations
 
