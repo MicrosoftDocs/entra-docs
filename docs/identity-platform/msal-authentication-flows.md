@@ -1,19 +1,17 @@
 ---
-title: Authentication flow support in the Microsoft Authentication Library (MSAL)
-description: Learn about the authorization grants and authentication flows supported by MSAL.
+title: Authentication flow support in MSAL
+description: Learn about the authentication flows supported by MSAL, such as authorization code, client credentials, and device code, to secure your apps effectively.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
-ms.date: 03/25/2024
+ms.date: 03/21/2025
 ms.reviewer: saeeda
 ms.service: identity-platform
-
 ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about the authentication flows supported by MSAL.
 ---
 
-# Authentication flow support in MSAL
+# Authentication flow support in the Microsoft Authentication Library (MSAL)
 
 The Microsoft Authentication Library (MSAL) supports several authorization grants and associated token flows for use by different application types and scenarios.
 
@@ -134,7 +132,7 @@ In the following diagram:
 The implicit grant flow has been replaced by the [authorization code flow with PKCE](v2-oauth2-auth-code-flow.md) as the preferred and more secure token grant flow for client-side single page-applications (SPAs)
 
 >[!WARNING]
-> It is no longer recommended to use the implicit grant flow. If you're building a SPA, use the authorization code flow with PKCE instead.
+> It's no longer recommended to use the implicit grant flow. If you're building a SPA, use the authorization code flow with PKCE instead.
 
 Single-page web apps written in JavaScript (including frameworks like Angular, Vue.js, or React.js) are downloaded from the server and their code runs directly in the browser. Because their client-side code runs in the browser and not on a web server, they have different security characteristics than traditional server-side web applications. Prior to the availability of Proof Key for Code Exchange (PKCE) for the authorization code flow, the implicit grant flow was used by SPAs for improved responsiveness and efficiency in getting access tokens.
 
@@ -216,14 +214,14 @@ IWA supports AD FS-federated users *only* - users created in Active Directory an
 
 IWA's non-interactive (silent) authentication can fail if MFA is enabled in the Microsoft Entra tenant and an MFA challenge is issued by Microsoft Entra ID. If IWA fails, you should fall back to an [interactive method of authentication](#interactive-and-non-interactive-authentication) as described earlier.
 
-Microsoft Entra ID uses AI to determine when two-factor authentication is required. Two-factor authentication is typically required when a user signs in from a different country/region, when connected to a corporate network without using a VPN, and sometimes when they *are* connected through a VPN. Because MFA's configuration and challenge frequency may be outside of your control as the developer, your application should gracefully handle a failure of IWA's silent token acquisition.
+Microsoft Entra ID uses AI to determine when two-factor authentication is required. Two-factor authentication is typically required when a user signs in from a different country/region, when connected to a corporate network without using a VPN, and sometimes when they're* connected through a VPN. Because MFA's configuration and challenge frequency may be outside of your control as the developer, your application should gracefully handle a failure of IWA's silent token acquisition.
 
 **Authority URI restrictions**
 
 The authority passed in when constructing the public client application must be one of:
 
 - `https://login.microsoftonline.com/{tenant}/` - This authority indicates a single-tenant application whose sign-in audience is restricted to the users in the specified Microsoft Entra tenant. The `{tenant}` value can be the tenant ID in GUID form or the domain name associated with the tenant.
-- `https://login.microsoftonline.com/organizations/` - This authority indicates a multi-tenant application whose sign-in audience is users in any Microsoft Entra tenant.
+- `https://login.microsoftonline.com/organizations/` - This authority indicates a multitenant application whose sign-in audience is users in any Microsoft Entra tenant.
 
 Authority values must NOT contain `/common` or `/consumers` because personal Microsoft accounts (MSA) are unsupported by IWA.
 
