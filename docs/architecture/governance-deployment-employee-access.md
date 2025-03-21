@@ -196,9 +196,7 @@ The **Identity Governance** dialog, in the **Review History** area, with the **R
 
 You can generate custom reports. Export data from Microsoft Entra ID to Azure Data Explorer and use Kusto Query Language (KQL) to create tailored views. You can analyze entitlement data, customize insights, and optimize identity governance reporting.
 
-### Sample custom report: manager's view
-
-You can develop a manager dashboard with visibility into current, direct-report active assignments.  
+You can learn to [create customized reports in Azure Data Explorer](../id-governance/custom-entitlement-report-with-adx-and-entra-id.md).
 
 ### Request access packages
 
