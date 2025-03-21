@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Dru
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Druva tenant](https://www.druva.com/products/pricing-plans/).
 * A user account in Druva with Admin permissions.
 

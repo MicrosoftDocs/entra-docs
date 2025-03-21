@@ -28,7 +28,7 @@ The objective of this article is to demonstrate the steps to be performed in Dro
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Dropbox for Business tenant](https://www.dropbox.com/business/pricing)
 * A user account in Dropbox for Business with Admin permissions.
 

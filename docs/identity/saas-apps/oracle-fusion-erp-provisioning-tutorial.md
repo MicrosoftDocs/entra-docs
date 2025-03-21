@@ -25,7 +25,7 @@ The objective of this article is to demonstrate the steps to be performed in Ora
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An [Oracle Fusion ERP tenant](https://www.oracle.com/applications/erp/).
 * A user account in Oracle Fusion ERP with Admin permissions.
 

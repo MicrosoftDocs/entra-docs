@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in RFP
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A RFPIO tenant](https://www.rfpio.com/product/).
 * A user account in RFPIO with Admin permissions.
 

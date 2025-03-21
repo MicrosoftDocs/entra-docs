@@ -25,7 +25,7 @@ The objective of this article is to demonstrate the steps to be performed in Sym
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Symantec Web Security Service (WSS) tenant](https://www.websecurity.digicert.com/buy-renew?inid=brmenu_nav_brhome).
 * A user account in Symantec Web Security Service (WSS) with Admin permissions.
 

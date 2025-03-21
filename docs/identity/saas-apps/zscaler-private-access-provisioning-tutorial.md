@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Zsc
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Zscaler Private Access (ZPA) tenant](https://www.zscaler.com/pricing-and-plans#contact-us)
 * A user account in Zscaler Private Access (ZPA) with Admin permissions.
 

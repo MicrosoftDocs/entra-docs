@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in iPa
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [An iPass SmartConnect tenant](https://www.ipass.com/).
 * A user account in iPass SmartConnect with Admin permissions.
 
