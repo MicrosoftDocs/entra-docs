@@ -46,6 +46,7 @@ Of these URLs, the URLs listed in the following table are the absolute bare mini
 | `*.entrust.net` |HTTP/80 |Used to download CRL lists for multifactor authentication (MFA). |
 | `*.management.core.windows.net` (Azure Storage)</br>`*.graph.windows.net` (Azure AD Graph)|HTTPS/443|Used for the various Azure services.|
 | `secure.aadcdn.microsoftonline-p.com` |HTTPS/443 |Used for MFA. |
+| `graph.microsoft.com` |HTTPS/443 |Used in 2.4.18.0 or later. |
 | `*.microsoftonline.com` |HTTPS/443 |Used to configure your Microsoft Entra directory and import/export data. |
 | `*.crl3.digicert.com` |HTTP/80 |Used to verify certificates. |
 | `*.crl4.digicert.com` |HTTP/80 |Used to verify certificates. |
