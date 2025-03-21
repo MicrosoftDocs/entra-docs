@@ -19,7 +19,7 @@ This article defines authentication and authorization. It also briefly covers mu
 
 ## Authentication
 
-*Authentication* is the process of proving that your who you say you are. This is achieved by verification of the identity of a person or device. It's sometimes shortened to *AuthN*. The Microsoft identity platform uses the [OpenID Connect](https://openid.net/connect/) protocol for handling authentication.
+*Authentication* is the process of proving that you are who you say you are. This is achieved by verification of the identity of a person or device. It's sometimes shortened to *AuthN*. The Microsoft identity platform uses the [OpenID Connect](https://openid.net/connect/) protocol for handling authentication.
 
 ## Authorization
 

@@ -16,7 +16,7 @@ ms.custom:
 
 You learned how to add sign-in to your web app in [Web app that signs in users: Sign-in and sign-out](scenario-web-app-sign-user-sign-in.md).
 
-Sign-out is different for a web app that calls web apis. When the user signs out from your application, or from any application, you must remove the tokens associated with that user from the token cache.
+Sign-out is different for a web app that calls web APIs. When the user signs out from your application, or from any application, you must remove the tokens associated with that user from the token cache.
 
 ## Intercept the callback after single sign-out
 
