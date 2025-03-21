@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 03/21/2025
 
 ms.author: justinha
 author: justinha
@@ -327,6 +327,10 @@ Make sure that enough DCs are patched to respond in time to service your resourc
 
 > [!NOTE]
 > The `/keylist` switch in the `nltest` command is available in client Windows 10 v2004 and later.
+
+### Is there a maximum number of groups per token for Microsoft Entra Kerberos on Windows scenarios?
+ 
+Yes, you can have up to 1,010 groups per token.
 
 ### Do FIDO2 security keys work in a Windows login with RODC present in the hybrid environment?
 
