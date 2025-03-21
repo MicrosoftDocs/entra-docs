@@ -26,7 +26,7 @@ This article demonstrates the steps for configuring provisioning from Microsoft 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [An SAP Cloud Identity Services tenant](https://www.sap.com/products/cloud-platform.html)
 * A user account in SAP Cloud Identity Services with Admin permissions.
 

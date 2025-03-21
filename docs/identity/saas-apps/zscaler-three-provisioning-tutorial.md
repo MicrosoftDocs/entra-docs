@@ -25,7 +25,7 @@ In this article,  you'll learn how to configure Microsoft Entra ID to automatica
 
 To complete the steps outlined in this article,  you need the following:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler Three tenant.
 * A user account in Zscaler Three with admin permissions.
 

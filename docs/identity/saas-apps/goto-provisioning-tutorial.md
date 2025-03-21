@@ -31,8 +31,7 @@ This article describes the steps you need to perform in both GoTo and Microsoft 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An organization created in the GoTo Organization Center with at least one verified domain 
 * A user account in the GoTo Organization Center with [permission](https://support.goto.com/meeting/help/manage-organization-users-g2m710102) to configure provisioning (for example, organization administrator role with Read & Write permissions) as shown in Step 2.
 

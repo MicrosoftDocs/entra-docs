@@ -29,7 +29,7 @@ This article demonstrates the steps to perform in Cornerstone OnDemand and Micro
 
 The scenario outlined in this article assumes that you have:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Cornerstone OnDemand tenant.
 * A user account in Cornerstone OnDemand with admin permissions.
 

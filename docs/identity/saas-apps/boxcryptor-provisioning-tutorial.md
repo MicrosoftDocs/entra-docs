@@ -34,8 +34,7 @@ This article describes the steps you need to perform in both Boxcryptor and Micr
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Boxcryptor Single sign-on enabled [subscription](https://www.boxcryptor.com).
 
 ## Step 1: Plan your provisioning deployment

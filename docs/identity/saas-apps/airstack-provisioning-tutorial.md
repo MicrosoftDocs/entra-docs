@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in Air
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An Airstack tenant.
 * A user account in Airstack with Admin permissions.
 

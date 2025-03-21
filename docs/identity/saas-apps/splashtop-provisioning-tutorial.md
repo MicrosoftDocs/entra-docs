@@ -31,8 +31,7 @@ This article describes the steps you need to perform in both Splashtop and Micro
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Splashtop team with SSO supported. Fill out this [contact form](https://marketing.splashtop.com/acton/fs/blocks/showLandingPage/a/3744/p/p-0095/t/page/fm/0) to trial or subscribe to the SSO feature.
 
 ## Step 1: Plan your provisioning deployment

@@ -31,8 +31,7 @@ This article describes the steps you need to perform in both Genesys Cloud for A
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A PureCloud [organization](https://help.mypurecloud.com/?p=81984).
 * A User with [permissions](https://help.mypurecloud.com/?p=24360) to create an Oauth Client.
 
