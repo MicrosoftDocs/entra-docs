@@ -53,6 +53,8 @@ Timelines show approximate delivery stage duration and are based on scenario com
 
 In entitlement management, you can configure policy for user groups and access packages. Conversely, with separation of duties, you can disable requests if a user is assigned to other access packages, or the user is a member of an incompatible group. Generate reports of users with incompatible access rights. Create alerts when users are granted access to applications. 
 
+You can learn to [configure separation of duties checks for an access package](../id-governance/entitlement-management-access-package-incompatible.md). 
+
 ### Create an autoassignment policy
 
 In this area of access policy, **birthright assignment** refers to automatically granting resource access based on user properties. Creating assignments works similarly. User properties match, or don’t match, a policy's membership rules. Use rules to determine access package assignment based on user properties, similar to [dynamic groups](../identity/users/groups-create-rule.md). Add or remove assignments, based on rule criteria. 
