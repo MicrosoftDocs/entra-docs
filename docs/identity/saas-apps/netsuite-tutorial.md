@@ -60,8 +60,8 @@ Configure and test Microsoft Entra SSO with NetSuite by using a test user called
 To configure and test Microsoft Entra SSO with NetSuite, perform the following steps:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
-    * [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra single sign-on with user B.Simon.  
-    * [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable user B.Simon to use Microsoft Entra single sign-on.
+    * Create a Microsoft Entra test user to test Microsoft Entra single sign-on with user B.Simon.  
+    * Assign the Microsoft Entra test user to enable user B.Simon to use Microsoft Entra single sign-on.
 1. [Configure NetSuite SSO](#configure-netsuite-sso) to configure the single sign-on settings on the application side.
     * [Create the NetSuite test user](#create-the-netsuite-test-user) to have a counterpart of user B.Simon in NetSuite that's linked to the Microsoft Entra representation of the user.
 1. [Test SSO](#test-sso) to verify that the configuration works.

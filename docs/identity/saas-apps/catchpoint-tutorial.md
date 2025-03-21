@@ -55,8 +55,8 @@ For SSO to work, you need to link a Microsoft Entra user with a user in Catchpoi
 Complete the following sections:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso), to enable this feature for your users.
-   - [Create a Microsoft Entra test user](#create-an-azure-ad-test-user), to test Microsoft Entra single sign-on with B.Simon.
-   - [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user), to enable B.Simon to use Microsoft Entra single sign-on.
+   - Create a Microsoft Entra test user, to test Microsoft Entra single sign-on with B.Simon.
+   - Assign the Microsoft Entra test user, to enable B.Simon to use Microsoft Entra single sign-on.
 1. [Configure Catchpoint SSO](#configure-catchpoint-sso), to configure the single sign-on settings on the application side.
    - [Create Catchpoint test user](#create-a-catchpoint-test-user), to allow linking of the B.Simon Microsoft Entra test account to a similar user account in Catchpoint.
 1. [Test SSO](#test-sso), to verify that the configuration works.

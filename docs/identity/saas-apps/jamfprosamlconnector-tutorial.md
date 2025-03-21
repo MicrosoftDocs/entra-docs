@@ -55,8 +55,8 @@ Configure and test Microsoft Entra SSO with Jamf Pro by using a test user called
 In this section, you configure and test Microsoft Entra SSO with Jamf Pro.
 
 1. [Configure SSO in Microsoft Entra ID](#configure-sso-in-azure-ad) so that your users can use this feature.
-    1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra SSO with the B.Simon account.
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) so that B.Simon can use SSO in Microsoft Entra ID.
+    1. Create a Microsoft Entra test user to test Microsoft Entra SSO with the B.Simon account.
+    1. Assign the Microsoft Entra test user so that B.Simon can use SSO in Microsoft Entra ID.
 1. [Configure SSO in Jamf Pro](#configure-sso-in-jamf-pro) to configure the SSO settings on the application side.
     1. [Create a Jamf Pro test user](#create-a-jamf-pro-test-user) to have a counterpart of B.Simon in Jamf Pro that's linked to the Microsoft Entra representation of the user.
 1. [Test the SSO configuration](#test-the-sso-configuration) to verify that the configuration works.

@@ -59,8 +59,8 @@ To configure and test Microsoft Entra SSO with Keeper Password Manager:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
 
-    1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra single sign-on with Britta Simon.
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable Britta Simon to use Microsoft Entra single sign-on.
+    1. Create a Microsoft Entra test user to test Microsoft Entra single sign-on with Britta Simon.
+    1. Assign the Microsoft Entra test user to enable Britta Simon to use Microsoft Entra single sign-on.
 
 1. [Configure Keeper Password Manager SSO](#configure-keeper-password-manager-sso) to configure the SSO settings on the application side.
     1. [Create a Keeper Password Manager test user](#create-a-keeper-password-manager-test-user) to have a counterpart of Britta Simon in Keeper Password Manager linked to the Microsoft Entra representation of the user.
