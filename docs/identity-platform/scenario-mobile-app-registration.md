@@ -1,23 +1,22 @@
 ---
 title: Register mobile apps that call web APIs
-description: Learn how to build a mobile app that calls web APIs (app's registration)
+description: Register your mobile app to call web APIs. Learn to set up redirect URIs, authentication flows, and API permissions.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: 
-ms.date: 11/14/2024
+ms.custom: null
+ms.date: 03/21/2025
 ms.reviewer: brianmel, jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
-#Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform for developers.
+#customer intent: As a mobile app developer, I want to register my app to call web APIs so that I can enable authentication and API access.  
 ---
 
 # Register mobile apps that call web APIs
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-This article contains instructions to help you register a mobile application that you're creating.
+This article explains how to register a mobile application you're creating.
 
 ## Supported account types
 
