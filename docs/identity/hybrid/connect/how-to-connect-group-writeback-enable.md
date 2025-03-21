@@ -3,10 +3,10 @@ title: 'Group writeback for Microsoft 365 groups'
 description: This article describes how to enable group writeback in Microsoft Entra Connect by using PowerShell and a wizard.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 03/21/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
