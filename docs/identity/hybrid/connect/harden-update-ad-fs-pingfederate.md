@@ -22,13 +22,18 @@ If you aren’t upgraded to the minimum required version, you'll encounter the f
  - All authentication requests to Entra ID on the Connect Sync wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes
  - Configuration of Active Directory Federation Services (ADFS) scenarios through the Connect Sync wizard won't work 
  - Configuration of PingFederate scenarios through the Connect Sync wizard won't work
-   
+
+For example, Microsoft Entra Connect Sync wizard throws an _"Access Denied. You do not have permissions to call this cmdlet"_ error when call the MSOnline PowerShell cmdlet `Get-MsolUserRole`:
+
+![Screenshot that shows MSOnline PowerShell error in Microsoft Entra Connect Sync wizard.](media/harden-update-ad-fs-pingfederate/msonline-connect-wizard-error.png)
+
+
 ## What won't be impacted
  - Your sync service will run as usual, and changes will continue to sync to Entra
  - The ability to upgrade your Entra Connect Sync instance. You can still perform the upgrade after April 7, 2025
    
 >[!NOTE]
-> If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You'll lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**. 
+>If you're unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). Failure to update will result in loosing the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**.
 
 ### Minimum versions 
 
