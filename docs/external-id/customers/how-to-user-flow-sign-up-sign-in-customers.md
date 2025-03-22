@@ -86,4 +86,3 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 - [Add your application to the user flow](how-to-user-flow-add-application.md)
 - [Create custom user attributes and customize the order of the attributes on the sign-up page](how-to-define-custom-attributes.md).
-- 
