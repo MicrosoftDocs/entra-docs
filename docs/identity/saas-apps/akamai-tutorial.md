@@ -23,9 +23,9 @@ In this article,  you learn how to integrate Akamai with Microsoft Entra ID. Whe
 * Enable your users to be automatically signed-in to Akamai with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-Microsoft Entra ID and Akamai Enterprise Application Access integration allows seamless access to legacy applications hosted in the cloud or on-premises. The integrated solution takes advantages of all the modern capabilities of Microsoft Entra ID like [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md), [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) and [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) for legacy applications access without app modifications or agents installation.
+Microsoft Entra ID and Akamai Enterprise Application Access integration allows seamless access to legacy applications hosted in the cloud or on-premises. The integrated solution takes advantages of all the modern capabilities of Microsoft Entra ID like [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md), [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), and [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) for legacy applications access without app modifications or agents installation.
 
-The below image describes, where Akamai EAA fits into the broader Hybrid Secure Access scenario.
+The following image describes, where Akamai EAA fits into the broader Hybrid Secure Access scenario.
 
 ![Akamai EAA fits into the broader Hybrid Secure Access scenario](./media/header-akamai-tutorial/introduction-1.png)
 
@@ -64,7 +64,7 @@ Akamai EAA is configured as a single application on the Microsoft Entra ID. Admi
 
 #### Integration Scenario 2
 
-Akamai EAA Application is set up individually on the Azure portal. Admin can configure Individual he Conditional Access policy on the Application(s) and once the conditions are satisfied users can directly be redirected to the specific application.
+Akamai EAA Application is set up individually on the Azure portal. Admin can configure Individual Conditional Access policy on the Application(s) and once the conditions are satisfied users can directly be redirected to the specific application.
 
 **Pros**:
 
@@ -105,7 +105,7 @@ To configure the integration of Akamai into Microsoft Entra ID, you need to add 
 1. In the **Add from the gallery** section, type **Akamai** in the search box.
 1. Select **Akamai** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-akamai'></a>
 
@@ -187,7 +187,7 @@ In the **General** tab, enter the following information:
 1. **Identity Intercept** - Specify the name of the domain (SP base URL–will be used for Microsoft Entra Configuration).
 
     > [!NOTE]
-    > You can choose to have your own custom domain (will require a DNS entry and a Certificate). In this example we are going to use the Akamai Domain.
+    > You can choose to have your own custom domain (will require a DNS entry and a Certificate). In this example we're going to use the Akamai Domain.
 
 1. **Akamai Cloud Zone** - Select the Appropriate cloud zone.
 1. **Certificate Validation** - Check Akamai Documentation (optional).
@@ -296,7 +296,7 @@ Select Save and Go to Authentication.
 1. Enter **Application Name**, such as *SecretRDPApp*.
 1. Select a **Description**, such as *Protect RDP Session using Microsoft Entra Conditional Access*.
 
-1. Specify the Connector that will be servicing this.
+1. Specify the Connector that is servicing this.
 
     ![Screenshot of the Akamai EAA console showing settings for Certificate and Location. Associated connectors is set to USWST-CON1.](./media/header-akamai-tutorial/configure-19.png)
 
@@ -398,7 +398,7 @@ Select Save and to go Deployment.
 
 ### Kerberos Authentication
 
-In the below example we will publish an internal web server at `http://frp-app1.superdemo.live` and enable SSO using KCD.
+In the following example we'll publish an internal web server at `http://frp-app1.superdemo.live` and enable SSO using KCD.
 
 #### General Tab
 
@@ -417,7 +417,7 @@ In the **Authentication** tab, assign the Identity Provider.
 ![Screenshot of the Akamai EAA console Advanced Settings tab for MYKERBOROSAPP showing settings for Related Applications and Authentication.](./media/header-akamai-tutorial/advance-settings-2.png)
 
 > [!NOTE]
-> The SPN for the Web Server has be  in SPN@Domain Format ex: `HTTP/frp-app1.superdemo.live@SUPERDEMO.LIVE` for this demo. Leave rest of the settings to default.
+> The SPN for the Web Server has been  in SPN@Domain Format ex: `HTTP/frp-app1.superdemo.live@SUPERDEMO.LIVE` for this demo. Leave rest of the settings to default.
 
 #### Deployment Tab
 
@@ -437,7 +437,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
     ![Screenshot of the Akamai EAA console Directories window showing that the directory superdemo.live has been added.](./media/header-akamai-tutorial/directory-domain.png)
 
-1. Add the Groups/OUs who would be require access.
+1. Add the Groups/OUs who would require access.
 
     ![Screenshot of the settings for the directory superdemo.live. The icon that you select for adding Groups or OUs is highlighted.](./media/header-akamai-tutorial/add-group.png)
 
@@ -451,12 +451,12 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Step 1: Create an Account 
 
-1. In the example we will use an account called **EAADelegation**. You can perform this using the **Active Directory users and computer** Snappin.
+1. In the example, we use an account called **EAADelegation**. You can perform this using the **Active Directory users and computer** Snappin.
 
     > [!NOTE]
     > The user name has to be in a specific format based on the **Identity Intercept Name**. From the figure 1 we see it's **corpapps.login.go.akamai-access.com**
 
-1. User logon Name will be:`HTTP/corpapps.login.go.akamai-access.com`
+1. User logon Name is:`HTTP/corpapps.login.go.akamai-access.com`
 
     ![Screenshot showing EAADelegation Properties with First name set to "EAADelegation" and User logon name set to HTTP/corpapps.login.go.akamai-access.com.](./media/header-akamai-tutorial/eaadelegation.png)
 
@@ -479,7 +479,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Step 4: Create a Keytab File for AKAMAI EAA
 
-1. Here is the generic Syntax.
+1. Here's the generic Syntax.
 
 1. ktpass /out ActiveDirectorydomain.keytab  /princ `HTTP/yourloginportalurl@ADDomain.com`  /mapuser serviceaccount@ADdomain.com /pass +rdnPass  /crypto All /ptype KRB5_NT_PRINCIPAL
 
