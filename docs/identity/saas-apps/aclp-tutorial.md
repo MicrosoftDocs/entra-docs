@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with ACLP
 
-In this article,  you'll learn how to integrate ACLP with Microsoft Entra ID. When you integrate ACLP with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate ACLP with Microsoft Entra ID. When you integrate ACLP with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ACLP.
 * Enable your users to be automatically signed-in to ACLP with their Microsoft Entra accounts.
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ACLP** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -85,9 +85,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://access.sans.org/go/<COMPANYNAME>`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [ACLP Client support team](mailto:mrichards@sans.org) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't  real. Update the value with the actual Sign-On URL. Contact [ACLP Client support team](mailto:mrichards@sans.org) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -107,11 +107,11 @@ In this section, you create a user called Britta Simon in ACLP. Work with [ACLP
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to ACLP Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to ACLP Sign-on URL where you can initiate the login flow. 
 
 * Go to ACLP Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the ACLP tile in the My Apps, this will redirect to ACLP Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the ACLP tile in the My Apps, this redirects to ACLP Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

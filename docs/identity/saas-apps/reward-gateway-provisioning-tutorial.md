@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in Rew
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A [Reward Gateway tenant](https://www.rewardgateway.com/).
 * A user account in Reward Gateway with Admin permissions.
 

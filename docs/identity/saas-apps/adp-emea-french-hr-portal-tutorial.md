@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with ADP EMEA French HR Portal mon.adp.com
 
-In this article,  you'll learn how to integrate ADP EMEA French HR Portal mon.adp.com with Microsoft Entra ID. When you integrate ADP EMEA French HR Portal mon.adp.com with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate ADP EMEA French HR Portal mon.adp.com with Microsoft Entra ID. When you integrate ADP EMEA French HR Portal mon.adp.com with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ADP EMEA French HR Portal mon.adp.com.
 * Enable your users to be automatically signed-in to ADP EMEA French HR Portal mon.adp.com with their Microsoft Entra accounts.
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ADP EMEA French HR Portal mon.adp.com** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -107,9 +107,9 @@ In this section, you create a user called Britta Simon in ADP EMEA French HR Por
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the ADP EMEA French HR Portal mon.adp.com for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the ADP EMEA French HR Portal mon.adp.com for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the ADP EMEA French HR Portal mon.adp.com tile in the My Apps, you should be automatically signed in to the ADP EMEA French HR Portal mon.adp.com for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the ADP EMEA French HR Portal mon.adp.com tile in the My Apps, you should be automatically signed in to the ADP EMEA French HR Portal mon.adp.com for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

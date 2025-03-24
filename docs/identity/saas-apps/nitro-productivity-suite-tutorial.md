@@ -57,9 +57,9 @@ To configure and test Microsoft Entra SSO with Nitro Productivity Suite, complet
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
 
-    a. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra single sign-on with B.Simon.
+    a. Create a Microsoft Entra test user to test Microsoft Entra single sign-on with B.Simon.
     
-    b. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable B.Simon to use Microsoft Entra single sign-on.
+    b. Assign the Microsoft Entra test user to enable B.Simon to use Microsoft Entra single sign-on.
     
 2. [Create a Nitro Productivity Suite test user](#create-a-nitro-productivity-suite-test-user) to have a counterpart of B.Simon in Nitro Productivity Suite, linked to the Microsoft Entra representation of the user.
 1. [Test SSO](#test-sso) to verify whether the configuration works.

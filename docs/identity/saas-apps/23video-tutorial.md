@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with 23 Video
 
-In this article,  you'll learn how to integrate 23 Video with Microsoft Entra ID. When you integrate 23 Video with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate 23 Video with Microsoft Entra ID. When you integrate 23 Video with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to 23 Video.
 * Enable your users to be automatically signed-in to 23 Video with their Microsoft Entra accounts.
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **23 Video** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.23video.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [23 Video Client support team](mailto:support@23company.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [23 Video Client support team](mailto:support@23company.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -110,11 +110,11 @@ The objective of this section is to create a user called B.Simon in 23 Video.
 
 2. Go to **Settings**.
 
-3. In **Users** section, click **Configure**.
+3. In **Users** section, select **Configure**.
 
     ![Screenshot that highlights the Users section.](./media/23video-tutorial/settings.png)
 
-4. Click **Add a new user**.
+4. Select **Add a new user**.
 
     ![Screenshot that highlights the Add a new user button.](./media/23video-tutorial/user.png)
 
@@ -124,17 +124,17 @@ The objective of this section is to create a user called B.Simon in 23 Video.
 
     a. In the **E-mail addresses** textbox, type the email address of a user like B.Simon@contoso.com.  
 
-    b. Click **Add the user..**.
+    b. Select **Add the user..**.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to 23 Video Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to 23 Video Sign-on URL where you can initiate the login flow. 
 
 * Go to 23 Video Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the 23 Video tile in the My Apps, this will redirect to 23 Video Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the 23 Video tile in the My Apps, this redirects to 23 Video Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

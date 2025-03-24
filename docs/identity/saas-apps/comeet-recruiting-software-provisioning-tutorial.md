@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Com
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Comeet Recruiting Software tenant](https://www.comeet.co/)
 * A user account in Comeet Recruiting Software with Admin permissions.
 

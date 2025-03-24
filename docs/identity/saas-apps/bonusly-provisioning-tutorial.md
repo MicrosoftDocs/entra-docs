@@ -25,7 +25,7 @@ The objective of this article is to demonstrate the steps to be performed in Bon
 
 The scenario outlined in this article assumes that you already have the following:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A [Bonusly tenant](https://bonus.ly/pricing)
 * A user account in Bonusly with Admin permissions
 

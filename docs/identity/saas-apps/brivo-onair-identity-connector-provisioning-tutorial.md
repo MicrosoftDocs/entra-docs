@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Bri
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Brivo Onair Identity Connector tenant](https://www.brivo.com/lp/quote)
 * A user account in Brivo Onair Identity Connector with Senior Administrator permissions.
 

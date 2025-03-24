@@ -56,8 +56,8 @@ Configure and test Microsoft Entra SSO with Roadmunk by using a test user called
 Here's an overview of how to configure and test Microsoft Entra SSO with Roadmunk:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) so that your users can use this feature.
-    1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra SSO by using B.Simon.
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable B.Simon to use Microsoft Entra SSO.
+    1. Create a Microsoft Entra test user to test Microsoft Entra SSO by using B.Simon.
+    1. Assign the Microsoft Entra test user to enable B.Simon to use Microsoft Entra SSO.
 1. [Configure Roadmunk SSO](#configure-roadmunk-sso) to configure the SSO settings on the application side.
     1. [Create a Roadmunk test user](#create-roadmunk-test-user) so that you can link the counterpart of B.Simon in Roadmunk to the Microsoft Entra representation of the user.
 1. [Test SSO](#test-sso) to make sure the configuration works.

@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in 4me
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A 4me tenant](https://www.4me.com/)
 * A user account in 4me with Admin permissions.
 
@@ -56,7 +56,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ### Important tips for assigning users to 4me
 
-* It is recommended that a single Microsoft Entra user is assigned to 4me to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It is recommended that a single Microsoft Entra user is assigned to 4me to test the automatic user provisioning configuration. Additional users and/or groups can be assigned later.
 
 * When assigning a user to 4me, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -65,7 +65,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in 4me based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for 4me, following the instructions provided in the [4me single sign-on  article.(4me-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
+> You can also choose to enable SAML-based single sign-on for 4me, following the instructions provided in the [4me single sign-on  article.(4me-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-4me-in-azure-ad'></a>
 
@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of 4me SCIM.](media/4me-provisioning-tutorial/4me03.png)
 
-7. Upon populating the fields shown in Step 5, click **Test Connection** to ensure Microsoft Entra ID can connect to 4me. If the connection fails, ensure your 4me account has Admin permissions and try again.
+7. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to 4me. If the connection fails, ensure your 4me account has Admin permissions and try again.
 
 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Notification Email.](common/provisioning-notification-email.png)
 
-9. Click **Save**.
+9. Select **Save**.
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to 4me**.
 	
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-17. When you are ready to provision, click **Save**.
+17. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

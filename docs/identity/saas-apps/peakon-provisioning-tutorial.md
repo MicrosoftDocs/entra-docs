@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in Pea
 
 The scenario outlined in this article assumes that you already have the following prerequisites
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Peakon tenant](https://www.workday.com/en-us/products/employee-voice/overview.html).
 * A user account in Peakon  with Admin permissions.
 

@@ -54,8 +54,8 @@ Configure and test Microsoft Entra SSO with ContractSafe Saml2 SSO by using a te
 To configure and test Microsoft Entra SSO with ContractSafe Saml2 SSO, perform the following steps:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
-   1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra SSO by using the **B.Simon** account.
-   1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable **B.Simon** to use Microsoft Entra SSO.
+   1. Create a Microsoft Entra test user to test Microsoft Entra SSO by using the **B.Simon** account.
+   1. Assign the Microsoft Entra test user to enable **B.Simon** to use Microsoft Entra SSO.
 1. [Configure ContractSafe Saml2 SSO](#configure-contractsafe-saml2-sso) to configure the SSO settings on application side.
    1. [Create a ContractSafe Saml2 SSO test user](#create-a-contractsafe-saml2-sso-test-user) to have a counterpart of **B.Simon** in ContractSafe Saml2 SSO that is linked to the Microsoft Entra representation of the user.
 1. [Test SSO](#test-sso) to verify whether the configuration works.

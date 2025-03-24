@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Fig
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Figma tenant](https://www.figma.com/pricing/).
 * A user account in Figma  with Admin permissions.
 

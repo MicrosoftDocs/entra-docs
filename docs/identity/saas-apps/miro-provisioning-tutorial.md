@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Mir
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Miro tenant](https://miro.com/pricing/)
 * A user account in Miro with Admin permissions.
 

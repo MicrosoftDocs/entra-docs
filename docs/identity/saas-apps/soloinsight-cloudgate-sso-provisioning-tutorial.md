@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Sol
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Soloinsight-CloudGate SSO tenant](https://www.soloinsight.com/)
 * A user account in Soloinsight-CloudGate SSO with Admin permissions.
 

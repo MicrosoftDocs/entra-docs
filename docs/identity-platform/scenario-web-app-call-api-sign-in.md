@@ -1,14 +1,14 @@
 ---
 title: Remove accounts from the token cache on sign-out
-description: Learn how to remove an account from the token cache on sign-out
+description: Learn how to remove accounts from the token cache during global sign-out in web apps that call web APIs using the Microsoft identity platform.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 03/20/2024
+ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom:
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -16,7 +16,7 @@ ms.topic: how-to
 
 You learned how to add sign-in to your web app in [Web app that signs in users: Sign-in and sign-out](scenario-web-app-sign-user-sign-in.md).
 
-Sign-out is different for a web app that calls web apis. When the user signs out from your application, or from any application, you must remove the tokens associated with that user from the token cache.
+Sign-out is different for a web app that calls web APIs. When the user signs out from your application, or from any application, you must remove the tokens associated with that user from the token cache.
 
 ## Intercept the callback after single sign-out
 

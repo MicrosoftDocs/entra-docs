@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in Cis
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Cisco Webex tenant](https://www.webex.com/pricing/index.html).
 * A user account in Cisco Webex  with Admin permissions.
 

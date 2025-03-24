@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Kee
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Keeper Password Manager & Digital Vault tenant](https://keepersecurity.com/pricing.html?t=e)
 * A user account in Keeper Password Manager & Digital Vault with Admin permissions.
 

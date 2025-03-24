@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Accenture Academy
 
-In this article,  you'll learn how to integrate Accenture Academy with Microsoft Entra ID. When you integrate Accenture Academy with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Accenture Academy with Microsoft Entra ID. When you integrate Accenture Academy with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Accenture Academy.
 * Enable your users to be automatically signed-in to Accenture Academy with their Microsoft Entra accounts.
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Accenture Academy** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -84,13 +84,13 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://www.accentureacademy.com/a/integration/saml_sso/<Customer ID>/acs/`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://www.accentureacademy.com/a/integration/saml_sso/<Customer ID>/request_idp_auth/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Accenture Academy Client support team](mailto:support@accentureacademy.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Accenture Academy Client support team](mailto:support@accentureacademy.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -109,7 +109,7 @@ To configure single sign-on on **Accenture Academy** side, you need to send the 
 
 ### Create Accenture Academy test user
 
-In this section, a user called Britta Simon is created in Accenture Academy. Accenture Academy supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Accenture Academy, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Accenture Academy. Accenture Academy supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Accenture Academy, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -117,15 +117,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Accenture Academy Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to Accenture Academy Sign on URL where you can initiate the login flow.  
 
 * Go to Accenture Academy Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Accenture Academy for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the Accenture Academy for which you set up the SSO 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Accenture Academy tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Accenture Academy for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Accenture Academy tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Accenture Academy for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
