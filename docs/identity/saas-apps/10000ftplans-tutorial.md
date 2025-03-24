@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with 10,000ft Plans
 
-In this article,  you'll learn how to integrate 10,000ft Plans with Microsoft Entra ID. When you integrate 10,000ft Plans with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate 10,000ft Plans with Microsoft Entra ID. When you integrate 10,000ft Plans with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to 10,000ft Plans.
 * Enable your users to be automatically signed-in to 10,000ft Plans with their Microsoft Entra accounts.
@@ -31,8 +31,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
-* 10,000ft Plans support **SP** initiated SSO.
-* 10,000ft Plans support **Just In Time** user provisioning.
+* 10,000ft Plans supports **SP** initiated SSO.
+* 10,000ft Plans supports **Just In Time** user provisioning.
 
 ## Add 10,000ft Plans from the gallery
 
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **10,000ft Plans** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -96,11 +96,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to your 10000ft Plans website as an administrator.
 
-1. Click **Settings** and select **Account Settings** from the dropdown.
+1. Select **Settings** and select **Account Settings** from the dropdown.
 
     ![Screenshot for Settings icon.](./media/10000ftplans-tutorial/settings.png)
 
-1. Click **SSO** at the left menu and perform the following steps:
+1. Select **SSO** at the left menu and perform the following steps:
 
     ![Screenshot for Settings SSO page.](./media/10000ftplans-tutorial/setup-sso.png)
 
@@ -110,21 +110,21 @@ Follow these steps to enable Microsoft Entra SSO.
 
     c. Enable the **Auto-provision authenticated users not in account** checkbox.
 
-    d. Click **Save**.
+    d. Select **Save**.
 
 ### Create 10000ft Plans test user
 
-In this section, a user called Britta Simon is created in 10,000ft Plans. 10,000ft Plans supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in 10,000ft Plans, a new one is created after authentication.
+In this section, a user called Britta Simon is created in 10,000ft Plans. 10,000ft Plans supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in 10,000ft Plans, a new one is created after authentication.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to 10,000ft Plans Sign on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to 10,000ft Plans Sign on URL where you can initiate the login flow. 
 
 * Go to 10,000ft Plans Sign on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the 10,000ft Plans tile in the My Apps, this will redirect to 10,000ft Plans Sign on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the 10,000ft Plans tile in the My Apps, this redirects to 10,000ft Plans Sign on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

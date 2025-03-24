@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Achieve3000
 
-In this article,  you'll learn how to integrate Achieve3000 with Microsoft Entra ID. When you integrate Achieve3000 with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Achieve3000 with Microsoft Entra ID. When you integrate Achieve3000 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Achieve3000.
 * Enable your users to be automatically signed-in to Achieve3000 with their Microsoft Entra accounts.
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Achieve3000** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://saml.achieve3000.com/district/<District Identifier>`
 
 	> [!NOTE]
-	> The Sign-On URL value is not real. Update the value with the actual Sign-On URL. Contact [Achieve3000 Client support team](https://www.achieve3000.com/contact-us/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign-On URL value isn't  real. Update the value with the actual Sign-On URL. Contact [Achieve3000 Client support team](https://www.achieve3000.com/contact-us/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. Achieve3000 application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes..
 
@@ -121,11 +121,11 @@ In this section, you create a user called B.Simon in Achieve3000. Work with [Ac
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Achieve3000 Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to Achieve3000 Sign-on URL where you can initiate the login flow. 
 
 * Go to Achieve3000 Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Achieve3000 tile in the My Apps, this will redirect to Achieve3000 Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Achieve3000 tile in the My Apps, this redirects to Achieve3000 Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Active and Thriving
 
-In this article,  you'll learn how to integrate Active and Thriving with Microsoft Entra ID. When you integrate Active and Thriving with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Active and Thriving with Microsoft Entra ID. When you integrate Active and Thriving with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Active and Thriving.
 * Enable your users to be automatically signed-in to Active and Thriving with their Microsoft Entra accounts.
@@ -70,13 +70,13 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Active and Thriving** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
     `https://app.activeandthriving.com.au/saml2/aad/login`
@@ -107,15 +107,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Active and Thriving Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to Active and Thriving Sign on URL where you can initiate the login flow.  
 
 * Go to Active and Thriving Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Active and Thriving for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Active and Thriving for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Active and Thriving tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Active and Thriving for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Active and Thriving tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Active and Thriving for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

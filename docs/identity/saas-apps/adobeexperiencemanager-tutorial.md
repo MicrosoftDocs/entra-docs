@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Adobe Experience Manager
 
-In this article,  you'll learn how to integrate Adobe Experience Manager with Microsoft Entra ID. When you integrate Adobe Experience Manager with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Adobe Experience Manager with Microsoft Entra ID. When you integrate Adobe Experience Manager with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adobe Experience Manager.
 * Enable your users to be automatically signed-in to Adobe Experience Manager with their Microsoft Entra accounts.
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Adobe Experience Manager** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -83,13 +83,13 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<AEM Server Url>/saml_login`
 
     > [!NOTE]
-    > The Reply URL value is not real. Update Reply URL value with the actual reply URL. To get this value, contact the [Adobe Experience Manager Client support team](https://helpx.adobe.com/support/experience-manager.html) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > The Reply URL value isn't  real. Update Reply URL value with the actual reply URL. To get this value, contact the [Adobe Experience Manager Client support team](https://helpx.adobe.com/support/experience-manager.html) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type your Adobe Experience Manager server URL.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/certificatebase64.png)
 
@@ -114,7 +114,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot that shows Manage TrustStore under Account settings.](./media/adobe-experience-manager-tutorial/manage-trust.png)
 
-5. Under **Add Certificate from CER file**, click **Select Certificate File**. Browse to and select the certificate file, which you already downloaded.
+5. Under **Add Certificate from CER file**, select **Select Certificate File**. Browse to and select the certificate file, which you already downloaded.
 
     ![Screenshot that highlights the Select Certificate File button.](./media/adobe-experience-manager-tutorial/certificate-file.png)
 
@@ -174,7 +174,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     b. Add `login.microsoftonline.com` to the **Allow Hosts**.
 
-    c. Click **Save**.
+    c. Select **Save**.
 
 ### Create Adobe Experience Manager test user
 
@@ -188,15 +188,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Adobe Experience Manager Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to Adobe Experience Manager Sign-on URL where you can initiate the login flow.  
 
 * Go to Adobe Experience Manager Sign on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Adobe Experience Manager for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the Adobe Experience Manager for which you set up the SSO 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Adobe Experience Manager tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Adobe Experience Manager for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Adobe Experience Manager tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Adobe Experience Manager for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content

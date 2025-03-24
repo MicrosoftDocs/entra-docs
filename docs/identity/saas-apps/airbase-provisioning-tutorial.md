@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and Airbase](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-airbase-to-support-provisioning-with-azure-ad'></a>
@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to Airbase portal.
 1. Navigate to the Users section.
-1. Click Sync with HRIS.
+1. Select Sync with HRIS.
 
    ![Screenshot of choosing Azure from People - Users page.](media/airbase-provisioning-tutorial/connect-hris.png)
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Airbase Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Airbase. If the connection fails, ensure your Airbase account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Airbase Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Airbase. If the connection fails, ensure your Airbase account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -128,7 +128,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
