@@ -170,7 +170,7 @@ Use Microsoft Entra sign-in log to verify the outcome of a token protection enfo
       1. 1006: The request is unbound because the OS version is unsupported. 
       1. 1008: The request is unbound because the client isn't integrated with the platform broker, such as Windows Account Manager (WAM). 
 
-:::image type="content" source="media/concept-token-protection/sign-in-log-sample-unbound-status-code-1002.png" alt-text="Screenshot" lightbox="media/concept-token-protection/sign-in-log-sample-unbound-status-code-1002.png":::
+:::image type="content" source="media/concept-token-protection/sign-in-log-sample-unbound-status-code-1002.png" alt-text="Screenshot showing a sample sign-in with the Token Protection - Sign In Session attribute highlighted. " lightbox="media/concept-token-protection/sign-in-log-sample-unbound-status-code-1002.png":::
 
 #### Log Analytics
 
