@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and 8x8](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-8x8-to-support-provisioning-with-azure-ad'></a>
@@ -56,9 +56,9 @@ This section guides you through the steps to configure 8x8 to support provisioni
 
    [ ![Screenshot showing the 8x8 Admin Console.](./media/8x8-provisioning-tutorial/8x8-identity-and-security.png) ](./media/8x8-provisioning-tutorial/8x8-identity-and-security.png#lightbox)
 
-2. In the **User Provisioning Integration (SCIM)** pane, click the toggle to enable and then click **Save**.
+2. In the **User Provisioning Integration (SCIM)** pane, select the toggle to enable and then select **Save**.
 
-   [ ![Screenshot showing the Identity and Security page of the Admin Console with a callout over the user provisioning integration slider.](./media/8x8-provisioning-tutorial/8x8-enable-user-provisioning.png) ](./media/8x8-provisioning-tutorial/8x8-enable-user-provisioning.png#lightbox)
+   [![Screenshot showing the Identity and Security page of the Admin Console with a callout over the user provisioning integration slider.](./media/8x8-provisioning-tutorial/8x8-enable-user-provisioning.png)](./media/8x8-provisioning-tutorial/8x8-enable-user-provisioning.png#lightbox)
 
 3. Copy the **8x8 URL** and **8x8 API Token** values. These values will be entered in the **Tenant URL** and **Secret Token** fields respectively in the Provisioning tab of your 8x8 application.
 
@@ -68,7 +68,7 @@ This section guides you through the steps to configure 8x8 to support provisioni
 
 ## Step 3: Add 8x8 from the Microsoft Entra application gallery
 
-Add 8x8 from the Microsoft Entra application gallery to start managing provisioning to 8x8. If you have previously setup 8x8 for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add 8x8 from the Microsoft Entra application gallery to start managing provisioning to 8x8. If you have previously setup 8x8 for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot showing the 8x8 link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab. Click on **Get started**.
+3. Select the **Provisioning** tab. Select **Get started**.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, copy the **8x8 URL** from Admin Console into **Tenant URL**. Copy the **8x8 API Token** from Admin Console into **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to 8x8. If the connection fails, ensure your 8x8 account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, copy the **8x8 URL** from Admin Console into **Tenant URL**. Copy the **8x8 API Token** from Admin Console into **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to 8x8. If the connection fails, ensure your 8x8 account has Admin permissions and try again.
 
 	![Screenshot of the Admin section.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -111,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Provision Microsoft Entra users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to 8x8 in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in 8x8 for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the 8x8 API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to 8x8 in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in 8x8 for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the 8x8 API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Notes|
    |---|---|---|
@@ -139,7 +139,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

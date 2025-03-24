@@ -41,20 +41,20 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and 15Five](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-15five-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure 15Five to support provisioning with Microsoft Entra ID
 
-Before configuring 15Five for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on 15Five.
+Before configuring 15Five for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on 15Five.
 
 1. Sign in to your [15Five Admin Console](https://my.15five.com/). Navigate to **Features > Integrations**.
 
 	:::image type="content" source="media/15five-provisioning-tutorial/integration.png" alt-text="Screenshot of the 15Five admin console. Integrations appears under Features in a menu, and both Features and Integrations are highlighted." border="false":::
 
-2.	Click on **SCIM 2.0**.
+2.	Select on **SCIM 2.0**.
 
 	:::image type="content" source="media/15five-provisioning-tutorial/image00.png" alt-text="Screenshot of the Integrations page in the 15Five admin console. Under Tool, S C I M 2.0 is highlighted." border="false":::
 
@@ -70,7 +70,7 @@ Before configuring 15Five for automatic user provisioning with Microsoft Entra I
 
 ## Step 3: Add 15Five from the Microsoft Entra application gallery
 
-Add 15Five from the Microsoft Entra application gallery to start managing provisioning to 15Five. If you have previously setup 15Five for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add 15Five from the Microsoft Entra application gallery to start managing provisioning to 15Five. If you have previously setup 15Five for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5.	Under the Admin Credentials section, input the **SCIM 2.0 base URL and Access Token** values retrieved earlier in the **Tenant URL** and **Secret Token** fields respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to 15Five. If the connection fails, ensure your 15Five account has Admin permissions and try again.
+5.	Under the Admin Credentials section, input the **SCIM 2.0 base URL and Access Token** values retrieved earlier in the **Tenant URL** and **Secret Token** fields respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to 15Five. If the connection fails, ensure your 15Five account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to 15Five**.
 
@@ -150,7 +150,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

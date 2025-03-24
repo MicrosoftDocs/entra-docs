@@ -42,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Adobe Identity Management (OIDC)](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-adobe-identity-management-oidc-to-support-provisioning-with-azure-ad'></a>
@@ -51,11 +51,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to [Adobe Admin Console](https://adminconsole.adobe.com/). Navigate to **Settings > Directory Details > Sync**. 
 
-1. Click **Add Sync**.
+1. Select **Add Sync**.
 
     ![Add](media/adobe-identity-management-provisioning-saml-tutorial/add-sync.png)
 
-1. Select **Sync users from Microsoft Azure** and click **Next**.
+1. Select **Sync users from Microsoft Azure** and select **Next**.
 
     ![Screenshot that shows 'Sync users from Microsoft Entra ID' selected.](media/adobe-identity-management-provisioning-saml-tutorial/sync-users.png)
 
@@ -67,7 +67,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Adobe Identity Management (OIDC) from the Microsoft Entra application gallery
 
-Add Adobe Identity Management (OIDC) from the Microsoft Entra application gallery to start managing provisioning to Adobe Identity Management (OIDC). If you have previously setup Adobe Identity Management (OIDC) for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Adobe Identity Management (OIDC) from the Microsoft Entra application gallery to start managing provisioning to Adobe Identity Management (OIDC). If you have previously setup Adobe Identity Management (OIDC) for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Adobe Identity Management (OIDC) Tenant URL and Secret Token retrieved earlier from Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to Adobe Identity Management (OIDC). If the connection fails, ensure your Adobe Identity Management (OIDC) account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Adobe Identity Management (OIDC) Tenant URL and Secret Token retrieved earlier from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Adobe Identity Management (OIDC). If the connection fails, ensure your Adobe Identity Management (OIDC) account has Admin permissions and try again.
 
     ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Adobe Identity Management (OIDC)**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Adobe Identity Management (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Adobe Identity Management (OIDC) for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Adobe Identity Management (OIDC) API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Adobe Identity Management (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Adobe Identity Management (OIDC) for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Adobe Identity Management (OIDC) API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Adobe Identity Management (OIDC)
    |---|---|---|---|
@@ -145,7 +145,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
     ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
