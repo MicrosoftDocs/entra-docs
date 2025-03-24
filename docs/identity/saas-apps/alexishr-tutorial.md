@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with AlexisHR
 
-In this article,  you'll learn how to integrate AlexisHR with Microsoft Entra ID. When you integrate AlexisHR with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate AlexisHR with Microsoft Entra ID. When you integrate AlexisHR with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AlexisHR.
 * Enable your users to be automatically signed-in to AlexisHR with their Microsoft Entra accounts.
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AlexisHR** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://auth.alexishr.com/login/callback?connection=<YOUR_CONNECTION_NAME>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [AlexisHR Client support team](mailto:support@alexishr.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [AlexisHR Client support team](mailto:support@alexishr.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. AlexisHR application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -111,7 +111,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your AlexisHR company site as an administrator.
 
-1. Go to **Settings** > **SAML Single sign-on** and click **New identity provider**.
+1. Go to **Settings** > **SAML Single sign-on** and select **New identity provider**.
 
 1. In the **New identity provider** section, perform the following steps:
 
@@ -123,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **Public x509 certificate** textbox.
 
-    1. Click **Create identity provider**.
+    1. Select **Create identity provider**.
 
 1. After creating identity provider, you will receive the following information.
 
@@ -141,9 +141,9 @@ In this section, you create a user called Britta Simon in AlexisHR. Work with [
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the AlexisHR for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the AlexisHR for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the AlexisHR tile in the My Apps, you should be automatically signed in to the AlexisHR for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the AlexisHR tile in the My Apps, you should be automatically signed in to the AlexisHR for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

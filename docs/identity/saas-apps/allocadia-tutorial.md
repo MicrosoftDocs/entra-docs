@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Allocadia
 
-In this article,  you'll learn how to integrate Allocadia with Microsoft Entra ID. When you integrate Allocadia with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Allocadia with Microsoft Entra ID. When you integrate Allocadia with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Allocadia.
 * Enable your users to be automatically signed-in to Allocadia with their Microsoft Entra accounts.
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Allocadia** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -120,15 +120,15 @@ To configure single sign-on on **Allocadia** side, you need to send the download
 
 ### Create Allocadia test user
 
-In this section, a user called B.Simon is created in Allocadia. Allocadia supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Allocadia, a new one is created after authentication.
+In this section, a user called B.Simon is created in Allocadia. Allocadia supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Allocadia, a new one is created after authentication.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Allocadia for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Allocadia for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Allocadia tile in the My Apps, you should be automatically signed in to the Allocadia for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Allocadia tile in the My Apps, you should be automatically signed in to the Allocadia for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Anaplan
 
-In this article,  you'll learn how to integrate Anaplan with Microsoft Entra ID. When you integrate Anaplan with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Anaplan with Microsoft Entra ID. When you integrate Anaplan with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Anaplan.
 * Enable your users to be automatically signed-in to Anaplan with their Microsoft Entra accounts.
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Anaplan** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click the copy icon to copy the **App Federation Metadata URL** and save this to use in the Anaplan SSO configuration.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select the copy icon to copy the **App Federation Metadata URL** and save this to use in the Anaplan SSO configuration.
 
     ![The Certificate download link.](common/copy-metadataurl.png)
 
@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the Administration page, navigate to **Security > Single Sign-On**.
 
-1. Click **New**.
+1. Select **New**.
 
 1. Perform the following steps in the **Metadata** tab:
 
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     b. Select **Load from XML file** and paste the App Federation Metadata URL you into the **Metadata URL** textbox.
 
-    c. Click **Save** to create the connection.
+    c. Select **Save** to create the connection.
     
     d. Enable the connection by setting the **Enabled** toggle.
 
@@ -102,7 +102,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Complete the Microsoft Entra SSO Configuration
 
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration.](common/edit-urls.png)
 
@@ -125,9 +125,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. Select **Name ID Format** as Email Address from the dropdown and keep the remaining values as default.
 
-    b. Click **Save**.
+    b. Select **Save**.
 
-1. In the **Workspaces** tab, specify the workspaces that will use the identity provider from the dropdown and Click **Save**. 
+1. In the **Workspaces** tab, specify the workspaces that will use the identity provider from the dropdown and Select **Save**. 
 
     ![Screenshot for the Workspaces page.](./media/anaplan-tutorial/workspaces.png)
 
@@ -147,11 +147,11 @@ In this section, you create a user called Britta Simon in Anaplan. Work with [An
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Anaplan Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to Anaplan Sign-on URL where you can initiate the login flow. 
 
 * Go to Anaplan Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Anaplan tile in the My Apps, this will redirect to Anaplan Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Anaplan tile in the My Apps, this redirects to Anaplan Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
