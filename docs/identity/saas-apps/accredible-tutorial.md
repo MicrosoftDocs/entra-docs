@@ -45,7 +45,7 @@ To configure the integration of Accredible into Microsoft Entra ID, you need to 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Accredible**, select **Accredible** from result panel then click **Add** button to add the application.
+1. In the **Add from the gallery** section, type **Accredible**, select **Accredible** from result panel then select **Add** button to add the application.
 
     ![Accredible in the results list](common/search-new-app.png)
 
@@ -82,7 +82,7 @@ To configure Microsoft Entra single sign-on with Accredible, perform the followi
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
     ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -101,9 +101,9 @@ To configure Microsoft Entra single sign-on with Accredible, perform the followi
     `https://api.accredible.com/v1/saml/admin/<Unique id>/consume`
 
     > [!NOTE]
-    > The Reply URL value is not real. According to the role of user, use the identifier value respectively. Each customer has a unique Reply URL depending on their ID. Contact [Accredible support team](mailto:support@accredible.com) to get these values.
+    > The Reply URL value isn't  real. According to the role of user, use the identifier value respectively. Each customer has a unique Reply URL depending on their ID. Contact [Accredible support team](mailto:support@accredible.com) to get these values.
 
-1. On the **Set-up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set-up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/metadataxml.png)
 
@@ -133,7 +133,7 @@ In this section, you create a user called Britta Simon in Accredible. You need t
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Accredible tile in the Access Panel, you should be automatically signed in to the Accredible for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Accredible tile in the Access Panel, you should be automatically signed in to the Accredible for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 

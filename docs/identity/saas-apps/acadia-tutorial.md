@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Acadia
 
-In this article,  you'll learn how to integrate Acadia with Microsoft Entra ID. When you integrate Acadia with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Acadia with Microsoft Entra ID. When you integrate Acadia with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Acadia.
 * Enable your users to be automatically signed-in to Acadia with their Microsoft Entra accounts.
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Acadia** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<CUSTOMER>.acadia.sysalli.com/Shibboleth.sso/SAML2/POST`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<CUSTOMER>.acadia.sysalli.com/Shibboleth.sso/Login`
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!NOTE]
     > The values for steps 4 and 5 will be provided in a metadata file by the Acadia team which can be imported by clicking **Upload metadata file** on the **Basic SAML Configuration** section. Update these values with the actual Identifier, Reply URL and Sign-on URL. You can also refer to the patterns shown in the **Basic SAML Configuration** section to confirm that the metadata values are correct. Contact [Acadia Client support team](mailto:support@systemsalliance.com) if the provided values are incorrect.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/metadataxml.png)
 
@@ -107,7 +107,7 @@ To configure single sign-on on the **Acadia** side, you need to send the downloa
 
 ### Create Acadia test user
 
-In this section, a user called Britta Simon is created in Acadia. Acadia supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Acadia, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Acadia. Acadia supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Acadia, a new one is created after authentication.
 
 ## Test SSO
 
@@ -115,15 +115,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Acadia Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to Acadia Sign on URL where you can initiate the login flow.  
 
 * Go to Acadia Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Acadia for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Acadia for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Acadia tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Acadia for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Acadia tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Acadia for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
