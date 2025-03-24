@@ -24,7 +24,7 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 |   | Applicable to all users in an organization |
 | **Device ownership** | Organization |
 | **Operating Systems** | All Windows 11 and Windows 10 devices except Home editions |
-|   | [Windows Server 2019 and newer Virtual Machines running in Azure](howto-vm-sign-in-azure-ad-windows.md) (Server core isn't supported) |
+|   | Windows Enterprise multi-session Virtual Machines running in Azure, [Windows Server 2019 and newer Virtual Machines running in Azure](howto-vm-sign-in-azure-ad-windows.md) (Server core isn't supported) |
 |   | (Public preview) Apple devices running macOS 13 or newer |
 | **Provisioning** | Self-service: Windows Out of Box Experience (OOBE) or Settings |
 |   | Bulk enrollment |
