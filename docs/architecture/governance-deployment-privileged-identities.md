@@ -200,7 +200,8 @@ For more information:
 2. [Bring groups into PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups)
 3. [Learn role settings for Microsoft Entra ID roles](/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings)
 4. [Learn role settings for Azure resource roles](/azure/active-directory/privileged-identity-management/pim-resource-roles-configure-role-settings)
-5. [Emable roup settings for PIM](/azure/active-directory/privileged-identity-management/groups-role-settings)
+5. [Enable group settings for PIM](/azure/active-directory/privileged-identity-management/groups-role-settings)
+
 6. [Assign Microsoft Entra ID roles in PIM](/azure/active-directory/privileged-identity-management/pim-how-to-add-role-to-user)
 7. [Assign Azure resources in PIM](/azure/active-directory/privileged-identity-management/pim-resource-roles-assign-roles)
 8. [Assign Groups in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner)

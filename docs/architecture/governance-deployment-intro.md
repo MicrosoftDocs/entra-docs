@@ -191,7 +191,8 @@ You can use guidance on cloud HR system integration, such as Workday, SuccessFac
 |Workday|[Microsoft Entra ID and Workday integration](../identity/app-provisioning/workday-integration-reference.md)|
 |SAP SuccessFactors|[Microsoft Entra ID and SAP SuccessFactors integration](../identity/app-provisioning/sap-successfactors-integration-reference.md)|
 |Oracle HCM|[Microsoft Entra ID integration with Oracle HCM](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)|
-|Ripppling|[Sync identities from Rippling to Microsoft Entra ID](https://techcommunity.microsoft.com/blog/identity/sync-identities-from-rippling-to-microsoft-entra-id/4279690)|
+|Rippling|[Sync identities from Rippling to Microsoft Entra ID](https://techcommunity.microsoft.com/blog/identity/sync-identities-from-rippling-to-microsoft-entra-id/4279690)|
+
 |Other API-driven sources|[API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md)|
 
 ### API-driven provisioning

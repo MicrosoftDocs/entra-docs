@@ -29,7 +29,8 @@ Use this scenario to help determine the need for [Microsoft Entra ID Governance]
 
 ## PoC timeline
 
-Proof-of-concept (PoC) timlines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
+Proof-of-concept (PoC) timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
+
 
 * Onboarding and discovery - 2 hours
 * Auto assign resources - 1 hour

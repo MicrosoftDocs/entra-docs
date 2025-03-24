@@ -149,7 +149,8 @@ The **New access review** dialog, and **Settings** tab, with decision helper opt
 
 ### Inactive user reviews
 
-If users haven't signed in to the tenant within a designated duration, they're considered intactive. This behavior is adjusted for application assignment reviews, or a user's last activity in an app. To get started, define what inactive means for your organization. 
+If users haven't signed in to the tenant within a designated duration, they're considered inactive. This behavior is adjusted for application assignment reviews, or a user's last activity in an app. To get started, define what inactive means for your organization. 
+
 
 Learn how to [detect and investigate inactive user accounts](../identity/monitoring-health/howto-manage-inactive-user-accounts.md). 
 
