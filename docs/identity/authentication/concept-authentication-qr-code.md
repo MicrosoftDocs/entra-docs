@@ -47,7 +47,7 @@ Policy | Values
 -------|--------
 Allowed characters | Numbers (0-9) 
 Unallowed characters | - Characters (A-Z, a-z)<br>- Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } \| \ : ' , . ? / ` ~ " ( ) ; < >)<br>- Unicode characters<br>- Blank space 
-Minimum PIN length |  8-20 digits 
+PIN length |  8-20 digits 
 PIN complexity     | Enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An **Invalid PIN** error appears if the PIN includes unallowed characters or is less than the minimum PIN length. 
 
 ## Best security practices to implement with QR code authentication 
@@ -59,6 +59,7 @@ We recommend the following measures when you enable QR code authentication metho
 - Combine QR code authentication with Conditional Access policies as another security layer. We recommended policies such as compliant devices, access within network, allow for certain applications, and shared device mode. 
 - Enforce phishing-resistant authentication or MFA when users access resources from outside of the store or workplace network.
 - Replace QR codes that are lost or stolen.
+- Enforce Entra ID Sign-in risk based Conditional Access policy to block access. 
 
 ## QR code configurations in the Authentication method policy
 
@@ -136,7 +137,8 @@ For more information about how to optimize the sign-in experience, see:
 - Bulk provisioning of QR code and PIN
 - QR code scan by barcode scanners
 - QR code authentication doesn't work with desktop apps or browsers
-- Custom tenant endpoint for sign in 
+- Custom tenant endpoint for sign in
+- Configurable PIN protection poilicies that defines account lockout period, account lockout at x number of attempts, and customized PIN complexity
 
 ## Related content
 
