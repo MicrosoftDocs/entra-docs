@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/21/2025
+ms.date: 03/24/2025
 ms.author: gasinh
 
 #customer intent: My goal is to deliver a proof of concept for deployment of Microsoft Entra ID Governance in my test and production environments.
