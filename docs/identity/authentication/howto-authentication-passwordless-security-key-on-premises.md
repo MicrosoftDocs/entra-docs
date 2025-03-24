@@ -328,7 +328,7 @@ Make sure that enough DCs are patched to respond in time to service your resourc
 > [!NOTE]
 > The `/keylist` switch in the `nltest` command is available in client Windows 10 v2004 and later.
 
-### Is there a maximum number of groups per token for Microsoft Entra Kerberos on Windows scenarios?
+### Is there a maximum number of groups per token for Microsoft Entra Kerberos?
  
 Yes, you can have up to 1,010 groups per token.
 
