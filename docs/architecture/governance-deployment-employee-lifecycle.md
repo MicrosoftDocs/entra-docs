@@ -83,7 +83,7 @@ Learn more in the video about [HR-driven user provisioning with SuccessFactors](
 
 ## Cloud HR to Active Directory
 
-Learn how to [configure API for on-premises Active Directory (AD)](https://youtu.be/N00CfO3s4SA). 
+Learn how to [configure API-driven inbound provisioning to on-premises Active Directory (AD)](../identity/app-provisioning/inbound-provisioning-api-configure-app.md). 
 
 ## Deploy PoC: Workday to Active Directory
 
@@ -123,7 +123,7 @@ IT teams import data extracts with automation. Independent software vendors (ISV
 
 ## Configure API-driven provisioning
 
-In a video, learn to configure [API-driven inbound provisioning](../identity/app-provisioning/inbound-provisioning-api-concepts.md).  
+You can learn to configure [API-driven inbound provisioning](../identity/app-provisioning/inbound-provisioning-api-concepts.md).  
 
 ## Comparison: Inbound provisioning /bulkUpload API and Microsoft Graph Users API 
 
