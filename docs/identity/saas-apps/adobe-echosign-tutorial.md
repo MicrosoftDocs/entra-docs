@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Adobe Sign
 
-In this article,  you'll learn how to integrate Adobe Sign with Microsoft Entra ID. When you integrate Adobe Sign with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Adobe Sign with Microsoft Entra ID. When you integrate Adobe Sign with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adobe Sign.
 * Enable your users to be automatically signed-in to Adobe Sign with their Microsoft Entra accounts.
@@ -73,7 +73,7 @@ To configure Microsoft Entra single sign-on with Adobe Sign, perform the followi
 
 1. On the **Select a Single sign-on method** dialog, select **SAML/WS-Fed** mode to enable single sign-on.
 
-1. On the **Set up Single Sign-On with SAML** page, click pencil icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select pencil icon to open **Basic SAML Configuration** dialog.
 
     ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -86,9 +86,9 @@ To configure Microsoft Entra single sign-on with Adobe Sign, perform the followi
     `https://<companyname>.echosign.com`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Adobe Sign Client support team](https://helpx.adobe.com/support.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Adobe Sign Client support team](https://helpx.adobe.com/support.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/certificatebase64.png)
 
@@ -177,11 +177,11 @@ To enable Microsoft Entra users to sign in to Adobe Sign, they must be provision
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Adobe Sign Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to Adobe Sign Sign-on URL where you can initiate the login flow. 
 
 * Go to Adobe Sign Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Adobe Sign tile in the My Apps, you should be automatically signed in to the Adobe Sign for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Adobe Sign tile in the My Apps, you should be automatically signed in to the Adobe Sign for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
