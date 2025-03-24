@@ -30,7 +30,7 @@ In this tutorial, you'll:
 ## Prerequisites
 
 - If you haven't already, complete the steps in [Quickstart: Call a web API that is protected by the Microsoft identity platform](quickstart-web-api-aspnet-sign-in.md?tabs=aspnet-core). You don't have to clone and run the code sample, but ensure you have the following:
-    - The web API's app registration details from the Microsoft Entra admin center including the client ID and tenant ID.
+    - The web API's app registration details from the Microsoft Entra admin center, including the client ID and tenant ID.
     - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](quickstart-web-api-aspnet-sign-in.md?tabs=aspnet-core#add-delegated-permissions-scopes)
     - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](quickstart-web-api-aspnet-sign-in.md?tabs=aspnet-core#add-application-permissions-app-roles)
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet) or later.
@@ -117,7 +117,7 @@ Custom URL domains aren't supported in workforce tenants.
 
 ---
 
-## Add app role and scope
+## Add permissions
 
 All APIs must publish a minimum of one scope, also called delegated permission, for the client apps to obtain an access token for a user successfully. APIs should also publish a minimum of one app role, also called application permissions, for the client apps to obtain an access token as themselves, that is, when they aren't signing-in a user.
 
@@ -183,7 +183,6 @@ public class ToDo
     public string Description { get; set; } = string.Empty;
 }
 ```
-
 The preceding code creates a model called *ToDo*. This model represents data that the app manages.
 
 ### Add a database context
@@ -193,32 +192,33 @@ Next, we define a database context class, which coordinates the [Entity Framewor
 1. Create a folder called *DbContext* in the root folder of your project. 
 1. Navigate into the *DbContext* folder and create a file named `ToDoContext.cs` then add the following code:
 
-```cs
-using Microsoft.EntityFrameworkCore;
-using ToDoListAPI.Models;
-
-namespace ToDoListAPI.Context;
-
-public class ToDoContext : DbContext
-{
-    public ToDoContext(DbContextOptions<ToDoContext> options) : base(options)
+    ```cs
+    using Microsoft.EntityFrameworkCore;
+    using ToDoListAPI.Models;
+    
+    namespace ToDoListAPI.Context;
+    
+    public class ToDoContext : DbContext
     {
+        public ToDoContext(DbContextOptions<ToDoContext> options) : base(options)
+        {
+        }
+    
+        public DbSet<ToDo> ToDos { get; set; }
     }
+    ```
 
-    public DbSet<ToDo> ToDos { get; set; }
-}
-```
 1. Open the *Program.cs* file in your project's root folder and update it with the following code:
 
-```cs
-// Add the following to your imports
-using ToDoListAPI.Context;
-using Microsoft.EntityFrameworkCore;
-
-//Register ToDoContext as a service in the application
-builder.Services.AddDbContext<ToDoContext>(opt =>
-    opt.UseInMemoryDatabase("ToDos"));
-```
+    ```cs
+    // Add the following to your imports
+    using ToDoListAPI.Context;
+    using Microsoft.EntityFrameworkCore;
+    
+    //Register ToDoContext as a service in the application
+    builder.Services.AddDbContext<ToDoContext>(opt =>
+        opt.UseInMemoryDatabase("ToDos"));
+    ```
 
 In the preceding code snippet, we register DB Context as a scoped service in the ASP.NET Core application service provider (also known as, the dependency injection container). You also configure the `ToDoContext` class to use an in-memory database for the ToDo List API.
 

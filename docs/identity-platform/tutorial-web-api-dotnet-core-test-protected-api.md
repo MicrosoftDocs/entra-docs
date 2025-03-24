@@ -107,9 +107,8 @@ Applications that authenticate by themselves without a user require app permissi
     ```
    
 1. Replace the placeholders in the code with your daemon app client ID, secret, web API application ID, and tenant name.      
- - For external tenants, use authority in the form of: `$"https://{tenantName}.ciamlogin.com/";`
- -  For workforce tenants, use authority in the form of|:
-
+     - For external tenants, use authority in the form of: `"https://{tenantName}.ciamlogin.com/"`
+     - For workforce tenants, use instance as `"https://login.microsoftonline.com/"`
 1. Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request with a valid access token. You should see the string: *Your response is:  OK* printed in your console.
 
 ## Related content

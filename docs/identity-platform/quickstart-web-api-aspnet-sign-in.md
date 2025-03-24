@@ -183,7 +183,7 @@ Configure your TodoListClient project by adding the Application ID to the *app.c
       "AllowedHosts": "*"
     }
     ```
-    Find the following `key`:
+    Find the following values:
 
     - `ClientId` - The identifier of the application, also referred to as the client. Replace the `value` text in quotes with **Application (client) ID** that was recorded earlier from the **Overview** page of the registered application.
     - `TenantId` - The identifier of the tenant where the application is registered. Replace the `value` text in quotes with **Directory (tenant) ID** value that was recorded earlier from the **Overview** page of the registered application.
@@ -268,6 +268,7 @@ To specify who can sign in to your application, by changing the `TenantId` prope
    ```
 
    The expected response is 401 Unauthorized. 
+---
 
 ## Next steps
 
