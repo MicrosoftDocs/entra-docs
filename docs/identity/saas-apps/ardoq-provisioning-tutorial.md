@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Ardoq to support provisioning with Microsoft Entra ID
 * Provisioning is gated by a feature toggle in Ardoq.  If you intend to configure SSO or have already done so, Ardoq will automatically recognize that Microsoft Entra ID is in use, and the provisioning feature will be automatically enabled.
 
-* If you don't intend to use the provisioning features of Microsoft Entra ID along with SSO, please reach out to Ardoq customer support and they'll manually enable support for provisioning.
+* If you don't intend to use the provisioning features of Microsoft Entra ID along with SSO, reach out to Ardoq customer support and they'll manually enable support for provisioning.
 
 Before we proceed we need to obtain a *Tenant Url* and a *Secret Token*, to configure secure communication between Microsoft Entra ID and Ardoq.
 
@@ -54,8 +54,8 @@ Before we proceed we need to obtain a *Tenant Url* and a *Secret Token*, to conf
 1. Log in to Ardoq admin console. 
 1. In the left menu select on profile logo and, navigate to **Organization Settings->Manage Organization->Manage SCIM Token**.
 1. Select **Generate new**.
-1. Copy and save the **Token**.This value will be entered in the **Secret Token** field in the Provisioning tab of your Ardoq application. 
-1. To create your *tenant URL*, use this template: `https://<YOUR-SUBDOMAIN>.ardoq.com/api/scim/v2` by replacing the placeholder text `<YOUR-SUBDOMAIN>`.This value will be entered in the **Tenant Url** field in the Provisioning tab of your Ardoq application.
+1. Copy and save the **Token**. This value is entered in the **Secret Token** field in the Provisioning tab of your Ardoq application. 
+1. To create your *tenant URL*, use this template: `https://<YOUR-SUBDOMAIN>.ardoq.com/api/scim/v2` by replacing the placeholder text `<YOUR-SUBDOMAIN>`. This value is entered in the **Tenant Url** field in the Provisioning tab of your Ardoq application.
 
 	>[!NOTE]
 	>`<YOUR-SUBDOMAIN>` is the subdomain your organization has chosen to access Ardoq. This is the same URL segment you use when you access the Ardoq app. For example, if your organization accesses Ardoq at `https://acme.ardoq.com` you'd fill in `acme`.  If you're in the US and access Ardoq at `https://piedpiper.us.ardoq.com`  then you'd fill in `piedpiper.us`.
@@ -64,7 +64,7 @@ Before we proceed we need to obtain a *Tenant Url* and a *Secret Token*, to conf
 
 ## Step 3: Add Ardoq from the Microsoft Entra application gallery
 
-Add Ardoq from the Microsoft Entra application gallery to start managing provisioning to Ardoq. If you have previously setup Ardoq for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Ardoq from the Microsoft Entra application gallery to start managing provisioning to Ardoq. If you have previously setup Ardoq for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Ardoq**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Ardoq in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Ardoq for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Ardoq API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Ardoq in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Ardoq for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Ardoq API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Ardoq|
    |---|---|---|---|
