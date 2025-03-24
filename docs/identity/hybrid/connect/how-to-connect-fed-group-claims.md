@@ -133,11 +133,11 @@ You can configure group claim to include the group display name for the cloud-on
 
 4. To emit group display name just for cloud groups, in the **Source attribute** dropdown select the **Cloud-only group display names**:
 
-  ![Screenshot that shows the Group Claims window, with the option for groups assigned to the application selected](https://github.com/user-attachments/assets/a3ded401-a3fa-4c7b-b821-c8e83e9615cd)
+  ![Screenshot that shows the Group Claims window, with the option for groups assigned to the application selected](media/how-to-connect-fed-group-claims/group-claims-ui-4-2.png)
 
 5. For a hybrid setup, to emit on-premises group attribute for synced groups and display name for cloud groups, you can select the desired on-premises sources attribute and check the checkbox **Emit group name for cloud-only groups**:
 
- ![Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups](https://github.com/user-attachments/assets/e7a91a65-19ef-4dbf-86a6-0f5b107c3839)
+ ![Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups](media/how-to-connect-fed-group-claims/group-claims-ui-4-3.png)
 
 
 > [!Note]
