@@ -111,7 +111,7 @@ To configure group claims for a gallery or non-gallery SAML application via sing
 
    - To emit only groups assigned to the application, select **Groups assigned to the application**.
 
-       ![Screenshot that shows the Group Claims window, with the option for groups assigned to the application selected.](media/how-to-connect-fed-group-claims/group-claims-ui-4-1.png)
+     ![Screenshot that shows the Group Claims window, with the option for groups assigned to the application selected.](media/how-to-connect-fed-group-claims/group-claims-ui-4-1.png)
 
      Groups assigned to the application will be included in the token. Other groups that the user is a member of will be omitted. With this option, nested groups are not included and the user must be a direct member of the group assigned to the application.
 
@@ -133,11 +133,11 @@ You can configure group claim to include the group display name for the cloud-on
 
 4. To emit group display name just for cloud groups, in the **Source attribute** dropdown select the **Cloud-only group display names**:
 
-  ![Screenshot that shows the Group Claims window, with the option for groups assigned to the application selected](media/how-to-connect-fed-group-claims/group-claims-ui-4-2.png)
+  ![Screenshot that shows the Group Claims source attribute dropdown, with the option for configuring cloud only group names selected.](media/how-to-connect-fed-group-claims/group-claims-ui-8new.png)
 
 5. For a hybrid setup, to emit on-premises group attribute for synced groups and display name for cloud groups, you can select the desired on-premises sources attribute and check the checkbox **Emit group name for cloud-only groups**:
 
- ![Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups](media/how-to-connect-fed-group-claims/group-claims-ui-4-3.png)
+  ![Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups.](media/how-to-connect-fed-group-claims/group-claims-ui-9new.png)
 
 
 > [!Note]
