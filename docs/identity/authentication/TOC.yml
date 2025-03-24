@@ -203,8 +203,6 @@
           href: concept-certificate-based-authentication-mobile-android.md
         - name: Certificate user IDs
           href: concept-certificate-based-authentication-certificateuserids.md
-        - name: Linkable identifiers
-          href: concept-certificate-based-authentication-linkable-identifiers.md
         - name: Migrate federated users
           href: concept-certificate-based-authentication-migration.md
         - name: FAQ
@@ -309,6 +307,8 @@
     href: howto-password-smart-lockout.md
   - name: Reporting
     items:
+    - name: Linkable identifiers
+      href: how-to-authentication-track-linkable-identifiers.md
     - name: Authentication methods activity
       href: howto-authentication-methods-activity.md
     - name: SSPR Reports
