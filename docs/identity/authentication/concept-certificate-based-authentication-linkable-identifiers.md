@@ -68,11 +68,11 @@ To view the sign-in logs from the Microsoft Entra admin center:
 4. Click any sign-in log entry.
 5. **Basic Info** shows the User ID, Resource Tenant ID, Session ID, Unique Token Identifier, and Date. **Devices** shows the Device ID for registered and domain-joined devices.
 
-:::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/sign-in-logs-entry.png" alt-text="Screenshot of sign-in log entry in Microsoft Entra admin center.":::
+:::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/sign-in-logs-entry.png" alt-text="Screenshot of sign-in log entry in Microsoft Entra admin center.":::
 
-:::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/log-entry-details.png" alt-text="Screenshot of sign-in log entry details in Microsoft Entra admin center.":::
+:::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/log-entry-details.png" alt-text="Screenshot of sign-in log entry details in Microsoft Entra admin center.":::
 
-:::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/log-entry-linkable-identifiers.png" alt-text="Screenshot of sign-in log entry with linkable identifiers.":::
+:::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/log-entry-linkable-identifiers.png" alt-text="Screenshot of sign-in log entry with linkable identifiers.":::
 
 You should start with Microsoft Entra sign-in logs UTI attribute and manually search on the workload audit logs to track all the activities using a specific access token. Similarly, session ID attribute can be used to manually search on the workload audit logs to track all the activities.
 
@@ -96,14 +96,14 @@ For scenarios involving exchange online like mailbox update, items moved or dele
 1. Go to [Microsoft Purview portal](https://purview.microsoft.com/).
 2. Search for logs with a specific timeframe and record types starting with Exchange.
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/purview-search.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/purview-search.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs.":::
 
 3. You can further filter for a specific user, or a UTI value from Microsoft Entra sign-in logs. You can filter all the activity logs within a session with `SessionId`.
 4. The results show all the linkable identifiers.
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/purview-search-linkable-identifiers.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/purview-search-linkable-identifiers.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers.":::
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/purview-search-linkable-identifiers-details.png" alt-text="Screenshot of Microsoft Purview portal showing detailed log item.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/purview-search-linkable-identifiers-details.png" alt-text="Screenshot of Microsoft Purview portal showing detailed log item.":::
 
 5. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for all the activities for Exchange Online.
 
@@ -145,7 +145,7 @@ For scenarios involving exchange online like mailbox update, items moved or dele
 
 6. The results have all of the linkable identifiers.
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/powershell-linkable-identifiers.png" alt-text="Screenshot of PowerShell command results showing linkable identifiers.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/powershell-linkable-identifiers.png" alt-text="Screenshot of PowerShell command results showing linkable identifiers.":::
 
 > [!NOTE]
 > The linkable identifiers aren't available in the Exchange Online audit logs on some aggregated log entries, or logs generated from background processes.
@@ -184,7 +184,7 @@ ADFSSignInLogs
 on $left.SignInActivityId == $right.UniqueTokenIdentifier
 ```
 
-:::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/kusto-query.png" alt-text="Screenshot of KQL query results showing joined logs.":::
+:::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/kusto-query.png" alt-text="Screenshot of KQL query results showing joined logs.":::
 
 For more information about queries in Log Analytics Workspace, see [Analyze Microsoft Entra activity logs with Log Analytics](/azure/active-directory/reports-monitoring/howto-analyze-activity-logs-log-analytics).
 
@@ -195,35 +195,35 @@ Let's walk through an example where a user logs into office.com. Then the user a
 
 1. Find the interactive login log line in the sign in logs, and capture the `SessionId`:
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/sign-in-log-session-id.png" alt-text="Screenshot of interactive sign-in log line with session ID.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/sign-in-log-session-id.png" alt-text="Screenshot of interactive sign-in log line with session ID.":::
 
 1. Add a filter by `SessionId`. You can get the `SessionId` for interactive or noninteractive sign-ins.
 
    **Interactive sign-ins:**
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/interactive-sign-in.png" alt-text="Screenshot of interactive sign-ins filtered by session ID.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/interactive-sign-in.png" alt-text="Screenshot of interactive sign-ins filtered by session ID.":::
 
    **Noninteractive sign-ins:**
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/noninteractive-sign-in.png" alt-text="Screenshot of non-interactive sign-ins filtered by session ID.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/noninteractive-sign-in.png" alt-text="Screenshot of non-interactive sign-ins filtered by session ID.":::
 
 1. To get all the activities on Microsoft Graph workload done by the user within this specific session, go to Log Analytics in Microsoft Entra portal and run the query to join Microsoft Entra sign in logs and Microsoft Graph Activity logs. The following query filters by `UserId` and `SessionId`.
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/graph-filter.png" alt-text="Screenshot of Microsoft Graph activities filtered by user ID and session ID.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/graph-filter.png" alt-text="Screenshot of Microsoft Graph activities filtered by user ID and session ID.":::
 
    Further filtering can be done on a `SignInActivityId` (uti claim) attribute to learn more about the access by specific request.
 
 1. To get Exchange Online activities, open the Microsoft Purview portal and search by Users or Record Types.
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/purview-record-types.png" alt-text="Screenshot of Microsoft Purview portal showing search by Users or Record Types.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/purview-record-types.png" alt-text="Screenshot of Microsoft Purview portal showing search by Users or Record Types.":::
 
 1. Export the data.
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/export-data.png" alt-text="Screenshot of data export in Microsoft Purview portal.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/export-data.png" alt-text="Screenshot of data export in Microsoft Purview portal.":::
 
 1. The log entry has all of the linkable identifiers. You can search by `UniqueTokenId` for each unique activity, and search by `AADSessionId` for all activities within the session.
 
-   :::image type="content" source="media/concept-certificate-based-authentication-linkable-identifiers/search-token-id.png" alt-text="Screenshot of log line with linkable identifiers.":::
+   :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/search-token-id.png" alt-text="Screenshot of log line with linkable identifiers.":::
 
 ## Related content
 
