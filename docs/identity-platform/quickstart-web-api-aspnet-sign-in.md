@@ -114,7 +114,7 @@ To add the new scope to the TodoListClient *app.config* file, follow these steps
 
 ## Register the web app (TodoListClient)
 
-Register your TodoListClient app in **App registrations** in the Azure portal, and then configure the code in the TodoListClient project. If the client and server are considered the same application, you can reuse the application that's registered in step 2. Use the same application if you want users to sign in with a personal Microsoft account.
+Register your TodoListClient app in **App registrations** in the Microsoft Entra admin center, and then configure the code in the TodoListClient project. If the client and server are considered the same application, you can reuse the application registered in step 2. Use the same application if you want users to sign in with a personal Microsoft account.
 
 ### Register the app
 
@@ -201,7 +201,7 @@ Start both projects. For Visual Studio users;
 
 1. Right click on the Visual Studio solution and select **Properties**
 
-1. In the **Common Properties** select **Startup Project** and then **Multiple startup projects**. 
+1. In the **Common Properties**, select **Startup Project** and then **Multiple startup projects**. 
 
 1. For both projects choose **Start** as the action
 
@@ -219,7 +219,7 @@ Sign in to run your TodoListClient project.
 
 ## Pre-authorize your client application
 
-You can allow users from other directories to access your web API by pre-authorizing the client application to access your web API. You do this by adding the Application ID from the client app to the list of pre-authorized applications for your web API. By adding a pre-authorized client, you're allowing users to access your web API without having to provide consent.
+You can allow users from other directories to access your web API by pre-authorizing the client application to access your web API. You do this by adding the Application ID from the client app to the list of preauthorized applications for your web API. By adding a preauthorized client, you're allowing users to access your web API without having to provide consent.
 
 1. In the **App registrations** portal, open the properties of your TodoListService app.
 1. In the **Expose an API** section, under **Authorized client applications**, select **Add a client application**.
@@ -246,7 +246,7 @@ To specify who can sign in to your application, by changing the `TenantId` prope
    dotnet run
    ```
 
-1. If everything worked correctly, your terminal will display an output similar to the following:
+1. If everything worked correctly, your terminal displays an output similar to the following:
 
    ```bash
     Building...

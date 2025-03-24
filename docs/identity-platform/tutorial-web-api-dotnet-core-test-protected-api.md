@@ -36,11 +36,11 @@ In this tutorial, you learn how to:
 
 [!INCLUDE [Add app client secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
-## Assign app role to your daemon app
+## Assign an app role to your daemon app
 
 Applications that authenticate by themselves without a user require app permissions (also known as roles). These permissions allow the app itself to access resources directly. On the other hand, if we were testing the API with a signed-in user, we would assign delegated permissions (scopes). Delegated permissions enable the app to act on behalf of the user, limited to the user’s access rights. Follow these steps to assign application permissions to the daemon app:
 
-[!INCLUDE [Add app client secret](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
+[!INCLUDE [Add API permissions using app roles](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
 ## Build a daemon app
 
