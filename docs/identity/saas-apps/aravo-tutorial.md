@@ -45,7 +45,7 @@ To configure the integration of Aravo into Microsoft Entra ID, you need to add A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Aravo**, select **Aravo** from result panel then click **Add** button to add the application.
+1. In the **Add from the gallery** section, type **Aravo**, select **Aravo** from result panel then select **Add** button to add the application.
 
     ![Aravo in the results list](common/search-new-app.png)
 
@@ -82,7 +82,7 @@ To configure Microsoft Entra single sign-on with Aravo, perform the following st
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
     ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -97,9 +97,9 @@ To configure Microsoft Entra single sign-on with Aravo, perform the following st
     `https://<companyname>.aravo.com/aems/login.do`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Aravo Client support team](https://www.aravo.com/about-us/contact/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Aravo Client support team](https://www.aravo.com/about-us/contact/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/certificatebase64.png)
 
@@ -129,7 +129,7 @@ In this section, you create a user called Britta Simon in Aravo. Work with [Ara
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Aravo tile in the Access Panel, you should be automatically signed in to the Aravo for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Aravo tile in the Access Panel, you should be automatically signed in to the Aravo for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 

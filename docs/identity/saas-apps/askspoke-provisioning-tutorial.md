@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and askSpoke](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-askspoke-to-support-provisioning-with-azure-ad'></a>
@@ -48,13 +48,13 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. Navigate to **Settings**.
 
-3. Click the **Integrations** tab.
+3. Select the **Integrations** tab.
 
-4. Scroll to the SCIM card. Click on **Connect**.
+4. Scroll to the SCIM card. Select **Connect**.
 
    ![Edit](media/askspoke-provisioning-tutorial/connection.png)
 
-5. Click on **Enable SCIM**.
+5. Select **Enable SCIM**.
 
 6. Copy and save the **API Token**. This value will be entered in the **Secret Token** field in the Provisioning tab of your askSpoke application.
 
@@ -66,7 +66,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add askSpoke from the Microsoft Entra application gallery
 
-Add askSpoke from the Microsoft Entra application gallery to start managing provisioning to askSpoke. If you have previously setup askSpoke for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add askSpoke from the Microsoft Entra application gallery to start managing provisioning to askSpoke. If you have previously setup askSpoke for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning
 
@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your askSpoke Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to askSpoke. If the connection fails, ensure your askSpoke account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your askSpoke Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to askSpoke. If the connection fails, ensure your askSpoke account has Admin permissions and try again.
 
    ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to askSpoke**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to askSpoke in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in askSpoke for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the askSpoke API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to askSpoke in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in askSpoke for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the askSpoke API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    | Attribute                                                             | Type      | Supported For Filtering |
    | --------------------------------------------------------------------- | --------- | ----------------------- |
@@ -147,7 +147,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       ![Provisioning Scope](common/provisioning-scope.png)
 
-15.   When you are ready to provision, click **Save**.
+15.   When you're ready to provision, select **Save**.
 
       ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

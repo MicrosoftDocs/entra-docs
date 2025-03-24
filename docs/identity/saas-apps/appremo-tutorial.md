@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with AppRemo
 
-In this article,  you'll learn how to integrate AppRemo with Microsoft Entra ID. When you integrate AppRemo with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate AppRemo with Microsoft Entra ID. When you integrate AppRemo with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AppRemo.
 * Enable your users to be automatically signed-in to AppRemo with their Microsoft Entra accounts.
@@ -74,7 +74,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AppRemo** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
     |
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Reply URL. Contact [AppRemo Client support team](mailto:AR-support@system-exe.co.jp) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Reply URL. Contact [AppRemo Client support team](mailto:AR-support@system-exe.co.jp) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -126,11 +126,11 @@ In this section, you create a user called Britta Simon in AppRemo. Work with [A
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to AppRemo Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to AppRemo Sign-on URL where you can initiate the login flow. 
 
 * Go to AppRemo Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the AppRemo tile in the My Apps, this will redirect to AppRemo Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the AppRemo tile in the My Apps, this redirects to AppRemo Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 
 ## Related content
