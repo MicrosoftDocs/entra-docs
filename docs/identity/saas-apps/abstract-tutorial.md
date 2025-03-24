@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 Make sure to retrieve your `App Federation Metadata Url` and the `Azure AD Identifier`, as you need those to configure SSO on Abstract.
 
-You will find those information on the **Set up Single Sign-On with SAML** page:
+You will find that information on the **Set up Single Sign-On with SAML** page:
 
 * The `App Federation Metadata Url` is located in the **SAML Signing Certificate** section.
 * The `Azure AD Identifier` is located in the **Set up Abstract** section.

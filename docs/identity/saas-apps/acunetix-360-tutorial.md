@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://online.acunetix360.com/account/ssosignin`
 
 	> [!NOTE]
-	> The values isn't  real. Update the Reply URL value with the actual Reply URL. Contact [Acunetix 360 Client support team](mailto:support@acunetix.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The values aren't real. Update the Reply URL value with the actual Reply URL. Contact [Acunetix 360 Client support team](mailto:support@acunetix.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your Acunetix 360 application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Acunetix 360 expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 

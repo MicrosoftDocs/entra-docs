@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.acquire.io/ad/<acquire_account_uid>`
 
     > [!NOTE]
-    > The value isn't  real. You gets the actual Reply URL which is explained later in the **Configure AcquireIO** section of the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > The value isn't real. You get the actual Reply URL which is explained later in the **Configure AcquireIO** section of the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
