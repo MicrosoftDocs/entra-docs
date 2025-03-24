@@ -112,9 +112,7 @@ Administrators determine review scope, then create reviews in access reviews, Mi
 
    [ ![Diagram of review creation for administrators.](media/governance-deployment/select-scope.png)](media/governance-deployment/select-scope-expanded.png#lightbox)
 
-The **New access review** dialog, with the **Review type** tab, shows options for review type, scope, and other configuration details. 
-
-   [ ![Screenshot of the New access review dialog with the Review type tab.](media/governance-deployment/select-scope.png)](media/governance-deployment/select-scope-expanded.png#lightbox)
+The **New access review** dialog appears with the **Review type** tab. Find options for review type, scope, and other configuration details. 
 
 ### Reviewers
 
