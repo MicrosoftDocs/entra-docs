@@ -10,7 +10,7 @@ author: justinha
 manager: femila
 ms.reviewer: msft-poulomi
 
-# Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
+# Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method they registered.
 ---
 
 # System-preferred multifactor authentication  - Authentication methods policy

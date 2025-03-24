@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with AppNeta Performance Manager
 
-In this article,  you'll learn how to integrate AppNeta Performance Manager with Microsoft Entra ID. When you integrate AppNeta Performance Manager with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate AppNeta Performance Manager with Microsoft Entra ID. When you integrate AppNeta Performance Manager with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to AppNeta Performance Manager.
 - Enable your users to be automatically signed-in to AppNeta Performance Manager with their Microsoft Entra accounts.
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AppNeta Performance Manager** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](./media/appneta-tutorial/edit-urls.png)
 
@@ -109,17 +109,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Screenshot that shows the App Registrations with Appneta Performance Manager at the bottom.](./media/appneta-tutorial/app-registrations.png)
 
-1. Click **App roles** in the left pane. The following screen will appear:
+1. Select **App roles** in the left pane. The following screen appears:
 
    ![Screenshot that shows the App Roles with Appneta Performance Manager at the bottom.](./media/appneta-tutorial/app-roles.png)
 
-1. Click **Create App role**.
+1. Select **Create App role**.
 1. On the **Create app role** screen, follow these steps:
    1. In the **Display name** field, enter a name for the role.
    1. In the **Allowed member types** field, select **Users/Groups**.
    1. In the **Value** field, enter the value of the security group set in your AppNeta Performance Manager role mappings.
    1. In the **Description** field, enter a description for the role.
-   1. Click **Apply**.
+   1. Select **Apply**.
 
    ![Screenshot of the Create App Role dialog with the fields filled out as described.](./media/appneta-tutorial/create-app-role.png)
 
@@ -140,7 +140,7 @@ To configure single sign-on on **AppNeta Performance Manager** side, you need to
 
 ### Create AppNeta Performance Manager test user
 
-In this section, a user called B.Simon is created in AppNeta Performance Manager. AppNeta Performance Manager supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in AppNeta Performance Manager, a new one is created after authentication.
+In this section, a user called B.Simon is created in AppNeta Performance Manager. AppNeta Performance Manager supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in AppNeta Performance Manager, a new one is created after authentication.
 
 > [!Note]
 > If you need to create a user manually, contact [AppNeta Performance Manager support team](mailto:support@appneta.com).
@@ -149,11 +149,11 @@ In this section, a user called B.Simon is created in AppNeta Performance Manager
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-- In the Azure portal, select **Test this application**. This will redirect to AppNeta Performance Manager Sign-on URL, where you can initiate the login flow.
+- In the Azure portal, select **Test this application**. This redirects to AppNeta Performance Manager Sign-on URL, where you can initiate the login flow.
 
 - Go to AppNeta Performance Manager Sign-on URL directly and initiate the login flow from there.
 
-- You can use Microsoft My Apps. When you click the AppNeta Performance Manager tile in the My Apps portal, this will redirect to AppNeta Performance Manager Sign-on URL. For more information about the My Apps portal, see [Introduction to My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+- You can use Microsoft My Apps. When you select the AppNeta Performance Manager tile in the My Apps portal, this redirects to AppNeta Performance Manager Sign-on URL. For more information about the My Apps portal, see [Introduction to My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

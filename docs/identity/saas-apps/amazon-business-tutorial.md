@@ -99,7 +99,7 @@ Follow these steps to enable Microsoft Entra SSO.
        | `https://www.amazon.de/bb/feature/sso/action/3p_redirect?idpid={idpid}`| Europe |
 
        > [!NOTE]
-       > The Reply URL value is not real. Update this value with the actual Reply URL. You will get the `<idpid>` value from the Amazon Business SSO configuration section, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+       > The Reply URL value isn't  real. Update this value with the actual Reply URL. You gets the `<idpid>` value from the Amazon Business SSO configuration section, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. If you want to configure the application in **SP** initiated mode, you need to add the full URL provided in the Amazon Business configuration to the **Sign-on URL** in the **Set additional URLs** section.
 
@@ -189,7 +189,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Amazon connection data** wizard, please confirm your IDP has configured and select **Continue**.
 
-    ![Screenshot shows Amazon connection data, where you can click next to continue.](media/amazon-business-tutorial/amazon-connect.png)
+    ![Screenshot shows Amazon connection data, where you can select next to continue.](media/amazon-business-tutorial/amazon-connect.png)
 
 1. Check the **Status** of the steps that have been configured and select **Start testing**.
 
@@ -222,7 +222,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select on **Test this application**, this will redirect to Amazon Business Sign-on URL where you can initiate the sign-in flow.  
+* Select on **Test this application**, this redirects to Amazon Business Sign-on URL where you can initiate the sign-in flow.  
 
 * Go to the Amazon Business Single Sign-on URL directly and initiate the sign-in flow from there.
 

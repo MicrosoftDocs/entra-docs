@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Autodesk SSO
 
-In this article,  you'll learn how to integrate Autodesk SSO with Microsoft Entra ID. When you integrate Autodesk SSO with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Autodesk SSO with Microsoft Entra ID. When you integrate Autodesk SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Autodesk SSO.
 * Enable your users to be automatically signed-in to Autodesk SSO with their Microsoft Entra accounts.
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Autodesk SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://autodesk-prod.okta.com/sso/saml2/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Autodesk SSO Client support team](https://knowledge.autodesk.com/contact-support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Autodesk SSO Client support team](https://knowledge.autodesk.com/contact-support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Autodesk SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -122,11 +122,11 @@ To configure single sign-on on **Autodesk SSO** side, you need to send the downl
 
 ### Create Autodesk SSO test user
 
-In this section, a user called Britta Simon is created in Autodesk SSO. Autodesk SSO supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Autodesk SSO, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Autodesk SSO. Autodesk SSO supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Autodesk SSO, a new one is created after authentication.
 
 ## Test SSO 
 
-To test the Autodesk SSO, open the Autodesk console and click **Test Connection** button and authenticate using the test account which you have created in the **Create a Microsoft Entra test user** section.
+To test the Autodesk SSO, open the Autodesk console and select **Test Connection** button and authenticate using the test account which you have created in the **Create a Microsoft Entra test user** section.
 
 ## Related content
 

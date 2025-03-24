@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and AuditBoard](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-auditboard-to-support-provisioning-with-azure-ad'></a>
@@ -47,7 +47,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to AuditBoard. Navigate to **Settings** > **Users & Roles** > **Security** > **SCIM**.
 
-2. Click **Generate Token**. 
+2. Select **Generate Token**. 
 
 3. Save the **Token** and the **SCIM base URL**. These values will be entered in the Tenant URL and Secret Token field in the Provisioning tab of your AuditBoard application.
 
@@ -63,7 +63,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add AuditBoard from the Microsoft Entra application gallery
 
-Add AuditBoard from the Microsoft Entra application gallery to start managing provisioning to AuditBoard. If you have previously setup AuditBoard for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add AuditBoard from the Microsoft Entra application gallery to start managing provisioning to AuditBoard. If you have previously setup AuditBoard for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your AuditBoard Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to AuditBoard. If the connection fails, ensure your AuditBoard account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your AuditBoard Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to AuditBoard. If the connection fails, ensure your AuditBoard account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -106,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to AuditBoard**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to AuditBoard in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in AuditBoard for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the AuditBoard API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to AuditBoard in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in AuditBoard for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the AuditBoard API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for Filtering|
    |---|---|---|
@@ -127,7 +127,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Appinux
 
-In this article,  you'll learn how to integrate Appinux with Microsoft Entra ID. When you integrate Appinux with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Appinux with Microsoft Entra ID. When you integrate Appinux with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to Appinux.
 - Enable your users to be automatically signed-in to Appinux with their Microsoft Entra accounts.
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Appinux** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -84,9 +84,9 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://<Appinux_SUBDOMAIN>.appinux.com/simplesaml/module.php/saml/sp/metadata.php/default-sp`
 
    > [!NOTE]
-   > These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Appinux Client support team](https://support.appinux.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+   > These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Appinux Client support team](https://support.appinux.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Appinux application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open User Attributes dialog.
+1. Appinux application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Select **Edit** icon to open User Attributes dialog.
 
    ![image](common/edit-attribute.png)
 
@@ -126,7 +126,7 @@ To configure single sign-on on **Appinux** side, you need to send the downloaded
 
 ### Create Appinux test user
 
-In this section, a user called Britta Simon is created in Appinux. Appinux supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Appinux, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Appinux. Appinux supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Appinux, a new one is created after authentication.
 
 > [!Note]
 > If you need to create a user manually, contact [Appinux support team](https://support.appinux.com).
@@ -135,11 +135,11 @@ In this section, a user called Britta Simon is created in Appinux. Appinux suppo
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-- Click on **Test this application**, this will redirect to Appinux Sign-on URL where you can initiate the login flow.
+- Select **Test this application**, this redirects to Appinux Sign-on URL where you can initiate the login flow.
 
 - Go to Appinux Sign-on URL directly and initiate the login flow from there.
 
-- You can use Microsoft My Apps. When you click the Appinux tile in the My Apps, this will redirect to Appinux Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+- You can use Microsoft My Apps. When you select the Appinux tile in the My Apps, this redirects to Appinux Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

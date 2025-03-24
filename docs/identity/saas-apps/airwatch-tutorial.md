@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate AirWatch with Microsoft Entra ID
 
-In this article,  you'll learn how to integrate AirWatch with Microsoft Entra ID. When you integrate AirWatch with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate AirWatch with Microsoft Entra ID. When you integrate AirWatch with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AirWatch.
 * Enable your users to be automatically signed-in to AirWatch with their Microsoft Entra accounts.
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AirWatch** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -93,9 +93,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.awmdm.com/AirWatch/Login?gid=companycode`
 
 	> [!NOTE]
-	> These values are not the real. Update these values with the actual Reply URL and Sign-on URL. Contact [AirWatch Client support team](https://customerconnect.omnissa.com/home) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't the real. Update these values with the actual Reply URL and Sign-on URL. Contact [AirWatch Client support team](https://customerconnect.omnissa.com/home) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. AirWatch application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, click **Edit** button to open **User Attributes** dialog.
+1. AirWatch application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, select **Edit** button to open **User Attributes** dialog.
 
 	![image](common/edit-attribute.png)
 
@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| UID | user.userprincipalname |
     | | |
 
-	a. Click **Add new claim** to open the **Manage user claims** dialog.
+	a. Select **Add new claim** to open the **Manage user claims** dialog.
 
 	b. In the **Name** textbox, type the attribute name shown for that row.
 
@@ -116,9 +116,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	e. From the **Source attribute** list, type the attribute value shown for that row.
 
-	f. Click **Ok**
+	f. Select **Ok**
 
-	g. Click **Save**.
+	g. Select **Save**.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the Metadata XML and save it on your computer.
 
@@ -143,7 +143,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Select the **Server** tab and perform the following steps:
    1. As **Directory Type**, select **None**.
    1. Enable the **Use SAML For Authentication** option.
-   1. Select the **Import Identity Provider Settings** and click **Upload** to upload the XML file that you downloaded in Step4 above.
+   1. Select the **Import Identity Provider Settings** and select **Upload** to upload the XML file that you downloaded in Step4 above.
 1. In the **Request** section, perform the following steps:
    1. As **Request Binding Type**, select **POST**.
    1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AirWatch**. 
@@ -164,7 +164,7 @@ Follow these steps to enable Microsoft Entra SSO.
    1. In the **First Name** textbox, type `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
    1. In the **Last Name** textbox, type `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
    1. In the **Email** textbox, type `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
-   1. Click **Save**.
+   1. Select **Save**.
 
 ### Create AirWatch test user
 
@@ -174,15 +174,15 @@ To enable Microsoft Entra users to sign in to AirWatch, they must be provisioned
 
 1. Sign in to your **AirWatch** company site as administrator.
 
-2. In the navigation pane on the left side, click **Accounts**, and then click **Users**.
+2. In the navigation pane on the left side, select **Accounts**, and then select **Users**.
 
-3. In the **Users** menu, click **List View**, and then click **Add > Add User**.
+3. In the **Users** menu, select **List View**, and then select **Add > Add User**.
 
 4. On the **Add / Edit User** dialog, perform the following steps:
 
    a. Type the **Username**, **Password**, **Confirm Password**, **First Name**, **Last Name**, **Email Address** of a valid Microsoft Entra account you want to provision into the related textboxes.
 
-   b. Click **Save**.
+   b. Select **Save**.
 
 > [!NOTE]
 > You can use any other AirWatch user account creation tools or APIs provided by AirWatch to provision Microsoft Entra user accounts.
@@ -191,11 +191,11 @@ To enable Microsoft Entra users to sign in to AirWatch, they must be provisioned
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to AirWatch Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to AirWatch Sign-on URL where you can initiate the login flow. 
 
 * Go to AirWatch Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the AirWatch tile in the My Apps, this will redirect to AirWatch Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the AirWatch tile in the My Apps, this redirects to AirWatch Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
