@@ -203,6 +203,8 @@
           href: concept-certificate-based-authentication-mobile-android.md
         - name: Certificate user IDs
           href: concept-certificate-based-authentication-certificateuserids.md
+        - name: Linkable identifiers
+          href: concept-certificate-based-authentication-linkable-identifiers.md
         - name: Migrate federated users
           href: concept-certificate-based-authentication-migration.md
         - name: FAQ
