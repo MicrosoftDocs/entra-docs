@@ -2,7 +2,7 @@
 title: Track and investigate identity activities with linkable identifiers in Microsoft Entra (preview)
 description: Discover how linkable identifiers like session IDs and unique token identifiers in Microsoft Entra help track and investigate identity-related activities, enhancing security and transparency.
 ms.topic: conceptual
-ms.date: 03/23/2025
+ms.date: 03/24/2025
 ms.author: justinha
 author: vimrang
 manager: femila
@@ -49,7 +49,7 @@ As of now, linkable identifiers are logged into Microsoft Entra sign in logs, Ex
 
 ## Linkable identifiers in Microsoft Entra sign in logs
 
-A sign-in logs entry has the following linkable identifier claims under the attributes below.
+A sign-in logs entry has the following linkable identifier claims.
 
 | **Claim** | **Sign in log attribute name** |
 |-----------|--------------------------------|
@@ -74,7 +74,7 @@ To view the sign-in logs from the Microsoft Entra admin center:
 
 :::image type="content" border="true" source="media/concept-certificate-based-authentication-linkable-identifiers/log-entry-linkable-identifiers.png" alt-text="Screenshot of sign-in log entry with linkable identifiers.":::
 
-You should start with Microsoft Entra sign-in logs UTI attribute and manually search on the workload audit logs to track all the activities using a specific access token. Similarly, session ID attribute can be used to manually search on the workload audit logs to track all the activities.
+You should start with Microsoft Entra sign-in logs User ID attribute and manually search on the workload audit logs to track all the activities using a specific access token. Similarly, the Session ID attribute can be used to manually search on the workload audit logs to track all the activities.
 
 ## Microsoft Exchange Online logs
 
