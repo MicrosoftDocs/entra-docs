@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Atea](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-atea-to-support-provisioning-with-azure-ad'></a>
@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
        
       ![Atea login dialog](media/atea-provisioning-tutorial/atea-login.png)
 
-7. Upon completing steps 5 and 6, click **Test Connection** to ensure Microsoft Entra ID can connect to Atea. If the connection fails, ensure your Atea has Admin permissions and try again.
+7. Upon completing steps 5 and 6, select **Test Connection** to ensure Microsoft Entra ID can connect to Atea. If the connection fails, ensure your Atea has Admin permissions and try again.
         
       ![Atea test connection](media/atea-provisioning-tutorial/test-connection.png)
 
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you're ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

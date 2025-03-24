@@ -38,18 +38,18 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Autodesk SSO](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-autodesk-sso-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Autodesk SSO to support provisioning with Microsoft Entra ID
 1. Login to [Autodesk management portal](https://manage.autodesk.com/).
-1. From the left navigation menu, navigate to **User Management > By Group**. Select the required team from the drop-down list and click the team settings gear icon.
+1. From the left navigation menu, navigate to **User Management > By Group**. Select the required team from the drop-down list and select the team settings gear icon.
 
 	[![Navigation](media/autodesk-sso-provisioning-tutorial/step2-1-navigation.png)](media/autodesk-sso-provisioning-tutorial/step2-1-navigation.png#lightbox)
 	
-2.  Click the Set up directory sync button and select Microsoft Entra SCIM as the directory environment. Click Next to access the Azure admin credentials. If you set up Directory Sync before, click on the Access Credential instead.
+2.  Select the Set up directory sync button and select Microsoft Entra SCIM as the directory environment. Select Next to access the Azure admin credentials. If you set up Directory Sync before, select on the Access Credential instead.
 
 	![Set Up Directory Sync](media/autodesk-sso-provisioning-tutorial/step2-2-set-up-directory-sync.png)
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Autodesk SSO Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Autodesk SSO. If the connection fails, ensure your Autodesk SSO account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Autodesk SSO Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Autodesk SSO. If the connection fails, ensure your Autodesk SSO account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -133,7 +133,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

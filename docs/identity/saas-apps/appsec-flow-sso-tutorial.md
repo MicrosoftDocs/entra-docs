@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Conviso Platform SSO
 
-In this article,  you'll learn how to integrate Conviso Platform SSO with Microsoft Entra ID. When you integrate Conviso Platform SSO with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Conviso Platform SSO with Microsoft Entra ID. When you integrate Conviso Platform SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Conviso Platform SSO.
 * Enable your users to be automatically signed-in to Conviso Platform SSO with their Microsoft Entra accounts.
@@ -74,7 +74,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Conviso Platform SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -104,9 +104,9 @@ In this section, you create a user called Britta Simon in Conviso Platform SSO. 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Conviso Platform SSO for which you set up the SSO
+* Select **Test this application**, and you should be automatically signed in to the Conviso Platform SSO for which you set up the SSO
 
-* You can use Microsoft My Apps. When you click the Conviso Platform SSO tile in the My Apps, you should be automatically signed in to the Conviso Platform SSO for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Conviso Platform SSO tile in the My Apps, you should be automatically signed in to the Conviso Platform SSO for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

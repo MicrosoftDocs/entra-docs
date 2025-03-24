@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Appraisd with Microsoft Entra ID
 
-In this article,  you'll learn how to integrate Appraisd with Microsoft Entra ID. When you integrate Appraisd with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Appraisd with Microsoft Entra ID. When you integrate Appraisd with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Appraisd.
 * Enable your users to be automatically signed-in to Appraisd with their Microsoft Entra accounts.
@@ -69,13 +69,13 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Appraisd** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, the application is pre-configured and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by clicking the Save button and perform the following steps:
 
-    a. Click **Set additional URLs**.
+    a. Select **Set additional URLs**.
 
 	b. In the **Relay State** text box, type the value: `<TENANTCODE>`
 
@@ -108,11 +108,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your Appraisd company site as an administrator
 
-4. On the top right of the page, click on **Settings** icon, then navigate to **Configuration**.
+4. On the top right of the page, select on **Settings** icon, then navigate to **Configuration**.
 
 	![Screenshot shows the Configuration link called out.](./media/appraisd-tutorial/settings.png)
 
-5. From the Left side of menu, click on **SAML single sign-on**.
+5. From the Left side of menu, select on **SAML single sign-on**.
 
 	![Screenshot shows the Configuration options with the SAML single sign-on option highlighted.](./media/appraisd-tutorial/configuration.png)
 
@@ -128,11 +128,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows Identifying users where you can enter values from this step.](./media/appraisd-tutorial/identifying-users.png)
 
-	a. In the **Identity Provider Single Sign-On URL** textbox, paste the value of **Login URL**, which you have copied and click **Save**.
+	a. In the **Identity Provider Single Sign-On URL** textbox, paste the value of **Login URL**, which you have copied and select **Save**.
 
-	b. In the **Identity Provider Issuer URL** textbox, paste the value of **Microsoft Entra Identifier**, which you have copied and click **Save**.
+	b. In the **Identity Provider Issuer URL** textbox, paste the value of **Microsoft Entra Identifier**, which you have copied and select **Save**.
 
-	c. In Notepad, open the base-64 encoded certificate that you downloaded, copy its content, and then paste it into the **X.509 Certificate** box and click **Save**.
+	c. In Notepad, open the base-64 encoded certificate that you downloaded, copy its content, and then paste it into the **X.509 Certificate** box and select **Save**.
 
 ### Create Appraisd test user
 
@@ -142,11 +142,11 @@ To enable Microsoft Entra users sign in to Appraisd, they must be provisioned in
 
 1. Sign in to Appraisd as a Security Administrator.
 
-2. On the top right of the page, click on **Settings** icon, then navigate to **Administration center**.
+2. On the top right of the page, select on **Settings** icon, then navigate to **Administration center**.
 
 	![Screenshot shows the Settings options where you can select Administration center.](./media/appraisd-tutorial/admin.png)
 
-3. In the toolbar at the top of the page, click **People**, then navigate to **Add a new user**.
+3. In the toolbar at the top of the page, select **People**, then navigate to **Add a new user**.
 
 	![Screenshot shows the Appraisd page with People and Add a new user called out.](./media/appraisd-tutorial/user.png)
 
@@ -160,7 +160,7 @@ To enable Microsoft Entra users sign in to Appraisd, they must be provisioned in
 
 	c. In **Email** text box, enter the email of user like `B. Simon@contoso.com`.
 
-	d. Click **Add user**.
+	d. Select **Add user**.
 
 ## Test SSO
 
@@ -168,15 +168,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Appraisd Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to Appraisd Sign on URL where you can initiate the login flow.  
 
 * Go to Appraisd Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Appraisd for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Appraisd for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Appraisd tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Appraisd for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Appraisd tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Appraisd for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

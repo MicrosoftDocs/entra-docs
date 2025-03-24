@@ -143,7 +143,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select on **Test this application**, this will redirect to Ardoq Sign on URL where you can initiate the sign in flow.  
+* Select on **Test this application**, this redirects to Ardoq Sign on URL where you can initiate the sign in flow.  
 
 * Go to Ardoq Sign-on URL directly and initiate the sign in flow from there.
 
