@@ -26,7 +26,7 @@ The following products and services appear in this guide:
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
 * [Microsoft Graph](/graph/overview)
 
-Use this scenario to help determine the need for Microsoft Entra ID Governance to create and grant access for your organization. Learn how you can provision your users effectively, securely, and consistently with employee lifecycle automation. 
+Use this scenario to help determine the need for Microsoft Entra ID Governance to create and grant access for your organization. Learn how you can provision your users effectively, securely, and consistently with employee lifecycle automation.
 
 ## Proof-of-concept timeline
 
