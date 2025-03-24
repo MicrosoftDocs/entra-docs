@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Akamai
 
-In this article,  you'll learn how to integrate Akamai with Microsoft Entra ID. When you integrate Akamai with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Akamai with Microsoft Entra ID. When you integrate Akamai with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Akamai.
 * Enable your users to be automatically signed-in to Akamai with their Microsoft Entra accounts.
@@ -136,7 +136,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Akamai** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -149,7 +149,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https:// <Yourapp>.login.go.akamai-access.com/saml/sp/response`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Akamai Client support team](https://www.akamai.com/us/en/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Akamai Client support team](https://www.akamai.com/us/en/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -170,7 +170,7 @@ Follow these steps to enable Microsoft Entra SSO.
 **AKAMAI EAA IDP Configuration**
 
 1. Sign in to **Akamai Enterprise Application Access** console.
-1. On the **Akamai EAA console**, Select **Identity** > **Identity Providers** and click **Add Identity Provider**.
+1. On the **Akamai EAA console**, Select **Identity** > **Identity Providers** and select **Add Identity Provider**.
 
     ![Screenshot of the Akamai EAA console Identity Providers window. Select Identity Providers on the Identity menu and select Add Identity Provider.](./media/header-akamai-tutorial/configure-1.png)
 
@@ -178,7 +178,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. Specify the **Unique Name**.
 
-    b. Choose **Third Party SAML** and click **Create Identity Provider and Configure**.
+    b. Choose **Third Party SAML** and select **Create Identity Provider and Configure**.
 
 ### General Settings
 
@@ -221,7 +221,7 @@ In the **Advanced settings** tab, accept the default values. Refer Akamai docume
 
 ### Deployment
 
-1. In the **Deployment** tab, click on Deploy Identity Provider.
+1. In the **Deployment** tab, select on Deploy Identity Provider.
 
 2. Verify the deployment was successful.
 
@@ -251,7 +251,7 @@ Akamai Header Based Authentication
 
 #### Services
 
-Click Save and Go to Authentication.
+Select Save and Go to Authentication.
 
 ![Screenshot of the Akamai EAA console Services tab for MYHEADERAPP showing the Save and go to AdvancedSettings button in the bottom right corner.](./media/header-akamai-tutorial/configure-11.png)
 
@@ -261,13 +261,13 @@ Click Save and Go to Authentication.
 
     ![Screenshot of the Akamai EAA console Advanced Settings tab showing the SSO Logged URL field highlighted under Authentication.](./media/header-akamai-tutorial/configure-12.png)
 
-1. Click **Save and go to Deployment** button.
+1. Select **Save and go to Deployment** button.
 
     ![Screenshot of the Akamai EAA console Advanced Settings tab showing the Save and go to Deployment button in the bottom right corner.](./media/header-akamai-tutorial/configure-13.png)
 
 #### Deploy the Application
 
-1. Click **Deploy Application** button.
+1. Select **Deploy Application** button.
 
     ![Screenshot of the Akamai EAA console Deployment tab showing the Deploy application button.](./media/header-akamai-tutorial/configure-14.png)
 
@@ -302,17 +302,17 @@ Click Save and Go to Authentication.
 
 #### Authentication
 
-In the **Authentication** tab, click **Save and go to Services**.
+In the **Authentication** tab, select **Save and go to Services**.
 
 #### Services
 
-Click **Save and go to Advanced Settings**.
+Select **Save and go to Advanced Settings**.
 
 ![Screenshot of the Akamai EAA console Services tab for SECRETRDPAPP showing the Save and go to AdvancedSettings button in the bottom right corner.](./media/header-akamai-tutorial/configure-21.png)
 
 #### Advanced Settings
 
-1. Click **Save and go to Deployment**.
+1. Select **Save and go to Deployment**.
 
     ![Screenshot of the Akamai EAA console Advanced Settings tab for SECRETRDPAPP showing the settings for Remote desktop configuration.](./media/header-akamai-tutorial/configure-22.png)
 
@@ -358,17 +358,17 @@ Click **Save and go to Advanced Settings**.
 
 #### Authentication
 
-In the **Authentication** tab, click on **Save and go to Services**.
+In the **Authentication** tab, select on **Save and go to Services**.
 
 #### Services
 
-Click **Save and go to Advanced Settings**.
+Select **Save and go to Advanced Settings**.
 
 ![Screenshot of the Akamai EAA console Services tab for SSH-SECURE showing the Save and go to AdvancedSettings button in the bottom right corner.](./media/header-akamai-tutorial/configure-29.png)
 
 #### Advanced Settings
 
-Click Save and to go Deployment.
+Select Save and to go Deployment.
 
 ![Screenshot of the Akamai EAA console Advanced Settings tab for SSH-SECURE showing the settings for Authentication and Health check configuration.](./media/header-akamai-tutorial/configure-30.png)
 
@@ -376,7 +376,7 @@ Click Save and to go Deployment.
 
 #### Deployment
 
-1. Click **Deploy application**.
+1. Select **Deploy application**.
 
     ![Screenshot of the Akamai EAA console Deployment tab for SSH-SECURE showing the Deploy application button.](./media/header-akamai-tutorial/configure-32.png)
 
@@ -445,7 +445,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
     ![Screenshot of the Akamai EAA console GROUPS ON SUPERDEMOLIVE DIRECTORY window. The EAAGroup with 1 User is listed under Groups.](./media/header-akamai-tutorial/eaagroup.png)
 
-1. Add the Directory to your Identity Provider by clicking **Identity** > **Identity Providers** and click on the **Directories** Tab and Click on **Assign directory**.
+1. Add the Directory to your Identity Provider by clicking **Identity** > **Identity Providers** and select on the **Directories** Tab and Select **Assign directory**.
 
 ### Configure KCD Delegation for EAA Walkthrough
 
@@ -454,7 +454,7 @@ In the **Authentication** tab, assign the Identity Provider.
 1. In the example we will use an account called **EAADelegation**. You can perform this using the **Active Directory users and computer** Snappin.
 
     > [!NOTE]
-    > The user name has to be in a specific format based on the **Identity Intercept Name**. From the figure 1 we see it is **corpapps.login.go.akamai-access.com**
+    > The user name has to be in a specific format based on the **Identity Intercept Name**. From the figure 1 we see it's **corpapps.login.go.akamai-access.com**
 
 1. User logon Name will be:`HTTP/corpapps.login.go.akamai-access.com`
 
@@ -470,12 +470,12 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Step 3: Configure Delegation
 
-1. For the EAADelegation account click on the Delegation tab.
+1. For the EAADelegation account select on the Delegation tab.
 
     ![Screenshot of an Administrator Command Prompt showing the command for configuring the SPN.](./media/header-akamai-tutorial/delegation.png)
 
     * Specify use any authentication Protocol.
-    * Click Add and Add the App Pool Account for the Kerberos Website. It should automatically resolve to correct SPN if configured correctly.
+    * Select Add and Add the App Pool Account for the Kerberos Website. It should automatically resolve to correct SPN if configured correctly.
 
 #### Step 4: Create a Keytab File for AKAMAI EAA
 
@@ -500,7 +500,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Step 5: Import Keytab in the AKAMAI EAA Console
 
-1. Click **System** > **Keytabs**.
+1. Select **System** > **Keytabs**.
 
     ![Screenshot of the Akamai EAA console showing Keytabs being selected from the System menu.](./media/header-akamai-tutorial/keytabs.png)
 
@@ -534,9 +534,9 @@ In this section, you create a user called B.Simon in Akamai. Work with [Akamai C
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Akamai for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Akamai for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Akamai tile in the My Apps, you should be automatically signed in to the Akamai for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Akamai tile in the My Apps, you should be automatically signed in to the Akamai for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Amazon Managed Grafana
 
-In this article,  you'll learn how to integrate Amazon Managed Grafana with Microsoft Entra ID. When you integrate Amazon Managed Grafana with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Amazon Managed Grafana with Microsoft Entra ID. When you integrate Amazon Managed Grafana with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Amazon Managed Grafana.
 * Enable your users to be automatically signed-in to Amazon Managed Grafana with their Microsoft Entra accounts.
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Amazon Managed Grafana** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<namespace>.grafana-workspace.<region>.amazonaws.com/login/saml`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [Amazon Managed Grafana Client support team](https://aws.amazon.com/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [Amazon Managed Grafana Client support team](https://aws.amazon.com/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Amazon Managed Grafana application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -114,27 +114,27 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Amazon Managed Grafana Console as an administrator.
 
-1. Click **Create workspace**. 
+1. Select **Create workspace**. 
 
 	![Screenshot shows creating workspace.](./media/amazon-managed-grafana-tutorial/console.png "Workspace")
 
-1. In the **Specify workspace details** page, type a unique **Workspace name** and click **Next**.
+1. In the **Specify workspace details** page, type a unique **Workspace name** and select **Next**.
 
 	![Screenshot shows workspace details.](./media/amazon-managed-grafana-tutorial/details.png "Specify details")
 
-1. In the **Configure settings** page, select **Security Assertion Markup Language(SAML)** checkbox and enable **Service managed** as permission type and click **Next**.
+1. In the **Configure settings** page, select **Security Assertion Markup Language(SAML)** checkbox and enable **Service managed** as permission type and select **Next**.
 
 	![Screenshot shows workspace settings.](./media/amazon-managed-grafana-tutorial/security.png "Settings")
 
-1. In the **Service managed permission settings**, select **Current account** and click **Next**.
+1. In the **Service managed permission settings**, select **Current account** and select **Next**.
 
 	![Screenshot shows permission settings.](./media/amazon-managed-grafana-tutorial/setting.png "permissions")
 
-1. In the **Review and create** page, verify all the workspace details and click **Create workspace**.
+1. In the **Review and create** page, verify all the workspace details and select **Create workspace**.
 
 	![Screenshot shows review and create page.](./media/amazon-managed-grafana-tutorial/review-workspace.png "Create Workspace")
 
-1. After creating workspace, click **Complete setup** to complete the SAML configuration.
+1. After creating workspace, select **Complete setup** to complete the SAML configuration.
 
 	![Screenshot shows SAML configuration.](./media/amazon-managed-grafana-tutorial/setup.png "SAML Configuration")
 
@@ -152,21 +152,21 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	1. In the **Assertion mapping** section, fill the required values according to your requirement.
 
-	1. Click **Save SAML configuration**.
+	1. Select **Save SAML configuration**.
 
 ### Create Amazon Managed Grafana test user
 
-In this section, a user called Britta Simon is created in Amazon Managed Grafana. Amazon Managed Grafana supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Amazon Managed Grafana, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Amazon Managed Grafana. Amazon Managed Grafana supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Amazon Managed Grafana, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Amazon Managed Grafana Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to Amazon Managed Grafana Sign-on URL where you can initiate the login flow. 
 
 * Go to Amazon Managed Grafana Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Amazon Managed Grafana tile in the My Apps, this will redirect to Amazon Managed Grafana Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Amazon Managed Grafana tile in the My Apps, this redirects to Amazon Managed Grafana Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

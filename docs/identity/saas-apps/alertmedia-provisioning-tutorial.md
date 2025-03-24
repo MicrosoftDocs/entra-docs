@@ -42,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and AlertMedia](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-alertmedia-to-support-provisioning-with-azure-ad'></a>
@@ -50,10 +50,10 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure AlertMedia to support provisioning with Microsoft Entra ID
 
 1. Log into your AlertMedia account. Navigate to **Company > API**.
-2. Click **Add New**.
+2. Select **Add New**.
 3. Choose to give your **API Integration** a name to help you easily recognize where the keys are being used.
 4. Select the admin with which you’d like to associate the integration.
-5. Click the **Generate Keys** and **Save** button.
+5. Select the **Generate Keys** and **Save** button.
 6. Copy and save the **Client Token** from your integration. This is used as the **Secret Token** in the Provisioning tab of your AlertMedia application.
 
 
@@ -61,7 +61,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add AlertMedia from the Microsoft Entra application gallery
 
-Add AlertMedia from the Microsoft Entra application gallery to start managing provisioning to AlertMedia. If you have previously setup AlertMedia for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add AlertMedia from the Microsoft Entra application gallery to start managing provisioning to AlertMedia. If you have previously setup AlertMedia for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       * (custom domain) `https://subdomain.alertmedia.com/api/scim/v3`
 
-      Input the **Secret Token** as retrieved earlier in Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to AlertMedia. If the connection fails, ensure your AlertMedia account has Admin permissions and try again.
+      Input the **Secret Token** as retrieved earlier in Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to AlertMedia. If the connection fails, ensure your AlertMedia account has Admin permissions and try again.
 
       ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to AlertMedia**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to AlertMedia in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in AlertMedia for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the AlertMedia API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to AlertMedia in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in AlertMedia for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the AlertMedia API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -160,7 +160,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

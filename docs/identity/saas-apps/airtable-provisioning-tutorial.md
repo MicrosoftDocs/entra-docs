@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 *  Determine what data to [map between Microsoft Entra ID and Airtable](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-create-an-airtable-personal-access-token-to-authorize-provisioning-with-azure-ad'></a>
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    1. Enter the Personal Access Token created in **Step 2** above as **Secret Token**.
 
-   Click **Test Connection** to ensure Microsoft Entra ID can connect to Airtable. If the connection fails, ensure your Airtable account has Admin permissions and that your personal access token has the appropriate scope applied and try again.
+   Select **Test Connection** to ensure Microsoft Entra ID can connect to Airtable. If the connection fails, ensure your Airtable account has Admin permissions and that your personal access token has the appropriate scope applied and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -183,7 +183,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
