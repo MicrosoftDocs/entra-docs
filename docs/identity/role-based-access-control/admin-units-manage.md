@@ -10,7 +10,7 @@ ms.subservice: role-based-access-control
 ms.date: 01/03/2025
 ms.author: rolyon
 ms.reviewer: anandy
-ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
+ms.custom: oldportal, it-pro, no-azure-ad-ps-ref
 ---
 
 # Create or delete administrative units
