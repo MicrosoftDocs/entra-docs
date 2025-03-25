@@ -8,16 +8,16 @@ ms.date: 03/30/2025
 ---
 # Service principal-less authentication mitigation
 
-From March 2026, Microsoft Entra ID will no longer support service principal-less authentication behavior. In this article, you'll learn how to take action for the service principal-less authentication behavior deprecation as a tenant administrator, including verifying access, creating an enterprise application, and verifying tokens.
+From March 2026, Microsoft Entra ID will no longer support service principal-less authentication behavior. In this article, you'll learn how to prepare for the deprecation of service principal-less authentication. As a tenant administrator you will verify access, create an enterprise application, and verify tokens.
 
 ## Prerequisites
 - An account in the resource tenant with at least the **Application administrator** or **Cloud application administrator** role assigned. 
 
 ## Transitioning to SP-less authentication
 
-Microsoft Entra ID will block authentication for multitenant applications that do not have an enterprise application registration in the resource tenant. This scenario is also known as service principal-less authentication. This behavior has already been blocked for most resources. This change will address a few remaining exceptions. Service principal-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
+Microsoft Entra ID will block authentication for multitenant applications that don't have an enterprise application registration in the resource tenant. This scenario is also known as service principal-less authentication. This behavior has already been blocked for most resources. This change will address a few remaining exceptions. Service principal-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
 
-This change to service principal-less authentication will make client service principal a requirement for all applications in order to improve our “Security by default” ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). Service principal-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations. Microsoft has verified that validations are not vulnerable to service principal-less authentication. However, with this action, the risk of this gap re-appearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
+This change to service principal-less authentication will make client service principal a requirement for all applications in order to improve our “Security by default” ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). Service principal-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations. Microsoft has verified that validations aren't vulnerable to service principal-less authentication. However, with this action, the risk of this gap re-appearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
 
 Additionally, by enforcing the requirement that applications must be registered in every tenant where they authenticate, we reinforce tenant administrator’s governance of all access, including the ability to write conditional access policies for these applications. 
 
@@ -25,7 +25,7 @@ You must act **before March 31, 2026**, to avoid authentication failure of appli
 
 ## Use sign-in logs to find service principal-less applications
 
-First, you'll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
+First, youll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
 
 1. Navigate to the [Microsoft Entra admin center](https://entra.microsoft.com/#home).
 2. On the left navigation panel, go to **Identity** > **Show more...** > **Monitoring & health** > **Sign-in logs**.
@@ -38,7 +38,7 @@ First, you'll need to verify that access by the named applications to the resour
 
 ## Create enterprise application
 
-Next, you'll need to [create an enterprise application](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell) in the resource tenant for each of the named applications. The resource tenant administrator must register the application using the Client App ID through the sign-in logs method from above.
+Next, youll need to [create an enterprise application](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell) in the resource tenant for each of the named applications. The resource tenant administrator must register the application using the Client App ID through the sign-in logs method from above.
 
 ## Verify tokens
 
