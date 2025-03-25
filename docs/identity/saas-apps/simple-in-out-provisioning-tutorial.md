@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Simple In/Out and M
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Simple In/Out.
-> * Remove users in Simple In/Out when they do not require access anymore.
+> * Remove users in Simple In/Out when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Simple In/Out.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Simple In/Out (recommended).
 
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and Simple In/Out](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure Simple In/Out to support provisioning with Microsoft Entra ID
@@ -43,23 +43,23 @@ The scenario outlined in this article assumes that you already have the followin
 Any one of your Simple In/Out administrator-level users can configure Single Sign On.
 
 1. In a web browser, head to [simpleinout.com](https://www.simpleinout.com) and sign in with a Simple In/Out administrator's credentials.
-1. Click **Settings** in the upper-right.
-1. Click **Single Sign On** under the **ENTERPRISE** menu on the left.
-1. If you are not yet on an Enterprise level plan, this settings page will alert you that you need to upgrade your plan in order to use Single Sign On. Follow the link to upgrade your plan if necessary and return to this page.
-1. Be sure your provider is set to **Microsoft** and click the **Connect Single Sign On** button.
-1. You will be asked to confirm that you wish to enable Single Sign On. Click **OK** to confirm.
-1. Click **Reveal** on your Recovery Key and store this entire key in a safe place. **IMPORTANT!** If you are ever locked out of your Microsoft accounts and need to disconnect SSO without access, you'll be required to relay the Recovery Key to Simple In/Out technical support.
-1. Click **Reveal** on your Bearer Token and make note of it. You'll need this for Step 5.6.
+1. Select **Settings** in the upper-right.
+1. Select **Single Sign On** under the **ENTERPRISE** menu on the left.
+1. If you aren't yet on an Enterprise level plan, this settings page will alert you that you need to upgrade your plan in order to use Single Sign On. Follow the link to upgrade your plan if necessary and return to this page.
+1. Be sure your provider is set to **Microsoft** and select the **Connect Single Sign On** button.
+1. You be asked to confirm that you wish to enable Single Sign On. Select **OK** to confirm.
+1. Select **Reveal** on your Recovery Key and store this entire key in a safe place. **IMPORTANT!** If you're ever locked out of your Microsoft accounts and need to disconnect SSO without access, you be required to relay the Recovery Key to Simple In/Out technical support.
+1. Select **Reveal** on your Bearer Token and make note of it. You'll need this for Step 5.6.
 
 * When a new user is provisioned from Microsoft Entra ID to Simple In/Out, Simple In/Out will set that user's role to the default role for your organization. This role will govern the user's permissions inside Simple In/Out. For existing users that may be converted to SSO, Simple In/Out will maintain their existing role.
 
-* After users are provisioned to Simple In/Out, any administrator-level user can edit a user's role. This is done by clicking on a user on the Simple In/Out board, then clicking the **Edit User** button that appears in the user's profile dialog.
+* After users are provisioned to Simple In/Out, any administrator-level user can edit a user's role. This is done by selecting a user on the Simple In/Out board, then selecting the **Edit User** button that appears in the user's profile dialog.
 
-* You can change the default role in Simple In/Out as well as customize the permissions in the role on Simple In/Out's website.
+* You can change the default role in Simple In/Out and customize the permissions in the role on Simple In/Out's website.
 
-1. Within Simple In/Out's website, click **Settings** in the upper-right
-1. Click **Roles** under the **USERS** menu on the left.
-1. Click the **Edit** button associated with your default role as designated by the green checkmark.
+1. Within Simple In/Out's website, select **Settings** in the upper-right
+1. Select **Roles** under the **USERS** menu on the left.
+1. Select the **Edit** button associated with your default role as designated by the green checkmark.
 1. Any settings can be changed from here and will immediately take effect.
 
 ## Step 3: Add Simple In/Out from the Microsoft Entra application gallery
@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Simple In/Out Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Simple In/Out. If the connection fails, ensure your Simple In/Out account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Simple In/Out Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Simple In/Out. If the connection fails, ensure your Simple In/Out account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -139,7 +139,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
