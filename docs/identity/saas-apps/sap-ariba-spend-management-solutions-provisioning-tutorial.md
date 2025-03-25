@@ -21,7 +21,7 @@ This article describes the steps you need to perform in SAP Cloud Identity Servi
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in SAP Spend Management solution apps to enable single sign-on to SAP Spend Management solution apps
-> * Remove users in SAP Spend Management solution apps when they do not require access anymore
+> * Remove users in SAP Spend Management solution apps when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and SAP Spend Management Solution apps
 
 ## Prerequisites
@@ -51,9 +51,9 @@ To prepare for provisioning users into SAP Spend Management solution apps or oth
 
 There are two ways to provision users from Microsoft Entra into SAP Cloud Identity Services.
 
-* If you will be using groups from Microsoft Entra ID, such as to assign users to roles in SAP Spend Management solution apps, then use SAP Cloud Identity Services provisioning. First, create Microsoft Entra groups for your SAP business roles used in SAP Analytics Cloud. Then, in SAP Cloud Identity Services provisioning, [configure Microsoft Entra ID as a source](https://help.sap.com/docs/identity-provisioning/identity-provisioning/microsoft-azure-active-directory) to bring users and groups from Microsoft Entra ID to SAP Cloud Identity Services and map the created groups to your SAP business roles. For more information, see [SAP documentation on how to provision users from Microsoft Azure AD to SAP Cloud Identity Services - Identity Authentication](https://blogs.sap.com/2022/02/04/provision-users-from-microsoft-azure-ad-to-sap-cloud-identity-services-identity-authentication/).
+* If you be using groups from Microsoft Entra ID, such as to assign users to roles in SAP Spend Management solution apps, then use SAP Cloud Identity Services provisioning. First, create Microsoft Entra groups for your SAP business roles used in SAP Analytics Cloud. Then, in SAP Cloud Identity Services provisioning, [configure Microsoft Entra ID as a source](https://help.sap.com/docs/identity-provisioning/identity-provisioning/microsoft-azure-active-directory) to bring users and groups from Microsoft Entra ID to SAP Cloud Identity Services and map the created groups to your SAP business roles. For more information, see [SAP documentation on how to provision users from Microsoft Azure AD to SAP Cloud Identity Services - Identity Authentication](https://blogs.sap.com/2022/02/04/provision-users-from-microsoft-azure-ad-to-sap-cloud-identity-services-identity-authentication/).
 
-* Alternatively, if you do not need to use groups in Microsoft Entra ID, then you can use the Microsoft Entra provisioning service. In this scenario, create an application representing an SAP Spend Management solution app, and assign users who need access to the SAP Spend Management solution app to that application. Then, configure [automatic user provisioning with Microsoft Entra ID to SAP Cloud Identity Services for](sap-cloud-platform-identity-authentication-provisioning-tutorial.md). Wait for those users to be provisioned into SAP Cloud Identity Services, and verify they have the attributes necessary for your SAP Spend Management solution target app.
+* Alternatively, if you don't need to use groups in Microsoft Entra ID, then you can use the Microsoft Entra provisioning service. In this scenario, create an application representing an SAP Spend Management solution app, and assign users who need access to the SAP Spend Management solution app to that application. Then, configure [automatic user provisioning with Microsoft Entra ID to SAP Cloud Identity Services for](sap-cloud-platform-identity-authentication-provisioning-tutorial.md). Wait for those users to be provisioned into SAP Cloud Identity Services, and verify they have the attributes necessary for your SAP Spend Management solution target app.
 
 > [!NOTE]
 > Start small. Test with a small set of users and groups before rolling out to everyone. Check the users have the right access in SAP downstream targets and when they sign in, they have the right roles.

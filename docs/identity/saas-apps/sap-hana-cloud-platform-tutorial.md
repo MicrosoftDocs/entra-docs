@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with SAP Business Technology Platform
 
-In this article,  you'll learn how to integrate SAP Business Technology Platform with Microsoft Entra ID. When you integrate SAP Business Technology Platform with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SAP Business Technology Platform with Microsoft Entra ID. When you integrate SAP Business Technology Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAP Business Technology Platform.
 * Enable your users to be automatically signed-in to SAP Business Technology Platform with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of SAP Business Technology Platform into Microsoft 
 1. In the **Add from the gallery** section, type **SAP Business Technology Platform** in the search box.
 1. Select **SAP Business Technology Platform** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-sap-business-technology-platform'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with SAP Business Technology Platform,
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
     1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure SAP Business Technology Platform SSO](#configure-sap-business-technology-platform-sso)** - to configure the Single Sign-On settings on application side.
-    1. **[Create SAP Business Technology Platform test user](#create-sap-business-technology-platform-test-user)** - to have a counterpart of Britta Simon in SAP Business Technology Platform that is linked to the Microsoft Entra representation of user.
+    1. **[Create SAP Business Technology Platform test user](#create-sap-business-technology-platform-test-user)** - to have a counterpart of Britta Simon in SAP Business Technology Platform that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,13 +72,13 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SAP Business Technology Platform** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, enter the values for the following fields:
 
-	a. In the **Identifier** textbox you will provide your SAP Business Technology Platform's type a URL using one of the following patterns: 
+	a. In the **Identifier** textbox you provide your SAP Business Technology Platform's type a URL using one of the following patterns: 
 
     | **Identifier** |
     |-----------|
@@ -111,9 +111,9 @@ Follow these steps to enable Microsoft Entra SSO.
     | `https://<subdomain>.hana.ondemand.com/<instancename>` |
 
 	> [!NOTE] 
-	> These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Contact [SAP Business Technology Platform Client support team](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/5dd739823b824b539eee47b7860a00be.html) to get Sign-On URL and Identifier. Reply URL you can get from trust management section which is explained later in the article.
+	> These values aren't real. Update these values with the actual Identifier,Reply URL and Sign on URL. Contact [SAP Business Technology Platform Client support team](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/5dd739823b824b539eee47b7860a00be.html) to get Sign-On URL and Identifier. Reply URL you can get from trust management section which is explained later in the article.
 	> 
-4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -125,7 +125,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign on to the SAP Business Technology Platform Cockpit at `https://account.<landscape host>.ondemand.com/cockpit`(for example: https://account.hanatrial.ondemand.com/cockpit).
 
-2. Click the **Trust** tab.
+2. Select the **Trust** tab.
    
     ![Trust](./media/sap-hana-cloud-platform-tutorial/account.png "Trust")
 
@@ -133,31 +133,31 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot that shows the "Trust Management" section with the "Local Service Provider" tab selected and all text boxes highlighted.](./media/sap-hana-cloud-platform-tutorial/service.png "Trust Management")
    
-    a. Click **Edit**.
+    a. Select **Edit**.
 
     b. As **Configuration Type**, select **Custom**.
 
     c. As **Local Provider Name**, leave the default value. Copy this value and paste it into the **Identifier** field in the Microsoft Entra configuration for SAP Business Technology Platform.
 
-    d. To generate a **Signing Key** and a **Signing Certificate** key pair, click **Generate Key Pair**.
+    d. To generate a **Signing Key** and a **Signing Certificate** key pair, select **Generate Key Pair**.
 
     e. As **Principal Propagation**, select **Disabled**.
 
     f. As **Force Authentication**, select **Disabled**.
 
-    g. Click **Save**.
+    g. Select **Save**.
 
 4. After saving the **Local Service Provider** settings, perform the following to obtain the Reply URL:
    
     ![Get Metadata](./media/sap-hana-cloud-platform-tutorial/certificate.png "Get Metadata")
 
-    a. Download the SAP Business Technology Platform metadata file by clicking **Get Metadata**.
+    a. Download the SAP Business Technology Platform metadata file by selecting **Get Metadata**.
 
     b. Open the downloaded SAP Business Technology Platform metadata XML file, and then locate the **ns3:AssertionConsumerService** tag.
  
     c. Copy the value of the **Location** attribute, and then paste it into the **Reply URL** field in the Microsoft Entra configuration for SAP Business Technology Platform.
 
-5. Click the **Trusted Identity Provider** tab, and then click **Add Trusted Identity Provider**.
+5. Select the **Trusted Identity Provider** tab, and then select **Add Trusted Identity Provider**.
    
     ![Screenshot that shows the "Trust Management" page with the "Trusted Identity Provider" tab selected.](./media/sap-hana-cloud-platform-tutorial/add-service.png "Trust Management")
    
@@ -166,7 +166,7 @@ Follow these steps to enable Microsoft Entra SSO.
     > 
     > 
 
-6. Click the **General** tab, and then click **Browse** to upload the downloaded metadata file.
+6. Select the **General** tab, and then select **Browse** to upload the downloaded metadata file.
     
     ![Trust Management](./media/sap-hana-cloud-platform-tutorial/general.png "Trust Management")
     
@@ -174,13 +174,13 @@ Follow these steps to enable Microsoft Entra SSO.
     >After uploading the metadata file, the values for **Single Sign-on URL**, **Single Logout URL**, and **Signing Certificate** are populated automatically.
     > 
      
-7. Click the **Attributes** tab.
+7. Select the **Attributes** tab.
 
 8. On the **Attributes** tab, perform the following step:
     
     ![Attributes](./media/sap-hana-cloud-platform-tutorial/principal-attribute.png "Attributes") 
 
-    a. Click **Add Assertion-Based Attribute**, and then add the following assertion-based attributes:
+    a. Select **Add Assertion-Based Attribute**, and then add the following assertion-based attributes:
        
     | Assertion Attribute | Principal Attribute |
     | --- | --- |
@@ -192,9 +192,9 @@ Follow these steps to enable Microsoft Entra SSO.
     >The configuration of the Attributes depends on how the application(s) on SCP are developed, that is, which attribute(s) they expect in the SAML response and under which name (Principal Attribute) they access this attribute in the code.
     > 
     
-    b. The **Default Attribute** in the screenshot is just for illustration purposes. It is not required to make the scenario work.  
+    b. The **Default Attribute** in the screenshot is just for illustration purposes. It isn't required to make the scenario work.  
  
-    c. The names and values for **Principal Attribute** shown in the screenshot depend on how the application is developed. It is possible that your application requires different mappings.
+    c. The names and values for **Principal Attribute** shown in the screenshot depend on how the application is developed. It's possible that your application requires different mappings.
 
 ### Assertion-based groups
 
@@ -218,25 +218,25 @@ In order to enable Microsoft Entra users to log in to SAP Business Technology Pl
    
     ![Authorizations](./media/sap-hana-cloud-platform-tutorial/roles.png "Authorizations")
    
-    a. Click **Authorization**.
+    a. Select **Authorization**.
 
-    b. Click the **Users** tab.
+    b. Select the **Users** tab.
 
     c. In the **User** textbox, type the user’s email address.
 
-    d. Click **Assign** to assign the user to a role.
+    d. Select **Assign** to assign the user to a role.
 
-    e. Click **Save**.
+    e. Select **Save**.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to SAP Business Technology Platform Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to SAP Business Technology Platform Sign-on URL where you can initiate the login flow. 
 
 * Go to SAP Business Technology Platform Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the SAP Business Technology Platform tile in the My Apps, you should be automatically signed in to the SAP Business Technology Platform for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the SAP Business Technology Platform tile in the My Apps, you should be automatically signed in to the SAP Business Technology Platform for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
