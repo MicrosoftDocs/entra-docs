@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both SAS Viya SSO and Mi
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in SAS Viya SSO.
-> * Remove users in SAS Viya SSO when they do not require access anymore.
+> * Remove users in SAS Viya SSO when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and SAS Viya SSO.
 > * [Single sign-on](sas-viya-sso-tutorial.md) to SAS Viya SSO (recommended).
 
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and SAS Viya SSO](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure SAS Viya SSO to support provisioning with Microsoft Entra ID
@@ -75,11 +75,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your SAS Viya SSO Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to SAS Viya SSO. If the connection fails, ensure your SAS Viya SSO account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your SAS Viya SSO Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to SAS Viya SSO. If the connection fails, ensure your SAS Viya SSO account has Admin permissions and try again.
 
    ### Tenant URL
 
-   * To configure the Microsoft Entra provisioning service, you will need your tenant URL.
+   * To configure the Microsoft Entra provisioning service, you need your tenant URL.
 
       Example: 
 
@@ -134,7 +134,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
