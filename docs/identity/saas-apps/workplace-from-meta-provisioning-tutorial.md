@@ -18,7 +18,7 @@ This article describes the steps you need to do in both Workplace from Meta and 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Workplace from Meta
-> * Remove users in Workplace from Meta when they do not require access anymore
+> * Remove users in Workplace from Meta when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Workplace from Meta
 > * [Single sign-on](./workplacebyfacebook-tutorial.md) to Workplace from Meta (recommended)
 
@@ -33,7 +33,7 @@ The scenario outlined in this article assumes that you already have the followin
 * A Workplace from Meta single-sign on enabled subscription
 
 > [!NOTE]
-> To test the steps in this article,  we do not recommend using a production environment.
+> To test the steps in this article,  we don't recommend using a production environment.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -45,7 +45,7 @@ To test the steps in this article,  you should follow these recommendations:
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Workplace from Meta](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-workplace-by-facebook-to-support-provisioning-with-azure-ad'></a>
@@ -88,14 +88,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Ensure the "Tenant URL" section is populated with the correct endpoint: https://scim.workplace.com/. Under the **Admin Credentials** section, click on **Authorize**. You'll be redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and click on the **Continue** button. Click **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
+1. Ensure the "Tenant URL" section is populated with the correct endpoint: https://scim.workplace.com/. Under the **Admin Credentials** section, select **Authorize**. You'll be redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
 
  	![Screenshot shows Admin Credentials dialog box with an Authorize option.](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 
  	![Authorize](./media/workplace-by-facebook-provisioning-tutorial/workplace-login.png)
 
    > [!NOTE]
-   > Failure to change the URL to https://scim.workplace.com/ will result in a failure when trying to save the configuration 
+   > Failure to change the URL to https://scim.workplace.com/ results in a failure when trying to save the configuration 
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Workplace from Meta**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Workplace from Meta in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Workplace from Meta for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Workplace from Meta API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Workplace from Meta in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Workplace from Meta for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Workplace from Meta API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -150,7 +150,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -162,7 +162,7 @@ This operation starts the initial synchronization cycle of all users defined in 
 
 ## Troubleshooting tips
 *  If you see a user unsuccessfully created and there's an audit log event with the code "1789003" it means that the user is from an unverified domain.
-*  There are cases where users get an error 'ERROR: Missing Email field: You must provide an email Error returned from Facebook: Processing of the HTTP request resulted in an exception. See the HTTP response returned by the 'Response' property of this exception for details. This operation was retried zero times. It will be retried again after this date'. This error is due to customers mapping mail, rather than userPrincipalName, to Facebook email, yet some users don't have a mail attribute. 
+*  There are cases where users get an error 'ERROR: Missing Email field: You must provide an email Error returned from Facebook: Processing of the HTTP request resulted in an exception. See the HTTP response returned by the 'Response' property of this exception for details. This operation was retried zero times. It's retried again after this date'. This error is due to customers mapping mail, rather than userPrincipalName, to Facebook email, yet some users don't have a mail attribute. 
 To avoid the errors and successfully provision the failed users to Workplace from Facebook, modify the attribute mapping to the Workplace from Facebook email attribute to Coalesce([mail],[userPrincipalName]) or unassign the user from Workplace from Facebook, or provision an email address for the user.  
 *  There's an option in Workplace, which allows the existence of [users without email addresses.](https://www.workplace.com/resources/tech/account-management/email-less#enable) If this setting is toggled on the Workplace side, provisioning on the Azure side must be restarted in order for users without emails to successfully be created in Workplace.  
 
@@ -173,7 +173,7 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the steps b
 * Custom attribute mappings
 
 > [!NOTE]
-> Be sure to note any changes that have been made to the settings listed above before completing the steps below. Failure to do so will result in the loss of customized settings. 
+> Be sure to note any changes that have been made to the settings listed above before completing the steps below. Failure to do so results in the loss of customized settings. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Workplace from Meta**.

@@ -19,7 +19,7 @@ This article describes the steps you need to perform in both Whimsical and Micro
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Whimsical
-> * Remove users in Whimsical when they do not require access anymore
+> * Remove users in Whimsical when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Whimsical
 > * [Single sign-on](benq-iam-tutorial.md) to Whimsical (recommended)
 
@@ -33,22 +33,22 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Whimsical](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-whimsical-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Whimsical to support provisioning with Microsoft Entra ID
 1. To enable SCIM, you must first set up SAML SSO with Microsoft Entra ID.
-1. Go to "Workspace Settings", which you'll find under your workspace name in the top left.
-1. Enable SCIM provisioning and click "Reveal" to retrieve the token.
+1. Go to "Workspace Settings", which you find under your workspace name in the top left.
+1. Enable SCIM provisioning and select "Reveal" to retrieve the token.
 1. In the "Provisioning" tab in Microsoft Entra ID, set "Provisioning Mode" to "Automatic", and paste "https://whimsical.com/public-api/scim-v2/?aadOptscim062020" into "Tenant URL"
 
 <a name='step-3-add-whimsical-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Whimsical from the Microsoft Entra application gallery
 
-Add Whimsical from the Microsoft Entra application gallery to start managing provisioning to Whimsical. If you have previously setup Whimsical for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Whimsical from the Microsoft Entra application gallery to start managing provisioning to Whimsical. If you have previously setup Whimsical for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -79,7 +79,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Whimsical Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Whimsical. If the connection fails, ensure your Whimsical account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Whimsical Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Whimsical. If the connection fails, ensure your Whimsical account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Whimsical**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Whimsical in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Whimsical for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Whimsical API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Whimsical in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Whimsical for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Whimsical API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
