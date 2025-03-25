@@ -33,7 +33,7 @@ For example, when calling the MSOnline PowerShell cmdlet `Get-MsolUserRole`, Mic
  - The ability to upgrade your Entra Connect Sync instance. You can still perform the upgrade after April 7, 2025
    
 >[!NOTE]
->If you're unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). Failure to update will result in loosing the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**.
+>If you're unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). Failure to update will result in losing the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**.
 
 ### Minimum versions 
 
