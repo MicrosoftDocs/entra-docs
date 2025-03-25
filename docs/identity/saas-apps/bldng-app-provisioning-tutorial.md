@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BLDNG APP so that I can streamline the user management process and ensure that users have the appropriate access to BLDNG APP.
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both BLDNG APP and Micro
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in BLDNG.AI 
-> * Remove users in BLDNG.AI  when they do not require access anymore.
+> * Remove users in BLDNG.AI  when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and BLDNG.AI
 > * Provision groups and group memberships in BLDNG.AI
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to BLDNG.AI (recommended).
@@ -39,18 +39,18 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and BLDNG APP](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-bldng-app-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure BLDNG APP to support provisioning with Microsoft Entra ID
 
-* To configure provisioning of users, user groups and group memberships from Azure you'll need a BLDNG.AI agreement and tenant.
-* To attain an agreement, please contact [sales](mailto:salg@bldng.ai) to get in contact with a sales representative. You will not be able to proceed nor use BLDNG APP if an agreement does not exist.
+* To configure provisioning of users, user groups and group memberships from Azure you need a BLDNG.AI agreement and tenant.
+* To attain an agreement, please contact [sales](mailto:salg@bldng.ai) to get in contact with a sales representative. You aren't able to proceed nor use BLDNG APP if an agreement doesn't exist.
 * If you already have an active agreement but need to enable user provisioning only, contact [support](mailto:support@bldng.ai) directly.
 
-When an agreement has been established, you will receive an email with detailed instructions on how to set up user provisioning. The email will also include details regarding admin consent (on behalf of your organization) for using BLDNG APP if needed. 
+When an agreement has been established, you receive an email with detailed instructions on how to set up user provisioning. The email will also include details regarding admin consent (on behalf of your organization) for using BLDNG APP if needed. 
 
 The email will also include Tenant URL and Secret Token for use when configuring automatic user provisioning. 
 
@@ -58,7 +58,7 @@ The email will also include Tenant URL and Secret Token for use when configuring
 
 ## Step 3: Add BLDNG APP from the Microsoft Entra application gallery
 
-Add BLDNG APP from the Microsoft Entra application gallery to start managing provisioning to BLDNG APP. If you have previously setup BLDNG APP for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add BLDNG APP from the Microsoft Entra application gallery to start managing provisioning to BLDNG APP. If you have previously setup BLDNG APP for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your BLDNG APP **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to BLDNG APP. If the connection fails , ensure your BLDNG APP account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your BLDNG APP **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to BLDNG APP. If the connection fails , ensure your BLDNG APP account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -101,10 +101,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to BLDNG APP**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to BLDNG APP in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in BLDNG APP for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the BLDNG APP API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to BLDNG APP in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in BLDNG APP for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the BLDNG APP API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
 > [!NOTE]
-> It is important to note that if you change the mapping of **externalId**, the users in your tenant will not be able to log in using BLDNG APP.
+> It's important to note that if you change the mapping of **externalId**, the users in your tenant isn't able to log in using BLDNG APP.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -140,7 +140,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OfficeSpace Software so that I can control who has access to OfficeSpace Software, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -57,7 +57,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values aren't real. Update these values with the actual Sign-on URL and Identifier. Contact the [OfficeSpace Software Client support team](mailto:support@officespacesoftware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. OfficeSpace Software application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. OfficeSpace Software application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. OfficeSpace Software application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. OfficeSpace Software application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 
@@ -121,11 +121,11 @@ In this section, a user called B.Simon is created in OfficeSpace Software. Offic
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select on **Test this application**, this will redirect to OfficeSpace Software Sign-on URL where you can initiate the sign-in flow. 
+* Select **Test this application**, this option redirects to OfficeSpace Software Sign-on URL where you can initiate the sign-in flow. 
 
 * Go to OfficeSpace Software Sign-on URL directly and initiate the sign-in flow from there.
 
-* You can use Microsoft My Apps. When you select the OfficeSpace Software tile in the My Apps, this will redirect to OfficeSpace Software Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the OfficeSpace Software tile in the My Apps, this option redirects to OfficeSpace Software Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

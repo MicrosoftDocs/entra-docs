@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Silverback
 
-In this article,  you'll learn how to integrate Silverback with Microsoft Entra ID. When you integrate Silverback with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Silverback with Microsoft Entra ID. When you integrate Silverback with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Silverback.
 * Enable your users to be automatically signed-in to Silverback with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of Silverback into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, type **Silverback** in the search box.
 1. Select **Silverback** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-silverback'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Silverback, perform the following
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Silverback SSO](#configure-silverback-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Silverback test user](#create-silverback-test-user)** - to have a counterpart of B.Simon in Silverback that is linked to the Microsoft Entra representation of user.
+    1. **[Create Silverback test user](#create-silverback-test-user)** - to have a counterpart of B.Simon in Silverback that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Silverback** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
     ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -88,9 +88,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<YOURSILVERBACKURL>.com/ssp`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Silverback Client support team](mailto:helpdesk@matrix42.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Silverback Client support team](mailto:helpdesk@matrix42.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -108,11 +108,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows the Authentication Provider Settings.](./media/silverback-tutorial/admin.png "Settings")
 
-	a. 	Click on **Import from URL**.
+	a. 	Select **Import from URL**.
 
-	b.	Paste the copied Metadata URL and click **OK**.
+	b.	Paste the copied Metadata URL and select **OK**.
 
-	c.	Confirm with **OK** then the values will be populated automatically.
+	c.	Confirm with **OK** then the values are populated automatically.
 
 	d.	Enable **Show on Login Page**.
 
@@ -120,11 +120,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	f.	Create a **Title** for the button on the Self Service Portal.
 
-	g.	Upload an **Icon** by clicking on **Choose File**.
+	g.	Upload an **Icon** by selecting **Choose File**.
 
 	h.	Select the background **color** for the button.
 
-	i.	Click **Save**.
+	i.	Select **Save**.
 
 ### Create Silverback test user
 
@@ -152,7 +152,7 @@ To enable Microsoft Entra users to log in to Silverback, they must be provisione
 
 	f. In the **Confirm Password** text box, Reenter your password and confirm.
 
-	g. Click **Save**.
+	g. Select **Save**.
 
 > [!NOTE]
 > If you don’t want to create each user manually Enable the **Dynamic User Creation** Checkbox under **Admin** > **Authentication Provider**.
@@ -161,11 +161,11 @@ To enable Microsoft Entra users to log in to Silverback, they must be provisione
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Silverback Sign on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Silverback Sign on URL where you can initiate the login flow. 
 
 * Go to Silverback Sign on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Silverback tile in the My Apps, this will redirect to Silverback Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Silverback tile in the My Apps, this option redirects to Silverback Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

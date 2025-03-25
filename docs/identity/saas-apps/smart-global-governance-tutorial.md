@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Smart Global Governance
 
-In this article,  you'll learn how to integrate Smart Global Governance with Microsoft Entra ID. When you integrate Smart Global Governance with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Smart Global Governance with Microsoft Entra ID. When you integrate Smart Global Governance with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access Smart Global Governance.
 * Enable your users to be automatically signed in to Smart Global Governance with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Article description
 
-In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 Smart Global Governance supports SP-initiated and IDP-initiated SSO.
 
@@ -47,7 +47,7 @@ To configure the integration of Smart Global Governance into Microsoft Entra ID,
 1. In the **Add from the gallery** section, enter **Smart Global Governance** in the search box.
 1. Select **Smart Global Governance** in the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-smart-global-governance'></a>
 
@@ -55,7 +55,7 @@ To configure the integration of Smart Global Governance into Microsoft Entra ID,
 
 You'll configure and test Microsoft Entra SSO with Smart Global Governance by using a test user named B.Simon. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the corresponding user in Smart Global Governance.
 
-To configure and test Microsoft Entra SSO with Smart Global Governance, you'll take these high-level steps:
+To configure and test Microsoft Entra SSO with Smart Global Governance, you take these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use the feature.
     1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
@@ -108,7 +108,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -122,7 +122,7 @@ In this section, you'll create a test user called B.Simon.
 
 ### Grant access to the test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting that user access to Smart Global Governance.
+In this section, you enable B.Simon to use single sign-on by granting that user access to Smart Global Governance.
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. In the applications list, select **Smart Global Governance**.
@@ -134,8 +134,8 @@ In this section, you'll enable B.Simon to use single sign-on by granting that us
 
 	![Select Add user](common/add-assign-user.png)
 
-1. In the **Users and groups** dialog box, select **B.Simon** in the **Users** list, and then click the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
+1. In the **Users and groups** dialog box, select **B.Simon** in the **Users** list, and then select the **Select** button at the bottom of the screen.
+1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list and then select the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog box, select **Assign**.
 
 ## Configure Smart Global Governance SSO
@@ -148,7 +148,7 @@ Work with the [Smart Global Governance support team](mailto:support.tech@smartg
 
 ## Test SSO 
 
-In this section, you'll test your Microsoft Entra SSO configuration by using Access Panel.
+In this section, you test your Microsoft Entra SSO configuration by using Access Panel.
 
 When you select the Smart Global Governance tile in Access Panel, you should be automatically signed in to the Smart Global Governance instance for which you set up SSO. For more information about Access Panel, see [Introduction to Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 

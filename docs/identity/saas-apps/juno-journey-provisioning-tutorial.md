@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Juno Journey so that I can streamline the user management process and ensure that users have the appropriate access to Juno Journey.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Juno Journey and Mi
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Juno Journey
-> * Remove users in Juno Journey when they do not require access anymore
+> * Remove users in Juno Journey when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Juno Journey
 > * [Single sign-on](./juno-journey-tutorial.md) to Juno Journey (recommended)
 
@@ -37,20 +37,20 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Juno Journey](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-juno-journey-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Juno Journey to support provisioning with Microsoft Entra ID
 
-1. For **Secret Token**  and **Tenant URL** contact Juno Journey support team at support@the-juno.com. This value will be entered in the **Secret Token**  and **Tenant URL** fields respectively in the Provisioning tab of your Juno Journey application. 
+1. For **Secret Token**  and **Tenant URL** contact Juno Journey support team at support@the-juno.com. This value is entered in the **Secret Token**  and **Tenant URL** fields respectively in the Provisioning tab of your Juno Journey application. 
 
 <a name='step-3-add-juno-journey-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Juno Journey from the Microsoft Entra application gallery
 
-Add Juno Journey from the Microsoft Entra application gallery to start managing provisioning to Juno Journey. If you have previously setup Juno Journey for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Juno Journey from the Microsoft Entra application gallery to start managing provisioning to Juno Journey. If you have previously setup Juno Journey for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -81,7 +81,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input the tenant URL value retrieved earlier in **Tenant URL**. Input the secret token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Juno Journey. If the connection fails, ensure your Juno Journey account has admin permissions and try again.
+5. Under the **Admin Credentials** section, input the tenant URL value retrieved earlier in **Tenant URL**. Input the secret token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Juno Journey. If the connection fails, ensure your Juno Journey account has admin permissions and try again.
 
  	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/juno-journey-provisioning-tutorial/provisioning.png)
 
@@ -93,7 +93,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Juno Journey**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Juno Journey in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Juno Journey for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Juno Journey API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Juno Journey in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Juno Journey for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Juno Journey API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Variable|Type|
    |---|---|
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

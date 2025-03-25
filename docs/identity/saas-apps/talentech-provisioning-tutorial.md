@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Talentech and Micro
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Talentech
-> * Remove users in Talentech when they do not require access anymore
+> * Remove users in Talentech when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Talentech
 > * Provision groups and group memberships in Talentech
 > * Single sign-on to Talentech (recommended)
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Talentech](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-talentech-to-support-provisioning-with-azure-ad'></a>
@@ -45,27 +45,27 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in [Talentech](https://www.talentech.com).
 
-2. Navigate to **Integrations** in the left panel and click on **Add new integration**.
+2. Navigate to **Integrations** in the left panel and select **Add new integration**.
 
 	![Navigate](media/talentech-provisioning-tutorial/integrations.png)
 
-3. Enter a **Name** for the integration and click **Add**.
+3. Enter a **Name** for the integration and select **Add**.
 
-4. Navigate to the integration you created and click on **Create api-access token**.
+4. Navigate to the integration you created and select **Create api-access token**.
 
 	![api](media/talentech-provisioning-tutorial/token.png)
 
-5. An access token is generated. This value will be entered in the **Secret Token** field in the Provisioning tab of your Talentech application.
+5. An access token is generated. This value is entered in the **Secret Token** field in the Provisioning tab of your Talentech application.
 
 	![permanent](media/talentech-provisioning-tutorial/bearer.png)
 
-6. Reach out to Talentech support to generate a Tenant URL. This value will be entered in the **Tenant URL** field in the Provisioning tab of your Talentech application.
+6. Reach out to Talentech support to generate a Tenant URL. This value is entered in the **Tenant URL** field in the Provisioning tab of your Talentech application.
 
 <a name='step-3-add-talentech-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Talentech from the Microsoft Entra application gallery
 
-Add Talentech from the Microsoft Entra application gallery to start managing provisioning to Talentech. If you have previously setup Talentech for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Talentech from the Microsoft Entra application gallery to start managing provisioning to Talentech. If you have previously setup Talentech for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Talentech Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Talentech. If the connection fails, ensure your Talentech account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Talentech Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Talentech. If the connection fails, ensure your Talentech account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Talentech**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Talentech in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Talentech for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Talentech API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Talentech in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Talentech for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Talentech API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -138,7 +138,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

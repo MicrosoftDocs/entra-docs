@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EAB Implementation so that I can control who has access to EAB Implementation, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with EAB Implementation
 
-In this article,  you'll learn how to integrate EAB Implementation with Microsoft Entra ID. When you integrate EAB Implementation with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate EAB Implementation with Microsoft Entra ID. When you integrate EAB Implementation with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to EAB Implementation.
 * Enable your users to be automatically signed-in to EAB Implementation with their Microsoft Entra accounts.
@@ -47,7 +47,7 @@ To configure the integration of EAB Implementation into Microsoft Entra ID, you 
 1. In the **Add from the gallery** section, type **EAB Implementation** in the search box.
 1. Select **EAB Implementation** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-eab-implementation'></a>
 
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with EAB Implementation, perform the f
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure EAB Implementation SSO](#configure-eab-implementation-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create EAB Implementation test user](#create-eab-implementation-test-user)** - to have a counterpart of B.Simon in EAB Implementation that is linked to the Microsoft Entra representation of user.
+    1. **[Create EAB Implementation test user](#create-eab-implementation-test-user)** - to have a counterpart of B.Simon in EAB Implementation that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **EAB Implementation** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -94,9 +94,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.navigate.impl.eab.com/`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [EAB Implementation Client support team](mailto:EABTechSupport@eab.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. Contact [EAB Implementation Client support team](mailto:EABTechSupport@eab.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
 
@@ -116,11 +116,11 @@ In this section, you create a user called B.Simon in EAB Implementation. Work wi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to EAB Implementation Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to EAB Implementation Sign-on URL where you can initiate the login flow. 
 
 * Go to EAB Implementation Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the EAB Implementation tile in the My Apps, this will redirect to EAB Implementation Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the EAB Implementation tile in the My Apps, this option redirects to EAB Implementation Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Evercate so that I can streamline the user management process and ensure that users have the appropriate access to Evercate.
@@ -23,7 +23,7 @@ This article describes the steps you need to do in both Evercate and Microsoft E
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Evercate.
-> * Remove users in Evercate when they do not require access anymore.
+> * Remove users in Evercate when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Evercate.
 > * Provision groups and group memberships in Evercate.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Evercate (recommended).
@@ -38,18 +38,18 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Evercate](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-evercate-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Evercate to support provisioning with Microsoft Entra ID
 
-1. Log in to Evercate as an administrator and click on **Settings** in the top menu.
+1. Log in to Evercate as an administrator and select **Settings** in the top menu.
 1. Under Settings, navigate to **Advanced -> Connect Microsoft Entra ID**.
-1. Click the button "**I understand, connect Microsoft Entra ID**" to start the process.
+1. Select the button "**I understand, connect Microsoft Entra ID**" to start the process.
 	[![connect Microsoft Entra ID](media/evercate-provisioning-tutorial/connect-azure-ad-page.png)](media/evercate-provisioning-tutorial/connect-azure-ad-page.png#lightbox)
-1. Now you are taken to Microsoft’s Sign in page where you need to sign in as an administrator for your AD.
+1. Now you're taken to Microsoft’s Sign in page where you need to sign in as an administrator for your AD.
 
       The Microsoft user you sign in with must:
 
@@ -58,14 +58,14 @@ The scenario outlined in this article assumes that you already have the followin
 
 	[![Sign in](media/evercate-provisioning-tutorial/sign-in-page.png)](media/evercate-provisioning-tutorial/sign-in-page.png#lightbox)
 
-1. Tick the "**Consent on behalf of your organization**" before clicking accept.
+1. Tick the "**Consent on behalf of your organization**" before selecting accept.
 	[![Provide consent](media/evercate-provisioning-tutorial/consent-page.png)](media/evercate-provisioning-tutorial/consent-page.png#lightbox)
       > [!NOTE]
-      > If you missed ticking the consent checkbox, every user will get a similar dialog upon their first sign in. See below under the section “Configuring the application in Azure” on how to give consent for your organization after the connection is made.
+      > If you missed ticking the consent checkbox, every user gets a similar dialog upon their first sign in. See below under the section “Configuring the application in Azure” on how to give consent for your organization after the connection is made.
 
 1. Once you have successfully set up the connection to Microsoft Entra ID you can configure which AD features you want to enable in Evercate.
-1. Navigate to  **Settings -> Advanced -> Connect Microsoft Entra ID** you will see the token you need to enable provisioning (enabled from Microsoft Entra ID) and can tick the box for allowing single sign on for your Evercate account.
-1. Copy and save the token. This value will be entered in the **Secret Token** * field in the Provisioning tab of your Evercate application.
+1. Navigate to  **Settings -> Advanced -> Connect Microsoft Entra ID** you see the token you need to enable provisioning (enabled from Microsoft Entra ID) and can tick the box for allowing single sign on for your Evercate account.
+1. Copy and save the token. This value is entered in the **Secret Token** * field in the Provisioning tab of your Evercate application.
 
 <a name='step-3-add-evercate-from-the-azure-ad-application-gallery'></a>
 
@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Evercate Tenant URL as `https://adscimprovisioning.evercate.com/scim` and corresponding Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Evercate. If the connection fails, ensure your Evercate account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Evercate Tenant URL as `https://adscimprovisioning.evercate.com/scim` and corresponding Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Evercate. If the connection fails, ensure your Evercate account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -114,7 +114,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Evercate**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Evercate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Evercate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Evercate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Evercate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Evercate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Evercate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Evercate|
    |---|---|---|---|
@@ -146,7 +146,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

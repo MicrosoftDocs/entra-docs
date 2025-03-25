@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Insightsfirst, perform the follow
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Insightsfirst SSO](#configure-insightsfirst-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Insightsfirst test user](#create-insightsfirst-test-user)** - to have a counterpart of B.Simon in Insightsfirst that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Insightsfirst test user](#create-insightsfirst-test-user)** - to have a counterpart of B.Simon in Insightsfirst that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Insightsfirst** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -107,7 +107,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| ---------------|  --------- |
 	| Email | user.mail |
 
-1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
+1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
 	![Screenshot shows to Edit SAML Signing Certificate.](common/edit-certificate.png "Certificate")
 
@@ -133,11 +133,11 @@ In this section, a user called Britta Simon is created in Insightsfirst. Insight
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Insightsfirst Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Insightsfirst Sign-on URL where you can initiate the login flow.
  
 * Go to Insightsfirst Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you click the Insightsfirst tile in the My Apps, this will redirect to Insightsfirst Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Insightsfirst tile in the My Apps, this option redirects to Insightsfirst Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

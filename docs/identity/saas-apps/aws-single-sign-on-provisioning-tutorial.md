@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AWS IAM Identity Center so that I can streamline the user management process and ensure that users have the appropriate access to AWS IAM Identity Center.
@@ -50,11 +50,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. Choose **Settings** in the left navigation pane
 
-3. In **Settings**, click on Enable in the Automatic provisioning section.
+3. In **Settings**, select Enable in the Automatic provisioning section.
 
 	![Screenshot of enabling automatic provisioning.](media/aws-single-sign-on-provisioning-tutorial/automatic-provisioning.png)
 
-4. In the Inbound automatic provisioning dialog box, copy and save the **SCIM endpoint** and **Access Token** (visible after clicking on Show Token). These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your AWS IAM Identity Center application.
+4. In the Inbound automatic provisioning dialog box, copy and save the **SCIM endpoint** and **Access Token** (visible after selecting Show Token). These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your AWS IAM Identity Center application.
 	![Screenshot of extracting provisioning configurations.](media/aws-single-sign-on-provisioning-tutorial/inbound-provisioning.png)
 
 <a name='step-3-add-aws-iam-identity-center-from-the-azure-ad-application-gallery'></a>
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your AWS IAM Identity Center **Tenant URL** and **Secret Token** retrieved earlier in Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to AWS IAM Identity Center.
+5. Under the **Admin Credentials** section, input your AWS IAM Identity Center **Tenant URL** and **Secret Token** retrieved earlier in Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to AWS IAM Identity Center.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -154,7 +154,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you're ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -170,12 +170,12 @@ With PIM for Groups, you can provide just-in-time access to groups in Amazon Web
 **Configure your enterprise application for SSO and provisioning**
 1. Add AWS IAM Identity Center to your tenant, configure it for provisioning as described in the article above, and start provisioning. 
 1. Configure [single sign-on](aws-single-sign-on-provisioning-tutorial.md) for AWS IAM Identity Center.
-1. Create a [group](/azure/active-directory/fundamentals/how-to-manage-groups) that will provide all users access to the application.
+1. Create a [group](/azure/active-directory/fundamentals/how-to-manage-groups) that provides all users access to the application.
 1. Assign the group to the AWS Identity Center application.
 1. Assign your test user as a direct member of the group created in the previous step, or provide them access to the group through an access package. This group can be used for persistent, non-admin access in AWS.
 
 **Enable PIM for groups**
-1. Create a second group in Microsoft Entra ID. This group will provide access to admin permissions in AWS.
+1. Create a second group in Microsoft Entra ID. This group provides access to admin permissions in AWS.
 1. Bring the group under [management in Microsoft Entra PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups).
 1. Assign your test user as [eligible for the group in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner) with the role set to member.
 1. Assign the second group to the AWS IAM Identity Center application.
@@ -208,7 +208,7 @@ When provisioning a user to AWS, they're required to have the following attribut
 * displayName
 * userName 
 
-Users who don't have these attributes will fail with the following error
+Users who don't have these attributes fail with the following error
 
 ![errorcode](https://user-images.githubusercontent.com/83957767/146811532-8b95a90b-2a32-4094-87a3-1b8180793a66.png)
 
@@ -219,7 +219,7 @@ AWS doesn't support the following multi-valued attributes:
 * email
 * phone numbers
 
-Trying to flow the above as multi-valued attributes will result in the following error message
+Trying to flow the above as multi-valued attributes results in the following error message
 
 ![errorcode2](https://user-images.githubusercontent.com/83957767/146811704-8980c317-aa6b-43ad-bfb8-a17534fcb9d0.png)
 

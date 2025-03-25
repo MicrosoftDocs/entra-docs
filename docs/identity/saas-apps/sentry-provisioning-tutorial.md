@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Sentry and Microsof
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Sentry.
-> * Remove users in Sentry when they do not require access anymore.
+> * Remove users in Sentry when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Sentry.
 > * Provision groups and group memberships in Sentry.
 > * [Single sign-on](sentry-tutorial.md) to Sentry (recommended).
@@ -31,12 +31,12 @@ The scenario outlined in this article assumes that you already have the followin
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
-* This feature is only available if your Sentry organization is on a Business or Enterprise plan.It is not available on Trial plans.
+* This feature is only available if your Sentry organization is on a Business or Enterprise plan.It isn't available on Trial plans.
 * You'll need to have Azure SSO set up already configured for your organization.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Sentry](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-sentry-to-support-provisioning-with-azure-ad'></a>
@@ -46,13 +46,13 @@ The scenario outlined in this article assumes that you already have the followin
 1. Sign in to your Sentry Organization. Select **Settings > Auth**
 1. Under General Settings select **Enable SCIM**, then **Save Settings**
 1. Sentry will display **SCIM Information** that contains your Auth Token and SCIM Base URL.
-1. SCIM Base URL will be your Tenant URL in Microsoft Entra ID, and Auth Token will be your Secret Token.
+1. SCIM Base URL is your Tenant URL in Microsoft Entra ID, and Auth Token is your Secret Token.
 
 <a name='step-3-add-sentry-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Sentry from the Microsoft Entra application gallery
 
-Add Sentry from the Microsoft Entra application gallery to start managing provisioning to Sentry. If you have previously setup Sentry for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Sentry from the Microsoft Entra application gallery to start managing provisioning to Sentry. If you have previously setup Sentry for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Sentry Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Sentry. If the connection fails, ensure your Sentry account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your Sentry Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Sentry. If the connection fails, ensure your Sentry account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Sentry**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Sentry in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sentry for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Sentry API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Sentry in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sentry for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Sentry API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -120,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

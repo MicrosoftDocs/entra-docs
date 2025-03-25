@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to InviteDesk so that I can streamline the user management process and ensure that users have the appropriate access to InviteDesk.
@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both InviteDesk and Micr
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in InviteDesk
-> * Remove users in InviteDesk when they do not require access anymore
+> * Remove users in InviteDesk when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and InviteDesk
 > * Provision groups and group memberships in InviteDesk.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to InviteDesk (recommended).
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and InviteDesk](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-invitedesk-to-support-provisioning-with-azure-ad'></a>
@@ -48,12 +48,12 @@ The scenario outlined in this article assumes that you already have the followin
 
       ![InviteDesk settings](./media\invitedesk-provisioning-tutorial\invitedesk-settings.png)
 
-1. Enter the **Azure Tenant-Id** and then click on the toggle button to generate the corresponding **access code**.
+1. Enter the **Azure Tenant-Id** and then select the toggle button to generate the corresponding **access code**.
 
       ![InviteDesk token page](./media\invitedesk-provisioning-tutorial\invitedesk-token-page.png)
 
 
-1. On clicking the toggle button **access code** corresponding to the **Azure Tenant-Id** would be generated.This value will be entered in the **Secret Token** * field in the Provisioning tab of your LucidChart application. 
+1. On selecting the toggle button **access code** corresponding to the **Azure Tenant-Id** would be generated.This value is entered in the **Secret Token** * field in the Provisioning tab of your LucidChart application. 
 
       ![InviteDesk token generate](./media\invitedesk-provisioning-tutorial\invitedesk-token-generate.png)
 
@@ -62,7 +62,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add InviteDesk from the Microsoft Entra application gallery
 
-Add InviteDesk from the Microsoft Entra application gallery to start managing provisioning to InviteDesk. If you have previously setup InviteDesk for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add InviteDesk from the Microsoft Entra application gallery to start managing provisioning to InviteDesk. If you have previously setup InviteDesk for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -93,7 +93,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your InviteDesk **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to InviteDesk. If the connection fails , ensure your InviteDesk account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your InviteDesk **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to InviteDesk. If the connection fails , ensure your InviteDesk account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to InviteDesk**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to InviteDesk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in InviteDesk for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the InviteDesk API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to InviteDesk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in InviteDesk for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the InviteDesk API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -144,7 +144,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

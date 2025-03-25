@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both ProdPad and Microso
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in ProdPad.
-> * Remove users in ProdPad when they do not require access anymore.
+> * Remove users in ProdPad when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and ProdPad.
 > * [Single sign-on](prodpad-tutorial.md) to ProdPad.
 
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and ProdPad](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-prodpad-to-support-provisioning-with-azure-ad'></a>
@@ -48,17 +48,17 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Profile](media/prodpad-provisioning-tutorial/profile-settings.png)
 
-1. Navigate to **API key** to get your API key. If you need to regenerate your API key, click the regenerate key. Please note this will also make the previous API key as invalid.
+1. Navigate to **API key** to get your API key. If you need to regenerate your API key, select the regenerate key. Please note this will also make the previous API key as invalid.
 
 	![API Key](media/prodpad-provisioning-tutorial/api-key.png)
 
-1. Copy and save the **API key**. This value will be entered in the **Secret Token** field in the Provisioning tab of your ProdPad application.
+1. Copy and save the **API key**. This value is entered in the **Secret Token** field in the Provisioning tab of your ProdPad application.
 
 <a name='step-3-add-prodpad-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add ProdPad from the Microsoft Entra application gallery
 
-Add ProdPad from the Microsoft Entra application gallery to start managing provisioning to ProdPad. If you have previously setup [ProdPad for SSO](prodpad-tutorial.md), you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add ProdPad from the Microsoft Entra application gallery to start managing provisioning to ProdPad. If you have previously setup [ProdPad for SSO](prodpad-tutorial.md), you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your ProdPad Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to ProdPad. If the connection fails, ensure your ProdPad account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your ProdPad Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to ProdPad. If the connection fails, ensure your ProdPad account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to ProdPad**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to ProdPad in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ProdPad for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the ProdPad API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to ProdPad in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ProdPad for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the ProdPad API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by ProdPad|
    |---|---|---|---|
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

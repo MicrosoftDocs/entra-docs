@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Snowflake](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-snowflake-to-support-provisioning-with-azure-ad'></a>
@@ -69,7 +69,7 @@ Before you configure Snowflake for automatic user provisioning with Microsoft En
 
     ![Screenshot of a worksheet in the Snowflake UI with the SCIM access token called out.](media/Snowflake-provisioning-tutorial/step-2.png)
 
-1. Create the custom role AAD_PROVISIONER. All users and roles in Snowflake created by Microsoft Entra ID will be owned by the scoped down AAD_PROVISIONER role.
+1. Create the custom role AAD_PROVISIONER. All users and roles in Snowflake created by Microsoft Entra ID is owned by the scoped down AAD_PROVISIONER role.
 
     ![Screenshot showing the custom role.](media/Snowflake-provisioning-tutorial/step-3.png)
 
@@ -168,7 +168,7 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
 1. Define the users and groups that you want to provision to Snowflake by choosing the desired values in **Scope** in the **Settings** section. 
 
-    If this option is not available, configure the required fields under **Admin Credentials**, select **Save**, and refresh the page. 
+    If this option isn't available, configure the required fields under **Admin Credentials**, select **Save**, and refresh the page. 
 
     ![Screenshot that shows choices for provisioning scope.](common/provisioning-scope.png)
 

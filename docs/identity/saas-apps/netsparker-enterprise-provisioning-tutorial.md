@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Netsparker Enterprise so that I can streamline the user management process and ensure that users have the appropriate access to Netsparker Enterprise.
@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Netsparker Enterpri
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Netsparker Enterprise.
-> * Remove users in Netsparker Enterprise when they do not require access anymore.
+> * Remove users in Netsparker Enterprise when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Netsparker Enterprise.
 > * Provision groups and group memberships in Netsparker Enterprise.
 > * [Single sign-on](netsparker-enterprise-tutorial.md) to Netsparker Enterprise (recommended).
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Netsparker Enterprise](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-netsparker-enterprise-to-support-provisioning-with-azure-ad'></a>
@@ -43,12 +43,12 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Netsparker Enterprise to support provisioning with Microsoft Entra ID
 
 1. Log in to [Netsparker Enterprise admin console](https://www.netsparkercloud.com). 
-1. Click on profile logo and navigate to **API Settings**.
-1. Enter your **Current Password** and then click on **Submit**.
-1. Copy and save the **Token**.This value will be entered in the **Secret Token** field in the Provisioning tab of your Netsparker Enterprise application.
+1. Select profile logo and navigate to **API Settings**.
+1. Enter your **Current Password** and then select **Submit**.
+1. Copy and save the **Token**.This value is entered in the **Secret Token** field in the Provisioning tab of your Netsparker Enterprise application.
    >[!NOTE]
-   >Click on **Reset API Token** in order to reset the Token. 
-1. And `https://www.netsparkercloud.com/scim/v2` will be entered in the **Tenant Url** field in the Provisioning tab of your Netsparker Enterprise application.
+   >Select **Reset API Token** in order to reset the Token. 
+1. And `https://www.netsparkercloud.com/scim/v2` is entered in the **Tenant Url** field in the Provisioning tab of your Netsparker Enterprise application.
 
 <a name='step-3-add-netsparker-enterprise-from-the-azure-ad-application-gallery'></a>
 
@@ -85,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Netsparker Enterprise Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Netsparker Enterprise. If the connection fails, ensure your Netsparker Enterprise account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Netsparker Enterprise Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Netsparker Enterprise. If the connection fails, ensure your Netsparker Enterprise account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -127,7 +127,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

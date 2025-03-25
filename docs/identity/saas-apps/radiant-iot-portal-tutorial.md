@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Radiant IOT Portal
 
-In this article, you'll learn how to integrate Radiant IOT Portal with Microsoft Entra ID. Radiant's IOT Portal is used by federal and commercial customers for asset tracking and accountability solutions based on IOT tracking technologies. When you integrate Radiant IOT Portal with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Radiant IOT Portal with Microsoft Entra ID. Radiant's IOT Portal is used by federal and commercial customers for asset tracking and accountability solutions based on IOT tracking technologies. When you integrate Radiant IOT Portal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Radiant IOT Portal.
 * Enable your users to be automatically signed-in to Radiant IOT Portal with their Microsoft Entra accounts.
@@ -86,7 +86,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://<SUBDOMAIN>.radiantrfid.com/VATPortal/?cn=<CustomerName>&id=<ID>`
 
 	> [!Note]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Radiant IOT Portal support team](mailto:support@radiantrfid.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Radiant IOT Portal support team](mailto:support@radiantrfid.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
 
 1. Radiant IOT Portal application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -120,11 +120,11 @@ In this section, a user called B.Simon is created in Radiant IOT Portal. Radiant
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Radiant IOT Portal Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Radiant IOT Portal Sign-on URL where you can initiate the login flow. 
 
 * Go to Radiant IOT Portal Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Radiant IOT Portal tile in the My Apps, this will redirect to Radiant IOT Portal Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Radiant IOT Portal tile in the My Apps, this option redirects to Radiant IOT Portal Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

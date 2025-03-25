@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BC in the Cloud so that I can control who has access to BC in the Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra SSO integration with BC in the Cloud
 
-In this article,  you'll learn how to integrate BC in the Cloud with Microsoft Entra ID. When you integrate BC in the Cloud with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate BC in the Cloud with Microsoft Entra ID. When you integrate BC in the Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to BC in the Cloud.
 * Enable your users to be automatically signed-in to BC in the Cloud with their Microsoft Entra accounts.
@@ -45,7 +45,7 @@ To configure the integration of BC in the Cloud into Microsoft Entra ID, you nee
 1. In the **Add from the gallery** section, type **BC in the Cloud** in the search box.
 1. Select **BC in the Cloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-bc-in-the-cloud'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with BC in the Cloud, perform the foll
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure BC in the Cloud SSO](#configure-bc-in-the-cloud-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create BC in the Cloud test user](#create-bc-in-the-cloud-test-user)** - to have a counterpart of B.Simon in BC in the Cloud that is linked to the Microsoft Entra representation of user.
+    1. **[Create BC in the Cloud test user](#create-bc-in-the-cloud-test-user)** - to have a counterpart of B.Simon in BC in the Cloud that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **BC in the Cloud** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -84,9 +84,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.bcinthecloud.com/router/loginSaml/<customerid>`
 
     > [!NOTE]
-    > This value is not real. Update this value with the actual Sign-On URL. Contact [BC in the Cloud Client support team](https://www.bcinthecloud.com/supportcenter/) to get this value.
+    > This value isn't real. Update this value with the actual Sign-On URL. Contact [BC in the Cloud Client support team](https://www.bcinthecloud.com/supportcenter/) to get this value.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/metadataxml.png)
 
@@ -110,11 +110,11 @@ In this section, you create a user called Britta Simon in BC in the Cloud. Work 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to BC in the Cloud Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to BC in the Cloud Sign-on URL where you can initiate the login flow. 
 
 * Go to BC in the Cloud Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the BC in the Cloud tile in the My Apps, this will redirect to BC in the Cloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the BC in the Cloud tile in the My Apps, this option redirects to BC in the Cloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

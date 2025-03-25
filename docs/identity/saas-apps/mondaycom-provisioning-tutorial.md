@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to monday.com so that I can streamline the user management process and ensure that users have the appropriate access to monday.com.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both monday.com and Micr
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in monday.com
-> * Remove users in monday.com when they do not require access anymore
+> * Remove users in monday.com when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and monday.com
 > * Provision groups and group memberships in monday.com
 > * [Single sign-on](mondaycom-tutorial.md) to monday.com (recommended)
@@ -36,28 +36,28 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and monday.com](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-mondaycom-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure monday.com to support provisioning with Microsoft Entra ID
-1. Login to [monday.com](https://www.monday.com/). Click on your profile picture , on the left navigation pane.
+1. Login to [monday.com](https://www.monday.com/). Select your profile picture , on the left navigation pane.
 2. Navigate to **Admin > Security** .
-3. Click on **Open** in the **SCIM** section under the **Login** tab
+3. Select **Open** in the **SCIM** section under the **Login** tab
 
 ![Scim Provisioning Tab](media/mondaycom-provisioning-tutorial/provisioning-tab-monday.png)
 
-4. Click on **Generate** . These are the **Tenant URL** and **Secret Token** you will need for step 5.
+4. Select **Generate** . These are the **Tenant URL** and **Secret Token** you need for step 5.
 
 >[!NOTE]
->Do not share or save this secret token. You can always generate a new token whenever and wherever it is required.
+>don't share or save this secret token. You can always generate a new token whenever and wherever it's required.
 
 <a name='step-3-add-mondaycom-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add monday.com from the Microsoft Entra application gallery
 
-Add monday.com from the Microsoft Entra application gallery to start managing provisioning to monday.com. If you have previously setup monday.com for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add monday.com from the Microsoft Entra application gallery to start managing provisioning to monday.com. If you have previously setup monday.com for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -88,7 +88,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your monday.com Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to monday.com. If the connection fails, ensure your monday.com account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your monday.com Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to monday.com. If the connection fails, ensure your monday.com account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to monday.com**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to monday.com in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in monday.com for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the monday.com API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to monday.com in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in monday.com for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the monday.com API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by monday.com|
    |---|---|---|---|
@@ -131,7 +131,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -142,7 +142,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Connector Limitations
-* monday.com only supports the userType "admin" , "guest", "member" and "viewer". The userType  "User" is not supported and will be removed in the future.
+* monday.com only supports the userType "admin" , "guest", "member" and "viewer". The userType  "User" isn't supported and is removed in the future.
 
 ## Change log
 * 1/21/2021 - Added support for core attribute "userType" for users.
