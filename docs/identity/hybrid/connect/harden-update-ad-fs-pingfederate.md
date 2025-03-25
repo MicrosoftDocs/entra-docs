@@ -17,18 +17,23 @@ In October 2024, we released new versions (2.4.xx.0) of Microsoft Entra Connect 
 
 ## Expected impacts 
 
-If you aren’t upgraded to the minimum required version, you'll encounter the following impacts to the Microsoft Entra Connect Sync service when the service change takes effect: 
+If Microsoft Entra Connect isn't upgraded to the minimum required version when the service change takes effect, you'll encounter the following impacts:
 
- - All authentication requests to Entra ID on the Connect Sync wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes
- - Configuration of Active Directory Federation Services (ADFS) scenarios through the Connect Sync wizard won't work 
- - Configuration of PingFederate scenarios through the Connect Sync wizard won't work
-   
+ - All authentication requests to Microsoft Entra ID on the Microsoft Entra Connect wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes.
+ - Configuration of Active Directory Federation Services (ADFS) scenarios through Microsoft Entra Connect wizard won't work.
+ - Configuration of PingFederate scenarios through the Microsoft Entra Connect wizard won't work.
+
+For example, when calling the MSOnline PowerShell cmdlet `Get-MsolUserRole`, Microsoft Entra Connect wizard throws an error: _"Access Denied. You do not have permissions to call this cmdlet"_
+
+![Screenshot that shows MSOnline PowerShell error in Microsoft Entra Connect Sync wizard.](media/harden-update-ad-fs-pingfederate/msonline-connect-wizard-error.png)
+
+
 ## What won't be impacted
  - Your sync service will run as usual, and changes will continue to sync to Entra
  - The ability to upgrade your Entra Connect Sync instance. You can still perform the upgrade after April 7, 2025
    
 >[!NOTE]
-> If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You'll lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**. 
+>If you're unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). Failure to update will result in losing the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**.
 
 ### Minimum versions 
 
@@ -38,7 +43,7 @@ To avoid any service impact, customers should be on version by April 7, 2025.
 
 To upgrade to the latest version.
 > [!div class="nextstepaction"]
-> [Install the latest Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
+> [Install the latest Microsoft Entra Connect Sync](https://www.microsoft.com/download/details.aspx?id=47594)
 
 >[!IMPORTANT]
 > Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the versions, including but not limited to: 
@@ -60,7 +65,7 @@ For more information, see [What is cloud sync?](/azure/active-directory/cloud-sy
 
 ## Upgrading Microsoft Entra Connect Sync 
 
-If you aren’t yet eligible to move to Cloud Sync, use this table for more information on upgrading. 
+If you aren't yet eligible to move to Cloud Sync, use this table for more information on upgrading. 
 
 |Title|Description| 
 |-----|-----|
@@ -71,5 +76,5 @@ If you aren’t yet eligible to move to Cloud Sync, use this table for more info
 ## Next steps
 
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
-- [Microsoft Entra Connect cloud sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
+- [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 - [Microsoft Entra Connect version history](reference-connect-version-history.md)
