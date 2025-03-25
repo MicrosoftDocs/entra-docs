@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -33,7 +33,7 @@ To learn about all the benefits, see the article on [F5 BIG-IP and Microsoft Ent
 
 This scenario looks at the classic **SAP ERP application using Kerberos authentication** to manage access to protected content.
 
-Being legacy, the application lacks modern protocols to support a direct integration with Microsoft Entra ID. The application can be modernized, but it is costly, requires careful planning, and introduces risk of potential downtime. Instead, an F5 BIG-IP Application Delivery Controller (ADC) is used to bridge the gap between the legacy application and the modern ID control plane, through protocol transitioning. 
+Being legacy, the application lacks modern protocols to support a direct integration with Microsoft Entra ID. The application can be modernized, but it's costly, requires careful planning, and introduces risk of potential downtime. Instead, an F5 BIG-IP Application Delivery Controller (ADC) is used to bridge the gap between the legacy application and the modern ID control plane, through protocol transitioning. 
 
 Having a BIG-IP in front of the application enables us to overlay the service with Microsoft Entra pre-authentication and headers-based SSO, significantly improving the overall security posture of the application.
 
@@ -62,7 +62,7 @@ SHA for this scenario supports both SP and IdP initiated flows. The following im
 | 7| Application authorizes request and returns payload |
 
 ## Prerequisites
-Prior BIG-IP experience isn’t necessary, but you will need:
+Prior BIG-IP experience isn’t necessary, but you need:
 
 * A Microsoft Entra ID Free subscription or above
 
@@ -99,7 +99,7 @@ With the Easy Button, admins no longer go back and forth between Microsoft Entra
 
 Before a client or service can access Microsoft Graph, it must be trusted by the [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md)
 
-The Easy Button client must also be registered in Microsoft Entra ID, before it is allowed to establish a trust between each SAML SP instance of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
+The Easy Button client must also be registered in Microsoft Entra ID, before it's allowed to establish a trust between each SAML SP instance of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) using an account with Application Administrative rights.
 
@@ -196,7 +196,7 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. 
 
-Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. 
+Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP and generic SHA template for any other apps. 
 
 For this scenario, in the **Azure Configuration** page, select **SAP ERP Central Component** > **Add** to start the Azure configurations.
 
@@ -216,7 +216,7 @@ For this scenario, in the **Azure Configuration** page, select **SAP ERP Central
 
    ![Screenshot for Azure configuration - Add signing certificates info](./media/f5-big-ip-easy-button-sap-erp/azure-configuration-sign-certificates.png)
 
-7. **User and User Groups** are dynamically queried from your Microsoft Entra tenant and used to authorize access to the application. Add a user or group that you can use later for testing, otherwise all access will be denied
+7. **User and User Groups** are dynamically queried from your Microsoft Entra tenant and used to authorize access to the application. Add a user or group that you can use later for testing, otherwise all access is denied
 
    ![Screenshot for Azure configuration - Add users and groups](./media/f5-big-ip-easy-button-sap-erp/azure-configuration-add-user-groups.png)
 
@@ -243,16 +243,16 @@ The **Additional User Attributes** tab can support a variety of distributed syst
 
 Conditional Access policies are enforced post Microsoft Entra pre-authentication, to control access based on device, application, location, and risk signals.
 
-The **Available Policies** view, by default, will list all Conditional Access policies that do not include user based actions.
+The **Available Policies** view, by default, will list all Conditional Access policies that don't include user based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All resources. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies can't be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 
 1.	Select the desired policy in the **Available Policies** list
 2.	Select the right arrow and move it to the **Selected Policies** list
 
-Selected policies should either have an **Include** or **Exclude** option checked. If both options are checked, the selected policy is not enforced.
+Selected policies should either have an **Include** or **Exclude** option checked. If both options are checked, the selected policy isn't enforced.
 
 ![Screenshot for Conditional Access policies](./media/f5-big-ip-easy-button-sap-erp/conditional-access-policy.png)
 
@@ -287,7 +287,7 @@ The **Application Pool tab** details the services behind a BIG-IP, represented a
 
 #### Single Sign-On & HTTP Headers
 
-Enabling SSO allows users to access BIG-IP published services without having to enter credentials. The **Easy Button wizard** supports Kerberos, OAuth Bearer, and HTTP authorization headers for SSO. You will need the Kerberos delegation account created earlier to complete this step. 
+Enabling SSO allows users to access BIG-IP published services without having to enter credentials. The **Easy Button wizard** supports Kerberos, OAuth Bearer, and HTTP authorization headers for SSO. You need the Kerberos delegation account created earlier to complete this step. 
 
 Enable **Kerberos** and **Show Advanced Setting** to enter the following:
 
@@ -301,7 +301,7 @@ Enable **Kerberos** and **Show Advanced Setting** to enter the following:
 
 * **UPN Support:** Enable for the APM to use the UPN for kerberos ticketing 
 
-* **SPN Pattern:** Use HTTP/%h to inform the APM to use the host header of the client request and build the SPN that it is requesting a kerberos token for.
+* **SPN Pattern:** Use HTTP/%h to inform the APM to use the host header of the client request and build the SPN that it's requesting a kerberos token for.
 
 * **Send Authorization:** Disable for applications that prefer negotiating authentication instead of receiving the kerberos token in the first request. For example, *Tomcat.*
 
@@ -336,7 +336,7 @@ You can navigate to **Access > Guided Configuration** and select the **small pad
  
    ![Screenshot for Configure Easy Button - Strict Management](./media/f5-big-ip-easy-button-sap-erp/strict-mode-padlock.png)
 
-At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application will be unlocked for direct management.
+At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application is unlocked for direct management.
 
 >[!NOTE]
 >Re-enabling strict mode and deploying a configuration will overwrite any settings performed outside of the Guided Configuration UI, therefore we recommend the advanced configuration method for production services.

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Field iD so that I can control who has access to Field iD, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Field iD
 
-In this article,  you'll learn how to integrate Field iD with Microsoft Entra ID. When you integrate Field iD with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Field iD with Microsoft Entra ID. When you integrate Field iD with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Field iD.
 * Enable your users to be automatically signed in to Field iD with their Microsoft Entra accounts.
@@ -43,7 +43,7 @@ To configure the integration of Field iD into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **Field iD** in the search box.
 1. Select **Field iD** from results panel, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-field-id'></a>
 
@@ -104,9 +104,9 @@ In this section, you create a user called Britta Simon in Field iD. Work with t
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Field iD for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Field iD for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Field iD tile in the My Apps, you should be automatically signed in to the Field iD for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Field iD tile in the My Apps, you should be automatically signed in to the Field iD for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 
