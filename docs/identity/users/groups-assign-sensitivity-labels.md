@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 01/14/2025
+ms.date: 03/25/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
