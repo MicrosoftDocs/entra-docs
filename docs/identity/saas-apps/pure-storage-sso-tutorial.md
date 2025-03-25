@@ -148,13 +148,13 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select on **Test this application** in Microsoft Entra admin center. This will redirect to Pure Storage SSO Sign-on URL where you can initiate the sign in flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Pure Storage SSO Sign-on URL where you can initiate the sign in flow.  
  
 * Go to Pure Storage SSO Sign-on URL directly and initiate the sign in flow from there.
  
 #### IDP initiated:
  
-* Select on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Pure Storage SSO for which you set up the SSO.
+* Select **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Pure Storage SSO for which you set up the SSO.
  
 You can also use Microsoft My Apps to test the application in any mode. When you select the Pure Storage SSO tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign in flow and if configured in IDP mode, you should be automatically signed in to the Pure Storage SSO for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
