@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and InstaVR Viewer so that I can control who has access to InstaVR Viewer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -46,7 +46,7 @@ To configure the integration of InstaVR Viewer into Microsoft Entra ID, you need
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **InstaVR Viewer**, select **InstaVR Viewer** from result panel then click **Add** button to add the application.
+1. In the search box, type **InstaVR Viewer**, select **InstaVR Viewer** from result panel then select **Add** button to add the application.
 
 	 ![InstaVR Viewer in the results list](common/search-new-app.png)
 
@@ -63,7 +63,7 @@ To configure and test Microsoft Entra single sign-on with InstaVR Viewer, you ne
 2. **[Configure InstaVR Viewer Single Sign-On](#configure-instavr-viewer-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create InstaVR Viewer test user](#create-instavr-viewer-test-user)** - to have a counterpart of Britta Simon in InstaVR Viewer that is linked to the Microsoft Entra representation of user.
+5. **[Create InstaVR Viewer test user](#create-instavr-viewer-test-user)** - to have a counterpart of Britta Simon in InstaVR Viewer that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -83,7 +83,7 @@ To configure Microsoft Entra single sign-on with InstaVR Viewer, perform the fol
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -95,15 +95,15 @@ To configure Microsoft Entra single sign-on with InstaVR Viewer, perform the fol
     `https://console.instavr.co/auth/saml/login/<WEBPackagedURL>`
 
 	> [!NOTE]
-	> There is no fixed pattern for Sign on URL. It is generated when the InstaVR Viewer customer does web packaging. It is unique for every customer and package. For getting the exact Sign on URL you need to login to your InstaVR Viewer instance and do web packaging.
+	> There's no fixed pattern for Sign on URL. It's generated when the InstaVR Viewer customer does web packaging. It's unique for every customer and package. For getting the exact Sign on URL you need to login to your InstaVR Viewer instance and do web packaging.
 
     b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
 	`https://console.instavr.co/auth/saml/sp/<WEBPackagedURL>`
 
 	> [!NOTE]
-	> The Identifier value is not real. Update this value with the actual Identifier value which is explained later in this article.
+	> The Identifier value isn't real. Update this value with the actual Identifier value which is explained later in this article.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** and **Federation Metadata File** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** and **Federation Metadata File** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadata-certificatebase64.png)
 
@@ -121,7 +121,7 @@ To configure Microsoft Entra single sign-on with InstaVR Viewer, perform the fol
 
 1. Open a new web browser window and log into your InstaVR Viewer company site as an administrator.
 
-2. Click on **User Icon** and select **Account**.
+2. Select **User Icon** and select **Account**.
 
 	![Screenshot shows your InstaVR Viewer site with a user selected.](media/instavr-viewer-tutorial/tutorial-instavr-viewer-account.png)
 
@@ -135,9 +135,9 @@ To configure Microsoft Entra single sign-on with InstaVR Viewer, perform the fol
 
 	c. In the **Entity ID** textbox, paste the **Microsoft Entra Identifier** value, which you copied previously.
 
-	d. To upload your downloaded Certificate file, click **Update**.
+	d. To upload your downloaded Certificate file, select **Update**.
 
-	e. To upload your downloaded Federation Metadata file, click **Update**.
+	e. To upload your downloaded Federation Metadata file, select **Update**.
 
 	f. Copy the **Entity ID** value and paste into the **Identifier (Entity ID)** text box on the **Basic SAML Configuration** section.
 
@@ -147,7 +147,7 @@ To configure Microsoft Entra single sign-on with InstaVR Viewer, perform the fol
 
 ### Create InstaVR Viewer test user
 
-In this section, a user called Britta Simon is created in InstaVR Viewer. InstaVR Viewer supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in InstaVR Viewer, a new one is created after authentication. If you face any problems, please contact to [InstaVR Viewer support team](mailto:contact@instavr.co).
+In this section, a user called Britta Simon is created in InstaVR Viewer. InstaVR Viewer supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in InstaVR Viewer, a new one is created after authentication. If you face any problems, please contact to [InstaVR Viewer support team](mailto:contact@instavr.co).
 
 ### Test single sign-on
 
@@ -161,7 +161,7 @@ In this section, a user called Britta Simon is created in InstaVR Viewer. InstaV
 
 	![Screenshot shows the Download icon selected.](media/instavr-viewer-tutorial/tutorial-instavr-viewer-testing2.png)
 
-4. Select **Open Hosted Page** after that it will be redirected to Microsoft Entra ID for login.
+4. Select **Open Hosted Page** after that it's redirected to Microsoft Entra ID for login.
 
 	![Screenshot shows Open Hosted Page selected.](media/instavr-viewer-tutorial/tutorial-instavr-viewer-testing3.png)
 
