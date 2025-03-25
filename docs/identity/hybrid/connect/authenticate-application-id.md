@@ -24,7 +24,7 @@ Microsoft Entra Connect manages the application and certificate including creati
 
  :::image type="content" source="media/authenticate-application-id/auth-1.png" alt-text="Diagram of authentication with application id." lightbox="media/authenticate-application-id/auth-1.png":::
 
-Microsoft recommendeds this certificate management option as we manage the keys and automatically roll over the certificate on expiry.
+Microsoft recommendeds this certificate management option as we manage the keys and automatically roll-over the certificate on expiry.
 
 ## Bring Your Own Certificate (BYOC) 
 
@@ -45,7 +45,7 @@ The following are additional requirements depending on which certificate managem
 - Maintenance is enabled and the scheduler isn't suspended.
 
 > [!NOTE]
-> If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a Gen 2 VMs. Gen 1 VMs can't be converted to a Gen 2 VMs. 
+> If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Should I create a generation 1 or 2 virtual machine in Hyper-V?](/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v)
 
 ### BYOC Prerequisites
 - A certificate is created in an HSM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
@@ -116,7 +116,7 @@ Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;c
  ```
 
  ## Certificate Rollover
-Microsoft Entra Connect will warn if the certificate roll over is due. That is, expiring in less tha or equal to 150 days. It will emit an error if certificate is already expired. These warning and errors can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
+Microsoft Entra Connect will warn if the certificate roll over is due. That is, expiring in less than or equal to 150 days. It will emit an error if certificate is already expired. These warning and errors can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
 
 When you get a warning from Microsoft Entra Connect Sync when using the BYOC option, it's **highly recommended you generate a new key and certificate and roll over the certificate** used by Connect Sync using PowerShell.
 
@@ -157,7 +157,7 @@ You may roll over the certificate at any point in time as deemed necessary, even
 The certificate revocation process allows Authentication Policy Administrators to revoke a previously issued certificate from being used for future authentication. The certificate revocation won't revoke already issued tokens of the user. For more information on this process see [Understanding the certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
 
 ## Roll back to legacy service account
-If want to go back to the legacy service account, you have the option to revert to using service account to mitigate the issue promptly using PowerShell. Use the steps below to rollback to the service account.
+If you want to go back to the legacy service account, you have the option to revert to using service account to mitigate the issue promptly using PowerShell. Use the steps below to roll back to the service account.
 
 1. Disable the scheduler with below command to ensure no sync cycles run until this change is completed
  
