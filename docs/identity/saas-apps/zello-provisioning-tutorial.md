@@ -45,7 +45,7 @@ Contact Zello support to configure Zello to support provisioning with Microsoft 
 
 ## Step 3: Add Zello from the Microsoft Entra application gallery
 
-Add Zello from the Microsoft Entra application gallery to start managing provisioning to Zello. If you have previously setup Zello for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Zello from the Microsoft Entra application gallery to start managing provisioning to Zello. If you have previously setup Zello for single sign-on (SSO), you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
