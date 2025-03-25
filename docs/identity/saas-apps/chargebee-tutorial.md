@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Chargebee so that I can control who has access to Chargebee, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Chargebee
 
-In this article,  you'll learn how to integrate Chargebee with Microsoft Entra ID. When you integrate Chargebee with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Chargebee with Microsoft Entra ID. When you integrate Chargebee with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Chargebee.
 * Enable your users to be automatically signed-in to Chargebee with their Microsoft Entra accounts.
@@ -43,7 +43,7 @@ To configure the integration of Chargebee into Microsoft Entra ID, you need to a
 1. In the **Add from the gallery** section, type **Chargebee** in the search box.
 1. Select **Chargebee** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-chargebee'></a>
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Chargebee, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 2. **[Configure Chargebee SSO](#configure-chargebee-sso)** - to configure the Single Sign-On settings on application side.
-    1. **[Create Chargebee test user](#create-chargebee-test-user)** - to have a counterpart of B.Simon in Chargebee that is linked to the Microsoft Entra representation of user.
+    1. **[Create Chargebee test user](#create-chargebee-test-user)** - to have a counterpart of B.Simon in Chargebee that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Chargebee** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://app.chargebee.com/saml/<domainname>/acs`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<domainname>.chargebee.com`
@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Open a new web browser window and sign into your Chargebee company site as an administrator.
 
-4. From the left side of menu, click on **Settings** > **Security** > **Manage**.
+4. From the left side of menu, select **Settings** > **Security** > **Manage**.
 
 	![Screenshot shows the Chargebee company site with Settings, Security, and Manage selected.](./media/chargebee-tutorial/security.png)
 
@@ -119,7 +119,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	c. Open the Base64 encoded certificate in notepad, copy its content and paste it into the **SAML Certificate** text box.
 
-	d. Click **Confirm**.
+	d. Select **Confirm**.
 
 ### Create Chargebee test user
 
@@ -129,11 +129,11 @@ To enable Microsoft Entra users, sign in to Chargebee, they must be provisioned 
 
 1. In a different web browser window, sign in to Chargebee as a Security Administrator.
 
-2. From the left side of menu,, click on **Customers** and then navigate to **Create a New Customer**.
+2. From the left side of menu,, select **Customers** and then navigate to **Create a New Customer**.
 
 	![Screenshot shows Chargebee site with Customers and Create a New Customer selected.](./media/chargebee-tutorial/menu.png)
 
-3. On the **New Customer** page, fill the respective fields shown below and click **Create Customer** for user creation.
+3. On the **New Customer** page, fill the respective fields shown below and select **Create Customer** for user creation.
 
 	![Screenshot shows the New Customer page where you can enter customer information.](./media/chargebee-tutorial/customers.png)
 
@@ -143,15 +143,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Chargebee Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Chargebee Sign on URL where you can initiate the login flow.  
 
 * Go to Chargebee Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Chargebee for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Chargebee for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Chargebee tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Chargebee for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Chargebee tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Chargebee for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

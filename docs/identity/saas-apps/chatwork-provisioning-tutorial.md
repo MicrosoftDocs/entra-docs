@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Chatwork so that I can streamline the user management process and ensure that users have the appropriate access to Chatwork.
@@ -25,7 +25,7 @@ This article describes the steps you need to perform in both Chatwork and Micros
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Chatwork.
-> * Remove users in Chatwork when they do not require access anymore.
+> * Remove users in Chatwork when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Chatwork.
 > * [Single sign-on](chatwork-tutorial.md) to Chatwork (required).
 
@@ -42,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Chatwork](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-chatwork-to-support-provisioning-with-azure-ad'></a>
@@ -51,7 +51,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ### 1. Open **User Synchronization** from the Chatwork admin page
 
-Access the Chatwork admin portal as a user with admin rights. If you have administrator privileges, you will be able to access the **User Synchronization** page. 
+Access the Chatwork admin portal as a user with admin rights. If you have administrator privileges, you be able to access the **User Synchronization** page. 
 
 **User Synchronization** page contains notes and restrictions for using the user provisioning feature. Check all the items.
 
@@ -59,7 +59,7 @@ Access the Chatwork admin portal as a user with admin rights. If you have admini
 
 ### 2. Configure the SAML login settings.
 
-If you are using Microsoft Entra ID and user provisioning, login to Chatwork using your Microsoft Entra ID. 
+If you're using Microsoft Entra ID and user provisioning, login to Chatwork using your Microsoft Entra ID. 
 
 ![Configure the SAML login settings](media/chatwork-provisioning-tutorial/chatwork-saml.png)
 
@@ -67,11 +67,11 @@ If you are using Microsoft Entra ID and user provisioning, login to Chatwork usi
 
 Check the checkboxes after accepting the cautions and restrictions for using the user provisioning function.
 
-When all the items are checked, click the **Enable user synchronization** button.
+When all the items are checked, select the **Enable user synchronization** button.
 
 ![Accepting the various items and enable user synchronization button](media/chatwork-provisioning-tutorial/chatwork-accept.png)
 
-When the user provisioning function is enabled, a message will appear at the top of the page indicating that it has been enabled.
+When the user provisioning function is enabled, a message appears at the top of the page indicating that it has been enabled.
 
 ![Enabled message](media/chatwork-provisioning-tutorial/chatwork-enable.png)
 
@@ -81,7 +81,7 @@ When the user provisioning function is enabled, a message will appear at the top
 
 
 
-Add Chatwork from the Microsoft Entra application gallery to start managing provisioning to Chatwork. If you have previously setup Chatwork for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add Chatwork from the Microsoft Entra application gallery to start managing provisioning to Chatwork. If you have previously setup Chatwork for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -112,7 +112,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, click on Authorize, make sure that you enter your Chatwork account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Chatwork. If the connection fails, ensure your Chatwork account has Admin permissions and try again.
+1. In the **Admin Credentials** section, select Authorize, make sure that you enter your Chatwork account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Chatwork. If the connection fails, ensure your Chatwork account has Admin permissions and try again.
 
    ![Token](media/chatwork-provisioning-tutorial/chatwork-authorize.png)
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
@@ -123,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Chatwork**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Chatwork in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Chatwork for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Chatwork API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Chatwork in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Chatwork for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Chatwork API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -144,7 +144,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
