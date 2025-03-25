@@ -299,7 +299,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 
 #### [Node](#tab/node-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -311,7 +311,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -323,7 +323,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 
 #### [Python Django](#tab/python-django-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
   * **Platform configuration**: Web
@@ -334,7 +334,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 
 #### [Python Flask](#tab/python-flask-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
   * **Platform configuration**: Web
