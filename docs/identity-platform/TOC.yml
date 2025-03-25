@@ -582,6 +582,10 @@
               href: quickstart-create-new-tenant.md
             - name: Register app or web API
               href: quickstart-register-app.md
+            - name: Add a redirect URI to an app
+              href: howto-add-redirect-uri.md
+            - name: Add credentials to an app
+              href: howto-add-credentials.md
             - name: Expose scopes in web API registration
               href: quickstart-configure-app-expose-web-apis.md
             - name: Grant scoped permission to web API
