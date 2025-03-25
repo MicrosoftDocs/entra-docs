@@ -34,7 +34,7 @@ First, you'll need to verify that access by the named applications to the resour
 5. Change the Date sorting to be **Custom time interval**, and set it to **Last 1 month**.
 6. Click on a log to view the details, and navigate to the **Application ID** in the side panel to find the Client Application ID for the next step.
 
-:::image type="content" source="media/deprecate-sp-less-auth/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Microsoft Entra admin center with filters applied to extract on SP-less auth sign ins.":::
+:::image type="content" source="media/deprecate-service-principal-less-authentication/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Microsoft Entra admin center with filters applied to extract on SP-less auth sign ins.":::
 
 ## Create enterprise application
 
