@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and 4me so that I can control who has access to 4me, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -48,7 +48,7 @@ To configure the integration of 4me into Microsoft Entra ID, you need to add 4me
 1. In the **Add from the gallery** section, type **4me** in the search box.
 1. Select **4me** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-4me'></a>
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with 4me, complete the following build
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure 4me SSO](#configure-4me-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create 4me test user](#create-4me-test-user)** - to have a counterpart of B.Simon in 4me that is linked to the Microsoft Entra representation of user.
+    1. **[Create 4me test user](#create-4me-test-user)** - to have a counterpart of B.Simon in 4me that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -130,7 +130,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to 4me as an Administrator.
 
-1. On the top left, select on **Settings** logo and on the left side bar select **Single Sign-On**.
+1. On the top left, select **Settings** logo and on the left side bar select **Single Sign-On**.
 
     ![4me settings](./media/4me-tutorial/settings.png)
 
@@ -159,11 +159,11 @@ In this section, a user called Britta Simon is created in 4me. 4me supports just
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this redirects to 4me Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to 4me Sign-on URL where you can initiate the login flow. 
 
 * Go to 4me Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the 4me tile in the My Apps, this redirects to 4me Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the 4me tile in the My Apps, this option redirects to 4me Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

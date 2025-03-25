@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -104,7 +104,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this redirects to Acoustic Connect Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Acoustic Connect Sign-on URL where you can initiate the login flow.  
 
 * Go to Acoustic Connect Sign-on URL directly and initiate the login flow from there.
 

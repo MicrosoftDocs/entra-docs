@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 15Five so that I can streamline the user management process and ensure that users have the appropriate access to 15Five.
@@ -22,7 +22,7 @@ The objective of this article is to demonstrate the steps to be performed in 15F
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in 15Five
-> * Remove users in 15Five when they do not require access anymore
+> * Remove users in 15Five when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and 15Five
 > * Provision groups and group memberships in 15Five
 > * [Single sign-on](./15five-tutorial.md) to 15Five (recommended)
@@ -54,7 +54,7 @@ Before configuring 15Five for automatic user provisioning with Microsoft Entra I
 
 	:::image type="content" source="media/15five-provisioning-tutorial/integration.png" alt-text="Screenshot of the 15Five admin console. Integrations appears under Features in a menu, and both Features and Integrations are highlighted." border="false":::
 
-2.	Select on **SCIM 2.0**.
+2.	Select **SCIM 2.0**.
 
 	:::image type="content" source="media/15five-provisioning-tutorial/image00.png" alt-text="Screenshot of the Integrations page in the 15Five admin console. Under Tool, S C I M 2.0 is highlighted." border="false":::
 
@@ -62,7 +62,7 @@ Before configuring 15Five for automatic user provisioning with Microsoft Entra I
 
 	:::image type="content" source="media/15five-provisioning-tutorial/image02.png" alt-text="Screenshot of the S C I M integration page in the 15Five admin console. Generate OAuth token is highlighted." border="false":::
 
-4.	Copy the values for **SCIM 2.0 base URL** and **Access Token**. This value will be entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your 15Five application.
+4.	Copy the values for **SCIM 2.0 base URL** and **Access Token**. This value is entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your 15Five application.
 	
 	:::image type="content" source="media/15five-provisioning-tutorial/image03.png" alt-text="Screen shot of the S C I M integration page. In the Token table, the values next to S C I M 2.0 base U R L and Access token are highlighted." border="false":::
 
@@ -162,7 +162,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 ## Connector limitations
 
-* 15Five does not support soft deletes for users.
+* 15Five doesn't support soft deletes for users.
 
 ## Change log
 

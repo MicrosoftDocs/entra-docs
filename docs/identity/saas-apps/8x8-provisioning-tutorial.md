@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 8x8 so that I can streamline the user management process and ensure that users have the appropriate access to 8x8.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both 8x8 Admin Console a
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in 8x8
-> * Deactivate users in 8x8 when they do not require access anymore
+> * Deactivate users in 8x8 when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and 8x8
 > * [Single sign-on](./8x8virtualoffice-tutorial.md) to 8x8 (recommended)
 
@@ -60,7 +60,7 @@ This section guides you through the steps to configure 8x8 to support provisioni
 
    [![Screenshot showing the Identity and Security page of the Admin Console with a callout over the user provisioning integration slider.](./media/8x8-provisioning-tutorial/8x8-enable-user-provisioning.png)](./media/8x8-provisioning-tutorial/8x8-enable-user-provisioning.png#lightbox)
 
-3. Copy the **8x8 URL** and **8x8 API Token** values. These values will be entered in the **Tenant URL** and **Secret Token** fields respectively in the Provisioning tab of your 8x8 application.
+3. Copy the **8x8 URL** and **8x8 API Token** values. These values are entered in the **Tenant URL** and **Secret Token** fields respectively in the Provisioning tab of your 8x8 application.
 
    [ ![Screenshot showing the Identity and Security page of the Admin Console with callout over token fields.](./media/8x8-provisioning-tutorial/8x8-copy-url-token.png) ](./media/8x8-provisioning-tutorial/8x8-copy-url-token.png#lightbox)
 
@@ -125,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |phoneNumbers[type eq "mobile"].value|String|Personal Contact Number|
    |phoneNumbers[type eq "work"].value|String|Personal Contact Number|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:8x8:1.1:User:site|String|Cannot be updated after user creation|
+   |urn:ietf:params:scim:schemas:extension:8x8:1.1:User:site|String|Can't be updated after user creation|
    |locale|String|Not mapped by default|
    |timezone|String|Not mapped by default|
 
