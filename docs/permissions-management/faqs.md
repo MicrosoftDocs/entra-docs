@@ -2,11 +2,11 @@
 title: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management
 description: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: faq
-ms.date: 05/13/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

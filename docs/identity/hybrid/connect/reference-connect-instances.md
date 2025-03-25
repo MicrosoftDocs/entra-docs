@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Sync service instances'
 description: This page documents special considerations for Microsoft Entra instances.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: f340ea11-8ff5-4ae6-b09d-e939c76355a3
 ms.service: entra-id

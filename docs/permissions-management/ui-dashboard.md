@@ -2,11 +2,11 @@
 title: View key statistics and data about your authorization system in Permissions Management
 description: How to view statistics and data about your authorization system in the Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 11/19/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

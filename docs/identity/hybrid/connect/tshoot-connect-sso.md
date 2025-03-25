@@ -4,7 +4,7 @@ description: This topic describes how to troubleshoot Microsoft Entra seamless s
 
 author: billmath
 ms.reviewer: swkrish
-manager: amycolannino
+manager: femila
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.topic: troubleshooting

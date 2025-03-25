@@ -2,11 +2,11 @@
 title:  Microsoft Entra Permissions Management partners
 description: View current Microsoft Entra Permissions Management partners and their websites.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: reference
-ms.date: 02/25/2025
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

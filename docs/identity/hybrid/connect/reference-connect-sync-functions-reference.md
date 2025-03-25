@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Functions Reference'
 description: Reference of declarative provisioning expressions in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 4f525ca0-be0e-4a2e-8da1-09b6b567ed5f
 ms.service: entra-id

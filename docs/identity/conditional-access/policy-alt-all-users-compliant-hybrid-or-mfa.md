@@ -9,7 +9,7 @@ ms.date: 02/24/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users

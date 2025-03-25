@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps you perform in Wrike a
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Wrike tenant](https://www.wrike.com/price/)
 * A user account in Wrike with admin permissions
 

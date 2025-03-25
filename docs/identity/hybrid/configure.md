@@ -3,7 +3,7 @@ title: 'Configure your integration with Active Directory'
 description: This article describes how you can configure the synchronization tools with Active Directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na

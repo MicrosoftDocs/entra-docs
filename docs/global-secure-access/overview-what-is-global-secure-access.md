@@ -3,12 +3,14 @@ title: What is Global Secure Access?
 description: Learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access, provides network access control and visibility to users and devices inside and outside a traditional office.
 author: kenwith
 ms.author: kenwith
-manager: rkarlin
+manager: femila
 ms.topic: overview
-ms.date: 02/21/2025
+ms.date: 03/03/2025
 ms.service: global-secure-access
 ms.custom: references_regions
 ai-usage: ai-assisted
+
+# Customer intent: As a customer, I want to learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access, provides network access control and visibility to users and devices inside and outside a traditional office.
 ---
 
 # What is Global Secure Access?
@@ -33,7 +35,7 @@ Microsoft Entra Internet Access secures access to all internet and SaaS apps and
 
 - Acquire network traffic using the user aware internet traffic forwarding profile, either from the desktop client or from a remote network, such as a branch location. 
 - Detailed network traffic logs for internet traffic (including enforced policy details). Dashboards such as relationship maps between users, devices and endpoints, cross tenant access, and top network destination in use.
-- Leverage rich context awareness (user, device, location, risk, and compliance policy) while applying network security policies through integration with Conditional Access. Protect user access to the public internet while using Microsoft's cloud-delivered, identity-aware SWG solution.
+- Use rich context awareness (user, device, location, risk, and compliance policy) while applying network security policies through integration with Conditional Access. Protect user access to the public internet while using Microsoft's cloud-delivered, identity-aware SWG solution.
 - Enable web content filtering to regulate access to internet destinations based on their web-content categories and/or FQDN-domain names.
 - Apply universal Conditional Access policies for all internet destinations, even if not federated with Microsoft Entra ID, through integration with Conditional Access session controls.
 
@@ -56,7 +58,7 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 
 ### Key features
 
-- Zero Trust based access to a range of IP addresses and/or Fully Qualified Domain Names (FQDNs) without requiring a legacy VPN. This feature is known as Quick Access.
+- Zero Trust-based access to a range of IP addresses and/or Fully Qualified Domain Names (FQDNs) without requiring a legacy VPN. This feature is known as Quick Access.
 - Per-app access for Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) applications.
 - Modernize legacy app authentication with deep Conditional Access integration.
 - Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing non-Microsoft SSE solutions.
@@ -73,7 +75,7 @@ Prerequisite to use Microsoft Entra Private Access and Microsoft Entra Internet 
 To learn more about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about purchasing individual license, see the Microsoft Entra Suite standalone products tab of the licensing page.
 
 > [!IMPORTANT]
-> Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. This is following a 90-day trial period that began with General Availability on July 1st, 2024.
+> Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. Enforcement follows a 90-day trial period that began with General Availability on July 1, 2024.
 
 **Remote Network licensing**
 

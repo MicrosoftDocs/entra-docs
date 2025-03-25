@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: gregkmsft
-manager: amycolannino
+manager: femila
 ms.reviewer: gkinasewitz, gustavosa
 
 # Customer intent: As an authentication administrator, I want learn how to manage an external authentication method (EAM) for Microsoft Entra ID.

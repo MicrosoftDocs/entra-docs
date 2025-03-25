@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: femila
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref
 ms.localizationpriority: high

@@ -3,7 +3,7 @@ title: Best practices for Microsoft Entra roles
 description: Best practices for using Microsoft Entra roles.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: conceptual

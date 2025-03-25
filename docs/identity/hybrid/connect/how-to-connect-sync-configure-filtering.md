@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Configure filtering'
 description: Explains how to configure filtering in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 880facf6-1192-40e9-8181-544c0759d506
 ms.service: entra-id
 ms.tgt_pltfrm: na

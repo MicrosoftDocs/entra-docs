@@ -3,7 +3,7 @@ title: Recommendation to migrate to Microsoft authenticator
 description: Learn the importance of migrating your users to the Microsoft authenticator app in Microsoft Entra ID.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

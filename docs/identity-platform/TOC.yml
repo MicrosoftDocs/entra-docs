@@ -270,6 +270,7 @@
     - name: How-to
       items:
         - name: Web app that signs in users
+          expanded: false
           items:
             - name: App registration
               href: scenario-web-app-sign-user-app-registration.md
@@ -278,6 +279,7 @@
             - name: Sign-in and sign-out
               href: scenario-web-app-sign-user-sign-in.md
         - name: Web app that calls an API
+          expanded: false
           items:
             - name: App registration
               href: scenario-web-app-call-api-app-registration.md
@@ -289,6 +291,31 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
+            - name: Node app that calls an API
+              expanded: false
+              items:
+              - name: Prepare tenant 
+                href: how-to-web-app-node-sign-in-call-api-prepare-tenant.md
+              - name: Create Node.js client web app 
+                href: how-to-web-app-node-sign-in-call-api-prepare-app.md
+              - name: Acquire access token
+                href: how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md
+              - name: Call API 
+                href: how-to-web-app-node-sign-in-call-api-call-api.md
+        - name: Edit profile with MFA
+          expanded: false
+          items:
+            - name: Set up app 
+              href: how-to-web-app-node-edit-profile-prepare-app.md
+              displayName: Conditional Access, CA 
+            - name: Update profile
+              href: how-to-web-app-node-edit-profile-update-profile.md
+              displayName: protect, multifactor authentication, MFA   
+        - name: Use client certificate
+          href: how-to-web-app-node-use-certificate.md
+        - name: Use role-based access control
+          href: how-to-web-app-role-based-access-control.md
+          displayName: rbac, roles, roles claim, groups claim
         - name: Deploy and set up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
@@ -403,6 +430,18 @@
                   href: quickstart-native-authentication-ios-call-api.md
     - name: Tutorials
       items:
+        - name: .NET MAUI
+          items:
+            - name: Browser-delegated authentication
+              items:
+                - name: Prepare tenant
+                  href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
+                - name: Prepare your app
+                  href: tutorial-mobile-app-maui-sign-in-prepare-app.md
+                - name: Add sign in and sign out
+                  href: tutorial-mobile-app-maui-sign-in-sign-out.md
+                - name: Use role-based access control
+                  href: tutorial-mobile-maui-role-based-access-control.md
         - name: Android
           items:
             - name: Browser-delegated authentication
@@ -713,6 +752,8 @@
           href: ./howto-remove-app.md
         - name: Restore or remove a deleted app registration
           href: ./howto-restore-app.md
+        - name: Deprecate SP-less authentication
+          href: ./deprecate-service-principal-less-authentication.md
 - name: Reference
   items:
     - name: Token claims reference
@@ -807,7 +848,7 @@
                 - name: Known issues - IE and Microsoft Edge
                   href: msal-js-known-issues-ie-edge-browsers.md
         - name: MSAL.NET
-          displayName: ASP.NET Core, Xamarin
+          displayName: ASP.NET Core
           href: /entra/msal/dotnet
         - name: Microsoft.Identity.Web (MSAL wrapper)
           displayName: auth, library, .NET, msal

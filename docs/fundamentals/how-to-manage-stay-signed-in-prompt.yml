@@ -5,7 +5,7 @@ metadata:
   description: Learn how the 'Stay signed in' prompt for Microsoft Entra users works and how to configure it in Microsoft Entra ID.
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: amycolannino
+  manager: femila
   ms.reviewer: almars
   ms.date: 01/30/2025
   ms.service: entra

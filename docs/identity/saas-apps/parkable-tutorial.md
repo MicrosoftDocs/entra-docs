@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Parkable
 
-In this article, you'll learn how to integrate Parkable with Microsoft Entra ID. Parkable is a car park management platform that helps create happier staff, tenants and visitors all while helping you improve occupancy rates and increase revenue. When you integrate Parkable with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Parkable with Microsoft Entra ID. Parkable is a car park management platform that helps create happier staff, tenants and visitors all while helping you improve occupancy rates and increase revenue. When you integrate Parkable with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Parkable.
 * Enable your users to be automatically signed-in to Parkable with their Microsoft Entra accounts.
@@ -97,11 +97,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 To configure single sign-on on **Parkable**, you need to follow the steps outlined in [this document](https://admin.parkable.com/s/article/Set-up-SSP-SAML) to continue the setup on the Parkable admin panel.
 
-* Click on **Test this application**, this will redirect to Parkable Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Parkable Sign-on URL where you can initiate the login flow. 
 
 * Go to Parkable Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Parkable tile in the My Apps, this will redirect to Parkable Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Parkable tile in the My Apps, this option redirects to Parkable Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

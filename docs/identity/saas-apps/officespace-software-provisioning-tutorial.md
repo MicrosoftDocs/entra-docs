@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: zollnerd
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to OfficeSpace Software so that I can streamline the user management process and ensure that users have the appropriate access to OfficeSpace Software.
@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Off
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An [OfficeSpace Software tenant](https://www.officespacesoftware.com/)
 * A user account in OfficeSpace Software with Admin permissions.
 
@@ -39,7 +39,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to OfficeSpace Software
 
-* It is recommended that a single Microsoft Entra user is assigned to OfficeSpace Software to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to OfficeSpace Software to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to OfficeSpace Software, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role in Azure are excluded from provisioning.
 
@@ -57,7 +57,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 ![01 Entra AUP - OSS - Directory Sync - SCIM](https://github.com/user-attachments/assets/a1bf3bed-ac11-4ca1-9def-a5b16e10e40f)
 
 
-4. Under SCIM, copy the **SCIM Authentication Key**. This value will be entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application in Microsoft Entra ID.
+4. Under SCIM, copy the **SCIM Authentication Key**. This value is entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application in Microsoft Entra ID.
 
 
 
@@ -65,7 +65,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 5. Check the **SCIM for Authentication** checkbox.
 
-3.	Copy the **SCIM Authentication Token**. This value will be entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application.
+3.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application.
 
 ## Add OfficeSpace Software from the gallery
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://<subdomain>.officespacesoftware.com/api/scim/v2/` URL format in **Tenant URL**. For example `https://contoso.officespacesoftware.com/api/scim/v2/`. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to OfficeSpace Software. If the connection fails, ensure your OfficeSpace Software account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://<subdomain>.officespacesoftware.com/api/scim/v2/` URL format in **Tenant URL**. For example `https://contoso.officespacesoftware.com/api/scim/v2/`. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to OfficeSpace Software. If the connection fails, ensure your OfficeSpace Software account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -115,7 +115,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to OfficeSpace Software**.
 
@@ -133,7 +133,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you are ready to provision, click **Save**.
+14. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

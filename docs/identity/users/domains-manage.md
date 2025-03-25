@@ -3,7 +3,7 @@ title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
 
 author: barclayn
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: users

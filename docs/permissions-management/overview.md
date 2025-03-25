@@ -2,11 +2,11 @@
 title: What's Microsoft Entra Permissions Management?
 description: An introduction to Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: overview
-ms.date: 12/10/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

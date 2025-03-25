@@ -188,6 +188,10 @@ items:
         href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
       - name: "Troubleshoot the Global Secure Access client: Health check tab"
         href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
+      - name: "Troubleshoot the Global Secure Access Client: Disabled by Your Organization"
+        href: troubleshoot-global-secure-access-client-disabled.md
+      - name: Troubleshoot application access
+        href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"
         href: troubleshoot-distributed-file-system.md
   - name: Partner ecosystem
@@ -237,4 +241,6 @@ items:
   - name: Windows client version history
     href: reference-windows-client-release-history.md
   - name: macOS client version history
-    href: reference-macos-client-release-history.md 
+    href: reference-macos-client-release-history.md
+  - name: Global Secure Access Certifications
+    href: reference-global-secure-access-certifications.md
