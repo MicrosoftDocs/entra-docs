@@ -4,7 +4,7 @@ description: Explore the types of tokens used in Microsoft Entra ID, their role 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 03/19/2025
+ms.date: 03/25/2025
 
 ms.author: jfields
 author: jenniferf-skc
