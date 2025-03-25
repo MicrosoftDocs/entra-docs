@@ -45,7 +45,7 @@ To configure the integration of Reflektive into Microsoft Entra ID, you need to 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **Reflektive**, select **Reflektive** from result panel then click **Add** button to add the application.
+1. In the search box, type **Reflektive**, select **Reflektive** from result panel then select **Add** button to add the application.
 
 	 ![Reflektive in the results list](common/search-new-app.png)
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra single sign-on with Reflektive, you need t
 2. **[Configure Reflektive Single Sign-On](#configure-reflektive-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Reflektive test user](#create-reflektive-test-user)** - to have a counterpart of Britta Simon in Reflektive that is linked to the Microsoft Entra representation of user.
+5. **[Create Reflektive test user](#create-reflektive-test-user)** - to have a counterpart of Britta Simon in Reflektive that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -82,7 +82,7 @@ To configure Microsoft Entra single sign-on with Reflektive, perform the followi
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -95,7 +95,7 @@ To configure Microsoft Entra single sign-on with Reflektive, perform the followi
     - `reflektive.com`
     - `https://www.reflektive.com/saml/metadata`
 
-5. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+5. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     ![image](common/both-preintegrated-signon.png)
 
@@ -103,9 +103,9 @@ To configure Microsoft Entra single sign-on with Reflektive, perform the followi
     `https://www.reflektive.com/app`
 
 	> [!NOTE]
-	> For SP mode you need to get the email id registered with [Reflektive support team](https://support@reflektive.com). When you enter your ID in the **Email** textbox then the single sign-on option will be enabled. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> For SP mode you need to get the email id registered with [Reflektive support team](https://support@reflektive.com). When you enter your ID in the **Email** textbox then the single sign-on option is enabled. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -135,7 +135,7 @@ In this section, you create a user called Britta Simon in Reflektive. Work withÂ
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Reflektive tile in the Access Panel, you should be automatically signed in to the Reflektive for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Reflektive tile in the Access Panel, you should be automatically signed in to the Reflektive for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 
