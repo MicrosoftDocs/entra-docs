@@ -17,7 +17,7 @@ From March 2026, Microsoft Entra ID will no longer support service principal-les
 
 Microsoft Entra ID will block authentication for multitenant applications that do not have an enterprise application registration in the resource tenant. This scenario is also known as service principal-less authentication. This behavior has already been blocked for most resources. This change will address a few remaining exceptions. Service principal-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
 
-This change to serviceprincipal-less authentication will make client service principal a requirement for all applications in order to improve our “Security by default” ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). Service principal-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations. Microsoft has verified that validations are not vulnerable to service principal-less authentication. However, with this action, the risk of this gap re-appearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
+This change to service principal-less authentication will make client service principal a requirement for all applications in order to improve our “Security by default” ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). Service principal-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations. Microsoft has verified that validations are not vulnerable to service principal-less authentication. However, with this action, the risk of this gap re-appearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
 
 Additionally, by enforcing the requirement that applications must be registered in every tenant where they authenticate, we reinforce tenant administrator’s governance of all access, including the ability to write conditional access policies for these applications. 
 
@@ -34,7 +34,7 @@ First, you'll need to verify that access by the named applications to the resour
 5. Change the Date sorting to be **Custom time interval**, and set it to **Last 1 month**.
 6. Click on a log to view the details, and navigate to the **Application ID** in the side panel to find the Client Application ID for the next step.
 
-:::image type="content" source="media/deprecate-sp-less-auth/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Entra admin center with filters applied to extract on SP-less auth sign ins.":::
+:::image type="content" source="media/deprecate-sp-less-auth/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Microsoft Entra admin center with filters applied to extract on SP-less auth sign ins.":::
 
 ## Create enterprise application
 
