@@ -107,7 +107,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Provide a description of the secret, and a duration. When done, select **Add**.
 
    > [!NOTE]
-   > After saving the client secret, the value of the client secret is displayed. Copy this value because you'ren't able to retrieve the key later.
+   > After saving the client secret, the value of the client secret is displayed. Copy this value because you aren't able to retrieve the key later.
 
    ![Copy the secret value because you can't retrieve this later](media/civic-platform-tutorial/secret-key.png)
 
