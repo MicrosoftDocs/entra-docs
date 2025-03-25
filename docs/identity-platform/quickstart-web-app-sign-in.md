@@ -317,12 +317,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
-* Add a self-signed certificate to your app registration. **Do not** use self-signed certificates in production apps. Use a certificate from a trusted certificate authority or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=certificate). Create the certificate using the following command:
-  
-  ```console
-  dotnet dev-certs https -ep ./certificate.crt --trust
-  ```
-
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * A minimum version of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
@@ -481,7 +476,7 @@ For you to sign in users with the sample app, you need to update it with your ap
 1. Open the *appsettings.json* file.
 1. In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is *caseyjensen@onmicrosoft.com*, the value you should enter is *casyjensen*.
 1. Find the `Enter_the_Application_Id_Here` value and replace it with the application ID (clientId) of the app you registered in the Microsoft Entra admin center.
-1. Replace `Enter_the_Client_Secret_Here` with the client secret value you set up in [Add app client secret](#add-app-client-secret).
+1. Replace `Enter_the_Client_Secret_Here` with the client secret value you set up.
 
 
 #### [Python Django](#tab/python-django-external)
