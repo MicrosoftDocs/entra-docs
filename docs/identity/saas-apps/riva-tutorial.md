@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, the application is pre-configured and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by selecting the **Save** button.
+1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Azure. The user needs to save the configuration by selecting the **Save** button.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -103,7 +103,7 @@ In this section, you test your Microsoft Entra single sign-on configuration usin
 
 When you select the Riva tile in the Access Panel, you should be automatically signed in to the Riva for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Additional resources
+## More resources
 
 - [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
