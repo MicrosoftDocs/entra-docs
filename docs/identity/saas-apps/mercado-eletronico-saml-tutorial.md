@@ -132,7 +132,7 @@ In this section, you create a user called B.Simon in Mercado Eletronico SAML. Wo
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Select **Test this application** in Microsoft Entra admin center. this option redirects to Mercado Eletronico SAML Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to Mercado Eletronico SAML Sign-on URL where you can initiate the login flow.
  
 * Go to Mercado Eletronico SAML Sign-on URL directly and initiate the login flow from there.
  

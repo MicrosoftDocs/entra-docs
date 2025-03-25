@@ -118,7 +118,7 @@ In this section, you create a user called B.Simon in MemoMeister. Work with [Me
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Select **Test this application** in Microsoft Entra admin center. this option redirects to MemoMeister Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to MemoMeister Sign-on URL where you can initiate the login flow.
  
 * Go to MemoMeister Sign-on URL directly and initiate the login flow from there.
  

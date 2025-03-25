@@ -107,7 +107,7 @@ In this section, a user called Britta Simon is created in MIC SAAS Portal. MIC S
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Select **Test this application** in Microsoft Entra admin center. this option redirects to MIC SAAS Portal Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to MIC SAAS Portal Sign-on URL where you can initiate the login flow.
  
 * Go to MIC SAAS Portal Sign-on URL directly and initiate the login flow from there.
  
