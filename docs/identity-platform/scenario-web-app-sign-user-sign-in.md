@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Web app that signs in users: Sign-in and sign out
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Learn how to add sign-in to the code for your web app that signs in users. Then, learn how to let them sign out.
 
 ## Sign-in

@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # How to call a downstream web API from a daemon app
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 .NET daemon apps can call a web API. .NET daemon apps can also call several preapproved web APIs.
 
 ## Calling a web API from a daemon application

@@ -13,6 +13,8 @@ ms.topic: how-to
 
 # Web app that signs in users: App registration
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 This article explains the app registration steps for a web app that signs in users.
 
 To register your application, you can use:

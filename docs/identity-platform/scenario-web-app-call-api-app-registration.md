@@ -13,6 +13,8 @@ ms.topic: how-to
 
 # A web app that calls web APIs: App registration
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 A web app that calls web APIs has the same registration as a web app that signs users in. So, follow the instructions in [A web app that signs in users: App registration](scenario-web-app-sign-user-app-registration.md).
 
 However, because the web app now also calls web APIs, it becomes a confidential client application. That's why some extra registration is required. The app must share client credentials, or *secrets*, with the Microsoft identity platform.
