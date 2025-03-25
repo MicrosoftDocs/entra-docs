@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to elia so that I can streamline the user management process and ensure that users have the appropriate access to elia.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both elia and Microsoft 
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in elia.
-> * Remove users in elia when they do not require access anymore.
+> * Remove users in elia when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and elia.
 > * [Single sign-on](elia-tutorial.md) to elia (recommended).
 
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and elia](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure elia to support provisioning with Microsoft Entra ID
@@ -77,7 +77,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your elia Tenant URL, Token Endpoint, Client Identifier and Client Secret. Click **Test Connection** to ensure Microsoft Entra ID can connect to elia. If the connection fails, ensure your elia account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your elia Tenant URL, Token Endpoint, Client Identifier and Client Secret. Select **Test Connection** to ensure Microsoft Entra ID can connect to elia. If the connection fails, ensure your elia account has Admin permissions and try again.
 
  	![Screenshot of Token.](media/elia-provisioning-tutorial/connection.png)
 
@@ -119,7 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
