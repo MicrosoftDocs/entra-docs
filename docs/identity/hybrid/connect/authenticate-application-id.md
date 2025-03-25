@@ -45,7 +45,7 @@ The following are additional requirements depending on which certificate managem
 - Maintenance is enabled and the scheduler isn't suspended.
 
 > [!NOTE]
-> If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Should I create a generation 1 or 2 virtual machine in Hyper-V?](/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v)
+> If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Generation 2 virtual machine security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable Trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm)
 
 ### BYOC Prerequisites
 - A certificate is created in an HSM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
