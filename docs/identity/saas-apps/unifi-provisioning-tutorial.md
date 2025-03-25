@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both UNIFI and Microsoft
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in UNIFI
-> * Remove users in UNIFI when they do not require access anymore
+> * Remove users in UNIFI when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and UNIFI
 > * Provision groups and group memberships in UNIFI
 > * [Single sign-on](unifi-tutorial.md) to UNIFI (recommended)
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and UNIFI](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-unifi-to-support-provisioning-with-azure-ad'></a>
@@ -43,30 +43,30 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure UNIFI to support provisioning with Microsoft Entra ID
 
 1. Make sure SSO is enabled successfully in your Enterprise Application in Azure. 
-1. Find the **Login URL** in Single sign-on. In our case it is `https://login.microsoftonline.com/<guid>/saml2`.
+1. Find the **Login URL** in Single sign-on. In our case it's `https://login.microsoftonline.com/<guid>/saml2`.
 1. Download the Certificate (Base64) under the SAML Signing Certificate section.
 
 	![Enterprise Application SSO View](media/unifi-provisioning-tutorial/enterprise-application-view.png)
 
-1. If your identity provider is not added to UNIFI , then login to UNIFI Portal as a **Company Admin**. Navigate to **Users -> Configure SSO -> add provider** button.
+1. If your identity provider isn't added to UNIFI , then login to UNIFI Portal as a **Company Admin**. Navigate to **Users -> Configure SSO -> add provider** button.
 
 	![Add Identity Provider View](media/unifi-provisioning-tutorial/add-identity-provider-view.png)
 
-1. The add SSO Provider modal will be displayed.
+1. The add SSO Provider modal is displayed.
 
 	![Add Identity Provider Modal](media/unifi-provisioning-tutorial/add-identity-provider-modal.png)
 
-1. Provide any unique **Name** value you desire. the **URL** will be the **Login URL** from your Microsoft Entra Enterprise Application. Provide any value for the **Token**. Place your Certificate (Base64) value in the **Certificate** field. If you want all of your users created from this point forward to use this identity provider, select the **Make this the default identity provider** checkbox.
+1. Provide any unique **Name** value you desire. the **URL** is the **Login URL** from your Microsoft Entra Enterprise Application. Provide any value for the **Token**. Place your Certificate (Base64) value in the **Certificate** field. If you want all of your users created from this point forward to use this identity provider, select the **Make this the default identity provider** checkbox.
 
 	![Add Identity Provider Modal Populated](media/unifi-provisioning-tutorial/add-identity-provider-modal-populated.png)
 
-1. Click SAVE Button.
+1. Select SAVE Button.
 
 <a name='step-3-add-unifi-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add UNIFI from the Microsoft Entra application gallery
 
-Add UNIFI from the Microsoft Entra application gallery to start managing provisioning to UNIFI. If you have previously setup UNIFI for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add UNIFI from the Microsoft Entra application gallery to start managing provisioning to UNIFI. If you have previously setup UNIFI for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your UNIFI **Tenant URL** -`https://licensing.inviewlabs.com/api/scim/v2/` and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to UNIFI. If the connection fails , ensure your UNIFI account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your UNIFI **Tenant URL** -`https://licensing.inviewlabs.com/api/scim/v2/` and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to UNIFI. If the connection fails , ensure your UNIFI account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to UNIFI**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to UNIFI in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in UNIFI for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the UNIFI API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to UNIFI in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in UNIFI for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the UNIFI API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -140,7 +140,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
