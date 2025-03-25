@@ -28,7 +28,7 @@ Microsoft recommendeds this certificate management option as we manage the keys 
 
 ## Bring Your Own Certificate (BYOC) 
 
-Microsoft Entra Connect Sync manages the application identity that will be used by Entra Connect Sync to authenticate to Microsoft Entra ID, and you manage the certificate credential used by the application. Your administrator is responsible for creating the certificate, rotation and deletion of unused/expired certificates. The certificate should be created in the Local Machine store. You are responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing. 
+Microsoft Entra Connect Sync manages the application identity that will be used by Entra Connect Sync to authenticate to Microsoft Entra ID, and you manage the certificate credential used by the application. Your administrator is responsible for creating the certificate, rotation and deletion of unused/expired certificates. The certificate should be stored in the Local Machine store. You are responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing. 
 
 ## Prerequisites
 The following prerequisites are required to implement authentication using application identity.
@@ -45,18 +45,17 @@ The following are additional requirements depending on which certificate managem
 - Maintenance is enabled and the scheduler is not suspended.
 
 > [!NOTE]
-> If using Hyper-V VMs, the TPM can be enabled by checking Security > Enable Trusted Platform Module. This can only be done on a Gen 2 VMs. Gen 1 VMs cannot be converted to a Gen 2 VMs. 
+> If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a Gen 2 VMs. Gen 1 VMs cannot be converted to a Gen 2 VMs. 
 
 ### BYOC Prerequisites
 - A certificate is created in an HSM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
-    a.	KeyLength: 2048
-    b.	KeyAlgorithm: RSA
-    c.	KeyHashAlgorithm: SHA256
+      a.	KeyLength: 2048
+      b.	KeyAlgorithm: RSA
+      c.	KeyHashAlgorithm: SHA256
+- A certificate can also be created in the local machine (not recommended). See [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate)
 
-For more information on creating a certificate on the local machine, see [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate)
-
-## Onboarding to Certificate Based Authentication
-Microsoft Entra Connect uses username and password by default for authenticating to Microsoft Entra ID. To onboard to Certificate Based Authentication, an administrator needs to perform the following steps.
+## Onboarding to Application Based Authentication
+Microsoft Entra Connect uses username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps.
 
 > [!NOTE]
 > Ensure that you are on the Microsoft Entra Connect server and the ADSync PowerShell module is installed.
@@ -79,7 +78,7 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
   - Managed by Microsoft Entra Connect:
     
      ``` powershell
-     Add-EntraApplicationRegistration –UserPrincipalName &lt;AdminUserPrincipalName&gt;
+     Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName>
      ```
 
   - Use BYOC:
@@ -87,11 +86,10 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
   > [!NOTE] 
   > The certificate thumbprint needs to be provided when registering the application. 
 
-   ``` powershell
-   Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
-   ```
-
-Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra administrator and &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
+      ``` powershell
+     Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
+      ```
+Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
@@ -101,10 +99,10 @@ Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra a
    ```
   - Use BYOC:
  
-   ``` powershell
-   Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint> 
-   ```
-Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra administrator, &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
+     ``` powershell
+     Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint> ```
+
+Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;certificateThumbprint&gt; with the CertificateThumbPrint
 
 5. Run a verification to confirm that we are now using application identity. Run the cmdlet below to get the current authentication and ensure it has the Connector Identity Type as **Application**. 
 
@@ -133,7 +131,7 @@ If the certificate is managed by Microsoft Entra Connect, **no action** is requi
 2. Invoke certificate credential rotation. When the customer is in BYOC mode, the new certificate thumbprint must be provided.
 
  ``` powershell
- Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
+ Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint &lt;certificateThumbprint>
  ```
 
 Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Microsoft Entra ID hybrid administrator, &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
@@ -159,7 +157,7 @@ You may roll over the certificate at any point in time as deemed necessary, even
 The certificate revocation process allows Authentication Policy Administrators to revoke a previously issued certificate from being used for future authentication. The certificate revocation won't revoke already issued tokens of the user. For more information on this process see [Understanding the certificate revocation process](../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
 
 ## Roll back to legacy service account
-If want to go back to the legacy servive account, you have the option to revert to using service account to mitigate the issue promptly using PowerShell.  Use the steps below to rollback to the service account.
+If want to go back to the legacy service account, you have the option to revert to using service account to mitigate the issue promptly using PowerShell.  Use the steps below to rollback to the service account.
 
 1. Disable the scheduler with below command to ensure no sync cycles run until this change is completed
  
