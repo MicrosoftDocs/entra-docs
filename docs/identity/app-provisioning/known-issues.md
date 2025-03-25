@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/04/2025
+ms.date: 03/25/2025
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -31,9 +31,10 @@ This article discusses known issues to be aware of when you work with app provis
 - Synchronizing meeting rooms across tenants
 
 ### Updating exchange attributes such as proxyAddresses and HiddenFromAddressListEnabled 
-Cross-tenant synchronization can manager user properties in Entra. It does not directly manage exchange attributes. For example: 
+Cross-tenant synchronization can manage user properties in Entra. It does not directly manage exchange attributes. For example: 
 * ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
 * Cross-tenant synchronization can update the ShowInAddressList attribute in Entra, but it cannot directly update HiddenFromAddressListEnabled in Exchange.
+* TargetAddress, which maps to the ExternalEmailAddress property in Microsoft Exchange Online, isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.
 
 ### SMS sign-in enabled users are skipped
 
@@ -115,10 +116,6 @@ The otherMails property is automatically computed in the target tenant. Changes 
 #### Multivalue directory extensions
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
-
-#### Attribute targetAddress not available to select
-
-Attribute **targetAddress** (which maps to the ExternalEmailAddress property in Microsoft Exchange Online) isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.  
 
 
 ## Service issues 
