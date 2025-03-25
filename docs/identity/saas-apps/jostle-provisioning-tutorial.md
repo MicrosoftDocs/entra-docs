@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jostle so that I can streamline the user management process and ensure that users have the appropriate access to Jostle.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Jostle and Microsof
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Jostle
-> * Remove users in Jostle when they do not require access anymore
+> * Remove users in Jostle when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Jostle
 > * [Single sign-on](jostle-tutorial.md) to Jostle (recommended)
 
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Jostle](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-jostle-to-support-provisioning-with-azure-ad'></a>
@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ### Automation account
 
-Before you begin, you’ll need to create an **Automation user** in your Jostle intranet. This will be the account you’ll use to configure with Azure. Automation users can be created in Admin **Settings > User accounts and data > Manage Automation users**.
+Before you begin, you’ll need to create an **Automation user** in your Jostle intranet. This are the account you’ll use to configure with Azure. Automation users can be created in Admin **Settings > User accounts and data > Manage Automation users**.
 
 For more details on Automation users and how to create one, see [this article](https://forum.jostle.us/hc/en-us/articles/360057364073).
 
@@ -58,19 +58,19 @@ Before you begin, ensure that your account subscription **includes SSO/user prov
 
 The next step is to obtain the **API URL** and **API key** from Jostle:
 
-1. Go to the Main Navigation and click **Admin Settings**.
-1. Under **User data to/from other systems** click **Manage user provisioning** .If you do not see "Manage user provisioning" here and have verified that your account includes SSO/user provisioning, contact Support <support@jostle.me> to have this page enabled in your Admin Settings).
-1. In the **User Provisioning API details** section, go to **Your Base URL** field, click the Copy button and save the URL somewhere you can easily access it later.                                                           
+1. Go to the Main Navigation and select **Admin Settings**.
+1. Under **User data to/from other systems** select **Manage user provisioning** .If you don't see "Manage user provisioning" here and have verified that your account includes SSO/user provisioning, contact Support <support@jostle.me> to have this page enabled in your Admin Settings).
+1. In the **User Provisioning API details** section, go to **Your Base URL** field, select the Copy button and save the URL somewhere you can easily access it later.                                                           
 
    ![Provisioning](media/jostle-provisioning-tutorial/manage-user-provisioning.png)
                 
-1. Next, click the **Add a new key**... button
+1. Next, select the **Add a new key**... button
 1. On the following screen, go to the **Automation User** field and use the drop-down menu to select your Automation user account. 
 
    ![Integration Account](media/jostle-provisioning-tutorial/select-integration-account.png)                                                                                                                                     
-1. In the **Provisioning API key description** field give your key a name (such as `Azure`) and then click the **Add** button.
+1. In the **Provisioning API key description** field give your key a name (such as `Azure`) and then select the **Add** button.
 
-1. Once your key is generated, **make sure to copy it right away** and save it where you saved your URL (since this will be the only time your key will appear).                                                               
+1. Once your key is generated, **make sure to copy it right away** and save it where you saved your URL (since it's the only time your key appears).                                                               
 1. Next, you’ll use the **API URL** and **API key** to configure the integration in Azure.
 <a name='step-3-add-jostle-from-the-azure-ad-application-gallery'></a>
 
@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Jostle link in the Applications list](common/all-applications.png)
 
-1. Select the **Provisioning** tab and click **Get Started**.
+1. Select the **Provisioning** tab and select **Get Started**.
 
 	![Provisioning tab](common/provisioning.png)
 
@@ -122,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Provision Microsoft Entra users to Jostle**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Jostle in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Jostle for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Jostle API supports filtering users based on that attribute. Select **Save** to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Jostle in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Jostle for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Jostle API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
