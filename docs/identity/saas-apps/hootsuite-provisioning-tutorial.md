@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Hootsuite so that I can streamline the user management process and ensure that users have the appropriate access to Hootsuite.
@@ -21,7 +21,7 @@ This article describes the steps you need to do in both Hootsuite and Microsoft 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Hootsuite
-> * Remove users in Hootsuite when they do not require access anymore
+> * Remove users in Hootsuite when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Hootsuite
 > * Provision groups and group memberships in Hootsuite
 > * [Single sign-on](./hootsuite-tutorial.md) to Hootsuite (recommended)
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Hootsuite](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-hootsuite-to-support-provisioning-with-azure-ad'></a>
@@ -76,7 +76,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The Hootsuite link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab. Click on **Get started**.
+3. Select the **Provisioning** tab. Select **Get started**.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
 
@@ -84,7 +84,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://platform.hootsuite.com/scim/v2` in Tenant URL. Input the long lasting secret token value retrieved earlier in **Step 2**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Hootsuite. If the connection fails, ensure your Hootsuite account has admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://platform.hootsuite.com/scim/v2` in Tenant URL. Input the long lasting secret token value retrieved earlier in **Step 2**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Hootsuite. If the connection fails, ensure your Hootsuite account has admin permissions and try again.
 
  	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/hootsuite-provisioning-tutorial/provisioning.png)
 
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Provision Microsoft Entra users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Hootsuite in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Hootsuite for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Hootsuite API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Hootsuite in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Hootsuite for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Hootsuite API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -129,7 +129,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you're ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
