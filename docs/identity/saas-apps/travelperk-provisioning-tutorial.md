@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both TravelPerk and Micr
 > [!div class="checklist"]
 >
 > - Create users in TravelPerk
-> - Remove users in TravelPerk when they do not require access anymore
+> - Remove users in TravelPerk when they don't require access anymore
 > - Keep user attributes synchronized between Microsoft Entra ID and TravelPerk
 > - [Single sign-on](./travelperk-tutorial.md) to TravelPerk (recommended)
 
@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and TravelPerk](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-travelperk-to-support-provisioning-with-azure-ad'></a>
@@ -51,18 +51,18 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. Navigate to **Company Settings** > **Integrations** > **SCIM**
 
-3. Click **Enable SCIM API**
+3. Select **Enable SCIM API**
 
    ![Enable](./media/travelperk-provisioning-tutorial/configuration.png)
 
 4. You can also enable approvals through SCIM. Approvals help you set additional governance by ensuring trips get approved first by the specified approvers. You can learn more about this [here](https://support.travelperk.com/hc/en-us/articles/360034561252-Using-SSO).
 
-5. You can specify whether you want every person's manager to automatically become the user responsible for the approval of trips. Therefore an approver will be assigned in the corresponding automatic approval process. TravelPerk will map Azure's **manager** value, to the user's desired approver. The user needs to exist on the platform before becoming the provisioned user approver.
-Approvers will not be created if they are not properly configured on TravelPerk.
+5. You can specify whether you want every person's manager to automatically become the user responsible for the approval of trips. Therefore an approver is assigned in the corresponding automatic approval process. TravelPerk will map Azure's **manager** value, to the user's desired approver. The user needs to exist on the platform before becoming the provisioned user approver.
+Approvers aren't created if they aren't properly configured on TravelPerk.
 
 6. Automatic approval process creation is available in the **SCIM settings** after enabling SCIM from the integrations page. To turn it on, select **Through an Identity Provider** and switch the toggle for **Enable automatic approval process creation**.
 
-7. Click on **Save changes** once the necessary approval process is configured.
+7. Select **Save changes** once the necessary approval process is configured.
 
    ![Automate](./media/travelperk-provisioning-tutorial/approval.png)
 
@@ -70,7 +70,7 @@ Approvers will not be created if they are not properly configured on TravelPerk.
 
 ## Step 3: Add TravelPerk from the Microsoft Entra application gallery
 
-Add TravelPerk from the Microsoft Entra application gallery to start managing provisioning to TravelPerk. If you have previously setup TravelPerk for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add TravelPerk from the Microsoft Entra application gallery to start managing provisioning to TravelPerk. If you have previously setup TravelPerk for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, click on **Authorize**. You will be redirected to **TravelPerk**'s Login page. Input your **Username** and **Password** and click on the **Sign In** button. Click on **Authorize App** on the Authorization page. Click **Test Connection** to ensure Microsoft Entra ID can connect to TravelPerk. If the connection fails, ensure your SecureLogin account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, select **Authorize**. You be redirected to **TravelPerk**'s Login page. Input your **Username** and **Password** and select the **Sign In** button. Select **Authorize App** on the Authorization page. Select **Test Connection** to ensure Microsoft Entra ID can connect to TravelPerk. If the connection fails, ensure your SecureLogin account has Admin permissions and try again.
 
    ![Admin Credentials](./media/travelperk-provisioning-tutorial/authorize.png)
 
@@ -117,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to TravelPerk**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to TravelPerk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in TravelPerk for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the TravelPerk API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to TravelPerk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in TravelPerk for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the TravelPerk API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    | Attribute                                                                         | Type      | Supported For Filtering |
    | --------------------------------------------------------------------------------- | --------- | ----------------------- |
@@ -152,7 +152,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
     ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
