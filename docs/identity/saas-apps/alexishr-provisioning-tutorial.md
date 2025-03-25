@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and AlexisHR](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-alexishr-to-support-provisioning-with-azure-ad'></a>
@@ -49,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Access User Management](media/alexishr-provisioning-tutorial/login.png)
 
-1. Once on the Access token page, fill in the **Name** and **Description** textbox and click on **Save**.A pop-up window will appear with the token in it.Copy and save the token. This value will be entered in the **Secret Token** * field in the Provisioning tab of your AlexisHR application.
+1. Once on the Access token page, fill in the **Name** and **Description** textbox and select on **Save**.A pop-up window appears with the token in it.Copy and save the token. This value will be entered in the **Secret Token** * field in the Provisioning tab of your AlexisHR application.
 
 	![Access tokens](media/alexishr-provisioning-tutorial/token.png)
 
@@ -57,7 +57,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add AlexisHR from the Microsoft Entra application gallery
 
-Add AlexisHR from the Microsoft Entra application gallery to start managing provisioning to AlexisHR. If you have previously setup AlexisHR for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add AlexisHR from the Microsoft Entra application gallery to start managing provisioning to AlexisHR. If you have previously setup AlexisHR for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -88,7 +88,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your AlexisHR **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to AlexisHR. If the connection fails , ensure your AlexisHR account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your AlexisHR **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to AlexisHR. If the connection fails , ensure your AlexisHR account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to AlexisHR**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to AlexisHR in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in AlexisHR for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the AlexisHR API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to AlexisHR in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in AlexisHR for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the AlexisHR API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by AlexisHR
    |---|---|---|---|
@@ -130,7 +130,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

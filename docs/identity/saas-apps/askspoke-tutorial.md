@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with askSpoke
 
-In this article,  you'll learn how to integrate askSpoke with Microsoft Entra ID. When you integrate askSpoke with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate askSpoke with Microsoft Entra ID. When you integrate askSpoke with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to askSpoke.
 * Enable your users to be automatically signed-in to askSpoke with their Microsoft Entra accounts.
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **askSpoke** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -85,9 +85,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.askspoke.com/saml/callback`
 
 	> [!NOTE]
-	> The Reply URL value is not real. Update this value with the actual Reply URL. Contact [askSpoke Client support team](mailto:support@askspoke.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Reply URL value isn't  real. Update this value with the actual Reply URL. Contact [askSpoke Client support team](mailto:support@askspoke.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
     `https://askspoke.com/login`
@@ -119,11 +119,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign into askSpoke website as an administrator.
 
-1. Click on **Settings** tab from the left navigation pane.
+1. Select **Settings** tab from the left navigation pane.
 
     ![askSpoke settings tab](./media/askspoke-tutorial/configure-1.png)
 
-1. Scroll down to **SSO** and click on **Connect**.
+1. Scroll down to **SSO** and select on **Connect**.
 
     ![askSpoke connect](./media/askspoke-tutorial/configure-2.png)
 
@@ -139,11 +139,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. Copy **ACS URL** value and paste it into **Reply URL** textbox in the **Basic SAML Configuration** section.
 
-    1. Click **Test SAML connection**.
+    1. Select **Test SAML connection**.
 
 ### Create askSpoke test user
 
-In this section, a user called B.Simon is created in askSpoke. askSpoke supports just-in-time provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in askSpoke, a new one is created when you attempt to access askSpoke.
+In this section, a user called B.Simon is created in askSpoke. askSpoke supports just-in-time provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in askSpoke, a new one is created when you attempt to access askSpoke.
 
 askSpoke also supports automatic user provisioning, you can find more details [here](./askspoke-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
@@ -153,15 +153,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to askspoke Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to askspoke Sign on URL where you can initiate the login flow.  
 
 * Go to askspoke Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the askspoke for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the askspoke for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the askspoke tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the askspoke for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the askspoke tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the askspoke for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 
 ## Related content

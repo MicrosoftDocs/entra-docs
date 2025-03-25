@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Atmos](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-atmos-to-support-provisioning-with-azure-ad'></a>
@@ -49,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 1. Hover over the **Azure Identity Provider** and select **edit**.
 1. Navigate to **Advanced Settings**.
 1. Navigate to **User Auto-Provisioning (SCIM)**. 
-1. Click **Generate new token**.
+1. Select **Generate new token**.
 1. Copy the **SCIM Service Provider Endpoint** and **SCIM Provisioning Token** and paste them into a text editor. You need them for Step 5.
 
 <a name='step-3-add-atmos-from-the-azure-ad-application-gallery'></a>
@@ -87,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, paste the **SCIM Service Provider Endpoint** obtained from the Axis SCIM configuration (step 2) in Tenant URL, and paste the **SCIM Provisioning Token** obtained from the Axis SCIM configuration (step 2) in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Atmos. If the connection fails, contact Axis to check your account setup.
+1. In the **Admin Credentials** section, paste the **SCIM Service Provider Endpoint** obtained from the Axis SCIM configuration (step 2) in Tenant URL, and paste the **SCIM Provisioning Token** obtained from the Axis SCIM configuration (step 2) in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Atmos. If the connection fails, contact Axis to check your account setup.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -133,7 +133,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

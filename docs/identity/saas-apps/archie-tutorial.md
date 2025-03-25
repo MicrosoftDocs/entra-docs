@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Archie
 
-In this article,  you'll learn how to integrate Archie with Microsoft Entra ID. When you integrate Archie with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Archie with Microsoft Entra ID. When you integrate Archie with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Archie.
 * Enable your users to be automatically signed-in to Archie with their Microsoft Entra accounts.
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Archie** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://archieapp.co/sign-in/<CustomerName>/`
 
 	> [!NOTE]
-	> This value is not real. Update this value with the actual Sign-on URL. Contact [Archie Client support team](mailto:dev@archieapp.co) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> This value isn't  real. Update this value with the actual Sign-on URL. Contact [Archie Client support team](mailto:dev@archieapp.co) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Archie application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -121,7 +121,7 @@ To configure single sign-on on **Archie** side, you need to send the downloaded 
 
 ### Create Archie test user
 
-In this section, a user called Britta Simon is created in Archie. Archie supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Archie, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Archie. Archie supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Archie, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -129,15 +129,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Archie Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to Archie Sign on URL where you can initiate the login flow.  
 
 * Go to Archie Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Archie for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Archie for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Archie tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Archie for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Archie tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Archie for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 
