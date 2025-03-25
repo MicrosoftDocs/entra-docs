@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
     * F5 BIG-IP Access Policy Manager&trade; (APM) add-on license on an existing BIG-IP F5 BIG-IP&reg; Local Traffic Manager&trade; (LTM).
 
-    * In addition to the above license, the F5 system may also be licensed with:
+    * In addition to the above license, the F5 system might also be licensed with:
 
         * A URL Filtering subscription to use the URL category database
 
@@ -52,9 +52,9 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Access guided configuration
 
-* Access guided configuration' is supported on F5 TMOS version 13.1.0.8 and above. If your BIG-IP system is running a version below 13.1.0.8, please refer to the **Advanced configuration** section.
+* Access guided configuration' is supported on F5 TMOS version 13.1.0.8 and above. If your BIG-IP system is running a version below 13.1.0.8, refer to the **Advanced configuration** section.
 
-* Access guided configuration presents a completely new and streamlined user experience. This workflow-based architecture provides intuitive, re-entrant configuration steps tailored to the selected topology.
+* Access guided configuration presents a new and streamlined user experience. This workflow-based architecture provides intuitive, re-entrant configuration steps tailored to the selected topology.
 
 * Before proceeding to the configuration, upgrade the guided configuration by downloading the latest use case pack from [downloads.f5.com](https://login.f5.com/resource/login.jsp?ctx=719748). To upgrade, follow the below procedure.
 
@@ -194,7 +194,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot that shows the "S S L Certificate/Key Source" page with the values entered and the "Import" button selected.](./media/kerbf5-tutorial/configure02.png) 
  
-1. We will use the Guided Experience to setup the Microsoft Entra Federation and Application Access. Go to – F5 BIG-IP **Main** and select **Access > Guided Configuration > Federation > SAML Service Provider**. Select **Next** then select **Next** to begin configuration.
+1. We use the Guided Experience to set up the Microsoft Entra Federation and Application Access. Go to – F5 BIG-IP **Main** and select **Access > Guided Configuration > Federation > SAML Service Provider**. Select **Next** then select **Next** to begin configuration.
 
     ![Screenshot that shows the "Guided Configuration" page with the "Federation" icon highlighted and "S A M L Service Provider" selected.](./media/kerbf5-tutorial/configure03.png) 
 
@@ -211,7 +211,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot that shows the "Virtual Server Properties" page with the "Destination Address" text box highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure06.png)
 
-1. Under **Select method to configure your IdP connector**, specify Metadata, select Choose File and upload the Metadata XML file downloaded earlier from Microsoft Entra ID. Specify a unique **Name** for SAML IDP connector. Choose the **Metadata Signing Certificate** which was upload earlier. Select **Save & Next**.
+1. Under **Select method to configure your IdP connector**, specify Metadata, select **Choose File** and upload the Metadata XML file downloaded earlier from Microsoft Entra ID. Specify a unique **Name** for SAML IDP connector. Choose the **Metadata Signing Certificate** which was upload earlier. Select **Save & Next**.
 
     ![Screenshot that shows the "External Identity Provider Connector Settings" page with the "Name" text box highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure07.png)  
 
@@ -226,7 +226,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Under **Account Name/ Account Password**, Specify the APM Delegation Account and Password. 
 1. Specify the Domain Controller IP in the **KDC** Field. 
 1. Select **Save & Next**.
-1. For purposes of this guidance, we will skip endpoint checks.  Refer to F5 documentation for details.  On screen select **Save & Next**.
+1. For purposes of this guidance, we'll skip endpoint checks.  Refer to F5 documentation for details.  On screen, select **Save & Next**.
 
 1. Accept the defaults and select **Save & Next**. Consult F5 documentation for details regarding SAML session management settings.
 
@@ -421,7 +421,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 ### Setting up Kerberos Delegation 
 
 >[!NOTE]
->For reference select [here](https://www.f5.com/pdf/deployment-guides/kerberos-constrained-delegation-dg.pdf)
+>For reference, select [here](https://www.f5.com/pdf/deployment-guides/kerberos-constrained-delegation-dg.pdf)
 
 *  **Step 1:** Create a Delegation Account
 
