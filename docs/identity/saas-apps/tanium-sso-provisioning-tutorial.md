@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Tanium SSO and Micr
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Tanium SSO.
-> * Remove users in Tanium SSO when they do not require access anymore.
+> * Remove users in Tanium SSO when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tanium SSO.
 > * Provision groups and group memberships in Tanium SSO.
 > * [Single sign-on](~/identity/saas-apps/tanium-sso-tutorial.md) to Tanium SSO (recommended).
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Tanium SSO](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Enable SCIM Provisioning in the Tanium Cloud Management Portal (CMP)
@@ -48,7 +48,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Tanium SSO from the Microsoft Entra application gallery
 
-Add Tanium SSO from the Microsoft Entra application gallery to start managing provisioning to Tanium SSO. If you have previously setup Tanium SSO for SSO you can use the same application. However, it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Tanium SSO from the Microsoft Entra application gallery to start managing provisioning to Tanium SSO. If you have previously setup Tanium SSO for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -79,7 +79,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Tanium SSO **Tenant URL** and **Secret Token** that you previously retrieved from the Tanium CMP. Click **Test Connection** to ensure Microsoft Entra ID can connect to Tanium SSO. If the connection fails, ensure that you entered the complete token value, including the `token-` prefix.
+1. Under the **Admin Credentials** section, input your Tanium SSO **Tenant URL** and **Secret Token** that you previously retrieved from the Tanium CMP. Select **Test Connection** to ensure Microsoft Entra ID can connect to Tanium SSO. If the connection fails, ensure that you entered the complete token value, including the `token-` prefix.
 
 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Tanium SSO**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Tanium SSO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Tanium SSO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Tanium SSO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Tanium SSO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Tanium SSO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Tanium SSO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Tanium SSO|
    |---|---|---|---|
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
