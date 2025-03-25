@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Visual Paradigm Online
 
-In this article,  you'll learn how to integrate Visual Paradigm Online with Microsoft Entra ID. When you integrate Visual Paradigm Online with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Visual Paradigm Online with Microsoft Entra ID. When you integrate Visual Paradigm Online with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Visual Paradigm Online.
 * Enable your users to be automatically signed-in to Visual Paradigm Online with their Microsoft Entra accounts.
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Visual Paradigm Online, perform t
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Visual Paradigm Online SSO](#configure-visual-paradigm-online-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Visual Paradigm Online test user](#create-visual-paradigm-online-test-user)** - to have a counterpart of B.Simon in Visual Paradigm Online that is linked to the Microsoft Entra representation of user.
+    1. **[Create Visual Paradigm Online test user](#create-visual-paradigm-online-test-user)** - to have a counterpart of B.Simon in Visual Paradigm Online that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -66,7 +66,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Visual Paradigm Online** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://online.visual-paradigm.com/login.jsp`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Visual Paradigm Online support team](mailto:support@visual-paradigm.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Visual Paradigm Online support team](mailto:support@visual-paradigm.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Your Visual Paradigm Online application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Box expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -112,11 +112,11 @@ In this section, you create a user called B.Simon in Visual Paradigm Online. Wor
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Visual Paradigm Online Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Visual Paradigm Online Sign-on URL where you can initiate the login flow.
  
 * Go to Visual Paradigm Online Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you click the Visual Paradigm Online tile in the My Apps, this will redirect to Visual Paradigm Online Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Visual Paradigm Online tile in the My Apps, this option redirects to Visual Paradigm Online Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
