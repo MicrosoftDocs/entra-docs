@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADP so that I can control who has access to ADP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -49,7 +49,7 @@ To configure the integration of ADP into Microsoft Entra ID, you need to add ADP
 1. In the **Add from the gallery** section, type **ADP** in the search box.
 1. Select **ADP** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-adp'></a>
 
@@ -63,7 +63,7 @@ To configure and test Microsoft Entra SSO with ADP, perform the following steps:
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 2. **[Configure ADP SSO](#configure-adp-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create ADP test user](#create-adp-test-user)** - to have a counterpart of B.Simon in ADP that is linked to the Microsoft Entra representation of user.
+    1. **[Create ADP test user](#create-adp-test-user)** - to have a counterpart of B.Simon in ADP that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,7 +73,7 @@ To configure and test Microsoft Entra SSO with ADP, perform the following steps:
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ADP** application integration page, select on **Properties tab** and perform the following steps: 
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ADP** application integration page, select **Properties tab** and perform the following steps: 
 
     ![Single sign-on properties](./media/adpfederatedsso-tutorial/properties.png)
 
@@ -124,7 +124,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot for services selection.](./media/adpfederatedsso-tutorial/services.png)
 
-1. In the **Configure** section, select on the **Next**.
+1. In the **Configure** section, select the **Next**.
 
 1. In the **Upload Metadata**, select **Browse** to upload the metadata XML file which you have downloaded and select **UPLOAD**.
 
@@ -141,11 +141,11 @@ Upon receipt of confirmation from your ADP representative, configure your ADP se
 1. In the **Add from the gallery** section, type **ADP** in the search box.
 1. Select **ADP** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. Select the **ADP** application integration page, select on **Properties tab** and perform the following steps:  
+1. Select the **ADP** application integration page, select **Properties tab** and perform the following steps:  
 
     ![Single sign-on linked properties tab](./media/adpfederatedsso-tutorial/application.png)
 

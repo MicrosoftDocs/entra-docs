@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Adobe Identity Management (OIDC) so that I can streamline the user management process and ensure that users have the appropriate access to Adobe Identity Management (OIDC).
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both Adobe Identity Mana
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Adobe Identity Management (OIDC)
-> * Disable users in Adobe Identity Management (OIDC) when they do not require access anymore
+> * Disable users in Adobe Identity Management (OIDC) when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Adobe Identity Management (OIDC)
 > * Provision groups and group memberships in Adobe Identity Management (OIDC)
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Adobe Identity Management (OIDC) (recommended)
@@ -59,7 +59,7 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Screenshot that shows 'Sync users from Microsoft Entra ID' selected.](media/adobe-identity-management-provisioning-saml-tutorial/sync-users.png)
 
-1. Copy and save the **Tenant URL** and the **Secret token**. These values will be entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your Adobe Identity Management (OIDC) application.
+1. Copy and save the **Tenant URL** and the **Secret token**. These values are entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your Adobe Identity Management (OIDC) application.
 
     ![Sync](media/adobe-identity-management-provisioning-saml-tutorial/token.png)
 
@@ -124,7 +124,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:Adobe:2.0:User:eduRole|String||
 
     > [!NOTE]
-    > The **eduRole** field accepts values like `Teacher or Student`, anything else will be ignored.
+    > The **eduRole** field accepts values like `Teacher or Student`, anything else is ignored.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Adobe Identity Management (OIDC)**.
 
