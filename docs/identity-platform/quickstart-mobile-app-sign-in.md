@@ -39,7 +39,6 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
 
 #### [Android](#tab/android-workforce)
@@ -63,7 +62,7 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 ## Add a redirect URI
 
-You will need to add a redirect URI to your app registration. This URI is used to redirect users to the app after they have signed in.
+You must configure specific redirect URIs in your app registration to ensure compatibility with the downloaded code sample. These URIs are essential for redirecting users back to the app after they successfully sign in.
 
 #### [Android](#tab/android-workforce)
 
@@ -270,13 +269,13 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md).
     * **Name**: *identity-client-mobile-app*
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+
 
 #### [Android](#tab/android-external)
 
@@ -286,10 +285,10 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
-- [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
-  - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
-  - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
+* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+* [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
+  * [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
+  * [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
 
 #### [iOS/macOS](#tab/ios-macos-external)
 
@@ -298,6 +297,8 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 ---
 
 ## Add a platform redirect URL
+
+You must configure specific redirect URIs in your app registration to ensure compatibility with the downloaded code sample. These URIs are essential for redirecting users back to the app after they successfully sign in.
 
 #### [Android](#tab/android-external)
 
@@ -321,28 +322,12 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 
 ---
 
-## Grant admin consent
-
-#### [Android](#tab/android-external)
-
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-#### [Android(.NET MAUI)](#tab/android-netmaui-external)
-
-[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-#### [iOS/macOS](#tab/ios-macos-external)
-
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
----
-
 ## Clone sample application
 
 
 #### [Android](#tab/android-external)
 
-To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+To obtain the sample application, you can either clone it from GitHub or [download it as a .zip file](https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-android-sample/archive/refs/heads/main.zip).
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
  
