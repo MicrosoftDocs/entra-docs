@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Atomic Learning
 
-In this article,  you'll learn how to integrate Atomic Learning with Microsoft Entra ID. When you integrate Atomic Learning with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Atomic Learning with Microsoft Entra ID. When you integrate Atomic Learning with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Atomic Learning.
 * Enable your users to be automatically signed-in to Atomic Learning with their Microsoft Entra accounts.
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Atomic Learning** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,9 +82,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://secure2.atomiclearning.com/sso/shibboleth/<companyname>`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [Atomic Learning Client support team](mailto:cs@atomiclearning.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't  real. Update the value with the actual Sign-On URL. Contact [Atomic Learning Client support team](mailto:cs@atomiclearning.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -102,17 +102,17 @@ To configure single sign-on on **Atomic Learning** side, you need to send the do
 
 ### Create Atomic Learning test user
 
-In this section, a user called Britta Simon is created in Atomic Learning. Atomic Learning supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Atomic Learning, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Atomic Learning. Atomic Learning supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Atomic Learning, a new one is created after authentication.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Atomic Learning Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this redirects to Atomic Learning Sign-on URL where you can initiate the login flow. 
 
 * Go to Atomic Learning Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Atomic Learning tile in the My Apps, this will redirect to Atomic Learning Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Atomic Learning tile in the My Apps, this redirects to Atomic Learning Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

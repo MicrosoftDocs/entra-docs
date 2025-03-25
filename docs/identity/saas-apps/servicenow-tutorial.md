@@ -68,8 +68,8 @@ Configure and test Microsoft Entra SSO with ServiceNow by using a test user call
 To configure and test Microsoft Entra SSO with ServiceNow, perform the following steps:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
-	1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra single sign-on with B.Simon.
-	1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable B.Simon to use Microsoft Entra single sign-on.
+	1. Create a Microsoft Entra test user to test Microsoft Entra single sign-on with B.Simon.
+	1. Assign the Microsoft Entra test user to enable B.Simon to use Microsoft Entra single sign-on.
 	1. [Configure Microsoft Entra SSO for ServiceNow Express](#configure-azure-ad-sso-for-servicenow-express) to enable your users to use this feature.
 2. [Configure ServiceNow](#configure-servicenow) to configure the SSO settings on the application side.
 	1. [Create a ServiceNow test user](#create-servicenow-test-user) to have a counterpart of B.Simon in ServiceNow, linked to the Microsoft Entra representation of the user.

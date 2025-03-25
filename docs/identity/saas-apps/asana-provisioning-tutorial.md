@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Asana so that I can streamline the user management process and ensure that users have the appropriate access to Asana.
@@ -23,7 +23,7 @@ This article describes the steps you need to do in both Asana and Microsoft Entr
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Asana.
-> * Remove users in Asana when they do not require access anymore.
+> * Remove users in Asana when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Asana.
 > * Provision groups and group memberships in Asana.
 > * [Single sign-on](asana-tutorial.md) to Asana (recommended).
@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Asana](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-asana-to-support-provisioning-with-azure-ad'></a>
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Asana Tenant URL and Secret Token provided by Asana. Click **Test Connection** to ensure Microsoft Entra ID can connect to Asana. If the connection fails, contact Asana to check your account setup.
+1. In the **Admin Credentials** section, input your Asana Tenant URL and Secret Token provided by Asana. Select **Test Connection** to ensure Microsoft Entra ID can connect to Asana. If the connection fails, contact Asana to check your account setup.
 
  	![Screenshot of token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -155,7 +155,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving provisioning configuration.](common/provisioning-configuration-save.png)
 

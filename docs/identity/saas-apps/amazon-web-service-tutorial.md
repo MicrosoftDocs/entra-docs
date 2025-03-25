@@ -123,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AWS Single-Account Access** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot showing Edit Basic SAML Configuration.](common/edit-urls.png)
 
@@ -167,11 +167,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different browser window, sign-on to your AWS company site as an administrator.
 
-1. In AWS home page, search for **IAM** and click it.
+1. In AWS home page, search for **IAM** and select it.
 
     ![Screenshot of AWS services page, with IAM highlighted.](./media/amazon-web-service-tutorial/identity-access-management.png)
 
-1. Go to **Access management** -> **Identity Providers** and click **Add provider** button.
+1. Go to **Access management** -> **Identity Providers** and select **Add provider** button.
 
     ![Screenshot of IAM page, with Identity Providers and Create Provider highlighted.](./media/amazon-web-service-tutorial/add-provider.png)
 
@@ -185,7 +185,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     c. To upload your downloaded **metadata file**, select **Choose file**.
 
-    d. Click **Add provider**.
+    d. Select **Add provider**.
 
 1. Select **Roles** > **Create role**.
 
@@ -222,7 +222,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Use AWS service account credentials for fetching the roles from the AWS account in Microsoft Entra user provisioning. For this, open the AWS console home.
 
-1. In the IAM section, select **Policies** and click **Create policy**.
+1. In the IAM section, select **Policies** and select **Create policy**.
 
     ![Screenshot of IAM section, with Policies highlighted.](./media/amazon-web-service-tutorial/create-policy.png)
 
@@ -249,9 +249,9 @@ Follow these steps to enable Microsoft Entra SSO.
     }
     ```
 
-    c. Click **Next: Tags**.
+    c. Select **Next: Tags**.
 
-1. You can also add the required tags in the below page and click **Next: Review**.
+1. You can also add the required tags in the below page and select **Next: Review**.
 
     ![Screenshot of Create policy tag page.](./media/amazon-web-service-tutorial/tag-policy.png)
 
@@ -267,7 +267,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Create a new user account in the AWS IAM service.
 
-    a. In the AWS IAM console, select **Users** and click **Add users**.
+    a. In the AWS IAM console, select **Users** and select **Add users**.
 
     ![Screenshot of AWS IAM console, with Users highlighted.](./media/amazon-web-service-tutorial/create-user.png)
 
@@ -307,7 +307,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot of AWS app, with Provisioning highlighted.](./media/amazon-web-service-tutorial/provisioning.png)
 
-**Note:**  The username and password returned when enabling console access are not what is needed for the clientsecret and Secret Token values. Instead, create a third-party access key for this step.
+**Note:**  The username and password returned when enabling console access aren't what is needed for the clientsecret and Secret Token values. Instead, create a third-party access key for this step.
 
 2. Enter the access key and secret in the **clientsecret** and **Secret Token** fields, respectively.
 
@@ -341,15 +341,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to AWS Single-Account Access Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to AWS Single-Account Access Sign on URL where you can initiate the login flow.  
 
 * Go to AWS Single-Account Access Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the AWS Single-Account Access for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the AWS Single-Account Access for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the AWS Single-Account Access tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the AWS Single-Account Access for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the AWS Single-Account Access tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the AWS Single-Account Access for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Known issues
 

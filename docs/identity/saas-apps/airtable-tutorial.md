@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Airtable
 
-In this article,  you'll learn how to integrate Airtable with Microsoft Entra ID. When you integrate Airtable with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Airtable with Microsoft Entra ID. When you integrate Airtable with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Airtable.
 * Enable your users to be automatically signed-in to Airtable with their Microsoft Entra accounts.
@@ -73,18 +73,18 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Airtable** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
     `https://airtable.com/sso/login`
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Airtable application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -115,7 +115,7 @@ Follow the instructions given in the [link](https://support.airtable.com/docs/co
 
 ### Create Airtable test user
 
-In this section, a user called B.Simon is created in Airtable. Airtable supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Airtable, a new one is created after authentication.
+In this section, a user called B.Simon is created in Airtable. Airtable supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Airtable, a new one is created after authentication.
 
 ## Test SSO
 
@@ -123,15 +123,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Airtable Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this redirects to Airtable Sign on URL where you can initiate the login flow.  
 
 * Go to Airtable Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Airtable for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Airtable for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Airtable tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Airtable for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Airtable tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Airtable for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
