@@ -635,9 +635,9 @@ The following documentation provides reference information for the `ADSync.psm1`
 ### SYNTAX
 
  ```powershell
- Get-ADSyncExportDeletionThreshold [[-AADCredential] <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ Get-ADSyncExportDeletionThreshold  [-AADUserName] <string> [-WhatIf] [-Confirm] [<CommonParameters>]
  ```
-
+ 
 ### DESCRIPTION
  Gets the export deletion threshold from Microsoft Entra ID.
 
@@ -647,26 +647,27 @@ The following documentation provides reference information for the `ADSync.psm1`
  ```powershell
  PS C:\> Get-ADSyncExportDeletionThreshold -AADUserName "<UserPrincipalName>"
  ```
-
+ 
  Gets the export deletion threshold from Microsoft Entra ID using the specified Microsoft Entra credentials.
 
 ### PARAMETERS
 
-#### -AADCredential
- The Microsoft Entra credential.
+#### -AADUserName <string>
+
+ The Microsoft Entra ID UserPrincipalName.
 
  ```yaml
  Type: PSCredential
  Parameter Sets: (All)
  Aliases:
 
- Required: False
+ Required: True
  Position: 1
  Default value: None
  Accept pipeline input: True (ByPropertyName)
  Accept wildcard characters: False
  ```
-
+ 
 #### -Confirm
  Prompts you for confirmation before running the cmdlet.
 
@@ -703,7 +704,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 
 ### INPUTS
 
-#### System.Management.Automation.PSCredential
+#### System.String
 
 ### OUTPUTS
 
