@@ -30,9 +30,10 @@ This article discusses known issues to be aware of when you work with app provis
 - Synchronizing contacts and converting contacts to B2B users
 - Synchronizing meeting rooms across tenants
 
-### Updating proxyAddresses
-
-ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
+### Updating exchange attributes such as proxyAddresses and HiddenFromAddressListEnabled 
+Cross-tenant synchronization can manager user properties in Entra. It does not directly manage exchange attributes. For example: 
+* ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
+* Cross-tenant synchronization can update the ShowInAddressList attribute in Entra, but it cannot directly update HiddenFromAddressListEnabled in Exchange.
 
 ### SMS sign-in enabled users are skipped
 
