@@ -15,7 +15,7 @@ ms.reviewer: KaTabish
 ---
 # Set a custom home page for published apps by using Microsoft Entra application proxy
 
-This article discusses how to configure an app to direct a user to a custom home page. When you publish an app with application proxy, you set an internal URL, but sometimes that's not the page a user should see first. Set a custom home page so a user gets the right page when accessing the app. A user sees the custom home page you set, regardless of whether they access the app from the Microsoft Entra My Apps or the Microsoft 365 app launcher.
+This article discusses how to configure an app to direct a user to a custom home page. When you publish an app with application proxy, you set an internal URL, but sometimes that's not the page a user should see first. Set a custom home page so users get the correct page when accessing the app. Users see the custom home page you set, regardless of whether they access the app from Microsoft Entra My Apps or the Microsoft 365 app launcher.
 
 When a user launches the app, they're directed to the root domain URL for the published app by default. The landing page is typically set as the home page URL. Use the Microsoft Entra PowerShell module to define a custom home page URL when you want an app user to land on a specific page within the app.
 
@@ -31,11 +31,11 @@ Here's one scenario that explains why your company would set a custom home page:
 
 ## Before you start
 
-Before you set the home page URL, keep in mind the following requirements:
+Before setting the home page URL, keep these requirements in mind:
 
 - The path that you specify must be a subdomain path of the root domain URL.
 
-  For example, if the root-domain URL is `https://apps.contoso.com/app1/`, the home page URL that you configure must start with `https://apps.contoso.com/app1/`.
+  For example, if the root domain URL is `https://apps.contoso.com/app1/`, the home page URL you configure must start with `https://apps.contoso.com/app1/`.
 
 - If you make a change to the published app, the change might reset the value of the home page URL. When you update the app in the future, you should recheck and, if necessary, update the home page URL.
 
@@ -50,10 +50,8 @@ To change the home page URL of your app through the Microsoft Entra admin center
 1. Choose your app from the list. A page showing the details of the registered app appears.
 1. Under **Manage**, select **Branding**.
 1. Update the **Home page URL**  with your new path.
-
-   ![Branding page for a registered app showing the Home Page URL field](media/application-proxy-configure-custom-home-page/app-proxy-app-branding.png)
-
 1. Select **Save**.
+:::image type="content" source="media/application-proxy-configure-custom-home-page/application-proxy-branding-properties.png" alt-text="Screenshot of the Branding & properties page for a registered app with the Home Page URL field highlighted." lightbox="media/application-proxy-configure-custom-home-page/application-proxy-branding-properties-expanded.png":::      
 
 ## Change the home page with PowerShell
 
