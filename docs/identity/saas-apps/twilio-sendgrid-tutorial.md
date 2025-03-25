@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Twilio Sendgrid so that I can control who has access to Twilio Sendgrid, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with Twilio Sendgrid, perform the foll
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Twilio Sendgrid SSO](#configure-twilio-sendgrid-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Twilio Sendgrid test user](#create-twilio-sendgrid-test-user)** - to have a counterpart of B.Simon in Twilio Sendgrid that's linked to the Microsoft Entra representation of user.
+    1. **[Create Twilio Sendgrid test user](#create-twilio-sendgrid-test-user)** - to have a counterpart of B.Simon in Twilio Sendgrid linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -100,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![image](common/default-attributes.png)
 
-1. In addition to above, Twilio Sendgrid application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to previous step, Twilio Sendgrid application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 
     | Name | Source Attribute|
     | ------------ | --------- |
@@ -133,15 +133,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this option redirects to Twilio Sendgrid Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Twilio Sendgrid Sign on URL where you can initiate the sign-in flow.  
 
-* Go to Twilio Sendgrid Sign-on URL directly and initiate the login flow from there.
+* Go to Twilio Sendgrid Sign-on URL directly and initiate the sign-in flow from there.
 
 #### IDP initiated:
 
 * Select **Test this application**, and you should be automatically signed in to the Twilio Sendgrid for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you select the Twilio Sendgrid tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Twilio Sendgrid for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Twilio Sendgrid tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign-in flow and if configured in IDP mode, you should be automatically signed in to the Twilio Sendgrid for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
