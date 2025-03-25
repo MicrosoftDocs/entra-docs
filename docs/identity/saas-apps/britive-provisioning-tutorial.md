@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Britive so that I can streamline the user management process and ensure that users have the appropriate access to Britive.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Britive and Microso
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Britive
-> * Remove users in Britive when they do not require access anymore
+> * Remove users in Britive when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Britive
 > * Provision groups and group memberships in Britive
 > * [Single sign-on](britive-tutorial.md) to Britive (recommended)
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Britive](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-britive-to-support-provisioning-with-azure-ad'></a>
@@ -47,24 +47,24 @@ The scenario outlined in this article assumes that you already have the followin
 
 The application will have to be manually configured using the steps provided below:
 1. Login to Britive application with administrator privileges
-1. Click on **Admin->User Administration->Identity Providers**
-1. Click on **Add Identity Provider**. Enter the name and description. Click on Add Identity Provider button.
+1. Select **Admin->User Administration->Identity Providers**
+1. Select **Add Identity Provider**. Enter the name and description. Select Add Identity Provider button.
 
 	![Identity Provider](media/britive-provisioning-tutorial/identity.png)
 
-1. A configuration page similar to one displayed below will be shown.
+1. A configuration page similar to one displayed below is shown.
 
 	![Configuration Page](media/britive-provisioning-tutorial/configuration.png)
 
-1. Click on **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the SCIM URL and note it down.This values will be entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application.
+1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the SCIM URL and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application.
 
 	![SCIM Page](media/britive-provisioning-tutorial/scim.png)
 
-1. Click on **Create Token**. Select the validity of the token as required and click on Create Token button.
+1. Select **Create Token**. Select the validity of the token as required and select Create Token button.
 
 	![Create Token](media/britive-provisioning-tutorial/create-token.png)
 
-1. Copy the token generated and note it down. Click OK. Please note that the user will not be able to see the token again. Click on Re-Create button to generate a new token if needed.This values will be entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
+1. Copy the token generated and note it down. Select OK. Please note that the user isn't able to see the token again. Select Re-Create button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
 
 	![Copy Token](media/britive-provisioning-tutorial/copy-token.png) 
 
@@ -73,7 +73,7 @@ The application will have to be manually configured using the steps provided bel
 
 ## Step 3: Add Britive from the Microsoft Entra application gallery
 
-Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously setup Britive for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously setup Britive for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Britive Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Britive. If the connection fails, ensure your Britive account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Britive Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Britive. If the connection fails, ensure your Britive account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -116,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Britive**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Britive in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Britive for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Britive API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Britive in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Britive for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Britive API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -187,7 +187,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
