@@ -71,7 +71,7 @@ To configure and test Microsoft Entra SSO with productboard, perform the followi
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **productboard** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **productboard** application integration page, find the **Manage** section, and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -111,15 +111,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this option redirects to productboard Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to productboard Sign-on URL where you can initiate the sign-in flow.  
 
-* Go to productboard Sign-on URL directly and initiate the login flow from there.
+* Go to productboard Sign-on URL directly and initiate the sign-in flow from there.
 
 #### IDP initiated:
 
 * Select **Test this application**, and you should be automatically signed in to the productboard for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you select the productboard tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the productboard for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the productboard tile in the My Apps, if configured in SP mode you would be redirected to the application sign-in page for initiating the sign-in flow and if configured in IDP mode, you should be automatically signed in to the productboard for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
