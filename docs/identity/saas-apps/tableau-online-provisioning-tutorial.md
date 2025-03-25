@@ -25,7 +25,7 @@ This article describes the steps you need to do in both Tableau Cloud and Micros
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Tableau Cloud.
-> * Remove users in Tableau Cloud when they do not require access anymore.
+> * Remove users in Tableau Cloud when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tableau Cloud.
 > * Provision groups and group memberships in Tableau Cloud.
 > * [Single sign-on](tableauonline-tutorial.md) to Tableau Cloud (recommended).
@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Tableau Cloud](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-tableau-cloud-to-support-provisioning-with-azure-ad'></a>
@@ -58,11 +58,11 @@ Use the following steps to enable SCIM support with Microsoft Entra ID:
  	* Step 2: [Add Tableau Cloud to your Microsoft Entra applications](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm#add-tableau-online-to-your-azure-ad-applications).
 	 
   	> [!NOTE]
-  	> If you don’t set up SAML single sign-on, your user will be unable to sign into Tableau Cloud after they have been provisioned unless you manually change the user’s authentication method from SAML to Tableau or Tableau MFA in Tableau Cloud. 
+  	> If you don’t set up SAML single sign-on, your user is unable to sign into Tableau Cloud after they have been provisioned unless you manually change the user’s authentication method from SAML to Tableau or Tableau MFA in Tableau Cloud. 
 
 1. In Tableau Cloud, navigate to **Settings > Authentication** page, then under **Automatic Provisioning and Group Synchronization (SCIM)**, select the **Enable SCIM** check box. This populates the **Base URL** and **Secret** boxes with values you use in the SCIM configuration of your IdP.
   	> [!NOTE] 
-  	> The secret token is displayed only immediately after it is generated. If you lose it before you can apply it to Microsoft Entra ID, you can select **Generate New Secret**. In addition, the secret token is tied to the Tableau Cloud user account of the site administrator who enables SCIM support. If that user’s site role changes or the user is removed from the site, the secret token becomes invalid, and another site administrator must generate a new secret token and apply it to Microsoft Entra ID.
+  	> The secret token is displayed only immediately after it's generated. If you lose it before you can apply it to Microsoft Entra ID, you can select **Generate New Secret**. In addition, the secret token is tied to the Tableau Cloud user account of the site administrator who enables SCIM support. If that user’s site role changes or the user is removed from the site, the secret token becomes invalid, and another site administrator must generate a new secret token and apply it to Microsoft Entra ID.
 
 
 
@@ -82,7 +82,7 @@ Add Tableau Cloud from the Microsoft Entra application gallery to start managing
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and groups in Tableau Cloud based on user and group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You must enable SAML-based single sign-on for Tableau Cloud. Follow the instructions in the [Tableau Cloud single sign-on  article](tableauonline-tutorial.md). If SAML isn't enabled, then the user that is provisioned will not be able to sign in.
+> You must enable SAML-based single sign-on for Tableau Cloud. Follow the instructions in the [Tableau Cloud single sign-on  article](tableauonline-tutorial.md). If SAML isn't enabled, then the user that's provisioned isn't able to sign in.
 
 <a name='to-configure-automatic-user-provisioning-for-tableau-cloud-in-azure-ad'></a>
 
@@ -108,14 +108,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Tableau Cloud Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Tableau Cloud. If the connection fails, ensure your Tableau Cloud account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your Tableau Cloud Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Tableau Cloud. If the connection fails, ensure your Tableau Cloud account has Admin permissions and try again.
 
 
 	![Token](media/tableau-online-provisioning-tutorial/tableau-test-connections.png)
 
 
 	> [!NOTE]
-	> You'll have 2 options for your Authentication Method: **Bearer Authentication** and **Basic Authentication**. Make sure that you select Bearer Authentication. Basic authentication will not work for the SCIM 2.0 endpoint.
+	> You'll have 2 options for your Authentication Method: **Bearer Authentication** and **Basic Authentication**. Make sure that you select Bearer Authentication. Basic authentication doesn't work for the SCIM 2.0 endpoint.
 
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
@@ -161,7 +161,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	![Provisioning Scope](common/provisioning-scope.png)
 
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -178,7 +178,7 @@ In June 2022, Tableau released a SCIM 2.0 connector. Completing the steps below 
 * Scoping filters
 * Custom attribute mappings
 >[!Note]
->Be sure to note any changes that have been made to the settings listed above before completing the steps below. Failure to do so will result in the loss of customized settings.
+>Be sure to note any changes that have been made to the settings listed above before completing the steps below. Failure to do so results in the loss of customized settings.
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
