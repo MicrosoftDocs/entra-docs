@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Funnel Leasing so that I can streamline the user management process and ensure that users have the appropriate access to Funnel Leasing.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Funnel Leasing and 
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Funnel Leasing.
-> * Remove users in Funnel Leasing when they do not require access anymore.
+> * Remove users in Funnel Leasing when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Funnel Leasing.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Funnel Leasing (recommended).
 
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Funnel Leasing](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-funnel-leasing-to-support-provisioning-with-azure-ad'></a>
@@ -79,7 +79,7 @@ This section guides you through connecting your Microsoft Entra ID to Funnel's u
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input `https://nestiolistings.com/scim/v2` as the **Tenant URL** and the **Secret Token** retrieved earlier from your Funnel Account Manager (the authentication Bearer token). Click **Test Connection** to ensure Microsoft Entra ID can connect to Funnel. If the connection fails, ensure you have a valid authentication token with your Funnel Account Manager.
+1. Under the **Admin Credentials** section, input `https://nestiolistings.com/scim/v2` as the **Tenant URL** and the **Secret Token** retrieved earlier from your Funnel Account Manager (the authentication Bearer token). Select **Test Connection** to ensure Microsoft Entra ID can connect to Funnel. If the connection fails, ensure you have a valid authentication token with your Funnel Account Manager.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -91,7 +91,7 @@ This section guides you through connecting your Microsoft Entra ID to Funnel's u
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Funnel Leasing**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Funnel Leasing in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Funnel Leasing for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Funnel Leasing API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Funnel Leasing in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Funnel Leasing for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Funnel Leasing API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Funnel Leasing|
    |---|---|---|---|
@@ -115,7 +115,7 @@ This section guides you through connecting your Microsoft Entra ID to Funnel's u
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
@@ -140,16 +140,16 @@ To associate an Azure user to a Funnel role, or an Azure user to a Funnel employ
     
     For initial setup, determine every value that you want to use for role and group mappings. Provide these values to your Funnel Account Manager to set up the configuration in Funnel.
     
-    For example, if you want to set the `jobTitle` field with an `agent` value, you will need to tell your Funnel Account Manager which Funnel role this value should be mapped. 
+    For example, if you want to set the `jobTitle` field with an `agent` value, you need to tell your Funnel Account Manager which Funnel role this value should be mapped. 
     
-    If you need to update or add new values in the future, you will need to notify your Funnel Account Manager.
+    If you need to update or add new values in the future, you need to notify your Funnel Account Manager.
 
 - How do I associate a user to several roles and groups?
     
-    It is not possible to associate a user to several Funnel roles, but it is possible to associate a user to several Funnel employee groups.
+    It isn't possible to associate a user to several Funnel roles, but it's possible to associate a user to several Funnel employee groups.
     
-    To associate a user to several Funnel employee groups, you will need to specify multiple values in the `department` user attribute (or whichever attribute you mapped to `userType`).
-    Each value will need to be separated by a delimiter. By default the `-` character is used as the delimiter. To use another delimiter, you will need to notify your Funnel account manager.
+    To associate a user to several Funnel employee groups, you need to specify multiple values in the `department` user attribute (or whichever attribute you mapped to `userType`).
+    Each value will need to be separated by a delimiter. By default the `-` character is used as the delimiter. To use another delimiter, you need to notify your Funnel account manager.
 
 ## More resources
 

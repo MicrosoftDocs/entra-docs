@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Freshworks so that I can control who has access to Freshworks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Freshworks
 
-In this article,  you'll learn how to integrate Freshworks with Microsoft Entra ID. When you integrate Freshworks with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Freshworks with Microsoft Entra ID. When you integrate Freshworks with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Freshworks.
 * Enable your users to be automatically signed-in to Freshworks with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of Freshworks into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, type **Freshworks** in the search box.
 1. Select **Freshworks** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-freshworks'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Freshworks, perform the following
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Freshworks SSO](#configure-freshworks-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Freshworks test user](#create-freshworks-test-user)** - to have a counterpart of B.Simon in Freshworks that is linked to the Microsoft Entra representation of user.
+    1. **[Create Freshworks test user](#create-freshworks-test-user)** - to have a counterpart of B.Simon in Freshworks that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Freshworks** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -84,19 +84,19 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.freshworks.com/sp/SAML/CUSTOM_URL`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
 	In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.freshworks.com/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Freshworks Client support team](mailto:support@freshworks.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Freshworks Client support team](mailto:support@freshworks.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. To modify the **Signing** options as per your requirement, click **Edit** button to open **SAML Signing Certificate** dialog.
+1. To modify the **Signing** options as per your requirement, select **Edit** button to open **SAML Signing Certificate** dialog.
 
      ![image](common/edit-certificate.png)
 
@@ -114,7 +114,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Open a new web browser window and sign into your Freshworks company site as an administrator and perform the following steps:
 
-2. From the left side of menu, click on **Security** icon then check the **Single sign-on** option and select **SAML SSO** under **Authentication Methods**.
+2. From the left side of menu, select on **Security** icon then check the **Single sign-on** option and select **SAML SSO** under **Authentication Methods**.
 
     ![Screenshot that shows the "Security - Authentication Methods" section with "Single sign-on" option turned on and "S A M L S S O" selected.](./media/freshworks-tutorial/configure01.png)
 
@@ -122,7 +122,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Freshworks configuration](./media/freshworks-tutorial/configure02.png)
 
-    a. Click **Copy** to copy the **Service Provider(SP) Entity ID** for your instance and paste it in **Identifier (Entity ID)** text box in **Basic SAML Configuration** section.
+    a. Select **Copy** to copy the **Service Provider(SP) Entity ID** for your instance and paste it in **Identifier (Entity ID)** text box in **Basic SAML Configuration** section.
 
     b. In the **Entity ID provided by the IdP** text box, Paste the **Microsoft Entra Identifier** value, which you copied previously.
 
@@ -130,7 +130,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     d. Open the Base64 encoded certificate in notepad, copy its content and paste it into the **Security certificate** text box.
 
-    e. Click **Save**.
+    e. Select **Save**.
 
 ### Create Freshworks test user
 
@@ -142,15 +142,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Freshworks Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Freshworks Sign on URL where you can initiate the login flow.  
 
 * Go to Freshworks Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Freshworks for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the Freshworks for which you set up the SSO 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Freshworks tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Freshworks for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Freshworks tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Freshworks for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content
