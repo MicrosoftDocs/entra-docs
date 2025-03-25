@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to askSpoke so that I can streamline the user management process and ensure that users have the appropriate access to askSpoke.
@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both askSpoke and Micros
 > [!div class="checklist"]
 >
 > -  Create users in askSpoke
-> -  Remove users in askSpoke when they do not require access anymore
+> -  Remove users in askSpoke when they don't require access anymore
 > -  Keep user attributes synchronized between Microsoft Entra ID and askSpoke
 > -  Provision groups and group memberships in askSpoke
 > -  [Single sign-on](./askspoke-tutorial.md) to askSpoke (recommended)
@@ -56,11 +56,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 5. Select **Enable SCIM**.
 
-6. Copy and save the **API Token**. This value will be entered in the **Secret Token** field in the Provisioning tab of your askSpoke application.
+6. Copy and save the **API Token**. This value is entered in the **Secret Token** field in the Provisioning tab of your askSpoke application.
 
    ![Api](media/askspoke-provisioning-tutorial/scim.png)
 
-7. The Tenant URL is your askSpoke URL followed by **/scim/v2**. For example: `https://example.askspoke.com/scim/v2`. This value will be entered in the **Tenant URL** field in the Provisioning tab of your askSpoke application.
+7. The Tenant URL is your askSpoke URL followed by **/scim/v2**. For example: `https://example.askspoke.com/scim/v2`. This value is entered in the **Tenant URL** field in the Provisioning tab of your askSpoke application.
 
 <a name='step-3-add-askspoke-from-the-azure-ad-application-gallery'></a>
 
