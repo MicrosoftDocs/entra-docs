@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to HelloID so that I can streamline the user management process and ensure that users have the appropriate access to HelloID.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both HelloID and Microso
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in HelloID
-> * Remove users in HelloID when they do not require access anymore
+> * Remove users in HelloID when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and HelloID
 > * Provision groups and group memberships in HelloID
 
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and HelloID](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-helloid-to-support-provisioning-with-azure-ad'></a>
@@ -55,7 +55,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![New Secret button](media/helloid-provisioning-tutorial/new-secret.png)
 
-4. The **URL** and **Secret** fields are automatically populated. Copy and save the URL and Secret. These value will be entered in the **Tenant URL** * and **Secret Token** * field in the Provisioning tab of your HelloID application.
+4. The **URL** and **Secret** fields are automatically populated. Copy and save the URL and Secret. These value is entered in the **Tenant URL** * and **Secret Token** * field in the Provisioning tab of your HelloID application.
 
 	![URL and secret generated](media/helloid-provisioning-tutorial/url-secret.png)
 
@@ -63,7 +63,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add HelloID from the Microsoft Entra application gallery
 
-Add HelloID from the Microsoft Entra application gallery to start managing provisioning to HelloID. If you have previously setup HelloID for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add HelloID from the Microsoft Entra application gallery to start managing provisioning to HelloID. If you have previously setup HelloID for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your HelloID Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to HelloID. If the connection fails, ensure your HelloID account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your HelloID Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to HelloID. If the connection fails, ensure your HelloID account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -106,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to HelloID**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to HelloID in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in HelloID for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the HelloID API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to HelloID in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in HelloID for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the HelloID API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -138,7 +138,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
