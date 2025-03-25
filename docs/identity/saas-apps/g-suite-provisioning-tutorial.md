@@ -91,7 +91,7 @@ Before configuring G Suite for automatic user provisioning with Microsoft Entra 
 
 ## Step 3: Add G Suite from the Microsoft Entra application gallery
 
-Add G Suite from the Microsoft Entra application gallery to start managing provisioning to G Suite. If you have previously setup G Suite for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add G Suite from the Microsoft Entra application gallery to start managing provisioning to G Suite. If you have previously setup G Suite for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -127,7 +127,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, select **Authorize**. You'll be redirected to a Google authorization dialog box in a new browser window.
+1. Under the **Admin Credentials** section, select **Authorize**. You're redirected to a Google authorization dialog box in a new browser window.
 
       ![G Suite authorize](./media/g-suite-provisioning-tutorial/authorize-1.png)
 
@@ -253,7 +253,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
 > [!NOTE]
-> If the users already have an existing personal/consumer account using the email address of the Microsoft Entra user, then it may cause some issue which could be resolved by using the Google Transfer Tool prior to performing the directory sync.
+> If the users already have an existing personal/consumer account using the email address of the Microsoft Entra user, then it might cause some issue which could be resolved by using the Google Transfer Tool prior to performing the directory sync.
 
 ## Step 6: Monitor your deployment
 
@@ -280,7 +280,7 @@ With PIM for Groups, you can provide just-in-time access to groups in Google Clo
 1. Use on-demand provisioning to create the group in Google Cloud / Google Workspace.
 1. Sign-in to Google Cloud / Google Workspace and assign the second group the necessary permissions to perform admin tasks.  
 
-Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). When their assignment expires, the user is removed from the group in Google Cloud / Google Workspace. During the next incremental cycle, the provisioning service attempts to remove the user from the group again. This may result in an error in the provisioning logs. This error is expected because the group membership 
+Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). When their assignment expires, the user is removed from the group in Google Cloud / Google Workspace. During the next incremental cycle, the provisioning service attempts to remove the user from the group again. This might result in an error in the provisioning logs. This error is expected because the group membership 
 was already removed. The error message can be ignored. 
 
 * How long does it take to have a user provisioned to the application? 
@@ -289,8 +289,8 @@ was already removed. The error message can be ignored.
   * When a user activates their group membership in Microsoft Entra ID PIM: 
     * The group membership is provisioned in 2 – 10 minutes. When there's a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
     * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
-    * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
-* If the user is unable to access the necessary group in Google Cloud / Google Workspace, review the PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application is architected, it may take more time for the group membership to take effect in the application.
+    * For the sixth user and beyond within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
+* If the user is unable to access the necessary group in Google Cloud / Google Workspace, review the PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application is architected, it might take more time for the group membership to take effect in the application.
 * You can create alerts for failures using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics).
   
 ## Change log
