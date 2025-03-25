@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Labelbox
 
-In this article,  you'll learn how to integrate Labelbox with Microsoft Entra ID. When you integrate Labelbox with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Labelbox with Microsoft Entra ID. When you integrate Labelbox with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Labelbox.
 Enable your users to be automatically signed in to Labelbox with their Microsoft Entra accounts.
@@ -48,7 +48,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Perform the following steps in the below section:
 
-    a. Click **Go to application**.
+    a. Select **Go to application**.
 
     ![Screenshot showing the identity configuration.](common/go-to-application.png "Identity")
 
@@ -66,19 +66,19 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     ![Screenshot showing the Access tokens.](./media/labelbox-tutorial/access-token.png "Tokens")
 
-    b. click **Save**.
+    b. select **Save**.
 
     >[!NOTE]
     > The **Redirect URIs** value will auto populate, you don't need to perform any manual configuration here.
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
-    1. Go to **Client secrets** tab and click **+New client secret**.
-    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
+    1. Go to **Client secrets** tab and select **+New client secret**.
+    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
 
         ![Screenshot showing the client secrets value.](common/client-secret.png "Days")
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Labelbox side configuration.
+    1. Once you add a client secret, **Value** is generated. Copy the value and use it later in the Labelbox side configuration.
 
         ![Screenshot showing how to add a client secret.](common/client.png "Secret")
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Kno2fy
 
-In this article, you learn how to integrate Kno2fy with Microsoft Entra ID. Kno2fy empowers healthcare organizations to send, receive, and find patient information across the healthcare ecosystem with just a few quick clicks. When you integrate Kno2fy with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Kno2fy with Microsoft Entra ID. Kno2fy empowers healthcare organizations to send, receive, and find patient information across the healthcare ecosystem with just a few quick selects. When you integrate Kno2fy with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Kno2fy.
 * Enable your users to be automatically signed-in to Kno2fy with their Microsoft Entra accounts.
@@ -61,8 +61,8 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 ## Access Microsoft Entra information in Kno2fy
 
 1. Login to https://kno2fy.com as a Network Administrator.
-1. Click the settings gear in the right-hand corner at the top of the screen.
-1. Under Network, Click **Identity Provider**.
+1. Select the settings gear in the right-hand corner at the top of the screen.
+1. Under Network, Select **Identity Provider**.
 1. In the dropdown, Select **Microsoft Entra ID**.
 1. Continue setup in [Configure Microsoft Entra SSO](#configure-microsoft-entra-sso) section below.
     
@@ -94,7 +94,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     c. In the **Sign on URL** textbox:
 
    > [!Note]
-   > This value will appear once the Kno2fy Identity Provider has been saved.
+   > This value appears once the Kno2fy Identity Provider has been saved.
    > For now leave it blank.
 
 1. Save the **Basic SAML Configuration** section. 
@@ -105,13 +105,13 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 ## Configure Kno2fy SSO
 
 1. Paste the **App Federation Metadata URL** from Microsoft Entra ID SSO setup into the **App Federation Metadata URL** field inside Kno2fy.
-1. In the **Authentication Settings**, login without SSO will be off by default.
+1. In the **Authentication Settings**, login without SSO is off by default.
 
-   To allow time to conduct a login test, the **Allow non-admins to bypass SSO and login with a Kno2 username and password** setting can be enabled temporarily. It is recommended this setting remain off once SSO is fully enabled and setup.
+   To allow time to conduct a login test, the **Allow non-admins to bypass SSO and login with a Kno2 username and password** setting can be enabled temporarily. It's recommended this setting remain off once SSO is fully enabled and setup.
 
-1. Click the **Save** button to complete the setup.
+1. Select the **Save** button to complete the setup.
 
-Once complete, an **SSO Integration Activated** banner will appear at the top of the screen.
+Once complete, an **SSO Integration Activated** banner appears at the top of the screen.
 Copy the URL and paste the URL into the **Sign on URL** section of the **Basic SAML Configuration** [Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)
 
 
@@ -123,11 +123,11 @@ In this section, you create a user called Britta Simon at Kno2fy. Work with [Kno
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Kno2fy Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Kno2fy Sign-on URL where you can initiate the login flow. 
 
 * Go to Kno2fy Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Kno2fy tile in the My Apps, this will redirect to Kno2fy Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Kno2fy tile in the My Apps, this option redirects to Kno2fy Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

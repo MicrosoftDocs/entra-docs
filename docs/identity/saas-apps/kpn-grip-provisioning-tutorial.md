@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: article
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to KPN Grip so that I can streamline the user management process and ensure that users have the appropriate access to KPN Grip.
@@ -24,7 +24,7 @@ This article describes the steps you need to do in both KPN Grip and Microsoft E
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in KPN Grip.
-> * Remove users in KPN Grip when they do not require access anymore.
+> * Remove users in KPN Grip when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and KPN Grip.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to KPN Grip.
 
@@ -82,7 +82,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your KPN Grip Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to KPN Grip. If the connection fails, ensure your KPN Grip account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your KPN Grip Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to KPN Grip. If the connection fails, ensure your KPN Grip account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -126,7 +126,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
