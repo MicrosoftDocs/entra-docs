@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.kanbanize.com`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Businessmap Client support team](mailto:support@businessmap.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Contact [Businessmap Client support team](mailto:support@businessmap.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Businessmap application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas nameidentifier is mapped with **user.userprincipalname**. Businessmap application expects nameidentifier to be mapped with **user.mail**, so you need to edit the attribute mapping by selecting Edit icon and change the attribute mapping.
 
@@ -121,7 +121,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows the Businessmap settings.](./media/businessmap-tutorial/tutorial-businessmap-set.png)
 
-5. On the Administration panel page from the left side of menu select **Integrations** and then enable **Single Sign-On**.
+5. On the Administration panel page, from the left side of menu select **Integrations** and then enable **Single Sign-On**.
 
 	![Screenshot shows the Administration panel with Integration selected.](./media/businessmap-tutorial/tutorial-businessmap-admin.png)
 
@@ -166,13 +166,13 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Select **Test this application**, this option redirects to Businessmap Sign on URL where you can initiate the login flow.  
 
-* Go to Businessmap Sign-on URL directly and initiate the login flow from there.
+* Go to Businessmap Sign-on URL directly and initiate the sign-in flow from there.
 
 #### IDP initiated:
 
 * Select **Test this application**, and you should be automatically signed in to the Businessmap for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you select the Businessmap tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Businessmap for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Businessmap tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign-in flow and if configured in IDP mode, you should be automatically signed in to the Businessmap for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

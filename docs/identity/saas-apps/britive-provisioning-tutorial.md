@@ -1,6 +1,6 @@
 ---
 title: Configure Britive for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Britive.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Britive.
 
 author: thomasakelo
 manager: jeedes
@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Britive to support provisioning with Microsoft Entra ID
 
-The application will have to be manually configured using the steps provided below:
+The application has to be manually configured using the steps provided in the this section:
 1. Login to Britive application with administrator privileges
 1. Select **Admin->User Administration->Identity Providers**
 1. Select **Add Identity Provider**. Enter the name and description. Select Add Identity Provider button.
@@ -64,7 +64,7 @@ The application will have to be manually configured using the steps provided bel
 
 	![Create Token](media/britive-provisioning-tutorial/create-token.png)
 
-1. Copy the token generated and note it down. Select OK. Please note that the user isn't able to see the token again. Select Re-Create button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
+1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select Re-Create button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
 
 	![Copy Token](media/britive-provisioning-tutorial/copy-token.png) 
 
@@ -73,7 +73,7 @@ The application will have to be manually configured using the steps provided bel
 
 ## Step 3: Add Britive from the Microsoft Entra application gallery
 
-Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously setup Britive for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously setup Britive for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 

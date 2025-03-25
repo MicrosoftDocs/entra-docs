@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<COMPANY_CODE>.brushup.net/`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Brushup Client support team](mailto:support@brushup.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Contact [Brushup Client support team](mailto:support@brushup.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (PEM)** and select **Download** to download the certificate and save it on your computer.
 
@@ -114,13 +114,13 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Select **Test this application**, this option redirects to Brushup Sign on URL where you can initiate the login flow.  
 
-* Go to Brushup Sign-on URL directly and initiate the login flow from there.
+* Go to Brushup Sign-on URL directly and initiate the sign-in flow from there.
 
 #### IDP initiated:
 
 * Select **Test this application**, and you should be automatically signed in to the Brushup for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you select the Brushup tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Brushup for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Brushup tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign-in flow and if configured in IDP mode, you should be automatically signed in to the Brushup for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
