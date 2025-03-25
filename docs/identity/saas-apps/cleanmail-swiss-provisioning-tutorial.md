@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cleanmail Swiss so that I can streamline the user management process and ensure that users have the appropriate access to Cleanmail Swiss.
@@ -22,7 +22,7 @@ This article describes the steps you need to do in both Cleanmail Swiss and Micr
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Cleanmail
-> * Remove users in Cleanmail Swiss when they do not require access anymore
+> * Remove users in Cleanmail Swiss when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cleanmail
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Cleanmail Swiss (recommended).
 
@@ -80,7 +80,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Cleanmail Swiss Tenant URL as `https://cloud.cleanmail.ch/api/v3/scim2` and corresponding Secret Token obtained from Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to Cleanmail. If the connection fails, ensure your Cleanmail Swiss account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your Cleanmail Swiss Tenant URL as `https://cloud.cleanmail.ch/api/v3/scim2` and corresponding Secret Token obtained from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cleanmail. If the connection fails, ensure your Cleanmail Swiss account has Admin permissions and try again.
 
 	![Screenshot of the token.](common/provisioning-testconnection-tenanturltoken.png)
 	
@@ -112,7 +112,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of provisioning scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of saving provisioning configuration.](common/provisioning-configuration-save.png)
 

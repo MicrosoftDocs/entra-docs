@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cisco Webex so that I can streamline the user management process and ensure that users have the appropriate access to Cisco Webex.
@@ -42,7 +42,7 @@ Before configuring Cisco Webex for automatic user provisioning with Microsoft En
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **Cisco Webex**, select **Cisco Webex** from result panel then click **Add** button to add the application.
+1. In the **Add from the gallery** section, type **Cisco Webex**, select **Cisco Webex** from result panel then select **Add** button to add the application.
 
     ![Screenshot shows the Cisco Webex in the results list.](media/cisco-webex-provisioning-tutorial/search-cisco-app.png)
 
@@ -56,7 +56,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ### Important tips for assigning users to Cisco Webex
 
-* It is recommended that a single Microsoft Entra user is assigned to Cisco Webex to test the automatic user provisioning configuration. Additional users may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Cisco Webex to test the automatic user provisioning configuration. Additional users may be assigned later.
 
 * When assigning a user to Cisco Webex, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -89,17 +89,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     :::image type="content" source="./media/cisco-webex-provisioning-tutorial/secrettoken1.png" alt-text="Screenshot of the Admin Credentials section. The Tenant U R L and Secret token boxes are highlighted but are empty." border="false":::
 
-1.  In the **Tenant URL** field, enter a value in the form of `https://api.ciscospark.com/v1/scim/[OrgId]`. To obtain `[OrgId]`, sign into your [Cisco Webex Control Hub](https://admin.webex.com/login). Click on your organization name on the bottom left and copy the value from **Organization ID**. 
+1.  In the **Tenant URL** field, enter a value in the form of `https://api.ciscospark.com/v1/scim/[OrgId]`. To obtain `[OrgId]`, sign into your [Cisco Webex Control Hub](https://admin.webex.com/login). Select your organization name on the bottom left and copy the value from **Organization ID**. 
 
     * To obtain the value for **Secret Token**, navigate to this [URL](https://idbroker.webex.com/idb/saml2/jsp/doSSO.jsp?type=login&goto=https%3A%2F%2Fidbroker.webex.com%2Fidb%2Foauth2%2Fv1%2Fauthorize%3Fresponse_type%3Dtoken%26client_id%3DC4ca14fe00b0e51efb414ebd45aa88c1858c3bfb949b2405dba10b0ca4bc37402%26redirect_uri%3Dhttp%253A%2f%2flocalhost%253A3000%2fauth%2fcode%26scope%3Dspark%253Apeople_read%2520spark%253Apeople_write%2520Identity%253ASCIM%26state%3Dthis-should-be-a-random-string-for-security-purpose). From the webex sign in page that appears, sign in with the full Cisco Webex admin account for your organization. An error page appears saying that the site can't be reached, but this is normal.
 
-        :::image type="content" source="./media/cisco-webex-provisioning-tutorial/test.png" alt-text="Screenshot of a webpage displaying an error message. The message says that the site cannot be reached and includes a few troubleshooting tips." border="false":::
+        :::image type="content" source="./media/cisco-webex-provisioning-tutorial/test.png" alt-text="Screenshot of a webpage displaying an error message. The message says that the site can't be reached and includes a few troubleshooting tips." border="false":::
  
     * Copy the value of the generated bearer token from the URL as highlighted below. This token is valid for 365 days.
         
         :::image type="content" source="./media/cisco-webex-provisioning-tutorial/test1.png" alt-text="Screenshot showing a long U R L. Part of the address is indecipherable but is highlighted and labeled Bearer token." border="false":::
 
-1. Upon populating the fields shown in Step 5, click **Test Connection** to ensure Microsoft Entra ID can connect to Cisco Webex. If the connection fails, ensure your Cisco Webex account has Admin permissions and try again.
+1. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to Cisco Webex. If the connection fails, ensure your Cisco Webex account has Admin permissions and try again.
 
     ![Screenshot shows the Tenant URL and Token.](common/provisioning-testconnection-tenanturltoken.png)
    
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot shows the Notification Email.](common/provisioning-notification-email.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Cisco Webex**.
 
@@ -142,7 +142,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot shows the Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
     ![Screenshot shows to Save Provisioning Configuration.](common/provisioning-configuration-save.png)
 
