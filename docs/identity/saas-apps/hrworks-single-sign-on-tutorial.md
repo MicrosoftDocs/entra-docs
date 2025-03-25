@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HRworks Single Sign-On so that I can control who has access to HRworks Single Sign-On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://login.hrworks.de/?companyId=<COMPANY_ID>&directssologin=true`
 
 	> [!NOTE]
-	> The value isn't real. Update the value with the actual Sign-On URL. See [HRworks Single Sign-On Helpcenter article](https://help.hrworks.de/en/single-sign-on) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. See [HRworks Single Sign-On Help center article](https://help.hrworks.de/en/single-sign-on) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -141,11 +141,11 @@ To enable Microsoft Entra users, sign in to HRworks Single Sign-On, they must be
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this option redirects to HRworks Single Sign-On Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this link redirects to HRworks Single Sign-On sign-in URL where you can initiate the sign-in flow. 
 
-* Go to HRworks Single Sign-On Sign-on URL directly and initiate the login flow from there.
+* Go to HRworks Single Sign-On sign-in URL directly and initiate the sign-in flow from there.
 
-* You can use Microsoft My Apps. When you select the HRworks Single Sign-On tile in the My Apps, this option redirects to HRworks Single Sign-On Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the HRworks Single Sign-On tile in the My Apps, this option redirects to HRworks Single Sign-On sign-in URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
