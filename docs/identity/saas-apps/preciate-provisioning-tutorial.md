@@ -1,6 +1,6 @@
 ---
 title: Configure Preciate for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Preciate.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Preciate.
 author: thomasakelo
 manager: jeedes
 ms.service: entra-id
@@ -14,7 +14,7 @@ ms.author: thomasakelo
 
 # Configure Preciate for automatic user provisioning
 
-This article describes the steps you need to perform in both Preciate and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Preciate](https://preciate.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Preciate and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Preciate](https://preciate.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Preciate to support provisioning with Microsoft Entra ID
 
-1.  Log in to [Preciate Admin Portal](https://preciate.com/web/admin/keys) and navigate to the **Integrations** page.
+1.  Sign in to [Preciate Admin Portal](https://preciate.com/web/admin/keys) and navigate to the **Integrations** page.
 
 	![Preciate secret](media/preciate-provisioning-tutorial/preciate-secret-path.png)
 
@@ -51,14 +51,14 @@ The scenario outlined in this article assumes that you already have the followin
 3.  A new **Secret Key** appears. Copy and save the **Secret Key**. Also make a note that Tenant URL is `https://preciate.com/api/v1/scim`. These values are entered in the **Secret Token** and **Tenant URL** field in the Provisioning tab of your Preciate's application.
  
 > [!NOTE]
->Every time you select the Generate button a new secret key is created. This will immediately invalidate the current one. If an integration is already actively using the current key, generating the new one will cause the integration to stop functioning until the Secret Token is updated in Preciate's application in the Azure portal.
+>Every time you select the Generate button a new secret key is created. This immediately invalidates the current one. If an integration is already actively using the current key, generating the new one causes the integration to stop functioning until the Secret Token is updated in Preciate's application in the Azure portal.
 
 
 <a name='step-3-add-preciate-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Preciate from the Microsoft Entra application gallery
 
-Add Preciate from the Microsoft Entra application gallery to start managing provisioning to Preciate. If you have previously setup Preciate for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the [gallery](~/identity/enterprise-apps/add-application-portal.md). 
+Add Preciate from the Microsoft Entra application gallery to start managing provisioning to Preciate. If you have previously setup Preciate for Single sign-on (SSO), you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the [gallery](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -135,7 +135,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
