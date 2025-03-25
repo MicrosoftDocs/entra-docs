@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and MobileIron so that I can control who has access to MobileIron, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra integration with MobileIron
 
- In this article,  you'll learn how to integrate MobileIron with Microsoft Entra ID. When you integrate MobileIron with Microsoft Entra ID, you can:
+ In this article,  you learn how to integrate MobileIron with Microsoft Entra ID. When you integrate MobileIron with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to MobileIron.
 * Enable your users to be automatically signed in to MobileIron with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of MobileIron into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, type **MobileIron** in the search box.
 1. Select **MobileIron** from the results, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-mobileiron'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with MobileIron, perform the following
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
     1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure MobileIron SSO](#configure-mobileiron-sso)** - to configure the Single Sign-On settings on application side.
-    1. **[Create MobileIron test user](#create-mobileiron-test-user)** - to have a counterpart of Britta Simon in MobileIron that is linked to the Microsoft Entra representation of user.
+    1. **[Create MobileIron test user](#create-mobileiron-test-user)** - to have a counterpart of Britta Simon in MobileIron that's linked to the Microsoft Entra representation of user.
 6. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -80,15 +80,15 @@ In this section, you enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<host>.MobileIron.com/saml/SSO/alias/<key>`
 
-    c. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+    c. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
      In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<host>.MobileIron.com/user/login.html`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-On URL. You will get the values of key and host from the ​administrative​ ​portal of MobileIron which is explained later in the article.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign-On URL. You get the values of key and host from the ​administrative​ ​portal of MobileIron which is explained later in the article.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -108,7 +108,7 @@ In this section, you enable Microsoft Entra SSO.
 
     ![Screenshot shows the Setting Up SAML option with a key and host value.](./media/MobileIron-tutorial/key.png)
 
-4. In the **Export​​ ​metadata​ file ​from​ ​A​AD​ and import to MobileIron Cloud Field** click **Choose File** to upload the downloaded metadata from Azure portal. Click **Done** once uploaded.
+4. In the **Export​​ ​metadata​ file ​from​ ​A​AD​ and import to MobileIron Cloud Field** select **Choose File** to upload the downloaded metadata from Azure portal. Select **Done** once uploaded.
 
     ![Configure Single Sign-On admin metadata button](./media/MobileIron-tutorial/tutorial_MobileIron_adminmetadata.png)
 
@@ -122,7 +122,7 @@ In the case of MobileIron, provisioning is a manual task.
 
 1. Log in to your MobileIron company site as an administrator.
 
-1. Go to **Users** and Click on **Add** > **Single User**.
+1. Go to **Users** and Select **Add** > **Single User**.
 
     ![Configure Single Sign-On user button](./media/MobileIron-tutorial/tutorial_MobileIron_user.png)
 
@@ -136,7 +136,7 @@ In the case of MobileIron, provisioning is a manual task.
 
 	c. In **Last Name** text box, enter the last name of user like Simon.
 
-    d. Click **Done**.
+    d. Select **Done**.
 
 ## Test SSO
 
@@ -144,15 +144,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ### SP initiated:
 
-* Click on **Test this application**, this will redirect to MobileIron Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to MobileIron Sign on URL where you can initiate the login flow.  
 
 * Go to MobileIron Sign-on URL directly and initiate the login flow from there.
 
 ### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the MobileIron for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the MobileIron for which you set up the SSO.
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the MobileIron tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the MobileIron for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the MobileIron tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the MobileIron for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content

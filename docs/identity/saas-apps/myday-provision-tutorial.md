@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to myday so that I can streamline the user management process and ensure that users have the appropriate access to myday.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both myday and Microsoft
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in myday
-> * Remove users in myday when they do not require access anymore
+> * Remove users in myday when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and myday
 > * Provision groups and group memberships in myday
 > * Single sign-on to myday (recommended)
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and myday](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-myday-to-support-provisioning-with-azure-ad'></a>
@@ -80,7 +80,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot shows the Provisioning tab automatic.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input the tenant URL value retrieved earlier in **Tenant URL**. Input the secret Token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to myday. If the connection fails, ensure your myday account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input the tenant URL value retrieved earlier in **Tenant URL**. Input the secret Token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to myday. If the connection fails, ensure your myday account has Admin permissions and try again.
 
 	![Screenshot shows the Tenant URL Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -144,7 +144,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot shows the Provisioning Scope.](common/provisioning-scope.png)
 
-15. When you're ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Screenshot shows saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
