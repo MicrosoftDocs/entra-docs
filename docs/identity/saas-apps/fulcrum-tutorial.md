@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fulcrum so that I can control who has access to Fulcrum, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Fulcrum
 
-In this article,  you'll learn how to integrate Fulcrum with Microsoft Entra ID. When you integrate Fulcrum with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Fulcrum with Microsoft Entra ID. When you integrate Fulcrum with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Fulcrum.
 * Enable your users to be automatically signed-in to Fulcrum with their Microsoft Entra accounts.
@@ -47,7 +47,7 @@ To configure the integration of Fulcrum into Microsoft Entra ID, you need to add
 1. In the **Add from the gallery** section, type **Fulcrum** in the search box.
 1. Select **Fulcrum** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-fulcrum'></a>
 
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with Fulcrum, perform the following st
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Fulcrum SSO](#configure-fulcrum-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Fulcrum test user](#create-fulcrum-test-user)** - to have a counterpart of B.Simon in Fulcrum that is linked to the Microsoft Entra representation of user.
+    1. **[Create Fulcrum test user](#create-fulcrum-test-user)** - to have a counterpart of B.Simon in Fulcrum that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Fulcrum** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,13 +82,13 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Reply URL** text box, type a URL using the following pattern:
     `https://web.fulcrumapp.com/saml/consume?organization=<DOMAIN>`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
     `https://web.fulcrumapp.com/users/saml`
 
 	> [!NOTE]
-	> The Reply URL value is not real. Update the value with the actual Reply URL. Contact [Fulcrum Client support team](mailto:support@fulcrumapp.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Reply URL value isn't real. Update the value with the actual Reply URL. Contact [Fulcrum Client support team](mailto:support@fulcrumapp.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Fulcrum application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -120,7 +120,7 @@ To configure single sign-on on **Fulcrum** side, you need to send the downloaded
 
 ### Create Fulcrum test user
 
-In this section, a user called Britta Simon is created in Fulcrum. Fulcrum supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Fulcrum, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Fulcrum. Fulcrum supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Fulcrum, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -128,15 +128,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Fulcrum Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Fulcrum Sign on URL where you can initiate the login flow.  
 
 * Go to Fulcrum Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Fulcrum for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Fulcrum for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Fulcrum tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Fulcrum for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Fulcrum tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Fulcrum for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

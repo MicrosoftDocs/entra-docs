@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Freshservice Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Freshservice Provisioning.
@@ -25,7 +25,7 @@ This article describes the steps you need to perform in both Freshservice Provis
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Freshservice Provisioning
-> * Remove users in Freshservice Provisioning when they do not require access anymore
+> * Remove users in Freshservice Provisioning when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Freshservice Provisioning
 
 ## Prerequisites
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Freshservice Provisioning](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-freshservice-provisioning-to-support-provisioning-with-azure-ad'></a>
@@ -46,10 +46,10 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. On your Freshservice account, install the **Azure Provisioning (SCIM)** app from the marketplace by navigating to **Freshservice Admin** > **Apps** > **Get Apps**.
 2. In the configuration screen, provide your **Freshservice Domain** (for example, `acme.freshservice.com`) and the **Organization Admin API key**.
-3. Click **Continue**.
-4. Highlight and copy the **Bearer Token**. This value will be entered in the **Secret Token** field in the Provisioning tab of your Freshservice Provisioning application.
-5. Click **Install** to complete the installation.
-6. The **Tenant URL** is `https://scim.freshservice.com/scim/v2`. This value will be entered in the **Tenant URL** field in the Provisioning tab of your Freshservice Provisioning application.
+3. Select **Continue**.
+4. Highlight and copy the **Bearer Token**. This value is entered in the **Secret Token** field in the Provisioning tab of your Freshservice Provisioning application.
+5. Select **Install** to complete the installation.
+6. The **Tenant URL** is `https://scim.freshservice.com/scim/v2`. This value is entered in the **Tenant URL** field in the Provisioning tab of your Freshservice Provisioning application.
 
 <a name='step-3-add-freshservice-provisioning-from-the-azure-ad-application-gallery'></a>
 
@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Freshservice Provisioning Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Freshservice Provisioning. If the connection fails, ensure your Freshservice Provisioning account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Freshservice Provisioning Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Freshservice Provisioning. If the connection fails, ensure your Freshservice Provisioning account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Freshservice Provisioning**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Freshservice Provisioning in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Freshservice Provisioning for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Freshservice Provisioning API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Freshservice Provisioning in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Freshservice Provisioning for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Freshservice Provisioning API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -125,8 +125,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > * At the bottom of the page, select **Show advanced options**.
 > * Select **Edit attribute list for Freshservice**.
 > * At the bottom of the attribute list, enter information about the custom attribute in the fields provided. The custom attribute urn namespace must follow the pattern as shown in the below example. The **CustomAttribute** can be customized per your application's requirements, for example: urn:ietf:params:scim:schemas:extension:freshservice:2.0:User:**isAgent**.
-> * The appropriate data type has to be selected for the custom attribute and click **Save**.
-> * Navigate back to the default mappings screen and click on **Add  New Mapping**. The custom attributes will show up in the **Target Attribute** list dropdown.
+> * The appropriate data type has to be selected for the custom attribute and select **Save**.
+> * Navigate back to the default mappings screen and select **Add  New Mapping**. The custom attributes will show up in the **Target Attribute** list dropdown.
 
 10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -138,7 +138,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
