@@ -97,7 +97,7 @@ When external users request initial access, they're invited to your directory an
 * [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md)
 * [View, add, and remove assignments for an access package](../id-governance/entitlement-management-access-package-assignments.md)
 
-## Deploy PoC: External user access
+## Deploy external user access
 
 1. [Add connected organization](/azure/active-directory/governance/entitlement-management-organization).
 2. [Learn settings for external users](/azure/active-directory/governance/entitlement-management-external-users).
@@ -111,7 +111,7 @@ For more detail, see [Govern access for external users in entitlement management
 
 ### Assign and remove resources
 
-To learn how to assign access, remove it, and more PoC guidance, go to [Scenario 2: Assign employee access to resources](governance-deployment-employee-access.md).
+To learn how to assign access, remove it, and more guidance, go to [Scenario 2: Assign employee access to resources](governance-deployment-employee-access.md).
 
 ### Custom workflows with Azure Logic Apps
 
@@ -123,7 +123,7 @@ In entitlement management, external users have three states: governed, ungoverne
 
 Learn to [govern access for external users in entitlement management](../id-governance/entitlement-management-external-users.md). 
 
-## Deploy PoC: Guest user lifecycle
+## Deploy guest user lifecycle
 
 * [Create an access package in entitlement management](/azure/active-directory/governance/entitlement-management-access-package-create)
 * [Create an automatic assignment policy](/azure/active-directory/governance/entitlement-management-access-package-auto-assignment-policy)
@@ -168,9 +168,9 @@ The **New access review** dialog, with the **Review type** tab, and guest user o
 
 To learn more about downloadable review-history reports, see [Scenario 2: Assign employee access to resources](governance-deployment-employee-access.md).
 
-## Deploy PoC: Access review guide
+## Deploy access review guide
 
-For PoC deployment instructions, go to [Scenario 2: Assign employee access to resources](governance-deployment-employee-access.md).
+For deployment instructions, go to [Scenario 2: Assign employee access to resources](governance-deployment-employee-access.md).
 
 ## Next steps
 
