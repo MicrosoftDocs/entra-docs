@@ -24,7 +24,7 @@ This article describes the steps you need to perform in both G Suite and Microso
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in G Suite
-> * Remove users in G Suite when they do not require access anymore (note: removing a user from the sync scope will not result in deletion of the object in GSuite)
+> * Remove users in G Suite when they don't require access anymore (note: removing a user from the sync scope doesn't result in deletion of the object in GSuite)
 > * Keep user attributes synchronized between Microsoft Entra ID and G Suite
 > * Provision groups and group memberships in G Suite
 > * [Single sign-on](./google-apps-tutorial.md) to G Suite (recommended)
@@ -48,18 +48,18 @@ The scenario outlined in this article assumes that you already have the followin
 
 Before configuring G Suite for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on G Suite.
 
-1. Sign in to the [G Suite Admin console](https://admin.google.com/) with your administrator account, then click on **Main menu** and then select **Security**. If you don't see it, it might be hidden under the **Show More** menu.
+1. Sign in to the [G Suite Admin console](https://admin.google.com/) with your administrator account, then select **Main menu** and then select **Security**. If you don't see it, it might be hidden under the **Show More** menu.
 
     ![G Suite Security](./media/g-suite-provisioning-tutorial/security.png)
     
     ![G Suite Show More](./media/g-suite-provisioning-tutorial/show-more.png)
 
-1. Navigate to **Security -> Access and data control -> API Controls** .Select the check box **Trust internal,domain-owned apps** and then click **SAVE**
+1. Navigate to **Security -> Access and data control -> API Controls** .Select the check box **Trust internal,domain-owned apps** and then select **SAVE**
 
     ![G Suite API](./media/g-suite-provisioning-tutorial/api-control.png)
 
     > [!IMPORTANT]
-    > For every user that you intend to provision to G Suite, their user name in Microsoft Entra ID **must** be tied to a custom domain. For example, user names that look like bob@contoso.onmicrosoft.com are not accepted by G Suite. On the other hand, bob@contoso.com is accepted. You can change an existing user's domain by following the instructions [here](~/fundamentals/add-custom-domain.yml).
+    > For every user that you intend to provision to G Suite, their user name in Microsoft Entra ID **must** be tied to a custom domain. For example, user names that look like bob@contoso.onmicrosoft.com aren't accepted by G Suite. On the other hand, bob@contoso.com is accepted. You can change an existing user's domain by following the instructions [here](~/fundamentals/add-custom-domain.yml).
 
 1. Once you add and verify your desired custom domains with Microsoft Entra ID, you must verify them again with G Suite. To verify domains in G Suite, refer to the following steps:
 
@@ -67,7 +67,7 @@ Before configuring G Suite for automatic user provisioning with Microsoft Entra 
 
         ![G Suite Domains](./media/g-suite-provisioning-tutorial/domains.png)
 
-    1. In the Manage Domain page, click on **Add a domain**.
+    1. In the Manage Domain page, select **Add a domain**.
 
         ![G Suite Add Domain](./media/g-suite-provisioning-tutorial/add-domains.png)
 
@@ -119,7 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The G Suite link in the Applications list](common/all-applications.png)
 
-1. Select the **Provisioning** tab. Click on **Get started**.
+1. Select the **Provisioning** tab. Select **Get started**.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
     
@@ -127,7 +127,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, click on **Authorize**. You'll be redirected to a Google authorization dialog box in a new browser window.
+1. Under the **Admin Credentials** section, select **Authorize**. You'll be redirected to a Google authorization dialog box in a new browser window.
 
       ![G Suite authorize](./media/g-suite-provisioning-tutorial/authorize-1.png)
 
@@ -246,7 +246,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
