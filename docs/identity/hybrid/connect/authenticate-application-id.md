@@ -87,23 +87,23 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
   > [!NOTE] 
   > The certificate thumbprint needs to be provided when registering the application. 
 
-     ``` powershell
-     Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
-     ```
+   ``` powershell
+   Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
+   ```
 
 Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra administrator and &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
   - Managed by Microsoft Entra Connect:
-     ``` powershell
-     Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName>
-     ```
+   ``` powershell
+   Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName>
+   ```
   - Use BYOC:
  
-     ``` powershell
-     Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint> 
-     ```
+   ``` powershell
+   Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint> 
+   ```
 Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Entra administrator, &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
 
 5. Run a verification to confirm that we are now using application identity. Run the cmdlet below to get the current authentication and ensure it has the Connector Identity Type as **Application**. 
@@ -136,7 +136,7 @@ If the certificate is managed by Microsoft Entra Connect, **no action** is requi
  Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
  ```
 
-Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Microsoft Entra ID hybrid administrator, <certificateThumbprint> with the CertificateThumbPrint 
+Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Microsoft Entra ID hybrid administrator, &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
 
 The new certificate thumbprint is optional if you have used the default mode but have maintenance disabled.
 
