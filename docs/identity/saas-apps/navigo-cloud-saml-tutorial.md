@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Navigo Cloud SAML so that I can control who has access to Navigo Cloud SAML, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Navigo Cloud SAML
 
-In this article,  you'll learn how to integrate Navigo Cloud SAML with Microsoft Entra ID. When you integrate Navigo Cloud SAML with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Navigo Cloud SAML with Microsoft Entra ID. When you integrate Navigo Cloud SAML with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Navigo Cloud SAML.
 * Enable your users to be automatically signed-in to Navigo Cloud SAML with their Microsoft Entra accounts.
@@ -54,7 +54,7 @@ To configure and test Microsoft Entra SSO with Navigo Cloud SAML, perform the fo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Navigo Cloud SAML SSO](#configure-navigo-cloud-saml-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Navigo Cloud SAML test user](#create-navigo-cloud-saml-test-user)** - to have a counterpart of B.Simon in Navigo Cloud SAML that is linked to the Microsoft Entra representation of user.
+    1. **[Create Navigo Cloud SAML test user](#create-navigo-cloud-saml-test-user)** - to have a counterpart of B.Simon in Navigo Cloud SAML that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -64,7 +64,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Navigo Cloud SAML** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -123,11 +123,11 @@ In this section, you create a user called B.Simon in Navigo Cloud SAML. Work wit
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Navigo Cloud SAML Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Navigo Cloud SAML Sign-on URL where you can initiate the login flow.
  
 * Go to Navigo Cloud SAML Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you click the Navigo Cloud SAML tile in the My Apps, this will redirect to Navigo Cloud SAML Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Navigo Cloud SAML tile in the My Apps, this option redirects to Navigo Cloud SAML Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
