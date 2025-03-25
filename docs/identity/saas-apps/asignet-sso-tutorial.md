@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -48,7 +48,7 @@ To configure the integration of AsignetSSOIntegration into Microsoft Entra ID, y
 1. In the **Add from the gallery** section, type **AsignetSSOIntegration** in the search box.
 1. Select **AsignetSSOIntegration** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-asignetssointegration'></a>
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with AsignetSSOIntegration, perform th
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure AsignetSSOIntegration SSO](#configure-asignetssointegration-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create AsignetSSOIntegration test user](#create-asignetssointegration-test-user)** - to have a counterpart of B.Simon in AsignetSSOIntegration that is linked to the Microsoft Entra representation of user.
+    1. **[Create AsignetSSOIntegration test user](#create-asignetssointegration-test-user)** - to have a counterpart of B.Simon in AsignetSSOIntegration that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:    
 
@@ -111,7 +111,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this redirects to AsignetSSOIntegration Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to AsignetSSOIntegration Sign-on URL where you can initiate the login flow.  
 
 * Go to AsignetSSOIntegration Sign-on URL directly and initiate the login flow from there.
 

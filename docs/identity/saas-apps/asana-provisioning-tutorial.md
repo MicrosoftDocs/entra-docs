@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Asana so that I can streamline the user management process and ensure that users have the appropriate access to Asana.
@@ -23,7 +23,7 @@ This article describes the steps you need to do in both Asana and Microsoft Entr
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Asana.
-> * Remove users in Asana when they do not require access anymore.
+> * Remove users in Asana when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Asana.
 > * Provision groups and group memberships in Asana.
 > * [Single sign-on](asana-tutorial.md) to Asana (recommended).
