@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Global Relay Identity Sync so that I can streamline the user management process and ensure that users have the appropriate access to Global Relay Identity Sync.
@@ -25,13 +25,13 @@ This article describes the steps you need to perform in both Global Relay Identi
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Global Relay Identity Sync
-> * Remove users in Global Relay Identity Sync when they do not require access anymore
+> * Remove users in Global Relay Identity Sync when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Global Relay Identity Sync
 > * Provision groups and group memberships in Global Relay Identity Sync
 
 
 > [!NOTE]
-> Global Relay Identity Sync provisioning connector utilizes a SCIM authorization method that is no longer supported due to security concerns. Efforts are underway with Global Relay to switch to a more secure authorization method.
+> Global Relay Identity Sync provisioning connector utilizes a SCIM authorization method that's no longer supported due to security concerns. Efforts are underway with Global Relay to switch to a more secure authorization method.
 
 ## Prerequisites
 
@@ -42,14 +42,14 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Global Relay Identity Sync](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-global-relay-identity-sync-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Global Relay Identity Sync to support provisioning with Microsoft Entra ID
 
-Contact your Global Relay Identity Sync representative to receive the Tenant URL. This value will be entered in the **Tenant URL** field in the Provisioning tab of your Global Relay Identity Sync application.
+Contact your Global Relay Identity Sync representative to receive the Tenant URL. This value is entered in the **Tenant URL** field in the Provisioning tab of your Global Relay Identity Sync application.
 
 <a name='step-3-add-global-relay-identity-sync-from-the-azure-ad-application-gallery'></a>
 
@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Global Relay Identity Sync **Tenant url**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Global Relay Identity Sync. If the connection fails, ensure your Global Relay Identity Sync account has Admin permissions and contact your Global Relay representative to resolve the issue.
+5. Under the **Admin Credentials** section, input your Global Relay Identity Sync **Tenant url**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Global Relay Identity Sync. If the connection fails, ensure your Global Relay Identity Sync account has Admin permissions and contact your Global Relay representative to resolve the issue.
 
 	![Authorization button](media/global-relay-identity-sync-provisioning-tutorial/authorization.png)
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Global Relay Identity Sync**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Global Relay Identity Sync in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Global Relay Identity Sync for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Global Relay Identity Sync API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Global Relay Identity Sync in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Global Relay Identity Sync for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Global Relay Identity Sync API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -191,7 +191,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
