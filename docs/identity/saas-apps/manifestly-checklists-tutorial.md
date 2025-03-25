@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Manifestly Checklists
 
-In this article,  you'll learn how to integrate Manifestly Checklists with Microsoft Entra ID. When you integrate Manifestly Checklists with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Manifestly Checklists with Microsoft Entra ID. When you integrate Manifestly Checklists with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Manifestly Checklists.
 * Enable your users to be automatically signed-in to Manifestly Checklists with their Microsoft Entra accounts.
@@ -47,7 +47,7 @@ To configure the integration of Manifestly Checklists into Microsoft Entra ID, y
 1. In the **Add from the gallery** section, type **Manifestly Checklists** in the search box.
 1. Select **Manifestly Checklists** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-manifestly-checklists'></a>
 
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with Manifestly Checklists, perform th
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Manifestly Checklists SSO](#configure-manifestly-checklists-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Manifestly Checklists test user](#create-manifestly-checklists-test-user)** - to have a counterpart of B.Simon in Manifestly Checklists that is linked to the Microsoft Entra representation of user.
+    1. **[Create Manifestly Checklists test user](#create-manifestly-checklists-test-user)** - to have a counterpart of B.Simon in Manifestly Checklists that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Manifestly Checklists** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | `https://app.manifest.ly/a/<CustomerName>` |
 
 	> [!NOTE]
-	> This value is not real. Update this value with the actual Sign-on URL. Contact [Manifestly Checklists Client support team](mailto:support@manifest.ly) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> This value isn't real. Update this value with the actual Sign-on URL. Contact [Manifestly Checklists Client support team](mailto:support@manifest.ly) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Manifestly Checklists application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -123,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Manifestly Checklists company site as an administrator.
 
-1. Go to **Settings** > **SSO** and click **Set up SAML Sign On** button.
+1. Go to **Settings** > **SSO** and select **Set up SAML Sign On** button.
 
     ![Screenshot shows the SSO Settings.](./media/manifestly-checklists-tutorial/settings.png "SSO Settings")
 
@@ -137,17 +137,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. In the **SAML URL** textbox, paste the **Login URL** value which you copied previously.
 
-    1. Click **Save**.
+    1. Select **Save**.
 
 ### Create Manifestly Checklists test user
 
 1. In a different web browser window, sign into your Manifestly Checklists company site as an administrator.
 
-1. Go to **Teams** > **Users** and click **Add User**.
+1. Go to **Teams** > **Users** and select **Add User**.
 
     ![Screenshot shows the Team Members.](./media/manifestly-checklists-tutorial/user.png "Team Members")
 
-1. Enter the **Name** and **Email** in the textbox and click **Send Invite**.
+1. Enter the **Name** and **Email** in the textbox and select **Send Invite**.
 
     ![Screenshot shows to add users.](./media/manifestly-checklists-tutorial/name.png "Add users")    
 
@@ -157,15 +157,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Manifestly Checklists Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Manifestly Checklists Sign on URL where you can initiate the login flow.  
 
 * Go to Manifestly Checklists Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Manifestly Checklists for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Manifestly Checklists for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Manifestly Checklists tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Manifestly Checklists for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Manifestly Checklists tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Manifestly Checklists for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -19,7 +19,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Mercado Eletronico SAML
 
-In this article,  you'll learn how to integrate Mercado Eletronico SAML with Microsoft Entra ID. When you integrate Mercado Eletronico SAML with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Mercado Eletronico SAML with Microsoft Entra ID. When you integrate Mercado Eletronico SAML with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Mercado Eletronico SAML.
 * Enable your users to be automatically signed-in to Mercado Eletronico SAML with their Microsoft Entra accounts.
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Mercado Eletronico SAML, perform 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Mercado Eletronico SAML SSO](#configure-mercado-eletronico-saml-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Mercado Eletronico SAML test user](#create-mercado-eletronico-saml-test-user)** - to have a counterpart of B.Simon in Mercado Eletronico SAML that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Mercado Eletronico SAML test user](#create-mercado-eletronico-saml-test-user)** - to have a counterpart of B.Simon in Mercado Eletronico SAML that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -67,7 +67,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Mercado Eletronico SAML** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -112,9 +112,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<SUBDOMAIN>.mercadoeletronico.com/auth/realms/me-trunk/broker/<ID>/endpoint`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL, Sign on URL, Relay State and Logout URL. Contact [Mercado Eletronico SAML support team](mailto:suporte@me.com.br) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, Sign on URL, Relay State and Logout URL. Contact [Mercado Eletronico SAML support team](mailto:suporte@me.com.br) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -132,11 +132,11 @@ In this section, you create a user called B.Simon in Mercado Eletronico SAML. Wo
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Mercado Eletronico SAML Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Mercado Eletronico SAML Sign-on URL where you can initiate the login flow.
  
 * Go to Mercado Eletronico SAML Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you click the Mercado Eletronico SAML tile in the My Apps, this will redirect to Mercado Eletronico SAML Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Mercado Eletronico SAML tile in the My Apps, this option redirects to Mercado Eletronico SAML Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
