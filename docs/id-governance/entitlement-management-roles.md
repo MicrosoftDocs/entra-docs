@@ -39,12 +39,14 @@ Now, new members joining the Support team can request access to this access pack
 ## Prerequisites
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+>[!NOTE] You need to be a Global Administrator or a Privileged Role Administrator with Catalog Owner permissions to add Entra Roles to a catalog. Once an Entra Role is added to a catalog, Identity Governance Administrators and Access Package Managers can create access packages containing that Entra Role, and other users with permissions to manage access packages can assign users to that Entra Role.
+
 
 ## Add a Microsoft Entra role as a resource in an access package 
 
 Follow these steps to change the list of incompatible groups or other access packages for an existing access package: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) with Catalog Owner permissions.
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
 
