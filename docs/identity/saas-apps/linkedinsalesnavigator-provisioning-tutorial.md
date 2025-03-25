@@ -1,6 +1,6 @@
 ---
 title: User provisioning - LinkedIn Sales Navigator, Microsoft Entra ID
-description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to LinkedIn Sales Navigator.
+description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to LinkedIn Sales Navigator.
 
 author: ArvindHarinder1
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: arvinh
 
 # Configure LinkedIn Sales Navigator for automatic user provisioning
 
-The objective of this article is to show you the steps you need to perform in LinkedIn Sales Navigator and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to LinkedIn Sales Navigator.
+The objective of this article is to show you the steps you need to perform in LinkedIn Sales Navigator and Microsoft Entra ID to automatically provision and deprovision user accounts from Microsoft Entra ID to LinkedIn Sales Navigator.
 
 ## Prerequisites
 
@@ -39,16 +39,16 @@ Before configuring and enabling the provisioning service, you need to decide wha
 
 ### Important tips for assigning users to LinkedIn Sales Navigator
 
-* It's recommended that a single Microsoft Entra user be assigned to LinkedIn Sales Navigator to test the provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user be assigned to LinkedIn Sales Navigator to test the provisioning configuration. Additional users and/or groups might be assigned later.
 
 * When assigning a user to LinkedIn Sales Navigator, you must select the **User** role in the assignment dialog. The "Default Access" role doesn't work for provisioning.
 
 ## Configuring user provisioning to LinkedIn Sales Navigator
 
-This section guides you through connecting your Microsoft Entra ID to LinkedIn Sales Navigator's SCIM user account provisioning API, and configuring the provisioning service to create, update and disable assigned user accounts in LinkedIn Sales Navigator based on user and group assignment in Microsoft Entra ID.
+This section guides you through connecting your Microsoft Entra ID to LinkedIn Sales Navigator's SCIM user account provisioning API, and configuring the provisioning service to create, update, and disable assigned user accounts in LinkedIn Sales Navigator based on user and group assignment in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enabled SAML-based Single Sign-On for LinkedIn Sales Navigator, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
+> You might also choose to enable SAML-based single sign-on for LinkedIn Sales Navigator, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-account-provisioning-to-linkedin-sales-navigator-in-azure-ad'></a>
 
@@ -68,7 +68,7 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 1. Select **+ Add new SCIM configuration** and follow the procedure by filling in each field.
 
     > [!NOTE]
-    > When auto-assign licenses isn't enabled, it means that only user data is synced.
+    > When auto-assign licenses option isn't enabled, it means that only user data is synced.
 
     ![Screenshot shows the LinkedIn Account Center Global Settings.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_1.PNG)
 
@@ -103,7 +103,7 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 
 1. Select **Save**.
 
-1. In the **Attribute Mappings** section, review the user and group attributes that's synchronized from Microsoft Entra ID to LinkedIn Sales Navigator. Note that the attributes selected as **Matching** properties are used to match the user accounts and groups in LinkedIn Sales Navigator for update operations. Select the Save button to commit any changes.
+1. In the **Attribute Mappings** section, review the user and group attributes that's synchronized from Microsoft Entra ID to LinkedIn Sales Navigator. The attributes selected as **Matching** properties are used to match the user accounts and groups in LinkedIn Sales Navigator for update operations. Select the Save button to commit any changes.
 
     ![Screenshot shows Mappings, including Attribute Mappings.](./media/linkedinsalesnavigator-provisioning-tutorial/linkedin_4.PNG)
 
@@ -111,7 +111,7 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 
 1. Select **Save**.
 
-This will start the initial synchronization of any users and/or groups assigned to LinkedIn Sales Navigator in the Users and Groups section. Note that the initial sync will take longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your LinkedIn Sales Navigator app.
+This starts the initial synchronization of any users and/or groups assigned to LinkedIn Sales Navigator in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your LinkedIn Sales Navigator app.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
