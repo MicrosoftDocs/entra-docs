@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HRworks Single Sign-On so that I can control who has access to HRworks Single Sign-On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with HRworks Single Sign-On
 
-In this article,  you'll learn how to integrate HRworks Single Sign-On with Microsoft Entra ID. When you integrate HRworks Single Sign-On with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate HRworks Single Sign-On with Microsoft Entra ID. When you integrate HRworks Single Sign-On with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HRworks Single Sign-On.
 * Enable your users to be automatically signed-in to HRworks Single Sign-On with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of HRworks Single Sign-On into Microsoft Entra ID, 
 1. In the **Add from the gallery** section, type **HRworks Single Sign-On** in the search box.
 1. Select **HRworks Single Sign-On** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-hrworks-single-sign-on'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with HRworks Single Sign-On, perform t
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure HRworks Single Sign-On SSO](#configure-hrworks-single-sign-on-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create HRworks Single Sign-On test user](#create-hrworks-single-sign-on-test-user)** - to have a counterpart of B.Simon in HRworks Single Sign-On that is linked to the Microsoft Entra representation of user.
+    1. **[Create HRworks Single Sign-On test user](#create-hrworks-single-sign-on-test-user)** - to have a counterpart of B.Simon in HRworks Single Sign-On that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HRworks Single Sign-On** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://login.hrworks.de/?companyId=<COMPANY_ID>&directssologin=true`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. See [HRworks Single Sign-On Helpcenter article](https://help.hrworks.de/en/single-sign-on) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. See [HRworks Single Sign-On Helpcenter article](https://help.hrworks.de/en/single-sign-on) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -103,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your HRworks Single Sign-On company site as an administrator
 
-1. Click on **Administrator** > **Basics** > **Security** > **Single Sign-on** from the left side of menu bar and perform the following steps:
+1. Select **Administrator** > **Basics** > **Security** > **Single Sign-on** from the left side of menu bar and perform the following steps:
 
     ![Configure single sign-on](./media/hrworks-single-sign-on-tutorial/configure.png)
 
@@ -115,7 +115,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	d. In Notepad, open the Metadata XML that you downloaded, copy its content, and then paste it into the **Metadata** textbox.
 
-	e. Click **Save**.
+	e. Select **Save**.
 
 ### Create HRworks Single Sign-On test user
 
@@ -125,15 +125,15 @@ To enable Microsoft Entra users, sign in to HRworks Single Sign-On, they must be
 
 1. Sign in to HRworks Single Sign-On as an Administrator.
 
-1. Click on **Administrator** > **Persons** > **Persons** > **New person** from the left side of menu bar.
+1. Select **Administrator** > **Persons** > **Persons** > **New person** from the left side of menu bar.
 
 	 ![Screenshot shows Screenshot shows H R works page with Persons and New person selected.](./media/hrworks-single-sign-on-tutorial/persons.png)
 
-1. On the Pop-up, click **Next**.
+1. On the Pop-up, select **Next**.
 
 	![Screenshot shows a list of countries for you to choose from for the person.](./media/hrworks-single-sign-on-tutorial/new-person.png)
 
-1. On the **Create new person with country for legal terms** pop-up, fill the respective details like **First name**, **Last name** and click **Create**.
+1. On the **Create new person with country for legal terms** pop-up, fill the respective details like **First name**, **Last name** and select **Create**.
 
 	![Screenshot shows text boxes where you can enter first and last names for the person.](./media/hrworks-single-sign-on-tutorial/create-person.png)
 
@@ -141,11 +141,11 @@ To enable Microsoft Entra users, sign in to HRworks Single Sign-On, they must be
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to HRworks Single Sign-On Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to HRworks Single Sign-On Sign-on URL where you can initiate the login flow. 
 
 * Go to HRworks Single Sign-On Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the HRworks Single Sign-On tile in the My Apps, this will redirect to HRworks Single Sign-On Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the HRworks Single Sign-On tile in the My Apps, this option redirects to HRworks Single Sign-On Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
