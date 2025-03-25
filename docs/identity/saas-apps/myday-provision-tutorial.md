@@ -49,7 +49,7 @@ Reach out to your myday representative or the support team to receive the **Tena
 
 ## Step 3: Add myday from the Microsoft Entra application gallery
 
-Add myday from the Microsoft Entra application gallery to start managing provisioning to myday. If you have previously setup myday for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add myday from the Microsoft Entra application gallery to start managing provisioning to myday. If you have previously setup myday for Single sign-on (SSO), you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -154,7 +154,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
