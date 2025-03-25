@@ -1,32 +1,33 @@
 ---
 title: Custom Home Page for Published Apps Using Microsoft Entra Application Proxy
-description: Covers the basics about Microsoft Entra private network connectors
-author: kenwith
+description: Learn how to set a custom home page for published apps using Microsoft Entra application proxy to ensure users land on the correct page.
+author: HULKsmashGithub
 manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 03/17/2025
-ms.author: kenwith
+ms.date: 03/25/2025
+ms.author: jayrusso
 ms.reviewer: KaTabish
 
+#customer intent: As an IT admin, I want to set a custom home page for published apps using Microsoft Entra application proxy so that users are directed to the correct page when accessing the app.
 ---
 # Set a custom home page for published apps by using Microsoft Entra application proxy
 
-This article discusses how to configure an app to direct a user to a custom home page. When you publish an app with application proxy, you set an internal URL, but sometimes that's not the page a user should see first. Set a custom home page so that a user gets the right page when they access the app. A user sees the custom home page that you set, regardless of whether they access the app from the Microsoft Entra My Apps or the Microsoft 365 app launcher.
+This article discusses how to configure an app to direct a user to a custom home page. When you publish an app with application proxy, you set an internal URL, but sometimes that's not the page a user should see first. Set a custom home page so a user gets the right page when accessing the app. A user sees the custom home page you set, regardless of whether they access the app from the Microsoft Entra My Apps or the Microsoft 365 app launcher.
 
-When a user launches the app, they're directed by default to the root domain URL for the published app. The landing page is typically set as the home page URL. Use the Microsoft Entra PowerShell module to define a custom home page URL when you want an app user to land on a specific page within the app.
+When a user launches the app, they're directed to the root domain URL for the published app by default. The landing page is typically set as the home page URL. Use the Microsoft Entra PowerShell module to define a custom home page URL when you want an app user to land on a specific page within the app.
 
 Here's one scenario that explains why your company would set a custom home page:
 
 - Inside your corporate network, a user goes to `https://ExpenseApp/login/login.aspx` to sign in and access your app.
 - Because you have other assets (such as images) that application proxy needs to access at the top level of the folder structure, you publish the app with `https://ExpenseApp` as the internal URL.
-- The default external URL is `https://ExpenseApp-contoso.msappproxy.net`, which doesn't take an external user to the sign-in page.
+- The default external URL is `https://ExpenseApp-contoso.msappproxy.net`, which doesn't direct an external user to the sign-in page.
 - You want to set `https://ExpenseApp-contoso.msappproxy.net/login/login.aspx` as the home page URL instead, so an external user sees the sign-in page first.
 
 > [!NOTE]
-> When you give users access to published apps, the apps are displayed in [My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) and the [Office 365 app launcher](https://www.microsoft.com/microsoft-365/blog/2016/09/27/introducing-the-new-office-365-app-launcher/).
+> When you give users access to published apps, the apps appear in [My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) and the [Office 365 app launcher](https://www.microsoft.com/microsoft-365/blog/2016/09/27/introducing-the-new-office-365-app-launcher/).
 
 ## Before you start
 
