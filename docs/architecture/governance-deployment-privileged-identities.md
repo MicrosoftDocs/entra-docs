@@ -1,11 +1,11 @@
 ---
 title: Microsoft Entra ID Governance deployment guide to govern privileged identities
-description: Learn how to govern privileged identities and their access in Microsoft Entra ID Governance, as a proof of concept.
+description: Learn how to govern privileged identities and their access in Microsoft Entra ID Governance.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/24/2025
+ms.date: 03/25/2025
 ms.author: gasinh
 
 #customer intent: I want to understand how to deploy Microsoft Entra ID Governance in my test and production environments.
@@ -30,9 +30,9 @@ The following products and services appear in this guide:
 * [Access reviews](../id-governance/access-reviews-overview.md)
 * [Microsoft Azure](/azure/?product=popular)
 
-## PoC timeline
+## Timelines
 
-Proof-of-concept (PoC) timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
+Timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
 
 1. Discovery and insights - 1 hour
 2. Microsoft Entra ID roles - 1 hour
