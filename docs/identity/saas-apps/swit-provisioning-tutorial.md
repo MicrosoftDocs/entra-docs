@@ -1,12 +1,12 @@
 ---
 title: Configure Swit for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Swit.
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Swit.
 author: thomasakelo
 manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Swit so that I can streamline the user management process and ensure that users have the appropriate access to Swit.
@@ -14,7 +14,7 @@ ms.author: thomasakelo
 
 # Configure Swit for automatic user provisioning
 
-This article describes the steps you need to perform in both Swit and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Swit](https://swit.io) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Swit and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Swit](https://swit.io) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities Supported
@@ -49,7 +49,7 @@ To configure Swit to support provisioning with Microsoft Entra ID, send an email
 ## Step 3: Add Swit from the Microsoft Entra application gallery
 
 
-Add Swit from the Microsoft Entra application gallery to start managing provisioning to Swit. If you have previously setup Swit for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add Swit from the Microsoft Entra application gallery to start managing provisioning to Swit. If you have previously setup Swit for single sign-on (SSO), you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning 
 
