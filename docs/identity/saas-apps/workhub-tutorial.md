@@ -65,7 +65,7 @@ To configure and test Microsoft Entra SSO with workhub, perform the following st
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure workhub SSO](#configure-workhub-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create workhub test user](#create-workhub-test-user)** - to have a counterpart of B.Simon in workhub that's linked to the Microsoft Entra representation of user.
+    1. **[Create workhub test user](#create-workhub-test-user)** - to have a counterpart of B.Simon in workhub linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -116,9 +116,9 @@ In this section, you create a user called Britta Simon at workhub. Work with [wo
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this option redirects to workhub Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to workhub Sign-on URL where you can initiate the sign-in flow. 
 
-* Go to workhub Sign-on URL directly and initiate the login flow from there.
+* Go to workhub Sign-on URL directly and initiate the sign-in flow from there.
 
 * You can use Microsoft My Apps. When you select the workhub tile in the My Apps, this option redirects to workhub Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 

@@ -63,7 +63,7 @@ To configure and test Microsoft Entra SSO with Wiz SSO, perform the following st
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Wiz SSO](#configure-wiz-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Wiz SSO test user](#create-wiz-sso-test-user)** - to have a counterpart of B.Simon in Wiz SSO that's linked to the Microsoft Entra representation of user.
+    1. **[Create Wiz SSO test user](#create-wiz-sso-test-user)** - to have a counterpart of B.Simon in Wiz SSO linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -97,16 +97,16 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Attributes")
 
-1. In addition to above, Wiz SSO application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to previous step, Wiz SSO application expects few more attributes to be passed back in SAML response, which are shown in the following table. These attributes are also pre populated but you can review them as per your requirements.
 
     | Name | Source Attribute|
     | ------------ | --------- |
     | name | user.displayname |
     | groups | user.groups |
 
-    To create these additional claims:
+    To create these extra claims:
 
-   a. Go to **User Attributes & Claims**, select **Edit**.
+   a. Go to **User Attributes & Claims**, and select **Edit**.
 
    b. Select **Add a group claim**.
 
@@ -142,9 +142,9 @@ In this section, a user called B.Simon is created in Speexx. Speexx supports jus
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this option redirects to Wiz SSO Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Wiz SSO Sign-on URL where you can initiate the sign-in flow. 
 
-* Go to Wiz SSO Sign-on URL directly and initiate the login flow from there.
+* Go to Wiz SSO Sign-on URL directly and initiate the sign-in flow from there.
 
 * You can use Microsoft My Apps. When you select the Wiz SSO tile in the My Apps, this option redirects to Wiz SSO Sign-On URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
