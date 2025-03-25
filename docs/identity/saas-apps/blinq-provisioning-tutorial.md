@@ -43,7 +43,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Blinq to support provisioning with Microsoft Entra ID
 
 1. Navigate to [Blinq Admin Console](https://dash.blinq.me) in a separate browser tab.
-1. If you'ren't logged in to Blinq you need to do so.
+1. If you aren't logged in to Blinq you need to do so.
 1. Select your workspace in the top left hand corner of the screen and select **Settings** in the dropdown menu.
 
    	[![Screenshot of the Blinq settings option.](media/blinq-provisioning-tutorial/blinq-settings.png)](media/blinq-provisioning-tutorial/blinq-settings.png#lightbox)
