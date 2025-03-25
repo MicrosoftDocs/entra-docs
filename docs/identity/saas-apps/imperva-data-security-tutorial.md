@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Imperva Data Security
 
-In this article,  you'll learn how to integrate Imperva Data Security with Microsoft Entra ID. When you integrate Imperva Data Security with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Imperva Data Security with Microsoft Entra ID. When you integrate Imperva Data Security with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Imperva Data Security.
 * Enable your users to be automatically signed-in to Imperva Data Security with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of Imperva Data Security into Microsoft Entra ID, y
 1. In the **Add from the gallery** section, type **Imperva Data Security** in the search box.
 1. Select **Imperva Data Security** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-imperva-data-security'></a>
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Imperva Data Security, perform th
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Imperva Data Security SSO](#configure-imperva-data-security-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Imperva Data Security test user](#create-imperva-data-security-test-user)** - to have a counterpart of B.Simon in Imperva Data Security that is linked to the Microsoft Entra representation of user.
+    1. **[Create Imperva Data Security test user](#create-imperva-data-security-test-user)** - to have a counterpart of B.Simon in Imperva Data Security that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Imperva Data Security** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<IMPERVA_DNS_NAME>:8443`    
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Imperva Data Security Client support team](mailto:support@jsonar.imperva.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Imperva Data Security Client support team](mailto:support@jsonar.imperva.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -115,9 +115,9 @@ In this section, you create a user called Britta Simon in Imperva Data Security.
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Imperva Data Security for which you set up the SSO
+* Select **Test this application**, and you should be automatically signed in to the Imperva Data Security for which you set up the SSO
 
-* You can use Microsoft My Apps. When you click the Imperva Data Security tile in the My Apps, you should be automatically signed in to the Imperva Data Security for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Imperva Data Security tile in the My Apps, you should be automatically signed in to the Imperva Data Security for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content
