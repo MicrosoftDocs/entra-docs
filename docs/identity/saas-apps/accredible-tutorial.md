@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Accredible so that I can control who has access to Accredible, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra single sign-on with Accredible, you need t
 2. **[Configure Accredible Single Sign-On](#configure-accredible-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Accredible test user](#create-accredible-test-user)** - to have a counterpart of Britta Simon in Accredible that is linked to the Microsoft Entra representation of user.
+5. **[Create Accredible test user](#create-accredible-test-user)** - to have a counterpart of Britta Simon in Accredible that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>

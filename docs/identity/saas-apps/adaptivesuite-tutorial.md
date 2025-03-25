@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adaptive Insights so that I can control who has access to Adaptive Insights, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -45,7 +45,7 @@ To configure the integration of Adaptive Insights into Microsoft Entra ID, you n
 1. In the **Add from the gallery** section, type **Adaptive Insights** in the search box.
 1. Select **Adaptive Insights** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-adaptive-insights'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Adaptive Insights, perform the fo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Adaptive Insights SSO](#configure-adaptive-insights-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Adaptive Insights test user](#create-adaptive-insights-test-user)** - to have a counterpart of B.Simon in Adaptive Insights that is linked to the Microsoft Entra representation of user.
+    1. **[Create Adaptive Insights test user](#create-adaptive-insights-test-user)** - to have a counterpart of B.Simon in Adaptive Insights that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -98,7 +98,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -114,7 +114,7 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Adaptive Insights.
+In this section, you enable B.Simon to use single sign-on by granting access to Adaptive Insights.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Adaptive Insights**.

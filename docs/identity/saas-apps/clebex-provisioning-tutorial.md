@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clebex so that I can streamline the user management process and ensure that users have the appropriate access to Clebex.
@@ -25,7 +25,7 @@ This article describes the steps you need to perform in both Clebex and Microsof
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Clebex
-> * Remove users in Clebex when they do not require access anymore
+> * Remove users in Clebex when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Clebex
 > * [Single sign-on](./clebex-tutorial.md) to Clebex (recommended)
 
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Clebex](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-clebex-to-support-provisioning-with-azure-ad'></a>
@@ -51,7 +51,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 3. Toggle the **Is active** button.
 
-4. Copy the **URL** and **Token**. This values will be entered in the **Tenant URL** and the **Secret Token** field in the Provisioning tab of your Clebex application.
+4. Copy the **URL** and **Token**. This values are entered in the **Tenant URL** and the **Secret Token** field in the Provisioning tab of your Clebex application.
 
 	![Connector](media/clebex-provisioning-tutorial/url.png)
 
@@ -59,7 +59,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Clebex from the Microsoft Entra application gallery
 
-Add Clebex from the Microsoft Entra application gallery to start managing provisioning to Clebex. If you have previously setup Clebex for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Clebex from the Microsoft Entra application gallery to start managing provisioning to Clebex. If you have previously setup Clebex for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Clebex Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Clebex. If the connection fails, ensure your Clebex account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Clebex Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Clebex. If the connection fails, ensure your Clebex account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Clebex**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Clebex in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Clebex for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Clebex API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Clebex in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Clebex for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Clebex API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -126,7 +126,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

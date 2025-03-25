@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 ---
@@ -54,7 +54,7 @@ To configure and test Microsoft Entra SSO with Acronis Cyber Protect Cloud, perf
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Acronis Cyber Protect Cloud SSO](#configure-acronis-cyber-protect-cloud-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Acronis Cyber Protect Cloud test user](#create-acronis-cyber-protect-cloud-test-user)** - to have a counterpart of B.Simon in Acronis Cyber Protect Cloud that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Acronis Cyber Protect Cloud test user](#create-acronis-cyber-protect-cloud-test-user)** - to have a counterpart of B.Simon in Acronis Cyber Protect Cloud that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO

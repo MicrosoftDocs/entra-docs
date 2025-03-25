@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Cybozu(cybozu.com)
 
-In this article, you'll learn how to integrate Cybozu(cybozu.com) with Microsoft Entra ID. Cybozu.com(kintone, Cybozu Office, Garoon, Mailwise) is the cloud service provided by Cybozu, Inc. The integration with Microsoft Entra ID enables SSO. When you integrate Cybozu(cybozu.com) with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Cybozu(cybozu.com) with Microsoft Entra ID. Cybozu.com(kintone, Cybozu Office, Garoon, Mailwise) is the cloud service provided by Cybozu, Inc. The integration with Microsoft Entra ID enables SSO. When you integrate Cybozu(cybozu.com) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cybozu(cybozu.com).
 * Enable your users to be automatically signed-in to Cybozu(cybozu.com) with their Microsoft Entra accounts.
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://CustomerName.cybozu.com/`
 
 	> [!Note]
-	> The Identifier and Reply URL values are not real.    Update these values with the actual Identifier and Reply URL. Contact [Cybozu(cybozu.com) Client support team](mailto:se@cybozu.co.jp) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Identifier and Reply URL values aren't real.    Update these values with the actual Identifier and Reply URL. Contact [Cybozu(cybozu.com) Client support team](mailto:se@cybozu.co.jp) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -100,11 +100,11 @@ In this section, you create a user called Britta Simon in Cybozu(cybozu.com). Wo
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Cybozu(cybozu.com) Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Cybozu(cybozu.com) Sign-on URL where you can initiate the login flow. 
 
 * Go to Cybozu(cybozu.com) Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Cybozu(cybozu.com) tile in the My Apps, this will redirect to Cybozu(cybozu.com) Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Cybozu(cybozu.com) tile in the My Apps, this option redirects to Cybozu(cybozu.com) Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

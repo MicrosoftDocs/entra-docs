@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -45,7 +45,7 @@ To configure the integration of Adobe Identity Management (SAML) into Microsoft 
 1. In the **Add from the gallery** section, type **Adobe Identity Management (SAML)** in the search box.
 1. Select **Adobe Identity Management (SAML)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-adobe-identity-management-saml'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Adobe Identity Management (SAML),
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Adobe Identity Management (SAML) SSO](#configure-adobe-identity-management-saml-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Adobe Identity Management (SAML) test user](#create-adobe-identity-management-saml-test-user)** - to have a counterpart of B.Simon in Adobe Identity Management (SAML) that is linked to the Microsoft Entra representation of user.
+    1. **[Create Adobe Identity Management (SAML) test user](#create-adobe-identity-management-saml-test-user)** - to have a counterpart of B.Simon in Adobe Identity Management (SAML) that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -105,15 +105,15 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your Adobe Identity Management (SAML) company site as an administrator
 
-4. Go to the **Settings** tab and select on **Create Directory**.
+4. Go to the **Settings** tab and select **Create Directory**.
 
     ![Adobe Identity Management settings](./media/adobe-identity-management-tutorial/settings.png)
 
-5. Give the directory name in the text box and select **Federated ID**, select on **Next**.
+5. Give the directory name in the text box and select **Federated ID**, select **Next**.
 
     ![Adobe Identity Management create directory](./media/adobe-identity-management-tutorial/create-directory.png)
 
-6. Select the **Other SAML Providers** and select on **Next**.
+6. Select the **Other SAML Providers** and select **Next**.
  
     ![Adobe Identity Management saml providers](./media/adobe-identity-management-tutorial/saml-providers.png)
 
@@ -125,7 +125,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create Adobe Identity Management (SAML) test user
 
-1. Go to the **Users** tab and select on **Add User**.
+1. Go to the **Users** tab and select **Add User**.
 
     ![Adobe Identity Management add user](./media/adobe-identity-management-tutorial/add-user.png)
 
@@ -139,11 +139,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Select **Test this application**, this redirects to Adobe Identity Management (SAML) Sign-on URL where you can initiate the login flow.
+* Select **Test this application**, this option redirects to Adobe Identity Management (SAML) Sign-on URL where you can initiate the login flow.
 
 * Go to Adobe Identity Management (SAML) Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Adobe Identity Management (SAML) tile in the My Apps, this redirects to Adobe Identity Management (SAML) Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Adobe Identity Management (SAML) tile in the My Apps, this option redirects to Adobe Identity Management (SAML) Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

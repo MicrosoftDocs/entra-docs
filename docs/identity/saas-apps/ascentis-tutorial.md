@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Ascentis so that I can control who has access to Ascentis, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -46,7 +46,7 @@ To configure the integration of Ascentis into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **Ascentis** in the search box.
 1. Select **Ascentis** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-single-sign-on'></a>
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with Ascentis, complete the following 
 2. **[Configure Ascentis SSO](#configure-ascentis-sso)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Ascentis test user](#create-ascentis-test-user)** - to have a counterpart of Britta Simon in Ascentis that is linked to the Microsoft Entra representation of user.
+5. **[Create Ascentis test user](#create-ascentis-test-user)** - to have a counterpart of Britta Simon in Ascentis that's linked to the Microsoft Entra representation of user.
 6. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -109,7 +109,7 @@ To configure single sign-on on **Ascentis** side, you need to send the downloade
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -125,7 +125,7 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Ascentis.
+In this section, you enable B.Simon to use single sign-on by granting access to Ascentis.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Ascentis**.

@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 01/03/2025
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref
 
 
 ---

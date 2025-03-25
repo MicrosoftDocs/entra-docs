@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Abstract so that I can control who has access to Abstract, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -43,7 +43,7 @@ To configure the integration of Abstract into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **Abstract** in the search box.
 1. Select **Abstract** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-abstract'></a>
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Abstract, perform the following s
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Abstract SSO](#configure-abstract-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Abstract test user](#create-abstract-test-user)** - to have a counterpart of B.Simon in Abstract that is linked to the Microsoft Entra representation of user.
+    1. **[Create Abstract test user](#create-abstract-test-user)** - to have a counterpart of B.Simon in Abstract that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section the application is pre-configured in **IDP** initiated mode and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section the application is pre-configured in **IDP** initiated mode and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by selecting the **Save** button.
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
@@ -92,12 +92,12 @@ Follow these steps to enable Microsoft Entra SSO.
 
 Make sure to retrieve your `App Federation Metadata Url` and the `Azure AD Identifier`, as you need those to configure SSO on Abstract.
 
-You will find that information on the **Set up Single Sign-On with SAML** page:
+You find that information on the **Set up Single Sign-On with SAML** page:
 
 * The `App Federation Metadata Url` is located in the **SAML Signing Certificate** section.
 * The `Azure AD Identifier` is located in the **Set up Abstract** section.
 
-You are now ready to configure SSO on Abstract:
+You're now ready to configure SSO on Abstract:
 
 >[!Note]
 >you need to authenticate with an organization Admin account to access the SSO settings on Abstract.
@@ -105,11 +105,11 @@ You are now ready to configure SSO on Abstract:
 1. Open the [Abstract web app](https://app.abstract.com/).
 2. Go to the **Permissions** page in the left side bar.
 3. In the **Configure SSO** section, enter your **Metadata URL** and **Entity ID**.
-4. Enter any manual exceptions you might have. Emails listed in the manual exceptions section will bypass SSO and be able to log in with email and password. 
+4. Enter any manual exceptions you might have. Emails listed in the manual exceptions section bypass SSO and be able to log in with email and password. 
 5. Select **Save Changes**.
 
 >[!Note] 
->You’ll need to use primary email addresses in the manual exceptions list. SSO activation will fail if the email you list is a user’s secondary email. If that happens, you’ll see an error message with the primary email for the failing account. Add that primary email to the manual exceptions list after you’ve verified you know the user.
+>You’ll need to use primary email addresses in the manual exceptions list. SSO activation fails if the email you list is a user’s secondary email. If that happens, you’ll see an error message with the primary email for the failing account. Add that primary email to the manual exceptions list after you’ve verified you know the user.
 
 ### Create Abstract test user
 
@@ -120,7 +120,7 @@ To test SSO on Abstract:
 3. Select **Test with my Account**. If the test fails, please [contact our support team](https://help.abstract.com/hc/).
 
 >[!Note]
->you need to authenticate with an organization Admin account to access the SSO settings on Abstract. This organization Admin account will need to be assigned to Abstract.
+>you need to authenticate with an organization Admin account to access the SSO settings on Abstract. This organization Admin account needs to be assigned to Abstract.
 
 ## Test SSO 
 
@@ -128,7 +128,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this redirects to Abstract Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Abstract Sign on URL where you can initiate the login flow.  
 
 * Go to Abstract Sign-on URL directly and initiate the login flow from there.
 

@@ -1,19 +1,19 @@
 ---
 title: Microsoft Entra ID Governance deployment guide to assign employee access
-description: Learn how to assign employee access to resources in Microsoft Entra ID Governance as a proof of concept.
+description: Learn how to assign employee access to resources in Microsoft Entra ID Governance.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/24/2025
+ms.date: 03/25/2025
 ms.author: gasinh
 
-#customer intent: My goal is to deliver a proof of concept for deployment of Microsoft Entra ID Governance in my test and production environments.
+#customer intent: My goal is to understand deployment of Microsoft Entra ID Governance in my test and production environments.
 ---
 
 # Microsoft Entra ID Governance deployment guide to assign employee access
 
-Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. With a proof-of-concept (PoC), you can discover how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements. 
+Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. Learn how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements. 
 
 The following products and services appear in this guide:
 
@@ -26,7 +26,7 @@ The following products and services appear in this guide:
 
 Use this scenario to help determine the need for Microsoft Entra ID Governance to create and grant access for your organization. Learn how you can simplify the employee experience with automated workflows, access assignments, access reviews, and expiration. 
 
-## PoC timeline
+## Timelines
 
 Timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
 
@@ -43,7 +43,7 @@ Timelines show approximate delivery stage duration and are based on scenario com
 * Use custom workflows for access lifecycles with Azure Logic Apps
 * Configure time-limited access  
 
-## Deploy PoC: Entitlement management
+## Deploy entitlement management
 
 1. Go to [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md).
 2. Use the instructions to create an access package.
@@ -94,7 +94,7 @@ To extend governance workflows, integrate Logic Apps with entitlement management
 * Create task sets in [Microsoft Planner](/office365/servicedescriptions/project-online-service-description/microsoft-planner-service-description)
 * Generate a temporary access pass (TAP)
 
-## Deploy PoC: Access package custom extensions
+## Deploy access package custom extensions
 
  >[!NOTE]
  >To consider custom extensions, ensure you understand Azure Logic Apps functionality. For more information, see the previous section.
@@ -184,7 +184,7 @@ With access reviews, authorized users can create downloadable review-history rep
 
 The **Identity Governance** dialog, in the **Review History** area, with the **Review History** option highlighted. 
 
-## Deploy PoC: Access reviews
+## Deploy access reviews
 
 1. [Plan a Microsoft Entra access review deployment](/azure/active-directory/governance/deploy-access-reviews).
 2. [Create an access review of PIM for Groups](/azure/active-directory/governance/create-access-review-pim-for-groups).

@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Ardoq so that I can streamline the user management process and ensure that users have the appropriate access to Ardoq.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Ardoq and Microsoft
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Ardoq.
-> * Remove users in Ardoq when they do not require access anymore.
+> * Remove users in Ardoq when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Ardoq.
 > * [Single sign-on](ardoq-tutorial.md) to Ardoq (recommended).
 
@@ -36,15 +36,15 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Ardoq](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-ardoq-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Ardoq to support provisioning with Microsoft Entra ID
-* Provisioning is gated by a feature toggle in Ardoq.  If you intend to configure SSO or have already done so, Ardoq will automatically recognize that Microsoft Entra ID is in use, and the provisioning feature will be automatically enabled.
+* Provisioning is gated by a feature toggle in Ardoq.  If you intend to configure SSO or have already done so, Ardoq automatically recognizes that Microsoft Entra ID is in use, and the provisioning feature is automatically enabled.
 
-* If you don't intend to use the provisioning features of Microsoft Entra ID along with SSO, reach out to Ardoq customer support and they'll manually enable support for provisioning.
+* If you don't intend to use the provisioning features of Microsoft Entra ID along with SSO, please reach out to Ardoq customer support and they'll manually enable support for provisioning.
 
 Before we proceed we need to obtain a *Tenant Url* and a *Secret Token*, to configure secure communication between Microsoft Entra ID and Ardoq.
 
@@ -52,10 +52,10 @@ Before we proceed we need to obtain a *Tenant Url* and a *Secret Token*, to conf
 
 
 1. Log in to Ardoq admin console. 
-1. In the left menu select on profile logo and, navigate to **Organization Settings->Manage Organization->Manage SCIM Token**.
+1. In the left menu, select profile logo and, navigate to **Organization Settings->Manage Organization->Manage SCIM Token**.
 1. Select **Generate new**.
-1. Copy and save the **Token**. This value is entered in the **Secret Token** field in the Provisioning tab of your Ardoq application. 
-1. To create your *tenant URL*, use this template: `https://<YOUR-SUBDOMAIN>.ardoq.com/api/scim/v2` by replacing the placeholder text `<YOUR-SUBDOMAIN>`. This value is entered in the **Tenant Url** field in the Provisioning tab of your Ardoq application.
+1. Copy and save the **Token**.This value is entered in the **Secret Token** field in the Provisioning tab of your Ardoq application. 
+1. To create your *tenant URL*, use this template: `https://<YOUR-SUBDOMAIN>.ardoq.com/api/scim/v2` by replacing the placeholder text `<YOUR-SUBDOMAIN>`.This value is entered in the **Tenant Url** field in the Provisioning tab of your Ardoq application.
 
 	>[!NOTE]
 	>`<YOUR-SUBDOMAIN>` is the subdomain your organization has chosen to access Ardoq. This is the same URL segment you use when you access the Ardoq app. For example, if your organization accesses Ardoq at `https://acme.ardoq.com` you'd fill in `acme`.  If you're in the US and access Ardoq at `https://piedpiper.us.ardoq.com`  then you'd fill in `piedpiper.us`.
@@ -64,7 +64,7 @@ Before we proceed we need to obtain a *Tenant Url* and a *Secret Token*, to conf
 
 ## Step 3: Add Ardoq from the Microsoft Entra application gallery
 
-Add Ardoq from the Microsoft Entra application gallery to start managing provisioning to Ardoq. If you have previously setup Ardoq for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Ardoq from the Microsoft Entra application gallery to start managing provisioning to Ardoq. If you have previously setup Ardoq for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
