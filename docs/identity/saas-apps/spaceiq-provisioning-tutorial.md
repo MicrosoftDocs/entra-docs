@@ -53,13 +53,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![SpaceIQ Add SCIM](media/spaceiq-provisioning-tutorial/thirdparty.png)
 
-3.	Navigate to **Provisioning and SSO** tab. Search for the **Azure** tile. Click on **Activate**.
+3.	Navigate to **Provisioning and SSO** tab. Search for the **Azure** tile. Select **Activate**.
 
 	![SpaceIQ Provisioning and SSO](media/spaceiq-provisioning-tutorial/provisioning.png)
 
 	![SpaceIQ Activate Azure](media/spaceiq-provisioning-tutorial/azure.png)
 
-3.	Copy the **SCIM Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your SpaceIQ application. Click **Activate**
+3.	Copy the **SCIM Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your SpaceIQ application. Select **Activate**
 
 	![SpaceIQ Create Token](media/spaceiq-provisioning-tutorial/token.png)
 
@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input `https://api.spaceiq.com/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to SpaceIQ. If the connection fails, ensure your SpaceIQ account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input `https://api.spaceiq.com/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to SpaceIQ. If the connection fails, ensure your SpaceIQ account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -111,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to SpaceIQ**.
 
@@ -129,7 +129,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with SpaceIQ
 
-In this article,  you'll learn how to integrate SpaceIQ with Microsoft Entra ID. When you integrate SpaceIQ with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SpaceIQ with Microsoft Entra ID. When you integrate SpaceIQ with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SpaceIQ.
 * Enable your users to be automatically signed-in to SpaceIQ with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of SpaceIQ into Microsoft Entra ID, you need to add
 1. In the **Add from the gallery** section, type **SpaceIQ** in the search box.
 1. Select **SpaceIQ** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-spaceiq'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with SpaceIQ, perform the following st
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SpaceIQ SSO](#configure-spaceiq-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create SpaceIQ test user](#create-spaceiq-test-user)** - to have a counterpart of B.Simon in SpaceIQ that is linked to the Microsoft Entra representation of user.
+    1. **[Create SpaceIQ test user](#create-spaceiq-test-user)** - to have a counterpart of B.Simon in SpaceIQ that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SpaceIQ** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> Update these values with the actual Reply URL and identifier which is explained later in the article.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -103,11 +103,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Open a new browser window, and then sign in to your SpaceIQ environment as an administrator.
 
-1. Once you are logged in, click on the puzzle sign at the top right, then click on **Integrations**
+1. Once you're logged in, select the puzzle sign at the top right, then select **Integrations**
 
 	![Account settings](./media/spaceiq-tutorial/setting.png) 
 
-1. Under **All PROVISIONING & SSO**, click on the **Azure** tile to add an instance of Azure as IDP.
+1. Under **All PROVISIONING & SSO**, select the **Azure** tile to add an instance of Azure as IDP.
 
 	![SAML icon](./media/spaceiq-tutorial/azure.png)
 
@@ -123,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	d. Open the downloaded certificate file in notepad, copy the content, and then paste it in the **X.509 Certificate** box.
 
-	e. Click **Save**.
+	e. Select **Save**.
 
 ### Create SpaceIQ test user
 
@@ -135,9 +135,9 @@ SpaceIQ also supports automatic user provisioning, you can find more details [he
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the SpaceIQ for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the SpaceIQ for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the SpaceIQ tile in the My Apps, you should be automatically signed in to the SpaceIQ for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the SpaceIQ tile in the My Apps, you should be automatically signed in to the SpaceIQ for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
