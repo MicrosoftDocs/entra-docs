@@ -583,9 +583,9 @@
             - name: Register app or web API
               href: quickstart-register-app.md
             - name: Add a redirect URI to an app
-              href: howto-add-redirect-uri.md
+              href: how-to-add-redirect-uri.md
             - name: Add credentials to an app
-              href: howto-add-credentials.md
+              href: how-to-add-credentials.md
             - name: Expose scopes in web API registration
               href: quickstart-configure-app-expose-web-apis.md
             - name: Grant scoped permission to web API
