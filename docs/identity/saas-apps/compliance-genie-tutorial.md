@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Compliance Genie
 
-In this article, you'll learn how to integrate Compliance Genie with Microsoft Entra ID. Compliance Genie is an all-in-One Health & Safety App, allowing to manage and keep track of health & safety across your company for risk assessments, incident management, audits and documentation. When you integrate Compliance Genie with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Compliance Genie with Microsoft Entra ID. Compliance Genie is an all-in-One Health & Safety App, allowing to manage and keep track of health & safety across your company for risk assessments, incident management, audits and documentation. When you integrate Compliance Genie with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Compliance Genie.
 * Enable your users to be automatically signed-in to Compliance Genie with their Microsoft Entra accounts.
@@ -78,9 +78,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://login.be-safetech.com/Login/Azure`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Compliance Genie Client support team](mailto:admin@be-safetech.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Compliance Genie Client support team](mailto:admin@be-safetech.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -90,17 +90,17 @@ To configure single sign-on on **Compliance Genie** side, you need to send the *
 
 ### Create Compliance Genie test user
 
-In this section, a user called B.Simon is created in Compliance Genie. Compliance Genie supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Compliance Genie, a new one is created after authentication.
+In this section, a user called B.Simon is created in Compliance Genie. Compliance Genie supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Compliance Genie, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Compliance Genie Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Compliance Genie Sign-on URL where you can initiate the login flow. 
 
 * Go to Compliance Genie Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Compliance Genie tile in the My Apps, this will redirect to Compliance Genie Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Compliance Genie tile in the My Apps, this option redirects to Compliance Genie Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
