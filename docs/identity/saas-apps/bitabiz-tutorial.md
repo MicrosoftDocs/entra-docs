@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BitaBIZ so that I can control who has access to BitaBIZ, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra integration with BitaBIZ
 
-In this article,  you'll learn how to integrate BitaBIZ with Microsoft Entra ID. When you integrate BitaBIZ with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate BitaBIZ with Microsoft Entra ID. When you integrate BitaBIZ with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to BitaBIZ.
 * Enable your users to be automatically signed-in to BitaBIZ with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of BitaBIZ into Microsoft Entra ID, you need to add
 1. In the **Add from the gallery** section, type **BitaBIZ** in the search box.
 1. Select **BitaBIZ** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-bitabiz'></a>
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with BitaBIZ, perform the following st
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
     1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure BitaBIZ SSO](#configure-bitabiz-sso)** - to configure the Single Sign-On settings on application side.
-    1. **[Create BitaBIZ test user](#create-bitabiz-test-user)** - to have a counterpart of Britta Simon in BitaBIZ that is linked to the Microsoft Entra representation of user.
+    1. **[Create BitaBIZ test user](#create-bitabiz-test-user)** - to have a counterpart of Britta Simon in BitaBIZ that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **BitaBIZ** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,12 +82,12 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!NOTE]
     > The value in the above URL is for demonstration only. Update the value with the actual identifier, which is explained later in the article.
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
     `https://www.bitabiz.com/dashboard`
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/certificatebase64.png)
 
@@ -104,11 +104,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign-on to your BitaBIZ tenant as an administrator.
 
-2. Click on **SETUP ADMIN**.
+2. Select **SETUP ADMIN**.
 
     ![Screenshot shows part of a browser window with Setup Admin selected.](./media/bitabiz-tutorial/setup-admin.png)
 
-3. Click on **Microsoft integrations** under **Add value** section.
+3. Select **Microsoft integrations** under **Add value** section.
 
 4. Scroll down to the section **Microsoft Entra ID (Enable single sign on)** and enter the appropriate values in the provided fields:
 
@@ -124,7 +124,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     f. Mark **SSO enabled** the BitaBIZ account.
 
-    g. Click **Save Microsoft Entra configuration** to save and activate the SSO configuration.
+    g. Select **Save Microsoft Entra configuration** to save and activate the SSO configuration.
 
 
 ### Create BitaBIZ test user
@@ -136,15 +136,15 @@ In the case of BitaBIZ, provisioning is a manual task.
 
 1. Log in to your BitaBIZ company site as an administrator.
 
-2. Click on **SETUP ADMIN**.
+2. Select **SETUP ADMIN**.
 
     ![Screenshot shows part of your browser window with Setup Admin selected.](./media/bitabiz-tutorial/setup-admin.png)
 
-3. Click on **Add users** under **Organization** section.
+3. Select **Add users** under **Organization** section.
 
     ![Screenshot shows the Organization section with Add users selected.](./media/bitabiz-tutorial/add-user.png)
 
-4. Click **Add new employee**.
+4. Select **Add new employee**.
 
     ![Screenshot shows Add users with Add new employee selected.](./media/bitabiz-tutorial/new-employee.png)
 
@@ -162,7 +162,7 @@ In the case of BitaBIZ, provisioning is a manual task.
 
     e. There are other non-mandatory user attributes which can be set up for the user. Please refer the [Employee Setup Doc](https://help.bitabiz.dk/manage-or-set-up-your-account/on-boarding-employees/new-employee) for more details.
 
-    f. Click **Save employee**.
+    f. Select **Save employee**.
 
     > [!NOTE]
     > The Microsoft Entra account holder receives an email and follows a link to confirm their account before it becomes active.
@@ -176,15 +176,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to BitaBIZ Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to BitaBIZ Sign on URL where you can initiate the login flow.  
 
 * Go to BitaBIZ Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the BitaBIZ for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the BitaBIZ for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the BitaBIZ tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the BitaBIZ for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the BitaBIZ tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the BitaBIZ for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

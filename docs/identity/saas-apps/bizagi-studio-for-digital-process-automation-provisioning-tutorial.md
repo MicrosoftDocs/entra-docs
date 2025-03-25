@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bizagi Studio for Digital Process Automation so that I can streamline the user management process and ensure that users have the appropriate access to Bizagi Studio for Digital Process Automation.
@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 Follow these steps for planning:
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be [in scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's [in scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Bizagi Studio for Digital Process Automation](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='configure-to-support-provisioning-with-azure-ad'></a>
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    More information on how to add custom attributes can be found in [Customize Application Attributes](~/identity/app-provisioning/customize-application-attributes.md).
 
 > [!NOTE]
-> Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, and so on). The properties linked to parametric tables or multiple types are not supported yet.
+> Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, and so on). The properties linked to parametric tables or multiple types aren't supported yet.
 
 10. To configure scoping filters, see the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
