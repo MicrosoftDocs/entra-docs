@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Postman and Microso
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Postman.
-> * Remove users in Postman when they do not require access anymore.
+> * Remove users in Postman when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Postman.
 > * Provision groups and group memberships in Postman.
 > * [Single sign-on](postman-tutorial.md) to Postman (recommended).
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Postman](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-postman-to-support-provisioning-with-azure-ad'></a>
@@ -49,12 +49,12 @@ Before you begin to configure Postman to support provisioning with Microsoft Ent
    > You can visit the page [Postman SCIM provisioning overview](https://learning.postman.com/docs/administration/scim-provisioning/scim-provisioning-overview/#enabling-scim-in-postman), to refer **Enable SCIM provisioning in Postman** steps.
 
 1. Navigate to [Postman Admin Console](https://go.postman.co/home) by logging in to your Postman account.
-1. Once you’ve logged in, click **Team** on the right side and click **Team Settings**.
+1. Once you’ve logged in, select **Team** on the right side and select **Team Settings**.
 1. Select **Authentication** in the sidebar and then turn on  the **SCIM provisioning** toggle.
 
    ![Screenshot of Postman authentication settings page.](media/postman-provisioning-tutorial/postman-authentication-settings.png)
 
-1. You will receive a pop up message asking whether you want to **Turn on SCIM Provisioning**, click **Turn On** to enable SCIM provisioning.
+1. You receive a pop up message asking whether you want to **Turn on SCIM Provisioning**, select **Turn On** to enable SCIM provisioning.
 
     ![Screenshot of modal to enable SCIM provisioning.](media/postman-provisioning-tutorial/postman-enable-scim-provisioning.png)
 1. To **Generate SCIM API Key**, perform the following steps:
@@ -63,11 +63,11 @@ Before you begin to configure Postman to support provisioning with Microsoft Ent
 
       ![Screenshot to generate SCIM API key in Postman.](media/postman-provisioning-tutorial/postman-generate-scim-api-key.png)
 
-   1. Enter name of the key and click **Generate**.
-   1. Copy your new API key for later use and click **Done**.
+   1. Enter name of the key and select **Generate**.
+   1. Copy your new API key for later use and select **Done**.
 
    > [!NOTE]
-   > You can revisit this page to manage your SCIM API keys. If you regenerate an existing API key, you will have the option to keep the first key active while you switch over.
+   > You can revisit this page to manage your SCIM API keys. If you regenerate an existing API key, you have the option to keep the first key active while you switch over.
 
    > [!NOTE]
    > To continue enabling SCIM provisioning, see [Configuring SCIM with Microsoft Entra ID](https://learning.postman.com/docs/administration/scim-provisioning/configuring-scim-with-azure-ad/). For further information or help configuring SCIM, [contact Postman support](https://www.postman.com/support/).
@@ -77,7 +77,7 @@ Before you begin to configure Postman to support provisioning with Microsoft Ent
 
 ## Step 3: Add Postman from the Microsoft Entra application gallery
 
-Add Postman from the Microsoft Entra application gallery to start managing provisioning to Postman. If you have previously set up Postman for SSO you can use the same application. However, it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Postman from the Microsoft Entra application gallery to start managing provisioning to Postman. If you have previously set up Postman for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input `https://api.getpostman.com/scim/v2/` as your Postman Tenant URL and your [SCIM API key](https://learning.postman.com/docs/administration/scim-provisioning/scim-provisioning-overview/#generating-scim-api-key) as the Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Postman. If the connection fails, ensure your Postman account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input `https://api.getpostman.com/scim/v2/` as your Postman Tenant URL and your [SCIM API key](https://learning.postman.com/docs/administration/scim-provisioning/scim-provisioning-overview/#generating-scim-api-key) as the Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Postman. If the connection fails, ensure your Postman account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -120,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Postman**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Postman in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Postman for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Postman API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Postman in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Postman for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Postman API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Postman|
    |---|---|---|---|
@@ -148,7 +148,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
