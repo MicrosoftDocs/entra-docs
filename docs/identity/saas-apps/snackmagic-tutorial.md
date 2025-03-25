@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with Snackmagic, perform the following
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Snackmagic SSO](#configure-snackmagic-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Snackmagic test user](#create-snackmagic-test-user)** - to have a counterpart of B.Simon in Snackmagic that's linked to the Microsoft Entra representation of user.
+    1. **[Create Snackmagic test user](#create-snackmagic-test-user)** - to have a counterpart of B.Simon in Snackmagic linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![image](common/default-attributes.png)
 
-1. In addition to above, Snackmagic application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre-populated but you can review them as per your requirements.
+1. In addition to above, Snackmagic application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also prepopulated but you can review them as per your requirements.
 	
 	| Name | Source Attribute|
 	| --------| --------- |
@@ -121,7 +121,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Snackmagic SSO
 
-1. Log in to your Snackmagic company site as an administrator.
+1. Sign in to your Snackmagic company site as an administrator.
 
 1. Go to **Account Settings** > **SSO Preferences** and perform the following steps:
 
@@ -159,7 +159,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Select **Test this application**, and you should be automatically signed in to the Snackmagic for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you select the Snackmagic tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Snackmagic for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Snackmagic tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign-in flow and if configured in IDP mode, you should be automatically signed in to the Snackmagic for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 
