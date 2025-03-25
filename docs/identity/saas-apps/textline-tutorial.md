@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Textline so that I can control who has access to Textline, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Textline with Microsoft Entra ID. W
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Textline single sign-on (SSO) enabled subscription.
@@ -59,7 +60,7 @@ To configure and test Microsoft Entra SSO with Textline, perform the following s
    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Textline SSO](#configure-textline-sso)** - to configure the single sign-on settings on application side.
-   1. **[Create Textline test user](#create-textline-test-user)** - to have a counterpart of B.Simon in Textline that's linked to the Microsoft Entra representation of user.
+   1. **[Create Textline test user](#create-textline-test-user)** - to have a counterpart of B.Simon in Textline linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -75,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, the application is pre-configured and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by selecting the **Save** button.
+1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Azure. The user needs to save the configuration by selecting the **Save** button.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
