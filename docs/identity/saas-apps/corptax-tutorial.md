@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CorpTax so that I can control who has access to CorpTax, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra single sign-on with Corptax, you need to c
 2. **[Configure Corptax Single Sign-On](#configure-corptax-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Corptax test user](#create-corptax-test-user)** - to have a counterpart of Britta Simon in Corptax that is linked to the Microsoft Entra representation of user.
+5. **[Create Corptax test user](#create-corptax-test-user)** - to have a counterpart of Britta Simon in Corptax that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -79,7 +79,7 @@ To configure Microsoft Entra single sign-on with Corptax, perform the following 
 
 1. On the **Select a Single sign-on method** dialog, select **SAML/WS-Fed** mode to enable single sign-on.
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit_urls.png)
 
@@ -90,7 +90,7 @@ To configure Microsoft Entra single sign-on with Corptax, perform the following 
     In the **Sign-on URL** text box, type a URL:
     `https://asp.corptax.com`
 
-1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click **Download** to download **Federation Metadata XML** and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, select **Download** to download **Federation Metadata XML** and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -109,7 +109,7 @@ In this section, you create a user called Britta Simon in Corptax. Work with [C
 ### Test single sign-on
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
-When you click the Corptax tile in the Access Panel, you should be redirected to the below Corptax page- 
+When you select the Corptax tile in the Access Panel, you should be redirected to the below Corptax page- 
 
 ![image](media/corptax-tutorial/corptaxlogin.png)
 
