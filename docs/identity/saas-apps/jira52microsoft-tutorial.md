@@ -42,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 To test the steps in this article,  you should follow these recommendations:
 
-- don't use your production environment, unless it's necessary.
+- Don't use your production environment, unless it's necessary.
 - A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 
 ## Supported versions of JIRA

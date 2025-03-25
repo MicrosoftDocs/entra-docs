@@ -85,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** which is in the form of **https://\<organisation\>.securesme.com**. This are the same address used to log in to the Jellyfish portal. For the *Secret Token* input the API key generated earlier in step 2. Then select Authorize, make sure that you enter your Jellyfish account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Jellyfish. If the connection fails, ensure your Jellyfish account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter the **Tenant Url** which is in the form of **https://\<organisation\>.securesme.com**. This is the same address used to log in to the Jellyfish portal. For the *Secret Token* input the API key generated earlier in step 2. Then select Authorize, make sure that you enter your Jellyfish account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Jellyfish. If the connection fails, ensure your Jellyfish account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
