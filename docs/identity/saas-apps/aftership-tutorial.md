@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 08/28/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -108,7 +108,7 @@ In this section, you create a user called B.Simon in AfterShip. Work with [Afte
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Select **Test this application** in Microsoft Entra admin center. this option redirects to AfterShip Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to AfterShip Sign-on URL where you can initiate the login flow.
  
 * Go to AfterShip Sign-on URL directly and initiate the login flow from there.
  

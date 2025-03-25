@@ -41,7 +41,7 @@ Use the information below to make a decision between using the AWS Single Sign-O
 |Conditional Access| Supports a single Conditional Access policy for all AWS accounts. | Supports a single Conditional Access policy for all accounts or custom policies per account|
 | CLI access | Supported | Supported|
 | Privileged  Identity Management | [Supported](./aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups) | Not supported |
-| Centralize account management | Centralize account management in AWS. | Centralize account management in Microsoft Entra ID (likely require a Microsoft Entra enterprise application per account). |
+| Centralize account management | Centralize account management in AWS. | Centralize account management in Microsoft Entra ID (likely requires a Microsoft Entra enterprise application per account). |
 | SAML certificate| Single certificate| Separate certificates per app / account | 
 
 ## AWS Single-Account Access architecture
@@ -256,7 +256,6 @@ Follow these steps to enable Microsoft Entra SSO.
     ![Screenshot of Create policy tag page.](./media/amazon-web-service-tutorial/tag-policy.png)
 
 1. Define the new policy.
-
     ![Screenshot of Create policy page, with Name and Description fields highlighted.](./media/amazon-web-service-tutorial/review-policy.png)
 
     a. For **Name**, enter **AzureAD_SSOUserRole_Policy**.
@@ -264,9 +263,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. For **Description**, enter **This policy will allow to fetch the roles from AWS accounts**.
 
     c. Select **Create policy**.
-
 1. Create a new user account in the AWS IAM service.
-
     a. In the AWS IAM console, select **Users** and select **Add users**.
 
     ![Screenshot of AWS IAM console, with Users highlighted.](./media/amazon-web-service-tutorial/create-user.png)
@@ -284,19 +281,13 @@ Follow these steps to enable Microsoft Entra SSO.
     e. Search for the newly created policy in the filter section **AzureAD_SSOUserRole_Policy**.
 
     f. Select the policy, and then select **Next**.
-
 1. Review your choices and select **Create user**.
-
-**Note:** Ensure to create and download the third-party access key for this user. This key is used in the Microsoft Entra user provisioning section to fetch the roles from the AWS console.
-
+   > [!NOTE]
+   > Ensure to create and download the third-party access key for this user. This key is used in the Microsoft Entra user provisioning section to fetch the roles from the AWS console.
 1. To download the user credentials of a user, enable the console access in **Security credentials** tab.
-
     ![Screenshot shows the Security credentials.](./media/amazon-web-service-tutorial/enable-console-access.png)
-
 1. Enter these credentials into the Microsoft Entra user provisioning section to fetch the roles from the AWS console.
-
     ![Screenshot shows the download the user credentials.](./media/amazon-web-service-tutorial/download-password.png)
-
 
 > [!NOTE]
 > AWS has a set of permissions/limits are required to configure AWS SSO. To know more information on AWS limits, please refer [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) page.

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/15/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -118,7 +118,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select **Test this application** in Microsoft Entra admin center. this option redirects to Amplified Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to Amplified Sign on URL where you can initiate the login flow.  
  
 * Go to Amplified Sign-on URL directly and initiate the login flow from there.
  

@@ -113,7 +113,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select **Test this application** in Microsoft Entra admin center. this option redirects to Alohi Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to Alohi Sign on URL where you can initiate the login flow.  
  
 * Go to Alohi Sign-on URL directly and initiate the login flow from there.
  

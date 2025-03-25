@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Select either **IDP Metadata URL** or **X509 certificate and IDP SSO URL** according to your requirement.
 
-    1. The **ACS Base URL** field autopopulates and get configured with HTTPS.
+    1. The **ACS Base URL** field autopopulates and gets configured with HTTPS.
 
     1. In the **IDP URL** field, paste the **Microsoft Entra Identifier**, which you have copied from the Microsoft Entra admin center.
 
@@ -124,7 +124,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select **Test this application** in Microsoft Entra admin center. this option redirects to Alteryx Server Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to Alteryx Server Sign on URL where you can initiate the login flow.  
  
 * Go to Alteryx Server Sign-on URL directly and initiate the login flow from there.
  
