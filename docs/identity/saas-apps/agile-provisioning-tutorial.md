@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Agile Provisioning, perform the f
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Agile Provisioning SSO](#configure-agile-provisioning-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Agile Provisioning test user](#create-agile-provisioning-test-user)** - to have a counterpart of B.Simon in Agile Provisioning that is linked to the Microsoft Entra representation of user.
+    1. **[Create Agile Provisioning test user](#create-agile-provisioning-test-user)** - to have a counterpart of B.Simon in Agile Provisioning that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -100,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -116,7 +116,7 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Agile Provisioning.
+In this section, you enable B.Simon to use single sign-on by granting access to Agile Provisioning.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Agile Provisioning**.
@@ -140,7 +140,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this redirects to Agile Provisioning Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Agile Provisioning Sign on URL where you can initiate the login flow.  
 
 * Go to Agile Provisioning Sign-on URL directly and initiate the login flow from there.
 

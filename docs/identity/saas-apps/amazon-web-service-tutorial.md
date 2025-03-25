@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access so that I can control who has access to AWS Single-Account Access, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -41,7 +41,7 @@ Use the information below to make a decision between using the AWS Single Sign-O
 |Conditional Access| Supports a single Conditional Access policy for all AWS accounts. | Supports a single Conditional Access policy for all accounts or custom policies per account|
 | CLI access | Supported | Supported|
 | Privileged  Identity Management | [Supported](./aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups) | Not supported |
-| Centralize account management | Centralize account management in AWS. | Centralize account management in Microsoft Entra ID (will likely require a Microsoft Entra enterprise application per account). |
+| Centralize account management | Centralize account management in AWS. | Centralize account management in Microsoft Entra ID (likely require a Microsoft Entra enterprise application per account). |
 | SAML certificate| Single certificate| Separate certificates per app / account | 
 
 ## AWS Single-Account Access architecture
@@ -76,7 +76,7 @@ To get started, you need the following items:
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
 > [!Note]
-> Roles should not be manually edited in Microsoft Entra ID when doing role imports.
+> Roles shouldn't be manually edited in Microsoft Entra ID when doing role imports.
 
 ## Scenario description
 
@@ -110,7 +110,7 @@ To configure and test Microsoft Entra SSO with AWS Single-Account Access, perfor
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure AWS Single-Account Access SSO](#configure-aws-single-account-access-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create AWS Single-Account Access test user](#create-aws-single-account-access-test-user)** - to have a counterpart of B.Simon in AWS Single-Account Access that is linked to the Microsoft Entra representation of user.
+    1. **[Create AWS Single-Account Access test user](#create-aws-single-account-access-test-user)** - to have a counterpart of B.Simon in AWS Single-Account Access that's linked to the Microsoft Entra representation of user.
     1. **[How to configure role provisioning in AWS Single-Account Access](#how-to-configure-role-provisioning-in-aws-single-account-access)**
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -287,7 +287,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Review your choices and select **Create user**.
 
-**Note:** Ensure to create and download the third-party access key for this user. This key will be used in the Microsoft Entra user provisioning section to fetch the roles from the AWS console.
+**Note:** Ensure to create and download the third-party access key for this user. This key is used in the Microsoft Entra user provisioning section to fetch the roles from the AWS console.
 
 1. To download the user credentials of a user, enable the console access in **Security credentials** tab.
 
@@ -326,7 +326,7 @@ Follow these steps to enable Microsoft Entra SSO.
     ![Screenshot of Settings section, with On highlighted.](./media/amazon-web-service-tutorial/provisioning2.png)
 
 > [!NOTE]
-> The provisioning service imports roles only from AWS to Microsoft Entra ID. The service does not provision users and groups from Microsoft Entra ID to AWS.
+> The provisioning service imports roles only from AWS to Microsoft Entra ID. The service doesn't provision users and groups from Microsoft Entra ID to AWS.
 
 > [!NOTE]
 > After you save the provisioning credentials, you must wait for the initial sync cycle to run. Sync usually takes around 40 minutes to finish. You can see the status at the bottom of the **Provisioning** page, under **Current Status**.
@@ -341,7 +341,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this redirects to AWS Single-Account Access Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to AWS Single-Account Access Sign on URL where you can initiate the login flow.  
 
 * Go to AWS Single-Account Access Sign-on URL directly and initiate the login flow from there.
 

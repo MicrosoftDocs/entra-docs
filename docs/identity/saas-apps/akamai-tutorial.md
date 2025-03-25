@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Akamai so that I can control who has access to Akamai, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -124,7 +124,7 @@ To configure and test Microsoft Entra SSO with Akamai, perform the following ste
     * **[Remote Desktop](#remote-desktop)**
     * **[SSH](#ssh)**
     * **[Kerberos Authentication](#kerberos-authentication)**
-    * **[Create Akamai test user](#create-akamai-test-user)** - to have a counterpart of B.Simon in Akamai that is linked to the Microsoft Entra representation of user.
+    * **[Create Akamai test user](#create-akamai-test-user)** - to have a counterpart of B.Simon in Akamai that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -184,10 +184,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 In the **General** tab, enter the following information:
 
-1. **Identity Intercept** - Specify the name of the domain (SP base URL–will be used for Microsoft Entra Configuration).
+1. **Identity Intercept** - Specify the name of the domain (SP base URL–is used for Microsoft Entra Configuration).
 
     > [!NOTE]
-    > You can choose to have your own custom domain (will require a DNS entry and a Certificate). In this example we're going to use the Akamai Domain.
+    > You can choose to have your own custom domain (requires a DNS entry and a Certificate). In this example we're going to use the Akamai Domain.
 
 1. **Akamai Cloud Zone** - Select the Appropriate cloud zone.
 1. **Certificate Validation** - Check Akamai Documentation (optional).
@@ -221,7 +221,7 @@ In the **Advanced settings** tab, accept the default values. Refer Akamai docume
 
 ### Deployment
 
-1. In the **Deployment** tab, select on Deploy Identity Provider.
+1. In the **Deployment** tab, select Deploy Identity Provider.
 
 2. Verify the deployment was successful.
 
@@ -296,7 +296,7 @@ Select Save and Go to Authentication.
 1. Enter **Application Name**, such as *SecretRDPApp*.
 1. Select a **Description**, such as *Protect RDP Session using Microsoft Entra Conditional Access*.
 
-1. Specify the Connector that is servicing this.
+1. Specify the Connector that's servicing this.
 
     ![Screenshot of the Akamai EAA console showing settings for Certificate and Location. Associated connectors is set to USWST-CON1.](./media/header-akamai-tutorial/configure-19.png)
 
@@ -358,7 +358,7 @@ Select **Save and go to Advanced Settings**.
 
 #### Authentication
 
-In the **Authentication** tab, select on **Save and go to Services**.
+In the **Authentication** tab, select **Save and go to Services**.
 
 #### Services
 
@@ -398,7 +398,7 @@ Select Save and to go Deployment.
 
 ### Kerberos Authentication
 
-In the following example we'll publish an internal web server at `http://frp-app1.superdemo.live` and enable SSO using KCD.
+In the following example we publish an internal web server at `http://frp-app1.superdemo.live` and enable SSO using KCD.
 
 #### General Tab
 
@@ -445,7 +445,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
     ![Screenshot of the Akamai EAA console GROUPS ON SUPERDEMOLIVE DIRECTORY window. The EAAGroup with 1 User is listed under Groups.](./media/header-akamai-tutorial/eaagroup.png)
 
-1. Add the Directory to your Identity Provider by clicking **Identity** > **Identity Providers** and select on the **Directories** Tab and Select **Assign directory**.
+1. Add the Directory to your Identity Provider by selecting **Identity** > **Identity Providers** and select the **Directories** Tab and Select **Assign directory**.
 
 ### Configure KCD Delegation for EAA Walkthrough
 
@@ -462,7 +462,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Step 2: Configure the SPN for this account
 
-1. Based on this sample the SPN will be as below.
+1. Based on this sample the SPN is as below.
 
 2. setspn -s **Http/corpapps.login.go.akamai-access.com eaadelegation**
 
@@ -470,7 +470,7 @@ In the **Authentication** tab, assign the Identity Provider.
 
 #### Step 3: Configure Delegation
 
-1. For the EAADelegation account select on the Delegation tab.
+1. For the EAADelegation account select the Delegation tab.
 
     ![Screenshot of an Administrator Command Prompt showing the command for configuring the SPN.](./media/header-akamai-tutorial/delegation.png)
 

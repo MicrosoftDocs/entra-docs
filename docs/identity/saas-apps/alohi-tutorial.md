@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Alohi, perform the following step
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Alohi SSO](#configure-alohi-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Alohi test user](#create-alohi-test-user)** - to have a counterpart of B.Simon in Alohi that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Alohi test user](#create-alohi-test-user)** - to have a counterpart of B.Simon in Alohi that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
@@ -113,7 +113,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select **Test this application** in Microsoft Entra admin center. This redirects to Alohi Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Alohi Sign on URL where you can initiate the login flow.  
  
 * Go to Alohi Sign-on URL directly and initiate the login flow from there.
  

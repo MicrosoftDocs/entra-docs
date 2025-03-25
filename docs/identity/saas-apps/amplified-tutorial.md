@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Amplified, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Amplified SSO](#configure-amplified-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Amplified test user](#create-amplified-test-user)** - to have a counterpart of B.Simon in Amplified that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Amplified test user](#create-amplified-test-user)** - to have a counterpart of B.Simon in Amplified that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -118,7 +118,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select **Test this application** in Microsoft Entra admin center. This redirects to Amplified Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Amplified Sign on URL where you can initiate the login flow.  
  
 * Go to Amplified Sign-on URL directly and initiate the login flow from there.
  
