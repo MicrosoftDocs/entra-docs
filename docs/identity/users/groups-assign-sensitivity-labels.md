@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro
+ms.custom: it-pro, no-azure-ad-ps-ref
 ---
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID
