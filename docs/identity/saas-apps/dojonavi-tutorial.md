@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with DojoNavi
 
-In this article, you'll learn how to integrate DojoNavi with Microsoft Entra ID. "Dojo Navi" is a next-generation manual solution that greatly contributes to various system operations in a company by providing "navigation functions" and "blocking functions" in system operation that have never existed before, in order to significantly improve system operation efficiency and significantly reduce system operation costs. When you integrate DojoNavi with Microsoft Entra ID, you can:
+In this article, you learn how to integrate DojoNavi with Microsoft Entra ID. "Dojo Navi" is a next-generation manual solution that greatly contributes to various system operations in a company by providing "navigation functions" and "blocking functions" in system operation that have never existed before, in order to significantly improve system operation efficiency and significantly reduce system operation costs. When you integrate DojoNavi with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to DojoNavi.
 * Enable your users to be automatically signed-in to DojoNavi with their Microsoft Entra accounts.
@@ -92,7 +92,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | `https://<SUBDOMAIN>.dojo-sero.tepss.com/external_sso_service/sso/` |
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [DojoNavi Client support team](mailto:product_support@tenda.co.jp) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [DojoNavi Client support team](mailto:product_support@tenda.co.jp) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -116,15 +116,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to DojoNavi Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to DojoNavi Sign-on URL where you can initiate the login flow.  
 
 * Go to DojoNavi Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the DojoNavi for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the DojoNavi for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the DojoNavi tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the DojoNavi for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the DojoNavi tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the DojoNavi for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
