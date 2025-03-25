@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Secret Server (on-premises), perf
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Secret Server (On-Premises) SSO](#configure-secret-server-on-premises-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Secret Server (On-Premises) test user](#create-secret-server-on-premises-test-user)** - to have a counterpart of B.Simon in Secret Server (on-premises) that is linked to the Microsoft Entra representation of user.
+    1. **[Create Secret Server (On-Premises) test user](#create-secret-server-on-premises-test-user)** - to have a counterpart of B.Simon in Secret Server (on-premises) that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx`
 
     > [!NOTE]
-	> The Entity ID shown above is an example only and you are free to choose any unique value that identifies your Secret Server instance in Microsoft Entra ID. You need to send this Entity ID to [Secret Server (On-Premises) Client support team](https://support.delinea.com/s/) and they configure it on their side. For more details, please read [this article](https://docs.delinea.com/online-help/library/start.htm).
+	> The Entity ID shown above is an example only and you're free to choose any unique value that identifies your Secret Server instance in Microsoft Entra ID. You need to send this Entity ID to [Secret Server (On-Premises) Client support team](https://support.delinea.com/s/) and they configure it on their side. For more details, please read [this article](https://docs.delinea.com/online-help/library/start.htm).
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SecretServerURL>/login.aspx`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Reply URL and Sign-On URL. Contact [Secret Server (On-Premises) Client support team](https://support.delinea.com/s/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Reply URL and Sign-On URL. Contact [Secret Server (On-Premises) Client support team](https://support.delinea.com/s/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -126,13 +126,13 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select on **Test this application**, this will redirect to Secret Server (on-premises) Sign-on URL where you can initiate the sign-in flow.  
+* Select **Test this application**, this option redirects to Secret Server (on-premises) Sign-on URL where you can initiate the sign-in flow.  
 
 * Go to Secret Server (on-premises) Sign on URL directly and initiate the sign-in flow from there.
 
 #### IDP initiated:
 
-* Select on **Test this application**, and you should be automatically signed in to the Secret Server (on-premises) for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Secret Server (on-premises) for which you set up the SSO. 
 
 You can also use Microsoft My Apps to test the application in any mode. When you select the Secret Server (on-premises) tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign-in flow and if configured in IDP mode, you should be automatically signed in to the Secret Server (on-premises) for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 

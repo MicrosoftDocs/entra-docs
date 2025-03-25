@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with senhasegura SAML Authentication
 
-In this article,  you'll learn how to integrate senhasegura SAML Authentication with Microsoft Entra ID. When you integrate senhasegura SAML Authentication with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate senhasegura SAML Authentication with Microsoft Entra ID. When you integrate senhasegura SAML Authentication with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to senhasegura SAML Authentication.
 * Enable your users to be automatically signed-in to senhasegura SAML Authentication with their Microsoft Entra accounts.
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with senhasegura SAML Authentication, 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure senhasegura SAML Authentication SSO](#configure-senhasegura-saml-authentication-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create senhasegura SAML Authentication test user](#create-senhasegura-saml-authentication-test-user)** - to have a counterpart of B.Simon in senhasegura SAML Authentication that is linked to the Microsoft Entra representation of user.
+    1. **[Create senhasegura SAML Authentication test user](#create-senhasegura-saml-authentication-test-user)** - to have a counterpart of B.Simon in senhasegura SAML Authentication that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **senhasegura SAML Authentication** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -87,9 +87,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<senhasegura_CUSTOM_URL>/flow/saml/auth/assert`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Reply URL and Sign on URL. Contact [senhasegura SAML Authentication support team](mailto:suporte@senhasegura.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values aren't real. Update these values with the actual Reply URL and Sign on URL. Contact [senhasegura SAML Authentication support team](mailto:suporte@senhasegura.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -111,15 +111,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to senhasegura SAML Authentication Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to senhasegura SAML Authentication Sign on URL where you can initiate the login flow.  
  
 * Go to senhasegura SAML Authentication Sign-on URL directly and initiate the login flow from there.
  
 #### IDP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the senhasegura SAML Authentication for which you set up the SSO.
+* Select **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the senhasegura SAML Authentication for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the senhasegura SAML Authentication tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the senhasegura SAML Authentication for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the senhasegura SAML Authentication tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the senhasegura SAML Authentication for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Shopify Plus and Mi
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Shopify Plus
-> * Remove users in Shopify Plus when they do not require access anymore
+> * Remove users in Shopify Plus when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Shopify Plus
 > * [Single sign-on](./shopify-plus-tutorial.md) to Shopify Plus (recommended)
 
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Shopify Plus](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-shopify-plus-to-support-provisioning-with-azure-ad'></a>
@@ -44,17 +44,17 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Login to [Shopify Plus organization admin](https://shopify.plus). Navigate to **Users > Security**.
 
-2. Navigate to the **SCIM Integration** section, click **Generate API token**.
+2. Navigate to the **SCIM Integration** section, select **Generate API token**.
 
-3. Copy and save the generated token. This value will be entered in the **Secret Token** field in the Provisioning tab of your Shopify Plus application.
+3. Copy and save the generated token. This value is entered in the **Secret Token** field in the Provisioning tab of your Shopify Plus application.
 
-4. The base URL is `https://shopifyscim.com/scim/v2/`. This value will be entered in the **Tenant URL** field in the Provisioning tab of your Shopify Plus application.
+4. The base URL is `https://shopifyscim.com/scim/v2/`. This value is entered in the **Tenant URL** field in the Provisioning tab of your Shopify Plus application.
 
 <a name='step-3-add-shopify-plus-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Shopify Plus from the Microsoft Entra application gallery
 
-Add Shopify Plus from the Microsoft Entra application gallery to start managing provisioning to Shopify Plus. If you have previously setup Shopify Plus for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Shopify Plus from the Microsoft Entra application gallery to start managing provisioning to Shopify Plus. If you have previously setup Shopify Plus for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -85,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Shopify Plus Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Shopify Plus. If the connection fails, ensure your Shopify Plus account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Shopify Plus Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Shopify Plus. If the connection fails, ensure your Shopify Plus account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Shopify Plus**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Shopify Plus in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Shopify Plus for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Shopify Plus API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Shopify Plus in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Shopify Plus for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Shopify Plus API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for Filtering|Required by Shopify Plus
    |---|---|---|---
@@ -118,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
