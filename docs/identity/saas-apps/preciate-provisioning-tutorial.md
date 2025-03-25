@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Preciate and Micros
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Preciate
-> * Remove users in Preciate when they do not require access anymore
+> * Remove users in Preciate when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Preciate
 
 ## Prerequisites
@@ -33,7 +33,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Preciate](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-preciate-to-support-provisioning-with-azure-ad'></a>
@@ -48,17 +48,17 @@ The scenario outlined in this article assumes that you already have the followin
  
 	![Preciate generate](media/preciate-provisioning-tutorial/preciate-secret-generate.png)
 
-3.  A new **Secret Key** will appear. Copy and save the **Secret Key**. Also make a note that Tenant URL is `https://preciate.com/api/v1/scim`. These values will be entered in the **Secret Token** and **Tenant URL** field in the Provisioning tab of your Preciate's application.
+3.  A new **Secret Key** appears. Copy and save the **Secret Key**. Also make a note that Tenant URL is `https://preciate.com/api/v1/scim`. These values are entered in the **Secret Token** and **Tenant URL** field in the Provisioning tab of your Preciate's application.
  
 > [!NOTE]
->Every time you click the Generate button a new secret key is created. This will immediately invalidate the current one. If an integration is already actively using the current key, generating the new one will cause the integration to stop functioning until the Secret Token is updated in Preciate's application in the Azure portal.
+>Every time you select the Generate button a new secret key is created. This will immediately invalidate the current one. If an integration is already actively using the current key, generating the new one will cause the integration to stop functioning until the Secret Token is updated in Preciate's application in the Azure portal.
 
 
 <a name='step-3-add-preciate-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Preciate from the Microsoft Entra application gallery
 
-Add Preciate from the Microsoft Entra application gallery to start managing provisioning to Preciate. If you have previously setup Preciate for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the [gallery](~/identity/enterprise-apps/add-application-portal.md). 
+Add Preciate from the Microsoft Entra application gallery to start managing provisioning to Preciate. If you have previously setup Preciate for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the [gallery](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Preciate Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Preciate. If the connection fails, ensure your Preciate account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Preciate Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Preciate. If the connection fails, ensure your Preciate account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Preciate**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Preciate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Preciate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Preciate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Preciate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Preciate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Preciate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -125,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

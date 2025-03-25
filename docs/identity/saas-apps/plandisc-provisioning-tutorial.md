@@ -20,7 +20,7 @@ This article describes the steps you need to do in both Plandisc and Microsoft E
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Plandisc
-> * Remove users in Plandisc when they do not require access anymore
+> * Remove users in Plandisc when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Plandisc
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Plandisc (recommended).
 
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Plandisc](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-plandisc-to-support-provisioning-with-azure-ad'></a>
@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 	![Plandisc navigate Enterprise](media/plandisc-provisioning-tutorial/get-scim-token-from-plandisc-step-1.png)
 
 1. Scroll down to see section **Manage users with SCIM** section.
-Here you'll find values to be entered in the Provisioning tab of your Plandisc application. 
+Here you find values to be entered in the Provisioning tab of your Plandisc application. 
 The **SCIM endpoint** is inserted into the Tenant URL field.
 The **SCIM token** is inserted into the Secret Token field.
 
@@ -87,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Plandisc Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Plandisc. If the connection fails, ensure your Plandisc account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your Plandisc Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Plandisc. If the connection fails, ensure your Plandisc account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Plandisc**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Plandisc in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Plandisc for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Plandisc API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Plandisc in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Plandisc for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Plandisc API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Plandisc|
    |---|---|---|---|
@@ -120,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
