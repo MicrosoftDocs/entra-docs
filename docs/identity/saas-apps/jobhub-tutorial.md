@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JOBHUB so that I can control who has access to JOBHUB, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Integrate JOBHUB with Microsoft Entra ID
 
-In this article,  you'll learn how to integrate JOBHUB with Microsoft Entra ID. When you integrate JOBHUB with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate JOBHUB with Microsoft Entra ID. When you integrate JOBHUB with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to JOBHUB.
 * Enable your users to be automatically signed-in to JOBHUB with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of JOBHUB into Microsoft Entra ID, you need to add 
 1. In the **Add from the gallery** section, type **JOBHUB** in the search box.
 1. Select **JOBHUB** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-single-sign-on'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with JOBHUB, complete the following bu
 2. **[Configure JOBHUB SSO](#configure-jobhub-sso)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create JOBHUB test user](#create-jobhub-test-user)** - to have a counterpart of Britta Simon in JOBHUB that is linked to the Microsoft Entra representation of user.
+5. **[Create JOBHUB test user](#create-jobhub-test-user)** - to have a counterpart of Britta Simon in JOBHUB that's linked to the Microsoft Entra representation of user.
 6. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **JOBHUB** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -77,9 +77,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://pasona.jobhub.jp/saml/init`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [JOBHUB Client support team](mailto:platform@pasonagroup.co.jp) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. Contact [JOBHUB Client support team](mailto:platform@pasonagroup.co.jp) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
+1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
 	![Edit SAML Signing Certificate](common/edit-certificate.png)
 
