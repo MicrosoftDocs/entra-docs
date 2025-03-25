@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Couchbase Capella - SSO
 
-In this article, you'll learn how to integrate Couchbase Capella - SSO with Microsoft Entra ID. The purpose of this app is to integrate Couchbase's Capella cloud database platform with Azure SSO. It’s the easiest and fastest way to begin with Couchbase. When you integrate Couchbase Capella - SSO with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Couchbase Capella - SSO with Microsoft Entra ID. The purpose of this app is to integrate Couchbase's Capella cloud database platform with Azure SSO. It’s the easiest and fastest way to begin with Couchbase. When you integrate Couchbase Capella - SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Couchbase Capella - SSO.
 * Enable your users to be automatically signed-in to Couchbase Capella - SSO with their Microsoft Entra accounts.
@@ -82,7 +82,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://cloud.couchbase.com/enterprise-sso`
 
 	> [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Couchbase Capella - SSO support team](mailto:support@couchbase.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Couchbase Capella - SSO support team](mailto:support@couchbase.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Couchbase Capella - SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -115,11 +115,11 @@ In this section, a user called B.Simon is created in Couchbase Capella - SSO. Co
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Couchbase Capella - SSO Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Couchbase Capella - SSO Sign-on URL where you can initiate the login flow. 
 
 * Go to Couchbase Capella - SSO Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Couchbase Capella - SSO tile in the My Apps, this will redirect to Couchbase Capella - SSO Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Couchbase Capella - SSO tile in the My Apps, this option redirects to Couchbase Capella - SSO Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

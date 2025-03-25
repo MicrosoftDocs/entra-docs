@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Dagster Cloud
 
-In this article,  you'll learn how to integrate Dagster Cloud with Microsoft Entra ID. When you integrate Dagster Cloud with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Dagster Cloud with Microsoft Entra ID. When you integrate Dagster Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Dagster Cloud.
 * Enable your users to be automatically signed-in to Dagster Cloud with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of Dagster Cloud into Microsoft Entra ID, you need 
 1. In the **Add from the gallery** section, type **Dagster Cloud** in the search box.
 1. Select **Dagster Cloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-dagster-cloud'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Dagster Cloud, perform the follow
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Dagster Cloud SSO](#configure-dagster-cloud-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Dagster Cloud test user](#create-dagster-cloud-test-user)** - to have a counterpart of B.Simon in Dagster Cloud that is linked to the Microsoft Entra representation of user.
+    1. **[Create Dagster Cloud test user](#create-dagster-cloud-test-user)** - to have a counterpart of B.Simon in Dagster Cloud that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Dagster Cloud** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<ORGANIZATION_NAME>.dagster.cloud/auth/saml/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. You can refer to the patterns shown in the **Basic SAML Configuration** section. [See Dagster Cloud's documentation](https://docs.dagster.io/dagster-plus/account/authentication/setting-up-azure-ad-saml-sso#step-2-configure-sso-in-azure-ad) for more information.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. You can refer to the patterns shown in the **Basic SAML Configuration** section. [See Dagster Cloud's documentation](https://docs.dagster.io/dagster-plus/account/authentication/setting-up-azure-ad-saml-sso#step-2-configure-sso-in-azure-ad) for more information.
 
 1. Dagster Cloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -122,7 +122,7 @@ To configure single sign-on on the **Dagster Cloud** side, you need to upload th
 
 ### Create Dagster Cloud test user
 
-In this section, a user called Britta Simon is created in Dagster Cloud. Dagster Cloud supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Dagster Cloud, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Dagster Cloud. Dagster Cloud supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Dagster Cloud, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -130,15 +130,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Dagster Cloud Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Dagster Cloud Sign on URL where you can initiate the login flow.  
 
 * Go to Dagster Cloud Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Dagster Cloud for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Dagster Cloud for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Dagster Cloud tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Dagster Cloud for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Dagster Cloud tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Dagster Cloud for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 
