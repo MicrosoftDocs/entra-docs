@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Grammarly so that I can streamline the user management process and ensure that users have the appropriate access to Grammarly.
@@ -25,7 +25,7 @@ This article describes the steps you need to perform in both Grammarly and Micro
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Grammarly
-> * Remove users in Grammarly when they do not require access anymore
+> * Remove users in Grammarly when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Grammarly
 
 ## Prerequisites
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Grammarly](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-grammarly-to-support-provisioning-with-azure-ad'></a>
@@ -82,7 +82,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot that shows Provisioning Mode set to Automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, in the enter **Tenant URL** field enter `https://sso.grammarly.com/scim/v2`, and in the **Secret Token** field enter the token provided by Grammarly (see Step 2 above). Click **Test Connection** to ensure Microsoft Entra ID can connect to Grammarly. If the connection fails, ensure your Grammarly account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, in the enter **Tenant URL** field enter `https://sso.grammarly.com/scim/v2`, and in the **Secret Token** field enter the token provided by Grammarly (see Step 2 above). Select **Test Connection** to ensure Microsoft Entra ID can connect to Grammarly. If the connection fails, ensure your Grammarly account has Admin permissions and try again.
 
  	![Screenshot that shows the Tenant URL and Secret Token boxes.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Grammarly**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Grammarly in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Grammarly for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Grammarly API supports filtering users based on that attribute. Select **Save** to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Grammarly in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Grammarly for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Grammarly API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
