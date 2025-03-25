@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Olfeo SAAS so that I can streamline the user management process and ensure that users have the appropriate access to Olfeo SAAS.
@@ -20,7 +20,7 @@ This article describes the steps you need to do in both Olfeo SAAS and Microsoft
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Olfeo SAAS
-> * Remove users in Olfeo SAAS when they do not require access anymore
+> * Remove users in Olfeo SAAS when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Olfeo SAAS
 > * Provision groups and group memberships in Olfeo SAAS
 > * [Single sign-on](olfeo-saas-tutorial.md) to Olfeo SAAS (recommended)
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Olfeo SAAS](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-olfeo-saas-to-support-provisioning-with-azure-ad'></a>
@@ -46,8 +46,8 @@ The scenario outlined in this article assumes that you already have the followin
 1. Login to Olfeo SAAS admin console. 
 1. Navigate to **Configuration > Annuaires**.
 1. Create a new directory and then name it.
-1. Select **Azure** provider and then click on **Créer** to save the new directory. 
-1. Navigate to the **Synchronisation** tab to see the **Tenant URL** and the **Jeton secret**. These values will be copied and pasted in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your Olfeo SAAS application.
+1. Select **Azure** provider and then select **Créer** to save the new directory. 
+1. Navigate to the **Synchronisation** tab to see the **Tenant URL** and the **Jeton secret**. These values are copied and pasted in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your Olfeo SAAS application.
 
 <a name='step-3-add-olfeo-saas-from-the-azure-ad-application-gallery'></a>
 
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Olfeo SAAS**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Olfeo SAAS in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Olfeo SAAS for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Olfeo SAAS API supports filtering users based on that attribute. Select **Save** to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Olfeo SAAS in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Olfeo SAAS for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Olfeo SAAS API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|

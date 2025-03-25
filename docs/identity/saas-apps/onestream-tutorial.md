@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with OneStream
 
-In this article,  you'll learn how to integrate OneStream with Microsoft Entra ID. When you integrate OneStream with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate OneStream with Microsoft Entra ID. When you integrate OneStream with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OneStream.
 * Enable your users to be automatically signed-in to OneStream with their Microsoft Entra accounts.
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with OneStream, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure OneStream SSO](#configure-onestream-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create OneStream test user](#create-onestream-test-user)** - to have a counterpart of B.Simon in OneStream that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create OneStream test user](#create-onestream-test-user)** - to have a counterpart of B.Simon in OneStream that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -66,7 +66,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **OneStream** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<CustomerDomain>.onestreamcloud.com/OneStreamIS/federation/<Scheme>/signin-saml`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Create a new SAML provider in the **OneStream Identity and Access Management Portal** to obtain these values which will be explained later in [Configure OneStream SSO](#configure-onestream-sso) section. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Create a new SAML provider in the **OneStream Identity and Access Management Portal** to obtain these values which is explained later in [Configure OneStream SSO](#configure-onestream-sso) section. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. OneStream application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| lastname| user.surname |
 	| email | user.mail |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -110,7 +110,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     ![Screenshot shows Settings for the configuration.](./media/onestream-tutorial/settings.png "Settings")
 
-1. On the **Manage Identity Providers** page, click **+Add SAML Provider**.
+1. On the **Manage Identity Providers** page, select **+Add SAML Provider**.
 
     ![Screenshot shows how to Manage Identity Providers.](./media/onestream-tutorial/provider.png "Identity")
 
@@ -124,7 +124,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. In the **Metadata URL** textbox, paste the **App Federation Metadata Url**, which you have copied from Microsoft Entra admin center.
 
-    1. Click **SAVE** button.
+    1. Select **SAVE** button.
 
 > [!NOTE]
 > Please refer [OneStream Documentation Site](https://docs.onestream.com/) under **System Guides** > **Identity and Access Management** for more details.
@@ -133,7 +133,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. In a different web browser window, sign in to your OneStream company site as an administrator.
 
-1. Go to **System** > **Security** > click **Create User** and perform the following steps:
+1. Go to **System** > **Security** > select **Create User** and perform the following steps:
 
     ![Screenshot shows the users page.](./media/onestream-tutorial/system.png "Add Users")
 
@@ -152,7 +152,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to OneStream Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to OneStream Sign-on URL where you can initiate the login flow.
  
 * Go to OneStream Sign-on URL directly and initiate the login flow from there.
 
