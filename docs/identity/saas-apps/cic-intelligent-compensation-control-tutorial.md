@@ -108,7 +108,7 @@ In this section, you create a user called B.Simon in CIC - Controle Inteligente 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Select **Test this application** in Microsoft Entra admin center. this option redirects to CIC - Controle Inteligente de Compensação Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to CIC - Controle Inteligente de Compensação Sign-on URL where you can initiate the login flow.
  
 * Go to CIC - Controle Inteligente de Compensação Sign-on URL directly and initiate the login flow from there.
  

@@ -51,7 +51,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ### 1. Open **User Synchronization** from the Chatwork admin page
 
-Access the Chatwork admin portal as a user with admin rights. If you have administrator privileges, you be able to access the **User Synchronization** page. 
+Access the Chatwork admin portal as a user with admin rights. If you have administrator privileges, you'll be able to access the **User Synchronization** page. 
 
 **User Synchronization** page contains notes and restrictions for using the user provisioning feature. Check all the items.
 

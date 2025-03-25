@@ -50,7 +50,7 @@ The scenario outlined in this article assumes that you already have the followin
          ![Screenshot of navigate to SCIM setting.](media/cato-networks-provisioning-tutorial/navigate.png)
 1. Select **Enable SCIM Provisioning** to set your account to connect to the SCIM app. And then select **Save**.
          ![Screenshot of Enable SCIM Provisioning.](media/cato-networks-provisioning-tutorial/scim-setting.png)
-1. Copy the **Base URL**.Select **Generate Token** and copy the bearer token. Base Url and token is entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Cato Network application.     
+1. Copy the **Base URL**. Select **Generate Token** and copy the bearer token. Base URL and token is entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Cato Network application.     
                                   
 
 <a name='step-3-add-cato-networks-from-the-azure-ad-application-gallery'></a>

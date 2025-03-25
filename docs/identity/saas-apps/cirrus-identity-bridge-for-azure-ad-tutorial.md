@@ -28,7 +28,7 @@ In this article,  you learn how to integrate Cirrus Identity Bridge for Microsof
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* Cirrus Identity Bridge for Microsoft Entra single sign-on (SSO) enabled subscription. If you'ren't already a subscriber, please visit the [Cirrus Identity Microsoft Entra ID Bridge Registration Page](https://info.cirrusidentity.com/cirrus-identity-azure-ad-app-gallery-registration).
+* Cirrus Identity Bridge for Microsoft Entra single sign-on (SSO) enabled subscription. If you aren't already a subscriber, please visit the [Cirrus Identity Microsoft Entra ID Bridge Registration Page](https://info.cirrusidentity.com/cirrus-identity-azure-ad-app-gallery-registration).
 
 ## Scenario description
 
@@ -40,7 +40,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 
 ## Before adding the Cirrus Identity Bridge for Microsoft Entra ID from the gallery
 
-When subscribing to the Cirrus Identity Bridge for Microsoft Entra ID, you be asked for your Microsoft Entra TenantID. To view this:
+When subscribing to the Cirrus Identity Bridge for Microsoft Entra ID, you are asked for your Microsoft Entra TenantID. To view this:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity** > **Overview** > **Properties**.
@@ -68,7 +68,7 @@ Once Cirrus Identity has the Tenant ID, and access has been granted, we will pro
 
 
 > [!NOTE] 
-> If you're unable to grant API access to the Cirrus Identity Bridge for Microsoft Entra ID, the Bridge can be integrated using a traditional SAML2 integration. Advise the Cirrus Identity contract representative you're working with that you'ren't able to use MS Graph API integration.
+> If you're unable to grant API access to the Cirrus Identity Bridge for Microsoft Entra ID, the Bridge can be integrated using a traditional SAML2 integration. Advise the Cirrus Identity contract representative you're working with that you aren't able to use MS Graph API integration.
 
 <a name='add-cirrus-identity-bridge-for-azure-ad-from-the-gallery'></a>
 

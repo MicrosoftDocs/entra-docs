@@ -116,7 +116,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the Network **Objects** pane, and select **Users**.
 
-1. Right-select an empty space and select **New > External User Profile > Match all users**.
+1. Right-click an empty space and select **New > External User Profile > Match all users**.
 
 1. Configure the **External User Profile** properties:
 
@@ -203,7 +203,7 @@ For example:
     ![screenshot for to Add a new object.](./media/check-point-remote-access-vpn-tutorial/add-new-object.png)
 
 1. Enter a name and a display name, and add/edit an authentication method:
-    In case the Login Option is use on GWs who participate in MEP, in order to allow smooth user experience the Name should start with `SAMLVPN_` prefix.
+    In case the Login Option is used on GWs who participate in MEP, in order to allow smooth user experience the Name should start with `SAMLVPN_` prefix.
 
     ![screenshot about Login Option.](./media/check-point-remote-access-vpn-tutorial/login-option.png)
 
