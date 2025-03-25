@@ -25,7 +25,7 @@ You must act **before March 31, 2026**, to avoid authentication failure of appli
 
 ## Use sign-in logs to find service principal-less applications
 
-First, youll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
+First, you'll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
 
 1. Navigate to the [Microsoft Entra admin center](https://entra.microsoft.com/#home).
 2. On the left navigation panel, go to **Identity** > **Show more...** > **Monitoring & health** > **Sign-in logs**.
@@ -38,7 +38,7 @@ First, youll need to verify that access by the named applications to the resourc
 
 ## Create enterprise application
 
-Next, youll need to [create an enterprise application](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell) in the resource tenant for each of the named applications. The resource tenant administrator must register the application using the Client App ID through the sign-in logs method from above.
+Next, you'll need to [create an enterprise application](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell) in the resource tenant for each of the named applications. The resource tenant administrator must register the application using the Client App ID through the sign-in logs method from above.
 
 ## Verify tokens
 
