@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LimbleCMMS so that I can streamline the user management process and ensure that users have the appropriate access to LimbleCMMS.
@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both LimbleCMMS and Micr
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in LimbleCMMS.
-> * Remove users in LimbleCMMS when they do not require access anymore.
+> * Remove users in LimbleCMMS when they don't require access anymore.
 > * Creates groups in LimbleCMMS.
 > * Adds/Removes users from groups in LimbleCMMS
 > * Removes groups in LimbleCMMS
@@ -37,12 +37,12 @@ The scenario outlined in this article assumes that you already have the followin
 * A [LimbleCMMS](https://limblecmms.com/signup/?plan=business-yearly) tenant with Business Plus or above licensing.
 * A user account in LimbleCMMS with Super Admin permissions.
 * Single Sign On to be enabled in your LimbleCMMS tenant (contact your Customer Success Manager).
-* At least one group you plan on provisioning to LimbleCMMS (permissions in LimbleCMMS are based on groups, if you do not provision a group then the users that are provisioned will not have any permissions associated with them). 
+* At least one group you plan on provisioning to LimbleCMMS (permissions in LimbleCMMS are based on groups, if you don't provision a group then the users that are provisioned don't have any permissions associated with them). 
 
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and LimbleCMMS](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-limblecmms-to-support-provisioning-with-azure-ad'></a>
@@ -54,14 +54,14 @@ The scenario outlined in this article assumes that you already have the followin
       ![Manage SSO](media/limblecmms-provisioning-tutorial/limble-manage-sso.png)
 1. Select **Microsoft Entra ID** as your SSO Provider.
 1. [Setup OIDC](https://help.limblecmms.com/en/articles/4446986-active-directory-oidc-sso-setup-guide) to support Single Sign On
-1. Click the **Generate SCIM Token** button to retrieve your SCIM token, save this for a future step.
-1. Click **"Enable SSO"**.
+1. Select the **Generate SCIM Token** button to retrieve your SCIM token, save this for a future step.
+1. Select **"Enable SSO"**.
 
 <a name='step-3-add-limblecmms-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add LimbleCMMS from the Microsoft Entra application gallery
 
-Add LimbleCMMS from the Microsoft Entra application gallery to start managing provisioning to LimbleCMMS. If you have previously setup LimbleCMMS for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add LimbleCMMS from the Microsoft Entra application gallery to start managing provisioning to LimbleCMMS. If you have previously setup LimbleCMMS for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your LimbleCMMS **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to LimbleCMMS.
+1. In the **Admin Credentials** section, input your LimbleCMMS **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to LimbleCMMS.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to LimbleCMMS**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to LimbleCMMS in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in LimbleCMMS for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the LimbleCMMS SCIM API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to LimbleCMMS in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in LimbleCMMS for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the LimbleCMMS SCIM API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -136,7 +136,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

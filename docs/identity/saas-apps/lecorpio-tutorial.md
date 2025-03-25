@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lecorpio so that I can control who has access to Lecorpio, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -45,7 +45,7 @@ To configure the integration of Lecorpio into Microsoft Entra ID, you need to ad
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **Lecorpio**, select **Lecorpio** from result panel then click **Add** button to add the application.
+1. In the search box, type **Lecorpio**, select **Lecorpio** from result panel then select **Add** button to add the application.
 
 	 ![Lecorpio in the results list](common/search-new-app.png)
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra single sign-on with Lecorpio, you need to 
 2. **[Configure Lecorpio Single Sign-On](#configure-lecorpio-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Lecorpio test user](#create-lecorpio-test-user)** - to have a counterpart of Britta Simon in Lecorpio that is linked to the Microsoft Entra representation of user.
+5. **[Create Lecorpio test user](#create-lecorpio-test-user)** - to have a counterpart of Britta Simon in Lecorpio that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -82,7 +82,7 @@ To configure Microsoft Entra single sign-on with Lecorpio, perform the following
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -97,9 +97,9 @@ To configure Microsoft Entra single sign-on with Lecorpio, perform the following
     `https://<instance name>.lecorpio.com/<customer name>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Lecorpio Client support team](mailto:info@lecorpio.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Lecorpio Client support team](mailto:info@lecorpio.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -129,7 +129,7 @@ In this section, you create a user called Britta Simon in Lecorpio. Work with [
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Lecorpio tile in the Access Panel, you should be automatically signed in to the Lecorpio for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Lecorpio tile in the Access Panel, you should be automatically signed in to the Lecorpio for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 
