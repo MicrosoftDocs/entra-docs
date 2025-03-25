@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with MINT TMS
 
-In this article, you'll learn how to integrate MINT TMS with Microsoft Entra ID. MINT TMS is a Training, Resource and Qualification Management System used as a reliable tool to plan, optimize and measure training and career progress and the actual records of their employees. When you integrate MINT TMS with Microsoft Entra ID, you can:
+In this article, you learn how to integrate MINT TMS with Microsoft Entra ID. MINT TMS is a Training, Resource and Qualification Management System used as a reliable tool to plan, optimize and measure training and career progress and the actual records of their employees. When you integrate MINT TMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to MINT TMS.
 * Enable your users to be automatically signed-in to MINT TMS with their Microsoft Entra accounts.
@@ -75,7 +75,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<environment-name>.mint-online.com/`
 
     > [!Note]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [MINT TMS Client support team](mailto:support@media-interactive.de) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [MINT TMS Client support team](mailto:support@media-interactive.de) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
     
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -97,9 +97,9 @@ In this section, you create a user called Britta Simon at MINT TMS. Work with [M
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the MINT TMS for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the MINT TMS for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the MINT TMS tile in the My Apps, you should be automatically signed in to the MINT TMS for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the MINT TMS tile in the My Apps, you should be automatically signed in to the MINT TMS for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
