@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Blinq so that I can streamline the user management process and ensure that users have the appropriate access to Blinq.
@@ -22,7 +22,7 @@ This article describes the steps you need to do in both Blinq and Microsoft Entr
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Blinq.
-> * Remove users in Blinq when they do not require access anymore.
+> * Remove users in Blinq when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Blinq.
 
 ## Prerequisites
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Blinq](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-blinq-to-support-provisioning-with-azure-ad'></a>
@@ -43,12 +43,12 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Blinq to support provisioning with Microsoft Entra ID
 
 1. Navigate to [Blinq Admin Console](https://dash.blinq.me) in a separate browser tab.
-1. If you aren't logged in to Blinq you will need to do so.
-1. Click on your workspace in the top left hand corner of the screen and select **Settings** in the dropdown menu.
+1. If you'ren't logged in to Blinq you need to do so.
+1. Select your workspace in the top left hand corner of the screen and select **Settings** in the dropdown menu.
 
    	[![Screenshot of the Blinq settings option.](media/blinq-provisioning-tutorial/blinq-settings.png)](media/blinq-provisioning-tutorial/blinq-settings.png#lightbox)
 
-1. Under the **Integrations** page you should see **Team Card Provisioning** which contains a URL and Token. You will need to generate the token by clicking **Generate**.
+1. Under the **Integrations** page you should see **Team Card Provisioning** which contains a URL and Token. You need to generate the token by selecting **Generate**.
 Copy the **URL** and **Token**. The URL and the Token are to be inserted into the **Tenant URL** and **Secret Token** field in the Azure portal respectively.
 
    	[![Screenshot of the Blinq integration page.](media/blinq-provisioning-tutorial/blinq-integrations-page.png)](media/blinq-provisioning-tutorial/blinq-integrations-page.png#lightbox)
@@ -88,7 +88,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Blinq Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Blinq. If the connection fails, ensure your Blinq account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your Blinq Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Blinq. If the connection fails, ensure your Blinq account has Admin permissions and try again.
 
 	![Screenshot of Token field.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Blinq**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Blinq in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Blinq for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Blinq API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Blinq in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Blinq for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Blinq API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Blinq|
    |---|---|---|---|
@@ -162,7 +162,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
