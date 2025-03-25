@@ -14,7 +14,117 @@ ms.custom:
 ---
 
 # Microsoft Entra Connect: ADSync PowerShell Reference
-The following documentation provides reference information for the `ADSync.psm1` PowerShell module that is included with Microsoft Entra Connect.
+The following documentation provides reference information for the `ADSync` PowerShell module that is included with Microsoft Entra Connect.
+
+
+## Add-ADSyncAADServiceAccount
+
+### SYNOPSIS
+ Adds a new or resets an existing Microsoft Entra synchronization service account in the Microsoft Entra tenant (associated with the specified credentials).
+ Updates the Microsoft Entra Connect Sync's Entra ID connector credential with the added account.
+
+### SYNTAX
+
+ ```powershell
+ Add-ADSyncAADServiceAccount [-AADCredential] <PSCredential> [-Name] <String> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+ ```
+
+### DESCRIPTION
+ Adds a new or resets an existing Microsoft Entra synchronization service account in the Microsoft Entra tenant (associated with the specified credentials).
+
+### EXAMPLES
+
+#### Example 1
+ ```powershell
+ # Get the current synchronization service account
+ PS C:\> (Get-ADsyncConnector -Identifier 'b891884f-051e-4a83-95af-2544101c9083').ConnectivityParameters['UserName'].Value
+ # Get the Microsoft Entra credential
+ PS C:\> $credEntra = Get-Credential
+ # Add or update the synchronization service account
+ PS C:\> Add-ADSyncAADServiceAccount -AADCredential $credEntra -Name Sync_CONNECT01
+ ```
+
+ Adds a new Microsoft Entra synchronization service account called Sync_CONNECT01@Contoso.onmicrosoft.com
+ If the account already exists, it resets its password.
+ Updates the Microsoft Entra Connect Sync's Entra ID connector credential with the added or updated account.
+
+### PARAMETERS
+
+#### -AADCredential
+ The Microsoft Entra credential.
+
+ ```yaml
+ Type: PSCredential
+ Aliases: None
+
+ Required: True
+ Position: 1
+ Default value: None
+ Accept pipeline input: True (ByPropertyName)
+ Accept wildcard characters: False
+ ```
+
+#### -Name
+ The service account name (without domain suffix).
+
+ ```yaml
+ Type: String
+ Aliases: None
+
+ Required: True
+ Position: 2
+ Default value: None
+ Accept pipeline input: True (ByPropertyName)
+ Accept wildcard characters: False
+ ```
+
+#### -Confirm
+ Prompts you for confirmation before running the cmdlet.
+
+ ```yaml
+ Type: SwitchParameter
+ Parameter Sets: (All)
+ Aliases: cf
+
+ Required: False
+ Position: Named
+ Default value: None
+ Accept pipeline input: False
+ Accept wildcard characters: False
+ ```
+
+#### -WhatIf
+ Shows what would happen if the cmdlet runs.
+ The cmdlet is not run.
+
+ ```yaml
+ Type: SwitchParameter
+ Parameter Sets: (All)
+ Aliases: wi
+
+ Required: False
+ Position: Named
+ Default value: None
+ Accept pipeline input: False
+ Accept wildcard characters: False
+ ```
+
+#### CommonParameters
+ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
+
+### INPUTS
+
+#### System.Management.Automation.PSCredential
+
+#### System.String
+
+#### System.Management.Automation.SwitchParameter
+
+### OUTPUTS
+
+#### System.Object
+
 
 
 ## Add-ADSyncADDSConnectorAccount
@@ -116,7 +226,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 ### SYNTAX
    
  ```powershell
-    Disable-ADSyncExportDeletionThreshold [[-AADCredential] <PSCredential>] [-WhatIf] [-Confirm]
+    Disable-ADSyncExportDeletionThreshold [-AADUserName] <string> [-WhatIf] [-Confirm] [<CommonParameters>]
      [<CommonParameters>]
  ```
 
@@ -130,24 +240,25 @@ The following documentation provides reference information for the `ADSync.psm1`
      PS C:\> Disable-ADSyncExportDeletionThreshold -AADUserName "<UserPrincipalName>"
  ```
 
- Uses the provided Microsoft Entra Credentials to disable the feature for export deletion threshold.
+ Uses the provided Microsoft Entra credential to disable the feature for export deletion threshold.
 
 ### PARAMETERS
 
-#### -AADCredential
-  The Microsoft Entra credential.
+#### -AADUserName <string>
 
-  ```yaml
-     Type: PSCredential
-     Parameter Sets: (All)
-     Aliases:
+ The Microsoft Entra ID UserPrincipalName.
 
-     Required: False
-     Position: 1
-     Default value: None
-     Accept pipeline input: True (ByPropertyName)
-     Accept wildcard characters: False
-  ```
+ ```yaml
+ Type: String
+ Parameter Sets: (All)
+ Aliases:
+
+ Required: True
+ Position: 1
+ Default value: None
+ Accept pipeline input: True (ByPropertyName)
+ Accept wildcard characters: False
+ ```
 
 #### -Confirm
   Parameter switch for prompting for confirmation.
@@ -185,7 +296,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 
 ### INPUTS
 
-#### System.Management.Automation.PSCredential
+#### System.String
 
 ### OUTPUTS
 
@@ -199,8 +310,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 ### SYNTAX
 
  ```powershell
- Enable-ADSyncExportDeletionThreshold [-DeletionThreshold] <UInt32> [[-AADCredential] <PSCredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ Enable-ADSyncExportDeletionThreshold [-DeletionThreshold] <UInt32>  [-AADUserName] <string> [-WhatIf] [-Confirm] [<CommonParameters>]
  ```
 
 ### DESCRIPTION
@@ -210,23 +320,24 @@ The following documentation provides reference information for the `ADSync.psm1`
 
 #### Example 1
  ```powershell
- PS C:\> Enable-ADSyncExportDeletionThreshold -DeletionThreshold 777 -AADUserName "<UserPrincipalName>"
+ PS C:\> Enable-ADSyncExportDeletionThreshold -DeletionThreshold 999 -AADUserName "<UserPrincipalName>"
  ```
 
  Enables export deletion threshold feature and sets the deletion threshold to 777.
 
 ### PARAMETERS
 
-#### -AADCredential
- The Microsoft Entra credential.
+#### -AADUserName <string>
+
+ The Microsoft Entra ID UserPrincipalName.
 
  ```yaml
- Type: PSCredential
+ Type: String
  Parameter Sets: (All)
  Aliases:
 
- Required: False
- Position: 2
+ Required: True
+ Position: 1
  Default value: None
  Accept pipeline input: True (ByPropertyName)
  Accept wildcard characters: False
@@ -285,7 +396,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 
 #### System.UInt32
  
-#### System.Management.Automation.PSCredential
+#### System.String
 
 ### OUTPUTS
 
@@ -635,7 +746,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 ### SYNTAX
 
  ```powershell
- Get-ADSyncExportDeletionThreshold  [-AADUserName] <string> [-WhatIf] [-Confirm] [<CommonParameters>]
+ Get-ADSyncExportDeletionThreshold [-AADUserName] <string> [-WhatIf] [-Confirm] [<CommonParameters>]
  ```
  
 ### DESCRIPTION
@@ -648,7 +759,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  PS C:\> Get-ADSyncExportDeletionThreshold -AADUserName "<UserPrincipalName>"
  ```
  
- Gets the export deletion threshold from Microsoft Entra ID using the specified Microsoft Entra credentials.
+ Gets the export deletion threshold from Microsoft Entra ID using the specified Microsoft Entra credential.
 
 ### PARAMETERS
 
@@ -657,7 +768,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  The Microsoft Entra ID UserPrincipalName.
 
  ```yaml
- Type: PSCredential
+ Type: String
  Parameter Sets: (All)
  Aliases:
 
@@ -1395,32 +1506,26 @@ The following documentation provides reference information for the `ADSync.psm1`
 ## Remove-ADSyncAADServiceAccount
 
 ### SYNOPSIS
- Deletes an/all existing Microsoft Entra service account(s) in the Microsoft Entra tenant (associated with the specified credentials).
+ Deletes an existing Microsoft Entra synchronization service account in the Microsoft Entra tenant (associated with the specified credentials).
 
 ### SYNTAX
 
-#### ServiceAccount
  ```powershell
- Remove-ADSyncAADServiceAccount [-AADCredential] <PSCredential> [-Name] <String> [-WhatIf] [-Confirm]
- [<CommonParameters>]
- ```
-
-#### ServicePrincipal
- ```powershell
- Remove-ADSyncAADServiceAccount [-ServicePrincipal] [-WhatIf] [-Confirm] [<CommonParameters>]
+ Remove-ADSyncAADServiceAccount [-AADCredential] <PSCredential> [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
  ```
 
 ### DESCRIPTION
- Deletes an/all existing Microsoft Entra service account(s) in the Microsoft Entra tenant (associated with the specified credentials).
+ Deletes an existing Microsoft Entra synchronization service account in the Microsoft Entra tenant (associated with the specified credentials).
 
 ### EXAMPLES
 
 #### Example 1
  ```powershell
- PS C:\> Remove-ADSyncAADServiceAccount -AADCredential $aadcreds -Name contoso.com
+ PS C:\> $credEntra = Get-Credential
+ PS C:\> Remove-ADSyncAADServiceAccount -AADCredential $credEntra -Name Sync_CONNECT01
  ```
 
- Deletes all existing Microsoft Entra service accounts in contoso.com.
+ Deletes the Microsoft Entra synchronization service account called Sync_CONNECT01@Contoso.onmicrosoft.com.
 
 ### PARAMETERS
 
@@ -1439,23 +1544,8 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
-#### -Confirm
- Prompts you for confirmation before running the cmdlet.
-
- ```yaml
- Type: SwitchParameter
- Parameter Sets: (All)
- Aliases: cf
-
- Required: False
- Position: Named
- Default value: None
- Accept pipeline input: False
- Accept wildcard characters: False
- ```
-
 #### -Name
- The name of the account.
+ The service account name (without domain suffix).
 
  ```yaml
  Type: String
@@ -1469,18 +1559,18 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
-#### -ServicePrincipal
- The service principal of the account.
+#### -Confirm
+ Prompts you for confirmation before running the cmdlet.
 
  ```yaml
  Type: SwitchParameter
- Parameter Sets: ServicePrincipal
- Aliases:
+ Parameter Sets: (All)
+ Aliases: cf
 
- Required: True
- Position: 3
+ Required: False
+ Position: Named
  Default value: None
- Accept pipeline input: True (ByPropertyName)
+ Accept pipeline input: False
  Accept wildcard characters: False
  ```
 
@@ -1508,8 +1598,6 @@ The following documentation provides reference information for the `ADSync.psm1`
 #### System.Management.Automation.PSCredential
 
 #### System.String
-
-#### System.Management.Automation.SwitchParameter
 
 ### OUTPUTS
 
