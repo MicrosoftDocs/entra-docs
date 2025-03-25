@@ -45,7 +45,7 @@ Timelines show approximate delivery stage duration and are based on scenario com
 
 Ensure the following requirements are met.
 
-* Identities with privileged roles that want PoC on-demand
+* Identities with privileged roles that want services on-demand
 * Approval-based just-in-time (JIT) administrative access activation to Azure resources
 * Microsoft Entra ID roles and apps with group memberships
 * Upon role activation, and privileged roles health check, require compliant devices, or authentication strengths 
@@ -56,7 +56,7 @@ To prepare for the scenario, perform a discovery of current user lifecycle proce
 
 * Collect available architectural diagrams
 * Use a pilot user group
-* Identify PoC-resource technical owners for remediation or investigation
+* Identify technical owners for remediation or investigation
 * Enable an account on the target tenant with:
   * User Administrator,
   * Identity Governance Administrator,
@@ -194,14 +194,13 @@ For more information:
 * [Require Conditional Access authentication context](/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings)
 * [Monitor results of your Intune device-compliance policies](/mem/intune/protect/compliance-policy-monitor)
 
-## Deploy PoC: PIM
+## Deploy PIM
 
 1. [Discover Azure resources you want to manage in PIM](/azure/active-directory/privileged-identity-management/pim-resource-roles-discover-resources)
 2. [Bring groups into PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups)
 3. [Learn role settings for Microsoft Entra ID roles](/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings)
 4. [Learn role settings for Azure resource roles](/azure/active-directory/privileged-identity-management/pim-resource-roles-configure-role-settings)
 5. [Enable group settings for PIM](/azure/active-directory/privileged-identity-management/groups-role-settings)
-
 6. [Assign Microsoft Entra ID roles in PIM](/azure/active-directory/privileged-identity-management/pim-how-to-add-role-to-user)
 7. [Assign Azure resources in PIM](/azure/active-directory/privileged-identity-management/pim-resource-roles-assign-roles)
 8. [Assign Groups in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner)
