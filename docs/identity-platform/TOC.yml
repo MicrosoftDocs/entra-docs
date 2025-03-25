@@ -753,7 +753,7 @@
         - name: Restore or remove a deleted app registration
           href: ./howto-restore-app.md
         - name: Deprecate SP-less authentication
-          href: ./deprecate-spless-auth.md
+          href: ./deprecate-service-principal-less-auth.md
 - name: Reference
   items:
     - name: Token claims reference
