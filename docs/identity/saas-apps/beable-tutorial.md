@@ -81,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
-1. In addition to above, Beable application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, Beable application expects few more attributes to be passed back in SAML response, which are shown in the following table. These attributes are also pre populated but you can review them as per your requirements.
 
 	| Name |  Source Attribute|
 	| ---------------|  --------- |
