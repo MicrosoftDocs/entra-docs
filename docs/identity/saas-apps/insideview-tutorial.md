@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra integration with InsideView
-description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and InsideView.
+description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and InsideView.
 
 author: nguhiu
 manager: CelesteDG
@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and InsideView so that I can control who has access to InsideView, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra integration with InsideView
 
-In this article,  you'll learn how to integrate InsideView with Microsoft Entra ID.
+In this article,  you learn how to integrate InsideView with Microsoft Entra ID.
 This integration provides these benefits:
 
 * You can use Microsoft Entra ID to control who has access to InsideView.
@@ -36,7 +36,7 @@ To configure Microsoft Entra integration with InsideView, you need to have:
 
 ## Scenario description
 
-In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * InsideView supports IdP-initiated SSO.
 
@@ -61,7 +61,7 @@ To set up the integration of InsideView into Microsoft Entra ID, you need to add
 
 ## Configure and test Microsoft Entra single sign-on
 
-In this section, you'll configure and test Microsoft Entra single sign-on with InsideView by using a test user named Britta Simon.
+In this section, you configure and test Microsoft Entra single sign-on with InsideView by using a test user named Britta Simon.
 To enable single sign-on, you need to establish a relationship between a Microsoft Entra user and the corresponding user in InsideView.
 
 To configure and test Microsoft Entra single sign-on with InsideView, you need to complete these steps:
@@ -77,7 +77,7 @@ To configure and test Microsoft Entra single sign-on with InsideView, you need t
 
 ### Configure Microsoft Entra single sign-on
 
-In this section, you'll enable Microsoft Entra single sign-on.
+In this section, you enable Microsoft Entra single sign-on.
 
 To configure Microsoft Entra single sign-on with InsideView, take these steps:
 
@@ -150,7 +150,7 @@ To configure Microsoft Entra single sign-on with InsideView, take these steps:
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user named Britta Simon.
+In this section, you create a test user named Britta Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -166,7 +166,7 @@ In this section, you'll create a test user named Britta Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable Britta Simon to use Azure single sign-on by granting her access to InsideView.
+In this section, you enable Britta Simon to use Azure single sign-on by granting her access to InsideView.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **InsideView**.
@@ -181,9 +181,9 @@ In this section, you'll enable Britta Simon to use Azure single sign-on by grant
 
    ![Select Add user](common/add-assign-user.png)
 
-1. In the **Users and groups** dialog box, select **Britta Simon** in the users list, and then click the **Select** button at the bottom of the window.
+1. In the **Users and groups** dialog box, select **Britta Simon** in the users list, and then select the **Select** button at the bottom of the window.
 
-1. If you expect a role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list. Click the **Select** button at the bottom of the window.
+1. If you expect a role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list. Select the **Select** button at the bottom of the window.
 
 1. In the **Add Assignment** dialog box, select **Assign**.
 

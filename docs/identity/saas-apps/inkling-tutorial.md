@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Inkling / EchoInk so that I can control who has access to Inkling / EchoInk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Inkling / EchoInk, perform the fo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Inkling / EchoInk SSO](#configure-inkling/echolink-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Inkling / EchoInk test user](#create-inkling/echolink-test-user)** - to have a counterpart of B.Simon in Inkling / EchoInk that is linked to the Microsoft Entra representation of user.
+    1. **[Create Inkling / EchoInk test user](#create-inkling/echolink-test-user)** - to have a counterpart of B.Simon in Inkling / EchoInk that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -110,7 +110,7 @@ In this section, you create a user called Britta Simon in Inkling / EchoInk. Wor
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Select on **Test this application**, and you should be automatically signed in to the Inkling / EchoInk for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Inkling / EchoInk for which you set up the SSO.
 
 * You can use Microsoft My Apps. When you select the Inkling / EchoInk tile in the My Apps, you should be automatically signed in to the Inkling / EchoInk for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
