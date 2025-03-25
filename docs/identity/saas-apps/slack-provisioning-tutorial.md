@@ -1,13 +1,13 @@
 ---
 title: User provisioning for Slack
-description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Slack.
+description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Slack.
 
 author: thomasakelo
 manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Slack so that I can streamline the user management process and ensure that users have the appropriate access to Slack.
@@ -18,7 +18,7 @@ ms.author: thomasakelo
 > [!NOTE]
 > Integrating with Slack with a custom / BYOA application isn't supported. Using the gallery application as described in this article is supported. The gallery application has been customized to work with Slack's SCIM v1 server. 
 
-The objective of this article is to show you the steps you need to perform in Slack and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Slack. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+The objective of this article is to show you the steps you need to perform in Slack and Microsoft Entra ID to automatically provision and deprovision user accounts from Microsoft Entra ID to Slack. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -101,7 +101,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 10. Under the Mappings section, select **Synchronize Microsoft Entra users to Slack**.
 
-11. In the **Attribute Mappings** section, review the user attributes that's synchronized from Microsoft Entra ID to Slack. Note that the attributes selected as **Matching** properties are used to match the user accounts in Slack for update operations. Select the Save button to commit any changes.
+11. In the **Attribute Mappings** section, review the user attributes that's synchronized from Microsoft Entra ID to Slack. The attributes selected as **Matching** properties are used to match the user accounts in Slack for update operations. Select the Save button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -138,7 +138,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Slack**.
 
-13. In the **Attribute Mappings** section, review the group attributes that's synchronized from Microsoft Entra ID to Slack. Note that the attributes selected as **Matching** properties are used to match the groups in Slack for update operations. Select the Save button to commit any changes.
+13. In the **Attribute Mappings** section, review the group attributes synchronized from Microsoft Entra ID to Slack. The attributes selected as **Matching** properties are used to match the groups in Slack for update operations. Select the Save button to commit any changes.
 
       |Attribute|Type|
       |---|---|
@@ -169,13 +169,13 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 * When configuring Slack's **displayName** attribute, be aware of the following behaviors:
 
-  * Values aren't entirely unique (such as 2 users can have the same display name)
+  * Values aren't entirely unique (such as two users can have the same display name)
 
   * Supports non-English characters, spaces, capitalization. 
   
   * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (for example, `( [ { } ] )`), and separators (for example, `, / ;`).
   
-  * displayName property can't have an '@' character. If an '@' is included, you may find a skipped event in the provisioning logs with the description "AttributeValidationFailed."
+  * displayName property can't have an '@' character. If an '@' is included, you might find a skipped event in the provisioning logs with the description "AttributeValidationFailed."
 
   * Only updates if these two settings are configured in Slack's workplace/organization - **Profile syncing is enabled** and **Users can't change their display name**.
 
@@ -189,7 +189,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 * 06/16/2020 - Modified DisplayName attribute to only be updated during new user creation.
 
-## Additional Resources
+## More Resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
