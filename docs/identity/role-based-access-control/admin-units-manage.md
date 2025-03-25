@@ -81,7 +81,7 @@ $params = @{
 $adminUnitObj = New-MgDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
-Use the [New-MgBetaDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.beta.identity.directorymanagement/new-mgbetadirectoryadministrativeunit) command to create a new restricted management administrative unit. Set the `IsMemberManagementRestricted` property to `$true`.
+Use the [New-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunit) command to create a new restricted management administrative unit. Set the `IsMemberManagementRestricted` property to `$true`.
 
 ```powershell
 $params = @{
@@ -90,7 +90,7 @@ $params = @{
     Visibility = "HiddenMembership"
     IsMemberManagementRestricted = $true
 }
-$restrictedAU = New-MgBetaDirectoryAdministrativeUnit -BodyParameter $params
+$restrictedAU = New-MgDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
 # [Graph API](#tab/ms-graph)
@@ -112,12 +112,12 @@ Body
 }
 ```
 
-Use the [Create administrativeUnit (beta)](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true&branch=main) API to create a new restricted management administrative unit. Set the `isMemberManagementRestricted` property to `true`.
+Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?view=graph-rest&preserve-view=true&branch=main) API to create a new restricted management administrative unit. Set the `isMemberManagementRestricted` property to `true`.
 
 Request
 
 ```http
-POST https://graph.microsoft.com/beta/administrativeUnits
+POST https://graph.microsoft.com/administrativeUnits
 ```
 
 Body
