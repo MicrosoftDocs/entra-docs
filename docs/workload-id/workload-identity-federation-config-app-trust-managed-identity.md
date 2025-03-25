@@ -38,17 +38,20 @@ When you configure a federated identity credential, there are several important 
 
 - *issuer*, *subject* are the key pieces of information needed to set up the trust relationship. When the Azure workload requests Microsoft identity platform to exchange the managed identity token for an Entra app access token, the *issuer* and *subject* values of the federated identity credential are checked against the `issuer` and `subject` claims provided in the Managed Identity token. If that validation check passes, Microsoft identity platform issues an access token to the external software workload.
 - *issuer* is the URL of the Microsoft Entra tenant's Authority URL in the form `https://login.microsoftonline.com/{tenant}/v2.0`. Both the Microsoft Entra app and managed identity must belong to the same tenant. If the `issuer` claim has leading or trailing whitespace in the value, the token exchange is blocked.   
-- *subject* is the GUID of the Managed Identity's Object ID (Principal ID) assigned to the Azure workload. The Microsoft identity platform looks at the incoming external token and rejects the exchange for an access token if the *subject* field configured in the Federated Identity Credential doesn't match the Principal ID of the Managed Identity. The GUID is case sensitive.
-
+- `subject`: This is the case-sensitive GUID of the managed identity’s **Object (Principal) ID** assigned to the Azure workload. The managed identity must be in the same tenant as the app registration, even if the target resource is in a different cloud. The Microsoft identity platform will reject the token exchange if the `subject` in the federated identity credential configuration does not exactly match the managed identity's Principal ID.
     > [!IMPORTANT]
     > Only User-Assigned Managed Identities can be used as a federated credential for Apps. System-Assigned Identities are not supported.
     
-- *audiences* list the audiences that can appear in the external token (Required). You must add a single audience value, which has a limit of 600 characters. The value must be one of the following and must match the value of the `aud` claim in the Managed Identity token.
+- *audiences* specifieds the value that appears in the `aud` claim in the managed identity token (Required). The value must be one of the following depending on the target cloud.
     - **Microsoft Entra ID global service**: `api://AzureADTokenExchange`
     - **Microsoft Entra ID for US Government**: `api://AzureADTokenExchangeUSGov`
     - **Microsoft Entra China operated by 21Vianet**: `api://AzureADTokenExchangeChina`
-
     
+
+  > [!IMPORTANT]  
+  > Accessing resources in *another tenant* is supported.
+  > Accessing resources in *another cloud* is not supported. Token requests to other clouds will fail.
+
   > [!IMPORTANT]
   > If you accidentally add incorrect information in the *issuer*, *subject* or *audience* setting the federated identity credential is created successfully without error. The error does not become apparent until the token exchange fails.
     
@@ -89,7 +92,10 @@ Open a terminal in your preferred IDE and run the following command to create a 
 az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 --parameters credential.json
 ```
 
-The `id` parameter specifies the application ID (object ID). The `parameters` parameter specifies the parameters, in JSON format, for creating the federated identity credential. This is an example for the contents of *credential.json*. Replace the `subject` GUID with the Object (principal) ID of the managed identity, and `{tenantID}` with your application's tenant ID. The audience value must be set to one of the following values:<br/> &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/>
+The `id` parameter specifies the application ID (object ID). The `parameters` parameter specifies federated identity credential configuration, in JSON format. 
+
+This is an example for the contents of *credential.json*. Replace the `subject` GUID with the Object (principal) ID of the managed identity, and `{tenantID}` with your application's tenant ID. 
+The audience value must be set to one of the following values:<br/> &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/>
 
 ```json
 {
@@ -105,7 +111,9 @@ The `id` parameter specifies the application ID (object ID). The `parameters` pa
 
 ### [PowerShell](#tab/powershell)
 
-Open a PowerShell terminal in your preferred IDE and run the following command to create a federated identity credential on your app. Replace the `Subject` GUID with the Object (principal) ID of the managed identity, and `{tenantID}` with your application's tenant ID. The audience value must be set to one of the following values:<br/> &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/>
+Open a PowerShell terminal in your preferred IDE and run the following command to create a federated identity credential on your app. Replace the `Subject` GUID with the Object (principal) ID of the managed identity, and `{tenantID}` with your application's tenant ID.
+
+The audience value must be set to one of the following values:<br/> &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/>
 
 ```Powershell
 New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api://AzureADTokenExchange -Issuer 'https://login.microsoftonline.com/{tenantID}/v2.0' -Name 'MyMsiFic' -Subject '00001111-aaaa-2222-bbbb-3333cccc4444'
@@ -115,7 +123,9 @@ New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api:/
 
 ### [APIs](#tab/api)
 
-Open a terminal in your preferred IDE and run the following command to create a federated identity credential on your app. Set the `subject` value to the Object (principal) ID of the managed identity, and `{tenantID}` with your application's tenant ID. The audience value must be set to one of the following values:<br/> &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/>
+Open a terminal in your preferred IDE and run the following command to create a federated identity credential on your app. Set the `subject` value to the Object (principal) ID of the managed identity, and `{tenantID}` with your application's tenant ID.
+
+The audience value must be set to one of the following values:<br/> &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/>
 
 ```bash
 az rest --method POST --uri 'https://graph.microsoft.com/applications/{app_registration_id}/federatedIdentityCredentials' --body '{"name":"MyMsiFicTest","issuer":"https://login.microsoftonline.com/{tenantID}/v2.0","subject":"{Managed_Identity_Principal_ID}","description":"Trust the workloads UAMI to impersonate the App","audiences":["api://AzureADTokenExchange"]}'
