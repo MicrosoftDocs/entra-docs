@@ -1,19 +1,19 @@
 ---
 title: Microsoft Entra ID Governance deployment guide to assign employee access
-description: Learn how to assign employee access to resources in Microsoft Entra ID Governance as a proof of concept.
+description: Learn how to assign employee access to resources in Microsoft Entra ID Governance.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/24/2025
+ms.date: 03/25/2025
 ms.author: gasinh
 
-#customer intent: My goal is to deliver a proof of concept for deployment of Microsoft Entra ID Governance in my test and production environments.
+#customer intent: My goal is to understand deployment of Microsoft Entra ID Governance in my test and production environments.
 ---
 
 # Microsoft Entra ID Governance deployment guide to assign employee access
 
-Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. With a proof-of-concept (PoC), you can discover how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements. 
+Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. Learn how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements. 
 
 The following products and services appear in this guide:
 
