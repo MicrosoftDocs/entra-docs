@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Vbrick Rev Cloud an
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Vbrick Rev Cloud.
-> * Remove users in Vbrick Rev Cloud when they do not require access anymore.
+> * Remove users in Vbrick Rev Cloud when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Vbrick Rev Cloud.
 > * Provision groups and group memberships in Vbrick Rev Cloud.
 > * [Single sign-on](vbrick-rev-cloud-tutorial.md) to Vbrick Rev Cloud (recommended).
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Vbrick Rev Cloud](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-vbrick-rev-cloud-to-support-provisioning-with-azure-ad'></a>
@@ -51,14 +51,14 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Screenshot of the Vbrick Rev User Security Settings with the Microsoft AD SCIM section called out.](./media/vbrick-rev-cloud-provisioning-tutorial/enable-azure-ad-scim.png)
 
-1. Enable **Microsoft Entra SCIM** and click on **Generate Token** button. 
+1. Enable **Microsoft Entra SCIM** and select **Generate Token** button. 
     ![Screenshot of the Vbrick Rev User Security Settings with the Microsoft AD SCIM enable.](./media/vbrick-rev-cloud-provisioning-tutorial/rev-scim-manage.png)
 
 1. It will open a popup with the **URL** and the **JWT token**. Copy and save the **JWT token** and **URL** for next steps.
 
 	![Screenshot of the Vbrick Rev User Security Settings with the Scim Token section called out.](./media/vbrick-rev-cloud-provisioning-tutorial/copy-token.png)
 
-1. Once you have a copy of the **JWT token** and **URL**, click **OK** to close the popup and then click on the **Save** button at the bottom of the settings page to enable SCIM for your tenant.
+1. Once you have a copy of the **JWT token** and **URL**, select **OK** to close the popup and then select the **Save** button at the bottom of the settings page to enable SCIM for your tenant.
 
 <a name='step-3-add-vbrick-rev-cloud-from-the-azure-ad-application-gallery'></a>
 
@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Vbrick Rev Cloud Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Vbrick Rev Cloud. If the connection fails, ensure your Vbrick Rev Cloud account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Vbrick Rev Cloud Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Vbrick Rev Cloud. If the connection fails, ensure your Vbrick Rev Cloud account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Vbrick Rev Cloud**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Vbrick Rev Cloud in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Vbrick Rev Cloud for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Vbrick Rev Cloud API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Vbrick Rev Cloud in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Vbrick Rev Cloud for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Vbrick Rev Cloud API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Vbrick Rev Cloud|
    |---|---|---|---|
@@ -141,7 +141,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

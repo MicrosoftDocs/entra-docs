@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Vonage and Microsof
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Vonage.
-> * Remove users in Vonage when they do not require access anymore.
+> * Remove users in Vonage when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Vonage.
 > * [Single sign-on](vonage-tutorial.md) to Vonage (recommended).
 
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Vonage](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-vonage-to-support-provisioning-with-azure-ad'></a>
@@ -51,7 +51,7 @@ The scenario outlined in this article assumes that you already have the followin
 
    ![Single sign on settings](media/vonage-provisioning-tutorial/single-sign-on-settings.png)
 
-1. Select **User Settings** tab, toggle **Enable SCIM user provisioning** ON and click **Save**.
+1. Select **User Settings** tab, toggle **Enable SCIM user provisioning** ON and select **Save**.
 
 ![Enable scim](media/vonage-provisioning-tutorial/enable-scim.png)
 
@@ -61,7 +61,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 
 
-Add Vonage from the Microsoft Entra application gallery to start managing provisioning to Vonage. If you have previously setup Vonage for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add Vonage from the Microsoft Entra application gallery to start managing provisioning to Vonage. If you have previously setup Vonage for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -70,7 +70,7 @@ Add Vonage from the Microsoft Entra application gallery to start managing provis
 ## Step 5: Configure automatic user provisioning to Vonage 
 
 > [!NOTE]
->  Any user that is added to Vonage must have first name, last name and email. Otherwise the integration will fail.
+>  Any user that's added to Vonage must have first name, last name and email. Otherwise the integration will fail.
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Vonage based on user and/or group assignments in Microsoft Entra ID.
 
@@ -95,12 +95,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Before the next step make sure you are authorized as Account Super User. For checking if the user is an Account Super User perform login at [Vonage admin portal](http://admin.vonage.com).
+1. Before the next step make sure you're authorized as Account Super User. For checking if the user is an Account Super User perform login at [Vonage admin portal](http://admin.vonage.com).
    You should see on the top left side similar to the picture below.
 
    ![Provisioning tab user](media/vonage-provisioning-tutorial/account-super-user.png)
 
-1. In the **Admin Credentials** section, click on Authorize , make sure that you enter your Account Super User credentials, if it doesn't ask you to enter credentials make sure that you logged in with the Account Super User (you can check it http://admin.vonage.com/ on the upper left side, bellow your name you need to see "Account Super User"). Click **Test Connection** to ensure Microsoft Entra ID can connect to Vonage. If the connection fails , ensure your Vonage account has Admin permissions and try again.
+1. In the **Admin Credentials** section, select Authorize , make sure that you enter your Account Super User credentials, if it doesn't ask you to enter credentials make sure that you logged in with the Account Super User (you can check it http://admin.vonage.com/ on the upper left side, bellow your name you need to see "Account Super User"). Select **Test Connection** to ensure Microsoft Entra ID can connect to Vonage. If the connection fails , ensure your Vonage account has Admin permissions and try again.
 
    ![Token](media/vonage-provisioning-tutorial/authorize.png)
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
@@ -111,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Vonage**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Vonage in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Vonage for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Vonage API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Vonage in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Vonage for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Vonage API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -131,7 +131,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
