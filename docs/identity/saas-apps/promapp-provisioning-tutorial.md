@@ -39,7 +39,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Promapp
 
-* It is recommended that a single Microsoft Entra user is assigned to Promapp to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Promapp to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Promapp, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -49,15 +49,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Promapp Admin Console](media/promapp-provisioning-tutorial/admin.png)
 
-2.	Under **Access Tokens** click on the **Create Token** button.
+2.	Under **Access Tokens** select the **Create Token** button.
 
 	![Promapp Add SCIM](media/promapp-provisioning-tutorial/addtoken.png)
 
-3.	Provide any name in the **Description** field and select **SCIM** from the **Scope** dropdown menu. Click on the save icon.
+3.	Provide any name in the **Description** field and select **SCIM** from the **Scope** dropdown menu. Select the save icon.
 
 	![Promapp Add Name](media/promapp-provisioning-tutorial/addname.png)
 
-4.	Copy the access token and save it as this will be the only time you can view it. This value will be entered in the Secret Token field in the Provisioning tab of your Promapp application.
+4.	Copy the access token and save it as it's the only time you can view it. This value is entered in the Secret Token field in the Provisioning tab of your Promapp application.
 
 	![Promapp Create Token](media/promapp-provisioning-tutorial/token.png)
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://api.promapp.com/api/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Promapp. If the connection fails, ensure your Promapp account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://api.promapp.com/api/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Promapp. If the connection fails, ensure your Promapp account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Promapp**.
 
@@ -127,7 +127,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you are ready to provision, click **Save**.
+14. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

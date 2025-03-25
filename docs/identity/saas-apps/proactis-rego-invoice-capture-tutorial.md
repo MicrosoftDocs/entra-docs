@@ -113,7 +113,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | `https://eu-p5.proactiscloud.com/SSO/<CustomerName>` |
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Proactis Rego Invoice Capture Client support team](mailto:support@proactis.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Proactis Rego Invoice Capture Client support team](mailto:support@proactis.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **Download** to download the certificate and save it on your computer.
 
@@ -137,15 +137,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Proactis Rego Invoice Capture Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Proactis Rego Invoice Capture Sign-on URL where you can initiate the login flow.  
 
 * Go to Proactis Rego Invoice Capture Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Proactis Rego Invoice Capture for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Proactis Rego Invoice Capture for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Proactis Rego Invoice Capture tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Proactis Rego Invoice Capture for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Proactis Rego Invoice Capture tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Proactis Rego Invoice Capture for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

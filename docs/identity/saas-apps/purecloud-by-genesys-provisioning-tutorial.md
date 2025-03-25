@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Genesys Cloud for A
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Genesys Cloud for Azure
-> * Remove users in Genesys Cloud for Azure when they do not require access anymore
+> * Remove users in Genesys Cloud for Azure when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Genesys Cloud for Azure
 > * Provision groups and group memberships in Genesys Cloud for Azure
 > * [Single sign-on](./purecloud-by-genesys-tutorial.md) to Genesys Cloud for Azure (recommended)
@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Genesys Cloud for Azure](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-genesys-cloud-for-azure-to-support-provisioning-with-azure-ad'></a>
@@ -49,13 +49,13 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Create an [Oauth Client](https://help.mypurecloud.com/?p=188023) configured in your PureCloud organization.
 2. Generate a token [with your oauth client](https://developer.mypurecloud.com/api/rest/authorization/use-client-credentials.html).
-3. If you are wanting to automatically provision Group membership within PureCloud, you must [create Groups](https://help.mypurecloud.com/?p=52397) in PureCloud with an identical name to the group in Microsoft Entra ID.
+3. If you're wanting to automatically provision Group membership within PureCloud, you must [create Groups](https://help.mypurecloud.com/?p=52397) in PureCloud with an identical name to the group in Microsoft Entra ID.
 
 <a name='step-3-add-genesys-cloud-for-azure-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Genesys Cloud for Azure from the Microsoft Entra application gallery
 
-Add Genesys Cloud for Azure from the Microsoft Entra application gallery to start managing provisioning to Genesys Cloud for Azure. If you have previously setup Genesys Cloud for Azure for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Genesys Cloud for Azure from the Microsoft Entra application gallery to start managing provisioning to Genesys Cloud for Azure. If you have previously setup Genesys Cloud for Azure for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Genesys Cloud for Azure API URL and Oauth Token in the **Tenant URL** and **Secret Token** fields respectively. The API URL will be structured as `{{API Url}}/api/v2/scim/v2`, using the API URL for your PureCloud region from the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/index.html). Click **Test Connection** to ensure Microsoft Entra ID can connect to Genesys Cloud for Azure. If the connection fails, ensure your Genesys Cloud for Azure account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Genesys Cloud for Azure API URL and Oauth Token in the **Tenant URL** and **Secret Token** fields respectively. The API URL is structured as `{{API Url}}/api/v2/scim/v2`, using the API URL for your PureCloud region from the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/index.html). Select **Test Connection** to ensure Microsoft Entra ID can connect to Genesys Cloud for Azure. If the connection fails, ensure your Genesys Cloud for Azure account has Admin permissions and try again.
 
  	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/purecloud-by-genesys-provisioning-tutorial/provisioning.png)
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Genesys Cloud for Azure**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Genesys Cloud for Azure in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Genesys Cloud for Azure for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Genesys Cloud for Azure API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Genesys Cloud for Azure in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Genesys Cloud for Azure for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Genesys Cloud for Azure API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
      |Attribute|Type|Supported for filtering|Required by Genesys Cloud for Azure|
      |---|---|---|---|
@@ -125,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Genesys Cloud for Azure**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to Genesys Cloud for Azure in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Genesys Cloud for Azure for update operations. Select the **Save** button to commit any changes. Genesys Cloud for Azure does not support group creation or deletion and only supports updating of groups.
+11. Review the group attributes that are synchronized from Microsoft Entra ID to Genesys Cloud for Azure in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Genesys Cloud for Azure for update operations. Select the **Save** button to commit any changes. Genesys Cloud for Azure doesn't support group creation or deletion and only supports updating of groups.
 
       |Attribute|Type|Supported for filtering|Required by Genesys Cloud for Azure|
       |---|---|---|---|
@@ -143,7 +143,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
