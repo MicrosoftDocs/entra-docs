@@ -40,11 +40,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure SAS Viya SSO to support provisioning with Microsoft Entra ID
 
-To configure SAS Viya SSO to support provisioning with Microsoft Entra ID, please refer to **[How to Configure SCIM](https://go.documentation.sas.com/doc/en/sasadmincdc/default/calids/n1rl3gjjjqmxmfn1hw9ebjjz5778.htm)** in SAS Viya Platform Administration
+To configure SAS Viya SSO to support provisioning with Microsoft Entra ID, refer to **[How to Configure SCIM](https://go.documentation.sas.com/doc/en/sasadmincdc/default/calids/n1rl3gjjjqmxmfn1hw9ebjjz5778.htm)** in SAS Viya Platform Administration
 
 ## Step 3: Add SAS Viya SSO from the Microsoft Entra application gallery
 
-Add SAS Viya SSO from the Microsoft Entra application gallery to start managing provisioning to SAS Viya SSO. If you have previously setup SAS Viya SSO for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add SAS Viya SSO from the Microsoft Entra application gallery to start managing provisioning to SAS Viya SSO. If you have previously setup SAS Viya SSO for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
