@@ -41,7 +41,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 1.  Select **Download on-premises agent**, and select **Accept terms & download**.  
 
    > [!NOTE]
-   > Please use different provisioning agents for on-premises application provisioning and Microsoft Entra Connect cloud sync / HR-driven provisioning. All three scenarios should not be managed on the same agent.
+   > Please use different provisioning agents for on-premises application provisioning and Microsoft Entra Connect cloud sync / HR-driven provisioning. All three scenarios shouldn't be managed on the same agent.
   
 1.  Open the provisioning agent installer, agree to the terms of service, and select **next**.
 1.  When the provisioning agent wizard opens, continue to the **Select Extension** tab and select **On-premises application provisioning** when prompted for the extension you want to enable.
@@ -67,7 +67,7 @@ Once the agent is installed, no further configuration is necessary on-premises, 
 1.  Select **Test Connection**, and save the credentials. The application SCIM endpoint must be actively listening for inbound provisioning requests, otherwise the test fails. Use the steps [here](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md#troubleshoot-test-connection-issues) if you run into connectivity issues. 
 
    >[!NOTE]
-   > If the test connection fails, you will see the request made. Please note that while the URL in the test connection error message is truncated, the actual request sent to the application contains the entire URL provided above. 
+   > If the test connection fails, you see the request made. Please note that while the URL in the test connection error message is truncated, the actual request sent to the application contains the entire URL provided above. 
 
 1.  Configure any [attribute mappings](~/identity/app-provisioning/customize-application-attributes.md) or [scoping](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) rules required for your application.
 1.  Add users to scope by [assigning users and groups](~/identity/enterprise-apps/add-application-portal-assign-users.md) to the application.

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Atomic Learning so that I can control who has access to Atomic Learning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -46,7 +46,7 @@ To configure the integration of Atomic Learning into Microsoft Entra ID, you nee
 1. In the **Add from the gallery** section, type **Atomic Learning** in the search box.
 1. Select **Atomic Learning** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-atomic-learning'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Atomic Learning, perform the foll
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Atomic Learning SSO](#configure-atomic-learning-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Atomic Learning test user](#create-atomic-learning-test-user)** - to have a counterpart of B.Simon in Atomic Learning that is linked to the Microsoft Entra representation of user.
+    1. **[Create Atomic Learning test user](#create-atomic-learning-test-user)** - to have a counterpart of B.Simon in Atomic Learning that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -108,11 +108,11 @@ In this section, a user called Britta Simon is created in Atomic Learning. Atomi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this redirects to Atomic Learning Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Atomic Learning Sign-on URL where you can initiate the login flow. 
 
 * Go to Atomic Learning Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Atomic Learning tile in the My Apps, this redirects to Atomic Learning Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Atomic Learning tile in the My Apps, this option redirects to Atomic Learning Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 
