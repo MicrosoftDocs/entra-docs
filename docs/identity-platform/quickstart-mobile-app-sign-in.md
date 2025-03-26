@@ -43,7 +43,7 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 #### [Android](#tab/android-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
   * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)*
 * Android Studio
@@ -51,7 +51,7 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 #### [iOS/macOS](#tab/ios-macos-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
   * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * XCode 10+
@@ -272,7 +272,7 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md).
+* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
     * **Name**: *identity-client-mobile-app*
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 
