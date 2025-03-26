@@ -10,8 +10,11 @@ ms.date: 04/01/2025
 ms.author: jfields
 ---
 
+
+# Product update
 > [!NOTE]
 > Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we will retire and discontinue support of this product. More information can be found [here](aka.ms/MEPMretire). 
+
 
 # View a list and description of system reports
 
