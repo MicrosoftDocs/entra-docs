@@ -8,10 +8,8 @@ ms.date: 11/06/2023
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.topic: reference
-
-
-ms.custom:
 ---
+
 
 # Microsoft Entra Connect: ADSync PowerShell Reference
 The following documentation provides reference information for the `ADSync` PowerShell module that is included with Microsoft Entra Connect.
