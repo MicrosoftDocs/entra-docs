@@ -29,6 +29,16 @@ For a more dynamic experience, you can now find this information in the Microsof
 
 ## March 2025
 
+### General Availability- Conditional Access reauthentication policy 
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+Require reauthentication every time can be used for scenarios where you want to require a fresh authentication, every time a user performs specific actions like accessing sensitive applications, securing resources behind VPN, or Securing privileged role elevation in PIM​. For more information, see: [Require reauthentication every time](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
+
+---
+
 ### General Availability- Custom Attributes support for Microsoft Entra Domain Services
 
 **Type:** New feature    
