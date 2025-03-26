@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # How to configure daemon apps that call web APIs
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Learn how to configure the code for your daemon application that calls web APIs.
 
 ## Microsoft libraries supporting daemon apps
