@@ -1,7 +1,9 @@
 ### YamlMime:Landing
 
 title: Microsoft Entra Permissions Management
-summary: Microsoft Entra Permissions Management is a cloud infrastructure entitlement management (CIEM) solution that provides comprehensive visibility into permissions assigned to all identities (users and workloads),  actions, and resources across cloud infrastructures. It detects, right-sizes, and monitors unused and excessive permissions and enables Zero Trust security through least privilege access in Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
+summary: Microsoft Entra Permissions Management is a cloud infrastructure entitlement management (CIEM) solution that provides comprehensive visibility into permissions assigned to all identities (users and workloads),  actions, and resources across cloud infrastructures. It detects, right-sizes, and monitors unused and excessive permissions and enables Zero Trust security through least privilege access in Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP). 
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](aka.ms/MEPMretire).
 
 metadata:
   title: Microsoft Entra Permissions Management
