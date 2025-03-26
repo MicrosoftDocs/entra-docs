@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AlertMedia so that I can streamline the user management process and ensure that users have the appropriate access to AlertMedia.
@@ -26,7 +26,7 @@ This article describes the steps you need to perform in both AlertMedia and Micr
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in AlertMedia
-> * Remove users in AlertMedia when they do not require access anymore
+> * Remove users in AlertMedia when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and AlertMedia
 > * Provision groups and group memberships in AlertMedia
 > * [Single sign-on](./alertmedia-tutorial.md) to AlertMedia (recommended)

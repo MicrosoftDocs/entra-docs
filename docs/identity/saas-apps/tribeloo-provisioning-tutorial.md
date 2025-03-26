@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Tribeloo and Micros
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Tribeloo.
-> * Remove users in Tribeloo when they do not require access anymore.
+> * Remove users in Tribeloo when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tribeloo.
 > * [Single sign-on](tribeloo-tutorial.md) to Tribeloo (recommended).
 
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Tribeloo](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-tribeloo-to-support-provisioning-with-azure-ad'></a>
@@ -48,14 +48,14 @@ Navigate to the [Tribeloo app](https://app.tribeloo.com/) and log as a user with
 
 	![Access User Management](media/tribeloo-provisioning-tutorial/tribeloo-user-management.png)
 
-1. Select the **User provisioning**(1) tab. On this tab, you have access to Tribeloo information that you will have to use to configure the Microsoft Entra integration.
+1. Select the **User provisioning**(1) tab. On this tab, you have access to Tribeloo information that you have to use to configure the Microsoft Entra integration.
    1. **SCIM base URL** (2)
    1. **SCIM Bearer token** (3)
 1. Copy these values to the clipboard and paste them in the corresponding Microsoft Entra ID fields (see Step 5). The AD fields are named **Tenant URL** and **Secret Token** respectively.
 
 	![Tribeloo Provisioning Parameters](media/tribeloo-provisioning-tutorial/tribeloo-provisioning-parameters.png)
 
-1. On the **User Provisioning** tab you can now click the **Enable User provisioning**(1) button to enable user provisioning in Tribeloo.
+1. On the **User Provisioning** tab you can now select the **Enable User provisioning**(1) button to enable user provisioning in Tribeloo.
 
 	![Tribeloo Enable Provisioning](media/tribeloo-provisioning-tutorial/tribeloo-enable-provisioning.png)
 
@@ -63,7 +63,7 @@ Navigate to the [Tribeloo app](https://app.tribeloo.com/) and log as a user with
 
 ## Step 3: Add Tribeloo from the Microsoft Entra application gallery
 
-Add Tribeloo from the Microsoft Entra application gallery to start managing provisioning to Tribeloo. If you have previously setup Tribeloo for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Tribeloo from the Microsoft Entra application gallery to start managing provisioning to Tribeloo. If you have previously setup Tribeloo for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Tribeloo **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Tribeloo. If the connection fails , ensure your Tribeloo account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your Tribeloo **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Tribeloo. If the connection fails , ensure your Tribeloo account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -106,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Tribeloo**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Tribeloo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Tribeloo for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Tribeloo API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Tribeloo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Tribeloo for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Tribeloo API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -128,7 +128,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

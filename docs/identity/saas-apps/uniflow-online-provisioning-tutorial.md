@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both uniFLOW Online and 
 > [!div class="checklist"]
 > * Create users in uniFLOW Online.
 > * Disable users in uniFLOW Online.
-> * Remove users in uniFLOW Online when they do not require access anymore.
+> * Remove users in uniFLOW Online when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and uniFLOW Online.
 > * [Single sign-on](uniflow-online-tutorial.md) to uniFLOW Online (recommended).
 
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and uniFLOW Online](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-uniflow-online-to-support-provisioning-with-azure-ad'></a>
@@ -43,14 +43,14 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure uniFLOW Online to support provisioning with Microsoft Entra ID
 * In a different web browser window, sign in to uniFLOW Online website as an administrator.
 * Select **Extensions** tab **> Identity Providers > Configure identity providers**.
-* Click on **Add identity provider**. On the **ADD IDENTITY PROVIDER** section, perform the following steps:
+* Select **Add identity provider**. On the **ADD IDENTITY PROVIDER** section, perform the following steps:
    * Enter the **Display name** .
    * For **Provider type**, select **WS-Federation** option from the dropdown.
    * For **WS-Federation type**, select **Microsoft Entra ID** option from the dropdown.
-   * Click **Save**.
+   * Select **Save**.
 * Enable the Advanced Administrative View within your user Profile settings by navigating to **Profile settings > Administrator view** and setting it to **Advanced**.
 * The provisioning tab will now be available within the Identity Provider configuration.
-* Click **Enable Provisioning** when you are ready to set up user provisioning in your company's Microsoft Entra ID.
+* Select **Enable Provisioning** when you're ready to set up user provisioning in your company's Microsoft Entra ID.
    * **Provisioning tenant URL** (only displayed once after **Provisioning** is enabled): You need this URL when setting up provisioning in your Microsoft Entra application.
    * **Provisioning secret token** (only displayed once after **Provisioning** is enabled): You need this token when setting up provisioning in your Microsoft Entra application.
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your uniFLOW Online Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to uniFLOW Online. If the connection fails, ensure your uniFLOW Online account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your uniFLOW Online Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to uniFLOW Online. If the connection fails, ensure your uniFLOW Online account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to uniFLOW Online**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to uniFLOW Online in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in uniFLOW Online for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the uniFLOW Online API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to uniFLOW Online in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in uniFLOW Online for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the uniFLOW Online API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by uniFLOW Online|
    |---|---|---|---|
@@ -130,7 +130,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

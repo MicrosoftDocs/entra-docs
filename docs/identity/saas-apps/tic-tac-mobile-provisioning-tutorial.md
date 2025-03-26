@@ -38,14 +38,14 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Tic-Tac Mobile](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-tic-tac-mobile-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Tic-Tac Mobile to support provisioning with Microsoft Entra ID
 
-Contact support@tictacmobile.com to get your **Tenant URL** and **Secret Token**. You must have a super admin role in Tic-Tac Mobile to receive a token. The token will be entered in the **Secret Token** box on the **Provisioning** tab of your Tic-Tac Mobile application.
+Contact support@tictacmobile.com to get your **Tenant URL** and **Secret Token**. You must have a super admin role in Tic-Tac Mobile to receive a token. The token is entered in the **Secret Token** box on the **Provisioning** tab of your Tic-Tac Mobile application.
 
 <a name='step-3-add-tic-tac-mobile-from-the-azure-ad-application-gallery'></a>
 
