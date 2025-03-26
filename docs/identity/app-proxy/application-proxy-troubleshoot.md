@@ -13,7 +13,7 @@ ms.reviewer: ashishj
 
 # Troubleshoot application proxy problems and error messages
 
-First, make sure the private network connectors are configured correctly. For more information, see [Debug private network connector issues](application-proxy-debug-connectors.md) and [Debug application proxy application issues](./application-proxy-debug-apps.md).
+To troubleshoot application proxy problems, first, verify that the private network connectors are configured correctly. For more information, see [Debug private network connector issues](application-proxy-debug-connectors.md) and [Debug application proxy application issues](./application-proxy-debug-apps.md).
 
 If errors occur in accessing a published application or in publishing applications, check the following options to see if Microsoft Entra application proxy is working correctly:
 
@@ -22,61 +22,73 @@ If errors occur in accessing a published application or in publishing applicatio
 * Open Event Viewer and look for private network connector events in **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector** > **Admin**.
 * Review detailed logs. [Turn on private network connector session logs](application-proxy-connectors.md#under-the-hood).
 
-## The page isn't rendered correctly
+## The page doesn't render correctly
 
-You have problems with your application rendering or functioning incorrectly without receiving specific error messages. The problem occurs if you published the article path, but the application requires content that exists outside that path.
+You have problems with your application rendering or it functions incorrectly, but no specific error messages appear.
 
-For example, if you publish the path `https://yourapp/app` but the application calls images in `https://yourapp/media`, they aren't rendered. Make sure that you publish the application using the highest level path you need to include all relevant content. In this example, it would be `http://yourapp/`.
+This problem occurs if you published the article path, but the application requires content that exists outside that path.
+
+For example, if you publish the path `https://yourapp/app` but the application calls images in `https://yourapp/media`, they aren't rendered. Make sure that you publish the application by using the highest-level path you need to include all relevant content. In this example, that level is `http://yourapp/`.
 
 ## An application proxy application takes too long to load
 
-Applications can be functional but experience a long latency. Network topology tweaks can make improvements to speed. For an evaluation of different topologies, see the [network considerations document](application-proxy-network-topology.md).
+Applications can be functional but experience a long latency.
+
+You can make changes to your network topology to improve the application speed. For an evaluation of different topologies, review [network considerations](application-proxy-network-topology.md).
 
 ## The application page doesn't display correctly for an application proxy app
 
-When you publish an application proxy app, only pages under your root are accessible when you access the application. If the page doesn't appear correctly, the root internal URL used for the application might be missing some page resources. To resolve, publish *all* the resources for the page as part of your application.
+When you publish an application proxy app, only pages in your root directory are accessible when you access the application. If the page doesn't render correctly, the root internal URL that's used for the application might be missing some page resources.
 
-Verify if missing resources is the issue. Opening your network tracker, such as Fiddler, or F12 tools in Microsoft Edge. Load the page, and looking for 404 errors. The errors indicate the pages can't be found and that you need to publish them.
+Verify that missing resources is the issue:
 
-As an example, assume you published an expenses application using the internal URL `http://myapps/expenses`, but the app uses the stylesheet `http://myapps/style.css`. The stylesheet isn't published in your application, so loading the expenses app throws a `404` error trying to load `style.css`. In this example, resolve the problem by publishing the application with the internal URL `http://myapp/`.
+1. Open your network tracker, such as by using Fiddler or F12 tools in Microsoft Edge.
+1. Load the page.
+1. Look for 404 errors.
 
-## Problems with publishing as one application
+A 404 error indicates that pages can't be found and that you need to publish them.
 
-If it isn't possible to publish all resources within the same application, you need to publish multiple applications and enable links between them.
+To resolve this issue, publish *all* the resources for the page as part of your application.
 
-To do so, we recommend using the [custom domains](how-to-configure-custom-domain.md) solution. However, this solution requires that you own the certificate for your domain and your applications use fully qualified domain names (FQDNs). For other options, see the [troubleshoot broken links documentation](application-proxy-page-links-broken-problem.md).
+For example, you publish an expenses application by using the internal URL `http://myapps/expenses`, but the app uses the stylesheet `http://myapps/style.css`. The stylesheet isn't in the folder that you published, so the stylesheet isn't yet published. Loading the expenses app shows a 404 error when the app tries to load `style.css`. In this example, resolve the problem by publishing the application by using the internal URL `http://myapp/`. That is, publish a path that includes all the resources the application uses.
 
-[I can get to my application, but the links on the application page don't work](application-proxy-page-links-broken-problem.md).
+## Problems with publishing as a single application
 
-## I'm having a connectivity problem with my application
+If you can't publish all resources in the same application, publish multiple applications and set up links between them. For this scenario, we recommend that you use [custom domains](how-to-configure-custom-domain.md). However, this solution requires that you own the certificate for your domain and that your applications use fully qualified domain names (FQDNs). For other options, see the [troubleshoot broken links documentation](application-proxy-page-links-broken-problem.md).
 
-[I don't know what ports to open for my application](application-proxy-add-on-premises-application.md).
+For more information, see [I can get to my application, but the links on the application page don't work](application-proxy-page-links-broken-problem.md).
 
-## I'm having a problem configuring the Microsoft Entra application proxy in the admin portal
+## Connectivity problem with an application
 
-[I don't know how to configure single sign-on to my application Proxy application](how-to-configure-sso.md).
+For causes and suggested resolutions, see [I don't know what ports to open for my application](application-proxy-add-on-premises-application.md).
 
-## I'm having a problem setting up back-end authentication to my application
+## Problem configuring the Microsoft Entra application proxy in the admin portal
 
-[I don't know how to configure Kerberos Constrained Delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
-[I don't know how to configure my application with PingAccess](application-proxy-ping-access-publishing-guide.md).
+For causes and suggested resolutions, see [I don't know how to configure single sign-on to my application proxy application](how-to-configure-sso.md).
 
-## I'm having a problem when signing in to my application
+## Problem setting up back-end authentication to the application
 
-I get the error `Can't Access this Corporate Application`. To solve this issue, see [Bad gateway timeout error](application-proxy-sign-in-bad-gateway-timeout-error.md).
+For causes and suggested resolutions, see these articles:
 
-## I'm having a problem with the private network connector
+* [I don't know how to configure Kerberos constrained delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
+* [I don't know how to configure my application by using PingAccess](application-proxy-ping-access-publishing-guide.md).
 
-[I have issues installing the private network connector](application-proxy-connector-installation-problem.md).
+## Problem signing in to the application
+
+You might be unable to sign in to your application, and you see the error "Can't Access this Corporate Application." To solve this issue, see [Bad gateway timeout error](application-proxy-sign-in-bad-gateway-timeout-error.md).
+
+## Problem with the private network connector
+
+For causes and suggested resolutions, see [I have issues installing the private network connector](application-proxy-connector-installation-problem.md).
 
 ## Kerberos errors
 
-This table covers the more common errors that come from Kerberos setup and configuration, and includes suggestions for resolution.
+For descriptions and suggested resolutions for more common errors in Kerberos setup and configuration, see the following table:
 
 | Error | Recommended steps |
 | ----- | ----------------- |
-| `Failed to retrieve the current execution policy for running PowerShell scripts.` | If the connector installation fails, check to make sure that PowerShell execution policy isn't disabled.<br><br>1. Open the Group Policy Editor.<br>2. Go to **Computer Configuration** > **Administrative Templates** > **Windows Components** > **Windows PowerShell** and double-click **Turn on Script Execution**.<br>3. The execution policy can be set to either **Not Configured** or **Enabled**. If set to **Enabled**, make sure that under Options, the Execution Policy is set to either **Allow local scripts and remote signed scripts** or to **Allow all scripts**. |
-| `12008 - Microsoft Entra exceeded the maximum number of permitted Kerberos authentication attempts to the backend server.` | This error indicates incorrect configuration between Microsoft Entra ID and the backend application server, or a problem in time and date configuration on both machines. The backend server declined the Kerberos ticket created by Microsoft Entra ID. Verify that Microsoft Entra ID and the backend application server are configured correctly. Make sure that the time and date configuration on the Microsoft Entra ID and the backend application server are synchronized. |
+| `Failed to retrieve the current execution policy for running PowerShell scripts.` | If the connector installation fails, check to make sure that the PowerShell execution policy isn't disabled.<br><br>1. Open the Group Policy Editor.<br>2. Go to **Computer Configuration** > **Administrative Templates** > **Windows Components** > **Windows PowerShell**, and then double-click **Turn on Script Execution**.<br>3. The execution policy can be set to either **Not Configured** or **Enabled**. If the policy is set to **Enabled**, make sure that under **Options**, the execution policy is set to either **Allow local scripts and remote signed scripts** or **Allow all scripts**. |
+| `12008 - Microsoft Entra exceeded the maximum number of permitted Kerberos authentication attempts to the backend server.` | This error indicates incorrect configuration between Microsoft Entra ID and the back-end application server, or there's a problem with the time and date configuration on both computers. The back-end server declined the Kerberos ticket that Microsoft Entra ID created. Verify that Microsoft Entra ID and the back-end application server are configured correctly. Make sure that the time and date configuration on the Microsoft Entra ID and back-end application server are synchronized. |
 | `13016 - Microsoft Entra ID cannot retrieve a Kerberos ticket on behalf of the user because there is no UPN in the edge token or in the access cookie.` | There's a problem with the Security Token Service (STS) configuration. Fix the User Principal Name (UPN) claim configuration in the STS. |
 | `13019 - Microsoft Entra ID cannot retrieve a Kerberos ticket on behalf of the user because of the following general API error.` | This event indicates incorrect configuration between Microsoft Entra ID and the domain controller server, or a problem in time and date configuration on both machines. The domain controller declined the Kerberos ticket created by Microsoft Entra ID. Verify that Microsoft Entra ID and the backend application server are configured correctly, especially the Service Principal Name (SPN) configuration. Make sure the domain controller establishes trust with Microsoft Entra ID. Both should use the same domain. Make sure the time and date configuration on the Microsoft Entra ID and the domain controller are synchronized. |
 | `13020 - Microsoft Entra ID cannot retrieve a Kerberos ticket on behalf of the user because the backend server SPN is not defined.` | This event indicates incorrect configuration between Microsoft Entra ID and the domain controller server, or a problem in time and date configuration on both machines. The domain controller declined the Kerberos ticket created by Microsoft Entra ID. Verify that Microsoft Entra ID and the backend application server are configured correctly, especially the SPN configuration. Make sure the domain controller establishes trust with Microsoft Entra ID. Both should use the same domain. Make sure that the time and date configuration on the Microsoft Entra ID and the domain controller are synchronized. |
