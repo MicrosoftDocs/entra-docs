@@ -4,7 +4,7 @@ description: Explore the types of tokens used in Microsoft Entra ID, their role 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 03/25/2025
+ms.date: 03/26/2025
 
 ms.author: jfields
 author: jenniferf-skc
@@ -12,238 +12,117 @@ manager: femila
 ms.reviewer: 
 ---
 
-As attackers increasingly leverage sophisticated attacks, it is
-crucial to guard against data exfiltration by hardening your environment
-against token theft and token replay. Although challenging, there are
-simple steps you can take to reduce your attack surface and increase the
-cost for attackers to successfully steal and replay tokens. A robust
-strategy to protect your tokens requires a multi-layered
-defense-in-depth approach, which should
-include:
+# Introduction
+
+As attackers increasingly leverage sophisticated attacks, it is crucial to guard against data exfiltration by hardening your environment against token theft and token replay. Although challenging, there are simple steps you can take to reduce your attack surface and increase the cost for attackers to successfully steal and replay tokens. A robust strategy to protect your tokens requires a multi-layered defense-in-depth approach, which should include:
 
 - Hardening your devices against malware-based attacks
 - Leverage Device based and Risk based Conditional Access
-- Deploy phishing resistantcredentials
+- Deploy phishing resistant credentials
 - Enforcing device-bound tokens where possible
 - Implementing network-based enforcements
 
-This document summarizes the basics of what tokens are, how tokens can be stolen,
-and provide concrete steps you can take to mitigate the risk of
-successful attacks in your environment. Due to the complexity and wide
-variety of tokens in Microsoft Entra, some topics will be generalized
-for simplicity and may not cover all edge cases. However, this guidance
-will cover the vast majority of scenarios for public clients.
-Confidential client scenarios are not in
-scope.
+This document summarizes the basics of what tokens are, how tokens can be stolen, and provide concrete steps you can take to mitigate the risk of successful attacks in your environment. Due to the complexity and wide variety of tokens in Microsoft Entra, some topics are generalized for simplicity and may not cover all edge cases. However, this guidance covers the vast majority of scenarios for public clients. Confidential client scenarios are not in scope.
 
-## Introduction
 
-Password-based attacks still comprise over 99% of attacks seen by
-Microsoft and are the root cause of most compromised identities.
-Organizations should deploy phishing-resistant MFA as a first line of
-defense for their identities. Doing so will force adversaries to adjust
-their tactics, moving to the next logical attack vector which is likely
-token theft. “Although token theft results in far fewer identity
-compromises than password attacks, our detections indicate incidents
-have grown to an estimated 39,000 per day. Moreover, over the last year
-we’ve seen a 146% rise in AiTM phishing attacks, which occur when
-attackers trick users into clicking a link and completing MFA on the
-attacker’s behalf.”\* While the deployment of phishing-resistant MFA
-should be a top priority, organizations should also begin preparing a
-token theft mitigation strategy as token theft attack vectors will
-continue to increase over time. Protecting against token theft will
-become more important as password-based attacks become less
-viable.
+Password-based attacks still comprise over 99 percent of attacks seen by Microsoft and are the root cause of most compromised identities.
+Organizations should deploy phishing-resistant MFA as a first line of defense for their identities. Doing so forces adversaries to adjust their tactics, moving to the next logical attack vector, which is likely token theft. “Although token theft results in far fewer identity compromises than password attacks, our detections indicate incidents have grown to an estimated 39,000 per day. Moreover, over the last year we’ve seen a 146% rise in AiTM phishing attacks, which occur when attackers trick users into clicking a link and completing MFA on the attacker’s behalf.”\* While the deployment of phishing-resistant MFA should be a top priority, organizations should also begin preparing a token theft mitigation strategy as token theft attack vectors continue to increase over time. Protecting against token theft becomes more important as password-based attacks become less viable.
 
-[[*\* From [2024 Microsoft Digital Defense Report](https://aka.ms/mddr)
-(page 40)*](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+*\* From [2024 Microsoft Digital Defense Report](https://aka.ms/mddr) (page 40)*
 
 ## What is a token?
 
-Tokens are digital objects used in various authentication and
-authorization processes to grant access to resources. They verify the
-identity of a user or a workload and grant access to resources without
-requiring the transmission of a password or credential for each
-transaction. Tokens encapsulate information about the user's identity
-and their permissions in a secure format, ensuring that sensitive
-information remains protected during the authentication
-process.
+Tokens are digital objects used in various authentication and authorization processes to grant access to resources. They verify the identity of a user or a workload and grant access to resources without requiring the transmission of a password or credential for each
+transaction. Tokens encapsulate information about the user's identity and their permissions in a secure format, ensuring that sensitive
+information remains protected during the authentication process.
 
-In digital environments, tokens play a critical role in enhancing
-security by enabling secure and efficient authentication mechanisms.
-They help reduce the risk of credential theft by minimizing the exposure
-of credentials over the network. However, they have the characteristic
-that if the device or network is compromised, they can be exfiltrated by
-an attacker. The attacker can then use these tokens from a device they
-control to gain access to resources as the signed-in
-user.
+In digital environments, tokens play a critical role in enhancing security by enabling secure and efficient authentication mechanisms.
+They help reduce the risk of credential theft by minimizing the exposure of credentials over the network. However, they have the characteristic that if the device or network is compromised, they can be exfiltrated by an attacker. The attacker can then use these tokens from a device they control to gain access to resources as the signed-in user.
 
 ## Summary of the kinds of tokens
 
 There are many kinds of tokens, but they generally fall into one of
 two categories:
 
-1. **Sign-in sessions** – These tokens maintain the signed-in state of a
-user, allowing the user to access resources without the need for
-frequent re-authentication. They are passed to the identity provider to
-request tokens that are in the app session category. They are also known
-as Refresh Tokens in the OAuth 2.0 standard. 
-2. **App sessions** – These tokens authorize access to specific applications. They are usually
-short-lived and are played between the client and the application. They
-are also known as Access Tokens in the OAuth 2.0 standard.
+1. **Sign-in sessions** – These tokens maintain the signed-in state of a user, allowing the user to access resources without the need for
+frequent re-authentication. They are passed to the identity provider to request tokens that are in the app session category. They are also known as Refresh Tokens in the OAuth 2.0 standard. 
+2. **App sessions** – These tokens authorize access to specific applications. They're usually short-lived and are played between the client and the application. They're also known as Access Tokens in the OAuth 2.0 standard.
 
-Tokens may also vary depending on the client application. Web applications accessed
-via browsers sometimes use different kinds of tokens compared with
-native apps such as Outlook and Teams.
-<img src="media/understading-tokens-and-how-to-protect-them-in-microsoft-entra-id/image1.png" style="width:6.5in;height:3.11458in" />
+Tokens may also vary depending on the client application. Web applications accessed via browsers sometimes use different kinds of tokens compared with native apps such as Outlook and Teams.
 
-[[Slide -\> [Token Theft Defense Summary
-Slide.pptx](https://microsoft-my.sharepoint.com/:p:/p/jebley/ER72L4t8uqBJrVGSa8m40u4B8cIUjLLf7VCkEkXvLlKlXQ?e=wHjZnh)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+:::image type="content" source="media/concept-tokens-in-microsoft-entra-id/tokens-evaluated-by-microsoft-entra-id.png" alt-text="Screenshot of tokens evaluated by Microsoft Entra ID and other applications and services.":::
 
-[[As a best practice, you will want to prioritize protecting your
-sign-in session tokens first as these tokens can last for weeks or
-months, potentially enabling persistent unauthorized access if
-stolen.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+As a best practice, you'll want to prioritize protecting your sign-in session tokens first as these tokens can last for weeks or
+months, potentially enabling persistent unauthorized access if stolen.
 
-[[Another difference between the two token families: Sign-in session
-tokens are revocable by design while app sessions are typically not. For
-example, Entra ID Access Tokens can only be revoked if the application
-has integrated Continuous Access
-Evaluation.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Another difference between the two token families: Sign-in session tokens are revocable by design while app sessions are typically not. For
+example, Entra ID Access Tokens can only be revoked if the application has integrated Continuous Access
+Evaluation.
 
-| [[Token Type](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                  | [[Issued by](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[Purpose](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)               | [[Scoped to Resource](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                                | [[Lifetime](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                  | [[Revocable](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)              | [[Renewable](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) |
-|---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| [[Primary Refresh Token (PRT)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[Entra ID](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)  | [[Request Access Tokens](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[No – Can request an access token for any resource](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[14 days\*](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                 | [[Yes](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                    | [[Yes](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)       |
-| [[Refresh Token](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)               | [[Entra ID](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)  | [[Request Access Tokens](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[Yes](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                                               | [[90 days\*](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                 | [[Yes](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                    | [[Yes](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)       |
-| [[Access Token](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                | [[Entra ID](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)  | [[Access the resource](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)   | [[Yes](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                                               | [[Variable 60-90 minutes](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)    | [[Yes, if CAE capable](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)    | [[No](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)        |
-| [[App auth cookie](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)             | [[Web app](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)   | [[Access the resource](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)   | [[Yes](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                                               | [[Determined by application](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[Depends on application](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[No](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)        |
+| Token Type  | Issued by | Purpose  | Scoped to Resource | Lifetime| Revocable | Renewable |
+|--------|--------|--------|--------|--------|--------|--------|
+| Primary Refresh Token (PRT)| Entra ID | Request Access Tokens | No – Can request an access token for any resource | 14 days\*| Yes | Yes|
+| Refresh Token| Entra ID| Request Access Tokens | Yes | 90 days\* | Yes | Yes |
+| Access Token    | Entra ID | Access the resource | Yes | Variable 60-90 minutes| Yes, if CAE capable | No |
+| App auth cookie| Web app | Access the resource | Yes  | Determined by application| Depends on application | No |
+\*Rolling window – Lifetime is restarted with every use of the token
 
-[[\*Rolling window – Lifetime is restarted with every use of the
-token](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## Token theft attack vectors
 
-# [[Token theft attack vectors](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Adversaries can employ a number of different attack vectors to steal tokens. Once a token is stolen, the adversary can then impersonate the user, gaining unauthorized access and even exfiltrating sensitive data.
+Some examples of these attack vectors include:
 
-[[Adversaries can employ a number of different attack vectors to steal
-tokens. Once a token is stolen, the adversary can then impersonate the
-user, gaining unauthorized access and even exfiltrating sensitive data.
-Some examples of these attack vectors
-include:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+ - **Adversary-in-the-middle** – A sophisticated form of a Man-in-the-Middle (MitM) attack. In this scenario, an attacker positions
+themselves between two communicating parties, intercepting and potentially altering the communication without either party's knowledge. This allows the attacker to capture sensitive information such as credentials, session cookies, and other data, even bypassing security measures like two-factor authentication. 
+ - **Malware** – Malware can steal tokens from a device by infiltrating the system and monitoring network traffic or accessing stored data. Once installed, the malware can capture authentication tokens, session cookies, or other credentials by intercepting communications between the device and legitimate services. It can also exploit vulnerabilities to extract tokens directly from
+memory or storage. In this article we will focus primarily on how to defeat attacks that are directed towards end users, such as those listed above. Attack vectors such as server-side or application compromise are out of scope for this article. To mitigate these kinds of attacks, organizations should follow the general best practices
+of:
 
-1.  
-2.  
+- Secure your application’s authentication
+- Ensure application permissions are least privileged
+- Avoid capture and retention of tokens in server-side logs
+- Monitor OAuth applications with permissions to other resources for compromise
 
-[[**Adversary-in-the-middle** – a sophisticated form of a
-Man-in-the-Middle (MitM) attack. In this scenario, an attacker positions
-themselves between two communicating parties, intercepting and
-potentially altering the communication without either party's knowledge.
-This allows the attacker to capture sensitive information such as
-credentials, session cookies, and other data, even bypassing security
-measures like two-factor authentication. **Malware** – Malware can steal
-tokens from a device by infiltrating the system and monitoring network
-traffic or accessing stored data. Once installed, the malware can
-capture authentication tokens, session cookies, or other credentials by
-intercepting communications between the device and legitimate services.
-It can also exploit vulnerabilities to extract tokens directly from
-memory or storage. In this article we will focus primarily on how to
-defeat attacks that are directed towards end users, such as those listed
-above. Attack vectors such as server-side or application compromise are
-out of scope for this article. To mitigate these kinds of attacks,
-organizations should follow the general best practices
-of:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Continue to [Understanding tokens and how to protect them in Microsoft Entra](concept-tokens-in-microsoft-entra-id.md#understanding-tokens-and-how-to-protect-them-in-microsoft-entra) for concrete steps you can take to mitigate the risk of successful token theft/replay attacks in your environment.
 
-- 
-- 
-- 
-- 
+# Understanding tokens and how to protect them in Microsoft Entra
 
-[[Secure your application’s authenticationEnsure application permissions
-are least privilegedAvoid capture and retention of tokens in server-side
-logsMonitor OAuth applications with permissions to other resources for
-compromise](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+This is part 2 of the Understanding tokens and how to protect them in Microsoft Entra. This article assumes you have read part 1 and provides concrete steps you can take to mitigate the risk of successful token theft/replay attacks in your environment.
 
-[[Continue to \<Part 2 document\> to find concrete steps you can take to
-mitigate the risk of successful token theft/replay attacks in your
-environment.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+The recommendations of this article span across multiple Microsoft technology solutions which have a range of licensing requirements.
+Ensure that you have the proper licensing for:
 
-[[  
-](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+- [Conditional Access](../conditional-access/overview.md#license-requirements)
+- [Microsoft Entra Internet Access for Microsoft services](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview)
+- [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md#license-requirements)
+- [Token Protection](/conditional-access/concept-token-protection.md#licensing-requirements)
+- [Microsoft Intune (minimum Plan 1)](../mem/intune/fundamentals/licenses.md#microsoft-intune-plan-1)
+- [Microsoft Defender for Endpoint XDR](defender-xdr/prerequisites.md#licensing-requirements)
 
-[[Understanding tokens and how to protect them in Microsoft Entra (part
-2)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## Defense-in-depth Strategy against Token Theft
 
-[[This is part 2 of the Understanding tokens and how to protect them in
-Microsoft Entra. This article assumes you have read part 1 and provides
-concrete steps you can take to mitigate the risk of successful token
-theft/replay attacks in your
-environment.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+There are several capabilities you can enable to reduce your attack surface area and reduce the risk of successful token compromise. In the next sections we will cover a number of Microsoft security capabilities that fall into one of three categories:
 
-[[The recommendations of this article span across multiple Microsoft
-technology solutions which have a range of licensing requirements.
-Ensure that you have the proper licensing
-for:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+1. **Minimize risk** – Harden or reduce the attack surface making successful token theft more difficult.
+2. **Detect + Mitigate** – Detect successful token theft and configure automatic mitigation if possible.
+3. **Protect against replay** – Block replay or reduce the impact of successful token theft.The following is a high-level summary
+capturing the key areas organizations should focus on as part of their token theft protection strategy.
 
-- 
-- 
+:::image type="content" source="media/concept-tokens-in-microsoft-entra-id/defense-against-attacks.png" alt-text="Diagram showing .":::
 
-<!-- -->
+## Token Theft – Minimize Risk
 
-- 
-- 
+Preventing a successful token theft incident from occurring in the first place is the most effective way to protect your organization.
+Organizations should harden devices against device-based token exfiltration methods using Microsoft Defender for Endpoint and Microsoft Intune. Organizations should also deploy controls to prevent users from accessing malicious or risky destinations on the
+internet.
 
-<!-- -->
+## Harden your devices
 
-- 
+Perform the following configurations and deployments to harden all devices/endpoints as first line of defense against malware-based token theft. Before you get started, ensure that you have enrolled your devices in Intune, and that you have deployed [Microsoft Defender for Endpoint](../defender-endpoint/mde-planning-guide.md).
 
-<!-- -->
-
-- 
-
-# [[[Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview#license-requirements)[Microsoft Entra Internet Access for Microsoft services](https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access#licensing-overview)[Microsoft Entra ID Protection](https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection#license-requirements)[Token Protection](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-token-protection#licensing-requirements)[Microsoft Intune (minimum Plan 1)](https://learn.microsoft.com/en-us/mem/intune/fundamentals/licenses#microsoft-intune-plan-1)[Microsoft Defender for Endpoint XDR](https://learn.microsoft.com/en-us/defender-xdr/prerequisites#licensing-requirements)Defense-in-depth Strategy against Token Theft](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-[[There are several capabilities you can enable to reduce your attack
-surface area and reduce the risk of successful token compromise. In the
-next sections we will cover a number of Microsoft security capabilities
-that fall into one of three
-categories:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-1.  
-2.  
-3.  
-
-[[**Minimize risk** – Harden or reduce the attack surface making
-successful token theft more difficult.**Detect + Mitigate** – Detect
-successful token theft and configure automatic mitigation if
-possible.**Protect against replay** – Block replay or reduce the impact
-of successful token theft.The following is a high-level summary
-capturing the key areas organizations should focus on as part of their
-token theft protection
-strategy.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-[[<img src="media/understading-tokens-and-how-to-protect-them-in-microsoft-entra-id/image2.png" style="width:6.5in;height:3.63542in" />Slide
-found here -\> [Token Theft Defense Summary
-Slide.pptx](https://microsoft-my.sharepoint.com/:p:/p/jebley/ER72L4t8uqBJrVGSa8m40u4B8cIUjLLf7VCkEkXvLlKlXQ?e=0fyBjg)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-# [[Token Theft – Minimize Risk](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-[[Preventing a successful token theft incident from occurring in the
-first place is the most effective way to protect your organization.
-Organizations should harden devices against device-based token
-exfiltration methods using Microsoft Defender for Endpoint and Microsoft
-Intune. Organizations should also deploy controls to prevent users from
-accessing malicious or risky destinations on the
-internet.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-## [[Harden your devices](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-[[Perform the following configurations and deployments to harden all
-devices/endpoints as first line of defense against malware-based token
-theft. Before you get started, ensure that you have enrolled your
-devices in Intune, and that you have [deployed Microsoft Defender for
-Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/mde-planning-guide).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-| [[Control](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                                                                                                                                                                                                                                                                                                           | [[Windows 10/11](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[MacOS](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[Linux](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------------------|
-| [[[Enable Microsoft Defender Antivirus always-on protection](https://learn.microsoft.com/en-us/defender-endpoint/configure-real-time-protection-microsoft-defender-antivirus) for real-time protection, behavior monitoring, and heuristics to identify malware based on known suspicious and malicious activities.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com) | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)             | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     |
+|Control | Windows 10/11 | macOS | Linux|
+|------|------|------|------|
+| [Enable Microsoft Defender Antivirus always-on protection](/defender-endpoint/configure-real-time-protection-microsoft-defender-antivirus) for real-time protection, behavior monitoring, and heuristics to identify malware based on known suspicious and malicious activities. | X | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     |
 | [[[Enable Microsoft Defender Antivirus cloud protection](https://learn.microsoft.com/en-us/defender-endpoint/enable-cloud-protection-microsoft-defender-antivirus) to help protect against malware on your endpoints and across your network.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                                                                       | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)             | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     |
 | [[[Enable network protection in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/network-protection) to protect devices from certain Internet-based events by preventing connections to malicious or suspicious sites.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                                                          | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)             | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     |
 | [[[Enable tamper protection in Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection) to protect certain security settings, such as virus and threat protection, from being disabled or changed.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)                         | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)             | [[X](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     | [[-](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)     |
