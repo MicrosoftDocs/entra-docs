@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alcumus Info Exchange so that I can control who has access to Alcumus Info Exchange, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -42,7 +42,7 @@ To configure the integration of Alcumus Info Exchange into Microsoft Entra ID, y
 1. In the **Add from the gallery** section, type **Alcumus Info Exchange** in the search box.
 1. Select **Alcumus Info Exchange** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-alcumus-info-exchange'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Alcumus Info Exchange, perform th
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Alcumus Info Exchange SSO](#configure-alcumus-info-exchange-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Alcumus Info Exchange test user](#create-alcumus-info-exchange-test-user)** - to have a counterpart of B.Simon in Alcumus Info Exchange that is linked to the Microsoft Entra representation of user.
+    1. **[Create Alcumus Info Exchange test user](#create-alcumus-info-exchange-test-user)** - to have a counterpart of B.Simon in Alcumus Info Exchange that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>

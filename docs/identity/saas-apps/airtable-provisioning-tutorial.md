@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airtable so that I can streamline the user management process and ensure that users have the appropriate access to Airtable.
@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both Airtable and Micros
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Airtable.
-> * Remove users in Airtable when they do not require access anymore.
+> * Remove users in Airtable when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Airtable.
 > * Provision groups and group memberships in Airtable.
 > * [Single sign-on](airtable-tutorial.md) to Airtable (recommended).
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Airtable**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Airtable in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Airtable for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Airtable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Airtable in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Airtable for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Airtable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Airtable|
    |---|---|---|---|
