@@ -1,32 +1,40 @@
 ---
-title: "How to add credentials to your application"
-description: In this how to, you learn how to add credentials to your application in Microsoft Entra.
+title: "Add and manage app credentials in Microsoft Entra ID"
+description: Learn to configure certificates, client secrets, and federated credentials in Microsoft Entra for secure app authentication.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-other
-ms.date: 01/29/2025
+ms.date: 03/26/2025
 ms.service: identity-platform
-ms.topic: quickstart
+ms.topic: how-to
 #Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
 ---
 
-# Add credentials to your application
+# Add and manage application credentials in Microsoft Entra ID
 
-After registering an app, you can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime, and are used by [confidential client applications](./msal-client-applications.md) that access a web API. 
+When building confidential client applications, managing credentials effectively is critical. This article explains how to add client certificates, federated identity credentials or client secrets to your app registration in Microsoft Entra. These credentials enable your application to authenticate itself securely and access web APIs without user interaction.
 
-:::image type="content" source="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
+## Prerequisites
+
+* [Quickstart: Register an app in Microsoft Entra ID](quickstart-register-app.md).
+
+## Add a credential to your application
 
 [!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
+
+To learn more about client secret vulnerabilities, refer to [Migrate applications away from secret-based authentication](/entra/identity/enterprise-apps/migrate-applications-from-secrets).
 
 ### [Add a certificate](#tab/certificate)
 
 Sometimes called a *public key*, a certificate is the recommended credential type because they're considered more secure than client secrets. 
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
-2. Select **Certificates & secrets** > **Certificates** > **Upload certificate**.
-3. Select the file you want to upload. It must be one of the following file types: *.cer*, *.pem*, *.crt*.
-4. Select **Add**.
+1. Select **Certificates & secrets** > **Certificates** > **Upload certificate**.
+1. Select the file you want to upload. It must be one of the following file types: *.cer*, *.pem*, *.crt*.
+1. Select **Add**.
+
+:::image type="content" source="./media/quickstart-register-app/add-client-certificate.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates tab and the upload certificate window in the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-client-certificate.png":::
 
 
 ### [Add a client secret](#tab/client-secret)
@@ -44,10 +52,11 @@ Client secrets are less secure than certificate or federated credentials and the
 1. Select **Add**.
 1. *Record the secret's value* for use in your client application code. This secret value is *never displayed again* after you leave this page.
 
-To learn more about client secret vulnerabilities, refer to [Migrate applications away from secret-based authentication](/entra/identity/enterprise-apps/migrate-applications-from-secrets).
+:::image type="content" source="./media/quickstart-register-app/add-client-secret.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Client secrets tab and add a client secret window in the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-client-secret.png":::
 
-If you're using an Azure DevOps service connection that automatically creates a service principal, you need to update the client secret from the Azure DevOps portal site instead of directly updating the client secret. Refer to this document on how to update the client secret from the Azure DevOps portal site:
-[Troubleshoot Azure Resource Manager service connections](/azure/devops/pipelines/release/azure-rm-endpoint#service-principals-token-expired).
+> [!NOTE]
+> If you're using an Azure DevOps service connection that automatically creates a service principal, you need to update the client secret from the Azure DevOps portal site instead of directly updating the client secret. Refer to this document on how to update the client secret from the Azure DevOps portal site:
+> [Troubleshoot Azure Resource Manager service connections](/azure/devops/pipelines/release/azure-rm-endpoint#service-principals-token-expired).
 
 ### [Add a federated credential](#tab/federated-credential)
 
@@ -57,6 +66,9 @@ To add a federated credential, follow these steps:
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Select **Certificates & secrets** > **Federated credentials** > **Add credential**.
+
+:::image type="content" source="./media/quickstart-register-app/add-federated-credential.png alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-federated-credential.png":::
+
 1. In the **Federated credential scenario** drop-down box, select one of the supported scenarios, and follow the corresponding guidance to complete the configuration.
 
     - **Customer managed keys** for encrypt data in your tenant using Azure Key Vault in another tenant.
@@ -73,4 +85,5 @@ For more information on how to get an access token with a federated credential, 
 - [Microsoft identity platform application authentication certificate credentials](./certificate-credentials.md)
 - [Configure an application to trust a managed identity](/entra/workload-id/workload-identity-federation-config-app-trust-managed-identity?tabs=microsoft-entra-admin-center)
 - [Public client and confidential client applications](./msal-client-applications.md)
+- [Create a sign-up and sign-in user flow for an external tenant app](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md)
 - [Add your application to a user flow](/entra/external-id/customers/how-to-user-flow-add-application)

@@ -1,6 +1,6 @@
 ---
 title: "Quickstart: Register an app in Microsoft Entra ID"
-description: In this quickstart, you learn how to register an application in a Microsoft Entra tenant.
+description: Learn how to register your app in Microsoft Entra ID and configure it for single-tenant or multitenant use.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
@@ -31,7 +31,7 @@ Follow these steps to create the app registration:
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
 1. Enter a meaningful **Name** for your, for example *identity-client-app*. App users can see this name, and it can be changed at any time. You can have multiple app registrations with the same name.
-1. Under **Supported account types**, specify who can use the application. We recommend you select **Accounts in this organizational directory only** for most applications. Refer to the table below for more information on each option.
+1. Under **Supported account types**, specify who can use the application. We recommend you select **Accounts in this organizational directory only** for most applications. Refer to the table for more information on each option.
 
    | Supported account types | Description   |
    | ----------------------- | ------------- |
