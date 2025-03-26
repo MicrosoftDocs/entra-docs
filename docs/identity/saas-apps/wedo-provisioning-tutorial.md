@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both WEDO and Microsoft 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in WEDO.
-> * Remove users in WEDO when they do not require access anymore.
+> * Remove users in WEDO when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and WEDO.
 > * [Single sign-on](wedo-tutorial.md) to WEDO (recommended).
 
@@ -34,20 +34,20 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and WEDO](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-wedo-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure WEDO to support provisioning with Microsoft Entra ID
 
-* Reach out to WEDO support at [info@wedo.swiss](mailto:info@wedo.swiss) to get your **Tenant URL** and **Secret Token**. These values will be entered in the Tenant URL * field and Secret Token * field in the Provisioning tab of your WEDO application.
+* Reach out to WEDO support at [info@wedo.swiss](mailto:info@wedo.swiss) to get your **Tenant URL** and **Secret Token**. These values are entered in the Tenant URL * field and Secret Token * field in the Provisioning tab of your WEDO application.
 
 <a name='step-3-add-wedo-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add WEDO from the Microsoft Entra application gallery
 
-Add WEDO from the Microsoft Entra application gallery to start managing provisioning to WEDO. If you have previously setup WEDO for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add WEDO from the Microsoft Entra application gallery to start managing provisioning to WEDO. If you have previously setup WEDO for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -78,7 +78,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your WEDO Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to WEDO. If the connection fails, ensure your WEDO account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your WEDO Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to WEDO. If the connection fails, ensure your WEDO account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to WEDO**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to WEDO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in WEDO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the WEDO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to WEDO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in WEDO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the WEDO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -114,7 +114,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
