@@ -12,7 +12,9 @@ ms.reviewer: katabish
 ---
 # How to configure per-app access using Global Secure Access applications
 
-Microsoft Entra Private Access provides secure access to your organization's internal resources by enabling you to segment access to each application segment. This allows you to provide specific network access based on user needs. To do this, you create a Global Secure Access application and configure the application segment that is used by your internal, private resources that you want to secure. Users with the Global Secure Access client installed that generate a network request to that application segment will be routed to your internal application by the Global Secure Access cloud service without any ability to connect to other resources on your network. By configuring a Global Secure Access application, you're creating per-app access to your internal resources. Global Secure Access application provides a more detailed ability to manage how the resources are accessed on a per-app basis.
+Microsoft Entra Private Access provides secure access to your organization's internal resources by enabling you to control and secure access to specific network destinations on your private network. This allows you to provide granular network access based on user needs. To do this, create a Global Secure Access application and add the application segment that is used by the internal, private resource that you want to secure. Network requests sent from devices running the Global Secure Access client to the application segment you added to your Global Secure Access application will be acquired and routed to your internal application by the Global Secure Access cloud service without any ability to connect to other resources on your network. By configuring a Global Secure Access application, you create per-app access to your internal resources. Global Secure Access applications provide you a segmented, granular ability to manage how your resources are accessed on a per-app basis.
+
+
 
 This article describes how to configure per-app access using Global Secure Access applications.
 
