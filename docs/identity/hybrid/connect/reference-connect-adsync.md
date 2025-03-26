@@ -1,4 +1,3 @@
-
 ---
 title: 'Microsoft Entra Connect: ADSync PowerShell Reference'
 description: This document provides reference information for the ADSync.psm1 PowerShell module.
