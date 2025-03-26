@@ -36,6 +36,7 @@ The following documentation provides reference information for the `ADSync` Powe
  Without `-Name` parameter, the current synchronization service account password is reset and the Entra ID connector's username and password is updated. 
  For example, using `-Name Sync_CONNECT01`, adds or updates a Microsoft Entra synchronization service account called `Sync_CONNECT01@Contoso.onmicrosoft.com`.
  To check what's the current Microsoft Entra synchronization service account use: 
+
    `(Get-ADsyncConnector -Identifier 'b891884f-051e-4a83-95af-2544101c9083').ConnectivityParameters['UserName'].Value`
 
 ### EXAMPLES
@@ -105,7 +106,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -WhatIf
  Shows what would happen if the cmdlet runs.
- The cmdlet is not run.
+ The cmdlet isn't run.
 
  ```yaml
  Type: SwitchParameter
@@ -286,7 +287,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -WhatIf
   Shows what would happen if the cmdlet runs.
-  The cmdlet is not run.
+  The cmdlet isn't run.
 
  ```yaml
      Type: SwitchParameter
@@ -384,7 +385,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -WhatIf
  Shows what would happen if the cmdlet runs.
- The cmdlet is not run.
+ The cmdlet isn't run.
 
  ```yaml
  Type: SwitchParameter
@@ -805,7 +806,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -WhatIf
  Shows what would happen if the cmdlet runs.
- The cmdlet is not run.
+ The cmdlet isn't run.
 
  ```yaml
  Type: SwitchParameter
@@ -1031,7 +1032,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -WhatIf
  Shows what would happen if the cmdlet runs.
- The cmdlet is not run.
+ The cmdlet isn't run.
 
  ```yaml
  Type: SwitchParameter
@@ -1160,7 +1161,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -WhatIf
  Shows what would happen if the cmdlet runs.
- The cmdlet is not run.
+ The cmdlet isn't run.
 
  ```yaml
  Type: SwitchParameter
@@ -1585,7 +1586,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -WhatIf
  Shows what would happen if the cmdlet runs.
- The cmdlet is not run.
+ The cmdlet isn't run.
 
  ```yaml
  Type: SwitchParameter
@@ -2114,7 +2115,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -ConnectorName
  Name of the Connector.
- If a Connector is not provided, then all busy connectors are stopped.
+ If a Connector isn't provided, then all busy connectors are stopped.
 
  ```yaml
  Type: String
@@ -2517,7 +2518,7 @@ The following documentation provides reference information for the `ADSync` Powe
  ```
 
 #### -PropertyType
- Permission type you are looking for. Accepted values: Allowed-Attributes, Allowed-Attributes-Effective, Allowed-Child-Classes, Allowed-Child-Classes-Effective.
+ Permission type you're looking for. Accepted values: Allowed-Attributes, Allowed-Attributes-Effective, Allowed-Child-Classes, Allowed-Child-Classes-Effective.
 
  ```yaml
  Type: String
@@ -2532,7 +2533,7 @@ The following documentation provides reference information for the `ADSync` Powe
  ```
 
 #### -PropertyValue
- The value you are looking for in PropertyType attribute.
+ The value you're looking for in PropertyType attribute.
 
  ```yaml
  Type: String
@@ -2548,7 +2549,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -WhatIf
  Shows what would happen if the cmdlet runs.
- The cmdlet is not run.
+ The cmdlet isn't run.
 
  ```yaml
  Type: SwitchParameter
