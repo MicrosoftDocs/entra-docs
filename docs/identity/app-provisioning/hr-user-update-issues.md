@@ -83,7 +83,7 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 | Troubleshooting | Details |
 |-- | -- |
 | **Issue** | You configured *mail* attribute provisioning from your HR system to Microsoft Entra ID. Any update to the mail attribute isn't working even though the provisioning logs display a record for the mail attribute.  |
-| **Cause** | The provisioning connector to Microsoft Entra does not support setting the mail attribute during user provisioning as this attribute is managed by Microsoft Exchange online. |
+| **Cause** | The provisioning connector to Microsoft Entra does not support setting the *mail* attribute during user provisioning as this attribute is managed by Microsoft Exchange online. |
 | **Resolution** | After creating the user, assigning the Exchange Online license to the user automatically sets the user principal name as the email address. To update the mail attribute, use the Exchange Online portal or PowerShell. |
 
 ## Provisioning Last Day of Work field from Workday
