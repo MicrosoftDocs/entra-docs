@@ -18,9 +18,9 @@ Historically, organizations could use Active Directory Domain Services, deploy [
 
 One approach to solving this problem and ensuring tokens can be issued to federated applications even during temporary site disconnection is:
 
-* maintain an Active Directory domain controller at each site
-* ensure users at a site can authenticate to either the Active Directory or Microsoft Entra and that the same claims are available from both identity providers
-* configure applications to trust Microsoft Entra as the identity provider during normal operations, but during a disconnect event, trust Active Directory as the identity provider
+* Maintain an Active Directory domain controller at each site
+* Ensure users at a site can authenticate to either the Active Directory or Microsoft Entra and that the same claims are available from both identity providers
+* Configure applications to trust Microsoft Entra as the identity provider during normal operations, but during a disconnect event, trust Active Directory as the identity provider
 
 :::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/topology-trust-without-relying-party-sts.png" alt-text="Diagram showing the trust relationship between an application that has both Windows Server Active Directory and Microsoft Entra ID as its identity providers.":::
 
@@ -28,10 +28,10 @@ For some prepackaged federated applications, the application may have been desig
 
 An alternative approach is to add a relying party security token service (STS), such as AD FS. In this topology,
 
-* maintain an Active Directory domain controller at each site
-* ensure users at a site can authenticate to either the Active Directory or Microsoft Entra
-* configure applications to trust the local relying party security token service (STS)
-* configure the relying party STS to trust Microsoft Entra as the identity provider during normal operations, but during a disconnect event, trust Active Directory as the identity provider
+* Maintain an Active Directory domain controller at each site
+* Ensure users at a site can authenticate to either the Active Directory or Microsoft Entra
+* Configure applications to trust the local relying party security token service (STS)
+* Configure the relying party STS to trust Microsoft Entra as the identity provider during normal operations, but during a disconnect event, trust Active Directory as the identity provider
 
 :::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/topology-trust-with-relying-party-sts.png" alt-text="Diagram showing the trust relationship between an application, a relying party STS, and identity providers. Both Windows Server Active Directory and Microsoft Entra ID are configured in the relying party STS as identity providers.":::
 
@@ -86,11 +86,11 @@ For more information on setting up HR inbound flows for applications with multip
 
 ### Provide an authentication option for users in Active Directory
 
-When you're configuring inbound provisioning from an HR source to AD, Microsoft Entra creates users in AD, both for existing workers who didn't previously have AD user accounts and any new workers that subsequently join. Those users will need to be able to authenticate to AD while they are disconnected, and also be able to authenticate to Microsoft Entra ID during normal operations. You'll need to plan to issue credentials for workers who need application access they can use with AD.
+When you're configuring inbound provisioning from an HR source to AD, Microsoft Entra creates users in AD, both for existing workers who didn't previously have AD user accounts and any new workers that later join. Those users will need to be able to authenticate to AD while they are disconnected, and also be able to authenticate to Microsoft Entra ID during normal operations. You'll need to plan to issue credentials for workers who need application access they can use with AD.
 
-* If the only applications leveraging AD are those being configured for resilience, then one way to have consistent authentication is to create users in AD, and then turn on [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) for those users that are synchronized from AD to Microsoft Entra. Ensure users have passwords set in AD and they know their password in AD. While they may have multifactor authentication requirements during normal operations, during a disconnected network event they would be able to authenticate to the Active Directory domain with their passwords.
+If the only applications connected to AD are those being configured for resilience, then one way to have consistent authentication is to create users in AD, and then turn on [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) for those users that are synchronized from AD to Microsoft Entra. Ensure users have passwords set in AD and they know their password in AD. While they may have multifactor authentication requirements during normal operations, during a disconnected network event they would be able to authenticate to the Active Directory domain with their passwords.
 
-* Another option is to use [Microsoft Entra certificate-based authentication(CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). AD also supports certificate authentication, and some organizations have issued smartcards, virtual smartcards, or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
+Another option is to use [Microsoft Entra certificate-based authentication(CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). AD also supports certificate authentication, and some organizations have issued smartcards, virtual smartcards, or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
 
 ## Deploy a relying party STS and configure Microsoft Entra as an identity provider
 
