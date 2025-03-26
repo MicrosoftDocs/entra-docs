@@ -34,7 +34,7 @@ Sometimes called a *public key*, a certificate is the recommended credential typ
 1. Select the file you want to upload. It must be one of the following file types: *.cer*, *.pem*, *.crt*.
 1. Select **Add**.
 
-:::image type="content" source="./media/quickstart-register-app/add-client-certificate.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates tab and the upload certificate window in the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-client-certificate.png":::
+:::image type="content" source="./media/quickstart-register-app/add-client-certificate.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates tab in the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-client-certificate.png":::
 
 
 ### [Add a client secret](#tab/client-secret)
@@ -52,7 +52,7 @@ Client secrets are less secure than certificate or federated credentials and the
 1. Select **Add**.
 1. *Record the secret's value* for use in your client application code. This secret value is *never displayed again* after you leave this page.
 
-:::image type="content" source="./media/quickstart-register-app/add-client-secret.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Client secrets tab and add a client secret window in the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-client-secret.png":::
+:::image type="content" source="./media/quickstart-register-app/add-client-secret.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Client secrets tab in the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-client-secret.png":::
 
 > [!NOTE]
 > If you're using an Azure DevOps service connection that automatically creates a service principal, you need to update the client secret from the Azure DevOps portal site instead of directly updating the client secret. Refer to this document on how to update the client secret from the Azure DevOps portal site:
@@ -67,7 +67,7 @@ To add a federated credential, follow these steps:
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Select **Certificates & secrets** > **Federated credentials** > **Add credential**.
 
-:::image type="content" source="./media/quickstart-register-app/add-federated-credential.png alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-federated-credential.png":::
+:::image type="content" source="./media/quickstart-register-app/add-federated-credential.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/add-federated-credential.png":::
 
 1. In the **Federated credential scenario** drop-down box, select one of the supported scenarios, and follow the corresponding guidance to complete the configuration.
 
