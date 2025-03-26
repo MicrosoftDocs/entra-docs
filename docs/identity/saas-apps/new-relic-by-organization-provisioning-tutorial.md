@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to New Relic by Organization so that I can streamline the user management process and ensure that users have the appropriate access to New Relic by Organization.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both New Relic by Organi
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in New Relic by Organization
-> * Remove users in New Relic by Organization when they do not require access anymore
+> * Remove users in New Relic by Organization when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and New Relic by Organization
 > * Provision groups and group memberships in New Relic by Organization
 > * [Single sign-on](./new-relic-limited-release-tutorial.md) to New Relic by Organization (recommended)
@@ -37,21 +37,21 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and New Relic by Organization](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-new-relic-by-organization-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure New Relic by Organization to support provisioning with Microsoft Entra ID
 
-Work with your account representative or get support at support.newrelic.com to configure SCIM and SSO for your organization. You will need to provide your account representative with:
+Work with your account representative or get support at support.newrelic.com to configure SCIM and SSO for your organization. You need to provide your account representative with:
 
 - Your organization name
 - List of New Relic account IDs to associate with the organization
 
 With this information, your account representative creates an organization record for you in our new system and associates your accounts to the organization.
 
-Your account representative provides you with the following information which you will need to configure the New Relic SCIM/SSO application for your identity provider:
+Your account representative provides you with the following information which you need to configure the New Relic SCIM/SSO application for your identity provider:
 
 - SCIM Endpoint (Tenant URL)
 - SCIM bearer token (Secret Token)
@@ -62,7 +62,7 @@ The SCIM bearer token allows the provisioning of your users at New Relic, so ple
 
 ## Step 3: Add New Relic by Organization from the Microsoft Entra application gallery
 
-Add New Relic by Organization from the Microsoft Entra application gallery to start managing provisioning to New Relic by Organization. If you have previously setup New Relic by Organization for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add New Relic by Organization from the Microsoft Entra application gallery to start managing provisioning to New Relic by Organization. If you have previously setup New Relic by Organization for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -93,7 +93,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://scim-provisioning.service.newrelic.com/scim/v2` in Tenant URL. Input the SCIM authentication token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to New Relic. If the connection fails, ensure your New Relic account has admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://scim-provisioning.service.newrelic.com/scim/v2` in Tenant URL. Input the SCIM authentication token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to New Relic. If the connection fails, ensure your New Relic account has admin permissions and try again.
 
  	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/new-relic-by-organization-provisioning-tutorial/provisioning.png)
 
@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to New Relic by Organization**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to New Relic by Organization in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in New Relic by Organization for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the New Relic by Organization API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to New Relic by Organization in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in New Relic by Organization for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the New Relic by Organization API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -137,7 +137,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

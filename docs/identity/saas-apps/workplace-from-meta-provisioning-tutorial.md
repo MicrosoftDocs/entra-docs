@@ -18,7 +18,7 @@ This article describes the steps you need to do in both Workplace from Meta and 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Workplace from Meta
-> * Remove users in Workplace from Meta when they do not require access anymore
+> * Remove users in Workplace from Meta when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Workplace from Meta
 > * [Single sign-on](./workplacebyfacebook-tutorial.md) to Workplace from Meta (recommended)
 
@@ -33,7 +33,7 @@ The scenario outlined in this article assumes that you already have the followin
 * A Workplace from Meta single-sign on enabled subscription
 
 > [!NOTE]
-> To test the steps in this article,  we do not recommend using a production environment.
+> To test the steps in this article,  we don't recommend using a production environment.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -45,7 +45,7 @@ To test the steps in this article,  you should follow these recommendations:
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Workplace from Meta](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-workplace-by-facebook-to-support-provisioning-with-azure-ad'></a>
@@ -54,7 +54,7 @@ To test the steps in this article,  you should follow these recommendations:
 
 Before configuring and enabling the provisioning service, you need to decide what users in Microsoft Entra ID represent the users who need access to your Workplace from Meta app. Once decided, you can assign these users to your Workplace from Meta app by following the instructions here:
 
-*   It's recommended that a single Microsoft Entra user is assigned to Workplace from Meta to test the provisioning configuration. More users may be assigned later.
+*   We recommend that a single Microsoft Entra user is assigned to Workplace from Meta to test the provisioning configuration. More users might be assigned later.
 
 *   When assigning a user to Workplace from Meta, you must select a valid user role. The "Default Access" role doesn't work for provisioning.
 
@@ -62,7 +62,7 @@ Before configuring and enabling the provisioning service, you need to decide wha
 
 ## Step 3: Add Workplace from Meta from the Microsoft Entra application gallery
 
-Add Workplace from Meta from the Microsoft Entra application gallery to start managing provisioning to Workplace from Meta. If you have previously setup Workplace from Meta for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add Workplace from Meta from the Microsoft Entra application gallery to start managing provisioning to Workplace from Meta. If you have previously setup Workplace from Meta for single sign-on (SSO, you can use the same application. However, we recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -88,14 +88,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Ensure the "Tenant URL" section is populated with the correct endpoint: https://scim.workplace.com/. Under the **Admin Credentials** section, click on **Authorize**. You'll be redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and click on the **Continue** button. Click **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
+1. Ensure the "Tenant URL" section is populated with the correct endpoint: https://scim.workplace.com/. Under the **Admin Credentials** section, select **Authorize**. You're redirected to Workplace from Meta's authorization page. Input your Workplace from Meta username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workplace from Meta. If the connection fails, ensure your Workplace from Meta account has Admin permissions and try again.
 
  	![Screenshot shows Admin Credentials dialog box with an Authorize option.](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 
  	![Authorize](./media/workplace-by-facebook-provisioning-tutorial/workplace-login.png)
 
    > [!NOTE]
-   > Failure to change the URL to https://scim.workplace.com/ will result in a failure when trying to save the configuration 
+   > Failure to change the URL to https://scim.workplace.com/ results in a failure when trying to save the configuration 
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Workplace from Meta**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Workplace from Meta in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Workplace from Meta for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Workplace from Meta API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Workplace from Meta in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Workplace from Meta for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Workplace from Meta API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -150,7 +150,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -161,19 +161,20 @@ This operation starts the initial synchronization cycle of all users defined in 
 [!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Troubleshooting tips
-*  If you see a user unsuccessfully created and there's an audit log event with the code "1789003" it means that the user is from an unverified domain.
-*  There are cases where users get an error 'ERROR: Missing Email field: You must provide an email Error returned from Facebook: Processing of the HTTP request resulted in an exception. See the HTTP response returned by the 'Response' property of this exception for details. This operation was retried zero times. It will be retried again after this date'. This error is due to customers mapping mail, rather than userPrincipalName, to Facebook email, yet some users don't have a mail attribute. 
+*  If you see a user unsuccessfully created and there's an audit log event with the code "1789003", it means that the user is from an unverified domain.
+*  There are cases where users get an error 'ERROR: Missing Email field: You must provide an email Error returned from Facebook: Processing of the HTTP request resulted in an exception. See the HTTP response returned by the 'Response' property of this exception for details. This operation was retried zero times. The operation is retried again after this date.' This error is due to customers mapping mail, rather than userPrincipalName, to Facebook email, yet some users don't have a mail attribute. 
 To avoid the errors and successfully provision the failed users to Workplace from Facebook, modify the attribute mapping to the Workplace from Facebook email attribute to Coalesce([mail],[userPrincipalName]) or unassign the user from Workplace from Facebook, or provision an email address for the user.  
 *  There's an option in Workplace, which allows the existence of [users without email addresses.](https://www.workplace.com/resources/tech/account-management/email-less#enable) If this setting is toggled on the Workplace side, provisioning on the Azure side must be restarted in order for users without emails to successfully be created in Workplace.  
 
 ## Update a Workplace from Meta application to use the Workplace from Meta SCIM 2.0 endpoint
-In December 2021, Facebook released a SCIM 2.0 connector. Completing the steps below will update applications configured to use the SCIM 1.0 endpoint to the use the SCIM 2.0 endpoint. These steps will remove any customizations previously made to the Workplace from Meta application, including:
+
+In December 2021, Facebook released a SCIM 2.0 connector. Completing the given steps update applications configured to use the SCIM 1.0 endpoint to the use the SCIM 2.0 endpoint. These steps remove any customizations previously made to the Workplace from Meta application, including:
 * Authentication details
 * Scoping filters
 * Custom attribute mappings
 
 > [!NOTE]
-> Be sure to note any changes that have been made to the settings listed above before completing the steps below. Failure to do so will result in the loss of customized settings. 
+> Be sure to note any changes made to the settings listed in the previous section before completing the following steps. Failure to do so results in the loss of customized settings. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Workplace from Meta**.
@@ -197,13 +198,13 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the steps b
    GET https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/
    ```
 
-1. Taking the "id" value from the response body of the GET request from above, run the command below, replacing "[job-id]" with the id value from the GET request. The value should have the format of "FacebookAtWorkOutDelta.xxxxxxxxxxxxxxx.xxxxxxxxxxxxxxx":
+1. Taking the "id" value from the response body of the`GET`request from previous example, run the following command, replacing "[job-id]" with the id value from the`GET`request. The value should have the format of "FacebookAtWorkOutDelta.xxxxxxxxxxxxxxx.xxxxxxxxxxxxxxx":
 
    ```
    DELETE https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/[job-id]
    ```
 
-1. In the Graph Explorer, run the command below. Replace "[object-id]" with the service principal ID (object ID) copied from the third step.             
+1. In the Microsoft Graph Explorer, run the following command. Replace "[object-id]" with the service principal ID (object ID) copied from the third step.             
 
    ```
    POST https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs { "templateId": "FacebookWorkplace" }
@@ -211,20 +212,20 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the steps b
 
    ![Screenshot of Microsoft Graph request](./media/workplace-by-facebook-provisioning-tutorial/graph-request.png)
 
-1. Return to the first web browser window and select the Provisioning tab for your application. Your configuration will have been reset. You can confirm the upgrade has taken place by confirming the Job ID starts with “FacebookWorkplace”. 
+1. Return to the first web browser window and select the Provisioning tab for your application. Your configuration is reset. You can confirm the upgrade is successful by confirming the Job ID starts with "FacebookWorkplace."
 
-1. Update the tenant URL in the Admin Credentials section to the following: https://scim.workplace.com/  
+1. Update the tenant URL in the Admin Credentials section to the following URL: https://scim.workplace.com/  
 
    ![Screenshot of Admin Credentials in the Workplace from Meta app in the Azure portal](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 
 1. Restore any previous changes you made to the application (Authentication details, Scoping filters, Custom attribute mappings) and re-enable provisioning. 
 
    > [!NOTE] 
-   > Failure to restore the previous settings may results in attributes (name.formatted for example) updating in Workplace unexpectedly. Be sure to check the configuration before enabling  provisioning 
+   > Failure to restore the previous settings might result in attributes (name.formatted for example) updating in Workplace unexpectedly. Be sure to check the configuration before enabling  provisioning 
 
 ## Change log
 
-* 09/10/2020 - Added support for enterprise attributes "division", "organization", "costCenter" and "employeeNumber". Added support for custom attributes "startDate", "auth_method" and "frontline".
+* 09/10/2020 - Added support for enterprise attributes "division", "organization", "costCenter" and "employeeNumber." Added support for custom attributes "startDate", "auth_method" and "frontline."
 * 07/22/2021 - Updated the troubleshooting tips for customers with a mapping of mail to Facebook mail yet some users don't have a mail attribute.
 
 ## More resources

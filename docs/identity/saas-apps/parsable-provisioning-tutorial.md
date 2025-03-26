@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Parsable so that I can streamline the user management process and ensure that users have the appropriate access to Parsable.
@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Parsable and Micros
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Parsable
-> * Remove users in Parsable when they do not require access anymore
+> * Remove users in Parsable when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Parsable
 > * Provision groups and group memberships in Parsable
 
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Parsable](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-parsable-to-support-provisioning-with-azure-ad'></a>
@@ -44,13 +44,13 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Contact the Parsable Customer Success representative to opt-in to this pre-release feature.
 2. They will further assist in raising a support ticket to obtain the necessary **Bearer token** (secret token).
-3. Copy and save the **Bearer token**. This value will be entered in the **Secret Token** * field in the Provisioning tab of your Parsable application.
+3. Copy and save the **Bearer token**. This value is entered in the **Secret Token** * field in the Provisioning tab of your Parsable application.
 
 <a name='step-3-add-parsable-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Parsable from the Microsoft Entra application gallery
 
-Add Parsable from the Microsoft Entra application gallery to start managing provisioning to Parsable. If you have previously setup Parsable for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Parsable from the Microsoft Entra application gallery to start managing provisioning to Parsable. If you have previously setup Parsable for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -81,7 +81,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Parsable Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Parsable. If the connection fails, ensure your Parsable account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Parsable Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Parsable. If the connection fails, ensure your Parsable account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -93,7 +93,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Parsable**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Parsable in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Parsable for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Parsable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Parsable in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Parsable for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Parsable API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -118,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

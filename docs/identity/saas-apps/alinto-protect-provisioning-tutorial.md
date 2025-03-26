@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Alinto Protect (renamed Cleanmail) so that I can streamline the user management process and ensure that users have the appropriate access to Alinto Protect (renamed Cleanmail).
@@ -23,7 +23,7 @@ This article describes the steps you need to do in both Cleanmail and Microsoft 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Cleanmail
-> * Remove users in Cleanmail when they do not require access anymore
+> * Remove users in Cleanmail when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cleanmail
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Cleanmail (recommended).
 

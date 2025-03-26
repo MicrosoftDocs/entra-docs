@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with WebCE
 
-In this article, you'll learn how to integrate WebCE with Microsoft Entra ID. WebCE offers self-study online continuing education and pre-license training courses for a variety of professional licenses and designations. When you integrate WebCE with Microsoft Entra ID, you can:
+In this article, you learn how to integrate WebCE with Microsoft Entra ID. WebCE offers self-study online continuing education and pre-license training courses for a variety of professional licenses and designations. When you integrate WebCE with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to WebCE.
 * Enable your users to be automatically signed-in to WebCE with their Microsoft Entra accounts.
@@ -78,9 +78,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://www.webce.com/<RootPortalFolder>/login`
 
     > [!Note]
-    > These values are not the real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [WebCE Client support team](mailto:CustomerService@WebCE.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't the real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [WebCE Client support team](mailto:CustomerService@WebCE.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
+1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
 	![Screenshot shows how to edit SAML Signing Certificate.](common/edit-certificate.png "Certificate")
 
@@ -94,17 +94,17 @@ To configure single sign-on on **WebCE** side, you need to send **Thumbprint Val
 
 ### Create WebCE test user
 
-In this section, a user called B.Simon is created in WebCE. WebCE supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in WebCE, a new one is created after authentication.
+In this section, a user called B.Simon is created in WebCE. WebCE supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in WebCE, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to WebCE Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to WebCE Sign-on URL where you can initiate the login flow. 
 
 * Go to WebCE Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the WebCE tile in the My Apps, this will redirect to WebCE Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the WebCE tile in the My Apps, this option redirects to WebCE Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

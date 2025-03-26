@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Xledger and Microso
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Xledger.
-> * Remove users in Xledger when they do not require access anymore.
+> * Remove users in Xledger when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Xledger.
 > * Provision groups and group memberships in Xledger.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Xledger (recommended).
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Xledger](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-xledger-to-support-provisioning-with-azure-ad'></a>
@@ -52,7 +52,7 @@ The scenario outlined in this article assumes that you already have the followin
 
    ![Screenshot of API Access Token (api url).](media/xledger-provisioning-tutorial/generate-new-token-api-url.png)
 
-These values will be used in the Provisioning tab of your Xledger application. (Step 5)
+These values are used in the Provisioning tab of your Xledger application. (Step 5)
 
 <a name='step-3-add-xledger-from-the-azure-ad-application-gallery'></a>
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Xledger Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Xledger. If the connection fails, ensure your Xledger account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Xledger Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Xledger. If the connection fails, ensure your Xledger account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -132,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

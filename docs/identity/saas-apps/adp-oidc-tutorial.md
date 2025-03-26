@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADP (OIDC) so that I can control who has access to ADP (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -79,13 +79,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         [![Screenshot of showing the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the ADP (OIDC) side configuration.
+    1. Once you add a client secret, **Value** is generated. Copy the value and use it later in the ADP (OIDC) side configuration.
 
         [![Screenshot of showing how to add a client secret.](common/client.png)](common/client.png#lightbox)
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -99,7 +99,7 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to ADP (OIDC).
+In this section, you enable B.Simon to use single sign-on by granting access to ADP (OIDC).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ADP (OIDC)**.

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Andromeda so that I can control who has access to Andromeda, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -44,7 +44,7 @@ To configure the integration of Andromeda into Microsoft Entra ID, you need to a
 1. In the **Add from the gallery** section, type **Andromeda** in the search box.
 1. Select **Andromeda** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-andromeda'></a>
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Andromeda, perform the following 
    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
    1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure Andromeda SSO](#configure-andromeda-sso)** - to configure the Single Sign-On settings on application side.
-   1. **[Create Andromeda test user](#create-andromeda-test-user)** - to have a counterpart of Britta Simon in Andromeda that is linked to the Microsoft Entra representation of user.
+   1. **[Create Andromeda test user](#create-andromeda-test-user)** - to have a counterpart of Britta Simon in Andromeda that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://<tenantURL>.ngcxpress.com/SAMLLogon.aspx`
 
    > [!NOTE]
-   > These values aren't real. You will update the value with the actual Identifier, Reply URL, and Sign-On URL which is explained later in the article.
+   > These values aren't real. You update the value with the actual Identifier, Reply URL, and Sign-On URL which is explained later in the article.
 
 1. Andromeda application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, select **Edit** button to open **User Attributes** dialog.
 
@@ -184,7 +184,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this redirects to Andromeda Sign on URL where you can initiate the login flow.
+* Select **Test this application**, this option redirects to Andromeda Sign on URL where you can initiate the login flow.
 
 * Go to Andromeda Sign-on URL directly and initiate the login flow from there.
 

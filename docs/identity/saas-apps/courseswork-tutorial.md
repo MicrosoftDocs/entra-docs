@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -69,7 +69,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
 1. courses.work application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -84,7 +84,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| lastname | user.surname |
 	| username | user.userprincipalname |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -94,15 +94,15 @@ To configure single sign-on on **courses.work** side, you need to send the **App
 
 ### Create courses.work test user
 
-In this section, a user called B.Simon is created in courses.work. courses.work supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in courses.work, a new one is created after authentication.
+In this section, a user called B.Simon is created in courses.work. courses.work supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in courses.work, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the courses.work for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the courses.work for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the courses.work tile in the My Apps, you should be automatically signed in to the courses.work for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the courses.work tile in the My Apps, you should be automatically signed in to the courses.work for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

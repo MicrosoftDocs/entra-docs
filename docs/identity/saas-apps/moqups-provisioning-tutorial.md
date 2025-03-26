@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Moqups so that I can streamline the user management process and ensure that users have the appropriate access to Moqups.
@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Moqups and Microsof
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Moqups.
-> * Remove users in Moqups when they do not require access anymore.
+> * Remove users in Moqups when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Moqups.
 > * [Single sign-on](moqups-tutorial.md) to Moqups (recommended).
 
@@ -35,18 +35,18 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Moqups](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-moqups-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Moqups to support provisioning with Microsoft Entra ID
-To set up **SCIM** for **Azure**, you will first need to generate an **API Token** in Moqups, and then configure **Automatic Provisioning** in Azure itself.
+To set up **SCIM** for **Azure**, you first need to generate an **API Token** in Moqups, and then configure **Automatic Provisioning** in Azure itself.
 
 Generate an API Token:
 
 1. Go to the **Integrations** tab on your Moqups **Dashboard's Account** page.
-1. In the **SCIM Provisioning** section of your **Integration tab**, click the **Generate token** button.
+1. In the **SCIM Provisioning** section of your **Integration tab**, select the **Generate token** button.
 
 	![Screenshot of generate token.](media/moqups-provisioning-tutorial/generate-token.png)
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. In the **Admin Credentials** section, input your Moqups Tenant URL and Secret Token.
 	1. Use `https://api.moqups.com/scim/v2` as the **Tenant URL**. 
 	1. Use the **API Token** generated in Step 2.1 as the **Secret Token**.
-	1. Click **Test Connection** so that Microsoft Entra ID can confirm that the supplied credentials can be used for provisioning. If the connection fails, double-check the **Tenant URL**,  as well make sure the **API Token** is correct. 
+	1. Select **Test Connection** so that Microsoft Entra ID can confirm that the supplied credentials can be used for provisioning. If the connection fails, double-check the **Tenant URL**,  as well make sure the **API Token** is correct. 
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Moqups**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Moqups in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Moqups for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Moqups API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Moqups in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Moqups for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Moqups API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Moqups|
    |---|---|---|---|
@@ -124,7 +124,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

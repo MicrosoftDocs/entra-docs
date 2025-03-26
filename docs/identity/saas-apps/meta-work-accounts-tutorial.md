@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Meta Work Accounts
 
-In this article,  you'll learn how to integrate Meta Work Accounts with Microsoft Entra ID. When you integrate Meta Work Accounts with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Meta Work Accounts with Microsoft Entra ID. When you integrate Meta Work Accounts with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Meta Work Accounts.
 * Enable your users to be automatically signed-in to Meta Work Accounts with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of Meta Work Accounts into Microsoft Entra ID, you 
 1. In the **Add from the gallery** section, type **Meta Work Accounts** in the search box.
 1. Select **Meta Work Accounts** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-meta-work-accounts'></a>
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Meta Work Accounts, perform the f
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Meta Work Accounts SSO](#configure-meta-work-accounts-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Meta Work Accounts test user](#create-meta-work-accounts-test-user)** - to have a counterpart of B.Simon in Meta Work Accounts that is linked to the Microsoft Entra representation of user.
+    1. **[Create Meta Work Accounts test user](#create-meta-work-accounts-test-user)** - to have a counterpart of B.Simon in Meta Work Accounts that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Meta Work Accounts** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,13 +82,13 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     ` https://work.facebook.com/work/saml.php?__cid=<ID>`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
     `https://work.facebook.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Engage the [Work Accounts team](https://www.workplace.com/help/work) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL. Engage the [Work Accounts team](https://www.workplace.com/help/work) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -108,7 +108,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Go to **Security** > **Single Sign-On**.
 
-1. Enable **Single-sign on(SSO)** checkbox and click **+Add new SSO Provider**.
+1. Enable **Single-sign on(SSO)** checkbox and select **+Add new SSO Provider**.
 
 <!-- ![Screenshot shows the SSO Account.](./media/meta-work-accounts-tutorial/security.png "SSO Account") -->
 
@@ -130,9 +130,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Copy **ACS (Assertion Consumer Service) URL** value, paste this value into the **Reply URL** text box in the **Basic SAML Configuration** section.
 
-1. In the **Test SSO Setup** section, enter a valid email in the textbox and click **Test SSO**.
+1. In the **Test SSO Setup** section, enter a valid email in the textbox and select **Test SSO**.
 
-1. Click **Save Changes**.
+1. Select **Save Changes**.
 
 ### Create Meta Work Accounts test user
 
@@ -144,15 +144,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Meta Work Accounts Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Meta Work Accounts Sign on URL where you can initiate the login flow.  
 
 * Go to Meta Work Accounts Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Meta Work Accounts for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Meta Work Accounts for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Meta Work Accounts tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Meta Work Accounts for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Meta Work Accounts tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Meta Work Accounts for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

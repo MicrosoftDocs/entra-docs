@@ -46,13 +46,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Set up TheOrgWiki for provisioning
 
-Before configuring TheOrgWiki for automatic user provisioning with Microsoft Entra ID, you'll need to enable SCIM provisioning on TheOrgWiki.
+Before configuring TheOrgWiki for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on TheOrgWiki.
 
-1. Sign in to your [TheOrgWiki Admin Console](https://www.theorgwiki.com/login/). Click on **Admin Console**.
+1. Sign in to your [TheOrgWiki Admin Console](https://www.theorgwiki.com/login/). Select **Admin Console**.
 
 	![Screenshot of Org Wiki with the user avatar and the Admin Console called out.](media/theorgwiki-provisioning-tutorial/login.png)
 
-2. In Admin Console, Click on **Settings tab**. 
+2. In Admin Console, Select **Settings tab**. 
 
 	![Screenshot of the The Org Wiki Admin Console with the Settings tab called out.](media/theorgwiki-provisioning-tutorial/settings.png)
 	
@@ -60,7 +60,7 @@ Before configuring TheOrgWiki for automatic user provisioning with Microsoft Ent
 
 	![Screenshot of the Service Accounts page in the Org Wiki Admin Console.](media/theorgwiki-provisioning-tutorial/serviceaccount.png)
 
-4. Click on **+Service Account**. Under **Service Account Type**, select **Token Based**. Click **Save**.
+4. Select **+Service Account**. Under **Service Account Type**, select **Token Based**. Select **Save**.
 
 	![Screenshot of the New Service Account dialog box with the Service Account Type, Token Based, and Save options called out.](media/theorgwiki-provisioning-tutorial/auth.png)
 
@@ -90,7 +90,7 @@ To configure TheOrgWiki for automatic user provisioning with Microsoft Entra ID,
 
 	![Screenshot of the The Org Wiki sign in page with the Sign in with Microsoft option called out.](media/theorgwiki-provisioning-tutorial/image03.png)
 	
-8. After a successful authentication, the application will be automatically added to your tenant and you'll be redirected to your TheOrgWiki account.
+8. After a successful authentication, the application is automatically added to your tenant and you be redirected to your TheOrgWiki account.
 
 	![OrgWiki Add SCIM](media/theorgwiki-provisioning-tutorial/image04.png)
 
@@ -127,7 +127,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > [!NOTE]
 > The **Subdomain Value** can only be set during the initial sign-up process for TheOrgWiki.
  
-6. Input the token value in **Secret Token** field, that you retrieved earlier from TheOrgWiki. Click **Test Connection** to ensure Microsoft Entra ID can connect to TheOrgWiki. If the connection fails, ensure your TheOrgWiki account has Admin permissions and try again.
+6. Input the token value in **Secret Token** field, that you retrieved earlier from TheOrgWiki. Select **Test Connection** to ensure Microsoft Entra ID can connect to TheOrgWiki. If the connection fails, ensure your TheOrgWiki account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-8. Click **Save**.
+8. Select **Save**.
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to TheOrgWiki**.
 
@@ -153,7 +153,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you're ready to provision, click **Save**.
+14. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

@@ -446,7 +446,7 @@ Trv2 is enforced by the following resources which will address token infiltratio
 
 ## Tenant restrictions and Microsoft Forms (preview)
 
-### Pure anonymous meeting join
+### Anonymous access
 Tenant restrictions v2 automatically block all anonymous / unauthenticated identity access to externally hosted Forms when TRv2 is enforced.
 
 ## Tenant restrictions and Microsoft Teams (preview)

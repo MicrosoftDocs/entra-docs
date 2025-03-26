@@ -36,7 +36,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Snowflake supports **SP and IDP** initiated SSO.
 * Snowflake supports [automated user provisioning and deprovisioning](snowflake-provisioning-tutorial.md) (recommended).
@@ -64,7 +64,7 @@ To configure and test Microsoft Entra SSO with Snowflake, perform the following 
 	1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
 	1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Snowflake SSO](#configure-snowflake-sso)** - to configure the single sign-on settings on application side.
-	1. **[Create Snowflake test user](#create-snowflake-test-user)** - to have a counterpart of B.Simon in Snowflake that is linked to the Microsoft Entra representation of user.
+	1. **[Create Snowflake test user](#create-snowflake-test-user)** - to have a counterpart of B.Simon in Snowflake that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -115,7 +115,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to Snowflake as a Security Administrator.
 
-1. **Switch Role** to **ACCOUNTADMIN**, by clicking on **profile** on the top right side of page.
+1. **Switch Role** to **ACCOUNTADMIN**, by selecting **profile** on the top right side of page.
 
 	> [!NOTE]
 	> This is separate from the context you have selected in the top-right corner under your User Name.
@@ -179,7 +179,7 @@ To enable Microsoft Entra users to sign in to Snowflake, they must be provisione
 
 1. Sign in to Snowflake as a Security Administrator.
 
-2. **Switch Role** to **ACCOUNTADMIN**, by clicking on **profile** on the top right side of page.  
+2. **Switch Role** to **ACCOUNTADMIN**, by selecting **profile** on the top right side of page.  
 
 	![The Snowflake admin](./media/snowflake-tutorial/account.png)
 
@@ -200,19 +200,19 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select on **Test this application**, this will redirect to Snowflake Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Snowflake Sign on URL where you can initiate the login flow.  
 
 * Go to Snowflake Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Snowflake for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Snowflake for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Snowflake tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Snowflake for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Snowflake tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Snowflake for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Prevent application access through local accounts
 
-Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your Conditional Access policies, MFA, etc. will be in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
+Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your Conditional Access policies, MFA, etc. is in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
 
 ## Related content
 

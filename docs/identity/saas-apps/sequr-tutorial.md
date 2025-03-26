@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Genea Access Control, perform the
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Genea Access Control SSO](#configure-genea-access-control-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Genea Access Control test user](#create-genea-access-control-test-user)** - to have a counterpart of B.Simon in Genea Access Control that is linked to the Microsoft Entra representation of user.
+    1. **[Create Genea Access Control test user](#create-genea-access-control-test-user)** - to have a counterpart of B.Simon in Genea Access Control that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. In the **Sign-on URL** text box, type the URL: `https://login.sequr.io`
 
-	b. In the **Relay State** textbox, you'll get this value, which is explained later in the article.
+	b. In the **Relay State** textbox, you get this value, which is explained later in the article.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
@@ -102,7 +102,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your Genea Access Control company site as an administrator.
 
-1. Select on the **Integrations** from the left navigation panel.
+1. Select the **Integrations** from the left navigation panel.
 
 	![Screenshot shows Integration selected from the navigation panel.](./media/sequr-tutorial/configure-1.png)
 
@@ -118,7 +118,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	b. Drag and drop the **Certificate** file, which you have downloaded or manually enters the content of the certificate.
 
-	c. After saving the configuration, the relay state value will be generated. Copy the **relay state** value and paste it in the **Relay State** textbox of **Basic SAML Configuration** section.
+	c. After saving the configuration, the relay state value is generated. Copy the **relay state** value and paste it in the **Relay State** textbox of **Basic SAML Configuration** section.
 
 	d. Select **Save**.
 
@@ -132,13 +132,13 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select on **Test this application**, this will redirect to Genea Access Control Sign on URL where you can initiate the sign in flow.  
+* Select **Test this application**, this option redirects to Genea Access Control Sign on URL where you can initiate the sign in flow.  
 
 * Go to Genea Access Control Sign-on URL directly and initiate the sign in flow from there.
 
 #### IDP initiated:
 
-* Select on **Test this application**, and you should be automatically signed in to the Genea Access Control for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the Genea Access Control for which you set up the SSO 
 
 You can also use Microsoft My Apps to test the application in any mode. When you select the Genea Access Control tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign in flow and if configured in IDP mode, you should be automatically signed in to the Genea Access Control for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 

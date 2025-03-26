@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business so that I can streamline the user management process and ensure that users have the appropriate access to Amazon Business.
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both Amazon Business and
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Amazon Business.
-> * Remove users in Amazon Business when they do not require access anymore.
+> * Remove users in Amazon Business when they don't require access anymore.
 > * Assign Amazon Business roles to user.
 > * Keep user attributes synchronized between Microsoft Entra ID and Amazon Business.
 > * Provision groups and group memberships in Amazon Business.
@@ -54,7 +54,7 @@ Before configuring and enabling the provisioning service, you need to identify a
    * Default SCIM Parent Group
       * This is the root of your SCIM directory in AmazonBusiness. All SCIM groups are placed directly under this default group. You can select an existing group as the default SCIM parent group. 
    * Default SCIM Users Group
-      * Users who are assigned to your Amazon Business app will be placed into this group by default with a Requisitioner role. It's recommended to have this group at the same level as the Default SCIM Parent Group.
+      * Users who are assigned to your Amazon Business app is placed into this group by default with a Requisitioner role. It's recommended to have this group at the same level as the Default SCIM Parent Group.
       * If a user is provisioned without a group assignment, they'll be placed into this group by default with a Requisitioner role.
       * Any deactivated user remains in this group. Hence, it's recommended to not use any role other than Requisitioner for this group.
 >[!NOTE]  
@@ -179,14 +179,14 @@ This operation starts the initial synchronization cycle of all users and groups 
 * Password Sync - Password sync isn't  supported.
 * SSO Requirement - While the Amazon Business app allows the activation of SCIM provisioning without SSO, provisioned users require SSO Authentication in order to access Amazon Business. 
 * Multi-Legal Entity (MLE) accounts - We currently don't support enabling SCIM for more than one Legal Entity in an Amazon Business Account.
-* When provisioning a group with the same name as already existing one in Amazon Business, these groups will be automatically linked (new group is created in Amazon Business).
+* When provisioning a group with the same name as already existing one in Amazon Business, these groups are automatically linked (new group is created in Amazon Business).
 
 ## Troubleshooting tips
 
 * If Amazon Business administrators have only logged in using SSO or don’t know their passwords, they can use the forgot password flow to reset their password and then sign in to Amazon Business.
 * If Admin and Requisitioner roles have already been applied to customer in a group, assigning Finance or Tech roles won't result in updates on Amazon Business side.
 * Customers with MASE accounts (Multiple Account Same Email) who delete one of their accounts can see errors that account doesn't exist when provisioning new users for short amount of time (24-48 hours).
-* Customers can't be removed immediately via Provision on Demand. Provisioning must be turned on and the removal will happen 40 mins after the action is taken.
+* Customers can't be removed immediately via Provision on Demand. Provisioning must be turned on and the removal happens 40 mins after the action is taken.
 
 ## More resources
 

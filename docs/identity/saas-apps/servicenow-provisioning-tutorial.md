@@ -14,7 +14,7 @@ ms.author: thomasakelo
 
 # Configure ServiceNow for automatic user provisioning
 
-This article describes the steps that you'll take in both ServiceNow and Microsoft Entra ID to configure automatic user provisioning. When Microsoft Entra ID is configured, it automatically provisions and deprovisions users and groups to [ServiceNow](https://www.servicenow.com) by using the Microsoft Entra provisioning service. 
+This article describes the steps that you take in both ServiceNow and Microsoft Entra ID to configure automatic user provisioning. When Microsoft Entra ID is configured, it automatically provisions and deprovisions users and groups to [ServiceNow](https://www.servicenow.com) by using the Microsoft Entra provisioning service. 
 
 For more information on the Microsoft Entra automatic user provisioning service, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -41,7 +41,7 @@ For more information on the Microsoft Entra automatic user provisioning service,
 ## Step 1: Plan your provisioning deployment
 
 - Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-- Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+- Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 - Determine what data to [map between Microsoft Entra ID and ServiceNow](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-servicenow-to-support-provisioning-with-azure-ad'></a>
@@ -93,7 +93,7 @@ To configure automatic user provisioning for ServiceNow in Microsoft Entra ID:
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to ServiceNow in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ServiceNow for update operations. 
 
-   If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the ServiceNow API supports filtering users based on that attribute. 
+   If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the ServiceNow API supports filtering users based on that attribute. 
    
    Select the **Save** button to commit any changes.
 
@@ -119,9 +119,9 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 ## Troubleshooting tips
 
-- When you're provisioning certain attributes (such as **Department** and **Location**) in ServiceNow, the values must already exist in a reference table in ServiceNow. If they don't, you'll get an **InvalidLookupReference** error. 
+- When you're provisioning certain attributes (such as **Department** and **Location**) in ServiceNow, the values must already exist in a reference table in ServiceNow. If they don't, you get an **InvalidLookupReference** error. 
 
-   For example, you might have two locations (Seattle, Los Angeles) and three departments (Sales, Finance, Marketing) in a certain table in ServiceNow. If you try to provision a user whose department is "Sales" and whose location is "Seattle," that user will be provisioned successfully. If you try to provision a user whose department is "Sales" and whose location is "LA," the user won't be provisioned. The location "LA" must be added to the reference table in ServiceNow, or the user attribute in Microsoft Entra ID must be updated to match the format in ServiceNow. 
+   For example, you might have two locations (Seattle, Los Angeles) and three departments (Sales, Finance, Marketing) in a certain table in ServiceNow. If you try to provision a user whose department is "Sales" and whose location is "Seattle," that user is provisioned successfully. If you try to provision a user whose department is "Sales" and whose location is "LA," the user won't be provisioned. The location "LA" must be added to the reference table in ServiceNow, or the user attribute in Microsoft Entra ID must be updated to match the format in ServiceNow. 
 - If you get an **EntryJoiningPropertyValueIsMissing** error, review your [attribute mappings](~/identity/app-provisioning/customize-application-attributes.md) to identify the matching attribute. This value must be present on the user or group you're trying to provision. 
 - To understand any requirements or limitations (for example, the format to specify a country code for a user), review the [ServiceNow SOAP API](https://docs.servicenow.com/bundle/rome-application-development/page/integrate/web-services-apis/reference/r_DirectWebServiceAPIFunctions.html).
 - Provisioning requests are sent by default to https://{your-instance-name}.service-now.com/{table-name}. If you need a custom tenant URL, you can provide the entire URL as the instance name.
@@ -142,7 +142,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 - Self-hosted ServiceNow instances aren't supported. 
 
-- When an update to the *active* attribute in ServiceNow is provisioned, the attribute *locked_out* is also updated accordingly, even if *locked_out* is not mapped in the Azure provisioning service.  
+- When an update to the *active* attribute in ServiceNow is provisioned, the attribute *locked_out* is also updated accordingly, even if *locked_out* isn't mapped in the Azure provisioning service.  
 
 ## Additional resources
 

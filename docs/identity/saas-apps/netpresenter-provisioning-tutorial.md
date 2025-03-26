@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Netpresenter Next so that I can streamline the user management process and ensure that users have the appropriate access to Netpresenter Next.
 ---
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both Netpresenter Next a
 
 > [!div class="checklist"]
 > * Create users in Netpresenter Next
-> * Remove users in Netpresenter Next when they do not require access anymore
+> * Remove users in Netpresenter Next when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Netpresenter Next.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Netpresenter Next (recommended).
 
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Netpresenter Next](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-netpresenter-next-to-support-provisioning-with-azure-ad'></a>
@@ -45,10 +45,10 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Netpresenter Next to support provisioning with Microsoft Entra ID
 
 1. Sign in to the Netpresenter Next with an administrator account.
-1. Click on cogwheel icon to go to settings page.
-1. In the settings page, click on **System** to open the submenu and click on **Microsoft Entra ID**.
-1. Click on the **Generate Token** button.
-1. Save the **SCIM Endpoint URL** and **Token** at a secure place, you'll need it in the **Step 5**.
+1. Select cogwheel icon to go to settings page.
+1. In the settings page, select **System** to open the submenu and select **Microsoft Entra ID**.
+1. Select the **Generate Token** button.
+1. Save the **SCIM Endpoint URL** and **Token** at a secure place, you need it in the **Step 5**.
 
    ![Screenshot shows the Token and URL values in Netpresenter Next.](media/netpresenter/get-token-and-url.png)
 
@@ -81,7 +81,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-1. Under the **Admin Credentials** section, input your Netpresenter Next Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Netpresenter Next. If the connection fails, ensure your Netpresenter Next account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Netpresenter Next Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Netpresenter Next. If the connection fails, ensure your Netpresenter Next account has Admin permissions and try again.
 
    ![Screenshot shows the fields for tenant URL and token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Netpresenter Next**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Netpresenter Next in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Netpresenter Next for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Netpresenter Next API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Netpresenter Next in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Netpresenter Next for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Netpresenter Next API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering|Required by Netpresenter Next
     |---|---|---|---|
@@ -112,7 +112,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot shows the Scope dropdown in the Settings section.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -44,7 +44,7 @@ To configure the integration of Animaker into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **Animaker** in the search box.
 1. Select **Animaker** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-animaker'></a>
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Animaker, perform the following s
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Animaker SSO](#configure-animaker-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Animaker test user](#create-animaker-test-user)** - to have a counterpart of B.Simon in Animaker that is linked to the Microsoft Entra representation of user.
+    1. **[Create Animaker test user](#create-animaker-test-user)** - to have a counterpart of B.Simon in Animaker that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Sign-on URL** text box, type the URL:
     `https://app.animaker.com/login/samlsuccess/<Anyone_Home_Provided_Unique_Value>`
 
-1. Animaker application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Appraisd application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Animaker application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Appraisd application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
 	![Screenshot shows the User Attributes pane with the edit icon highlighted.](common/edit-attribute.png)
 
@@ -117,7 +117,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this redirects to Animaker Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Animaker Sign on URL where you can initiate the login flow.  
 
 * Go to Animaker Sign-on URL directly and initiate the login flow from there.
 

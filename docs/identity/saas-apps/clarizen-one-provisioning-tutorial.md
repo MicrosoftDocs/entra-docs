@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clarizen One so that I can streamline the user management process and ensure that users have the appropriate access to Clarizen One.
@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Clarizen One](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-clarizen-one-to-support-provisioning-with-azure-ad'></a>
@@ -54,7 +54,7 @@ The scenario outlined in this article assumes that you already have the followin
       * US Sandbox data center: https://servicesapp.clarizentb.com/scim/v2
       * EU Sandbox data center: https://serviceseu.clarizentb.com/scim/v2
 
-1. Generate an [API key](https://success.clarizen.com/hc/articles/360011833079-API-Keys-Support). This value will be entered in the **Secret Token** box on the **Provisioning** tab of your Clarizen One application.
+1. Generate an [API key](https://success.clarizen.com/hc/articles/360011833079-API-Keys-Support). This value is entered in the **Secret Token** box on the **Provisioning** tab of your Clarizen One application.
 
 <a name='step-3-add-clarizen-one-from-the-azure-ad-application-gallery'></a>
 

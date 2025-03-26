@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Hypervault so that I can streamline the user management process and ensure that users have the appropriate access to Hypervault.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Hypervault and Micr
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Hypervault.
-> * Remove users in Hypervault when they do not require access anymore.
+> * Remove users in Hypervault when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Hypervault.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Hypervault (recommended).
 
@@ -45,8 +45,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Sign in into your Hypervault account as a manager.
 1. Navigate to the **Workspace Settings** page.
-1. Under the **Connect to Microsoft Azure** section, click **Enable User Provisioning**.
-1. Copy the Domain and Token values. You will need these values in step 5.
+1. Under the **Connect to Microsoft Azure** section, select **Enable User Provisioning**.
+1. Copy the Domain and Token values. You need these values in step 5.
 
 <a name='step-3-add-hypervault-from-the-azure-ad-application-gallery'></a>
 
@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Hypervault Tenant URL and Secret Token (generated in step 2). Click **Test Connection** to ensure Microsoft Entra ID can connect to Hypervault. If the connection fails, ensure your Hypervault account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Hypervault Tenant URL and Secret Token (generated in step 2). Select **Test Connection** to ensure Microsoft Entra ID can connect to Hypervault. If the connection fails, ensure your Hypervault account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -116,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

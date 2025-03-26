@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Citrix Cloud SAML SSO
 
-In this article,  you'll learn how to integrate Citrix Cloud SAML SSO with Microsoft Entra ID. When you integrate Citrix Cloud SAML SSO with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Citrix Cloud SAML SSO with Microsoft Entra ID. When you integrate Citrix Cloud SAML SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Citrix Cloud SAML SSO.
 * Enable your users to be automatically signed-in to Citrix Cloud SAML SSO with their Microsoft Entra accounts.
@@ -47,13 +47,13 @@ To configure the integration of Citrix Cloud SAML SSO into Microsoft Entra ID, y
 1. In the **Add from the gallery** section, type **Citrix Cloud SAML SSO** in the search box.
 1. Select **Citrix Cloud SAML SSO** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-citrix-cloud-saml-sso'></a>
 
 ## Configure and test Microsoft Entra SSO for Citrix Cloud SAML SSO
 
-Configure and test Microsoft Entra SSO with Citrix Cloud SAML SSO using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Citrix Cloud SAML SSO. This user must also exist in your Active Directory that is synced with Microsoft Entra Connect to your Microsoft Entra subscription.
+Configure and test Microsoft Entra SSO with Citrix Cloud SAML SSO using a test user called **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the related user in Citrix Cloud SAML SSO. This user must also exist in your Active Directory that's synced with Microsoft Entra Connect to your Microsoft Entra subscription.
 
 To configure and test Microsoft Entra SSO with Citrix Cloud SAML SSO, perform the following steps:
 
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Citrix Cloud SAML SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.cloud.com`
 
 	> [!NOTE]
-	> The value is not real. Update the value with your Citrix Workspace URL. Access your Citrix Cloud account to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with your Citrix Workspace URL. Access your Citrix Cloud account to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Citrix Cloud SAML SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -141,7 +141,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	g. In the **Authentication Context**, select **Unspecified** and **Exact**  from the dropdown.
 
-	h. Click **Test and Finish**.
+	h. Select **Test and Finish**.
 
 ## Test SSO 
 

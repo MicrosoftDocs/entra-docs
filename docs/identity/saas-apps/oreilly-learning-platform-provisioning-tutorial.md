@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to O'Reilly learning platform so that I can streamline the user management process and ensure that users have the appropriate access to O'Reilly learning platform.
@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both O'Reilly learning p
 
 > [!div class="checklist"]
 > * Create users in O'Reilly learning platform.
-> * Remove users in O'Reilly learning platform when they do not require access anymore.
+> * Remove users in O'Reilly learning platform when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and O'Reilly learning platform.
 > * [Single sign-on](oreilly-learning-platform-tutorial.md) to O'Reilly learning platform (recommended).
 
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and O'Reilly learning platform](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-oreilly-learning-platform-to-support-provisioning-with-azure-ad'></a>
@@ -45,9 +45,9 @@ The scenario outlined in this article assumes that you already have the followin
 Before you begin to configure the O'Reilly learning platform to support provisioning with Microsoft Entra ID, you’ll need to generate a SCIM API token within the O’Reilly Admin Console.
 
 1. Navigate to [O’Reilly Admin Console](https://learning.oreilly.com/) by logging in to your O’Reilly account. 
-1. Once you’ve logged in, click **Admin** in the top navigation and select **Integrations**.
-1. Scroll down to the **API tokens** section. Under API tokens, click **Create token** and select the **SCIM API**. Then give your token a name and expiration date, and click Continue. You’ll receive your API key in a pop-up message prompting you to store a copy of it in a secure place. Once you’ve saved a copy of your key, click the checkbox and Continue.
-1. You will use the O’Reilly SCIM API token in Step 5.
+1. Once you’ve logged in, select **Admin** in the top navigation and select **Integrations**.
+1. Scroll down to the **API tokens** section. Under API tokens, select **Create token** and select the **SCIM API**. Then give your token a name and expiration date, and select Continue. You’ll receive your API key in a pop-up message prompting you to store a copy of it in a secure place. Once you’ve saved a copy of your key, select the checkbox and Continue.
+1. You use the O’Reilly SCIM API token in Step 5.
 
 <a name='step-3-add-oreilly-learning-platform-from-the-azure-ad-application-gallery'></a>
 
@@ -84,7 +84,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your O'Reilly learning platform Tenant URL, which is `https://api.oreilly.com/api/scim/v2`, and Secret Token, which you generated in Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to O'Reilly learning platform. If the connection fails, double-check that your token is correct or [contact the O’Reilly platform integration team](mailto:platform-integration@oreilly.com) for help.
+1. Under the **Admin Credentials** section, input your O'Reilly learning platform Tenant URL, which is `https://api.oreilly.com/api/scim/v2`, and Secret Token, which you generated in Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to O'Reilly learning platform. If the connection fails, double-check that your token is correct or [contact the O’Reilly platform integration team](mailto:platform-integration@oreilly.com) for help.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to O'Reilly learning platform**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to O'Reilly learning platform in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in O'Reilly learning platform for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the O'Reilly learning platform API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to O'Reilly learning platform in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in O'Reilly learning platform for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the O'Reilly learning platform API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by O'Reilly learning platform|
    |---|---|---|---|
@@ -117,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

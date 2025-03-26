@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both SurveyMonkey Enterp
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in SurveyMonkey Enterprise.
-> * Remove users in SurveyMonkey Enterprise when they do not require access anymore.
+> * Remove users in SurveyMonkey Enterprise when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and SurveyMonkey Enterprise.
 > * [Single sign-on](surveymonkey-enterprise-tutorial.md) to SurveyMonkey Enterprise (recommended).
 
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and SurveyMonkey Enterprise](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-surveymonkey-enterprise-to-support-provisioning-with-azure-ad'></a>
@@ -55,7 +55,7 @@ Once the team is aligned, the Primary Admin can:
 Your organization’s IT partner will use the SCIM endpoint link and access token during setup of the IdP. They will also need to adjust the default mapping for your team’s needs.
 
 ### Revoke SCIM Provisioning
-If you need to disconnect Surveymonkey from your IdP so the systems no longer sync, the Primary Admin can revoke SCIM provisioning. As long as SSO is enabled, there will be no impact to users who have already been synced.
+If you need to disconnect Surveymonkey from your IdP so the systems no longer sync, the Primary Admin can revoke SCIM provisioning. As long as SSO is enabled, there is no impact to users who have already been synced.
 
 To revoke the SCIM provisioning:
 
@@ -67,7 +67,7 @@ To revoke the SCIM provisioning:
 
 ## Step 3: Add SurveyMonkey Enterprise from the Microsoft Entra application gallery
 
-Add SurveyMonkey Enterprise from the Microsoft Entra application gallery to start managing provisioning to SurveyMonkey Enterprise. If you have previously setup SurveyMonkey Enterprise for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add SurveyMonkey Enterprise from the Microsoft Entra application gallery to start managing provisioning to SurveyMonkey Enterprise. If you have previously setup SurveyMonkey Enterprise for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your SurveyMonkey Enterprise Tenant URL and corresponding Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to SurveyMonkey Enterprise.
+1. Under the **Admin Credentials** section, input your SurveyMonkey Enterprise Tenant URL and corresponding Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to SurveyMonkey Enterprise.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to SurveyMonkey Enterprise**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to SurveyMonkey Enterprise in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SurveyMonkey Enterprise for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the SurveyMonkey Enterprise API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to SurveyMonkey Enterprise in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SurveyMonkey Enterprise for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the SurveyMonkey Enterprise API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by SurveyMonkey Enterprise|
    |---|---|---|---|
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

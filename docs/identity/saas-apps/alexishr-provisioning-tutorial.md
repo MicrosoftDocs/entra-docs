@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AlexisHR so that I can streamline the user management process and ensure that users have the appropriate access to AlexisHR.
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both AlexisHR and Micros
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in AlexisHR.
-> * Remove users in AlexisHR when they do not require access anymore.
+> * Remove users in AlexisHR when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and AlexisHR.
 > * [Single sign-on](alexishr-tutorial.md) to AlexisHR (recommended).
 
@@ -49,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Access User Management](media/alexishr-provisioning-tutorial/login.png)
 
-1. Once on the Access token page, fill in the **Name** and **Description** textbox and select on **Save**.A pop-up window appears with the token in it.Copy and save the token. This value will be entered in the **Secret Token** * field in the Provisioning tab of your AlexisHR application.
+1. Once on the Access token page, fill in the **Name** and **Description** textbox and select **Save**.A pop-up window appears with the token in it.Copy and save the token. This value is entered in the **Secret Token** * field in the Provisioning tab of your AlexisHR application.
 
 	![Access tokens](media/alexishr-provisioning-tutorial/token.png)
 

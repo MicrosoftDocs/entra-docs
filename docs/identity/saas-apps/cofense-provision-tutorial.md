@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thwimmer
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cofense Recipient Sync so that I can streamline the user management process and ensure that users have the appropriate access to Cofense Recipient Sync.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Cofense Recipient S
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Cofense Recipient Sync
-> * Remove users in Cofense Recipient Sync when they do not require access anymore
+> * Remove users in Cofense Recipient Sync when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cofense Recipient Sync
 
 ## Prerequisites
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Cofense Recipient Sync](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-cofense-recipient-sync-to-support-provisioning-with-azure-ad'></a>
@@ -42,7 +42,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Cofense Recipient Sync to support provisioning with Microsoft Entra ID
 
 1. Login to Cofense PhishMe. Navigate to **Recipients > Recipient Sync**. 
-2. Accept the terms and conditions and then click **Get Started**.
+2. Accept the terms and conditions and then select **Get Started**.
 
 	![Recipient Sync tnc](media/cofense-provisioning-tutorial/recipient-sync-toc.png)
 
@@ -55,7 +55,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Cofense Recipient Sync from the Microsoft Entra application gallery
 
-Add Cofense Recipient Sync from the Microsoft Entra application gallery to start managing provisioning to Cofense Recipient Sync. If you have previously setup Cofense Recipient Sync for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Cofense Recipient Sync from the Microsoft Entra application gallery to start managing provisioning to Cofense Recipient Sync. If you have previously setup Cofense Recipient Sync for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input the **SCIM 2.0 base url and SCIM Authentication Token** value retrieved earlier from Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to Cofense Recipient Sync. If the connection fails, ensure your Cofense Recipient Sync account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input the **SCIM 2.0 base url and SCIM Authentication Token** value retrieved earlier from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cofense Recipient Sync. If the connection fails, ensure your Cofense Recipient Sync account has Admin permissions and try again.
 
 	![Tenant URL Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -149,7 +149,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

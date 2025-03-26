@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Airtable so that I can control who has access to Airtable, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -47,7 +47,7 @@ To configure the integration of Airtable into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **Airtable** in the search box.
 1. Select **Airtable** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-airtable'></a>
 
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with Airtable, perform the following s
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Airtable SSO](#configure-airtable-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Airtable test user](#create-airtable-test-user)** - to have a counterpart of B.Simon in Airtable that is linked to the Microsoft Entra representation of user.
+    1. **[Create Airtable test user](#create-airtable-test-user)** - to have a counterpart of B.Simon in Airtable that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
@@ -123,7 +123,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select **Test this application**, this redirects to Airtable Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Airtable Sign on URL where you can initiate the login flow.  
 
 * Go to Airtable Sign-on URL directly and initiate the login flow from there.
 

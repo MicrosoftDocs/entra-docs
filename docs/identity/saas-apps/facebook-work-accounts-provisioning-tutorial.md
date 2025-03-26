@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Facebook Work Accounts so that I can streamline the user management process and ensure that users have the appropriate access to Facebook Work Accounts.
 ---
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both Meta Work Accounts 
 
 > [!div class="checklist"]
 > * Create users in Meta Work Accounts
-> * Remove users in Meta Work Accounts when they do not require access anymore
+> * Remove users in Meta Work Accounts when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Meta Work Accounts
 > * Single sign-on to Meta Work Accounts (recommended)
 
@@ -38,14 +38,14 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Meta Work Accounts](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-add-meta-work-accounts-from-the-azure-ad-application-gallery'></a>
 
 ## Step 2: Add Meta Work Accounts from the Microsoft Entra application gallery
 
-Add Meta Work Accounts from the Microsoft Entra application gallery to start managing provisioning to Meta Work Accounts. If you have previously setup Meta Work Accounts for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add Meta Work Accounts from the Microsoft Entra application gallery to start managing provisioning to Meta Work Accounts. If you have previously setup Meta Work Accounts for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 3: Define who is in scope for provisioning
 
@@ -68,7 +68,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-1. Under the **Admin Credentials** section, click on **Authorize**. You will be redirected to **Meta Work Accounts**'s authorization page. Input your Meta Work Accounts username and click on the **Continue** button. Click **Test Connection** to ensure Microsoft Entra ID can connect to Meta Work Accounts. If the connection fails, ensure your Meta Work Accounts account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, select **Authorize**. You be redirected to **Meta Work Accounts**'s authorization page. Input your Meta Work Accounts username and select the **Continue** button. Select **Test Connection** to ensure Microsoft Entra ID can connect to Meta Work Accounts. If the connection fails, ensure your Meta Work Accounts account has Admin permissions and try again.
 
     :::image type="content" source="media/facebook-work-accounts-provisioning-tutorial/azure-connect.png" alt-text="Screenshot shows the Meta Work Accounts authorization page.":::
 
@@ -78,7 +78,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Meta Work Accounts**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Meta Work Accounts in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Meta Work Accounts for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Meta Work Accounts API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Meta Work Accounts in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Meta Work Accounts for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Meta Work Accounts API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering|
     |---|---|---|
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Screenshot shows the Scope dropdown in the Settings section.](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
