@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both Zendesk and Microso
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Zendesk.
-> * Remove users in Zendesk when they do not require access anymore.
+> * Remove users in Zendesk when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Zendesk.
 > * Provision groups and group memberships in Zendesk.
 > * [Single sign-on](./zendesk-tutorial.md) to Zendesk (recommended)
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Zendesk](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-zendesk-to-support-provisioning-with-azure-ad'></a>
@@ -46,17 +46,17 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Sign in to [Zendesk Admin Center](https://support.zendesk.com/hc/en-us/articles/4581766374554#topic_hfg_dyz_1hb).
 1. Navigate to **Apps and integrations** > **APIs** > **Zendesk APIs**.
-1. Click the **Settings** tab, and make sure Token Access is **enabled**.
-1. Click the **Add API token** button to the right of **Active API Tokens**. The token is generated and displayed.
+1. Select the **Settings** tab, and make sure Token Access is **enabled**.
+1. Select the **Add API token** button to the right of **Active API Tokens**. The token is generated and displayed.
 1. Enter an **API token description**.
 1. **Copy** the token and paste it somewhere secure. Once you close this window, the full token will never be displayed again.
-1. Click **Save** to return to the API page. If you click the token to reopen it, a truncated version of the token is displayed.
+1. Select **Save** to return to the API page. If you select the token to reopen it, a truncated version of the token is displayed.
 
 <a name='step-3-add-zendesk-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Zendesk from the Microsoft Entra application gallery
 
-Add Zendesk from the Microsoft Entra application gallery to start managing provisioning to Zendesk. If you have previously setup Zendesk for SSO, you can use the same application. However, it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Zendesk from the Microsoft Entra application gallery to start managing provisioning to Zendesk. If you have previously setup Zendesk for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 

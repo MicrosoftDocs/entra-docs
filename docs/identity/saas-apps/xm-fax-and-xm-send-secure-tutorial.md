@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with XM Fax and XM SendSecure
 
-In this article,  you'll learn how to integrate XM Fax and XM SendSecure with Microsoft Entra ID. When you integrate XM Fax and XM SendSecure with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate XM Fax and XM SendSecure with Microsoft Entra ID. When you integrate XM Fax and XM SendSecure with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to XM Fax and XM SendSecure.
 * Enable your users to be automatically signed-in to XM Fax and XM SendSecure with their Microsoft Entra accounts.
@@ -67,7 +67,7 @@ To configure and test Microsoft Entra SSO with XM Fax and XM SendSecure, perform
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure XM Fax and XM SendSecure SSO](#configure-xm-fax-and-xm-sendsecure-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create XM Fax and XM SendSecure test user](#create-xm-fax-and-xm-sendsecure-test-user)** - to have a counterpart of B.Simon in XM Fax and XM SendSecure that is linked to the Microsoft Entra representation of user.
+    1. **[Create XM Fax and XM SendSecure test user](#create-xm-fax-and-xm-sendsecure-test-user)** - to have a counterpart of B.Simon in XM Fax and XM SendSecure that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **XM Fax and XM SendSecure** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
     ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -137,7 +137,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     c. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **X.509 Signing Certificate** textbox.
 
-    d. click **Save**.
+    d. select **Save**.
 
 > [!NOTE]
 > Keep the fail-safe URL (`https://login.[domain]/[account]/no-sso`) provided at the bottom of the SSO configuration section, it will allow you to log in using your XM Cloud account credentials if you lock yourself after SSO activation.
@@ -153,11 +153,11 @@ Create a user called Britta Simon at XM Fax and XM SendSecure. Make sure the ema
 
 In this section, you test your Microsoft Entra single sign-on configuration with the following options. 
 
-* Click on **Test this application**, this will redirect to XM Fax and XM SendSecure Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to XM Fax and XM SendSecure Sign-on URL where you can initiate the login flow. 
 
 * Go to XM Fax and XM SendSecure Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the XM Fax and XM SendSecure tile in the My Apps portal, this will redirect to XM Fax and XM SendSecure Sign-on URL. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the XM Fax and XM SendSecure tile in the My Apps portal, this option redirects to XM Fax and XM SendSecure Sign-on URL. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 
