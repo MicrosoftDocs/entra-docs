@@ -12,15 +12,15 @@ ms.reviewer: katabish
 ---
 # How to configure per-app access using Global Secure Access applications
 
-Microsoft Entra Private Access provides secure access to your organization's internal resources by enabling you to control and secure access to specific network destinations on your private network. This allows you to provide granular network access based on user needs. To do this, create a Global Secure Access application and add the application segment that is used by the internal, private resource that you want to secure. Network requests sent from devices running the Global Secure Access client to the application segment you added to your Global Secure Access application will be acquired and routed to your internal application by the Global Secure Access cloud service without any ability to connect to other resources on your network. By configuring a Global Secure Access application, you create per-app access to your internal resources. Global Secure Access applications provide you a segmented, granular ability to manage how your resources are accessed on a per-app basis.
+Microsoft Entra Private Access provides secure access to your organization's internal resources by enabling you to control and secure access to specific network destinations on your private network. This allows you to provide granular network access based on user needs. To do this, create an Enterprise application and add the application segment that is used by the internal, private resource that you want to secure. Network requests sent from devices running the Global Secure Access client to the application segment you added to your Enterprise application will be acquired and routed to your internal application by the Global Secure Access cloud service without any ability to connect to other resources on your network. By configuring an Enterprise application, you create per-app access to your internal resources. Enterprise applications provide you a segmented, granular ability to manage how your resources are accessed on a per-app basis.
 
 
 
-This article describes how to configure per-app access using Global Secure Access applications.
+This article describes how to configure per-app access using Enterprise applications.
 
 ## Prerequisites
 
-To configure a Global Secure Access app, you must have:
+To configure a Global Secure Access Enterprise app, you must have:
 
 - The **Global Secure Access Administrator** and **Application Administrator** roles in Microsoft Entra ID
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
@@ -64,7 +64,7 @@ If you don't already have a connector set up, see [Configure connectors](how-to-
 >
 > The minimum version of connector required for Private Access is **1.5.3417.0**.
 
-## Create a Global Secure Access application
+## Create a Global Secure Access Enterprise application
 
 To create a new app, you provide a name, select a connector group, and then add application segments. App segments include the fully qualified domain names (FQDNs) and IP addresses you want to tunnel through the service. You can complete all three steps at the same time, or you can add them after the initial setup is complete.
 
@@ -143,7 +143,7 @@ You need to grant access to the app you created by assigning users and/or groups
 1. Add users and groups as needed.
 
 > [!NOTE]
-> Users must be directly assigned to the app or to the group assigned to the app. Nested groups are not supported and access assignments are not automatically transferred when you create an Enterprise App, even when there is an existing (overlapping) application segment defined in Quick Access. Allow 15 minutes for your configuration change to be synchronized with your Global Secure Access clients.
+> You must assign users directly assigned to the app or to the group assigned to the app. Nested groups are not supported. Also note that access assignments are not automatically transferred to a newly created Enterprise App even when there is an existing (overlapping) application segment defined in Quick Access. This is important because you can encounter an issue where users that had successfully accessed an app segment through Quick Access will be blocked from access when the app segment is moved to Enterprise Apps until you assign them access specifically to the Enterprise App. Allow 15 minutes for your configuration change to be synchronized with your Global Secure Access clients.
 
 ## Update application segments
 
