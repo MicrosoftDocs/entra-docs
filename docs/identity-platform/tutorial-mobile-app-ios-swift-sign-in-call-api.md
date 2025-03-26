@@ -17,6 +17,8 @@ zone_pivot_groups: entra-tenants
 
 # Tutorial: Call a protected web API in iOS (Swift) app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 ::: zone pivot="workforce"
 
 This is the fourth tutorial in the tutorial series that guides you on signing in users and calling a protected web API using Microsoft Entra ID.

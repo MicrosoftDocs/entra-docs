@@ -14,6 +14,8 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample Desktop app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 In this quickstart, you’ll use a sample application to learn how to add authentication to a desktop application. The sample application enables users to sign in and sign out and uses the Microsoft Authentication Library (MSAL) to handle authentication.
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
