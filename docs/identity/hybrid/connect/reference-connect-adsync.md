@@ -1,3 +1,4 @@
+
 ---
 title: 'Microsoft Entra Connect: ADSync PowerShell Reference'
 description: This document provides reference information for the ADSync.psm1 PowerShell module.
@@ -20,34 +21,42 @@ The following documentation provides reference information for the `ADSync` Powe
 ## Add-ADSyncAADServiceAccount
 
 ### SYNOPSIS
- Adds a new or resets an existing Microsoft Entra synchronization service account in the Microsoft Entra tenant (associated with the specified credentials).
- Updates the Microsoft Entra Connect Sync's Entra ID connector credential with the added account.
+ 
+ Adds a new Microsoft Entra synchronization service account and updates the Entra ID connector credential, or updates the current account.
 
 ### SYNTAX
 
  ```powershell
- Add-ADSyncAADServiceAccount [-AADCredential] <PSCredential> [-Name] <String> [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ Add-ADSyncAADServiceAccount [-AADCredential] <PSCredential> [[-Name] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
  ```
 
 ### DESCRIPTION
- Adds a new or resets an existing Microsoft Entra synchronization service account in the Microsoft Entra tenant (associated with the specified credentials).
+ Adds a new Microsoft Entra synchronization service account and updates the Entra ID connector credential, or updates the current account.
+ If `-Name` parameter is provided, a new synchronization service account is created and the Entra ID connector's username and password is updated.
+ Without `-Name` parameter, the current synchronization service account password is reset and the Entra ID connector's username and password is updated. 
+ For example, using `-Name Sync_CONNECT01`, adds or updates a Microsoft Entra synchronization service account called `Sync_CONNECT01@Contoso.onmicrosoft.com`.
+ To check what's the current Microsoft Entra synchronization service account use: 
+   `(Get-ADsyncConnector -Identifier 'b891884f-051e-4a83-95af-2544101c9083').ConnectivityParameters['UserName'].Value`
 
 ### EXAMPLES
 
 #### Example 1
  ```powershell
+ # Get the Microsoft Entra credential
+ PS C:\> $credEntra = Get-Credential
+ # Add or update the synchronization service account
+ PS C:\> Add-ADSyncAADServiceAccount -AADCredential $credEntra
+ ```
+
+#### Example 2
+ ```powershell
  # Get the current synchronization service account
  PS C:\> (Get-ADsyncConnector -Identifier 'b891884f-051e-4a83-95af-2544101c9083').ConnectivityParameters['UserName'].Value
  # Get the Microsoft Entra credential
  PS C:\> $credEntra = Get-Credential
- # Add or update the synchronization service account
+ # Add or updatethe synchronization service account
  PS C:\> Add-ADSyncAADServiceAccount -AADCredential $credEntra -Name Sync_CONNECT01
  ```
-
- Adds a new Microsoft Entra synchronization service account called Sync_CONNECT01@Contoso.onmicrosoft.com
- If the account already exists, it resets its password.
- Updates the Microsoft Entra Connect Sync's Entra ID connector credential with the added or updated account.
 
 ### PARAMETERS
 
@@ -72,7 +81,7 @@ The following documentation provides reference information for the `ADSync` Powe
  Type: String
  Aliases: None
 
- Required: True
+ Required: False
  Position: 2
  Default value: None
  Accept pipeline input: True (ByPropertyName)
