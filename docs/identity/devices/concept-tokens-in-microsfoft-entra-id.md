@@ -19,27 +19,26 @@ simple steps you can take to reduce your attack surface and increase the
 cost for attackers to successfully steal and replay tokens. A robust
 strategy to protect your tokens requires a multi-layered
 defense-in-depth approach, which should
-include:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+include:
 
-- 
+- Hardening your devices against malware-based attacks
+- Leverage Device based and Risk based Conditional Access
+- Deploy phishing resistantcredentials
+- Enforcing device-bound tokens where possible
+- Implementing network-based enforcements
 
-
-[[Hardening your devices against malware-based attacksLeverage Device
-based and Risk based Conditional AccessDeploy phishing resistant
-credentialsEnforcing device-bound tokens where possibleImplementing
-network-based enforcementsIn this document and in \<part 2 document\> we
-will summarize the basics of what tokens are, how tokens can be stolen,
+This document summarizes the basics of what tokens are, how tokens can be stolen,
 and provide concrete steps you can take to mitigate the risk of
 successful attacks in your environment. Due to the complexity and wide
 variety of tokens in Microsoft Entra, some topics will be generalized
 for simplicity and may not cover all edge cases. However, this guidance
 will cover the vast majority of scenarios for public clients.
 Confidential client scenarios are not in
-scope.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+scope.
 
-# [[Introduction](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## Introduction
 
-[[Password-based attacks still comprise over 99% of attacks seen by
+Password-based attacks still comprise over 99% of attacks seen by
 Microsoft and are the root cause of most compromised identities.
 Organizations should deploy phishing-resistant MFA as a first line of
 defense for their identities. Doing so will force adversaries to adjust
@@ -54,52 +53,49 @@ should be a top priority, organizations should also begin preparing a
 token theft mitigation strategy as token theft attack vectors will
 continue to increase over time. Protecting against token theft will
 become more important as password-based attacks become less
-viable.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+viable.
 
 [[*\* From [2024 Microsoft Digital Defense Report](https://aka.ms/mddr)
 (page 40)*](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
 
-# [[What is a token?](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## What is a token?
 
-[[Tokens are digital objects used in various authentication and
+Tokens are digital objects used in various authentication and
 authorization processes to grant access to resources. They verify the
 identity of a user or a workload and grant access to resources without
 requiring the transmission of a password or credential for each
 transaction. Tokens encapsulate information about the user's identity
 and their permissions in a secure format, ensuring that sensitive
 information remains protected during the authentication
-process.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+process.
 
-[[In digital environments, tokens play a critical role in enhancing
+In digital environments, tokens play a critical role in enhancing
 security by enabling secure and efficient authentication mechanisms.
 They help reduce the risk of credential theft by minimizing the exposure
 of credentials over the network. However, they have the characteristic
 that if the device or network is compromised, they can be exfiltrated by
 an attacker. The attacker can then use these tokens from a device they
 control to gain access to resources as the signed-in
-user.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+user.
 
-# [[Summary of the kinds of tokens](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## Summary of the kinds of tokens
 
-[[There are many kinds of tokens, but they generally fall into one of
-two
-categories:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+There are many kinds of tokens, but they generally fall into one of
+two categories:
 
-1.  
-2.  
-
-[[**Sign-in sessions** – These tokens maintain the signed-in state of a
+1. **Sign-in sessions** – These tokens maintain the signed-in state of a
 user, allowing the user to access resources without the need for
 frequent re-authentication. They are passed to the identity provider to
 request tokens that are in the app session category. They are also known
-as Refresh Tokens in the OAuth 2.0 standard. **App sessions** – These
-tokens authorize access to specific applications. They are usually
+as Refresh Tokens in the OAuth 2.0 standard. 
+2. **App sessions** – These tokens authorize access to specific applications. They are usually
 short-lived and are played between the client and the application. They
-are also known as Access Tokens in the OAuth 2.0 standard.Tokens may
-also vary depending on the client application. Web applications accessed
+are also known as Access Tokens in the OAuth 2.0 standard.
+
+Tokens may also vary depending on the client application. Web applications accessed
 via browsers sometimes use different kinds of tokens compared with
 native apps such as Outlook and Teams.
-<img src="media/understading-tokens-and-how-to-protect-them-in-microsoft-entra-id/image1.png" style="width:6.5in;height:3.11458in" />](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+<img src="media/understading-tokens-and-how-to-protect-them-in-microsoft-entra-id/image1.png" style="width:6.5in;height:3.11458in" />
 
 [[Slide -\> [Token Theft Defense Summary
 Slide.pptx](https://microsoft-my.sharepoint.com/:p:/p/jebley/ER72L4t8uqBJrVGSa8m40u4B8cIUjLLf7VCkEkXvLlKlXQ?e=wHjZnh)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
