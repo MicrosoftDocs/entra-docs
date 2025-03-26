@@ -2203,7 +2203,7 @@
   },
   {
     "source_path_from_root": "/docs/identity-platform/deprecate-service-principal-less-authentication.md",
-    "redirect_url": "/docs/identity-platform/retire-service-principal-less-authentication",
+    "redirect_url": "/entra/identity-platform/retire-service-principal-less-authentication",
     "redirect_document_id": false
   }
 
