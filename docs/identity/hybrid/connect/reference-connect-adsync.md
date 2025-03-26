@@ -244,7 +244,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 ### PARAMETERS
 
-#### -AADUserName <string>
+#### -AADUserName \<string\>
 
  The Microsoft Entra ID UserPrincipalName.
 
@@ -327,7 +327,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 ### PARAMETERS
 
-#### -AADUserName <string>
+#### -AADUserName \<string\>
 
  The Microsoft Entra ID UserPrincipalName.
 
@@ -500,7 +500,7 @@ The following documentation provides reference information for the `ADSync` Powe
  PS C:\> Get-ADSyncCSObject -ConnectorName "contoso.com" -DistinguishedName "CN=fabrikam,CN=Users,DC=contoso,DC=com"
  ```
 
- Gets the CS object for the user fabrikam in the contoso.com domain.
+ Gets the Connector Space object for the user fabrikam in the contoso.com domain.
 
 ### PARAMETERS
 
@@ -580,7 +580,7 @@ The following documentation provides reference information for the `ADSync` Powe
  ```
 
 #### -SkipDNValidation
- Parameter Switch to Skip DN validation.
+ Parameter Switch to Skip DistinguishedName validation.
 
  ```yaml
  Type: SwitchParameter
@@ -610,7 +610,7 @@ The following documentation provides reference information for the `ADSync` Powe
  ```
 
 #### -Transient
- Parameter Switch to get Transient CS objects.
+ Parameter Switch to get Transient Connector Space objects.
 
  ```yaml
  Type: SwitchParameter
@@ -763,7 +763,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 ### PARAMETERS
 
-#### -AADUserName <string>
+#### -AADUserName \<string\>
 
  The Microsoft Entra ID UserPrincipalName.
 
@@ -876,7 +876,7 @@ The following documentation provides reference information for the `ADSync` Powe
 ## Get-ADSyncRunProfileResult
 
 ### SYNOPSIS
- Processes the inputs from the client and retrieves the run profile result(s).
+ Processes the inputs from the client and retrieves one or more run profile results.
 
 ### SYNTAX
 
@@ -887,7 +887,7 @@ The following documentation provides reference information for the `ADSync` Powe
  ```
 
 ### DESCRIPTION
- Processes the inputs from the client and retrieves the run profile result(s).
+ Processes the inputs from the client and retrieves one or more run profile results.
 
 ### EXAMPLES
 
@@ -1217,7 +1217,7 @@ The following documentation provides reference information for the `ADSync` Powe
 ## Get-ADSyncSchedulerConnectorOverride
 
 ### SYNOPSIS
- Gets the AD Sync Scheduler override values for the specified connector(s).
+ Gets the AD Sync Scheduler override values for one or more specified connectors.
 
 ### SYNTAX
 
@@ -1227,7 +1227,7 @@ The following documentation provides reference information for the `ADSync` Powe
  ```
 
 ### DESCRIPTION
- Gets the AD Sync Scheduler override values for the specified connector(s).
+ Gets the AD Sync Scheduler override values for one or more specified connectors.
 
 ### EXAMPLES
 
@@ -1701,8 +1701,8 @@ The following documentation provides reference information for the `ADSync` Powe
 ### PARAMETERS
 
 #### -CustomizedSyncCycleInterval
- Please specify the timespan value for custom sync interval you want to set.
- If you want to run on lowest allowed setting, please set this parameter to null.
+ Specify the timespan value for custom sync interval you want to set.
+ If you want to run on lowest allowed setting, set this parameter to null.
 
  ```yaml
  Type: TimeSpan
@@ -2105,7 +2105,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### -ConnectorName
  Name of the Connector.
- If this is not given, then all busy connectors will be stopped.
+ If a Connector is not provided, then all busy connectors are stopped.
 
  ```yaml
  Type: String
@@ -2407,7 +2407,7 @@ The following documentation provides reference information for the `ADSync` Powe
 ## Test-AdSyncUserHasPermissions
 
 ### SYNOPSIS
- Cmdlet to check if ADMA user has required permissions.
+ Cmdlet to check if the Active Directory Connector account have the required permissions.
 
 ### SYNTAX
 
@@ -2418,7 +2418,7 @@ The following documentation provides reference information for the `ADSync` Powe
  ```
 
 ### DESCRIPTION
- Cmdlet to check if ADMA user has required permissions.
+ Cmdlet to check if the Active Directory Connector account have the required permissions.
 
 ### EXAMPLES
 
