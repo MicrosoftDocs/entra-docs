@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 03/26/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -39,7 +39,7 @@ This configuration registers an app in Microsoft Entra ID that represents the ex
 1. From the context menu **API permissions**, select the option **Add a permission**. 
 1. Under **Request API permissions**, select **Microsoft Graph**. 
 1. Select **Application permissions**.
-1. Search and select permission **AuditLog.Read.All** and **SynchronizationData-User.Upload**.
+1. Search and select permission **AuditLog.Read.All**, **ProvisioningLog.Read.All**, **ProvisioningLog.Read.OwnedBy**, **SynchronizationData-User.Upload**, and **SyncrhonizationData-User.Upload.OwnedBy**.
 1. Click on **Grant admin consent** on the next screen to complete the permission assignment. Click Yes on the confirmation dialog. Your app should have the following permission sets.
       [![Screenshot of app permissions.](media/inbound-provisioning-api-grant-access/api-client-permissions.png)](media/inbound-provisioning-api-grant-access/api-client-permissions.png#lightbox)  
 1. You're now ready to use the service principal with your API client.
