@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Tulip
 
-In this article,  you'll learn how to integrate Tulip with Microsoft Entra ID. When you integrate Tulip with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Tulip with Microsoft Entra ID. When you integrate Tulip with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Tulip.
 * Enable your users to be automatically signed-in to Tulip with their Microsoft Entra accounts.
@@ -47,7 +47,7 @@ To configure the integration of Tulip into Microsoft Entra ID, you need to add T
 1. In the **Add from the gallery** section, type **Tulip** in the search box.
 1. Select **Tulip** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-tulip'></a>
 
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Tulip** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -77,11 +77,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	a.Download Tulip's Metadata File which is accessible under the settings page on your Tulip instance - 
 	
-	b. Click **Upload metadata file**. 
+	b. Select **Upload metadata file**. 
 	
 	![image1](common/upload-metadata.png)
 
-	b. Click on **folder logo** to select the metadata file and click **Upload**.
+	b. Select **folder logo** to select the metadata file and select **Upload**.
 
 	![image2](common/browse-upload-metadata.png)
 
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![image3](common/idp-intiated.png)
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values are not getting auto populated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values aren't getting auto populated, then fill in the values manually according to your requirement.
 
 1. Tulip application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. If the ```nameID``` needs to be an email, change the format to be ```Persistent```.
 
@@ -117,11 +117,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	a. **Enable SAML Logins**. 
 
-	b. Click on **metadata xml file** to download the **Service Provider metadata file** and use this file to upload in the **Basic SAML Configuration** section in Azure portal.
+	b. Select **metadata xml file** to download the **Service Provider metadata file** and use this file to upload in the **Basic SAML Configuration** section in Azure portal.
 
 	c. Upload the Federation Metadata XML file from Azure to Tulip. This will populate the SSO Login, SSO Logout URL and the Certificates.
 
-	d. Verify that the Name, Email and Badge attributes are not null, that is, enter any unique strings in all three inputs and do a test authentication using the ```Authenticate``` button on the right.
+	d. Verify that the Name, Email and Badge attributes aren't null, that is, enter any unique strings in all three inputs and do a test authentication using the ```Authenticate``` button on the right.
 	
 	e. Upon successful authentication, copy/paste the entire claim URL into the appropriate mapping for the name, email and badgeID attributes.
 	
@@ -133,7 +133,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	* Paste the **Role Attribute** value as `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/groups` or the appropriate claim URL.
 
-	f. Click **Save SAML Configuration**.
+	f. Select **Save SAML Configuration**.
 
 ## Related content
 

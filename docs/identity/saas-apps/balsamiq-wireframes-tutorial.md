@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Balsamiq Wireframes
 
-In this article,  you'll learn how to integrate Balsamiq Wireframes with Microsoft Entra ID. When you integrate Balsamiq Wireframes with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Balsamiq Wireframes with Microsoft Entra ID. When you integrate Balsamiq Wireframes with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Balsamiq Wireframes.
 * Enable your users to be automatically signed-in to Balsamiq Wireframes with their Microsoft Entra accounts.
@@ -48,7 +48,7 @@ To configure the integration of Balsamiq Wireframes into Microsoft Entra ID, you
 1. In the **Add from the gallery** section, type **Balsamiq Wireframes** in the search box.
 1. Select **Balsamiq Wireframes** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-balsamiq-wireframes'></a>
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with Balsamiq Wireframes, perform the 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Balsamiq Wireframes SSO](#configure-balsamiq-wireframes-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Balsamiq Wireframes test user](#create-balsamiq-wireframes-test-user)** - to have a counterpart of B.Simon in Balsamiq Wireframes that is linked to the Microsoft Entra representation of user.
+    1. **[Create Balsamiq Wireframes test user](#create-balsamiq-wireframes-test-user)** - to have a counterpart of B.Simon in Balsamiq Wireframes that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,7 +74,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Balsamiq Wireframes** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://balsamiq.cloud/<ID>/projects`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL, Sign-on URL and Relay State. Contact [Balsamiq Wireframes Client support team](mailto:support@balsamiq.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, Sign-on URL and Relay State. Contact [Balsamiq Wireframes Client support team](mailto:support@balsamiq.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Balsamiq Wireframes application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -123,11 +123,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Balsamiq Wireframes company site as an administrator.
 
-1. Go to **Settings** > **Space Settings** and click **Configure SSO** under Single Sign-On Authentication.
+1. Go to **Settings** > **Space Settings** and select **Configure SSO** under Single Sign-On Authentication.
 
     ![Screenshot shows the SSO Settings.](./media/balsamiq-wireframes-tutorial/settings.png "SSO Settings") 
 
-1. Copy all the required values and paste it in **Basic SAML Configuration** section in the Azure portal and click **Next**.
+1. Copy all the required values and paste it in **Basic SAML Configuration** section in the Azure portal and select **Next**.
 
     ![Screenshot shows the Service Provider Details.](./media/balsamiq-wireframes-tutorial/details.png "Service Provider Details")
 
@@ -141,22 +141,22 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. Open the downloaded **Federation Metadata XML** file and **Upload** the file into **Public Certificate** section.
     
-    1. Click **Next**.
+    1. Select **Next**.
 
     > [!Note]
-    > If you have an IdP Metadata file to upload, the fields will be automatically populated.
+    > If you have an IdP Metadata file to upload, the fields are automatically populated.
 
-1. Verify your SAML configuration, click **Test SAML Login** button and click **Next**.
+1. Verify your SAML configuration, select **Test SAML Login** button and select **Next**.
 
     ![Screenshot shows the SAML configuration.](./media/balsamiq-wireframes-tutorial/configuration.png "SAML Login")
 
-1. After the successful test configuration, click **Turn on SAML SSO Now**.
+1. After the successful test configuration, select **Turn on SAML SSO Now**.
 
     ![Screenshot shows the Test SAML.](./media/balsamiq-wireframes-tutorial/testing.png "Test SAML")
 
 ### Create Balsamiq Wireframes test user
 
-In this section, a user called Britta Simon is created in Balsamiq Wireframes. Balsamiq Wireframes supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Balsamiq Wireframes, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Balsamiq Wireframes. Balsamiq Wireframes supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Balsamiq Wireframes, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -164,15 +164,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Balsamiq Wireframes Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Balsamiq Wireframes Sign on URL where you can initiate the login flow.  
 
 * Go to Balsamiq Wireframes Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Balsamiq Wireframes for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Balsamiq Wireframes for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Balsamiq Wireframes tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Balsamiq Wireframes for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Balsamiq Wireframes tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Balsamiq Wireframes for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

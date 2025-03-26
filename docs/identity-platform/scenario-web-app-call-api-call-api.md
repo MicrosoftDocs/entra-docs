@@ -1,14 +1,13 @@
 ---
 title: Call a web API from a web app
-description: Learn how to build a web app that calls web APIs (calling a protected web API).
+description: Learn how to build a web app that calls protected web APIs using the Microsoft identity platform. Explore options for ASP.NET Core, ASP.NET, Java, Node.js, and Python.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
-ms.date: 09/25/2020
+
+ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---

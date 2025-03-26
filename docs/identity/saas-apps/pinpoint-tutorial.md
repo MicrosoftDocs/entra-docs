@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Pinpoint (SAML)
 
-In this article, you'll learn how to integrate Pinpoint (SAML) with Microsoft Entra ID. DDI’s Pinpoint platform makes it easy to design, deliver, and track blended learning journeys for leaders. Pinpoint is seamlessly integrated into DDI’s award-winning leadership development solutions. When you integrate Pinpoint (SAML) with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Pinpoint (SAML) with Microsoft Entra ID. DDI’s Pinpoint platform makes it easy to design, deliver, and track blended learning journeys for leaders. Pinpoint is seamlessly integrated into DDI’s award-winning leadership development solutions. When you integrate Pinpoint (SAML) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Pinpoint (SAML).
 * Enable your users to be automatically signed-in to Pinpoint (SAML) with their Microsoft Entra accounts.
@@ -81,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://pinpoint.ddiworld.com/<CustomerName>`
 
     > [!Note]
-    > This value is not real. Update this value with the actual Sign on URL. Contact [Pinpoint (SAML) Client support team](mailto:ssosupport@ddiworld.com) to get the value. You can also refer to the patterns shown in the Basic SAML Configuration section.
+    > This value isn't real. Update this value with the actual Sign on URL. Contact [Pinpoint (SAML) Client support team](mailto:ssosupport@ddiworld.com) to get the value. You can also refer to the patterns shown in the Basic SAML Configuration section.
     
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -103,11 +103,11 @@ In this section, you create a user called Britta Simon at Pinpoint (SAML). Work 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Pinpoint (SAML) Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Pinpoint (SAML) Sign-on URL where you can initiate the login flow. 
 
 * Go to Pinpoint (SAML) Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Pinpoint (SAML) tile in the My Apps, this will redirect to Pinpoint (SAML) Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Pinpoint (SAML) tile in the My Apps, this option redirects to Pinpoint (SAML) Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

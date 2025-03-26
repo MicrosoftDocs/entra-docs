@@ -103,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [uniFLOW Online Client support team](mailto:support@nt-ware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal or refer to the reply URL displayed in your uniFLOW Online tenant.
 
-1. uniFLOW Online application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. uniFLOW Online application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. uniFLOW Online application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. uniFLOW Online application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
 	![Screenshot shows the User Attributes pane with the edit icon highlighted.](common/edit-attribute.png)
 
@@ -142,7 +142,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows box to configure identity providers](./media/uniflow-online-tutorial/configure-identity-providers.png)
 
-1. Select on **Add identity provider**.
+1. Select **Add identity provider**.
 
 	![Screenshot shows Add identity provider selected.](./media/uniflow-online-tutorial/add-identity-providers.png)
 
@@ -192,11 +192,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select on **Test this application**, this will redirect to uniFLOW Online Sign-on URL where you can initiate the sign in flow. 
+* Select **Test this application**, this option redirects to uniFLOW Online Sign-on URL where you can initiate the sign in flow. 
 
 * Go to uniFLOW Online Sign-on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you select the uniFLOW Online tile in the My Apps, this will redirect to uniFLOW Online Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the uniFLOW Online tile in the My Apps, this option redirects to uniFLOW Online Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

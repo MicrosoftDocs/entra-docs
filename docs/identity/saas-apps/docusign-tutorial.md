@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with DocuSign
 
-In this article,  you'll learn how to integrate DocuSign with Microsoft Entra ID. When you integrate DocuSign with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate DocuSign with Microsoft Entra ID. When you integrate DocuSign with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who has access to DocuSign.
 * Enable automatic sign-in to DocuSign for your users through their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Scenario description
 
-In this article,  you'll configure and test Microsoft Entra SSO in a test environment to verify that:
+In this article,  you configure and test Microsoft Entra SSO in a test environment to verify that:
 
 * DocuSign supports service provider **SP** initiated SSO.
 
@@ -51,7 +51,7 @@ To configure the integration of DocuSign into Microsoft Entra ID, you must add D
 1. In the **Add from the gallery** section, type **DocuSign** in the search box.
 1. Select **DocuSign** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. You can learn more about O365 wizards [here](/microsoft-365/admin/misc/azure-ad-setup-guides?view=o365-worldwide&preserve-view=true).
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. You can learn more about O365 wizards [here](/microsoft-365/admin/misc/azure-ad-setup-guides?view=o365-worldwide&preserve-view=true).
 
 <a name='configure-and-test-azure-ad-sso-for-docusign'></a>
 
@@ -62,8 +62,8 @@ Configure and test Microsoft Entra SSO with DocuSign by using a test user named 
 To configure and test Microsoft Entra SSO with DocuSign, perform the following steps:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) so that your users can use this feature.
-    1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra single sign-on with B.Simon.
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable B.Simon to use Microsoft Entra single sign-on.
+    1. Create a Microsoft Entra test user to test Microsoft Entra single sign-on with B.Simon.
+    1. Assign the Microsoft Entra test user to enable B.Simon to use Microsoft Entra single sign-on.
 1. [Configure DocuSign SSO](#configure-docusign-sso) to configure the single sign-on settings on the application side.
     1. [Create a DocuSign test user](#create-docusign-test-user) to generate a counterpart of B.Simon in DocuSign that's linked to the Microsoft Entra representation of the user.
 1. [Test SSO](#test-sso) to verify that the configuration works.
@@ -157,7 +157,7 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
 
 	e. TTL: Default or 1 hour / 3,600 seconds.
 
-11. In the left navigation, click **Identity Providers** in **ACCESS MANAGEMENT**.
+11. In the left navigation, select **Identity Providers** in **ACCESS MANAGEMENT**.
   
     ![Screenshot of Identity Providers option.](media/docusign-tutorial/identity-providers.png)
 
@@ -196,7 +196,7 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
        ![Screenshot of Custom Attribute Mapping fields.](media/docusign-tutorial/email-address.png)
 
        > [!NOTE]
-       > Use the appropriate **User identifier** to map the user from Microsoft Entra ID to DocuSign user mapping. Select the proper field, and enter the appropriate value based on your organization settings. Custom Attribute Mapping setting is not mandatory.
+       > Use the appropriate **User identifier** to map the user from Microsoft Entra ID to DocuSign user mapping. Select the proper field, and enter the appropriate value based on your organization settings. Custom Attribute Mapping setting isn't mandatory.
 
     i. In the **Identity Provider Certificates** section, select **ADD CERTIFICATE**, upload the certificate you downloaded from Azure portal, and select **SAVE**.
 
@@ -214,13 +214,13 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
        
        1. Copy the **Service Provider Assertion Consumer Service URL**, and then paste it into the **Reply URL** box in **Basic SAML Configuration** section.
        
-       1. Copy the **Service Provider Login URL**, and then paste it into the **Sign On URL** box in **Basic SAML Configuration** section. At the end of the **Service Provider Login URL** you will get the IDPID value.
+       1. Copy the **Service Provider Login URL**, and then paste it into the **Sign On URL** box in **Basic SAML Configuration** section. At the end of the **Service Provider Login URL** you get the IDPID value.
 
        1. Select **Close**.
 
 ### Create DocuSign test user
 
-In this section, a user named B.Simon is created in DocuSign. DocuSign supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in DocuSign, a new one is created after authentication.
+In this section, a user named B.Simon is created in DocuSign. DocuSign supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in DocuSign, a new one is created after authentication.
 
 > [!Note]
 > If you need to create a user manually, contact the [DocuSign support team](https://support.docusign.com/).
@@ -229,11 +229,11 @@ In this section, a user named B.Simon is created in DocuSign. DocuSign supports 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to DocuSign Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to DocuSign Sign-on URL where you can initiate the login flow. 
 
 * Go to DocuSign Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the DocuSign tile in the My Apps, you should be automatically signed in to the DocuSign for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the DocuSign tile in the My Apps, you should be automatically signed in to the DocuSign for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

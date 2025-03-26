@@ -81,12 +81,12 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<InstanceName>.cloud.tanium.com`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Tanium Support](https://community.tanium.com/s/contactsupport) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Tanium Support](https://community.tanium.com/s/contactsupport) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
     > [!NOTE]
     > If deploying Tanium in an on-premises configuration, your values may look different than those shown above. The values to use can be retrieved from the **Administration > SAML Configuration** menu in the Tanium console. Details can be found in the [Tanium Console User Guide: Integrating with a SAML IdP](https://docs.tanium.com/platform_user/platform_user/console_using_saml.html?cloud=false "Integrating with a SAML IdP Guide").
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer. If deploying to Tanium in an on-premises configuration, click the edit button and set the **Response Signing Option** to "Sign response and assertion".
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer. If deploying to Tanium in an on-premises configuration, select the edit button and set the **Response Signing Option** to "Sign response and assertion".
 
 	[ ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")](common/copy-metadataurl.png#lightbox)
 
@@ -104,15 +104,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Tanium SSO Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Tanium SSO Sign-on URL where you can initiate the login flow.  
 
 * Go to Tanium SSO Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Tanium SSO for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Tanium SSO for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Tanium SSO tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Tanium SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Tanium SSO tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Tanium SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

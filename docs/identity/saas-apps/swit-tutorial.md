@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Swit
 
-In this article,  you'll learn how to integrate Swit with Microsoft Entra ID. When you integrate Swit with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Swit with Microsoft Entra ID. When you integrate Swit with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Swit.
 * Enable your users to be automatically signed-in to Swit with their Microsoft Entra accounts.
@@ -65,7 +65,7 @@ To configure and test Microsoft Entra SSO with Swit, perform the following steps
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Swit SSO](#configure-swit-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Swit test user](#create-swit-test-user)** - to have a counterpart of B.Simon in Swit that is linked to the Microsoft Entra representation of user.
+    1. **[Create Swit test user](#create-swit-test-user)** - to have a counterpart of B.Simon in Swit that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Swit** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://swit.io/auth/login?subdomain=<OrgName>`
 
 	> [!NOTE]
-	> These values are not real. Update the values with the actual Identifier and Sign on URL. Contact [Swit support team](mailto:help@swit.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update the values with the actual Identifier and Sign on URL. Contact [Swit support team](mailto:help@swit.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Swit application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -141,13 +141,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
     e. Select **Allowed sign-in methods** from the dropdown.
 
-    f. Click **Save**.
+    f. Select **Save**.
 
 ### Create Swit test user
 
 1. In a different web browser window, log in to your Swit company site as an administrator.
 
-1. Go to **Admin console** > **Members&teams** and click **Invitations**.
+1. Go to **Admin console** > **Members&teams** and select **Invitations**.
 
 1. In the **Invitations** page, perform the following steps:
 
@@ -159,17 +159,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
     c. Select **Primary team** from the dropdown menu.
 
-    d. Click **Send Invitation**.
+    d. Select **Send Invitation**.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Swit Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Swit Sign-on URL where you can initiate the login flow. 
 
 * Go to Swit Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Swit tile in the My Apps, this will redirect to Swit Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Swit tile in the My Apps, this option redirects to Swit Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

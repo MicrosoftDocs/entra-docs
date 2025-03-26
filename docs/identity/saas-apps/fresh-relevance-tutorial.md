@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Fresh Relevance
 
-In this article,  you'll learn how to integrate Fresh Relevance with Microsoft Entra ID. When you integrate Fresh Relevance with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Fresh Relevance with Microsoft Entra ID. When you integrate Fresh Relevance with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Fresh Relevance.
 * Enable your users to be automatically signed-in to Fresh Relevance with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of Fresh Relevance into Microsoft Entra ID, you nee
 1. In the **Add from the gallery** section, type **Fresh Relevance** in the search box.
 1. Select **Fresh Relevance** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-fresh-relevance'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Fresh Relevance, perform the foll
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Fresh Relevance SSO](#configure-fresh-relevance-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Fresh Relevance test user](#create-fresh-relevance-test-user)** - to have a counterpart of B.Simon in Fresh Relevance that is linked to the Microsoft Entra representation of user.
+    1. **[Create Fresh Relevance test user](#create-fresh-relevance-test-user)** - to have a counterpart of B.Simon in Fresh Relevance that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,29 +72,29 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Fresh Relevance** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
-	a. Click **Upload metadata file**.
+	a. Select **Upload metadata file**.
 
     ![Metadata file](common/upload-metadata.png)
 
-	b. Click on **folder logo** to select the metadata file and click **Upload**.
+	b. Select **folder logo** to select the metadata file and select **Upload**.
 
 	![image](common/browse-upload-metadata.png)
 
 	c. Once the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in Basic SAML Configuration section:
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values are not getting auto populated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values aren't getting auto populated, then fill in the values manually according to your requirement.
 
     d. In the **Relay State** textbox, type a value using the following pattern:
     `<ID>`
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
 
@@ -106,9 +106,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your Fresh Relevance company site as an administrator.
 
-1. Go to **Settings** > **All Settings** > **Security and Privacy** and click **SAML/Azure AD Single Sign-On**.
+1. Go to **Settings** > **All Settings** > **Security and Privacy** and select **SAML/Azure AD Single Sign-On**.
 
-1. In the **SAML/Single Sign-On Configuration** page, **Enable SAML SSO for this account** checkbox and click **Create new IdP Configuration** button. 
+1. In the **SAML/Single Sign-On Configuration** page, **Enable SAML SSO for this account** checkbox and select **Create new IdP Configuration** button. 
 
     ![Screenshot shows to create new IdP Configuration.](./media/fresh-relevance-tutorial/configuration.png "Configuration")
 
@@ -124,30 +124,30 @@ Follow these steps to enable Microsoft Entra SSO.
 
     c. Copy **RelayState Value** and paste this value into the **Relay State** text box in the **Basic SAML Configuration** section.
 
-    d. Click **Download SP Metadata XML** and upload the metadata file in the **Basic SAML Configuration** section.
+    d. Select **Download SP Metadata XML** and upload the metadata file in the **Basic SAML Configuration** section.
 
-    e. Copy **App Federation Metadata Url** into Notepad and paste the content into the **IdP Metadata XML** textbox and click **Save** button.
+    e. Copy **App Federation Metadata Url** into Notepad and paste the content into the **IdP Metadata XML** textbox and select **Save** button.
 
-    f. If successful, information such as the **Entity ID** of your IdP will be displayed in the **IdP Entity ID** textbox.
+    f. If successful, information such as the **Entity ID** of your IdP is displayed in the **IdP Entity ID** textbox.
 
     g. In the **Attribute Mapping** section, fill the required fields manually which you copied previously.
 
-    h. In the **General Configuration** section, enable **Allow Just In Time(JIT)Account Creation** and click **Save**.
+    h. In the **General Configuration** section, enable **Allow Just In Time(JIT)Account Creation** and select **Save**.
 
     > [!NOTE]
-    > If these parameters are not correctly mapped, login/account creation will not be successful and an error will be shown. To temporarily show enhanced attribute debugging information on sign-on failure, enable **Show Debugging Information** checkbox.
+    > If these parameters aren't correctly mapped, login/account creation isn't successful and an error is shown. To temporarily show enhanced attribute debugging information on sign-on failure, enable **Show Debugging Information** checkbox.
 
 ### Create Fresh Relevance test user
 
-In this section, a user called Britta Simon is created in Fresh Relevance. Fresh Relevance supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Fresh Relevance, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Fresh Relevance. Fresh Relevance supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Fresh Relevance, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Fresh Relevance for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Fresh Relevance for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Fresh Relevance tile in the My Apps, you should be automatically signed in to the Fresh Relevance for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Fresh Relevance tile in the My Apps, you should be automatically signed in to the Fresh Relevance for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

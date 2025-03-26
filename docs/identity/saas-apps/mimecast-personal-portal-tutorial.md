@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mimecast so that I can control who has access to Mimecast, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Mimecast
 
-In this article,  you'll learn how to integrate Mimecast with Microsoft Entra ID. When you integrate Mimecast with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Mimecast with Microsoft Entra ID. When you integrate Mimecast with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Mimecast.
 * Enable your users to be automatically signed-in to Mimecast with their Microsoft Entra accounts.
@@ -43,7 +43,7 @@ To configure the integration of Mimecast into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **Mimecast** in the search box.
 1. Select **Mimecast** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-mimecast'></a>
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Mimecast, perform the following s
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Mimecast SSO](#configure-mimecast-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Mimecast test user](#create-mimecast-test-user)** - to have a counterpart of B.Simon in Mimecast that is linked to the Microsoft Entra representation of user.
+    1. **[Create Mimecast test user](#create-mimecast-test-user)** - to have a counterpart of B.Simon in Mimecast that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Mimecast** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| Offshore        | `https://jer-api.mimecast.com/sso/<accountcode>`|
 
 	> [!NOTE]
-	> You will find the `accountcode` value in the Mimecast under **Account** > **Settings** > **Account Code**. Append the `accountcode` to the Identifier.
+	> You find the `accountcode` value in the Mimecast under **Account** > **Settings** > **Account Code**. Append the `accountcode` to the Identifier.
 
 	b. In the **Reply URL** textbox, type one of the following URLs:
 
@@ -110,9 +110,9 @@ Follow these steps to enable Microsoft Entra SSO.
 	| Australia       | `https://au-api.mimecast.com/login/saml`|
 	| Offshore        | `https://jer-api.mimecast.com/login/saml`|
 
-1. Click **Save**.
+1. Select **Save**.
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
 
@@ -128,11 +128,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot shows Mimecast window with Applications selected.](./media/mimecast-personal-portal-tutorial/services.png)
 
-1. Click **Authentication Profiles** tab.
+1. Select **Authentication Profiles** tab.
     
     ![Screenshot shows the Application tab with Authentication Profiles selected.](./media/mimecast-personal-portal-tutorial/authentication-profiles.png)
 
-1. Click **New Authentication Profile** tab.
+1. Select **New Authentication Profile** tab.
 
 	![Screenshot shows new Authentication Profile selected.](./media/mimecast-personal-portal-tutorial/new-authenticatio-profile.png)
 
@@ -148,11 +148,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	b. In the **Metadata URL** textbox, paste the **App Federation Metadata URL** value, which you copied previously.
 
-	c. Click **Import**. After importing the Metadata URL, the fields will be populated automatically, no need to perform any action on these fields.
+	c. Select **Import**. After importing the Metadata URL, the fields are populated automatically, no need to perform any action on these fields.
 
 	d. Make sure you uncheck **Use Password protected Context** and **Use Integrated Authentication Context** checkboxes.
 
-	e. Click **Save**.
+	e. Select **Save**.
 
 ### Create Mimecast test user
 
@@ -162,11 +162,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot shows the SAML Configuration for Mimecast where you can enter the values described.](./media/mimecast-personal-portal-tutorial/internal-directories.png)
 
-1. Select on your domain, if the domain is mentioned below, otherwise please create a new domain by clicking on the **New Domain**.
+1. Select your domain, if the domain is mentioned below, otherwise please create a new domain by selecting the **New Domain**.
 
     ![Screenshot shows Mimecast window with Internal Directories selected.](./media/mimecast-personal-portal-tutorial/domain-name.png)
 
-1. Click **New Address** tab.
+1. Select **New Address** tab.
 
     ![Screenshot shows the domain selected.](./media/mimecast-personal-portal-tutorial/new-address.png)
 
@@ -182,9 +182,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	d. Select **Force Change at Login** checkbox.
 
-	e. Click **Save**.
+	e. Select **Save**.
 
-	f. To assign roles to the user, click on **Role Edit** and assign the required role to user as per your organization requirement.
+	f. To assign roles to the user, select **Role Edit** and assign the required role to user as per your organization requirement.
 
     ![Screenshot shows Address Settings where you can select Role Edit.](./media/mimecast-personal-portal-tutorial/assign-role.png)
 
@@ -194,15 +194,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Mimecast  Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Mimecast  Sign on URL where you can initiate the login flow.  
 
 * Go to Mimecast  Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Mimecast  for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Mimecast  for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Mimecast  tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Mimecast  for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Mimecast  tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Mimecast  for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

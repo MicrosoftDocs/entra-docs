@@ -140,7 +140,7 @@ To ensure that iOS devices are only able to sign in through Workday managed by m
 1. Under **Platform**, choose **iOS/iPadOS**.
 1. Under **Associated App**, choose the Workday for iOS app that you added.
 1. Select **Configuration Settings**. Under **Configuration settings format**, select **Enter XML Data**.
-1. Here's an example XML file. Add the configurations you want to apply. Replace `STRING_VALUE` with the string you want to use. Replace `<true /> or <false />` with `<true />` or  `<false />`. If you don't add a configuration, this example functions like it is set to `True`.
+1. Here's an example XML file. Add the configurations you want to apply. Replace `STRING_VALUE` with the string you want to use. Replace `<true /> or <false />` with `<true />` or  `<false />`. If you don't add a configuration, this example functions like it's set to `True`.
 
     ```
     <dict>

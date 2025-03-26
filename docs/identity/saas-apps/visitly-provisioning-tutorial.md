@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps you perform in Visitly
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Visitly tenant](https://www.visitly.io/pricing/)
 * A user account in Visitly with admin permissions
 

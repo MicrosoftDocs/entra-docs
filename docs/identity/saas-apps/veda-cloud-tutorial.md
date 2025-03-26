@@ -88,7 +88,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<DOMAIN>.veda.net/<INSTANCE>`
     
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [VEDA Cloud Client support team](mailto:peoplemanagement@veda.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [VEDA Cloud Client support team](mailto:peoplemanagement@veda.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. VEDA Cloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -100,7 +100,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| ---------------|  --------- |
     | displayname | user.displayname |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -116,11 +116,11 @@ In this section, you create a user called Britta Simon at VEDA Cloud. Work with 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to VEDA Cloud Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to VEDA Cloud Sign-on URL where you can initiate the login flow. 
 
 * Go to VEDA Cloud Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the VEDA Cloud tile in the My Apps, this will redirect to VEDA Cloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the VEDA Cloud tile in the My Apps, this option redirects to VEDA Cloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
