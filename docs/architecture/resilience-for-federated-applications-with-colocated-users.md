@@ -24,9 +24,9 @@ One approach to solving this problem and ensuring tokens can be issued to federa
 
 :::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/topology-trust-without-relying-party-sts.png" alt-text="Diagram showing the trust relationship between an application that has both Windows Server Active Directory and Microsoft Entra ID as its identity providers.":::
 
-For some prepackaged federated applications, the application may have been designed to operate with a single identity provider at a time, and it may not be feasible to configure the applications to have multiple trusted identity providers. Even for organizations with in-house developed applications that were designed for a single identity provider, may require significant engineering effort to implement a process that changes many applications with different configuration models.
+However, for some prepackaged federated applications, the application may have been designed to operate with a single identity provider at a time, and it may not be feasible to configure the applications to have multiple trusted identity providers. Even for organizations with in-house developed applications that were designed for a single identity provider, may require significant engineering effort to implement a process that changes many applications with different configuration models.
 
-An alternative approach is to add a relying party security token service (STS), such as AD FS. In this topology,
+An alternative approach, described in this tutorial, is to add a relying party security token service (STS), such as AD FS to the topology. In this topology,
 
 * Maintain an Active Directory domain controller at each site
 * Ensure users at a site can authenticate to either the Active Directory or Microsoft Entra
@@ -90,7 +90,7 @@ When you're configuring inbound provisioning from an HR source to AD, Microsoft 
 
 If the only applications connected to AD are those being configured for resilience, then one way to have consistent authentication is to create users in AD, and then turn on [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) for those users that are synchronized from AD to Microsoft Entra. Ensure users have passwords set in AD and they know their password in AD. While they may have multifactor authentication requirements during normal operations, during a disconnected network event they would be able to authenticate to the Active Directory domain with their passwords.
 
-Another option is to use [Microsoft Entra certificate-based authentication(CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). AD also supports certificate authentication, and some organizations have issued smartcards, virtual smartcards, or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
+Another option is to use [Microsoft Entra certificate-based authentication (CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). AD also supports certificate authentication, and some organizations have issued smartcards, virtual smartcards, or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
 
 ## Deploy a relying party STS and configure Microsoft Entra as an identity provider
 
@@ -112,7 +112,8 @@ Then, perform the steps in the [Enable single sign-on for an enterprise applicat
 
 Next, configure in the relying party STS that Active Directory is a claims source for the claims needed by the applications. The following steps are shown using AD FS, but another relying party STS could be used instead.
 
-1. Launch `AD FS Management` on a server where AD FS is deployed.
+1. Sign in as an administrator on a server where AD FS is deployed.
+1. Launch `AD FS Management`.
 1. In the `AD FS` menu, select `Claims Provider Trusts`.
 1. Ensure that there are two claims providers, `Microsoft Entra` and `Active Directory`, and that both are enabled. The `Active Directory` claims provider is present by default. 
 1. Select `Active Directory` and select `Edit Claim Rules`.
@@ -183,7 +184,7 @@ In this section, you'll validate that when you switch the identity provider for 
 1. Based on the configuration in step 2, AD FS will select Active Directory.
 1. Sign in to AD FS using the Active Directory identity of the test user. AD FS will authenticate the user in Active Directory.
 1. AD FS transforms the LDAP attributes of the user into claims, and redirects the web browser to the application. Confirm that your application has received the required claims from Active Directory via this process.
-1. In the PowerShell session, configure that Microsoft Entra is again the claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`. You can also allow all claims providers with a command like `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName @()`.
+1. In the PowerShell session, configure that Microsoft Entra is again the claims provider for the application, using the command `Set-AdfsRelyingPartyTrust` and provide the value of the `-ClaimsProviderName` parameter. You can also allow all claims providers with a command like `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName @()`.
 
 ## Configure who can sign-in to the application
 
@@ -195,13 +196,13 @@ You'll next need to configure who can sign-in to each application. AD FS and Mic
 
 ## Configure a scheduled task to perform automatic failover to AD
 
-You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for an application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected, by invoking the `Set-AdfsRelyingPartyTrust` command for each application. Optionally, you may wish to configure a monitor to reset the AD FS configuration back to `Microsoft Entra` when connectivity is restored. Deploying this monitor is outside of the scope of this article and depends upon the IT automation system in use in your organization.
+You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for each application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected, by invoking the `Set-AdfsRelyingPartyTrust` command for that application. Optionally, you may wish to configure a monitor to reset the AD FS configuration back to `Microsoft Entra` when connectivity is detected to have been restored. Deploying this monitor depends upon the IT automation system in use in your organization and is outside of the scope of this article.
 
 ## Complete configuration
 
 After testing the initial sign-on configuration, you'll need to ensure that your relying party STS stays up to date as new certificates are added to Microsoft Entra. Some relying party STS may have a built-in process to monitor the federation metadata of the identity provider.
 
-This guide doesn't cover how to deploy AD or AD FS for high availability. For more information, see how to deploy [a federation server farm](/windows-server/identity/ad-fs/design/when-to-create-a-federation-server-farm).
+For more information on configuring AD FS for high availability, see how to deploy [a federation server farm](/windows-server/identity/ad-fs/design/when-to-create-a-federation-server-farm).
 
 ## Next steps
 
