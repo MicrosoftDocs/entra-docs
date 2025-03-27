@@ -337,6 +337,8 @@
       href: passwords-faq.yml
     - name: MFA FAQ
       href: multi-factor-authentication-faq.yml
+    - name: Troubleshoot sign-in
+      href: how-to-remove-synced-passkeys.md
 - name: Reference
   items:
   - name: MFA user guide
