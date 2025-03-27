@@ -1,5 +1,5 @@
 ---
-title: Learn how to migrate user to Microsoft Entra External ID
+title: Learn how to migrate users to Microsoft Entra External ID
 description: Learn how to migrate users from another identity provider to Microsoft Entra External ID.
  
 author: garrodonnell   
