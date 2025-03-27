@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Cornerstone OnDemand for automatic user provisioning with Microsoft Entra ID'
+title: Configure Cornerstone OnDemand for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Cornerstone OnDemand.
 
 author: zhchia
@@ -7,29 +7,29 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cornerstone OnDemand so that I can streamline the user management process and ensure that users have the appropriate access to Cornerstone OnDemand.
 ---
 
-# Tutorial: Configure Cornerstone OnDemand for automatic user provisioning
+# Configure Cornerstone OnDemand for automatic user provisioning
 
-This tutorial demonstrates the steps to perform in Cornerstone OnDemand and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Cornerstone OnDemand.
+This article demonstrates the steps to perform in Cornerstone OnDemand and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Cornerstone OnDemand.
 
 > [!WARNING]
-> This provisioning integration is no longer supported. As a result of this, the provisioning functionality of the Cornerstone OnDemand application in the Microsoft Entra Enterprise App Gallery will be removed soon. The application's SSO functionality will remain intact. Microsoft is working with Cornerstone to build a new modernized provisioning integration, but there are no timelines on when this will be completed.
+> This provisioning integration is no longer supported. As a result of this, the provisioning functionality of the Cornerstone OnDemand application in the Microsoft Entra Enterprise App Gallery is removed soon. The application's SSO functionality will remain intact. Microsoft is working with Cornerstone to build a new modernized provisioning integration, but there are no timelines on when it's completed.
 
 
 > [!NOTE]
-> This tutorial describes a connector that's built on top of the Microsoft Entra user provisioning service. For information on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software-as-a-service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector that's built on top of the Microsoft Entra user provisioning service. For information on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software-as-a-service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you have:
+The scenario outlined in this article assumes that you have:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Cornerstone OnDemand tenant.
 * A user account in Cornerstone OnDemand with admin permissions.
 
@@ -105,7 +105,7 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 
 	![Cornerstone OnDemand Attribute Mappings](./media/cornerstone-ondemand-provisioning-tutorial/UserMappingAttributes.png)
 
-11. To configure scoping filters, follow the instructions in the [scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+11. To configure scoping filters, follow the instructions in the [scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 12. To enable the Microsoft Entra provisioning service for Cornerstone OnDemand, in the **Settings** section, change **Provisioning Status** to **On**.
 
@@ -140,7 +140,7 @@ The Cornerstone OnDemand **Position** attribute expects a value that corresponds
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 

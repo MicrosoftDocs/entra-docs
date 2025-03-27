@@ -3,11 +3,11 @@ title: Workflow Versioning
 description: An article discussing Lifecycle workflow versioning and history
 author: owinfreyATL
 ms.author: owinfrey
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 05/31/2023
+ms.date: 12/10/2024
 ms.custom: template-concept
 ---
 

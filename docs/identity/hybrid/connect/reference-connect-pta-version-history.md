@@ -3,7 +3,7 @@ title: 'Microsoft Entra pass-through authentication: Version release history'
 description: This article lists all releases of the Microsoft Entra pass-through authentication agent
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 ms.topic: reference

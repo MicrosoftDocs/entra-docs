@@ -3,7 +3,7 @@ title: Migrate from ADAL to MSAL recommendation
 description: Learn why you should migrate from the Azure Active Directory Authentication Library to the Microsoft Authentication Libraries.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -85,7 +85,7 @@ You can run the following set of commands in Windows PowerShell. These commands 
 1. Open Windows PowerShell as an administrator.
 
 1. Connect to Microsoft Graph:
-    - `Connect-MgGraph-Tenant <YOUR_TENANT_ID>`
+    - `Connect-MgGraph -Tenant <YOUR_TENANT_ID>`
 
 1. Select your profile:
     - `Select-MgProfile beta`

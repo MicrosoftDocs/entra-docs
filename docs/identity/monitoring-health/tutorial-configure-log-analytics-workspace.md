@@ -44,8 +44,6 @@ To analyze activity logs with Log Analytics, you need the following roles and re
 
 ## Create a Log Analytics workspace
 
-[!INCLUDE [portal updates](../../includes/portal-update.md)]
-
 In this step, you create a Log Analytics workspace, which is where you eventually send your sign-in logs. Before you can create the workspace, you need an [Azure resource group](/azure//azure-resource-manager/management/overview#resource-groups).
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) with [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor) permissions.

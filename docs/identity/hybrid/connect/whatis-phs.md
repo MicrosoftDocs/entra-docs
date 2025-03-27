@@ -2,10 +2,10 @@
 title: 'What is password hash synchronization with Microsoft Entra ID?'
 description: Describes password hash synchronization.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: overview
-ms.date: 11/06/2023
+ms.date: 12/27/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

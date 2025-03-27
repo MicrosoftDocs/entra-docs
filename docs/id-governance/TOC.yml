@@ -13,13 +13,17 @@
   - name: What are identity governance use cases? 
     href: scenarios/identity-governance-use-cases.md 
   - name: Understanding least privileged
-    href: scenarios/least-privileged.md 
+    href: scenarios/least-privileged.md
+  - name: Microsoft Entra ID Governance Deployment Introduction
+    href: ~/architecture/governance-deployment-intro.md
   - name: Govern the employee and guest lifecycle
     items:
     - name: Govern the employee lifecycle
       href: scenarios/govern-the-employee-lifecycle.md
     - name: Plan new governance scenarios for business partners and external users
       href: scenarios/govern-guest-lifecycle-new-project.md
+    - name: Microsoft Entra ID Governance deployment guide for employee lifecycle automation
+      href: ~/architecture/governance-deployment-employee-lifecycle.md  
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
       items: 
@@ -70,9 +74,8 @@
         items: 
         - name: Govern auditing and access reviews for guest users
           href: /graph/tutorial-accessreviews-m365group?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
- 
- 
- 
+
+  
   - name: Govern access to applications
     items:
     - name: Get started with governing application access
@@ -97,6 +100,8 @@
         href: identity-governance-applications-not-provisioned-users.md
       - name: Manage access to SAP applications
         href: sap.md
+      - name: Using Entra Private Access with Entitlement Management  
+        href: scenarios/entitlement-management-private-access.md    
   - name: Migrations
     items:
     - name: Transform your cloud posture
@@ -111,8 +116,6 @@
       items:
       - name: Migrate IAM scenarios to Microsoft Entra ID
         href: /microsoft-identity-manager/migrate-entra-id
-      - name: Migrate from the FIM connector
-        href: /microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory
     - name: Migrate from SAP IDM
       items:
       - name: Migrate from SAP IDM
@@ -142,6 +145,7 @@
         href: entitlement-management-custom-teams-extension.md      
       - name: Customized entitlement reports in Azure Data Explorer
         href: custom-entitlement-report-with-adx-and-entra-id.md      
+ 
     - name: Access Reviews
       items:
       - name: Review access to Microsoft 365 groups - Microsoft Graph
@@ -281,7 +285,9 @@
       - name: Hide or delete
         href: entitlement-management-access-package-edit.md
       - name: Assign Microsoft Entra Roles (Preview)
-        href: entitlement-management-roles.md  
+        href: entitlement-management-roles.md
+      - name: Suggested access packages in MyAccess (Preview)
+        href: entitlement-management-suggested-access-packages.md   
     - name: Approvers
       items:
       - name: Approve requests

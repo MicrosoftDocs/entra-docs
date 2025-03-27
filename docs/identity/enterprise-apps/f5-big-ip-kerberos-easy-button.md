@@ -84,7 +84,6 @@ This tutorial covers Guided Configuration 16.1 with an Easy Button template. Wit
 
 ## Register Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 [Microsoft identity platform](~/identity-platform/quickstart-register-app.md) trusts a service or client, and then either can access Microsoft Graph. This action creates a tenant app registration to authorize Easy Button access to Graph. Through these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 

@@ -169,7 +169,7 @@ Just like a client application, resource application's identity configuration is
 
 Like [scopes](#scopes), app roles provide a way for a [resource server](#resource-server) to govern access to its protected resources. Unlike scopes, roles represent privileges that the [subject](#subject) has been granted beyond the baseline - this is why reading your own email is a scope, while being an email administrator that can read everyone's email is a role.
 
-App roles can support two assignment types: "user" assignment implements role-based access control for users/groups that require access to the resource, while "application" assignment implements the same for [client applications](#client-application) that require access.  An app role can be defined as user-assignable, app-assignabnle, or both.
+App roles can support two assignment types: "user" assignment implements role-based access control for users/groups that require access to the resource, while "application" assignment implements the same for [client applications](#client-application) that require access. An app role can be defined as user-assignable, app-assignable, or both.
 
 Roles are resource-defined strings (for example "Expense approver", "Read-only", "Directory.ReadWrite.All"), managed via the resource's [application manifest](#application-manifest), and stored in the resource's [appRoles property][Graph-Sp-Resource]. Users can be assigned to "user" assignable roles and client [application permissions](#permissions) can be configured to request "application" assignable roles.
 

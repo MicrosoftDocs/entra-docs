@@ -2,12 +2,12 @@
 title: What are custom security attributes in Microsoft Entra ID?
 description: Learn about custom security attributes in Microsoft Entra ID.
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 05/14/2024
+ms.date: 10/28/2024
 ms.collection: M365-identity-device-management
 ---
 
@@ -199,3 +199,4 @@ You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-e
 - [Add or deactivate custom security attribute definitions in Microsoft Entra ID](custom-security-attributes-add.md)
 - [Manage access to custom security attributes in Microsoft Entra ID](custom-security-attributes-manage.md)
 - [Assign, update, list, or remove custom security attributes for a user](~/identity/users/users-custom-security-attributes.md)
+- [Provision custom security attributes from HR sources (preview)](~/identity/app-provisioning/provision-custom-security-attributes.md)

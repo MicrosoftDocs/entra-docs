@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Protected web API: Code configuration
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 To configure the code for your protected web API, understand:
 
 - What defines APIs as protected.

@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 05/30/2023
+ms.date: 01/31/2025
 ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
@@ -37,10 +37,10 @@ Discover applications using ADFS:
  
 ## Using other identity providers (IdPs)
 
+If you're using other identity providers, you can use the following approaches to discover applications:
+
 - If you’re currently using Okta, refer to our [Okta to Microsoft Entra migration guide](migrate-applications-from-okta.md).
-
-- If you’re currently using Ping Federate, then consider using the [Ping Administrative API](https://docs.pingidentity.com/r/en-us/pingfederate-112/pf_admin_api) to discover applications.
-
+- If you’re currently using Ping Federate, then consider using the [Ping Administrative API](https://docs.pingidentity.com/pingfederate/11.2/developers_reference_guide/pf_admin_api.html)
 - If the applications are integrated with Active Directory, search for service principals or service accounts that may be used for applications.  
 
 ## Using cloud discovery tools
@@ -51,7 +51,7 @@ In the cloud environment, you need rich visibility, control over data travel, an
 - **Cloud Discovery** - By configuring [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps), you gain visibility into the cloud app usage, and can discover unsanctioned or Shadow IT apps.
 - **Azure Hosted Applications** - For apps connected to Azure infrastructure, you can use the APIs and tools on those systems to begin to take an inventory of hosted apps. In the Azure environment:
   - Use the [Get-AzureWebsite](/powershell/module/servicemanagement/azure/get-azurewebsite) cmdlet to get information about Azure websites.
-  - Use the [Get-AzureRMWebApp](/powershell/module/azurerm.websites/get-azurermwebapp) cmdlet to get information about your Azure Web Apps.D
+  - Use the [Get-AzWebApp](/powershell/module/Az.websites/get-Azwebapp) cmdlet to get information about your Azure Web Apps.
   - Query Microsoft Entra ID looking for [Applications](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity) and [Service Principals](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#serviceprincipal-entity).
 
 ## Manual discovery process

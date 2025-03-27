@@ -2,12 +2,11 @@
 title: Tutorial - Issue a Microsoft Entra Verified ID credential for directory based claims 
 description: In this tutorial, you learn how to issue verifiable credentials, from directory based claims, by using a sample app.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 11/15/2024
+ms.date: 01/31/2025
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 
 ---
@@ -39,9 +38,9 @@ In this article, you learn how to:
 
 ## Configure your test user account
 
-1. Create a test user following the steps to [create a new user](../fundamentals/how-to-create-delete-users.yml#create-a-new-user).
+1. [Create a new user](../fundamentals/how-to-create-delete-users.yml#create-a-new-user) to use in our testing.
 
-2. Sign in with your new user. The user name would be something like meganb@yourtenant.onmicrosoft.com. You'll be prompted to change your password.
+2. Sign in with your new user. The user name would be something like meganb@yourtenant.onmicrosoft.com. You must change your password.
 
 ### Set up your test user for Microsoft Authenticator
 
@@ -50,10 +49,10 @@ Your test user needs to have Microsoft Authenticator setup for the account. To e
 1. On your mobile test device, open Microsoft Authenticator, go to the Authenticator tab at the bottom and tap **+**  sign to **Add account**. Select **Work or school account** 
 1. At the prompt, select **Sign in**. Don't select "Scan QR code"
 1. Sign in with the test user’s credentials in the Microsoft Entra tenant
-1. Authenticator will launch [https://aka.ms/mfasetup](https://aka.ms/mfasetup) in the browser on your mobile device.   need to sign in again with your test users credentials.
+1. Authenticator launches [https://aka.ms/mfasetup](https://aka.ms/mfasetup) in the browser on your mobile device.   need to sign in again with your test users credentials.
 1. In the **Set up your account in the app**, select **Pair your account to the app by clicking this link**. The Microsoft Authenticator app and opens and you see your test user as an added account
 
-If [https://aka.ms/mfasetup](https://aka.ms/mfasetup) launches without prompting you to sign in, that means you have already set up authenticator for another user on this device. When already configured with a user, Authenticator signs you in automatically. Sign out the browser's currently logged in user and then repeat the steps above. If you zoom in on the page, you find the **Sign out** button at the top right corner
+If [https://aka.ms/mfasetup](https://aka.ms/mfasetup) launches without prompting you to sign in, that means Microsoft Authenticator is already set up for another user on this device. When already configured with a user, Authenticator signs you in automatically. Sign out the browser and then setup authenticator again. If you zoom in on the page, you find the **Sign out** button at the top right corner.
 
 ## Create a Verified employee credential
 
@@ -61,9 +60,9 @@ When you select + Add credential in the portal, you get the option to launch two
 
 :::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-quickstart.png" alt-text="Screenshot of the quickstart start screen.":::
 
-In the next screen, you enter some of the Display definitions, like logo url, text and background color. Since the credential is a managed credential with directory based claims, rules definitions are predefined and can't be changed. You don't need to enter rule definition details. The credential type will be **VerifiedEmployee** and the claims from the user’s profile are preset. Select Create to create the credential.
+In the next screen, you enter some of the Display definitions, like logo url, text and background color. Since the credential is a managed credential with directory based claims, rules definitions are predefined and can't be changed. You don't need to enter rule definition details. The credential type is **VerifiedEmployee** and the claims from the user’s profile are preset. Select Create to create the credential.
 
-:::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-styling.png" alt-text="Screenshot of the create credential, verified employee, card styling section.":::
+:::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-styling.png" alt-text="Screenshot of the created credential, verified employee, card styling section.":::
 
 ## Claims schema for Verified employee credential
 
@@ -87,7 +86,7 @@ See full Microsoft Entra user profile [properties reference](/graph/api/resource
 
 ## Configure the samples to issue and verify your VerifiedEmployee credential
 
-Verifiable Credentials for directory based claims can be issued and verified just like any other credentials you create. All you need is your issuer DID for your tenant, the credential type and the manifest url to your credential. The easiest way to find these values for a Managed Credential is to view the credential in the portal, select **Issue credential** and you will get a header named **Custom issue**. These steps bring up a textbox with a skeleton JSON payload for the Request Service API.
+Verifiable Credentials for directory based claims can be issued and verified just like any other credentials you create. All you need is your issuer DID for your tenant, the credential type, and the manifest url to your credential. The easiest way to find these values for a Managed Credential is to view the credential in the portal, select **Issue credential** and you get a header named **Custom issue**. These steps bring up a textbox with a skeleton JSON payload for the Request Service API.
 
 :::image type="content" source="media/how-to-use-quickstart-verifiedemployee/verifiable-credentials-configure-verifiedemployee-custom-issue.png" alt-text="Screenshot of the custom issuance request section.":::
 
@@ -107,7 +106,7 @@ The configuration file depends on the sample in-use.
 ## Remarks
 
 >[!NOTE]
-> This schema is fixed and it is not supported to add or remove claims in the schema. The attestation flow for directory based claims is also fixed and it is unsupported to try and change it to become a custom credential with id token hint attestation flow, for example.
+> This schema is fixed and it isn't supported to add or remove claims in the schema. The attestation flow for directory based claims is also fixed and it's unsupported to try to change it to become a custom credential with ID token hint attestation flow, for example.
 
 ## Next steps
 

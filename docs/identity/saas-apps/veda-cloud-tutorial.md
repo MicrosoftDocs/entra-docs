@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with VEDA Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and VEDA Cloud.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and VEDA Cloud so that I can control who has access to VEDA Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -88,7 +88,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<DOMAIN>.veda.net/<INSTANCE>`
     
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [VEDA Cloud Client support team](mailto:peoplemanagement@veda.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [VEDA Cloud Client support team](mailto:peoplemanagement@veda.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. VEDA Cloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -100,7 +100,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| ---------------|  --------- |
     | displayname | user.displayname |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -116,17 +116,17 @@ In this section, you create a user called Britta Simon at VEDA Cloud. Work with 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to VEDA Cloud Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to VEDA Cloud Sign-on URL where you can initiate the login flow. 
 
 * Go to VEDA Cloud Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the VEDA Cloud tile in the My Apps, this will redirect to VEDA Cloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the VEDA Cloud tile in the My Apps, this option redirects to VEDA Cloud Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure VEDA Cloud you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
