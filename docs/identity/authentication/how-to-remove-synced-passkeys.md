@@ -1,5 +1,5 @@
 ---  
-title: Find and remove synced passkeys  
+title: How to find and remove synced passkeys  
 description: Learn how to find and remove synced passkeys using Microsoft Graph API or Azure Portal. Includes steps for listing, deleting, and auditing passkeys.  
 author: Justinha  
 contributors:  
@@ -10,11 +10,13 @@ ms.reviewer: justinha
 ROBOTS: NOINDEX,NOFOLLOW
 ---  
 
-# Steps to find and remove synced passkeys
+# How to find and remove synced passkeys
+
+This topic explains how to find and remove synced passkeys. 
 
 ## Microsoft Graph API
 
-You can use the Microsoft Graph API to programmatically list each user’s authentication methods and find any synced passkeys that they have registered.
+You can use the Microsoft Graph API to programmatically list each user’s authentication methods and find any synced passkeys that they registered.
 
 1. To list all passkeys registered with a user’s account: 
    
@@ -30,16 +32,7 @@ For more information, including required permissions, see [List fido2Authenticat
 
 ## Removing registered synced passkeys
 
-You can remove synced passkeys by using Microsoft Graph API ot the Azure portal. 
-
-### Microsoft Graph API
-
-You can use the Microsoft Graph API to programmatically delete passkeys.
-
-1. **To delete a passkey from a user’s account:**  
-   DELETE https://graph.microsoft.com/v1.0/users/{id | userPrincipalName}/authentication/fido2Methods/{passkeyId}  
-
-For more information, including required permissions, please see [Delete fido2AuthenticationMethod](/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0&tabs=http).  
+You can remove synced passkeys by using the Azure portal or Microsoft Graph. 
 
 ### Azure portal
 
@@ -54,13 +47,23 @@ In the Azure portal, you can view each user’s authentication methods and delet
 7. Select **View details** to check if the passkey ID matches the synced passkey ID you identified earlier by using the Graph API.  
 8. Once you determine which passkey to delete, you can repeat step #6, then select **Delete** to delete the passkey.  
 
-:::image type="content" source="media/steps-to-remove-synced-passkeys/delete.png" alt-text="Screenshot of the Azure Portal showing the steps to delete a synced passkey.":::
+:::image type="content" source="media/how-to-remove-synced-passkeys/delete.png" alt-text="Screenshot of the Azure Portal showing the steps to delete a synced passkey.":::
 
-## Graveyard
+### Microsoft Graph API
 
-### Audit Logs Approach
+You can use the Microsoft Graph API to programmatically delete passkeys.
 
-#### Azure Portal
+1. **To delete a passkey from a user’s account:**  
+   DELETE https://graph.microsoft.com/v1.0/users/{id | userPrincipalName}/authentication/fido2Methods/{passkeyId}  
+
+For more information, including required permissions, please see [Delete fido2AuthenticationMethod](/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0&tabs=http).  
+
+
+### Use Audit logs to find synced passkey registrations
+
+You can find synced passkeys by using the Azure portal or Microsoft Graph. 
+
+#### Azure portal
 
 In the Azure portal, you can find audit logs that contain a record of any synced passkey registration, along with the user who performed the action.
 
@@ -71,16 +74,22 @@ In the Azure portal, you can find audit logs that contain a record of any synced
 5. In the filters, select **Activity**. Then, search for and select **Add Passkey (synced)**. Now you have a set of audit logs for synced passkey registration.  
 6. Click a log to see more details about the passkey, including its AAGUID, and the user who created the passkey.  
 
-:::image type="content" source="media/steps-to-remove-synced-passkeys/audit.png" alt-text="Screenshot of the Azure portal showing audit logs for synced passkey registrations.":::
+:::image type="content" source="media/how-to-remove-synced-passkeys/audit.png" alt-text="Screenshot of the Azure portal showing audit logs for synced passkey registrations.":::
 
-#### Graph API
+#### Microsoft Graph
 
 You can also use the Microsoft Graph API to query this information programmatically.
 
-1. **To list audit logs containing synced passkey registrations:**  
-   GET https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?\$filter=activityDisplayName eq 'Add Passkey (synced)'  
+1. To list audit logs containing synced passkey registrations:
 
-2. **To list UPNs with registered synced passkeys:**  
-   GET https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?\$filter=activityDisplayName eq 'Add Passkey (synced)'&\$select=initiatedBy  
+   ```html
+   GET https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?\$filter=activityDisplayName eq 'Add Passkey (synced)'
+   ```
 
-For more information, please see [directoryAudit resource type](/graph/api/resources/directoryaudit?view=graph-rest-1.0).  
+2. To list UPNs with registered synced passkeys:
+
+   ```html
+   GET https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?\$filter=activityDisplayName eq 'Add Passkey (synced)'&\$select=initiatedBy
+   ```
+
+For more information, see [directoryAudit resource type](/graph/api/resources/directoryaudit?view=graph-rest-1.0).  
