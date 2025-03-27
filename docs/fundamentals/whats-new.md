@@ -61,7 +61,7 @@ A new feature has been added to the [App Management Policy Framework](/graph/api
 Administrators can now configure tenant default or custom app policy using the new '[audiences](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta#what-restrictions-can-be-managed-in-microsoft-graph)' restriction to block new app creation if the signInAudience value provided in the app is not permitted by the policy. In addition, existing apps can be restricted from changing their signInAudience if the target value is not permitted by the policy. These policy changes are applied during app creation or update operations, offering control over application deployment and usage. For more information, see: [audiencesConfiguration resource type](/graph/api/resources/audiencesconfiguration).
 
 
-# [Change announcements](#tab/change-announcementsMarch)
+# [Change announcements](#tab/changeAnnouncementsMarch)
 
 ### General Availability - Download Microsoft Entra Connect Sync on the Microsoft Entra admin center
 
@@ -162,7 +162,7 @@ Now new, lesser privileged permissions can be used for managing specific read an
 
 For more information, see: [Microsoft Graph permissions reference](/graph/permissions-reference).
 
-# [Change announcements](#tab/change-announcementsFebruary)
+# [Change announcements](#tab/changeAnnouncementsFebruary)
 
 ---
 
