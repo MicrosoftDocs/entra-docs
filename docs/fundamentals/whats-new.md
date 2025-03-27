@@ -18,16 +18,13 @@ ms.collection: M365-identity-device-management
 
 # Microsoft Entra releases and announcements
 
-This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see [Archive for What's new in Microsoft Entra](whats-new-archive.md). 
-
-For a more dynamic experience, you can now find this information in the Microsoft Entra admin center. To learn more, see [What's new (preview)](./whats-new-overview.md).
+This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
-> [!NOTE] 
-> If you're currently using Azure Active Directory today or have previously deployed Azure Active Directory in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
-
 ## March 2025
+
+# [New features](#tab/NewFeaturesMarch)
 
 ### General Availability- Conditional Access reauthentication policy 
 
@@ -37,8 +34,6 @@ For a more dynamic experience, you can now find this information in the Microsof
 
 Require reauthentication every time can be used for scenarios where you want to require a fresh authentication, every time a user performs specific actions like accessing sensitive applications, securing resources behind VPN, or Securing privileged role elevation in PIM​. For more information, see: [Require reauthentication every time](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
 
----
-
 ### General Availability- Custom Attributes support for Microsoft Entra Domain Services
 
 **Type:** New feature    
@@ -47,18 +42,6 @@ Require reauthentication every time can be used for scenarios where you want to 
 
 Custom Attributes for Microsoft Entra Domain Services is now Generally Available. This capability allows customers to use Custom Attributes in their managed domains. Legacy applications often rely on custom attributes created in the past to store information, categorize objects, or enforce fine-grained access control over resources. For example, these applications might use custom attributes to store an employee ID in their directory and rely on these attributes in their application LDAP calls. Modifying legacy applications can be costly and risky, and customers might lack the necessary skills or knowledge to make these changes. Microsoft Entra Domain Services now supports custom attributes, enabling customers to migrate their legacy applications to the Azure cloud without modification. It also provides support to synchronize custom attributes from Microsoft Entra ID, allowing customers to benefit from Microsoft Entra ID services in the cloud. For more information, see: [Custom attributes for Microsoft Entra Domain Services](../identity/domain-services/concepts-custom-attributes.md).
 
----
-
-### General Availability - Download Microsoft Entra Connect Sync on the Microsoft Entra admin center
-
-**Type:** Plan for change    
-**Service category:** Microsoft Entra Connect    
-**Product capability:** Identity Governance    
-
-The Microsoft Entra Connect Sync .msi installation files are also available on Microsoft Entra admin center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). As part of this change, we'll stop uploading new installation files on the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
-
----
-
 ### Public Preview - Conditional Access Per-Policy Reporting
 
 **Type:** New feature    
@@ -66,8 +49,6 @@ The Microsoft Entra Connect Sync .msi installation files are also available on M
 **Product capability:** Identity Security & Protection    
 
 Conditional Access Per-Policy Reporting enables admins to easily evaluate the impact of enabled and report-only Conditional Access policies on their organization, without using Log Analytics. This feature surfaces a graph for each policy in the Microsoft Entra Admin Center, visualizing the policy’s impact on the tenant’s past sign-ins. For more information, see: [Policy impact (Preview)](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact-preview).
-
----
 
 ### Public Preview - Limit creation or promotion of multitenant apps
 
@@ -79,7 +60,16 @@ A new feature has been added to the [App Management Policy Framework](/graph/api
 
 Administrators can now configure tenant default or custom app policy using the new '[audiences](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta#what-restrictions-can-be-managed-in-microsoft-graph)' restriction to block new app creation if the signInAudience value provided in the app is not permitted by the policy. In addition, existing apps can be restricted from changing their signInAudience if the target value is not permitted by the policy. These policy changes are applied during app creation or update operations, offering control over application deployment and usage. For more information, see: [audiencesConfiguration resource type](/graph/api/resources/audiencesconfiguration).
 
----
+
+# [Change announcements](#tab/changeAnnouncementsMarch)
+
+### General Availability - Download Microsoft Entra Connect Sync on the Microsoft Entra admin center
+
+**Type:** Plan for change    
+**Service category:** Microsoft Entra Connect    
+**Product capability:** Identity Governance    
+
+The Microsoft Entra Connect Sync .msi installation files are also available on Microsoft Entra admin center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). As part of this change, we'll stop uploading new installation files on the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
 ### General Availability - New Microsoft-managed Conditional Access policies designed to limit device code flow and legacy authentication flows
 
@@ -88,8 +78,6 @@ Administrators can now configure tenant default or custom app policy using the n
 **Product capability:** Access Control    
 
 As part of our ongoing commitment to enhance security and protect our customers from evolving cyber threats, we're rolling out two new Microsoft-managed Conditional Access policies designed to limit device code flow and legacy authentication flows. These policies are aligned to the secure by default principle of our broader [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative), which aims to provide robust security measures to safeguard your organization by default.
-
----
 
 ### Deprecated - Upgrade your Microsoft Entra Connect Sync version to avoid impact on the Sync Wizard
 
@@ -103,6 +91,8 @@ As announced in the Microsoft Entra What's New [Blog](https://techcommunity.micr
 
 ## February 2025
 
+# [New features](#tab/NewFeaturesFebruary)
+
 ### General Availability - Authentication methods migration wizard
 
 **Type:** New feature    
@@ -110,8 +100,6 @@ As announced in the Microsoft Entra What's New [Blog](https://techcommunity.micr
 **Product capability:** User Authentication    
 
 The authentication methods migration guide in the Microsoft Entra Admin Center lets you automatically migrate method management from the [legacy MFA and SSPR policies](../identity/authentication/concept-authentication-methods-manage.md#legacy-mfa-and-sspr-policies) to the [converged authentication methods policy](../identity/authentication/concept-authentication-methods-manage.md). In 2023, it was announced that the ability to manage authentication methods in the legacy MFA and SSPR policies would be retired in September 2025. Until now, organizations had to manually migrate methods themselves by using [the migration toggle](../identity/authentication/how-to-authentication-methods-manage.md#start-the-migration) in the converged policy. Now, you can migrate in just a few selections by using the migration guide. The guide evaluates what your organization currently has enabled in both legacy policies, and generates a recommended converged policy configuration for you to review and edit as needed. From there, confirm the configuration, and we set it up for you and mark your migration as complete. For more information, see: [How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID](../identity/authentication/how-to-authentication-methods-manage.md).
-
----
 
 
 ### Public Preview - Enhanced user management in Admin Center UX
@@ -122,7 +110,6 @@ The authentication methods migration guide in the Microsoft Entra Admin Center l
 
 Admins are now able to multi-select and edit users at once through the Microsoft Entra Admin Center. With this new capability, admins can bulk edit user properties, add users to groups, edit account status, and more. This UX enhancement will significantly improve efficiency for user management tasks in the Microsoft Entra admin center. For more information, see: [Add or update a user's profile information and settings in the Microsoft Entra admin center](how-to-manage-user-profile-info.yml).
 
----
 
 ### Public Preview – QR code authentication, a simple and fast authentication method for Frontline Workers
 
@@ -136,8 +123,6 @@ You'll see a new authentication method ‘QR code’ in Microsoft Entra ID Authe
 
 The feature has a ‘preview’ tag until it's generally available. For more information, see: [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](../identity/authentication/concept-authentication-qr-code.md).
 
----
-
 ### Public Preview - Custom SAML/WS-Fed External Identity Provider Support in Microsoft Entra External ID
 
 **Type:** New feature    
@@ -150,7 +135,6 @@ This feature also includes domain-based federation, so a user who enters an emai
 
 For more information, see: [Custom SAML/WS-Fed identity providers (preview)](../external-id/customers/concept-authentication-methods-customers.md#custom-samlws-fed-identity-providers-preview).
 
----
 
 ### Public Preview - External Auth Methods support for system preferred MFA
 
@@ -159,8 +143,6 @@ For more information, see: [Custom SAML/WS-Fed identity providers (preview)](../
 **Product capability:** 3rd Party Integration    
 
 Support for external auth methods as a supported method begins rolling out at the beginning of March 2025. When this is live in a tenant where system preferred is enabled and users are in scope of an external auth methods policy, those users will be prompted for their external authentication method if their most secure registered method is Microsoft Authenticator notification. External Authentication Method will appear as third in the list of most secure methods. If the user has a Temporary Access Pass (TAP) or Passkey (FIDO2) device registered, they'll be prompted for those. In addition, users in the scope of an external auth methods policy will have the ability to delete all registered second factor methods from their account, even if the method being deleted is specified as the default sign in method or is system preferred. For more information, see: [System-preferred multifactor authentication - Authentication methods policy](../identity/authentication/concept-system-preferred-multifactor-authentication.md).
-
----
 
 ### General Availability - Granular Microsoft Graph permissions for Lifecycle workflows
 
@@ -179,6 +161,8 @@ Now new, lesser privileged permissions can be used for managing specific read an
 - LifecycleWorkflows-CustomExt.ReadWrite.All
 
 For more information, see: [Microsoft Graph permissions reference](/graph/permissions-reference).
+
+# [Change announcements](#tab/changeAnnouncementsFebruary)
 
 ---
 
