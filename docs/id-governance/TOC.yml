@@ -15,7 +15,7 @@
   - name: Understanding least privileged
     href: scenarios/least-privileged.md
   - name: Microsoft Entra ID Governance deployment Introduction
-    href: ~/architecture/governance-deployment-intro.md  
+    href: ~/architecture/governance-deployment-intro.md&bc=/entra/id-governance/breadcrumb/toc.json  
   - name: Govern the employee and guest lifecycle
     items:
     - name: Govern the employee lifecycle
