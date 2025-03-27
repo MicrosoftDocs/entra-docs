@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: arvinh
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cerner Central so that I can streamline the user management process and ensure that users have the appropriate access to Cerner Central.
@@ -22,7 +22,7 @@ The objective of this article is to show you the steps you need to perform in Ce
 
 The scenario outlined in this article assumes that you already have the following items:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Cerner Central tenant
 
 > [!NOTE]
@@ -38,7 +38,7 @@ Before configuring and enabling the provisioning service, you should decide what
 
 ### Important tips for assigning users to Cerner Central
 
-* It is recommended that a single Microsoft Entra user be assigned to Cerner Central to test the provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user be assigned to Cerner Central to test the provisioning configuration. Additional users and/or groups may be assigned later.
 
 * Once initial testing is complete for a single user, Cerner Central recommends assigning the entire list of users intended to access any Cerner solution (not just Cerner Central) to be provisioned to Cerner’s user roster.  Other Cerner solutions leverage this list of users in the user roster.
 
@@ -55,7 +55,7 @@ This section guides you through connecting your Microsoft Entra ID to Cerner Cen
 
 ### To configure automatic user account provisioning to Cerner Central in Microsoft Entra ID:
 
-In order to provision user accounts to Cerner Central, you’ll need to request a Cerner Central system account from Cerner, and generate an OAuth bearer token that Microsoft Entra ID can use to connect to Cerner's SCIM endpoint. It is also recommended that the integration be performed in a Cerner sandbox environment before deploying to production.
+In order to provision user accounts to Cerner Central, you’ll need to request a Cerner Central system account from Cerner, and generate an OAuth bearer token that Microsoft Entra ID can use to connect to Cerner's SCIM endpoint. It's also recommended that the integration be performed in a Cerner sandbox environment before deploying to production.
 
 1. The first step is to ensure the people managing the Cerner and Microsoft Entra integration have a CernerCare account, which is required to access the documentation necessary to complete the instructions. If necessary, use the URLs below to create CernerCare accounts in each applicable environment.
 
@@ -102,19 +102,19 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
     > Production:
     > ```https://user-roster-api.cernercentral.com/scim/v1/Realms/User-Roster-Realm-ID/``` 
 
-   * In the **Secret Token** field, enter the OAuth bearer token you generated in step #3 and click **Test Connection**.
+   * In the **Secret Token** field, enter the OAuth bearer token you generated in step #3 and select **Test Connection**.
 
    * You should see a success notification on the upper-right side of your portal.
 
 1. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox below.
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. In the **Attribute Mappings** section, review the user and group attributes to be synchronized from Microsoft Entra ID to Cerner Central. The attributes selected as **Matching** properties are used to match the user accounts and groups in Cerner Central for update operations. Select the Save button to commit any changes.
 
 1. To enable the Microsoft Entra provisioning service for Cerner Central, change the **Provisioning Status** to **On** in the **Settings** section
 
-1. Click **Save**.
+1. Select **Save**.
 
 This starts the initial synchronization of any users and/or groups assigned to Cerner Central in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your Cerner Central app.
 

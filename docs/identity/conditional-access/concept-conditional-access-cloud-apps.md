@@ -56,7 +56,7 @@ When you target the Windows Azure Service Management API application, policy is 
 - Application Insights API
 - Log Analytics API
 
-Because the policy is applied to the Azure management portal and API, services, or clients with an Azure API service dependency, can indirectly be impacted. For example:
+Because the policy is applied to the Azure management portal and API, any services or clients that depend on the Azure API can be indirectly affected. For example:
 
 - Azure CLI
 - Azure Data Factory portal

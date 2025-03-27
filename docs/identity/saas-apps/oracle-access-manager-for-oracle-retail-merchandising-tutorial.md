@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Oracle Access Manager for Oracle Retail Merchandising
 
-In this article, you'll learn how to integrate Oracle Access Manager for Oracle Retail Merchandising with Microsoft Entra ID. When you integrate Oracle Access Manager for Oracle Retail Merchandising with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Oracle Access Manager for Oracle Retail Merchandising with Microsoft Entra ID. When you integrate Oracle Access Manager for Oracle Retail Merchandising with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Oracle Access Manager for Oracle Retail Merchandising.
 * Enable your users to be automatically signed-in to Oracle Access Manager for Oracle Retail Merchandising with their Microsoft Entra accounts.
@@ -79,7 +79,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     ` https://<SUBDOMAIN>.oraclecloud.com/`
     
     >[!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Oracle Access Manager for Oracle Retail Merchandising support team](https://www.oracle.com/support/advanced-customer-services/cloud/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Oracle Access Manager for Oracle Retail Merchandising support team](https://www.oracle.com/support/advanced-customer-services/cloud/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your Oracle Access Manager for Oracle Retail Merchandising application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Oracle Access Manager for Oracle Retail Merchandising expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -101,11 +101,11 @@ In this section, you create a user called Britta Simon at Oracle Access Manager 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Oracle Access Manager for Oracle Retail Merchandising Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Oracle Access Manager for Oracle Retail Merchandising Sign-on URL where you can initiate the login flow. 
 
 * Go to Oracle Access Manager for Oracle Retail Merchandising Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Oracle Access Manager for Oracle Retail Merchandising tile in the My Apps, this will redirect to Oracle Access Manager for Oracle Retail Merchandising Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Oracle Access Manager for Oracle Retail Merchandising tile in the My Apps, this option redirects to Oracle Access Manager for Oracle Retail Merchandising Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

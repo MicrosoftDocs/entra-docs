@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 11/26/2024
+ms.date: 03/10/2025
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn about how to configure a Nodejs code sample web app to sign in and sign out users with my external tenant.
 ---
@@ -20,7 +20,7 @@ In this Quickstart, you learn how to sign in users and call a web API from a Nod
 
 ## Prerequisites
 
-- Complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
+- Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Node.js](https://nodejs.org).
 - [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.
@@ -38,7 +38,7 @@ In this step, you create the web and the web API application registrations, and 
 
 ### Configure API scopes
 
-This API needs to expose permissions, which a client needs to acquire for calling the API:
+This web API needs to expose permissions that a client app acquires to call the web API.
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-api-scopes.md)]
 
@@ -50,7 +50,7 @@ This API needs to expose permissions, which a client needs to acquire for callin
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
 
-Use the steps in [Configure optional claims](optional-claims.md?tabs=appui) article to add idtyp claim to the access token:
+Use the steps in [Configure optional claims](optional-claims.md?tabs=appui) article to add *idtyp* claim to the access token:
 
 - For the **Token type** select **Access**.
 - From the optional claims list, select **idtyp**.  
@@ -92,10 +92,10 @@ To use your app registration in the client web app sample:
 
 1. Find the placeholder:
 
-    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details(../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the client app you registered earlier. The client app is one that you registered in the prerequisites.
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
     - `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
-    - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier.
+    - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier. The web API app is one that you registered earlier in [Register a web API application](#register-a-web-api).
 
 To use your app registration in the web API sample: 
 
@@ -103,7 +103,7 @@ To use your app registration in the web API sample:
 
 1. Find the placeholder:
     
-    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. 
+    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. The web API app is one that you registered earlier in [Register a web API application](#register-a-web-api).
     - `Enter_the_Tenant_Id_Here` and replace it with the Directory (tenant) ID you copied earlier.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
@@ -121,6 +121,7 @@ To use your app registration in the web API sample:
 
     ```console
     cd 2-Authorization\4-call-api-express\App
+    npm install
     npm start
     ```
 

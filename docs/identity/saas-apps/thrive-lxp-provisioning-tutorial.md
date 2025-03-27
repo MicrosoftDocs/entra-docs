@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Thrive LXP and Micr
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Thrive LXP
-> * Remove users in Thrive LXP when they do not require access anymore
+> * Remove users in Thrive LXP when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Thrive LXP
 > * Provision groups and group memberships in Thrive LXP
 > * [Single sign-on](./thrive-lxp-tutorial.md) to Thrive LXP (recommended)
@@ -31,35 +31,29 @@ This article describes the steps you need to perform in both Thrive LXP and Micr
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A **SCIM token** supplied by your contact at THRIVE LXP.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Thrive LXP](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-thrive-lxp-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Thrive LXP to support provisioning with Microsoft Entra ID
 
-Reach out to your [Thrive LXP Client support team](mailto:support@thrivelearning.com) to generate your **Tenant url** and **Secret Token**. These values will be entered in the Tenant URL and Secret Token field in the Provisioning tab of your Thrive LXP application.
+Reach out to your [Thrive LXP Client support team](mailto:support@thrivelearning.com) to generate your **Tenant url** and **Secret Token**. These values are entered in the Tenant URL and Secret Token field in the Provisioning tab of your Thrive LXP application.
 
 <a name='step-3-add-thrive-lxp-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Thrive LXP from the Microsoft Entra application gallery
 
-Add Thrive LXP from the Microsoft Entra application gallery to start managing provisioning to Thrive LXP. If you have previously setup Thrive LXP for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Thrive LXP from the Microsoft Entra application gallery to start managing provisioning to Thrive LXP. If you have previously setup Thrive LXP for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
-
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to Thrive LXP 
 
@@ -86,7 +80,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Thrive LXP Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Thrive LXP. If the connection fails, ensure your Thrive LXP account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Thrive LXP Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Thrive LXP. If the connection fails, ensure your Thrive LXP account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -98,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Thrive LXP**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Thrive LXP in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Thrive LXP for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Thrive LXP API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Thrive LXP in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Thrive LXP for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Thrive LXP API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -132,18 +126,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 6: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
 
-1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 

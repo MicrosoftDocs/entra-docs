@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cleanmail Swiss so that I can streamline the user management process and ensure that users have the appropriate access to Cleanmail Swiss.
@@ -22,7 +22,7 @@ This article describes the steps you need to do in both Cleanmail Swiss and Micr
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Cleanmail
-> * Remove users in Cleanmail Swiss when they do not require access anymore
+> * Remove users in Cleanmail Swiss when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cleanmail
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Cleanmail Swiss (recommended).
 
@@ -53,12 +53,7 @@ Add Cleanmail Swiss from the Microsoft Entra application gallery to start managi
 
 ## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who is provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who is provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who is provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users before rolling out to everyone. When the scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app instance. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
-
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to Cleanmail Swiss 
 
@@ -85,7 +80,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Cleanmail Swiss Tenant URL as `https://cloud.cleanmail.ch/api/v3/scim2` and corresponding Secret Token obtained from Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to Cleanmail. If the connection fails, ensure your Cleanmail Swiss account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your Cleanmail Swiss Tenant URL as `https://cloud.cleanmail.ch/api/v3/scim2` and corresponding Secret Token obtained from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cleanmail. If the connection fails, ensure your Cleanmail Swiss account has Admin permissions and try again.
 
 	![Screenshot of the token.](common/provisioning-testconnection-tenanturltoken.png)
 	
@@ -117,18 +112,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of provisioning scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of saving provisioning configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to complete than next cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 6: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
 
-* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
-* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## More resources
 

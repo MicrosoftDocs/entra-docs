@@ -4,8 +4,8 @@ description: A description of the best practices and limitations of redirect URI
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 06/25/2024
-ms.reviewer:
+ms.date: 03/19/2025
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -62,9 +62,9 @@ If the application you're building contains one or multiple redirect URIs in you
 
 | Type of your application | Typical languages/Frameworks | Platform to add redirect URI in App Registration |
 |--------------------------|------------------------------|--------------------------------------------------|
-| An iOS or macOS app excluding the scenarios listed below this table | Swift, Objective-C, Xamarin | IOS/macOS |
-| An Android app | Java, Kotlin, Xamarin | Android |
-| An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Xamarin, Android, iOS/macOS | Mobile and desktop applications |
+| An iOS or macOS app excluding the scenarios listed below this table | Swift, Objective-C | IOS/macOS |
+| An Android app | Java or Kotlin | Android |
+| An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Android, iOS/macOS | Mobile and desktop applications |
 
 If you're building an iOS app using one of the following methods, use the **Mobile and desktop applications** platform to add a redirect URI:
 

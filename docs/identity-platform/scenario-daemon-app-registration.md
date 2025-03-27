@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # How to register a daemon app that calls web APIs
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 For a daemon application, here's what you need to know when you register the app.
 
 ## Supported account types

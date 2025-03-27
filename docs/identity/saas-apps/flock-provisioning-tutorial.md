@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Flock so that I can streamline the user management process and ensure that users have the appropriate access to Flock.
@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Flo
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Flock tenant](https://flock.com/pricing/)
 * A user account in Flock  with Admin permissions.
 
@@ -39,15 +39,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Flock 
 
-* It is recommended that a single Microsoft Entra user is assigned to Flock  to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Flock  to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Flock, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up Flock  for provisioning
 
-Before configuring Flock for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Flock.
+Before configuring Flock for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Flock.
 
-1. Log in into [Flock](https://web.flock.com/?). Click **Settings Icon** > **Manage your team**.
+1. Log in into [Flock](https://web.flock.com/?). Select **Settings Icon** > **Manage your team**.
 
 	:::image type="content" source="media/flock-provisioning-tutorial/icon.png" alt-text="Screenshot of the Flock website. The settings icon is highlighted and its shortcut menu is visible. In that menu, Manage your team is highlighted." border="false":::
 
@@ -55,7 +55,7 @@ Before configuring Flock for automatic user provisioning with Microsoft Entra ID
 
 	:::image type="content" source="media/Flock-provisioning-tutorial/auth.png" alt-text="Screenshot of a menu on the Flock website. The Auth and provisioning item is highlighted." border="false":::
 
-3. Copy the **API Token**. These values will be entered in the **Secret Token** field in the Provisioning tab of your Flock application.
+3. Copy the **API Token**. These values are entered in the **Secret Token** field in the Provisioning tab of your Flock application.
 
 	:::image type="content" source="media/Flock-provisioning-tutorial/provisioning.png" alt-text="Screenshot of a Provisioning tab on the Flock website. Under A P I token, a value is highlighted. Next to the token is a Copy token button." border="false":::
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the Admin Credentials section, input the `https://api.flock-staging.com/v2/scim` and **API Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to Flock. If the connection fails, ensure your Flock account has Admin permissions and try again.
+5. Under the Admin Credentials section, input the `https://api.flock-staging.com/v2/scim` and **API Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to Flock. If the connection fails, ensure your Flock account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Flock**.
 
@@ -126,7 +126,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you are ready to provision, click **Save**.
+14. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

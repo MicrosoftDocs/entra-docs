@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Trend Micro Web Security (TMWS)
 
-In this article,  you'll learn how to integrate Trend Micro Web Security (TMWS) with Microsoft Entra ID. When you integrate TMWS with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Trend Micro Web Security (TMWS) with Microsoft Entra ID. When you integrate TMWS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to TMWS.
 * Enable your users to be automatically signed in to TMWS with their Microsoft Entra accounts.
 * Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
-
-To get started, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A TMWS subscription that's enabled for SSO.
 
 ## Scenario description
 
-In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * TMWS supports **SP** initiated SSO.
 
@@ -45,7 +43,7 @@ To configure the integration of TMWS into Microsoft Entra ID, you need to add TM
 1. In the **Add from the gallery** section, enter **Trend Micro Web Security (TMWS)** in the search box.
 1. Select **Trend Micro Web Security (TMWS)** in the search results and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-tmws'></a>
 
@@ -111,7 +109,7 @@ Complete these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -127,14 +125,14 @@ In this section, you'll create a test user called B.Simon.
 
 ### Grant the Microsoft Entra test user access to TMWS
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to TMWS.
+In this section, you enable B.Simon to use single sign-on by granting access to TMWS.
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. In the applications list, select **Trend Micro Web Security (TMWS)**.
 1. In the app's overview page, in the **Manage** section, select **Users and groups**:
 1. Select **Add user**, and then select **Users and groups** in the **Add Assignment** dialog box.
-1. In the **Users and groups** dialog box, select **B.Simon** in the **Users** list, and then click the **Select** button at the bottom of the screen.
-1. If you expect a role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
+1. In the **Users and groups** dialog box, select **B.Simon** in the **Users** list, and then select the **Select** button at the bottom of the screen.
+1. If you expect a role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list and then select the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog box, select **Assign**.
 
 <a name='configure-user-and-group-synchronization-settings-in-azure-ad'></a>
@@ -151,7 +149,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the **Add a client secret screen**, optionally add a description and select an expiration period for the client secret, and then select **Add**. The new client secret appears in the **Client secrets** area.
 
-1. Record the client secret value. Later, you'll enter it into TMWS.
+1. Record the client secret value. Later, you enter it into TMWS.
 
 1. Under **Manage**, select **API permissions**. 
 
@@ -170,7 +168,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Select **Overview**. 
 
-1. Record the **Application (client) ID** and **Directory (tenant) ID** that you see in the right pane. Later, you'll enter that information into TMWS.
+1. Record the **Application (client) ID** and **Directory (tenant) ID** that you see in the right pane. Later, you enter that information into TMWS.
 
 ## Configure TMWS SSO
 
@@ -224,7 +222,7 @@ After you configure the Microsoft Entra service and specify Microsoft Entra ID a
 1. Point your browser to the TMWS proxy server. 
 For details, see [Traffic Forwarding Using PAC Files](https://docs.trendmicro.com/en-us/enterprise/trend-micro-web-security-online-help/administration/pac-files/traffic-forwarding-u.aspx).
 
-1. Visit any internet website. TMWS will direct you to the TMWS captive portal.
+1. Visit any internet website. TMWS directs you to the TMWS captive portal.
 
 1. Specify an Active Directory account (format: *domain*\\*sAMAccountName* or *sAMAccountName*@*domain*), email address, or UPN, and then select **Log On**. TMWS sends you to the Microsoft Entra sign-in window.
 

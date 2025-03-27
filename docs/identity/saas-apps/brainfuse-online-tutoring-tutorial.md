@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Brainfuse Online Tutoring
 
-In this article, you'll learn how to integrate Brainfuse Online Tutoring with Microsoft Entra ID. This app provides single sign-on integration to Brainfuse Live Tutoring. You must be a subscriber to use the app. When you integrate Brainfuse Online Tutoring with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Brainfuse Online Tutoring with Microsoft Entra ID. This app provides single sign-on integration to Brainfuse Live Tutoring. You must be a subscriber to use the app. When you integrate Brainfuse Online Tutoring with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Brainfuse Online Tutoring.
 * Enable your users to be automatically signed-in to Brainfuse Online Tutoring with their Microsoft Entra accounts.
@@ -81,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://landing.brainfuse.com/saml.asp?oauth_consumer_key=<ID>`
     
     > [!NOTE]
-    > This value is not real. Update this value with the actual Sign on URL. Contact [Brainfuse Online Tutoring support team](mailto:support@brainfuse.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > This value isn't real. Update this value with the actual Sign on URL. Contact [Brainfuse Online Tutoring support team](mailto:support@brainfuse.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Brainfuse Online Tutoring application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -110,11 +110,11 @@ In this section, you create a user called Britta Simon at Brainfuse Online Tutor
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Brainfuse Online Tutoring Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Brainfuse Online Tutoring Sign-on URL where you can initiate the login flow. 
 
 * Go to Brainfuse Online Tutoring Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Brainfuse Online Tutoring tile in the My Apps, this will redirect to Brainfuse Online Tutoring Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Brainfuse Online Tutoring tile in the My Apps, this option redirects to Brainfuse Online Tutoring Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
