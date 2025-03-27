@@ -63,7 +63,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
-|[2.4.129.0](#241290)||
+|[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
+|[2.4.131.0](#241310)||
 
 **All other versions are not supported**
 
@@ -86,6 +87,16 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+
+## 2.4.131.0
+
+### Release status
+
+03/27/2025: Released for download
+
+### Bug fixes
+- Removed the pre-requisite check for the SchUseStrongCrypto registry key being enabled. This version uses .NET 4.7.2 which uses strong cryptography by default.
 
 ## 2.4.129.0
 
