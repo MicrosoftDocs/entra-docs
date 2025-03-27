@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/27/2025
+ms.date: 04/01/2024
 ms.author: godonnell
 ---
 
@@ -23,53 +23,49 @@ Before you start migrating users to External ID, ensure you have the following:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
-## Pre-migration
 
-In the pre migration flow, your migration application performs these steps for each user account: 
+## Stage 1: User Data Migration
+In this stage, you will migrate user data from the legacy identity provider to External ID. This includes usernames, passwords, and any other relevant attributes.
 
-1. Read the user account from the old identity provider, including its current credentials (username and password). 
-1. Create a corresponding account in your External ID directory with the current credentials. 
+1. Read the user accounts from the old identity provider, including Azure AD B2C. 
+1. Create the corresponding user accounts in your External ID directory, with random passwords that you generate. 
+1. Add an extension attribute to the user account which flags the account for migration. 
 
-Use the pre migration flow in any of these situations: 
+Not all information in the legacy identity provider should be migrated to your External ID directory. Identify the appropriate set of user attributes to store in External ID before migrating.
 
-- You have access to a user's plaintext credentials (their username and password). 
-- The credentials are encrypted, but you can decrypt them. 
-- You do not have access to the user’s plaintext credentials, and will force users to reset their password on next logon. 
+**DO** store in External ID:
 
-For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c&preserve-view=true).   
+- Username, password, email addresses, phone numbers, membership numbers/identifiers.
+- Consent markers for privacy policy and end-user license agreements.
 
-When following this approach to migrate from Azure AD B2C to External ID, users will be required to reset their passwords on first log-on to an application that is protected by External ID.
+**DO NOT** store in External ID:
 
-You may consider using External ID's password-less capabilities which would allow users to continue using applications without having to reset their password.  
+- Sensitive data like credit card numbers, social security numbers (SSN), medical records, or other data regulated by government or industry compliance bodies.
+- Marketing or communication preferences, user behaviors, and insights.
 
-When migrating users from Azure AD B2C, you can register the verified email address as a multifactor authentication method by adding the email authentication method to the user object. This can be added to the user object through the Microsoft Graph API [create emailMethod](/graph/api/resources/emailauthenticationmethod) operation.  
+If you have access to your users' plaintext passwords, you can migrate them directly as part of the user data migration. If you do not have access to the plaintext passwords, you should set a random password for now. This will be updated as part of the credential migration process later. 
 
-## Seamless migration
+For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c&preserve-view=true).  
 
-Use the seamless migration flow if plaintext passwords in the old identity provider are not accessible. For example, when: 
+## Password Migration
+
+Password migration is the process of moving user passwords from the legacy identity provider to External ID. You will need to follow this process if plaintext passwords in the old identity provider are not accessible. For example, if: 
 
 - The password is stored in Azure AD B2C. 
 - The password is stored in a one-way encrypted format, such as with a hash function. 
 - The password is stored by the legacy identity provider in a way that you can't access. For example, when the identity provider validates credentials by calling a web service. 
 
-### Phase 1: Pre-migration 
+### Self Service Password Reset (SSPR)
+You can use the [Self Service Password Reset (SSPR)](https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-howitworks) feature to allow users to reset their passwords. You will need to set up SSPR in your External ID tenant and configure the password reset policies. You will also need to provide user with instructions on how to reset their passwords using SSPR on first login to the new system.  
 
-In phase 1 of the seamless migration flow, your migration application performs these steps for each user account:
+### Seamless migration
+Seamless migration is a method of migrating user credentials from the legacy identity provider to External ID without requiring users to reset their passwords. This is done by using a custom REST API to validate user credentials against the legacy identity provider during the sign-in process.
 
-1. Read the user accounts from the old identity provider, including Azure AD B2C. 
+This approach allows users to continue using their existing passwords while migrating their accounts to External ID. The seamless migration process consists of the following steps.
 
-1. Create the corresponding user accounts in your External ID directory, with random passwords that you generate. 
-
-1. Add an extension attribute to the user account which flags the account for migration. 
-
-### Phase 2: Credentials
-
-In phase 2 of the seamless migration flow, your migration application performs these steps for each user account:
-
+1. Add an extension attribute to all user account which flags the accounts for migration. 
 1. Read the External ID user account corresponding to the email address entered, and continue if the user requires migration. 
-
 1. If the legacy IdP determines the password is incorrect, return a friendly error to the user. 
-
 1. If the legacy IdP determines the password is correct, use the REST API to write the password to the External ID account and change the extension attribute to False. 
 
 Credential migration happens over two stages. Legacy credentials are harvested and stored in External ID during Stage 1. After a sufficient number of users have logged in during Stage 1, applications can be migrated to authenticate directly with External ID, and the majority of users can continue to use their existing credentials. Users who do not login during Stage 1, would require to reset their password after moving to Stage 2.
@@ -91,22 +87,6 @@ To see an example of an Azure AD B2C custom policy and REST API adaptor which fo
 The seamless migration approach uses your own custom REST API to validate a user's credentials against the legacy identity provider.
 
 You must protect your REST API against brute-force attacks. An attacker can submit several passwords in the hope of eventually guessing a user's credentials. To help defeat such attacks, stop serving requests to your REST API when the number of sign-in attempts passes a certain threshold. 
-
-## User attributes
-
-Not all information in the legacy identity provider should be migrated to your External ID directory. Identify the appropriate set of user attributes to store in External ID before migrating.
-
-**DO** store in External ID:
-
-- Username, password, email addresses, phone numbers, membership numbers/identifiers.
-
-- Consent markers for privacy policy and end-user license agreements.
-
-**DO NOT** store in External ID:
-
-- Sensitive data like credit card numbers, social security numbers (SSN), medical records, or other data regulated by government or industry compliance bodies.
-
-- Marketing or communication preferences, user behaviors, and insights.
 
 ## Directory cleanup
 
