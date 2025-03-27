@@ -22,6 +22,8 @@
       href: scenarios/govern-the-employee-lifecycle.md
     - name: Plan new governance scenarios for business partners and external users
       href: scenarios/govern-guest-lifecycle-new-project.md
+    - name: Microsoft Entra ID Governance deployment guide for employee lifecycle automation
+      href: ~/architecture/governance-deployment-employee-lifecycle.md  
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
       items: 
@@ -72,9 +74,8 @@
         items: 
         - name: Govern auditing and access reviews for guest users
           href: /graph/tutorial-accessreviews-m365group?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
- 
- 
- 
+
+  
   - name: Govern access to applications
     items:
     - name: Get started with governing application access
