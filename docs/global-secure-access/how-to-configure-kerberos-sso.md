@@ -58,7 +58,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |88          |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
 |389         |UDP        |DC locator  |
 |464         |UDP/TCP    |Password Change Request  |
-|123         |UDP        |Time Synchronization  |
+|123         |UDP        |Network Time Protocol (NTP)  |
 |135         |UDP/TCP    |Domain controller to domain controller and client to domain controller operations  |
 |138         |UDP        |File replication service between domain controllers  |
 |139         |TCP        |File replication service between domain controllers  |
@@ -66,7 +66,6 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |3268        |TCP        |Global catalog from client to domain controller  |
 |3269        |TCP        |Global catalog from client to domain controller  |
 |53          |UDP/TCP    |DNS from client to domain controller and domain controller to domain controller  |
-|123         |UDP        |Network Time Protocol (NTP)  |
 |1025-5000   |UDP/TCP    |Ephemeral ports  |
 |4952-65535  |UDP/TCP    |Ephemeral ports  |
 
