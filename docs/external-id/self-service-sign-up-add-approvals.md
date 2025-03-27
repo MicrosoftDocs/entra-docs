@@ -33,7 +33,6 @@ This article gives an example of how to integrate with an approval system. In th
 
 ## Register an application for your approval system
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You need to register your approval system as an application in your Microsoft Entra tenant so it can authenticate with Microsoft Entra ID and have permission to create users. Learn more about [authentication and authorization basics for Microsoft Graph](/graph/auth/auth-concepts).
 

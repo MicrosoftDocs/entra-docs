@@ -1,9 +1,9 @@
 ---
 title: Troubleshoot publisher verification
 description: Describes how to troubleshoot publisher verification for the Microsoft identity platform by calling Microsoft Graph APIs.
-author: rwike77
 manager: CelesteDG
-ms.author: ryanwi
+author: garrodonnell
+ms.author: godonnell
 ms.date: 07/19/2024
 ms.service: identity-platform
 ms.topic: troubleshooting
@@ -31,7 +31,7 @@ Here are some common issues that may occur during the process of publisher verif
     1. Navigate to the [partner profile page](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) where the Partner One ID and primary account contact are listed.
 
 - **I don't know who my Microsoft Entra Global Administrator (also known as company admin or tenant admin) is, how do I find them? What about the Application Administrator or Cloud Application Administrator?**
-    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Adminstrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
     1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
     1. Select the desired admin role.
     1. The list of users assigned that role are displayed.
@@ -48,8 +48,8 @@ Here are some common issues that may occur during the process of publisher verif
 - **I'm getting an error related to multi-factor authentication. What should I do?** 
     Ensure [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario. For example, MFA could be:
     - Always required for the user you're signing in with.
-    - [Required for Azure management](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md).
-    - [Required for the type of administrator](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md) you're signing in with.
+    - [Required for Azure management](~/identity/conditional-access/policy-old-require-mfa-azure-mgmt.md).
+    - [Required for the type of administrator](~/identity/conditional-access/policy-old-require-mfa-admin.md) you're signing in with.
 
 ## Making Microsoft Graph API calls 
 
@@ -306,7 +306,7 @@ Error: "You're unable to add a verified publisher to this application. Contact y
 When a request to add a verified publisher is made, many signals are used to make a security risk assessment. If the user risk state is determined to be ‘AtRisk’, the above error is returned. Investigate the user risk and take the appropriate steps to remediate the risk (guidance below): 
 
 **Remediation Steps**
-> [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users)
+> [Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users-report)
 > 
 > [Remediate risk/unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
 > 

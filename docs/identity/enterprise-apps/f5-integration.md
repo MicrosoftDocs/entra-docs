@@ -41,8 +41,7 @@ Other benefits include:
 - Preemptive [Conditional Access](~/identity/conditional-access/overview.md)
 - [Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 - Adaptive protection through user and session risk profiling
-  - [Identity Protection](~/id-protection/overview-identity-protection.md)
-- [Leaked credential detection](~/id-protection/concept-identity-protection-risks.md)
+  - [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md)
 - [Self-service password reset (SSPR)](~/identity/authentication/tutorial-enable-sspr.md)
 - Entitlement management for governed guest access
   - [Partner collaboration](~/id-governance/entitlement-management-external-users.md)
@@ -87,11 +86,9 @@ Whether an employee, affiliate, or consumer, most users are acquainted with the 
 
 Users can find their BIG-IP published services in the [My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) or [Microsoft 365 app launcher](https://support.microsoft.com/office/meet-the-microsoft-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) with self-service capabilities, regardless of device or location. Users can continue accessing published services with the BIG-IP Webtop portal. When users sign out, SHA ensures session termination for BIG-IP and Microsoft Entra ID, helping services remain protected from unauthorized access.  
 
-Users access the My Apps portal to find BIG-IP published services and to manage their account properties. See the gallery and self-service page in the following graphics. 
+Users access the My Apps portal to find BIG-IP published services and to manage their account properties. See the gallery and page in the following graphic. 
 
    ![Screenshot of woodgrove my apps page.](media/f5-integration/woodgrove-app-gallery.png)
-
-   ![Screenshot of woodgrove my account page.](media/f5-integration/woodgrove-myaccount.png)
 
 ## Insights and analytics
 
@@ -125,7 +122,7 @@ Integrating an F5 BIG-IP with Microsoft Entra ID for SHA has the following prere
   - A 90-day BIG-IP Access Policy Manager&trade; (APM) [trial license](https://www.f5.com/trial/big-ip-trial.php)
 - Microsoft Entra ID licensing:
   - An [Azure free account](https://azure.microsoft.com/free/) has minimum core requirements for SHA with password-less authentication
-  - A [Premium subscription](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) has [Conditional Access](~/identity/conditional-access/overview.md), [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), and [Identity Protection](~/id-protection/overview-identity-protection.md)
+  - A [Premium subscription](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) has [Conditional Access](~/identity/conditional-access/overview.md), [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), and [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md)
 
 ## Configuration scenarios
 

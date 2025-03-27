@@ -1,15 +1,15 @@
 ---
-title: Native authentication with email and password API reference
-description: Find out how to use native authentication with email and password API reference for Microsoft Entra ID for customers. 
+title: Native authentication API reference documentation
+description: Find out how to use native authentication APIs to authenticate users into your customer-facing apps with the external tenant.
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: reference
-ms.date: 04/09/2024
+ms.date:  09/30/2024
 
-#Customer intent: As an identity developer, I want to learn how to integrate customer apps with Native authentication's email and password API that Microsoft Entra ID for customers supports.
+#Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
 
 # Native authentication API reference
@@ -30,17 +30,17 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 ## Prerequisites
 
-1. Microsoft Entra External ID for customers tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+1. A Microsoft Entra external tenant. If you don't already have one, [create an external tenant](../external-id/customers/how-to-create-external-tenant-portal.md).
 
-1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauthentication#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
+1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](/entra/identity-platform/quickstart-register-app). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
-1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). While you create the user flow, take note of the user attributes you configure required as these attributes are the ones that Microsoft Entra expects your app to submit. Under **Identity providers**, select **Email one-time-passcode** option.
+1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). When you create the user flow, take note of the user attributes you configure as required as these attributes are the ones that Microsoft Entra expects your app to submit.
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign-in APIs. Alternatively, you can get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the API signIn. Alternatively, you can get this test user after you run the sign-up flow.
 
-1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the customers tenant. SSPR is available for customer users who use email with password authentication method.  
+1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method.  
 
 ## Continuation token
 
@@ -63,13 +63,13 @@ To complete a user sign-up flow for either authentication method, your app inter
 
 The API allows the client app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in the app's request. This parameter holds predefined values, which represent different authentication methods.
 
-Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md). This article explains the challenge type values you should for an authentication method.
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md). This article explains the challenge type values you should use for an authentication method.
 
 ### Sign-up flow protocol details
 
 The sequence diagram demonstrates the flow of the sign-up process.
 
-:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native authentication sign-up flow."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native authentication a sign-up flow."::: 
 
 This diagram indicates that the app collects username (email), password (for email with password authentication methods), and attributes from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email), password and all the required, and optional attribute values in the same screen, then submit all of them via the `/signup/v1.0/start` endpoint. In this case, the app doesn't need to make calls and handle responses for the optional steps.
 
@@ -162,13 +162,13 @@ Content-Type: application/json
 ```json
 {
     "error": "user_already_exists", 
-    "error_description": "AADSTS1003037: It looks like you may already have an account.... .\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...", 
+    "error_description": "AADSTS1003037: It looks like you may already have an account.... .\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...", 
     "error_codes": [ 
         1003037 
     ],
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -300,13 +300,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -601,8 +601,8 @@ Content-Type: application/json
         399246
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6",
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd",
     "suberror": "password_too_weak"
 }
 ```
@@ -712,13 +712,13 @@ Content-Type: application/json
 ```json
 {
     "error": "expired_token",
-    "error_description": "AADSTS901007: The continuation_token is expired.  .\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...", 
+    "error_description": "AADSTS901007: The continuation_token is expired.  .\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...", 
     "error_codes": [
         552003
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6" 
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd" 
 }
 ```
 
@@ -820,13 +820,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The client doesn't have consent for the requested scopes.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The client doesn't have consent for the requested scopes.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         50126 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -856,13 +856,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/user-attribute-format.md)]
 
-## Sign-in API reference
+## API signIn reference
 
-Users need to sign in with the authentication method that they use sign up. For example, users who sign up using email with password authentication method must sign in email and password.
+Users need to sign in with the authentication method that they use to sign up. For example, users who sign up using email with password authentication method must sign in email and password.
 
 To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
-### Sign-in API endpoints
+### API signIn endpoints
 
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
@@ -971,13 +971,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1112,13 +1112,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1208,13 +1208,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_grant", 
-    "error_description": "AADSTS901007: Error validating credentials due to invalid username or password.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: Error validating credentials due to invalid username or password.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         50126 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1348,13 +1348,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1466,13 +1466,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1550,13 +1550,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS55200: The continuation_token is invalid.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS55200: The continuation_token is invalid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         55200 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1641,13 +1641,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "invalid_request", 
-    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The challenge_type list parameter does not include the 'redirect' type.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         901007 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1742,13 +1742,13 @@ Content-Type: application/json
 ```json
 { 
     "error": "expired_token", 
-    "error_description": "AADSTS901007: The continuation_token is expired.\r\nTrace ID: b386ad47-23ae-4092-...-1000000\r\nCorrelation ID: 72f57f26-...-3fa6\r\nTimestamp: yyyy-...",
+    "error_description": "AADSTS901007: The continuation_token is expired.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: yyyy-...",
     "error_codes": [ 
         552003 
     ], 
     "timestamp": "yyyy-mm-dd 10:15:00Z",
-    "trace_id": "b386ad47-...-0000", 
-    "correlation_id": "72f57f26-...-3fa6"
+    "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333", 
+    "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 } 
 ```
 
@@ -1768,6 +1768,6 @@ Here are the possible errors you can encounter (possible values of the `error` p
 | `invalid_request`  |  Request parameter validation failed such as validation of *continuation token* failed.   |
 |`expired_token`|The *continuation token* is expired.    |
 
-## Next steps
+## Related content
 
-- [Native authentication email OTP API reference](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- [Configure a custom claims provider](custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).

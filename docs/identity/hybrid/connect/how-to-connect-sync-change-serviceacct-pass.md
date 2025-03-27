@@ -4,12 +4,12 @@ description: This topic document describes the encryption key and how to abandon
 
 keywords: Azure AD sync service account, password
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 76b19162-8b16-4960-9e22-bd64e6675ecc
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/26/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

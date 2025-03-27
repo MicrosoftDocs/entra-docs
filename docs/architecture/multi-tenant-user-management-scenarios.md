@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 04/19/2023
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.custom: it-pro, seodec18, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -104,7 +104,7 @@ For example, a company acquires a competitor. Each company has a single Microsof
 - Use single sign-on to all provisioned resources.
 - Find each other and resources in a unified GAL.
 - Determine each other's presence and initiate chat.
-- Access applications based on dynamic group membership.
+- Access applications based on dynamic membership groups.
 
 In this scenario, each organization's tenant is the home tenant for its existing employees while being the resource tenant for the other organization's employees.
 
@@ -246,7 +246,7 @@ In a mesh topology, every user in each home tenant synchronizes to each of the o
 
 You can use the mesh topology in as few as two tenants, such as in the scenario for a DIB defense contractor straddling a cross-sovereign cloud solution. As with the mesh topology, each user in each home tenant synchronizes to the other tenant, which becomes a resource tenant. In the [Technique 3 section](#technique-3-provision-accounts-with-azure-ad-connect) diagram, the public Commercial tenant internal user synchronizes to the US sovereign GCC High tenant as an external user account. At the same time, the GCC High internal user synchronizes to Commercial as an external user account.
 
-The diagram also illustrates data storage locations. Data categorization and compliance is outside the scope of this article, but you can include entitlements and restrictions to applications and content. Content might include locations where an internal user's user-owned data resides (such as data stored in an Exchange Online mailbox or OneDrive for Business). The content might be in their home tenant and not in the resource tenant. Shared data might reside in either tenant. You can restrict access to the content through access control and Conditional Access policies.
+The diagram also illustrates data storage locations. Data categorization and compliance is outside the scope of this article, but you can include entitlements and restrictions to applications and content. Content might include locations where an internal user's user-owned data resides (such as data stored in an Exchange Online mailbox or OneDrive). The content might be in their home tenant and not in the resource tenant. Shared data might reside in either tenant. You can restrict access to the content through access control and Conditional Access policies.
 
 #### Single resource tenant topology
 
@@ -263,7 +263,7 @@ In a single resource tenant topology, users and their attributes synchronize to 
 
 ### Managing accounts
 
-This solution detects and syncs attribute changes from source tenant users to resource tenant external users. You can use these attributes to make authorization decisions (such as when you're using dynamic groups).
+This solution detects and syncs attribute changes from source tenant users to resource tenant external users. You can use these attributes to make authorization decisions (such as when you're using dynamic membership groups).
 
 ### Deprovisioning accounts
 

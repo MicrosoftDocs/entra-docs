@@ -3,10 +3,10 @@ title: 'Configure - Provisioning Microsoft Entra ID to Active Directory using Mi
 description: This article describes how to configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 12/16/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

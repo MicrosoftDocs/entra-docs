@@ -2,11 +2,11 @@
 title: Plan a Microsoft Entra access reviews deployment
 description: Planning guide for a successful access reviews deployment.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
@@ -46,7 +46,7 @@ The key benefits of enabling access reviews are:
 
 The following videos help you learn about access reviews:
 
-* [What are access reviews in Microsoft Entra ID?](https://youtu.be/kDRjQQ22Wkk)
+* [What are access reviews in Microsoft Entra ID?](https://youtu.be/VSl1TVITcQ8)
 * [How to create access reviews in Microsoft Entra ID](https://youtu.be/6KB3TZ8Wi40)
 * [How to create automatic access reviews for all guest users with access to Microsoft 365 groups in Microsoft Entra ID](https://www.youtube.com/watch?v=3D2_YW2DwQ8)
 * [How to enable access reviews in Microsoft Entra ID](https://youtu.be/X1SL2uubx9M)
@@ -290,7 +290,7 @@ Group owners review membership because they're best qualified to know who needs 
 
 ### Review membership of exclusion groups in Conditional Access policies
 
-To learn how to review membership of exclusion groups, see [Use Microsoft Entra access reviews to manage users excluded from Conditional Access policies](conditional-access-exclusion.md).
+To learn how to review membership of excluded groups, see [Use Microsoft Entra access reviews to manage users excluded from Conditional Access policies](conditional-access-exclusion.md).
 
 ### Review guest users' group memberships
 
@@ -298,7 +298,7 @@ To learn how to review guest users' access to group memberships, see [Manage gue
 
 ### Review access to on-premises groups
 
-Access reviews can't change the group membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](../identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority for a group originating in AD is on-premises AD.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
+Access reviews can't change the membership of groups that you synchronize from on-premises AD with [Microsoft Entra Connect](../identity/hybrid/connect/whatis-azure-ad-connect.md). This restriction is because the source of authority for a group originating in AD is on-premises AD.  To control access to AD group-based apps, use [Microsoft Entra Cloud Sync group writeback](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md).
 
 Until you have migrated to Microsoft Entra groups with group writeback, you can still use access reviews to schedule and maintain regular reviews of existing on-premises groups. In this case, admins will then take action in the on-premises group after each review completes. This strategy keeps access reviews as the tool for all reviews.
 
@@ -396,7 +396,7 @@ Follow the instructions in the articles listed in the table.
 
 | How-to articles | Description |
 | - | - |
- [Create access reviews](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Microsoft Entra roles in PIM. |
+| [Create access reviews](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| Create access reviews for privileged Microsoft Entra roles in PIM. |
 | [Self-review your access](../id-governance/privileged-identity-management/pim-perform-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| If you're assigned to an administrative role, approve or deny access to your role. |
 | [Complete an access review](../id-governance/privileged-identity-management/pim-complete-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)| View an access review and apply the results. |
 
@@ -445,7 +445,7 @@ Access reviews activities are recorded and available from the [Microsoft Entra a
 | | Apply decision |
 | Date range| Seven days |
 
-For more advanced queries and analysis of access reviews, and to track changes and completion of reviews, export your Microsoft Entra audit logs to [Azure Log Analytics](../identity/monitoring-health/howto-archive-logs-to-storage-account.md) or Azure Event Hubs. When audit logs are stored in Log Analytics, you can use the [powerful analytics language](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md) and build your own dashboards.
+For more advanced queries and analysis of access reviews, and to track changes and completion of reviews, export your Microsoft Entra audit logs to [Azure Monitor Log Analytics](../identity/monitoring-health/howto-archive-logs-to-storage-account.md) or Azure Event Hubs. When audit logs are stored in Log Analytics, you can use the [powerful analytics language](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md) and build your own dashboards. For more information, see [Archive logs and reporting on entitlement management in Azure Monitor](entitlement-management-logs-and-reporting.md).
 
 ## Next steps
 

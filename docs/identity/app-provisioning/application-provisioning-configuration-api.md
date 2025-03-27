@@ -3,11 +3,11 @@ title: Configure provisioning using Microsoft Graph APIs
 description: Learn how to save time by using the Microsoft Graph APIs to automate the configuration of automatic provisioning.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -34,7 +34,7 @@ If you are provisioning to an on-premises application, then you will also need t
 
 ## Step 1: Create the gallery application
 
-### Sign in to Microsoft Graph Explorer (recommended), Postman, or any other API client you use
+### Sign in to Microsoft Graph Explorer (recommended), or any other API client you use
 
 1. Start [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select the "Sign-In with Microsoft" button and sign in with a user with the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.

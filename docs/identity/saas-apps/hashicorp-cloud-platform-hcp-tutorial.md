@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with HashiCorp Cloud Platform (HCP)
 description: Learn how to configure single sign-on between Microsoft Entra ID and HashiCorp Cloud Platform (HCP).
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HashiCorp Cloud Platform (HCP) so that I can control who has access to HashiCorp Cloud Platform (HCP), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://portal.cloud.hashicorp.com/sign-in?conn-id=HCP-SSO-<HCP_ORG_ID>-samlp`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. These values are also pregenerated for you on the "Setup SAML SSO" page within your Organization settings in HashiCorp Cloud Platform (HCP). For more information SAML documentation is provided on [HashiCorp's Developer site](https://developer.hashicorp.com/hcp/docs/hcp/security/sso/sso-aad). Contact [HashiCorp Cloud Platform (HCP) Client support team](mailto:support@hashicorp.com) for any questions about this process. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. These values are also pregenerated for you on the "Setup SAML SSO" page within your Organization settings in HashiCorp Cloud Platform (HCP). For more information SAML documentation is provided on [HashiCorp's Developer site](https://developer.hashicorp.com/hcp/docs/hcp/security/sso/sso-aad). Contact [HashiCorp Cloud Platform (HCP) Client support team](mailto:support@hashicorp.com) for any questions about this process. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -90,11 +90,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure HashiCorp Cloud Platform (HCP) SSO
 
-To configure single sign-on on the **HashiCorp Cloud Platform (HCP)** side, you need to add a verification record TXT to your domain host, add the downloaded **Certificate (Base64)** and **Login URL** copied from Azure portal to your HashiCorp Cloud Platform (HCP) Organization "Setup SAML SSO" page. Please refer to the SAML documentation that is provided on [HashiCorp's Developer site](https://developer.hashicorp.com/hcp/docs/hcp/security/sso/sso-aad). Contact [HashiCorp Cloud Platform (HCP) Client support team](mailto:support@hashicorp.com) for any questions about this process.
+To configure single sign-on on the **HashiCorp Cloud Platform (HCP)** side, you need to add a verification record TXT to your domain host, add the downloaded **Certificate (Base64)** and **Login URL** copied from Azure portal to your HashiCorp Cloud Platform (HCP) Organization "Setup SAML SSO" page. Please refer to the SAML documentation that's provided on [HashiCorp's Developer site](https://developer.hashicorp.com/hcp/docs/hcp/security/sso/sso-aad). Contact [HashiCorp Cloud Platform (HCP) Client support team](mailto:support@hashicorp.com) for any questions about this process.
 
 ## Test SSO 
 
-In the previous [Create and assign Microsoft Entra test user](#create-and-assign-azure-ad-test-user) section, you created a user called B.Simon and assigned it to the HashiCorp Cloud Platform (HCP) app within the Azure portal. This can now be used for testing the SSO connection. You may also use any account that is already associated with the HashiCorp Cloud Platform (HCP) app. 
+In the previous [Create and assign Microsoft Entra test user](#create-and-assign-azure-ad-test-user) section, you created a user called B.Simon and assigned it to the HashiCorp Cloud Platform (HCP) app within the Azure portal. This can now be used for testing the SSO connection. You may also use any account that's already associated with the HashiCorp Cloud Platform (HCP) app. 
 
 ## Additional resources
 
@@ -102,6 +102,6 @@ In the previous [Create and assign Microsoft Entra test user](#create-and-assign
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 * [HashiCorp Cloud Platform (HCP) | Microsoft Entra SAML SSO Configuration](https://developer.hashicorp.com/hcp/docs/hcp/security/sso/sso-aad).
 
-## Next steps
+## Related content
 
 Once you configure HashiCorp Cloud Platform (HCP) you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

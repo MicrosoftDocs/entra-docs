@@ -3,12 +3,12 @@ title: How to configure routers for remote networks
 description: Learn how to configure the connectivity between your customer premises equipment and the Global Secure Access network.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 
-# Customer Intent: As a Global Secure Access administrator, I need to know how to configure the connection between my customer premises equipment and Microsoft's network so that I can create a tunnel from my remote network to the Global Secure Access network.
+# Customer Intent: As a Global Secure Access Administrator, I need to know how to configure the connection between my customer premises equipment and Microsoft's network so that I can create a tunnel from my remote network to the Global Secure Access network.
 ---
 # Configure customer premises equipment for Global Secure Access
 
@@ -31,10 +31,10 @@ You can set up the CPE using the Microsoft Entra admin center or using the Micro
 ## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a **Global Secure Access Administrator**.
-1. Browse to **Global Secure Access** > **Devices** > **Remote network**.
+1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select **View configuration** for the remote network you need to configure.
 
-    :::image type="content" source="media/how-to-configure-customer-premises-equipment/remote-network-view-configuration.png" alt-text="Screenshot of the configuration details with the Microsoft information highlighted." lightbox="media/how-to-configure-customer-premises-equipment/remote-network-view-configuration-expanded.png":::
+    :::image type="content" source="media/how-to-configure-customer-premises-equipment/remote-network-view-configuration.png" alt-text="Screenshot of the configuration details with the Microsoft information highlighted." lightbox="media/how-to-configure-customer-premises-equipment/remote-network-view-configuration.png":::
 
 1. Locate and save Microsoft's public IP address `endpoint` from the panel that opens.
 

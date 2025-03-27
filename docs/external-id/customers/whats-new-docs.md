@@ -1,71 +1,55 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 07/01/2024
+ms.date: 03/03/2025
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: whats-new
  
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
+# Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
 
 # What's new in docs: External ID in external tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
 
-## June 2024
-
-### Updated articles
-
-- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Screenshots and instructions updated
-- [Sign in users and call a web API in sample Node.js web application](sample-web-app-node-sign-in-call-api.md) - Editorial updates
-- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Updated sign in instructions
-
-
-## May 2024
-
-This month, we announced the general availability of Microsoft Entra External ID. Additionally, we’ve added “Applies to” tags to many of our articles to help navigation within the documentation.
+## February 2025
 
 ### New articles
 
-- [Tutorial: Prepare your Android (Kotlin) app for authentication](tutorial-mobile-app-android-kotlin-prepare-app.md)
-- [Tutorial: Register and configure Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-prepare-tenant.md)
-- [Tutorial: Call a protected web API in Android (Kotlin) app](tutorial-mobile-app-android-kotlin-sign-in-call-api.md)
-- [Tutorial: Sign in users in Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-sign-in.md)
-- [Custom URL domains in Microsoft Entra External ID (Preview)](concept-custom-url-domain.md)
-- [Enable custom URL domains for Microsoft Entra External ID (Preview)](how-to-custom-url-domain.md)
-- [Tutorial: Prepare your iOS (Swift) app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md)
-- [Tutorial: Register and configure iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-prepare-tenant.md)
-- [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md)
-- [Tutorial: Sign in users in iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-sign-in.md)
-- [Delete an external tenant](how-to-delete-external-tenant-portal.md)
+- [Add the SAML/WS-Fed identity provider to a user flow (preview)](how-to-saml-ws-federation-self-service-sign-up.md)
 
 ### Updated articles
 
-- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Merged sign-in native authentication Android articles
-- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added new supported features
-- [Samples for External ID developers](samples-ciam-all.md) - Updated the list of guides and tutorials for samples
-- [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md) - Merged sign-in native authentication Android articles
-- [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md) - Merged sign-in native authentication Android articles
-- [Authentication methods and identity providers in external tenants](concept-authentication-methods-customers.md) - Clarified authentication methods, identity providers, and MFA in external tenants
-- [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Updated the least privileged role
-- [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Updates some FAQs
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md) - Email claim is now mandatory
+- [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Updated billing for phone charges
+- [Identity providers for external tenants](concept-authentication-methods-customers.md) - Included SAML/WS-Fed details
 
-## April 2024
-
-This month, we made updates to our table of contents to make navigation easier for you. Additionally, we revised the terminology used to describe the external tenant in Microsoft Entra External ID.
+## January 2025
 
 ### New articles
 
-- [Microsoft Entra ID and data residency](/entra/fundamentals/data-residency)
-- [Workforce and external tenant configurations in Microsoft Entra External ID](/entra/external-id/tenant-configurations)
+- [Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication (preview)](how-to-native-authentication-cors-solution-production-environment.md)
+- [Set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App (preview)](how-to-native-authentication-cors-solution-test-environment.md)
+- [Quickstart: Sign in users in a sample React single-page application by using native authentication (preview)](quickstart-native-authentication-single-page-app-react-sign-in.md)
+- [Tutorial: Reset password in a React single-page app by using native authentication (preview)](tutorial-native-authentication-single-page-app-react-reset-password.md)
+- [Tutorial: Set up CORS proxy server to manage CORS headers for native authentication (preview)](tutorial-native-authentication-single-page-app-react-set-up-local-cors.md)
+- [Tutorial: Sign in users into a React single-page app by using native authentication (preview)](tutorial-native-authentication-single-page-app-react-sign-in.md)
+- [Tutorial: Sign up users into a React single-page app by using native authentication (preview)](tutorial-native-authentication-single-page-app-react-sign-up.md)
+- [Register a SAML app in your external tenant (preview)](how-to-register-saml-app.md)
+- [Configure Microsoft Entra External ID with Azure Web Application Firewall](tutorial-configure-external-id-web-app-firewall.md)
+- [Register a SAML app in your external tenant (preview)](tutorial-web-app-node-sign-in-sign-out.md)
+- [Tutorial: Add add sign-in to a Node/Express.js web app by using Microsoft identity platform](how-to-register-saml-app.md)
 
 ### Updated articles
 
-- [Supported features in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers) - Supported features for external tenants updated
-- [Overview: Secure your apps using External ID in an external tenant](/entra/external-id/customers/overview-customers-ciam) - Image and terminology updates
-- [Microsoft Entra External ID frequently asked questions](/entra/external-id/customers/faq-customers) - Updated pricing information
-- [Default user permissions in external tenants](/entra/external-id/customers/reference-user-permissions) - Updated user types
+- [Add Azure AD B2C tenant as an OpenID Connect identity provider](how-to-b2c-federation-customers.md) - Editorial updates
 
+## December 2024
+
+### Updated articles
+
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added pricing and ID Governance details

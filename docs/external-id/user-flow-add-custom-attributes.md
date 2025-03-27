@@ -1,13 +1,13 @@
 ---
-title: Add custom attributes to self-service sign-up flows
-description: Learn about customizing the attributes for your self-service sign-up user flows.
+title: Add custom attributes
+description: Learn how to add custom attributes to self-service sign-up flows in Microsoft Entra External ID. Extend the set of attributes stored on a guest account and customize the user experience.
  
 author: msmimart
 manager: celestedg
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 05/15/2024
+ms.date: 10/21/2024
 ms.author: mimart
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -15,7 +15,7 @@ ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration user flow administrator, I want to define custom attributes for user flows in Microsoft Entra, so that I can collect specific information during sign-up and extend the set of attributes stored on a guest account.
 ---
 
-# Define custom attributes for user flows
+# Define custom attributes to self-service sign-up flows in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -34,7 +34,6 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
 
 ## Create a custom attribute
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **Overview**.

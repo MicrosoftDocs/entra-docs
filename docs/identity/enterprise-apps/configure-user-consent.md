@@ -8,11 +8,11 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 10/31/2023
+ms.date: 09/16/2024
 ms.author: jomondi
-ms.reviewer: phsignor, yuhko
+ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 
 
 #customer intent: As an IT admin, I want to configure user consent settings for applications, so that I can control the level of access users have to my organization's data and reduce the risk of malicious applications.
@@ -26,6 +26,9 @@ Before an application can access your organization's data, a user must grant the
 
 To reduce the risk of malicious applications attempting to trick users into granting them access to your organization's data, we recommend that you allow user consent only for applications that have been published by a [verified publisher](~/identity-platform/publisher-verification-overview.md).
 
+> [!NOTE]
+> Applications that requires users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
+
 ## Prerequisites
 
 To configure user consent, you need:
@@ -37,7 +40,6 @@ To configure user consent, you need:
 
 :::zone pivot="portal"
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To configure user consent settings through the Microsoft Entra admin center:
 
@@ -76,7 +78,7 @@ $body = @{
         "managePermissionGrantsForOwnedResource.{other-current-policies}" 
     )
 }
-Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -BodyParameter $body
+Update-MgPolicyAuthorizationPolicy -BodyParameter $body
 
 ```
 
@@ -91,7 +93,7 @@ $body = @{
         "managePermissionGrantsForOwnedResource.{other-current-policies}"
     )
 }
-Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -BodyParameter $body
+Update-MgPolicyAuthorizationPolicy -BodyParameter $body
 ```
 
 Replace `{consent-policy-id}` with the ID of the policy you want to apply. You can choose a [custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-powershell) that you've created, or you can choose from the following built-in policies:
