@@ -2,12 +2,12 @@
 title: Delegate access governance to catalog creators in entitlement management
 description: Learn how to delegate access governance from IT administrators to catalog creators and project managers so that they can manage access themselves.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 03/10/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
@@ -15,7 +15,7 @@ ms.reviewer: mwahl
 
 # Delegate access governance to catalog creators in entitlement management
 
-A catalog is a container of resources and access packages. You create a catalog when you want to group related resources and access packages. By default, a Global Administrator or an Identity Governance Administrator can [create a catalog](entitlement-management-catalog-create.md), and can add other users as catalog owners.
+A catalog is a container of resources and access packages. You create a catalog when you want to group related resources and access packages. By default the role Identity Governance Administrator is the least privileged role that can [create a catalog](entitlement-management-catalog-create.md), and can add other users as catalog owners as an even further least privilege option.
 
 > [!NOTE]
 > Following least privilege access, it is recommended to use the Identity Governance Administrator role when possible in entitlement management.
@@ -32,7 +32,6 @@ If you have existing catalogs to delegate, then continue at the [create and mana
 
 ## As an IT administrator, delegate to a catalog creator
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to assign a user to the catalog creator role.
 

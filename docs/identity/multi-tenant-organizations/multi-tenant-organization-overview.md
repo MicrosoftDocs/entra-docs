@@ -2,11 +2,11 @@
 title: What is a multitenant organization in Microsoft Entra ID?
 description: Learn about multitenant organizations in Microsoft Entra ID and Microsoft 365.
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 05/16/2024
+ms.date: 03/20/2025
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -138,6 +138,7 @@ To ease the setup of homogenous cross-tenant access settings applied to partner 
 The multitenant organization capability has been designed with the following constraints:
 
 - Any given tenant can only create or join a single multitenant organization.
+- A multitenant organization is not allowed between a Cloud Solution Provider (CSP) and their customer tenants.
 - Any multitenant organization must have at least one active owner tenant.
 - Each active tenant must have cross-tenant access settings for all active tenants.
 - Any active tenant may leave a multitenant organization by removing themselves from it.

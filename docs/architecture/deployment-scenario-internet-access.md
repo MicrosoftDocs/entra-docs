@@ -63,7 +63,7 @@ This section defines the requirements for the scenario solution.
 
 Administrators who interact with Global Secure Access features require the Global Secure Access Administrator and Application Administrator roles.
 
-Conditional Access (CA) policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
+Conditional Access policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
 
 Identity Governance configuration requires at least the Identity Governance Administrator role.
 
@@ -75,7 +75,7 @@ To implement all the steps in this scenario, you need Global Secure Access and M
 
 To successfully deploy and test this scenario, configure for these prerequisites:
 
-1. Microsoft Entra tenant with Microsoft Entra ID P1 license. Configure Microsoft Entra ID to test Identity Protection. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+1. Microsoft Entra tenant with Microsoft Entra ID P1 license. [Purchase licenses or obtain trial licenses](https://www.microsoft.com/security/business/microsoft-entra-pricing).
    - One user with at least Global Secure Access Administrator and Application Administrator roles to configure Microsoft's Security Service Edge
    - At least one user as client test user in your tenant
 1. One Windows client device with this configuration:
@@ -113,10 +113,10 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 
 ### Create security groups
 
-In this scenario, we use two security groups to assign security profiles using Conditional Access (CA) policies. In the Microsoft Entra admin center, create security groups with these names:
+In this scenario, we use two security groups to assign security profiles using Conditional Access policies. In the Microsoft Entra admin center, create security groups with these names:
 
 - Internet Access -- Allow Social Networking sites
-= Internet Access -- Allow Hacking sites
+- Internet Access -- Allow Hacking sites
 
 Don't add any members to these groups. Later in this article, we configure Identity Governance to add members on request.
 
@@ -245,7 +245,7 @@ In this section, we create a security profile that allows access to social netwo
 
 ### Create social networking Conditional Access policy
 
-In this section, we create a Conditional Access (CA) policy that enforces the **Allow Social Networking** security profile for users that request access.
+In this section, we create a Conditional Access policy that enforces the **Allow Social Networking** security profile for users that request access.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.

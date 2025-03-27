@@ -13,3 +13,6 @@ items:
     - name: Conditional Access
       tocHref: /mem/intune/enrollment/
       topicHref: /entra/identity/conditional-access/
+    - name: Conditional Access
+      tocHref: /entra/identity/role-based-access-control/
+      topicHref: /entra/identity/conditional-access/

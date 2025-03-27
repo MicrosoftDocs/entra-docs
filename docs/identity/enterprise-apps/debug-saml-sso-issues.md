@@ -28,7 +28,6 @@ To download and install the My Apps Secure Sign-in Extension, use one of the fol
 - [Chrome](https://go.microsoft.com/fwlink/?linkid=866367)
 - [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/my-apps-secure-signin-ex/gaaceiggkkiffbfdpmfapegoiohkiipl)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Test SAML-based single sign-on
 
@@ -98,4 +97,4 @@ To resolve the error, follow these steps, or watch this [short video about how t
 
 ## Next steps
 
-Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml).
+Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](~/identity/conditional-access/policy-all-users-device-compliance.md).

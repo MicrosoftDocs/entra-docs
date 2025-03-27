@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 05/31/2024
+ms.date: 03/13/2025
 ms.author: ryanwi
 ms.reviewer: 
 ---
@@ -99,7 +99,7 @@ With modern authentication, all services, including all authentication services,
 
 With a central identity provider, organizations can establish authentication and authorization policies, monitor user behavior, identify suspicious activities, and reduce malicious attacks.  
 
-[Microsoft Entra](../index.yml) is an example of a cloud-based identity provider. Other examples include Twitter, Google, Amazon, LinkedIn, and GitHub.
+[Microsoft Entra](../index.yml) is an example of a cloud-based identity provider. Other examples include X, Google, Amazon, LinkedIn, and GitHub.
 
 ## Next steps
 

@@ -15,6 +15,8 @@ ms.topic: tutorial
 
 # Tutorial: Sign in users and call Microsoft Graph in Windows Presentation Foundation (WPF) desktop app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 In this tutorial, you build a native Windows Desktop .NET (XAML) app that signs in users and gets an access token to call the Microsoft Graph API.
 
 When you've completed the guide, your application will able to call a protected API that uses personal accounts (including outlook.com, live.com, and others). The application will also use work and school accounts from any company or organization that uses Microsoft Entra ID.
@@ -88,7 +90,6 @@ Create the application using the following steps:
 
 ## Register your application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register and configure your application, follow these steps:
 

@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with Flipsnack SAML
 description: Learn how to configure single sign-on between Microsoft Entra ID and Flipsnack SAML.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Flipsnack SAML so that I can control who has access to Flipsnack SAML, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -18,7 +18,7 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with Flipsnack SAML
 
-In this article, you'll learn how to integrate Flipsnack SAML with Microsoft Entra ID. Flipsnack is the complete solution perfect for creating interactive catalogs, magazines, brochures & many more. Convert a PDF file to a flipbook or make the entire design from scratch. When you integrate Flipsnack SAML with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Flipsnack SAML with Microsoft Entra ID. Flipsnack is the complete solution perfect for creating interactive catalogs, magazines, brochures & many more. Convert a PDF file to a flipbook or make the entire design from scratch. When you integrate Flipsnack SAML with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Flipsnack SAML.
 * Enable your users to be automatically signed-in to Flipsnack SAML with their Microsoft Entra accounts.
@@ -87,7 +87,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://www.flipsnack.com/accounts/sign-in-sso.html?accountId=<CustomerHash>`
 
     > [!Note]
-    > This value is not the real. Update this value with the actual Sign on URL. Contact [Flipsnack SAML Client support team](mailto:contact@flipsnack.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > This value isn't the real. Update this value with the actual Sign on URL. Contact [Flipsnack SAML Client support team](mailto:contact@flipsnack.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -115,11 +115,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
     1. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **Certificate** textbox.
 
-    1. Click **Save changes**.
+    1. Select **Save changes**.
 
 ### Create Flipsnack SAML test user
 
-In this section, a user called B.Simon is created in Flipsnack SAML. Flipsnack SAML supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Flipsnack SAML, a new one is created after authentication.
+In this section, a user called B.Simon is created in Flipsnack SAML. Flipsnack SAML supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Flipsnack SAML, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -127,21 +127,21 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Flipsnack SAML Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Flipsnack SAML Sign-on URL where you can initiate the login flow.  
 
 * Go to Flipsnack SAML Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Flipsnack SAML for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Flipsnack SAML for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Flipsnack SAML tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Flipsnack SAML for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Flipsnack SAML tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Flipsnack SAML for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Flipsnack SAML you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

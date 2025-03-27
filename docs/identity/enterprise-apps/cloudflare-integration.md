@@ -63,7 +63,6 @@ Integrate Cloudflare Zero Trust account with an instance of Microsoft Entra ID.
 
 ## Register Cloudflare with Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the instructions in the following three sections to register Cloudflare with Microsoft Entra ID.
 
@@ -95,8 +94,6 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 5. Under **Expires**, select an expiration.
 6. Select **Add**.
 7. Under **Client secrets**, from the **Value** field, copy the value. Consider the value an application password. The example value appears, Azure values appear in the Cloudflare Access configuration.
-
-   :::image type="content" source="./media/cloudflare-integration/cloudflare-access-configuration.png" alt-text="Screenshot of Client secrets input.":::
 
 ### Permissions
 

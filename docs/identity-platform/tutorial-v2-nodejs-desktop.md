@@ -14,6 +14,8 @@ ms.topic: tutorial
 
 # Tutorial: Sign in users and call the Microsoft Graph API in an Electron desktop app
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 In this tutorial, you build an Electron desktop application that signs in users and calls Microsoft Graph by using the authorization code flow with PKCE. The desktop app you build uses the [Microsoft Authentication Library (MSAL) for Node.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node).
 
 Follow the steps in this tutorial to:

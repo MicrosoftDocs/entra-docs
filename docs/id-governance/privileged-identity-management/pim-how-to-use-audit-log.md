@@ -1,18 +1,16 @@
 ---
 title: View audit log report for Microsoft Entra roles in Microsoft Entra PIM
-description: Learn how to view the audit log history for Microsoft Entra roles in Microsoft Entra Privileged Identity Management (PIM).
-
+description: Learn how to view the audit log history for Microsoft Entra roles in
+  Microsoft Entra Privileged Identity Management (PIM).
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-
-
 ---
 # View audit history for Microsoft Entra roles in Privileged Identity Management
 
@@ -22,7 +20,6 @@ Follow these steps to view the audit history for Microsoft Entra roles.
 
 ## View resource audit history
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Resource audit gives you a view of all activity associated with your Microsoft Entra roles.
 

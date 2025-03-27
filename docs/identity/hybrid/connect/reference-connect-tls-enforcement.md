@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: TLS 1.2 enforcement for Microsoft Entra Connect
 description: Learn how to force your Microsoft Entra Connect server to use only Transport Layer Security (TLS) 1.2.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: reference
 ms.tgt_pltfrm: na
@@ -23,13 +23,13 @@ Transport Layer Security (TLS) protocol version 1.2 is a cryptography protocol t
 
 
 > [!NOTE]
-> All versions of Windows Server that are supported for Microsoft Entra Connect V2.0 already default to TLS 1.2. If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
 
 ## Update the registry
 In order to force the Microsoft Entra Connect server to only use TLS 1.2, the registry of the Windows server must be updated. Set the following registry keys on the Microsoft Entra Connect server.
 
 > [!IMPORTANT]
-> After you have updated the registry, you must restart the Windows server for the changes to take affect.
+> After you have updated the registry, you must restart the Windows server for the changes to take effect.
 
 
 ### Enable TLS 1.2
@@ -144,59 +144,6 @@ New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders
 New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client' -Name 'DisabledByDefault' -Value '0' -PropertyType 'DWord' -Force | Out-Null
 
 Write-Host 'TLS 1.2 has been enabled. You must restart the Windows Server for the changes to take affect.' -ForegroundColor Cyan
-
-```
-
-### Disable TLS 1.2
-- [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\\.NETFramework\v4.0.30319]
-  - "SystemDefaultTlsVersions"=dword:00000000
-  - "SchUseStrongCrypto"=dword:0000000
-- [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework\v4.0.30319]
-  - "SystemDefaultTlsVersions"=dword:00000000
-  - "SchUseStrongCrypto"=dword:00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server]
-  - "Enabled"=dword:00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server]
-  - "DisabledByDefault"=dword:00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client]
-  - "Enabled"=dword:00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client]
-  - "DisabledByDefault"=dword:00000001 
-
-### PowerShell script to disable TLS 1.2 (not recommended)
-You can use the following PowerShell script to disable TLS 1.2 on your Microsoft Entra Connect server.
-
-```powershell
-
-If (-Not (Test-Path 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319'))
-{
-    New-Item 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319' -Force | Out-Null
-}
-New-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319' -Name 'SystemDefaultTlsVersions' -Value '0' -PropertyType 'DWord' -Force | Out-Null
-New-ItemProperty -Path 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value '0' -PropertyType 'DWord' -Force | Out-Null
-
-If (-Not (Test-Path 'HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319'))
-{
-    New-Item 'HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319' -Force | Out-Null
-}
-New-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319' -Name 'SystemDefaultTlsVersions' -Value '0' -PropertyType 'DWord' -Force | Out-Null
-New-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value '0' -PropertyType 'DWord' -Force | Out-Null
-
-If (-Not (Test-Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server'))
-{
-    New-Item 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server' -Force | Out-Null
-}
-New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server' -Name 'Enabled' -Value '0' -PropertyType 'DWord' -Force | Out-Null
-New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server' -Name 'DisabledByDefault' -Value '1' -PropertyType 'DWord' -Force | Out-Null
-
-If (-Not (Test-Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client'))
-{
-    New-Item 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client' -Force | Out-Null
-}
-New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client' -Name 'Enabled' -Value '0' -PropertyType 'DWord' -Force | Out-Null
-New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client' -Name 'DisabledByDefault' -Value '1' -PropertyType 'DWord' -Force | Out-Null
-
-Write-Host 'TLS 1.2 has been disabled. You must restart the Windows Server for the changes to take affect.' -ForegroundColor Cyan
 
 ```
 

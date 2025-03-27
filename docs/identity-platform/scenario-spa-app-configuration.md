@@ -8,11 +8,14 @@ ms.custom:
 ms.date: 02/11/2020
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 
 # Single-page application: Code configuration
+
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 Learn how to configure the code for your single-page application (SPA).
 

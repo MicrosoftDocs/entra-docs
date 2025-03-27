@@ -2,11 +2,11 @@
 title: View and download the Permissions Analytics Report in Permissions Management
 description: How to view and download the Permissions Analytics Report in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/20/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

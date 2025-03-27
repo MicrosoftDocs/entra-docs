@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/22/2023
+ms.date: 12/10/2024
 ms.custom: template-how-to
 ---
 

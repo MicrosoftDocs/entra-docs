@@ -2,11 +2,11 @@
 title: Set and view configuration settings in Permissions Management
 description: How to view the Permissions Management API integration settings and create service accounts and roles.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 06/16/2023
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

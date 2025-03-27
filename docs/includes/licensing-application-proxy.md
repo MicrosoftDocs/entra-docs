@@ -1,11 +1,11 @@
 ---
-title: include file
-description: include file
+title: Include file
+description: Include file
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: include
-ms.date: 10/26/2023
+ms.date: 01/31/2025
 ms.author: barclayn
 ms.custom: include file,licensing
 ---

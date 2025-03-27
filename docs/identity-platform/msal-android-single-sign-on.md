@@ -91,7 +91,6 @@ If Microsoft Authenticator, Intune Company Portal, or Link to Windows is uninsta
 
 #### Generate a redirect URI for a broker
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You must register a redirect URI that is compatible with the broker. The redirect URI for the broker should include your app's package name and the Base64-encoded representation of your app's signature.
 
@@ -162,7 +161,7 @@ Android applications have the option to use the `WEBVIEW`, system browser, or Ch
 
 ### Authorization agents
 
-Choosing a specific strategy for authorization agents is important and represents additional functionality apps can customize. We recommend using 'WEBVIEW'. To know more about other confguration values (see [Understand the Android MSAL configuration file](msal-configuration.md).
+Choosing a specific strategy for authorization agents is important and represents additional functionality apps can customize. We recommend using 'WEBVIEW'. To know more about other configuration values (see [Understand the Android MSAL configuration file](msal-configuration.md).
 
 MSAL supports authorization using a `WEBVIEW`, or the system browser. The image below shows how it looks using the `WEBVIEW`, or the system browser with CustomTabs or without CustomTabs:
 

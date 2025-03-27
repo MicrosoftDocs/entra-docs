@@ -95,7 +95,6 @@ This tutorial uses the Guided Configuration v16.1 Easy Button template. With the
 
 ## Register the Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it.
 
@@ -151,8 +150,6 @@ To reduce time and effort, reuse global settings to publish other applications.
 3. For **Tenant ID, Client ID**, and **Client Secret** enter what you noted during Easy Button client registration.
 4. Confirm the BIG-IP connects to your tenant.
 5. Select **Next**.
-
-   ![Screenshot of input on the Configuration Properties dialog.](./media/f5-big-ip-oracle/configuration-general-and-service-account-properties.png)
 
 ### Service Provider
 
