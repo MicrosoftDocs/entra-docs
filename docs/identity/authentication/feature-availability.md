@@ -64,11 +64,11 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 |**Identity governance**|Automated user provisioning to apps | &#x2705; |
 || Automated group provisioning to apps | &#x2705; |
 || HR-driven provisioning | Partial. See [HR-provisioning apps](#hr-provisioning-apps). |
-|| Terms of use attestation | &#x2705; |
-|| Access certifications and reviews | &#x2705; |
+|| Terms of use | &#x2705; |
+|| Access reviews | &#x2705; |
 || Entitlement management | &#x2705; |
-|| Privileged Identity Management (PIM), just-in-time access |  &#x2705; |
-|| Lifecycle workflows (LCW) |  &#x2705; |
+|| Privileged Identity Management (PIM) |  &#x2705; |
+|| Lifecycle workflows, in Microsoft Entra ID Governance |  &#x2705; |
 |**Event logging and reporting**|Basic security and usage reports | &#x2705; |
 || Advanced security and usage reports | &#x2705; |
 || ID Protection: vulnerabilities and risky accounts | &#x2705; |
