@@ -76,8 +76,6 @@ Administrators can now configure tenant default or custom app policy using the n
 
 The Microsoft Entra Connect Sync .msi installation files are also available on Microsoft Entra admin center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). As part of this change, we'll stop uploading new installation files on the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
----
-
 ### General Availability - New Microsoft-managed Conditional Access policies designed to limit device code flow and legacy authentication flows
 
 **Type:** Changed feature    
@@ -85,8 +83,6 @@ The Microsoft Entra Connect Sync .msi installation files are also available on M
 **Product capability:** Access Control    
 
 As part of our ongoing commitment to enhance security and protect our customers from evolving cyber threats, we're rolling out two new Microsoft-managed Conditional Access policies designed to limit device code flow and legacy authentication flows. These policies are aligned to the secure by default principle of our broader [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative), which aims to provide robust security measures to safeguard your organization by default.
-
----
 
 ### Deprecated - Upgrade your Microsoft Entra Connect Sync version to avoid impact on the Sync Wizard
 
