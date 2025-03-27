@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 03/05/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: anjusingh, ludwignick
 ---
 # Conditional Access: Authentication transfer (Preview)
@@ -23,7 +23,7 @@ During authentication transfer, all Microsoft Entra Conditional Access policies 
 - With authentication transfer, if users perform multifactor authentication (MFA) on their PC, they aren't required to perform MFA on their mobile device.
 - With authentication transfer, Conditional Access policies get evaluated before transferring the authentication. If a policy isn't met for the mobile device, the user is prompted to sign in manually.
    - Authentication Transfer bypasses 3rd party mobile device management (MDM) solutions when transferring authentication to mobile devices. 
-- With authentication transfer, users must reauthenticate on mobile apps if they signed in with protected session tokens, like the Primary Refresh Token. 
+- With authentication transfer, users must reauthenticate on their PC even if they signed in with protected session tokens, like the Primary Refresh Token. They aren't required to reauthenticate on mobile apps.
 
 ## Authentication transfer in sign-in logs
 
@@ -35,9 +35,9 @@ Authentication transfer is enabled by default for all users. Administrators can 
 
 Authentication transfer checks all applicable Conditional Access policies before signing the user into a mobile app. If the required conditions aren't met, the user is prompted to authenticate on the mobile app.
 
-To create a policy that uses the authentication transfer condition, see the article [Block authentication transfer with Conditional Access policy](how-to-policy-authentication-flows.md#authentication-transfer-policies).
+To create a policy that uses the authentication transfer condition, see the article [Block authentication transfer with Conditional Access policy](policy-block-authentication-flows.md#authentication-transfer-policies).
 
 ## Related content
 
-- [Block authentication transfer with Conditional Access policy](how-to-policy-authentication-flows.md#authentication-transfer-policies)
+- [Block authentication transfer with Conditional Access policy](policy-block-authentication-flows.md#authentication-transfer-policies)
 - [Conditional Access: Conditions](concept-conditional-access-conditions.md)

@@ -2,11 +2,11 @@
 title: Generate and view a system report in Permissions Management
 description: How to generate and view a system report in the Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 04/24/2023
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

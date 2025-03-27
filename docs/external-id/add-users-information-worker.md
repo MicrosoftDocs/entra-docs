@@ -62,7 +62,6 @@ Self-service app management requires some initial setup by a Microsoft Entra adm
 
 ### Enable self-service group management for your tenant
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.

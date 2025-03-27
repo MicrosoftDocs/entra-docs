@@ -2,7 +2,7 @@
 title: Change lifecycle settings for an access package in entitlement management
 description: Learn how to change requestor information & lifecycle settings for an access package in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -21,7 +21,6 @@ To ensure users have the right access to an access package, custom questions can
 
 ## Open lifecycle settings
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To change the lifecycle settings for an access package, you need to open the corresponding policy. Follow these steps to open the lifecycle settings for an access package.
 

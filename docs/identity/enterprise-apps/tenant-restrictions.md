@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 12/19/2023
+ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: vranganathan
 ms.collection: M365-identity-device-management
@@ -26,7 +26,7 @@ With tenant restrictions, organizations can specify the list of tenants that use
 
 This article focuses on tenant restrictions for Microsoft 365, but the feature protects all apps that send the user to Microsoft Entra ID for single sign-on. If you use SaaS apps with a different Microsoft Entra tenant from the tenant used by your Microsoft 365, make sure that all required tenants are permitted. (For example, in B2B collaboration scenarios). For more information about SaaS cloud apps, see the [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps).
 
-The tenant restrictions feature also supports [blocking the use of all Microsoft consumer applications](#blocking-consumer-applications) (MSA apps) such as OneDrive, Hotmail, and Xbox.com.  This functionality uses a separate header to the `login.live.com` endpoint, and is detailed at the end of this article.
+The tenant restrictions feature also supports [blocking the use of all Microsoft consumer applications](#blocking-consumer-applications) (MSA apps) such as OneDrive, Hotmail, and Xbox.com. This functionality uses a separate header to the `login.live.com` endpoint, and is detailed at the end of this article.
 
 ## How it works
 
@@ -89,7 +89,7 @@ To find your directory ID:
 1. Browse to **Identity** > **Overview** > **Overview**.
 1. Copy the **Tenant ID** value.
 
-To validate that a directory ID or domain name refer to the same tenant, use that ID or domain in place of \<tenant\> in this URL: `https://login.microsoftonline.com/<tenant>/v2.0/.well-known/openid-configuration`.  If the results with the domain and the ID are the same, they refer to the same tenant.
+To validate that a directory ID or domain name refer to the same tenant, use that ID or domain in place of \<tenant\> in this URL: `https://login.microsoftonline.com/<tenant>/v2.0/.well-known/openid-configuration`. If the results with the domain and the ID are the same, they refer to the same tenant.
 
 To prevent users from inserting their own HTTP header with nonapproved tenants, the proxy needs to replace the *Restrict-Access-To-Tenants* header if it's already present in the incoming request.
 

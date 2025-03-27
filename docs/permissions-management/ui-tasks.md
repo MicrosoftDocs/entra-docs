@@ -2,11 +2,11 @@
 title: View information about active and completed tasks in Permissions Management
 description: How to view information about active and completed tasks in the Activities pane in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 02/23/2022
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 
@@ -15,6 +15,7 @@ ms.author: jfields
 This article describes the usage of the **Permissions Management Tasks** pane in Permissions Management.
 
 ## Display active and completed tasks
+You can display both active and completed tasks in Permissions Management. This section will show you how to access the Tasks pane, view details about active and completed tasks, and understand the status of each task.
 
 1. In the Permissions Management home page, select **Tasks** (the timer icon).
 

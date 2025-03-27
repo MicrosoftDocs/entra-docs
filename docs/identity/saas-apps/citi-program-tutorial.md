@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with CITI Program
 description: Learn how to configure single sign-on between Microsoft Entra ID and CITI Program.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CITI Program so that I can control who has access to CITI Program, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -122,13 +122,13 @@ To configure single sign-on on **CITI Program** side, you need to send the copie
 
 In this section, you test your Microsoft Entra single sign-on configuration with the following options. 
 
-* Click on **Test this application**, this will redirect to CITI Program Sign-on URL, where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to CITI Program Sign-on URL, where you can initiate the login flow. 
 
 * Go to CITI Program Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. Clicking the CITI Program tile in the My Apps will redirect to CITI Program Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. Selecting the CITI Program tile in the My Apps will redirect to CITI Program Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-CITI Program supports just-in-time user provisioning. First-time SSO users will be prompted to either: 
+CITI Program supports just-in-time user provisioning. First-time SSO users are prompted to either: 
 
 * Link their existing CITI Program account in case they already have one
 ![SSOHaveAccount](https://user-images.githubusercontent.com/46728557/228357500-a74489c7-8c5f-4cbe-ad47-9757d3d9fbe6.PNG "Link existing CITI Program account")
@@ -142,6 +142,6 @@ CITI Program supports just-in-time user provisioning. First-time SSO users will 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md)
 
-## Next steps
+## Related content
 
 Once you configure CITI Program you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real-time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

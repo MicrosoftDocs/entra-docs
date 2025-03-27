@@ -1,7 +1,7 @@
 ---
 author: kengaderdus
-ms.service: active-directory
-ms.subservice: ciam
+ms.service: entra-external-id 
+ms.subservice: external
 ms.topic: include
 ms.date: 03/12/2024
 ms.author: kengaderdus

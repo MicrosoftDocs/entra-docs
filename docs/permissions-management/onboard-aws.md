@@ -2,11 +2,11 @@
 title:  Onboard an Amazon Web Services (AWS) account to Permissions Management
 description: How to onboard an Amazon Web Services (AWS) account to Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 
@@ -15,7 +15,7 @@ ms.author: jfields
 This article describes how to onboard an Amazon Web Services (AWS) account in Microsoft Entra Permissions Management.
 
 > [!NOTE]
-> You must be a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) to perform the tasks in this article.
+> You must be a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) to perform the tasks in this article.
 
 ## Explanation
 

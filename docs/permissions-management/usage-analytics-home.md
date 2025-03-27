@@ -2,11 +2,11 @@
 title: View analytic information with the Analytics dashboard in Permissions Management
 description: How to use the Analytics dashboard in Permissions Management to view details about users, groups, active resources, active tasks, access keys, and serverless functions.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

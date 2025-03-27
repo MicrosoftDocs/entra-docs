@@ -3,11 +3,11 @@ title: Lifecycle Workflows tasks and definitions
 description: This article guides a user on Workflow task definitions and task parameters.
 author: OWinfreyATL
 ms.author: owinfrey
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 08/13/2024
+ms.date: 08/27/2024
 ---
 
 # Lifecycle Workflow built-in tasks

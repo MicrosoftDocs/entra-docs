@@ -8,11 +8,13 @@ ms.custom:
 ms.date: 04/30/2022
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 
 # Single-page application: sign-in and sign-out
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 Before you can get tokens to access APIs in your application, you need an authenticated user context. To authenticate a user, you can use a [Pop-up window](#sign-in-with-a-pop-up-window) and/or a [Redirect](#sign-in-with-a-redirect) sign in method.
 

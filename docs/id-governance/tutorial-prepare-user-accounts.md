@@ -2,14 +2,14 @@
 title: 'Tutorial: Preparing user accounts for Lifecycle workflows'
 description: Tutorial for preparing user accounts for Lifecycle workflows.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/13/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial, has-azure-ad-ps-ref
+ms.custom: template-tutorial, no-azure-ad-ps-ref
 ---
 # Preparing user accounts for Lifecycle workflows tutorials
 
@@ -35,7 +35,6 @@ In most cases, users are going to be provisioned to Microsoft Entra ID either fr
 
 ## Create users in Microsoft Entra ID
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 We use Graph Explorer to quickly create two users needed to execute the Lifecycle Workflows in the tutorials.  One user represents our new employee and the second represents the new employee's manager.
 
@@ -143,13 +142,20 @@ $Password_manager = "Pass1w0rd"
 $Department = "Sales"
 $UPN_manager = "bsimon@<your tenant name here>"
 
-Install-Module -Name AzureAD
+Install-Module -Name Microsoft.Graph
 Connect-MgGraph -Confirm
 
-$PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
-$PasswordProfile.Password = "<Password>"
-New-MgUser -DisplayName $Displayname_manager  -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_manager -AccountEnabled $true -MailNickName $Name_manager -Department $Department
-New-MgUser -DisplayName $Displayname_employee  -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_employee -AccountEnabled $true -MailNickName $Name_employee -Department $Department
+$PasswordProfile = @{
+  Password = "$Password_manager"
+  }
+
+New-MgUser -DisplayName $Displayname_manager -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_manager -AccountEnabled $true -MailNickName $Name_manager -Department $Department
+
+$PasswordProfile = @{
+  Password = "$Password_employee"
+  }
+
+New-MgUser -DisplayName $Displayname_employee -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_employee -AccountEnabled $true -MailNickName $Name_employee -Department $Department
 ```
 
 Once your user or users are successfully created in Microsoft Entra ID, you can proceed to follow the Lifecycle workflow tutorials for your workflow creation.  

@@ -2,7 +2,7 @@
 title: Reprocess assignments for an access package in entitlement management
 description: Learn how to reprocess assignments for an access package in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -29,7 +29,6 @@ To use entitlement management and assign users to access packages, you must have
 
 ## Open an existing access package and reprocess user assignments
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If you have users who are in the "Delivered" state but don't have access to resources that are a part of the access package, you'll likely need to reprocess the assignments to reassign those users to the access package's resources. Follow these steps to reprocess assignments for an existing access package:
 
