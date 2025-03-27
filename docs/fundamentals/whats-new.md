@@ -29,6 +29,8 @@ For a more dynamic experience, you can now find this information in the Microsof
 
 ## March 2025
 
+# [New features](#tab/NewFeaturesMarch)
+
 ### General Availability- Conditional Access reauthentication policy 
 
 **Type:** New feature    
@@ -36,8 +38,6 @@ For a more dynamic experience, you can now find this information in the Microsof
 **Product capability:** Identity Security & Protection    
 
 Require reauthentication every time can be used for scenarios where you want to require a fresh authentication, every time a user performs specific actions like accessing sensitive applications, securing resources behind VPN, or Securing privileged role elevation in PIM​. For more information, see: [Require reauthentication every time](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time).
-
----
 
 ### General Availability- Custom Attributes support for Microsoft Entra Domain Services
 
@@ -47,18 +47,6 @@ Require reauthentication every time can be used for scenarios where you want to 
 
 Custom Attributes for Microsoft Entra Domain Services is now Generally Available. This capability allows customers to use Custom Attributes in their managed domains. Legacy applications often rely on custom attributes created in the past to store information, categorize objects, or enforce fine-grained access control over resources. For example, these applications might use custom attributes to store an employee ID in their directory and rely on these attributes in their application LDAP calls. Modifying legacy applications can be costly and risky, and customers might lack the necessary skills or knowledge to make these changes. Microsoft Entra Domain Services now supports custom attributes, enabling customers to migrate their legacy applications to the Azure cloud without modification. It also provides support to synchronize custom attributes from Microsoft Entra ID, allowing customers to benefit from Microsoft Entra ID services in the cloud. For more information, see: [Custom attributes for Microsoft Entra Domain Services](../identity/domain-services/concepts-custom-attributes.md).
 
----
-
-### General Availability - Download Microsoft Entra Connect Sync on the Microsoft Entra admin center
-
-**Type:** Plan for change    
-**Service category:** Microsoft Entra Connect    
-**Product capability:** Identity Governance    
-
-The Microsoft Entra Connect Sync .msi installation files are also available on Microsoft Entra admin center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). As part of this change, we'll stop uploading new installation files on the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
-
----
-
 ### Public Preview - Conditional Access Per-Policy Reporting
 
 **Type:** New feature    
@@ -66,8 +54,6 @@ The Microsoft Entra Connect Sync .msi installation files are also available on M
 **Product capability:** Identity Security & Protection    
 
 Conditional Access Per-Policy Reporting enables admins to easily evaluate the impact of enabled and report-only Conditional Access policies on their organization, without using Log Analytics. This feature surfaces a graph for each policy in the Microsoft Entra Admin Center, visualizing the policy’s impact on the tenant’s past sign-ins. For more information, see: [Policy impact (Preview)](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact-preview).
-
----
 
 ### Public Preview - Limit creation or promotion of multitenant apps
 
@@ -78,6 +64,17 @@ Conditional Access Per-Policy Reporting enables admins to easily evaluate the im
 A new feature has been added to the [App Management Policy Framework](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta) that allows restriction on creation or promotion of multitenant applications, providing administrators with greater control over their app environments.
 
 Administrators can now configure tenant default or custom app policy using the new '[audiences](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta#what-restrictions-can-be-managed-in-microsoft-graph)' restriction to block new app creation if the signInAudience value provided in the app is not permitted by the policy. In addition, existing apps can be restricted from changing their signInAudience if the target value is not permitted by the policy. These policy changes are applied during app creation or update operations, offering control over application deployment and usage. For more information, see: [audiencesConfiguration resource type](/graph/api/resources/audiencesconfiguration).
+
+
+# [Change announcements](#tab/change-announcementsMarch)
+
+### General Availability - Download Microsoft Entra Connect Sync on the Microsoft Entra admin center
+
+**Type:** Plan for change    
+**Service category:** Microsoft Entra Connect    
+**Product capability:** Identity Governance    
+
+The Microsoft Entra Connect Sync .msi installation files are also available on Microsoft Entra admin center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). As part of this change, we'll stop uploading new installation files on the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
 ---
 
