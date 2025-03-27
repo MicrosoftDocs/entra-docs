@@ -47,7 +47,7 @@ For more information, see [What is Azure attribute-based access control (Azure A
 
 Follow these steps to make a user eligible for an Azure resource role.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Access Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a User Access Administrator.
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**.
 
