@@ -88,8 +88,8 @@ Tenant restrictions are not enforced when a user (or a guest user) tries to acce
 1. Ensure that the Universal Tenant Restrictions signaling is **turned off** in Global Secure Access settings.
 1. Use your browser to navigate to the Graph Explorer (`https://aka.ms/ge`) and sign in with the identity from a tenant different than yours that isn't allow-listed in a Tenant Restrictions v2 policy. Note that you may need to use a private browser window and/or log out of your primary account to perform this step.
    1. For example, if your tenant is Contoso, sign in as a Fabrikam user in the Fabrikam tenant. 
-   1. The Fabrikam user should be able to access SharePoint, since Tenant Restrictions v2 signaling is disabled in Global Secure Access.
-1. Optionally, in the same browser with Graph Explorer open, open Developer Tools, or press F12 on the keyboard. Start capturing the network logs. You should see HTTP requests returning status `200` as you navigate SharePoint when everything is working as expected. 
+   1. The Fabrikam user should be able to access the Microsoft Graph Explorer, since Tenant Restrictions v2 signaling is disabled in Global Secure Access.
+1. Optionally, in the same browser with Graph Explorer open, open Developer Tools, or press F12 on the keyboard. Start capturing the network logs. You should see HTTP requests returning status `200` as you interact with the Microsoft Graph Explorer when everything is working as expected(for example, send a GET request to retrieve users in your tenant). 
 1. Ensure the **Preserve log** option is checked before continuing.
 1. Keep the browser window open with the logs.  
 1. Turn on Universal Tenant Restrictions in the Microsoft Entra admin center -> Global Secure Access -> Session Management -> Universal Tenant Restrictions.
@@ -101,7 +101,7 @@ Tenant restrictions are not enforced when a user (or a guest user) tries to acce
       1. `x-ms-diagnostics: 2000020;reason="xms_trpid claim was not present but sec-tenant-restriction-access-policy header was in requres";error_category="insufficient_claims"`
 
 ### Known limitations
-- If you enabled Universal Tenant Restrictions and you access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
+- If you enabled Universal Tenant Restrictions and you access the Microsoft Entra admin center for a tenant on the TRv2 allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
     - `?feature.msaljs=true&exp.msaljsexp=true`
     - For example, you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
         - If you received the "access denied" error message for the URL `https://entra.microsoft.com/`, then add the feature flag as follows:   `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
