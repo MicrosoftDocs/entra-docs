@@ -3,7 +3,7 @@ title: Add, test, or remove protected actions in Microsoft Entra ID
 description: Learn how to add, test, or remove protected actions in Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra-id
 ms.subservice: role-based-access-control

@@ -5,11 +5,11 @@ description: Topic that shows how to configure Microsoft Entra certificate-based
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/21/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: femila
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
 ---
@@ -49,7 +49,7 @@ Make sure that the following prerequisites are in place:
 
 Some configuration steps need to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. 
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 Optionally, you can also configure authentication bindings to map certificates to single-factor or multifactor authentication, and configure username bindings to map the certificate field to an attribute of the user object. [Authentication Policy Administrators](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) can configure user-related settings. Once all the configurations are complete, enable Microsoft Entra CBA on the tenant. 
 
@@ -62,18 +62,19 @@ Entra has a new public key infrastructure (PKI) based certificate authorities (C
 The PKI-based trust store has higher limits for the number of CAs and the size of each CA file. A PKI-based trust store supports up to 250 CAs and 8-KB size for each CA object. We highly recommended you use the new PKI-based trust store for storing CAs, which is scalable and supports new functionality like issuer hints. 
 
 >[!Note]
->If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. After you make sure everything works well, you can delete the CAs from old trust store. 
+>If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. 
 
 An admin must configure the trusted CAs that issue user certificates. 
 Only least-privileged administrators are needed to make changes. 
-A PKI-based trust store has RBAC roles [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator) and [Authentication Administrator](../role-based-access-control/permissions-reference.md#authentication-administrator).
+A PKI-based trust store has RBAC role [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
 
-A Microsoft Entra ID P1 or P2 license is required to configure the certificate authorities with a PKI-based trust store. If you have a free Microsoft Entra ID license or Microsoft 365 license, you can configure certificate authorities to enable CBA by using the Microsoft Entra admin center. For more information, see [How to configure certificate authorities for Microsoft Entra certificate-based authentication](how-to-configure-certificate-authorities.md).
+Upload PKI feature of the PKI-based trust store is available only with  Microsoft Entra ID P1 or P2 license. However, with free license as well, admins can upload all the CAs individually instead of the PKI file and configure the PKI-based trust store.
 
 ### Configure certificate authorities by using the Microsoft Entra admin center
 
+#### Create a PKI container object
 1.	Create a PKI container object.
-   1. Sign in to the Microsoft Entra admin center as an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+   1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
    1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Public key infrastructure (Preview)**.
    1. Click **+ Create PKI**.
    1. Enter **Display Name**.
@@ -81,13 +82,15 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
 
-   1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
-
-      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
-
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of PKIs.
 
+#### Delete a PKI container object
+1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
+
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
+
+#### Upload individual CAs into PKI container object
 1. To upload a CA into the PKI container:
    1. Click on **+ Add certificate authority**.
    1. Select the CA file.
@@ -103,6 +106,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of CAs.
 
+#### Upload all CAs with upload PKI into PKI container object
 1. To upload all CAs at once into the PKI container:
    1. Create a PKI container object, or open one.
    1. Select **Upload PKI**.
@@ -118,13 +122,13 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
    Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
    ```
 
-### Edit a PKI
+#### Edit a PKI
 
 1. To edit PKI, select **...** on the PKI row and select **Edit**.
 1. Enter a new PKI name and select **Save**.
 
 
-### Edit a CA
+#### Edit a CA
 
 1. To edit CA, select **...** on the CA row and select **Edit**.
 1. Enter new values for Certificate Authority type (root/intermediate), CRL URL, Delta CRL URL, Issuer Hints enabled flag as necessary and select **Save**.
@@ -139,7 +143,7 @@ A Microsoft Entra ID P1 or P2 license is required to configure the certificate a
 1. Select the **Deleted CAs** tab.
 1. Select the CA file and select **Restore certificate authority**.
 
-### Understanding isIssuerHintEnabled attribute on CA
+#### Understanding isIssuerHintEnabled attribute on CA
 
 Issuer hints send back a Trusted CA Indication as part of the Transport Layer Security (TLS) handshake. 
 The trusted CA list is set to the subject of the CAs uploaded by the tenant in the Entra trust store. 
@@ -260,15 +264,17 @@ Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
 ## Step 2: Enable CBA on the tenant
 
 >[!IMPORTANT]
->A user is considered capable for **MFA** when the user is in scope for **Certificate-based authentication** in the Authentication methods policy. This policy requirement means a user can't use proof up as part of their authentication to register other available methods. If the users don't have access to certificates, they get locked out and can't register other methods for MFA. Authentication Policy Administrators need to enable CBA only for users who have a valid certificates. Don't include **All users** for CBA. Only use groups of users with valid certificates available. For more information, see [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md).
+>A user is considered capable for **MFA** when the user is in scope for **Certificate-based authentication** in the Authentication methods policy. This policy requirement means a user can't use proof up as part of their authentication to register other available methods. If the users don't have access to certificates, they get locked out and can't register other methods for MFA. Authentication Policy Administrators need to enable CBA only for users who have valid certificates. Don't include **All users** for CBA. Only use groups of users with valid certificates available. For more information, see [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md).
 
 To enable CBA in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users.
 1. Browse to **Protection** > **Authentication methods** > **Certificate-based Authentication**.
-1. Under **Enable and Target**, select **Enable**.
-1. Select **Add groups** to select specific groups like the one you created. Use specific groups rather than **All users**.
+1. Under **Enable and Target**, select **Enable**, and click **I Acknowledge**.
+1. Click **Select groups**, click **Add groups**.
+1. Choose specific groups like the one you created, and click **Select**. Use specific groups rather than **All users**.
+1. When you are done, click **Save**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot of how to enable CBA.":::
  
@@ -280,11 +286,14 @@ Once certificate-based authentication is enabled on the tenant, all users in the
 
 ## Step 3: Configure authentication binding policy
 
-The authentication binding policy helps determine the strength of authentication to either a single factor or multifactor. The default protection level for the certificates on the tenant is **single-factor authentication**.
+The authentication binding policy helps determine the strength of authentication to either a single factor or multifactor. The default protection level for all the certificates on the tenant is **Single-factor authentication**.
+The default affinity binding at the tenant level is **Low**. An Authentication Policy Administrator can change the default value from single-factor to multifactor and if changes, all the certificates on the tenant will be considered of strength **Multi-factor authentication**. Similarly, the affinity binding at the tenant level can be set to **High** which means all the certificates will be validated using only high affinity attributes.
 
-An Authentication Policy Administrator can change the default value from single-factor to multifactor and configure custom policy rules. Authentication binding rules map certificate attributes, such as Issuer, or Policy Object ID (OID), or Issuer and Policy OID, to a value and select default protection level for that rule. You can create multiple rules.
+>[!IMPORTANT]
+>Admin should set the tenant default to a value that is applicable for most certificates and create custom rules only for specific certificates that needs different protection level and/or affinity binding than tenant default. All the authentication methods configuration go into the same policy file so creating multiple redundant rules can hit the policy file limit.
 
-To modify tenant default settings in the Microsoft Entra admin center, complete the following steps:
+Authentication binding rules map certificate attributes, such as Issuer, or Policy Object ID (OID), or Issuer and Policy OID, to a value and select default protection level as well as affinity binding for that rule. 
+To modify tenant default settings and create custom rules in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
@@ -300,9 +309,9 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/change-default.png" alt-text="Screenshot of how to change the default policy to MFA.":::
 
-1. You can also set up custom authentication binding rules to help determine the protection level for client certificates. It can be configured using either the issuer Subject or Policy OID fields in the certificate.
+1. You can also set up custom authentication binding rules to help determine the protection level for client certificates that need different values for protection level or affinity binding than tenant default. The rules can be configured using either the issuer Subject or Policy OID or both fields in the certificate.
 
-   Authentication binding rules map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created.
+   Authentication binding rules map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created. For the config below let us assume the tenant default is **Multifactor authentication** and **Low** affinity binding.
 
    To add custom rules, select **Add rule**.
 
@@ -311,14 +320,14 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
    To create a rule by certificate issuer, select **Certificate issuer**.
 
    1. Select a **Certificate issuer identifier** from the list box.
-   1. Select **Multifactor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
+   1. Select **Multifactor authentication** but **High** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-issuer.png" alt-text="Screenshot of multifactor authentication policy.":::
 
    To create a rule by Policy OID, select **Policy OID**.
 
    1. Enter a value for **Policy OID**.
-   1. Select **Multifactor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
+   1. Select **Single-factor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-policy-oid.png" alt-text="Screenshot of mapping to Policy OID.":::
 
@@ -326,8 +335,8 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    1. Select **Certificate Issuer** and **Policy OID**.
    1. Select an issuer and enter the policy OID.
-   1. For Authentication strength, select **Single-factor authentication** or **Multifactor authentication**.
-   1. For Affinity binding, select **Low**.
+   1. For Authentication strength, select **Multifactor authentication**.
+   1. For Affinity binding, select **High**.
  
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer-and-policy-oid.png" alt-text="Screenshot of how to select a low affinity binding.":::
 

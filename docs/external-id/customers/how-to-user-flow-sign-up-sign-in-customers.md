@@ -8,40 +8,36 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 03/21/2025
 ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro, seo-july-2024
 
-#Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-i experience for my customer users.
+#Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-in experience for my customer users.
 ---
 
-# Create self-service sign-up user flows for apps in external tenants
+# Create a sign-up and sign-in user flow for an external tenant app
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Add a self-service sign-up user flow to an app](../self-service-sign-up-user-flow.yml).
 
-You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md)). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
+You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md)) or a custom [OIDC federation](how-to-custom-oidc-federation-customers.md). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
 
-You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow.
-
-> [!NOTE]
-> If you're creating local user accounts via Microsoft Graph and only need to support sign-in, you don't need to attach a user flow to your app. Refer to the Microsoft Graph REST API reference for an example of how to [create a customer account in external tenants](/graph/api/user-post-users#example-3-create-a-customer-account-in-external-tenants).
+This article describes how to create a sign-in and sign-up user flow. After you create the user flow, the next step is to [add your application to the user flow](how-to-user-flow-add-application.md). You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow. 
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=OnlineRetail)
 > 
 > To try out this feature, go to the Woodgrove Groceries demo and start the “Online retail” use case.
 
-
 ## Prerequisites
 
 - **A Microsoft Entra external tenant**: Before you begin, create your Microsoft Entra external tenant. You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new external tenant in Microsoft Entra ID.
 - **Email one-time passcode enabled (optional)**: If you want customers to use their email address and a one-time passcode each time they sign in, make sure Email one-time passcode is enabled at the tenant level (in the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **External Identities** > **All Identity Providers** > **Email One-time-passcode**).
 - **Custom attributes defined (optional)**: User attributes are values collected from the user during self-service sign-up. Microsoft Entra ID comes with a built-in set of attributes, but you can [define custom attributes to collect during sign-up](how-to-define-custom-attributes.md). Define custom attributes in advance so they're available when you set up your user flow. Or you can create and add them later.
-- **Identity providers defined (optional)**: You can set up federation with [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) in advance, and then select them as sign-in options as you create the user flow.
+- **Identity providers defined (optional)**: You can set up federation with [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md) or an [OIDC identity provider](how-to-custom-oidc-federation-customers.md) in advance, and then select them as sign-in options as you create the user flow.
 
 ## Create and customize a user flow
 

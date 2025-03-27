@@ -3,10 +3,10 @@ title: 'Modify group writeback in Microsoft Entra Connect'
 description: This article describes how to modify the default behavior for group writeback in Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/19/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

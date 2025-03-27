@@ -1,11 +1,11 @@
 ---
-title: How to configure per-app access using Global Secure Access applications
+title: How to Configure Per-app Access Using Global Secure Access Applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 11/10/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -30,9 +30,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 ### Known limitations
 
-- Avoid overlapping app segments between Quick Access and Global Secure Access apps.
-- Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## High level steps
 
@@ -132,7 +130,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > [!NOTE]
 > You can add up to 500 application segments to your app.
 >
-> Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
+> Do not overlap FQDNs, IP addresses, and IP ranges between any Private Access apps.
 
 ## Assign users and groups
 

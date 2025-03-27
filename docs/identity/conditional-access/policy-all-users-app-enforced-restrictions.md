@@ -5,16 +5,20 @@ description: Create a custom Conditional Access policy for unmanaged devices.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/30/2024
+ms.date: 02/27/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Use application enforced restrictions for unmanaged devices
 
-Block or limit access to SharePoint, OneDrive, and Exchange content from unmanaged devices.
+This policy can help organizations accomplish the following initiatives:
+
+- [Block or limit access to a specific SharePoint site or OneDrive](/sharepoint/control-access-from-unmanaged-devices#block-or-limit-access-to-a-specific-sharepoint-site-or-onedrive)
+- [Limit access to email attachments in Outlook on the web and the new Outlook for Windows](/security/zero-trust/zero-trust-identity-device-access-policies-exchange#limit-access-to-exchange-online-from-outlook-on-the-web)
+- [Enforce idle session timeout on unmanaged devices](/microsoft-365/admin/manage/idle-session-timeout-web-apps#idle-session-timeout-on-unmanaged-devices)
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]

@@ -5,11 +5,11 @@ ms.service: entra-id-governance
 ms.subservice:
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 
 ms.topic: conceptual
-ms.date: 07/28/2023
+ms.date: 12/30/2024
 ms.author: billmath
 ---
 

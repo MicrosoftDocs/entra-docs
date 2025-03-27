@@ -3,10 +3,10 @@ title: "Quickstart: Configure Quick Access to private resources"
 description: Learn how to configure Quick Access to private resources in Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: global-secure-access
 ms.topic: quickstart
-ms.date: 07/22/2024
+ms.date: 02/21/2025
 
 #customer intent: As an administrator, I want learn how to configure Quick Access so that my users can access private resources in Global Secure Access.
 

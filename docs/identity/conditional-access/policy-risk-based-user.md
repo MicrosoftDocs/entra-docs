@@ -9,7 +9,7 @@ ms.date: 09/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, cokoopma
 ---
 # Require a secure password change for elevated user risk

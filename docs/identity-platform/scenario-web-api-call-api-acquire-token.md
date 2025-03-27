@@ -1,21 +1,22 @@
 ---
 title: Get a token for a web API that calls web APIs
-description: Learn how to build a web API that calls web APIs that require acquiring a token for the app.
+description: "As a developer, I want to learn how to acquire tokens for web APIs so that I can enable secure API calls in my application.  "
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
-ms.date: 05/08/2023
+ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
-#Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
+ms.custom:
+#customer intent: As a developer, I want to learn how to acquire tokens for web APIs so that I can enable secure API calls in my application.  
 ---
 
 # A web API that calls web APIs: Acquire a token for the app
 
-After you've built a client application object, use it to acquire a token that you can use to call a web API.
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
+After building a client application object, use it to acquire a token that you can use to call a web API.
 
 ## Code in the controller
 
@@ -175,7 +176,7 @@ def get(self):
         return jsonify(subscriptions_list)
 ```
 
-## (Advanced) Accessing the signed-in user's token cache from background apps, APIs and services
+## (Advanced) Accessing the signed-in user's token cache from background apps, APIs, and services
 
 [!INCLUDE [advanced-token-caching](~/includes/advanced-token-cache.md)]
 

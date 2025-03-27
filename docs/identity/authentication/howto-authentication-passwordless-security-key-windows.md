@@ -5,11 +5,11 @@ description: Learn how to enable passwordless security key sign-in to Windows wi
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/06/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: librown, aakapo
 ---
 # Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID 

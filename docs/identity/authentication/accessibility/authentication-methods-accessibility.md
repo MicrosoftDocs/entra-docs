@@ -5,12 +5,12 @@ author:      gdaluz1 # GitHub alias
 ms.author: justinha
 ms.service: entra-id
 ms.topic: article
-ms.date:     11/05/2024
+ms.date: 03/04/2025
 ms.subservice: authentication
 ---
 # Improve accessibility with multifactor authentication in Microsoft Entra ID
 
-As cybersecurity threats evolve, multifactor authentication (MFA) has become a cornerstone of secure digital identity. Microsoft Entra ID offers a range of MFA methods designed not only for robust security but also to cater to diverse user needs, including those with accessibility constraints. Here's a closer look at how these MFA options enhance accessibility and inclusivity.
+As cybersecurity threats evolve, multifactor authentication (MFA) has become a cornerstone of secure digital identity. Microsoft Entra ID offers a range of MFA methods designed for robust security and diverse user needs, including those with accessibility constraints. Here's a closer look at how these MFA options enhance accessibility and inclusivity.
 
 ## Microsoft Authenticator
 
@@ -20,7 +20,7 @@ The Microsoft Authenticator app provides either notifications for quick approval
 
 ## Text and voice calls
 
-Text and voice call options cater to those who may not use a smartphone app. This can be particularly beneficial for individuals with certain accessibility needs:
+Text and voice call options cater to those who may not use a smartphone app. This can be beneficial for individuals with certain accessibility needs:
 
 - **Text:** Allows users to receive a verification code via text message, which can be useful for those with hearing impairments or those who prefer text-based communication.
 
@@ -30,7 +30,7 @@ For more information, see [Phone authentication methods](/entra/identity/authent
 
 ## FIDO2 security keys
 
-FIDO2 security keys are physical devices that offer a highly accessible and secure MFA option. These hardware keys support biometric authentication (such as fingerprint scans) or PINs, making them ideal for users who may find traditional passwords or other authentication methods challenging. FIDO2 keys are particularly beneficial for users with physical disabilities who may have difficulty typing complex passwords.
+FIDO2 security keys are physical devices that offer a highly accessible and secure MFA option. These hardware keys support biometric authentication (such as fingerprint scans) or PINs, making them ideal for users who may find traditional passwords or other authentication methods challenging. FIDO2 keys are beneficial for users with physical disabilities who may have difficulty typing complex passwords.
 
 For more information, see [How to register passkey (FIDO2)](/entra/identity/authentication/how-to-register-passkey-with-security-key).
 
@@ -51,7 +51,7 @@ References:
 
 ## Conclusion
 
-Microsoft Entra ID's range of MFA options enables individuals with diverse needs to access secure authentication without compromising on usability. By offering various options like the Authenticator app, SMS and voice calls, FIDO2 keys, Windows Hello, and email verification, Microsoft Entra ID ensures that security measures remain accessible and inclusive for all users.
+Microsoft Entra ID's range of MFA options enables individuals with diverse needs to access secure authentication without compromising on usability. To ensure that security measures remain accessible and inclusive for all users, Microsoft Entra ID offers various options like the Authenticator app, SMS and voice calls, FIDO2 keys, Windows Hello, and email verification.
 
 Selecting the right MFA method depends on individual needs and constraints. Microsoft’s commitment to flexible and inclusive authentication helps everyone stay secure, regardless of their physical or technological limitations. For those with specific accessibility requirements, it’s worth exploring each MFA option to find the one that aligns best with personal preferences and usability needs.
 

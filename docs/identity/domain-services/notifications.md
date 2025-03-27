@@ -2,13 +2,13 @@
 title: Email notifications for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure email notifications to alert you about issues in a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.assetid: b9af1792-0b7f-4f3e-827a-9426cdb33ba6
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ---
 # Configure email notifications for issues in Microsoft Entra Domain Services
@@ -50,7 +50,7 @@ You can also choose to have highly privileged roles in the Microsoft Entra direc
 
 To review the existing email notification recipients, or add recipients, complete the following steps:
 
-1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)] 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Search for and select **Microsoft Entra Domain Services**.
 1. Select your managed domain, such as *aaddscontoso.com*.
 1. On the left-hand side of the Domain Services resource window, select **Notification settings**. The existing recipients for email notifications are shown.

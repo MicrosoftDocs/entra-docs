@@ -41,7 +41,6 @@ The option to restrict an app to a specific set of users, apps or security group
 
 ## Update the app to require user assignment
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To update an application to require user assignment, you must be owner of the application under Enterprise apps, or be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 

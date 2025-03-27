@@ -3,7 +3,7 @@ title: Recommendation to remove unused apps
 description: Learn how the Microsoft Entra recommendation to remove unused apps works and why you should follow the guidance.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -18,6 +18,9 @@ ms.reviewer: saumadan
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
 This article covers the recommendation to investigate unused applications. This recommendation is called `StaleApps` in the recommendations API in Microsoft Graph. 
+
+> [!NOTE]
+> With [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot), you can use natural language prompts to get insights on unused applications. Learn more about how to [Assess application risks using Microsoft Security Copilot](/entra/fundamentals/copilot-security-entra-investigate-risky-apps#explore-unused-microsoft-entra-applications).
 
 ## Prerequisites
 

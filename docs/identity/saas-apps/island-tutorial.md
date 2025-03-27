@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with Island
 description: Learn how to configure single sign-on between Microsoft Entra ID and Island.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Island so that I can control who has access to Island, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -80,7 +80,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://download.island.io`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Island Client support team](mailto:support@island.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Island Client support team](mailto:support@island.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your Island application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Island expects this to be mapped with the user's object ID and change the name identifier format setting to **Persistent**. For that you can use **user.objectid** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -88,10 +88,10 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
     > [!NOTE]
     > From the list of default attributes, please edit the following claims manually:
-    > 1. Click the **givenname** (user.givenname) claim, change the Name setting to **given_name** and click **Save**.
-    > 1. Click the **name** (user.userprincipalname) claim, change the Source setting to **Transformation** and edit the Manage transformation settings as follows.
+    > 1. Select the **givenname** (user.givenname) claim, change the Name setting to **given_name** and select **Save**.
+    > 1. Select the **name** (user.userprincipalname) claim, change the Source setting to **Transformation** and edit the Manage transformation settings as follows.
     > 1. Select Transformation, choose Join(). Select user.givenname as Parameter 1 and add a single whitespace as Separator and choose user.surname as Parameter 2.
-    > 1. Click Add and Save to complete the configuration.
+    > 1. Select Add and Save to complete the configuration.
 
 1. In addition to above, Island application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 
@@ -123,21 +123,21 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Island Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Island Sign-on URL where you can initiate the login flow.  
 
 * Go to Island Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Island for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Island for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Island tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Island for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Island tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Island for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Island you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

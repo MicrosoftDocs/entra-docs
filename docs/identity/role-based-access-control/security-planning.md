@@ -5,7 +5,7 @@ description: Ensure that your organization's administrative access and administr
 
 keywords:
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.date: 11/21/2024
 ms.topic: conceptual
@@ -37,7 +37,7 @@ Securing privileged access requires changes to:
 Secure your privileged access in a way that is managed and reported in the Microsoft services you care about. If you have on-premises administrator accounts, see the guidance for on-premises and hybrid privileged access in Active Directory at [Securing Privileged Access](/security/privileged-access-workstations/overview).
 
 > [!NOTE]
-> The guidance in this article refers primarily to features of Microsoft Entra ID that are included in Microsoft Entra ID P1 and P2. Microsoft Entra ID P2 is included in the EMS E5 suite and Microsoft 365 E5 suite. This guidance assumes your organization already has Microsoft Entra ID P2 licenses purchased for your users. If you do not have these licenses, some of the guidance might not apply to your organization. Also, throughout this article, the term Global Administrator means the same thing as "company administrator" or "tenant administrator."
+> The guidance in this article refers primarily to features of Microsoft Entra ID that are included in Microsoft Entra ID P1 and P2. Microsoft Entra ID P2 is included in the EMS E5 suite and Microsoft 365 E5 suite. This guidance assumes your organization already has Microsoft Entra ID P2 licenses purchased for your users. If you do not have these licenses, some of the guidance might not apply to your organization.
 
 ## Develop a roadmap
 
@@ -140,7 +140,7 @@ The increase in "bring your own device" and work from home policies and the grow
 
 #### Identify Microsoft accounts in administrative roles that need to be switched to work or school accounts
 
-If your initial Global Administrators reuse their existing Microsoft account credentials when they began using Microsoft Entra ID, replace the Microsoft accounts with individual cloud-based or synchronized accounts.
+If your initial Global Administrators reuse their existing Microsoft account credentials when they began using Microsoft Entra ID, replace the Microsoft accounts with individual cloud-based accounts.
 
 #### Ensure separate user accounts and mail forwarding for Global Administrator accounts
 
@@ -287,7 +287,7 @@ If you're already using Microsoft Entra Privileged Identity Management, adjust t
 
 #### Determine exposure to password-based sign-in protocols (if using Exchange Online)
 
-We recommend you identify every potential user who could be catastrophic to the organization if their credentials were compromised. For those users, put in place strong authentication requirements and use Microsoft Entra Conditional Access to keep them from signing in to their email using username and password. You can block [legacy authentication using Conditional Access](~/identity/conditional-access/block-legacy-authentication.md), and you can [block basic authentication](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) through Exchange online.
+We recommend you identify every potential user who could be catastrophic to the organization if their credentials were compromised. For those users, put in place strong authentication requirements and use Microsoft Entra Conditional Access to keep them from signing in to their email using username and password. You can block [legacy authentication using Conditional Access](~/identity/conditional-access/policy-block-legacy-authentication.md), and you can [block basic authentication](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) through Exchange Online.
 
 #### Complete a roles review assessment for Microsoft 365 roles (if using Microsoft 365)
 

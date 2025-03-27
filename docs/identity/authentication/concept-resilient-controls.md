@@ -8,7 +8,7 @@ ms.custom: has-azure-ad-ps-ref
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/29/2023
+ms.date: 03/04/2025
 ms.author: martinco
 ---
 # Create a resilient access control management strategy with Microsoft Entra ID
@@ -279,7 +279,6 @@ Undo the changes you made as part of the activated contingency plan once the ser
 * [Microsoft Entra authentication Documentation](./howto-mfaserver-iis.md)
 * [Manage emergency-access administrative accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
 * [Configure named locations in Microsoft Entra ID](../conditional-access/concept-assignment-network.md)
-  * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings)
 * [How to configure Microsoft Entra hybrid joined devices](~/identity/devices/hybrid-join-plan.md)
 * [Windows Hello for Business Deployment Guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Password Guidance - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf)

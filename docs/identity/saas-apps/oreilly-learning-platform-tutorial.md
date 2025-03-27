@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with O'Reilly learning platform
 description: Learn how to configure single sign-on between Microsoft Entra ID and O'Reilly learning platform.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and O'Reilly learning platform so that I can control who has access to O'Reilly learning platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -81,9 +81,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://go.oreilly.com/<CONNECTION-NAME>`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [O'Reilly learning platform Client support team](mailto:platform-integration@oreilly.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [O'Reilly learning platform Client support team](mailto:platform-integration@oreilly.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -101,21 +101,21 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to O'Reilly learning platform Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to O'Reilly learning platform Sign-on URL where you can initiate the login flow.  
 
 * Go to O'Reilly learning platform Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the O'Reilly learning platform for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the O'Reilly learning platform for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the O'Reilly learning platform tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the O'Reilly learning platform for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the O'Reilly learning platform tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the O'Reilly learning platform for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure O'Reilly learning platform you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

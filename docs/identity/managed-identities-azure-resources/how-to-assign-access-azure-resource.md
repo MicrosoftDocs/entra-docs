@@ -20,8 +20,6 @@ zone_pivot_groups: identity-mi-azure-resource
 
 # Assign a managed identity access to an Azure resource or another resource
 
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
 This article shows you how to give an Azure virtual machine (VM) managed identity access to an Azure storage account. Once you've configured an Azure resource with a managed identity, you can then give the managed identity access to another resource, similar to any security principal.
 
 ## Prerequisites

@@ -9,14 +9,14 @@ ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Block unknown or unsupported device platform
 
 Users are blocked from accessing company resources when the device type is unknown or unsupported.
 
-The [device platform condition](concept-conditional-access-conditions.md#device-platforms) is based on user agent strings. Conditional Access policies using it should be used with another policy, like one requiring device compliance or app protection policies.
+The [device platform condition](concept-conditional-access-conditions.md#device-platforms) is based on user agent strings. Conditional Access policies using it should be used with another policy, like one requiring device compliance or app protection policies, to mitigate the risk of user agent spoofing.
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
@@ -48,6 +48,6 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ## Next steps
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
+- [Conditional Access templates](concept-conditional-access-policy-common.md)
 
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)

@@ -26,6 +26,9 @@ Claims are present only if a value exists to fill it. An application shouldn't t
 
 The Microsoft identity platform uses some claims to help secure tokens for reuse. The description of `Opaque` marks these claims as not being for public consumption. These claims may or may not appear in a token, and new ones may be added without notice.
 
+> [!Important]
+> Applications should not take hard dependency on claims being present or in specific order. New claims can be added or a claim can be changed from optional to required as new features are supported.
+
 ## Header claims
 
 | Claim | Format | Description |
@@ -64,6 +67,7 @@ The Microsoft identity platform uses some claims to help secure tokens for reuse
 | `sub` | String | The principal associated with the token. For example, the user of an application. This value is immutable, don't reassign or reuse. The subject is a pairwise identifier that's unique to a particular application ID. If a single user signs into two different applications using two different client IDs, those applications receive two different values for the subject claim. Using the two different values depends on architecture and privacy requirements. See also the `oid` claim, which does remain the same across applications within a tenant. | This value can be used to perform authorization checks, such as when the token is used to access a resource, and can be used as a key in database tables. |
 | `oid` | String, a GUID | The immutable identifier for the requestor, which is the verified identity of the user or service principal. This ID uniquely identifies the requestor across applications. Two different applications signing in the same user receive the same value in the `oid` claim. The `oid` can be used when making queries to Microsoft online services, such as the Microsoft Graph. The Microsoft Graph returns this ID as the `id` property for a given user account. Because the `oid` allows multiple applications to correlate principals, to receive this claim for users use the `profile` scope. If a single user exists in multiple tenants, the user contains a different object ID in each tenant. Even though the user logs into each account with the same credentials, the accounts are different. | This value can be used to perform authorization checks, such as when the token is used to access a resource, and can be used as a key in database tables. |
 | `tid` | String, a GUID | Represents the tenant that the user is signing in to. For work and school accounts, the GUID is the immutable tenant ID of the organization that the user is signing in to. For sign-ins to the personal Microsoft account tenant (services like Xbox, Teams for Life, or Outlook), the value is `9188040d-6c67-4c5b-b112-36a304b66dad`. To receive this claim, the application must request the `profile` scope. | This value should be considered in combination with other claims in authorization decisions. |
+| `sid` | String, a GUID | Represents an unique identifier for a session and will be generated when a new session is established.| |
 | `unique_name` | String, only present in v1.0 tokens | Provides a human readable value that identifies the subject of the token. | This value can be different within a tenant and use it only for display purposes. |
 | `uti` | String | Token identifier claim, equivalent to `jti` in the JWT specification. Unique, per-token identifier that is case-sensitive. | |
 | `rh` | Opaque String | An internal claim used by Azure to revalidate tokens. Resources shouldn't use this claim. | |
