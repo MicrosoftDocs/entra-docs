@@ -2,11 +2,11 @@
 title: Create and view statistical anomaly alerts and alert triggers in Permissions Management
 description: How to create and view statistical anomaly alerts and alert triggers in the Statistical Anomaly tab in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 02/23/2022
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 
@@ -25,6 +25,7 @@ You can configure statistical anomaly alert triggers for the following scenarios
 Alert triggers are based on data collected. All alerts, if triggered, are shown every hour under the Alerts subtab.
 
 ## View statistical anomalies in an identity's behavior
+You can view statistical anomalies in an identity's behavior to monitor unusual activities in Permissions Management. This section explains how to access and interpret the alerts.
 
 1. In the Permissions Management home page, select **Alerts** (the bell icon).
 1. Select **Statistical Anomaly**, and then select the **Alerts** subtab.
@@ -48,6 +49,7 @@ Alert triggers are based on data collected. All alerts, if triggered, are shown 
       - **View Trigger**: Displays the current trigger settings and applicable authorization system details
 
 ## Create a statistical anomaly alert trigger
+You can configure statistical anomaly alert triggers for specific conditions to detect unusual activities. This section guides you through the steps to create these alert triggers.
 
 1. In the Permissions Management home page, select **Alerts** (the bell icon).
 1. Select **Statistical Anomaly**, select the **Alerts** subtab, and then select **Create Alert Trigger**.
@@ -81,6 +83,7 @@ Alert triggers are based on data collected. All alerts, if triggered, are shown 
 1. Select **Save**.
 
 ## View statistical anomaly alert triggers
+You can view and manage the statistical anomaly alert triggers you have created. This section provides instructions on how to access and modify these triggers.
 
 1. In the Permissions Management home page, select **Alerts** (the bell icon).
 1. Select **Statistical Anomaly**, and then select the **Alert Triggers** subtab.

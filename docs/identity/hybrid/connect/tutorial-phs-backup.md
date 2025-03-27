@@ -3,10 +3,10 @@ title: 'Tutorial:  Set up password hash sync as backup for AD FS in Microsoft En
 description: Learn how to turn on password hash sync as a backup for Azure Directory Federation Services (AD FS) in Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 11/06/2023
+ms.date: 12/27/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

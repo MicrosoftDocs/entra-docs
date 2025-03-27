@@ -4,8 +4,8 @@ description: A description of the best practices and limitations of redirect URI
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 06/25/2024
-ms.reviewer:
+ms.date: 03/19/2025
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -19,6 +19,8 @@ To sign in a user, your application must send a login request to the Microsoft E
 ## What is a redirect URI?
 
 A redirect URI, or reply URL, is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. To sign in a user, your application must send a login request with a redirect URI specified as a parameter, so after the user has successfully signed in, the authentication server will redirect the user and issue an access token to the redirect URI specified in the login request.
+
+In a production web application, for example, the redirect URI is often a public endpoint where your app is running, like `https://contoso.com/auth-response`. During development, it's common to also add the endpoint where you run your app locally, like `https://127.0.0.1/auth-response` or `http://localhost/auth-response`. Be sure that any unnecessary development environments/redirect URIs are not exposed in the production app. This can be done by having separate app registrations for development and production.
 
 ## Why do redirect URI(s) need to be added to an app registration?
 
@@ -60,9 +62,9 @@ If the application you're building contains one or multiple redirect URIs in you
 
 | Type of your application | Typical languages/Frameworks | Platform to add redirect URI in App Registration |
 |--------------------------|------------------------------|--------------------------------------------------|
-| An iOS or macOS app excluding the scenarios listed below this table | Swift, Objective-C, Xamarin | IOS/macOS |
-| An Android app | Java, Kotlin, Xamarin | Android |
-| An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Xamarin, Android, iOS/macOS | Mobile and desktop applications |
+| An iOS or macOS app excluding the scenarios listed below this table | Swift, Objective-C | IOS/macOS |
+| An Android app | Java or Kotlin | Android |
+| An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Android, iOS/macOS | Mobile and desktop applications |
 
 If you're building an iOS app using one of the following methods, use the **Mobile and desktop applications** platform to add a redirect URI:
 

@@ -3,11 +3,11 @@ title: 'Microsoft Entra Cloud Governed Management for On-Premises Workloads - Az
 description: This topic describes cloud governed management for on-premises workloads.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 12/18/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

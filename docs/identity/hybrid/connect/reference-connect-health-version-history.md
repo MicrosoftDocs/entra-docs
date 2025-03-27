@@ -3,7 +3,7 @@ title: Microsoft Entra Connect Health Version History
 description: This document describes the releases for Microsoft Entra Connect Health and what has been included in those releases.
 
 author: zhiweiwangmsft
-manager: amycolannino
+manager: femila
 
 ms.assetid: 8dd4e998-747b-4c52-b8d3-3900fe77d88f
 ms.service: entra-id
@@ -26,8 +26,16 @@ Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Conne
 
 For feature feedback, vote at [Connect Health User Voice channel](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
 
+## March 2025
+**Agent Updates**
+
+Microsoft Entra Connect Health (version 4.5.2520.0)
+  - Addresses a data upload size limit issue
+  - Quality improvements
+
 ## May 2024
 **Agent Updates**
+
 Microsoft Entra Connect Health (version 4.5.2487.0)
   - Updated installer to allow for specifying proxy server configuration
   - Updated installer to default to Public Cloud with the option to specify US Government cloud

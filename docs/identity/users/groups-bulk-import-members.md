@@ -4,8 +4,8 @@ description: Add group members in bulk by using a comma-separated values (CSV) f
 
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
-ms.date: 07/01/2024
+manager: femila
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -41,7 +41,6 @@ The rows in a downloaded CSV template are:
 
 ## Bulk import group members
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.

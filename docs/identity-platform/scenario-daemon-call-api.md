@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # How to call a downstream web API from a daemon app
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 .NET daemon apps can call a web API. .NET daemon apps can also call several preapproved web APIs.
 
 ## Calling a web API from a daemon application
@@ -129,6 +131,6 @@ For daemon apps, the web APIs that you call need to be preapproved. There's no i
 
 ## Next steps
 
-- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
 
 - Explore Microsoft identity platform [service / daemon  code samples](sample-v2-code.md) 

@@ -46,7 +46,6 @@ Go to developers.cloudflare.com to [set up Microsoft Entra ID as an IdP](https:/
 
 ## Configure Conditional Access
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **App registrations** > **All applications**

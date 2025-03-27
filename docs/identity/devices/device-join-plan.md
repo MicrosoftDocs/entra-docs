@@ -9,7 +9,7 @@ ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 ---
 # How to: Plan your Microsoft Entra join implementation

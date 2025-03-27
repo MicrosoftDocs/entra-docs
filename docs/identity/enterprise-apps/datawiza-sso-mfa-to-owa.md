@@ -319,7 +319,6 @@ DCMC integration features help complete Microsoft Entra configuration. Instead, 
 
 ## Optional: Enable Microsoft Entra multifactor authentication
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more sign-in security, you can enforce Microsoft Entra multifactor authentication. The process starts in the Microsoft Entra admin center.
 

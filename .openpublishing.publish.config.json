@@ -122,8 +122,8 @@
       "branch_mapping": {}
     },
     {
-      "path_to_root": "custom-authentication-extension",
-      "url": "https://github.com/microsoft/custom-authentication-extension",
+      "path_to_root": "authentication-events-function",
+      "url": "https://github.com/microsoft/authentication-events-function",
       "branch": "main",
       "branch_mapping": {}
     }

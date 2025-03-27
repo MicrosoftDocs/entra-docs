@@ -9,7 +9,7 @@ ms.date: 09/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for device registration
@@ -22,7 +22,7 @@ Use the [Conditional Access user action](concept-conditional-access-cloud-apps.m
 ## Create a Conditional Access policy
 
 > [!WARNING]
-> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatable with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
+> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatible with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
@@ -45,6 +45,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 > 
 > :::image type="content" source="media/policy-all-users-device-registration/device-settings-require-mfa-to-register-or-join.png" alt-text="Screenshot of the Require Multifactor Authentication to register or join devices with Microsoft Entra control to be disabled." lightbox="media/policy-all-users-device-registration/device-settings-require-mfa-to-register-or-join.png":::
 
+<!---
 ### Block access to register or join devices outside of trusted networks and locations
 
 Organizations might choose to incorporate known network locations known as **Named locations** in their Conditional Access policies. These named locations might include trusted IP networks like those for a main office location. For more information about configuring named locations, see the article [What is the location condition in Microsoft Entra Conditional Access?](concept-assignment-network.md#ipv4-and-ipv6-address-ranges)
@@ -66,6 +67,8 @@ Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at
 1. Under **Access controls** > **Block**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
+
+--->
 
 ## Related content
 

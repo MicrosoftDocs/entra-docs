@@ -2,7 +2,7 @@
 title: 'Microsoft Entra Connect: ADSync PowerShell Reference'
 description: This document provides reference information for the ADSync.psm1 PowerShell module.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.date: 11/06/2023
 ms.subservice: hybrid-connect
@@ -127,7 +127,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 
 #### Example 1
  ```powershell
-     PS C:\> Disable-ADSyncExportDeletionThreshold -AADCredential $aadCreds
+     PS C:\> Disable-ADSyncExportDeletionThreshold -AADUserName "<UserPrincipalName>"
  ```
 
  Uses the provided Microsoft Entra Credentials to disable the feature for export deletion threshold.
@@ -210,7 +210,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 
 #### Example 1
  ```powershell
- PS C:\> Enable-ADSyncExportDeletionThreshold -DeletionThreshold 777 -AADCredential $aadCreds
+ PS C:\> Enable-ADSyncExportDeletionThreshold -DeletionThreshold 777 -AADUserName "<UserPrincipalName>"
  ```
 
  Enables export deletion threshold feature and sets the deletion threshold to 777.
@@ -645,7 +645,7 @@ The following documentation provides reference information for the `ADSync.psm1`
 
 #### Example 1
  ```powershell
- PS C:\> Get-ADSyncExportDeletionThreshold -AADCredential $aadCreds
+ PS C:\> Get-ADSyncExportDeletionThreshold -AADUserName "<UserPrincipalName>"
  ```
 
  Gets the export deletion threshold from Microsoft Entra ID using the specified Microsoft Entra credentials.

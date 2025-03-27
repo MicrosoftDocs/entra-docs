@@ -76,7 +76,7 @@ Administrators have granular controls over identity providers.
 
 If you require business partner users to perform MFA, you can choose to trust the MFA authentication method claim from the specific business partner organization. Otherwise, enforce these user accounts to register for additional authentication methods for MFA in Microsoft Entra ID.
 
-Microsoft recommends enforcing multifactor authentication for external users. [Authentication and Conditional Access for B2B users](../external-id/authentication-conditional-access.md) describes how to create conditional access policies that target guests.
+Microsoft recommends enforcing multifactor authentication for external users. [Authentication and Conditional Access for B2B users](../external-id/authentication-conditional-access.md) describes how to create Conditional Access policies that target guests.
 
 #### Ad-hoc collaboration
 
@@ -161,7 +161,7 @@ Administrators can choose to trust MFA authentication methods and device states 
 
 Administrators can choose to trust business partner MFA authentication methods from specific organizations.
 
-Create conditional access policies that target guests to enforce multifactor authentication for external users. [Authentication and Conditional Access for B2B users](../external-id/authentication-conditional-access.md) describes the authentication flow for external users who access resources in your organization.
+Create Conditional Access policies that target guests to enforce multifactor authentication for external users. [Authentication and Conditional Access for B2B users](../external-id/authentication-conditional-access.md) describes the authentication flow for external users who access resources in your organization.
 
 #### Ad-hoc collaboration
 

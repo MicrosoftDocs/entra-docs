@@ -43,7 +43,6 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 
 ## Configure default settings
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Default cross-tenant access settings apply to all external organizations for which you haven't created organization-specific customized settings. If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
 

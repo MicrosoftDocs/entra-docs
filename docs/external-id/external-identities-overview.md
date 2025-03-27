@@ -124,7 +124,7 @@ As an inviting organization, you might not know ahead of time who the individual
 
 Organizations can use Conditional Access policies to enhance their security by applying the appropriate access controls, such as MFA, to external users.
 
-#### Conditional access and MFA in external tenants
+#### Conditional Access and MFA in external tenants
 
 In external tenants, organizations can enforce MFA for customers by creating a Microsoft Entra Conditional Access policy and adding MFA to sign-up and sign-in user flows. External tenants support two methods for authentication as a second factor:
 

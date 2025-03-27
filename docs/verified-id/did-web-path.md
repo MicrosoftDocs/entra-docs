@@ -3,11 +3,10 @@ title: How to add did:web:path support
 description: Learn how to enable support for did:web:path
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 11/11/2024
+ms.date: 01/21/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information to help me add support for did:web:path.
@@ -43,7 +42,7 @@ Support ticket details:
 
 ## How can I test that my authority is enabled?
 
-You are given confirmation on your support request, but you can also verify if a did:web domain is enabled for did:web:path by testing it in a normal browser. By adding a path that doesn't exist (```:do-not-exist``` in the following example) you get and error message with code `discovery_service.web_method_path_not_supported` if your authority isn't enabled, but the code `discovery_service.not_found` if it's enabled.
+You receive confirmation in your support request. You can also verify if a did:web domain is enabled for did:web:path by testing it in a normal browser. By adding a path that doesn't exist (```:do-not-exist``` in the following example) you get and error message with code `discovery_service.web_method_path_not_supported` if your authority isn't enabled, but the code `discovery_service.not_found` if enabled.
 
 ```http
 https://discover.did.msidentity.com/v1.0/identifiers/did:web:my-domain.com:do-not-exist
@@ -51,13 +50,13 @@ https://discover.did.msidentity.com/v1.0/identifiers/did:web:my-domain.com:do-no
 
 ## How do I configure an authority using did:web:path?
 
-Once your tenant and authority is enabled for did:web:path, you can create a new authority in the same tenant that uses did:web:path. Currently this requires using the [Admin API](admin-api.md) as there's no support in the portal for it.
+Once your tenant and authority is enabled for did:web:path, you can create a new authority in the same tenant that uses did:web:path. Currently this configuration option requires using the [Admin API](admin-api.md) as there's no support in the portal for it.
 
 1. Get details of your existing authority
     - Go to `Verified ID | Overview` and copy domain (example: `https://verifiedid.contoso.com/`)
     - Go to `Verified ID | Organization settings` and take a note of which Key vault is being configured.
     - Go to the Key vault resource and copy the `resource group`, the `subscription ID`, and the `Vault URI`
-2. Call the [create authority](admin-api.md#create-authority) with the following JSON body (modify as required). The `/my-path` in the path is where you specify the path name to be used.
+2. Call the [creating authority](admin-api.md#create-authority) with the following JSON body (modify as required). The `/my-path` in the path is where you specify the path name to be used.
 
 ```JSON
 POST /v1.0/verifiableCredentials/authorities
@@ -76,7 +75,7 @@ POST /v1.0/verifiableCredentials/authorities
 }
 ```
 
-3. Generate the did document for the new authority by calling [generateDidDocument](admin-api.md#generate-did-document) where `newAuthorityIdForPath` is the `id` attribute in the create authority response:
+3. Generate the did document for the new authority by calling [generateDidDocument](admin-api.md#generate-did-document) where `newAuthorityIdForPath` is the `id` attribute in the response:
 
 ```JSON
 POST /v1.0/verifiableCredentials/authorities/:newAuthorityIdForPath/generateDidDocument
@@ -94,7 +93,7 @@ POST /v1.0/verifiableCredentials/authorities/:newAuthorityIdForPath/generateWell
 }
 ```
 
-6. From the response, copy the JWT token inside the `linked_dids` collection.
+6. From the response, copy the JSON Web Token (JWT) inside the `linked_dids` collection.
 
 7. On your webserver, open the file `https://my-domain.com/.well-known/did.configuration.json` in an editor and add the JWT token as a new entry inside the linked_dids collection. It should look something like this after adding it.
 

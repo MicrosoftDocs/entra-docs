@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 08/11/2023
+ms.date: 01/30/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -14,6 +14,8 @@ ms.topic: how-to
 ---
 
 # A web app that calls web APIs: Acquire a token for the app
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 You've built your client application object. Now, you use it to acquire a token to call a web API. In ASP.NET or ASP.NET Core, calling a web API is done in the controller:
 

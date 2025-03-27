@@ -9,7 +9,7 @@ ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: calebb
 ---
 # Troubleshooting Conditional Access using the What If tool
