@@ -163,6 +163,7 @@ Now new, lesser privileged permissions can be used for managing specific read an
 For more information, see: [Microsoft Graph permissions reference](/graph/permissions-reference).
 
 # [Change announcements](#tab/changeAnnouncementsFebruary)
+No change announcements
 
 ---
 
@@ -590,5 +591,5 @@ For more information, see: [Multifactor authentication in external tenants](../e
 
 
 # [Change announcements](#tab/ChangeAnnouncementsOctober)
-
+No change announcements
 ---
