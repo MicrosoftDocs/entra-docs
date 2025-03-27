@@ -38,7 +38,8 @@ procedureSection:
 
     steps:
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) 
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
       - |
         Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.
 
