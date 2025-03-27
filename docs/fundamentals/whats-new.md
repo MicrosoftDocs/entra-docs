@@ -591,6 +591,7 @@ For more information, see: [Multifactor authentication in external tenants](../e
 
 
 # [Change announcements](#tab/ChangeAnnouncementsOctober)
+
 No change announcements
 
 ---
