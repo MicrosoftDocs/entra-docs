@@ -1,5 +1,5 @@
 ---
-title: Debug Application Proxy
+title: Debug Application Proxy Issues
 description: Learn how to debug issues that might occur when you configure Microsoft Entra application proxy.
 author: kenwith
 manager: femila

@@ -1,6 +1,6 @@
 ---
-title: Troubleshoot Kerberos Constrained Delegation (KCD) with Microsoft Entra application proxy.
-description: Troubleshoot Kerberos Constrained Delegation (KCD) configurations with Microsoft Entra application proxy.
+title: Troubleshoot Kerberos Constrained Delegation
+description: Learn how to troubleshoot a Kerberos constrained delegation (KCD) configuration in Microsoft Entra application proxy.
 author: kenwith
 manager: femila
 ms.service: entra-id
@@ -11,76 +11,85 @@ ms.author: kenwith
 ms.reviewer: asteen, ashishj
 ---
 
-# Troubleshoot Kerberos Constrained Delegation (KCD) configurations with Microsoft Entra application proxy
+# Troubleshoot Kerberos constrained delegation
 
-Single sign-on methods vary from one application to another. Microsoft Entra application proxy provides Kerberos Constrained Delegation (KCD) by default. Users authenticate to private applications using Kerberos. 
+Single sign-on (SSO) methods vary from one application to another. Microsoft Entra application proxy provides Kerberos constrained delegation (KCD) by default. Users authenticate to private applications by using Kerberos.
 
-This article provides a single point of reference to troubleshoot the most common issues. It also covers diagnosis of more complex implementation problems.
+This article describes how to troubleshoot the most common issues in configuring KCD. It also covers diagnosis of more complex implementation problems.
 
-This article makes the following assumptions.
-- Deployment of Microsoft Entra application proxy and general access to non-KCD applications. For more information, see [Get started with application proxy](application-proxy-add-on-premises-application.md).
-- Published application is based on Internet Information Services (IIS) and the Microsoft implementation of Kerberos.
-- Server and application hosts reside in a single Microsoft Entra domain. For more information on cross-domain and forest scenarios, see [KCD white paper](https://aka.ms/KCDPaper).
-- Application is published in a Microsoft Entra tenant with preauthentication enabled. Users are expected to authenticate using forms-based authentication. Rich client authentication scenarios aren't covered by this article.
+This article makes the following assumptions:
 
-## Prerequisites
+- Microsoft Entra application proxy is deployed and has general access to non-KCD applications.
 
-Simple misconfigurations or general mistakes cause most issues. Check all prerequisites in [Using KCD single sign-on with the application proxy](how-to-configure-sso-with-kcd.md) before troubleshooting.
+   For more information, see [Get started with application proxy](application-proxy-add-on-premises-application.md).
+- A published application is based on Internet Information Services (IIS) and the Microsoft implementation of Kerberos.
+- Server and application hosts reside in a single Microsoft Entra domain.
 
-Connector hosts aren't restricted to communication with only a specific local site Domain Controller (DC). Check the DC being used as it could change.
+   For more information on cross-domain and forest scenarios, see the white paper [Understanding Kerberos Constrained Delegation with Application Proxy](https://aka.ms/KCDPaper).
+- The application is published in a Microsoft Entra tenant with preauthentication enabled. Users are expected to authenticate by using forms-based authentication.
 
-Cross-domain scenarios rely on referrals that direct a connector host to DCs that might be outside of the local network perimeter. In these cases, it's equally important to also send traffic onward to DCs that represent other respective domains. If not, delegation fails.
+   Rich client authentication scenarios aren't covered by this article.
 
-Avoid active Intrusion Prevention System (IPS) or Intrusion Detection System (IDS) devices between connector hosts and DCs. These devices are too intrusive and interfere with core Remote Procedure Call (RPC) traffic.
+## Considerations
 
-Test delegation in simple scenarios. The more variables you introduce, the more you might have to contend with. To save time, limit your testing to a single connector. Add more connectors after the issue is resolved.
+The following list describes foundational considerations for KCD configuration and use with Microsoft Entra application proxy:
 
-Some environmental factors might also contribute to an issue. To avoid these factors, minimize architecture as much as possible during testing. For example, misconfigured internal firewall Access Control Lists (ACLs) are common. If possible, send all traffic from a connector straight through to the DCs and back-end application.
+- Simple misconfigurations or general mistakes cause most issues. Before you begin to troubleshoot, check all prerequisites in [Use KCD SSO with application proxy](how-to-configure-sso-with-kcd.md).
 
-The best place to position connectors is as close as possible to their targets. A firewall that sits inline when testing adds unnecessary complexity and can prolong your investigations.
+- Connector hosts aren't restricted to communicate with only a specific local site domain controller (DC). Check the DC you use because it might change over time.
 
-What shows a KCD problem? There are several common indications that KCD single sign-on is failing. The first signs of an issue appear in the browser.
+- Cross-domain scenarios rely on referrals that direct a connector host to DCs that might be outside of the local network perimeter. In these cases, it's equally important to send traffic onward to DCs that represent other respective domains. If you don't, delegation fails.
 
-![Screenshot that shows an example of an incorrect K C D configuration error, with the error "Incorrect Kerberos constrained delegation..." highlighted.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic1.png)
+- Avoid active Intrusion Prevention System (IPS) or Intrusion Detection System (IDS) devices between connector hosts and DCs. These devices are too intrusive and interfere with core Remote Procedure Call (RPC) traffic.
 
-![Example: Authorization failed because of missing permissions](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic2.png)
+- Test delegation in simple scenarios. The more variables you introduce, the more complex configuration and troubleshooting is. To save time, limit your testing to a single connector. Add more connectors after the issue is resolved.
 
-Both images show the same symptom: single sign-on failure. User access to the application is denied.
+- Some environmental factors might also contribute to the cause of an issue. To avoid these factors, minimize architecture as much as possible during testing. For example, misconfigured internal firewall Access Control Lists (ACLs) are common. If possible, send all traffic from a connector straight through to the DCs and back-end application.
 
-## Troubleshooting
+- The best place to position connectors is as close as possible to their targets. A firewall that sits inline when you test adds unnecessary complexity and can prolong your investigations.
+
+- What indicates a KCD problem? Several common errors indicate that KCD SSO is failing. The first signs of an issue appear in the browser.
+
+  ![Screenshot that shows an example of an incorrect K C D configuration error, with the error Incorrect Kerberos constrained delegation highlighted.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic1.png)
+
+  ![Example: Authorization failed because of missing permissions.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic2.png)
+
+  Both images show the same symptom of SSO failure: User access to the application is denied.
+
+## Troubleshoot
 
 Separate troubleshooting into the three stages.
 
-### Client pre authentication
+### Client preauthentication
 
-The external user authenticating via a browser. The ability to pre authenticate to Microsoft Entra ID is necessary for KCD single sign-on (SSO) to function. Test and address this ability if there are any issues. The pre authentication stage isn't related to KCD or the published application. It's easy to correct any discrepancies by checking that the subject account exists in Microsoft Entra ID. Check that the application not disabled or blocked. The error response in the browser is descriptive enough to explain the cause.
+The external user authenticating via a browser. The ability to preauthenticate to Microsoft Entra ID is necessary for KCD SSO to work. Test and address this ability if there are any issues. The preauthentication stage isn't related to KCD or to the published application. It's easy to correct any discrepancies by checking that the subject account exists in Microsoft Entra ID. Check that the application isn't disabled or blocked. The error response in the browser typically is descriptive enough to explain the cause.
 
 ### Delegation service
 
-The private network connector that gets a Kerberos service ticket for users from a Kerberos Key Distribution Center (KCD).
+The Kerberos delegation service is the private network connector that gets a Kerberos service ticket for users from a Kerberos Key Distribution Center (KDC).
 
-The external communications between the client and the Azure front end have no bearing on KCD. These communications only make sure that KCD works. The application proxy service is provided a valid user ID that is used to get a Kerberos ticket. Without this ID, KCD isn't possible and fails.
+The external communications between the client and the Azure front end have no effect on constrained delegation. These communications only make sure that KCD works. The application proxy service is given a valid user ID that gets a Kerberos ticket. Without this ID, Kerberos constrained delegation can't occur and SSO fails.
 
-The browser error messages provide some good clues about why things fail. Record the `activity ID` and `timestamp` fields in the response. The information helps correlate the behavior to actual events in the application proxy event log.
+Browser error messages provide some good clues about why sign-in fails. Record the values for `activity ID` and `timestamp` that appear in the response to application sign-in. The information helps correlate the behavior to actual events in the application proxy event log.
 
-![Example: Incorrect KCD configuration error](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic3.png)
+![Screenshot that shows a Kerberos constrained delegation configuration error message.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic3.png)
 
-The corresponding entries seen in the event log show as events 13019 or 12027. Find the connector event logs in **Applications and Services Logs** &gt; **Microsoft** &gt; **Microsoft Entra private network** &gt; **Connector** &gt; **Admin**.
+The corresponding entries seen in the event log show as events 13019 or 12027. To view the connector event logs, go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector** > **Admin**.
 
-1. Use an **A** record in your internal Domain Name System (DNS) for the application’s address, not a **`CName`**.
-1. Reconfirm that the connector host has the right to delegate to the designated target account’s Service Principal Name (SPN). Reconfirm that **Use any authentication protocol** is selected. For more information, see the [SSO configuration article](how-to-configure-sso-with-kcd.md).
-1. Verify that there's only one instance of the SPN in existence in Microsoft Entra ID. Issue `setspn -x` from a command prompt on any domain member host.
-1. Check that a domain policy is enforced that limits the [maximum size of issued Kerberos tokens](/archive/blogs/askds/maxtokensize-and-windows-8-and-windows-server-2012). The policy stops the connector from getting a token if it's excessive.
+1. Use an `A record` value in your internal Domain Name System (DNS) for the application’s address, not a `CName` value.
+1. Verify that the connector host is configured with the right to delegate to the designated target account’s service principal name (SPN). Verify that **Use any authentication protocol** is selected. For more information, see [SSO configuration](how-to-configure-sso-with-kcd.md).
+1. Verify that only one instance of the SPN exists in Microsoft Entra ID. Issue `setspn -x` from a command prompt on any domain member host.
+1. Check that a domain policy that limits the [maximum size of issued Kerberos tokens](/archive/blogs/askds/maxtokensize-and-windows-8-and-windows-server-2012) is enforced. The policy stops the connector from getting a token if the token size is excessive.
 
-A network trace that captures exchanges between the connector host and a domain Kerberos Constrained Delegation (KDC) is the next best step to get more low-level detail on the issues. For more information, see the [deep dive Troubleshoot paper](https://aka.ms/proxytshootpaper).
+A network trace that captures exchanges between the connector host and a domain Kerberos constrained delegation is the next best step to get more low-level detail on the issues. For more information, see the [deep dive Troubleshoot paper](https://aka.ms/proxytshootpaper).
 
 If ticketing looks good, you see an event in the logs stating that authentication failed because the application returned a 401. This event indicates that the target application rejected your ticket. Go to the next stage.
 
 ### Target application
 
-The consumer of the Kerberos ticket the connector provided. At this stage, expect the connector sent a Kerberos service ticket to the back end. The ticket is a header in the first application request.
+The consumer of the Kerberos ticket the connector provided. At this stage, you can expect that the connector sent a Kerberos service ticket to the back end. The ticket is a header in the first application request.
 
-1. By using the application’s internal URL defined in the portal, validate that the application is accessible directly from the browser on the connector host. Then you can sign in successfully. Details can be found on the connector **Troubleshoot** page.
+1. By using the application’s internal URL that's defined in the portal, validate that the application is accessible directly from the browser on the connector host. Then you can sign in successfully. Details can be found on the connector **Troubleshoot** page.
 1. Confirm that authentication between the browser and the application uses Kerberos.
 1. Run DevTools (**F12**) in Internet Explorer, or use [Fiddler](https://blogs.msdn.microsoft.com/crminthefield/2012/10/10/using-fiddler-to-check-for-kerberos-auth/) from the connector host. Go to the application by using the internal URL. To make sure that either negotiate or Kerberos is present, inspect the offered web authorization headers returned in the response from the application.
 
@@ -107,7 +116,7 @@ The consumer of the Kerberos ticket the connector provided. At this stage, expec
 
       ![Shows HTTP 401 forbidden error](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic8.png)
 
-   - Check the IIS application. Make sure that the configured application pool and the SPN are configured to use the same account in Microsoft Entra ID. Navigate in IIS as shown in the following illustration.
+   - Check the IIS application. Make sure that the configured application pool and the SPN are configured to use the same account in Microsoft Entra ID. In IIS, go to the folder as shown in the following illustration.
 
       ![IIS application configuration window](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic9.png)
 
@@ -115,9 +124,9 @@ The consumer of the Kerberos ticket the connector provided. At this stage, expec
 
       ![Shows the SetSPN command window](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic10.png)
 
-   - Check the SPN defined against the application’s settings in the portal. Make sure that the same SPN configured against the target Microsoft Entra account is used by the application’s app pool.
+   - In the portal, check the defined SPN against the application settings. Make sure that the application’s app pool uses the same SPN that is set for the target Microsoft Entra account.
 
-   - Go into IIS and select the **Configuration Editor** option for the application. Navigate to **system.webServer/security/authentication/windowsAuthentication**. Make sure the value **UseAppPoolCredentials** is **True**.
+   - In IIS, select the **Configuration Editor** option for the application. Go to **system.webServer/security/authentication/windowsAuthentication**. Make sure that the value **UseAppPoolCredentials** is **True**.
 
       ![IIS configuration app pools credential option](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic12.png)
 
@@ -127,20 +136,20 @@ The consumer of the Kerberos ticket the connector provided. At this stage, expec
       Get-WmiObject Win32_LogonSession | Where-Object {$_.AuthenticationPackage -ne 'NTLM'} | ForEach-Object {klist.exe purge -li ([Convert]::ToString($_.LogonId, 16))}
       ```
 
-If you leave Kernel mode enabled, it improves the performance of Kerberos operations. But it also causes the ticket for the requested service to be decrypted by using the machine account. This account is also called the Local system. Set this value to **True** to break KCD when the application is hosted across more than one server in a farm.
+If Kernel mode is enabled, Kerberos operations improve. But the ticket for the requested service also must be decrypted by using the machine account. This account is also called the Local system. Set this value to **True** to break KCD when the application is hosted across more than one server in a farm.
 
-- As another check, disable **Extended** protection too. In some scenarios, **Extended** protection broke KCD when it was enabled in specific configurations. In those cases, an application was published as a subfolder of the default website. This application is configured for anonymous authentication only. All the dialogs are grayed out, which suggests child objects wouldn't inherit any active settings. We recommend that you test, but don’t forget to restore this value to **enabled**, where possible.
+- As another check, disable **Extended** protection, too. In some scenarios, **Extended** protection broke KCD when it was enabled in specific configurations. In those cases, an application was published as a subfolder of the default website. This application is configured for anonymous authentication only. All the dialogs are grayed out, which suggests child objects wouldn't inherit any active settings. We recommend that you test, but don’t forget to restore this value to **enabled**, where possible.
 
   This extra check puts you on track to use your published application. You can spin up more connectors that are also configured to delegate. For more information, read the more in-depth technical walk-through, [Troubleshooting the Microsoft Entra application proxy](https://aka.ms/proxytshootpaper).
 
-If you still can't make progress, Microsoft support can assist you. Create a support ticket directly within the portal.
+If you still can't make progress, Microsoft support can assist you. Create a support ticket directly in the portal.
 
 ## Other scenarios
 
-Microsoft Entra application proxy requests a Kerberos ticket before sending its request to an application. Some applications don't like this method of authenticating. These applications expect the more conventional negotiations to take place. The first request is anonymous, which allows the application to respond with the authentication types that it supports through a 401. This type of Kerberos negotiation can be enabled using the steps outlined in this document: [Kerberos Constrained Delegation for single sign-on](how-to-configure-sso-with-kcd.md).
+Microsoft Entra application proxy requests a Kerberos ticket before it sends a request to an application. Some applications don't support this method of authenticating. These applications are set up to respond to more conventional authentication steps. The first request is anonymous, which allows the application to respond with the authentication types that it supports through a 401. This type of Kerberos negotiation can be enabled using the steps outlined in this document: [Kerberos constrained delegation for SSO](how-to-configure-sso-with-kcd.md).
 
 Multi-hop authentication is commonly used in scenarios where an application is tiered. The tiers include a back end and front end. Both tiers require authentication. For example, SQL Server Reporting Services. For more information, see [How to configure Kerberos Constrained Delegation for Web Enrollment proxy pages](/troubleshoot/windows-server/identity/configure-kerberos-constrained-delegation).
 
-## Next steps
+## Related content
 
-[Configure KCD on a managed domain](/entra/identity/domain-services/deploy-kcd).
+- [Set up KCD on a managed domain](/entra/identity/domain-services/deploy-kcd).
