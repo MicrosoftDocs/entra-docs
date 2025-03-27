@@ -75,7 +75,9 @@ Conditional Access Per-Policy Reporting enables admins to easily evaluate the im
 **Service category:** Directory Management    
 **Product capability:** Developer Experience    
 
-A new feature has been added to the App Management Policy Framework to restrict the creation or promotion of multitenant applications, providing administrators with greater control over their app environments. Administrators can now set app policies and utilize the 'audiences' restriction to block the creation or promotion of multitenant apps based on their signInAudience value. This ensures that any newly created app must use an allowed signInAudience value per policy. Additionally, existing apps can be restricted from changing their signInAudience value if the target value isn't permitted by the policy. These policy changes are applied during app creation or update operations, offering comprehensive control over application deployment and usage. For more information, see: [audiencesConfiguration resource type](/graph/api/resources/audiencesconfiguration).
+A new feature has been added to the [App Management Policy Framework](graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta) that allows restriction on creation or promotion of multitenant applications, providing administrators with greater control over their app environments.
+
+Administrators can now configure tenant default or custom app policy using the new '[audiences](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta#what-restrictions-can-be-managed-in-microsoft-graph)' restriction to block new app creation if the signInAudience value provided in the app is not permitted by the policy. In addition, existing apps can be restricted from changing their signInAudience if the target value is not permitted by the policy. These policy changes are applied during app creation or update operations, offering control over application deployment and usage. For more information, see: [audiencesConfiguration resource type](/graph/api/resources/audiencesconfiguration).
 
 ---
 
