@@ -541,6 +541,8 @@ The hybrid reporting agent, used to send a MIM Service event log to Microsoft En
 
 ## October 2024
 
+# [New features](#tab/NewFeaturesOctober)
+
 ### Public Preview - Passkey authentication in brokered Microsoft apps on Android
 
 **Type:** New feature    
@@ -587,5 +589,8 @@ Announcing general availability of SMS as an MFA method in Microsoft Entra Exter
 
 
 For more information, see: [Multifactor authentication in external tenants](../external-id/customers/concept-multifactor-authentication-customers.md).
+
+
+[Change announcements](#tab/ChangeAnnouncementsOctober)
 
 ---
