@@ -43,7 +43,7 @@ Authentication scenarios involve two activities:
 
 Most authentication scenarios acquire tokens on behalf of signed-in users.
 
-![Scenarios with users](media/scenarios/scenarios-with-users-trimmed.svg)
+![Scenarios with users](media/scenarios/scenarios-with-users.svg)
 
 However, there are also daemon apps. In these scenarios, applications acquire tokens on behalf of themselves with no user.
 
