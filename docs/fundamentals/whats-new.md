@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 # Microsoft Entra releases and announcements
 
-This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see [Archive for What's new in Microsoft Entra](whats-new-archive.md).
+This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see: [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
@@ -169,6 +169,8 @@ For more information, see: [Microsoft Graph permissions reference](/graph/permis
 
 ## January 2025
 
+# [New features](#tab/NewFeaturesJanuary)
+
 ### Public Preview - Manage Lifecycle Workflows with Microsoft Security CoPilot in Microsoft Entra
 
 **Type:** New feature    
@@ -176,8 +178,6 @@ For more information, see: [Microsoft Graph permissions reference](/graph/permis
 **Product capability:** Identity Governance    
 
 Customers can now manage, and customize, Lifecycle Workflows using natural language with Microsoft Security CoPilot. Our Lifecycle Workflows (LCW) Copilot solution provides step-by-step guidance to perform key workflow configuration and execution tasks using natural language. It allows customers to quickly get rich insights to help monitor, and troubleshoot, workflows for compliance. For more information, see: [Manage employee lifecycle using Microsoft Security Copilot (Preview)](../fundamentals/copilot-entra-lifecycle-workflow.md).
-
----
 
 ### General Availability - Microsoft Entra PowerShell
 
@@ -187,7 +187,6 @@ Customers can now manage, and customize, Lifecycle Workflows using natural langu
 
 Manage and automate Microsoft Entra resources programmatically with the scenario-focused Microsoft Entra PowerShell module. For more information, see: [Microsoft Entra PowerShell module now generally available](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-powershell-module-now-generally-available/4365718).
 
----
 
 ### General Availability - Improving visibility into downstream tenant sign-ins
 
@@ -209,8 +208,6 @@ After seeing a partner logging into a downstream tenant’s resources, an import
 
 To increase visibility into the aforementioned columns, Microsoft Entra will begin enabling these columns to display by default when loading the sign-in logs UX starting on March 7, 2025.
 
----
-
 ### Public Preview - Auditing administrator events in Microsoft Entra Connect
 
 **Type:** New feature    
@@ -223,8 +220,6 @@ Where supported, we'll also autoupgrade customers to this version of Microsoft E
 
 For upgrade-related guidance, see [Microsoft Entra Connect: Upgrade from a previous version to the latest](../identity/hybrid/connect/how-to-upgrade-previous-version.md).
 
----
-
 ### Public Preview - Flexible Federated Identity Credentials
 
 **Type:** New feature    
@@ -232,8 +227,6 @@ For upgrade-related guidance, see [Microsoft Entra Connect: Upgrade from a previ
 **Product capability:** Developer Experience    
 
 Flexible Federated Identity Credentials extend the existing Federated Identity Credential model by providing the ability to use wildcard matching against certain claims. Currently available for GitHub, GitLab, and Terraform Cloud scenarios, this functionality can be used to lower the total number of FICs required to managed similar scenarios. For more information, see: [Flexible federated identity credentials (preview)](../workload-id/workload-identities-flexible-federated-identity-credentials.md).
-
----
 
 ### General Availability - Real-time Password Spray Detection in Microsoft Entra ID Protection
 
@@ -245,8 +238,6 @@ Traditionally, password spray attacks are detected post breach or as part of hun
 
 Risk-based Conditional Access can automatically respond to this new signal by raising session risk, immediately challenging the sign-in attempt, and stopping password spray attempts in their tracks. This cutting-edge detection, now Generally Available, works alongside existing detections for advanced attacks such as Adversary-in-the-Middle (AitM) phishing and token theft, to ensure comprehensive coverage against modern attacks. For more information, see: [What is Microsoft Entra ID Protection?](../id-protection/overview-identity-protection.md)
 
----
-
 ### General Availability - Protected actions for hard deletions
 
 **Type:** New feature    
@@ -255,7 +246,17 @@ Risk-based Conditional Access can automatically respond to this new signal by ra
 
 Customers can now configure Conditional Access policies to protect against early hard deletions. Protected action for hard deletion protects hard deletion of users, Microsoft 365 groups, and applications. For more information, see: [What are protected actions in Microsoft Entra ID?](../identity/role-based-access-control/protected-actions-overview.md)
 
----
+### Public Preview - Elevate Access events are now exportable via Microsoft Entra Audit Logs
+
+**Type:** New feature    
+**Service category:** RBAC    
+**Product capability:** Monitoring & Reporting    
+
+This feature enables administrators to export and stream Elevate Access events to both first-party and third-party SIEM solutions via Microsoft Entra Audit logs. It enhances detection and improves logging capabilities, allowing visibility into who in their tenant has utilized Elevate Access. For more information on how to use the feature, see: [View elevate access log entries](/azure/role-based-access-control/elevate-access-global-admin?tabs=azure-portal%2Centra-audit-logs#view-elevate-access-log-entries).
+
+
+
+# [Change announcements](#tab/ChangeAnnouncementsJanuary)
 
 ### Deprecated - Action Required by February 1, 2025: Azure AD Graph retirement
 
@@ -271,8 +272,6 @@ If you haven't already, it's now urgent to review the applications on your tenan
 
 Microsoft Entra Recommendations are the best tool to identify applications that are using Azure AD Graph APIs in your tenant and require action. Reference this blog post: Action required: [Azure AD Graph API retirement](https://techcommunity.microsoft.com/blog/identity/action-required-azure-ad-graph-api-retirement/4090533) for step by step guidance.
 
----
-
 ### General Availability - Microsoft Entra Connect Version 2.4.129.0
 
 **Type:** Changed feature    
@@ -281,17 +280,6 @@ Microsoft Entra Recommendations are the best tool to identify applications that 
 
 On January 15, 2025, we released Microsoft Entra Connect Sync Version 2.4.129.0 which supports auditing administrator events. More details are available in the [release notes](../identity/hybrid/connect/reference-connect-version-history.md#241290). We'll automatically upgrade eligible customers to this latest version of Microsoft Entra Connect in February 2025. For customers who wish to be autoupgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).  
 
----
-
-### Public Preview - Elevate Access events are now exportable via Microsoft Entra Audit Logs
-
-**Type:** New feature    
-**Service category:** RBAC    
-**Product capability:** Monitoring & Reporting    
-
-This feature enables administrators to export and stream Elevate Access events to both first-party and third-party SIEM solutions via Microsoft Entra Audit logs. It enhances detection and improves logging capabilities, allowing visibility into who in their tenant has utilized Elevate Access. For more information on how to use the feature, see: [View elevate access log entries](/azure/role-based-access-control/elevate-access-global-admin?tabs=azure-portal%2Centra-audit-logs#view-elevate-access-log-entries).
-
----
 
 ### Deprecated - Take action to avoid impact when legacy MSOnline and AzureAD PowerShell modules retire
 
@@ -315,6 +303,8 @@ For more information, see: [Action required: MSOnline and AzureAD PowerShell ret
 
 ## December 2024
 
+# [New features](#tab/NewFeaturesDecember)
+
 ### General Availability - What's new in Microsoft Entra
 
 **Type:** New feature    
@@ -323,18 +313,6 @@ For more information, see: [Action required: MSOnline and AzureAD PowerShell ret
 
 What's new in Microsoft Entra offers a comprehensive view of Microsoft Entra product updates including product roadmap (like Public Previews and recent GAs), and change announcements (like deprecations, breaking changes, feature changes and Microsoft-managed policies). It's a one stop shop for Microsoft Entra admins to discover the product updates.
 
----
-
-### General Availability - Dedicated new 1st party resource application to enable Active Directory to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
-
-**Type:** Changed feature    
-**Service category:** Provisioning    
-**Product capability:** Directory    
-
-As part of ongoing security hardening, Microsoft deployed Microsoft Entra AD Synchronization Service, a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application, with Application Id 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016, was provisioned in customer tenants that use Microsoft Entra Connect Sync or the Microsoft Entra Cloud Sync service. 
-
----
-
 ### Public Preview - Microsoft Entra ID Governance: Approvers can revoke access in MyAccess
 
 **Type:** New feature    
@@ -342,8 +320,6 @@ As part of ongoing security hardening, Microsoft deployed Microsoft Entra AD Syn
 **Product capability:** Entitlement Management    
 
 For Microsoft Entra ID Governance users, approvers of access package requests can now revoke their decision in MyAccess. Only the person who took the approve action is able to revoke access. To opt into this feature, admins can go to the [Identity Governance settings page](https://entra.microsoft.com/#view/Microsoft_AAD_ERM/DashboardBlade/~/elmSetting), and enable the feature. For more information, see: [What is the My Access portal?](..//id-governance/my-access-portal-overview.md#approve-or-deny-a-request).
-
----
 
 ### General Availability - Expansion of SSPR Policy Audit Logging 
 
@@ -363,8 +339,6 @@ These changes are rolled out in phases:
 
 This change occurs automatically, so admins take no action. For more information and details regarding this change, see: [Microsoft Entra audit log categories and activities](..//identity/monitoring-health/reference-audit-activities.md)
 
----
-
 ### General Availability - Update Profile Photo in MyAccount
 
 **Type:** New feature    
@@ -375,8 +349,6 @@ Users can now update their profile photo directly from their MyAccount portal. T
 
 In some environments, it’s necessary to prevent users from making this change. Global Administrators can manage this using a tenant-wide policy with Microsoft Graph API, following the guidance in the [Manage user profile photo settings in Microsoft 365](/graph/profilephoto-configure-settings) document.
 
----
-
 ### General Availability - Temporary Access Pass (TAP) support for internal guest users
 
 **Type:** New feature    
@@ -385,7 +357,6 @@ In some environments, it’s necessary to prevent users from making this change.
 
 Microsoft Entra ID now supports issuing Temporary Access Passes (TAP) to internal guest users. TAPs can be issued to internal guests just like normal members, through the Microsoft Entra ID Admin Center, or natively through Microsoft Graph. With this enhancement, internal guests can now seamlessly onboard, and recover, their accounts with time-bound temporary credentials. For more information, see: [Configure Temporary Access Pass to register passwordless authentication methods](../identity/authentication/howto-authentication-temporary-access-pass.md).
 
----
 
 ### Public Preview - Microsoft Entra ID Governance: access package request suggestions
 
@@ -395,7 +366,6 @@ Microsoft Entra ID now supports issuing Temporary Access Passes (TAP) to interna
 
 **Opt-In** As communicated [earlier](https://techcommunity.microsoft.com/blog/identity/whats-new-in-microsoft-entra---september-2024/4253153), we're excited to introduce a new feature in [My Access](https://myaccess.microsoft.com): a curated list of suggested access packages. This capability allows users to quickly view the most relevant access packages (based off their peers' access packages and previous requests) without scrolling through a long list. In December you can [enable the preview in the Opt-in Preview Features for Identity Governance](https://entra.microsoft.com/?feature.msaljs=true#view/Microsoft_AAD_ERM/DashboardBlade/~/elmSetting). From January, this setting is enabled by default.
 
----
 
 ### Public Preview - Security Copilot embedded in Microsoft Entra
 
@@ -407,7 +377,6 @@ We’ve announced the public preview of Microsoft Security Copilot embedded in t
 
 With Security Copilot now embedded in Microsoft Entra, identity admins get AI-driven, natural-language summaries of identity context and insights tailored for handling security incidents, equipping them to better protect against identity compromise. The embedded experience also accelerates troubleshooting tasks like resolving identity-related risks and sign-in issues, without ever leaving the admin center.  
 
----
 
 ### Public Preview - Security Copilot in Microsoft Entra: App Risk skills
 
@@ -417,7 +386,6 @@ With Security Copilot now embedded in Microsoft Entra, identity admins get AI-dr
 
 Identity admins and security analysts managing Microsoft Entra ID registered apps can identify and understand risks through natural language prompts. Security Copilot has links to the Microsoft Entra Admin Center for admins to take needed remediation actions. For more information, see: [Assess application risks using Microsoft Security Copilot in Microsoft Entra](../fundamentals/copilot-security-entra-investigate-risky-apps.md).
 
----
 
 ### Public Preview - Provision custom security attributes from HR sources
 
@@ -427,7 +395,6 @@ Identity admins and security analysts managing Microsoft Entra ID registered app
 
 With this feature, customers can automatically provision "*custom security attributes*" in Microsoft Entra ID from authoritative HR sources. Supported authoritative sources include: Workday, SAP SuccessFactors, and any HR system integrated using API-driven provisioning.
 
----
 
 ### Public Preview - Sign in with Apple
 
@@ -437,7 +404,6 @@ With this feature, customers can automatically provision "*custom security attri
 
 This new feature adds Apple to our list of preconfigured social identity providers. As the first social identity provider implemented on the eSTS platform, it introduces a "*Sign in with Apple*" button to the sign-in options, allowing users to access applications with their Apple accounts. For more information, see: [Add Apple as an identity provider (preview)](../external-id/customers/how-to-apple-federation-customers.md).
 
----
 
 ### General Availability - Microsoft Entra External ID Custom URL Domains
 
@@ -447,7 +413,6 @@ This new feature adds Apple to our list of preconfigured social identity provide
 
 This feature allows users to customize their Microsoft default sign in authentication endpoint with their own brand names. Custom URL Domains help users to change Ext ID endpoint < tenant-name >.ciamlogin.com to login.contoso.com.
 
----
 
 ### General Availability - Privileged Identity Management integration in Azure Role Based Access Control
 
@@ -458,6 +423,16 @@ This feature allows users to customize their Microsoft default sign in authentic
 Privileged Identity Management (PIM) capabilities are now integrated into the Azure Role Based Access Control (Azure RBAC) UI. Before this integration, RBAC admins could only manage standing access (active permanent role assignments) from the Azure RBAC UI. With this integration, just-in-time access and timebound access, which are functionalities supported by PIM, are now brought into the Azure RBAC UI for customers with either a P2, or Identity Governance, license.
 
 RBAC admins can create assignments of type eligible and timebound duration from the Azure RBAC add role assignment flow, see the list of different states of role assignment in a single view, as well as convert the type and duration of their role assignments from the Azure RBAC UI. In addition, end users now see all their role assignments of different state straight from the Azure RBAC UI landing page, from where they can also activate their eligible role assignments. For more information, see: [List role assignments at a scope](/azure/role-based-access-control/role-assignments-list-portal#list-role-assignments-at-a-scope).
+
+# [Change announcements](#tab/ChangeAnnouncementsDecember)
+
+### General Availability - Dedicated new 1st party resource application to enable Active Directory to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
+
+**Type:** Changed feature    
+**Service category:** Provisioning    
+**Product capability:** Directory    
+
+As part of ongoing security hardening, Microsoft deployed Microsoft Entra AD Synchronization Service, a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application, with Application Id `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016`, was provisioned in customer tenants that use Microsoft Entra Connect Sync or the Microsoft Entra Cloud Sync service. 
 
 ---
 
