@@ -2,10 +2,10 @@
 title: PowerShell sample - Recover from Global Secure Access break glass scenario
 description: PowerShell examples that re-enable any Conditional Access policies that were disabled in a break glass scenario. 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: global-secure-access
 ms.topic: sample
-ms.date: 06/27/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: frankgomulka
 ---
@@ -36,7 +36,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 # Before you begin:
 #    
 # - Make sure you are running PowerShell as an Administrator
-# - Make sure your Administrator persona is an leveraging an Entra ID emergency access admin account, not subject to Microsoft Entra Internet Access Compliant Network policy, as described in https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access.
+# - Make sure your Administrator persona is an leveraging an Entra ID emergency access admin account, not subject to Microsoft Entra Internet Access Compliant Network policy, as described in https://learn.microsoft.com/entra/identity/role-based-access-control/security-emergency-access.
 # - Make sure you run: Install-Module Microsoft.Graph.Beta -AllowClobber -Force
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 Connect-MgGraph -Scopes "Policy.Read.All,Policy.ReadWrite.ConditionalAccess"
@@ -88,7 +88,7 @@ $policiesToRecover = $reportOnlyOutput[2..($reportOnlyOutput.Count - 2)]
 $result += "Total count of Compliant Network Conditional Access policies to recover: $($policiesToRecover.Count)"
 
 # Based on admin input, either view or recover the list of policies disabled in the breakglass scenario.
-$action = Read-Host "`nDo you want to recover all affected CA policies (type 'recover') or just view them (type 'view')?"
+$action = Read-Host "`nDo you want to recover all affected Conditional Access policies (type 'recover') or just view them (type 'view')?"
 if ($action -eq "view") {
     $result += "Total count of policies to revert: $($policiesToRecover.Count)"
     foreach ($policy in $policiesToRecover) 

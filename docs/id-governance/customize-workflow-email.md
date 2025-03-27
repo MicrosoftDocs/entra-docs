@@ -3,11 +3,11 @@ title: Customize emails sent from workflow tasks
 description: Get a step-by-step guide for customizing emails that you send by using tasks within lifecycle workflows.
 author: owinfreyATL
 ms.author: owinfrey
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/22/2023
+ms.date: 12/10/2024
 ms.custom: template-how-to
 ---
 
@@ -34,7 +34,6 @@ For more information on these customizable parameters, see [Common email task pa
 
 ## Customize email by using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 When you're customizing an email sent via lifecycle workflows, you can choose to customize either a new task or an existing task. You do these customizations the same way whether the task is new or existing, but the following steps walk you through updating an existing task. To customize emails sent from tasks within workflows by using the Microsoft Entra admin center:
 

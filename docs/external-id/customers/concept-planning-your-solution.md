@@ -6,7 +6,7 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date: 05/09/2024
 ms.author: mimart
@@ -31,7 +31,7 @@ This article describes each of these steps and outlines important planning consi
 | Step  |  How-to guides |
 |---------|---------|
 |**[Step 1: Create an external tenant](#step-1-create-an-external-tenant)**   | &#8226; [Create an external tenant](how-to-create-external-tenant-portal.md)</br>&#8226; <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">Or start a free trial</a>  |
-|**[Step 2: Register your application](#step-2-register-your-application)**   | &#8226; [Register your application](how-to-register-ciam-app.md)  |
+|**[Step 2: Register your application](#step-2-register-your-application)**   | &#8226; [Register your application](/entra/identity-platform/quickstart-register-app)  |
 |**[Step 3: Integrate a sign-in flow with your app](#step-3-integrate-a-sign-in-flow-with-your-app)**     | &#8226; [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) </br>&#8226; [Add your app to the user flow](how-to-user-flow-add-application.md)   |
 |**[Step 4: Customize and secure your sign-in](#step-4-customize-and-secure-your-sign-in)**     |  &#8226; [Customize branding](concept-branding-customers.md) </br>&#8226; [Add identity providers](concept-authentication-methods-customers.md)  </br>&#8226; [Collect attributes during sign-up](how-to-define-custom-attributes.md)</br>&#8226; [Add attributes to the token](how-to-add-attributes-to-token.md) </br>&#8226; [Add multifactor authentication (MFA)](concept-security-customers.md)    |
 
@@ -55,11 +55,13 @@ Customer accounts have a [default set of permissions](reference-user-permissions
 
 - If you don't already have a Microsoft Entra tenant and want to try External ID, we recommend using the [get started experience](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl) to start a free trial.
 
+- If you use Visual Studio Code, you can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to create an external tenant directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
+
 ## Step 2: Register your application
 
 :::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 2 in the setup flow.":::
 
-Before your applications can interact with External ID, you need to register them in your external tenant. Microsoft Entra ID performs identity and access management only for registered applications. [Registering your app](how-to-register-ciam-app.md) establishes a trust relationship and allows you to integrate your app with External ID.
+Before your applications can interact with External ID, you need to register them in your external tenant. Microsoft Entra ID performs identity and access management only for registered applications. [Registering your app](/entra/identity-platform/quickstart-register-app) establishes a trust relationship and allows you to integrate your app with External ID.
 
 Then, to complete the trust relationship between Microsoft Entra ID and your app, you update your application source code with the values assigned during app registration, such as the application (client) ID, directory (tenant) subdomain, and client secret.
 
@@ -69,7 +71,7 @@ We provide code sample guides and in-depth integration guides for several app ty
 
 - Find guidance specific to the application you want to register on our [Samples by app type and language page](samples-ciam-all.md).
 
-- If we don't have a guide specific to your platform or language, refer to the general instructions for [registering an application](how-to-register-ciam-app.md) in an external tenant.
+- If we don't have a guide specific to your platform or language, refer to the general instructions for [registering an application](/entra/identity-platform/quickstart-register-app) in an external tenant.
 
 ## Step 3: Integrate a sign-in flow with your app
 
@@ -101,7 +103,7 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 - **Requirements for token claims**. If your application requires specific user attributes, you can include them in the token sent to your application.
 
-- **Social identity providers**. You can set up social identity providers [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) and then add them to your user flow as sign-in options.
+- **Identity providers**. You can set up social identity providers like [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or a [custom-configured OpenID Connect (OIDC)](how-to-custom-oidc-federation-customers.md) identity provider. Then, you can add them to your user flow as sign-in options
 
 ### How to integrate a user flow with your app
 
@@ -121,11 +123,11 @@ When planning for configuring company branding, language customizations, and cus
 
 - **Extending the authentication token claims**. External ID is designed for flexibility. You can use a custom authentication extension to add claims from external systems to the application token just before the token is issued to the application. Learn more about [adding your own business logic](concept-custom-extensions.md) with custom authentication extensions.
 
-- **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. Learn more about [MFA for customers](concept-security-customers.md#multifactor-authentication).
+- **Multifactor authentication (MFA)**. You can also enable application access security by enforcing MFA, which adds a critical second layer of security to user sign-ins by requiring verification via email one-time passcode. Learn more about [available MFA authentication methods](concept-security-customers.md#multifactor-authentication-mfa).
 
 - **Native authentication**. Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers. Learn more about [native authentication](concept-native-authentication.md) in External ID.
 
-- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Identity Protection.
+- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Microsoft Entra ID Protection.
 
 ### How to customize and secure your sign-in
 

@@ -9,11 +9,13 @@ ms.date: 07/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
 ---
 
 # A web API that calls web APIs: Code configuration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 This article describes how to configure code for a Web API app using the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md).
 

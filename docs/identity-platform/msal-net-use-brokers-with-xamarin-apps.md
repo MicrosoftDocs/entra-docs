@@ -163,7 +163,6 @@ Add `msauthv2` to the `LSApplicationQueriesSchemes` section of the *Info.plist* 
 
 ### Step 7: Add a redirect URI to your app registration
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 When you use the broker, your redirect URI has an extra requirement. The redirect URI *must* have the following format:
 

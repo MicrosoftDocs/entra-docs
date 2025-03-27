@@ -3,11 +3,11 @@ title: Grant access to inbound provisioning API
 description: Learn how to grant access to the inbound provisioning API.
 
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 05/21/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -83,6 +83,5 @@ This section describes how you can assign the necessary permissions to a managed
 
 ## Next steps
 - [Quick start using cURL](inbound-provisioning-api-curl-tutorial.md)
-- [Quick start using Postman](inbound-provisioning-api-postman.md)
 - [Quick start using Graph Explorer](inbound-provisioning-api-graph-explorer.md)
 - [Frequently asked questions about API-driven inbound provisioning](inbound-provisioning-api-faqs.md)

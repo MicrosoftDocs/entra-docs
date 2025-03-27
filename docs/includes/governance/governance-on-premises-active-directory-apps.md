@@ -2,7 +2,7 @@
 author: billmath
 ms.service: entra-id-governance
 ms.topic: include
-ms.date: 10/16/2019
+ms.date: 08/25/2024
 ms.author: billmath
 # Used by articles entra governance
 ---

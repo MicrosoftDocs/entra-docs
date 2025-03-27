@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with Elsevier SP
 description: Learn how to configure single sign-on between Microsoft Entra ID and Elsevier SP.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Elsevier SP so that I can control who has access to Elsevier SP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -18,7 +18,7 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with Elsevier SP
 
-In this article, you'll learn how to integrate Elsevier SP with Microsoft Entra ID. Elsevier SP provides access to your organization's Elsevier subscriptions using your Microsoft Entra credentials. When you integrate Elsevier SP with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Elsevier SP with Microsoft Entra ID. Elsevier SP provides access to your organization's Elsevier subscriptions using your Microsoft Entra credentials. When you integrate Elsevier SP with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Elsevier SP.
 * Enable your users to be automatically signed-in to Elsevier SP with their Microsoft Entra accounts.
@@ -104,17 +104,17 @@ In this section, you create a user called Britta Simon in Seculio. Work with [El
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Elsevier SP Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Elsevier SP Sign-on URL where you can initiate the login flow. 
 
 * Go to Elsevier SP Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Elsevier SP tile in the My Apps, this will redirect to Elsevier SP Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Elsevier SP tile in the My Apps, this option redirects to Elsevier SP Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Elsevier SP you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

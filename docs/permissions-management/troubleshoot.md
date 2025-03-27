@@ -2,17 +2,17 @@
 title: Troubleshoot issues with Permissions Management
 description: Troubleshoot issues with Permissions Management
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: troubleshooting
-ms.date: 02/23/2022
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 
 # Troubleshoot issues with Permissions Management
 
-This section answers troubleshoot issues with Permissions Management.
+This section addresses how to troubleshoot issues with Permissions Management.
 
 ## One time passcode (OTP) email
 

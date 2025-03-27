@@ -2,12 +2,12 @@
 title: PowerShell sample - Replace certificate in Microsoft Entra application proxy apps
 description: PowerShell example that bulk replaces a certificate across Microsoft Entra application proxy applications.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
-ms.date: 02/27/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -38,7 +38,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 # Before you begin:
 #    
 #    Required Microsoft Entra role at least Application Administrator or Application Developer 
-#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#    or appropriate custom permissions as documented https://learn.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions
 #
 # 
 
@@ -90,7 +90,9 @@ foreach ($item in $allApps) {
 
   $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
 
-  $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+
+  $aadapAppId =  Get-MgBetaApplication -Filter "AppId eq '$($item.AppID)'"
+
   $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
   $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
     | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 

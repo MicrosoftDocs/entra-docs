@@ -5,11 +5,11 @@ description: Learn how to customize user display and experience options for Micr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
 ---
 # Customize the user experience for Microsoft Entra self-service password reset
@@ -18,7 +18,7 @@ Self-service password reset (SSPR) gives users in Microsoft Entra ID the ability
 
 To improve the SSPR experience for users, you can customize the look and feel of the password reset page, email notifications, or sign-in pages. These customization options let you make it clear to the user they're in the right place, and give them confidence they're accessing company resources.
     
-This article shows you how to customize the SSPR e-mail link for users, company branding, and AD FS sign-in page link.
+This article shows you how to customize the SSPR e-mail link for users, company branding, and AD FS sign-in page link. Most of these options can be customized by anyone assigned the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 
 ## Customize the "Contact your administrator" link
 
@@ -64,9 +64,22 @@ The graphics you choose are shown in the following circumstances:
    * By passing the `whr` parameter to the password reset page, like `https://login.microsoftonline.com/?whr=contoso.com`
    * By passing the `username` parameter to the password reset page, like `https://login.microsoftonline.com/?username=admin@contoso.com`
 
+SSPR will honor browser language settings. When there is a customization for browser language, the page will display in the browser language customization. Otherwise, it falls to the default locale customization.
+
 ### Directory name
 
-To make things look more user-friendly, you can change organization name in the portal and in the automated communications. To change the directory name attribute in the Microsoft Entra admin center, sign in as a Global Administrator and browse to **Identity** > **Overview** > **Properties**. This friendly organization name option is the most visible in automated emails, as in the following examples:
+To make things look more user-friendly, you can change organization name in the portal and in the automated communications. 
+
+To change the directory name attribute in the Microsoft Entra admin center:
+
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Browse to **Identity** > **Overview** > **Properties**. 
+1. Update the **Name**.
+1. Select **Save**.
+
+This friendly organization name option is the most visible in automated emails, as in the following examples:
 
 * The friendly name in the email, for example "*Microsoft on behalf of CONTOSO demo*"
 * The subject line in the email, for example "*CONTOSO demo account email verification code*"

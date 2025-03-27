@@ -1,19 +1,19 @@
 ---
 title: Register a web app that calls web APIs
-description: Learn how to register a web app that calls web APIs
+description: 'Learn how to register a web app that calls web APIs. Configure client secrets and delegated permissions with the Microsoft identity platform.  '
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
-ms.date: 05/07/2019
+ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # A web app that calls web APIs: App registration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 A web app that calls web APIs has the same registration as a web app that signs users in. So, follow the instructions in [A web app that signs in users: App registration](scenario-web-app-sign-user-app-registration.md).
 

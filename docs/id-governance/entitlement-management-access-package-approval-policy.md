@@ -2,11 +2,11 @@
 title: Change approval settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change approval and requestor information settings for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/08/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
@@ -29,18 +29,17 @@ In the Approval section, you specify whether an approval is required when users 
 
 For a demonstration of how to add approvers to a request policy, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4cZfg]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=15df4213-d77d-4c88-b5c4-9ccfb261eefa]
 
 For a demonstration of how to add a multi-stage approval to a request policy, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4d1Jw]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=25c39e83-da3e-4f41-8d91-8b865b25b702]
 
 > [!NOTE]
 > Approvers are not able to approve their own access package requests.
 
 ## Change approval settings of an existing access package assignment policy
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to specify the approval settings for requests for the access package through a policy:
 
@@ -164,8 +163,10 @@ For example, if you listed Alice and Bob as the first stage approver(s), list Ca
 
     ![Access package - Policy- Enable policy setting](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
+1. When new requests are enabled, you can specify whether you want to **Allow managers to request on behalf of their employees (preview)**.
+    :::image type="content" source="media/entitlement-management-access-package-approval-policy/manager-enable-approval.png" alt-text="Screenshot of manager approval of request options.":::
 1. Select **Next**.
-
+ 
 ## Collect additional requestor information for approval
 
 In order to make sure users are getting access to the right access packages, you can require requestors to answer custom text field or Multiple Choice questions at the time of request. The questions will then be shown to approvers to help them make a decision.
