@@ -17,9 +17,7 @@ ms.author: billmath
 ---
 
 # Microsoft Entra Connect Sync: Directory extensions
-You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. These attributes can be consumed through [extensions](/graph/extensibility-overview). You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). You can also use this feature to create dynamic membership groups in Microsoft Entra ID.
-
-At present, no Microsoft 365 workload consumes these attributes.
+You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. These attributes can be consumed through [extensions](/graph/extensibility-overview). You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/overview) or [Microsoft Entra PowerShell](/powershell/entra-powershell/overview). At present, no Microsoft 365 workload consumes these attributes, but you can use this feature with dynamic group memberships in Microsoft Entra ID.
 
 >[!IMPORTANT]
 >If you have exported a configuration that contains a custom rule used to synchronize directory extension attributes and you attempt to import this rule into a new or existing installation of Microsoft Entra Connect, the rule will be created during import, but the directory extension attributes won't be mapped.  You'll need to re-select the directory extension attributes and re-associate them with the rule or recreate the rule entirely to fix this.
@@ -96,7 +94,7 @@ One of the more useful scenarios is to use these attributes in dynamic security 
 
    ![Screenshot with new attributes showing up in the UI](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup3.png)
    
-      Complete the expression to suit your requirements. In our example, the rule is set to **(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")**.
+         Complete the expression to suit your requirements. In our example, the rule is set to **(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")**.
 
 1. After the group has been created, give Microsoft Entra some time to populate the members and then review the members.
 
