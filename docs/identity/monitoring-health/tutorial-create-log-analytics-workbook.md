@@ -4,10 +4,10 @@ description: Learn how to create a Log Analytics custom workbook for enhanced an
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: tutorial
-ms.date: 12/02/2024
+ms.date: 03/27/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 
 # Customer intent: As an IT admin, I want to create custom workbooks so I can analyze the health of my environment.
@@ -41,7 +41,7 @@ To analyze activity logs with Log Analytics, you need the following roles and re
   - Global Reader
   - Security Administrator
 
-If you haven't already created a Log Analtyics workspace, complete the [Configure Log Analytics workbook](tutorial-configure-log-analytics-workbook.md) tutorial.
+If you haven't already created a Log Analytics workspace, complete the [Configure Log Analytics workbook](tutorial-configure-log-analytics-workbook.md) tutorial.
 
 ## Create a custom workbook
 
@@ -60,7 +60,6 @@ In addition to querying the data with KQL, you can create a custom workbook for 
 1. In the textbox, enter `# Client apps used in the past week` and select **Done Editing**.
 
     ![Screenshot shows the text and the Done Editing button.](./media/tutorial-create-log-analytics-workbook/workbook-text.png)
-
 
 1. Below the text window, open the **Add** menu and select **Add query**.
 

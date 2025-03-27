@@ -4,10 +4,10 @@ description: Learn how to improve the performance of your Log Analytics workspac
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: tutorial
-ms.date: 11/22/2024
+ms.date: 03/27/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 
 # Customer intent: As an IT admin, I want to exclude some unnecessary logs from the logs I integrate with Log Analytics so I can improve the performance of my analysis tools.

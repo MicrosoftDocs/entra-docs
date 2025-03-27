@@ -4,10 +4,10 @@ description: Learn how to configure a Log Analytics workspace, create a workbook
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: tutorial
-ms.date: 11/21/2024
+ms.date: 03/27/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 
 # Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
