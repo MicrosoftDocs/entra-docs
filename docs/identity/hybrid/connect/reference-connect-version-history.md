@@ -93,9 +93,12 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-03/27/2025: Released for download
+03/27/2025: Released for download and auto upgrade.
 
-### Bug fixes
+>[!NOTE]
+>Auto upgrade will run from the release date until 15 April 2025. If your environment is not upgraded by then, it means the auto upgrade attempt failed and you will need to perform a manual upgrade. You can check the Application event logs for reasons for the failure of the auto upgrade.
+
+### Updated Features
 - Removed the pre-requisite check for the SchUseStrongCrypto registry key being enabled. This version uses .NET 4.7.2 which uses strong cryptography by default.
 
 ## 2.4.129.0
