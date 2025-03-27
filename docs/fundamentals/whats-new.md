@@ -169,6 +169,8 @@ For more information, see: [Microsoft Graph permissions reference](/graph/permis
 
 ## January 2025
 
+# [New features](#tab/NewFeaturesJanuary)
+
 ### Public Preview - Manage Lifecycle Workflows with Microsoft Security CoPilot in Microsoft Entra
 
 **Type:** New feature    
@@ -176,8 +178,6 @@ For more information, see: [Microsoft Graph permissions reference](/graph/permis
 **Product capability:** Identity Governance    
 
 Customers can now manage, and customize, Lifecycle Workflows using natural language with Microsoft Security CoPilot. Our Lifecycle Workflows (LCW) Copilot solution provides step-by-step guidance to perform key workflow configuration and execution tasks using natural language. It allows customers to quickly get rich insights to help monitor, and troubleshoot, workflows for compliance. For more information, see: [Manage employee lifecycle using Microsoft Security Copilot (Preview)](../fundamentals/copilot-entra-lifecycle-workflow.md).
-
----
 
 ### General Availability - Microsoft Entra PowerShell
 
@@ -187,7 +187,6 @@ Customers can now manage, and customize, Lifecycle Workflows using natural langu
 
 Manage and automate Microsoft Entra resources programmatically with the scenario-focused Microsoft Entra PowerShell module. For more information, see: [Microsoft Entra PowerShell module now generally available](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-powershell-module-now-generally-available/4365718).
 
----
 
 ### General Availability - Improving visibility into downstream tenant sign-ins
 
@@ -209,8 +208,6 @@ After seeing a partner logging into a downstream tenant’s resources, an import
 
 To increase visibility into the aforementioned columns, Microsoft Entra will begin enabling these columns to display by default when loading the sign-in logs UX starting on March 7, 2025.
 
----
-
 ### Public Preview - Auditing administrator events in Microsoft Entra Connect
 
 **Type:** New feature    
@@ -223,8 +220,6 @@ Where supported, we'll also autoupgrade customers to this version of Microsoft E
 
 For upgrade-related guidance, see [Microsoft Entra Connect: Upgrade from a previous version to the latest](../identity/hybrid/connect/how-to-upgrade-previous-version.md).
 
----
-
 ### Public Preview - Flexible Federated Identity Credentials
 
 **Type:** New feature    
@@ -232,8 +227,6 @@ For upgrade-related guidance, see [Microsoft Entra Connect: Upgrade from a previ
 **Product capability:** Developer Experience    
 
 Flexible Federated Identity Credentials extend the existing Federated Identity Credential model by providing the ability to use wildcard matching against certain claims. Currently available for GitHub, GitLab, and Terraform Cloud scenarios, this functionality can be used to lower the total number of FICs required to managed similar scenarios. For more information, see: [Flexible federated identity credentials (preview)](../workload-id/workload-identities-flexible-federated-identity-credentials.md).
-
----
 
 ### General Availability - Real-time Password Spray Detection in Microsoft Entra ID Protection
 
@@ -245,8 +238,6 @@ Traditionally, password spray attacks are detected post breach or as part of hun
 
 Risk-based Conditional Access can automatically respond to this new signal by raising session risk, immediately challenging the sign-in attempt, and stopping password spray attempts in their tracks. This cutting-edge detection, now Generally Available, works alongside existing detections for advanced attacks such as Adversary-in-the-Middle (AitM) phishing and token theft, to ensure comprehensive coverage against modern attacks. For more information, see: [What is Microsoft Entra ID Protection?](../id-protection/overview-identity-protection.md)
 
----
-
 ### General Availability - Protected actions for hard deletions
 
 **Type:** New feature    
@@ -255,7 +246,17 @@ Risk-based Conditional Access can automatically respond to this new signal by ra
 
 Customers can now configure Conditional Access policies to protect against early hard deletions. Protected action for hard deletion protects hard deletion of users, Microsoft 365 groups, and applications. For more information, see: [What are protected actions in Microsoft Entra ID?](../identity/role-based-access-control/protected-actions-overview.md)
 
----
+### Public Preview - Elevate Access events are now exportable via Microsoft Entra Audit Logs
+
+**Type:** New feature    
+**Service category:** RBAC    
+**Product capability:** Monitoring & Reporting    
+
+This feature enables administrators to export and stream Elevate Access events to both first-party and third-party SIEM solutions via Microsoft Entra Audit logs. It enhances detection and improves logging capabilities, allowing visibility into who in their tenant has utilized Elevate Access. For more information on how to use the feature, see: [View elevate access log entries](/azure/role-based-access-control/elevate-access-global-admin?tabs=azure-portal%2Centra-audit-logs#view-elevate-access-log-entries).
+
+
+
+# [Change announcements](#tab/ChangeAnnouncementsJanuary)
 
 ### Deprecated - Action Required by February 1, 2025: Azure AD Graph retirement
 
@@ -271,8 +272,6 @@ If you haven't already, it's now urgent to review the applications on your tenan
 
 Microsoft Entra Recommendations are the best tool to identify applications that are using Azure AD Graph APIs in your tenant and require action. Reference this blog post: Action required: [Azure AD Graph API retirement](https://techcommunity.microsoft.com/blog/identity/action-required-azure-ad-graph-api-retirement/4090533) for step by step guidance.
 
----
-
 ### General Availability - Microsoft Entra Connect Version 2.4.129.0
 
 **Type:** Changed feature    
@@ -281,17 +280,6 @@ Microsoft Entra Recommendations are the best tool to identify applications that 
 
 On January 15, 2025, we released Microsoft Entra Connect Sync Version 2.4.129.0 which supports auditing administrator events. More details are available in the [release notes](../identity/hybrid/connect/reference-connect-version-history.md#241290). We'll automatically upgrade eligible customers to this latest version of Microsoft Entra Connect in February 2025. For customers who wish to be autoupgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).  
 
----
-
-### Public Preview - Elevate Access events are now exportable via Microsoft Entra Audit Logs
-
-**Type:** New feature    
-**Service category:** RBAC    
-**Product capability:** Monitoring & Reporting    
-
-This feature enables administrators to export and stream Elevate Access events to both first-party and third-party SIEM solutions via Microsoft Entra Audit logs. It enhances detection and improves logging capabilities, allowing visibility into who in their tenant has utilized Elevate Access. For more information on how to use the feature, see: [View elevate access log entries](/azure/role-based-access-control/elevate-access-global-admin?tabs=azure-portal%2Centra-audit-logs#view-elevate-access-log-entries).
-
----
 
 ### Deprecated - Take action to avoid impact when legacy MSOnline and AzureAD PowerShell modules retire
 
