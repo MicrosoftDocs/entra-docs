@@ -13,7 +13,7 @@ ms.author: godonnell
 
 # Migrating users to Microsoft Entra External ID
 
-In this article, you'll learn how to migrate users and credentials from another identity provider, including Azure AD B2C, to Microsoft Entra External ID. This guide will cover a number of different migration methods you can use depending on your current configuration. With each of these approaches, you'll need to write an application or script that uses the [Microsoft Graph API](/graph/api/resources/identity-network-access-overview) to create user accounts in External ID.
+In this guide, you'll learn the fundamentals of how to migrate users and credentials from your current identity provider, including Azure AD B2C, to Microsoft Entra External ID. This guide will cover a number of different solutions you can use depending on your current configuration. With each of these approaches, you'll need to write an application or script that uses the [Microsoft Graph API](/graph/api/resources/identity-network-access-overview) to create user accounts in External ID.
 
 ## Pre-requisites
 
@@ -25,7 +25,7 @@ Before you start migrating users to External ID, ensure you have the following:
 
 ## Preparation: Directory cleanup
 
-Prior to migrating users, you should clean up your legacy identity provider directory. 
+Prior to starting your user migration process, you should take the time to clean up data in your legacy identity provider directory. This will help ensure that you only migrate the data you need and make the migration process smoother.
 
 - Identify the set of user attributes to be stored in External ID, and migrate only what you need. If necessary, you can create custom attributes within External ID to store more data about a user.
 - If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in External ID.
@@ -34,11 +34,11 @@ Prior to migrating users, you should clean up your legacy identity provider dire
 
 ## Stage 1: User Data Migration
 
-First you will migrate user data from your legacy identity provider to External ID. This includes usernames and any other relevant attributes.
+The first step in the migration process is to migrate user data from your legacy identity provider to External ID. This includes usernames and any other relevant attributes. To do this, you will need to:
 
-1. Read the user accounts from your legacy identity provider, including Azure AD B2C. 
-1. Create the corresponding user accounts in your External ID directory, with random passwords that you generate. 
-1. Add an extension attribute to the user account which flags the account for migration. 
+1. Read the user accounts from your legacy identity provider. 
+1. Create the corresponding user accounts in your External ID directory.
+1. If you have access to users' plaintext passwords, you can set them directly on the new accounts as you are migrating user data. If you don't have access to the plaintext passwords, you should set a random password for now that will be updated later as part of the password migration process. 
 
 Not all information in your legacy identity provider will need to be migrated to your External ID directory. The following recommendations can help you determine the appropriate set of user attributes to store in External ID.
 
@@ -52,13 +52,11 @@ Not all information in your legacy identity provider will need to be migrated to
 - Sensitive data like credit card numbers, social security numbers (SSN), medical records, or other data regulated by government or industry compliance bodies.
 - Marketing or communication preferences, user behaviors, and insights.
 
-If you have access to your users' plaintext passwords, you can set them directly on the new user accounts as you are migrating user data. If you don't have access to the plaintext passwords, you should set a random password for now. That password will be updated later as part of the password migration process. 
-
 For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c&preserve-view=true).  
 
 ## Stage 2: Password Migration
 
-Password migration is the process of moving user passwords from the legacy identity provider to External ID. You will need to follow this process if plaintext passwords in the legacy identity provider aren't accessible. For example, if: 
+Once you have migrated user data, you'll need to migrate user passwords from the legacy identity provider to External ID. There are two recommended approaches for migrating user passwords: self-service password reset (SSPR) and seamless migration. You'll need to use one of these methods if plaintext user passwords aren't accessible. For example, if: 
 
 - The password is stored in Azure AD B2C. 
 - The password is stored in a one-way encrypted format, such as with a hash function. 
@@ -66,24 +64,26 @@ Password migration is the process of moving user passwords from the legacy ident
 
 ### Self Service Password Reset (SSPR)
 
-You can use the [Self Service Password Reset (SSPR)](how-to-enable-password-reset-customers.md) feature to allow users to reset their passwords. You will need to set up SSPR in your External ID tenant and configure the password reset policies. You will then need to provide user with instructions on how to reset their passwords using SSPR the first time they log in to the new system.  
+Using the Self Service Password Reset (SSPR) feature in External ID customers can manually set their password the first time they log in to the new system. This approach is simple to implement and doesn't require any custom code.  However, it does require users to reset their passwords manually, which may be inconvenient for some users.
+
+To use this approach you'll first need to set up [SSPR](how-to-enable-password-reset-customers.md) in your External ID tenant and configure the password reset policies. You will then need to provide user with instructions on how to reset their passwords using SSPR when they log in for the first time.
 
 ### Seamless migration
 
-Seamless migration allows you to migrate passwords from the legacy identity provider to External ID without requiring users to reset their passwords. To do this you will need to build a custom REST API to validate user credentials against the legacy identity provider during the sign-in process.
+If you have a large number of users, or if you want to provide a more seamless experience, you can use the seamless migration approach. This allows users to continue using their existing passwords while migrating their accounts to External ID. To do this you will need to build a custom REST API to validate credentials entered by users against the legacy identity provider during the sign-in process. 
 
-This approach allows users to continue using their existing passwords while migrating their accounts to External ID. The seamless migration process consists of the following steps.
+The seamless migration process consists of the following steps:
 
-1. Add an extension attribute to user accounts which flags them for migration. Set this to True for all accounts. 
+1. Add an extension attribute to user accounts which flags their migration status. 
 1. When a customer signs in, read the External ID user account corresponding to the email address entered. 
-1. If a customers account **isn't** flagged for migration, continue with the sign-in process.
-1. If the user's account **is** flagged for migration, validate the password entered against the legacy identity provider. 
+1. If a customers account is already flagged as migrated, continue with the sign-in process.
+1. If the user's account has not been flagged as migrated, validate the password entered against the legacy identity provider. 
     1. If the legacy IdP determines the password is incorrect, return a friendly error to the user. 
-    1. If the legacy IdP determines the password is correct, use the REST API to write the password to the External ID account and change the extension attribute to False. 
+    1. If the legacy IdP determines the password is correct, use the REST API to write the password to the External ID account and change the extension attribute to mark the account as migrated.
 
-Seamless migration happens in two parts. In the first part Legacy credentials are harvested and stored in External ID during. After a sufficient number of users have logged in, applications can be migrated to authenticate directly with External ID, and the majority of users can continue to use their existing credentials. Users who didn't log in during the first part, will need to reset their password after this point.
+Seamless migration happens in two phases. First, legacy credentials are harvested and stored in External ID. Next, after this has been done for a sufficient number of users, applications can be migrated to authenticate directly with External ID. At this point migrated users can continue to use their existing credentials. Any users who have not yet been migrated will need to reset their password when they log in for the first time.
 
-The below diagrams illustrates the high level design:
+The high level design for the seamless migration process is shown below.
 
 Harvest credentials from the legacy identity provider and update corresponding accounts in External ID.
 
@@ -93,15 +93,8 @@ Stop harvesting credentials and migrate applications to authenticate with Extern
 
 :::image type="content" source="media/how-to-migrate-users/pre-migration-stage2.png" alt-text="A diagram showing the high level design for the second phase of credential migration.":::
 
-## Security
-
-The seamless migration approach uses your own custom REST API to validate a user's credentials against the legacy identity provider.
-
-You must protect your REST API against brute-force attacks. An attacker can submit several passwords in the hope of eventually guessing a user's credentials. To help defeat such attacks, stop serving requests to your REST API when the number of sign-in attempts passes a certain threshold. 
-
-## Password policy
-
-If the accounts you're migrating have weaker password strength than the [strong password strength](/azure/active-directory/authentication/concept-sspr-policy) enforced by External ID, you can disable the strong password requirement. For more information, see [Password policy property](/azure/active-directory-b2c/user-profile-attributes#password-policy-attribute).
+> [!Note]
+> If you are using this approach it's important to protect your REST API against brute-force attacks. An attacker can submit several passwords in the hope of eventually guessing a user's credentials. To help defeat such attacks, stop serving requests to your REST API when the number of sign-in attempts passes a certain threshold.
 
 ## Related content
 
