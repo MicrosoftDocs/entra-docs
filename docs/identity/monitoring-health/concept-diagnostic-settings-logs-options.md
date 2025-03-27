@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 02/10/2025
+ms.date: 03/27/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -96,7 +96,7 @@ The `RemoteNetworkHealthLogs` provide insights into the health of your remote ne
 
 ### Microsoft service principal sign-in logs
 
-The `MicrosoftServicePrincipalSignInLogs` provides visibility into scenarios where Microsoft services authenticate to other Microsoft services within a tenant, such as when a user opens a Word document inside Microsoft Teams. These logs were released to provide greater transparency around service-to-service authentication but are not necessary for most customers as they are complex and generate a high volume of data. These applications are monitored by Microsoft security to ensure the security of the applications and follows principles of least privilege. We want to emphasize that this data is not essential for security investigations and we strongly advise against taking actions such as disabling applications based on this data, as doing so could cause misconfigurations and potential adverse effects such as tenant lock-out. This data is offered as an opt-in through diagnostic settings only. For more information and commonly asked questions, please visit our [FAQ page](reports-faq.yml). 
+The `MicrosoftServicePrincipalSignInLogs` provides visibility into scenarios where Microsoft-owned (first-party) services authenticate to other Microsoft services within a tenant, such as when a user opens a Word document inside Microsoft Teams. These logs were released to provide greater transparency around service-to-service authentication but are not necessary for most customers as they are complex and generate a high volume of data. These applications are monitored by Microsoft security to ensure the security of the applications and follows principles of least privilege. We want to emphasize that this data is not essential for security investigations and we strongly advise against taking actions such as disabling applications based on this data, as doing so could cause misconfigurations and potential adverse effects such as tenant lock-out. This data is offered as an opt-in through diagnostic settings only. For more information and commonly asked questions, please visit our [FAQ page](reports-faq.yml). 
 
 ### Custom security attribute audit logs
 
