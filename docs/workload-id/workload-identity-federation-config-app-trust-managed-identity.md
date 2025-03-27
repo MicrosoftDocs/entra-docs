@@ -237,12 +237,12 @@ In **Microsoft.Identity.Web**, a web application or web API can replace the clie
     "Instance": "https://login.microsoftonline.com/",
     "ClientId": "YOUR_APPLICATION_ID",
     "TenantId": "YOUR_TENANT_ID",
-
-   "ClientCredentials": [
+    
+    "ClientCredentials": [
       {
         "SourceType": "SignedAssertionFromManagedIdentity",
         "ManagedIdentityClientId": "YOUR_USER_ASSIGNED_MANAGED_IDENTITY_CLIENT_ID",
-        "TokenExchangeUrl":"api://AzureADTokenExchange"
+        "TokenExchangeUrl": "api://AzureADTokenExchange"
       }
     ]
   }
