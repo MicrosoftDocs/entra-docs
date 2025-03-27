@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 05/30/2023
+ms.date: 08/25/2024
 ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
@@ -95,7 +95,7 @@ There are two main categories of users of your apps and resources that Microsoft
 
 - **External:** Vendors, suppliers, distributors, or other business partners that interact with your organization in the regular course of business with [Microsoft Entra B2B collaboration.](~/external-id/what-is-b2b.md)
 
-You can define groups for these users and populate these groups in diverse ways. You might choose that an administrator must manually add members into a group, or you can enable self-service group membership. Rules can be established that automatically add members into groups based on the specified criteria using [dynamic groups](~/identity/users/groups-dynamic-membership.md).
+You can define groups for these users and populate these groups in diverse ways. You might choose that an administrator must manually add members into a group, or you can enable self-service dynamic membership groups. Rules can be established that automatically add members into groups based on the specified criteria using [dynamic membership groups](~/identity/users/groups-dynamic-membership.md).
 
 External users might also refer to customers. [Azure AD B2C](/azure/active-directory-b2c/overview), a separate product supports customer authentication. However, it is outside the scope of this paper.
 

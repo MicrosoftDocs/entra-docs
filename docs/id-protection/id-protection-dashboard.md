@@ -5,29 +5,29 @@ description: Learn how the Microsoft Entra ID Protection overview provides a vie
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 05/02/2024
+ms.date: 02/28/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection dashboard
 
-Microsoft Entra ID Protection prevents identity compromises by detecting identity attacks and reporting risks. It enables customers to protect their organizations by monitoring risks, investigating them, and configuring risk-based access policies to guard sensitive access and auto remediate risks. 
+Microsoft Entra ID Protection prevents identity compromises by detecting identity attacks and reporting risks. It lets customers protect their organizations by monitoring risks, investigating them, and configuring risk-based access policies to guard sensitive access and automatically remediate risks. 
 
 Our dashboard helps customers better analyze their security posture, understand how well they're protected, identify vulnerabilities, and perform recommended actions. 
 
 [![Screenshot showing the Microsoft Entra ID Protection overview dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard.png)
 
-This dashboard is designed to empower organizations with rich insights and actionable recommendations tailored to your tenant. This information provides a better view into your organization’s security posture and allows you to enable effective protections accordingly. You have access to key metrics, attack graphics, a map highlighting risky locations, top recommendations to enhance security posture, and recent activities.
+This dashboard empowers organizations with rich insights and actionable recommendations tailored to your tenant. This information provides a better view into your organization’s security posture and lets you enable effective protections accordingly. You have access to key metrics, attack graphics, a map highlighting risky locations, top recommendations to enhance security posture, and recent activities.
 
 ## Prerequisites
 
-To access this dashboard, you need: 
+To access this dashboard, you need:
 
-- Microsoft Entra ID Free, or Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
-- To view a comprehensive list of recommendations and select the recommended action links, you need Microsoft Entra ID P2 licenses.
+- Microsoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
+- Microsoft Entra ID P2 licenses to view a comprehensive list of recommendations and select the recommended action links.
 
 ## Access the dashboard
 
@@ -38,7 +38,7 @@ You can access the dashboard by:
 
 ### Metric cards
  
-As you implement more security measures such as risk-based policies, your tenant protection strengthens. So, we're now providing four key metrics to help you understand the effectiveness of the security measures you have in place. 
+As you implement more security measures such as risk-based policies, your tenant protection strengthens. We provide four key metrics to help you understand the effectiveness of the security measures you have in place. 
 
 [![Screenshot showing the metric graphs in the dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-metrics.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-metrics.png)
 

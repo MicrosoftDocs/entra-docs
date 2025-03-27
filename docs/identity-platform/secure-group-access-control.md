@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: template-concept
-ms.date: 01/06/2023
+ms.date: 08/25/2024
 ms.reviewer:
 ms.service: identity-platform
 
@@ -18,7 +18,7 @@ ms.topic: concept-article
 
 Microsoft Entra ID allows the use of groups to manage access to resources in an organization. Use groups for access control to manage and minimize access to applications. When groups are used, only members of those groups can access the resource. Using groups also enables the following management features:
 
-- Attribute-based dynamic groups
+- Attribute-based dynamic membership groups
 - External groups synced from on-premises Active Directory
 - Administrator managed or self-service managed groups
 

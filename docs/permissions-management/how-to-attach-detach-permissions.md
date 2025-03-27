@@ -2,11 +2,11 @@
 title: Attach and detach permissions for users, roles, and groups for Amazon Web Services (AWS) identities in the Remediation dashboard
 description: How to attach and detach permissions for users, roles, and groups for Amazon Web Services (AWS) identities in the Remediation dashboard in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/15/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

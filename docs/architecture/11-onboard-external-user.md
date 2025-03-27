@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 06/28/2024
+ms.date: 08/25/2024
 ms.author: gasinh
 ms.reviewer: ajburnle
 ---
@@ -38,7 +38,7 @@ To integrate LOB applications with Microsoft Entra B2B, follow this pattern:
 8. The application provisions the user to its database or backend user directory using the user object ID attribute as the immutable ID.
 9. The application presents the success or failure status to the end user.
 
-If assignment is required to access the LOB application, the invited guest user is assigned to the application with an application role. Enable this action as another API call adding the invited guest to a group, or automate group membership with Microsoft Entra dynamic groups. Dynamic groups don't require another API call by the application. However, group membership is updated as quickly as adding a user to a group after user invitation.
+If assignment is required to access the LOB application, the invited guest user is assigned to the application with an application role. Enable this action as another API call adding the invited guest to a group, or automate membership with Microsoft Entra [dynamic membership groups](~/identity/users/groups-create-rule.md). Dynamic membership groups don't require another API call by the application; however, they are updated as quickly as adding a user to a group via user invitation.
 
 ## Confirm the external user is in the directory
 
@@ -143,15 +143,15 @@ Content-type: application/json
 
 For more information, see [Add members in Microsoft Graph v1.0](/graph/api/group-post-members).
 
-Alternatively, you can use Microsoft Entra dynamic groups that automatically assign users based on their attributes. However, if user access is time sensitive this approach isn't recommended approach because dynamic groups can take up to 24 hours to populate.
+Alternatively, you can use Microsoft Entra dynamic membership groups that automatically assign users based on specific attributes, such as userType, email, or a custom attribute. However, if user access is time sensitive, this approach isn't recommended because dynamic membership groups can take up to 24 hours to populate.
 
-If you use dynamic groups, don't add the users to a group with another API call. Create a dynamic group that adds the user as a group member, based on attributes such as userType, email, or a custom attribute. For more information, see [Create or edit a dynamic group and get status](~/identity/users/groups-create-rule.md).
+If you use dynamic membership groups, don't add the users to a group with another API call. Instead, create a group that adds the user as a group member, based on attributes such as userType, email, or a custom attribute. For more information, see [Create or edit a dynamic group and get status](~/identity/users/groups-create-rule.md).
 
 ## Provision the invited user to the application
 
 After the invited external user is provisioned in Microsoft Entra ID, the Microsoft Graph API returns a response with user information such as object ID and email. The LOB application provisions the user to its directory or database. The provisioning varies, depending on the application and internal directory type the application uses.
 
-With the external user provisioned in Microsoft Entra ID and the application, the LOB application notifies the initiating user the process was successful. The invited user gets SSO with their identity without the inviting organization onboarding and issuing extra credentials. Microsoft Entra ID enforces authorization policies with Conditional Access, Microsoft Entra multifactor authentication, and risk-based Identity Protection.
+With the external user provisioned in Microsoft Entra ID and the application, the LOB application notifies the initiating user the process was successful. The invited user gets SSO with their identity without the inviting organization onboarding and issuing extra credentials. Microsoft Entra ID enforces authorization policies with Conditional Access, Microsoft Entra multifactor authentication, and Microsoft Entra ID Protection.
 
 ## Other considerations
 

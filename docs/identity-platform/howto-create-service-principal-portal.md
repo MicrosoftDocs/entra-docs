@@ -32,7 +32,6 @@ To register an application in your Microsoft Entra tenant, you need:
 
 ## Register an application with Microsoft Entra ID and create a service principal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations** then select **New registration**.
@@ -124,8 +123,6 @@ If you choose not to use a certificate, you can create a new client secret.
 1. Select **Add**.
 
 Once you've saved the client secret, the value of the client secret is displayed. This is only displayed once, so copy this value and store it where your application can retrieve it, usually where your application keeps values like `clientId`, or `authority` in the source code. You'll provide the secret value along with the application's client ID to sign in as the application.
-
-   :::image type="content" source="media/howto-create-service-principal-portal/copy-secret.png" alt-text="Screenshot showing the client secret value.":::
 
 ## Configure access policies on resources
 

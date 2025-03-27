@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id
  
 ROBOTS: NOINDEX
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date: 06/06/2023
 ---

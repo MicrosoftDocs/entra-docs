@@ -2,7 +2,7 @@
 title: Onboard external users with entitlement management
 description: Learn how to simplify approving access to applications and resources for onboarding external users to your organization.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -37,7 +37,7 @@ The custom questions feature for access packages in entitlement management allow
 
 This feature supports different types of questions that includes free form text or multiple choice, which can be localized for external users in different locales.
 
-For a step by step guide on this process, see: [Add requestor information to an access package](entitlement-management-access-package-create.md#create-request-policies).
+For a step by step guide on this process, see: [Add requestor information to an access package](entitlement-management-access-package-create.md#create-the-initial-policy).
 
 ## Verified IDs
 

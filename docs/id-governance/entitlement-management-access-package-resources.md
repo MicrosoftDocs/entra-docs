@@ -2,11 +2,11 @@
 title: Change resource roles for an access package in entitlement management
 description: Learn how to change the resource roles for an existing access package in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 08/23/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
@@ -16,11 +16,10 @@ As an access package manager, you can change the resources in an access package 
 
 This video provides an overview of how to change an access package.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3LD4Z]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9]
 
 ## Check catalog for resources
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 If you need to add resources to an access package, you should check whether the resources you need are available in the access package's catalog. If you're an access package manager, you can't add resources to a catalog, even if you own them. You're restricted to using the resources available in the catalog.
 
@@ -59,7 +58,7 @@ If you want some users to receive different resource roles than others, then you
 In particular, applications can have multiple app roles. When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in the access package.
 
 > [!NOTE]
-> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles.  If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
+> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles. If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
 
 In addition, applications can also rely upon security groups for expressing permissions. For example, an application might have a single app role `User` and also check the membership of two groups - a `Ordinary Users` group and a `Administrative Access` groups. A user of the application must be a member of exactly one of those two groups. If you wished to configure that users could request either permission, then you would put into a catalog three resources: the application, the group `Ordinary Users` and the group `Administrative Access`. Then, you would create in that catalog two access packages, and indicate each access package is [incompatible](entitlement-management-access-package-incompatible.md#scenarios-for-separation-of-duties-checks) with the other:
 
@@ -96,11 +95,11 @@ You can have entitlement management automatically add users to a group or a team
 - When a membership of a group or team is a resource role that's part of an access package and a user is assigned to that access package, the user is added as a member to that group or team, if not already present.
 - When a user's access package assignment expires, they're removed from the group or team, unless they currently have an assignment to another access package that includes that same group or team.
 
-You can select any [Microsoft Entra security group or Microsoft 365 Group](~/fundamentals/how-to-manage-groups.yml). Users in an administrator role that can manage groups can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
+You can select any [Microsoft Entra security group or Microsoft 365 Group](/entra/fundamentals/how-to-manage-groups). Users in an administrator role that can manage groups can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
 
 - When a user, including a guest, is added as a member to a group or team, they can see all the other members of that group or team.
 - Microsoft Entra ID can't change the membership of a group that was synchronized from Windows Server Active Directory using Microsoft Entra Connect, or that was created in Exchange Online as a distribution group. If you plan to manage access to applications that use AD security groups, see [how to set up group writeback with entitlement management](entitlement-management-group-writeback.md).
-- The membership of dynamic groups can't be updated by adding or removing a member, so dynamic group memberships aren't suitable for use with entitlement management.
+- Dynamic membership groups can't be updated by adding or removing a member, so they aren't suitable for use with entitlement management.
 - Microsoft 365 groups have additional constraints, described in the [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups), including a limit of 100 owners per group, limits on how many members can access Group conversations concurrently, and 7,000 groups per member.
 
 For more information, see [Compare groups](/office365/admin/create-groups/compare-groups) and [Microsoft 365 Groups and Microsoft Teams](/microsoftteams/office-365-groups).
@@ -141,7 +140,7 @@ If your application hasn't yet been integrated with your Microsoft Entra directo
 Applications can have multiple app roles defined in their manifest and managed through the [app roles UI](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui). When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in that access package. If you're developing applications, you can read more about how those roles are added to your applications in [How to: Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md). If you're using the Microsoft Authentication Libraries, there's also a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles for access control.
 
 > [!NOTE]
-> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles.  If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
+> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles. If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
 
 Once an app role is a resource of an access package:
 
@@ -150,7 +149,7 @@ Once an app role is a resource of an access package:
 
 Here are some considerations when selecting an application:
 
-- Applications can also have groups assigned to their app roles as well.  You can choose to add a group in place of an application and its role in an access package, however then the application won't be visible to the user as part of the access package in the My Access portal.
+- Applications can also have groups assigned to their app roles as well. You can choose to add a group in place of an application and its role in an access package, however then the application won't be visible to the user as part of the access package in the My Access portal.
 - Microsoft Entra admin center can also show service principals for services that can't be selected as applications. In particular, **Exchange Online** and **SharePoint Online** are services, not applications that have resource roles in the directory, so they can't be included in an access package. Instead, use group-based licensing to establish an appropriate license for a user who needs access to those services.
 - Applications that only support Personal Microsoft Account users for authentication, and don't support organizational accounts in your directory, don't have application roles and can't be added to access package catalogs.
 
@@ -193,7 +192,7 @@ Microsoft Entra ID can automatically assign users access to a SharePoint Online 
     Any users with existing assignments to the access package will automatically be given access to this SharePoint Online site when it's added. For more information, see [when changes are applied](#when-changes-are-applied).
 
 ## Add a Microsoft Entra role assignment
-When users need additional permissions to access your organization's resources, you can manage those permissions by assigning them Microsoft Entra roles through access packages. By assigning Microsoft Entra roles to employees, and guests, using Entitlement Management, you can look at a user's entitlements to quickly determine which roles are assigned to that user. When you include a Microsoft Entra role as a resource in an access package, you can also specify whether that role assignment is “eligible” or “active”.
+When users need additional permissions to access your organization's resources, you can manage those permissions by assigning them Microsoft Entra roles through access packages. By assigning Microsoft Entra roles to employees, and guests, using Entitlement Management, you can look at a user's entitlements to quickly determine which roles are assigned to that user. When you include a Microsoft Entra role as a resource in an access package, you can also specify whether that role assignment is **eligible** or **active**.
 
 Assigning Microsoft Entra roles through access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle.
 
@@ -231,7 +230,7 @@ There are two ways to add a resource role to an access package programmatically,
 You can add a resource role to an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API to:
 
 1. [List the resources in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http&preserve-view=true) and [create an accessPackageResourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&tabs=http&preserve-view=true) for any resources that aren't yet in the catalog.
-1. [Retrieve the roles and scopes of each resource in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http#example-2-retrieve-the-roles-and-scopes-of-a-single-resource-in-a-catalog). This list of roles will then be used to select a role, when subsequently creating a resourceRoleScope.
+1. [Retrieve the roles and scopes of each resource in the catalog](/graph/api/accesspackagecatalog-list-resources?view=graph-rest-1.0&tabs=http&preserve-view=true#example-2-retrieve-the-roles-and-scopes-of-a-single-resource-in-a-catalog). This list of roles will then be used to select a role, when subsequently creating a resourceRoleScope.
 1. [Create a resourceRoleScope](/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0&preserve-view=true) for each resource role needed in the access package.
 
 ### Add resource roles to an access package with Microsoft PowerShell
@@ -281,6 +280,8 @@ $rparams = @{
 New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $apid -BodyParameter $rparams
 ```
 
+If the role doesn't have an ID, then don't include the `id` parameter of the `role` structure in the request payload.
+
 For more information, see [Create an access package in entitlement management for an application with a single role using PowerShell](entitlement-management-access-package-create-app.md).
 
 ## Remove resource roles
@@ -308,6 +309,6 @@ When you remove a member of a team, they're removed from the Microsoft 365 Group
 
 ## Next steps
 
-- [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml)
+- [Create a basic group and add members using Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups)
 - [How to: Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md)
 - [Introduction to SharePoint Online](/sharepoint/introduction)

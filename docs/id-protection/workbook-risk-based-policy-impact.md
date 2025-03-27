@@ -7,9 +7,9 @@ ms.service: entra-id-protection
 ms.topic: how-to
 ms.date: 07/18/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: chuqiaoshi
 ---
 # Workbook: Impact analysis of risk-based access policies
@@ -46,11 +46,18 @@ Administrators can use this information to see which users might be impacted ove
 
 ## How to access the workbook
 
-This workbook doesn't require that you create any Conditional Access policies, even ones in report-only mode. The only prerequisite is that you have your sign-in logs sent to a Log Analytics workspace. For more information about how to enable this prerequisite, see the article [How to use Microsoft Entra Workbooks](../identity/monitoring-health/howto-use-workbooks.md).
+This workbook doesn't require that you create any Conditional Access policies, even ones in report-only mode. The only prerequisite is that you have your sign-in logs sent to a Log Analytics workspace. For more information about how to enable this prerequisite, see the article [How to use Microsoft Entra Workbooks](../identity/monitoring-health/howto-use-workbooks.md). You can access the workbook directly in the Identity Protection blade or go to Workbooks for an editable version: 
+
+In the Identity Protection blade:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Protection** > **Identity Protection** > **Risk policy impact analysis**.
+
+In Workbooks: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
-1. Select the **Impact analysis of risk-based access policies** workbook under **Identity Protection**.
+1. Select the **Impact analysis of risk-based access policies** workbook under **ID Protection**.
 
 ### Navigate the workbook
 
@@ -88,7 +95,7 @@ Sign-in scenario 5, **IP addresses not trusted**, surfaces the IP addresses from
 
 #### Federated sign-in risk policy scenarios
 
-For customers using multiple identity providers, the next section will be useful to see if there are any risky sessions being redirected to those external providers for MFA or for other forms of remediation. This section can give you insight into where remediation is taking place and if it's happening as expected. For this data to populate, “federatedIdpMfaBehavior” needs to be set in your federated environment to enforce MFA coming from a federated identity provider. 
+For customers using multiple identity providers, the next section will be useful to see if there are any risky sessions being redirected to those external providers for MFA or for other forms of remediation. This section can give you insight into where remediation is taking place and if it's happening as expected. For this data to populate, "federatedIdpMfaBehavior" needs to be set in your federated environment to enforce MFA coming from a federated identity provider. 
 
 :::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-federated.png" alt-text="Screenshot showing the federated sign-in risk policy scenarios of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-federated.png":::
 

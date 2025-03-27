@@ -34,7 +34,6 @@ In this tutorial, you learn how to:
 
 ## Create a Logic App and custom extension in a catalog
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To create a Logic App and custom extension in a catalog, you'd follow these steps:
 

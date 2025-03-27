@@ -3,10 +3,10 @@ title: 'What is HR-driven provisioning with Microsoft Entra ID?'
 description: Describes overview of HR driven provisioning.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: overview
-ms.date: 05/22/2024
+ms.date: 03/04/2025
 ms.subservice: app-provisioning
 ms.author: billmath
 ms.collection: M365-identity-device-management

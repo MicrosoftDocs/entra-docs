@@ -4,7 +4,7 @@ description: Learn how to call a protected ASP.NET Core web API using the Micros
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 04/24/2024
+ms.date: 03/06/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -63,7 +63,6 @@ The Microsoft identity platform requires your application to be registered befor
 
 ### Register the web API 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to create the web API registration:  
 
@@ -79,7 +78,7 @@ Follow these steps to create the web API registration:
 
 1. The application's **Overview** pane is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.  
 
-   :::image type="content" source="./media/web-api-tutorial-01-register-app/record-identifiers.png" alt-text="Screenshot that shows the identifier values on the overview page."::: 
+   :::image type="content" source="./media/web-api-tutorial-01-register-app/app-identifiers.png" alt-text="Screenshot that shows the identifier values on the overview page."::: 
 
 > [!NOTE]
 > The **Supported account types** can be changed by referring to [Modify the accounts supported by an application](howto-modify-supported-accounts.md).  
@@ -96,7 +95,7 @@ Once the API is registered, you can configure its permission by defining the sco
    1. In the **User consent display name** box, enter `Read forecast data`. 
    1. In the **User consent description** box, enter `Allows the application to read weather forecast data`. 
    1. Ensure that the **State** is set to **Enabled**.
-1. Select **Add scope**. If the scope has been entered correctly, it'll be listed in the **Expose an API** pane.  
+1. Select **Add scope**. If the scope has been entered correctly, it is listed in the **Expose an API** pane.  
 
    :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
@@ -163,12 +162,12 @@ Follow these steps to configure the web app permissions to the web API:
 
 1. From the **Overview** pane of your web application (*web-app-that-calls-web-api*), under **Manage**, select **API permissions** > **Add a permission** > **APIs my organization uses**.  
 1. Select **NewWebAPI1** or the API that you wish to add permissions to. 
-1. Under **Select permissions**, check the box next to **Forecast.Read**. You may need to expand the **Permission** list. This selects the permissions the client app should have on behalf of the signed-in user.  
+1. Under **Select permissions**, check the box next to **Forecast.Read**. You might need to expand the **Permission** list. This selects the permissions the client app should have on behalf of the signed-in user.  
 1. Select **Add permissions** to complete the process.  
 
 After adding these permissions to your API, you should see the selected permissions under **Configured permissions**.  
 
-You may also notice the **User.Read** permission for the Microsoft Graph API. This permission is added automatically when you register an app.  
+You might also notice the **User.Read** permission for the Microsoft Graph API. This permission is added automatically when you register an app.  
 
 ::: zone pivot="no-api"
 
@@ -259,7 +258,7 @@ The authorization code flow begins with the client directing the user to the `/a
    - `{web-app-calls-web-api_application_client_id}` is the **Application (client) ID** on the web app's (*web-app-calls-web-api*) **Overview** pane.
    - `{web_API_application_client_id}` is the **Application (client) ID** on the web API's (*NewWebAPI1*) **Overview** pane.
 1. Sign in as a user in the Microsoft Entra tenant in which the apps are registered. Consent to any requests for access, if necessary.  
-1. Your browser will be redirected to `http://localhost/`. Refer to your browser's navigation bar and copy the `{authorization_code}` to use in the following steps. The URL takes the form of the following snippet:  
+1. Your browser is redirected to `http://localhost/`. Refer to your browser's navigation bar and copy the `{authorization_code}` to use in the following steps. The URL takes the form of the following snippet:  
 
    ```http
    http://localhost/?code={authorization_code}
@@ -269,7 +268,9 @@ The authorization code flow begins with the client directing the user to the `/a
 
 cURL can now be used to request an access token from the Microsoft identity platform. 
 
-1. Copy the cURL command in the following snippet. Replace the values in parentheses with the following parameters to your terminal. Be sure to remove the parentheses: 
+1. Copy the cURL command in the following snippet. Replace the values in parentheses with the following parameters to your terminal. Be sure to remove the parentheses:
+
+    #### [Bash](#tab/bash)
 
    ```bash
    curl -X POST https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token \
@@ -279,7 +280,22 @@ cURL can now be used to request an access token from the Microsoft identity plat
    -d 'redirect_uri=http://localhost' \
    -d 'grant_type=authorization_code' \
    -d 'client_secret={client_secret}'
-   ``` 
+   ```
+    
+    #### [Windows Command Prompt](#tab/command-prompt)
+    
+   ```bash
+   curl -X POST https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token ^
+    -d "client_id={web-app-calls-web-api_application_client_id}" ^
+    -d "api://{web_API_application_client_id}/Forecast.Read" ^
+    -d "code={authorization_code}&session_state={web-app-calls-web-api_application_client_id}" ^
+    -d "redirect_uri=http://localhost" ^
+    -d "grant_type=authorization_code" ^
+    -d "client_secret={client_secret}"
+   ```
+    ---
+
+ 
    - `{tenant_id}` is the web app **Directory (tenant) ID**.
    - `client_id={web-app-calls-web-api_application_client_id}`, and `session_state={web-app-calls-web-api_application_client_id}` is the **Application (client) ID** on the web application's (*web-app-calls-web-api*) **Overview** pane. 
    - `api://{web_API_application_client_id}/Forecast.Read` is the **Application (client) ID** on the web API's (*NewWebAPI1*) **Overview** pane. 

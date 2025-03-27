@@ -3,9 +3,9 @@ title: Learn about Security Service Edge (SSE) coexistence with Microsoft and Ne
 description: Microsoft and Netskope’s Security Service Edge (SSE) coexistence solution guide.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: conceptual
-ms.date: 07/02/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -18,7 +18,7 @@ Microsoft’s Security Service Edge solution provides a robust set of capabiliti
 - Prevent data moving to untrusted tenants.
 - Verify users and conditions before giving access to the network.
 - Revoke access to Microsoft 365 products when conditions change by using continuous access evaluation.
-- Apply location-based conditional access, risk detection, and enhanced activity logs by taking advantage of source IP restoration.
+- Apply location-based Conditional Access, risk detection, and enhanced activity logs by taking advantage of source IP restoration.
 - Protect Microsoft 365 apps against token infiltration and anonymous access.
 
 These capabilities are unique to Microsoft Entra Internet Access for Microsoft 365. You can use these features for Microsoft 365 and use Netskope Security Service Edge (SSE) solution at the same time. As a result, you harness a robust set of capabilities from both platforms to elevate your SSE journey. The synergy between these platforms empowers you with enhanced security and seamless connectivity. 
@@ -30,13 +30,13 @@ This document contains steps to deploy the two solutions side by side. Specifica
 In Microsoft Entra, you enable the Microsoft 365 traffic forwarding profile and disable the Internet Access and Private Access traffic forwarding profiles. Only Microsoft 365 traffic is captured. In Netskope, you capture Internet Access traffic and exclude Microsoft 365 traffic.
 
 > [!NOTE]
-> The clients must be installed on a Windows 10 or Windows 11 Entra joined device.
+> The clients must be installed on a Windows 10 or Windows 11 Microsoft Entra joined device or Microsoft Entra hybrid joined device.
 
 ## Microsoft Entra Internet Access for Microsoft 365 configuration
 
 Enable the Microsoft 365 traffic forwarding profile for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 
-Install and configure the Global Secure Access Client on end-user devices. Download the Global Secure Access Client from https://aka.ms/gsawithnetskope for coexistence with Netskope. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
+Install and configure the Global Secure Access Client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
 
 ## Netskope configuration
 

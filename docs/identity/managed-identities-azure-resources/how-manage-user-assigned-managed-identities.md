@@ -2,13 +2,13 @@
 title: Manage user-assigned managed identities
 description: Create user-assigned managed identities.
 
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
-ms.date: 05/10/2023
-ms.author: barclayn
+ms.date: 01/15/2025
+ms.author: ryanwi
 ms.custom: devx-track-azurecli, devx-track-linux
 zone_pivot_groups: identity-mi-methods
 ---
@@ -30,7 +30,6 @@ In this article, you learn how to create, list, delete, or assign a role to a us
 
 ## Create a user-assigned managed identity
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To create a user-assigned managed identity, your account needs the [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 

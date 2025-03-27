@@ -2,11 +2,11 @@
 title: Select group-based permissions settings with the User management dashboard
 description: How to select group-based permissions settings with the User management dashboard.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/15/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

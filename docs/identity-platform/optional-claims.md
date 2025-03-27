@@ -1,11 +1,11 @@
 ---
 title: Configure optional claims
-description: Learn how to configure optional claims in tokens issued by Microsoft identity platform.
+description: Learn how to configure optional claims and attributes in access tokens issued by Microsoft identity platform; optional claims can add useful user information for your app.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/10/2024
+ms.date: 01/27/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -13,7 +13,7 @@ ms.topic: how-to
 #Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
 ---
 
-# Configure optional claims
+# Configure and manage optional claims in ID tokens, access tokens, and SAML tokens
 
 Tokens that Microsoft Entra returns are kept smaller to ensure optimal performance by clients that request them. As a result, several claims are no longer present in the token by default and must be asked for specifically on a per-application basis.
 
@@ -112,7 +112,6 @@ Within the JWT, these claims are emitted with the following name format:  `extn.
 
 ## Configure groups optional claims
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This section covers the configuration options under optional claims for changing the group attributes used in group claims from the default group objectID to attributes synced from on-premises Windows Active Directory. You can configure groups optional claims for your application through the Azure portal or application manifest. Group optional claims are only emitted in the JWT for user principals. Service principals aren't included in group optional claims emitted in the JWT.
 
@@ -185,7 +184,7 @@ Complete the following steps to configure groups optional claims through the app
 
    Some applications require group information about the user in the role claim. To change the claim type from a group claim to a role claim, add `emit_as_roles` to `additionalProperties`.  The group values are emitted in the role claim.
 
-   If `emit_as_roles` is used, any application roles configured that the user is assigned aren't in the role claim.
+   If `emit_as_roles` is used, any application roles configured that the user (or a resource application) is assigned aren't in the role claim.
 
 The following examples show the manifest configuration for group claims:
 
@@ -312,6 +311,10 @@ Configure claims in the manifest:
     ```
 
 1. When you're finished updating the manifest, select **Save** to save the manifest.
+
+## Limitation
+
+An application can issue a maximum number of 10 extension attributes as optional claims.
 
 ## Related content
 

@@ -13,8 +13,8 @@ ms.author: billmath
 
 ### In the Microsoft Entra admin center
 
-1. Create a cloud-only Global Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Global Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
-2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+- [!INCLUDE [emergency-access-accounts](../definitions/emergency-access-accounts.md)]
+- Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
 
@@ -30,7 +30,7 @@ ms.author: billmath
      | **8080** (optional) | Agents report their status every 10 minutes over port 8080, if port 443 is unavailable. This status is displayed on the portal. |
      
      If your firewall enforces rules according to the originating users, open these ports for traffic from Windows services that run as a network service.
-   - If your firewall or proxy allows you to specify safe suffixes, then add  connections t to **\*.msappproxy.net** and **\*.servicebus.windows.net**. If not, allow access to the [Azure datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653), which are updated weekly.
+   - If your firewall or proxy allows you to specify safe suffixes, then add connections to **\*.msappproxy.net** and **\*.servicebus.windows.net**. If not, allow access to the [Azure datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653), which are updated weekly.
    - Your agents need access to **login.windows.net** and **login.microsoftonline.com** for initial registration. Open your firewall for those URLs as well.
    - For certificate validation, unblock the following URLs: **mscrl.microsoft.com:80**, **crl.microsoft.com:80**, **ocsp.msocsp.com:80**, and **www\.microsoft.com:80**. Since these URLs are used for certificate validation with other Microsoft products, you may already have these URLs unblocked.
 
@@ -50,7 +50,6 @@ If you're using the  [Basic AD and Azure environment](~/identity/hybrid/cloud-sy
 
 ## Configure Microsoft Entra Cloud Sync
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to configure and start the provisioning:
 
@@ -58,6 +57,8 @@ Use the following steps to configure and start the provisioning:
  3. Select **New Configuration**
  4. On the configuration screen, enter a **Notification email**, move the selector to **Enable** and select **Save**.
  5. The configuration status should now be **Healthy**.
+
+For more information on configuring Microsoft Entra Cloud Sync, see [Provision Active Directory to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
 
 ## Verify users are created and synchronization is occurring
 

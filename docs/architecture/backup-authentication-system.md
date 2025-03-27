@@ -9,7 +9,7 @@ ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: joroja
 ---
 # Microsoft Entra ID's backup authentication system
@@ -81,15 +81,15 @@ In addition to user authentication, the backup authentication system provides re
 
 ## Cloud environments that support the backup authentication system
 
-The backup authentication system is supported in all cloud environments except Microsoft Azure operated by 21Vianet. The types of identities supported vary by cloud, as described in the following table.
+The backup authentication system is supported in all cloud environments except Microsoft Azure operated by 21Vianet. The types of identities supported vary by cloud and have separate authentication endpoints, as described in the following table.
 
-| Azure environment | Identities protected |
-| --- | --- |
-| Azure Commercial | Users and managed identities |
-| Azure Government | Users and managed identities |
-| Azure Government Secret | Managed identities |
-| Azure Government Top Secret | Managed identities |
-| Azure operated by 21Vianet | Not available |
+| Azure environment | Microsoft 365 environments | Identities protected | Microsoft Entra authentication endpoint |
+| --- | --- | --- | --- |
+| Azure Commercial | Commercial and M365 Government | Users and managed identities | ```https://login.microsoftonline.com``` |
+| Azure Government | M365 GCC High and DoD | Users and managed identities | ```https://login.microsoftonline.us``` |
+| Azure Government Secret | M365 Government Secret | Users and managed identities | Not available |
+| Azure Government Top Secret | M365 Government Top Secret | Users and managed identities | Not available |
+| Azure operated by 21Vianet | Not available | Managed identities | ```https://login.partner.microsoftonline.cn``` | 
 
 ## Appendix
 
@@ -108,7 +108,7 @@ The backup authentication system is supported in all cloud environments except M
 | Atlassian Cloud | Yes \* | Protected |
 | Blackboard Learn | No | SAML SP-initiated |
 | Box | No | SAML SP-initiated |
-| Brightspace by Desire2Leam | No | SAML SP-initiated |
+| Brightspace by Desire2Learn | No | SAML SP-initiated |
 | Canvas | No | SAML SP-initiated |
 | Ceridian Dayforce HCM | No | SAML SP-initiated |
 | Cisco AnyConnect | No | SAML SP-initiated |

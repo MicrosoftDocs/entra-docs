@@ -2,7 +2,7 @@
 title: Convert guest user lifecycle in entitlement management - Microsoft Entra
 description: Learn how to convert guest user access package assignments for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -26,7 +26,6 @@ Guest users that already existed in your tenant by being invited are ungoverned.
 
 ## Manage guest user lifecycle in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To manage user lifecycle, you'd follow these steps:
 

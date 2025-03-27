@@ -3,11 +3,11 @@ title: Security Assertion Markup Language (SAML) single sign-on (SSO) for on-pre
 description: Learn how to provide single sign-on (SSO) for on-premises applications that are secured with Security Assertion Markup Language (SAML) authentication. Provide remote access to on-premises apps with application proxy.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/06/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -65,9 +65,6 @@ Before you provide SSO for on-premises applications, enable application proxy an
 2. In the **Set up Single Sign-On with SAML** page, go to the **Basic SAML Configuration** heading, and select its **Edit** icon (a pencil). Make sure the **External URL** you configured in application proxy is populated in the **Identifier**, **Reply URL**, and **Logout URL** fields. These URLs are required for application proxy to work correctly. 
 
 3. Edit the **Reply URL** configured earlier so that its domain reachable on the internet via application proxy. For example, if your **External URL** is `https://contosotravel-f128.msappproxy.net` and the original **Reply URL** was `https://contosotravel.com/acs`, you need to update the original **Reply URL** to `https://contosotravel-f128.msappproxy.net/acs`.
-
-    ![Enter basic SAML configuration data](./media/application-proxy-configure-single-sign-on-on-premises-apps/basic-saml-configuration.png)
-
 
 4. Select the checkbox next to the updated **Reply URL** to mark it as the default.
 

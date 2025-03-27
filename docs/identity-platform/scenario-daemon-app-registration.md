@@ -9,11 +9,13 @@ ms.date: 02/01/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform for developers.
 ---
 
 # How to register a daemon app that calls web APIs
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 For a daemon application, here's what you need to know when you register the app.
 

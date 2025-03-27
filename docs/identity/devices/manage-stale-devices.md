@@ -10,7 +10,7 @@ ms.date: 04/22/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer:
 
 #Customer intent: As an IT admin, I want to understand how I can get rid of stale devices, so that I can I can cleanup my device registration data.
@@ -39,7 +39,7 @@ Because a stale device is defined as a registered device that hasn't been used t
 
 The evaluation of the activity timestamp is triggered by an authentication attempt of a device. Microsoft Entra ID evaluates the activity timestamp when:
 
-- A Conditional Access policies requiring [managed devices](~/identity/conditional-access/concept-conditional-access-grant.md) or [approved client apps](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml) has been triggered.
+- A Conditional Access policies requiring [managed devices](~/identity/conditional-access/concept-conditional-access-grant.md) or [approved client apps](~/identity/conditional-access/policy-all-users-device-compliance.md) has been triggered.
 - Windows 10 or newer devices that are either Microsoft Entra joined or Microsoft Entra hybrid joined are active on the network. 
 - Intune managed devices have checked in to the service.
 
@@ -64,7 +64,7 @@ To efficiently cleanup stale devices in your environment, you should define a re
 > [!CAUTION]
 > If your organization uses BitLocker drive encryption, you should ensure that BitLocker recovery keys are either backed up or no longer needed before deleting devices. Failure to do this may cause loss of data.
 
-If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
+If you use features like [Autopilot](/autopilot/registration-overview#deregister-from-autopilot-using-intune) or [Universal Print](/universal-print/reference/portal/register-unregister-printers), those devices should be cleaned up in their respective admin portals.
 
 ### Cleanup account
 

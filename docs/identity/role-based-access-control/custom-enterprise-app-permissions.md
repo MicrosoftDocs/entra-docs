@@ -3,7 +3,7 @@ title: App permissions for custom roles in Microsoft Entra ID
 description: Preview enterprise app permissions for custom Microsoft Entra roles in the Microsoft Entra admin center, PowerShell, or Graph API.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: overview
@@ -224,5 +224,5 @@ To delegate create, read, update, and delete (CRUD) permissions for updating the
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
-- [List role assignments](view-assignments.md)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
+- [List Microsoft Entra role assignments](view-assignments.md)

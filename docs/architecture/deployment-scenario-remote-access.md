@@ -33,14 +33,14 @@ In this section, we describe how to configure Microsoft Entra Suite products for
 
 Microsoft Entra Private Access provides users (whether in an office or working remotely) secure access to private corporate resources. Microsoft Entra Private Access builds on the Microsoft Entra application proxy to extend access to any private resource, independent of TCP/IP port and protocol.
 
-Remote users can connect to private apps across hybrid and multicloud environments, private networks, and data centers from any device and network without requiring a VPN solution. The service offers per-app adaptive access based on Conditional Access (CA) policies for more granular security than a traditional VPN solution.
+Remote users can connect to private apps across hybrid and multicloud environments, private networks, and data centers from any device and network without requiring a VPN solution. The service offers per-app adaptive access based on Conditional Access policies for more granular security than a traditional VPN solution.
 
 Microsoft Entra ID Protection cloud-based identity and access management (IAM) helps protect user identities and credentials from compromise.
 
 You can replicate these high-level steps for the Contoso solution as described in this scenario.
 
 1. Sign up for Microsoft Entra Suite. Enable and configure Microsoft Entra Internet and Private Access to desired network and security settings.
-1. Deploy [Microsoft Global Secure Access client](../global-secure-access/how-to-install-windows-client.md) on user devices and [Microsoft Entra Private Access connectors](sse-deployment-guide-private-access.md) on private networks. Include multicloud Internet-as-a-Service (IaaS)-based virtual networks to access apps and resources on Contoso networks.
+1. Deploy [Microsoft Global Secure Access client](../global-secure-access/how-to-install-windows-client.md) on user devices and [Microsoft Entra Private Access connectors](gsa-deployment-guide-private-access.md) on private networks. Include multicloud Internet-as-a-Service (IaaS)-based virtual networks to access apps and resources on Contoso networks.
 1. Set up private apps as [Global Secure Access apps](../global-secure-access/how-to-configure-per-app-access.md). Assign appropriate users and groups. Set up [Conditional Access policies](../identity/conditional-access/plan-conditional-access.md) for those apps and users. With this setup, you can achieve minimum access by allowing access only to users and groups that require access.
 1. Enable [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) to allow administrators to investigate and remediate risks to keep organizations safe and secure. Risks can be fed into tools like Conditional Access to make access decisions and fed back to a security information and event management (SIEM) tool for investigation.
 1. Use enhanced logs and analytics from Microsoft Entra Internet Access, Microsoft Entra Private Access, and Microsoft Entra ID Protection to track and evaluate network and security status. This configuration helps your Security Operations Center (SOC) team to promptly detect and examine threats to prevent escalation.
@@ -62,7 +62,7 @@ This section defines the requirements for the scenario's solution.
 
 Administrators who interact with Global Secure Access features require the Global Secure Access Administrator and Application Administrator roles.
 
-Conditional Access (CA) policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
+Conditional Access policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
 
 ### Prerequisites for remote access with quick access
 
@@ -165,7 +165,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 
 ### Secure published application for remote access with quick access
 
-In this section, we create a Conditional Access (CA) policy that blocks access to the new application when a user's risk is elevated.
+In this section, we create a Conditional Access policy that blocks access to the new application when a user's risk is elevated.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.

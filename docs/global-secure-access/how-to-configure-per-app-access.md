@@ -1,11 +1,11 @@
 ---
-title: How to configure per-app access using Global Secure Access applications
+title: How to Configure Per-app Access Using Global Secure Access Applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 07/22/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -30,9 +30,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 ### Known limitations
 
-- Avoid overlapping app segments between Quick Access and Global Secure Access apps.
-- Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## High level steps
 
@@ -78,7 +76,8 @@ To create a new app, you provide a name, select a connector group, and then add 
 
 1. Enter a name for the app.
 1. Select a Connector group from the dropdown menu.
-    - Existing connector groups appear in the dropdown menu.
+    > [!IMPORTANT]
+    > You must have at least one active connector in order to create an application. To learn more about connectors, see [Understand the Microsoft Entra private network connector](concept-connectors.md).
 1. Select the **Save** button at the bottom of the page to create your app without adding private resources.
 
 ### Add application segment
@@ -91,16 +90,10 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications**.
 1. Select **New application**.
 1. Select **Add application segment**.
-
-    ![Screenshot of the Add application segment button.](media/how-to-configure-per-app-access/enterprise-app-add-application-segment.png)
-
 1. In the **Create application segment** panel that opens, select a **Destination type**.
-
-    ![Screenshot of the create app segment panel.](media/how-to-configure-per-app-access/app-segment-destination-type.png)
-
 1. Enter the appropriate details for the selected destination type. Depending on what you select, the subsequent fields change accordingly.
     - **IP address**:
-        - Internet Protocol version 4 (IPv4) address, such as 192.0.2.1, that identifies a device on the network.
+        - Internet Protocol version 4 (IPv4) address, such as 192.168.2.1, that identifies a device on the network.
         - Provide the ports that you want to include.
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
@@ -108,10 +101,10 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
         - NetBIOS isn't supported. For example, use `contoso.local/app1` instead of `contoso/app1.`
     - **IP address range (CIDR)**:
         - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses where an IP address is followed by a suffix that indicates the number of network bits in the subnet mask.
-        - For example, 192.0.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
+        - For example, 192.168.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
         - Provide the starting address, network mask, and ports.
     - **IP address range (IP to IP)**:
-        - Range of IP addresses from start IP (such as 192.0.2.1) to end IP (such as 192.0.2.10).
+        - Range of IP addresses from start IP (such as 192.168.2.1) to end IP (such as 192.168.2.10).
         - Provide the IP address start, end, and ports.
 
 1. Enter the ports and select the **Apply** button.
@@ -137,7 +130,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > [!NOTE]
 > You can add up to 500 application segments to your app.
 >
-> Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
+> Do not overlap FQDNs, IP addresses, and IP ranges between any Private Access apps.
 
 ## Assign users and groups
 
@@ -185,6 +178,23 @@ Once you have your app configured, your private resources added, users assigned 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select the toggle for **Private access profile**.
+
+This diagram demonstrates how Microsoft Entra Private Access works when attempting to use Remote Desktop Protocol to connect to a server on a private network.
+
+:::image type="content" source="media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png" alt-text="Diagram of Microsoft Entra Private Access working with Remote Desktop Protocol." lightbox="media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png":::
+
+| Step | Description |
+| --- | --- |
+| 1 | User initiates RDP session to an FQDN which maps to the target server. The GSA Client intercepts the traffic and tunnels it to the SSE Edge.  |
+| 2 | The SSE Edge evaluates policies stored in Microsoft Entra ID such as whether the user is assigned to the application and Conditional Access policies.  |
+| 3 | Once the user has been authorized, Microsoft Entra ID issues a token for the Private Access application.  |
+| 4 | The traffic is released to continue to the Private Access service along with the application’s access token.  |
+| 5 | The Private Access service validates the access token and the connection is brokered to the Private Access backend service.  |
+| 6 | The connection is brokered to the Private Network Connector.  |
+| 7 | The Private Network Connector performs a DNS query to identify the IP address of the target server. |
+| 8 | The DNS service on the private network sends the response. |
+| 9 | The Private Network Connector forwards the traffic to the target server. The RDP session is negotiated (including RDP authentication) and is then established.  |
+
 
 ## Next steps
 

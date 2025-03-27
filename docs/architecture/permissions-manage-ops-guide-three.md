@@ -53,7 +53,7 @@ Use Permissions Management to create and save custom audit queries that others v
 
 **Review administrator and privileged account activity**
 
-   ![Diagram of a query to review admin and privelged account activity.](./media/permissions-manage-ops-guide/admin-privileged-account-activity.png)
+   ![Diagram of a query to review admin and privileged account activity.](./media/permissions-manage-ops-guide/admin-privileged-account-activity.png)
 
 **Review high-risk permissions usage**
 
