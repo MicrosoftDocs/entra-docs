@@ -97,7 +97,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
 
-### App registrations must not have reply URLs containing *.azurewebsites.net, URL shorteners, or localhost, wildcard domains
+### App registrations don't have insecure redirect URIs 
 
 [!INCLUDE [21885](../includes/secure-recommendations/21885.md)]
 
