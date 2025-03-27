@@ -13,7 +13,9 @@
   - name: What are identity governance use cases? 
     href: scenarios/identity-governance-use-cases.md 
   - name: Understanding least privileged
-    href: scenarios/least-privileged.md 
+    href: scenarios/least-privileged.md
+  - name: Microsoft Entra ID Governance deployment Introduction
+    href: ~/architecture/governance-deployment-intro.md  
   - name: Govern the employee and guest lifecycle
     items:
     - name: Govern the employee lifecycle
