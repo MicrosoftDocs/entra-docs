@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: conditional-access
 
 ms.topic: conceptual
-ms.date: 03/26/2025
+ms.date: 03/27/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
