@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/27/2025
 ms.service: global-secure-access
 
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
@@ -67,6 +67,18 @@ For example if you want to look at all the logs from a specific connection:
 1. In the field that appears, paste the `connectionId` and select **Apply**.
 
     ![Screenshot of the traffic log filter.](media/how-to-view-traffic-logs/traffic-log-filter.png)
+
+## Connection logs
+
+Connection logs provide a summary of all associated transactions, including the total transaction count and blocked transactions, allowing for quick identification of any blocked activity.   
+
+A connection represents multiple transactions occurring in the last 24 hours and provides a single Flow Correlation Id.
+
+As of March 31, 2025, we are previewing a new tab in the Traffic logs blade for you to view Connections:
+
+![Screenshot of the new Connections tab on the Traffic logs page.](media/how-to-view-traffic-logs/traffic-logs-conncetions-tab.png)
+
+Transactions associated with each Connection are viewed by selecting the **Transactions** tab.
 
 ### Troubleshooting scenarios
 
