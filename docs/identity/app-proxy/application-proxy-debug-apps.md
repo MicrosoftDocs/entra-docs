@@ -25,7 +25,7 @@ If you still have application proxy issues, return to this article to troublesho
 
 The flowchart contains the steps to debug common issues.
 
- The table that appears after the flowchart contains details about each step.
+The table that appears after the flowchart contains details about each step.
 
 ![Diagram of a flowchart that shows steps to debug an application for application proxy issues.](media/application-proxy-debug-apps/application-proxy-apps-debugging-flowchart.png)
 

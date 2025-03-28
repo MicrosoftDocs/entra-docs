@@ -1,5 +1,5 @@
 ---
-title: Broken Links in App
+title: Broken Links in an Application
 description:  Troubleshoot problems with broken links in application proxy apps that are integrated with Microsoft Entra ID.
 author: kenwith
 manager: femila
@@ -19,7 +19,7 @@ After you publish an application proxy app, by default, the only links that work
 
 If a link in the app doesn't work, the likely cause is that the link goes to a destination that is outside the published root URL.
 
-**Why does this happen?** When an app user selects a link in an application, application proxy tries to resolve the URL as either an internal URL within the same application or as an externally available URL. If the link points to an internal URL that isn't in the same application, the link doesn't fit in either of these buckets. The result is a "not found" error.
+*What causes broken links in my app?* When an app user selects a link in an application, application proxy tries to resolve the URL as either an internal URL within the same application or as an externally available URL. If the link points to an internal URL that isn't in the same application, the link doesn't fit in either of these buckets. The result is a "not found" error.
 
 ## Resolve broken links
 

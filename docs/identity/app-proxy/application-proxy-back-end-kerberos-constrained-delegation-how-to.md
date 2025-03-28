@@ -42,23 +42,23 @@ The following list describes foundational considerations for KCD configuration a
 
 - Avoid active Intrusion Prevention System (IPS) or Intrusion Detection System (IDS) devices between connector hosts and DCs. These devices are too intrusive and interfere with core Remote Procedure Call (RPC) traffic.
 
-- Test delegation in simple scenarios. The more variables you introduce in a setup, the more complex configuration and troubleshooting is. To save time, limit your testing to a single connector. Add more connectors after the issue is resolved.
+- Test delegation in a simple scenario. The more variables you introduce in a scenario, the more complex configuration and troubleshooting is. To save time, limit your testing to a single connector. Add more connectors after the issue is resolved.
 
-- Some environmental factors might also contribute to the cause of an issue. To avoid these factors, minimize architecture as much as possible during testing. For example, misconfigured internal firewall Access Control Lists (ACLs) are common. If possible, send all traffic from a connector straight through to the DCs and back-end application.
+- Some environmental factors might also contribute to the cause of an issue. To avoid these factors, minimize architecture as much as possible during testing. For example, misconfigured internal firewall access control lists (ACLs) are common. If possible, send all traffic from a connector directly to the DCs and back-end application.
 
 - The best place to position connectors is as close as possible to their targets. A firewall that sits inline when you test adds unnecessary complexity and can prolong your investigations.
 
 - What indicates a KCD problem? Several common errors indicate that KCD SSO is failing. The first signs of an issue appear in the browser.
 
+  Both of the following screenshots show the same symptom of SSO failure: User access to the application is denied.
+
   ![Screenshot that shows an example of an incorrect KCD configuration error, with the error Incorrect Kerberos constrained delegation highlighted.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic1.png)
 
-  ![Screeshot that shows an example of authorization failure because of missing permissions.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic2.png)
-
-  Both images show the same symptom of SSO failure: User access to the application is denied.
+  ![Screenshot that shows an example of authorization failure because of missing permissions.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic2.png)
 
 ## Troubleshoot
 
-You can troubleshoot KCD problems in three stages. Check these aspects of the KCD process in the following order:
+You can troubleshoot KCD problems in three stages. Check these parts of the KCD process in the following order:
 
 - Client preauthentication
 - The delegation service
@@ -72,49 +72,48 @@ Test client preauthentication first, and resolve any issues. The preauthenticati
 
 ### Delegation service
 
-The Kerberos delegation service is the private network connector that gets a Kerberos service ticket for a user from a Kerberos Key Distribution Center (KDC).
+The Kerberos delegation service is the private network connector that gets a Kerberos service ticket from a Kerberos Key Distribution Center (KDC). The app user authenticates with the application via the ticket.
 
-The external communications between the client and the Azure front end have no effect on constrained delegation. These communications ensure only that KCD works. The application proxy service is given a valid user ID that gets a Kerberos ticket. Without this ID, KCD can't occur and SSO fails.
+External communications between the client and the Azure front end have no effect on constrained delegation. These communications ensure only that KCD works. The application proxy service is given a valid user ID that gets a Kerberos ticket. Without this ID, KCD can't occur and SSO fails.
 
-Browser error messages provide good clues about why sign-in fails. Record the values for `activity ID` and `timestamp` in the response to application sign-in. The information helps correlate the behavior to events in the application proxy event log.
+Browser error messages provide useful information about why sign-in fails. Record the values for `TransactionID` and `Timestamp` in the response to application sign-in. The information helps correlate the behavior to events that appear in the application proxy event log.
 
 ![Screenshot that shows a Kerberos constrained delegation configuration error message.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic3.png)
 
 The corresponding entries in the event log are event IDs 13019 or 12027. To view the connector event logs, go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector** > **Admin**.
 
-To troubleshoot constrained delegation issues:
+To troubleshoot a constrained delegation issue:
 
-1. Use an A record in your internal Domain Name System (DNS) for the application’s address, not a CNAME record.
+1. In your internal Domain Name System (DNS) for the application address, use an A record, not a CNAME record.
 1. Verify that the connector host is configured with permissions to delegate to the target account’s service principal name (SPN). Verify that **Use any authentication protocol** is selected. For more information, see [SSO configuration](how-to-configure-sso-with-kcd.md).
 1. Verify that only one instance of the SPN exists in Microsoft Entra ID. To verify a single SPN, at a command prompt on any domain member host, run `setspn -x`.
 1. Check that a domain policy that limits the [maximum size of issued Kerberos tokens](/archive/blogs/askds/maxtokensize-and-windows-8-and-windows-server-2012) is enforced. The policy stops the connector from getting a token if the token size exceeds a set maximum.
+1. Running a network trace that captures exchanges between the connector host and a domain KCD is the next best step to get more details about the issue. For more information, you can review the in-depth white paper [Troubleshooting the Microsoft Entra application proxy](https://aka.ms/proxytshootpaper).
 
-A network trace that captures exchanges between the connector host and a domain KCD is the next best step to get more details about the issue. For more information, you can review the in-depth white paper [Troubleshooting the Microsoft Entra application proxy](https://aka.ms/proxytshootpaper).
-
-If you verify that ticketing is working correctly, check the logs for an event that indicates authentication failed because the application returned a 401 error. This event indicates that the target application rejected the ticket. Go to the next stage of troubleshooting.
+If ticketing is working correctly, the logs likely show an event that indicates authentication failed because the application returned a 401 error. This event indicates that the target application rejected the ticket. Go to the next stage of troubleshooting.
 
 ### Target application
 
 The target application consumes the Kerberos ticket that the connector provides. At this stage, it's expected that the connector sent a Kerberos service ticket to the back end. The ticket is a header in the first application request.
 
-To troubleshoot application issues:
+To troubleshoot an application issue:
 
-1. Use the application’s internal URL that's defined in the portal to validate that the application is accessible directly from the browser on the connector host. Then you can successfully sign in.
+1. Use the application’s internal URL that's defined in the Azure portal to validate that the application is accessible directly from the browser on the connector host. If you can successfully sign in, the application is accessible.
 
-1. Verify that authentication between the browser and the application uses Kerberos. Run DevTools (select F12) in Internet Explorer or use [Fiddler](https://blogs.msdn.microsoft.com/crminthefield/2012/10/10/using-fiddler-to-check-for-kerberos-auth/) from the connector host. Go to the application by using the internal URL. To make sure that either "Negotiate" or "Kerberos" is present, inspect the web authorization headers that are returned in the response from the application.
+1. Verify that authentication between the browser and the application uses Kerberos. Use DevTools (select the **F12** key) in Internet Explorer or use [Fiddler](https://blogs.msdn.microsoft.com/crminthefield/2012/10/10/using-fiddler-to-check-for-kerberos-auth/) from the connector host. Go to the application by using the internal URL. To make sure that either "Negotiate" or "Kerberos" is included, inspect the web authorization headers that are returned in the response from the application.
 
-   The next Kerberos blob that is returned in the response from the browser to the application starts with `YII`. These letters indicate that Kerberos is running. A response from Microsoft NT LAN Manager (NTLM) always starts with `TlRMTVNTUAAB`. The response reads NTLM Security Support Provider (NTLMSSP) when it's decoded from Base64. If you see `TlRMTVNTUAAB` at the start of the blob, Kerberos isn't available. If you don’t see `TlRMTVNTUAAB`, Kerberos likely is available.
+   The next Kerberos blob that returns in the response from the browser to the application starts with `YII`. These letters indicate that Kerberos is running. A response from Microsoft NT LAN Manager (NTLM) always starts with `TlRMTVNTUAAB`. The response reads NTLM Security Support Provider (NTLMSSP) when it's decoded from Base64. If you see `TlRMTVNTUAAB` at the start of the blob, Kerberos isn't available. If you don’t see `TlRMTVNTUAAB`, Kerberos likely is available.
 
    > [!NOTE]
    > If you use Fiddler, you must temporarily disable extended protection on the application configuration in IIS.
 
-   ![Screenshot that shows a browser network inspection window.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic6.png)
+   ![Screenshot that shows a browser network inspection dialog.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic6.png)
 
    The blob in this screenshot doesn't start with `TIRMTVNTUAAB`. So in this example, Kerberos is available, and the Kerberos blob doesn’t start with `YII`.
 
-1. On the IIS site, temporarily remove NTLM from the providers list. Access the app directly from Internet Explorer on the connector host. NTLM is no longer in the providers list. You can access the application only by using Kerberos. If access fails, a problem with the application’s configuration is indicated. The application isn't processing Kerberos authentication.
+1. On the IIS site, temporarily remove NTLM from the providers list. Access the app directly from Internet Explorer on the connector host. NTLM is no longer in the providers list, so you can access the application only by using Kerberos. If access fails, a problem with the application’s configuration is indicated. The application isn't processing Kerberos authentication.
 
-1. If Kerberos isn't available, check the application’s authentication settings in IIS. Make sure that **Negotiate** is listed at the top, with NTLM just beneath it. If you see **Not Negotiate**, **Kerberos or Negotiate**, or **PKU2U**, continue only if Kerberos is functional.
+1. If Kerberos isn't available, check the application’s authentication settings in IIS. Make sure that **Negotiate** is listed at the top, and NTLM is just below it. If you see **Not Negotiate**, **Kerberos or Negotiate**, or **PKU2U**, continue only if Kerberos is functional.
 
    ![Screenshot that shows Windows authentication providers.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic7.png)
 
@@ -130,7 +129,7 @@ To troubleshoot application issues:
 
    ![Screenshot that shows an IIS application configuration dialog.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic9.png)
 
-   Check the identity, and then make sure this account is configured with the SPN. For example, run `setspn –q http/spn.contoso.com`. At a command prompt, enter text shown in the following screenshot:
+   Check the identity, and then make sure this account is configured with the SPN. At a command prompt, for example, run `setspn –q http/spn.contoso.com`.
 
    ![Screenshot that shows the SetSPN command window.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic10.png)
 
@@ -140,7 +139,7 @@ To troubleshoot application issues:
 
    ![Screenshot that shows the IIS configuration app pools credential option.](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic12.png)
 
-   Change the value to **True**. Remove all cached Kerberos tickets from the back-end server by running the following command:
+   Change the value to **True** if needed. Remove all cached Kerberos tickets from the back-end server by running the following command:
 
    ```powershell
    Get-WmiObject Win32_LogonSession | Where-Object {$_.AuthenticationPackage -ne 'NTLM'} | ForEach-Object {klist.exe purge -li ([Convert]::ToString($_.LogonId, 16))}
@@ -148,11 +147,11 @@ To troubleshoot application issues:
 
 1. If Kernel mode is enabled, Kerberos operations improve. But the ticket for the requested service also must be decrypted by using the machine account. This account is also called the *Local system*. Set this value to **True** to break KCD when the application is hosted across more than one server in a farm.
 
-1. As another check, disable extended protection. In some test scenarios, extended protection breaks KCD when it was enabled in specific configurations. In those cases, an application was published as a subfolder of the default website. This application is configured for anonymous authentication only. All the dialogs are inactive, with no available selections, which suggests that child objects wouldn't inherit any active settings. We recommend that you test, but don’t forget to restore this value to **enabled** if possible.
+1. As another check, disable extended protection. In some test scenarios, extended protection broke KCD when it was enabled in specific configurations. In those cases, an application was published as a subfolder of the default website. This application is configured for anonymous authentication only. All the dialogs are inactive, with no available selections, which suggests that child objects wouldn't inherit any active settings. We recommend that you test, but don’t forget to restore this value to **enabled** if possible.
 
    This extra check puts you on track to use your published application. You can generate more connectors that are also configured to delegate. For more information, read the more in-depth technical walkthrough [Troubleshooting the Microsoft Entra application proxy](https://aka.ms/proxytshootpaper).
 
-If you still can't resolve the application authentication issue, Microsoft support can assist you. Create a support ticket directly in the portal.
+If you still can't resolve the application authentication issue, create a support ticket directly in the portal.
 
 ## Other scenarios
 

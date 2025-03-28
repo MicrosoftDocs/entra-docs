@@ -11,11 +11,11 @@ ms.author: kenwith
 ms.reviewer: asteen
 ---
 
-# Troubleshoot "corporate app can't be accessed" in application proxy
+# Troubleshoot "corporate app can't be accessed" error in application proxy
 
-This article helps you troubleshoot common issues for the `This corporate app can't be accessed` error on a Microsoft Entra application proxy application.
+This article helps you troubleshoot common issues for the `This corporate app can't be accessed` error in a Microsoft Entra application proxy application.
 
-When you see this error, find the status code on the error page. The status code is one of the following status codes:
+When you see this error, find the status code on the error page:
 
 - **Gateway time-out**: The application proxy service can't reach the connector. The error typically indicates a problem with the connector assignment, the connector, or the networking rules for the connector.
 - **Bad gateway**: The connector can't reach the back-end application. The error might indicate a misconfiguration of the application.
