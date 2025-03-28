@@ -19,18 +19,13 @@ ms.author: billmath
 # Microsoft Entra Connect Sync: Directory extensions
 You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. These attributes can be consumed through [extensions](/graph/extensibility-overview). You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/overview) or [Microsoft Entra PowerShell](/powershell/entra-powershell/overview). At present, no Microsoft 365 workload consumes these attributes, but you can use this feature with dynamic group memberships in Microsoft Entra ID.
 
->[!IMPORTANT]
->If you have exported a configuration that contains a custom rule used to synchronize directory extension attributes and you attempt to import this rule into a new or existing installation of Microsoft Entra Connect, the rule will be created during import, but the directory extension attributes won't be mapped.  You'll need to re-select the directory extension attributes and re-associate them with the rule or recreate the rule entirely to fix this.
+## Select which attributes to synchronize with Microsoft Entra ID
 
-<a name='customize-which-attributes-to-synchronize-with-azure-ad'></a>
-
-## Customize which attributes to synchronize with Microsoft Entra ID
-
-You configure which additional attributes you want to synchronize in the custom settings path in the installation wizard.
+You configure which additional attributes you want to synchronize using Microsoft Entra Connect configuration wizard, in the custom settings.
 
 ![Schema extension wizard](./media/how-to-connect-sync-feature-directory-extensions/extension2.png)  
 
->[!NOTE]
+> [!NOTE]
 > Manually editing or cloning the sync rules for Directory Extensions can cause synchronization issues. It's not supported to manage Directory Extensions outside of this wizard page.
 
 The installation shows the following attributes, which are valid candidates:
@@ -39,19 +34,21 @@ The installation shows the following attributes, which are valid candidates:
 * Single-valued attributes: String, Boolean, Integer, Binary
 * Multi-valued attributes: String, Binary
 
-> [!NOTE]
-> Not all features in Microsoft Entra ID support multi-valued extension attributes. Please refer to the documentation of the feature in which you plan to use these attributes to confirm they're supported.
-
-The list of attributes is read from the schema cache that's created during installation of Microsoft Entra Connect. If you have extended the Active Directory schema with additional attributes, you must [refresh the schema](how-to-connect-installation-wizard.md#refresh-directory-schema) before these new attributes are visible.
-
-An object in Microsoft Entra ID can have up to 100 attributes for directory extensions. The maximum length is 250 characters. If an attribute value is longer, the sync engine truncates it.
+The list of attributes is read from the Active Directory schema during initial installation of Microsoft Entra Connect. If you have extended the Active Directory schema with additional attributes, you must [refresh the schema](how-to-connect-installation-wizard.md#refresh-directory-schema) before these new attributes are visible.
 
 > [!NOTE]
 > It's not supported to sync constructed attributes, such as msDS-UserPasswordExpiryTimeComputed. If you upgrade from an old version of Microsoft Entra Connect you may still see these attributes show up in the installation wizard, you shouldn't enable them though. Their value won't sync to Microsoft Entra ID if you do. 
 > You can read more about constructed attributes in [this article](/openspecs/windows_protocols/ms-adts/a3aff238-5f0e-4eec-8598-0a59c30ecd56).
 > You should also not attempt to sync [Non-replicated attributes](/windows/win32/ad/attributes), such as badPwdCount, Last-Logon, and Last-Logoff, as their values won't be synced to Microsoft Entra ID.
+## Important considerations when using Directory Extensions
 
-<a name='configuration-changes-in-azure-ad-made-by-the-wizard'></a>
+- <a name='configuration-changes-in-azure-ad-made-by-the-wizard'></a>If you have exported a configuration that contains a custom rule used to synchronize directory extension attributes and you attempt to import this rule into a new or existing installation of Microsoft Entra Connect, the rule will be created during import, but the directory extension attributes won't be mapped.  You'll need to re-select the directory extension attributes and re-associate them with the rule or recreate the rule entirely to fix this.
+
+- Not all features in Microsoft Entra ID support multi-valued extension attributes. Please refer to the documentation of the feature in which you plan to use these attributes to confirm they're supported. 
+
+- An object in Microsoft Entra ID can have up to 100 attributes for directory extensions. The maximum length is 250 characters. If an attribute value is longer, the sync engine truncates it.
+
+- It's not supported to sync constructed attributes, such as msDS-UserPasswordExpiryTimeComputed. If you upgrade from an old version of Microsoft Entra Connect you may still see these attributes show up in the installation wizard, you shouldn't enable them as the value won't sync to Microsoft Entra ID. [Learn mode](/openspecs/windows_protocols/ms-adts/a3aff238-5f0e-4eec-8598-0a59c30ecd56).
 
 ## Configuration changes in Microsoft Entra ID made by the wizard
 
