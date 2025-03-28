@@ -7,9 +7,11 @@ manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 01/29/2025
+ms.date: 03/25/2025
 ms.author: sarahlipsey
 ms.reviewer: almars
+
+# Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
 ---
 
 # Configure your company branding
@@ -170,6 +172,8 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 All of the available options appear in one list so you can review everything you customized or left at the default setting. When you're done, select the **Create** button.
 
 Once your default sign-in experience is created, select the **Edit** button to make any changes. You can't delete a default sign-in experience after it's created, but you can remove all custom settings.
+
+The time it takes for changes to appear in the sign-in experience can vary based on the tenant's geographical location. Updates can take a few minutes or up to 2 hours. This time range is a target, not a guarantee. 
 
 ## Customize the sign-in experience by browser language
 

@@ -84,12 +84,19 @@ For more information, see [Microsoft Graph: Use query parameters](/graph/query-p
 Get-MgApplication -Filter "DisplayName eq 'Tenant Schema Extension App'"
 ```
 
-2. List all extension attributes using the **Tenant Schema Extension App** identifier:
+2. List all extension attributes for the **Tenant Schema Extension App**:
 
 ```powershell
-$extensionsApp = Get-MgApplication -Filter "DisplayName eq 'Tenant Schema Extension App'"
-Get-MgApplicationExtensionProperty -ApplicationId $extensionsApp.Id -All
+Get-MgDirectoryObjectAvailableExtensionProperty
 ```
+
+3. List all extension attributes for a user object:
+
+```powershell
+(Get-MgBetaUser -UserId "<Id or UserPrincipalName>").AdditionalProperties
+
+```
+
 
 ### Using the Microsoft Entra PowerShell
 
@@ -102,8 +109,13 @@ Get-EntraApplication -SearchString "Tenant Schema Extension App"
 2. List all extension attributes for **Tenant Schema Extension App** application:
 
 ```powershell
-
 Get-EntraExtensionProperty | Where-Object {$_.AppDisplayName -eq 'Tenant Schema Extension App'}
+```
+
+3. List all extension attributes for a user object:
+
+```powershell
+Get-EntraUserExtension -UserId "<Id or UserPrincipalName>"
 ```
 
 ## Use the attributes in dynamic membership groups
@@ -113,12 +125,12 @@ One of the most useful scenarios is to use extension attributes in dynamic secur
 1. Create a new group in Microsoft Entra ID. Give it a name and make sure the **Membership type** is **Dynamic User**.
 
       ![Screenshot with a new group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup1.png)
-
-2. Select to **Add dynamic query**. When you look at the properties, these extended attributes are missing because you need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
+   
+1. Select to **Add dynamic query**. When you look at the properties, these extended attributes are missing because you need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
 
    ![Screenshot where directory extensions have been added](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup2.png) 
    
-3. Open the property drop-down and note that the attributes you added are now visible.
+1. Open the property drop-down and note that the attributes you added are now visible.
 
    ![Screenshot with new attributes showing up in the UI](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup3.png)
    
@@ -126,7 +138,7 @@ One of the most useful scenarios is to use extension attributes in dynamic secur
 
     `(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")`
 
-5. After the group is created, give Microsoft Entra some time to populate the members and then review the members.
+1. After the group is created, give Microsoft Entra some time to populate the members and then review the members.
 
    ![Screenshot with members in the dynamic group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup4.png)  
    
