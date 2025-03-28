@@ -26,7 +26,7 @@ This article provides information and walks you through enabling group writeback
 
  
 ## Prerequisites and information
-The following pre-requisites must be met in order to enable group writeback.
+The following prerequisites must be met in order to enable group writeback.
 - Azure Active Directory Premium licenses for your tenant.
 - A configured hybrid deployment between your Exchange on-premises organization and Microsoft 365 and verified it's functioning correctly.
 - Installed a supported version of Exchange on-premises
@@ -34,13 +34,13 @@ The following pre-requisites must be met in order to enable group writeback.
 
 The following information should be taken into consideration when using group writeback V1 with Microsoft Entra Connect Sync:
 - Microsoft 365 groups with up to 250,000 members can be written back to on-premises. 
-- If you don't want to writeback all existing Microsoft 365 groups to Active Directory, you need to make changes to group writeback default behavior before performing the steps in this article to enable the feature. See [Modify Microsoft 365 groups](#modifying-default-behavior-for-microsoft-365-groups).
+- If you don't want to write back all existing Microsoft 365 groups to Active Directory, you need to make changes to group writeback default behavior before performing the steps in this article to enable the feature. See [Modify Microsoft 365 groups](#modifying-default-behavior-for-microsoft-365-groups).
 
 ## Enable group writeback
 
 To enable group writeback, use the following steps:
 
-1. Open the Azure AD Connect wizard, select **Configure** and then click **Next**.
+1. Open the Azure AD Connect wizard, select **Configure**, and then click **Next**.
 2. Select **Customize synchronization options** and then click **Next**.
 3. On the **Connect to Azure AD** page, enter your credentials. Click **Next**.
 4. On the **Optional features** page, verify that the options you previously configured are still selected.
@@ -77,7 +77,7 @@ $GroupWritebackOU = <DN of OU where groups are to be written back to>
 Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnectSWritebackAccountDN -ADObjectDN $GroupWritebackOU
 ```
 
-For additional information on configuring the Microsoft 365 groups see [Configure Microsoft 365 Groups with on-premises Exchange hybrid](/exchange/hybrid-deployment/set-up-microsoft-365-groups#enable-group-writeback-in-azure-ad-connect).
+For additional information on configuring the Microsoft 365 groups, see [Configure Microsoft 365 Groups with on-premises Exchange hybrid](/exchange/hybrid-deployment/set-up-microsoft-365-groups#enable-group-writeback-in-azure-ad-connect).
 
 ## Disabling group writeback
 
@@ -85,10 +85,10 @@ To disable Group Writeback, use the following steps:
 
 1. Launch the Azure Active Directory Connect wizard and navigate to the Additional Tasks page. Select the **Customize synchronization options** task and click **next**.
 2. On the **Optional Features** page, uncheck group writeback. You will receive a warning letting you know that groups will be deleted. Click **Yes**.
-  > [!IMPORTANT]
-  > Disabling Group Writeback will cause any groups that were previously created by this feature to be deleted from your local Active Directory on the next synchronization cycle.
+ > [!IMPORTANT]
+ > Disabling Group Writeback will cause any groups that were previously created by this feature to be deleted from your local Active Directory on the next synchronization cycle.
 
-  ![Uncheck box](media/how-to-connect-group-writeback/group-1.png)
+ ![Uncheck box](media/how-to-connect-group-writeback/group-1.png)
 
 3. Click **Next**.
 4. Click **Configure**.
@@ -108,17 +108,17 @@ Because the default sync rule that limits the group size is created when group w
 1. On your Microsoft Entra Connect server, open a PowerShell prompt as an administrator. 
 2. Disable the [Microsoft Entra Connect Sync scheduler](./how-to-connect-sync-feature-scheduler.md): 
  
-  ``` PowerShell 
-  Set-ADSyncScheduler -SyncCycleEnabled $false 
-  ``` 
+ ``` PowerShell 
+ Set-ADSyncScheduler -SyncCycleEnabled $false 
+ ``` 
 3. Open the [synchronization rule editor](./how-to-connect-create-custom-sync-rule.md). 
 4. Set the direction to **Outbound**. 
 5. Locate and disable the **Out to AD – Group Writeback Member Limit** synchronization rule. 
 6. Enable the Microsoft Entra Connect Sync scheduler: 
 
-  ``` PowerShell 
-  Set-ADSyncScheduler -SyncCycleEnabled $true 
-  ``` 
+ ``` PowerShell 
+ Set-ADSyncScheduler -SyncCycleEnabled $true 
+ ``` 
 
 > [!NOTE] 
 > Disabling the synchronization rule will set the flag for full synchronization to `true` on the Microsoft Entra connector. This change will cause the rule changes to propagate through on the next synchronization cycle. 
