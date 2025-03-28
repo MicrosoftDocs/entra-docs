@@ -75,7 +75,7 @@ This option only applies to the following types of applications and services:
 - Applications or services for which other applications or service are requesting access tokens
 
 >[!NOTE]
->Users with a Global Administrator role can sign in to applications, regardless of the assignment required settings
+>Users with a Global Administrator role can sign in to applications, regardless of the assignment required settings.
 
 ## Visible to users
 
