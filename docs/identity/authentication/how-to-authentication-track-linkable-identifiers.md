@@ -78,9 +78,9 @@ You should start with Microsoft Entra sign-in logs User ID attribute and manuall
 
 ## Microsoft Exchange Online logs
 
-Exchange Online audit logs will help provide organization access to critical audit log event data to gain insight and further investigate user activities. Exchange Online will carry forward the linkable identifiers from Microsoft Entra tokens and will log all the linkable identifiers in the Exchange Online audit logs.
+Exchange Online audit logs help you access critical audit log event data to gain insight, and further investigate user activities. Exchange Online carries forward the linkable identifiers from Microsoft Entra tokens and logs all of the linkable identifiers in the Exchange Online audit logs.
 
-For scenarios involving exchange online like mailbox update, items moved or deleted, you can start with linkable identifiers from Microsoft Entra sign in logs and search Microsoft Purview Audit (Standard) and Audit (Premium) to track all user actions on any items in a mailbox. For more information about how to search Exchange Online audit logs, see [Search the audit log | Microsoft Learn](/purview/audit-search).
+For scenarios like mailbox update, items moved or deleted, you can start with linkable identifiers from Microsoft Entra sign in logs and search Microsoft Purview Audit (Standard) and Audit (Premium) to track all user actions on any items in a mailbox. For more information about how to search Exchange Online audit logs, see [Search the audit log | Microsoft Learn](/purview/audit-search).
 
 | **Claim** | **Exchange Online audit log attribute name**                              |
 |-----------|---------------------------------------------------------------|
