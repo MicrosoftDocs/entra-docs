@@ -13,13 +13,13 @@ ms.author: jfields
 # How to offboard and transition off of Microsoft Entra Permissions Management 
 
 > [!NOTE]
-> Effective April 1, 2025, Microsoft Entra Permissions Management (Permissions Management) will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire). 
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire). 
 
 ## Introduction
 
-Permissions Management is retiring on October 01, 2025, with new purchases unavailable starting April 1, 2025. Existing paid customers will continue to have access to Permissions Management between April 1, 2025 - September 30, 2025. 
+Microsoft Entra Permissions Management (Permissions Management) is retiring on October 01, 2025, with new purchases unavailable starting April 1, 2025. Existing paid customers will continue to have access to Permissions Management between April 1, 2025 - September 30, 2025. 
 
-On October 01, 2025, Permissions Management will be automatically offboarded and associated data collection will be deleted. For customers needing to offboard before October 1, 2025, refer to the Offboarding Steps section in this guide. 
+On October 01, 2025, Permissions Management will be automatically offboarded and associated data collection will be deleted. For customers needing to offboard before October 1, 2025, refer to the [Offboarding steps](#offboarding-steps) section in this guide. 
 
 ## Why is Permissions Management being retired? 
 
@@ -42,10 +42,10 @@ To ensure you continue with the CIEM objectives with our recommended partner, we
 1. First, go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview), then click **Permissions Management** from the navigation blade. 
 
 - Authorization system IDs which are being monitored across Azure, Amazon Web Service (AWS) and Google Cloud Platform (GCP). To find this, launch the **Permissions Management** portal, select **Settings (Gear icon)** and select the **Authorization Systems** tab to view list of Authorization system IDs.  
-- Groups and users given admin access with the Permissions Management Administrator role in Entra ID. To find this, launch the **Entra ID**, select **Roles and Admins**, search for **Permissions Management Administrator role**, select **Assignments**. 
-- Authorization system-specific access provided to groups through the Permissions Management portal. To find this, launch **Permissions Management** portal, Select **User Management**, then click the **Groups** tab to view all groups assignments.  
-- Custom reports configured in your environment. To find this, launch **Permissions Management** portal, select **Reports**, navigate to **Custom Reports**.
-- Alerts configured in your environment. To find this, launch **Permissions Management** portal, select **Alerts** (bell icon), navigate to respective alerts tab.
+- Groups and users given admin access with the Permissions Management Administrator role in Entra ID. To find this, launch **Entra ID**, select **Roles and Admins**, search for **Permissions Management Administrator role**, select **Assignments**. 
+- Authorization system-specific access provided to groups through the Permissions Management portal. To find this, launch **Permissions Management** portal, Select **User Management**, then click the **Groups** tab to view all group assignments.  
+- Custom reports configured in your environment. To find this, launch the **Permissions Management** portal, select **Reports**, navigate to **Custom Reports**.
+- Alerts configured in your environment. To find this, launch the **Permissions Management** portal, select **Alerts** (bell icon), navigate to respective alerts tab.
 
 ## Offboarding steps
 
@@ -60,9 +60,9 @@ Once onboarded to our recommended partner and/or any other vendor, customers can
 
 ## Remove permissions assigned in AWS, Azure, and GCP
 
-For successful offboarding of your data, remove permissions from your onboarded cloud provider (Azure, AWS, or GCP) and Permissions Management. Any roles and permissions assigned during onboarding should be removed. This ensures your environment is secure with no overprivileged access once your environment is off boarded from Entra Permissions Management. 
+For successful offboarding of your data, remove permissions from your onboarded cloud provider (Azure, AWS, or GCP) and Permissions Management. Any roles and permissions assigned during onboarding should be removed. This ensures your environment is secure with no overprivileged access once your environment is offboarded from Permissions Management. 
 
-Refer to the Data Collector configuration from the Entra Permissions Management portal and select the settings (gear icon). Note down the configuration settings to remove roles and permissions assigned in your respective cloud provider.  
+Refer to the Data Collector configuration from the Permissions Management portal and select the settings (gear icon). Note down the configuration settings to remove roles and permissions assigned in your respective cloud provider.  
 
 ## Remove the OIDC application for AWS and GCP environments
 
@@ -96,7 +96,7 @@ Stop collecting data for your list of accounts / subscriptions / projects by del
 
 1. Go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
 1. Select **Permissions Management** and click on **Launch portal**. 
-1. Select **Settings** (the gear icon). Then select the **Data Collectors** tab. 
+1. Select **Settings** (the gear icon), then select the **Data Collectors** tab. 
 1. On the **Data Collectors** dashboard, select your authorization system type: 
     1. **AWS** for Amazon Web Services. 
     1. **Azure** for Microsoft Azure. 
@@ -113,7 +113,7 @@ Stop collecting data for your list of accounts / subscriptions / projects by del
 Once data collection stops for all AWS accounts, Azure subscriptions, and GCP projects, disable the Cloud Infrastructure Entitlement Management (CIEM) app so that it can't be signed in. This ensures Permissions Management can no longer access your environments (accounts, subscriptions and projects).  
 
 > [!NOTE]
-> User must have the Cloud Application Administrator role assignment to perform this task. 
+> User must have the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role assignment to perform this task. 
 
 To disable the CIEM App for users to sign in: 
 
