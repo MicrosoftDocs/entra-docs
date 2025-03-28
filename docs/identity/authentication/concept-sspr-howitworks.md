@@ -99,6 +99,8 @@ The following authentication methods are available for SSPR:
 
 * Mobile app notification
 * Mobile app code
+* Hardware OATH token
+* Software OATH token
 * Email
 * Mobile phone
 * Office phone (available only for tenants with paid subscriptions)
