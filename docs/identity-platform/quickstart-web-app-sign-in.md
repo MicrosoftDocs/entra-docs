@@ -31,7 +31,7 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 
 #### [Node](#tab/node-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com). Choose an identifiable name (for example *identity-client-app*) configure it for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md). Ensure that you record the following details for later use: 
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. See [Register an application](quickstart-register-app.md) for details. Record the following details for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -57,7 +57,7 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 
 #### [Python Flask](#tab/python-flask-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com). Choose an identifiable name (for example *identity-client-app*) configure it for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md). Ensure that you record the following details for later use: 
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. See [Register an application](quickstart-register-app.md) for details. Record the following details for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
