@@ -12,7 +12,7 @@ ms.date: 03/28/2025
 ---
 # Configure endpoint detection and response and antivirus solution coexistence with Global Secure Access client
 
-Running antivirus solutions such as Microsoft Defender for Endpoint side by side with the Global Secure Access client can affect system performance. If your system experiences [high CPU usage or performance issues](https://learn.microsoft.com/en-us/defender-endpoint/troubleshoot-performance-issues), exclude Global Secure Access client processes from your antivirus solution.
+Running antivirus solutions such as Microsoft Defender for Endpoint side by side with the Global Secure Access client can affect system performance. If your system experiences [high CPU usage or performance issues](/defender-endpoint/troubleshoot-performance-issues), exclude Global Secure Access client processes from your antivirus solution.
 
 ## Configuration overview
 
