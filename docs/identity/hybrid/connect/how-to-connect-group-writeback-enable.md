@@ -79,7 +79,7 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnect
 
 For additional information on configuring the Microsoft 365 groups, see [Configure Microsoft 365 Groups with on-premises Exchange hybrid](/exchange/hybrid-deployment/set-up-microsoft-365-groups#enable-group-writeback-in-azure-ad-connect).
 
-## Disabling group writeback
+## Disable group writeback
 
 To disable Group Writeback, use the following steps:
 
@@ -88,7 +88,7 @@ To disable Group Writeback, use the following steps:
  > [!IMPORTANT]
  > Disabling Group Writeback will cause any groups that were previously created by this feature to be deleted from your local Active Directory on the next synchronization cycle.
 
- ![Uncheck box](media/how-to-connect-group-writeback/group-1.png)
+ ![Screenshot that shows the uncheck box.](media/how-to-connect-group-writeback/group-1.png)
 
 3. Click **Next**.
 4. Click **Configure**.
@@ -96,7 +96,7 @@ To disable Group Writeback, use the following steps:
  > [!NOTE]
  > Disabling Group Writeback will set the Full Import and Full Synchronization flags to 'true' on the Azure Active Directory Connector, causing the rule changes to propagate through on the next synchronization cycle, deleting the groups that were previously written back to your Active Directory.
 
- ## Modifying default behavior for Microsoft 365 groups
+ ## Modify default behavior for Microsoft 365 groups
 The following sections will provide guidance on how to modify the default behavior for Microsoft 365 groups.
 
 
