@@ -49,7 +49,7 @@ Recipients of the emails can be:
 
 - **Manager mail attribute(Preview)**: The email of the manager of the user who the workflow runs for.
 - **User mail attribute (default)**: The email of the user who the workflow runs for.
-- **Sponsor(s) mail attribute (Preview)**: The email of the sponsor for the user who the workflow runs for.
+- **Sponsor(s) mail attribute (Preview)**: The email of the sponsor or sponsors for the user who the workflow runs for.
 - **Selected users (Preview)**: The email of specified users manually selected.
 
 > [!NOTE]
