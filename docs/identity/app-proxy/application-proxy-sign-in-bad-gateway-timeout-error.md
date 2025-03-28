@@ -34,7 +34,7 @@ A *gateway time-out* error occurs when the service tries to reach the connector 
 A *bad gateway* error indicates that the connector is can't reach the back-end application. Common mistakes that cause this error are:
 
 - A typo or mistake is in the internal URL.
-- The root of the application isn't published. For example, publishing `http://expenses/reimbursement` but trying to access `http://expenses`
+- The root of the application isn't published. An example is publishing `http://expenses/reimbursement` but trying to access `http://expenses`.
 - Problems exist with the Kerberos constrained delegation (KCD) configuration.
 - Problems exist with the back-end application.
 
@@ -66,9 +66,9 @@ Look directly at the connector logs to identify any errors. Many of the error me
 
 ## Common solutions
 
-If your application is configured to use integrated Windows authentication (IWA), test the application without single sign-on (SSO). To check the application without SSO, open your application through **Enterprise Applications,** and go to the **Single Sign-On** menu. Change the drop-down from *Integrated Windows authentication* to *Microsoft Entra single sign-on disabled*.
+If your application is configured to use integrated Windows authentication (IWA), test the application without single sign-on (SSO). To check the application without SSO, open your application through **Enterprise Applications** and go to the **Single Sign-On** menu. Change the drop-down from **Integrated Windows authentication** to **Microsoft Entra single sign-on disabled**.
 
-Next, open a browser and try again to access the application. You should be prompted for authentication and get into the application. If you're able to authenticate, the problem is with the KCD configuration that enables SSO.
+Next, open a browser and try again to access the application. You should be prompted for authentication and be able to sign in the application. If you can authenticate, the problem is with the KCD configuration that enables SSO.
 
 If you continue to see the error, go to the computer where the connector is installed, open a browser, and attempt to reach the internal URL that's used for the application. The connector acts like another client from the same computer. If you can't reach the application, investigate why that machine can't reach the application, or use a connector on a server that can access the application.
 
