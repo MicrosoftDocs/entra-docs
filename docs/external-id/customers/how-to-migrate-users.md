@@ -20,16 +20,16 @@ In this guide, you learn the fundamentals of how to migrate users and credential
 Before you start migrating users to External ID, you will need:
 
 - An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Preparation: Directory cleanup
 
 Before starting your user migration process, you should take the time to clean up data in your legacy identity provider directory. Doing this helps ensure that you only migrate the data you need and makes the migration process smoother.
 
-- Identify the set of user attributes to be stored in External ID, and migrate only what you need. If necessary, you can create custom attributes within External ID to store more data about a user.
-- If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in External ID.
-- If multiple applications have different usernames, you can store all of them in an External ID user account by using the identities collection. For the password, let the user choose one and set it in the directory. Only the chosen password should be stored in the External ID account.
+- Identify the set of user attributes to be stored in External ID, and migrate only what you need. If necessary, you can [create custom attributes](concept-user-attributes.md) within External ID to store more data about a user.
+- If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in External ID. You may need to apply your own business logic to merge and reconcile accounts for the same user from different sources.
+- Usernames need to be unique per account in External. If multiple applications use different usernames, you will need to apply your own business logic to reconcile and merge accounts. For the password, let the user choose one and set it in the directory. Only the chosen password should be stored in the External ID account.
 - Remove unused user accounts, or don't migrate stale accounts.
 
 ## Stage 1: User Data Migration
@@ -37,7 +37,7 @@ Before starting your user migration process, you should take the time to clean u
 The first step in the migration process is to migrate user data from your legacy identity provider to External ID. This includes usernames and any other relevant attributes. To do this, you need to:
 
 1. Read the user accounts from your legacy identity provider. 
-1. Create the corresponding user accounts in your External ID directory.
+1. Create the corresponding user accounts in your External ID directory. For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c&preserve-view=true). 
 1. If you have access to users' plaintext passwords, you can set them directly on the new accounts as you are migrating user data. If you don't have access to the plaintext passwords, you should set a random password for now that will be updated later as part of the password migration process. 
 
 Not all information in your legacy identity provider needs to be migrated to your External ID directory. The following recommendations can help you determine the appropriate set of user attributes to store in External ID.
@@ -52,8 +52,6 @@ Not all information in your legacy identity provider needs to be migrated to you
 - Sensitive data like credit card numbers, social security numbers (SSN), medical records, or other data regulated by government or industry compliance bodies.
 - Marketing or communication preferences, user behaviors, and insights.
 
-For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c&preserve-view=true).  
-
 ## Stage 2: Password Migration
 
 Once you have migrated user data, you need to migrate user passwords from the legacy identity provider to External ID. There are two recommended approaches for migrating user passwords: self-service password reset (SSPR) and seamless migration. If plaintext user passwords aren't accessible you'll need to use one of these methods. For example, if: 
@@ -66,7 +64,7 @@ Once you have migrated user data, you need to migrate user passwords from the le
 
 Using the Self Service Password Reset (SSPR) feature in External ID customers can manually set their password the first time they log in to the new system. This approach is simple to implement and doesn't require any custom code.  However, it does require users to reset their passwords manually, which may be inconvenient for some users.
 
-To use this approach, you first need to set up [SSPR](how-to-enable-password-reset-customers.md) in your External ID tenant and configure the password reset policies. You then need to provide user with instructions on how to reset their passwords using SSPR when they log in for the first time.
+To use this approach, you first need to set up [SSPR](how-to-enable-password-reset-customers.md) in your External ID tenant and configure the password reset policies. You then need to provide users with instructions on how to reset their passwords using SSPR when they log in for the first time. For example, you can send an email to users with a link to the password reset page and instructions on how to reset their passwords or add instructions in your app before the user navigates to the sign in flow.
 
 ### Seamless migration
 
