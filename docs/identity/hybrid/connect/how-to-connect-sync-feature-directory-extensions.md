@@ -65,12 +65,19 @@ The format of extended attributes is `extension_{ApplicationId}_<attributeName>`
 
 ### Using the Microsoft Graph API
 
-
 These attributes are available through Microsoft Graph API, by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer#).
 
 In the Microsoft Graph API, you need to ask for the attributes to be returned. Explicitly select the attributes like this: 
 
 `https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division`
+
+### Using the Microsoft Graph PowerShell SDK
+
+a
+
+### Using the Microsoft Entra PowerShell
+
+a
 
 For more information, see [Microsoft Graph: Use query parameters](/graph/query-parameters#select-parameter).
 
