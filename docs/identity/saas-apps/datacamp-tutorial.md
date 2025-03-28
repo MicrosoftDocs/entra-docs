@@ -94,9 +94,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![image](common/default-attributes.png)
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/certificateraw.png)
+	![The Certificate download link](common/certificatebase64.png)
 
 1. On the **Set up DataCamp** section, copy the appropriate URL(s) based on your requirement.
 
@@ -108,7 +108,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure DataCamp SSO
 
-To configure single sign-on on **DataCamp** side, you need to send the downloaded **Certificate (Raw)** and appropriate copied URLs from the application configuration to [DataCamp support team](https://support.datacamp.com/hc/en-us). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **DataCamp** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [DataCamp support team](https://support.datacamp.com/hc/en-us). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create DataCamp test user
 
