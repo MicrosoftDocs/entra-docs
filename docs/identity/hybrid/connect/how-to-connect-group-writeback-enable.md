@@ -17,7 +17,7 @@ ms.author: billmath
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-Group writeback is a feature that allows you to write cloud groups back to your on-premises Active Directory instance by using Microsoft Entra Connect Sync. Group writeback V2 using Microsoft Entra Connect has been deprecated. Group writeback V1 using Microsoft Entra Connect still functions and should be used if you are synchronizing Microsoft 365 groups. This version of group writeback is being replaces with Microsoft Entra Connect Cloud Sync group provisioning to Active Directory. However, the V1 functionality will continue to work until Microsoft Entra Connect cloud sync supports synchronizing Microsoft 365 groups.
+Group writeback is a feature that allows you to write cloud groups back to your on-premises Active Directory instance by using Microsoft Entra Connect Sync. Group writeback V2 using Microsoft Entra Connect has been deprecated. Group writeback V1 using Microsoft Entra Connect still functions and should be used if you are synchronizing Microsoft 365 groups. This version of group writeback is being replaced with [Microsoft Entra Connect Cloud Sync group provisioning to Active Directory](../group-writeback-cloud-sync.md). However, the V1 functionality will continue to work until Microsoft Entra Connect cloud sync supports synchronizing Microsoft 365 groups.
 
 This article provides information and walks you through enabling group writeback V1. 
 
@@ -34,7 +34,7 @@ The following pre-requisites must be met in order to enable group writeback.
 
 The following information should be taken into consideration when using group writeback V1 with Microsoft Entra Connect Sync:
 - Microsoft 365 groups with up to 250,000 members can be written back to on-premises. 
-- If you don't want to writeback all existing Microsoft 365 groups to Active Directory, you need to make changes to group writeback default behaviour before performing the steps in this article to enable the feature. See [Modify Microsoft 365 groups](#modifying-default-behavior-for-microsoft-365-groups).
+- If you don't want to writeback all existing Microsoft 365 groups to Active Directory, you need to make changes to group writeback default behavior before performing the steps in this article to enable the feature. See [Modify Microsoft 365 groups](#modifying-default-behavior-for-microsoft-365-groups).
 
 ## Enable group writeback
 
@@ -46,9 +46,24 @@ To enable group writeback, use the following steps:
 4. On the **Optional features** page, verify that the options you previously configured are still selected.
 5. Select **Group writeback** and then click **Next**.
 6. On the **Writeback page**, select an Active Directory organizational unit (OU) to store objects that are synchronized from Microsoft 365 to your on-premises organization, and then click **Next**.
-7. On the **Ready** to configure page, click **Configure**.
-8. When the wizard is complete, click **Exit** on the Configuration complete page.
-9. Open the Windows PowerShell as an Administrator on the Microsoft Entra Connect server, and run the following commands.
+7. To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, there's an option to write back the group distinguished name by using the cloud display name: 
+
+- Default format: 
+`CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271, OU=WritebackContainer, DC=domain, DC=com`  
+
+- New format: 
+`CN=Administrators_e9305786a271, OU=WritebackContainer, DC=domain, DC=com`  
+
+When you're configuring group writeback, a checkbox appears at the bottom of the configuration window. Select it to enable this feature. 
+
+> [!NOTE]
+> Groups being written back from Microsoft Entra ID to Active Directory will have a source of authority in the cloud. Any changes made on-premises to groups that are written back from Microsoft Entra ID will be overwritten in the next sync cycle. 
+
+:::image type="content" source="media/how-to-connect-group-writeback/optional-group-writeback-1.png" alt-text="Screenshot showing how to enable the using the cloud display name." lightbox="media/how-to-connect-group-writeback/optional-group-writeback-1.png":::
+
+8. On the **Ready** to configure page, click **Configure**.
+9. When the wizard is complete, click **Exit** on the Configuration complete page.
+10. Open the Windows PowerShell as an Administrator on the Microsoft Entra Connect server, and run the following commands.
 
 ```powershell
 $AzureADConnectSWritebackAccountDN = <MSOL_ account DN>
@@ -107,21 +122,6 @@ Because the default sync rule that limits the group size is created when group w
 
 > [!NOTE] 
 > Disabling the synchronization rule will set the flag for full synchronization to `true` on the Microsoft Entra connector. This change will cause the rule changes to propagate through on the next synchronization cycle. 
-
-## Optional configuration 
-
-To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, there's an option to write back the group distinguished name by using the cloud display name: 
-
-- Default format: 
-`CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271, OU=WritebackContainer, DC=domain, DC=com`  
-
-- New format: 
-`CN=Administrators_e9305786a271, OU=WritebackContainer, DC=domain, DC=com`  
-
-When you're configuring group writeback, a checkbox appears at the bottom of the configuration window. Select it to enable this feature. 
-
-> [!NOTE]
-> Groups being written back from Microsoft Entra ID to Active Directory will have a source of authority in the cloud. Any changes made on-premises to groups that are written back from Microsoft Entra ID will be overwritten in the next sync cycle. 
 
 ## Next steps 
 
