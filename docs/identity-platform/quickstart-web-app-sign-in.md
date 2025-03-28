@@ -31,9 +31,9 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 
 #### [Node](#tab/node-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com). Choose an identifiable name (for example *identity-client-app*) configure it for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md). Ensure that you record the following details for later use: 
+  * Application (client) ID 
+  * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
   * **Redirect URI**: `http://localhost:3000/auth/redirect`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
@@ -43,9 +43,9 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com). Choose an identifiable name (for example *identity-client-app*) configure it for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md). Ensure that you record the following details for later use: 
+  * Application (client) ID 
+  * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
@@ -57,10 +57,10 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 
 #### [Python Flask](#tab/python-flask-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Web
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com). Choose an identifiable name (for example *identity-client-app*) configure it for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md). Ensure that you record the following details for later use: 
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
   * **Redirect URI**: `http://localhost:5000/getAToken`
 * [Python 3 +](https://www.python.org/downloads/)
 * Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
