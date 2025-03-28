@@ -34,7 +34,7 @@ This article makes the following assumptions:
 
 The following list describes foundational considerations for KCD configuration and use with Microsoft Entra application proxy:
 
-- Simple misconfigurations or general mistakes cause most issues. Before you begin to troubleshoot, check all prerequisites in [Use KCD SSO with application proxy](how-to-configure-sso-with-kcd.md).
+- Basic misconfigurations or general mistakes cause most issues. Before you begin to troubleshoot, check all prerequisites in [Use KCD SSO with application proxy](how-to-configure-sso-with-kcd.md).
 
 - Connector hosts aren't restricted to communicate with only a specific local site domain controller (DC). Check the DC you use because it might change.
 
@@ -44,7 +44,7 @@ The following list describes foundational considerations for KCD configuration a
 
 - Test delegation in a simple scenario. The more variables you introduce in a scenario, the more complex configuration and troubleshooting is. To save time, limit your testing to a single connector. Add more connectors after the issue is resolved.
 
-- Some environmental factors might also contribute to the cause of an issue. To avoid these factors, minimize architecture as much as possible during testing. For example, misconfigured internal firewall access control lists (ACLs) are common. If possible, send all traffic from a connector directly to the DCs and back-end application.
+- Environmental factors might contribute to the cause of an issue. To avoid these factors, minimize architecture as much as possible during testing. For example, misconfigured internal firewall access control lists (ACLs) are common. If possible, send all traffic from a connector directly to the DCs and back-end application.
 
 - The best place to position connectors is as close as possible to their targets. A firewall that sits inline when you test adds unnecessary complexity and can prolong your investigations.
 
@@ -70,7 +70,7 @@ You can troubleshoot KCD problems in three stages. Check these parts of the KCD 
 
 Test client preauthentication first, and resolve any issues. The preauthentication stage isn't related to KCD or to the published application. It's easy to correct any discrepancies by checking that the subject account exists in Microsoft Entra ID. Check that the application isn't unavailable or blocked. The error response in the browser typically is descriptive enough to explain the cause.
 
-### Delegation service
+### The delegation service
 
 The Kerberos delegation service is the private network connector that gets a Kerberos service ticket from a Kerberos Key Distribution Center (KDC). The app user authenticates with the application via the ticket.
 
@@ -92,7 +92,7 @@ To troubleshoot a constrained delegation issue:
 
 If ticketing is working correctly, the logs likely show an event that indicates authentication failed because the application returned a 401 error. This event indicates that the target application rejected the ticket. Go to the next stage of troubleshooting.
 
-### Target application
+### The application
 
 The target application consumes the Kerberos ticket that the connector provides. At this stage, it's expected that the connector sent a Kerberos service ticket to the back end. The ticket is a header in the first application request.
 

@@ -11,15 +11,15 @@ ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
-# Troubleshoot application proxy problems and error messages
+# Troubleshoot application proxy issues and errors
 
-This article describes steps to troubleshoot issues and error messages in Microsoft Entra application proxy.
+This article describes steps you can take to troubleshoot issues and error messages in Microsoft Entra application proxy.
 
 ## Before you begin
 
-The first thing to check is the connector. To learn how to debug a private network connector, see [Debug private network connector issues](application-proxy-debug-connectors.md). If you're still having issues, return to this article to troubleshoot the application.  
+The first thing to check is the connector. To learn how to debug a private network connector, see [Debug private network connector issues](application-proxy-debug-connectors.md). If you still have issues connecting to your application, return to this article to troubleshoot the application.  
 
-If errors occur in accessing a published application or in publishing applications, check the following options to see if Microsoft Entra application proxy is working correctly:
+If an error occurs when a user accesses a published application or when you publish an application, check the following options to see if Microsoft Entra application proxy is working correctly:
 
 * Open the Windows Services console. Verify that the **Microsoft Entra private network connector** service is enabled and running. Look at the application proxy service properties page.
 
@@ -27,7 +27,11 @@ If errors occur in accessing a published application or in publishing applicatio
 * Open Event Viewer. Go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector** > **Admin** and check for private network connector events.
 * Review detailed logs. Learn how to [turn on private network connector session logs](application-proxy-connectors.md#under-the-hood).
 
-## App doesn't render correctly
+## Application configuration errors
+
+Review the following sections for common configuration issues and suggested resolutions.
+
+### App doesn't render correctly
 
 You have problems with your application rendering or it functions incorrectly, but no specific error message appears.
 
@@ -45,36 +49,36 @@ Verify that the missing resources caused the issue:
 
 A 404 error indicates that pages can't be found and that you need to publish them.
 
-## App takes too long to load
+### App takes too long to load
 
 Applications can be functional but have a long latency.
 
 You can make changes to your network topology to improve the application speed. Review [network considerations](application-proxy-network-topology.md).
 
-## Problem publishing as a single application
+### Problem publishing as a single application
 
 If you can't publish all resources in the same application, publish multiple applications and set up links between them. For this scenario, we recommend that you use [custom domains](how-to-configure-custom-domain.md). However, this solution requires that you own the certificate for your domain and that your applications use fully qualified domain names (FQDNs). For other options, [troubleshoot broken links](application-proxy-page-links-broken-problem.md).
 
-## Problem setting up connectivity for an app
+### Problem setting up connectivity for an app
 
 For causes and suggested resolutions, see [Ports to open for an application proxy application](application-proxy-add-on-premises-application.md).
 
-## Problem configuring the Microsoft Entra application proxy in the admin portal
+### Problem configuring the Microsoft Entra application proxy in the admin portal
 
 For causes and suggested resolutions, see [Single sign-on in an application proxy application](how-to-configure-sso.md).
 
-## Problem setting back-end authentication to the application
+### Problem setting back-end authentication to the application
 
 For causes and suggested resolutions, see these articles:
 
 * [Troubleshoot Kerberos constrained delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
 * [Single sign-on by using application proxy and PingAccess](application-proxy-ping-access-publishing-guide.md).
 
-## Can't sign in to the application
+### Can't sign in to the application
 
 If you see the error `This corporate app can’t be accessed` and you can't sign in to your application, a configuration error occurred. For suggested resolutions, see [Troubleshoot bad gateway time-out errors](application-proxy-sign-in-bad-gateway-timeout-error.md).
 
-## Private network connector errors
+### Private network connector errors
 
 For causes and suggested resolutions, see [Install the private network connector](application-proxy-connector-installation-problem.md).
 
