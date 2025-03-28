@@ -28,7 +28,9 @@ This article helps you keep track of the versions that have released and the cha
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
-You can download the latest version of Microsoft Entra Connect 2.x from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest release](reference-connect-version-history.md#21200).
+You can download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under **Manage**.
+
+Or, you can download the latest version of Microsoft Entra Connect 2.x from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest release](reference-connect-version-history.md#21200).
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
@@ -63,7 +65,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
-|[2.4.129.0](#241290)||
+|[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
+|[2.4.131.0](#241310)||
 
 **All other versions are not supported**
 
@@ -86,6 +89,19 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+
+## 2.4.131.0
+
+### Release status
+
+03/27/2025: Released for download and auto upgrade.
+
+>[!NOTE]
+>Auto upgrade will run from the release date until 15 April 2025. If your environment is not upgraded by then, it means the auto upgrade attempt failed and you will need to perform a [manual upgrade](how-to-upgrade-previous-version.md). You can check the [Application event logs](how-to-connect-install-automatic-upgrade.md#troubleshooting) for reasons for the failure of the auto upgrade.
+
+### Updated Features
+- Removed the pre-requisite check for the SchUseStrongCrypto registry key being enabled. This version uses .NET 4.7.2 which uses strong cryptography by default.
 
 ## 2.4.129.0
 

@@ -88,6 +88,9 @@ To make sure that authentication methods are correct when they're needed to rese
 
 Valid values to prompt a user to confirm their registered methods are from *0* to *730* days. Setting this value to *0* means that users are never asked to confirm their authentication information. When using the combined registration experience users will be required to confirm their identity before reconfirming their information.
 
+> [!NOTE]
+> If SSPR has more than one auth method requirement, a user has completed the SSPR registration once and then deletes one of the factor later. users will not be prompted for Forced registration interrupt mode until they reach the attestation period set at "Number of days before users are asked to re-confirm their authentication information".
+
 ## Authentication methods
 
 When a user is enabled for SSPR, they must register at least one authentication method. We highly recommend that you choose two or more authentication methods so that your users have more flexibility in case they're unable to access one method when they need it. For more information, see [What are authentication methods?](concept-authentication-methods.md).
