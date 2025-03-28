@@ -17,11 +17,12 @@ ms.author: billmath
 ---
 
 # Microsoft Entra Connect Sync: Directory extensions
-You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. These attributes can be consumed through [extensions](/graph/extensibility-overview). You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/overview) or [Microsoft Entra PowerShell](/powershell/entra-powershell/overview). At present, no Microsoft 365 workload consumes these attributes, but you can use this feature with dynamic group memberships in Microsoft Entra ID.
+You can use directory extensions to extend the schema in Microsoft Entra ID with your own attributes from on-premises Active Directory. This feature enables you to build LOB apps by consuming attributes that you continue to manage on-premises. These attributes can be consumed through [extensions](/graph/extensibility-overview). You can see the available attributes by using [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/overview) or [Microsoft Entra PowerShell](/powershell/entra-powershell/overview). 
+Currently, no Microsoft 365 workload consumes these attributes, but you can use this feature with dynamic group memberships in Microsoft Entra ID.
 
 ## Select which attributes to synchronize with Microsoft Entra ID
 
-You configure which additional attributes you want to synchronize using Microsoft Entra Connect configuration wizard, in the custom settings.
+You configure which extended attributes you want to synchronize using Microsoft Entra Connect configuration wizard, in the custom settings.
 
 ![Schema extension wizard](./media/how-to-connect-sync-feature-directory-extensions/extension2.png)  
 
@@ -33,17 +34,17 @@ The wizard shows the attributes that are valid candidates to be used with Direct
 
 ## Important considerations when using Directory Extensions
 
-- <a name='configuration-changes-in-azure-ad-made-by-the-wizard'></a>The list of attributes is read from the Active Directory schema during initial installation of Microsoft Entra Connect. If you have extended the Active Directory schema with additional attributes, you must [refresh the schema](how-to-connect-installation-wizard.md#refresh-directory-schema) before these new attributes are visible.
+- <a name='configuration-changes-in-azure-ad-made-by-the-wizard'></a>The list of attributes is read from the Active Directory schema during initial installation of Microsoft Entra Connect. If you extend the Active Directory schema with more custom attributes, you must [refresh the schema](how-to-connect-installation-wizard.md#refresh-directory-schema) before these new attributes are visible.
 
-- If you have exported a configuration that contains a custom rule used to synchronize directory extension attributes and you attempt to import this rule into a new or existing installation of Microsoft Entra Connect, the rule will be created during import, but the directory extension attributes won't be mapped.  You'll need to re-select the directory extension attributes and re-associate them with the rule or recreate the rule entirely to fix this.
+- If you exported a configuration that contains a custom rule used to synchronize directory extension attributes and you attempt to import this rule into a new or existing installation of Microsoft Entra Connect, the rule is created during import, but the directory extension attributes won't be mapped.  You need to re-select the directory extension attributes and re-associate them with the rule or recreate the rule entirely to fix this.
 
-- Not all features in Microsoft Entra ID support multi-valued extension attributes. Please refer to the documentation of the feature in which you plan to use these attributes to confirm they're supported. 
+- Not all features in Microsoft Entra ID support multi-valued extension attributes. Refer to the documentation of the feature in which you plan to use these attributes to confirm they're supported. 
 
 - An object in Microsoft Entra ID can have up to 100 attributes for directory extensions. The maximum length is 250 characters. If an attribute value is longer, the sync engine truncates it.
 
 - It's not supported to sync constructed attributes, such as msDS-UserPasswordExpiryTimeComputed. If you upgrade from an old version of Microsoft Entra Connect you may still see these attributes show up in the installation wizard, you shouldn't enable them as its value won't sync to Microsoft Entra ID. [Learn mode](/openspecs/windows_protocols/ms-adts/a3aff238-5f0e-4eec-8598-0a59c30ecd56).
 
-- It's not supported to sync non-replicated attributes, such as badPwdCount, Last-Logon, and Last-Logoff, as their values won't be synced to Microsoft Entra ID.
+- It's not supported to sync non-replicated attributes, such as badPwdCount, Last-Logon, and Last-Logoff, as their values don't sync to Microsoft Entra ID.
 
 - It's not supported to manage on-premises Directory Extensions outside of Microsoft Entra Connect wizard. Manually editing or cloning the sync rules for Directory Extensions can cause synchronization issues.
 
@@ -57,11 +58,11 @@ During installation of Microsoft Entra Connect, an application is registered whe
 
 > [!NOTE]
 > The **Tenant Schema Extension App** is a system-only application that can't be deleted. 
-> Deleting the Service Principal associated with **Tenant Schema Extension App** will break the synchronization. To recover Directory Extensions synchronization, restore the soft-deleted Service Principal or re-create a new one.
+> Deleting the Service Principal associated with **Tenant Schema Extension App** breaks the synchronization. To recover Directory Extensions synchronization, restore the soft-deleted Service Principal or re-create a new one.
 
 ## Viewing extended attributes in Microsoft Entra ID
 
-The format of extended attributes is `extension_{ApplicationId}_<attributeName>`, where ApplicationId is the application identifier of your *Tenant Schema Extension App*. You'll need this value for all other scenarios in this topic.
+The format of extended attributes is `extension_{ApplicationId}_<attributeName>`, where ApplicationId is the application identifier of your *Tenant Schema Extension App*. You need this value for all other scenarios in this topic.
 
 ### Using the Microsoft Graph API
 
@@ -119,7 +120,7 @@ One of the most useful scenarios is to use extension attributes in dynamic secur
 
       ![Screenshot with a new group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup1.png)
 
-1. Select to **Add dynamic query**. If you look at the properties, then you'll not see these extended attributes. You need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
+1. Select to **Add dynamic query**. When you look at the properties, these extended attributes are missing because you need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
 
    ![Screenshot where directory extensions have been added](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup2.png) 
    
@@ -127,11 +128,11 @@ One of the most useful scenarios is to use extension attributes in dynamic secur
 
    ![Screenshot with new attributes showing up in the UI](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup3.png)
    
-1. Complete the expression to suit your requirements. In our example, the rule is set to:
+1. To suit your requirements, complete the expression. In our example, the rule is set to:
 
     `(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")`
 
-1. After the group has been created, give Microsoft Entra some time to populate the members and then review the members.
+1. After the group is created, give Microsoft Entra some time to populate the members and then review the members.
 
    ![Screenshot with members in the dynamic group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup4.png)  
    
