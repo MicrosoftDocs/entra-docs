@@ -85,7 +85,7 @@ For AWS and GCP, delete the application created in the Microsoft Entra Admin Cen
 To find the Enterprise Application created which was used to set up OIDC connection to your AWS and GCP environments, follow the below steps: 
 
 > [!NOTE] 
-> User must have the [Permissions Management Administrator](../role-based-access-control/permissions-reference.md) and [Cloud Application Administrator](../role-based-access-control/permissions-reference.md) role assignments to perform this task. 
+> User must have the [Permissions Management Administrator](/entra-docs-pr/docs/identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) and [Cloud Application Administrator](/entra-docs-pr/docs/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role assignments to perform this task. 
 
 1. Go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
 1. Launch the **Microsoft Entra Permissions Management portal**.
@@ -106,7 +106,7 @@ To find the Enterprise Application created which was used to set up OIDC connect
 Stop collecting data for your list of accounts / subscriptions / projects by deleting the associated data collectors. 
 
 > [!NOTE]
-> User must have the *Permissions Management Administrator* role assignment to perform this task.
+> User must have the [Permissions Management Administrator](/entra-docs-pr/docs/identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) role assignment to perform this task.
 
 1. Go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
 1. Select **Microsoft Entra Permissions Management** and click on **launch portal**. 
