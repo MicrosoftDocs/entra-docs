@@ -41,7 +41,7 @@ Common task parameters are the non-unique parameters contained in every task. Wh
 
 ## Common email task parameters
 
-Along with all of the basic task parameters, under **Basics** email tasks also include the ability to configure who are the recipient of the email:
+Along with all of the basic task parameters, under **Basics** email tasks also include the ability to configure who are the recipients of the email:
 
 :::image type="content" source="media/lifecycle-workflow-task/email-tasks-basics.png" alt-text="Screenshot of basics email task customization.":::
 
