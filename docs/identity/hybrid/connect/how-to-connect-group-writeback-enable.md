@@ -96,7 +96,7 @@ To disable Group Writeback, use the following steps:
  > [!NOTE]
  > Disabling Group Writeback will set the Full Import and Full Synchronization flags to 'true' on the Azure Active Directory Connector, causing the rule changes to propagate through on the next synchronization cycle, deleting the groups that were previously written back to your Active Directory.
 
- ## Modify default behavior for Microsoft 365 groups
+ ## Modifying default behavior for Microsoft 365 groups
 The following sections will provide guidance on how to modify the default behavior for Microsoft 365 groups.
 
 
