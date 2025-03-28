@@ -61,6 +61,8 @@ items:
         href: how-to-install-android-client.md
       - name: Install the iOS client
         href: how-to-install-ios-client.md
+      - name: EDR/antivirus coexistence with Global Secure Access client
+        href: concept-edr-antivirus-coexistence.md
   - name: Remote networks
     expanded: false
     items:
