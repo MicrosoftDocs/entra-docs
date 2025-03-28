@@ -80,32 +80,26 @@ For more information, see [Microsoft Graph: Use query parameters](/graph/query-p
 
 1. Get the **Tenant Schema Extension App** application:
 
-
 ```powershell
 Get-MgApplication -Filter "DisplayName eq 'Tenant Schema Extension App'"
 ```
 
-1. List all extension attributes using the **Tenant Schema Extension App** identifier:
-
+2. List all extension attributes using the **Tenant Schema Extension App** identifier:
 
 ```powershell
-
 $extensionsApp = Get-MgApplication -Filter "DisplayName eq 'Tenant Schema Extension App'"
 Get-MgApplicationExtensionProperty -ApplicationId $extensionsApp.Id -All
-
 ```
 
 ### Using the Microsoft Entra PowerShell
 
 1. Get the **Tenant Schema Extension App** application identifier:
 
-
 ```powershell
 Get-EntraApplication -SearchString "Tenant Schema Extension App"
 ```
 
-1. List all extension attributes for **Tenant Schema Extension App** application:
-
+2. List all extension attributes for **Tenant Schema Extension App** application:
 
 ```powershell
 
@@ -120,19 +114,19 @@ One of the most useful scenarios is to use extension attributes in dynamic secur
 
       ![Screenshot with a new group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup1.png)
 
-1. Select to **Add dynamic query**. When you look at the properties, these extended attributes are missing because you need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
+2. Select to **Add dynamic query**. When you look at the properties, these extended attributes are missing because you need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
 
    ![Screenshot where directory extensions have been added](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup2.png) 
    
-1. Open the property drop-down and note that the attributes you added are now visible.
+3. Open the property drop-down and note that the attributes you added are now visible.
 
    ![Screenshot with new attributes showing up in the UI](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup3.png)
    
-1. To suit your requirements, complete the expression. In our example, the rule is set to:
+4. To suit your requirements, complete the expression. In our example, the rule is set to:
 
     `(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")`
 
-1. After the group is created, give Microsoft Entra some time to populate the members and then review the members.
+5. After the group is created, give Microsoft Entra some time to populate the members and then review the members.
 
    ![Screenshot with members in the dynamic group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup4.png)  
    
