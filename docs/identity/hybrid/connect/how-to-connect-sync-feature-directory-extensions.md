@@ -69,26 +69,56 @@ These attributes are available through Microsoft Graph API, by using [Microsoft 
 
 In the Microsoft Graph API, you need to ask for the attributes to be returned. Explicitly select the attributes like this: 
 
-`https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division`
+```
+https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division
+```
+  
+For more information, see [Microsoft Graph: Use query parameters](/graph/query-parameters#select-parameter).
 
 ### Using the Microsoft Graph PowerShell SDK
 
-a
+1. Get the **Tenant Schema Extension App** application:
+
+
+```powershell
+Get-MgApplication -Filter "DisplayName eq 'Tenant Schema Extension App'"
+```
+
+1. List all extension attributes using the **Tenant Schema Extension App** identifier:
+
+
+```powershell
+
+$extensionsApp = Get-MgApplication -Filter "DisplayName eq 'Tenant Schema Extension App'"
+Get-MgApplicationExtensionProperty -ApplicationId $extensionsApp.Id -All
+
+```
 
 ### Using the Microsoft Entra PowerShell
 
-a
+1. Get the **Tenant Schema Extension App** application identifier:
 
-For more information, see [Microsoft Graph: Use query parameters](/graph/query-parameters#select-parameter).
+
+```powershell
+Get-EntraApplication -SearchString "Tenant Schema Extension App"
+```
+
+1. List all extension attributes for **Tenant Schema Extension App** application:
+
+
+```powershell
+
+Get-EntraExtensionProperty | Where-Object {$_.AppDisplayName -eq 'Tenant Schema Extension App'}
+```
 
 ## Use the attributes in dynamic membership groups
 
-One of the more useful scenarios is to use these attributes in dynamic security or Microsoft 365 groups.
+One of the most useful scenarios is to use extension attributes in dynamic security or Microsoft 365 groups.
 
-1. Create a new group in Microsoft Entra ID. Give it a good name and make sure the **Membership type** is **Dynamic User**.
+1. Create a new group in Microsoft Entra ID. Give it a name and make sure the **Membership type** is **Dynamic User**.
 
-   ![Screenshot with a new group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup1.png)
-   
+      ![Screenshot with a new group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup1.png)
+
 1. Select to **Add dynamic query**. If you look at the properties, then you'll not see these extended attributes. You need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
 
    ![Screenshot where directory extensions have been added](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup2.png) 
@@ -97,7 +127,9 @@ One of the more useful scenarios is to use these attributes in dynamic security 
 
    ![Screenshot with new attributes showing up in the UI](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup3.png)
    
-         Complete the expression to suit your requirements. In our example, the rule is set to **(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")**.
+1. Complete the expression to suit your requirements. In our example, the rule is set to:
+
+    `(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")`
 
 1. After the group has been created, give Microsoft Entra some time to populate the members and then review the members.
 
