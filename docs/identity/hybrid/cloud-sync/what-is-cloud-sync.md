@@ -59,7 +59,7 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Support for group objects |● |● |
 | Support for contact objects |● |● |
 | Support for device objects |● | |
-| Support for [Hybrid Device Join](../../devices/hybrid-join-plan) |● | |
+| Support for [Hybrid Device Join](../../devices/hybrid-join-plan.md) |● | |
 | Allow basic customization for attribute flows |● |● |
 | Synchronize Exchange online attributes |● |● |
 | Synchronize extension attributes 1-15 |● |● |
