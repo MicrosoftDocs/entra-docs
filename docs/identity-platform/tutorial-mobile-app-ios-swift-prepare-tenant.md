@@ -17,6 +17,8 @@ zone_pivot_groups: entra-tenants
 
 # Tutorial: Register and configure iOS (Swift) mobile app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 ::: zone pivot="workforce"
 
 This tutorial series demonstrates how to build an iOS or macOS app that integrates with the Microsoft identity platform to sign users and get an access token to call the Microsoft Graph API.

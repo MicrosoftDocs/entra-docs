@@ -14,6 +14,8 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample web app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 ::: zone pivot="workforce"
 
 In this quickstart, you use a sample web app to show you how to sign in users and call Microsoft Graph API in your workforce tenant. The sample app uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.

@@ -1,10 +1,10 @@
 ---
 title: Cross-tenant access overview
-description: Get an overview of cross-tenant access in Microsoft Entra External ID. Learn how to manage your B2B collaboration with other Microsoft Entra organizations through this overview of cross-tenant access settings.
+description: Learn how to manage cross-tenant access in Microsoft Entra External ID. Configure B2B collaboration and direct connect settings to control access and trust for external organizations.
  
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 08/20/2024
+ms.date: 03/28/2025
 
 ms.author: cmulligan
 author: csmulligan
@@ -24,14 +24,14 @@ Microsoft Entra organizations can use External ID cross-tenant access settings t
 This article covers cross-tenant access settings for managing B2B collaboration and B2B direct connect with external Microsoft Entra organizations, including across Microsoft clouds. Other settings are available for B2B collaboration with non-Microsoft Entra identities (for example, social identities or non-IT managed external accounts). These [external collaboration settings](external-collaboration-settings-configure.md) include options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
 
 There are no limits to the number of organizations you can add in cross-tenant access settings.
- 
+
 ## Manage external access with inbound and outbound settings
 
 The external identities cross-tenant access settings manage how you collaborate with other Microsoft Entra organizations. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. 
 
 The following diagram shows the cross-tenant access inbound and outbound settings. The **Resource Microsoft Entra tenant** is the tenant containing the resources to be shared. For B2B collaboration, the resource tenant is the inviting tenant (for example, your corporate tenant, where you want to invite the external users). The **User's home Microsoft Entra tenant** is the tenant where the external users are managed.
 
-:::image type="content" source="media/cross-tenant-access-overview/cross-tenant-access-settings-overview.png" alt-text="Overview diagram of cross-tenant access settings.":::
+:::image type="content" source="media/cross-tenant-access-overview/cross-tenant-access-settings-overview.png" alt-text="Screenshot of a diagram showing cross-tenant access settings for inbound and outbound collaboration.":::
 
 By default, B2B collaboration with other Microsoft Entra organizations is enabled, and B2B direct connect is blocked. But the following comprehensive admin settings let you manage both of these features.
 
@@ -98,7 +98,7 @@ When using this feature, consider the following known limitations:
 
 ### Direct federation for Microsoft Entra ID verified domains
 
-SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra.
+SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in another Microsoft Entra tenant
 
 > [!NOTE]
 > Ensure that the domain is not verified in the same tenant in which you are trying to set up the Direct federation configuration.
