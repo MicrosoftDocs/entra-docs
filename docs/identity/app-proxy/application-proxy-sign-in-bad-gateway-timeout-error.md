@@ -21,7 +21,7 @@ When you see this error, find the status code on the error page. The status code
 - **Bad gateway**: The connector can't reach the back-end application. The error might indicate a misconfiguration of the application.
 - **Forbidden**: The user isn't authorized to access the application. The error might occur when the user isn't assigned to the application in Microsoft Entra ID. The error can also happen if the user doesn't have permissions to access the application on the back end.
 
-To find the code, look at the text at the bottom left of the error message for the `Status Code` field.
+To find the error code, look at the text at the bottom-left corner of the error message under `Status Code`.
 
 ![Screenshot that shows an example of a gateway time-out error.](./media/application-proxy-sign-in-bad-gateway-timeout-error/connection-problem.png)
 
