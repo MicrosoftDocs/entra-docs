@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Kisi Physical Security so that I can streamline the user management process and ensure that users have the appropriate access to Kisi Physical Security.
@@ -23,7 +23,7 @@ This article describes the steps you need to do in both Kisi Physical Security a
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Kisi Physical Security.
-> * Remove users in Kisi Physical Security when they do not require access anymore.
+> * Remove users in Kisi Physical Security when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Kisi Physical Security.
 > * Provision groups and group memberships in Kisi Physical Security.
 > * [Single sign-on](kisi-physical-security-tutorial.md) to Kisi Physical Security(recommended).
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Kisi Physical Security](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-kisi-physical-security-to-support-provisioning-with-azure-ad'></a>
@@ -49,9 +49,9 @@ The scenario outlined in this article assumes that you already have the followin
 
 * Sign in to your Kisi Organization account
 
-* Under Organization Setup, click on SSO & SCIM
+* Under Organization Setup, select SSO & SCIM
 
-* Toggle On Enable SCIM and click on Generate Token
+* Toggle On Enable SCIM and select Generate Token
 
 	![Secret Token](media/kisi-physical-security-provisioning-tutorial/kisi-create-secret-token.png)
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your Kisi Physical Security Tenant URL and Secret Token provided by Kisi Physical Security. Click **Test Connection** to ensure Microsoft Entra ID can connect to Kisi Physical Security. If the connection fails, contact Kisi Physical Security to check your account setup.
+1. In the **Admin Credentials** section, input your Kisi Physical Security Tenant URL and Secret Token provided by Kisi Physical Security. Select **Test Connection** to ensure Microsoft Entra ID can connect to Kisi Physical Security. If the connection fails, contact Kisi Physical Security to check your account setup.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Kisi Physical Security**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Kisi Physical Security in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Kisi Physical Security for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Kisi Physical Security API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Kisi Physical Security in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Kisi Physical Security for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Kisi Physical Security API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Kisi Physical Security|
    |---|---|---|---|
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

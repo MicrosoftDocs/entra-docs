@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both TerraTrue and Micro
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in TerraTrue.
-> * Remove users in TerraTrue when they do not require access anymore.
+> * Remove users in TerraTrue when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and TerraTrue.
 > * [Single sign-on](terratrue-tutorial.md) to TerraTrue.
 
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and TerraTrue](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-terratrue-to-support-provisioning-with-azure-ad'></a>
@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure TerraTrue to support provisioning with Microsoft Entra ID
 
 1. In TerraTrue, navigate to **Organization Settings > Authentication > SCIM** or visit `https://launch.terratrue.com/settings/auth/scim`.
-1. Next, enable the **“SCIM Configuration”** toggle and click **“Copy API Key”** to copy the SCIM API Key.
+1. Next, enable the **“SCIM Configuration”** toggle and select **“Copy API Key”** to copy the SCIM API Key.
 
 
 	![Generate Token](media/terratrue-provisioning-tutorial/generate-token.png)
@@ -53,7 +53,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add TerraTrue from the Microsoft Entra application gallery
 
-Add TerraTrue from the Microsoft Entra application gallery to start managing provisioning to TerraTrue. If you have previously setup TerraTrue for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add TerraTrue from the Microsoft Entra application gallery to start managing provisioning to TerraTrue. If you have previously setup TerraTrue for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -84,7 +84,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your TerraTrue Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to TerraTrue. If the connection fails, ensure your TerraTrue account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your TerraTrue Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to TerraTrue. If the connection fails, ensure your TerraTrue account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to TerraTrue**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to TerraTrue in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in TerraTrue for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the TerraTrue API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to TerraTrue in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in TerraTrue for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the TerraTrue API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by TerraTrue|
    |---|---|---|---|
@@ -116,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -129,7 +129,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 ## Troubleshooting and Tips
 Reach out to `hello@terratrue.com` for help ensuring that your provisioning is working correctly.
 
-TerraTrue provides a revision history of all changes to a user's account visible to any TerraTrue administrator at the link below. All user changes made as a result of SCIM provisioning will be shown with the Actor column being "Scim System User".
+TerraTrue provides a revision history of all changes to a user's account visible to any TerraTrue administrator at the link below. All user changes made as a result of SCIM provisioning is shown with the Actor column being "Scim System User".
 
 `https://launch.terratrue.com/settings/history`
 

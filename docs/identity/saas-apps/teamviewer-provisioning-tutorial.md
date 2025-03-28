@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both TeamViewer and Micr
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in TeamViewer
-> * Remove users in TeamViewer when they do not require access anymore
+> * Remove users in TeamViewer when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and TeamViewer
 > * [Single sign-on](./teamviewer-tutorial.md) to TeamViewer (recommended)
 
@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and TeamViewer](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-teamviewer-to-support-provisioning-with-azure-ad'></a>
@@ -48,10 +48,10 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure TeamViewer to support provisioning with Microsoft Entra ID
 
 1. Log in to [TeamViewer Management Console](https://login.teamviewer.com). Navigate to **Admin settings**.
-1. In the Authentication section, click **Apps and token**.
-1. Click Profile **settings**.
-1. Click **Add app or token**.
-1. Click **Create script token**.
+1. In the Authentication section, select **Apps and token**.
+1. Select Profile **settings**.
+1. Select **Add app or token**.
+1. Select **Create script token**.
 1. Enter a name for your API token and select the following options for the token.
 
 	### Account management
@@ -74,11 +74,11 @@ The scenario outlined in this article assumes that you already have the followin
 	* Edit user groups.
 	* Read user groups.
 
-1. Click Save, to create your script token.
+1. Select Save, to create your script token.
 
 ## Step 3: Add TeamViewer from the Microsoft Entra application gallery
 
-Add TeamViewer from the Microsoft Entra application gallery to start managing provisioning to TeamViewer. If you have previously setup TeamViewer for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add TeamViewer from the Microsoft Entra application gallery to start managing provisioning to TeamViewer. If you have previously setup TeamViewer for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, enter `https://webapi.teamviewer.com/scim/v2`  in the **Tenant URL** field and enter the script token created earlier in the **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to TeamViewer. If the connection fails, ensure your TeamViewer account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, enter `https://webapi.teamviewer.com/scim/v2`  in the **Tenant URL** field and enter the script token created earlier in the **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to TeamViewer. If the connection fails, ensure your TeamViewer account has Admin permissions and try again.
 
  	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/teamViewer-provisioning-tutorial/provisioning.png)
 
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to TeamViewer**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to TeamViewer in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in TeamViewer for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the TeamViewer API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to TeamViewer in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in TeamViewer for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the TeamViewer API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -139,7 +139,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

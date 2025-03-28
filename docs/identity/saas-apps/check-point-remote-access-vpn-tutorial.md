@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Check Point Remote Secure Access VPN
 
-In this article,  you'll learn how to integrate Check Point Remote Secure Access VPN with Microsoft Entra ID. When you integrate Check Point Remote Secure Access VPN with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Check Point Remote Secure Access VPN with Microsoft Entra ID. When you integrate Check Point Remote Secure Access VPN with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Check Point Remote Secure Access VPN.
 * Enable your users to be automatically signed-in to Check Point Remote Secure Access VPN with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of Check Point Remote Secure Access VPN into Micros
 1. In the **Add from the gallery** section, type **Check Point Remote Secure Access VPN** in the search box.
 1. Select **Check Point Remote Secure Access VPN** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-check-point-remote-secure-access-vpn'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Check Point Remote Secure Access 
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Check Point Remote Secure Access VPN SSO](#configure-check-point-remote-secure-access-vpn-sso)** - to enable your users to use this feature.
 
-    1. **[Create Check Point Remote Secure Access VPN test user](#create-check-point-remote-secure-access-vpn-test-user)** - to have a counterpart of B.Simon in Check Point Remote Secure Access VPN that is linked to the Microsoft Entra representation of user.
+    1. **[Create Check Point Remote Secure Access VPN test user](#create-check-point-remote-secure-access-vpn-test-user)** - to have a counterpart of B.Simon in Check Point Remote Secure Access VPN that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Check Point Remote Secure Access VPN** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<GATEWAY_IP>/saml-vpn/`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Check Point Remote Secure Access VPN Client support team](mailto:support@checkpoint.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Check Point Remote Secure Access VPN Client support team](mailto:support@checkpoint.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -106,17 +106,17 @@ Follow these steps to enable Microsoft Entra SSO.
 ### Configure an External User Profile object
 
 > [!NOTE]
-> This section is needed only if you do not want to use an on-premises Active Directory (LDAP).
+> This section is needed only if you don't want to use an on-premises Active Directory (LDAP).
 
 **Configure a generic user profile in the Legacy SmartDashboard**:
 
 1. In SmartConsole, go to **Manage & Settings > Blades**.
 
-1. In the **Mobile Access** section, click **Configure in SmartDashboard**. The Legacy SmartDashboard opens.
+1. In the **Mobile Access** section, select **Configure in SmartDashboard**. The Legacy SmartDashboard opens.
 
-1. In the Network **Objects** pane, and click **Users**.
+1. In the Network **Objects** pane, and select **Users**.
 
-1. Right-click on an empty space and select **New > External User Profile > Match all users**.
+1. Right-click an empty space and select **New > External User Profile > Match all users**.
 
 1. Configure the **External User Profile** properties:
 
@@ -128,9 +128,9 @@ Follow these steps to enable Microsoft Entra SSO.
         * From the **Authentication Scheme** drop-down list, select `undefined`
     1. On the **Location**, **Time**, and **Encryption** pages:
         * Configure other applicable settings
-    1. Click **OK**.
+    1. Select **OK**.
 
-1. From the top toolbar, click **Update** (or press Ctrl + S).
+1. From the top toolbar, select **Update** (or press Ctrl + S).
 
 1. Close SmartDashboard.
 
@@ -142,19 +142,19 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the General Properties page, enable the **IPSec VPN** Software Blade.
 
-1. From the left tree, click the **IPSec VPN** page.
+1. From the left tree, select the **IPSec VPN** page.
 
-1. In the section **This Security Gateway participates in the following VPN communities**, click **Add** and select **Remote Access Community**.
+1. In the section **This Security Gateway participates in the following VPN communities**, select **Add** and select **Remote Access Community**.
 
-1. From the left tree, click **VPN clients > Remote Access**.
+1. From the left tree, select **VPN clients > Remote Access**.
 
 1. Enable **Support Visitor Mode**.
 
-1. From the left tree, click **VPN clients > Office Mode**.
+1. From the left tree, select **VPN clients > Office Mode**.
 
 1. Select **Allow Office Mode** and select the applicable Office Mode Method.
 
-1. From the left tree, click **VPN Clients > SAML Portal Settings**.
+1. From the left tree, select **VPN Clients > SAML Portal Settings**.
 
 1. Make sure the Main URL contains the fully qualified domain name of the gateway.
 This domain name should end with a DNS suffix registered by your organization.
@@ -163,13 +163,13 @@ For example:
 
 1. Make sure the certificate is trusted by the end users’ browser.
 
-1. Click **OK**.
+1. Select **OK**.
 
 ### Configure an Identity Provider object
 
 1. Do the following steps for each Security Gateway that participates in Remote Access VPN.
 
-1. In SmartConsole, in the **Gateways & Servers** view, click **New > More > User/Identity > Identity Provider**.
+1. In SmartConsole, in the **Gateways & Servers** view, select **New > More > User/Identity > Identity Provider**.
 
  1. Perform the following steps in **New Identity Provider** window.
 
@@ -188,7 +188,7 @@ For example:
     > [!NOTE]
     > Alternatively you can also select **Insert Manually** to paste manually the **Entity ID** and **Login URL** values into the corresponding fields, and to upload the **Certificate File**.
 
-    f. Click **OK**.
+    f. Select **OK**.
 
 ### Configure the Identity Provider as an authentication method
 
@@ -203,19 +203,19 @@ For example:
     ![screenshot for to Add a new object.](./media/check-point-remote-access-vpn-tutorial/add-new-object.png)
 
 1. Enter a name and a display name, and add/edit an authentication method:
-    In case the Login Option will be use on GWs who participate in MEP, in order to allow smooth user experience the Name should start with `SAMLVPN_` prefix.
+    In case the Login Option is used on GWs who participate in MEP, in order to allow smooth user experience the Name should start with `SAMLVPN_` prefix.
 
     ![screenshot about Login Option.](./media/check-point-remote-access-vpn-tutorial/login-option.png)
 
-1. Select the option **Identity Provider**, click the green `+` button and select the applicable Identity Provider object.
+1. Select the option **Identity Provider**, select the green `+` button and select the applicable Identity Provider object.
 
     ![screenshot to select the applicable Identity Provider object.](./media/check-point-remote-access-vpn-tutorial/green-button.png)
 
 1. In the Multiple Logon Options window:
-From the left pane, click **User Directories** and then select **Manual configuration**.
+From the left pane, select **User Directories** and then select **Manual configuration**.
 There are two options:
-    1. If you do not want to use an on-premises Active Directory (LDAP), select only External User Profiles and click OK.
-    2. If you do want to use an on-premises Active Directory (LDAP), select only LDAP users and in the LDAP Lookup Type select email. Then click OK.
+    1. If you don't want to use an on-premises Active Directory (LDAP), select only External User Profiles and select OK.
+    2. If you do want to use an on-premises Active Directory (LDAP), select only LDAP users and in the LDAP Lookup Type select email. Then select OK.
 
     ![Screenshot of manual configuration.](./media/check-point-remote-access-vpn-tutorial/manual-configuration.png)
 
@@ -231,7 +231,7 @@ There are two options:
 
     5. In the bottom pane, go to **realms_for_blades** > **vpn**.
 
-    6. If you do not want to use an on-premises Active Directory (LDAP), set **do_ldap_fetch** to **false** and **do_generic_fetch** to **true**. Then click **OK**. If you do want to use an on-premises Active Directory (LDAP), set **do_ldap_fetch** to **true** and **do_generic_fetch** to **false**. Then click **OK**.
+    6. If you don't want to use an on-premises Active Directory (LDAP), set **do_ldap_fetch** to **false** and **do_generic_fetch** to **true**. Then select **OK**. If you do want to use an on-premises Active Directory (LDAP), set **do_ldap_fetch** to **true** and **do_generic_fetch** to **false**. Then select **OK**.
 
     7. Repeat steps 4 to 6 for all applicable Security Gateways.
 
@@ -243,7 +243,7 @@ There are two options:
 
     * Make sure to select the option **LDAP users** only for Software Blades that use LDAP.
 
-    * Make sure to select the option **External user profiles** only for Software Blades that do not use LDAP.
+    * Make sure to select the option **External user profiles** only for Software Blades that don't use LDAP.
 
 1. Install the Access Control Policy on each Security Gateway.
 
@@ -321,11 +321,11 @@ In this section, you create a user called Britta Simon in Check Point Remote Sec
 
 ## Test SSO
 
-1. Open the VPN client and click **Connect to...**.
+1. Open the VPN client and select **Connect to...**.
 
     ![screenshot for Connect to.](./media/check-point-remote-access-vpn-tutorial/connect.png)
 
-1. Select **Site** from the dropdown and click **Connect**.
+1. Select **Site** from the dropdown and select **Connect**.
 
     ![screenshot for selecting site.](./media/check-point-remote-access-vpn-tutorial/site.png)
 

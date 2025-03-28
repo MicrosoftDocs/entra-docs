@@ -93,7 +93,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | End-user | `https://<SecureTransport_Address>:<PORT>` |
     
     > [!NOTE]
-    > These values are not real. Update these values with the actual Reply URL and Sign on URL. Contact [SecureTransport Client support team](mailto:support@axway.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Reply URL and Sign on URL. Contact [SecureTransport Client support team](mailto:support@axway.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your SecureTransport application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but SecureTransport expects this to be mapped with the user's display name. For that you can use **user.displayname** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -119,11 +119,11 @@ In this section, you create a user called Britta Simon at SecureTransport. Work 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to SecureTransport Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to SecureTransport Sign-on URL where you can initiate the login flow. 
 
 * Go to SecureTransport Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the SecureTransport tile in the My Apps, this will redirect to SecureTransport Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the SecureTransport tile in the My Apps, this option redirects to SecureTransport Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

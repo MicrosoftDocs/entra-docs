@@ -47,7 +47,7 @@ To configure the integration of Voyance into Microsoft Entra ID, you need to add
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **Voyance**, select **Voyance** from result panel then click **Add** button to add the application.
+1. In the search box, type **Voyance**, select **Voyance** from result panel then select **Add** button to add the application.
 
 	 ![Voyance in the results list](common/search-new-app.png)
 
@@ -64,7 +64,7 @@ To configure and test Microsoft Entra single sign-on with Voyance, you need to c
 2. **[Configure Voyance Single Sign-On](#configure-voyance-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Voyance test user](#create-voyance-test-user)** - to have a counterpart of Britta Simon in Voyance that is linked to the Microsoft Entra representation of user.
+5. **[Create Voyance test user](#create-voyance-test-user)** - to have a counterpart of Britta Simon in Voyance that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -84,7 +84,7 @@ To configure Microsoft Entra single sign-on with Voyance, perform the following 
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -98,7 +98,7 @@ To configure Microsoft Entra single sign-on with Voyance, perform the following 
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<companyname>.nyansa.com/saml/create/`
 
-5. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+5. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     ![Screenshot shows Set additional U R Ls where you can enter a Sign on U R L.](common/metadata-upload-additional-signon.png)
 
@@ -106,9 +106,9 @@ To configure Microsoft Entra single sign-on with Voyance, perform the following 
     `https://<companyname>.nyansa.com/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Voyance Client support team](mailto:support@nyansa.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Voyance Client support team](mailto:support@nyansa.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -126,19 +126,19 @@ To configure Microsoft Entra single sign-on with Voyance, perform the following 
 
 1. In a different web browser window, sign-on to your Voyance tenant as an administrator.
 
-2. Go to the top right corner of the navigation bar and click on **Profile**.
+2. Go to the top right corner of the navigation bar and select **Profile**.
 	
 	![Configure Single Sign-On On App Side Acme University](./media/voyance-tutorial/tutorial_voyance_001.png) 
 
-3. Click **Admin Settings**.
+3. Select **Admin Settings**.
 
 	![Configure Single Sign-On On App Side Admin Settings](./media/voyance-tutorial/tutorial_voyance_002.png)
 
-4. Click **User Access** tab.
+4. Select **User Access** tab.
 
 	![Configure Single Sign-On On App Side User Access](./media/voyance-tutorial/tutorial_voyance_003.png)
 
-5. Click the **SSO is disabled** button to configure Microsoft Entra ID as an IdP using SAML 2.0.
+5. Select the **SSO is disabled** button to configure Microsoft Entra ID as an IdP using SAML 2.0.
 
 	![Configure Single Sign-On On App Side SSO is disabled button](./media/voyance-tutorial/tutorial_voyance_004.png)
 
@@ -152,7 +152,7 @@ To configure Microsoft Entra single sign-on with Voyance, perform the following 
 
 	c. Open your downloaded Base64 encoded certificate in notepad, copy the content of it into your clipboard, and then paste it to the **IdP Cert** textbox.
 	
-	d. Click **Save**.
+	d. Select **Save**.
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -160,7 +160,7 @@ To configure Microsoft Entra single sign-on with Voyance, perform the following 
 
 ### Create Voyance test user
 
-In this section, a user called Britta Simon is created in Voyance. Voyance supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Voyance, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Voyance. Voyance supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Voyance, a new one is created after authentication.
 
 >[!NOTE]
 >If you need to create a user manually, you need to contact [Voyance support team](mailto:support@nyansa.com).
@@ -169,7 +169,7 @@ In this section, a user called Britta Simon is created in Voyance. Voyance suppo
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Voyance tile in the Access Panel, you should be automatically signed in to the Voyance for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Voyance tile in the Access Panel, you should be automatically signed in to the Voyance for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 

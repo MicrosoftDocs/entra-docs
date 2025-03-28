@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with ServiceNow
 
-In this article,  you'll learn how to integrate ServiceNow with Microsoft Entra ID. When you integrate ServiceNow with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate ServiceNow with Microsoft Entra ID. When you integrate ServiceNow with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ServiceNow.
 * Enable your users to be automatically signed-in to ServiceNow with their Microsoft Entra accounts.
@@ -57,7 +57,7 @@ To configure the integration of ServiceNow into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, enter **ServiceNow** in the search box.
 1. Select **ServiceNow** from results panel, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-servicenow'></a>
 
@@ -127,7 +127,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Screenshot of the SAML Signing Certificate section, with Download highlighted](common/certificatebase64.png)
 
-   a. Select the copy button to copy **App Federation Metadata Url**, and paste it into Notepad. This URL will be used later in the article.
+   a. Select the copy button to copy **App Federation Metadata Url**, and paste it into Notepad. This URL is used later in the article.
 
 	b. Select **Download** to download **Certificate(Base64)**, and then save the certificate file on your computer.
 
@@ -232,7 +232,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	1. Return to the **ServiceNow** single sign-on page.
 
-	1. One-click configure service is provided for ServiceNow. To enable this service, go to the **ServiceNow Configuration** section, and select **Configure ServiceNow** to open the **Configure sign-on** window.
+	1. One-select configure service is provided for ServiceNow. To enable this service, go to the **ServiceNow Configuration** section, and select **Configure ServiceNow** to open the **Configure sign-on** window.
 
 		![Screenshot of Set up ServiceNow, with View step-by-step instructions highlighted](./media/servicenow-tutorial/tutorial-servicenow-configure.png)
 
@@ -256,7 +256,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 		     ![Screenshot of Identity Provider section](./media/servicenow-tutorial/automatic-config.png "Configure single sign-on")
 
-		       a. Right click on the grey bar at the top of the screen and click **Copy sys_id** and use this value to the **Sign on URL** in **Basic SAML Configuration** section.
+		       a. Right select the grey bar at the top of the screen and select **Copy sys_id** and use this value to the **Sign on URL** in **Basic SAML Configuration** section.
 
 			   b. For **Name**, enter a name for your configuration (for example, **Microsoft Azure Federated single sign-on**).
 
@@ -269,7 +269,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 		      e. Confirm that **NameID Policy** is set to `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified` value. 
 
-			  f. Click on **Advanced** and give the **Single Sign-On Script** value as **MultiSSOv2_SAML2_custom**.
+			  f. Select **Advanced** and give the **Single Sign-On Script** value as **MultiSSOv2_SAML2_custom**.
 
 	     1. Scroll down to the **X.509 Certificate** section, and select **Edit**.
 
@@ -286,7 +286,7 @@ Follow these steps to enable Microsoft Entra SSO.
 		     ![Screenshot of page, with Test Connection highlighted](./media/servicenow-tutorial/tutorial-activate-2.png "Activate plugin")
 
 		     > [!NOTE]
-		     > If the Test Connection is failing and you are not able to activate this connection then ServiceNow does offer the override switch. You have to enter **Sys_properties.LIST** in the **Search Navigation** and it will open the new page of System Properties. Here you have to create a new property with the name as **glide.authenticate.multisso.test.connection.mandatory** with **datatype** as **True/False** and then set the **value** as **False**.
+		     > If the Test Connection is failing and you aren't able to activate this connection then ServiceNow does offer the override switch. You have to enter **Sys_properties.LIST** in the **Search Navigation** and it will open the new page of System Properties. Here you have to create a new property with the name as **glide.authenticate.multisso.test.connection.mandatory** with **datatype** as **True/False** and then set the **value** as **False**.
 
 		     > ![Screenshot of Test connection page](./media/servicenow-tutorial/test-connection-fail.png "Configure single sign-on")
 		
@@ -322,7 +322,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 		![Screenshot of Identity Provider](./media/servicenow-tutorial/identity-provider.png "Configure single sign-on")
 
-		a. Right click on the grey bar at the top of the screen and click **Copy sys_id** and use this value to the **Sign on URL** in **Basic SAML Configuration** section.
+		a. Right select the grey bar at the top of the screen and select **Copy sys_id** and use this value to the **Sign on URL** in **Basic SAML Configuration** section.
 		
 		b.  For **Name**, enter a name for your configuration (for example, **Microsoft Azure Federated single sign-on**).
 
@@ -343,7 +343,7 @@ Follow these steps to enable Microsoft Entra SSO.
 		g. Select **Test Connection** at the upper-right corner of the page.
 
 		> [!NOTE]
-		> If the Test Connection is failing and you are not able to activate this connection then ServiceNow does offer the override switch. You have to enter **Sys_properties.LIST** in the **Search Navigation** and it will open the new page of System Properties. Here you have to create a new property with the name as **glide.authenticate.multisso.test.connection.mandatory** with **datatype** as **True/False** and then set the **value** as **False**.
+		> If the Test Connection is failing and you aren't able to activate this connection then ServiceNow does offer the override switch. You have to enter **Sys_properties.LIST** in the **Search Navigation** and it will open the new page of System Properties. Here you have to create a new property with the name as **glide.authenticate.multisso.test.connection.mandatory** with **datatype** as **True/False** and then set the **value** as **False**.
 
 		  > ![Screenshot of Test connection](./media/servicenow-tutorial/test-connection-fail.png "Configure single sign-on")
 

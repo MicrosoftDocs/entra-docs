@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Ideo so that I can streamline the user management process and ensure that users have the appropriate access to Ideo.
@@ -21,7 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in IDE
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in IDEO
-> * Remove users in IDEO when they do not require access anymore
+> * Remove users in IDEO when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and IDEO
 > * Provision groups and group memberships in IDEO
 > * Single sign-on to IDEO (recommended)
@@ -38,22 +38,22 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and IDEO](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-ideo-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure IDEO to support provisioning with Microsoft Entra ID
 
-Before configuring IDEO for automatic user provisioning with Microsoft Entra ID, you will need to retrieve some provisioning information from IDEO.
+Before configuring IDEO for automatic user provisioning with Microsoft Entra ID, you need to retrieve some provisioning information from IDEO.
 
-* For **Secret Token** contact IDEO support team at productsupport@ideo.com. This value will be entered in the **Secret Token** field in the Provisioning tab of your IDEO application. 
+* For **Secret Token** contact IDEO support team at productsupport@ideo.com. This value is entered in the **Secret Token** field in the Provisioning tab of your IDEO application. 
 
 <a name='step-3-add-ideo-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add IDEO from the Microsoft Entra application gallery
 
-Add IDEO from the Microsoft Entra application gallery to start managing provisioning to IDEO. If you have previously setup IDEO for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add IDEO from the Microsoft Entra application gallery to start managing provisioning to IDEO. If you have previously setup IDEO for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -84,7 +84,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input the **SCIM 2.0 base URL and Access Token** values retrieved earlier from the IDEO support team in the **Tenant URL** and **Secret Token** fields respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to IDEO. If the connection fails, ensure your IDEO account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input the **SCIM 2.0 base URL and Access Token** values retrieved earlier from the IDEO support team in the **Tenant URL** and **Secret Token** fields respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to IDEO. If the connection fails, ensure your IDEO account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to IDEO**.
 
@@ -125,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

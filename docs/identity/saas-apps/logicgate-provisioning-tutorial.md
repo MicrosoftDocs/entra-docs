@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LogicGate so that I can streamline the user management process and ensure that users have the appropriate access to LogicGate.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both LogicGate and Micro
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in LogicGate
-> * Remove users in LogicGate when they do not require access anymore
+> * Remove users in LogicGate when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and LogicGate
 
 ## Prerequisites
@@ -36,23 +36,23 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and LogicGate](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-logicgate-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure LogicGate to support provisioning with Microsoft Entra ID
 
-1. Login to **LogicGate** admin console.Navigate to the **Home** tab and Click on **Profile** icon over top right corner.
+1. Login to **LogicGate** admin console.Navigate to the **Home** tab and Select **Profile** icon over top right corner.
 2. Navigate to **Profile** **>** **Access Key**.
 
  	![Profile tab](./media/logicgate-provisioning-tutorial/profile.png)
 
-3. Click on **Generate Access key**. 
+3. Select **Generate Access key**. 
 	
 	![Access tab](./media/logicgate-provisioning-tutorial/key.png)
 
-4. Copy and save the **Access Key**.This value will be entered in the **Secret Token** * field in the Provisioning tab of your LogicGate application. 
+4. Copy and save the **Access Key**.This value is entered in the **Secret Token** * field in the Provisioning tab of your LogicGate application. 
 	
 	![Key tab](./media/logicgate-provisioning-tutorial/access.png)
 
@@ -60,7 +60,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add LogicGate from the Microsoft Entra application gallery
 
-Add LogicGate from the Microsoft Entra application gallery to start managing provisioning to LogicGate. If you have previously setup LogicGate for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add LogicGate from the Microsoft Entra application gallery to start managing provisioning to LogicGate. If you have previously setup LogicGate for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Automatic tab](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your LogicGate Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to LogicGate. If the connection fails, ensure your LogicGate account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your LogicGate Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to LogicGate. If the connection fails, ensure your LogicGate account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to LogicGate**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to LogicGate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in LogicGate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the LogicGate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to LogicGate in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in LogicGate for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the LogicGate API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -123,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

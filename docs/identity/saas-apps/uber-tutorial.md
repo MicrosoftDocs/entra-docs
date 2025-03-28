@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Uber
 
-In this article, you'll learn how to integrate Uber with Microsoft Entra ID. This app helps you automatically provision and de-provision users to Uber for business using the Microsoft Entra provisioning service. When you integrate Uber with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Uber with Microsoft Entra ID. This app helps you automatically provision and de-provision users to Uber for business using the Microsoft Entra provisioning service. When you integrate Uber with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Uber.
 * Enable your users to be automatically signed-in to Uber with their Microsoft Entra accounts.
@@ -66,7 +66,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **Download** to download the certificate and save it on your computer.
 
@@ -88,9 +88,9 @@ In this section, you create a user called Britta Simon in Uber. Work with [Uber 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Uber for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Uber for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Uber tile in the My Apps, you should be automatically signed in to the Uber for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Uber tile in the My Apps, you should be automatically signed in to the Uber for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

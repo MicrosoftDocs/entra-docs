@@ -22,7 +22,7 @@ This article describes the steps you need to do in both Appaegis Isolation Acces
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Appaegis Isolation Access Cloud
-> * Remove users in Appaegis Isolation Access Cloud when they do not require access anymore
+> * Remove users in Appaegis Isolation Access Cloud when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Appaegis Isolation Access Cloud
 > * [Single sign-on](appaegis-isolation-access-cloud-tutorial.md) to Appaegis Isolation Access Cloud (recommended)
 
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Appaegis Isolation Access Cloud](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-appaegis-isolation-access-cloud-to-support-provisioning-with-azure-ad'></a>
@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Appaegis Isolation Access Cloud to support provisioning with Microsoft Entra ID
 
 1. Enabled [SSO](appaegis-isolation-access-cloud-tutorial.md) with Appaegis Cloud.
-2. When at the **Identity Provider Details** page (the page lists ACS URL and Entity ID), you'll find the SCIM URL and SCIM Token.
+2. When at the **Identity Provider Details** page (the page lists ACS URL and Entity ID), you find the SCIM URL and SCIM Token.
 
 <a name='step-3-add-appaegis-isolation-access-cloud-from-the-azure-ad-application-gallery'></a>
 
@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Appaegis Isolation Access Cloud Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Appaegis Isolation Access Cloud. If the connection fails, ensure your Appaegis Isolation Access Cloud account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Appaegis Isolation Access Cloud Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Appaegis Isolation Access Cloud. If the connection fails, ensure your Appaegis Isolation Access Cloud account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Appaegis Isolation Access Cloud**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Appaegis Isolation Access Cloud in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Appaegis Isolation Access Cloud for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Appaegis Isolation Access Cloud API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Appaegis Isolation Access Cloud in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Appaegis Isolation Access Cloud for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Appaegis Isolation Access Cloud API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering|
     |---|---|---|
@@ -124,7 +124,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

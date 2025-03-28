@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with DX NetOps Portal
 
-In this article, you'll learn how to integrate DX NetOps Portal with Microsoft Entra ID. DX NetOps Portal provides network observability, topology with fault correlation and root-cause analysis at telecom carrier level scale, over traditional and software defined networks, internal and external. When you integrate DX NetOps Portal with Microsoft Entra ID, you can:
+In this article, you learn how to integrate DX NetOps Portal with Microsoft Entra ID. DX NetOps Portal provides network observability, topology with fault correlation and root-cause analysis at telecom carrier level scale, over traditional and software defined networks, internal and external. When you integrate DX NetOps Portal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to DX NetOps Portal.
 * Enable your users to be automatically signed-in to DX NetOps Portal with their Microsoft Entra accounts.
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `SsoProductCode=pc&SsoRedirectUrl=https://<DX NetOps Portal FQDN>:<https port>/pc/desktop/page`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Relay State URL. Contact [DX NetOps Portal Client support team](https://support.broadcom.com/web/ecx/contact-support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Relay State URL. Contact [DX NetOps Portal Client support team](https://support.broadcom.com/web/ecx/contact-support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your DX NetOps Portal application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but DX NetOps Portal expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -106,9 +106,9 @@ In this section, you create a user called Britta Simon in DX NetOps Portal that 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the DX NetOps Portal for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the DX NetOps Portal for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the DX NetOps Portal tile in the My Apps, you should be automatically signed in to the DX NetOps Portal for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the DX NetOps Portal tile in the My Apps, you should be automatically signed in to the DX NetOps Portal for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

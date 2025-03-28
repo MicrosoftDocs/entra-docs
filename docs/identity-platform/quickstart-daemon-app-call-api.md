@@ -14,6 +14,8 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Call a web API in a sample daemon app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 In this quickstart, you use a sample daemon application to acquire an access token and call a protected web API by using the [Microsoft Authentication Library (MSAL)](msal-overview.md).
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]

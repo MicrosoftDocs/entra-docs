@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Playvox so that I can streamline the user management process and ensure that users have the appropriate access to Playvox.
@@ -36,7 +36,7 @@ The scenario in this article assumes that you already have the following prerequ
 
 1. Learn [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 
-2. Determine who will be [in scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's [in scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 3. Determine what data to [map between Microsoft Entra ID and Playvox](~/identity/app-provisioning/customize-application-attributes.md).
 
@@ -56,7 +56,7 @@ The scenario in this article assumes that you already have the following prerequ
 
     ![Partial screenshot showing the location of the Details icon, which is a magnifying glass, in the Playvox user interface.](media/playvox-provisioning-tutorial/api.png)
 
-5. Copy and save the **BASE64 KEY** value. Later, in the Azure portal, you'll enter this value in the **Secret Token** text box in the **Provisioning** tab of your Playvox application.
+5. Copy and save the **BASE64 KEY** value. Later, in the Azure portal, you enter this value in the **Secret Token** text box in the **Provisioning** tab of your Playvox application.
 
     ![Screenshot of the Details API Key message box, with the BASE64 KEY value highlighted.](media/playvox-provisioning-tutorial/token.png)
 
@@ -103,7 +103,7 @@ To configure automatic user provisioning for Playvox in Microsoft Entra ID:
 
     ![Partial screenshot showing the Admin Credentials section, including Tenant URL and Secret Token text boxes, and with the Test Connection link highlighted.](common/provisioning-testconnection-tenanturltoken.png)
 
-6. In the **Notification Email** text box, enter the email address of a person or group who will receive the provisioning error notifications. Then, select the **Send an email notification when a failure occurs** check box.
+6. In the **Notification Email** text box, enter the email address of a person or group who receives the provisioning error notifications. Then, select the **Send an email notification when a failure occurs** check box.
 
     ![Partial screenshot showing the Notification Email text box and the email notification check box.](common/provisioning-notification-email.png)
 

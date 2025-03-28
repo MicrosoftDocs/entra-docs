@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -130,11 +130,11 @@ The SSO configuration for Cisco Intersight is now self-service and managed direc
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select on **Test this application**, this will redirect to Cisco Intersight Sign-on URL where you can initiate the sign in flow. 
+* Select **Test this application**, this option redirects to Cisco Intersight Sign-on URL where you can initiate the sign in flow. 
 
 * Go to Cisco Intersight Sign on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you select the Cisco Intersight tile in the My Apps, this will redirect to Cisco Intersight Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Cisco Intersight tile in the My Apps, this option redirects to Cisco Intersight Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content

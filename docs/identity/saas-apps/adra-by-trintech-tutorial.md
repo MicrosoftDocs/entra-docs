@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Adra by Trintech
 
-In this article,  you'll learn how to integrate Adra by Trintech with Microsoft Entra ID. When you integrate Adra by Trintech with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Adra by Trintech with Microsoft Entra ID. When you integrate Adra by Trintech with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adra by Trintech.
 * Enable your users to be automatically signed-in to Adra by Trintech with their Microsoft Entra accounts.
@@ -48,7 +48,7 @@ To configure the integration of Adra by Trintech into Microsoft Entra ID, you ne
 1. In the **Add from the gallery** section, type **Adra by Trintech** in the search box.
 1. Select **Adra by Trintech** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-adra-by-trintech'></a>
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with Adra by Trintech, perform the fol
    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Adra by Trintech SSO](#configure-adra-by-trintech-sso)** - to configure the single sign-on settings on application side.
-   1. **[Create Adra by Trintech test user](#create-adra-by-trintech-test-user)** - to have a counterpart of B.Simon in Adra by Trintech that is linked to the Microsoft Entra representation of user.
+   1. **[Create Adra by Trintech test user](#create-adra-by-trintech-test-user)** - to have a counterpart of B.Simon in Adra by Trintech that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,17 +74,17 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Adra by Trintech** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file** and wish to configure in **IDP** initiated mode, perform the following steps:
 
-	a. Click **Upload metadata file**.
+	a. Select **Upload metadata file**.
 
    ![Screenshot shows to upload metadata file.](common/upload-metadata.png "File")
 
-	b. Click on **folder logo** to select the metadata file and click **Upload**.
+	b. Select **folder logo** to select the metadata file and select **Upload**.
 
 	![Screenshot shows to choose metadata file.](common/browse-upload-metadata.png "Folder")
 
@@ -100,9 +100,9 @@ Follow these steps to enable Microsoft Entra SSO.
       `https://login.adra.com/Saml/SLOServiceSP`
 
    > [!Note]
-	> You will get the **Service Provider metadata file** from the **Configure Adra by Trintech SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
+	> You gets the **Service Provider metadata file** from the **Configure Adra by Trintech SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values don't get auto populated, then fill in the values manually according to your requirement.
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -116,17 +116,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Go to **Engagement** > **Security** Tab > **Security Policy** > select **Use a federated identity provider** button.
 
-1. Download the **Service Provider metadata file** by clicking **here** in the Adra page and upload this metadata file.
+1. Download the **Service Provider metadata file** by selecting **here** in the Adra page and upload this metadata file.
 
    [ ![Screenshot that shows the Configuration Settings.](./media/adra-by-trintech-tutorial/settings.png "Configuration")](./media/adra-by-trintech-tutorial/settings.png#lightbox)
 
-1. Click on the **Add a new federated identity provider** button and enter the details for the required fields accordingly.
+1. Select the **Add a new federated identity provider** button and enter the details for the required fields accordingly.
 
    a. Enter a valid **Name** and **Description** values in the textbox.
 
-   b. In the **Metadata URL** textbox, paste the **App Federation Metadata Url** which you've copied and click on the **Test URL** button.
+   b. In the **Metadata URL** textbox, paste the **App Federation Metadata Url** which you've copied and select the **Test URL** button.
 
-   c. Click **Save** to save the SAML configuration..
+   c. Select **Save** to save the SAML configuration..
 
 ### Create Adra by Trintech test user
 
@@ -138,15 +138,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Adra by Trintech Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Adra by Trintech Sign-on URL where you can initiate the login flow.  
 
 * Go to Adra by Trintech Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Adra by Trintech for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Adra by Trintech for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Adra by Trintech tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Adra by Trintech for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Adra by Trintech tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Adra by Trintech for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

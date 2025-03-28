@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Vault Platform and 
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Vault Platform.
-> * Remove users in Vault Platform when they do not require access anymore.
+> * Remove users in Vault Platform when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Vault Platform.
 > * [Single sign-on](vault-platform-tutorial.md) to Vault Platform (recommended).
 
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Vault Platform](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-vault-platform-to-support-provisioning-with-azure-ad'></a>
@@ -66,7 +66,7 @@ Next go to **Administration > Data Integration** inside Vault Platform
 
 1. For **Data Integration** select `Azure`.
 1. For **Method of providing SCIM secret location** set `bearer`.
-1. For **Secret** set a complex string, similar to a strong password. Keep this string secure as it will be used later on at **Step 5**
+1. For **Secret** set a complex string, similar to a strong password. Keep this string secure as it's used later on at **Step 5**
 1. Toggle **Set as active SCIM Provider** to be active.
 
 <a name='step-3-add-vault-platform-from-the-azure-ad-application-gallery'></a>
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Vault Platform Tenant URL (URL with structure `https://app.vaultplatform.com/api/scim/${organization-slug}`) and Secret Token (from Step 2.2). Click **Test Connection** to ensure Microsoft Entra ID can connect to Vault Platform. If the connection fails, ensure your Vault Platform account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Vault Platform Tenant URL (URL with structure `https://app.vaultplatform.com/api/scim/${organization-slug}`) and Secret Token (from Step 2.2). Select **Test Connection** to ensure Microsoft Entra ID can connect to Vault Platform. If the connection fails, ensure your Vault Platform account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -116,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Vault Platform**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Vault Platform in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Vault Platform for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Vault Platform API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Vault Platform in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Vault Platform for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Vault Platform API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Vault Platform|
    |---|---|---|---|
@@ -144,7 +144,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

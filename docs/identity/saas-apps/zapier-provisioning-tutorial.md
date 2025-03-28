@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Zapier and Microsof
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Zapier
-> * Remove users in Zapier when they do not require access anymore
+> * Remove users in Zapier when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Zapier
 > * Provision groups and group memberships in Zapier
 > * Single sign-on to Zapier (recommended)
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Zapier](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-zapier-to-support-provisioning-with-azure-ad'></a>
@@ -52,7 +52,7 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Zapier Add SCIM](media/zapier-provisioning-tutorial/user.png)
 
-3. Copy the **SCIM Base URL** and **SCIM Bearer Token**. These values will be entered in the Tenant URL and Secret Token fields respectively in the Provisioning tab of your Zapier application.
+3. Copy the **SCIM Base URL** and **SCIM Bearer Token**. These values are entered in the Tenant URL and Secret Token fields respectively in the Provisioning tab of your Zapier application.
 
     ![Zapier Create Token](media/zapier-provisioning-tutorial/token.png)
 
@@ -60,7 +60,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Zapier from the Microsoft Entra application gallery
 
-Add Zapier from the Microsoft Entra application gallery to start managing provisioning to Zapier. If you have previously setup Zapier for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Zapier from the Microsoft Entra application gallery to start managing provisioning to Zapier. If you have previously setup Zapier for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Zapier **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Zapier. If the connection fails, ensure your Zapier account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Zapier **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zapier. If the connection fails, ensure your Zapier account has Admin permissions and try again.
 
    ![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/zapier-provisioning-tutorial/provisioning.png)
 
@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zapier**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Zapier in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zapier for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Zapier API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Zapier in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zapier for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Zapier API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Variable|Type|
    |---|---|
@@ -133,7 +133,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
     ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

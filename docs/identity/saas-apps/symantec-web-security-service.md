@@ -38,13 +38,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ##  Important tips for assigning users to Symantec Web Security Service (WSS)
 
-* It is recommended that a single Microsoft Entra user is assigned to Symantec Web Security Service (WSS) to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Symantec Web Security Service (WSS) to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Symantec Web Security Service (WSS), you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Setup Symantec Web Security Service (WSS) for provisioning
 
-Before configuring Symantec Web Security Service (WSS) for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Symantec Web Security Service (WSS).
+Before configuring Symantec Web Security Service (WSS) for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Symantec Web Security Service (WSS).
 
 1. Sign in to your [Symantec Web Security Service admin console](https://portal.threatpulse.com/login.jsp). Navigate to **Solutions** > **Service**.
 
@@ -58,7 +58,7 @@ Before configuring Symantec Web Security Service (WSS) for automatic user provis
 
 	![Screenshot of the Third-Party Users & Groups Sync option.](media/symantec-web-security-service/third-party-users.png)
 
-4.  Copy the **SCIM URL** and **Token**. These values will be entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Symantec Web Security Service (WSS)  		application.
+4.  Copy the **SCIM URL** and **Token**. These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Symantec Web Security Service (WSS)  		application.
 
 	![Screenshot of the New Integration dialog box with the S C I M U R L and Token text boxes called out.](media/symantec-web-security-service/scim.png)
 
@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the Admin Credentials section, input the **SCIM URL** and **Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to Symantec Web Security Service. If the connection fails, ensure your Symantec Web Security Service (WSS) account has Admin permissions and try again.
+5. Under the Admin Credentials section, input the **SCIM URL** and **Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to Symantec Web Security Service. If the connection fails, ensure your Symantec Web Security Service (WSS) account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Symantec Web Security Service (WSS)**.
 
@@ -138,7 +138,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

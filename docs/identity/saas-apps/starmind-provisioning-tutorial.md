@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Starmind and Micros
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Starmind.
-> * Remove users in Starmind when they do not require access anymore.
+> * Remove users in Starmind when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Starmind.
 > * [Single sign-on](starmind-tutorial.md) to Starmind (recommended).
 
@@ -35,12 +35,12 @@ The scenario outlined in this article assumes that you already have the followin
 ## Plan your provisioning deployment
 
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and Starmind](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Configure Starmind to support provisioning with Microsoft Entra ID
 
-Contact [Starmind support](https://starmind.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Starmind to support provisioning with Microsoft Entra ID. Ensure to provide the Starmind network domain (such as acme.starmind.com) you want to enable user provisioning for. You will then get provided with the Tenant URL and Secret Token for authorization.
+Contact [Starmind support](https://starmind.atlassian.net/servicedesk/customer/portal/2) to open a service request to enable Starmind to support provisioning with Microsoft Entra ID. Ensure to provide the Starmind network domain (such as acme.starmind.com) you want to enable user provisioning for. You then get provided with the Tenant URL and Secret Token for authorization.
 
 ## Starmind from the Microsoft Entra application gallery
 
@@ -75,7 +75,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Starmind Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Starmind. If the connection fails, ensure your Starmind account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Starmind Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Starmind. If the connection fails, ensure your Starmind account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Humbol so that I can streamline the user management process and ensure that users have the appropriate access to Humbol.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Humbol and Microsof
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Humbol.
-> * Remove users in Humbol when they do not require access anymore.
+> * Remove users in Humbol when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Humbol.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Humbol (recommended).
 
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Humbol](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-humbol-to-support-provisioning-with-azure-ad'></a>
@@ -50,7 +50,7 @@ Contact Humbol support to configure Humbol to support provisioning with Microsof
    1. On this page you can find the organization SCIM API url. Copy it.
    1. Create SCIM API token and copy the value. 
    > [!NOTE]
-   > The token value is not saved anywhere on the Humbol service, so if you lose it, you should create a new one and remove old one.
+   > The token value isn't saved anywhere on the Humbol service, so if you lose it, you should create a new one and remove old one.
 
 <a name='step-3-add-humbol-from-the-azure-ad-application-gallery'></a>
 
@@ -87,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Humbol Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Humbol. If the connection fails, ensure your Humbol account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Humbol Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Humbol. If the connection fails, ensure your Humbol account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Humbol**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Humbol in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Humbol for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Humbol API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Humbol in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Humbol for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Humbol API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Humbol|
    |---|---|---|---|
@@ -131,7 +131,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

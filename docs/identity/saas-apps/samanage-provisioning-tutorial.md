@@ -24,7 +24,7 @@ If you have an existing integration with SolarWinds Service Desk, see the follow
 
 #### What's changing?
 
-* Changes on the Microsoft Entra ID side: The authorization method to provision users in Samange has historically been **Basic auth**. Soon you will see the authorization method changed to **Long lived secret token**.
+* Changes on the Microsoft Entra ID side: The authorization method to provision users in Samange has historically been **Basic auth**. Soon you see the authorization method changed to **Long lived secret token**.
 
 
 #### What do I need to do to migrate my existing custom integration to the new application?
@@ -34,13 +34,13 @@ If you have an existing SolarWinds Service Desk integration with valid admin cre
 
 #### How can I tell if my application has been migrated? 
 
-When your application is migrated, in the **Admin Credentials** section, the **Admin Username** and **Admin Password** fields will be replaced with a single **Secret Token** field.
+When your application is migrated, in the **Admin Credentials** section, the **Admin Username** and **Admin Password** fields are replaced with a single **Secret Token** field.
 
 ## Capabilities supported
 
 > [!div class="checklist"]
 > * Create users in SolarWinds Service Desk
-> * Remove users in SolarWinds Service Desk when they do not require access anymore
+> * Remove users in SolarWinds Service Desk when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and SolarWinds Service Desk
 > * Provision groups and group memberships in SolarWinds Service Desk
 > * [Single sign-on](./samanage-tutorial.md) to SolarWinds Service Desk (recommended)
@@ -54,11 +54,11 @@ The scenario outlined in this article assumes that you already have the followin
 * A user account in SolarWinds Service Desk with admin permissions.
 
 > [!Note]
-> Roles should not be manually edited in Microsoft Entra ID when doing role imports.
+> Roles shouldn't be manually edited in Microsoft Entra ID when doing role imports.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and SolarWinds Service Desk](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-solarwinds-service-desk-to-support-provisioning-with-azure-ad'></a>
@@ -71,7 +71,7 @@ To generate a secret token for authentication, see [Article tokens authenticatio
 
 ## Step 3: Add SolarWinds Service Desk from the Microsoft Entra application gallery
 
-Add SolarWinds Service Desk from the Microsoft Entra application gallery to start managing provisioning to SolarWinds Service Desk. If you previously set up SolarWinds Service Desk for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add SolarWinds Service Desk from the Microsoft Entra application gallery to start managing provisioning to SolarWinds Service Desk. If you previously set up SolarWinds Service Desk for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -112,7 +112,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to SolarWinds Service Desk**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to SolarWinds Service Desk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SolarWinds Service Desk for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the SolarWinds Service Desk API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to SolarWinds Service Desk in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SolarWinds Service Desk for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the SolarWinds Service Desk API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
       ![Samange User mappings](./media/samanage-provisioning-tutorial/user-attributes.png)
 
@@ -132,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, select **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
