@@ -2,7 +2,7 @@
 title: Track and investigate identity activities with linkable identifiers in Microsoft Entra (preview)
 description: Discover how linkable identifiers like session IDs and unique token identifiers in Microsoft Entra help track and investigate identity-related activities, enhancing security and transparency.
 ms.topic: conceptual
-ms.date: 03/24/2025
+ms.date: 03/28/2025
 ms.author: justinha
 author: vimrang
 manager: femila
@@ -91,7 +91,7 @@ For scenarios involving exchange online like mailbox update, items moved or dele
 | uti       | UniqueTokenId within App Access Context object                |
 | iat       | IssuedAtTime within App Access Context object                 |
 
-### View Exchange Online logs using Purview portal
+### View Exchange Online logs using Microsoft Purview portal
 
 1. Go to [Microsoft Purview portal](https://purview.microsoft.com/).
 2. Search for logs with a specific timeframe and record types starting with Exchange.
@@ -207,7 +207,7 @@ Let's walk through an example where a user logs into office.com. Then the user a
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/noninteractive-sign-in.png" alt-text="Screenshot of non-interactive sign-ins filtered by session ID.":::
 
-1. To get all the activities on Microsoft Graph workload done by the user within this specific session, go to Log Analytics in Microsoft Entra portal and run the query to join Microsoft Entra sign in logs and Microsoft Graph Activity logs. The following query filters by `UserId` and `SessionId`.
+1. To get all the activities on Microsoft Graph workload done by the user within this specific session, go to Log Analytics in Microsoft Entra admin center and run the query to join Microsoft Entra sign in logs and Microsoft Graph Activity logs. The following query filters by `UserId` and `SessionId`.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/graph-filter.png" alt-text="Screenshot of Microsoft Graph activities filtered by user ID and session ID.":::
 
