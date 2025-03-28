@@ -85,7 +85,7 @@ For AWS and GCP, delete the application created in the Microsoft Entra Admin Cen
 To find the Enterprise Application created which was used to set up OIDC connection to your AWS and GCP environments, follow the below steps: 
 
 > [!NOTE] 
-> User must have the [Permissions Management Administrator](/entra-docs-pr/docs/identity/role-based-access-control/permissions-reference.md) and [Cloud Application Administrator](/entra-docs-pr/docs/identity/role-based-access-control/permissions-reference.md) role assignments to perform this task. 
+> User must have the [Permissions Management Administrator](/role-based-access-control/permissions-reference.md) and [Cloud Application Administrator](/role-based-access-control/permissions-reference.md) role assignments to perform this task. 
 
 1. Go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
 1. Launch the **Microsoft Entra Permissions Management portal**.
@@ -136,7 +136,7 @@ To disable the CIEM App for users to sign in:
 1. Open **Properties**.
 1. Toggle Enabled for users to sign-in to **No**.
 
-:::image type="content" source="media/how-to-offboard-permissions-management/enable-user-sign-in-no.png" alt-text="Screenshot of enabling a user to sign in.:::
+:::image type="content" source="media/how-to-offboard-permissions-management/enable-user-sign-in-no.png" alt-text="Screenshot of enabling a user to sign in.":::
 
 ## Next steps
 
