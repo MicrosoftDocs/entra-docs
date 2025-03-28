@@ -41,11 +41,25 @@ Common task parameters are the non-unique parameters contained in every task. Wh
 
 ## Common email task parameters
 
-Emails, sent from tasks, are able to be customized. If you choose to customize the email, you're able to set the following arguments:
+Along with all of the basic task parameters, under **Basics** email tasks also include the ability to configure who are the recipient of the email:
 
-- **Subject:** Customizes the subject of emails.
-- **Message body:** Customizes the body of the emails being sent out.
-- **Email language translation:** Overrides the email recipient's language settings. Custom text isn't customized, and it's recommended to set this language to the same language as the custom text. 
+:::image type="content" source="media/lifecycle-workflow-task/email-tasks-basics.png" alt-text="Screenshot of basics email task customization.":::
+
+Recipients of the emails can be:
+
+- **Manager mail attribute(Preview)**: The email of the manager of the user who the workflow runs for.
+- **User mail attribute (default)**: The email of the user who the workflow runs for.
+- **Sponsor(s) mail attribute (Preview)**: The email of the sponsor for the user who the workflow runs for.
+- **Selected users (Preview)**: The email of specified users manually selected.
+
+> [!NOTE]
+> You're not able to add another user as cc to the recipient if you select **Sponsor(s) mail attribute (Preview)**. If you want to add multiple recipients along with the sponsor, find the users sponsor in their attributes, and add them manually along with who you want to cc via the **Selected users (Preview)** option. 
+
+Under **Email Customization** you're able to customize the specific email message send out by the task. If you choose to customize the email, you're able to set the following arguments:
+
+- **Subject**: Customizes the subject of emails.
+- **Message body**: Customizes the body of the emails being sent out.
+- **Email language translation**: Overrides the email recipient's language settings. Custom text isn't customized, and it's recommended to set this language to the same language as the custom text. 
 
 :::image type="content" source="media/lifecycle-workflow-task/customize-email-concept.png" alt-text="Screenshot of the customization email options.":::
 
