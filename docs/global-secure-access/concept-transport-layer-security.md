@@ -6,7 +6,7 @@ ms.author: jayrusso
 manager: femila
 ms.service: global-secure-access
 ms.topic: concept-article
-ms.date: 03/10/2025
+ms.date: 03/28/2025
 
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 
@@ -39,6 +39,6 @@ TLS supports the following ciphers:
 
 ## Related content
 
-- [Configure Transport Layer Security](how-to-transport-layer-security.md)
-- [Transport Layer Security Inspection Frequently asked questions](<resource-faq.yml>)
-- [Ciphers for Microsoft Entra Private Access](reference-ciphers.md)
+* [Configure Transport Layer Security](how-to-transport-layer-security.md)
+* [Transport Layer Security Inspection Frequently Asked Questions](<resource-faq.yml>)
+* [Ciphers for Microsoft Entra Private Access](reference-ciphers.md)
