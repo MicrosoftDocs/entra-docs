@@ -13,7 +13,7 @@ ms.author: jfields
 # View roles and identities that can access account information from an external account
 
 > [!NOTE]
-> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](aka.ms/MEPMretire).
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 You can view information about users, groups, and resources that can access account information from an external account in Permissions Management.
 

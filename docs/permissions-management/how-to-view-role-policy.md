@@ -13,7 +13,7 @@ ms.author: jfields
 # View information about roles/ policies in the Remediation dashboard
 
 > [!NOTE]
-> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](aka.ms/MEPMretire).
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 The **Remediation** dashboard in Permissions Management enables system administrators to view, adjust, and remediate excessive permissions based on a user's activity data. You can use the **Roles/Policies** subtab in the dashboard to view information about roles and policies in the Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) authorization systems.
 

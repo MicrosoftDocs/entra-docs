@@ -13,7 +13,7 @@ ms.author: jfields
 # Create and view activity alerts and alert triggers
 
 > [!NOTE]
-> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](aka.ms/MEPMretire).
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how to create and view activity alerts and alert triggers in Permissions Management.
 

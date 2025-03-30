@@ -13,7 +13,7 @@ ms.author: jfields
 # Microsoft Entra Permissions Management partners
 
 > [!NOTE]
-> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](aka.ms/MEPMretire).
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 Microsoft verified partners can help you onboard Microsoft Entra Permissions Management (Permissions Management) and run a risk assessment across your entire multicloud environment.
 

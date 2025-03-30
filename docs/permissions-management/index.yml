@@ -28,15 +28,6 @@ landingContent:
             url: whats-new-in-permissions-management.md
           - text: Customer case study - Infosys
             url: https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Entra-Permissions-Management-Infosys-Case-Study.pdf?culture=en-us&country=us
-            # Card
-  - title: Learn
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Intro to Microsoft Entra Permissions Management
-            url: https://go.microsoft.com/fwlink/?linkid=2245157
-          - text: Explore the features of Permissions Management
-            url: https://go.microsoft.com/fwlink/?linkid=2252361
   # Card
   - title: Get started
     linkLists:

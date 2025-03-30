@@ -13,7 +13,7 @@ ms.author: jfields
 # Add an account/ subscription/ project after onboarding is complete
 
 > [!NOTE]
-> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](aka.ms/MEPMretire).
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how to add an Amazon Web Services (AWS) account, Microsoft Azure subscription, or Google Cloud Platform (GCP) project in Microsoft Permissions Management after you've completed the onboarding process.
 
