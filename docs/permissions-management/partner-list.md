@@ -45,7 +45,6 @@ If you're a partner and would like to be considered for the Microsoft Entra Perm
 | ![Screenshot of Vu logo.](media/partner-list/partner-oxford-computer-group.png) | [Permissions Management implementation and remediation](https://oxfordcomputergroup.com/microsoft-entra-permissions-management-implementation/)|
 | ![Screenshot of Onfido logo.](media/partner-list/partner-ada-quest.png) | [adaQuest Microsoft Entra Permissions Management Risk Assessment](https://adaquest.com/entra-permission-risk-assessment/)|
 | ![Screenshot of Ascent Solutions logo.](media/partner-list/partner-ascent-solutions.png) | [Ascent Solutions Microsoft Entra Permissions Management Rapid Risk Assessment](https://www.meetascent.com/resources/microsoft-entra-permissions-rapid-risk-assessment)|
-| ![Screenshot of Synergy Advisors logo.](media/partner-list/partner-synergy-advisors.png) | [Synergy Advisors Identity Optimization](https://synergyadvisors.biz/solutions-item/identity-optimization/)|
 | ![Screenshot of BDO Digital logo.](media/partner-list/partner-bdo-digital.png) | [BDO Digital Managing Permissions Across Multicloud](https://www.bdodigital.com/services/security-compliance/cybersecurity/entra-permissions-management)|
 | ![Screenshot of Mazzy Technologies logo.](media/partner-list/partner-mazzy-technologies.png) | [Mazzy Technologies Identity](https://mazzytechnologies.com/identity%3A-microsoft-entra)|
 
