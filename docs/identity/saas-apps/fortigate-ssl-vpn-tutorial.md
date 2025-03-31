@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FortiGate SSL VPN so that I can control who has access to FortiGate SSL VPN, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Article description
 
-In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 FortiGate SSL VPN supports SP-initiated SSO.
 
@@ -57,7 +57,7 @@ You'll configure and test Microsoft Entra SSO with FortiGate SSL VPN by using a 
 To configure and test Microsoft Entra SSO with FortiGate SSL VPN, you complete these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable the feature for your users.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
     1. **[Grant access to the test user](#grant-access-to-the-test-user)** to enable Microsoft Entra single sign-on for that user.
 1. **[Configure FortiGate SSL VPN SSO](#configure-fortigate-ssl-vpn-sso)** on the application side.
     1. **Create a FortiGate SAML SSO user group** as a counterpart to the Microsoft Entra representation of the user.
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
     `https://<FortiGate IP or FQDN address>:<Custom SSL VPN port><FQDN>/remote/saml/logout`.
 
     > [!NOTE]
-    > These values are just patterns. You need to use the actual **Sign on URL**, **Identifier**, **Reply URL**, and **Logout URL** that is configured on the FortiGate. FortiGate support needs to supply the correct values for the environment.
+    > These values are just patterns. You need to use the actual **Sign on URL**, **Identifier**, **Reply URL**, and **Logout URL** that's configured on the FortiGate. FortiGate support needs to supply the correct values for the environment.
 
 1. The FortiGate SSL VPN application expects SAML assertions in a specific format, which requires you to add custom attribute mappings to the configuration. The following screenshot shows the list of default attributes.
 
@@ -193,7 +193,7 @@ After you completed the SAML configuration of the FortiGate app in your tenant, 
 1. Select **Import** > **Remote Certificate**.
 1. Browse to the certificate downloaded from the FortiGate app deployment in the Azure tenant, select it, and then select **OK**.
 
-After the certificate is uploaded, take note of its name under **System** > **Certificates** > **Remote Certificate**. By default, it is named REMOTE_Cert_*N*, where *N* is an integer value.
+After the certificate is uploaded, take note of its name under **System** > **Certificates** > **Remote Certificate**. By default, it's named REMOTE_Cert_*N*, where *N* is an integer value.
 
 #### Complete FortiGate command-line configuration
 
@@ -270,11 +270,11 @@ Refer to [Configuring SAML SSO sign in for SSL VPN with Microsoft Entra ID actin
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* In Step 5) of the Azure SSO configuration, **Test single sign-on with your App*, select the **Test** button. This will redirect to FortiGate VPN Sign-on URL where you can initiate the sign in flow. 
+* In Step 5) of the Azure SSO configuration, **Test single sign-on with your App*, select the **Test** button. this option redirects to FortiGate VPN Sign-on URL where you can initiate the sign in flow. 
 
 * Go to FortiGate VPN Sign-on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you select the FortiGate VPN tile in the My Apps, this will redirect to FortiGate VPN Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the FortiGate VPN tile in the My Apps, this option redirects to FortiGate VPN Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

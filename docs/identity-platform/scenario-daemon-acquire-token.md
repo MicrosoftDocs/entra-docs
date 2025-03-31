@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Acquire tokens to call a web API using a daemon application
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 After you've constructed a confidential client application, you can acquire a token for the app by calling `AcquireTokenForClient`, passing the scope, and optionally forcing a refresh of the token.
 
 ## Scopes to request

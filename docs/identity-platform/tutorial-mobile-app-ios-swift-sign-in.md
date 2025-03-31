@@ -17,6 +17,8 @@ zone_pivot_groups: entra-tenants
 
 # Tutorial: Sign in users in iOS (Swift) mobile app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 ::: zone pivot="workforce"
 
 This is the third tutorial in the tutorial series that guides you on signing in users using Microsoft Entra ID.

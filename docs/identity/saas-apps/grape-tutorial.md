@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Gra-Pe so that I can control who has access to Gra-Pe, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -45,7 +45,7 @@ To configure the integration of Gra-Pe into Microsoft Entra ID, you need to add 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **Gra-Pe**, select **Gra-Pe** from result panel then click **Add** button to add the application.
+1. In the search box, type **Gra-Pe**, select **Gra-Pe** from result panel then select **Add** button to add the application.
 
 	 ![Gra-Pe in the results list](common/search-new-app.png)
 
@@ -60,9 +60,9 @@ To configure and test Microsoft Entra single sign-on with Gra-Pe, you need to co
 
 1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
 2. **[Configure Gra-Pe Single Sign-On](#configure-gra-pe-single-sign-on)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Gra-Pe test user](#create-gra-pe-test-user)** - to have a counterpart of Britta Simon in Gra-Pe that is linked to the Microsoft Entra representation of user.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
+5. **[Create Gra-Pe test user](#create-gra-pe-test-user)** - to have a counterpart of Britta Simon in Gra-Pe that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -82,7 +82,7 @@ To configure Microsoft Entra single sign-on with Gra-Pe, perform the following s
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -93,7 +93,7 @@ To configure Microsoft Entra single sign-on with Gra-Pe, perform the following s
     In the **Sign-on URL** text box, type a URL:
     `https://btm.tts.co.jp/portal/apl/SSOLogin.aspx`
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -144,9 +144,9 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Add Assignment** dialog, select the **Assign** button.
 
 ### Create Gra-Pe test user
 
@@ -156,7 +156,7 @@ In this section, you create a user called Britta Simon in Gra-Pe. Work with [Gr
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Gra-Pe tile in the Access Panel, you should be automatically signed in to the Gra-Pe for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Gra-Pe tile in the Access Panel, you should be automatically signed in to the Gra-Pe for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 

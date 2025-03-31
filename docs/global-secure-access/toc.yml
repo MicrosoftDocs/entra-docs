@@ -241,4 +241,6 @@ items:
   - name: Windows client version history
     href: reference-windows-client-release-history.md
   - name: macOS client version history
-    href: reference-macos-client-release-history.md 
+    href: reference-macos-client-release-history.md
+  - name: Global Secure Access Certifications
+    href: reference-global-secure-access-certifications.md

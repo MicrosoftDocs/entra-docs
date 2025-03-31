@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with HighQ
 
-In this article, you'll learn how to integrate HighQ with Microsoft Entra ID. Thomson Reuters HighQ is a simple, flexible, and expandable solution that transforms the way law firms and corporate legal departments work and engage with their clients and colleagues. When you integrate HighQ with Microsoft Entra ID, you can:
+In this article, you learn how to integrate HighQ with Microsoft Entra ID. Thomson Reuters HighQ is a simple, flexible, and expandable solution that transforms the way law firms and corporate legal departments work and engage with their clients and colleagues. When you integrate HighQ with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HighQ.
 * Enable your users to be automatically signed-in to HighQ with their Microsoft Entra accounts.
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<CustomerName>/domain.extension/`
 
    > [!NOTE]
-   > These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [HighQ Client support team](mailto:highq-support@thomsonreuters.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+   > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [HighQ Client support team](mailto:highq-support@thomsonreuters.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your HighQ application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but HighQ expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -93,7 +93,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | ------------ | --------- |
     | Mail | user.mail |
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -109,11 +109,11 @@ In this section, you create a user called Britta Simon in HighQ. Work with [High
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to HighQ Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to HighQ Sign-on URL where you can initiate the login flow. 
 
 * Go to HighQ Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the HighQ tile in the My Apps, this will redirect to HighQ Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the HighQ tile in the My Apps, this option redirects to HighQ Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

@@ -147,3 +147,4 @@ This tutorial illustrates testing the sign-in flow using a web-based application
 
 * [What is application management in Microsoft Entra ID?](what-is-application-management.md)
 * [Govern access for applications in your environment](~/id-governance/identity-governance-applications-prepare.md)
+* [Increase the resilience of authentication for federated applications deployed at sites with colocated users](~/architecture/resilience-for-federated-applications-with-colocated-users.md)

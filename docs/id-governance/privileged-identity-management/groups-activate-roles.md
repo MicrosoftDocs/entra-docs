@@ -24,6 +24,10 @@ This article is for eligible members or owners who want to activate their group 
 >
 >Application may provide access to users based on their group membership. In some situations, application access may not immediately reflect the fact that user was added to the group or removed from it. If application previously cached the fact that user is not member of the group – when user tries to access application again, access may not be provided. Similarly, if application previously cached the fact that user is member of the group – when group membership is deactivated, user may still get access. Specific situation depends on the application’s architecture. For some applications, signing out and signing back in may help to get access added or removed.
 
+## PIM for Groups and ownership deactivation
+
+[!INCLUDE [groups-deactivation-include](../includes/groups-deactivation-include.md)]
+
 ## Activate a role
 
 When you need to take on a group membership or ownership, you can request activation by using the **My roles** navigation option in PIM.

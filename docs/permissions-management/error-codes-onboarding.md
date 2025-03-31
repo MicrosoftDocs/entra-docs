@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: reference
-ms.date: 09/07/2023
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 
