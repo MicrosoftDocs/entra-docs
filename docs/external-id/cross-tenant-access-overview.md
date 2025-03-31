@@ -177,6 +177,8 @@ For more information, see the [Configure Microsoft cloud settings for B2B collab
 
 - If you block access to all apps by default, users are unable to read emails encrypted with Microsoft Rights Management Service, also known as Office 365 Message Encryption (OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If you allow only this application, access to all other apps is blocked by default.
 
+- If an external organization requires MFA or Terms of Use (ToU) by Conditional Access policies, users might be blocked from registering MFA methods or consenting to ToU. To avoid this issue, configure outbound settings to let users access app ID 0000000c-0000-0000-c000-000000000000 (Microsoft App Access Panel) for MFA registration and app ID d52792f4-ba38-424d-8140-ada5b883f293 (AAD Terms of Use) for ToU.
+
 ## Custom roles for managing cross-tenant access settings
 <!--Added content as a reference. -->
 
