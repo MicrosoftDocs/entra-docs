@@ -14,7 +14,7 @@ manager: celestedg
 ms.collection: M365-identity-device-management
 ms.custom: seo-july-2024
 
-#  Customer intent: As a B2B collaboration administrator, I want to understand the built-in capability for using Microsoft account (MSA) as an identity provider for External ID, so that guest users can use their personal Microsoft accounts to sign in without additional configuration.
+#Customer intent: As a B2B collaboration administrator, I want to understand the built-in capability for using Microsoft account (MSA) as an identity provider for External ID, so that guest users can use their personal Microsoft accounts to sign in without additional configuration.
 ---
 
 # Use Microsoft accounts (MSA) for B2B collaboration

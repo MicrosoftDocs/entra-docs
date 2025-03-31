@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Redocly
 
-In this article, you'll learn how to integrate Redocly with Microsoft Entra ID. Redocly is the first developer documentation tool that allows us to keep the docs in GitHub, keeping developer docs close to the developers. When you integrate Redocly with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Redocly with Microsoft Entra ID. Redocly is the first developer documentation tool that allows us to keep the docs in GitHub, keeping developer docs close to the developers. When you integrate Redocly with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Redocly.
 * Enable your users to be automatically signed-in to Redocly with their Microsoft Entra accounts.
@@ -94,7 +94,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| `https://<SiteName>.<REGION>.redoc.dev/_auth/idp-login` |
 
 	> [!Note]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Redocly support team](mailto:team@redocly.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Redocly support team](mailto:team@redocly.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **Download** to download the certificate and save it on your computer.
 
@@ -116,11 +116,11 @@ In this section, a user called B.Simon is created in Redocly. Redocly supports j
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Redocly Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Redocly Sign-on URL where you can initiate the login flow. 
 
 * Go to Redocly Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Redocly tile in the My Apps, this will redirect to Redocly Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Redocly tile in the My Apps, this option redirects to Redocly Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

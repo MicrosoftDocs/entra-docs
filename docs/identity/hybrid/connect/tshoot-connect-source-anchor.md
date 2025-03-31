@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Troubleshoot Source Anchor Issues during Instal
 description: This topic provides steps for how to troubleshoot issues with the source anchor during installation.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.date: 12/27/2024

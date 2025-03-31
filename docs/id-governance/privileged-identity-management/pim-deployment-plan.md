@@ -1,9 +1,9 @@
 ---
 title: Plan a Privileged Identity Management deployment
-description: Learn how to deploy Privileged Identity Management (PIM) in your Microsoft Entra organization.
-
+description: Learn how to deploy Privileged Identity Management (PIM) in your Microsoft
+  Entra organization.
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: conceptual
@@ -11,7 +11,6 @@ ms.date: 12/11/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-
 ---
 
 # Plan a Privileged Identity Management deployment

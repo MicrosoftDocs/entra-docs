@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Version release history archive'
 description: This article lists all archived releases of Microsoft Entra Connect and Azure AD Sync
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: reference
 ms.date: 11/06/2023

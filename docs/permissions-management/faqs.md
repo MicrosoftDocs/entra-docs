@@ -2,11 +2,11 @@
 title: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management
 description: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: faq
-ms.date: 05/13/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 
@@ -113,7 +113,7 @@ For information about permissions usage reports, see [Generate and download the 
 
 ## Does Permissions Management integrate with third-party ITSM (Information Technology Service Management) tools?
 
-Integration with ITMS tools, such as ServiceNow, is in the future roadmap.
+Integration with ITSM tools, such as ServiceNow, is in the future roadmap.
 
 ## How is Permissions Management being deployed?
 

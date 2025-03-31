@@ -2,11 +2,11 @@
 title: Security considerations for Microsoft Entra application proxy
 description: Covers security considerations for using Microsoft Entra application proxy
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/14/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -23,7 +23,7 @@ The following diagram shows how Microsoft Entra ID enables secure remote access 
 
 Microsoft Entra application proxy offers many security benefits. The list of benefits are:
 - Authenticated access
-- Conditional access
+- Conditional Access
 - Traffic termination
 - All outbound access
 - Cloud scale analytics and machine learning

@@ -5,11 +5,11 @@ description: To protect customers, some regions require a support ticket to requ
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 author: aloom3
 ms.author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: aloom3
 ms.custom: references_regions
 ---
@@ -197,7 +197,7 @@ For SMS verification, the following region codes require an opt-in. This means t
 | 1869       | Saint Kitts and Nevis |
 | 1876       | Jamaica |
 | 1767       | Dominica |
-| 970        | Palestine |
+| 970        | Palestinian Authority |
 | 880        | Bangladesh |
 | 1868       | Trinidad and Tobago |
 | 1441       | Bermuda |

@@ -70,9 +70,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by clicking the Save button.
+1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by selecting the Save button.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -88,9 +88,9 @@ In this section, you create a user called Britta Simon at my.sdworx.com. Work wi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the my.sdworx.com for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the my.sdworx.com for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the my.sdworx.com tile in the My Apps, you should be automatically signed in to the my.sdworx.com for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the my.sdworx.com tile in the My Apps, you should be automatically signed in to the my.sdworx.com for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

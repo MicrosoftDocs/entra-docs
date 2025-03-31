@@ -2,13 +2,16 @@
 title: Recommendation to migrate to Microsoft Entra MFA
 description: Learn about the Microsoft Entra recommendation to migrate to Microsoft Entra multifactor authentication from MFA server
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/19/2024
+ms.date: 02/25/2025
 ms.author: sarahlipsey
 ms.reviewer:  jupetter
+
+# Customer intent: As an IT admin, I need to migrate from MFA Server to Microsoft Entra MFA to align with Microsoft Entra recommendations.
+
 ---
 # Microsoft Entra recommendation: Migrate from MFA server to Microsoft Entra multifactor authentication (MFA)
 
@@ -40,7 +43,7 @@ Cloud-based, Microsoft Entra multifactor authentication offers better resiliency
 
 1. Update domain federation settings and decommission MFA Server. 
 
-## Next steps
+## Related content
 
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)

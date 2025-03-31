@@ -16,26 +16,22 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## February 2025
+
+### New articles
+
+- [Best practices to protect frontline workers](security-best-practices-for-frontline-workers.md) - Best Practices to Protect Frontline Workers
+
+### Updated articles
+
+- [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](v2-oauth-ropc.md) - Added clarity to the content
+
 ## January 2025
+
+### Updated articles
 
 - [Set up your application's Microsoft Entra test environment](test-setup-environment.md) - Added clarity to the content
 
 ## December 2024
 
 No updates available.
-
-## November 2024
-
-### New articles
-
-- [Configure a custom email provider for one time passcode send events (preview)](custom-extension-email-otp-get-started.md)
-- [Tutorial: Call an API from an Angular single-page app](tutorial-single-page-apps-angular-call-api.md)
-- [Tutorial: Create an Angular application and prepare it for authentication](tutorial-single-page-apps-angular-prepare-app.md)
-- [Tutorial: Register an Angular application in a Microsoft Entra ID tenant](tutorial-single-page-apps-angular-register-app.md)
-- [Tutorial: Add sign in and sign out in your Angular single-page application](tutorial-single-page-apps-angular-sign-in-users-app.md)
-
-### Updated articles
-
-- [How to use Continuous Access Evaluation enabled APIs in your applications](app-resilience-continuous-access-evaluation.md) - CAE page update with code snippets for MSAL libraries
-- [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Added clarity to the content
-- [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Added clarity to the content

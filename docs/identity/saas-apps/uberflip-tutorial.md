@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Uberflip
 
-In this tutorial, you learn how to integrate Uberflip with Microsoft Entra ID.
+In this article,  you learn how to integrate Uberflip with Microsoft Entra ID.
 
 Integrating Uberflip with Microsoft Entra ID provides you with the following benefits:
 
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with Uberflip, you need the following i
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 Uberflip supports the following features:
 
@@ -65,8 +65,8 @@ To configure and test Microsoft Entra single sign-on with Uberflip, you need to 
 
 1. **[Configure Microsoft Entra single sign-on](#configure-azure-ad-single-sign-on)** to enable your users to use this feature.
 1. **[Configure Uberflip single sign-on](#configure-uberflip-single-sign-on)** to configure the single sign-on settings on the application side.
-1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with B. Simon.
-1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable B. Simon to use Microsoft Entra single sign-on.
+1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with B. Simon.
+1. **Assign the Microsoft Entra test user** to enable B. Simon to use Microsoft Entra single sign-on.
 1. **[Create an Uberflip test user](#create-an-uberflip-test-user)** so that there's a user named B. Simon in Uberflip who's linked to the Microsoft Entra user named B. Simon.
 1. **[Test single sign-on](#test-single-sign-on)** to verify whether the configuration works.
 
@@ -183,7 +183,7 @@ When you select **Uberflip** in the My Apps portal, you should be automatically 
 
 ## Additional resources
 
-* [List of tutorials for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
+* [List of articles for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
 
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

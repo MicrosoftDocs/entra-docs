@@ -50,10 +50,10 @@ You'll now configure a custom authentication extension, which will be used by Mi
 1. Give the app a name, for example **Azure Functions authentication events API**.
 1. Select **Next**.
 1. In **Claims**, enter the attributes that you expect your custom authentication extension to parse from your REST API and will be merged into the token. Add the following claims:
-    - dateOfBirth
-    - customRoles
-    - apiVersion
-    - correlationId
+    - DateOfBirth
+    - CustomRoles
+    - ApiVersion
+    - CorrelationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
 1. Note the **App ID** under **API Authentication**, which is needed to [configure authentication for your Azure Function](./custom-extension-tokenissuancestart-setup.md#configure-authentication-for-your-azure-function) in your Azure Function app.
 
@@ -268,8 +268,8 @@ To assign the custom authentication extension as a custom claims provider source
 
 Next, assign the attributes from the custom claims provider, which should be issued into the token as claims:
 
-1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example *dateOfBirth*.
-1. Under **Source**, select **Attribute**, and choose *customClaimsProvider.dateOfBirth* from the **Source attribute** drop-down box.
+1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example *DateOfBirth*.
+1. Under **Source**, select **Attribute**, and choose *customClaimsProvider.DateOfBirth* from the **Source attribute** drop-down box.
 
     :::image type="content" border="false"  source="media/custom-extension-tokenissuancestart-configuration/manage-claim.png" alt-text="Screenshot that shows how to add a claim mapping to your app." lightbox="media/custom-extension-tokenissuancestart-configuration/manage-claim.png":::
 
@@ -450,7 +450,7 @@ To test your custom claims provider, follow these steps:
 
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID.  
-1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
+1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `DateOfBirth`.
 
 # [External tenant](#tab/external-tenant)
 
@@ -463,7 +463,7 @@ To test your custom claims provider, follow these steps:
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID. 
 1. Go through the sign in user flow that you've configured, and accept the requested permissions.
-1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
+1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `DateOfBirth`.
 
 ---
 

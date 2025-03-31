@@ -3,7 +3,7 @@ title: 'Accounts for integrating with Active Directory'
 description: This article describes the required accounts for each of the synchronization tools.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na

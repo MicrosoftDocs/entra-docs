@@ -9,7 +9,7 @@ ms.date: 12/04/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: nigu
 ---
 # Migrate from a classic policy

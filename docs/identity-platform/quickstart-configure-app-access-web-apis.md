@@ -45,6 +45,10 @@ Once you've registered both your client app and web API and you've exposed the A
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations**, and then select your client application (*not* your web API).
 1. Select **API permissions**, then **Add a permission** and select **My APIs** in the sidebar.
+
+
+   :::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-path-to-my-apis-pane.png" alt-text="Screenshot with highlighted buttons of App registrations, API permissions, Add a permission and My APIs to enable the user to request API permissions.":::
+
 1. Select the web API you registered as part of the prerequisites, and select **Delegated permissions**.
 
     - **Delegated permissions** are appropriate for client apps that access a web API as the signed-in user, and whose access should be restricted to the permissions you select in the next step. Leave **Delegated permissions** selected for this example.
@@ -138,7 +142,7 @@ The **Grant admin consent** button is *disabled* if you aren't an admin or if no
 It's important not to give an application too many permissions than is necessary. To revoke admin consent for a permission in your application;
 
 1. Navigate to your application and select **API permissions**.
-2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Remove permission**
+2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Revoke admin consent**.
 3. In the pop-up that appears, select **Yes, remove** to revoke the admin consent for the permission.
 
 ## Related content

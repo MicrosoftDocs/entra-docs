@@ -2,7 +2,7 @@
 title: 'Install Microsoft Entra Connect using SQL delegated administrator permissions'
 description: This topic describes an update to Microsoft Entra Connect that allows for installation using an account that only has SQL dbo permissions.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.reviewer: jparsons
 ms.service: entra-id
 ms.tgt_pltfrm: na

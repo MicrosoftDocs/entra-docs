@@ -8,7 +8,7 @@ ms.date: 03/11/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: calebb, oanae
 
 ms.custom: subject-rbac-steps

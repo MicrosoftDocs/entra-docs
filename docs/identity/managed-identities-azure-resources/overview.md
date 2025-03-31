@@ -65,7 +65,7 @@ You can use managed identities by following the steps below:
 4. Use the managed identity to access a resource. In this step, you can use the Azure SDK with the Azure.Identity library. Some "source" resources offer connectors that know how to use Managed identities for the connections. In that case, you use the identity as a feature of that "source" resource.
 
 
-## What Azure services support the feature?<a name="which-azure-services-support-managed-identity"></a>
+## Which Azure services support the feature?
 
 Managed identities for Azure resources can be used to authenticate to services that support Microsoft Entra authentication. For a list of supported Azure services, see [services that support managed identities for Azure resources](./managed-identities-status.md).
 

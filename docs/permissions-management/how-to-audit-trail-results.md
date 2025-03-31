@@ -2,11 +2,11 @@
 title: Generate an on-demand report from a query in the Audit dashboard in Permissions Management
 description: How to generate an on-demand report from a query in the **Audit** dashboard in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 
