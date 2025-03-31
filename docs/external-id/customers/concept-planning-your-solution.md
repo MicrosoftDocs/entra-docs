@@ -141,4 +141,5 @@ When planning for configuring company branding, language customizations, and cus
 ## Next steps
 - [Start a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl) or [create your external tenant](how-to-create-external-tenant-portal.md).
 - [Find samples and guidance for integrating your app](samples-ciam-all.md).
+- [Learn how to migrate users from your current identity provider](how-to-migrate-users.md).
 - See also the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.
