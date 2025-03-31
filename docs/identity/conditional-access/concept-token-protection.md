@@ -72,7 +72,7 @@ The following devices and applications support accessing resources on which a to
    - Power Automate hosted machine groups that are [Microsoft Entra joined](/power-automate/desktop-flows/hosted-machine-groups#general-network-requirements). 
    - Windows Autopilot devices deployed using [self-deploying mode](/autopilot/self-deploying). 
    - Windows virtual machines deployed in Azure using the virtual machine (VM) extension that are enabled for [Microsoft Entra ID authentication](/entra/identity/devices/howto-vm-sign-in-azure-ad-windows).
-- New [Microsoft Entra registered devices]([Microsoft Entra registered devices](../devices/concept-device-registration.md)) on Windows versions before 24H2 might be blocked if users don't perform a fresh sign-in during registration. If blocked, users must re-register the device.
+- New [Microsoft Entra registered devices](../devices/concept-device-registration.md) on Windows versions before 24H2 might be blocked if users don't perform a fresh sign-in during registration. If blocked, users must re-register the device.
 
 To identify the impacted devices due to unsupported registration types listed previously, inspect `tokenProtectionStatusDetails` attribute in the Sign-in logs. Token requests that are blocked due to an unsupported device registration type, can be identified with a `signInSessionStatusCode` value of 1003. 
 
