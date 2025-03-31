@@ -103,8 +103,6 @@ For scenarios like mailbox update, items moved or deleted, you can start with li
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-linkable-identifiers.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers.":::
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-linkable-identifiers-details.png" alt-text="Screenshot of Microsoft Purview portal showing detailed log item.":::
-
 5. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for all the activities for Exchange Online.
 
 ### View Exchange Online logs using PowerShell commandlets
