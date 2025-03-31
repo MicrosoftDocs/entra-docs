@@ -17,7 +17,7 @@ In this guide, you learn the fundamentals of how to migrate users and credential
 
 ## Pre-requisites
 
-Before you start migrating users to External ID, you will need:
+Before you start migrating users to External ID, you need:
 
 - An external tenant. To create one, choose from the following methods:
   - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
@@ -29,7 +29,7 @@ Before starting your user migration process, you should take the time to clean u
 
 - Identify the set of user attributes to be stored in External ID, and migrate only what you need. If necessary, you can [create custom attributes](concept-user-attributes.md) within External ID to store more data about a user.
 - If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in External ID. You may need to apply your own business logic to merge and reconcile accounts for the same user from different sources.
-- Usernames need to be unique per account in External. If multiple applications use different usernames, you will need to apply your own business logic to reconcile and merge accounts. For the password, let the user choose one and set it in the directory. Only the chosen password should be stored in the External ID account.
+- Usernames need to be unique per account in External. If multiple applications use different usernames, you need to apply your own business logic to reconcile and merge accounts. For the password, let the user choose one and set it in the directory. Only the chosen password should be stored in the External ID account.
 - Remove unused user accounts, or don't migrate stale accounts.
 
 ## Stage 1: User Data Migration
@@ -54,7 +54,7 @@ Not all information in your legacy identity provider needs to be migrated to you
 
 ## Stage 2: Password Migration
 
-Once you have migrated user data, you need to migrate user passwords from the legacy identity provider to External ID. There are two recommended approaches for migrating user passwords: self-service password reset (SSPR) and seamless migration. If plaintext user passwords aren't accessible you'll need to use one of these methods. For example, if: 
+Once you have migrated user data, you need to migrate user passwords from the legacy identity provider to External ID. There are two recommended approaches for migrating user passwords: self-service password reset (SSPR) and seamless migration. If plaintext user passwords aren't accessible, you'll need to use one of these methods. For example, if: 
 
 - The password is stored in Azure AD B2C. 
 - The password is stored in a one-way encrypted format, such as with a hash function. 
