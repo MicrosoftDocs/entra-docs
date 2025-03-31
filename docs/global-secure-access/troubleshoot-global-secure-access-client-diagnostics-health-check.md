@@ -292,6 +292,8 @@ function FindProxyForURL(url, host) {  
 #### Add a system variable
 Configuring the Global Secure Access client to route Global Secure Access traffic through a proxy:
 1. Set a system environment variable in Windows named `grpc_proxy` to the value of the proxy address. For example, `http://10.1.0.10:8080`.
+![image](https://github.com/user-attachments/assets/d5d10e11-f581-4e73-a7da-0dbc1b45a575)
+
 1. Restart the Global Secure Access client.
 
 ### No Hyper-V external virtual switch detected
