@@ -1,9 +1,9 @@
 ---
 title: What is Privileged Identity Management?
-description: Provides an overview of Microsoft Entra Privileged Identity Management (PIM).
-
+description: Provides an overview of Microsoft Entra Privileged Identity Management
+  (PIM).
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: overview

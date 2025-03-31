@@ -26,7 +26,9 @@ In this article, you learn how to create, list, and delete federated identity cr
 
 ## Important considerations and restrictions
 
-To create, update, or delete a federated identity credential, the account performing the action must have the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or Application Owner role. The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
+
+To create, update, or delete a federated identity credential, the account performing the action must be the owner of the application, or have one of these Entra roles: [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), or [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
+
 
 [!INCLUDE [federated credential configuration](./includes/federated-credential-configuration-considerations.md)]
 
@@ -71,8 +73,6 @@ Use the following values from your Microsoft Entra application registration for 
     The following screenshot demonstrates how to copy the application ID and tenant ID.
 
     ![Screenshot that demonstrates how to copy the application ID and tenant ID from Microsoft Entra admin center.](./media/workload-identity-federation-create-trust/copy-client-id.png)
-
-- `AZURE_SUBSCRIPTION_ID` your subscription ID. To get the subscription ID, open **Subscriptions** in [Azure portal](https://portal.azure.com) and find your subscription. Then, copy the **Subscription ID**.
 
 #### Entity type examples
 

@@ -3,7 +3,7 @@ title: 'Get started with single sign-on'
 description: This article describes how you can configure the synchronization tools to use single sign-on.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na

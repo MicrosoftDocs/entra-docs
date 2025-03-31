@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Blink so that I can streamline the user management process and ensure that users have the appropriate access to Blink.
@@ -16,17 +16,17 @@ ms.author: thomasakelo
 
 # Configure Blink for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Blink and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users to Blink.
+The objective of this article is to demonstrate the steps to be performed in Blink and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users to Blink.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Blink tenant](https://joinblink.com/pricing)
 * A user account in Blink with Admin permissions.
 
@@ -42,7 +42,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Blink
 
-* It is recommended that a single Microsoft Entra user is assigned to Blink to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Blink to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Blink, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -50,7 +50,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 1. Log a [Support Case](https://support.joinblink.com) or email **Blink support** at support@joinblink.com to request a SCIM token.
 
-2.	Copy the **SCIM Authentication Token**. This value will be entered in the Secret Token field in the Provisioning tab of your Blink application.
+2.	Copy the **SCIM Authentication Token**. This value is entered in the Secret Token field in the Provisioning tab of your Blink application.
 
 ## Add Blink from the gallery
 
@@ -69,7 +69,7 @@ Before configuring Blink for automatic user provisioning with Microsoft Entra ID
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Blink based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Blink, following the instructions provided in the [Blink Single sign-on tutorial](./blink-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for Blink, following the instructions provided in the [Blink Single sign-on  article](./blink-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-blink-in-azure-ad'></a>
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://api.joinblink.com/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Blink. If the connection fails, ensure your Blink account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://api.joinblink.com/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Blink. If the connection fails, ensure your Blink account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Blink**.
 
@@ -124,7 +124,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    urn:ietf:params:scim:schemas:extension:blink:2.0:User:description|String|
    urn:ietf:params:scim:schemas:extension:blink:2.0:User:location|String|
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Blink, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -134,7 +134,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -146,7 +146,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 * Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
+* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
 * If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 

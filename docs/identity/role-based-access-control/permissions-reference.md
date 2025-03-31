@@ -2,7 +2,7 @@
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 author: rolyon
-manager: amycolannino
+manager: femila
 search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
@@ -69,6 +69,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Global Administrator](#global-administrator) | Can manage all aspects of Microsoft Entra ID and Microsoft services that use Microsoft Entra identities.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 62e90394-69f5-4237-9190-012177145e10 |
 > | [Global Reader](#global-reader) | Can read everything that a Global Administrator can, but not update anything.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | f2ef992c-3afb-46b9-b7cf-a126ee74c451 |
 > | [Global Secure Access Administrator](#global-secure-access-administrator) | Create and manage all aspects of Microsoft Entra Internet Access and Microsoft Entra Private Access, including managing access to public and private endpoints. | ac434307-12b9-4fa1-a708-88bf58caabc1 |
+> | [Global Secure Access Log Reader](#global-secure-access-log-reader) | Provides designated security personnel with read-only access to network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for detailed analysis. | 843318fb-79a6-4168-9e6f-aa9a07481cc4 |
 > | [Groups Administrator](#groups-administrator) | Members of this role can create/manage groups, create/manage groups settings like naming and expiration policies, and view groups activity and audit reports. | fdd7a751-b60b-444a-984c-02652fe8fa1c |
 > | [Guest Inviter](#guest-inviter) | Can invite guest users independent of the 'members can invite guests' setting. | 95e79109-95c0-4d8e-aee3-d01accf2d47b |
 > | [Helpdesk Administrator](#helpdesk-administrator) | Can reset passwords for non-administrators and Helpdesk Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 729827e3-9c14-49f7-bb1b-9608f156bbb8 |
@@ -78,6 +79,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Insights Analyst](#insights-analyst) | Access the analytical capabilities in Microsoft Viva Insights and run custom queries. | 25df335f-86eb-4119-b717-0ff02de207e9 |
 > | [Insights Business Leader](#insights-business-leader) | Can view and share dashboards and insights via the Microsoft 365 Insights app. | 31e939ad-9672-4796-9c2e-873181342d2d |
 > | [Intune Administrator](#intune-administrator) | Can manage all aspects of the Intune product.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 3a2c62db-5318-420d-8d74-23affee5d9d5 |
+> | [IoT Device Administrator](#iot-device-administrator) | Provision new IoT devices, manage their lifecycle, configure certificates, and manage device templates. | 2ea5ce4c-b2d8-4668-bd81-3680bd2d227a |
 > | [Kaizala Administrator](#kaizala-administrator) | Can manage settings for Microsoft Kaizala. | 74ef975b-6605-40af-a5d2-b9539d836353 |
 > | [Knowledge Administrator](#knowledge-administrator) | Can configure knowledge, learning, and other intelligent features. | b5a8dcf3-09d5-43a9-a639-8e29ef291470 |
 > | [Knowledge Manager](#knowledge-manager) | Can organize, create, manage, and promote topics and knowledge. | 744ec460-397e-42ad-a462-8b3f9747a02c |
@@ -99,6 +101,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Partner Tier1 Support](#partner-tier1-support) | Do not use - not intended for general use.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 4ba39ca4-527c-499a-b93d-d9b492c50246 |
 > | [Partner Tier2 Support](#partner-tier2-support) | Do not use - not intended for general use.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8 |
 > | [Password Administrator](#password-administrator) | Can reset passwords for non-administrators and Password Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 966707d0-3269-4727-9be2-8c3a10f19b9d |
+> | [People Administrator](#people-administrator) | Manage profile photos of users and people settings for all users in the organization. | 024906de-61e5-49c8-8572-40335f1e0e10 |
 > | [Permissions Management Administrator](#permissions-management-administrator) | Manage all aspects of Microsoft Entra Permissions Management. | af78dc32-cf4d-46f9-ba4e-4428526346b5 |
 > | [Power Platform Administrator](#power-platform-administrator) | Can create and manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate. | 11648597-926c-4cf3-9c36-bcebb0ba8dcc |
 > | [Printer Administrator](#printer-administrator) | Can manage all aspects of printers and printer connectors. | 644ef478-e28f-4e28-b9dc-3fdde9aa0b1f |
@@ -126,6 +129,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [User Administrator](#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | fe930be7-5e62-47db-91af-98c3a49a38b1 |
 > | [User Experience Success Manager](#user-experience-success-manager) | View product feedback, survey results, and reports to find training and communication opportunities. | 27460883-1df1-4691-b032-3b79643e5e63 |
 > | [Virtual Visits Administrator](#virtual-visits-administrator) | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app. | e300d9e7-4a2b-4295-9eff-f1c78b36cc98 |
+> | [Viva Glint Tenant Administrator](#viva-glint-tenant-administrator) | Manage and configure Microsoft Viva Glint settings in the Microsoft 365 admin center. | 0ec3f692-38d6-4d14-9e69-0377ca7797ad |
 > | [Viva Goals Administrator](#viva-goals-administrator) | Manage and configure all aspects of Microsoft Viva Goals. | 92b086b3-e367-4ef2-b869-1de128fb986e |
 > | [Viva Pulse Administrator](#viva-pulse-administrator) | Can manage all settings for Microsoft Viva Pulse app. | 87761b17-1ed2-4af3-9acd-92a150038160 |
 > | [Windows 365 Administrator](#windows-365-administrator) | Can provision and manage all aspects of Cloud PCs. | 11451d60-acb2-45eb-a7d6-43d0f0125c13 |
@@ -1012,7 +1016,9 @@ This role does not provide any permissions for other Dynamics 365 products.
 
 ## Edge Administrator
 
-Users in this role can create and manage the enterprise site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit, and publish the site list and additionally allows access to manage support tickets. [Learn more](https://go.microsoft.com/fwlink/?linkid=2165707)
+Users in this role can create and manage the enterprise site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit, and publish the site list and additionally allows access to manage support tickets.
+
+[Learn more](https://go.microsoft.com/fwlink/?linkid=2165707)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1321,6 +1327,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.powerApps.powerBI/allEntities/allTasks | Manage all aspects of Fabric and Power BI |
 > | microsoft.teams/allEntities/allProperties/allTasks | Manage all resources in Teams |
 > | microsoft.virtualVisits/allEntities/allProperties/allTasks | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app |
+> | microsoft.viva.glint/allEntities/allProperties/allTasks | Manage and configure all Microsoft Viva Glint settings in the Microsoft 365 admin center |
 > | microsoft.viva.goals/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Viva Goals |
 > | microsoft.viva.pulse/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Viva Pulse |
 > | microsoft.windows.defenderAdvancedThreatProtection/allEntities/allTasks | Manage all aspects of Microsoft Defender for Endpoint |
@@ -1442,6 +1449,7 @@ Users with this role **cannot** do the following:
 > | microsoft.permissionsManagement/allEntities/allProperties/read | Read all aspects of Microsoft Entra Permissions Management |
 > | microsoft.teams/allEntities/allProperties/read | Read all properties of Microsoft Teams |
 > | microsoft.virtualVisits/allEntities/allProperties/read | Read all aspects of Virtual Visits |
+> | microsoft.viva.glint/allEntities/allProperties/read | Read all Microsoft Viva Glint settings in the Microsoft 365 admin center |
 > | microsoft.viva.goals/allEntities/allProperties/read | Read all aspects of Microsoft Viva Goals |
 > | microsoft.viva.pulse/allEntities/allProperties/read | Read all aspects of Microsoft Viva Pulse |
 > | microsoft.windows.updatesDeployments/allEntities/allProperties/read | Read all aspects of Windows Update Service |
@@ -1457,7 +1465,7 @@ Users with this role **cannot** do the following:
 
 - Cannot manage enterprise applications, application registrations, Conditional Access, or application proxy settings
 
-[Learn more](../../global-secure-access/overview-what-is-global-secure-access.md)
+[Learn more](../../global-secure-access/reference-role-based-permissions.md)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1482,6 +1490,21 @@ Users with this role **cannot** do the following:
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## Global Secure Access Log Reader
+
+Assign the Global Secure Access Log Reader role to users who need to do the following:
+
+- Read network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for analysis by designated security personnel
+- View log details such as session, connection, and transaction
+- Filter logs based on criteria such as IP address and domain
+
+[Learn more](../../global-secure-access/reference-role-based-permissions.md)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.networkAccess/trafficLogs/standard/read | Read standard properties of traffic logs such as DeviceId, DestinationIp and PolicyRuleId |
 
 ## Groups Administrator
 
@@ -1758,6 +1781,31 @@ This role can create and manage all security groups. However, Intune Administrat
 > | microsoft.office365.organizationalMessages/allEntities/allProperties/read | Read all aspects of Microsoft 365 Organizational Messages |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## IoT Device Administrator
+
+Assign the IoT Device Administrator role to users who need to do the following tasks:
+
+- Provision new IoT devices using device templates
+- Manage the lifecycle of IoT devices
+- Configure certificates used for IoT device authentication
+- Manage the lifecycle of IoT device templates
+
+[Learn more](/graph/api/resources/devicetemplate)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/create | Create Certificate Authorities configurations for IoT Device trust and authentication |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update | Update crendential related properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/delete | Delete certificate authority configurations for Internet of Things (IoT) device |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/standard/read | Read standard properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
+> | microsoft.directory/deviceTemplates/create | Create Internet of Things (IoT) device templates |
+> | microsoft.directory/deviceTemplates/createDeviceFromTemplate | Create IoT Device from Internet of Things (IoT) device templates |
+> | microsoft.directory/deviceTemplates/delete | Delete Internet of Things (IoT) device templates |
+> | microsoft.directory/deviceTemplates/deviceInstances/read | Read device instances from Internet of Things (IoT) device links |
+> | microsoft.directory/deviceTemplates/owners/read | Read owners on Internet of Things (IoT) device templates |
+> | microsoft.directory/deviceTemplates/owners/update | Update owners on Internet of Things (IoT) device templates |
 
 ## Kaizala Administrator
 
@@ -2185,6 +2233,21 @@ Users with this role **cannot** do the following:
 > | --- | --- |
 > | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## People Administrator
+
+Assign the People Administrator role to users who need to do the following tasks:
+
+- Update profile photos for all users including administrators
+- Update people settings for all users, such as pronouns, name pronunciation, and profile card settings
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.peopleAdmin/organization/allProperties/read | Read people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.peopleAdmin/organization/allProperties/update | Update people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.people/users/photo/read | Read profile photo of user |
+> | microsoft.people/users/photo/update | Update profile photo of user |
 
 ## Permissions Management Administrator
 
@@ -2946,6 +3009,28 @@ Virtual Visits are a simple way to schedule and manage online and video appointm
 > | --- | --- |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.virtualVisits/allEntities/allProperties/allTasks | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app |
+
+## Viva Glint Tenant Administrator
+
+Assign the Viva Glint Tenant Administrator role to users who need to do the following tasks:
+
+- Read and configure Viva Glint settings in the Microsoft 365 admin center
+- Assign or remove Viva Glint service admins
+- Create and manage Viva Feature Access Management policies
+- View and manage Viva Glint experiences (if applicable)
+- Create and manage Azure support tickets
+
+For more information, see [Key roles for Viva Glint](/viva/glint/start/role-definitions) and [Assign Viva Glint Tenant and Service Administrators](/viva/glint/setup/post-provisioning-next-steps).
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+> | microsoft.viva.glint/allEntities/allProperties/allTasks | Manage and configure all Microsoft Viva Glint settings in the Microsoft 365 admin center |
 
 ## Viva Goals Administrator
 

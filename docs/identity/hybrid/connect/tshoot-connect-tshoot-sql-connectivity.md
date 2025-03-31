@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Troubleshoot SQL connectivity issues'
 description: Explains how to troubleshoot SQL connectivity issues that occur with Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting

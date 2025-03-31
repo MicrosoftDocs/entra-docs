@@ -34,9 +34,9 @@ These samples show how to write a single-page application secured with Microsoft
 > [!div class="mx-tdCol2BreakAll"]
 > | Language /<br/>Platform | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
 > | ----------------------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
-> | React | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/react-spa) | [MSAL React](/javascript/api/@azure/msal-react) |  Authorization code with PKCE | [Quickstart](quickstart-single-page-app-react-sign-in.md) | [Tutorial](tutorial-single-page-app-react-register-app.md) |
+> | React | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/react-spa) | [MSAL React](/javascript/api/@azure/msal-react) |  Authorization code with PKCE | [Quickstart](quickstart-single-page-app-react-sign-in.md) | [Tutorial](tutorial-single-page-app-react-prepare-app.md) |
 > | Angular | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/angular-spa) | [MSAL Angular](/javascript/api/@azure/msal-angular) | Authorization code with PKCE | [Quickstart](quickstart-single-page-app-angular-sign-in.md) | [Tutorial](tutorial-v2-angular-auth-code.md) |
-> | JavaScript | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/vanillajs-spa) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/2-Authorization-I/1-call-graph/README.md)<br/>&#8226; [Call Node.js web API](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/1-call-api/README.md) <br/>&#8226; [Deploy to Azure Storage and App Service](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/4-Deployment/README.md) | [MSAL.js](/javascript/api/overview/msal-overview) | Authorization code with PKCE | [Quickstart](quickstart-single-page-app-javascript-sign-in.md) | |
+> | JavaScript | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/vanillajs-spa) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/2-Authorization-I/1-call-graph/README.md)<br/>&#8226; [Call Node.js web API](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/1-call-api/README.md) <br/>&#8226; [Deploy to Azure Storage and App Service](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/4-Deployment/README.md) | [MSAL.js](/javascript/api/overview/msal-overview) | Authorization code with PKCE | [Quickstart](quickstart-single-page-app-sign-in.md) | |
 > | Blazor WebAssembly | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/tree/main/spa-blazor-wasm) <br/>&#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-blazor-wasm/blob/main/WebApp-graph-user/Call-MSGraph/README.md)<br/>&#8226; [Deploy to Azure App Service](https://github.com/Azure-Samples/ms-identity-blazor-wasm/blob/main/Deploy-to-Azure/README.md) | [MSAL.js](/javascript/api/overview/msal-overview) | Authorization code with PKCE | [Quickstart](quickstart-single-page-app-blazor-wasm-sign-in.md)|  |
 
 ### Web applications
@@ -91,7 +91,6 @@ The following samples show public client mobile applications that access the Mic
 > | iOS | &#8226; [Call Microsoft Graph native](https://github.com/Azure-Samples/ms-identity-mobile-apple-swift-objc) | [MSAL iOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc) | Authorization code with PKCE |[Quickstart](quickstart-mobile-app-ios-sign-in.md) |[Tutorial](tutorial-v2-ios.md) |
 > | Java | &#8226; [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-android-java) | [MSAL Android](https://github.com/AzureAD/microsoft-authentication-library-for-android) | Authorization code with PKCE | [Quickstart](quickstart-mobile-app-android-sign-in.md) |[Tutorial](tutorial-v2-android.md) |
 > | Kotlin | &#8226; [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-android-kotlin) | [MSAL Android](https://github.com/AzureAD/microsoft-authentication-library-for-android) | Authorization code with PKCE | | |
-> | Xamarin | &#8226; [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/1-Basic) <br/>&#8226; [Sign in users with broker and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/2-With-broker) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE | | |
 
 ### Service / daemon
 
@@ -186,15 +185,6 @@ The following samples show how to build applications using the C# language and f
 > | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/tree/main/spa-blazor-wasm) <br/>&#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-blazor-wasm/blob/main/WebApp-graph-user/Call-MSGraph/README.md)<br/>&#8226; [Deploy to Azure App Service](https://github.com/Azure-Samples/ms-identity-blazor-wasm/blob/main/Deploy-to-Azure/README.md) | [MSAL.js](/javascript/api/overview/msal-overview) | Implicit Flow | [Quickstart](quickstart-single-page-app-blazor-wasm-sign-in.md)| |
 > | Web application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-OIDC/MyOrg) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-graph-user/Call-MSGraph) <br/> &#8226; [Call web API](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-your-API/MyOrg) | [MSAL.NET](/entra/msal/dotnet) | Implicit/Hybrid flow | | |
 
-#### Xamarin
-
-The following samples show how to build applications for the Xamarin platform.
-
-> [!div class="mx-tdCol2BreakAll"]
-> | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
-> | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
-> | Mobile | &#8226; [Sign in users and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/1-Basic) <br/>&#8226; [Sign in users with broker and call Microsoft Graph](https://github.com/Azure-Samples/active-directory-xamarin-native-v2/tree/main/2-With-broker) | [MSAL.NET](/entra/msal/dotnet) | Authorization code with PKCE | | |
-
 ### iOS
 
 The following samples show how to build applications for the iOS platform.
@@ -213,7 +203,7 @@ The following samples show how to build applications for the JavaScript language
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
 > | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
-> | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/vanillajs-spa) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/2-Authorization-I/1-call-graph/README.md)<br/>&#8226; [Call Node.js web API](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/1-call-api/README.md) <br/>&#8226; [Deploy to Azure Storage and App Service](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/4-Deployment/README.md) | [MSAL.js](/javascript/api/overview/msal-overview) | Authorization code with PKCE | [Quickstart](quickstart-single-page-app-javascript-sign-in.md) | |
+> | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/vanillajs-spa) <br/> &#8226; [Call Microsoft Graph](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/2-Authorization-I/1-call-graph/README.md)<br/>&#8226; [Call Node.js web API](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/1-call-api/README.md) <br/>&#8226; [Deploy to Azure Storage and App Service](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/4-Deployment/README.md) | [MSAL.js](/javascript/api/overview/msal-overview) | Authorization code with PKCE | [Quickstart](quickstart-single-page-app-sign-in.md) | |
 
 #### Angular
 
@@ -244,7 +234,7 @@ The following samples show how to build applications for the JavaScript language
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample(s) <br/>on GitHub | Auth <br/>libraries | Auth flow | Quickstart | Tutorial |
 > | -------- | ----------------------------- | ------------------- | --------- | ---------- | -------- |
-> | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/react-spa) | [MSAL React](/javascript/api/@azure/msal-react) | &#8226; Authorization code with PKCE<br/> | [Quickstart](quickstart-single-page-app-react-sign-in.md) | [Tutorial](tutorial-single-page-app-react-register-app.md) |
+> | Single-page application | &#8226; [Sign in users](https://github.com/Azure-Samples/ms-identity-docs-code-javascript/tree/main/react-spa) | [MSAL React](/javascript/api/@azure/msal-react) | &#8226; Authorization code with PKCE<br/> | [Quickstart](quickstart-single-page-app-react-sign-in.md) | [Tutorial](tutorial-single-page-app-react-prepare-app.md) |
 
 ### Java
 

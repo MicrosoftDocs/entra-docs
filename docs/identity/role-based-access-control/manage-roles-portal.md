@@ -3,7 +3,7 @@ title: Assign Microsoft Entra roles
 description: Learn how to assign Microsoft Entra roles to users and groups at tenant, application registration, administrative unit scopes using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API. 
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to

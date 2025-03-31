@@ -5,11 +5,11 @@ description: Learn about using security questions in Microsoft Entra ID to help 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to understand how to use security questions in Microsoft Entra ID to improve and secure user sign-in events.
 ---

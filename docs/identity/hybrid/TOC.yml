@@ -384,12 +384,8 @@
         href: connect/admin-audit-logging.md
       - name: Enable device writeback
         href: connect/how-to-connect-device-writeback.md
-      - name: Enable group writeback
+      - name: Group writeback for Microsoft 365 groups
         href: connect/how-to-connect-group-writeback-enable.md
-      - name: Modify group writeback
-        href: connect/how-to-connect-modify-group-writeback.md
-      - name: Disable group writeback
-        href: connect/how-to-connect-group-writeback-disable.md
       - name: Device options
         href: connect/how-to-connect-device-options.md
       - name: Additional features in Microsoft Entra Connect

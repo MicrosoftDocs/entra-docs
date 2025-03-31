@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Harness so that I can streamline the user management process and ensure that users have the appropriate access to Harness.
@@ -27,7 +27,7 @@ In this article, you learn how to configure Microsoft Entra ID to automatically 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Harness tenant](https://harness.io/pricing/)
 * A user account in Harness with *Admin* permissions
 
@@ -67,7 +67,7 @@ Before you configure and enable automatic user provisioning, decide which users 
    
 1. Select **Submit**.
 
-1. Copy the **Key** for later use in this tutorial.
+1. Copy the **Key** for later use in this article.
 
 	![Harness Create Token](media/harness-provisioning-tutorial/token.png)
 
@@ -93,7 +93,7 @@ Before you configure Harness for automatic user provisioning with Microsoft Entr
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users or groups in Harness based on user or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Harness by following the instructions in the [Harness single sign-on tutorial](./harness-tutorial.md). You can configure single sign-on independent of automatic user provisioning, although these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for Harness by following the instructions in the [Harness single sign-on  article](./harness-tutorial.md). You can configure single sign-on independent of automatic user provisioning, although these two features complement each other.
 
 > [!NOTE]
 > To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://docs.harness.io/article/smloyragsm-api-keys) article.

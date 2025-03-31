@@ -2,11 +2,11 @@
 title: Define and manage users, roles, and access levels in Microsoft Permissions Management
 description: How to define and manage users, roles, and access levels in the Permissions Management User management dashboard.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

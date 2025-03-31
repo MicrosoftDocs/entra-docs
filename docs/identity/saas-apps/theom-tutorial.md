@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<CUSTOMER_SUBDOMAIN>.theom.ai`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Theom Client support team](mailto:help@theom.ai) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Theom Client support team](mailto:help@theom.ai) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -100,11 +100,11 @@ In this section, you create a user called Britta Simon at Theom. Work with [Theo
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Theom Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Theom Sign-on URL where you can initiate the login flow. 
 
 * Go to Theom Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Theom tile in the My Apps, this will redirect to Theom Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Theom tile in the My Apps, this option redirects to Theom Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

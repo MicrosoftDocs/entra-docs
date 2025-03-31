@@ -2,11 +2,11 @@
 title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access.
 description: Covers how to provide single sign-on using Kerberos with Microsoft Entra Private Access.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 11/10/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -53,12 +53,22 @@ At a minimum, publish all Domain Controllers that are configured in the Active D
 
 The Domain Controller ports are required to enable SSO to on-premises resources.
 
-|Port      |Protocol   |Purpose     |
-|----------|-----------|------------|
-|88        |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
-|389       |UDP        |DC locator  |
-|464       |UDP/TCP        |Password Change Request  |
-|123       |UDP        |Time Synchronization  |
+|Port        |Protocol   |Purpose     |
+|------------|-----------|------------|
+|88          |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
+|389         |UDP        |DC locator  |
+|464         |UDP/TCP    |Password Change Request  |
+|123         |UDP        |Network Time Protocol (NTP)  |
+|135         |UDP/TCP    |Domain controller to domain controller and client to domain controller operations  |
+|138         |UDP        |File replication service between domain controllers  |
+|139         |TCP        |File replication service between domain controllers  |
+|445         |UDP/TCP    |Replication, User and Computer Authentication, Group Policy  |
+|3268        |TCP        |Global catalog from client to domain controller  |
+|3269        |TCP        |Global catalog from client to domain controller  |
+|53          |UDP/TCP    |DNS from client to domain controller and domain controller to domain controller  |
+|1025-5000   |UDP/TCP    |Ephemeral ports  |
+|4952-65535  |UDP/TCP    |Ephemeral ports  |
+
 
 > [!NOTE]
 > The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).

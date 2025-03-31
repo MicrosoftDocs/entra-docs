@@ -3,7 +3,7 @@ title: Change static groups to dynamic membership groups
 description: Learn how to convert existing groups from static to dynamic membership groups using either the portal or PowerShell cmdlets.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to

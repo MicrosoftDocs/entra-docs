@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Upgrade from DirSync'
 description: Learn how to upgrade from DirSync to Microsoft Entra Connect. This article describes the steps for upgrading from DirSync to Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.tgt_pltfrm: na
@@ -167,7 +167,7 @@ If you have fewer than 50,000 objects, but you still want to do a parallel deplo
 
 1. Open a Command Prompt window.
 
-1. In the installation location of Microsoft Entra Connect (the default is *C:\Program Files\Microsoft Entra Connect*), run the following command:
+1. In the installation location of Microsoft Entra Connect (the default is *C:\Program Files\Microsoft Azure Active Directory Connect*), run the following command:
 
    `AzureADConnect.exe /ForceExport`
 

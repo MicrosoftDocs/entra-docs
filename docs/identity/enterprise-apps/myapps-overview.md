@@ -13,7 +13,7 @@ ms.author: jomondi
 ms.reviewer: saibandaru
 ms.custom: enterprise-apps
 
-#Customer intent: As an IT admin managing and launching applications in Microsoft Entra ID, I want to learn how I can equip end users to request new applications and create collectiona for applications in their My Apps portal, so that they can easily find and use the applications they need for their work.
+#Customer intent: As an IT admin managing and launching applications in Microsoft Entra ID, I want to learn how I can equip end users to request new applications and create collections for applications in their My Apps portal, so that they can easily find and use the applications they need for their work.
 ---
 
 # My Apps portal overview

@@ -3,7 +3,7 @@ title: 'Tools used for synchronization'
 description: This article introduces the various tools that can be used to synchronize the cloud with on-premises environments.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na

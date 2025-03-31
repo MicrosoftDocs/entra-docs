@@ -18,8 +18,6 @@ zone_pivot_groups: identity-linux-vm-access
 
 # Tutorial: Use a Linux VM/VMSS to access Azure resources
 
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
 ## Prerequisites
 
 - An understanding of managed identities. If you're not familiar with the managed identities for Azure resources feature, see this [overview](~/identity/managed-identities-azure-resources/overview.md).

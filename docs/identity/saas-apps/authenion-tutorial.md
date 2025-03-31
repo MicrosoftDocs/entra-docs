@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Authenion
 
-In this tutorial, you learn how to integrate Authenion with Microsoft Entra ID. When you integrate Authenion  with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Authenion with Microsoft Entra ID. When you integrate Authenion  with Microsoft Entra ID, you can:
 
 - Use Microsoft Entra ID to control who can access Authenion.
 - Enable your users to be automatically signed in to Authenion  with their Microsoft Entra accounts.

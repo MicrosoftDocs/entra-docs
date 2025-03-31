@@ -2,11 +2,11 @@
 title: Recommendation to migrate to Microsoft Graph API
 description: Learn about the Microsoft Entra recommendation to migrate from Azure Active Directory Graph APIs to Microsoft Graph APIs.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 04/05/2024
+ms.date: 02/25/2025
 ms.author: sarahlipsey
 ms.reviewer: krbash
 

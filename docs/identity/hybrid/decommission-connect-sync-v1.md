@@ -4,7 +4,7 @@ description: This article describes Azure AD Connect V1 decommissioning and how 
 
 documentationcenter: ''
 author: billmath
-manager: amycolannino
+manager: femila
 editor: ''
 ms.service: entra-id
 ms.topic: conceptual

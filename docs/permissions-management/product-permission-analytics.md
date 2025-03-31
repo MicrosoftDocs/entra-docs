@@ -2,11 +2,11 @@
 title: Create and view permission analytics triggers in Permissions Management
 description: How to create and view permission analytics triggers in the Permission analytics tab in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 11/21/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

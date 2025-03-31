@@ -2,11 +2,11 @@
 title: Enable or disable the controller in Permissions Management after onboarding is complete
 description: How to enable or disable the controller in Permissions Management after onboarding is complete.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 

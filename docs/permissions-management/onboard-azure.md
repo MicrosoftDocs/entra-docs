@@ -2,11 +2,11 @@
 title: Onboard a Microsoft Azure subscription in Permissions Management
 description: How to a Microsoft Azure subscription on Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 03/19/2025
 ms.author: jfields
 ---
 
