@@ -53,7 +53,7 @@ Recipients of the emails can be:
 - **Selected users (Preview)**: The email of specified users manually selected.
 
 > [!NOTE]
-> You're not able to add another user as cc to the recipient if you select **Sponsor(s) mail attribute (Preview)**. If you want to add multiple recipients along with the sponsor, find the users sponsor in their attributes, and add them manually along with who you want to cc via the **Selected users (Preview)** option. 
+> You're not able to add another user as cc to the recipient if you select **Sponsor(s) mail attribute (Preview)**. If you want to add multiple recipients along with the sponsor, find the user's sponsors in their attributes, and add them manually along with who you want to cc via the **Selected users (Preview)** option. 
 
 Under **Email Customization** you're able to customize the specific email message send out by the task. If you choose to customize the email, you're able to set the following arguments:
 
