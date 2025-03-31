@@ -88,6 +88,14 @@ You can also investigate the sign-ins of a specific user by searching for sign-i
 > [!NOTE]
 > When downloading the sign-in logs, choose JSON format to include Conditional Access report-only result data.
 
+## Improve workbook performance
+
+The standard Conditional Access insights and reporting workbook can capture a large amount of data with the default settings. The amount of data captured can affect the performance of the workbook so some queries might take longer to load or time out. To improve performance, you can create a transformation in Azure Monitor.
+
+Before proceeding with this optional step, review the [Transformation in Azure Monitor](/azure-monitor/essentials/data-collection-transformations) article for a general overview and cost considerations.
+
+
+
 ## Configure a Conditional Access policy in report-only mode
 
 To configure a Conditional Access policy in report-only mode:
