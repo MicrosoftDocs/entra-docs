@@ -161,4 +161,4 @@ Multi-hop authentication is commonly used when an application is tiered. The tie
 
 ## Related content
 
-- [Set up KCD on a managed domain](/entra/identity/domain-services/deploy-kcd).
+- [Set up KCD on a managed domain](/entra/identity/domain-services/deploy-kcd)

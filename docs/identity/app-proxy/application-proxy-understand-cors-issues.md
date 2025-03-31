@@ -111,7 +111,7 @@ Some CORS issues can't be resolved. For example, your application redirects to `
 
 ### Option 6: Complex application
 
-For applications that contain multiple individual web applications where preflight (OPTIONS) requests are used, you can publish the apps by using the complex application feature. For more information, see [Understand complex applications in Microsoft Entra application proxy](application-proxy-configure-complex-application.md).
+For applications that contain multiple individual web applications where preflight (`OPTIONS`) requests are used, you can publish the apps by using the complex application feature. For more information, see [Understand complex applications in Microsoft Entra application proxy](application-proxy-configure-complex-application.md).
 
 ## Related content
 

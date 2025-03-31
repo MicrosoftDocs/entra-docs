@@ -71,8 +71,8 @@ For causes and suggested resolutions, see [Single sign-on in an application prox
 
 For causes and suggested resolutions, see these articles:
 
-* [Troubleshoot Kerberos constrained delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
-* [Single sign-on by using application proxy and PingAccess](application-proxy-ping-access-publishing-guide.md).
+* [Troubleshoot Kerberos constrained delegation](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
+* [Single sign-on by using application proxy and PingAccess](application-proxy-ping-access-publishing-guide.md)
 
 ### Can't sign in to the application
 
