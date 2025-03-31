@@ -64,7 +64,7 @@ Once you have migrated user data, you need to migrate user passwords from the le
 
 Using the Self Service Password Reset (SSPR) feature in External ID, customers can manually set their password the first time they log in to the new system. This approach is simple to implement and doesn't require any custom code.  However, it does require users to reset their passwords manually, which may be inconvenient for some users.
 
-To use this approach, you first need to set up [SSPR](how-to-enable-password-reset-customers.md) in your External ID tenant and configure the password reset policies. You then need to provide users with instructions on how to reset their passwords using SSPR when they log in for the first time. For example, you can send an email to users with a link to the password reset page and instructions on how to reset their passwords or add instructions in your app before the user navigates to the sign in flow.
+To use this approach, you first need to set up [SSPR](how-to-enable-password-reset-customers.md) in your External ID tenant and configure the password reset policies. You then need to provide users with instructions on how to reset their passwords using SSPR when they log in for the first time. For example, you can send an email to users with instructions on how to reset their passwords or add instructions in your app before the user navigates to the sign in flow.
 
 ### Seamless migration
 
