@@ -85,11 +85,11 @@ The high level design for the seamless migration process is shown in the followi
 
 Harvest credentials from the legacy identity provider and update corresponding accounts in External ID.
 
-:::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for the first phase of credential migration.":::
+:::image type="content" source="./media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for the first phase of credential migration.":::
 
 Stop harvesting credentials and migrate applications to authenticate with External ID. Decommission the legacy identity provider.
 
-:::image type="content" source="media/how-to-migrate-users/pre-migration-stage2.png" alt-text="A diagram showing the high level design for the second phase of credential migration.":::
+:::image type="content" source="./media/how-to-migrate-users/pre-migration-stage2.png" alt-text="A diagram showing the high level design for the second phase of credential migration.":::
 
 > [!Note]
 > If you are using this approach it's important to protect your REST API against brute-force attacks. An attacker can submit several passwords in the hope of eventually guessing a user's credentials. To help defeat such attacks, stop serving requests to your REST API when the number of sign-in attempts passes a certain threshold.
