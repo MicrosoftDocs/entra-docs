@@ -230,7 +230,7 @@ Learn how to [plan a lifecycle workflow deployment](../id-governance/lifecycle-w
 
 ### Provision and onboard apps
 
-Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), legacy apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
+Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), private/on-premises apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
 
 |Target system|Approach|Guidance|
 |---|---|---|
