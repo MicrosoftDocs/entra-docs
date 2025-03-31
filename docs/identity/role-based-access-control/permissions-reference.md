@@ -3020,6 +3020,8 @@ Assign the Viva Glint Tenant Administrator role to users who need to do the foll
 - View and manage Viva Glint experiences (if applicable)
 - Create and manage Azure support tickets
 
+For more information, see [Key roles for Viva Glint](/viva/glint/start/role-definitions) and [Assign Viva Glint Tenant and Service Administrators](/viva/glint/setup/post-provisioning-next-steps).
+
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
