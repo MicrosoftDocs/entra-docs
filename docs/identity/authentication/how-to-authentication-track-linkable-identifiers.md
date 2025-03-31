@@ -70,8 +70,6 @@ To view the sign-in logs from the Microsoft Entra admin center:
 
 :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/sign-in-logs-entry.png" alt-text="Screenshot of sign-in log entry in Microsoft Entra admin center.":::
 
-:::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/log-entry-details.png" alt-text="Screenshot of sign-in log entry details in Microsoft Entra admin center.":::
-
 :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/log-entry-linkable-identifiers.png" alt-text="Screenshot of sign-in log entry with linkable identifiers.":::
 
 You should start with Microsoft Entra sign-in logs User ID attribute and manually search on the workload audit logs to track all the activities using a specific access token. Similarly, the Session ID attribute can be used to manually search on the workload audit logs to track all the activities.
@@ -102,6 +100,8 @@ For scenarios like mailbox update, items moved or deleted, you can start with li
 4. The results show all the linkable identifiers.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-linkable-identifiers.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers.":::
+
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-linkable-identifiers-details.png" alt-text="Screenshot of Microsoft Purview portal showing detailed log item.":::
 
 5. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for all the activities for Exchange Online.
 
@@ -142,8 +142,6 @@ For scenarios like mailbox update, items moved or deleted, you can start with li
    ```
 
 6. The results have all of the linkable identifiers.
-
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/powershell-linkable-identifiers.png" alt-text="Screenshot of PowerShell command results showing linkable identifiers.":::
 
 > [!NOTE]
 > The linkable identifiers aren't available in the Exchange Online audit logs on some aggregated log entries, or logs generated from background processes.
