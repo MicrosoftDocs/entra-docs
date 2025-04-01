@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: how-to
-ms.date: 03/27/2025
+ms.date: 04/07/2025
 ms.service: global-secure-access
 
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
@@ -79,6 +79,8 @@ As of March 31, 2025, we are previewing a new tab in the Traffic logs blade for 
 ![Screenshot of the new Connections tab on the Traffic logs page.](media/how-to-view-traffic-logs/traffic-logs-connections-tab.png)
 
 Transactions associated with each Connection are viewed by selecting the **Transactions** tab.
+
+![Screenshot of the Transaction details.](media/how-to-view-traffic-logs/traffic-logs-details.png)
 
 ### Troubleshooting scenarios
 
