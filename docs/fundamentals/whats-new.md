@@ -24,6 +24,18 @@ This article provides information about the latest releases and change announcem
 
 ## March 2025
 
+### Public Preview - Track and investigate identity activities with linkable identifiers in Microsoft Entra
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+Microsoft will standardize the linkable token identifiers, and expose them in both Microsoft Entra and workflow audit logs. This allows customers to join the logs to track, and investigate, any malicious activity. Currently linkable identifiers are available in Microsoft Entra sign in logs, Exchange Online audit logs, and MSGraph Activity logs.
+
+For more information, see: [Track and investigate identity activities with linkable identifiers in Microsoft Entra (preview)](../identity/authentication/how-to-authentication-track-linkable-identifiers.md).
+
+---
+
 ### General Availability- Conditional Access reauthentication policy 
 
 **Type:** New feature    
