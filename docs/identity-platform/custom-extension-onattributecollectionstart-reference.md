@@ -4,7 +4,7 @@ description: Reference documentation for a custom authentication extension that 
 author: msmimart
 manager: CelesteDG
 ms.author: mimart
-ms.date: 01/23/2024
+ms.date: 04/01/2025
 ms.service: identity-platform
 
 ms.topic: how-to
