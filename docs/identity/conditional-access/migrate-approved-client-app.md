@@ -37,7 +37,7 @@ Organizations can choose to update their policies using the following steps.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 Repeat the previous steps on all of your policies that use the approved client app grant. 
 
@@ -70,7 +70,7 @@ Organizations can choose to deploy this policy using the following steps.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!NOTE] 
 > If an app does not support **Require app protection policy**, end users trying to access resources from that app will be blocked.
