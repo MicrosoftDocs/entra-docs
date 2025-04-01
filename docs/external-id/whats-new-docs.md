@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 03/03/2025
+ms.date: 04/01/2025
 ms.service: entra-external-id
 ms.topic: whats-new
 

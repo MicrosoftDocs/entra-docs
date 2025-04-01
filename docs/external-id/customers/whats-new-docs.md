@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 03/03/2025
+ms.date: 04/01/2025
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: whats-new
@@ -17,6 +17,10 @@ manager: CelesteDG
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
 
 ## March 2025
+
+### New articles
+
+- [Migrating users to Microsoft Entra External ID](how-to-migrate-users.md)
 
 ### Updated articles
 
