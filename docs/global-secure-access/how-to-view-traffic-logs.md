@@ -72,15 +72,15 @@ For example if you want to look at all the logs from a specific connection:
 
 Connection logs provide a summary of all associated transactions, including the total transaction count and blocked transactions, allowing for quick identification of any blocked activity.   
 
-A connection represents multiple transactions occurring in the last 24 hours and provides a single Flow Correlation Id.
+A connection represents multiple transactions occurring in the last 24 hours and sharing the same flow correlation Id. While the transaction logs provide detailed information about individual transactions, connection logs offer a higher-level overview by aggregating multiple transactions. Connections are logged in real time with Active/Closed status, providing admins with near real-time traffic visibility.
 
 We are currently previewing a new tab in the Traffic logs blade for you to view Connections:
 
-:::image type="content" source="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png" alt-text="Screenshot of the new Connections tab on the Traffic logs page." lightbox="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png":::
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png" alt-text="Screenshot of the new Connections tab on the Traffic logs page.":::
 
 Transactions associated with each Connection are viewed by selecting the **Transactions** tab.
 
-:::image type="content" source="media/how-to-view-traffic-logs/traffic-log-details.png" alt-text="Screenshot of the Traffic log details page." lightbox="media/how-to-view-traffic-logs/traffic-log-details.png":::
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-log-details.png" alt-text="Screenshot of the Traffic log details page."
 
 ### Troubleshooting scenarios
 
