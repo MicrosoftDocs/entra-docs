@@ -5,11 +5,11 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 04/08/2024
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
-ms.topic: concept-article
+ms.topic: reference
 #Customer intent: As a developer building a web service, I want to understand how to implement the OAuth 2.0 client credentials flow, so that I can authenticate my web service when calling another web service without impersonating a user.
 ---
 
