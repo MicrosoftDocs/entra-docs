@@ -49,7 +49,7 @@ Use the following settings for your app registration:
 ## Create the project
 
 > [!NOTE]
-> The Electron sample provided in this tutorial is specifically designed to work with MSAL-node. MSAL-browser is not supported in Electron applications. Ensure you to complete the following steps to set up your project correctly.
+> The Electron sample provided in this tutorial is specifically designed to work with MSAL-node. MSAL-browser is not supported in Electron applications. Ensure you complete the following steps to set up your project correctly.
 
 Create a folder to host your application, for example *ElectronDesktopApp*.
 
