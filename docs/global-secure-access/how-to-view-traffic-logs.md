@@ -80,7 +80,7 @@ As of March 31, 2025, we are previewing a new tab in the Traffic logs blade for 
 
 Transactions associated with each Connection are viewed by selecting the **Transactions** tab.
 
-![Screenshot of the Transaction details.](media/how-to-view-traffic-logs/traffic-logs-details.png)
+![Screenshot of the Transaction details.](media/how-to-view-traffic-logs/traffic-log-details.png)
 
 ### Troubleshooting scenarios
 
