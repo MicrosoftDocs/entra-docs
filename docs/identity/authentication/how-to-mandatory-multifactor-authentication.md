@@ -14,7 +14,7 @@ ms.reviewer: nashahid, gkinasewitz
 ---
 # How to verify that users are set up for mandatory MFA
 
-This topic covers steps to verify that users in your organization are set up to meet mandatory MFA requirements for Microsoft. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md).
+This topic covers steps to verify that users in your organization are set up to meet Azure's mandatory MFA requirements. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md).
 
 ## Verify MFA for a personal account
 
