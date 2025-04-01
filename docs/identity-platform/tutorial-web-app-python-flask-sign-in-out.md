@@ -31,19 +31,21 @@ In this tutorial, you'll;
 
 #### [Workforce tenant](#tab/workforce-tenant)
 
-- Ensure you have [an app registration](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
-    - The *Application (client) ID* of the client web app that you registered.
-    - The *Directory (tenant) ID* where you registered your web app.
-    - The *Client secret* value for the web app you created.
+* A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 
 #### [External tenant](#tab/external-tenant)
 
-- Ensure you have [an app registration](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
-    - The *Application (client) ID* of the client web app that you registered.
-    - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
-    - The *Directory (tenant) ID* where you registered your web app.
-    - The *Client secret* value for the web app you created.
-- Ensure you [add your application to a user flow during registration](../external-id/customers/how-to-user-flow-add-application.md).
+* Ensure you have [an app registration](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
+* Extract the *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ---
 

@@ -20,25 +20,22 @@ In this Quickstart, you learn how to sign in users and call a web API from a Nod
 
 ## Prerequisites
 
-- Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-- [Node.js](https://nodejs.org).
-- [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.
-- An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
+* An external tenant. To create one, choose from the following methods:
+  * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Register a new app for your web API in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* [Node.js](https://nodejs.org).
+* [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.
 
-## Register a web API
+## Configure API scopes and roles
 
-In this step, you create the web and the web API application registrations, and you specify the scopes of your web API.
-
-### Register a web API application
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/register-api-app.md)]
+By registering the web API, you must configure API scopes to define the permissions that a client application can request to access the web API. Additionally, you need to set up app roles to specify the roles available for users or applications, and grant the necessary API permissions to the web app to enable it to call the web API.
 
 ### Configure API scopes
-
-This web API needs to expose permissions that a client app acquires to call the web API.
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-api-scopes.md)]
 
