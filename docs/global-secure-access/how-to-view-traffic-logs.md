@@ -76,11 +76,11 @@ A connection represents multiple transactions occurring in the last 24 hours and
 
 As of March 31, 2025, we are previewing a new tab in the Traffic logs blade for you to view Connections:
 
-![Screenshot of the new Connections tab on the Traffic logs page.](media/how-to-view-traffic-logs/traffic-logs-connections-tab.png)
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png" alt-text="Screenshot of the new Connections tab on the Traffic logs page." lightbox="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png":::
 
 Transactions associated with each Connection are viewed by selecting the **Transactions** tab.
 
-![Screenshot of the Transaction details.](media/how-to-view-traffic-logs/traffic-log-details.png)
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-log-details.png" alt-text="Screenshot of the Traffic log details page." lightbox="media/how-to-view-traffic-logs/traffic-log-details.png":::
 
 ### Troubleshooting scenarios
 
