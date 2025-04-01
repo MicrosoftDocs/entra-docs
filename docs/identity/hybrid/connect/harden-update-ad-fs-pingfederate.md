@@ -10,18 +10,20 @@ ms.subservice: hybrid-connect
 ms.author: billmath
 ---
 
-# Hardening update to Microsoft Entra Connect Sync from April 7, 2025 
+# Hardening update to Microsoft Entra Connect Sync by April 30, 2025 
 
-In October 2024, we released new versions (2.4.xx.0) of Microsoft Entra Connect Sync. These versions contain a back-end service change that further hardens our services. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
+In October 2024, we released new versions (2.4.xx.0) of Microsoft Entra Connect Sync. These versions contain a back-end service change that hardens our services and readies Connect Sync for the [MSOnline PowerShell retirement](https://aka.ms/msonlineretirement) in April 2025. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 30, 2025**.
+
+The deadline has been extended by three weeks from the earlier communicated date of April 7, 2025.
 
 
 ## Expected impacts 
 
-If Microsoft Entra Connect isn't upgraded to the minimum required version when the service change takes effect, you'll encounter the following impacts:
+Though the deadline has been extended, if you are not yet on a minimum supported version, you'll experience the following impacts after the original date:
 
- - All authentication requests to Microsoft Entra ID on the Microsoft Entra Connect wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes.
- - Configuration of Active Directory Federation Services (ADFS) scenarios through Microsoft Entra Connect wizard won't work.
- - Configuration of PingFederate scenarios through the Microsoft Entra Connect wizard won't work.
+ - After April 7, 2025, configuration of Active Directory Federation Services (ADFS) scenarios through Microsoft Entra Connect wizard won't work.
+ - After April 7, 2025, configuration of PingFederate scenarios through the Microsoft Entra Connect wizard won't work.
+ - After April 30, 2025, all authentication requests to Microsoft Entra ID on the Microsoft Entra Connect wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes.
 
 For example, when calling the MSOnline PowerShell cmdlet `Get-MsolUserRole`, Microsoft Entra Connect wizard throws an error: _"Access Denied. You do not have permissions to call this cmdlet"_
 
@@ -30,16 +32,16 @@ For example, when calling the MSOnline PowerShell cmdlet `Get-MsolUserRole`, Mic
 
 ## What won't be impacted
  - Your sync service will run as usual, and changes will continue to sync to Entra
- - The ability to upgrade your Entra Connect Sync instance. You can still perform the upgrade after April 7, 2025
+ - The ability to upgrade your Entra Connect Sync instance. You can still perform the upgrade after April 30, 2025
    
 >[!NOTE]
->If you're unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). Failure to update will result in losing the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**.
+>If you're unable to upgrade by the deadline, you can still restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You will, however, lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 30, 2025 and when you upgrade**.
 
 ### Minimum versions 
 
-To avoid any service impact, customers should be on version by April 7, 2025. 
-- Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or higher.
-- Customers in noncommercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or higher. 
+To avoid service impacts, customers should be on version by April 30, 2025. 
+- Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or any newer version (see [version history]((reference-connect-version-history.md))
+- Customers in noncommercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or any newer version (see [version history]((reference-connect-version-history.md))
 
 To upgrade to the latest version.
 > [!div class="nextstepaction"]
@@ -47,11 +49,9 @@ To upgrade to the latest version.
 
 >[!IMPORTANT]
 > Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the versions, including but not limited to: 
->
->  - Transport Layer Security,[TLS 1. 2](reference-connect-tls-enforcement.md)
 >  - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
 
-To assist customers with the upgrade process, we occasionally autoupgrade customers where supported. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), you should be on version [2.3.20.0](reference-connect-version-history.md#23200) or higher. 
+To assist customers with the upgrade process, we perform autoupgrades for select releases, which can help streamline the upgrae process for you. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), ensure that you meet the [minimum requirements](how-to-connect-install-automatic-upgrade.md#auto-upgrade-eligibility) for autoupgrade. 
 
 ## Consider moving to Microsoft Entra Cloud Sync  
 
