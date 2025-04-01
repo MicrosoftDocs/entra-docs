@@ -22,7 +22,7 @@ This article helps you keep track of the versions that have released and the cha
 ### Breaking Change on Entra Connect Sync
 
 > [!WARNING]
-> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync wizard. You must upgrade your connect sync version to [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or higher to maintain connect sync wizard capabilities such as schema refresh, configuration of staging mode and user-sign in changes. No action is required if you have upgraded your Entra Connect sync server. [Learn More](harden-update-ad-fs-pingfederate.md)
+> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) will start impacting the Microsoft Entra Connect Sync wizard in April 2025. You must upgrade your Connect Sync version **by 30 April 2025** to maintain Connect Sync wizard capabilities such as schema refresh, configuration of staging mode, and user-sign in changes. The minimum supported versions are [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or any newer version. No action is required if your Microsoft Entra Connect Sync server is within the recommended version range. [Learn More](harden-update-ad-fs-pingfederate.md)
 
 ## Looking for the latest versions?
 
@@ -58,10 +58,10 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 |Version|End of support date|
 |-----|-----|
-|[2.3.2.0](#2320)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.6.0](#2360)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.8.0](#2380)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.20.0](#23200)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.20.0](#23200)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
