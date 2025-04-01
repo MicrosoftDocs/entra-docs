@@ -64,7 +64,7 @@ If you anticipate making a large number of changes to group membership (for exam
 - **Minimize use of MemberOf at this time**: [```memberOf```](groups-dynamic-rule-member-of.md), which is currently in preview, can introduce more complexity, particularly if a tenant has a large number of groups or frequent updates. Avoid using this operator if possible as it comes with bugs and limitations. The recommendation is to delete existing MemberOf groups in your tenant: Learn More 
 
 >[!NOTE]
-> Review [Create simpler and faster rules](groups-dynamic-rule-more-efficient.md) to help you create more efficient rules.
+> Review [Create simpler and more efficient rules](groups-dynamic-rule-more-efficient.md) to help you optimize dynamic group processing.
 
 
 
