@@ -24,6 +24,20 @@ This article provides information about the latest releases and change announcem
 
 ## March 2025
 
+### Retirement notice - Microsoft Entra Permissions Management
+ 
+**Type:** Plan for change    
+**Service category:** Other    
+**Product capability:** Permissions Management    
+ 
+Effective April 1, 2025, Microsoft Entra Permissions Management (MEPM) will no longer be available for sale to new Enterprise Agreement or direct customers. Additionally, starting May 1 2025, it will not be available for sale to new CSP customers. Effective October 1, 2025, we'll retire Permissions Management and discontinue support of this product.
+ 
+Current Permissions Management customers will retain access to this product until September 30, 2025, with continued support for existing functionalities. We have partnered with Delinea to provide an alternative solution that offers similar capabilities as those provided by Permissions Management.
+ 
+This decision was made to align strategically with our core areas of strengths, including our differentiation in core identity and Microsoft Entra suite, and accelerate our investments on securing AI and harnessing the power of AI for security.
+ 
+---
+
 ### Public Preview - Track and investigate identity activities with linkable identifiers in Microsoft Entra
 
 **Type:** New feature    
