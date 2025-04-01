@@ -24,8 +24,6 @@ This article provides information about the latest releases and change announcem
 
 ## March 2025
 
-# [New features](#tab/NewFeaturesMarch)
-
 ### General Availability- Conditional Access reauthentication policy 
 
 **Type:** New feature    
@@ -61,8 +59,6 @@ A new feature has been added to the [App Management Policy Framework](/graph/api
 Administrators can now configure tenant default or custom app policy using the new '[audiences](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta#what-restrictions-can-be-managed-in-microsoft-graph)' restriction to block new app creation if the signInAudience value provided in the app is not permitted by the policy. In addition, existing apps can be restricted from changing their signInAudience if the target value is not permitted by the policy. These policy changes are applied during app creation or update operations, offering control over application deployment and usage. For more information, see: [audiencesConfiguration resource type](/graph/api/resources/audiencesconfiguration).
 
 
-# [Change announcements](#tab/changeAnnouncementsMarch)
-
 ### General Availability - Download Microsoft Entra Connect Sync on the Microsoft Entra admin center
 
 **Type:** Plan for change    
@@ -90,8 +86,6 @@ As announced in the Microsoft Entra What's New [Blog](https://techcommunity.micr
 ---
 
 ## February 2025
-
-# [New features](#tab/NewFeaturesFebruary)
 
 ### General Availability - Authentication methods migration wizard
 
@@ -162,15 +156,12 @@ Now new, lesser privileged permissions can be used for managing specific read an
 
 For more information, see: [Microsoft Graph permissions reference](/graph/permissions-reference).
 
-# [Change announcements](#tab/changeAnnouncementsFebruary)
-No change announcements
 
 ---
 
 
 ## January 2025
 
-# [New features](#tab/NewFeaturesJanuary)
 
 ### Public Preview - Manage Lifecycle Workflows with Microsoft Security CoPilot in Microsoft Entra
 
@@ -256,9 +247,6 @@ Customers can now configure Conditional Access policies to protect against early
 This feature enables administrators to export and stream Elevate Access events to both first-party and third-party SIEM solutions via Microsoft Entra Audit logs. It enhances detection and improves logging capabilities, allowing visibility into who in their tenant has utilized Elevate Access. For more information on how to use the feature, see: [View elevate access log entries](/azure/role-based-access-control/elevate-access-global-admin?tabs=azure-portal%2Centra-audit-logs#view-elevate-access-log-entries).
 
 
-
-# [Change announcements](#tab/ChangeAnnouncementsJanuary)
-
 ### Deprecated - Action Required by February 1, 2025: Azure AD Graph retirement
 
 **Type:** Deprecated    
@@ -303,8 +291,6 @@ For more information, see: [Action required: MSOnline and AzureAD PowerShell ret
 ---
 
 ## December 2024
-
-# [New features](#tab/NewFeaturesDecember)
 
 ### General Availability - What's new in Microsoft Entra
 
@@ -425,7 +411,6 @@ Privileged Identity Management (PIM) capabilities are now integrated into the Az
 
 RBAC admins can create assignments of type eligible and timebound duration from the Azure RBAC add role assignment flow, see the list of different states of role assignment in a single view, as well as convert the type and duration of their role assignments from the Azure RBAC UI. In addition, end users now see all their role assignments of different state straight from the Azure RBAC UI landing page, from where they can also activate their eligible role assignments. For more information, see: [List role assignments at a scope](/azure/role-based-access-control/role-assignments-list-portal#list-role-assignments-at-a-scope).
 
-# [Change announcements](#tab/ChangeAnnouncementsDecember)
 
 ### General Availability - Dedicated new 1st party resource application to enable Active Directory to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
 
@@ -439,8 +424,6 @@ As part of ongoing security hardening, Microsoft deployed Microsoft Entra AD Syn
 
 
 ## November 2024
-
-# [New features](#tab/NewFeaturesNovember)
 
 ### Public Preview - Universal Continuous Access Evaluation
 
@@ -478,8 +461,6 @@ In some environments, it’s necessary to prevent users from making this change.
 
 Microsoft Entra health monitoring, available from the Health pane, includes a set of low-latency pre-computed health metrics that can be used to monitor the health of critical user scenarios in your tenant. The first set of health scenarios includes MFA, CA-compliant devices, CA-managed devices, and SAML authentications. This set of monitor scenarios will grow over time. These health metrics are now released as general availability data streams, in conjunction with the public preview of an intelligent alerting capability. For more information, see: [What is Microsoft Entra Health?](../identity/monitoring-health/concept-microsoft-entra-health.md).
 
-
-# [Change announcements](#tab/ChangeAnnouncementsNovember)
 
 ### General Availability - Microsoft Entra Connect Sync Version 2.4.27.0
 
@@ -543,8 +524,6 @@ The hybrid reporting agent, used to send a MIM Service event log to Microsoft En
 
 ## October 2024
 
-# [New features](#tab/NewFeaturesOctober)
-
 ### Public Preview - Passkey authentication in brokered Microsoft apps on Android
 
 **Type:** New feature    
@@ -588,10 +567,5 @@ Announcing general availability of SMS as an MFA method in Microsoft Entra Exter
 
 
 For more information, see: [Multifactor authentication in external tenants](../external-id/customers/concept-multifactor-authentication-customers.md).
-
-
-# [Change announcements](#tab/ChangeAnnouncementsOctober)
-
-No change announcements
 
 ---
