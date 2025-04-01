@@ -15,7 +15,7 @@ ms.author: jfields
 > [!NOTE]
 > Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire). 
 
-## Introduction
+# Introduction
 
 Microsoft Entra Permissions Management (Permissions Management) is retiring on October 01, 2025, with new purchases unavailable starting April 1, 2025. Existing paid customers will continue to have access to Permissions Management between April 1, 2025 - September 30, 2025. 
 
@@ -39,13 +39,13 @@ We recommend beginning the shift away from Permissions Management as soon as pos
 
 To ensure you continue with the CIEM objectives with our recommended partner, we recommend making a note of the following information from your Permissions Management portal: 
 
-1. First, go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview), then click **Permissions Management** from the navigation blade. 
+- First, go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview), then click **Permissions Management** from the navigation blade. 
 
-- Authorization system IDs which are being monitored across Azure, Amazon Web Service (AWS) and Google Cloud Platform (GCP). To find this, launch the **Permissions Management** portal, select **Settings (Gear icon)** and select the **Authorization Systems** tab to view list of Authorization system IDs.  
-- Groups and users given admin access with the Permissions Management Administrator role in Entra ID. To find this, launch **Entra ID**, select **Roles and Admins**, search for **Permissions Management Administrator role**, select **Assignments**. 
-- Authorization system-specific access provided to groups through the Permissions Management portal. To find this, launch **Permissions Management** portal, Select **User Management**, then click the **Groups** tab to view all group assignments.  
-- Custom reports configured in your environment. To find this, launch the **Permissions Management** portal, select **Reports**, navigate to **Custom Reports**.
-- Alerts configured in your environment. To find this, launch the **Permissions Management** portal, select **Alerts** (bell icon), navigate to respective alerts tab.
+    - Authorization system IDs which are being monitored across Azure, Amazon Web Service (AWS) and Google Cloud Platform (GCP). To find this, launch the **Permissions Management** portal, select **Settings (Gear icon)** and select the **Authorization Systems** tab to view list of Authorization system IDs.  
+    - Groups and users given admin access with the Permissions Management Administrator role in Entra ID. To find this, launch **Entra ID**, select **Roles and Admins**, search for **Permissions Management Administrator role**, select **Assignments**. 
+    - Authorization system-specific access provided to groups through the Permissions Management portal. To find this, launch **Permissions Management** portal, Select **User Management**, then click the **Groups** tab to view all group assignments.  
+    - Custom reports configured in your environment. To find this, launch the **Permissions Management** portal, select **Reports**, navigate to **Custom Reports**.
+    - Alerts configured in your environment. To find this, launch the **Permissions Management** portal, select **Alerts** (bell icon), navigate to respective alerts tab.
 
 ## Offboarding steps
 
@@ -77,8 +77,8 @@ To find the Enterprise Application created which was used to set up OIDC connect
 1. Launch the **Permissions Management** portal.
 1. Select **Settings** (gear icon), then select the **Data Collectors** tab.
 1. On the **Data Collectors** dashboard, select your authorization system type:
-    1. **AWS** for Amazon Web Services. 
-    1. **GCP** for Google Cloud Platform.
+    - **AWS** for Amazon Web Services. 
+    - **GCP** for Google Cloud Platform.
 1. Select the ellipses **(...)** at the end of the row in the table.
 1. Select **Edit Configuration**. The app is located under the **Azure App** name.
 1. Go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
@@ -98,9 +98,9 @@ Stop collecting data for your list of accounts / subscriptions / projects by del
 1. Select **Permissions Management** and click on **Launch portal**. 
 1. Select **Settings** (the gear icon), then select the **Data Collectors** tab. 
 1. On the **Data Collectors** dashboard, select your authorization system type: 
-    1. **AWS** for Amazon Web Services. 
-    1. **Azure** for Microsoft Azure. 
-    1. **GCP** for Google Cloud Platform. 
+    - **AWS** for Amazon Web Services. 
+    - **Azure** for Microsoft Azure. 
+    - **GCP** for Google Cloud Platform. 
 1. Select the ellipses **(...)** at the end of the row in the table. 
 1. Select **Delete Configuration**. The **Permissions Management Onboarding - Summary** box displays. 
 1. Select **Delete**. 
