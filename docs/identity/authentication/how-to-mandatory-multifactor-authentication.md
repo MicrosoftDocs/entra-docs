@@ -14,7 +14,7 @@ ms.reviewer: nashahid, gkinasewitz
 ---
 # How to verify that users are set up for mandatory MFA
 
-This topic covers steps to verify that users in your organization are set up to meet requirements to use MFA to sign in to Microsoft admin portals and Windows Azure Service Management API. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md).
+This topic covers steps to verify that users in your organization are set up to meet mandatory MFA requirements for Microsoft. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md).
 
 ## Verify MFA for a personal account
 
@@ -33,7 +33,7 @@ Use the following resources to find users who sign in with and without MFA:
 - If you run queries to analyze user sign-ins, use the application IDs of the [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications). 
 
 ## Verify MFA enablement
-All users who access [admin portals and Azure clients that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. Mandatory MFA isn't restricted to privileged roles. As a best practice, all users who access *any* administration portal should use MFA. 
+All users who access [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. Mandatory MFA isn't restricted to privileged roles. As a best practice, all users who access *any* administration portal should use MFA. 
 
 Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
 
@@ -47,22 +47,7 @@ Use the following steps to verify that MFA is set up for your users, or to enabl
 
 ### Verify MFA is enabled for Microsoft Entra ID P1 or Microsoft Entra ID P2 license
 
-If you have a Microsoft Entra ID P1 or Microsoft Entra ID P2 license, you can use the Conditional Access Insights and reporting workbook containing sign-in logs to understand impact for your tenant. 
-As a prerequisite, you need to 
-
-- [Create a workspace](/azure/azure-monitor/logs/quick-create-workspace).
-- [Integrate activity logs with Azure Monitor](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs).
-
-Choose the following parameters to see how mandatory MFA affects your tenant:
-
-- Select the previously created MFA Conditional Access policy
-- Select a time range to evaluate the data
-- Select **Data View** to see results in terms of number of users or number of sign-ins
-
-You can query the sign-in details or download the sign-in logs to dive deeper into the data. For more information, see [Conditional Access insights and reporting](/entra/identity/conditional-access/howto-conditional-access-insights-reporting).
-
-
-You can create another Conditional Access policy to require MFA for users who access Microsoft admin portals or the Windows Azure Service Management API app:  
+If you have a Microsoft Entra ID P1 or Microsoft Entra ID P2 license, you can create a Conditional Access policy to require MFA for users who access [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications):  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Protection** > **Conditional Access** > **Policies**.
@@ -79,6 +64,22 @@ You can create another Conditional Access policy to require MFA for users who ac
    >Create the CA Policy in Report-Only mode to understand impact for your tenant so you don't get locked out.
 
 For more information, see [Common Conditional Access policy: Require multifactor authentication for admins accessing Microsoft admin portals](~/identity/conditional-access/how-to-policy-mfa-admin-portals.md). 
+
+You can use the Conditional Access insights and reporting workbook that contains sign-in logs to understand impact for your tenant. 
+As a prerequisite, you need to: 
+
+- [Create a workspace](/azure/azure-monitor/logs/quick-create-workspace).
+- [Integrate activity logs with Azure Monitor](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs).
+
+Choose the following parameters to see how mandatory MFA affects your tenant:
+
+- Select the previously created MFA Conditional Access policy
+- Select a time range to evaluate the data
+- Select **Data View** to see results in terms of number of users or number of sign-ins
+
+You can query the sign-in details or download the sign-in logs to dive deeper into the data. For more information, see [Conditional Access insights and reporting](/entra/identity/conditional-access/howto-conditional-access-insights-reporting).
+
+
 
 ### Verify MFA is enabled for Microsoft 365 or Microsoft Entra ID Free
 
