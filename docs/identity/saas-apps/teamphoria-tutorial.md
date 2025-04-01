@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Teamphoria
 
-In this article,  you'll learn how to integrate Teamphoria with Microsoft Entra ID. When you integrate Teamphoria with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Teamphoria with Microsoft Entra ID. When you integrate Teamphoria with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Teamphoria.
 * Enable your users to be automatically signed-in to Teamphoria with their Microsoft Entra accounts.
@@ -45,7 +45,7 @@ To configure the integration of Teamphoria into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, type **Teamphoria** in the search box.
 1. Select **Teamphoria** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-teamphoria'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Teamphoria, complete the followin
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Teamphoria SSO](#configure-teamphoria-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Teamphoria test user](#create-teamphoria-test-user)** - to have a counterpart of B.Simon in Teamphoria that is linked to the Microsoft Entra representation of user.
+    1. **[Create Teamphoria test user](#create-teamphoria-test-user)** - to have a counterpart of B.Simon in Teamphoria that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Teamphoria** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<sub-domain>.teamphoria.com/login`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [Teamphoria Client support team](https://www.teamphoria.com/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. Contact [Teamphoria Client support team](https://www.teamphoria.com/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -102,11 +102,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your Teamphoria company site as an administrator
 
-4. Go to **ADMIN SETTINGS** option in the left toolbar and under the Configure Tab click on **SINGLE SIGN-ON** to open the SSO configuration window.
+4. Go to **ADMIN SETTINGS** option in the left toolbar and under the Configure Tab select **SINGLE SIGN-ON** to open the SSO configuration window.
 
 	![Screenshot shows ADMIN SETTINGS where you can select SINGLE SIGN-ON.](./media/teamphoria-tutorial/admin_sso_configure.png)
 
-5. Click on **ADD NEW IDENTITY PROVIDER** option in the top right corner to open the form for adding the settings for SSO.
+5. Select **ADD NEW IDENTITY PROVIDER** option in the top right corner to open the form for adding the settings for SSO.
 
 	![Screenshot shows where you can select ADD NEW IDENTITY PROVIDER.](./media/teamphoria-tutorial/add_new_identity_provider.png)
 
@@ -122,7 +122,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	d. **ENTRY POINT**: Paste the **Login URL** copied earlier.
 
-	e. Switch the option to **ON** and click on **SAVE**.
+	e. Switch the option to **ON** and select **SAVE**.
 
 ### Create Teamphoria test user
 
@@ -132,11 +132,11 @@ In order to enable Microsoft Entra users to sign in to Teamphoria, they must be 
 
 1. Sign in to your Teamphoria company site as an administrator.
 
-1. Click on **ADMIN** settings on the left toolbar and under the **MANAGE** tab Click on **USERS** to open the admin page for users.
+1. Select **ADMIN** settings on the left toolbar and under the **MANAGE** tab Select **USERS** to open the admin page for users.
 
     ![Add Employee](./media/teamphoria-tutorial/admin_manage_users.png)
 
-1. Click on the **MANUAL INVITE** option.
+1. Select the **MANUAL INVITE** option.
 
 	![Screenshot shows the MANUAL INVITE option.](./media/teamphoria-tutorial/admin_manage_add_users.png)
 
@@ -150,13 +150,13 @@ In order to enable Microsoft Entra users to sign in to Teamphoria, they must be 
 
 	c. In the **LAST NAME** textbox, enter the last name of the user like **Simon**.
 
-    d. Click **INVITE 1 USER**. User needs to accept the invite to get created in the system.
+    d. Select **INVITE 1 USER**. User needs to accept the invite to get created in the system.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Teamphoria tile in the Access Panel, you should be automatically signed in to the Teamphoria for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Teamphoria tile in the Access Panel, you should be automatically signed in to the Teamphoria for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional resources
 

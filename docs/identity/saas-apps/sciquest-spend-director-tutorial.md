@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with SciQuest Spend Director
 
-In this article,  you'll learn how to integrate SciQuest Spend Director with Microsoft Entra ID. When you integrate SciQuest Spend Director with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SciQuest Spend Director with Microsoft Entra ID. When you integrate SciQuest Spend Director with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SciQuest Spend Director.
 * Enable your users to be automatically signed-in to SciQuest Spend Director with their Microsoft Entra accounts.
@@ -43,7 +43,7 @@ To configure the integration of SciQuest Spend Director into Microsoft Entra ID,
 1. In the **Add from the gallery** section, type **SciQuest Spend Director** in the search box.
 1. Select **SciQuest Spend Director** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-sciquest-spend-director'></a>
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with SciQuest Spend Director, perform 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SciQuest Spend Director SSO](#configure-sciquest-spend-director-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create SciQuest Spend Director test user](#create-sciquest-spend-director-test-user)** - to have a counterpart of B.Simon in SciQuest Spend Director that is linked to the Microsoft Entra representation of user.
+    1. **[Create SciQuest Spend Director test user](#create-sciquest-spend-director-test-user)** - to have a counterpart of B.Simon in SciQuest Spend Director that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SciQuest Spend Director** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -85,9 +85,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<companyname>.sciquest.com/apps/Router/SAMLAuth/<instancename>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [SciQuest Spend Director Client support team](https://www.jaggaer.com/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [SciQuest Spend Director Client support team](https://www.jaggaer.com/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -109,7 +109,7 @@ The objective of this section is to create a user called Britta Simon in SciQues
 
 You need to contact your [SciQuest Spend Director support team](https://www.jaggaer.com/contact-us/) and provide them with the details about your test account to get it created.
 
-Alternatively, you can also leverage just-in-time provisioning, a single sign-on feature that is supported by SciQuest Spend Director.  
+Alternatively, you can also leverage just-in-time provisioning, a single sign-on feature that's supported by SciQuest Spend Director.  
 If just-in-time provisioning is enabled, users are automatically created by SciQuest Spend Director during a single sign-on attempt if they don't exist. This feature eliminates the need to manually create single sign-on counterpart users.
 
 To get just-in-time provisioning enabled, you need to contact your [SciQuest Spend Director support team](https://www.jaggaer.com/contact-us/).
@@ -118,11 +118,11 @@ To get just-in-time provisioning enabled, you need to contact your [SciQuest Spe
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to SciQuest Spend Director Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to SciQuest Spend Director Sign-on URL where you can initiate the login flow. 
 
 * Go to SciQuest Spend Director Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the SciQuest Spend Director tile in the My Apps, this will redirect to SciQuest Spend Director Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the SciQuest Spend Director tile in the My Apps, this option redirects to SciQuest Spend Director Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

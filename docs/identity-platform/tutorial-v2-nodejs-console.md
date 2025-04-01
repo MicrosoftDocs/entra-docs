@@ -14,6 +14,8 @@ ms.topic: tutorial
 
 # Tutorial: Call the Microsoft Graph API in a Node.js console daemon app
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 In this tutorial, you build a console daemon app that calls Microsoft Graph API using its own identity. The daemon app you build uses the [Microsoft Authentication Library (MSAL) for Node.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node).
 
 Follow the steps in this tutorial to:

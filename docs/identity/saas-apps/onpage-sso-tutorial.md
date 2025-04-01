@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with OnPage (SSO)
 
-In this article,  you'll learn how to integrate OnPage (SSO) with Microsoft Entra ID. When you integrate OnPage (SSO) with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate OnPage (SSO) with Microsoft Entra ID. When you integrate OnPage (SSO) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OnPage (SSO).
 * Enable your users to be automatically signed-in to OnPage (SSO) with their Microsoft Entra accounts.
@@ -55,7 +55,7 @@ To configure and test Microsoft Entra SSO with OnPage (SSO), perform the followi
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure OnPage (SSO)](#configure-onpage-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create OnPage (SSO) test user](#create-onpage-sso-test-user)** - to have a counterpart of B.Simon in OnPage (SSO) that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create OnPage (SSO) test user](#create-onpage-sso-test-user)** - to have a counterpart of B.Simon in OnPage (SSO) that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -65,7 +65,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **OnPage (SSO)** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     | `https://sso.onpage.com/md/v1` |
 
 	> [!NOTE]
-	> The Identifier value is not real. Update the value with the actual Identifier. Contact [OnPage (SSO) support team](mailto:support@onpagecorp.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> The Identifier value isn't real. Update the value with the actual Identifier. Contact [OnPage (SSO) support team](mailto:support@onpagecorp.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
 
@@ -113,11 +113,11 @@ In this section, you create a user called B.Simon in OnPage (SSO). Work with [O
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to OnPage (SSO) Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to OnPage (SSO) Sign-on URL where you can initiate the login flow.
  
 * Go to OnPage (SSO) Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you click the OnPage (SSO) tile in the My Apps, this will redirect to OnPage (SSO) Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the OnPage (SSO) tile in the My Apps, this option redirects to OnPage (SSO) Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

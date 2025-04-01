@@ -129,6 +129,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [User Administrator](#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | fe930be7-5e62-47db-91af-98c3a49a38b1 |
 > | [User Experience Success Manager](#user-experience-success-manager) | View product feedback, survey results, and reports to find training and communication opportunities. | 27460883-1df1-4691-b032-3b79643e5e63 |
 > | [Virtual Visits Administrator](#virtual-visits-administrator) | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app. | e300d9e7-4a2b-4295-9eff-f1c78b36cc98 |
+> | [Viva Glint Tenant Administrator](#viva-glint-tenant-administrator) | Manage and configure Microsoft Viva Glint settings in the Microsoft 365 admin center. | 0ec3f692-38d6-4d14-9e69-0377ca7797ad |
 > | [Viva Goals Administrator](#viva-goals-administrator) | Manage and configure all aspects of Microsoft Viva Goals. | 92b086b3-e367-4ef2-b869-1de128fb986e |
 > | [Viva Pulse Administrator](#viva-pulse-administrator) | Can manage all settings for Microsoft Viva Pulse app. | 87761b17-1ed2-4af3-9acd-92a150038160 |
 > | [Windows 365 Administrator](#windows-365-administrator) | Can provision and manage all aspects of Cloud PCs. | 11451d60-acb2-45eb-a7d6-43d0f0125c13 |
@@ -1326,6 +1327,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.powerApps.powerBI/allEntities/allTasks | Manage all aspects of Fabric and Power BI |
 > | microsoft.teams/allEntities/allProperties/allTasks | Manage all resources in Teams |
 > | microsoft.virtualVisits/allEntities/allProperties/allTasks | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app |
+> | microsoft.viva.glint/allEntities/allProperties/allTasks | Manage and configure all Microsoft Viva Glint settings in the Microsoft 365 admin center |
 > | microsoft.viva.goals/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Viva Goals |
 > | microsoft.viva.pulse/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Viva Pulse |
 > | microsoft.windows.defenderAdvancedThreatProtection/allEntities/allTasks | Manage all aspects of Microsoft Defender for Endpoint |
@@ -1447,6 +1449,7 @@ Users with this role **cannot** do the following:
 > | microsoft.permissionsManagement/allEntities/allProperties/read | Read all aspects of Microsoft Entra Permissions Management |
 > | microsoft.teams/allEntities/allProperties/read | Read all properties of Microsoft Teams |
 > | microsoft.virtualVisits/allEntities/allProperties/read | Read all aspects of Virtual Visits |
+> | microsoft.viva.glint/allEntities/allProperties/read | Read all Microsoft Viva Glint settings in the Microsoft 365 admin center |
 > | microsoft.viva.goals/allEntities/allProperties/read | Read all aspects of Microsoft Viva Goals |
 > | microsoft.viva.pulse/allEntities/allProperties/read | Read all aspects of Microsoft Viva Pulse |
 > | microsoft.windows.updatesDeployments/allEntities/allProperties/read | Read all aspects of Windows Update Service |
@@ -3006,6 +3009,28 @@ Virtual Visits are a simple way to schedule and manage online and video appointm
 > | --- | --- |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.virtualVisits/allEntities/allProperties/allTasks | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app |
+
+## Viva Glint Tenant Administrator
+
+Assign the Viva Glint Tenant Administrator role to users who need to do the following tasks:
+
+- Read and configure Viva Glint settings in the Microsoft 365 admin center
+- Assign or remove Viva Glint service admins
+- Create and manage Viva Feature Access Management policies
+- View and manage Viva Glint experiences (if applicable)
+- Create and manage Azure support tickets
+
+For more information, see [Key roles for Viva Glint](/viva/glint/start/role-definitions) and [Assign Viva Glint Tenant and Service Administrators](/viva/glint/setup/post-provisioning-next-steps).
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+> | microsoft.viva.glint/allEntities/allProperties/allTasks | Manage and configure all Microsoft Viva Glint settings in the Microsoft 365 admin center |
 
 ## Viva Goals Administrator
 

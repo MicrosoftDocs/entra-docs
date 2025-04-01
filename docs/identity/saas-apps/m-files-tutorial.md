@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and M-Files so that I can control who has access to M-Files, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra integration with M-Files
 
-In this article,  you'll learn how to integrate M-Files with Microsoft Entra ID. When you integrate M-Files with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate M-Files with Microsoft Entra ID. When you integrate M-Files with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to M-Files.
 * Enable your users to be automatically signed-in to M-Files with their Microsoft Entra accounts.
@@ -43,7 +43,7 @@ To configure the integration of M-Files into Microsoft Entra ID, you need to add
 1. In the **Add from the gallery** section, type **M-Files** in the search box.
 1. Select **M-Files** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-m-files'></a>
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with M-Files, perform the following st
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure M-Files SSO](#configure-m-files-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create M-Files test user](#create-m-files-test-user)** - to have a counterpart of B.Simon in M-Files that is linked to the Microsoft Entra representation of user.
+    1. **[Create M-Files test user](#create-m-files-test-user)** - to have a counterpart of B.Simon in M-Files that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **M-Files** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,9 +82,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<tenantname>.cloudvault.m-files.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [M-Files Client support team](mailto:support@m-files.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [M-Files Client support team](mailto:support@m-files.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Follow the next steps to configure the M-File desktop application to enable SSO with Microsoft Entra ID. To download M-Files, go to [M-Files download](https://www.m-files.com/customers/product-downloads/download-update-links/) page.
 
-1. Open the **M-Files Desktop Settings** window. Then, click **Add**.
+1. Open the **M-Files Desktop Settings** window. Then, select **Add**.
    
     ![Screenshot shows M-Files Desktop Settings where you can select Add.](./media/m-files-tutorial/settings.png)
 
@@ -121,11 +121,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
     c. For **Protocol**, select **HTTPS**. 
 
-    d. In the **Authentication** field, select **Specific Windows user**. Then, you are prompted with a signing page. Insert your Microsoft Entra credentials. 
+    d. In the **Authentication** field, select **Specific Windows user**. Then, you're prompted with a signing page. Insert your Microsoft Entra credentials. 
 
     e. For the **Vault on Server**,  select the corresponding vault on server.
  
-    f. Click **OK**.
+    f. Select **OK**.
 
 ### Create M-Files test user
 
@@ -135,11 +135,11 @@ The objective of this section is to create a user called Britta Simon in M-Files
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to M-Files Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to M-Files Sign-on URL where you can initiate the login flow. 
 
 * Go to M-Files Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the M-Files tile in the My Apps, this will redirect to M-Files Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the M-Files tile in the My Apps, this option redirects to M-Files Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

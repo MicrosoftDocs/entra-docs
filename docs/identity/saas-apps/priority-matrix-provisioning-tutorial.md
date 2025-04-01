@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Pri
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Priority Matrix tenant](https://appfluence.com/pricing/)
 * A user account on a Priority Matrix with Admin permissions.
 
@@ -43,21 +43,21 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ### Important tips for assigning users to Priority Matrix
 
-* It is recommended that a single Microsoft Entra user is assigned to Priority Matrix to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Priority Matrix to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Priority Matrix, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up Priority Matrix for provisioning
 
-Before configuring Priority Matrix for automatic user provisioning with Microsoft Entra ID, you will need to retrieve some provisioning information from Priority Matrix.
+Before configuring Priority Matrix for automatic user provisioning with Microsoft Entra ID, you need to retrieve some provisioning information from Priority Matrix.
 
 1. Sign in to your [Priority Matrix Admin Console](https://sync.appfluence.com/accounts/login/?next=/accounts/provisioning).
 
-3. Click **Oauth login token** for Priority Matrix
+3. Select **Oauth login token** for Priority Matrix
 
 	![Priority Matrix Add SCIM](media/priority-matrix-provisioning-tutorial/oauthlogin.png)
 
-4. Click the **GET NEW TOKEN** button. Copy the **Token String**. This value will be entered in the **Secret Token** field in the Provisioning tab of your Priority Matrix application.
+4. Select the **GET NEW TOKEN** button. Copy the **Token String**. This value is entered in the **Secret Token** field in the Provisioning tab of your Priority Matrix application.
 
 ## Add Priority Matrix from the gallery
 
@@ -77,7 +77,7 @@ To configure Priority Matrix for automatic user provisioning with Microsoft Entr
 
 	![Priority Matrix OIDC login](media/priority-matrix-provisioning-tutorial/msftsignin.png)
 
-7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Priority Matrix account.
+7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Priority Matrix account.
 
 
 ## Configure automatic user provisioning to Priority Matrix 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://sync.appfluence.com/scim/v2/` in **Tenant URL**. Input the value that you retrieved and saved earlier from Priority Matrix in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Priority Matrix. If the connection fails, ensure your Priority Matrix account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://sync.appfluence.com/scim/v2/` in **Tenant URL**. Input the value that you retrieved and saved earlier from Priority Matrix in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Priority Matrix. If the connection fails, ensure your Priority Matrix account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -116,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Priority Matrix**.
 
@@ -134,7 +134,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

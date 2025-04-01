@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Adstream
 
-In this article, you'll learn how to integrate Adstream with Microsoft Entra ID. Adstream is a content management system that provides the ability for multiple teams to collaborate on assets and distribute content. When you integrate Adstream with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Adstream with Microsoft Entra ID. Adstream is a content management system that provides the ability for multiple teams to collaborate on assets and distribute content. When you integrate Adstream with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adstream.
 * Enable your users to be automatically signed-in to Adstream with their Microsoft Entra accounts.
@@ -100,11 +100,11 @@ In this section, you create a user called Britta Simon in Adstream. Work with [A
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Adstream Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Adstream Sign-on URL where you can initiate the login flow. 
 
 * Go to Adstream Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Adstream tile in the My Apps, this will redirect to Adstream Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Adstream tile in the My Apps, this option redirects to Adstream Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

@@ -6,12 +6,15 @@ manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/19/2025
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 
 # View key statistics and data about your authorization system
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 Permissions Management provides a summary of key statistics and data about your authorization system. This information is available for Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
 

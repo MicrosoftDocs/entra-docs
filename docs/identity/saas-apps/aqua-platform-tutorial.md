@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Aqua Platform
 
-In this article, you'll learn how to integrate Aqua Platform with Microsoft Entra ID. Aqua Platform enables customers to securely build, scale and automate cloud native applications. When you integrate Aqua Platform with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Aqua Platform with Microsoft Entra ID. Aqua Platform enables customers to securely build, scale and automate cloud native applications. When you integrate Aqua Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Aqua Platform.
 * Enable your users to be automatically signed-in to Aqua Platform with their Microsoft Entra accounts.
@@ -123,11 +123,11 @@ In this section, you create a user called Britta Simon in Aqua Platform. Work wi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Aqua Platform Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Aqua Platform Sign-on URL where you can initiate the login flow. 
 
 * Go to Aqua Platform Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Aqua Platform tile in the My Apps, this will redirect to Aqua Platform Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Aqua Platform tile in the My Apps, this option redirects to Aqua Platform Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

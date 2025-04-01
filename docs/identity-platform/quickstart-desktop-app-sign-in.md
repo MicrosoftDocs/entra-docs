@@ -14,6 +14,8 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample Desktop app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 In this quickstart, you’ll use a sample application to learn how to add authentication to a desktop application. The sample application enables users to sign in and sign out and uses the Microsoft Authentication Library (MSAL) to handle authentication.
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
@@ -96,14 +98,13 @@ To specify the app type and redirect URIs to your app registration, follow these
 
 #### [Node.js Electron](#tab/node-js-workforce)
 
-*Extract the project, open the *ms-identity-JavaScript-nodejs-desktop-main* folder, and then open *.authConfig.js* file. Replace the value as follows:
+In your code editor, open the *ms-identity-javascript-nodejs-desktop-main/App/authConfig.js* file. Replace the value as follows:
 
 | Variable  |  Description | Example(s) |
 |-----------|--------------|------------|
 | `Enter_the_Cloud_Instance_Id_Here` | The Azure cloud instance in which your application is registered | `https://login.microsoftonline.com/` (include the trailing forward-slash)|
-| `Enter_the_Tenant_Id_Here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
+| `Enter_the_Tenant_Info_Here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
 | `Enter_the_Application_Id_Here` | Client ID of the application you registered | `00001111-aaaa-2222-bbbb-3333cccc4444` |
-| `Enter_the_Redirect_Uri_Here` | Redirect Uri of the application you registered | `msal00001111-aaaa-2222-bbbb-3333cccc4444://auth` |
 | `Enter_the_Graph_Endpoint_Here` | The Microsoft Graph API cloud instance that your app will call | `https://graph.microsoft.com/`  (include the trailing forward-slash)|
 
 Your file should look similar to below:
@@ -147,7 +148,7 @@ Your file should look similar to below:
 
 1. Extract the zip file to a local folder close to the root of the disk, for example, **C:\Azure-Samples**.
 1. Open the project in Visual Studio.
-1. Edit **App.Xaml.cs** and replace the values of the fields `ClientId` and `Tenant` with the following code:
+1. Edit **active-directory-wpf-msgraph-v2/App.xaml.cs** and replace the values of the fields `ClientId` and `Tenant` with the following code:
 
    ```csharp
    private static string ClientId = "Enter_the_Application_Id_here";

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - Captive Portal so that I can control who has access to Palo Alto Networks - Captive Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -44,7 +44,7 @@ To configure the integration of Palo Alto Networks Captive Portal into Microsoft
 1. In the **Add from the gallery** section, type **Palo Alto Networks Captive Portal** in the search box.
 1. Select **Palo Alto Networks Captive Portal** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra single sign-on with Palo Alto Networks Cap
     * **Create a Microsoft Entra test user** - Test Microsoft Entra single sign-on with the user B.Simon.
     * **Assign the Microsoft Entra test user** - Set up B.Simon to use Microsoft Entra single sign-on.
 2. **[Configure Palo Alto Networks Captive Portal SSO](#configure-palo-alto-networks-captive-portal-sso)** - Configure the single sign-on settings in the application.
-    * **[Create a Palo Alto Networks Captive Portal test user](#create-a-palo-alto-networks-captive-portal-test-user)** - to have a counterpart of B.Simon in Palo Alto Networks Captive Portal that is linked to the Microsoft Entra representation of user.
+    * **[Create a Palo Alto Networks Captive Portal test user](#create-a-palo-alto-networks-captive-portal-test-user)** - to have a counterpart of B.Simon in Palo Alto Networks Captive Portal that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - Verify that the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Palo Alto Networks Captive Portal** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -129,9 +129,9 @@ Next, create a user named *Britta Simon* in Palo Alto Networks Captive Portal. P
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Palo Alto Networks Captive Portal for which you set up the SSO
+* Select **Test this application**, and you should be automatically signed in to the Palo Alto Networks Captive Portal for which you set up the SSO
 
-* You can use Microsoft My Apps. When you click the Palo Alto Networks Captive Portal tile in the My Apps, you should be automatically signed in to the Palo Alto Networks Captive Portal for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Palo Alto Networks Captive Portal tile in the My Apps, you should be automatically signed in to the Palo Alto Networks Captive Portal for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content

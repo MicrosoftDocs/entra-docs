@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to iPass SmartConnect so that I can streamline the user management process and ensure that users have the appropriate access to iPass SmartConnect.
@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in iPa
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [An iPass SmartConnect tenant](https://www.ipass.com/).
 * A user account in iPass SmartConnect with Admin permissions.
 
@@ -43,16 +43,16 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to iPass SmartConnect
 
-* It is recommended that a single Microsoft Entra user is assigned to iPass SmartConnect to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to iPass SmartConnect to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to iPass SmartConnect, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up iPass SmartConnect for provisioning
 
-Before configuring iPass SmartConnect for automatic user provisioning with Microsoft Entra ID, you will need to retrieve configuration information from the iPass SmartConnect admin console:
+Before configuring iPass SmartConnect for automatic user provisioning with Microsoft Entra ID, you need to retrieve configuration information from the iPass SmartConnect admin console:
 
-1. To retrieve the bearer token that is needed to authenticate against your iPass SmartConnect SCIM endpoint, refer to the very first time that you set up iPass SmartConnect as this value is only provided then. 
-2. If you do not have the bearer token, reach out to [iPass SmartConnect's support team](mailto:help@ipass.com) to retrieve a new one.
+1. To retrieve the bearer token that's needed to authenticate against your iPass SmartConnect SCIM endpoint, refer to the very first time that you set up iPass SmartConnect as this value is only provided then. 
+2. If you don't have the bearer token, reach out to [iPass SmartConnect's support team](mailto:help@ipass.com) to retrieve a new one.
 
 ## Add iPass SmartConnect from the gallery
 
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://openmobile.ipass.com/moservices/scim/v1` in **Tenant URL**. Enter the bearer token retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to iPass SmartConnect. If the connection fails, ensure that your iPass SmartConnect account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://openmobile.ipass.com/moservices/scim/v1` in **Tenant URL**. Enter the bearer token retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to iPass SmartConnect. If the connection fails, ensure that your iPass SmartConnect account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -102,7 +102,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to iPass SmartConnect**.
 
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

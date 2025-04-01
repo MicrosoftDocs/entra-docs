@@ -12,6 +12,8 @@ ms.topic: tutorial
 
 # Tutorial: Sign in and sign out of a React SPA
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 This tutorial is the final part of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [part 2 of this series](tutorial-single-page-app-react-configure-authentication.md), you added functional components to a React SPA and built a responsive UI. This final step shows you how to test sign-in and sign-out functionality in your app.
 
 In this tutorial, you'll;

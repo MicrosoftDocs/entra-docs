@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and 10,000 ft Plans so that I can control who has access to 10,000 ft Plans, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra SSO integration with 10,000ft Plans
 
-In this article,  you'll learn how to integrate 10,000ft Plans with Microsoft Entra ID. When you integrate 10,000ft Plans with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate 10,000ft Plans with Microsoft Entra ID. When you integrate 10,000ft Plans with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to 10,000ft Plans.
 * Enable your users to be automatically signed-in to 10,000ft Plans with their Microsoft Entra accounts.
@@ -31,8 +31,8 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
-* 10,000ft Plans support **SP** initiated SSO.
-* 10,000ft Plans support **Just In Time** user provisioning.
+* 10,000ft Plans supports **SP** initiated SSO.
+* 10,000ft Plans supports **Just In Time** user provisioning.
 
 ## Add 10,000ft Plans from the gallery
 
@@ -43,7 +43,7 @@ To configure the integration of 10,000ft Plans into Microsoft Entra ID, you need
 1. In the **Add from the gallery** section, type **10,000ft Plans** in the search box.
 1. Select **10,000ft Plans** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-10000ft-plans'></a>
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with 10,000ft Plans, perform the follo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure 10,000ft Plans SSO](#configure-10000ft-plans-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create 10,000ft Plans test user](#create-10000ft-plans-test-user)** - to have a counterpart of B.Simon in 10,000ft Plans that is linked to the Microsoft Entra representation of user.
+    1. **[Create 10,000ft Plans test user](#create-10000ft-plans-test-user)** - to have a counterpart of B.Simon in 10,000ft Plans that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **10,000ft Plans** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -96,11 +96,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to your 10000ft Plans website as an administrator.
 
-1. Click **Settings** and select **Account Settings** from the dropdown.
+1. Select **Settings** and select **Account Settings** from the dropdown.
 
     ![Screenshot for Settings icon.](./media/10000ftplans-tutorial/settings.png)
 
-1. Click **SSO** at the left menu and perform the following steps:
+1. Select **SSO** at the left menu and perform the following steps:
 
     ![Screenshot for Settings SSO page.](./media/10000ftplans-tutorial/setup-sso.png)
 
@@ -110,21 +110,21 @@ Follow these steps to enable Microsoft Entra SSO.
 
     c. Enable the **Auto-provision authenticated users not in account** checkbox.
 
-    d. Click **Save**.
+    d. Select **Save**.
 
 ### Create 10000ft Plans test user
 
-In this section, a user called Britta Simon is created in 10,000ft Plans. 10,000ft Plans supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in 10,000ft Plans, a new one is created after authentication.
+In this section, a user called Britta Simon is created in 10,000ft Plans. 10,000ft Plans supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in 10,000ft Plans, a new one is created after authentication.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to 10,000ft Plans Sign on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to 10,000ft Plans Sign on URL where you can initiate the login flow. 
 
 * Go to 10,000ft Plans Sign on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the 10,000ft Plans tile in the My Apps, this will redirect to 10,000ft Plans Sign on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the 10,000ft Plans tile in the My Apps, this option redirects to 10,000ft Plans Sign on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

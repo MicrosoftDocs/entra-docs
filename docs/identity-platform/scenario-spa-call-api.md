@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Single-page application: Call a web API
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 We recommend that you call the `acquireTokenSilent` method to acquire or renew an access token before calling a web API. After you have a token, you can call a protected web API.
 
 ## Call a web API

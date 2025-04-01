@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Nitro Productivity Suite
 
-In this article,  you'll learn how to integrate Nitro Productivity Suite with Microsoft Entra ID. When you integrate Nitro Productivity Suite with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Nitro Productivity Suite with Microsoft Entra ID. When you integrate Nitro Productivity Suite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Nitro Productivity Suite.
 * Enable your users to be automatically signed in to Nitro Productivity Suite with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of Nitro Productivity Suite into Microsoft Entra ID
 1. In the **Add from the gallery** section, type **Nitro Productivity Suite** in the search box.
 1. Select **Nitro Productivity Suite** from the results, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-nitro-productivity-suite'></a>
@@ -57,9 +57,9 @@ To configure and test Microsoft Entra SSO with Nitro Productivity Suite, complet
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
 
-    a. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra single sign-on with B.Simon.
+    a. Create a Microsoft Entra test user to test Microsoft Entra single sign-on with B.Simon.
     
-    b. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable B.Simon to use Microsoft Entra single sign-on.
+    b. Assign the Microsoft Entra test user to enable B.Simon to use Microsoft Entra single sign-on.
     
 2. [Create a Nitro Productivity Suite test user](#create-a-nitro-productivity-suite-test-user) to have a counterpart of B.Simon in Nitro Productivity Suite, linked to the Microsoft Entra representation of the user.
 1. [Test SSO](#test-sso) to verify whether the configuration works.
@@ -128,7 +128,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Nitro Productivity Suite test user
 
-Nitro Productivity Suite supports just-in-time user provisioning, which is enabled by default. There is no additional action for you to take. If a user doesn't already exist in Nitro Productivity Suite, a new one is created after authentication.
+Nitro Productivity Suite supports just-in-time user provisioning, which is enabled by default. There's no additional action for you to take. If a user doesn't already exist in Nitro Productivity Suite, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -136,15 +136,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 ### SP initiated:
 
-1. Click on **Test this application**, this will redirect to Nitro Productivity Suite Sign on URL where you can initiate the login flow.  
+1. Select **Test this application**, this option redirects to Nitro Productivity Suite Sign on URL where you can initiate the login flow.  
 
 2. Go to Nitro Productivity Suite Sign-on URL directly and initiate the login flow from there.
 
 ### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Nitro Productivity Suite for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the Nitro Productivity Suite for which you set up the SSO 
 
-You can also use Microsoft Access Panel to test the application in any mode. When you click the Nitro Productivity Suite tile in the Access Panel, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Nitro Productivity Suite for which you set up the SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft Access Panel to test the application in any mode. When you select the Nitro Productivity Suite tile in the Access Panel, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Nitro Productivity Suite for which you set up the SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with RightCrowd Workforce Management
 
-In this article,  you'll learn how to integrate RightCrowd Workforce Management with Microsoft Entra ID. When you integrate RightCrowd Workforce Management with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate RightCrowd Workforce Management with Microsoft Entra ID. When you integrate RightCrowd Workforce Management with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to RightCrowd Workforce Management.
 * Enable your users to be automatically signed-in to RightCrowd Workforce Management with their Microsoft Entra accounts.
@@ -48,7 +48,7 @@ To configure the integration of RightCrowd Workforce Management into Microsoft E
 1. In the **Add from the gallery** section, type **RightCrowd Workforce Management** in the search box.
 1. Select **RightCrowd Workforce Management** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-rightcrowd-workforce-management'></a>
@@ -63,7 +63,7 @@ To configure and test Microsoft Entra SSO with RightCrowd Workforce Management, 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure RightCrowd Workforce Management SSO](#configure-rightcrowd-workforce-management-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create RightCrowd Workforce Management test user](#create-rightcrowd-workforce-management-test-user)** - to have a counterpart of B.Simon in RightCrowd Workforce Management that is linked to the Microsoft Entra representation of user.
+    1. **[Create RightCrowd Workforce Management test user](#create-rightcrowd-workforce-management-test-user)** - to have a counterpart of B.Simon in RightCrowd Workforce Management that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **RightCrowd Workforce Management** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -88,15 +88,15 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.rightcrowdcustomerdomain.com/RightCrowd/Saml2/Auth/AssertionComsumerService`
 
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type one of the following URLs:
     `http://<SUBDOMAIN>.rightcrowdcustomerdomain.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL, Identifier and Reply URL. Contact [RightCrowd Workforce Management support team](mailto:info@rightcrowd.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL, Identifier and Reply URL. Contact [RightCrowd Workforce Management support team](mailto:info@rightcrowd.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -115,7 +115,7 @@ To configure single sign-on on **RightCrowd Workforce Management** side, you nee
 
 ### Create RightCrowd Workforce Management test user
 
-In this section, a user called Britta Simon is created in RightCrowd Workforce Management. RightCrowd Workforce Management supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in RightCrowd Workforce Management, a new one is created after authentication.
+In this section, a user called Britta Simon is created in RightCrowd Workforce Management. RightCrowd Workforce Management supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in RightCrowd Workforce Management, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -123,15 +123,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to RightCrowd Workforce Management Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to RightCrowd Workforce Management Sign on URL where you can initiate the login flow.  
 
 * Go to RightCrowd Workforce Management Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the RightCrowd Workforce Management for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the RightCrowd Workforce Management for which you set up the SSO 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the RightCrowd Workforce Management tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the RightCrowd Workforce Management for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the RightCrowd Workforce Management tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the RightCrowd Workforce Management for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content

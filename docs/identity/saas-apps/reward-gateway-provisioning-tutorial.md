@@ -27,7 +27,7 @@ The objective of this article is to demonstrate the steps to be performed in Rew
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A [Reward Gateway tenant](https://www.rewardgateway.com/).
 * A user account in Reward Gateway with Admin permissions.
 
@@ -40,14 +40,14 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Reward Gateway 
 
-* It is recommended that a single Microsoft Entra user is assigned to Reward Gateway  to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Reward Gateway  to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Reward Gateway, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Setup Reward Gateway  for provisioning
-Before configuring Reward Gateway for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Reward Gateway.
+Before configuring Reward Gateway for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Reward Gateway.
 
-1. Sign in to your [Reward Gateway Admin Console](https://rewardgateway.photoshelter.com/login/). Click **Integrations**.
+1. Sign in to your [Reward Gateway Admin Console](https://rewardgateway.photoshelter.com/login/). Select **Integrations**.
 
 	![Screenshot of the Reward Gateway Admin Console with the Integrations option called out.](media/reward-gateway-provisioning-tutorial/image00.png)
 
@@ -55,7 +55,7 @@ Before configuring Reward Gateway for automatic user provisioning with Microsoft
 
 	![Screenshot of the two Integrations options with the My Integrations option called out.](media/reward-gateway-provisioning-tutorial/image001.png)
 
-3.	Copy the values of **SCIM URL (v2)** and **OAuth Bearer Token**. These values will be entered in the Tenant URL and Secret Token field in the Provisioning tab of your Reward Gateway application.
+3.	Copy the values of **SCIM URL (v2)** and **OAuth Bearer Token**. These values are entered in the Tenant URL and Secret Token field in the Provisioning tab of your Reward Gateway application.
 
 	![Screenshot of the My Integrations panel with the OAuth Bearer Token text box called out.](media/reward-gateway-provisioning-tutorial/image03.png)
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input the **SCIM URL (v2)** and **OAuth Bearer Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to reward gateway. If the connection fails, ensure your reward gateway account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input the **SCIM URL (v2)** and **OAuth Bearer Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to reward gateway. If the connection fails, ensure your reward gateway account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Reward Gateway**.
 
@@ -125,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -135,7 +135,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 
 ## Connector limitations
 
-Reward Gateway does not support group provisioning currently.
+Reward Gateway doesn't support group provisioning currently.
 
 ## Additional resources
 

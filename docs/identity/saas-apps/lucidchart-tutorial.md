@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lucidchart so that I can control who has access to Lucidchart, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Lucidchart
 
-In this article,  you'll learn how to integrate Lucidchart with Microsoft Entra ID. When you integrate Lucidchart with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Lucidchart with Microsoft Entra ID. When you integrate Lucidchart with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Lucidchart.
 * Enable your users to be automatically signed-in to Lucidchart with their Microsoft Entra accounts.
@@ -45,7 +45,7 @@ To configure the integration of Lucidchart into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, type **Lucidchart** in the search box.
 1. Select **Lucidchart** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-lucidchart'></a>
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Lucidchart, perform the following
     * **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     * **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Lucidchart SSO](#configure-lucidchart-sso)** - to configure the single sign-on settings on application side.
-    * **[Create Lucidchart test user](#create-lucidchart-test-user)** - to have a counterpart of B.Simon in Lucidchart that is linked to the Microsoft Entra representation of user.
+    * **[Create Lucidchart test user](#create-lucidchart-test-user)** - to have a counterpart of B.Simon in Lucidchart that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Lucidchart** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
    In the **Sign-on URL** text box, type the URL as:
     `https://chart2.office.lucidchart.com/saml/sso/azure`
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -98,21 +98,21 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, log into your Lucidchart company site as an administrator.
 
-2. In the menu on the top, click **Team**.
+2. In the menu on the top, select **Team**.
 
     ![Team](./media/lucidchart-tutorial/ic791190.png "Team")
 
-3. Click **Applications \> Manage SAML**.
+3. Select **Applications \> Manage SAML**.
 
     ![Manage SAML](./media/lucidchart-tutorial/ic791191.png "Manage SAML")
 
 4. On the **SAML Authentication Settings** dialog page, perform the following steps:
 
-    a. Select **Enable SAML Authentication**, and then click **Optional**.
+    a. Select **Enable SAML Authentication**, and then select **Optional**.
 
     ![SAML Authentication Settings](./media/lucidchart-tutorial/ic791192.png "SAML Authentication Settings")
 
-    b. In the **Domain** textbox, type your domain, and then click **Change Certificate**.
+    b. In the **Domain** textbox, type your domain, and then select **Change Certificate**.
 
     ![Change Certificate](./media/lucidchart-tutorial/ic791193.png "Change Certificate")
 
@@ -120,25 +120,25 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Upload Metadata](./media/lucidchart-tutorial/ic791194.png "Upload Metadata")
 
-    d. Select **Automatically Add new users to the team**, and then click **Save changes**.
+    d. Select **Automatically Add new users to the team**, and then select **Save changes**.
 
     ![Save Changes](./media/lucidchart-tutorial/ic791195.png "Save Changes")
 
 ### Create Lucidchart test user
 
-There is no action item for you to configure user provisioning to Lucidchart.  When an assigned user tries to log into Lucidchart using the access panel, Lucidchart checks whether the user exists.  
+There's no action item for you to configure user provisioning to Lucidchart.  When an assigned user tries to log into Lucidchart using the access panel, Lucidchart checks whether the user exists.  
 
-If there is no user account available yet, it is automatically created by Lucidchart.
+If there is no user account available yet, it's automatically created by Lucidchart.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Lucidchart Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Lucidchart Sign-on URL where you can initiate the login flow. 
 
 * Go to Lucidchart Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Lucidchart tile in the My Apps, you should be automatically signed in to the Lucidchart for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Lucidchart tile in the My Apps, you should be automatically signed in to the Lucidchart for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

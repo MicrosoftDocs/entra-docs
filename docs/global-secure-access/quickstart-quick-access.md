@@ -18,6 +18,9 @@ Microsoft Entra Private Access provides a secure, zero-trust access solution for
  
 This quickstart shows you the steps needed to configure Quick Access to private resources. To learn more about Global Secure Access, see [What is Global Secure Access?](overview-what-is-global-secure-access.md)
 
+> [!NOTE]
+> Use Quick Access as a transition phase in your Zero Trust journey. After Quick Access has enabled you to replace your VPN, [configure per-app access](quickstart-per-app-access.md) to achieve application segmentation and per-app granular controls.
+
 ## Prerequisites
 
 Administrators who interact with **Global Secure Access** features must have the [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference). Some features might also require other roles.
