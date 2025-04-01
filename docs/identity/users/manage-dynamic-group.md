@@ -13,7 +13,7 @@ ms.reviewer: mbhargava
 
 # Understanding and Managing Dynamic Group Processing  in Microsoft Entra ID
 
-Dynamic membership groups in Microsoft Entra are a powerful tool that allows administrators to automate group membership management. Changes to membership typically process within a few hours. However, under certain conditions, customers can experience delays in membership updates. Processing can take more than 24 hours. Understanding the underlying causes can help admins optimize their configurations and avoid unnecessary processing bottlenecks. 
+Dynamic membership groups in Microsoft Entra is a powerful feature that allows administrators to automate group membership management. Changes to membership typically process within a few hours. However, under certain conditions, customers can experience delays in membership updates. Processing can take more than 24 hours. Understanding the underlying causes can help admins optimize their configurations and avoid unnecessary processing bottlenecks. 
 
 ## How Dynamic Group Processing Works 
 
@@ -72,5 +72,7 @@ If you anticipate making a large number of changes to group membership (for exam
 
 Delays in dynamic group processing primarily happen due to high volumes of changes and large numbers of groups. By following best practices—such as optimizing rule efficiency, monitoring changes, and pausing nonessential groups when needed—IT administrators can improve processing performance and avoid unnecessary delays.  
 
->[!NOTE]
-> Review detailed information on pausing group processing in [Troubleshoot dynamic group processing](/troubleshoot/entra/entra-id/dir-dmns-obj/troubleshoot-dynamic-groups)
+
+## Related Articles
+- [Create and manage dynamic groups in Microsoft Entra ID](groups-dynamic-overview.md)
+- Review detailed information on pausing group processing in [Troubleshoot dynamic group processing](/troubleshoot/entra/entra-id/dir-dmns-obj/troubleshoot-dynamic-groups)
