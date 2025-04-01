@@ -73,4 +73,4 @@ If you anticipate making a large number of changes to group membership (for exam
 Delays in dynamic group processing primarily happen due to high volumes of changes and large numbers of groups. By following best practices—such as optimizing rule efficiency, monitoring changes, and pausing nonessential groups when needed—IT administrators can improve processing performance and avoid unnecessary delays.  
 
 >[!NOTE]
-> Review detailed information on pausing group processing in [Troubleshoot dynamic group processing](/troubleshoot/entra/entra-id/dir-dmns-obj/troubleshoot-dynamic-groups.md)
+> Review detailed information on pausing group processing in [Troubleshoot dynamic group processing](/troubleshoot/entra/entra-id/dir-dmns-obj/troubleshoot-dynamic-groups)
