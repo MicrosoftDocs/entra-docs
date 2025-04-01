@@ -26,8 +26,8 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 
 - [Customize the language of the authentication experience](how-to-customize-languages-customers.md) - Editorial updates
 - [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md) - OpenID Connect federation is generally available
-- [Add Facebook as an identity provider](how-to-facebook-federation-customers.md) - OpenID Connect federation is generally available
-- [Add Google as an identity provider](how-to-google-federation-customers.md) - OpenID Connect federation is generally available
+- [Add Facebook as an identity provider](how-to-facebook-federation-customers.md) - Facebook federation is generally available
+- [Add Google as an identity provider](how-to-google-federation-customers.md) - Google federation is generally available
 - [Create a sign-up and sign-in user flow for an external tenant app](how-to-user-flow-sign-up-sign-in-customers.md) - Removed disable sign-up in a sign-up and sign-in user flow
 - [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Added clarification
 - [Manage user accounts for consumers and business customers](how-to-manage-customer-accounts.md) - Added clarification
