@@ -39,7 +39,6 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 * [Node.js](https://nodejs.org/en/download/package-manager)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 
-
 #### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
 
 * [Visual Studio](https://visualstudio.microsoft.com/vs/) with the [Universal Windows Platform development](/windows/apps/windows-app-sdk/set-up-your-development-environment) workload installed
@@ -71,6 +70,9 @@ To specify the app type and redirect URIs to your app registration, follow these
 ## Download the sample project
 
 ### [Node.js Electron](#tab/node-js-workforce)
+
+> [!NOTE]
+> The Electron sample provided in this tutorial is specifically designed to work with MSAL-node. MSAL-browser is not supported in Electron applications. Ensure you to complete the following steps to set up your project correctly.
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -285,6 +287,9 @@ You will need to add a redirect URI to your app registration. This URI is used t
 ## Download the sample project
 
 #### [Node.js Electron](#tab/node-js-external)
+
+> [!NOTE]
+> The Electron sample provided in this tutorial is specifically designed to work with MSAL-node. MSAL-browser is not supported in Electron applications. Ensure you complete the following steps to set up your project correctly.
 
 To get the desktop app sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
