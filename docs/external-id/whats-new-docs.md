@@ -15,6 +15,15 @@ manager: CelesteDG
 
 Welcome to what's new in documentation for Microsoft Entra External ID in workforce tenants. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
+## March 2025
+
+### Updated articles
+
+- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated important considerations
+- [Authentication flow for non-Microsoft Entra ID external users](authentication-conditional-access.md) - Replaced retired MSOnline references 
+- [Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](bulk-invite-powershell.md) - Editorial updates
+- [B2B collaboration invitation redemption](redemption-experience.md) - Editorial updates
+
 ## February 2025
 
 ### New articles
@@ -32,13 +41,3 @@ Welcome to what's new in documentation for Microsoft Entra External ID in workfo
 
 - [Leave an organization where you have a guest account](leave-the-organization.md) - Added additional support options
 - [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated pricing information
-
-## October 2024
-
-### Updated articles
-
-- [B2B collaboration invitation redemption](redemption-experience.md) - Guest and contact object conflicts update
-- [Troubleshoot common issues with Microsoft Entra B2B collaboration](troubleshoot.md) - Guest and contact object conflicts update
-- [Microsoft Entra B2B in government and national clouds](b2b-government-national-clouds.md) - MSA support update
-- [Microsoft Entra B2B best practices](b2b-fundamentals.md) - Security considerations updates
-

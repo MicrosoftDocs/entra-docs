@@ -16,6 +16,20 @@ manager: CelesteDG
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
 
+## March 2025
+
+### Updated articles
+
+- [Customize the language of the authentication experience](how-to-customize-languages-customers.md) - Editorial updates
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md) - OpenID Connect federation is generally available
+- [Add Facebook as an identity provider](how-to-facebook-federation-customers.md) - OpenID Connect federation is generally available
+- [Add Google as an identity provider](how-to-google-federation-customers.md) - OpenID Connect federation is generally available
+- [Create a sign-up and sign-in user flow for an external tenant app](how-to-user-flow-sign-up-sign-in-customers.md) - Removed disable sign-up in a sign-up and sign-in user flow
+- [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Added clarification
+- [Manage user accounts for consumers and business customers](how-to-manage-customer-accounts.md) - Added clarification
+- [Default user permissions in external tenants](reference-user-permissions.md) - Updated default permissions
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added default permissions
+
 ## February 2025
 
 ### New articles
@@ -47,9 +61,3 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 ### Updated articles
 
 - [Add Azure AD B2C tenant as an OpenID Connect identity provider](how-to-b2c-federation-customers.md) - Editorial updates
-
-## December 2024
-
-### Updated articles
-
-- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added pricing and ID Governance details
