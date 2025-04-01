@@ -74,7 +74,7 @@ Connection logs provide a summary of all associated transactions, including the 
 
 A connection represents multiple transactions occurring in the last 24 hours and provides a single Flow Correlation Id.
 
-As of March 31, 2025, we are previewing a new tab in the Traffic logs blade for you to view Connections:
+We are currently previewing a new tab in the Traffic logs blade for you to view Connections:
 
 :::image type="content" source="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png" alt-text="Screenshot of the new Connections tab on the Traffic logs page." lightbox="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png":::
 
@@ -112,8 +112,6 @@ You can export the Global Secure Access traffic logs (preview) to an endpoint fo
     * **Archive to a storage account:** Provide the number of days you'd like to retain the data in the **Retention days** boxes that appear next to the log categories. Select the appropriate details from the menus that appear.
     * **Stream to an event hub:** Select the appropriate details from the menus that appear.
     * **Send to partner solution:** Select the appropriate details from the menus that appear.
-
-
 
 ## Next steps
 
