@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -83,7 +83,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| `https://<CustomerName-Environment>.tririga.com/samlsps` |
 
 	> [!Note]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [IBM TRIRIGA on Cloud support team](https://www.ibm.com/mysupport) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [IBM TRIRIGA on Cloud support team](https://www.ibm.com/mysupport) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -105,9 +105,9 @@ In this section, you create a user called Britta Simon in IBM TRIRIGA on Cloud. 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the IBM TRIRIGA on Cloud for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the IBM TRIRIGA on Cloud for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the IBM TRIRIGA on Cloud tile in the My Apps, you should be automatically signed in to the IBM TRIRIGA on Cloud for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the IBM TRIRIGA on Cloud tile in the My Apps, you should be automatically signed in to the IBM TRIRIGA on Cloud for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

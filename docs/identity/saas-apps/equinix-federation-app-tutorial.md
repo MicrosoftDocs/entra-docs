@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Equinix Federation App
 
-In this article,  you'll learn how to integrate Equinix Federation App with Microsoft Entra ID. When you integrate Equinix Federation App with Microsoft Entra ID, you can do the following:
+In this article,  you learn how to integrate Equinix Federation App with Microsoft Entra ID. When you integrate Equinix Federation App with Microsoft Entra ID, you can do the following:
 
 * Control in Microsoft Entra ID who has access to Equinix Federation App.
 * Enable your users to be automatically signed-in to Equinix Federation App with their Microsoft Entra accounts.
@@ -47,7 +47,7 @@ To configure the integration of Equinix Federation App into Microsoft Entra ID, 
 1. In the **Add from the gallery** section, type **Equinix Federation App** in the search box.
 1. Select **Equinix Federation App** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-equinix-federation-app'></a>
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with Equinix Federation App, perform t
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Equinix Federation App SSO](#configure-equinix-federation-app-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Equinix Federation App test user](#create-equinix-federation-app-test-user)** - to have a counterpart of B.Simon in Equinix Federation App that is linked to the Microsoft Entra representation of user.
+    1. **[Create Equinix Federation App test user](#create-equinix-federation-app-test-user)** - to have a counterpart of B.Simon in Equinix Federation App that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,7 +74,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Equinix Federation App** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<customerprefix>customerportal.equinix.com`
 
 	> [!NOTE]
-	> The Sign on URL value is not real. Update the value with the actual Sign on URL. Contact [Equinix Federation App Client support team](mailto:FederationSupport@equinix.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign on URL value isn't real. Update the value with the actual Sign on URL. Contact [Equinix Federation App Client support team](mailto:FederationSupport@equinix.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -113,7 +113,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 Go to Equinix Federation App Sign-on URL directly, and initiate the login flow from there.
 
  > [!NOTE]
- > If you attempt to test your Azure application by using the **Test this application** link or by clicking the Equinix Federation App tile, it will not work, as that is IdP-initiated SSO, which Equinix does not support by default.  For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+ > If you attempt to test your Azure application by using the **Test this application** link or by selecting the Equinix Federation App tile, it doesn't work, as that's IdP-initiated SSO, which Equinix doesn't support by default.  For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Related content

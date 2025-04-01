@@ -47,7 +47,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 Before configuring Workteam  for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Workteam.
 
-1. Log in into [Workteam](https://app.workte.am/account/signin). Click **Organization settings** > **SETTINGS**.
+1. Log in into [Workteam](https://app.workte.am/account/signin). Select **Organization settings** > **SETTINGS**.
 
 	![Screenshot of the Workteam U I with the Organization settings and SETTINGS options called out.](media/workteam-provisioning-tutorial/settings.png)
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the Admin Credentials section, input the **Base URL** and **Bearer Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to Workteam. If the connection fails, ensure your Workteam account has Admin permissions and try again.
+5. Under the Admin Credentials section, input the **Base URL** and **Bearer Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workteam. If the connection fails, ensure your Workteam account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Workteam**.
 
@@ -126,7 +126,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you're ready to provision, click **Save**.
+14. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

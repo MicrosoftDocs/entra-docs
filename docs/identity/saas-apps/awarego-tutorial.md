@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on integration with AwareGo
 
-In this article,  you'll learn how to integrate AwareGo with Microsoft Entra ID. When you integrate AwareGo with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate AwareGo with Microsoft Entra ID. When you integrate AwareGo with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AwareGo.
 * Enable your users to be automatically signed in to AwareGo with their Microsoft Entra accounts.
@@ -87,7 +87,7 @@ To enable Microsoft Entra SSO in the Azure portal, do the following:
     c. In the **Reply URL** box, enter a URL in the following format: `https://<SUBDOMAIN>.awarego.com/auth/sso/callback`
 
 	> [!NOTE]
-	> The preceding values are not real. Update them with the actual identifier and reply URLs. To obtain the values, contact the [AwareGo client support team](mailto:support@awarego.com). You can also refer to the examples in the **Basic SAML Configuration** section.
+	> The preceding values aren't real. Update them with the actual identifier and reply URLs. To obtain the values, contact the [AwareGo client support team](mailto:support@awarego.com). You can also refer to the examples in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, next to **Certificate (Base64)**, select **Download** to download the certificate and save it to your computer.
 

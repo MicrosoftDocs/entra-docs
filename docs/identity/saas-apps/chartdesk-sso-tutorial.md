@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with ChartDesk SSO
 
-In this article, you'll learn how to integrate ChartDesk SSO with Microsoft Entra ID. ChartDesk SSO allows your users to sign in to ChartDesk using Microsoft Entra credentials. When you integrate ChartDesk SSO with Microsoft Entra ID, you can:
+In this article, you learn how to integrate ChartDesk SSO with Microsoft Entra ID. ChartDesk SSO allows your users to sign in to ChartDesk using Microsoft Entra credentials. When you integrate ChartDesk SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ChartDesk SSO.
 * Enable your users to be automatically signed-in to ChartDesk SSO with their Microsoft Entra accounts.
@@ -85,9 +85,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | `https://<externaltenantid>.prod-api.chartdesk.de/saml/consume` |
 
     > [!Note]
-    > These values are not the real. Update these values with the actual Identifier and Reply URL. Contact [ChartDesk SSO Client support team](mailto:support@chartdesk.pro) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't the real. Update these values with the actual Identifier and Reply URL. Contact [ChartDesk SSO Client support team](mailto:support@chartdesk.pro) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
     
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -103,9 +103,9 @@ In this section, you create a user called Britta Simon in ChartDesk SSO. Work wi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the ChartDesk SSO for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the ChartDesk SSO for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the ChartDesk SSO tile in the My Apps, you should be automatically signed in to the ChartDesk SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the ChartDesk SSO tile in the My Apps, you should be automatically signed in to the ChartDesk SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

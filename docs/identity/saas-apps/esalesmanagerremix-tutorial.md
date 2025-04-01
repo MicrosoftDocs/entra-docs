@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 ---
 # Integrate Microsoft Entra ID with E Sales Manager Remix
@@ -36,7 +36,7 @@ To configure Microsoft Entra integration with E Sales Manager Remix, you need th
 
 To test the steps in this article,  follow these recommendations:
 
-- Do not use your production environment, unless it is necessary.
+- don't use your production environment, unless it's necessary.
 - If you don't have a Microsoft Entra trial environment, you can [get a one-month trial](https://azure.microsoft.com/pricing/free-trial/).
 
 ## Scenario description
@@ -94,7 +94,7 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 	c. Note the **Identifier** value for later use in this article.
 	
 	> [!NOTE] 
-	> The preceding values are not real. Update them with the actual sign-in URL and identifier. To obtain the values, contact [E Sales Manager Remix Client support team](mailto:esupport@softbrain.co.jp).
+	> The preceding values aren't real. Update them with the actual sign-in URL and identifier. To obtain the values, contact [E Sales Manager Remix Client support team](mailto:esupport@softbrain.co.jp).
 
 1. Under **SAML Signing Certificate**, select **Certificate (Base64)**, and then save the certificate file on your computer.
 
@@ -192,7 +192,7 @@ In this section, you create test user.
 
 	b. Complete the remaining required fields.
 	
-	c. If you enable SAML, the administrator cannot sign in from the sign-in page. Grant administrator sign-in privileges to the user by selecting the **Admin Login** check box.
+	c. If you enable SAML, the administrator can't sign in from the sign-in page. Grant administrator sign-in privileges to the user by selecting the **Admin Login** check box.
 
 	d. Select **Registration**.
 

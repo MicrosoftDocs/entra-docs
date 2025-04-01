@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AuditBoard so that I can streamline the user management process and ensure that users have the appropriate access to AuditBoard.
@@ -25,7 +25,7 @@ This article describes the steps you need to perform in both AuditBoard and Micr
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in AuditBoard
-> * Remove users in AuditBoard when they do not require access anymore
+> * Remove users in AuditBoard when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and AuditBoard
 > * [Single sign-on](./auditboard-tutorial.md) to AuditBoard (recommended)
 
@@ -49,12 +49,12 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. Select **Generate Token**. 
 
-3. Save the **Token** and the **SCIM base URL**. These values will be entered in the Tenant URL and Secret Token field in the Provisioning tab of your AuditBoard application.
+3. Save the **Token** and the **SCIM base URL**. These values are entered in the Tenant URL and Secret Token field in the Provisioning tab of your AuditBoard application.
 
    > [!NOTE]
-   > Generating a new token will invalidate the previous token.
+   > Generating a new token invalidates the previous token.
 
-4. The AuditBoard instance will require the following user permissions to be set on the SCIM user role (System Admin by default). Please connect with AuditBoard support to confirm this is set correctly
+4. The AuditBoard instance requires the following user permissions to be set on the SCIM user role (System Admin by default). Please connect with AuditBoard support to confirm this is set correctly
 `user:action.administer must be set to allow` and
 `user:action.edit must be set to allow`.
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Versal
 
-In this article,  you'll learn how to integrate Versal with Microsoft Entra ID. When you integrate Versal with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Versal with Microsoft Entra ID. When you integrate Versal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Versal.
 * Enable your users to be automatically signed-in to Versal with their Microsoft Entra accounts.
@@ -50,7 +50,7 @@ To configure the integration of Versal into Microsoft Entra ID, you need to add 
 1. In the **Add from the gallery** section, type **Versal** in the search box.
 1. Select **Versal** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-versal'></a>
 
@@ -64,7 +64,7 @@ To configure and test Microsoft Entra SSO with Versal, perform the following ste
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Versal SSO](#configure-versal-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Versal test user](#create-versal-test-user)** - to have a counterpart of B.Simon in Versal that is linked to the Microsoft Entra representation of user.
+    1. **[Create Versal test user](#create-versal-test-user)** - to have a counterpart of B.Simon in Versal that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Versal** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -89,9 +89,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://versal.com/sso/saml/orgs/<organization_id>`
 
 	> [!NOTE]
-	> The Reply URL value is not real. Update this value with the actual Reply URL. Contact Versal Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Reply URL value isn't real. Update this value with the actual Reply URL. Contact Versal Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Versal application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Versal application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Versal application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Versal application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
 	![Screenshot shows the image of Versal application.](common/edit-attribute.png "Attributes")
 
@@ -121,7 +121,7 @@ In this section, you test your Microsoft Entra single sign-on configuration usin
 Please see the Embedding Organizational Courses **SAML Single Sign-On**
 support guide for instructions on how to embed a Versal course with support for Microsoft Entra single sign-on. 
 
-You will need to create a course, share it with your organization, and publish it in order to test course embedding. 
+You need to create a course, share it with your organization, and publish it in order to test course embedding. 
 
 ## Related content
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Sakon Device Platform
 
-In this article,  you'll learn how to integrate Sakon Device Platform with Microsoft Entra ID. When you integrate Sakon Device Platform with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Sakon Device Platform with Microsoft Entra ID. When you integrate Sakon Device Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Sakon Device Platform.
 * Enable your users to be automatically signed-in to Sakon Device Platform with their Microsoft Entra accounts.
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Sakon Device Platform, perform th
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Sakon Device Platform SSO](#configure-sakon-device-platform-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Sakon Device Platform test user](#create-sakon-device-platform-test-user)** - to have a counterpart of B.Simon in Sakon Device Platform that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Sakon Device Platform test user](#create-sakon-device-platform-test-user)** - to have a counterpart of B.Simon in Sakon Device Platform that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Sakon Device Platform** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -81,9 +81,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<CUSTOMER_NAME>.gsgcloud.net/core5/AssertionConsumerService.aspx`
 
 	> [!NOTE]
-	> The Reply URL is not real. Update this value with the actual Reply URL. Contact [Sakon Device Platform support team](mailto:imsteam@sakon.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> The Reply URL isn't real. Update this value with the actual Reply URL. Contact [Sakon Device Platform support team](mailto:imsteam@sakon.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-1. Your Sakon Device Platform application requires SAML assertions in a specific format. Typically, the attribute mappings use the **emailaddress** attribute in your SAML token configuration. The screenshot below shows an example of this setup. If your organization prefers to use **employeeid** instead, you will need to add a custom attribute mapping. Here's how to do it:
+1. Your Sakon Device Platform application requires SAML assertions in a specific format. Typically, the attribute mappings use the **emailaddress** attribute in your SAML token configuration. The screenshot below shows an example of this setup. If your organization prefers to use **employeeid** instead, you need to add a custom attribute mapping. Here's how to do it:
 
     1.	Go to your Azure SAML configuration & Add a new claim.
     2.	Add a new claim and select **user.employeeid** from the list of attributes or choose the appropriate attribute based on your organization’s configuration.
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 	![Screenshot shows the image of custom attribute mappings.](common/default-attributes.png "Image")
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -109,9 +109,9 @@ In this section, you create a user called B.Simon in Sakon Device Platform. Work
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on Test this application in Microsoft Entra admin center and you should be automatically signed in to the Sakon Device Platform for which you set up the SSO.
+* Select Test this application in Microsoft Entra admin center and you should be automatically signed in to the Sakon Device Platform for which you set up the SSO.
  
-* You can use Microsoft My Apps. When you click the Sakon Device Platform tile in the My Apps, you should be automatically signed in to the Sakon Device Platform for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](
+* You can use Microsoft My Apps. When you select the Sakon Device Platform tile in the My Apps, you should be automatically signed in to the Sakon Device Platform for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](
 https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510
 ).
 

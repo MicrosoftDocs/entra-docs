@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with TINFOIL SECURITY
 
-In this article,  you'll learn how to integrate TINFOIL SECURITY with Microsoft Entra ID. When you integrate TINFOIL SECURITY with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate TINFOIL SECURITY with Microsoft Entra ID. When you integrate TINFOIL SECURITY with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to TINFOIL SECURITY.
 * Enable your users to be automatically signed-in to TINFOIL SECURITY with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of TINFOIL SECURITY into Microsoft Entra ID, you ne
 1. In the **Add from the gallery** section, type **TINFOIL SECURITY** in the search box.
 1. Select **TINFOIL SECURITY** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-tinfoil-security'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with TINFOIL SECURITY, perform the fol
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure TINFOIL SECURITY SSO](#configure-tinfoil-security-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create TINFOIL SECURITY test user](#create-tinfoil-security-test-user)** - to have a counterpart of B.Simon in TINFOIL SECURITY that is linked to the Microsoft Entra representation of user.
+    1. **[Create TINFOIL SECURITY test user](#create-tinfoil-security-test-user)** - to have a counterpart of B.Simon in TINFOIL SECURITY that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,11 +72,11 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **TINFOIL SECURITY** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, the application is pre-configured and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section, the application is pre-configured and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by selecting the **Save** button.
 
 1. Visitly application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -89,9 +89,9 @@ Follow these steps to enable Microsoft Entra SSO.
 	| accountid | UXXXXXXXXXXXXX |
 
 	> [!NOTE]
-	> You will get the accountid value explained later in the article.
+	> You get the accountid value explained later in the article.
 
-1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
+1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
 	![Edit SAML Signing Certificate](common/edit-certificate.png)
 
@@ -111,11 +111,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign into your TINFOIL SECURITY company site as an administrator.
 
-1. In the toolbar on the top, click **My Account**.
+1. In the toolbar on the top, select **My Account**.
 
     ![Dashboard](./media/tinfoil-security-tutorial/account.png "Dashboard")
 
-1. Click **Security**.
+1. Select **Security**.
 
     ![Security](./media/tinfoil-security-tutorial/details.png "Security")
 
@@ -125,7 +125,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. Select **Enable SAML**.
 
-    b. Click **Manual Configuration**.
+    b. Select **Manual Configuration**.
 
     c. In **SAML Post URL** textbox, paste the value of **Login URL**.
 
@@ -133,7 +133,7 @@ Follow these steps to enable Microsoft Entra SSO.
   
     e. Copy **Your Account ID** value and paste the value in **Source Attribute** textbox under **User Attributes & Claims** section in Azure portal.
 
-    f. Click **Save**.
+    f. Select **Save**.
 
 ### Create TINFOIL SECURITY test user
 
@@ -152,9 +152,9 @@ In order to enable Microsoft Entra users to sign in to TINFOIL SECURITY, they mu
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the TINFOIL SECURITY for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the TINFOIL SECURITY for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the TINFOIL SECURITY tile in the My Apps, you should be automatically signed in to the TINFOIL SECURITY for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the TINFOIL SECURITY tile in the My Apps, you should be automatically signed in to the TINFOIL SECURITY for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

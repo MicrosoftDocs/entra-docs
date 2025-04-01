@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Sansan with Microsoft Entra ID
 
-In this article,  you'll learn how to integrate Sansan with Microsoft Entra ID. When you integrate Sansan with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Sansan with Microsoft Entra ID. When you integrate Sansan with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Sansan.
 * Enable your users to be automatically signed-in to Sansan with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of Sansan into Microsoft Entra ID, you need to add 
 1. In the **Add from the gallery** section, type **Sansan** in the search box.
 1. Select **Sansan** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-sansan'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Sansan, perform the following ste
    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with Britta Simon.
    1. **Assign the Microsoft Entra test user** to enable Britta Simon to use Microsoft Entra single sign-on.
 1. **[Configure Sansan SSO](#configure-sansan-sso)** to configure the SSO settings on application side.
-   1. **[Create Sansan test user](#create-sansan-test-user)** to have a counterpart of Britta Simon in Sansan that is linked to the Microsoft Entra representation of user.
+   1. **[Create Sansan test user](#create-sansan-test-user)** to have a counterpart of Britta Simon in Sansan that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Sansan** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://ap.sansan.com/`
 
     > [!NOTE]
-    > These values are not real. Check the actual Identifier and Reply URL values on the **Sansan admin settings**.
+    > These values aren't real. Check the actual Identifier and Reply URL values on the **Sansan admin settings**.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -124,11 +124,11 @@ In this section, you create a user called Britta Simon in Sansan. For more infor
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Sansan Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Sansan Sign-on URL where you can initiate the login flow. 
 
 * Go to Sansan Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Sansan tile in the My Apps, this will redirect to Sansan Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Sansan tile in the My Apps, this option redirects to Sansan Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

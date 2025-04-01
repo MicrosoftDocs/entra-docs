@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Webroot Security Aw
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Webroot Security Awareness Training
-> * Remove users in Webroot Security Awareness Training when they do not require access anymore
+> * Remove users in Webroot Security Awareness Training when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Webroot Security Awareness Training
 > * Provision groups and group memberships in Webroot Security Awareness Training
 
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Webroot Security Awareness Training](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-webroot-security-awareness-training-to-support-provisioning-with-azure-ad'></a>
@@ -45,21 +45,21 @@ The scenario outlined in this article assumes that you already have the followin
 
 ### Obtain a secret token
 
-To connect your site to Microsoft Entra ID, you will need to obtain a **Secret Token** for that site in the Webroot management console.
+To connect your site to Microsoft Entra ID, you need to obtain a **Secret Token** for that site in the Webroot management console.
 
 1. Sign into your [Webroot management console](https://identity.webrootanywhere.com/v1/Account/login#tab_customers)
 
-2. From the **Sites** tab, click the gear icon in the Security Awareness Training column for the site you wish to connect with Microsoft Entra ID.
+2. From the **Sites** tab, select the gear icon in the Security Awareness Training column for the site you wish to connect with Microsoft Entra ID.
 
     ![Gear Icon](./media/webroot-security-awareness-training-provisioning-tutorial/gear-icon.png)
 
-3. Click the button to **Configure Microsoft Entra Integration**.
+3. Select the button to **Configure Microsoft Entra Integration**.
 
     ![Configure Microsoft Entra Integration](./media/webroot-security-awareness-training-provisioning-tutorial/configure-azure-ad-integration.png)
 
-4. Copy and save the **Secret Token**. This value will be entered in the Secret Token field in the Provisioning tab of your Webroot Security Awareness Training application.
+4. Copy and save the **Secret Token**. This value is entered in the Secret Token field in the Provisioning tab of your Webroot Security Awareness Training application.
 
-5. Click **Done**.
+5. Select **Done**.
 
     ![Copy Secret Token](./media/webroot-security-awareness-training-provisioning-tutorial/copy-secret-token.png)
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://awarenessapi.webrootanywhere.com/api/v2/scim` in **Tenant URL**. Input the secret token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Webroot Security Awareness Training. If the connection fails, ensure your Webroot Security Awareness Training account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://awarenessapi.webrootanywhere.com/api/v2/scim` in **Tenant URL**. Input the secret token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Webroot Security Awareness Training. If the connection fails, ensure your Webroot Security Awareness Training account has Admin permissions and try again.
 
  	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/webroot-security-awareness-training-provisioning-tutorial/provisioning.png)
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Provision Microsoft Entra users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Webroot Security Awareness Training in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Webroot Security Awareness Training for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Webroot Security Awareness Training API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Webroot Security Awareness Training in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Webroot Security Awareness Training for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Webroot Security Awareness Training API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -140,7 +140,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

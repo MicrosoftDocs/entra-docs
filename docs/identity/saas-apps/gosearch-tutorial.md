@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with GoSearch
 
-In this article,  you'll learn how to integrate GoSearch with Microsoft Entra ID. When you integrate GoSearch with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate GoSearch with Microsoft Entra ID. When you integrate GoSearch with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to GoSearch.
 * Enable your users to be automatically signed-in to GoSearch with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with GoSearch, perform the following s
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure GoSearch SSO](#configure-gosearch-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create GoSearch test user](#create-gosearch-test-user)** - to have a counterpart of B.Simon in GoSearch that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create GoSearch test user](#create-gosearch-test-user)** - to have a counterpart of B.Simon in GoSearch that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -70,11 +70,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **GoSearch** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section, the application is preconfigured and the necessary URLs are already prepopulated with Microsoft Entra. The user needs to save the configuration by selecting the **Save** button.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Log in to GoSearch company site as an administrator.
 
-1. Go to **Settings** > **Workspace** > **Single sign-on** >  select **Azure** as an authentication method and click **Configure**.
+1. Go to **Settings** > **Workspace** > **Single sign-on** >  select **Azure** as an authentication method and select **Configure**.
 
     ![Screenshot shows Settings for the configuration.](./media/gosearch-tutorial/settings.png "Settings")
 
@@ -107,11 +107,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Open the downloaded **Federation Metadata XML** into Notepad and paste the content into the **Identity Provider Metadata** textbox.
 
-    1. Click **Save Changes**.
+    1. Select **Save Changes**.
 
 ### Create GoSearch test user
 
-In this section, a user called Britta Simon is created in GoSearch. GoSearch supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in GoSearch, a new one is created after authentication.
+In this section, a user called Britta Simon is created in GoSearch. GoSearch supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in GoSearch, a new one is created after authentication.
 
 ## Test SSO
 
@@ -119,15 +119,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to GoSearch Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to GoSearch Sign on URL where you can initiate the login flow.  
  
 * Go to GoSearch Sign-on URL directly and initiate the login flow from there.
  
 #### IDP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the GoSearch for which you set up the SSO.
+* Select **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the GoSearch for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the GoSearch tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the GoSearch for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the GoSearch tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the GoSearch for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

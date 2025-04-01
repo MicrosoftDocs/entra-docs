@@ -105,9 +105,9 @@ In this section, you create a user called Britta Simon at Fleet Management Syste
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Fleet Management System for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Fleet Management System for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Fleet Management System tile in the My Apps, you should be automatically signed in to the Fleet Management System for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Fleet Management System tile in the My Apps, you should be automatically signed in to the Fleet Management System for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

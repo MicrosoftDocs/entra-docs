@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with xMatters OnDemand
 
-In this article,  you'll learn how to integrate xMatters OnDemand with Microsoft Entra ID. When you integrate xMatters OnDemand with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate xMatters OnDemand with Microsoft Entra ID. When you integrate xMatters OnDemand with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to xMatters OnDemand.
 * Enable your users to be automatically signed-in to xMatters OnDemand with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of xMatters OnDemand into Microsoft Entra ID, you n
 1. In the **Add from the gallery** section, type **xMatters OnDemand** in the search box.
 1. Select **xMatters OnDemand** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-xmatters-ondemand'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with xMatters OnDemand, perform the fo
 	1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 	2. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure xMatters OnDemand SSO](#configure-xmatters-ondemand-sso)** - to configure the Single Sign-On settings on application side.
-	1. **[Create xMatters OnDemand test user](#create-xmatters-ondemand-test-user)** - to have a counterpart of Britta Simon in xMatters OnDemand that is linked to the Microsoft Entra representation of user.
+	1. **[Create xMatters OnDemand test user](#create-xmatters-ondemand-test-user)** - to have a counterpart of Britta Simon in xMatters OnDemand that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **xMatters OnDemand** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -94,9 +94,9 @@ Follow these steps to enable Microsoft Entra SSO.
 	| `https://<COMPANY_NAME>.au1.xmatters.com.au/<INSTANCE_NAME>` |
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [xMatters OnDemand Client support team](https://www.xmatters.com/company/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [xMatters OnDemand Client support team](https://www.xmatters.com/company/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -115,7 +115,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your xMatters OnDemand company site as an administrator.
 
-2. Click on **Admin**, and then click **Company Details**.
+2. Select **Admin**, and then select **Company Details**.
 
     ![Admin page](./media/xmatters-ondemand-tutorial/admin.png "Admin page")
 
@@ -131,9 +131,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
     d. In the **Logout URL Redirect** textbox, paste **Logout URL**, which you copied previously.
 
-	e. Click on **Choose File** to upload the **Certificate (Base64)** which you have downloaded. 
+	e. Select **Choose File** to upload the **Certificate (Base64)** which you have downloaded. 
 
-    f. On the Company Details page, at the top, click **Save Changes**.
+    f. On the Company Details page, at the top, select **Save Changes**.
 
     ![Company details](./media/xmatters-ondemand-tutorial/save-button.png "Company details")
 
@@ -141,11 +141,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to your **xMatters OnDemand** tenant.
 
-2. Go to the **Users Icon** > **Users** and then click **Add Users**.
+2. Go to the **Users Icon** > **Users** and then select **Add Users**.
 
 	![Users](./media/xmatters-ondemand-tutorial/add-user.png "Users")
 
-3. In the **Add Users** section, fill the required fields and click on **Add User** button.
+3. In the **Add Users** section, fill the required fields and select **Add User** button.
 
     ![Add a User](./media/xmatters-ondemand-tutorial/add-user-2.png "Add a User")
 
@@ -153,9 +153,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the xMatters OnDemand for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the xMatters OnDemand for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the xMatters OnDemand tile in the My Apps, you should be automatically signed in to the xMatters OnDemand for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the xMatters OnDemand tile in the My Apps, you should be automatically signed in to the xMatters OnDemand for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

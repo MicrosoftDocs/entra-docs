@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Skillport
 
-In this article,  you'll learn how to integrate Skillport with Microsoft Entra ID. When you integrate Skillport with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Skillport with Microsoft Entra ID. When you integrate Skillport with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Skillport.
 * Enable your users to be automatically signed-in to Skillport with their Microsoft Entra accounts.
@@ -45,7 +45,7 @@ To configure the integration of Skillport into Microsoft Entra ID, you need to a
 1. In the **Add from the gallery** section, type **Skillport** in the search box.
 1. Select **Skillport** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-skillport'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Skillport, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Skillport SSO](#configure-skillport-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Skillport test user](#create-skillport-test-user)** - to have a counterpart of B.Simon in Skillport that is linked to the Microsoft Entra representation of user.
+    1. **[Create Skillport test user](#create-skillport-test-user)** - to have a counterpart of B.Simon in Skillport that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Skillport** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
         US Datacenter: `https://sso.skillport.com/sp/ACS.saml2`
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -119,11 +119,11 @@ In order to create Skillport test user, you need to contact [Skillport support t
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Skillport Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Skillport Sign-on URL where you can initiate the login flow. 
 
 * Go to Skillport Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Skillport tile in the My Apps, this will redirect to Skillport Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Skillport tile in the My Apps, this option redirects to Skillport Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

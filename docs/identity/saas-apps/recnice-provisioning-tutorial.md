@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Recnice and Microso
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Recnice.
-> * Remove users in Recnice when they do not require access anymore.
+> * Remove users in Recnice when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Recnice.
 > * Provision groups and group memberships in Recnice.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Recnice (recommended).
@@ -35,19 +35,19 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Recnice](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-recnice-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Recnice to support provisioning with Microsoft Entra ID
-Before configuring Recnice for automatic user provisioning with Microsoft Entra ID, you will need to know the Secret Token and Tenant URL.
+Before configuring Recnice for automatic user provisioning with Microsoft Entra ID, you need to know the Secret Token and Tenant URL.
 
-1. Sign in to your Recnice Admin Console. Click on **Account**.
+1. Sign in to your Recnice Admin Console. Select **Account**.
 
 	![Screenshot of the Recnice Account Page.](media/recnice-provisioning-tutorial/recnice-account-settings.png)
 
-2. Copy the **SCIM Key** value. This value will be entered in the **Secret Token** field in the Provisioning tab of your Recnice application.
+2. Copy the **SCIM Key** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Recnice application.
 
 	![Screenshot of the S C I M A P I key.](media/recnice-provisioning-tutorial/recnice-token.png)
 
@@ -88,7 +88,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Recnice Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Recnice. If the connection fails, ensure your Recnice account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Recnice Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Recnice. If the connection fails, ensure your Recnice account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Recnice**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Recnice in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Recnice for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Recnice API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Recnice in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Recnice for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Recnice API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Recnice|
    |---|---|---|---|
@@ -143,7 +143,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

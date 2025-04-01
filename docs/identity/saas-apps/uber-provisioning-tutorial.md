@@ -21,7 +21,7 @@ This article describes the steps you need to perform in both Uber and Microsoft 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Uber.
-> * Remove users in Uber when they do not require access anymore.
+> * Remove users in Uber when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Uber.
 
 ## Prerequisites
@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Uber](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-uber-to-support-provisioning-with-azure-ad'></a>
@@ -54,7 +54,7 @@ Before you start the setup, below are the requirements to enable SCIM provisioni
 
 ## Step 3: Add Uber from the Microsoft Entra application gallery
 
-Add Uber from the Microsoft Entra application gallery to start managing provisioning to Uber. If you have previously setup Uber for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Uber from the Microsoft Entra application gallery to start managing provisioning to Uber. If you have previously setup Uber for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -85,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** and then click on Authorize, make sure that you enter your Uber account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Uber. If the connection fails, ensure your Uber account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter the **Tenant Url** and then select Authorize, make sure that you enter your Uber account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Uber. If the connection fails, ensure your Uber account has Admin permissions and try again.
 
    ![Screenshot of Token.](media/uber-provisioning-tutorial/authorize.png)
 
@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Uber**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Uber in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Uber for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Uber API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Uber in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Uber for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Uber API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Uber|
    |---|---|---|---|
@@ -118,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

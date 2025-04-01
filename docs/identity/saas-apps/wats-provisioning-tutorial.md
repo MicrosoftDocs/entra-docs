@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both WATS and Microsoft 
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in WATS.
-> * Remove users in WATS when they do not require access anymore.
+> * Remove users in WATS when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and WATS.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to WATS (recommended).
 
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and WATS](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-wats-to-support-provisioning-with-azure-ad'></a>
@@ -71,7 +71,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your WATS Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to WATS. If the connection fails, ensure your WATS account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your WATS Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to WATS. If the connection fails, ensure your WATS account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to WATS**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to WATS in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in WATS for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the WATS API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to WATS in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in WATS for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the WATS API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by WATS|
    |---|---|---|---|
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

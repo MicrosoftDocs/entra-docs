@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and MyGeotab so that I can control who has access to MyGeotab, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with MyGeotab
 
-In this article,  you'll learn how to integrate MyGeotab with Microsoft Entra ID. When you integrate MyGeotab with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate MyGeotab with Microsoft Entra ID. When you integrate MyGeotab with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to MyGeotab.
 * Enable your users to be automatically signed-in to MyGeotab with their Microsoft Entra accounts.
@@ -54,7 +54,7 @@ To configure and test Microsoft Entra SSO with MyGeotab, perform the following s
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure MyGeotab SSO](#configure-mygeotab-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create MyGeotab test user](#create-mygeotab-test-user)** - to have a counterpart of B.Simon in MyGeotab that is linked to the Microsoft Entra representation of user.
+    1. **[Create MyGeotab test user](#create-mygeotab-test-user)** - to have a counterpart of B.Simon in MyGeotab that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -64,11 +64,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **MyGeotab** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Microsoft Entra.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Microsoft Entra.
 
 1. MyGeotab application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -98,7 +98,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Go to **Administration** > **System** > **System Settings**.
 
-1. Click the **User Account Policy** tab and enable **Allow SAML login**.
+1. Select the **User Account Policy** tab and enable **Allow SAML login**.
 
 1. Go to **Certificates** > **Add new certificate** and upload **Certificate (Base64)**, which you have downloaded from the Microsoft Entra admin center.
 
@@ -108,9 +108,9 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. In the **Logout URL** field, paste the **Logout URL** which you copied from the Microsoft Entra admin center.
 
-1. Click **Save** on the **Certificates** page.
+1. Select **Save** on the **Certificates** page.
 
-1. Click **Save** on the **System Settings** page.
+1. Select **Save** on the **System Settings** page.
 
 ### Create MyGeotab test user
 
@@ -118,15 +118,15 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Select **SAML** as the Authentication type and add or edit users in MyGeotab SAML authentication page.
 
-1. Click **Save**.
+1. Select **Save**.
 
 ## Test SSO 
  
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on Test this application in Microsoft Entra admin center and you should be automatically signed in to the MyGeotab for which you set up the SSO.
+* Select Test this application in Microsoft Entra admin center and you should be automatically signed in to the MyGeotab for which you set up the SSO.
  
-* You can use Microsoft My Apps. When you click the MyGeotab tile in the My Apps, you should be automatically signed in to the MyGeotab for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the MyGeotab tile in the My Apps, you should be automatically signed in to the MyGeotab for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

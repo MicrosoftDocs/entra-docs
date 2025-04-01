@@ -23,13 +23,13 @@ Transport Layer Security (TLS) protocol version 1.2 is a cryptography protocol t
 
 
 > [!NOTE]
->If TLS 1.2 is not enabled on your server you will need to enable this before you can deploy Microsoft Entra Connect V2.0.
+>If TLS 1.2 isn't enabled on your server you need to enable it before you can deploy Microsoft Entra Connect V2.0.
 
 ## Update the registry
 In order to force the Microsoft Entra Connect server to only use TLS 1.2, the registry of the Windows server must be updated. Set the following registry keys on the Microsoft Entra Connect server.
 
 > [!IMPORTANT]
-> After you have updated the registry, you must restart the Windows server for the changes to take effect.
+> After you've updated the registry, you must restart the Windows server for the changes to take effect.
 
 
 ### Enable TLS 1.2
@@ -111,7 +111,7 @@ Example Output showing proper TLS1.2 configuration:
 ![image](https://user-images.githubusercontent.com/38323403/138769930-2cdd290b-8f18-4f52-8a80-c12e5f8a56ba.png)
 
 ### PowerShell script to enable TLS 1.2
-You can use the following PowerShell script to enforce TLS 1.2 on your Microsoft Entra Connect server.
+You can use the following PowerShell script to enable TLS 1.2 on your Microsoft Entra Connect server.
 
 ```powershell
 

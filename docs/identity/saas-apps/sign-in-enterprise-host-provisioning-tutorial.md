@@ -34,14 +34,14 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Sign In Enterprise](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Gather SCIM Host Provisioning information from Sign In Enterprise
 
-1. Click on the gear icon in the top-right corner of your Sign In Enterprise account.
-1. Click **Preferences**.
-1. In the **General tab**, scroll down until you get to the **SCIM Host Provisioning** section. You will then need to copy both the URL and the Token, which will be needed in Step 5 below.
+1. Select the gear icon in the top-right corner of your Sign In Enterprise account.
+1. Select **Preferences**.
+1. In the **General tab**, scroll down until you get to the **SCIM Host Provisioning** section. You then need to copy both the URL and the Token, which is needed in Step 5 below.
 
 <a name='step-3-add-sign-in-enterprise-host-provisioning-from-the-azure-ad-application-gallery'></a>
 
@@ -78,7 +78,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Sign In Enterprise Tenant URL and Token you copied in Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to Sign In Enterprise. If the connection fails, ensure your and try again.
+1. Under the **Admin Credentials** section, input your Sign In Enterprise Tenant URL and Token you copied in Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Sign In Enterprise. If the connection fails, ensure your and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Provision Microsoft Entra users**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Sign In Enterprise Host Provisioning in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sign In Enterprise Host Provisioning for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Sign In Enterprise Host Provisioning API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Sign In Enterprise Host Provisioning in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sign In Enterprise Host Provisioning for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Sign In Enterprise Host Provisioning API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Sign In Enterprise Host Provisioning|
    |---|---|---|---|
@@ -124,7 +124,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

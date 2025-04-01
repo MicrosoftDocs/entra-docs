@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IBM Kenexa Survey Enterprise so that I can control who has access to IBM Kenexa Survey Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra SSO integration with IBM Kenexa Survey Enterprise
 
-In this article,  you'll learn how to integrate IBM Kenexa Survey Enterprise with Microsoft Entra ID. When you integrate IBM Kenexa Survey Enterprise with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate IBM Kenexa Survey Enterprise with Microsoft Entra ID. When you integrate IBM Kenexa Survey Enterprise with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to IBM Kenexa Survey Enterprise.
 * Enable your users to be automatically signed-in to IBM Kenexa Survey Enterprise with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of IBM Kenexa Survey Enterprise into Microsoft Entr
 1. In the **Add from the gallery** section, type **IBM Kenexa Survey Enterprise** in the search box.
 1. Select **IBM Kenexa Survey Enterprise** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-ibm-kenexa-survey-enterprise'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with IBM Kenexa Survey Enterprise, per
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure IBM Kenexa Survey Enterprise SSO](#configure-ibm-kenexa-survey-enterprise-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create IBM Kenexa Survey Enterprise test user](#create-ibm-kenexa-survey-enterprise-test-user)** - to have a counterpart of B.Simon in IBM Kenexa Survey Enterprise that is linked to the Microsoft Entra representation of user.
+    1. **[Create IBM Kenexa Survey Enterprise test user](#create-ibm-kenexa-survey-enterprise-test-user)** - to have a counterpart of B.Simon in IBM Kenexa Survey Enterprise that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **IBM Kenexa Survey Enterprise** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://surveys.kenexa.com/<companycode>/tools/sso.asp`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [IBM Kenexa Survey Enterprise Client support team](https://www.ibm.com/support/home/?lnk=fcw) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [IBM Kenexa Survey Enterprise Client support team](https://www.ibm.com/support/home/?lnk=fcw) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. The IBM Kenexa Survey Enterprise application expects to receive the Security Assertions Markup Language (SAML) assertions in a specific format, which requires you to add custom attribute mappings to the configuration of your SAML token attributes. The value of the user-identifier claim in the response must match the SSO ID that's configured in the Kenexa system. To map the appropriate user identifier in your organization as SSO Internet Datagram Protocol (IDP), work with the [IBM Kenexa Survey Enterprise support team](https://www.ibm.com/support/home/?lnk=fcw).
 
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![image](common/edit-attribute.png)
 
-6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -115,9 +115,9 @@ To create users in the IBM Kenexa Survey Enterprise system and map the SSO ID fo
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the IBM Kenexa Survey Enterprise for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the IBM Kenexa Survey Enterprise for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the IBM Kenexa Survey Enterprise tile in the My Apps, you should be automatically signed in to the IBM Kenexa Survey Enterprise for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the IBM Kenexa Survey Enterprise tile in the My Apps, you should be automatically signed in to the IBM Kenexa Survey Enterprise for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Autodesk SSO so that I can streamline the user management process and ensure that users have the appropriate access to Autodesk SSO.
@@ -23,7 +23,7 @@ This article describes the steps you need to do in both Autodesk SSO and Microso
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Autodesk SSO.
-> * Remove users in Autodesk SSO when they do not require access anymore.
+> * Remove users in Autodesk SSO when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Autodesk SSO.
 > * Provision groups and group memberships in Autodesk SSO.
 > * [Single sign-on](autodesk-sso-tutorial.md) to Autodesk SSO (recommended).
@@ -49,11 +49,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 	[![Navigation](media/autodesk-sso-provisioning-tutorial/step2-1-navigation.png)](media/autodesk-sso-provisioning-tutorial/step2-1-navigation.png#lightbox)
 	
-2.  Select the Set up directory sync button and select Microsoft Entra SCIM as the directory environment. Select Next to access the Azure admin credentials. If you set up Directory Sync before, select on the Access Credential instead.
+2.  Select the Set up directory sync button and select Microsoft Entra SCIM as the directory environment. Select Next to access the Azure admin credentials. If you set up Directory Sync before, select the Access Credential instead.
 
 	![Set Up Directory Sync](media/autodesk-sso-provisioning-tutorial/step2-2-set-up-directory-sync.png)
 
-3. Copy and save the Base URL and API token. These values will be entered in the Tenant URL * field and Secret Token * field respectively in the Provisioning tab of your Autodesk application.
+3. Copy and save the Base URL and API token. These values are entered in the Tenant URL * field and Secret Token * field respectively in the Provisioning tab of your Autodesk application.
 
 	![Get Credentials](media/autodesk-sso-provisioning-tutorial/step2-3-get-credentials.png)
 
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Autodesk SSO**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Autodesk SSO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Autodesk SSO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Autodesk SSO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Autodesk SSO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Autodesk SSO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Autodesk SSO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Autodesk SSO|
    |---|---|---|---|

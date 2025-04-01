@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Puzzel and Microsof
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Puzzel.
-> * Remove users in Puzzel when they do not require access anymore.
+> * Remove users in Puzzel when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Puzzel.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Puzzel (recommended).
 
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and Puzzel](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Add Puzzel from the Microsoft Entra application gallery
@@ -70,7 +70,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** and then click on Authorize, make sure that you enter your Puzzel account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Puzzel. If the connection fails, ensure your Puzzel account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter the **Tenant Url** and then select Authorize, make sure that you enter your Puzzel account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Puzzel. If the connection fails, ensure your Puzzel account has Admin permissions and try again.
 
  	![Screenshot of Token.](media/puzzel-provisioning-tutorial/test-connection.png)
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
@@ -133,7 +133,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

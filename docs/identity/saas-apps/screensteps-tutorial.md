@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with ScreenSteps, perform the followin
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ScreenSteps SSO](#configure-screensteps-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create ScreenSteps test user](#create-screensteps-test-user)** - to have a counterpart of B.Simon in ScreenSteps that is linked to the Microsoft Entra representation of user.
+    1. **[Create ScreenSteps test user](#create-screensteps-test-user)** - to have a counterpart of B.Simon in ScreenSteps that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -117,7 +117,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 > [!NOTE]
 > To configure Single Sign-on in Screen steps, Please refer [How to Set up Single Sign-on](https://help.screensteps.com/a/1097728-how-to-set-up-single-sign-on). This article guides you through the steps of setting up ScreenSteps to work with Microsoft Entra ID.
-> After answering a few questions in the help article, you'll be asked to "Select how you'll set up SSO". Select Microsoft Entra ID and continue on with [Configure Microsoft Entra SSO](#configure-azure-ad-sso).
+> After answering a few questions in the help article, you be asked to "Select how you set up SSO". Select Microsoft Entra ID and continue on with [Configure Microsoft Entra SSO](#configure-azure-ad-sso).
 
 ### Create ScreenSteps test user
 
@@ -135,7 +135,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Sign in with the `B.Simon@contoso.com` test user you created in the previous step. You should be granted access to ScreenSteps and `B.Simon@contoso.com` should appear in the list of Users in ScreenSteps.
 
-* You can use Microsoft My Apps. When you select the ScreenSteps tile in the My Apps, this will redirect to ScreenSteps Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the ScreenSteps tile in the My Apps, this option redirects to ScreenSteps Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

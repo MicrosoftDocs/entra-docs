@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BenQ IAM so that I can streamline the user management process and ensure that users have the appropriate access to BenQ IAM.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both BenQ IAM and Micros
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in BenQ IAM
-> * Remove users in BenQ IAM when they do not require access anymore
+> * Remove users in BenQ IAM when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and BenQ IAM
 > * [Single sign-on](benq-iam-tutorial.md) to BenQ IAM (recommended)
 
@@ -37,32 +37,32 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and BenQ IAM](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-benq-iam-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure BenQ IAM to support provisioning with Microsoft Entra ID
 
-1. Sign in to the [BenQ IAM](https://service-portaltest.benq.com/login) with BenQ administrator account, click on **SSO Setting** in the Account Management section.
+1. Sign in to the [BenQ IAM](https://service-portaltest.benq.com/login) with BenQ administrator account, select **SSO Setting** in the Account Management section.
 	![SSO Setting](media/benq-iam-provisioning-tutorial/sso-setting.png)
 
-2. Select **SSO by SAML** as SSO Setting in the pop up and click Next. 
+2. Select **SSO by SAML** as SSO Setting in the pop up and select Next. 
 	![sso-with-saml](media/benq-iam-provisioning-tutorial/sso-by-saml.png)
 
 3. Follow [the article for Microsoft Entra SSO integration with BenQ IAM](benq-iam-tutorial.md) to complete the required settings.
 
-4. After finishing the settings for SSO by SAML, you will see a success message as shown in the image below. Click on **Create Token** in the Automated User Provisioning section.
+4. After finishing the settings for SSO by SAML, you see a success message as shown in the image below. Select **Create Token** in the Automated User Provisioning section.
 	![created-token](media/benq-iam-provisioning-tutorial/create-token.png)
 
-5. Copy the token to a safe place. This token will be used in Azure portal in **Step 5**.
+5. Copy the token to a safe place. This token is used in Azure portal in **Step 5**.
 	![copying-token](media/benq-iam-provisioning-tutorial/copy-token.png)
 
 <a name='step-3-add-benq-iam-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add BenQ IAM from the Microsoft Entra application gallery
 
-Add BenQ IAM from the Microsoft Entra application gallery to start managing provisioning to BenQ IAM. If you have previously setup BenQ IAM for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add BenQ IAM from the Microsoft Entra application gallery to start managing provisioning to BenQ IAM. If you have previously setup BenQ IAM for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -93,7 +93,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your BenQ IAM Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to BenQ IAM. If the connection fails, ensure your BenQ IAM account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your BenQ IAM Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to BenQ IAM. If the connection fails, ensure your BenQ IAM account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to BenQ IAM**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to BenQ IAM in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in BenQ IAM for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the BenQ IAM API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to BenQ IAM in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in BenQ IAM for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the BenQ IAM API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -124,7 +124,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

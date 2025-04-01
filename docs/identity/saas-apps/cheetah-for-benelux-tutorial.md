@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Cheetah For Benelux
 
-In this article,  you'll learn how to integrate Cheetah For Benelux with Microsoft Entra ID. When you integrate Cheetah For Benelux with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Cheetah For Benelux with Microsoft Entra ID. When you integrate Cheetah For Benelux with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cheetah For Benelux.
 * Enable your users to be automatically signed-in to Cheetah For Benelux with their Microsoft Entra accounts.
@@ -52,7 +52,7 @@ To configure the integration of Cheetah For Benelux into Microsoft Entra ID, you
 1. In the **Add from the gallery** section, type **Cheetah For Benelux** in the search box.
 1. Select **Cheetah For Benelux** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-cheetah-for-benelux'></a>
 
@@ -66,7 +66,7 @@ To configure and test Microsoft Entra SSO with Cheetah For Benelux, perform the 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Cheetah For Benelux SSO](#configure-cheetah-for-benelux-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Cheetah For Benelux test user](#create-cheetah-for-benelux-test-user)** - to have a counterpart of B.Simon in Cheetah For Benelux that is linked to the Microsoft Entra representation of user.
+    1. **[Create Cheetah For Benelux test user](#create-cheetah-for-benelux-test-user)** - to have a counterpart of B.Simon in Cheetah For Benelux that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cheetah For Benelux** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
     ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -108,17 +108,17 @@ To configure single sign-on on **Cheetah For Benelux** side, you need to send th
 
 ### Create Cheetah For Benelux test user
 
-In this section, a user called B.Simon is created in Cheetah For Benelux. Cheetah For Benelux supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Cheetah For Benelux, a new one is created after authentication.
+In this section, a user called B.Simon is created in Cheetah For Benelux. Cheetah For Benelux supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Cheetah For Benelux, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Cheetah For Benelux Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Cheetah For Benelux Sign-on URL where you can initiate the login flow. 
 
 * Go to Cheetah For Benelux Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Cheetah For Benelux tile in the My Apps, this will redirect to Cheetah For Benelux Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Cheetah For Benelux tile in the My Apps, this option redirects to Cheetah For Benelux Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 
