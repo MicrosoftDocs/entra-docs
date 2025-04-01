@@ -15,16 +15,16 @@ ms.topic: quickstart
 
 # Quickstart: Call a web API that is protected by the Microsoft identity platform
 
-[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-workforce-only.md)]
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 In this quickstart, you use a sample web app to show you how to protect an ASP.NET web API by using the Microsoft identity platform. The sample uses [Microsoft Authentication Library (MSAL)](msal-overview.md) to handle authentication.
 
 ## Prerequisites
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *NewWebAPI1*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 
 ### [ASP.NET](#tab/aspnet-workforce)
 
@@ -114,29 +114,7 @@ To add the new scope to the TodoListClient *app.config* file, follow these steps
   > [!NOTE]
   > Make sure that the Application ID uses the following format: `api://{TodoListService-Application-ID}/access_as_user` (where `{TodoListService-Application-ID}` is the GUID representing the Application ID for your TodoListService app).
 
-## Register the web app (TodoListClient)
-
-Register your TodoListClient app in **App registrations** in the Azure portal, and then configure the code in the TodoListClient project. If the client and server are considered the same application, you can reuse the application that's registered in step 2. Use the same application if you want users to sign in with a personal Microsoft account.
-
-### Register the app
-
-To register the TodoListClient app, follow these steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
-1. Select **New registration**.
-1. When the **Register an application page** opens, enter your application's registration information:
-
-    1. In the **Name** section, enter a meaningful application name that will be displayed to users of the app (for example, **NativeClient-DotNet-TodoListClient**).
-    1. For **Supported account types**, select **Accounts in any organizational directory**.
-    1. Select **Register** to create the application.
-
-   > [!NOTE]
-   > In the TodoListClient project *app.config* file, the default value of `ida:Tenant` is set to `common`. The possible values are:
-   >
-   > - `common`: You can sign in by using a work or school account or a personal Microsoft account (because you selected **Accounts in any organizational directory** in a previous step).
-   > - `organizations`: You can sign in by using a work or school account.
-   > - `consumers`: You can sign in only by using a Microsoft personal account.
+### Add a redirect URI to your application
 
 1. On the app **Overview** page, select **Authentication**, and then complete these steps to add a platform:
 

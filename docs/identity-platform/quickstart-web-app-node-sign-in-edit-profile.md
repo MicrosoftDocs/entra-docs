@@ -50,14 +50,6 @@ Grant your client web app the *EditProfileService.ReadWrite* permission. This pe
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/grant-api-permissions-mfa-api-app.md)]
 
-### Grant admin consent in the client web app
-
-You've assigned the **EditProfileService.ReadWrite* permissions correctly to your client web app. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
-    
-1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
-
-1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
-
 ## Create Conditional Access MFA policy
 
 Your EditProfileService app that you registered earlier is the resource that you protect with MFA. 
