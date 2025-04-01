@@ -30,7 +30,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [JavaScript](#tab/javascript-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -39,7 +39,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [React](#tab/react-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -48,7 +48,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [Angular](#tab/angular-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -57,7 +57,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [Blazor](#tab/blazor-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -252,7 +252,7 @@ Run the project with a web server by using dotnet:
 
 #### [JavaScript](#tab/javascript-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -262,7 +262,7 @@ Run the project with a web server by using dotnet:
 
 #### [React](#tab/react-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
@@ -272,7 +272,7 @@ Run the project with a web server by using dotnet:
 
 #### [Angular](#tab/angular-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).

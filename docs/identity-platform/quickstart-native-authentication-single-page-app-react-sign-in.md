@@ -30,7 +30,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Ensure that the user flow includes the following user attributes:
   * **Given Name**
   * **Surname**
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
