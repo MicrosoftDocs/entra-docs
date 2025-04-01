@@ -123,8 +123,6 @@ To disable the CIEM App for users to sign in:
 1. Open **Properties**.
 1. Toggle Enabled for users to sign-in to **No**.
 
-:::image type="content" source="media/how-to-offboard-permissions-management/enable-user-sign-in-no.png" alt-text="Screenshot of enabling a user to sign in.":::
-
 ## Next steps
 
 - For more information on the Permissions Management product retirement, visit [aka.ms/MEPMretire](https://aka.ms/MEPMretire)
