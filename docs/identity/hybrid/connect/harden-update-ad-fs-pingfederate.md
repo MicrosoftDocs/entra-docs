@@ -40,8 +40,8 @@ For example, when calling the MSOnline PowerShell cmdlet `Get-MsolUserRole`, Mic
 ### Minimum versions 
 
 To avoid service impacts, customers should be on version by April 30, 2025. 
-- Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or any newer version (see [version history]((reference-connect-version-history.md))
-- Customers in noncommercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or any newer version (see [version history]((reference-connect-version-history.md))
+- Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or any newer version (see [version history](reference-connect-version-history.md)\)
+- Customers in noncommercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or any newer version (see [version history](reference-connect-version-history.md))
 
 To upgrade to the latest version.
 > [!div class="nextstepaction"]
@@ -51,7 +51,7 @@ To upgrade to the latest version.
 > Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the versions, including but not limited to: 
 >  - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
 
-To assist customers with the upgrade process, we perform autoupgrades for select releases, which can help streamline the upgrae process for you. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), ensure that you meet the [minimum requirements](how-to-connect-install-automatic-upgrade.md#auto-upgrade-eligibility) for autoupgrade. 
+To assist customers with the upgrade process, we perform autoupgrades for select releases, which can help streamline the upgrade process for you. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), ensure that you meet the [minimum requirements](how-to-connect-install-automatic-upgrade.md#auto-upgrade-eligibility) for autoupgrade. 
 
 ## Consider moving to Microsoft Entra Cloud Sync  
 
