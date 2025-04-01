@@ -64,7 +64,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
      - Passkeys in Microsoft Authenticator also support attestation. For more information, see [How passkey attestation works with Authenticator](concept-authentication-authenticator-app.md#how-passkey-attestation-works-with-authenticator).
 
      >[!WARNINGS]
-     >- If you set **Enforce attestation** to **No**, you can't be sure that users only register device-bound passkeys.
+     >- If you set **Enforce attestation** to **No**, users can register any type of passkey. Set **Enforce attestation** to **Yes** to ensure that users can only register device-bound passkeys.
      >
      >- Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
 
