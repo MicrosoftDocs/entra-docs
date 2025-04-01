@@ -202,7 +202,8 @@ For a simple environment, you can implement a monitor by using a PowerShell scri
 
 ### Configuring an example scheduled task for AD FS
 
-1. Copy the script which detects the network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust`, to the server.
+1. Create a script which detects a network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust` to change the identity provider.
+1. Copy the script to a server with AD FS.
 1. Edit the script to match the AD FS configuration and list of applications.
 1. Launch PowerShell on the Windows Server where AD FS is installed.
 1. Register a source so the script can write to the Application event log. For example, if the script is named `AD FS changeover script`, then type the command `New-EventLog -LogName Application -Source "AD FS changeover script"`.
