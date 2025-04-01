@@ -15,8 +15,6 @@ ms.author: jfields
 > [!NOTE]
 > Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire). 
 
-# Introduction
-
 Microsoft Entra Permissions Management (Permissions Management) is retiring on October 01, 2025, with new purchases unavailable starting April 1, 2025. Existing paid customers will continue to have access to Permissions Management between April 1, 2025 - September 30, 2025. 
 
 On October 01, 2025, Permissions Management will be automatically offboarded and associated data collection will be deleted. For customers needing to offboard before October 1, 2025, refer to the [Offboarding steps](#offboarding-steps) section in this guide. 
