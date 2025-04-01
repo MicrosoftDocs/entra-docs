@@ -5,7 +5,7 @@ description: Protecting Gen AI services like Microsoft Security Copilot and Micr
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 11/08/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

@@ -5,7 +5,7 @@ description: Create a Conditional Access policy to require app protection policy
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

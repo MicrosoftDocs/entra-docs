@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy to require all users do m
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/24/2025
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

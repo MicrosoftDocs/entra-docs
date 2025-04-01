@@ -5,7 +5,7 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: femila
 ms.reviewer: lhuangnorth
-ms.date: 07/30/2024
+ms.date: 04/01/2025
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to

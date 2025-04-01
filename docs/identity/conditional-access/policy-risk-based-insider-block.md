@@ -5,7 +5,7 @@ description: Create Conditional Access policies using signals from Adaptive prot
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/25/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

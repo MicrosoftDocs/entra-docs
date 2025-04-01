@@ -4,7 +4,7 @@ description: Use Conditional Access policy to restrict how device code flow and 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/05/2024
+ms.date: 04/01/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
