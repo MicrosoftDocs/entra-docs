@@ -24,16 +24,15 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Ensure that the user flow includes the following user attributes:
   * **Given Name**
   * **Surname**
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *ciam-client-app*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
@@ -41,10 +40,6 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 ## Enable public client and native authentication flows 
 
 [!INCLUDE [Enable public client and native authentication](../external-id/customers/includes/native-auth/enable-native-authentication.md)]
- 
-## Grant admin consent
- 
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Clone or download sample SPA
 

@@ -29,10 +29,10 @@ In this tutorial, you'll:
 ### [Workforce tenant](#tab/workforce-tenant)
 
 * A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: identity-client-spa
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-    * **Platform configuration**: Single-page application (SPA).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
     * **Redirect URI**: `http://localhost:3000/`.
 
 ### [External tenant](#tab/external-tenant)
@@ -40,10 +40,10 @@ In this tutorial, you'll:
 * An external tenant. To create one, choose from the following methods:
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: identity-client-spa
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-    * **Platform configuration**: Single-page application (SPA).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. For more information, see [Register an application](quickstart-register-app.md) for details. Record the following details from the app's **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs to your web app. For more information see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
     * **Redirect URI**: `http://localhost:3000/`.
 * Associate your app with a user flow in the Microsoft Entra admin center. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
