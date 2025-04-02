@@ -45,7 +45,7 @@ When you're customizing an email sent via lifecycle workflows, you can choose to
 
 1. On the pane that lists tasks, select the task for which you want to customize the email.
 
-1. On the pane for the specific task under **Basics**, you can  edit the task name or description, along with configuring which recipient you want to send the email to outside the default audience.
+1. On the pane for the specific task under **Basics**, you can  edit the task name or description, along with configuring which recipient or recipients you want to send the email to outside the default audience.
     :::image type="content" source="media/customize-workflow-email/email-recipient-list.png" alt-text="Screenshot of the recipient list for an email customization task.":::
     > [!NOTE]
     > Additional CC recipients are only available if the recipient is the user themselves or their manager. If there are multiple CC recipients, they're copied on the single individual email. 
