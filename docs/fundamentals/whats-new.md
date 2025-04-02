@@ -24,7 +24,7 @@ This article provides information about the latest releases and change announcem
 
 ## March 2025
 
-### Retirement notice - Microsoft Entra Permissions Management
+### Microsoft Entra Permissions Management end of sale and retirement
  
 **Type:** Plan for change    
 **Service category:** Other    
