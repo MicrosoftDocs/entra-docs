@@ -202,7 +202,7 @@ For a simple environment, you can implement a monitor by using a PowerShell scri
 
 ### Configuring an example scheduled task for AD FS
 
-1. Create a script which detects a network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust` to change the identity provider. An example of a script can be found at [https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/sample-changeover-multiple-apps.ps1](https://raw.githubusercontent.com/microsoft/Entra-reporting/refs/heads/main/PowerShell/sample-changeover-multiple-apps.ps1).
+1. Create a script which detects a network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust` to change the identity provider. An example of a script can be found at [https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/sample-changeover-multiple-apps.ps1](https://raw.githubusercontent.com/microsoft/Entra-reporting/refs/heads/main/PowerShell/sample-changeover-multiple-apps.ps1). Note that if you download a script, then you will need to use File Explorer to unblock the script before you can run it in PowerShell.
 1. Copy the script to a Windows Server with AD FS.
 1. Edit the script to match the AD FS configuration and list of applications configured in AD FS at that site.
 1. Launch PowerShell on a Windows Server where AD FS is installed.
