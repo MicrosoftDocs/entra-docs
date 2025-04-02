@@ -33,7 +33,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Using the *Single-page application* platform setting, include the following redirect URIs. For detailed steps, see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
   * **Redirect URI**: `http://localhost:3000/`
 * [Node.js](https://nodejs.org/en/download/)
 
@@ -42,7 +42,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Using the *Single-page application* platform setting, include the following redirect URIs. For detailed steps, see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
   * **Redirect URI**: `http://localhost:3000/`
 * [Node.js](https://nodejs.org/en/download/)
 
@@ -51,7 +51,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Using the *Single-page application* platform setting, include the following redirect URIs. For detailed steps, see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
   * **Redirect URI**: `http://localhost:4200/`
 * [Node.js](https://nodejs.org/en/download/)
 
@@ -60,7 +60,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Using the *Single-page application* platform setting, include the following redirect URIs. For detailed steps, see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
   * **Redirect URI**: `http://localhost:5000/authentication/login-callback.`
 * [.NET SDK](https://dotnet.microsoft.com/download/dotnet)
 
@@ -255,7 +255,7 @@ Run the project with a web server by using dotnet:
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Using the *Single-page application* platform setting, include the following redirect URIs. For detailed steps, see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
     * **Redirect URI**: `http://localhost:3000/`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/)
@@ -265,7 +265,7 @@ Run the project with a web server by using dotnet:
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Using the *Single-page application* platform setting, include the following redirect URIs. For detailed steps, see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
     * **Redirect URI**: `http://localhost:3000/`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/)
@@ -275,7 +275,7 @@ Run the project with a web server by using dotnet:
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Using the *Single-page application* platform setting, include the following redirect URIs. For detailed steps, see [How to add a redirect URI in your application](./how-to-add-redirect-uri.md).
     * **Redirect URI**: `http://localhost:4200/`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/)

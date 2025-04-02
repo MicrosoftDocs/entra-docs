@@ -29,9 +29,9 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- If you haven't already, complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external). In the quickstart, you don't have to clone and run the code sample.
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet) or later.
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* If you haven't already, complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external). In the quickstart, you don't have to clone and run the code sample.
+* [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet) or later.
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ## Create a new ASP.NET Core web API project
 

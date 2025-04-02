@@ -116,7 +116,7 @@ pip freeze > requirements.txt
     
     - Replace `<Enter_your_client_id>` with the *Application (client) ID* of the client web app that you registered.
     - Replace `<Enter_tenant_id>` with the *Directory (Tenant) ID* where you registered your web app.
-    - Replace `<Enter_your_client_secret>` with the *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials).
+    - Replace `<Enter_your_client_secret>` with the *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./how-to-add-credentials.md).
     - Replace `<Enter_redirect_uri>` with the redirect URI that you registered earlier. This tutorial sets the redirect URI path to `http://localhost:3000/getAToken`.
     
     #### [External tenant](#tab/external-tenant) 
@@ -132,7 +132,7 @@ pip freeze > requirements.txt
     
     - Replace `<Enter_your_client_id>` with the *Application (client) ID* of the client web app that you registered.
     - Replace `<Enter_your_subdomain>` with the *Directory (tenant) subdomain* where you registered your web app.
-    - Replace `<Enter_your_client_secret>` with the *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials).
+    - Replace `<Enter_your_client_secret>` with the *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./how-to-add-credentials.md).
     - Replace `<Enter_redirect_uri>` with the redirect URI that you registered earlier. This tutorial sets the redirect URI path to `http://localhost:3000/getAToken`.
     
     ---

@@ -26,11 +26,10 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *msal-node-desktop*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 
 #### [Node.js Electron](#tab/node-js-workforce)
 

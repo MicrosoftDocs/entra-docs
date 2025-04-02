@@ -42,7 +42,7 @@ In this tutorial:
 * Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
-* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./quickstart-register-app.md#add-credentials) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
+* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./how-to-add-credentials.md) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
 
 ### [External tenant](#tab/external-tenant)
 
@@ -53,7 +53,7 @@ In this tutorial:
 * Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
-* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./quickstart-register-app.md#add-credentials) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
+* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./how-to-add-credentials.md) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
 * Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ---

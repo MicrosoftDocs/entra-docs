@@ -92,7 +92,7 @@ To use your app registration in the client web app sample:
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the client app you registered earlier. The client app is one that you registered in the prerequisites.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
     - `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
-    - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier. The web API app is one that you registered earlier in [Register a web API application](#register-a-web-api).
+    - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier as part of the prerequisites.
 
 To use your app registration in the web API sample: 
 
@@ -100,7 +100,7 @@ To use your app registration in the web API sample:
 
 1. Find the placeholder:
     
-    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. The web API app is one that you registered earlier in [Register a web API application](#register-a-web-api).
+    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. The web API app is one that you registered earlier sa part of the prerequisites.
     - `Enter_the_Tenant_Id_Here` and replace it with the Directory (tenant) ID you copied earlier.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
