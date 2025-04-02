@@ -230,6 +230,8 @@ items:
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: FAQs
     href: resource-faq.yml
+  - name: TLS Inspection FAQs
+    href: faq-transport-layer-security.yml
   - name: Connector version history
     href: reference-version-history.md
   - name: Windows client version history
