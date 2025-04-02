@@ -859,6 +859,16 @@
       "redirect_url": "/entra/identity-platform/tutorial-mobile-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
   },  
+  {
+      "source_path_from_root": "/docs/identity-platform/custom-extension-onattributecollectionstart-reference.md",
+      "redirect_url": "/entra/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data",
+      "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/identity-platform/custom-extension-onattributecollectionsubmit-reference.md",
+    "redirect_url": "/entra/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data",
+      "redirect_document_id": false
+    },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-ios-app.md",
       "redirect_url": "/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app",

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra deployment scenario - Modernize remote access
+title: Microsoft Entra Suite deployment scenario - Modernize remote access
 description: Configure Microsoft Entra Suite products for upgrading existing VPN solution to a scalable cloud-based solution and move towards Secure Access Service Edge (SASE).
 ms.author: gasinh
 author: gargi-sinha
@@ -9,11 +9,11 @@ ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
 
-#CustomerIntent: As a Microsoft Entra customer, I want replace existing VPN with a cloud-based solution so that we can move towards Secure Access Service Edge (SASE).
+#CustomerIntent: As a Microsoft Entra Suite customer, I want replace existing VPN with a cloud-based solution so that we can move towards Secure Access Service Edge (SASE).
 ---
-# Microsoft Entra deployment scenario - Modernize remote access to on-premises apps with MFA per app
+# Microsoft Entra Suite deployment scenario - Modernize remote access to on-premises apps with MFA per app
 
-The Microsoft Entra deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
+The Microsoft Entra Suite deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
