@@ -49,11 +49,11 @@ Recipients of the emails can be:
 
 - **Manager mail attribute(Preview)**: The email of the manager of the user who the workflow runs for.
 - **User mail attribute (default)**: The email of the user who the workflow runs for.
-- **Sponsor(s) mail attribute (Preview)**: The email of the sponsor or sponsors for the user who the workflow runs for.
-- **Selected users (Preview)**: The email of specified users manually selected.
+- **Sponsor(s) mail attribute (Preview)**: The email of the sponsor or sponsors of the users the workflow runs for.
+- **Selected users (Preview)**: The email users manually specified.
 
 > [!NOTE]
-> You're not able to add another user as cc to the recipient if you select **Sponsor(s) mail attribute (Preview)**. If you want to add multiple recipients along with the sponsor, find the user's sponsors in their attributes, and add them manually along with who you want to cc via the **Selected users (Preview)** option. 
+> Additional CC recipients are only available if the recipient is the user themselves or their manager. If there are multiple CC recipients, they're copied on the single individual email. 
 
 Under **Email Customization** you're able to customize the specific email message send out by the task. If you choose to customize the email, you're able to set the following arguments:
 
