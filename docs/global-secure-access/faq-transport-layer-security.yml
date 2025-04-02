@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  title: Transport Layer Security Inspection Frequently Asked Questions   
+  title: Transport Layer Security Inspection (Preview) Frequently Asked Questions   
   description: "Get answers to common questions about Transport Layer Security (TLS) inspection."
   author: HULKsmashGithub
   ms.author: jayrusso
@@ -8,7 +8,7 @@ metadata:
   ms.topic: faq   
   ms.date: 04/01/2025
 
-title: Frequently asked questions for Transport Layer Security Inspection   
+title: Frequently asked questions for Transport Layer Security Inspection (Preview)   
 summary: |
   This article answers frequently asked questions about Transport Layer Security inspection.   
 

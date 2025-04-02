@@ -1,5 +1,5 @@
 ---
-title: Transport Layer Security Inspection Overview
+title: Transport Layer Security Inspection (Preview) Overview
 description: "This article provides an overview of the Transport Layer Security (TLS) inspection process and how it increases security between two communicating parties."
 author: HULKsmashGithub
 ms.author: jayrusso
@@ -11,7 +11,11 @@ ms.date: 04/01/2025
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 
 ---
-# Transport Layer Security inspection overview
+# Transport Layer Security inspection (Preview) overview
+> [!IMPORTANT]
+> The Transport Layer Security inspection feature is currently in PREVIEW.   
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.   
+
 The Transport Layer Security (TLS) protocol uses certificates at the transport layer to ensure the privacy, integrity, and authenticity of data exchanged between two communicating parties. This article provides an overview of the TLS inspection process, highlighting how it enhances security by enabling visibility into encrypted traffic. With TLS inspection, Global Secure Access administrators can effectively create and manage TLS inspection policies to detect and mitigate threats hidden within encrypted communications.
 
 ## The TLS inspection process
