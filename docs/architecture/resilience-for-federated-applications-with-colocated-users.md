@@ -194,9 +194,28 @@ You'll next need to configure who can sign-in to each application. AD FS and Mic
 1. If you have multiple applications connected to the same relying party STS, then in Microsoft Entra, you may only be able to have a single application object representing all those applications. For the role assignments, you can use features like dynamic groups or entitlement management to assign users to an application role. If the user has a role membership on the application role, then the user will be able to receive a token from Microsoft Entra.
 1. In addition, AD FS also applies access control policies that are assigned to the applications. Any policy you select for the application needs to able to be evaluated by AD FS for both tokens from Microsoft Entra and for users which authenticate to AD. As tokens from Microsoft Entra do not pass through Active Directory, you can't use the **Permit specific group** access control policy, as that would deny Microsoft Entra tokens. If you wish to control access in AD FS for token issuance from AD, you'll need to use a different policy instead. For more information on access control policies, see [Access Control Policies in AD FS](/windows-server/identity/ad-fs/operations/access-control-policies-in-ad-fs).
 
-## Configure a scheduled task to perform automatic failover to AD
+## Configure a task to perform automatic failover to AD
 
-You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for each application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected, by invoking the `Set-AdfsRelyingPartyTrust` command for that application. Optionally, you may wish to configure a monitor to reset the AD FS configuration back to `Microsoft Entra` when connectivity is detected to have been restored. Deploying this monitor depends upon the IT automation system in use in your organization and is outside of the scope of this article.
+You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for each application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected, by invoking the `Set-AdfsRelyingPartyTrust` command for that application. Optionally, you may wish to configure a monitor to reset the AD FS configuration back to `Microsoft Entra` when connectivity is detected to have been restored.
+
+For a simple environment, you can implement a monitor by using a PowerShell script and the built-in Task Scheduler. For a scaled out deployment, deploying a monitor depends upon the IT automation system in use in your organization and is outside of the scope of this article.
+
+### Configuring an example scheduled task for AD FS
+
+1. Create a script which detects a network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust` to change the identity provider.
+1. Copy the script to a server with AD FS.
+1. Edit the script to match the AD FS configuration and list of applications.
+1. Launch PowerShell on the Windows Server where AD FS is installed.
+1. Register a source so the script can write to the Application event log. For example, if the script is named `AD FS changeover script`, then type the command `New-EventLog -LogName Application -Source "AD FS changeover script"`.
+1. Launch **Event Viewer** and navigate to the newly created log.
+1. Test the script by running it in PowerShell, to ensure it operates correctly from an interactive session.
+1. Launch **Task Scheduler** and view the Task Scheduler Library.
+1. If you don't already have a folder for your tasks, create a folder.
+1. Select the folder for your tasks, then select **Create task**.
+1. Fill out the **General** tab settings for the task.
+1. Change to the **Triggers** tab. Select **New** and provide a recurrence schedule for your task, in alignment with your organization's risk and network guidance.
+1. Change to the **Actions** tab. Select **New** and select an action to **Start a program**. Specify `powershell.exe` as the program, and specify arguments needed to invoke the PowerShell script. For example, `-NonInteractive -WindowStyle Hidden -File c:\scripts\ad_fs_changeover_script.ps1`. Then Select **OK** to close the action window and **OK** to close the task window. For more information, see [about powershell.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe).
+1. Select **Run**, wait one minute, then select **Refresh**. Ensure that the script started and completed successfully, and check **Event Viewer** to see if any errors were recorded.
 
 ## Complete configuration
 

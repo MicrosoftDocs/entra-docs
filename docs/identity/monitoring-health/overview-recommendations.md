@@ -50,7 +50,6 @@ The recommendations listed in the following table are currently available in pub
 | Enable policy to block legacy authentication | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
 | Enable self-service password reset | Users | Preview | Yes | Authentication Policy Administrator |
 | Ensure all users can complete multifactor authentication | Users | Preview | Yes | Conditional Access Administrator, Security Administrator |
-| Long lived credentials in applications | Applications | Preview | No | Global Administrator |
 | [Migrate applications from AD FS to Microsoft Entra ID](recommendation-migrate-apps-from-adfs-to-azure-ad.md) | Applications | Generally available | No | Application Administrator, Authentication Administrator Hybrid Identity Administrator |
 | [Migrate applications from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | Preview | No | Application Administrator |
 | [Migrate from ADAL to MSAL](recommendation-migrate-from-adal-to-msal.md) | Applications | Generally available | No | Application Administrator |
@@ -61,16 +60,13 @@ The recommendations listed in the following table are currently available in pub
 | Protect all users with a sign-in risk policy | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
 | Protect all users with a user risk policy | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
 | [Protect your tenant with Insider Risk Conditional Access policy](recommendation-insider-risk-condition.md) | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
-| Remove overprivileged permissions for your applications | Applications | Preview | No | Global Administrator |
 | [Remove unused applications](recommendation-remove-unused-apps.md) | Applications | Preview | No | Application Administrator |
 | [Remove unused credentials from applications](recommendation-remove-unused-credential-from-apps.md) | Applications | Preview | No | Application Administrator |
-| Remove unused redirect URIs in your app configuration | Applications | Preview | No | Application Administrator |
 | [Renew expiring application credentials](recommendation-renew-expiring-application-credential.md) | Applications | Preview | No | Application Administrator |
 | [Renew expiring service principal credentials](recommendation-renew-expiring-service-principal-credential.md) | Applications | Preview | No | Application Administrator |
 | Require MFA for administrative roles | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
 | Review inactive users with Access Reviews | Users | Preview | No | Identity Governance Administrator |
 | Secure and govern your apps with automatic user and group provisioning | Applications | Preview | No | Application Administrator, IT Governance Administrator |
-| Update incorrectly configured multitenant application sign-in audience | Applications | Preview | Now | Application Administrator |
 | Use least privileged administrative roles | Users | Preview | Yes | Privileged Role Administrator |
 | Verify App Publisher | Applications | Preview | No | Global Administrator |
 

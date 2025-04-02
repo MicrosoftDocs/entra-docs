@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.onit.com`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Onit Client support team](https://www.onit.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Onit Client support team](https://www.onit.com/support-portal) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 

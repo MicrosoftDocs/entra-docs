@@ -6,11 +6,14 @@ ms.service: entra-permissions-management
 
 ms.topic: how-to
 author: jenniferf-skc
-ms.date: 03/19/2025
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # View personal and organization information
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 The **Account settings** dashboard in Permissions Management allows you to view personal information, passwords, and account preferences.
 This information can't be modified because the user information is pulled from Microsoft Entra-only **User Session Time(min)**.
