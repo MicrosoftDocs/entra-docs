@@ -48,7 +48,7 @@ When you're customizing an email sent via lifecycle workflows, you can choose to
 1. On the pane for the specific task under **Basics**, you can  edit the task name or description, along with configuring which recipient you want to send the email to outside the default audience.
     :::image type="content" source="media/customize-workflow-email/email-recipient-list.png" alt-text="Screenshot of the recipient list for an email customization task.":::
     > [!NOTE]
-    > You're not able to add another user as cc to the recipient if you select **Sponsor(s) mail attribute (Preview)**. If you want to add multiple recipients along with the sponsor, find the user's sponsors in their attributes, and add them manually along with who you want to cc via the **Selected users (Preview)** option. 
+    > Additional CC recipients are only available if the recipient is the user themselves or their manager.
 1. Select the **Email Customization** tab.
 
 1. Enter a custom subject, a message body, and the email language translation option that will be used to translate the message body of the email. 
