@@ -202,15 +202,15 @@ For a simple environment, you can implement a monitor by using a PowerShell scri
 
 ### Configuring an example scheduled task for AD FS
 
-1. Create a script which detects a network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust` to change the identity provider.
-1. Copy the script to a server with AD FS.
-1. Edit the script to match the AD FS configuration and list of applications.
-1. Launch PowerShell on the Windows Server where AD FS is installed.
+1. Create a script which detects a network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust` to change the identity provider. An example of a script can be found at [https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/sample-changeover-multiple-apps.ps1](https://raw.githubusercontent.com/microsoft/Entra-reporting/refs/heads/main/PowerShell/sample-changeover-multiple-apps.ps1).
+1. Copy the script to a Windows Server with AD FS.
+1. Edit the script to match the AD FS configuration and list of applications configured in AD FS at that site.
+1. Launch PowerShell on a Windows Server where AD FS is installed.
 1. Register a source so the script can write to the Application event log. For example, if the script is named `AD FS changeover script`, then type the command `New-EventLog -LogName Application -Source "AD FS changeover script"`.
 1. Launch **Event Viewer** and navigate to the newly created log.
 1. Test the script by running it in PowerShell, to ensure it operates correctly from an interactive session.
 1. Launch **Task Scheduler** and view the Task Scheduler Library.
-1. If you don't already have a folder for your tasks, create a folder.
+1. If you don't already have a folder for your tasks in Task Scheduler, create a folder.
 1. Select the folder for your tasks, then select **Create task**.
 1. Fill out the **General** tab settings for the task.
 1. Change to the **Triggers** tab. Select **New** and provide a recurrence schedule for your task, in alignment with your organization's risk and network guidance.
