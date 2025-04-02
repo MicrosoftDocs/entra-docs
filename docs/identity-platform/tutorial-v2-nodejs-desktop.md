@@ -33,7 +33,7 @@ Follow the steps in this tutorial to:
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs for the *Mobile and desktop applications* platform setting. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost` 
 * [Node.js](https://nodejs.org/en/download/)
 * [Electron](https://www.electronjs.org/)
