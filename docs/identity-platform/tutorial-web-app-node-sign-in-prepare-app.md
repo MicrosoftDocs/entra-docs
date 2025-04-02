@@ -33,7 +33,7 @@ In this tutorial you'll;
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:3000/auth/redirect`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
 * Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
@@ -44,7 +44,7 @@ In this tutorial you'll;
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:3000/auth/redirect`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
 * Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).

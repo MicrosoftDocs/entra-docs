@@ -1,5 +1,5 @@
 ---
-title: "How to add a redirect URI in your application"
+title: "How to add a redirect URI to your application"
 description: Learn how to add a redirect URI to your application in Microsoft Entra to securely handle authentication tokens and enhance app security.
 author: cilwerner
 manager: CelesteDG
@@ -11,7 +11,7 @@ ms.topic: how-to
 #Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
 ---
 
-# How to add a redirect URI in your application
+# How to add a redirect URI to your application
 
 To sign in a user, your application must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The redirect URI is a critical security feature that ensures the Microsoft Entra authentication server only sends authorization codes and access tokens to the intended recipient.
 

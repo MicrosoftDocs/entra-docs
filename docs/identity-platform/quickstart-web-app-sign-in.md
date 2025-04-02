@@ -34,7 +34,7 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:3000/auth/redirect`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
 * Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
@@ -46,7 +46,7 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
 * Add a self-signed certificate to your app registration. **Do not** use self-signed certificates in production apps. Use a certificate from a trusted certificate authority or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=certificate). Create the certificate using the following command:
@@ -60,7 +60,7 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:5000/getAToken`
 * [Python 3 +](https://www.python.org/downloads/)
 * Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
@@ -302,7 +302,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:3000/auth/redirect`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
 * Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
@@ -314,7 +314,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
 * Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
@@ -326,7 +326,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:5000/getAToken`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Python 3 +](https://www.python.org/downloads/)
@@ -337,7 +337,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:5000/getAToken`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Python 3 +](https://www.python.org/downloads/)

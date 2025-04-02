@@ -33,7 +33,7 @@ In this tutorial, you'll:
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your SPA. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`.
 
 ### [External tenant](#tab/external-tenant)
@@ -44,7 +44,7 @@ In this tutorial, you'll:
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your SPA. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`.
 * Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 

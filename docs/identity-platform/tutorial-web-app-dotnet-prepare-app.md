@@ -39,7 +39,7 @@ In this tutorial:
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
 * For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./how-to-add-credentials.md) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
@@ -50,7 +50,7 @@ In this tutorial:
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
-* Add the following redirect URIs to your web app. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
 * For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./how-to-add-credentials.md) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
