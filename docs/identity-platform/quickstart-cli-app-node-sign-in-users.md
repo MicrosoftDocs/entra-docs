@@ -27,10 +27,12 @@ In this quickstart, you use a sample Node Command Line Interface (CLI) applicati
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Custom redirect URIs**: `http://localhost` 
 * Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 
-## Add platform configurations
+## Enable public client flows
 
 [!INCLUDE [active-directory-b2c-app-integration-add-platform-configurations](../external-id/customers/includes/register-app/add-platform-redirect-url-node-cli.md)]
 

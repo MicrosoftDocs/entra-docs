@@ -43,17 +43,17 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 #### [Android](#tab/android-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 * Android Studio
 * Android 16+
 
 #### [iOS/macOS](#tab/ios-macos-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 * XCode 10+
 * iOS 10+
 * macOS 10.12+
