@@ -95,7 +95,7 @@ Custom user attributes are also known as directory extension attributes because 
 
 For example, if the client ID of the *b2c-extensions-app* is `2588a-bcdwh-tfeehj-jeeqw-ertc` and the attribute name is:
 - *loyaltyNumber*, then the custom attribute is named as`extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber`.
-- *Loyalty Number* then the custom attribute is named as`extension_2588abcdwhtfeehjjeeqwertc_loyaltyNumber`. You remove the space and use camel case to separate the words.
+- *Loyalty Number* then the custom attribute is named as`extension_2588abcdwhtfeehjjeeqwertc_LoyaltyNumber`. You remove the space and use camel case to separate the words.
 
 Use the [Find the application ID for the extensions app](how-to-define-custom-attributes.md) article to learn how to find the application ID for the *b2c-extensions-app* registered in your external tenant.
 
