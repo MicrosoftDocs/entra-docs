@@ -18,7 +18,7 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-tra
 
 To improve the security of Azure Linux virtual machines (VMs) or Azure Arc-enabled Linux servers, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies.
 
-This article shows you how to create and configure a Linux VM and log in with Microsoft Entra ID by using OpenSSH certificate-based authentication.
+This article shows you how to create and configure a Linux VM and log in with Microsoft Entra ID by using OpenSSH certificate-based authentication. It also introduces an optional method using Himmelblau for full Entra ID login integration and Kerberos authentication.
 
 There are many security benefits of using Microsoft Entra ID with OpenSSH certificate-based authentication to sign in to Linux VMs in Azure. They include:
 
@@ -29,6 +29,7 @@ There are many security benefits of using Microsoft Entra ID with OpenSSH certif
 - With RBAC, specify who can sign in to a VM as a regular user or with administrator privileges. When users join your team, you can update the Azure RBAC policy for the VM to grant access as appropriate. When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
 - With Conditional Access, configure policies to require multifactor authentication or to require that your client device is managed (for example, compliant or Microsoft Entra hybrid joined) before you can use it SSH into Linux VMs.
 - Use Azure deploy and audit policies to require Microsoft Entra login for Linux VMs and flag unapproved local accounts.
+- For advanced scenarios like full login integration, Kerberos-based Azure Files access, and graphical/console authentication, you can use the [Himmelblau project](https://github.com/himmelblau-idm) to join the Linux system directly to Microsoft Entra ID.
 
 Sign in to Linux VMs with Microsoft Entra ID works for customers who use Active Directory Federation Services.
 
@@ -50,6 +51,9 @@ The following Linux distributions are currently supported for deployments in a s
 
 > [!NOTE]
 > SUSE made a breaking change with version 15.6 that is incompatible with the older versions. Since the Microsoft Entra login VM extension always installs the latest package, this will not work on older SUSE versions. You can install the aadsshlogin packages from packages.microsoft.com for older SUSE versions. After adding the repo, one can manually install them with this command: `sudo zypper install aadsshlogin=1.0.027980001`.
+
+> [!TIP]
+> For Himmelblau-based login integration, additional distributions such as openSUSE, Fedora, and Rocky Linux are supported. See the Himmelblau section below for details.
 
 The following Azure regions are currently supported for this feature:
 
@@ -557,6 +561,158 @@ Add the `"PubkeyAcceptedKeyTypes +ssh-rsa-cert-v01@openssh.com"` into the client
 Host *
 PubkeyAcceptedKeyTypes +ssh-rsa-cert-v01@openssh.com
 ```
+
+## Use Himmelblau for Microsoft Entra MFA login and Kerberos integration
+
+In addition to the certificate-based Microsoft Entra ID authentication described above, organizations seeking deeper integration with Entra ID can use [Himmelblau](https://github.com/himmelblau-idm) to join Linux systems directly to Microsoft Entra ID. Himmelblau enables login via Entra ID credentials and provides Kerberos credential caching for accessing Azure Files.
+
+### What Himmelblau provides
+
+- Joins the Linux device to Microsoft Entra ID during the user's first login.
+- Provides a Pluggable Authentication Module (PAM) for login via Entra ID credentials.
+- Supports Conditional Access and MFA enforcement.
+- Caches Kerberos credentials for accessing Azure Files and other services.
+- Integrates with PAM and NSS to support system logins, `sudo`, and SSH.
+- Optionally supports Windows Hello PIN authentication (not recommended for public-facing SSH endpoints).
+
+### Supported Distributions
+
+Himmelblau provides packages for the following distributions:
+
+| Distribution | Version |
+| --- | --- |
+| openSUSE | Leap 15.6, Tumbleweed |
+| SUSE Linux Enterprise Server (SLES) | SLES 15.6+, SLES 16 |
+| Rocky Linux | Rocky 8, Rocky 9 |
+| Fedora | 41, Rawhide |
+| Ubuntu | 22.04, 24.04 |
+| Debian | 12 |
+
+
+### Installation
+
+[Download the appropriate packages](https://himmelblau-idm.org/downloads.html) for your distribution. For example:
+
+**Fedora/Rocky Linux:**
+
+```bash
+sudo dnf install ./himmelblau-*.rpm ./himmelblau-sshd-config-*.rpm ./himmelblau-sso-*.rpm \
+                 ./nss-himmelblau-*.rpm ./pam-himmelblau-*.rpm
+```
+
+**openSUSE/SLES:**
+
+```bash
+sudo zypper install ./himmelblau-*.rpm ./himmelblau-sshd-config-*.rpm ./himmelblau-sso-*.rpm \
+                    ./nss-himmelblau-*.rpm ./pam-himmelblau-*.rpm
+```
+
+**Debian/Ubuntu:**
+
+```bash
+sudo apt install ./himmelblau_*.deb ./himmelblau-sshd-config_*.deb ./himmelblau-sso_*.deb \
+                 ./nss-himmelblau_*.deb ./pam-himmelblau_*.deb
+```
+
+### Configuration
+
+Edit `/etc/himmelblau/himmelblau.conf` to specify your tenant domain:
+
+```ini
+[global]
+domains = contoso.onmicrosoft.com
+```
+
+**Note:** On Ubuntu, it is important to also include the following:
+
+```ini
+[global]
+home_attr = CN
+home_alias = CN
+use_etc_skel = true
+```
+
+These settings ensure compatibility with Snap applications.
+
+### NSS and PAM Setup
+
+**NSS:** Add `himmelblau` to the relevant lines in `/etc/nsswitch.conf`:
+
+```conf
+passwd:     compat systemd himmelblau
+group:      compat systemd himmelblau
+shadow:     compat systemd himmelblau
+```
+
+**PAM:** PAM integration with Himmelblau is relatively straightforward:
+
+- On **openSUSE** and **SUSE Linux Enterprise**, run:
+
+  ```
+  sudo pam-config --add --himmelblau
+  ```
+
+- On **Ubuntu** and **Debian**, install the Himmelblau PAM module and run:
+
+  ```
+  sudo pam-auth-update
+  ```
+  Select "Azure Entra Id authentication" when prompted.
+
+- On other distributions, including **Fedora**, **Rocky Linux**, and **RHEL**, use the Himmelblau `aad-tool` command:
+
+  ```bash
+  sudo aad-tool configure-pam
+  ```
+
+  This command only previews the changes by default. To enforce those changes, use `--really`.
+
+### Enable the Daemons
+
+```bash
+systemctl enable himmelblaud himmelblaud-tasks
+systemctl start himmelblaud himmelblaud-tasks
+```
+
+It is also recommended that the Name Service Cache daemon (`nscd`) be disabled.
+
+The nscd daemon caches name service lookups, including user and group information obtained from sources like `/etc/passwd` and `/etc/group`. When integrating with Azure Entra ID, it's important to ensure that the most up-to-date user and group information is consistently retrieved from the directory. Disabling nscd helps avoid potential inconsistencies that may arise from cached data not reflecting changes made in Azure Entra ID.
+
+```bash
+systemctl stop nscd
+systemctl disable nscd
+systemctl mask nscd
+```
+
+### Enroll the Device and Authenticate
+
+At the login prompt, enter your Microsoft Entra ID username (e.g., `tux@contoso.onmicrosoft.com`). You'll be prompted to:
+
+1. Enter your password.
+2. Complete MFA.
+
+This process:
+
+- Authenticates the user via Entra ID.
+- Enrolls the device in Entra ID (first user becomes the device owner).
+- Enables future sign-ins using Entra ID credentials.
+
+> **Note:** Himmelblau optionally supports setting up a Windows Hello PIN during enrollment. While useful for local interactive sessions, PIN authentication is not recommended for internet-exposed SSH systems. To disable this feature, set `enable_hello = false` in `/etc/himmelblau/himmelblau.conf`.
+
+### Kerberos Support for Azure Files
+
+Himmelblau automatically generates a Kerberos credential cache (`ccache`) for authenticated users. Use this for Azure Files:
+
+```bash
+mount -t cifs //STORAGE_ACCOUNT.file.core.windows.net/SHARE /mnt/share \
+  -o sec=krb5,vers=3.0,cruid=$(id -u),multiuser,uid=$(id -u),gid=$(id -g)
+```
+
+### Troubleshooting
+
+- Check logs: systemd journal logs for the `himmelblaud` service.
+- Confirm enrollment: successful login triggers device join
+- Verify credentials: use `klist` to inspect Kerberos tickets
 
 ## Next steps
 
