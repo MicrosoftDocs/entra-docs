@@ -241,6 +241,21 @@ If you change UPN, a new account with the new UPN appears on the Authenticator. 
 
 To remove references to the previous UPN on Authenticator, the user removes the previous and new accounts from Authenticator. The user re-registers for MFA, and rejoins the device.
 
+## Mobile Device Management
+ 
+### Known issues: Device re-registration required
+ 
+If your organization uses Mobile Device Management and the Intune App or the Company Portal app to manage your devices, device registration isn’t resilient during UPN changes. Upon changing the UPN, the device will be detected as unregistered with Entra, and users will be required to sign in and register the device again for management and Conditional Access to continue to work. Until registration is complete, the user may not be able to access any corporate resources on this device.  
+ 
+Learn more:
+ 
+* [Device enrollment guide for Microsoft Intune](/mem/intune/fundamentals/deployment-guide-enrollment)
+* [Use Conditional Access with Microsoft Intune compliance policies](/mem/intune/protect/conditional-access)
+ 
+**Workaround**
+ 
+After UPN changes, the end users are required to sign in and follow the in-app prompts to register again.
+
 ### Phone sign-in
 
 Use phone sign-in to sign in to Microsoft Entra ID without a password. With Authenticator, the user registers for MFA and then enables phone sign-in. The device registers with Microsoft Entra ID.
