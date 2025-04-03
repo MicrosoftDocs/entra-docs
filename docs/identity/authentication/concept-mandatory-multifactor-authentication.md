@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/31/2025
+ms.date: 04/02/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -14,7 +14,7 @@ ms.reviewer: nashahid, gkinasewitz
 ---
 # Planning for mandatory multifactor authentication for Azure and other admin portals 
 
-At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW166lD) shows that MFA can block more than 99.2% of account compromise attacks. 
+At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://www.microsoft.com/security/blog/2019/08/20/one-simple-action-you-can-take-to-prevent-99-9-percent-of-account-attacks) shows that MFA can block more than 99.2% of account compromise attacks. 
 
 That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
 
