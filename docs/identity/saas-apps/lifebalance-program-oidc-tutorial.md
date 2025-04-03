@@ -108,4 +108,4 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 ## Configure LifeBalance Program SSO
 
-To complete the OAuth/OIDC federation setup on **LifeBalance Program** side, you need to send the copied values like  Tenant ID, Application ID, and Client Secret from Entra to [LifeBalance Program support team](mailto:info@lifebalanceprogram.com). They set this setting to have the OIDC connection set properly on both sides.
+To complete the OAuth/OIDC federation setup on **LifeBalance Program** side, you need to send the copied values for Tenant ID, Application ID, and Client Secret from Entra to [LifeBalance Program SSO support team](mailto:sso@lifebalanceprogram.com) via secure email. The LifeBalance SSO team will set these values to have the OIDC connection set properly on both sides.
