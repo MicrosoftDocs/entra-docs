@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: how-to
 ms.date: 08/01/2024
 
-ms.author: joflore
+ms.author: owinfrey
 author: MicrosoftGuyJFlo
-manager: femila
+manager: owinfreyATL
 ms.reviewer: sempofu, micrider
 ms.custom: references_regions
 ---
