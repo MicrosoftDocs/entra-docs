@@ -5,7 +5,7 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: femila
 ms.reviewer: lhuangnorth
-ms.date: 07/30/2024
+ms.date: 04/01/2025
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
@@ -49,7 +49,7 @@ More information about the location condition in Conditional Access can be found
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ## Related Content
 
