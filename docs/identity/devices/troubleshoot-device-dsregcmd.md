@@ -7,8 +7,8 @@ ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 03/03/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: owinfrey
+author: owinfreyATL
 manager: femila
 ms.reviewer: jploegert
 ---

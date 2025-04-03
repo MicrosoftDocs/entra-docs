@@ -7,8 +7,8 @@ ms.subservice: devices
 ms.topic: conceptual
 ms.date: 11/25/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: owinfrey
+author: owinfreyATL
 manager: femila
 ms.reviewer: sandeo
 ---
