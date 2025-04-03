@@ -241,6 +241,18 @@ If you change UPN, a new account with the new UPN appears on the Authenticator. 
 
 To remove references to the previous UPN on Authenticator, the user removes the previous and new accounts from Authenticator. The user re-registers for MFA, and rejoins the device.
 
+### Phone sign-in
+
+Use phone sign-in to sign in to Microsoft Entra ID without a password. With Authenticator, the user registers for MFA and then enables phone sign-in. The device registers with Microsoft Entra ID.
+
+**Known issues: No notification**
+
+Users can't use phone sign-in because they didn't receive notification. If the user selects **Check for Notifications**, an error appears.
+
+**Workaround**
+
+On the account enabled for phone sign-in, on the drop-down menu, the user selects **Disable phone sign-in**. 
+
 ## Mobile Device Management
  
 ### Known issues: Device re-registration required
@@ -255,18 +267,6 @@ Learn more:
 **Workaround**
  
 After UPN changes, the end users are required to sign in and follow the in-app prompts to register again.
-
-### Phone sign-in
-
-Use phone sign-in to sign in to Microsoft Entra ID without a password. With Authenticator, the user registers for MFA and then enables phone sign-in. The device registers with Microsoft Entra ID.
-
-**Known issues: No notification**
-
-Users can't use phone sign-in because they didn't receive notification. If the user selects **Check for Notifications**, an error appears.
-
-**Workaround**
-
-On the account enabled for phone sign-in, on the drop-down menu, the user selects **Disable phone sign-in**. 
 
 ## Security key (FIDO2) issues
 
