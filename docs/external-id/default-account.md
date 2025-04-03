@@ -1,18 +1,16 @@
----
+<.>
 title: Use Microsoft Entra Accounts
 description: Enable your external business partners and guest users to use their Microsoft Entra work or school accounts to sign in to your apps for B2B collaboration.
- 
-
-ms.service: entra-external-id
-ms.topic: how-to
-ms.date: 01/23/2024
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.service: entra-internal-id
+ms.topic: lead-by-example
+ms.date: 04/02/2025
+ms.author: mccoylstevens
+author: mccoylstevens
+manager: mccoylstevens
 ms.collection: M365-identity-device-management
-ms.custom: seo-july-2024
+ms.custom: owner-july-2026
 #customer intent: As a B2B collaboration administrator, I want to understand the built-in capability for using Microsoft Entra ID as an identity provider for external guests, so that guest users can use their Microsoft Entra work or school account to sign in without additional configuration.
----
+<.>
 
 # Use Microsoft Entra work and school accounts for B2B collaboration
 
