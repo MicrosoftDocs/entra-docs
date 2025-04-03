@@ -3,7 +3,7 @@ title: 'Microsoft Entra Cloud Sync accidental deletes'
 description: This topic describes how to use the accidental delete feature to prevent deletions.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.date: 04/26/2024

@@ -52,7 +52,7 @@ At this point, you completed the initiate and plan stages of your Secure Access 
 
 ## Configure per-app access
 
-To maximize the value of your Microsoft Entra Private Access deployment, you should transition from Quick Access to per-app access. You can use [Application Discovery](../global-secure-access/how-to-application-discovery.md) feature to quickly create Global Secure Access applications from app segments your users access. You can also use [Global Secure Access Enterprise applications](../global-secure-access/how-to-configure-per-app-access.md#create-a-global-secure-access-application) to do create them manually, or you can use [PowerShell](gsa-poc-private-access.md#use-powershell-to-manage-microsoft-entra-private-access) to automate creation.
+To maximize the value of your Microsoft Entra Private Access deployment, you should transition from Quick Access to per-app access. You can use [Application Discovery](../global-secure-access/how-to-application-discovery.md) feature to quickly create Global Secure Access applications from app segments your users access. You can also use [Global Secure Access Enterprise applications](../global-secure-access/how-to-configure-per-app-access.md) to do create them manually, or you can use [PowerShell](gsa-poc-private-access.md#use-powershell-to-manage-microsoft-entra-private-access) to automate creation.
 
 1. Create the application and scope it to either all users assigned to Quick Access (recommended) or all users that need to access the specific application.
 1. Add at least one app segment to the application. You don't need to add all app segments at the same time. You might prefer to add them slowly so that you can validate traffic flow for each segment.

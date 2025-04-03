@@ -52,7 +52,7 @@ Explicit group authorization in AD FS:
 
 To map this rule to Microsoft Entra ID:
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.yml) that corresponds to the group of users from AD FS.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](/entra/fundamentals/how-to-manage-groups) that corresponds to the group of users from AD FS.
 1. Assign app permissions to the group:
 
    :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add an assignment to the app.":::

@@ -3,7 +3,7 @@ title: Understand Microsoft Entra role concepts
 description: Learn how to understand Microsoft Entra built-in and custom roles with resource scope in Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: conceptual

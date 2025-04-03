@@ -3,7 +3,7 @@ title: Microsoft Entra Connect Sync service features and configuration
 description: Describes service side features for Microsoft Entra Connect Sync service.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.service: entra-id
 ms.tgt_pltfrm: na

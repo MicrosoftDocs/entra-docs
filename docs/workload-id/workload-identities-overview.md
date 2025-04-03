@@ -5,10 +5,10 @@ author: rwike77
 manager: CelesteDG
 ms.service: entra-workload-id
 
-ms.topic: concept-article
-ms.date: 01/10/2024
+ms.topic: overview
+ms.date: 03/13/2025
 ms.author: ryanwi
-ms.reviewer: arluca, ilanas, naha
+ms.reviewer: arluca, ilanas, hosamsh
 ms.custom: aaddev
 #Customer intent: As a developer, I want workload identities so I can authenticate with Microsoft Entra ID and access Microsoft Entra protected resources.
 ---

@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 01/29/2025
+ms.date: 02/05/2025
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register a SAML app through the Microsoft Entra admin center.
@@ -19,6 +19,12 @@ ms.custom: it-pro
 In external tenants, you can register applications that use the OpenID Connect (OIDC) or Security Assertion Markup Language (SAML) protocol for authentication and single sign-on. The [app registration](how-to-register-ciam-app.md) process is designed specifically for OIDC apps. But you can use the Enterprise applications feature to create and register your SAML app. This process generates a unique application ID (client ID) and adds your app to the App registrations, where you can view and manage its properties.
 
 This article describes how to register your own SAML application in your external tenant by creating a *non-gallery* app in **Enterprise applications**.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovebanking.com/)
+> 
+> To try out SAML app with External ID for customer identity and access management (CIAM), go to the Woodgrove live demo and select the sign-in option.
+
 
 > [!NOTE]
 > The following capabilities aren't supported for SAML apps in external tenants:

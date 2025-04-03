@@ -2,7 +2,7 @@
 title: Manage guest access with access reviews
 description: Manage guest users as members of a group or assigned to an application with Microsoft Entra access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
@@ -30,12 +30,10 @@ For more information, [License requirements](access-reviews-overview.md#license-
 
 ## Create and perform an access review for guests
 
-First, you must be assigned one of the following roles:
-- Global Administrator
+First, you must be assigned as at least one of the following roles:
 - User Administrator
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed
-> [!NOTE]
-> Following least privilege access, we recommend using User Administrator or be the Security Group owner for this task.
+
 
 Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews is ready for your organization.
 

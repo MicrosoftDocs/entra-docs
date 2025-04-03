@@ -3,12 +3,12 @@ title: Add, test, or remove protected actions in Microsoft Entra ID
 description: Learn how to add, test, or remove protected actions in Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 04/21/2023
+ms.date: 03/30/2025
 ---
 
 # Add, test, or remove protected actions in Microsoft Entra ID
@@ -16,7 +16,7 @@ ms.date: 04/21/2023
 [Protected actions](./protected-actions-overview.md) in Microsoft Entra ID are permissions that have been assigned Conditional Access polices that are enforced when a user attempts to perform an action. This article describes how to add, test, or remove protected actions.
 
 > [!NOTE]
-> You should perform these steps in the following sequence to ensure that protected actions are properly configured and enforced. If you don't follow this order, you may get unexpected behavior, such as [getting repeated requests to reauthenticate](#symptom---policy-is-never-satisfied).
+> You should perform these steps in the following sequence to ensure that protected actions are properly configured and enforced. If you don't follow this order, you might get unexpected behavior, such as [getting repeated requests to reauthenticate](#symptom---policy-is-never-satisfied).
 
 ## Prerequisites
 
@@ -209,7 +209,7 @@ When using PowerShell to perform a protected action, an error is returned and th
 
 **Cause**
 
-Microsoft Graph PowerShell supports step-up authentication, which is required to allow policy prompts. Azure and Azure AD Graph PowerShell aren't supported for step-up authentication.
+Microsoft Graph PowerShell supports step-up authentication, which is required to allow policy prompts. Azure PowerShell isn't supported for step-up authentication.
 
 **Solution**
 

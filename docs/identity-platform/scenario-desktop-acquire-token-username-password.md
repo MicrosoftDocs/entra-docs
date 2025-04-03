@@ -13,6 +13,8 @@ ms.topic: how-to
 
 # Desktop app that calls web APIs: Acquire a token using username and password
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 In your desktop applications, you can use the username and password flow, also known as Resource Owner Password Credentials (ROPC), to acquire a token silently.
 
 >[!WARNING]

@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Technical concepts'
 description: Explains the technical concepts of Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 731cfeb3-beaf-4d02-aef4-b02a8f99fd11
 ms.service: entra-id

@@ -5,7 +5,7 @@ description: Ensure that your organization's administrative access and administr
 
 keywords:
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.date: 11/21/2024
 ms.topic: conceptual
@@ -140,7 +140,7 @@ The increase in "bring your own device" and work from home policies and the grow
 
 #### Identify Microsoft accounts in administrative roles that need to be switched to work or school accounts
 
-If your initial Global Administrators reuse their existing Microsoft account credentials when they began using Microsoft Entra ID, replace the Microsoft accounts with individual cloud-based or synchronized accounts.
+If your initial Global Administrators reuse their existing Microsoft account credentials when they began using Microsoft Entra ID, replace the Microsoft accounts with individual cloud-based accounts.
 
 #### Ensure separate user accounts and mail forwarding for Global Administrator accounts
 

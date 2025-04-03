@@ -19,7 +19,11 @@ This article provides a guide on how to set up a [Flexible Federated identity cr
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- [Create an app registration](~/identity-platform/quickstart-register-app.md) or [managed identity](/entra/identity/managed-identities-azure-resources/overview) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
+- [Create an app registration](~/identity-platform/quickstart-register-app.md). Grant your app access to the Azure resources targeted by your external software workload.
+
+> [!NOTE]
+> 
+> Flexible federated identity credentials support is not yet available for [managed identities](/entra/identity/managed-identities-azure-resources/overview).
 
 ## Setting up federated identity credentials through Microsoft Graph
 
