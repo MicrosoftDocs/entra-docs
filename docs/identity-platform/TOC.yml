@@ -434,8 +434,6 @@
           items:
             - name: Browser-delegated authentication
               items:
-                - name: Prepare tenant
-                  href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
                 - name: Prepare your app
                   href: tutorial-mobile-app-maui-sign-in-prepare-app.md
                 - name: Add sign in and sign out
@@ -479,8 +477,6 @@
           items:
             - name: Browser-delegated authentication
               items:
-                - name: Prepare tenant
-                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md?pivots=workforce-tenant
                 - name: Prepare app
                   href: tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce-tenant
                 - name: Sign in users
