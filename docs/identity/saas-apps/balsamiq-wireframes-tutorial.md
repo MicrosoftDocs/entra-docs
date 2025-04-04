@@ -121,7 +121,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Balsamiq Wireframes SSO
 
-1. Log in to your Balsamiq Wireframes company site as an administrator.
+1. Log in to your Balsamiq Wireframes space as an Owner.
 
 1. Go to **Settings** > **Space Settings** and select **Configure SSO** under Single Sign-On Authentication.
 
@@ -129,9 +129,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Copy all the required values and paste it in **Basic SAML Configuration** section in the Azure portal and select **Next**.
 
+
     ![Screenshot shows the Service Provider Details.](./media/balsamiq-wireframes-tutorial/details.png "Service Provider Details")
 
-1. In the **Configure IDp** section, perform the following steps:
+1. In **Step 2**, perform the following steps:
 
     ![Screenshot shows the IDP Metadata.](./media/balsamiq-wireframes-tutorial/certificate.png "IDP Metadata")
 
@@ -146,13 +147,13 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!Note]
     > If you have an IdP Metadata file to upload, the fields are automatically populated.
 
-1. Verify your SAML configuration, select **Test SAML Login** button and select **Next**.
+1. In **Step 3** verify your SAML configuration, click **Test SAML Login** button and click **Next**.
 
     ![Screenshot shows the SAML configuration.](./media/balsamiq-wireframes-tutorial/configuration.png "SAML Login")
 
-1. After the successful test configuration, select **Turn on SAML SSO Now**.
+1. After the successful test configuration, in **Step 4** click **Turn on SAML SSO Now**.
 
-    ![Screenshot shows the Test SAML.](./media/balsamiq-wireframes-tutorial/testing.png "Test SAML")
+
 
 ### Create Balsamiq Wireframes test user
 
