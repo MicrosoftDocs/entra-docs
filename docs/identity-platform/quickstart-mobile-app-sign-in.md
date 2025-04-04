@@ -284,7 +284,7 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 #### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
-* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application).
 * [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 * [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
   * [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)

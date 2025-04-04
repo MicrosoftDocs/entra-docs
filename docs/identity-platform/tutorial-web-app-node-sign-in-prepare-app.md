@@ -37,7 +37,6 @@ In this tutorial you'll;
   * **Redirect URI**: `http://localhost:3000/auth/redirect`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
 * Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
-* [Node.js](https://nodejs.org/en/download/package-manager)
 
 #### [External tenant](#tab/external-tenant)
 

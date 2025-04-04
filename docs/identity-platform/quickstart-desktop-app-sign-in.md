@@ -209,7 +209,7 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
   * Application Administrator
   * Application Developer
   * Cloud Application Administrator
-- An external tenant. To create one, choose from the following methods:
+* An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.

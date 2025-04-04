@@ -34,8 +34,6 @@ In this quickstart, you use a sample Node Command Line Interface (CLI) applicati
 
 ## Enable public client flows
 
-[!INCLUDE [active-directory-b2c-app-integration-add-platform-configurations](../external-id/customers/includes/register-app/add-platform-redirect-url-node-cli.md)]
-
 [!INCLUDE [active-directory-b2c-enable-public-client-flow](../external-id/customers/includes/register-app/enable-public-client-flow.md)]  
 
 ## Clone or download the sample Node.js CLI application

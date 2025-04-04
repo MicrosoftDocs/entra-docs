@@ -52,7 +52,6 @@ In this article, you do the following tasks:
   * Directory (tenant) ID
 * A web API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](../external-id/customers/sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
-    - Register a web API application
     - Configure API scopes
     - Configure app roles
     - Configure optional claims
@@ -65,12 +64,9 @@ In this article, you do the following tasks:
 * An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
 * Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
-  * Directory (tenant) ID* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
-  * Application (client) ID 
-  * Directory (tenant) ID
+  * Directory (tenant) ID*
 * An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample iOS mobile app](../external-id/customers/sample-native-authentication-ios-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
-    - Register a web API application.
     - Configure API scopes.
     - Configure app roles.
     - Configure optional claims.

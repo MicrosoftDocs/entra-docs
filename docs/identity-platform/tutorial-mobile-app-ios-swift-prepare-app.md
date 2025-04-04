@@ -220,7 +220,6 @@ In this tutorial, you;
 
 ## Prerequisites
 
-* <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
 * Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
