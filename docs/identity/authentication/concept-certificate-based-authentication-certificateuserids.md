@@ -197,7 +197,7 @@ To prevent synchronization errors, make sure the values being synchronized follo
 
 Before you begin, make sure all user accounts that are synchronized from on-premises Active Directory have:
 
-- 5 or fewer values in their altSecurityIdentities attributes 
+- 10 or fewer values in their altSecurityIdentities attributes 
 - No value with more than 1,024 characters
 - No duplicate values
   
