@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both XM Fax and XM SendS
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in XM Fax and XM SendSecure.
-> * Remove users in XM Fax and XM SendSecure when they do not require access anymore.
+> * Remove users in XM Fax and XM SendSecure when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and XM Fax and XM SendSecure.
 > * [Single sign-on](xm-fax-and-xm-send-secure-tutorial.md) to XM Fax and XM SendSecure (recommended).
 
@@ -34,20 +34,20 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and XM Fax and XM SendSecure](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure XM Fax and XM SendSecure to support provisioning with Microsoft Entra ID
 
 
 ### Create an access token
-1. In your XM Cloud enterprise account, click **Enterprise name** > **Access tokens**.
+1. In your XM Cloud enterprise account, select **Enterprise name** > **Access tokens**.
 1. Create a new access token with the permission **User provisioning (using SCIM)**.
-1. Copy the access token. You will need it as the **Secret Token** in Microsoft Entra ID.
+1. Copy the access token. You need it as the **Secret Token** in Microsoft Entra ID.
 
 ### Tenant URL
 
-* To configure the Microsoft Entra provisioning service, you will need your tenant URL.
+* To configure the Microsoft Entra provisioning service, you need your tenant URL.
 
 * The tenant URL depends on the region, the name of your enterprise account and has the following scheme:
 `https://<domain>/api/scim/v2/enterprises/<enterprise_name>/`
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your XM Fax and XM SendSecure Tenant URL and Secret Token from Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to XM Fax and XM SendSecure. If the connection fails, check the URL and access token are correct.
+1. Under the **Admin Credentials** section, input your XM Fax and XM SendSecure Tenant URL and Secret Token from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to XM Fax and XM SendSecure. If the connection fails, check the URL and access token are correct.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -136,7 +136,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

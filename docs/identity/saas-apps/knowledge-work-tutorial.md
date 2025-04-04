@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Knowledge Work
 
-In this article, you learn how to integrate Knowledge Work with Microsoft Entra ID. "Knowledge Work" is a cloud service that realizes various elements of sales enablement with a single tool and improves the sales productivity of companies. Specifically, it is possible to share sales materials and sales know-how, and provide learning programs for sales. When you integrate Knowledge Work with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Knowledge Work with Microsoft Entra ID. "Knowledge Work" is a cloud service that realizes various elements of sales enablement with a single tool and improves the sales productivity of companies. Specifically, it's possible to share sales materials and sales know-how, and provide learning programs for sales. When you integrate Knowledge Work with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Knowledge Work.
 * Enable your users to be automatically signed-in to Knowledge Work with their Microsoft Entra accounts.
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<CustomerName>.kwork.cloud/redirect`
 
     > [!Note]
-    > These values are not real. Update these values with the actual Identifier and Sign-on URL. Contact [Knowledge Work Client support team](mailto:support@knowledgework.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+    > These values aren't real. Update these values with the actual Identifier and Sign-on URL. Contact [Knowledge Work Client support team](mailto:support@knowledgework.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -100,11 +100,11 @@ In this section, a user called B.Simon is created in Knowledge Work. Knowledge W
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Knowledge Work Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Knowledge Work Sign-on URL where you can initiate the login flow. 
 
 * Go to Knowledge Work Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Knowledge Work tile in the My Apps, this will redirect to Knowledge Work Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Knowledge Work tile in the My Apps, this option redirects to Knowledge Work Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

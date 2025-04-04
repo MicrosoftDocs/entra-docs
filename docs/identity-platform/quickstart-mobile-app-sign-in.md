@@ -15,6 +15,8 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample mobile app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
 ::: zone pivot="workforce"

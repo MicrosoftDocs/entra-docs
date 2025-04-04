@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AppBlade so that I can control who has access to AppBlade, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -63,7 +63,7 @@ To configure and test Microsoft Entra single sign-on with AppBlade, you need to 
 2. **[Configure AppBlade Single Sign-On](#configure-appblade-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create AppBlade test user](#create-appblade-test-user)** - to have a counterpart of Britta Simon in AppBlade that is linked to the Microsoft Entra representation of user.
+5. **[Create AppBlade test user](#create-appblade-test-user)** - to have a counterpart of Britta Simon in AppBlade that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -123,7 +123,7 @@ To configure single sign-on on **AppBlade** side, you need to send the downloade
 
 The objective of this section is to create a user called Britta Simon in AppBlade. AppBlade supports just-in-time provisioning, which is by default enabled. **Make sure that your domain name is configured with AppBlade for user provisioning. After that only the just-in-time user provisioning works.**
 
-If the user has an email address ending with the domain configured by AppBlade for your account, then the user will automatically join the account as a member with the permission level you specify, which is one of "Basic" (a basic user who can only install applications), "Team Member" (a user who can upload new app versions and manage projects), or "Administrator" (full admin privileges to the account). Normally one would choose Basic and then promote users manually via an Admin login (AppBlade needs to configure either an email-based admin login in advance or promote a user on behalf of the customer after login).
+If the user has an email address ending with the domain configured by AppBlade for your account, then the user automatically joins the account as a member with the permission level you specify, which is one of "Basic" (a basic user who can only install applications), "Team Member" (a user who can upload new app versions and manage projects), or "Administrator" (full admin privileges to the account). Normally one would choose Basic and then promote users manually via an Admin login (AppBlade needs to configure either an email-based admin login in advance or promote a user on behalf of the customer after login).
 
 There's no action item for you in this section. A new user is created during an attempt to access AppBlade if it doesn't exist yet.
 

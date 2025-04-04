@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Sprinklr
 
-In this article,  you'll learn how to integrate Sprinklr with Microsoft Entra ID. When you integrate Sprinklr with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Sprinklr with Microsoft Entra ID. When you integrate Sprinklr with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Sprinklr.
 * Enable your users to be automatically signed-in to Sprinklr with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of Sprinklr into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **Sprinklr** in the search box.
 1. Select **Sprinklr** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-sprinklr'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Sprinklr, perform the following s
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Sprinklr SSO](#configure-sprinklr-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Sprinklr test user](#create-sprinklr-test-user)** - to have a counterpart of B.Simon in Sprinklr that is linked to the Microsoft Entra representation of user.
+    1. **[Create Sprinklr test user](#create-sprinklr-test-user)** - to have a counterpart of B.Simon in Sprinklr that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Sprinklr** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -81,9 +81,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.sprinklr.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Sprinklr Client support team](https://www.sprinklr.com/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [Sprinklr Client support team](https://www.sprinklr.com/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -107,7 +107,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Manage Partner](./media/sprinklr-tutorial/users.png "Manage Partner")
 
-1. Click **+Add Single Sign Ons**.
+1. Select **+Add Single Sign Ons**.
 
     ![Screenshot shows the Add Single Sign Ons button.](./media/sprinklr-tutorial/add-user.png "Single Sign-Ons")
 
@@ -133,7 +133,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. As **SAML User ID Location**, select **User ID is in the Name Identifier element of the Subject statement**.
 
-    1. Click **Save**.
+    1. Select **Save**.
 
     ![SAML](./media/sprinklr-tutorial/save-configuration.png "SAML")
 
@@ -149,7 +149,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot shows the Add User button in Settings/Users.](./media/sprinklr-tutorial/client.png "Settings")
 
-1. Click **Add User**.
+1. Select **Add User**.
 
     ![Screenshot shows the Edit user dialog box where you can enter the values described.](./media/sprinklr-tutorial/search-users.png "Settings")
 
@@ -165,7 +165,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. Select **User Type**.
 
-    1. Click **Update**.
+    1. Select **Update**.
 
     > [!IMPORTANT]
     > **Password Disabled** must be selected to enable a user to log in via an Identity provider. 
@@ -176,7 +176,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. From the **Global** list, select **ALL_Permissions**.  
 
-    1. Click **Update**.
+    1. Select **Update**.
 
 > [!NOTE]
 > You can use any other Sprinklr user account creation tools or APIs provided by Sprinklr to provision Microsoft Entra user accounts.
@@ -185,11 +185,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Sprinklr Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Sprinklr Sign-on URL where you can initiate the login flow. 
 
 * Go to Sprinklr Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Sprinklr tile in the My Apps, this will redirect to Sprinklr Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Sprinklr tile in the My Apps, this option redirects to Sprinklr Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

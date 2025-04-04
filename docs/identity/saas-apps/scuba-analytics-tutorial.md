@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Scuba Analytics
 
-In this article,  you'll learn how to integrate Scuba Analytics with Microsoft Entra ID. When you integrate Scuba Analytics with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Scuba Analytics with Microsoft Entra ID. When you integrate Scuba Analytics with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Scuba Analytics.
 * Enable your users to be automatically signed-in to Scuba Analytics with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of Scuba Analytics into Microsoft Entra ID, you nee
 1. In the **Add from the gallery** section, type **Scuba Analytics** in the search box.
 1. Select **Scuba Analytics** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-scuba-analytics'></a>
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Scuba Analytics, perform the foll
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Scuba Analytics SSO](#configure-scuba-analytics-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Scuba Analytics test user](#create-scuba-analytics-test-user)** - to have a counterpart of B.Simon in Scuba Analytics that is linked to the Microsoft Entra representation of user.
+    1. **[Create Scuba Analytics test user](#create-scuba-analytics-test-user)** - to have a counterpart of B.Simon in Scuba Analytics that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,11 +70,11 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Scuba Analytics** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section the application is pre-configured in **IDP** initiated mode and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section the application is pre-configured in **IDP** initiated mode and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by selecting the **Save** button.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -100,9 +100,9 @@ In this section, you create a user called Britta Simon in Scuba Analytics. Work 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Scuba Analytics for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Scuba Analytics for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Scuba Analytics tile in the My Apps, you should be automatically signed in to the Scuba Analytics for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Scuba Analytics tile in the My Apps, you should be automatically signed in to the Scuba Analytics for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

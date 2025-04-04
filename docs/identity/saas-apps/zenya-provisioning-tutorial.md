@@ -20,7 +20,7 @@ The objective of this article is to demonstrate the steps to be performed in Zen
 
 ## Capabilities supported
 > * Create users in Zenya
-> * Remove/disable users in Zenya when they do not require access anymore
+> * Remove/disable users in Zenya when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Zenya
 > * Provision groups and group memberships in Zenya
 > * [Single sign-on](./zenya-tutorial.md) to Zenya (recommended)
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Zenya](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-zenya-to-support-provisioning-with-azure-ad'></a>

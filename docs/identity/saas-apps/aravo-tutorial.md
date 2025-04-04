@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Aravo so that I can control who has access to Aravo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra single sign-on with Aravo, you need to com
 2. **[Configure Aravo Single Sign-On](#configure-aravo-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Aravo test user](#create-aravo-test-user)** - to have a counterpart of Britta Simon in Aravo that is linked to the Microsoft Entra representation of user.
+5. **[Create Aravo test user](#create-aravo-test-user)** - to have a counterpart of Britta Simon in Aravo that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>

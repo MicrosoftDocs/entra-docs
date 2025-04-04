@@ -88,4 +88,4 @@ For the latest developer content and resources, see the [External ID developer c
  - [Register an app in CIAM](/entra/identity-platform/quickstart-register-app) 
  - [Customize user experience for your customers](how-to-customize-branding-customers.md)
  - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
-
+ - [Migrate users to External ID](how-to-migrate-users.md)

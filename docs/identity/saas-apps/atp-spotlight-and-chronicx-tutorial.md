@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -49,7 +49,7 @@ To configure the integration of ATP SpotLight and ChronicX into Microsoft Entra 
 1. In the **Add from the gallery** section, type **ATP SpotLight and ChronicX** in the search box.
 1. Select **ATP SpotLight and ChronicX** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-atp-spotlight-and-chronicx'></a>
 
@@ -63,7 +63,7 @@ To configure and test Microsoft Entra SSO with ATP SpotLight and ChronicX, perfo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ATP SpotLight and ChronicX SSO](#configure-atp-spotlight-and-chronicx-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create ATP SpotLight and ChronicX test user](#create-atp-spotlight-and-chronicx-test-user)** - to have a counterpart of B.Simon in ATP SpotLight and ChronicX that is linked to the Microsoft Entra representation of user.
+    1. **[Create ATP SpotLight and ChronicX test user](#create-atp-spotlight-and-chronicx-test-user)** - to have a counterpart of B.Simon in ATP SpotLight and ChronicX that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -133,11 +133,11 @@ In this section, a user called Britta Simon is created in ATP SpotLight and Chro
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this redirects to ATP SpotLight and ChronicX Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to ATP SpotLight and ChronicX Sign-on URL where you can initiate the login flow. 
 
 * Go to ATP SpotLight and ChronicX Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the ATP SpotLight and ChronicX tile in the My Apps, this redirects to ATP SpotLight and ChronicX Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the ATP SpotLight and ChronicX tile in the My Apps, this option redirects to ATP SpotLight and ChronicX Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

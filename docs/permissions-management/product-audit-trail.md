@@ -6,11 +6,14 @@ manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/19/2025
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Filter and query user activity
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 The **Audit** dashboard in Permissions Management details all user activity performed in your authorization system. It captures all high risk activity in a centralized location, and allows system administrators to query the logs. The **Audit** dashboard enables you to:
 

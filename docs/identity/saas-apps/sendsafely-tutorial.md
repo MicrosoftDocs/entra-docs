@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with SendSafely
 
-In this article,  you'll learn how to integrate SendSafely with Microsoft Entra ID. When you integrate SendSafely with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SendSafely with Microsoft Entra ID. When you integrate SendSafely with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SendSafely.
 * Enable your users to be automatically signed-in to SendSafely with their Microsoft Entra accounts.
@@ -48,7 +48,7 @@ To configure the integration of SendSafely into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, type **SendSafely** in the search box.
 1. Select **SendSafely** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-sendsafely'></a>
@@ -63,7 +63,7 @@ To configure and test Microsoft Entra SSO with SendSafely, complete the followin
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SendSafely SSO](#configure-sendsafely-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create SendSafely test user](#create-sendsafely-test-user)** - to have a counterpart of B.Simon in SendSafely that is linked to the Microsoft Entra representation of user.
+    1. **[Create SendSafely test user](#create-sendsafely-test-user)** - to have a counterpart of B.Simon in SendSafely that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SendSafely** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SENDSAFELY_URL>/auth/saml2/`
 
-1. Click **Set additional URLs** and perform the following steps if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following steps if you wish to configure the application in **SP** initiated mode:
 
     a. In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<SENDSAFELY_URL>/auth/`
@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SENDSAFELY_URL>/auth/saml2/`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL, Sign-on URL and Relay State. Contact [SendSafely Client support team](mailto:support@sendsafely.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL, Sign-on URL and Relay State. Contact [SendSafely Client support team](mailto:support@sendsafely.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -116,13 +116,13 @@ To configure single sign-on on **SendSafely** side, follow the steps as provided
 
 ### Create SendSafely test user
 
-In this section, a user called B.Simon is created in SendSafely. SendSafely supports just-in-time provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in SendSafely, a new one is created when you attempt to access SendSafely.
+In this section, a user called B.Simon is created in SendSafely. SendSafely supports just-in-time provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in SendSafely, a new one is created when you attempt to access SendSafely.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the SendSafely tile in the Access Panel, you should be automatically signed in to the SendSafely for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the SendSafely tile in the Access Panel, you should be automatically signed in to the SendSafely for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional resources
 

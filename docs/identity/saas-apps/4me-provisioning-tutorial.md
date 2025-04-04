@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 4me so that I can streamline the user management process and ensure that users have the appropriate access to 4me.
@@ -56,7 +56,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ### Important tips for assigning users to 4me
 
-* It is recommended that a single Microsoft Entra user is assigned to 4me to test the automatic user provisioning configuration. Additional users and/or groups can be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to 4me to test the automatic user provisioning configuration. Additional users and/or groups can be assigned later.
 
 * When assigning a user to 4me, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -147,7 +147,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 
 * 4me has different SCIM endpoint URLs for test and production environments. The former ends with **.qa** while the latter ends with **.com**
 * 4me generated Secret Tokens have an expiration date of a month from generation.
-* 4me doesn’t support **HARD DELETE** of Users. SCIM users are never really deleted in 4me, instead the **active** attribute of the SCIM user will be set to **false** and the related 4me person record will be disabled.
+* 4me doesn’t support **HARD DELETE** of Users. SCIM users are never really deleted in 4me, instead the **active** attribute of the SCIM user is set to **false** and the related 4me person record is disabled.
 
 ## Additional resources
 

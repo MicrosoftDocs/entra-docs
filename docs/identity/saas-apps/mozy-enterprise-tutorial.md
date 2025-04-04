@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mozy Enterprise so that I can control who has access to Mozy Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -45,7 +45,7 @@ To configure the integration of Mozy Enterprise into Microsoft Entra ID, you nee
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **Mozy Enterprise**, select **Mozy Enterprise** from result panel then click **Add** button to add the application.
+1. In the search box, type **Mozy Enterprise**, select **Mozy Enterprise** from result panel then select **Add** button to add the application.
 
 	 ![Mozy Enterprise in the results list](common/search-new-app.png)
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra single sign-on with Mozy Enterprise, you n
 2. **[Configure Mozy Enterprise Single Sign-On](#configure-mozy-enterprise-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Mozy Enterprise test user](#create-mozy-enterprise-test-user)** - to have a counterpart of Britta Simon in Mozy Enterprise that is linked to the Microsoft Entra representation of user.
+5. **[Create Mozy Enterprise test user](#create-mozy-enterprise-test-user)** - to have a counterpart of Britta Simon in Mozy Enterprise that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -82,7 +82,7 @@ To configure Microsoft Entra single sign-on with Mozy Enterprise, perform the fo
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -94,9 +94,9 @@ To configure Microsoft Entra single sign-on with Mozy Enterprise, perform the fo
     `https://<tenantname>.Mozyenterprise.com`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [Mozy Enterprise Client support team](https://www.safenames.net/about-us/contact-us) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. Contact [Mozy Enterprise Client support team](https://www.safenames.net/about-us/contact-us) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -114,7 +114,7 @@ To configure Microsoft Entra single sign-on with Mozy Enterprise, perform the fo
 
 1. In a different web browser window, log into your Mozy Enterprise company site as an administrator.
 
-2. In the **Configuration** section, click **Authentication Policy**.
+2. In the **Configuration** section, select **Authentication Policy**.
    
 	![Screenshot shows Authentication Policy selected from Configuration.](./media/mozy-enterprise-tutorial/ic777314.png "Authentication policy")
 
@@ -126,7 +126,7 @@ To configure Microsoft Entra single sign-on with Mozy Enterprise, perform the fo
    
     b. Select **Use LDAP Push**.
    
-    c. Click the **SAML Authentication** tab.
+    c. Select the **SAML Authentication** tab.
    
     d. Paste **Login URL** into the **Authentication URL** textbox.
    
@@ -136,7 +136,7 @@ To configure Microsoft Entra single sign-on with Mozy Enterprise, perform the fo
    
     g. Select **Enable SSO for Admins to log in with their network credentials**.
    
-    h. Click **Save Changes**.
+    h. Select **Save Changes**.
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -153,7 +153,7 @@ In order to enable Microsoft Entra users to log into Mozy Enterprise, they must 
 
 1. Log in to your **Mozy Enterprise** tenant.
 
-2. Click **Users**, and then click **Add New User**.
+2. Select **Users**, and then select **Add New User**.
    
 	![Users](./media/mozy-enterprise-tutorial/ic777317.png "Users")
    
@@ -174,16 +174,16 @@ In order to enable Microsoft Entra users to log into Mozy Enterprise, they must 
    
     e. Select **Send user instruction email**.
    
-    f. Click **Add User(s)**.
+    f. Select **Add User(s)**.
 
      >[!NOTE]
-     > After creating the user, an email will be sent to the Microsoft Entra user that includes a link to confirm the account before it becomes active.
+     > After creating the user, an email is sent to the Microsoft Entra user that includes a link to confirm the account before it becomes active.
 
 ### Test single sign-on 
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Mozy Enterprise tile in the Access Panel, you should be automatically signed in to the Mozy Enterprise for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Mozy Enterprise tile in the Access Panel, you should be automatically signed in to the Mozy Enterprise for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ARES for Enterprise so that I can control who has access to ARES for Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -47,7 +47,7 @@ To configure the integration of ARES for Enterprise into Microsoft Entra ID, you
 1. In the **Add from the gallery** section, type **ARES for Enterprise** in the search box.
 1. Select **ARES for Enterprise** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-ares-for-enterprise'></a>
 
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with ARES for Enterprise, perform the 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ARES for Enterprise SSO](#configure-ares-for-enterprise-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create ARES for Enterprise test user](#create-ares-for-enterprise-test-user)** - to have a counterpart of B.Simon in ARES for Enterprise that is linked to the Microsoft Entra representation of user.
+    1. **[Create ARES for Enterprise test user](#create-ares-for-enterprise-test-user)** - to have a counterpart of B.Simon in ARES for Enterprise that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -102,11 +102,11 @@ In this section, a user called Britta Simon is created in ARES for Enterprise. A
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this redirects to ARES for Enterprise Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to ARES for Enterprise Sign-on URL where you can initiate the login flow. 
 
 * Go to ARES for Enterprise Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the ARES for Enterprise tile in the My Apps, this redirects to ARES for Enterprise Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the ARES for Enterprise tile in the My Apps, this option redirects to ARES for Enterprise Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

@@ -24,7 +24,7 @@ This article describes the steps you need to perform in both G Suite and Microso
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in G Suite
-> * Remove users in G Suite when they do not require access anymore (note: removing a user from the sync scope will not result in deletion of the object in GSuite)
+> * Remove users in G Suite when they don't require access anymore (note: removing a user from the sync scope doesn't result in deletion of the object in GSuite)
 > * Keep user attributes synchronized between Microsoft Entra ID and G Suite
 > * Provision groups and group memberships in G Suite
 > * [Single sign-on](./google-apps-tutorial.md) to G Suite (recommended)
@@ -48,18 +48,18 @@ The scenario outlined in this article assumes that you already have the followin
 
 Before configuring G Suite for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on G Suite.
 
-1. Sign in to the [G Suite Admin console](https://admin.google.com/) with your administrator account, then click on **Main menu** and then select **Security**. If you don't see it, it might be hidden under the **Show More** menu.
+1. Sign in to the [G Suite Admin console](https://admin.google.com/) with your administrator account, then select **Main menu** and then select **Security**. If you don't see it, it might be hidden under the **Show More** menu.
 
     ![G Suite Security](./media/g-suite-provisioning-tutorial/security.png)
     
     ![G Suite Show More](./media/g-suite-provisioning-tutorial/show-more.png)
 
-1. Navigate to **Security -> Access and data control -> API Controls** .Select the check box **Trust internal,domain-owned apps** and then click **SAVE**
+1. Navigate to **Security -> Access and data control -> API Controls** .Select the check box **Trust internal,domain-owned apps** and then select **SAVE**
 
     ![G Suite API](./media/g-suite-provisioning-tutorial/api-control.png)
 
     > [!IMPORTANT]
-    > For every user that you intend to provision to G Suite, their user name in Microsoft Entra ID **must** be tied to a custom domain. For example, user names that look like bob@contoso.onmicrosoft.com are not accepted by G Suite. On the other hand, bob@contoso.com is accepted. You can change an existing user's domain by following the instructions [here](~/fundamentals/add-custom-domain.yml).
+    > For every user that you intend to provision to G Suite, their user name in Microsoft Entra ID **must** be tied to a custom domain. For example, user names that look like bob@contoso.onmicrosoft.com aren't accepted by G Suite. On the other hand, bob@contoso.com is accepted. You can change an existing user's domain by following the instructions [here](~/fundamentals/add-custom-domain.yml).
 
 1. Once you add and verify your desired custom domains with Microsoft Entra ID, you must verify them again with G Suite. To verify domains in G Suite, refer to the following steps:
 
@@ -67,7 +67,7 @@ Before configuring G Suite for automatic user provisioning with Microsoft Entra 
 
         ![G Suite Domains](./media/g-suite-provisioning-tutorial/domains.png)
 
-    1. In the Manage Domain page, click on **Add a domain**.
+    1. In the Manage Domain page, select **Add a domain**.
 
         ![G Suite Add Domain](./media/g-suite-provisioning-tutorial/add-domains.png)
 
@@ -91,7 +91,7 @@ Before configuring G Suite for automatic user provisioning with Microsoft Entra 
 
 ## Step 3: Add G Suite from the Microsoft Entra application gallery
 
-Add G Suite from the Microsoft Entra application gallery to start managing provisioning to G Suite. If you have previously setup G Suite for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add G Suite from the Microsoft Entra application gallery to start managing provisioning to G Suite. If you have previously setup G Suite for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -119,7 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![The G Suite link in the Applications list](common/all-applications.png)
 
-1. Select the **Provisioning** tab. Click on **Get started**.
+1. Select the **Provisioning** tab. Select **Get started**.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
     
@@ -127,7 +127,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, click on **Authorize**. You'll be redirected to a Google authorization dialog box in a new browser window.
+1. Under the **Admin Credentials** section, select **Authorize**. You're redirected to a Google authorization dialog box in a new browser window.
 
       ![G Suite authorize](./media/g-suite-provisioning-tutorial/authorize-1.png)
 
@@ -246,14 +246,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
 > [!NOTE]
-> If the users already have an existing personal/consumer account using the email address of the Microsoft Entra user, then it may cause some issue which could be resolved by using the Google Transfer Tool prior to performing the directory sync.
+> If the users already have an existing personal/consumer account using the email address of the Microsoft Entra user, then it might cause some issue which could be resolved by using the Google Transfer Tool prior to performing the directory sync.
 
 ## Step 6: Monitor your deployment
 
@@ -280,7 +280,7 @@ With PIM for Groups, you can provide just-in-time access to groups in Google Clo
 1. Use on-demand provisioning to create the group in Google Cloud / Google Workspace.
 1. Sign-in to Google Cloud / Google Workspace and assign the second group the necessary permissions to perform admin tasks.  
 
-Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). When their assignment expires, the user is removed from the group in Google Cloud / Google Workspace. During the next incremental cycle, the provisioning service attempts to remove the user from the group again. This may result in an error in the provisioning logs. This error is expected because the group membership 
+Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). When their assignment expires, the user is removed from the group in Google Cloud / Google Workspace. During the next incremental cycle, the provisioning service attempts to remove the user from the group again. This might result in an error in the provisioning logs. This error is expected because the group membership 
 was already removed. The error message can be ignored. 
 
 * How long does it take to have a user provisioned to the application? 
@@ -289,8 +289,8 @@ was already removed. The error message can be ignored.
   * When a user activates their group membership in Microsoft Entra ID PIM: 
     * The group membership is provisioned in 2 – 10 minutes. When there's a high rate of requests at one time, requests are throttled at a rate of five requests per 10 seconds.  
     * For the first five users within a 10-second period activating their group membership for a specific application, group membership is provisioned in the application within 2-10 minutes. 
-    * For the sixth user and above within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
-* If the user is unable to access the necessary group in Google Cloud / Google Workspace, review the PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application is architected, it may take more time for the group membership to take effect in the application.
+    * For the sixth user and beyond within a 10-second period activating their group membership for a specific application, group membership is provisioned to the application in the next synchronization cycle. The synchronization cycle runs every 40 minutes. The throttling limits are per enterprise application. 
+* If the user is unable to access the necessary group in Google Cloud / Google Workspace, review the PIM logs, and provisioning logs to ensure that the group membership was updated successfully. Depending on how the target application is architected, it might take more time for the group membership to take effect in the application.
 * You can create alerts for failures using [Azure Monitor](/entra/identity/app-provisioning/application-provisioning-log-analytics).
   
 ## Change log

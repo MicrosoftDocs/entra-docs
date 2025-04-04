@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FreshDesk so that I can control who has access to FreshDesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra integration with FreshDesk
 
-In this article,  you'll learn how to integrate FreshDesk with Microsoft Entra ID. When you integrate FreshDesk with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate FreshDesk with Microsoft Entra ID. When you integrate FreshDesk with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to FreshDesk.
 * Enable your users to be automatically signed-in to FreshDesk with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of FreshDesk into Microsoft Entra ID, you need to a
 1. In the **Add from the gallery** section, type **FreshDesk** in the search box.
 1. Select **FreshDesk** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-freshdesk'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with FreshDesk, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
     1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 1. **[Configure FreshDesk SSO](#configure-freshdesk-sso)** - to configure the Single Sign-On settings on application side.
-    1. **[Create FreshDesk test user](#create-freshdesk-test-user)** - to have a counterpart of Britta Simon in FreshDesk that is linked to the Microsoft Entra representation of user.
+    1. **[Create FreshDesk test user](#create-freshdesk-test-user)** - to have a counterpart of Britta Simon in FreshDesk that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -66,7 +66,7 @@ To configure and test Microsoft Entra SSO with FreshDesk, perform the following 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **FreshDesk** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set-up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set-up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,13 +82,13 @@ To configure and test Microsoft Entra SSO with FreshDesk, perform the following 
     `https://<tenant-name>.freshdesk.com/login/saml`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Sign on URL, Identifier and Reply URL. Contact [FreshDesk Client support team](https://freshdesk.com/helpdesk-software?utm_source=Google-AdWords&utm_medium=Search-IND-Brand&utm_campaign=Search-IND-Brand&utm_term=freshdesk&device=c&gclid=COSH2_LH7NICFVUDvAodBPgBZg) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Sign on URL, Identifier and Reply URL. Contact [FreshDesk Client support team](https://freshdesk.com/helpdesk-software?utm_source=Google-AdWords&utm_medium=Search-IND-Brand&utm_campaign=Search-IND-Brand&utm_term=freshdesk&device=c&gclid=COSH2_LH7NICFVUDvAodBPgBZg) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. FreshDesk application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **Unique User Identifier** is mapped with **user.userprincipalname** but FreshDesk expects this claim to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on Edit icon and change the attribute mapping.
+1. FreshDesk application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **Unique User Identifier** is mapped with **user.userprincipalname** but FreshDesk expects this claim to be mapped with **user.mail**, so you need to edit the attribute mapping by selecting Edit icon and change the attribute mapping.
 
     ![image](common/edit-attribute.png)
 
-1. On the **Set-up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set-up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/certificatebase64.png)
 
@@ -123,7 +123,7 @@ To configure and test Microsoft Entra SSO with FreshDesk, perform the following 
 
     1. In the **Security Certificate** textbox, paste **Certificate (Base64)** value, which you have obtained earlier.
   
-    1. Click **Save**.
+    1. Select **Save**.
 
 ## Create FreshDesk test user
 
@@ -134,20 +134,20 @@ In the case of FreshDesk, provisioning is a manual task.
 
 1. Log in to your **Freshdesk** tenant.
 
-1. In the menu on the left, click **Admin** and in the **General Settings** tab, click **Agents**.
+1. In the menu on the left, select **Admin** and in the **General Settings** tab, select **Agents**.
   
     ![Agents](./media/freshdesk-tutorial/create-user-1.png "Agents")
 
-1. Click **New Agent**.
+1. Select **New Agent**.
 
     ![New Agent](./media/freshdesk-tutorial/create-user-2.png "New Agent")
 
-1. On the Agent Information dialog, enter the required fields and click on **Create agent**.
+1. On the Agent Information dialog, enter the required fields and select **Create agent**.
 
     ![Agent Information](./media/freshdesk-tutorial/create-user-3.png "Agent Information")
 
     >[!NOTE]
-    >The Microsoft Entra account holder will get an email that includes a link to confirm the account before it is activated.
+    >The Microsoft Entra account holder gets an email that includes a link to confirm the account before it's activated.
     >
     >[!NOTE]
     >You can use any other Freshdesk user account creation tools or APIs provided by Freshdesk to provision Microsoft Entra user accounts to FreshDesk.
@@ -156,11 +156,11 @@ In the case of FreshDesk, provisioning is a manual task.
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to FreshDesk Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to FreshDesk Sign-on URL where you can initiate the login flow. 
 
 * Go to FreshDesk Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the FreshDesk tile in the My Apps, you should be automatically signed in to the FreshDesk for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the FreshDesk tile in the My Apps, you should be automatically signed in to the FreshDesk for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

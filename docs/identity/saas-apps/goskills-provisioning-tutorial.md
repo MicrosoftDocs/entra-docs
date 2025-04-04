@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both GoSkills and Micros
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in GoSkills.
-> * Remove users in GoSkills when they do not require access anymore.
+> * Remove users in GoSkills when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and GoSkills.
 > * Provision groups and group memberships in GoSkills.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to GoSkills (recommended).
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and GoSkills](~/identity/app-provisioning/customize-application-attributes.md).
  
 ## Step 2: Obtain your GoSkills API key
@@ -47,11 +47,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![Screenshot of GoSkills admin navigation.](./media/goskills-provisioning-tutorial/navigate.png)
 
-1. Click **Enable API keys** if you have not used API keys before.
+1. Select **Enable API keys** if you have not used API keys before.
 
 	![Screenshot of GoSkills API keys start page.](./media/goskills-provisioning-tutorial/enable.png)
 
-1. Enter a description for your API key and click **Generate**.
+1. Enter a description for your API key and select **Generate**.
 
 	![Screenshot of GoSkills API key generation.](./media/goskills-provisioning-tutorial/keys.png)
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter `https://scim.goskills.com/api/v2/scim` for the **Tenant Url** and your GoSkills API key for the **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to GoSkills. If the connection fails, please check your API key has been entered correctly, and try again.
+1. In the **Admin Credentials** section, enter `https://scim.goskills.com/api/v2/scim` for the **Tenant Url** and your GoSkills API key for the **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to GoSkills. If the connection fails, please check your API key has been entered correctly, and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -131,7 +131,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

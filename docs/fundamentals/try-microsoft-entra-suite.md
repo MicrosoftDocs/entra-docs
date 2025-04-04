@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 01/15/2025
+ms.date: 04/02/2025
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management

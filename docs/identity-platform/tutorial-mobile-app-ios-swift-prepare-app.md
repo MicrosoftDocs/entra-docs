@@ -16,6 +16,8 @@ zone_pivot_groups: entra-tenants
 
 # Tutorial: Prepare your iOS (Swift) app for authentication
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 ::: zone pivot="workforce"
 
 This is the second tutorial in the tutorial series that demonstrates how to add Microsoft Authentication Library (MSAL) for iOS and macOS to your iOS Swift app.

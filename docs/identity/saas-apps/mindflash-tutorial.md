@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Trakstar Learn so that I can control who has access to Trakstar Learn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra SSO integration with Trakstar Learn
 
-In this article,  you'll learn how to integrate Trakstar Learn (Mindflash) with Microsoft Entra ID. When you integrate Learn with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Trakstar Learn (Mindflash) with Microsoft Entra ID. When you integrate Learn with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Learn.
 * Enable your users to be automatically signed-in to Learn with their Microsoft Entra accounts.
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Learn, perform the following step
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Trakstar Learn SSO](#configure-trakstar-learn-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Trakstar Learn test user](#create-trakstar-learn-test-user)** - to have a counterpart of B.Simon in Trakstar Learn that is linked to the Microsoft Entra representation of user.
+    1. **[Create Trakstar Learn test user](#create-trakstar-learn-test-user)** - to have a counterpart of B.Simon in Trakstar Learn that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Trakstar Learn** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
     ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -83,9 +83,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<companyname>.mindflash.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [Trakstar Learn Client support team](mailto:learn@trakstar.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [Trakstar Learn Client support team](mailto:learn@trakstar.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
@@ -113,7 +113,7 @@ In order to enable Microsoft Entra users to log into Learn, they must be provisi
    
     ![Screenshot shows the Manage Users of account.](./media/mindflash-tutorial/account.png "Manage Users")
 
-1. Click the **Add Users**, and then click **New**.
+1. Select the **Add Users**, and then select **New**.
 
 1. In the **Add New Users** section, perform the following steps of a valid Microsoft Entra account you want to provision:
    
@@ -125,7 +125,7 @@ In order to enable Microsoft Entra users to log into Learn, they must be provisi
 	
 	c. In the **Email** textbox, type **Email Address** of the user as **BrittaSimon\@contoso.com**.
 
-    b. Click **Add**.
+    b. Select **Add**.
 
 >[!NOTE]
 >You can use any other Learn user account creation tools or APIs provided by Learn to provision Microsoft Entra user accounts. 
@@ -135,11 +135,11 @@ In order to enable Microsoft Entra users to log into Learn, they must be provisi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Learn Sign on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Learn Sign on URL where you can initiate the login flow. 
 
 * Go to Learn Sign on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Trakstar Learn tile in the My Apps, this will redirect to Learn Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Trakstar Learn tile in the My Apps, this option redirects to Learn Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

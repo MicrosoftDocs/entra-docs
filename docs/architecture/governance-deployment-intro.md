@@ -1,14 +1,14 @@
 ---
 title: Introduction to Microsoft Entra ID Governance deployment guide
-description: Learn how to deploy Microsoft Entra ID Governance as a proof of concept.
+description: Learn how to deploy Microsoft Entra ID Governance.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/24/2025
+ms.date: 03/25/2025
 ms.author: gasinh
 
-#customer intent: I want to deploy and test Microsoft Entra ID Governance as a proof of concept in my production or test environment. 
+#customer intent: I want to deploy and test Microsoft Entra ID Governance in my production or test environment. 
 ---
 
 # Introduction to Microsoft Entra ID Governance deployment guide
@@ -27,12 +27,7 @@ In alignment with the approach, the guide has this introduction and four scenari
 * [Scenario 3: Govern guest and partner access](governance-deployment-guest-access.md)
 * [Scenario 4: Govern privileged identities and their access](governance-deployment-privileged-identities.md)
 
-While most services are in General Availability (GA), some features or services might be in Public Preview, or other states before GA. GA indicates a product or service is publicly available to all customers and backed by service-level agreement (SLA) guarantees. See the following sections for licensing information and the definition of proof-of-concept (PoC). 
-
-## Proof-of-concept
-
-A PoC helps ensure solutions you choose provide the features and experience your organization requires. This process entails a detailed understanding of organizational requirements, success criteria, and outcomes. The capabilities that you want, and environmental complexity, can affect the duration of a PoC for Microsoft Entra ID Governance. Refer to the scenario docs for PoC information and the approximate time needed to complete it. 
-
+While most services are in General Availability (GA), some features or services might be in Public Preview, or other states before GA. GA indicates a product or service is publicly available to all customers and backed by service-level agreement (SLA) guarantees. See the following section for licensing information. 
 
 ### Licensing
 
@@ -83,7 +78,7 @@ A communications plan helps you proactively interact with your stakeholders and 
 
 A project is a success when you achieve the expected outcomes within budget and time constraints. Therefore, identify result goals by date, quarter, or year. Work with stakeholders for agreement on milestones that define result goals. Clarify success for each goal. Because Microsoft Entra ID Governance and other Microsoft services are in continuous development, map requirements to feature development stages. Set realistic expectations with contingency plans to meet key milestones: 
 
-* Proof of Concept (PoC)
+* Proof-of-concept (PoC)
 * Pilot date
 * Launch date
 * Dates that affect delivery
@@ -192,7 +187,6 @@ You can use guidance on cloud HR system integration, such as Workday, SuccessFac
 |SAP SuccessFactors|[Microsoft Entra ID and SAP SuccessFactors integration](../identity/app-provisioning/sap-successfactors-integration-reference.md)|
 |Oracle HCM|[Microsoft Entra ID integration with Oracle HCM](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)|
 |Rippling|[Sync identities from Rippling to Microsoft Entra ID](https://techcommunity.microsoft.com/blog/identity/sync-identities-from-rippling-to-microsoft-entra-id/4279690)|
-
 |Other API-driven sources|[API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md)|
 
 ### API-driven provisioning
@@ -236,12 +230,12 @@ Learn how to [plan a lifecycle workflow deployment](../id-governance/lifecycle-w
 
 ### Provision and onboard apps
 
-Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), legacy apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
+Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), private/on-premises apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
 
 |Target system|Approach|Guidance|
 |---|---|---|
-|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, legacy systems </br>|- [Automated app user provisioning](../identity/app-provisioning/user-provisioning.md) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
-|Legacy apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, private/on-premises systems </br>|- [Automated app user provisioning](../identity/app-provisioning/user-provisioning.md) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|Private/on-premises apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
 |Software-as-a-Service (SaaS) apps integrated with Microsoft Entra ID |Automated app user provisioning|[Automated app user provisioning](../identity/app-provisioning/user-provisioning.md)|
 
 ### Common tasks

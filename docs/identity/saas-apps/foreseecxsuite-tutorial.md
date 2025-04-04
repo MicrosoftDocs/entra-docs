@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ForeSee CX Suite so that I can control who has access to ForeSee CX Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra SSO integration with ForeSee CX Suite
 
-In this article,  you'll learn how to integrate ForeSee CX Suite with Microsoft Entra ID. When you integrate ForeSee CX Suite with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate ForeSee CX Suite with Microsoft Entra ID. When you integrate ForeSee CX Suite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ForeSee CX Suite.
 * Enable your users to be automatically signed-in to ForeSee CX Suite with their Microsoft Entra accounts.
@@ -45,7 +45,7 @@ To configure the integration of ForeSee CX Suite into Microsoft Entra ID, you ne
 1. In the **Add from the gallery** section, type **ForeSee CX Suite** in the search box.
 1. Select **ForeSee CX Suite** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-foresee-cx-suite'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with ForeSee CX Suite, perform the fol
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     2. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 2. **[Configure ForeSee CX Suite SSO](#configure-foresee-cx-suite-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create ForeSee CX Suite test user](#create-foresee-cx-suite-test-user)** - to have a counterpart of B.Simon in ForeSee CX Suite that is linked to the Microsoft Entra representation of user.
+    1. **[Create ForeSee CX Suite test user](#create-foresee-cx-suite-test-user)** - to have a counterpart of B.Simon in ForeSee CX Suite that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,17 +71,17 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ForeSee CX Suite** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot showing the edit Basic SAML Configuration screen.](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
-	a. Click **Upload metadata file**.
+	a. Select **Upload metadata file**.
 
     ![Upload metadata file](common/upload-metadata.png)
 
-	b. Click on **folder logo** to select the metadata file and click **Upload**.
+	b. Select **folder logo** to select the metadata file and select **Upload**.
 
 	![choose metadata file](common/browse-upload-metadata.png)
 
@@ -93,9 +93,9 @@ Follow these steps to enable Microsoft Entra SSO.
 	e. In the **Identifier** textbox, type a URL using the following pattern: https:\//www.okta.com/saml2/service-provider/\<UniqueID>
 
 	> [!Note]
-	> If the **Identifier** value do not get auto populated, then please fill in the value manually according to above pattern. The Identifier value is not real. Update this value with the actual Identifier. Contact [ForeSee CX Suite Client support team](mailto:support@foresee.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> If the **Identifier** value don't get auto populated, then please fill in the value manually according to above pattern. The Identifier value isn't real. Update this value with the actual Identifier. Contact [ForeSee CX Suite Client support team](mailto:support@foresee.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -113,17 +113,17 @@ To configure single sign-on on **ForeSee CX Suite** side, you need to send the d
 
 ### Create ForeSee CX Suite test user
 
-In this section, you create a user called Britta Simon in ForeSee CX Suite. Work with [ForeSee CX Suite support team](mailto:support@foresee.com) to add the users or the domain that must be added to an allowlist for the ForeSee CX Suite platform. If the domain is added by the team, users will get automatically provisioned to the ForeSee CX Suite platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in ForeSee CX Suite. Work with [ForeSee CX Suite support team](mailto:support@foresee.com) to add the users or the domain that must be added to an allowlist for the ForeSee CX Suite platform. If the domain is added by the team, users get automatically provisioned to the ForeSee CX Suite platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to ForeSee CX Suite Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to ForeSee CX Suite Sign-on URL where you can initiate the login flow. 
 
 * Go to ForeSee CX Suite Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the ForeSee CX Suite tile in the My Apps, this will redirect to ForeSee CX Suite Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the ForeSee CX Suite tile in the My Apps, this option redirects to ForeSee CX Suite Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Ziflow
 
-In this article,  you'll learn how to integrate Ziflow with Microsoft Entra ID. When you integrate Ziflow with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Ziflow with Microsoft Entra ID. When you integrate Ziflow with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Ziflow.
 * Enable your users to be automatically signed-in to Ziflow with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of Ziflow into Microsoft Entra ID, you need to add 
 1. In the **Add from the gallery** section, type **Ziflow** in the search box.
 1. Select **Ziflow** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-ziflow'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Ziflow, perform the following ste
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Ziflow SSO](#configure-ziflow-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Ziflow test user](#create-ziflow-test-user)** - to have a counterpart of B.Simon in Ziflow that is linked to the Microsoft Entra representation of user.
+    1. **[Create Ziflow test user](#create-ziflow-test-user)** - to have a counterpart of B.Simon in Ziflow that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Ziflow** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -84,9 +84,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://ziflow-production.auth0.com/login/callback?connection=<UNIQUE_ID>`
 
 	> [!NOTE]
-	> The preceding values are not real. You will update the unique ID value in the Identifier, Sign on URL and Reply URL with actual value, which is explained later in the article.
+	> The preceding values aren't real. You update the unique ID value in the Identifier, Sign on URL and Reply URL with actual value, which is explained later in the article.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -102,11 +102,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to Ziflow as a Security Administrator.
 
-2. Click on Avatar in the top right corner, and then click **Manage account**.
+2. Select Avatar in the top right corner, and then select **Manage account**.
 
 	![Screenshot for Ziflow Configuration Manage](./media/ziflow-tutorial/manage-account.png)
 
-3. In the top left, click **Single Sign-On**.
+3. In the top left, select **Single Sign-On**.
 
 	![Screenshot for Ziflow Configuration Sign](./media/ziflow-tutorial/configuration.png)
 
@@ -136,7 +136,7 @@ To provision a user account, perform the following steps:
 
 	![Screenshot for Ziflow Configuration people](./media/ziflow-tutorial/people.png)
 
-3. Click **Add** and then click **Add user**.
+3. Select **Add** and then select **Add user**.
 
 	![Screenshot shows the Add user option selected.](./media/ziflow-tutorial/add-tab.png)
 
@@ -152,7 +152,7 @@ To provision a user account, perform the following steps:
 
 	d. Select your Ziflow role.
 
-	e. Click **Add 1 user**.
+	e. Select **Add 1 user**.
 
 	> [!NOTE]
     > The Microsoft Entra account holder receives an email and follows a link to confirm their account before it becomes active.
@@ -161,11 +161,11 @@ To provision a user account, perform the following steps:
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Ziflow Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Ziflow Sign-on URL where you can initiate the login flow. 
 
 * Go to Ziflow Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Ziflow tile in the My Apps, this will redirect to Ziflow Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Ziflow tile in the My Apps, this option redirects to Ziflow Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

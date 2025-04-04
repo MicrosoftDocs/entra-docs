@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Sigma Computing and
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Sigma Computing
-> * Remove users in Sigma Computing when they do not require access anymore
+> * Remove users in Sigma Computing when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Sigma Computing
 > * Provision groups and group memberships in Sigma Computing
 > * [Single sign-on](./sigma-computing-tutorial.md) to Sigma Computing (recommended)
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Sigma Computing](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-sigma-computing-to-support-provisioning-with-azure-ad'></a>
@@ -48,21 +48,21 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. Navigate to the **Admin Portal** by selecting **Administration** from the user menu.
 
-3. In the left panel, click **Authentication** to open your organization’s Authentication page.
+3. In the left panel, select **Authentication** to open your organization’s Authentication page.
 
 4. Ensure the **Authentication Method** is **SAML** only.
 
-5. Click the **Setup** button under **Account Type and Team Provisioning** to open the Provisioning modal.
+5. Select the **Setup** button under **Account Type and Team Provisioning** to open the Provisioning modal.
 
    ![Role](media/sigma-computing-provisioning-tutorial/sigma-role-and-team-provisioning.png)
 
-6. Read through the notes provided on the getting started section of the Provisioning modal. Check the confirmation box, and click **Next** to continue.
+6. Read through the notes provided on the getting started section of the Provisioning modal. Check the confirmation box, and select **Next** to continue.
 
-7. Enter a Token name and click **Next**.
+7. Enter a Token name and select **Next**.
 
    ![Next](media/sigma-computing-provisioning-tutorial/sigma-create-token.png)
 
-8. Sigma will provide you with a **Bearer Token** and **Directory Base URL**. Copy and save these values in a secure location. These values will be entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Sigma Computing application. Click **Done**.
+8. Sigma will provide you with a **Bearer Token** and **Directory Base URL**. Copy and save these values in a secure location. These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Sigma Computing application. Select **Done**.
 
    ![Sigma](media/sigma-computing-provisioning-tutorial/sigma-copy-keys.png)
    
@@ -70,7 +70,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Sigma Computing from the Microsoft Entra application gallery
 
-Add Sigma Computing from the Microsoft Entra application gallery to start managing provisioning to Sigma Computing. If you have previously setup Sigma Computing for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Sigma Computing from the Microsoft Entra application gallery to start managing provisioning to Sigma Computing. If you have previously setup Sigma Computing for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Sigma Computing Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Sigma Computing. If the connection fails, ensure your Sigma Computing account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Sigma Computing Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Sigma Computing. If the connection fails, ensure your Sigma Computing account has Admin permissions and try again.
 
    ![Auth](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -113,7 +113,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Sigma Computing**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Sigma Computing in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sigma Computing for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Sigma Computing API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Sigma Computing in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Sigma Computing for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Sigma Computing API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -144,7 +144,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    ![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
    ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

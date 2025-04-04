@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://login.cmdnctrl.net`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [CMD+CTRL Base Camp Client support team](mailto:support@cmdnctrl.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [CMD+CTRL Base Camp Client support team](mailto:support@cmdnctrl.net) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -100,11 +100,11 @@ In this section, a user called B.Simon is created in CMD+CTRL Base Camp. CMD+CTR
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to CMD+CTRL Base Camp Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to CMD+CTRL Base Camp Sign-on URL where you can initiate the login flow. 
 
 * Go to CMD+CTRL Base Camp Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the CMD+CTRL Base Camp tile in the My Apps, this will redirect to CMD+CTRL Base Camp Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the CMD+CTRL Base Camp tile in the My Apps, this option redirects to CMD+CTRL Base Camp Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

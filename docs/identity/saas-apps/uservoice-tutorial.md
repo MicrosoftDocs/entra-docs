@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with UserVoice
 
-In this article,  you'll learn how to integrate UserVoice with Microsoft Entra ID. When you integrate UserVoice with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate UserVoice with Microsoft Entra ID. When you integrate UserVoice with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to UserVoice.
 * Enable your users to be automatically signed-in to UserVoice with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure the integration of UserVoice into Microsoft Entra ID, you need to a
 1. In the **Add from the gallery** section, type **UserVoice** in the search box.
 1. Select **UserVoice** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-uservoice'></a>
 
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with UserVoice, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure UserVoice SSO](#configure-uservoice-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create UserVoice test user](#create-uservoice-test-user)** - to have a counterpart of B.Simon in UserVoice that is linked to the Microsoft Entra representation of user.
+    1. **[Create UserVoice test user](#create-uservoice-test-user)** - to have a counterpart of B.Simon in UserVoice that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **UserVoice** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -81,9 +81,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<TENANT_NAME>.UserVoice.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [UserVoice Client support team](https://www.uservoice.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [UserVoice Client support team](https://www.uservoice.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-5. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
+5. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
 	![Edit SAML Signing Certificate](common/edit-certificate.png)
 
@@ -103,11 +103,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your UserVoice company site as an administrator.
 
-2. In the toolbar on the top, click **Settings**, and then select **Web portal** from the menu.
+2. In the toolbar on the top, select **Settings**, and then select **Web portal** from the menu.
    
     ![Settings Section On App Side](./media/uservoice-tutorial/portal.png "Settings")
 
-3. On the **Web portal** tab, in the **User authentication** section, click **Edit** to open the **Edit User Authentication** dialog page.
+3. On the **Web portal** tab, in the **User authentication** section, select **Edit** to open the **Edit User Authentication** dialog page.
    
     ![Web portal Tab](./media/uservoice-tutorial/user.png "Web portal")
 
@@ -115,7 +115,7 @@ Follow these steps to enable Microsoft Entra SSO.
    
     ![Edit user authentication](./media/uservoice-tutorial/authentication.png "Edit user authentication")
    
-    a. Click **Single Sign-On (SSO)**.
+    a. Select **Single Sign-On (SSO)**.
  
     b. Paste the **Login URL** value into the **SSO Remote Sign-In** textbox.
 
@@ -123,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
  
     d. Paste the **Thumbprint** value,.  into the **Current certificate SHA1 fingerprint** textbox.
 	
-	e. Click **Save authentication settings**.
+	e. Select **Save authentication settings**.
 
 ### Create UserVoice test user
 
@@ -137,13 +137,13 @@ To enable Microsoft Entra users to sign in to UserVoice, they must be provisione
    
     ![Settings](./media/uservoice-tutorial/account.png "Settings")
 
-3. Click **General**.
+3. Select **General**.
 
-4. Click **Agents and permissions**.
+4. Select **Agents and permissions**.
    
     ![Agents and permissions](./media/uservoice-tutorial/general.png "Agents and permissions")
 
-5. Click **Add admins**.
+5. Select **Add admins**.
    
     ![Add admins](./media/uservoice-tutorial/admin.png "Add admins")
 
@@ -151,9 +151,9 @@ To enable Microsoft Entra users to sign in to UserVoice, they must be provisione
    
     ![Invite admins](./media/uservoice-tutorial/invite.png "Invite admins")
    
-    a. In the Emails textbox, type the email address of the account you want to provision, and then click **Add**.
+    a. In the Emails textbox, type the email address of the account you want to provision, and then select **Add**.
    
-    b. Click **Invite**.
+    b. Select **Invite**.
 
 > [!NOTE]
 > You can use any other UserVoice user account creation tools or APIs provided by UserVoice to provision Microsoft Entra user accounts.
@@ -162,11 +162,11 @@ To enable Microsoft Entra users to sign in to UserVoice, they must be provisione
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to UserVoice Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to UserVoice Sign-on URL where you can initiate the login flow. 
 
 * Go to UserVoice Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the UserVoice tile in the My Apps, this will redirect to UserVoice Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the UserVoice tile in the My Apps, this option redirects to UserVoice Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

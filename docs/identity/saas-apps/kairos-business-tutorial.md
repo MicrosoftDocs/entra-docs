@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Kairos Business
 
-In this article,  you'll learn how to integrate Kairos Business with Microsoft Entra ID. When you integrate Kairos Business with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Kairos Business with Microsoft Entra ID. When you integrate Kairos Business with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Kairos Business.
 * Enable your users to be automatically signed-in to Kairos Business with their Microsoft Entra accounts.
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Kairos Business, perform the foll
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Kairos Business SSO](#configure-kairos-business-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Kairos Business test user](#create-kairos-business-test-user)** - to have a counterpart of B.Simon in Kairos Business that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Kairos Business test user](#create-kairos-business-test-user)** - to have a counterpart of B.Simon in Kairos Business that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -67,7 +67,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Kairos Business** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     | `<KairoBusiness_ENTITY_ID>`|
 
     > [!NOTE]
-    > <KairoBusiness_ENTITY_ID> is not real. Update this with the actual value.
+    > <KairoBusiness_ENTITY_ID> isn't real. Update this with the actual value.
 
     b. In the **Reply URL** text box, type the URL:
     `https://www.dimepkairos.com.br/Dimep/Account/SamlLogon`
@@ -102,15 +102,15 @@ To configure single sign-on on **Kairos Business** side, you need to send the do
 
 ### Create Kairos Business test user
 
-In this section, a user called Britta Simon is created in Kairos Business. Kairos Business supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Kairos Business, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Kairos Business. Kairos Business supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Kairos Business, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on Test this application in Microsoft Entra admin center and you should be automatically signed in to the Kairos Business for which you set up the SSO.
+* Select Test this application in Microsoft Entra admin center and you should be automatically signed in to the Kairos Business for which you set up the SSO.
  
-* You can use Microsoft My Apps. When you click the Kairos Business tile in the My Apps, you should be automatically signed in to the Kairos Business for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Kairos Business tile in the My Apps, you should be automatically signed in to the Kairos Business for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

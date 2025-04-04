@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Connecter so that I can streamline the user management process and ensure that users have the appropriate access to Connecter.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Connecter and Micro
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Connecter.
-> * Remove users in Connecter when they do not require access anymore.
+> * Remove users in Connecter when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Connecter.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Connecter (recommended).
 
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Connecter](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-connecter-to-support-provisioning-with-azure-ad'></a>
@@ -54,20 +54,20 @@ There are two main roles involved in the configuration:
 #### Actions that must be done by the Team Portal admin:
 1. Log in to Connecter's [Team Portal](https://teamwork.connecterapp.com/).
 1. Select your team.
-1. Click on the **Features tab**.
+1. Select the **Features tab**.
 
 	![Screenshot of navigating to features tab.](media/connecter-provisioning-tutorial/feature-tab.png)
 
-6. *Optional*: If you would like to select a workspace that your team members will be automatically added to when they are synchronized from Microsoft Entra ID select the **Workspace configuration** action and select the workspace and the permissions.
+6. *Optional*: If you would like to select a workspace that your team members are automatically added to when they are synchronized from Microsoft Entra ID select the **Workspace configuration** action and select the workspace and the permissions.
 
 	![Screenshot of selecting workspace configuration.](media/connecter-provisioning-tutorial/workspace-configuration.png)
 
-7. Click on the **Authenticate** button. This will open the sign-in page. Sign in with your **Microsoft Entra admin** account to add Connecter to your enterprise applications.
+7. Select the **Authenticate** button. This will open the sign-in page. Sign in with your **Microsoft Entra admin** account to add Connecter to your enterprise applications.
 
 	![Screenshot of Microsoft Entra admin sign-in page.](media/connecter-provisioning-tutorial/azure-sign-in-page.png)
 
 
-8. Click on **Get SCIM token**.
+8. Select **Get SCIM token**.
 9. Use the button to copy the token to your clipboard and save it for future purpose.
 
 <a name='step-3-add-connecter-from-the-azure-ad-application-gallery'></a>
@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Connecter Tenant URL as `https://teamwork.connecterapp.com/scim/v2` and corresponding Secret Token obtained from step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to Connecter. If the connection fails, ensure your Connecter account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Connecter Tenant URL as `https://teamwork.connecterapp.com/scim/v2` and corresponding Secret Token obtained from step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Connecter. If the connection fails, ensure your Connecter account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -117,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Connecter**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Connecter in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Connecter for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Connecter API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Connecter in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Connecter for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Connecter API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Connecter|
    |---|---|---|---|
@@ -136,7 +136,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

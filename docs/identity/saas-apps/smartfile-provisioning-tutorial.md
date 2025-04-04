@@ -49,7 +49,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Set up SmartFile for provisioning
 
-Before configuring SmartFile for automatic user provisioning with Microsoft Entra ID, you'll need to enable SCIM provisioning on SmartFile and collect more details needed.
+Before configuring SmartFile for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on SmartFile and collect more details needed.
 
 1. Sign into your SmartFile Admin Console. Navigate to the top-right hand corner of the SmartFile Admin Console. Select **Product Key**.
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5.  Under the **Admin Credentials** section, input `https://<SmartFile sitename>.smartfile.com/ftp/scim` in **Tenant URL**. An example would look like `https://demo1test.smartfile.com/ftp/scim`. Enter the **Bearer token** value (ProductKey:ProductPassword) that you retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to SmartFile. If the connection fails, ensure your SmartFile account has Admin permissions and try again.
+5.  Under the **Admin Credentials** section, input `https://<SmartFile sitename>.smartfile.com/ftp/scim` in **Tenant URL**. An example would look like `https://demo1test.smartfile.com/ftp/scim`. Enter the **Bearer token** value (ProductKey:ProductPassword) that you retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to SmartFile. If the connection fails, ensure your SmartFile account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -109,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to SmartFile**.
 
@@ -133,7 +133,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you're ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

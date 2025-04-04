@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Signagelive
 
-In this article,  you'll learn how to integrate Signagelive with Microsoft Entra ID. When you integrate Signagelive with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Signagelive with Microsoft Entra ID. When you integrate Signagelive with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Signagelive.
 * Enable your users to be automatically signed-in to Signagelive with their Microsoft Entra accounts.
@@ -43,7 +43,7 @@ To configure the integration of Signagelive into Microsoft Entra ID, you need to
 1. In the **Add from the gallery** section, type **Signagelive** in the search box.
 1. Select **Signagelive** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-signagelive'></a>
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Signagelive, perform the followin
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Signagelive SSO](#configure-signagelive-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Signagelive test user](#create-signagelive-test-user)** - to have a counterpart of B.Simon in Signagelive that is linked to the Microsoft Entra representation of user.
+    1. **[Create Signagelive test user](#create-signagelive-test-user)** - to have a counterpart of B.Simon in Signagelive that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Signagelive** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://login.signagelive.com/sso/<ORGANIZATIONALUNITNAME>`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual sign-on URL. To get the value, contact the [Signagelive Client support team](mailto:support@signagelive.com). You can also refer to the patterns that are shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual sign-on URL. To get the value, contact the [Signagelive Client support team](mailto:support@signagelive.com). You can also refer to the patterns that are shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Raw)** from the given options per your requirement. Then save it on your computer.
 
@@ -107,11 +107,11 @@ Signagelive also supports automatic user provisioning, you can find more details
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Signagelive Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Signagelive Sign-on URL where you can initiate the login flow. 
 
 * Go to Signagelive Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Signagelive tile in the My Apps, this will redirect to Signagelive Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Signagelive tile in the My Apps, this option redirects to Signagelive Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

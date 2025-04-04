@@ -11,7 +11,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to directprint.io so that I can streamline the user management process and ensure that users have the appropriate access to directprint.io.
@@ -25,7 +25,7 @@ This article describes the steps you need to perform in both directprint.io and 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in directprint.io.
-> * Remove users in directprint.io when they do not require access anymore.
+> * Remove users in directprint.io when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and directprint.io.
 > * Provision groups and group memberships in directprint.io.
 > * [Single sign-on](directprint-io-cloud-print-administration-tutorial.md) to directprint.io (recommended).
@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and directprint.io](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-directprintio-to-support-provisioning-with-azure-ad'></a>
@@ -50,11 +50,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. log into your [directprint.io account](https://directprint.io/login/).
 1. Navigate to the Microsoft Entra SSO and Provisioning screen.
-1. Save the Tenant URL and secret toke for future reference. You will need it in **Step 5**.
+1. Save the Tenant URL and secret toke for future reference. You need it in **Step 5**.
 
 ## Step 3: Add directprint.io from the Microsoft Entra application gallery
 
-Add directprint.io from the Microsoft Entra application gallery to start managing provisioning to directprint.io. If you have previously setup directprint.io for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add directprint.io from the Microsoft Entra application gallery to start managing provisioning to directprint.io. If you have previously setup directprint.io for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -85,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your directprint.io Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to directprint.io. If the connection fails, ensure your directprint.io account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your directprint.io Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to directprint.io. If the connection fails, ensure your directprint.io account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to directprint.io**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to directprint.io in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in directprint.io for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the directprint.io API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to directprint.io in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in directprint.io for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the directprint.io API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -125,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

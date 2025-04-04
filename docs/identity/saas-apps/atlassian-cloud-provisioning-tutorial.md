@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Atlassian Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Atlassian Cloud.
@@ -24,7 +24,7 @@ This article describes the steps you need to perform in both Atlassian Cloud and
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Atlassian Cloud
-> * Remove users in Atlassian Cloud when they do not require access anymore
+> * Remove users in Atlassian Cloud when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Atlassian Cloud
 > * Provision groups and group memberships in Atlassian Cloud
 > * [Single sign-on](./atlassian-cloud-tutorial.md) to Atlassian Cloud (recommended)

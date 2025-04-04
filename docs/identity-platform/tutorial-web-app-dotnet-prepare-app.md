@@ -77,6 +77,7 @@ This application uses [Microsoft.Identity.Web](/entra/msal/dotnet/microsoft-iden
 Use the following snippet to change into the new *identity-client-web-app* folder and install the relevant NuGet package:
 
 ```console
+cd identity-client-web-app
 dotnet add package Microsoft.Identity.Web.UI
 ```
 

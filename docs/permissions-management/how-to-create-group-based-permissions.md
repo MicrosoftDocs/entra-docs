@@ -6,11 +6,14 @@ manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/19/2025
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Select group-based permissions settings
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how you can create  and manage group-based permissions in Microsoft Entra Permissions Management with the User management dashboard.
 

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Nulab Pass (Backlog, Cacoo, and Typetalk)
 
-In this article,  you'll learn how to integrate Nulab Pass (Backlog, Cacoo, and Typetalk) with Microsoft Entra ID. By integrating, you can:
+In this article,  you learn how to integrate Nulab Pass (Backlog, Cacoo, and Typetalk) with Microsoft Entra ID. By integrating, you can:
 
 * Control in Microsoft Entra ID who has access to Nulab Pass in Microsoft Entra ID.
 * Enable users to be automatically signed in to Nulab Pass with their Microsoft Entra accounts.
@@ -86,7 +86,7 @@ To enable Microsoft Entra SSO:
    `https://apps.nulab.com/signin`
 
 	> [!NOTE]
-	> These values are not real and should be updated with the actual Identifier, Reply URL, and Sign on URL found in your Nulab Pass organization settings. In your organization settings:
+	> These values aren't real and should be updated with the actual Identifier, Reply URL, and Sign on URL found in your Nulab Pass organization settings. In your organization settings:
 	>  1. Select **Single Sign-On** from the menu on the left.
  	>  2. Press the **Manage** button to display the **Manage SAML authentication** dialog.
 	>  3. Copy **SP Entity ID** and **SP Endpoint URL (ACS)** values and paste in the Entra side configuration.
@@ -96,7 +96,7 @@ To enable Microsoft Entra SSO:
 
 	![image](common/default-attributes.png)
 
-1. On the **Set up single sign-on with SAML** page in the **SAML Signing Certificate** section, you will find the **Certificate (Base64)**. Select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page in the **SAML Signing Certificate** section, you find the **Certificate (Base64)**. Select **Download** to download the certificate and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -134,15 +134,15 @@ Now, you’ll test your Microsoft Entra SSO configuration using one of the follo
 
 #### SP initiated:
 
-* Click on **Test this application** to be redirected to Nulab Pass to sign in.  
+* Select **Test this application** to be redirected to Nulab Pass to sign in.  
 
 * Or, go to the Nulab Pass sign in page directly and initiate the flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application** to be automatically signed in to SSO-enabled Nulab Pass. 
+* Select **Test this application** to be automatically signed in to SSO-enabled Nulab Pass. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Nulab Pass tile in My Apps, you’ll be redirected to the application sign on page for initiating the login flow if it was configured in SP mode. If configured in IDP mode, you’ll be automatically signed in to SSO-enabled Nulab Pass. [Learn more about My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Nulab Pass tile in My Apps, you’ll be redirected to the application sign on page for initiating the login flow if it was configured in SP mode. If configured in IDP mode, you’ll be automatically signed in to SSO-enabled Nulab Pass. [Learn more about My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

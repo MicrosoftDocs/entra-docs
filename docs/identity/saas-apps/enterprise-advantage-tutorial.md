@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Enterprise Advantage
 
-In this article,  you'll learn how to integrate Enterprise Advantage with Microsoft Entra ID. When you integrate Enterprise Advantage with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Enterprise Advantage with Microsoft Entra ID. When you integrate Enterprise Advantage with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Enterprise Advantage.
 * Enable your users to be automatically signed-in to Enterprise Advantage with their Microsoft Entra accounts.
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Enterprise Advantage, perform the
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Enterprise Advantage SSO](#configure-enterprise-advantage-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Enterprise Advantage test user](#create-enterprise-advantage-test-user)** - to have a counterpart of B.Simon in Enterprise Advantage that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Enterprise Advantage test user](#create-enterprise-advantage-test-user)** - to have a counterpart of B.Simon in Enterprise Advantage that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -66,7 +66,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Enterprise Advantage** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     | Staging | `https://ssotest.screeningxchange.com/<CustomerLink>` |
     
 	> [!NOTE]
-	> The Sign-on URL value is not real. Update the value with the Sign on URL. Contact [Enterprise Advantage support team](mailto:globaladvantagesupport@fadv.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> The Sign-on URL value isn't real. Update the value with the Sign on URL. Contact [Enterprise Advantage support team](mailto:globaladvantagesupport@fadv.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Enterprise Advantage application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -124,7 +124,7 @@ To configure single sign-on on **Enterprise Advantage** side, you need to send t
 
 ### Create Enterprise Advantage test user
 
-In this section, a user called Britta Simon is created in Enterprise Advantage. Enterprise Advantage supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Enterprise Advantage, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Enterprise Advantage. Enterprise Advantage supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Enterprise Advantage, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -132,15 +132,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Enterprise Advantage Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Enterprise Advantage Sign on URL where you can initiate the login flow.  
  
 * Go to Enterprise Advantage Sign-on URL directly and initiate the login flow from there.
  
 #### IDP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Enterprise Advantage for which you set up the SSO.
+* Select **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Enterprise Advantage for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the Enterprise Advantage tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Enterprise Advantage for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Enterprise Advantage tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Enterprise Advantage for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

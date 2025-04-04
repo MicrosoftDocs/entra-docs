@@ -1,10 +1,10 @@
 ---
-title: "Tutorial: Test an ASP.NET Core web API"
-description:  Learn how to test a web API whose endpoints are protected using the Microsoft identity platform 
+title: "Tutorial: Call a protected ASP.NET Core web API"
+description:  Learn how to call a web API whose endpoints are protected using the Microsoft identity platform 
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 2/21/2025
+ms.date: 03/18/2025
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -36,22 +36,11 @@ In this tutorial, you learn how to:
 
 [!INCLUDE [Add app client secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
-## Assign app role to your daemon app
+## Assign an app role to your daemon app
 
-Apps authenticating by themselves require app permissions.
+Applications that authenticate by themselves without a user require app permissions (also known as roles). These permissions allow the app itself to access resources directly. On the other hand, if we were testing the API with a signed-in user, we would assign delegated permissions (scopes). Delegated permissions enable the app to act on behalf of the user, limited to the user’s access rights. Follow these steps to assign application permissions to the daemon app:
 
-1. From the **App registrations** page, select the daemon application that you created.
-1. Under **Manage**, select **API permissions**.
-1. Under **Configured permissions**, select **Add a permission**.
-1. Select the **APIs my organization uses** tab.
-1. In the list of APIs, select the web API you registered earlier.
-1. Select **Application permissions** option. We select this option as the app signs in as itself, but not on behalf of a user. 
-1. From the permissions list, select **Forecast.Read** (use the search box if necessary).
-1. Select the **Add permissions** button.
-1. At this point, you've assigned the permissions correctly. However, since the daemon app doesn't allow users to interact with it, users themselves can't consent to these permissions. To address this problem, you as the admin must consent to these permissions on behalf of all the users in the tenant:
-
-    1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
-    1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for the permissions.
+[!INCLUDE [Add API permissions using app roles](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
 ## Build a daemon app
 
@@ -78,11 +67,12 @@ Apps authenticating by themselves require app permissions.
 
     HttpClient client = new HttpClient();
 
-    var response = await client.GetAsync("http://localhost:<your-api-port>/weatherforecast");
+    var response = await client.GetAsync("http://localhost:<your-api-port>/api/todolist);
     Console.WriteLine("Your response is: " + response.StatusCode);
     ```
 
     Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request without an access token. You should see the string: *Your response is: Unauthorized* printed in your console.
+
 1. Remove the code in step 4 and replace with the following to test your API by sending a request with a valid access token. This daemon app uses the client credentials flow to acquire an access token as it authenticates without user interaction. 
 
     ```csharp
@@ -96,8 +86,9 @@ Apps authenticating by themselves require app permissions.
     var clientId = "<your-daemon-app-client-id>";
     var clientSecret = "<your-daemon-app-secret>";
     var scopes = new[] {"api://<your-web-api-application-id>/.default"};
-    var tenantName= "<your-tenant-name>";
-    var authority = $"https://{tenantName}.ciamlogin.com/"; 
+    var tenantId = "<your-tenant-id>";     //Use in workforce tenant configuration
+    var tenantName = "<your-tenant-name>"; //Use in external tenant configuration
+    var authority = $"https://login.microsoftonline.com/{tenantId}"; // Use "https://{tenantName}.ciamlogin.com" for external tenant configuration 
 
     var app = ConfidentialClientApplicationBuilder
         .Create(clientId)
@@ -109,23 +100,19 @@ Apps authenticating by themselves require app permissions.
     Console.WriteLine($"Access Token: {result.AccessToken}");
     
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
-    var response = await client.GetAsync("http://localhost:/<your-api-port>/weatherforecast");
+    var response = await client.GetAsync("http://localhost:/<your-api-port>/api/todolist");
     var content = await response.Content.ReadAsStringAsync();
     
     Console.WriteLine("Your response is: " + response.StatusCode);
     Console.WriteLine(content);
     ```
+   
+1. Replace the placeholders in the code with your daemon app client ID, secret, web API application ID, and tenant name.      
+     - For external tenants, use authority in the form: `"https://{tenantName}.ciamlogin.com/"`
+     - For workforce tenants, use authority in the form: `"https://login.microsoftonline.com/{tenantId}"`
 
-    Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request with a valid access token. You should see the string: *Your response is: OK* printed in your console alongside some dummy weather forecast data from our minimal API.
+1. Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request with a valid access token. You should see the string: *Your response is:  OK* printed in your console.
 
-    ```json
-    Your response is: OK
-    [{"date":"2025-03-01","temperatureC":45,"summary":"Warm","temperatureF":112},
-    {"date":"2025-03-02","temperatureC":7,"summary":"Freezing","temperatureF":44},
-    {"date":"2025-03-03","temperatureC":48,"summary":"Sweltering","temperatureF":118},
-    {"date":"2025-03-04","temperatureC":-20,"summary":"Chilly","temperatureF":-3},
-    {"date":"2025-03-05","temperatureC":12,"summary":"Scorching","temperatureF":53}]
-    ```
 ## Related content
 
 - [How to call a protected Web API with cURL](howto-call-a-web-api-with-curl.md)

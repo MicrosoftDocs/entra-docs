@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Asana so that I can control who has access to Asana, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Asana, perform the following step
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Asana SSO](#configure-asana-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Asana test user](#create-asana-test-user)** - to have a counterpart of B.Simon in Asana that is linked to the Microsoft Entra representation of user.
+    1. **[Create Asana test user](#create-asana-test-user)** - to have a counterpart of B.Simon in Asana that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -121,7 +121,7 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Asana.
+In this section, you enable B.Simon to use single sign-on by granting access to Asana.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Asana**.
@@ -133,11 +133,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ### Configure Asana SSO
 
-1. In a different browser window, sign on to your Asana application. To configure SSO in Asana, access the admin console by clicking on the avatar on the top right corner of the screen. Then, select on **Admin Console**.
+1. In a different browser window, sign on to your Asana application. To configure SSO in Asana, access the admin console by selecting the avatar on the top right corner of the screen. Then, select **Admin Console**.
 
     ![Screenshot showing Asana admin console settings.](./media/asana-tutorial/settings.png)
 
-2. Navigate to the **Security** tab. Then select on **SAML Authentication**.
+2. Navigate to the **Security** tab. Then select **SAML Authentication**.
 
     ![Screenshot showing Configure Single Sign-On Organization settings.](./media/asana-tutorial/save.png)  
 
@@ -169,17 +169,17 @@ In this section, you create a user called Britta Simon in Asana.
 
 2. Type the email of the user like **britta.simon\@contoso.com** in the text box and then select **Invite**.
 
-3. Select **Send Invite**. The new user will receive an email into their email account. user will need to create and validate the account.
+3. Select **Send Invite**. The new user receives an email into their email account. user needs to create and validate the account.
 
 ### Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this redirects to Asana Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Asana Sign-on URL where you can initiate the login flow. 
 
 * Go to Asana Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Asana tile in the My Apps, this redirects to Asana Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Asana tile in the My Apps, this option redirects to Asana Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

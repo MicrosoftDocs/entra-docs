@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Howspace so that I can streamline the user management process and ensure that users have the appropriate access to Howspace.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Howspace and Micros
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Howspace.
-> * Remove users in Howspace when they do not require access anymore.
+> * Remove users in Howspace when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Howspace.
 > * Provision groups and group memberships in Howspace.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Howspace (recommended).
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Howspace](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-howspace-to-support-provisioning-with-azure-ad'></a>
@@ -50,7 +50,7 @@ The scenario outlined in this article assumes that you already have the followin
 
    ![Screenshot of the single sign-on section in the settings list.](media/howspace-provisioning-tutorial/settings-sso.png)
 
-1. Click the **Add SSO configuration** button.
+1. Select the **Add SSO configuration** button.
 
    ![Screenshot of the Add SSO configuration menu in the single sign-on section.](media/howspace-provisioning-tutorial/settings-sso-2.png)
 
@@ -59,7 +59,7 @@ The scenario outlined in this article assumes that you already have the followin
    ![Screenshot of the Microsoft Entra ID (Multi-Tenant) dialog.](media/howspace-provisioning-tutorial/settings-azure-ad-multi-tenant.png)
    ![Screenshot of the Microsoft Entra dialog.](media/howspace-provisioning-tutorial/settings-azure-ad-single-tenant.png)
 
-1. Enter your Microsoft Entra tenant ID, and click **OK** to save the configuration.
+1. Enter your Microsoft Entra tenant ID, and select **OK** to save the configuration.
 
 ### Provisioning configuration
 1. In the settings list, select **System for Cross-domain Identity Management**.
@@ -68,7 +68,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Check the **Enable user synchronization** checkbox.
 1. Copy the Tenant URL and Secret Token for later use in Microsoft Entra ID.
-1. Click **Save** to save the configuration.
+1. Select **Save** to save the configuration.
 
 ### Main user dashboard access control configuration
 1. In the settings list, select **Main User Dashboard Access Control**
@@ -78,7 +78,7 @@ The scenario outlined in this article assumes that you already have the followin
 1. Check the **Enable single sign-on for main users** checkbox.
 1. Select the SSO configuration you created in the previous step.
 1. Enter the object IDs of the Microsoft Entra user groups that should have access to the Main User Dashboard to the **Limit to following user groups** field. You can specify multiple groups by separating the object IDs with a comma.
-1. Click **Save** to save the configuration.
+1. Select **Save** to save the configuration.
 
 ### Workspace default access control configuration
 1. In the settings list, select **Workspace default settings**
@@ -129,7 +129,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Howspace Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Howspace. If the connection fails, ensure your Howspace account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Howspace Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Howspace. If the connection fails, ensure your Howspace account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -172,7 +172,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

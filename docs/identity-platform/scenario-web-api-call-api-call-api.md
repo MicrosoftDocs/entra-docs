@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # A web API that calls web APIs: Call an API
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 After you have a token, you can call a protected web API. You usually call the downstream APIs from the controller or pages of your web API.
 
 ## Controller code

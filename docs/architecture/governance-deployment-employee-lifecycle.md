@@ -1,14 +1,14 @@
 ---
 title: Microsoft Entra ID Governance deployment guide for employee lifecycle automation
-description: Learn how to deploy employee lifecycle automation in Microsoft Entra ID Governance as a proof of concept.
+description: Learn how to deploy employee lifecycle automation in Microsoft Entra ID Governance.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/24/2025
+ms.date: 03/25/2025
 ms.author: gasinh
 
-#customer intent: My goal is to deploy Microsoft Entra ID Governance as a proof of concept in my test and production environments.
+#customer intent: My goal is to deploy Microsoft Entra ID Governance in my test and production environments.
 ---
 
 # Microsoft Entra ID Governance deployment guide for employee lifecycle automation
@@ -28,9 +28,9 @@ The following products and services appear in this guide:
 
 Use this scenario to help determine the need for Microsoft Entra ID Governance to create and grant access for your organization. Learn how you can provision your users effectively, securely, and consistently with employee lifecycle automation.
 
-## Proof-of-concept timeline
+## Timelines
 
-Proof-of-concept (PoC) timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
+Timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
 
 1. HR provisioning - 3 hours
 2. Software-as-a-Service (SaaS) app provisioning - 1 hour
@@ -56,7 +56,7 @@ Learn more in the video about [HR-driven provisioning with Microsoft Entra ID](h
 
 Users are created in Microsoft Entra ID, and other SaaS apps that support user provisioning. When employee records are updated in cloud HR, the user account is updated in Microsoft Entra ID and supporting SaaS apps.  
 
-## Deploy PoC: Workday to Microsoft Entra ID
+## Deploy Workday to Microsoft Entra ID
 
 1. [Select cloud HR provisioning connector apps](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
 2. [Design provisioning topology](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
@@ -68,7 +68,7 @@ Users are created in Microsoft Entra ID, and other SaaS apps that support user p
 
 Learn more in the video about [HR-driven user provisioning with Workday](https://youtu.be/TfndXBlhlII).
 
-## Deploy PoC: SuccessFactors to Microsoft Entra ID
+## Deploy SuccessFactors to Microsoft Entra ID
 
 1. [Select cloud HR provisioning connector apps](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
 2. [Design provisioning topology](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
@@ -85,7 +85,7 @@ Learn more in the video about [HR-driven user provisioning with SuccessFactors](
 
 Learn how to [configure API-driven inbound provisioning to on-premises Active Directory (AD)](../identity/app-provisioning/inbound-provisioning-api-configure-app.md). 
 
-## Deploy PoC: Workday to Active Directory
+## Deploy Workday to Active Directory
 
 1. [Select cloud HR provisioning connector apps](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
 2. [Design provisioning topology](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
@@ -96,7 +96,7 @@ Learn how to [configure API-driven inbound provisioning to on-premises Active Di
 7. [Configure attribute mappings](/azure/active-directory/saas-apps/workday-inbound-tutorial).
 8. [Enable and launch user provisioning](/azure/active-directory/saas-apps/workday-inbound-tutorial).
 
-## Deploy PoC: SuccessFactors to Active Directory
+## Deploy SuccessFactors to Active Directory
 
 1. [Select cloud HR provisioning connector apps](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
 2. [Design provisioning topology](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
@@ -131,7 +131,7 @@ We recommend noting the differences between the provisioning **/bulkUpload** API
 
 In an FAQ, learn how [the new inbound provisioning API differs from Graph Users API](../identity/app-provisioning/inbound-provisioning-api-faqs.md).
 
-## Deploy PoC: API-driven inbound provisioning
+## Deploy API-driven inbound provisioning
 
 1. [Create an API-driven provisioning app](/azure/active-directory/app-provisioning/inbound-provisioning-api-configure-app).
 2. For **Active Directory**, [configure API-driven inbound provisioning app](/azure/active-directory/app-provisioning/inbound-provisioning-api-configure-app). For **Microsoft Entra ID**, [configure API-driven inbound provisioning app](/azure/active-directory/app-provisioning/inbound-provisioning-api-configure-app).
@@ -159,9 +159,10 @@ SCIM 2.0 is a standardized definition of two endpoints **/Users** and **/Groups*
 
 See more details in the tutorial, [develop, and plan provisioning for a SCIM endpoint in Microsoft Entra ID](../identity/app-provisioning/use-scim-to-provision-users-and-groups.md). 
 
-## Deploy PoC: SaaS sample-app provisioning
+## Deploy SaaS sample-app provisioning
 
-The [Microsoft Entra ID application gallery](../identity/saas-apps/tutorial-list.md) displays available apps for user provisioning. Select up to four apps needed for your environment, when you configure the following popular apps for automatic user provisioning:
+The [Microsoft Entra ID application gallery](../identity/saas-apps/tutorial-list.md) displays available apps for user provisioning. Select up to four apps for your environment, or choose from these popular apps to enable automatic user provisioning:
+
 
 * [ServiceNow](/azure/active-directory/saas-apps/servicenow-provisioning-tutorial)
 * [Salesforce](/azure/active-directory/saas-apps/salesforce-provisioning-tutorial)
@@ -220,7 +221,7 @@ Use custom extensions to create workflows using tools like Azure Logic Apps. For
 
 To learn more, see the [App Service Environment overview](/azure/app-service/environment/overview) and [Azure Logic Apps documentation](/azure/logic-apps/logic-apps-overview).  
 
-## Deploy PoC: Lifecycle workflows
+## Deploy lifecycle workflows
 
 1. [Synchronize attributes](/azure/active-directory/governance/how-to-lifecycle-workflow-sync-attributes)
 2. [Prepare user accounts](/azure/active-directory/governance/tutorial-prepare-user-accounts)

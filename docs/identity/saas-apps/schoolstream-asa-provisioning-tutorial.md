@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both SchoolStream ASA an
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in SchoolStream ASA 
-> * Remove users in SchoolStream ASA  when they do not require access anymore.
+> * Remove users in SchoolStream ASA  when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and SchoolStream ASA.
 > * Provision groups and group memberships in SchoolStream ASA.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to SchoolStream ASA (recommended).
@@ -31,20 +31,20 @@ This article describes the steps you need to perform in both SchoolStream ASA an
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* A SchoolStream Website. Please contact [SchoolStream support](mailto:support@rtresponse.com) if you do not have one.
+* A SchoolStream Website. Please contact [SchoolStream support](mailto:support@rtresponse.com) if you don't have one.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and SchoolStream ASA](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-schoolstream-asa-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure SchoolStream ASA to support provisioning with Microsoft Entra ID
 
-1. Contact [SchoolStream support](mailto:support@rtresponse.com) to request SchoolStream ASA integration, you will need to provide your **Microsoft Entra tenant Id** and your **SchoolStream Website URL**.
+1. Contact [SchoolStream support](mailto:support@rtresponse.com) to request SchoolStream ASA integration, you need to provide your **Microsoft Entra tenant Id** and your **SchoolStream Website URL**.
 
-1. You will get your **Secret Token** and SchoolStream ASA **Tenant URL** after SchoolStream has mapped your SchoolStream Website and Microsoft Entra tenant ID.
+1. You get your **Secret Token** and SchoolStream ASA **Tenant URL** after SchoolStream has mapped your SchoolStream Website and Microsoft Entra tenant ID.
 
 <a name='step-3-add-schoolstream-asa-from-the-azure-ad-application-gallery'></a>
 
@@ -58,7 +58,7 @@ To start managing provisioning to SchoolStream ASA in your Microsoft Entra ID, y
 1. Select **SchoolStream ASA** from results panel and then **Sign up for the app**. Wait a few seconds while the app is added to your tenant.
 
 
-If you have previously setup SchoolStream ASA for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+If you have previously setup SchoolStream ASA for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -85,13 +85,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning.png)
 
-1. If you are configuring provisioning for the first time, select **Get started**.
+1. If you're configuring provisioning for the first time, select **Get started**.
 	
 1. Set the **Provisioning Mode** to **Automatic**.
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your SchoolStream ASA **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails, ensure your SchoolStream ASA account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your SchoolStream ASA **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails, ensure your SchoolStream ASA account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -117,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	   ![Edit Attribute](media/schoolstream-asa-provisioning-tutorial/add-mappings-attribute.png)
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to SchoolStream ASA in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SchoolStream ASA for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the SchoolStream ASA API supports filtering users based on that attribute.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to SchoolStream ASA in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SchoolStream ASA for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the SchoolStream ASA API supports filtering users based on that attribute.
 
 
 
@@ -159,7 +159,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

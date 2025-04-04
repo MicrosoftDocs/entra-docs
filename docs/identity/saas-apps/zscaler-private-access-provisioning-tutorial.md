@@ -39,7 +39,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Zscaler Private Access (ZPA)
 
-* It is recommended that a single Microsoft Entra user is assigned to Zscaler Private Access (ZPA) to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Zscaler Private Access (ZPA) to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Zscaler Private Access (ZPA), you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -49,15 +49,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Zscaler Private Access (ZPA) Admin Console](media/zscaler-private-access-provisioning-tutorial/idpconfig.png)
 
-2.	Verify to make sure that an IdP for **Single sign-on** is configured. If no IdP is set up, then add one by clicking the plus icon at the top right corner of the screen.
+2.	Verify to make sure that an IdP for **Single sign-on** is configured. If no IdP is set up, then add one by selecting the plus icon at the top right corner of the screen.
 
 	![Zscaler Private Access (ZPA) Add SCIM](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
 
-3. Follow through the **Add IdP Configuration** wizard to add an IdP. Leave the **Single sign-on** field set to **User**. Provide a **Name** and select the **Domains** from the drop-down list. Click on **Next** to navigate to the next window.
+3. Follow through the **Add IdP Configuration** wizard to add an IdP. Leave the **Single sign-on** field set to **User**. Provide a **Name** and select the **Domains** from the drop-down list. Select **Next** to navigate to the next window.
 
 	![Zscaler Private Access (ZPA) Add IdP](media/zscaler-private-access-provisioning-tutorial/addidp.png)
 
-4. Download the **Service Provider Certificate**. Click on **Next** to navigate to the next window.
+4. Download the **Service Provider Certificate**. Select **Next** to navigate to the next window.
 
 	![Zscaler Private Access (ZPA) SP certificate](media/zscaler-private-access-provisioning-tutorial/spcertificate.png)
 
@@ -69,15 +69,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Zscaler Private Access (ZPA) IdP ID](media/zscaler-private-access-provisioning-tutorial/idpid.png)
 
-7.	Scroll down to **Enable SCIM Sync**. Click on **Generate New Token** button. Copy the **Bearer Token**. This value will be entered in the Secret Token field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
+7.	Scroll down to **Enable SCIM Sync**. Select **Generate New Token** button. Copy the **Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
 
 	![Zscaler Private Access (ZPA) Create Token](media/zscaler-private-access-provisioning-tutorial/token.png)
 
-8.	To locate the **Tenant URL**, navigate to **Administration > IdP Configuration**. Click on the name of the newly added IdP configuration listed on the page.
+8.	To locate the **Tenant URL**, navigate to **Administration > IdP Configuration**. Select the name of the newly added IdP configuration listed on the page.
 
 	![Zscaler Private Access (ZPA) Idp Name](media/zscaler-private-access-provisioning-tutorial/idpname.png)
 
-9.	Scroll down to view the **SCIM Service Provider Endpoint** at the end of the page. Copy the **SCIM Service Provider Endpoint**. This value will be entered in the Tenant URL field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
+9.	Scroll down to view the **SCIM Service Provider Endpoint** at the end of the page. Copy the **SCIM Service Provider Endpoint**. This value is entered in the Tenant URL field in the Provisioning tab of your Zscaler Private Access (ZPA) application.
 
 	![Zscaler Private Access (ZPA) SCIM URL](media/zscaler-private-access-provisioning-tutorial/tenanturl.png)
 
@@ -124,7 +124,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input the **SCIM Service Provider Endpoint** value retrieved earlier in **Tenant URL**. Input the **Bearer Token** value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler Private Access (ZPA). If the connection fails, ensure your Zscaler Private Access (ZPA) account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input the **SCIM Service Provider Endpoint** value retrieved earlier in **Tenant URL**. Input the **Bearer Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler Private Access (ZPA). If the connection fails, ensure your Zscaler Private Access (ZPA) account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -132,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler Private Access (ZPA)**.
 
@@ -169,7 +169,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

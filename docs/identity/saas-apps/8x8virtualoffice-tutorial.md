@@ -50,7 +50,7 @@ To configure the integration of 8x8 into Microsoft Entra ID, you need to add 8x8
 1. In the **Add from the gallery** section, type **8x8** in the search box.
 1. Select **8x8** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 ## Configure and test Microsoft Entra SSO for 8x8
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with 8x8, perform the following steps:
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure 8x8 SSO in 8x8 Admin Console](#configure-8x8-sso-in-8x8-admin-console)** - to configure the single sign-on settings on application side.
-    1. **[Create 8x8 test user](#create-8x8-test-user)** - to have a counterpart of B.Simon in 8x8 that is linked to the Microsoft Entra representation of user.
+    1. **[Create 8x8 test user](#create-8x8-test-user)** - to have a counterpart of B.Simon in 8x8 that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -87,11 +87,11 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Sign on URL** text box, type the URL:
     `https://sso.8x8.com`
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer. You will use the certificate later in the article in the **Configure 8x8 SSO** section.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer. You use the certificate later in the article in the **Configure 8x8 SSO** section.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up 8x8** section, copy the URL(s) and you will use these URL values later in the article: login URL, identifier, and logout URL.
+1. On the **Set up 8x8** section, copy the URL(s) and you use these URL values later in the article: login URL, identifier, and logout URL.
 
 [!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 

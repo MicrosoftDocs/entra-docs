@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Astro so that I can control who has access to Astro, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -55,7 +55,7 @@ To configure and test Microsoft Entra SSO with Astro, perform the following step
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Astro SSO](#configure-astro-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Astro test user](#create-astro-test-user)** - to have a counterpart of B.Simon in Astro that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Astro test user](#create-astro-test-user)** - to have a counterpart of B.Simon in Astro that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -105,7 +105,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select **Test this application** in Microsoft Entra admin center. This redirects to Astro Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Astro Sign on URL where you can initiate the login flow.  
  
 * Go to Astro Sign-on URL directly and initiate the login flow from there.
  

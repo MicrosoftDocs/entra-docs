@@ -6,11 +6,14 @@ manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/19/2025
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # View system reports in the Reports dashboard
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 Permissions Management has various types of system report types available that capture specific sets of data. These reports allow management to:
 

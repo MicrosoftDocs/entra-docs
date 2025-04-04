@@ -59,14 +59,14 @@ These signals include:
    - Most restrictive decision
 - Grant access
 - Less restrictive decision that can require one or more of the following options:
-      - Require multifactor authentication
-      - Require authentication strength
-      - Require device to be marked as compliant
-      - Require Microsoft Entra hybrid joined device
-      - Require approved client app
-      - Require app protection policy
-      - Require password change
-      - Require terms of use
+   - Require multifactor authentication
+   - Require authentication strength
+   - Require device to be marked as compliant
+   - Require Microsoft Entra hybrid joined device
+   - Require approved client app
+   - Require app protection policy
+   - Require password change
+   - Require terms of use
 
 ## Commonly applied policies
 

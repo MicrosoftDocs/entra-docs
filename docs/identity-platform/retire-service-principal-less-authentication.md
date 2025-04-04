@@ -1,5 +1,5 @@
 ---
-title: Deprecate Service Principal-Less Authentication
+title: Retire Service Principal-Less Authentication
 description: Learn about the mitigation steps tenant administrators should perform for service principal-less authentication behavior deprecation.
 author: shirlingxu
 ms.author: xushirling
@@ -13,7 +13,7 @@ From March 2026, Microsoft Entra ID will no longer support service principal-les
 ## Prerequisites
 - An account in the resource tenant with at least the **Application administrator** or **Cloud application administrator** role assigned. 
 
-## Transitioning to SP-less authentication
+## Transitioning to Service Principal-less authentication
 
 Microsoft Entra ID will block authentication for multitenant applications that don't have an enterprise application registration in the resource tenant. This scenario is also known as service principal-less authentication. This behavior has already been blocked for most resources. This change will address a few remaining exceptions. Service principal-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
 
@@ -34,7 +34,7 @@ First, you'll need to verify that access by the named applications to the resour
 5. Change the Date sorting to be **Custom time interval**, and set it to **Last 1 month**.
 6. Click on a log to view the details, and navigate to the **Application ID** in the side panel to find the Client Application ID for the next step.
 
-:::image type="content" source="media/deprecate-service-principal-less-authentication/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Microsoft Entra admin center with filters applied to extract on SP-less auth sign ins.":::
+:::image type="content" source="media/retire-service-principal-less-authentication/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Microsoft Entra admin center with filters applied to extract on SP-less auth sign ins.":::
 
 ## Create enterprise application
 
@@ -44,6 +44,3 @@ Next, you'll need to [create an enterprise application](/entra/identity/enterpri
 
 Finally, the administrator of the resource tenant should verify that the tokens issued to the application are no longer service principal-less. This can be verified in sign-in logs. The Service principal ID should appear with a unique alphanumeric GUID in the format `aaaaaaaa-bbbb-cccc-1111-222222222222`.
 
-## Related content
-
-* [Microsoft Entra ID will no longer support authentication without a service principal](https://aka.ms/splessauthblog)

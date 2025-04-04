@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Benefitsolver so that I can control who has access to Benefitsolver, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Benefitsolver, perform the follow
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Benefitsolver SSO](#configure-benefitsolver-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Benefitsolver test user](#create-benefitsolver-test-user)** - to have a counterpart of B.Simon in Benefitsolver that is linked to the Microsoft Entra representation of user.
+    1. **[Create Benefitsolver test user](#create-benefitsolver-test-user)** - to have a counterpart of B.Simon in Benefitsolver that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -145,11 +145,11 @@ In this section, you create a user called Britta Simon in Benefitsolver. Work wi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select on **Test this application**, this will redirect to Benefitsolver Sign-on URL where you can initiate the sign in flow. 
+* Select **Test this application**, this option redirects to Benefitsolver Sign-on URL where you can initiate the sign in flow. 
 
 * Go to Benefitsolver Sign-on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you select the Benefitsolver tile in the My Apps, this will redirect to Benefitsolver Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Benefitsolver tile in the My Apps, this option redirects to Benefitsolver Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

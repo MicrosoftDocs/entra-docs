@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud
 
-In this article,  you'll learn how to integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID. When you integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID. When you integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud.
 * Enable your users to be automatically signed in to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of Microsoft Entra SSO for Splunk Enterprise and Sp
 1. In the **Add from the gallery** section, type **Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud** in the search box.
 1. Select **Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud'></a>
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Microsoft Entra SSO for Splunk En
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud SSO](#configure-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud test user](#create-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud-test-user)** - to have a counterpart of B.Simon in Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud that is linked to the Microsoft Entra representation of user.
+    1. **[Create Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud test user](#create-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud-test-user)** - to have a counterpart of B.Simon in Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -86,9 +86,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<splunkserver>/saml/acs`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign-On URL, Identifier and Reply URL. Contact [Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud Client support team](https://www.splunk.com/en_us/about-splunk/contact-us.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign-On URL, Identifier and Reply URL. Contact [Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud Client support team](https://www.splunk.com/en_us/about-splunk/contact-us.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -104,9 +104,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Go to the **Settings > Access Controls** menu option.
 
-1. Click on the **Authentication method** link. Click on the **SAML** radio button
+1. Select the **Authentication method** link. Select the **SAML** radio button
 
-1. Click on the **Configure Splunk to use SAML** link below the SAML radio button.
+1. Select the **Configure Splunk to use SAML** link below the SAML radio button.
 
     ![Screenshot that shows Configure Splunk to use SAML.](./media/splunk-enterprise-and-splunk-cloud-tutorial/configure-splunk.png)
 
@@ -114,13 +114,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot that shows Configure Splunk to SAML configuration.](./media/splunk-enterprise-and-splunk-cloud-tutorial/sso-configuration.png)
 
-    a. Click on the **Select File** button to upload the **Federation Metadata XML** file, which you have downloaded previously.
+    a. Select the **Select File** button to upload the **Federation Metadata XML** file, which you have downloaded previously.
 
     b. In the **Entity ID** field, enter the **Identifier** value, which you copied previously.
 
     c. Check the **Verify SAML response** checkbox if not already selected. Note that this step is now mandatory for all Splunk Cloud integrations to ensure secure communication between Microsoft Entra and Splunk.
 
-1. Scroll down within the configuration dialogue and click on the **Alias** section. Enter the following values in each attribute:
+1. Scroll down within the configuration dialogue and select the **Alias** section. Enter the following values in each attribute:
 
     a. **Role alias**: `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups`
 
@@ -134,13 +134,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot that shows Advanced Settings.](./media/splunk-enterprise-and-splunk-cloud-tutorial/advanced-settings.png)
 
-    a. Click the **Name Id Format** and select **Email Address** from the dropdown.
+    a. Select the **Name Id Format** and select **Email Address** from the dropdown.
 
     b. In the **Fully qualified domain name or IP of the load balancer** text box, enter the value as: `https://<acme>.splunkcloud.com`.
 
-    c. Set **Redirect port – load balancer port** to `0(zero)` and click **Save**.
+    c. Set **Redirect port – load balancer port** to `0(zero)` and select **Save**.
 
-1. Click on the green **New Group** button in the upper right hand corner of the SAML Groups configuration screen in Splunk.
+1. Select the green **New Group** button in the upper right hand corner of the SAML Groups configuration screen in Splunk.
 
 1. In the **Create new SAML Group** configuration dialogue, Paste the Microsoft Entra Group Object ID (not the application or user Object ID) into the Group Name field. To find the Group Object ID:
     1. Navigate to **Identity** > **Groups** in the Microsoft Entra admin center.
@@ -157,11 +157,11 @@ In this section, you create a user called Britta Simon in Microsoft Entra SSO fo
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud Sign-on URL where you can initiate the login flow. 
 
 * Go to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud tile in the My Apps, this will redirect to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud tile in the My Apps, this option redirects to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

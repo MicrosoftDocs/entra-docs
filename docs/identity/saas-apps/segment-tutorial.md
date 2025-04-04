@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Segment
 
-In this article,  you'll learn how to integrate Segment with Microsoft Entra ID. When you integrate Segment with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Segment with Microsoft Entra ID. When you integrate Segment with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Segment.
 * Enable your users to be automatically signed-in to Segment with their Microsoft Entra accounts.
@@ -45,7 +45,7 @@ To configure the integration of Segment into Microsoft Entra ID, you need to add
 1. In the **Add from the gallery** section, type **Segment** in the search box.
 1. Select **Segment** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-segment'></a>
 
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Segment, perform the following st
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Segment SSO](#configure-segment-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Segment test user](#create-segment-test-user)** - to have a counterpart of B.Simon in Segment that is linked to the Microsoft Entra representation of user.
+    1. **[Create Segment test user](#create-segment-test-user)** - to have a counterpart of B.Simon in Segment that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Segment** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://segment-prod.auth0.com/login/callback?connection=<CUSTOMER_VALUE>`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
     `https://app.segment.com`
@@ -107,15 +107,15 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a new web browser window, sign in to your Segment company site as an administrator.
 
-1. Click on **Settings Icon** and scroll down to **AUTHENTICATION** and click on **Connections**.
+1. Select **Settings Icon** and scroll down to **AUTHENTICATION** and select **Connections**.
 
     ![Screenshot that shows the "Settings" icon selected, and "Connections" selected from the "Authentication" menu.](./media/segment-tutorial/connections.PNG)
 
-1. Click on **Add new Connection**.
+1. Select **Add new Connection**.
 
     ![Screenshot that shows the "Connections" section with the "Add new Connection" button selected.](./media/segment-tutorial/new-connections.PNG)
 
-1. Select **SAML 2.0** as a connection to configure and click on **Select Connection** button.
+1. Select **SAML 2.0** as a connection to configure and select **Select Connection** button.
 
     ![Screenshot that shows the "Choose a Connection" section with "S A M L 2.0" and the "Select Connection" button selected.](./media/segment-tutorial/select-connections.PNG)
 
@@ -127,7 +127,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     b. Copy the ****Audience URL**** value and paste it into the **Identifier URL** box in the **Basic SAML Configuration** dialog box.
 
-    c. Click on **Next**.
+    c. Select **Next**.
 
     ![Segment Configuration](./media/segment-tutorial/certificate.PNG)
 
@@ -135,11 +135,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Open the downloaded **Certificate(Base64)** into Notepad and paste the content into the **Public Certificate** textbox.
 
-1. Click on **Configure Connection**.
+1. Select **Configure Connection**.
 
 ### Create Segment test user
 
-In this section, a user called B.Simon is created in Segment. Segment supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Segment, a new one is created after authentication.
+In this section, a user called B.Simon is created in Segment. Segment supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Segment, a new one is created after authentication.
 
 Segment also supports automatic user provisioning, you can find more details [here](./segment-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
@@ -149,15 +149,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Segment Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Segment Sign on URL where you can initiate the login flow.  
 
 * Go to Segment Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Segment for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Segment for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Segment tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Segment for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Segment tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Segment for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

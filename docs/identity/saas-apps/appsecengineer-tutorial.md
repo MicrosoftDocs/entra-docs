@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AppSecEngineer so that I can control who has access to AppSecEngineer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -54,7 +54,7 @@ To configure and test Microsoft Entra SSO with AppSecEngineer, perform the follo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure AppSecEngineer SSO](#configure-appsecengineer-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create AppSecEngineer test user](#create-appsecengineer-test-user)** - to have a counterpart of B.Simon in AppSecEngineer that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create AppSecEngineer test user](#create-appsecengineer-test-user)** - to have a counterpart of B.Simon in AppSecEngineer that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -100,11 +100,11 @@ In this section, you create a user called B.Simon in AppSecEngineer. Work with 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Select **Test this application** in Microsoft Entra admin center. This redirects to AppSecEngineer Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to AppSecEngineer Sign-on URL where you can initiate the login flow.
  
 * Go to AppSecEngineer Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you select the AppSecEngineer tile in the My Apps, this redirects to AppSecEngineer Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the AppSecEngineer tile in the My Apps, this option redirects to AppSecEngineer Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

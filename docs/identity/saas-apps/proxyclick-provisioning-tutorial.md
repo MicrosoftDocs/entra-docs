@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Proxyclick so that I can streamline the user management process and ensure that users have the appropriate access to Proxyclick.
@@ -52,7 +52,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ### Important tips for assigning users to Proxyclick
 
-* It is recommended that a single Microsoft Entra user is assigned to Proxyclick to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Proxyclick to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Proxyclick, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -94,13 +94,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Proxyclick Marketplace](media/proxyclick-provisioning-tutorial/proxyclick02.png)
 
-	Select **Microsoft Entra ID**. Click **Install now**.
+	Select **Microsoft Entra ID**. Select **Install now**.
 
 	![Proxyclick Microsoft Entra ID](media/proxyclick-provisioning-tutorial/proxyclick03.png)
 
 	![Proxyclick Install](media/proxyclick-provisioning-tutorial/proxyclick04.png)
 
-	Select **User Provisioning** and click **Start integration**. 
+	Select **User Provisioning** and select **Start integration**. 
 
 	![Proxyclick User Provisioning](media/proxyclick-provisioning-tutorial/proxyclick05.png)
 
@@ -112,7 +112,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Proxyclick Create Token](media/proxyclick-provisioning-tutorial/proxyclick07.png)
 
-7. Upon populating the fields shown in Step 5, click **Test Connection** to ensure Microsoft Entra ID can connect to Proxyclick. If the connection fails, ensure your Proxyclick account has Admin permissions and try again.
+7. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to Proxyclick. If the connection fails, ensure your Proxyclick account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -120,13 +120,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-9. Click **Save**.
+9. Select **Save**.
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Proxyclick**.
 
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Proxyclick in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Proxyclick for update operations. Select the **Save** button to commit any changes.
 
-    ![Proxyclick User Attributes](media/proxyclick-provisioning-tutorial/Proxyclick-user-attribute.png)
+    ![Proxyclick User Attributes](media/proxyclick-provisioning-tutorial/proxyclick-user-attribute.png)
 
 13. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -138,7 +138,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-16. When you are ready to provision, click **Save**.
+16. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -149,7 +149,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Connector Limitations
 
 * Proxyclick requires **emails** and **userName** to have the same source value. Any updates to either attributes will modify the other value.
-* Proxyclick does not support provisioning for groups.
+* Proxyclick doesn't support provisioning for groups.
 
 ## Additional resources
 
