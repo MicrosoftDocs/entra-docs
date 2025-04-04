@@ -72,7 +72,7 @@ In this section, you create a new project to demonstrate how to integrate a Wind
 The application that you create displays a button that will call the Microsoft Graph API, an area to display the results, and a sign-out button.
 
 > [!NOTE]
-> Prefer to download this sample's Visual Studio project instead? [Download a project](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2/archive/msal3x.zip), and skip to the [Configuration step](#register-your-application) to configure the code sample before you execute it.
+> Prefer to download this sample's Visual Studio project instead? [Download a project](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2/archive/msal3x.zip), and register your application to configure the code sample before you execute it.
 
 Create the application using the following steps:
 
