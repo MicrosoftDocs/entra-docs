@@ -324,16 +324,16 @@
       href: index-web-api.yml
     - name: Quickstart
       items:
-        - name: Sign in users
-          href: quickstart-web-api-aspnet-sign-in.md
+        - name: Call a protected web API
+          href: quickstart-web-api-dotnet-protect-app.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
           items: 
           - name: Create a web API and protect its endpoints
             href: tutorial-web-api-dotnet-core-build-app.md
-          - name: Test a protected web API
-            href: tutorial-web-api-dotnet-core-test-protected-api.md
+          - name: Call a protected web API
+            href: tutorial-web-api-dotnet-core-call-protected-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
