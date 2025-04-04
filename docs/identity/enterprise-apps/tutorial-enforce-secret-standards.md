@@ -120,20 +120,27 @@ Content-type: application/json
 
 ## Update the application management policy
 
-Updating the default application management policy to use our recommendations requires setting the following parameters:
+To implement secret and certificate restrictions, we need to update the default application management policy. We provide an example with our recommended settings but you can adjust them to suit your needs or even omit certain elements if you don't want to apply them. The following example shows how to update the default application management policy with the recommended settings:
 
-* `passwordCredentials`: Allows you to set policies to restrict attributes for client secrets and symmetric keys.
-    * The `restrictionType` parameter allows you to set the type of restriction we want to apply. In this case, we are restricting `passwordAddition`, `customPasswordAddition`, and `symmetricKeyAddition`. All of which will limit the creation of client secrets and symmetric keys.
+* `passwordCredentials`: Allows you to set policies to restrict attributes for client secrets and symmetric keys. This can be omitted if you don't want to set a policy to restrict these types of credentials.
+
+    * The `restrictionType` parameter allows you to set the type of restriction we want to apply. In this case, we are restricting `passwordAddition`, `customPasswordAddition`, and `symmetricKeyAddition`. These settings will limit the creation of client secrets, custom passwords and symmetric keys.
+
     * The `state` parameter allows you to enable or disable the restriction. If set to `enabled`, the restriction will be applied. If set to `disabled`, the restriction will not be applied.
-    * The `maxLifetime` parameter allows you to set the maximum lifetime of the secret. For `passwordCredentials` we have set the value to `null`. Setting the value to `null` means that the maximum lifetime is not restricted. This is because we are disabling the creation of client secrets and symmetric keys. If you want to set a maximum lifetime for client secrets, you can set this value to a duration in ISO 8601 format. For more information on duration formatting please see [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations).
-    * The `restrictForAppsCreatedAfterDateTime` parameter allows you to set a date from which the policy will take effect. Any applications created before this date will be unaffected by the policy. In this case, we are applying restrictions for applications created after February 20th 2025. Please ensure you update this date to suit your needs. If the value is set to a time in the future, the policy will not be applied to any applications created before that date.
+
+    * The `maxLifetime` parameter allows you to set the maximum lifetime of the secret. For `passwordCredentials` we have set the value to `null`. Setting the value to `null` means that the maximum lifetime is not restricted. This is because we are disabling the creation of client secrets and symmetric keys entirely. If you want to set a maximum lifetime for client secrets, you can set this value to a duration in ISO 8601 format. You'll find an example of this in the next section. For more information on duration formatting please see [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations).
+
+    * The `restrictForAppsCreatedAfterDateTime` parameter allows you to set a date from which the policy will take effect for new applications. Any applications created before this date will be unaffected by the policy. In this case, we are applying restrictions for applications created after February 20th 2025. Please ensure you update this date to suit your needs. If you want to set different restrictions for applications created before or after a certain date you can set multiple policies with different `restrictForAppsCreatedAfterDateTime` values. 
 
 * `keyCredentials`: Allows you to set parameters for certificates. In this case, we are restricting the lifetime of application certificates to 180 days.
-    * The `restrictionType` parameter allows you to set the type of restriction we want to apply. In this case, we are restricting `asymmetricKeyLifetime`. This will limit the lifetime of application certificates to a user-defined value.
-    * The `state` parameter allows you to enable or disable the restriction. If set to `enabled`, the restriction will be applied. If set to `disabled`, the restriction will not be applied.
-    * The `maxLifetime` parameter allows you to set the maximum lifetime of the certificate. In this case, we are restricting the lifetime of certificates to 180 days. This is done using the ISO 8601 duration format. The prefix `P` indicates that the value is for a period of time, and `180D` indicates that the period is 180 days. You can change the number from `180` to another value to suit your specific needs. For more information on duration formatting please see [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations).
-    * The `restrictForAppsCreatedAfterDateTime` parameter allows you to restrict the secret for applications created after a certain date. Any applications created before this date will be unaffected by the policy. In this case, we are applying restrictions for applications created after February 20th 2025. Please ensure you update this date to suit your needs. If the value is set to a time in the future, the policy will not be applied to any applications created before that date.
 
+    * The `restrictionType` parameter allows you to set the type of restriction we want to apply. In this case, we are restricting `asymmetricKeyLifetime`. This will limit the lifetime of application certificates to a user-defined value.
+
+    * The `state` parameter allows you to enable or disable the restriction. If set to `enabled`, the restriction will be applied. If set to `disabled`, the restriction will not be applied.
+
+    * The `maxLifetime` parameter allows you to set the maximum lifetime of the certificate. In this case, we are restricting the lifetime of certificates to 180 days. This is done using the ISO 8601 duration format. The prefix `P` indicates that the value is for a period of time, and `180D` indicates that the period is 180 days. You can change the number from `180` to another value to suit your specific needs. For more information on duration formatting please see [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations).
+
+    * The `restrictForAppsCreatedAfterDateTime` parameter allows you to set a date from which the policy will take effect for new applications. Any applications created before this date will be unaffected by the policy. In this case, we are applying restrictions for applications created after February 20th 2025. Please ensure you update this date to suit your needs. If you want to set different restrictions for applications created before or after a certain date you can set multiple policies with different `restrictForAppsCreatedAfterDateTime` values. 
 
 ### Example
 
