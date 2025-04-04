@@ -29,10 +29,10 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- If you haven't already, complete the steps in [Quickstart: Call a web API that is protected by the Microsoft identity platform](quickstart-web-api-aspnet-sign-in.md?tabs=aspnet-core). You don't have to clone and run the code sample, but ensure you have the following:
+- If you haven't already, complete the steps in [Quickstart: Call a web API that is protected by the Microsoft identity platform](quickstart-web-api-dotnet-protect-app.md?tabs=aspnet-core). You don't have to clone and run the code sample, but ensure you have the following:
     - The web API's app registration details from the Microsoft Entra admin center, including the client ID and tenant ID.
-    - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](quickstart-web-api-aspnet-sign-in.md?tabs=aspnet-core#add-delegated-permissions-scopes)
-    - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](quickstart-web-api-aspnet-sign-in.md?tabs=aspnet-core#add-application-permissions-app-roles)
+    - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](quickstart-web-api-dotnet-protect-app.md?tabs=aspnet-core#add-delegated-permissions-scopes)
+    - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](quickstart-web-api-dotnet-protect-app.md?tabs=aspnet-core#add-application-permissions-app-roles)
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet) or later.
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
@@ -123,8 +123,8 @@ All APIs must publish a minimum of one scope, also called delegated permission, 
 
 We specify these permissions in the *appsettings.json* file. In this tutorial, you registered the following delegated and application permissions:
  
- - **Delegated permissions:** *ToDoList.ReadWrite* and *ToDoList.Read*
- - **Applications permissions:** *ToDoList.ReadWrite.All* and *ToDoList.Read.All*
+ - **Delegated permissions:** *ToDoList.Read* and *ToDoList.ReadWrite*.
+ - **Applications permissions:** *ToDoList.Read.All* and *ToDoList.ReadWrite.All*.
 
 When a user or client application calls the web API, only clients with these scopes or permissions get authorized to access the protected endpoint.
 
@@ -160,6 +160,8 @@ In this API, we use the JSON Web Token (JWT) Bearer scheme as the default authen
 // Add required packages to your imports
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add an authentication scheme
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -275,7 +277,7 @@ This section explains how to add code to the controller scaffolded in the previo
 
 1. **Import the necessary packages:**  The `Microsoft.Identity.Web` package is a wrapper around MSAL.NET that helps us easily handle authentication logic such as handling token validation. To ensure that our endpoints require authorization, we use the inbuilt `Microsoft.AspNetCore.Authorization` package.
 
-1. Since we granted permissions for this API to be called either using delegated permissions on behalf of the user or application permissions where the client calls as itself and not on the user's behalf, it's important to know whether the call is being made by the app on its own behalf. The easiest way to do this is the claims to find whether the access token contains the `idtyp` optional claim. This `idtyp` claim is the easiest way for the API to determine whether a token is an app token or an app + user token. We recommend enabling the `idtyp` optional claim.
+1. Since we granted permissions for this API to be called either using delegated permissions on behalf of the user or application permissions where the client calls as itself and not on the user's behalf, it's important to know whether the call is being made by the app on its own behalf. The easiest way to do this is to find whether the access token contains the `idtyp` optional claim. This `idtyp` claim is the easiest way for the API to determine whether a token is an app token or an app + user token. We recommend enabling the `idtyp` optional claim.
 
     If the `idtyp` claim isn't enabled, you can use the `roles` and `scp` claims to determine whether the access token is an app token or an app + user token. An access token issued by Microsoft Entra ID has at least one of the two claims. Access tokens issued to a user have the `scp` claim. Access tokens issued to an application have the `roles` claim. Access tokens that contain both claims are issued only to users, where the `scp` claim designates the delegated permissions, while the `roles` claim designates the user's role. Access tokens that have neither aren't to be honored.
     
@@ -319,7 +321,7 @@ This section explains how to add code to the controller scaffolded in the previo
     public class ToDoListController: ControllerBase{...}
     ```
 
-    Add permissions to the GET all endpoint and the POST endpoint. Do this using the *RequiredScopeOrAppPermission* method that is part of the *Microsoft.Identity.Web.Resource* namespace. You then pass scopes and permissions to this method via the *RequiredScopesConfigurationKey* and *RequiredAppPermissionsConfigurationKey* attributes.
+    Add permissions to the GET and POST endpoints. Do this using the *RequiredScopeOrAppPermission* method that is part of the *Microsoft.Identity.Web.Resource* namespace. You then pass scopes and permissions to this method via the *RequiredScopesConfigurationKey* and *RequiredAppPermissionsConfigurationKey* attributes.
 
     ```csharp
     [HttpGet]
@@ -404,4 +406,4 @@ For a full example of this API code, see the [samples file](https://github.com/A
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Part 2: Test your protected ASP.NET Core web API](tutorial-web-api-dotnet-core-test-protected-api.md)
+> [Part 2: Call your protected ASP.NET Core web API](tutorial-web-api-dotnet-core-call-protected-api.md)

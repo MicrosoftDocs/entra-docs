@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api, 
-ms.date: 03/20/2025
+ms.date: 04/03/2025
 ms.reviewer: jmprieur, dmwendia
 ms.service: identity-platform
 
@@ -22,7 +22,7 @@ In this quickstart, you use a sample web app to show you how to protect an ASP.N
 ## Prerequisites
 
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *NewWebAPI1*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 
@@ -251,7 +251,7 @@ To specify who can sign in to your application, by changing the `TenantId` prope
    ```bash
     Building...
         info: Microsoft.Hosting.Lifetime[14]
-              Now listening on: http://localhost:{port}
+              Now listening on: https://localhost:{port}
         info: Microsoft.Hosting.Lifetime[0]
               Application started. Press Ctrl+C to shut down.
         info: Microsoft.Hosting.Lifetime[0]
@@ -259,12 +259,12 @@ To specify who can sign in to your application, by changing the `TenantId` prope
    ...
    ```
 
-   Record the port number in the `http://localhost:{port}` URL.
+   Record the port number in the `https://localhost:{port}` URL.
 
 1. To verify the endpoint is protected, update the base URL in the following cURL command to match the one you received in the previous step, and then run the command:
 
    ```bash
-   curl -k -X GET http://localhost:<your-api-port>/api/todolist -w "%{http_code}\n"
+   curl -k -X GET https://localhost:<your-api-port>/api/todolist -w "%{http_code}\n"
    ```
 
    The expected response is 401 Unauthorized. 

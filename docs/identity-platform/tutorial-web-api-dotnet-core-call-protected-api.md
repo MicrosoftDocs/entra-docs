@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Test an ASP.NET Core web API"
-description:  Learn how to test a web API whose endpoints are protected using the Microsoft identity platform 
+title: "Tutorial: Call a protected ASP.NET Core web API"
+description:  Learn how to call a web API whose endpoints are protected using the Microsoft identity platform 
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
@@ -86,8 +86,9 @@ Applications that authenticate by themselves without a user require app permissi
     var clientId = "<your-daemon-app-client-id>";
     var clientSecret = "<your-daemon-app-secret>";
     var scopes = new[] {"api://<your-web-api-application-id>/.default"};
-    var tenantName= "<your-tenant-name>";
-    var authority = $"https://{tenantName}.ciamlogin.com/"; 
+    var tenantId = "<your-tenant-id>";     //Use in workforce tenant configuration
+    var tenantName = "<your-tenant-name>"; //Used in external tenant configuration
+    var authority = $"https://login.microsoftonline.com/{tenantId}"; // Use "https://{tenantName}.ciamlogin.com" for external tenant configuration 
 
     var app = ConfidentialClientApplicationBuilder
         .Create(clientId)
@@ -108,7 +109,8 @@ Applications that authenticate by themselves without a user require app permissi
    
 1. Replace the placeholders in the code with your daemon app client ID, secret, web API application ID, and tenant name.      
      - For external tenants, use authority in the form of: `"https://{tenantName}.ciamlogin.com/"`
-     - For workforce tenants, use instance as `"https://login.microsoftonline.com/"`
+     - For workforce tenants, use authority as `"https://login.microsoftonline.com/{tenantId}"`
+
 1. Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request with a valid access token. You should see the string: *Your response is:  OK* printed in your console.
 
 ## Related content
