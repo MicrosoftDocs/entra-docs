@@ -76,4 +76,4 @@ You can manage access to SAP BTP applications using Microsoft Entra ID Governanc
 
 * [Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID](sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
 * [Configure Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services](sap-hana-cloud-platform-identity-authentication-tutorial.md)
-* [Manage access to SAP BTP applications](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
+* [Enable SSO to SAP SaaS and modern apps](~/id-governance/sap.md#enable-sso)
