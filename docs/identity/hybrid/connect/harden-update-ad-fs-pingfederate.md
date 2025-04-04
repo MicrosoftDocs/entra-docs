@@ -57,18 +57,17 @@ To assist customers with the upgrade process, we perform autoupgrades for select
 
 Past the MSOnline retirement date, older versions of Microsoft Entra Connect can’t switch Staging mode via the wizard.
 
-You can safely proceed with the in-place upgrade to fully restore Microsoft Entra Connect functionally, but in case you want to enable Staging mode prior to upgrade your server, the following workaround via PowerShell is available:
+You can safely proceed with the in-place upgrade to fully restore Microsoft Entra Connect functionally, but in case you want to enable Staging mode prior to upgrade your server, the following workaround via PowerShell is available.
 
-> [!NOTE] 
+> [!NOTE]
 > The following cmdlet is not supported in PowerShell 7 and only works on older Microsoft Entra Connect versions that have MSOnline module dependencies.
 
-1.	Open a PowerShell session with "Run As Administrator" and install ADSyncTools module with the following commands:
+1. Open a PowerShell session with "Run As Administrator" and install or update ADSyncTools module with the following commands:
 
 ```PowerShell
-# If the module is already present, the command below updates it, otherwise it installs the latest version
-$n = 'ADSyncTools' 
-if (Get-Module -Name $n -ListAvailable) {Update-Module -Name $n} else {Install-Module -Name $n}
-Import-Module $n
+# Note: If ADSyncTools is already present, this command updates it, otherwise it installs the latest version.
+if (Get-Module -Name ADSyncTools -ListAvailable) {Update-Module -Name ADSyncTools} else {Install-Module -Name ADSyncTools}
+Import-Module ADSyncTools
 ```
 
 2.	To enable staging mode, type:
@@ -105,3 +104,4 @@ If you aren't yet eligible to move to Cloud Sync, use this table for more inform
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
 - [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 - [Microsoft Entra Connect version history](reference-connect-version-history.md)
+
