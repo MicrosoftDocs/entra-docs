@@ -14,9 +14,9 @@ ms.custom: oldportal;it-pro;
 
 # Restricted management administrative units in Microsoft Entra ID
 
-Organizations have resources that need strict security, like the CEO user account. Currently, a Helpdesk Administrator can potentially gain access to a CEO's account by resetting its password, and a tenant-level Groups Administrator can add users to security groups with financial data access on SharePoint.
+Organizations have resources that need strict security, like the CEO's user account. Currently, a Helpdesk Administrator can potentially gain access to a CEO's account by resetting its password, and a tenant-level Groups Administrator can add users to security groups with financial data access on SharePoint.
 
-Restricted management administrative units allow you to protect specific objects in your tenant from modification by anyone other than a specific set of administrators that you designate. This allows you to meet security or compliance requirements without having to remove tenant-level role assignments from your administrators.
+Restricted management administrative units allow you to protect specific objects in your tenant from modification by anyone other than a specific set of people that you designate. This allows you to meet security or compliance requirements without having to remove tenant-level role assignments from your administrators.
 
 ## Why use restricted management administrative units?
 
@@ -24,7 +24,7 @@ Here are some reasons why you might use restricted management administrative uni
 
 - **Protect your executive accounts and their devices**
 
-    You want to protect your C-level executive accounts and their devices from Helpdesk Administrators who would otherwise be able to reset their passwords or access BitLocker recovery keys. You can add your C-level user accounts in a restricted management administrative unit and enable a specific trusted set of administrators who can reset their passwords and access BitLocker recovery keys when needed.
+    You want to protect your C-level executive accounts and their devices from Helpdesk Administrators who would otherwise be able to reset their passwords or access BitLocker recovery keys. You can add your C-level user accounts to a restricted management administrative unit and enable a specific trusted set of administrators who can reset their passwords and access BitLocker recovery keys when needed.
 
 - **Implement compliance control to only local administrators**
 
@@ -36,9 +36,9 @@ Here are some reasons why you might use restricted management administrative uni
 
 ## Example scenario
 
-The following diagram shows an example executive restricted management administrative unit with objects that can only be modified by the executive administrator. Tenant-level administrators and local administrators cannot modify the objects in the Executive administrative unit.
+The following diagram shows an example executive restricted management administrative unit (shown in the purple box) with objects that can only be modified by executive support. Tenant-level administrators and local administrators cannot modify the objects in the Executive administrative unit.
 
-:::image type="content" source="./media/admin-units-restricted-management/admin-unit-restricted.png" alt-text="Diagram of an example executive restricted management administrative unit with objects that can only be modified by the executive administrator." lightbox="./media/admin-units-restricted-management/admin-unit-restricted.png":::
+:::image type="content" source="./media/admin-units-restricted-management/admin-unit-restricted.png" alt-text="Diagram of an example executive restricted management administrative unit with objects that can only be modified by executive support." lightbox="./media/admin-units-restricted-management/admin-unit-restricted.png":::
 
 > [!NOTE]
 > Placing objects in a restricted management administrative unit severely restricts who can make changes to the objects. This restriction can cause existing workflows to break.
