@@ -50,7 +50,7 @@ The top of the page displays a summary of all transactions as well as a breakdow
 
 Select any log from the list to view the details. These details provide valuable information that can be used to filter the logs for specific details or to troubleshoot a scenario. The details can be added as a column and used to filter the logs.
 
-![Screenshot of the traffic log activity details.](media/how-to-view-traffic-logs/traffic-activity-details.png)
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-log-details.png" alt-text="Screenshot of Traffic log details page":::
 
 ### Filter and column options
 
