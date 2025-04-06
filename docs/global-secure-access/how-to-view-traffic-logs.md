@@ -80,8 +80,6 @@ We are currently previewing a new tab in the Traffic logs blade for you to view 
 
 Transactions associated with each Connection are viewed by selecting the **Transactions** tab.
 
-:::image type="content" source="media/how-to-view-traffic-logs/traffic-log-details.png" alt-text="Screenshot of the Traffic log details page."
-
 ### Troubleshooting scenarios
 
 The following details may be helpful for troubleshooting and analysis:
