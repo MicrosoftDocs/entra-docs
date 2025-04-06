@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Federated Directory so that I can streamline the user management process and ensure that users have the appropriate access to Federated Directory.
@@ -16,17 +16,17 @@ ms.author: thomasakelo
 
 # Configure Federated Directory for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Federated Directory and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Federated Directory.
+The objective of this article is to demonstrate the steps to be performed in Federated Directory and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Federated Directory.
 
 > [!NOTE]
->  This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+>  This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Federated Directory](https://www.federated.directory/pricing).
 * A user account in Federated Directory with Admin permissions.
 
@@ -38,13 +38,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
  * [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) 
  
  ## Important tips for assigning users to Federated Directory
- * It is recommended that a single Microsoft Entra user is assigned to Federated Directory to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+ * It's recommended that a single Microsoft Entra user is assigned to Federated Directory to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Federated Directory, you must select any valid application-specific role (if available) in the assignment dialog. Users with the Default Access role are excluded from provisioning.
 	
  ## Set up Federated Directory for provisioning
 
-Before configuring Federated Directory for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Federated Directory.
+Before configuring Federated Directory for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Federated Directory.
 
 1. Sign in to your [Federated Directory Admin Console](https://federated.directory/of)
 
@@ -63,7 +63,7 @@ Before configuring Federated Directory for automatic user provisioning with Micr
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/federated02.png" alt-text="Screenshot of the Create directory key page of the Federated Directory admin console, with Name and Description fields and a Create key button." border="false":::
 	
 
-5. Copy the **Access Token** value. This value will be entered in the **Secret Token** field in the Provisioning tab of your Federated Directory application. 
+5. Copy the **Access Token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Federated Directory application. 
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/federated03.png" alt-text="Screenshot of a page in the Federated Directory admin console. An access token placeholder and a key name, description, and issuer are visible." border="false":::
 	
@@ -83,7 +83,7 @@ To configure Federated Directory for automatic user provisioning with Microsoft 
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/loginpage1.png" alt-text="Screenshot of a page in the Azure portal that displays information on Federated Directory. The U R L value is highlighted." border="false":::
 
-6. Click **LOG IN**.
+6. Select **LOG IN**.
 
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/federated04.png" alt-text="Screenshot of the main menu on the Federated Directory site. The Login button is highlighted." border="false":::
 
@@ -91,7 +91,7 @@ To configure Federated Directory for automatic user provisioning with Microsoft 
 	
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/loginpage3.png" alt-text="Screenshot of the S C I M A D test page on the Federated Directory site. Log in with your Microsoft account is highlighted." border="false":::
  
-8. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Federated Directory account.
+8. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Federated Directory account.
 
 ## Configuring automatic user provisioning to Federated Directory 
 
@@ -118,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://api.federated.directory/v2/` in Tenant URL. Input the value that you retrieved and saved earlier from Federated Directory in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Federated Directory. If the connection fails, ensure your Federated Directory account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://api.federated.directory/v2/` in Tenant URL. Input the value that you retrieved and saved earlier from Federated Directory in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Federated Directory. If the connection fails, ensure your Federated Directory account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -126,7 +126,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-9. Click **Save**.
+9. Select **Save**.
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Federated Directory**.
 	
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	:::image type="content" source="media/federated-directory-provisioning-tutorial/user-attributes.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra ID and Federated Directory attributes and the matching status." border="false":::
 	
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Federated Directory, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -145,7 +145,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

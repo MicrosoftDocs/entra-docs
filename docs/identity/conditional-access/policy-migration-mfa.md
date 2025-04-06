@@ -5,11 +5,11 @@ description: This article shows how to migrate a classic Conditional Access poli
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 12/04/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: nigu
 ---
 # Migrate from a classic policy

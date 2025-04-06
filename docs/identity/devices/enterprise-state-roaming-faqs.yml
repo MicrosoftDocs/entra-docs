@@ -6,9 +6,9 @@ metadata:
   ms.subservice: devices
   ms.topic: faq
   ms.date: 08/01/2024
-  ms.author: joflore
-  author: MicrosoftGuyJFlo
-  manager: amycolannino
+  ms.author: owinfrey
+  author: owinfreyATL
+  manager: femila
   ms.reviewer: sempofu, micrider
 title: Settings and data roaming FAQ for administrators
 summary: This article answers some questions IT administrators might have about settings and app data sync.

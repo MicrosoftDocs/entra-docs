@@ -3,7 +3,7 @@ title: 'Using a deprecated version of Microsoft Entra Connect'
 description: This article describes what to do if you find that you're running a deprecated version.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/18/2024

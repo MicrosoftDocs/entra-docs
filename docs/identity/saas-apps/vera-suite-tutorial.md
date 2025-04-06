@@ -66,9 +66,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Vera Suite** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -84,11 +84,11 @@ In this section, a user called B.Simon is created in Vera Suite. Vera Suite supp
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Vera Suite Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Vera Suite Sign-on URL where you can initiate the login flow. 
 
 * Go to Vera Suite Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Vera Suite tile in the My Apps, this will redirect to Vera Suite Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Vera Suite tile in the My Apps, this option redirects to Vera Suite Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

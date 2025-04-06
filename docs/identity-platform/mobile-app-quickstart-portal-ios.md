@@ -201,7 +201,7 @@ ms.topic: concept-article
 > * When MFA or other Conditional Access policies are required
 > 
 > ```swift
-> let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParameters: self.webViewParamaters!)
+> let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParameters: self.webViewParameters!)
 > self.applicationContext!.acquireToken(with: parameters) { (result, error) in /* Add your handling logic */}
 > ```
 > 

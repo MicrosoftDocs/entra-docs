@@ -4,7 +4,7 @@ description: Describes how shadow attributes work in Microsoft Entra Connect Syn
 
 author: billmath
 ms.service: entra-id
-manager: amycolannino
+manager: femila
 ms.topic: how-to
 ms.date: 12/09/2024
 ms.subservice: hybrid-connect

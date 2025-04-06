@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 08/15/2024
+ms.date: 04/03/2025
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -40,7 +40,6 @@ During the free trial period, you have access to all product features with few e
 | **MFA**  | :x: |  :heavy_check_mark:  |  
 | **Custom token augmentation** (From external sources.) |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Social identity providers**   |  :heavy_check_mark: |  :heavy_check_mark:  |
-| **ID Protection** (Adaptive risk-based Conditional Access policies.)  | :x: |  :heavy_check_mark:  |
 | Default, least-access privileges for CIAM end-users. |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Rich authorization** (Including group and role management.)  |  :heavy_check_mark: |  :heavy_check_mark:  | 
 | **Customizable** (Sign-in/sign-up experiences - background, logo, strings.) |  :heavy_check_mark: |  :heavy_check_mark:  |

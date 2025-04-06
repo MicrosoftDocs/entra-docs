@@ -7,9 +7,9 @@ ms.service: entra-id-protection
 ms.topic: conceptual
 ms.date: 02/19/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: cokoopma, jaedwards
 ---
 # What are risk detections?

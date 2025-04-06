@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 12/26/2024
 ms.author: billmath
 author: gargi-sinha
-manager: amycolannino
+manager: femila
 
 ---
 # Migrate from federation to cloud authentication  

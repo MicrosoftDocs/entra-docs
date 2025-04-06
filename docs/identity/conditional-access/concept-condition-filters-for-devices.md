@@ -6,11 +6,11 @@ ms.service: entra-id
 ms.subservice: conditional-access
 
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 04/03/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 ---
 # Conditional Access: Filter for devices
@@ -122,6 +122,7 @@ The following device attributes can be used with the filter for devices conditio
 | deviceId | Equals, NotEquals, In, NotIn | A valid deviceId that is a GUID | (device.deviceid -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb") |
 | displayName | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.displayName -contains "ABC") |
 | deviceOwnership | Equals, NotEquals | Supported values are "Personal" for bring your own devices and "Company" for corporate owned devices  | (device.deviceOwnership -eq "Company") |
+| enrollmentProfileName | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | This is set by Microsoft Intune based on the profile the device was enrolled under at the time of enrollment. It's a string value created by Microsoft Intune admin, and matches the Windows Autopilot, Apple Automated Device Enrollment (ADE), or Google enrollment profile applied to the device. | (device.enrollmentProfileName -startsWith "AutoPilot Profile") |
 | isCompliant | Equals, NotEquals | Supported values are "True" for compliant devices and "False" for non compliant devices  | (device.isCompliant -eq "True") |
 | manufacturer | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.manufacturer -startsWith "Microsoft") |
 | mdmAppId | Equals, NotEquals, In, NotIn | A valid MDM application ID | (device.mdmAppId -in ["00001111-aaaa-2222-bbbb-3333cccc4444"]) |
@@ -134,14 +135,17 @@ The following device attributes can be used with the filter for devices conditio
 | trustType | Equals, NotEquals | A valid registered state for devices. Supported values are: AzureAD (used for Microsoft Entra joined devices), ServerAD (used for Microsoft Entra hybrid joined devices), Workplace (used for Microsoft Entra registered devices) | (device.trustType -eq "ServerAD") |
 | extensionAttribute1-15 | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | extensionAttributes1-15 are attributes that customers can use for device objects. Customers can update any of the extensionAttributes1 through 15 with custom values and use them in the filter for devices condition in Conditional Access. Any string value can be used. | (device.extensionAttribute1 -eq "SAW") |
 
+> [!IMPORTANT]
+> Customers should avoid using Entra device properties (ones that can be modified or manipulated by an end user) just on its own when creating a device filter rule. As an example, use of displayName that can be modified by end user or model, manufacturer, etc. sourced from registry entries that can be manipualted by the end user. Microsoft recommends using these properties in conjunction (use of AND clause) with some of the other properties on the device that are not modifiable by the end user when creating a device filter rule in Conditional Access.
+
+> [!WARNING] 
+> Devices must be Microsoft Intune managed, compliant, or Microsoft Entra hybrid joined for a value to be available in extensionAttributes1-15 at the time of the Conditional Access policy evaluation.
+
 > [!NOTE] 
 > When building complex rules or using too many individual identifiers like deviceid for device identities, keep in mind "The maximum length for the filter rule is 3072 characters".
 
 > [!NOTE] 
 > The `Contains` and the `NotContains` operators work differently depending on attribute types. For string attributes such as `operatingSystem` and `model`, the `Contains` operator indicates whether a specified substring occurs within the attribute. For string collection attributes such as `physicalIds` and `systemLabels`, the `Contains` operator indicates whether a specified string matches one of the whole strings in the collection.
-
-> [!WARNING] 
-> Devices must be Microsoft Intune managed, compliant, or Microsoft Entra hybrid joined for a value to be available in extensionAttributes1-15 at the time of the Conditional Access policy evaluation.
 
 ## Policy behavior with filter for devices
 

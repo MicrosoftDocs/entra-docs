@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -24,7 +24,7 @@ In this article, you learn how to integrate BrainStorm Platform with Microsoft E
 * Enable your users to be automatically signed-in to BrainStorm Platform with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You are able to configure and test Microsoft Entra single sign-on for BrainStorm Platform in your BrainStorm environment. BrainStorm Platform supports only **SP** initiated single sign-on and **Just In Time** user provisioning.
+You're able to configure and test Microsoft Entra single sign-on for BrainStorm Platform in your BrainStorm environment. BrainStorm Platform supports only **SP** initiated single sign-on and **Just In Time** user provisioning.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -81,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://auth.brainstorminc.com/auth/wsfed?providerId=<ID>`
 
 	> [!NOTE]
-	> This value is not real. Update this value with the actual Sign on URL. Contact [BrainStorm Platform Client support team](mailto:support@brainstorminc.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> This value isn't real. Update this value with the actual Sign on URL. Contact [BrainStorm Platform Client support team](mailto:support@brainstorminc.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. BrainStorm Platform application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -94,7 +94,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | title | user.jobtitle
 	| department | user.department |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -110,11 +110,11 @@ In this section, a user called B.Simon is created in BrainStorm Platform. BrainS
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to BrainStorm Platform Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to BrainStorm Platform Sign-on URL where you can initiate the login flow. 
 
 * Go to BrainStorm Platform Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the BrainStorm Platform tile in the My Apps, this will redirect to BrainStorm Platform Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the BrainStorm Platform tile in the My Apps, this option redirects to BrainStorm Platform Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

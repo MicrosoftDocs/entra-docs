@@ -221,7 +221,7 @@ internal class Program
         {
             // TODO: perform operations with the blobs
             BlobClient blobClient = containerClient.GetBlobClient(blob.Name);
-            Console.WriteLine($"Blob name: {blobClent.Name}, uri: {blobClient.Uri}");            
+            Console.WriteLine($"Blob name: {blobClient.Name}, uri: {blobClient.Uri}");            
         }
     }
 }
@@ -237,12 +237,12 @@ In **Microsoft.Identity.Web**, a web application or web API can replace the clie
     "Instance": "https://login.microsoftonline.com/",
     "ClientId": "YOUR_APPLICATION_ID",
     "TenantId": "YOUR_TENANT_ID",
-
-   "ClientCredentials": [
+    
+    "ClientCredentials": [
       {
         "SourceType": "SignedAssertionFromManagedIdentity",
         "ManagedIdentityClientId": "YOUR_USER_ASSIGNED_MANAGED_IDENTITY_CLIENT_ID",
-        "TokenExchangeUrl":"api://AzureADTokenExchange"
+        "TokenExchangeUrl": "api://AzureADTokenExchange"
       }
     ]
   }

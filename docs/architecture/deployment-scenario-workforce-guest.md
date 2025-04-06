@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra deployment scenario - Workforce and guest lifecycle
+title: Microsoft Entra Suite deployment scenario - Workforce and guest lifecycle
 description: Configure Microsoft Entra Suite products for hiring new remote employees and providing them with secure and seamless access to apps and resources.
 ms.author: gasinh
 author: gargi-sinha
@@ -9,11 +9,11 @@ ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
 
-#CustomerIntent: As a Microsoft Entra customer, I want to provide remote employees with secure access to apps and resources so that we prevent unauthorized access.
+#CustomerIntent: As a Microsoft Entra Suite customer, I want to provide remote employees with secure access to apps and resources so that we prevent unauthorized access.
 ---
-# Microsoft Entra deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
+# Microsoft Entra Suite deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
 
-The Microsoft Entra deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
+The Microsoft Entra Suite deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)

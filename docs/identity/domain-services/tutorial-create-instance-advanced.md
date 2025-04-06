@@ -2,7 +2,7 @@
 title: Tutorial - Create a customized Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, you learn how to create and configure a customized Microsoft Entra Domain Services managed domain and specify advanced configuration options using the Microsoft Entra admin center.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services
@@ -107,7 +107,10 @@ To create a managed domain, complete the fields in the *Basics* window of the Mi
 
 ## Create and configure the virtual network
 
-To provide connectivity, an Azure virtual network and a dedicated subnet are needed. Domain Services is enabled in this virtual network subnet. In this tutorial, you create a virtual network, though you could instead choose to use an existing virtual network. In either approach, you must create a dedicated subnet for use by Domain Services.
+To provide connectivity, an Azure virtual network and a dedicated subnet are needed. Domain Services is enabled in this virtual network subnet. In this tutorial, you create a virtual network, though you could instead choose to use an existing virtual network. In either approach, you must create a dedicated subnet for use by Domain Services. 
+
+   > [!TIP]
+   > Because you must use the Microsoft Entra Domain Services deployment IPs as the DNS resolver in the VNET in which it resides, we recommend a dedicated Azure virtual network if using a different DNS service and configuring conditional forwarders on Microsoft Entra Domain Services itself.
 
 Some considerations for this dedicated virtual network subnet include the following areas:
 

@@ -5,7 +5,7 @@ keywords:
 author: billmath
 ms.author: billmath
 ms.date: 12/18/2024
-manager: amycolannino
+manager: femila
 ms.topic: article
 ms.service: entra-id
 ms.subservice: hybrid-connect

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Pennylane
 
-In this article, you'll learn how to integrate Pennylane with Microsoft Entra ID. Access your company's financial data easily and in real time. Reduce the time spent on your accounting, limit manual actions, back and forth with your accountant. When you integrate Pennylane with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Pennylane with Microsoft Entra ID. Access your company's financial data easily and in real time. Reduce the time spent on your accounting, limit manual actions, back and forth with your accountant. When you integrate Pennylane with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Pennylane.
 * Enable your users to be automatically signed-in to Pennylane with their Microsoft Entra accounts.
@@ -110,11 +110,11 @@ In this section, you create a user called Britta Simon at Pennylane. Work with [
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Pennylane Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Pennylane Sign-on URL where you can initiate the login flow. 
 
 * Go to Pennylane Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Pennylane tile in the My Apps, this will redirect to Pennylane Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Pennylane tile in the My Apps, this option redirects to Pennylane Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

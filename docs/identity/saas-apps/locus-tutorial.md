@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -78,9 +78,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<ClientId>.locus-dashboard.com/#/login/sso?clientId=<ClientId>&connection=<ConnectionName>`
     
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Locus Client support team](mailto:platform-oncall@locus.sh) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Locus Client support team](mailto:platform-oncall@locus.sh) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -96,11 +96,11 @@ In this section, you create a user called Britta Simon at Locus. Work with [Locu
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Locus Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Locus Sign-on URL where you can initiate the login flow. 
 
 * Go to Locus Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Locus tile in the My Apps, this will redirect to Locus Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Locus tile in the My Apps, this option redirects to Locus Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

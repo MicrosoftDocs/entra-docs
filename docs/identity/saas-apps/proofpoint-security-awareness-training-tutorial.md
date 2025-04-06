@@ -86,9 +86,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<SUBDOMAIN>.<ENVIRONMENT>/api/auth/saml/SingleLogout`
     
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL, Sign on URL, Relay State and Logout Url. Contact [Proofpoint Security Awareness Training Client support team](mailto:wst-support@proofpoint.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL, Sign on URL, Relay State and Logout Url. Contact [Proofpoint Security Awareness Training Client support team](mailto:wst-support@proofpoint.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     [ ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")](common/copy-metadataurl.png#lightbox)
 
@@ -106,15 +106,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Proofpoint Security Awareness Training Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Proofpoint Security Awareness Training Sign-on URL where you can initiate the login flow.  
 
 * Go to Proofpoint Security Awareness Training Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Proofpoint Security Awareness Training for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Proofpoint Security Awareness Training for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Proofpoint Security Awareness Training tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Proofpoint Security Awareness Training for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Proofpoint Security Awareness Training tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Proofpoint Security Awareness Training for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

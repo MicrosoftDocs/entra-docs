@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: overview
 ms.date: 02/26/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: sandeo, jogro, jploegert
 ---
 # What is a device identity?

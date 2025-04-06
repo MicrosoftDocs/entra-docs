@@ -5,18 +5,18 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 02/06/2024
+ms.date: 04/01/2025
 ms.reviewer: jassuri
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: how-to
 titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
 # Custom claims provider reference
 
-In this reference article, you can learn about the REST API schema and claims mapping policy structure for custom claim provider events.
+In this how-to guide, you can learn about the REST API schema and claims mapping policy structure for custom claim provider events.
 
 ## Token issuance start event
 
@@ -83,7 +83,7 @@ POST https://your-api.com/endpoint
                 "createdDateTime": "2016-03-01T15:23:40Z",
                 "displayName": "Casey Jensen",
                 "givenName": "Casey",
-                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // Client ID representing the Microsoft Entra authentication events service
+                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // The unique identifier for the user. See https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-1.0#properties
                 "mail": "casey@contoso.com",
                 "onPremisesSamAccountName": "caseyjensen",
                 "onPremisesSecurityIdentifier": "<Enter Security Identifier>",

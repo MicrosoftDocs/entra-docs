@@ -52,7 +52,7 @@ For more information about configuring and managing Microsoft Entra ID solutions
 
 ### Protection
 
-**Protection** gives administrators and developers access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) solutions, including the protection dashboard, conditional access, multifactor authentication, and password reset.
+**Protection** gives administrators and developers access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) solutions, including the protection dashboard, Conditional Access, multifactor authentication, and password reset.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-protection.png" alt-text="Screenshot of the Microsoft Entra admin center Protection menu.":::
 
