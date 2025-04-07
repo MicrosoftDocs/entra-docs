@@ -5,7 +5,7 @@ description: Learn how to configure user self-remediation and manually remediate
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 03/19/2025
+ms.date: 04/07/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -16,7 +16,7 @@ ms.reviewer: chuqiaoshi
 ---
 # Remediate risks and unblock users
 
-After completing your [risk investigation](howto-identity-protection-investigate-risk.md), you need to take action to remediate risky users or unblock them. You can enable automated remediation by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md) or manually update the user's risk status. Microsoft recommends acting quickly because time matters when working with risks.
+After completing your [risk investigation](howto-identity-protection-investigate-risk.md), you need to take action to remediate risky users or unblock them. You can enable automated remediation by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md) or manually updating the user's risk status. Microsoft recommends acting quickly because time matters when working with risks.
 
 This article covers several options for remediating risks. You can enable self-remediation for users or manually remediate risks on the user's behalf. This article also covers scenarios when users were blocked because of user risk, so you know how to unblock them.
 
@@ -24,9 +24,9 @@ This article covers several options for remediating risks. You can enable self-r
 
 All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so they're no longer at risk and blocked from access.
 
-When Microsoft Entra ID Protection identifies risk detections and the corresponding risky sign-ins as as no longer posing a security threat, the risk state is automatically updated as **Dismissed** and the risk detail as **Microsoft Entra ID Protection assessed sign-in safe**. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
+When Microsoft Entra ID Protection identifies a risk detection and the corresponding risky sign-in as as no longer posing a security threat, the risk state is automatically updated as **Dismissed** and the risk detail as **Microsoft Entra ID Protection assessed sign-in safe**. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
 
-As an IT administrators, you can configure the ability for users to self-remediate or manually remediate on behalf of the user.
+As an IT administrator, you can configure the ability for users to self-remediate or manually remediate on behalf of the user.
 
 Self-remediation options include:
 
@@ -44,7 +44,7 @@ You can also [remediate in Microsoft Defender for Identity](/defender-for-identi
 
 ## User self-remediation
 
-As IT administrators, you have several options to configure self-remediation for users. If your organization has a hybrid environment, you can allow on-premises password changes to reset user risks. You must enable on-premises password reset to remediate user risks before users can self-remediate in those scenarios.
+As an IT administrator, you have several options to configure self-remediation for users. If your organization has a hybrid environment, you can allow on-premises password changes to reset user risks. You must enable on-premises password reset to remediate user risks before users can self-remediate in those scenarios.
 
 ### Allow on-premises password reset to remediate user risks
 
