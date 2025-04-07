@@ -90,6 +90,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Microsoft 365 Backup Administrator](#microsoft-365-backup-administrator) | Back up and restore content across supported services (SharePoint, OneDrive, and Exchange Online) in Microsoft 365 Backup | 1707125e-0aa2-4d4d-8655-a7c786c76a25 |
 > | [Microsoft 365 Migration Administrator](#microsoft-365-migration-administrator) | Perform all migration functionality to migrate content to Microsoft 365 using Migration Manager. | 8c8b803f-96e1-4129-9349-20738d9f9652 |
 > | [Microsoft Entra Joined Device Local Administrator](#microsoft-entra-joined-device-local-administrator) | Users assigned to this role are added to the local administrators group on Microsoft Entra joined devices. | 9f06204d-73c1-4d4c-880a-6edb90606fd8 |
+> | [Microsoft Graph Data Connect Administrator](#microsoft-graph-data-connect-administrator) | Manage aspects of Microsoft Graph Data Connect service in a tenant. | ee67aa9c-e510-4759-b906-227085a7fd4d |
 > | [Microsoft Hardware Warranty Administrator](#microsoft-hardware-warranty-administrator) | Create and manage all aspects warranty claims and entitlements for Microsoft manufactured hardware, like Surface and HoloLens. | 1501b917-7653-4ff9-a4b5-203eaf33784f |
 > | [Microsoft Hardware Warranty Specialist](#microsoft-hardware-warranty-specialist) | Create and read warranty claims for Microsoft manufactured hardware, like Surface and HoloLens. | 281fe777-fb20-4fbb-b7a3-ccebce5b0d96 |
 > | [Modern Commerce Administrator](#modern-commerce-administrator) | Can manage commercial purchases for a company, department or team. | d24aef57-1500-4070-84db-2666f29cf966 |
@@ -1966,6 +1967,25 @@ This role is available for assignment only as an additional local administrator 
 > | --- | --- |
 > | microsoft.directory/groupSettings/standard/read | Read basic properties on group settings |
 > | microsoft.directory/groupSettingTemplates/standard/read | Read basic properties on group setting templates |
+
+## Microsoft Graph Data Connect Administrator
+
+Assign the Microsoft Graph Data Connect Administrator role to users who need to do the following tasks:
+
+- Access the full set of administrative capabilities of Microsoft Graph Data Connect
+- Manage Microsoft Graph Data Connect settings in a tenant
+- Enable or disable the Microsoft Graph Data Connect service
+- Configure dataset workload selections in Microsoft Graph Data Connect
+- Configure cross-tenant data movement settings in Microsoft Graph Data Connect
+- View, approve, or deny application authorization requests for Microsoft Graph Data Connect
+- View, create, update, or delete application registrations for Microsoft Graph Data Connect
+
+[Learn more](/graph/data-connect-concept-overview)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.graph.dataConnect/allEntities/allProperties/allTasks | Manage aspects of Microsoft Graph Data Connect |
 
 ## Microsoft Hardware Warranty Administrator
 
