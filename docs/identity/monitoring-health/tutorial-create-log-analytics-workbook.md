@@ -41,7 +41,7 @@ To analyze activity logs with Log Analytics, you need the following roles and re
   - Global Reader
   - Security Administrator
 
-If you haven't already created a Log Analytics workspace, complete the [Configure Log Analytics workbook](tutorial-configure-log-analytics-workbook.md) tutorial.
+If you haven't already created a Log Analytics workspace, complete the [Configure Log Analytics workspace](tutorial-configure-log-analytics-workspace) tutorial.
 
 ## Create a custom workbook
 
