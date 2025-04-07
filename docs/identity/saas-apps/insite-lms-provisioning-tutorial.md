@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Insite LMS so that I can streamline the user management process and ensure that users have the appropriate access to Insite LMS.
@@ -22,7 +22,7 @@ This article describes the steps you need to do in both Insite LMS and Microsoft
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Insite LMS
-> * Remove users in Insite LMS when they do not require access anymore
+> * Remove users in Insite LMS when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Insite LMS
 
 ## Prerequisites
@@ -46,11 +46,11 @@ To generate the Secret Token
 
 1. Log in to [Insite LMS Console](https://portal.insitelms.net) with your Admin account. 
 1. Navigate to **Applications** module on the left hand side menu.
-1. In the section **Self hosted Jobs**, you'll find a job named “SCIM”. If you can't find the job, contact the Insite LMS support team.
+1. In the section **Self hosted Jobs**, you find a job named “SCIM”. If you can't find the job, contact the Insite LMS support team.
 
 	![Screenshot of generate API Key.](media/insite-lms-provisioning-tutorial/generate-api-key.png)
 
-1. Click on **Generate Api Key**.
+1. Select **Generate Api Key**.
 Copy and save the **Api Key**. This value is entered in the **Secret Token** field in the Provisioning tab of your Insite LMS application.
 
 > [!NOTE]

@@ -14,6 +14,8 @@ ms.custom:
 
 # A web API that calls web APIs: Acquire a token for the app
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 After building a client application object, use it to acquire a token that you can use to call a web API.
 
 ## Code in the controller

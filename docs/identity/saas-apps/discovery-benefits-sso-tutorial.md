@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Discovery Benefits SSO so that I can control who has access to Discovery Benefits SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Discovery Benefits SSO
 
-In this article,  you'll learn how to integrate Discovery Benefits SSO with Microsoft Entra ID. When you integrate Discovery Benefits SSO with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Discovery Benefits SSO with Microsoft Entra ID. When you integrate Discovery Benefits SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Discovery Benefits SSO.
 * Enable your users to be automatically signed-in to Discovery Benefits SSO with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of Discovery Benefits SSO into Microsoft Entra ID, 
 1. In the **Add from the gallery** section, type **Discovery Benefits SSO** in the search box.
 1. Select **Discovery Benefits SSO** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-discovery-benefits-sso'></a>
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Discovery Benefits SSO, complete 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Discovery Benefits SSO](#configure-discovery-benefits-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Discovery Benefits SSO test user](#create-discovery-benefits-sso-test-user)** - to have a counterpart of B.Simon in Discovery Benefits SSO that is linked to the Microsoft Entra representation of user.
+    1. **[Create Discovery Benefits SSO test user](#create-discovery-benefits-sso-test-user)** - to have a counterpart of B.Simon in Discovery Benefits SSO that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,29 +72,29 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Discovery Benefits SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section the application is pre-configured in **IDP** initiated mode and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section the application is pre-configured in **IDP** initiated mode and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by selecting the **Save** button.
 
-1. Discovery Benefits SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open User Attributes dialog.
+1. Discovery Benefits SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Select **Edit** icon to open User Attributes dialog.
 
 	![image](common/edit-attribute.png)
 
-	a. Click on **Edit**  icon to open the **Unique User Identifier (Name ID)** dialog.
+	a. Select **Edit**  icon to open the **Unique User Identifier (Name ID)** dialog.
 
 	![Screenshot that shows the "User Attributes & Claims" section with the "Required claim" ellipses on the right side selected.](./media/discovery-benefits-sso-tutorial/user-attribute.png)
 
 	![Discovery Benefits SSO configuration](./media/discovery-benefits-sso-tutorial/add-attribute.png)
 
-	b. Click on **Edit** icon to open the **Manage transformation** dialog.
+	b. Select **Edit** icon to open the **Manage transformation** dialog.
 
 	c. In the **Transformation** textbox, type the **ToUppercase()** shown for that row.
 
 	d. In the **Parameter 1** textbox, type the parameter like `<Name Identifier value>`.
 
-	e. Click **Add**.
+	e. Select **Add**.
 
 	> [!NOTE]
 	> Discovery Benefits SSO requires a fixed string value to be passed in **Unique User Identifier (Name ID)** field to get this integration working. Microsoft Entra ID currently doesn't support this feature so as a work around, you can use **ToUpper** or **ToLower** transformations of NameID to set a fixed string value as shown above in the screenshot.
@@ -127,9 +127,9 @@ In this section, you create a user called Britta Simon in Discovery Benefits SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Discovery Benefits SSO for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Discovery Benefits SSO for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Discovery Benefits SSO tile in the My Apps, you should be automatically signed in to the Discovery Benefits SSO for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Discovery Benefits SSO tile in the My Apps, you should be automatically signed in to the Discovery Benefits SSO for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

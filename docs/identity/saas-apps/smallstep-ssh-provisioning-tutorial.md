@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Smallstep SSH and M
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Smallstep SSH
-> * Remove users in Smallstep SSH when they do not require access anymore
+> * Remove users in Smallstep SSH when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Smallstep SSH
 > * Provision groups and group memberships in Smallstep SSH
 > * Single sign-on to Smallstep SSH (recommended)
@@ -36,7 +36,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Smallstep SSH](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-smallstep-ssh-to-support-provisioning-with-azure-ad'></a>
@@ -49,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 3. On the next page, provide your **Microsoft Entra tenant ID** and allow list to configure OIDC.
 
-4. Under SCIM Details, copy and save your SCIM **Tenant URL** and **Secret Token**. These values will be entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Smallstep SSH application.
+4. Under SCIM Details, copy and save your SCIM **Tenant URL** and **Secret Token**. These values are entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Smallstep SSH application.
 
 >Note! 
 >You would need to grant access to your Smallstep managed hosts via Active Directory Groups. For example, you might have a group for your ssh users and one for your sudo users. Learn more about access control in [Microsoft Entra Quickstart](https://smallstep.com/docs/ssh/azure-ad) and [Host Quickstart Guide](https://smallstep.com/docs/ssh/hosts).
@@ -58,7 +58,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Smallstep SSH from the Microsoft Entra application gallery
 
-Add Smallstep SSH from the Microsoft Entra application gallery to start managing provisioning to Smallstep SSH. If you have previously setup Smallstep SSH for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Smallstep SSH from the Microsoft Entra application gallery to start managing provisioning to Smallstep SSH. If you have previously setup Smallstep SSH for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Smallstep SSH Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Smallstep SSH. If the connection fails, ensure your Smallstep SSH account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Smallstep SSH Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Smallstep SSH. If the connection fails, ensure your Smallstep SSH account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Smallstep SSH**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Smallstep SSH in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Smallstep SSH for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Smallstep SSH API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Smallstep SSH in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Smallstep SSH for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Smallstep SSH API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|--|
@@ -131,7 +131,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

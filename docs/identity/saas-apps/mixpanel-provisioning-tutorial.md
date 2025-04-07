@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Mixpanel so that I can streamline the user management process and ensure that users have the appropriate access to Mixpanel.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Mixpanel and Micros
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Mixpanel
-> * Remove users in Mixpanel when they do not require access anymore
+> * Remove users in Mixpanel when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Mixpanel
 > * Provision groups and group memberships in Mixpanel
 > * [Single sign-on](./mixpanel-tutorial.md) to Mixpanel (recommended)
@@ -38,14 +38,14 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Mixpanel](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-mixpanel-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Mixpanel to support provisioning with Microsoft Entra ID
 1. For setting up SSO and claiming a domain refer [this](https://docs.mixpanel.com/docs/admin/sso).
-2. After that you will need to generate a SCIM token in the SCIM tab of the access security section of your organization settings.
+2. After that you need to generate a SCIM token in the SCIM tab of the access security section of your organization settings.
 ![Mixpanel token](./media/mixpanel-provisioning-tutorial/mixpanelscim.png)
 
 
@@ -53,7 +53,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Mixpanel from the Microsoft Entra application gallery
 
-Add Mixpanel from the Microsoft Entra application gallery to start managing provisioning to Mixpanel. If you have previously setup Mixpanel for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Mixpanel from the Microsoft Entra application gallery to start managing provisioning to Mixpanel. If you have previously setup Mixpanel for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -84,7 +84,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Mixpanel **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Mixpanel. If the connection fails, ensure your Mixpanel account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Mixpanel **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Mixpanel. If the connection fails, ensure your Mixpanel account has Admin permissions and try again.
 
  	![Screenshot shows the Admin Credentials dialog box, where you can enter your Tenant U R L and Secret Token.](./media/mixpanel-provisioning-tutorial/provisioning.png)
 
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Mixpanel**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Mixpanel in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Mixpanel for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Mixpanel API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Mixpanel in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Mixpanel for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Mixpanel API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -122,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

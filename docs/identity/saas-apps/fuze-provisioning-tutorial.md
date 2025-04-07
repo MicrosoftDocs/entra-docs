@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Fuze so that I can streamline the user management process and ensure that users have the appropriate access to Fuze.
@@ -21,7 +21,7 @@ The objective of this article is to demonstrate the steps to be performed in Fuz
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Fuze
-> * Remove users in Fuze when they do not require access anymore
+> * Remove users in Fuze when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Fuze
 > * [Single sign-on](./fuze-tutorial.md) to Fuze (recommended)
 
@@ -37,14 +37,14 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Fuze](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-fuze-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Fuze to support provisioning with Microsoft Entra ID
 
-Before configuring Fuze for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Fuze. 
+Before configuring Fuze for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Fuze. 
 
 1. Start by contacting your Fuze representative for the following required information:
 
@@ -54,13 +54,13 @@ Before configuring Fuze for automatic user provisioning with Microsoft Entra ID,
 
 2. You can find these SKUs and codes in your Fuze contract and configuration documents, or by contacting your Fuze representative.
 
-3. Once the requirements are received, your Fuze representative will provide you with the Fuze authentication token that is required to enable the integration. This value will be entered in the Secret Token field in the Provisioning tab of your Fuze application.
+3. Once the requirements are received, your Fuze representative will provide you with the Fuze authentication token that's required to enable the integration. This value is entered in the Secret Token field in the Provisioning tab of your Fuze application.
 
 <a name='step-3-add-fuze-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Fuze from the Microsoft Entra application gallery
 
-Add Fuze from the Microsoft Entra application gallery to start managing provisioning to Fuze. If you have previously setup Fuze for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
+Add Fuze from the Microsoft Entra application gallery to start managing provisioning to Fuze. If you have previously setup Fuze for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md).
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input the **SCIM 2.0 base url and SCIM Authentication Token** value retrieved earlier from the Fuze representative in **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Fuze. If the connection fails, ensure your Fuze account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input the **SCIM 2.0 base url and SCIM Authentication Token** value retrieved earlier from the Fuze representative in **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Fuze. If the connection fails, ensure your Fuze account has Admin permissions and try again.
 
 	![Tenant URL Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Fuze**.
 
@@ -123,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -136,7 +136,7 @@ This operation starts the initial synchronization of all users and/or groups def
 ## Connector limitations
 
 * Fuze supports custom SCIM attributes called **Entitlements**. These attributes are only able to be created and not updated. 
-* The Fuze SCIM API does not support filtering on the userName attribute. As a result, you may see failures in the logs when trying to sync an existing user who does not have a userName attribute but exists with an email that matches the userPrincipalName in Microsoft Entra ID. 
+* The Fuze SCIM API doesn't support filtering on the userName attribute. As a result, you may see failures in the logs when trying to sync an existing user who doesn't have a userName attribute but exists with an email that matches the userPrincipalName in Microsoft Entra ID. 
 
 ## Change log
 

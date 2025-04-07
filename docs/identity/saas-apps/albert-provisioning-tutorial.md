@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Albert so that I can streamline the user management process and ensure that users have the appropriate access to Albert.
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both Albert and Microsof
 ## Supported capabilities
 > [!div class="checklist"]
 > * Update user status in Albert.
-> * Remove users in Albert when they do not require access anymore.
+> * Remove users in Albert when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Albert.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Albert (recommended).
 
@@ -92,7 +92,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Albert**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Albert in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Albert for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Albert API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Albert in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Albert for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Albert API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Albert|
    |---|---|---|---|

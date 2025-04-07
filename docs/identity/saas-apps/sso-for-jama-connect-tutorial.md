@@ -80,9 +80,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://<Tenant_Name>.jamacloud.com/login.req`
 
 	> [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [SSO for Jama Connect® support team](mailto:support@jamasoftware.zendesk.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [SSO for Jama Connect® support team](mailto:support@jamasoftware.zendesk.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -100,15 +100,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to SSO for Jama Connect® Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to SSO for Jama Connect® Sign-on URL where you can initiate the login flow.  
 
 * Go to SSO for Jama Connect® Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the SSO for Jama Connect® for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the SSO for Jama Connect® for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the SSO for Jama Connect® tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SSO for Jama Connect® for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the SSO for Jama Connect® tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SSO for Jama Connect® for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

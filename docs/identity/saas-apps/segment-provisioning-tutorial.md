@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Segment and Microso
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Segment
-> * Remove users in Segment when they do not require access anymore
+> * Remove users in Segment when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Segment
 > * Provision groups and group memberships in Segment
 > * [Single sign-on](./segment-tutorial.md) to Segment (recommended)
@@ -38,14 +38,14 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Segment](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-segment-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Segment to support provisioning with Microsoft Entra ID
 
-1. The Tenant URL is `https://scim.segmentapis.com/scim/v2`. This value will be entered in the **Tenant URL** field in the Provisioning tab of your Segment application.
+1. The Tenant URL is `https://scim.segmentapis.com/scim/v2`. This value is entered in the **Tenant URL** field in the Provisioning tab of your Segment application.
 
 2. Login to [Segment](https://www.segment.com/) app.
 
@@ -53,11 +53,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 	![panel](media/segment-provisioning-tutorial/left.png)
 
-4. Scroll down to **SSO Sync** and click on **Generate SSO Token**.
+4. Scroll down to **SSO Sync** and select **Generate SSO Token**.
 
 	![access](media/segment-provisioning-tutorial/token.png)
 
-5. Copy and save the Bearer token. This value will be entered in the **Secret Token** field in the Provisioning tab of your Segment application.
+5. Copy and save the Bearer token. This value is entered in the **Secret Token** field in the Provisioning tab of your Segment application.
 
 	![token](media/segment-provisioning-tutorial/access.png)
 
@@ -65,7 +65,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 3: Add Segment from the Microsoft Entra application gallery
 
-Add Segment from the Microsoft Entra application gallery to start managing provisioning to Segment. If you have previously setup Segment for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Segment from the Microsoft Entra application gallery to start managing provisioning to Segment. If you have previously setup Segment for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Segment Tenant URL and Secret Token retrieved earlier in Step 2. Click **Test Connection** to ensure Microsoft Entra ID can connect to Segment. If the connection fails, ensure your Segment account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Segment Tenant URL and Secret Token retrieved earlier in Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to Segment. If the connection fails, ensure your Segment account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Segment**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Segment in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Segment for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Segment API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Segment in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Segment for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Segment API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for Filtering
    |---|---|--|
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

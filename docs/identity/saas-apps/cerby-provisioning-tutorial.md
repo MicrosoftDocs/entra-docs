@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cerby so that I can streamline the user management process and ensure that users have the appropriate access to Cerby.
@@ -22,7 +22,7 @@ This article describes the steps you need to do in both Cerby and Microsoft Entr
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Cerby
-> * Remove users in Cerby when they do not require access anymore
+> * Remove users in Cerby when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Cerby
 > * Provision groups and group memberships in Cerby.
 > * [Single sign-on](cerby-tutorial.md) to Cerby (recommended).
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Cerby](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-cerby-to-support-provisioning-with-azure-ad'></a>
@@ -47,13 +47,13 @@ The scenario outlined in this article assumes that you already have the followin
 Cerby has enabled by default the provisioning support for Microsoft Entra ID. You must only retrieve the SCIM API authentication token by completing the following steps:
 
 1. Log in to your corresponding [Cerby workspace](https://app.cerby.com/).
-1. Click the **Hi there < user >!** button located at the bottom of the left side navigation menu. A drop-down menu is displayed.
+1. Select the **Hi there < user >!** button located at the bottom of the left side navigation menu. A drop-down menu is displayed.
 1. Select the **Workspace Configuration** option related to your account from the drop-down menu. The **Workspace Configuration** page is displayed.
 1. Activate the **IDP Settings** tab.
-1. Click the **View Token** button located in the **Directory Sync** section of the **IDP Settings** tab. A pop-up window is displayed waiting to confirm your identity, and a push notification is sent to your Cerby mobile application.
+1. Select the **View Token** button located in the **Directory Sync** section of the **IDP Settings** tab. A pop-up window is displayed waiting to confirm your identity, and a push notification is sent to your Cerby mobile application.
 **IMPORTANT:** To confirm your identity, you must have installed and logged in to the Cerby mobile application to receive push notifications.
-1. Click the **It's me!** button in the **Confirmation Request** screen of your Cerby mobile application to confirm your identity. The pop-up window in your Cerby workspace is closed, and the **Show Token** pop-up window is displayed.
-1. Click the **Copy** button to copy the SCIM token to the clipboard.
+1. Select the **It's me!** button in the **Confirmation Request** screen of your Cerby mobile application to confirm your identity. The pop-up window in your Cerby workspace is closed, and the **Show Token** pop-up window is displayed.
+1. Select the **Copy** button to copy the SCIM token to the clipboard.
 
 	>[!TIP]
 	>Keep the **Show Token** pop-up window open to copy the token at any time. You need the token to configure provisioning with Microsoft Entra ID.
@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Admin Credentials** section, input `https://api.cerby.com/v1/scim/v2` as your Cerby Tenant URL and the SCIM API authentication token that you have previously retrieved. 
 
-1. Click **Test Connection** to ensure Microsoft Entra ID can connect to Cerby. If the connection fails, ensure your Cerby account has Admin permissions and try again.
+1. Select **Test Connection** to ensure Microsoft Entra ID can connect to Cerby. If the connection fails, ensure your Cerby account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Cerby**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Cerby in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Cerby for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Cerby API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Cerby in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Cerby for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Cerby API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Cerby|
    |---|---|---|---|
@@ -138,7 +138,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

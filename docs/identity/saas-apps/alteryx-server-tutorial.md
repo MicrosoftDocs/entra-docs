@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alteryx Server so that I can control who has access to Alteryx Server, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -54,7 +54,7 @@ To configure and test Microsoft Entra SSO with Alteryx Server, perform the follo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Alteryx Server SSO](#configure-alteryx-server-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Alteryx Server test user](#create-alteryx-server-test-user)** - to have a counterpart of B.Simon in Alteryx Server that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Alteryx Server test user](#create-alteryx-server-test-user)** - to have a counterpart of B.Simon in Alteryx Server that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Select either **IDP Metadata URL** or **X509 certificate and IDP SSO URL** according to your requirement.
 
-    1. The **ACS Base URL** field will autopopulate and get configured with HTTPS.
+    1. The **ACS Base URL** field autopopulates and gets configured with HTTPS.
 
     1. In the **IDP URL** field, paste the **Microsoft Entra Identifier**, which you have copied from the Microsoft Entra admin center.
 
@@ -124,7 +124,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select **Test this application** in Microsoft Entra admin center. This redirects to Alteryx Server Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to Alteryx Server Sign on URL where you can initiate the login flow.  
  
 * Go to Alteryx Server Sign-on URL directly and initiate the login flow from there.
  

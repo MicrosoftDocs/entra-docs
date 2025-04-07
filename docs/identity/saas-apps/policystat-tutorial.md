@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with PolicyStat
 
-In this article,  you'll learn how to integrate PolicyStat with Microsoft Entra ID. When you integrate PolicyStat with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate PolicyStat with Microsoft Entra ID. When you integrate PolicyStat with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to PolicyStat.
 * Enable your users to be automatically signed-in to PolicyStat with their Microsoft Entra accounts.
@@ -47,7 +47,7 @@ To configure the integration of PolicyStat into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, type **PolicyStat** in the search box.
 1. Select **PolicyStat** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-policystat'></a>
 
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with PolicyStat, perform the following
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure PolicyStat SSO](#configure-policystat-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create PolicyStat test user](#create-policystat-test-user)** - to have a counterpart of B.Simon in PolicyStat that is linked to the Microsoft Entra representation of user.
+    1. **[Create PolicyStat test user](#create-policystat-test-user)** - to have a counterpart of B.Simon in PolicyStat that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **PolicyStat** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -86,11 +86,11 @@ Follow these steps to enable Microsoft Entra SSO.
         >[!NOTE]
         >These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [PolicyStat Client support team](https://rldatix.com/en-apac/customer-success/community/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
     ![The Certificate download link](common/metadataxml.png)
 
-1. Your PolicyStat application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open **User Attributes** dialog.
+1. Your PolicyStat application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Select **Edit** icon to open **User Attributes** dialog.
 
     ![Screenshot that shows the "User Attributes" dialog with the "Edit" icon selected.](common/edit-attribute.png)
 
@@ -100,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
     |------------------- | -------------------- |
     | uid | ExtractMailPrefix([mail]) |
 
-    1. Click **Add new claim** to open the **Manage user claims** dialog.
+    1. Select **Add new claim** to open the **Manage user claims** dialog.
 	
         ![Screenshot that shows the "User claims" section with the "Add new claim" and "Save" actions highlighted.](common/new-save-attribute.png)
 
@@ -130,11 +130,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, log in to your PolicyStat company site as an administrator.
 
-1. Click the **Admin** tab, and then click **Single Sign-On Configuration** in left navigation pane.
+1. Select the **Admin** tab, and then select **Single Sign-On Configuration** in left navigation pane.
    
     ![Administrator Menu](./media/policystat-tutorial/admin.png "Administrator Menu")
 
-1. Click **Your IDP Metadata**, and then, in the **Your IDP Metadata** section, perform the following steps:
+1. Select **Your IDP Metadata**, and then, in the **Your IDP Metadata** section, perform the following steps:
    
     ![Screenshot that shows the "Your I D P Metadata" action selected.](./media/policystat-tutorial/metadata.png "Single Sign-On Configuration")
    
@@ -142,9 +142,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. Select **Save Changes**.
 
-1. Click **Configure Attributes**, and then, in the **Configure Attributes** section, perform the following steps using the **CLAIM NAMES** found in your Azure configuration:
+1. Select **Configure Attributes**, and then, in the **Configure Attributes** section, perform the following steps using the **CLAIM NAMES** found in your Azure configuration:
    
-    1. In the **Username Attribute** textbox, type the username claim value you are passing over as the key username attribute. The default value in Azure is UPN, but if you already have accounts in PolicyStat, you will need to match those username values to avoid duplicate accounts or update the existing accounts in PolicyStat to the UPN value. To update existing usernames in bulk, please contact RLDatix PolicyStat Support https://websupport.rldatix.com/support-form/.
+    1. In the **Username Attribute** textbox, type the username claim value you're passing over as the key username attribute. The default value in Azure is UPN, but if you already have accounts in PolicyStat, you need to match those username values to avoid duplicate accounts or update the existing accounts in PolicyStat to the UPN value. To update existing usernames in bulk, please contact RLDatix PolicyStat Support https://websupport.rldatix.com/support-form/.
     Default value to enter to pass the UPN **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`** .
 
     1. In the **First Name Attribute** textbox, type the First Name Attribute claim name from Azure **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`**.
@@ -153,7 +153,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. In the **Email Attribute** textbox, type the Email Attribute claim name from Azure **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`**.
 
-    1. Click **Save Changes**.
+    1. Select **Save Changes**.
 
 1. In the **Setup** section, select **Enable Single Sign-on Integration**.
    
@@ -161,7 +161,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create PolicyStat test user
 
-In this section, a user called Britta Simon is created in PolicyStat. PolicyStat supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in PolicyStat, a new one is created after authentication.
+In this section, a user called Britta Simon is created in PolicyStat. PolicyStat supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in PolicyStat, a new one is created after authentication.
 
 >[!NOTE]
 >You can use any other PolicyStat user account creation tools or APIs provided by PolicyStat to provision Microsoft Entra user accounts.
@@ -170,11 +170,11 @@ In this section, a user called Britta Simon is created in PolicyStat. PolicyStat
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to PolicyStat Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to PolicyStat Sign-on URL where you can initiate the login flow. 
 
 * Go to PolicyStat Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the PolicyStat tile in the My Apps, this will redirect to PolicyStat Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the PolicyStat tile in the My Apps, this option redirects to PolicyStat Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

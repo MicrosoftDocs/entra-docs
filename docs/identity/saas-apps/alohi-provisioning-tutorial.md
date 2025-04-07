@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Alohi so that I can streamline the user management process and ensure that users have the appropriate access to Alohi.
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both Alohi and Microsoft
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Alohi.
-> * Remove users in Alohi when they do not require access anymore.
+> * Remove users in Alohi when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Alohi.
 > * [Single sign-on](alohi-tutorial.md) to Alohi (recommended).
 

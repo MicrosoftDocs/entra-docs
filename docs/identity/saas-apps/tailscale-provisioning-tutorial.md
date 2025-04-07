@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Tailscale and Micro
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Tailscale.
-> * Remove users in Tailscale when they do not require access anymore.
+> * Remove users in Tailscale when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Tailscale.
 > * Provision groups and group memberships in Tailscale.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Tailscale (recommended).
@@ -48,10 +48,10 @@ You need to be an [Owner, Admin, or IT admin](https://tailscale.com/kb/1138/user
 
 In the **[User management](https://login.tailscale.com/admin/settings/user-management/)** page of the admin console,
 
-1. Click **Enable Provisioning**.
+1. Select **Enable Provisioning**.
 1. Copy the generated key to the clipboard.
 
-Save the key information in a secure spot. This is the Secret Token you will need to use it when you configure provisioning in Microsoft Entra ID.
+Save the key information in a secure spot. This is the Secret Token you need to use it when you configure provisioning in Microsoft Entra ID.
 
 <a name='step-3-add-tailscale-from-the-azure-ad-application-gallery'></a>
 
@@ -88,7 +88,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Tailscale Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Tailscale. If the connection fails, ensure your Tailscale account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Tailscale Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Tailscale. If the connection fails, ensure your Tailscale account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -134,7 +134,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

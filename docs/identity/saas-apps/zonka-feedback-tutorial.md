@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Zonka Feedback
 
-In this article,  you'll learn how to integrate Zonka Feedback with Microsoft Entra ID. When you integrate Zonka Feedback with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Zonka Feedback with Microsoft Entra ID. When you integrate Zonka Feedback with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zonka Feedback.
 * Enable your users to be automatically signed-in to Zonka Feedback with their Microsoft Entra accounts.
@@ -59,7 +59,7 @@ To configure and test Microsoft Entra SSO with Zonka Feedback, perform the follo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Zonka Feedback SSO](#configure-zonka-feedback-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Zonka Feedback test user](#create-zonka-feedback-test-user)** - to have a counterpart of B.Simon in Zonka Feedback that is linked to the Microsoft Entra representation of user.
+    1. **[Create Zonka Feedback test user](#create-zonka-feedback-test-user)** - to have a counterpart of B.Simon in Zonka Feedback that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zonka Feedback** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -108,7 +108,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Log in to Zonka Feedback company site as an administrator.
 
-1. Go to **Settings (gear icon)** > **Account** > and click **SSO**.
+1. Go to **Settings (gear icon)** > **Account** > and select **SSO**.
 
 1. In the **Single Sign On** page, perform the following steps.
 
@@ -122,13 +122,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **Public Certificate** textbox.
 
-    1. Click **Save**.
+    1. Select **Save**.
 
 ### Create Zonka Feedback test user
 
 1. In a different web browser window, sign into Zonka Feedback website as an administrator.
 
-1. Navigate to **Settings** > **Users** > **All Users** and click **Add User**.
+1. Navigate to **Settings** > **Users** > **All Users** and select **Add User**.
 
     ![Screenshot shows how to create users in application.](./media/zonka-feedback-tutorial/create.png "Users")
 
@@ -138,17 +138,17 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Enter a valid email address in the textbox.
 
-    1. Click **Invite**.
+    1. Select **Invite**.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Zonka Feedback Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Zonka Feedback Sign-on URL where you can initiate the login flow.
  
 * Go to Zonka Feedback Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you click the Zonka Feedback tile in the My Apps, this will redirect to Zonka Feedback Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Zonka Feedback tile in the My Apps, this option redirects to Zonka Feedback Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

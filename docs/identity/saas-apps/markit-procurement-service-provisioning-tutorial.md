@@ -6,7 +6,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Markit Procurement Service so that I can streamline the user management process and ensure that users have the appropriate access to Markit Procurement Service.
@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Markit Procurement 
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Markit Procurement Service.
-> * Remove users in Markit Procurement Service when they do not require access anymore.
+> * Remove users in Markit Procurement Service when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Markit Procurement Service.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Markit Procurement Service (recommended).
 
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Markit Procurement Service](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-markit-procurement-service-to-support-provisioning-with-azure-ad'></a>
@@ -77,7 +77,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Markit Procurement Service Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Markit Procurement Service. If the connection fails, ensure your Markit Procurement Service account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Markit Procurement Service Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Markit Procurement Service. If the connection fails, ensure your Markit Procurement Service account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -113,7 +113,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

@@ -86,4 +86,5 @@ This link will take you to the [guide](quickstart-get-started-guide.md), where y
 
 ## Related content
 - To learn more about the set-up guide and how to customize your tenant, see the [Get started guide](quickstart-get-started-guide.md) article.
-- To learn how to delete your tenant, see the [Delete an external tenant](how-to-delete-external-tenant-portal.md) article. 
+- To learn how to delete your tenant, see the [Delete an external tenant](how-to-delete-external-tenant-portal.md) article.
+- To learn how to migrate users from another identity provider, see the [How to migrate users](how-to-migrate-users.md) article.

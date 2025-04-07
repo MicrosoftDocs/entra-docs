@@ -64,7 +64,7 @@ To configure and test Microsoft Entra SSO with Yokoy, perform the following step
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Yokoy SSO](#configure-yokoy-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Yokoy test user](#create-yokoy-test-user)** - to have a counterpart of B.Simon in Yokoy that is linked to the Microsoft Entra representation of user.
+    1. **[Create Yokoy test user](#create-yokoy-test-user)** - to have a counterpart of B.Simon in Yokoy that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     > [!NOTE]
     > The Reply URL value isn't real. Update this value with the actual Reply URL. Contact Yokoy Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Yokoy application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Yokoy application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Yokoy application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Yokoy application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by selecting **Edit** icon and change the attribute mapping.
 
     ![Screenshot shows the image of Yokoy application.](common/edit-attribute.png "Attributes")
 

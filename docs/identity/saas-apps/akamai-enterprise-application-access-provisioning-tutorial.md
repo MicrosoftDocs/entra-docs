@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Akamai Enterprise Application Access so that I can streamline the user management process and ensure that users have the appropriate access to Akamai Enterprise Application Access.
@@ -23,7 +23,7 @@ This article describes the steps you need to perform in both Akamai Enterprise A
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Akamai Enterprise Application Access.
-> * Remove users in Akamai Enterprise Application Access when they do not require access anymore.
+> * Remove users in Akamai Enterprise Application Access when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Akamai Enterprise Application Access.
 > * Provision groups and group memberships in Akamai Enterprise Application Access
 > * [Single sign-on](akamai-tutorial.md) to Akamai Enterprise Application Access (recommended).
@@ -58,7 +58,7 @@ Configure a SCIM directory of type Azure in Akamai Enterprise Center and save 
 1. Open your new directory **Settings** > **General** and copy **SCIM base URL**. Save it for Azure SCIM provisioning in STEP 4.
 1. In **Settings** > **General** select **Create Provisioning Key**.
 1. Enter a name and description for the key.
-1. Copy **Provisioning key** by clicking on the copy to clipboard icon. Save it for Azure SCIM provisioning in STEP 5.
+1. Copy **Provisioning key** by selecting the copy to clipboard icon. Save it for Azure SCIM provisioning in STEP 5.
 1. In **Login preference Attributes** select either **User principal name** (default) or **Email** to choose for a user a way to log in.
 1. Select **Save**.  
      The new SCIM directory appears in the directories list in **Identity & Users** > **Directories**.

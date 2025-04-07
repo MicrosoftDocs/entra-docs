@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with WEDO
 
-In this article,  you'll learn how to integrate WEDO with Microsoft Entra ID. When you integrate WEDO with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate WEDO with Microsoft Entra ID. When you integrate WEDO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to WEDO.
 * Enable your users to be automatically signed-in to WEDO with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of WEDO into Microsoft Entra ID, you need to add WE
 1. In the **Add from the gallery** section, type **WEDO** in the search box.
 1. Select **WEDO** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-wedo'></a>
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with WEDO, perform the following steps
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure WEDO SSO](#configure-wedo-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create WEDO test user](#create-wedo-test-user)** - to have a counterpart of B.Simon in WEDO that is linked to the Microsoft Entra representation of user.
+    1. **[Create WEDO test user](#create-wedo-test-user)** - to have a counterpart of B.Simon in WEDO that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **WEDO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,13 +82,13 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.wedo.swiss/sp/acs`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.wedo.swiss/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [WEDO Client support team](mailto:info@wedo.swiss) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [WEDO Client support team](mailto:info@wedo.swiss) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. WEDO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -127,34 +127,34 @@ Follow these steps to enable Microsoft Entra SSO in WEDO.
 
    c. Open the downloaded **Federation Metadata XML** from Azure portal into Notepad and copy the content of metadata XML and paste it into **X.509 Certificate** textbox.
 
-   d. Click **Save**.
+   d. Select **Save**.
 
 ### Create WEDO test user
 
-In this section, you'll create a test user in WEDO called Bob Simon. Information must matches from **Create a Microsoft Entra test user**.
+In this section, you create a test user in WEDO called Bob Simon. Information must matches from **Create a Microsoft Entra test user**.
 
 1. From the Profile setting in WEDO, select **Users** from **Network settings** section.
-1. Click **Add user**.
+1. Select **Add user**.
 1. In the Add user pop-up, fill the user's information
 
     a. First name `B`.
 
     b. Last name `Simon`.
 
-    c. Enter the email `username@companydomain.extension`. For example, `B.Simon@contoso.com`. It is mandatory to have email with the same domain as your company short name.
+    c. Enter the email `username@companydomain.extension`. For example, `B.Simon@contoso.com`. It's mandatory to have email with the same domain as your company short name.
 
     d. User type `User`.
 
-    e. Click **Create user**.
+    e. Select **Create user**.
 
-    f. In the **Select teams** page, click **Save**.
+    f. In the **Select teams** page, select **Save**.
 
-    g.  In the **Invite user** page, click **Yes**.
+    g.  In the **Invite user** page, select **Yes**.
 
 1. Validate the user using the link you received by email
 
 > [!NOTE]
-> If you want to create a fake user (email above does not exist in your network), contact [our support](mailto:info@wedo.swiss) to validate the user*.
+> If you want to create a fake user (email above doesn't exist in your network), contact [our support](mailto:info@wedo.swiss) to validate the user*.
 
 > [!NOTE]
 > WEDO also supports automatic user provisioning, you can find more details [here](./wedo-provisioning-tutorial.md) on how to configure automatic user provisioning.
@@ -165,15 +165,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click **Test this application** in Azure portal. This will redirect to WEDO Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Azure portal. this option redirects to WEDO Sign on URL where you can initiate the login flow.  
 
 * Go to WEDO Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click **Test this application** and you should be automatically signed in to the WEDO for which you set up the SSO. 
+* Select **Test this application** and you should be automatically signed in to the WEDO for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the WEDO tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the WEDO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the WEDO tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the WEDO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

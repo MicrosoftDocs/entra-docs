@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Onyxia
 
-In this article,  you'll learn how to integrate Onyxia with Microsoft Entra ID. When you integrate Onyxia with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Onyxia with Microsoft Entra ID. When you integrate Onyxia with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Onyxia.
 * Enable your users to be automatically signed-in to Onyxia with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Onyxia, perform the following ste
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Onyxia SSO](#configure-onyxia-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Onyxia test user](#create-onyxia-test-user)** - to have a counterpart of B.Simon in Onyxia that is linked to the Microsoft Entra representation of user.
+    1. **[Create Onyxia test user](#create-onyxia-test-user)** - to have a counterpart of B.Simon in Onyxia that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -70,11 +70,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Onyxia** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the application is pre-configured and the necessary URLs are already pre-populated with Microsoft Entra. The user needs to save the configuration by clicking the **Save** button.
+1. On the **Basic SAML Configuration** section, the application is pre-configured and the necessary URLs are already pre-populated with Microsoft Entra. The user needs to save the configuration by selecting the **Save** button.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
@@ -97,11 +97,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Log in to Onyxia company site as an administrator.
 
-1. Go to **Settings** and click **Account Settings**.
+1. Go to **Settings** and select **Account Settings**.
 
     ![Screenshot shows navigation to the settings.](./media/onyxia-tutorial/navigate.png "Settings")
 
-1. Navigate to **SSO** section and click **+ Add New Connection**.
+1. Navigate to **SSO** section and select **+ Add New Connection**.
 
     ![Screenshot shows to add new connection.](./media/onyxia-tutorial/connection.png "Add")
 
@@ -119,11 +119,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     1. Copy the **SP Entity ID** and paste it in the **Identifier (Entity ID)** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-    1. Click **+ Create**.
+    1. Select **+ Create**.
 
 ### Create Onyxia test user
 
-In this section, a user called Britta Simon is created in Onyxia. Onyxia supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Onyxia, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Onyxia. Onyxia supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Onyxia, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -131,15 +131,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Onyxia Sign-on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Onyxia Sign-on URL where you can initiate the login flow.  
  
 * Go to Onyxia Sign-on URL directly and initiate the login flow from there.
  
 #### IDP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Onyxia for which you set up the SSO.
+* Select **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Onyxia for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the Onyxia tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Onyxia for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Onyxia tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Onyxia for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

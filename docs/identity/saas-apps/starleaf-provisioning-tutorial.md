@@ -50,7 +50,7 @@ Before you configure StarLeaf for automatic user provisioning with Microsoft Ent
 
 	![Screenshot of the StarLeaf Admin Console with the Integrations and Add integration options called out.](media/starleaf-provisioning-tutorial/image00.png)
 
-2. Select the **Type** to be Microsoft Entra ID. Enter a suitable name in **Name**. Click **Apply**.
+2. Select the **Type** to be Microsoft Entra ID. Enter a suitable name in **Name**. Select **Apply**.
 
 	![Screenshot of the Add integration dialog box with the Type and Name text boxes called out.](media/starleaf-provisioning-tutorial/image01.png)
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the Admin Credentials section, input the **SCIM Base URL** and **Access Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to StarLeaf. If the connection fails, ensure your StarLeaf account has Admin permissions and try again.
+5. Under the Admin Credentials section, input the **SCIM Base URL** and **Access Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to StarLeaf. If the connection fails, ensure your StarLeaf account has Admin permissions and try again.
 
 	![Screenshot of the Tenant URL + Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Notification Email.](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to StarLeaf**.
 
@@ -118,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the provisioning scope.](common/provisioning-scope.png)
 
-13. When you're ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Screenshot of saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

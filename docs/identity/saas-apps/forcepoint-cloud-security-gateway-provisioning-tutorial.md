@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Forcepoint Cloud Security Gateway - User Authentication so that I can streamline the user management process and ensure that users have the appropriate access to Forcepoint Cloud Security Gateway - User Authentication.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Forcepoint Cloud Se
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Forcepoint Cloud Security Gateway - User Authentication.
-> * Remove users in Forcepoint Cloud Security Gateway - User Authentication when they do not require access anymore.
+> * Remove users in Forcepoint Cloud Security Gateway - User Authentication when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Forcepoint Cloud Security Gateway - User Authentication.
 > * Provision groups and group memberships in Forcepoint Cloud Security Gateway - User Authentication.
 > * [Single sign-on](forcepoint-cloud-security-gateway-tutorial.md) to Forcepoint Cloud Security Gateway - User Authentication (recommended).
@@ -38,7 +38,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Forcepoint Cloud Security Gateway - User Authentication](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-forcepoint-cloud-security-gateway---user-authentication-to-support-provisioning-with-azure-ad'></a>
@@ -81,7 +81,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Forcepoint Cloud Security Gateway - User Authentication Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Forcepoint Cloud Security Gateway - User Authentication. If the connection fails, ensure your Forcepoint Cloud Security Gateway - User Authentication account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Forcepoint Cloud Security Gateway - User Authentication Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Forcepoint Cloud Security Gateway - User Authentication. If the connection fails, ensure your Forcepoint Cloud Security Gateway - User Authentication account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -93,7 +93,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Forcepoint Cloud Security Gateway - User Authentication**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to Forcepoint Cloud Security Gateway - User Authentication in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Forcepoint Cloud Security Gateway - User Authentication for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Forcepoint Cloud Security Gateway - User Authentication API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Forcepoint Cloud Security Gateway - User Authentication in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Forcepoint Cloud Security Gateway - User Authentication for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Forcepoint Cloud Security Gateway - User Authentication API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Forcepoint Cloud Security Gateway - User Authentication|
    |---|---|---|---|
@@ -123,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

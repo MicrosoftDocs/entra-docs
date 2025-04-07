@@ -12,7 +12,7 @@ metadata:
   author: rolyon
   ms.author: rolyon
   manager: femila
-  ms.date: 03/22/2024
+  ms.date: 03/30/2025
 
 productDirectory:
   title: Getting started
@@ -67,7 +67,7 @@ productDirectory:
       url: ./saas-apps/tutorial-list.md
     - title: Monitoring and health
       imageSrc: ./media/index/monitoring-health.svg
-      summary: "Use logs and reports to determine usage of your apps and services, detect risks, and troubleshoot issues.."
+      summary: "Use logs and reports to determine usage of your apps and services, detect risks, and troubleshoot issues."
       url: ./monitoring-health/overview-monitoring-health.md
     - title: Multitenant organizations
       imageSrc: ./media/index/multitenant-organizations.svg

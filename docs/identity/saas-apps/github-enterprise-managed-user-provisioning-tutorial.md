@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub Enterprise Managed User so that I can streamline the user management process and ensure that users have the appropriate access to GitHub Enterprise Managed User.
@@ -21,12 +21,12 @@ ms.author: thomasakelo
 This article describes the steps you need to perform in both GitHub Enterprise Managed User and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to GitHub Enterprise Managed User using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 > [!NOTE]
-> [GitHub Enterprise Managed User (EMU)](https://docs.github.com/enterprise-cloud@latest/admin/authentication/managing-your-enterprise-users-with-your-identity-provider/about-enterprise-managed-users) is a different type of [GitHub Enterprise Account](https://docs.github.com/enterprise-cloud@latest/admin/overview/about-enterprise-accounts). If you haven't specifically requested EMU instance, you have a standard GitHub Enterprise Account. In that case, please refer to [the documentation](./github-provisioning-tutorial.md) to configure user provisioning in your non-EMU organisation. User provisioning is not supported for [standard GitHub Enterprise Accounts](https://docs.github.com/enterprise-cloud@latest/admin/overview/about-enterprise-accounts), but is supported for organisations under GitHub Enterprise Managed User (EMU).
+> [GitHub Enterprise Managed User (EMU)](https://docs.github.com/enterprise-cloud@latest/admin/authentication/managing-your-enterprise-users-with-your-identity-provider/about-enterprise-managed-users) is a different type of [GitHub Enterprise Account](https://docs.github.com/enterprise-cloud@latest/admin/overview/about-enterprise-accounts). If you haven't specifically requested EMU instance, you have a standard GitHub Enterprise Account. In that case, please refer to [the documentation](./github-provisioning-tutorial.md) to configure user provisioning in your non-EMU organisation. User provisioning isn't supported for [standard GitHub Enterprise Accounts](https://docs.github.com/enterprise-cloud@latest/admin/overview/about-enterprise-accounts), but is supported for organisations under GitHub Enterprise Managed User (EMU).
 
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in GitHub Enterprise Managed User
-> * Remove users in GitHub Enterprise Managed User when they do not require access anymore
+> * Remove users in GitHub Enterprise Managed User when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and GitHub Enterprise Managed User
 > * Provision groups and group memberships in GitHub Enterprise Managed User
 > * Single sign-on to GitHub Enterprise Managed User (recommended)
@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and GitHub Enterprise Managed User](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-github-enterprise-managed-user-to-support-provisioning-with-azure-ad'></a>
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your GitHub Enterprise Managed User Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to GitHub Enterprise Managed User. If the connection fails, ensure your GitHub Enterprise Managed User account has created the secret token as an enterprise owner and try again.
+5. Under the **Admin Credentials** section, input your GitHub Enterprise Managed User Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GitHub Enterprise Managed User. If the connection fails, ensure your GitHub Enterprise Managed User account has created the secret token as an enterprise owner and try again.
 
      ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -142,7 +142,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you're ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
     ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

@@ -5,7 +5,7 @@ description: Protecting Gen AI services like Microsoft Security Copilot and Micr
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 11/08/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -72,7 +72,7 @@ The following steps help create a Conditional Access policy to require all users
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ### All users of Generative AI services must access from a compliant device when insider risk is moderate
 
@@ -106,7 +106,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ### All users of Generative AI services are blocked when insider risk is elevated 
 
@@ -136,7 +136,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ## Related content
 

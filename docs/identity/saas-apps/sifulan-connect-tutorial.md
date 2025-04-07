@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with SIFULAN Connect
 
-In this article,  you'll learn how to integrate SIFULAN Connect with Microsoft Entra ID. When you integrate SIFULAN Connect with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SIFULAN Connect with Microsoft Entra ID. When you integrate SIFULAN Connect with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SIFULAN Connect.
 * Enable your users to be automatically signed-in to SIFULAN Connect with their Microsoft Entra accounts.
@@ -55,7 +55,7 @@ To configure and test Microsoft Entra SSO with SIFULAN Connect, perform the foll
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SIFULAN Connect SSO](#configure-sifulan-connect-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create SIFULAN Connect test user](#create-sifulan-connect-test-user)** - to have a counterpart of B.Simon in SIFULAN Connect that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create SIFULAN Connect test user](#create-sifulan-connect-test-user)** - to have a counterpart of B.Simon in SIFULAN Connect that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -65,7 +65,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SIFULAN Connect** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<Sub-DomainName>/idp/profile/SAML2/POST/SSO`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [SIFULAN Connect support team](mailto:support@sifulan.my) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [SIFULAN Connect support team](mailto:support@sifulan.my) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. SIFULAN Connect application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -118,7 +118,7 @@ In this section, you test your Microsoft Entra single sign-on configuration usin
 
 #### SP initiated:
 
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to SIFULAN Connect Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to SIFULAN Connect Sign on URL where you can initiate the login flow.  
 * Go to SIFULAN Connect Sign-on URL directly and initiate the login flow from there.
 
 ## Related content

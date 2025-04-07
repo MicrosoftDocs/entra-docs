@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with Alation Data Catalog, perform the
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Alation Data Catalog SSO](#configure-alation-data-catalog-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Alation Data Catalog test user](#create-alation-data-catalog-test-user)** - to have a counterpart of B.Simon in Alation Data Catalog that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Alation Data Catalog test user](#create-alation-data-catalog-test-user)** - to have a counterpart of B.Simon in Alation Data Catalog that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -137,7 +137,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Select **Test this application** in Microsoft Entra admin center. This redirects to Alation Data Catalog Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to Alation Data Catalog Sign on URL where you can initiate the login flow.  
  
 * Go to Alation Data Catalog Sign-on URL directly and initiate the login flow from there.
  

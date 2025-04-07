@@ -20,7 +20,7 @@ This article describes the steps you need to perform in both Teamgo and Microsof
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in Teamgo
-> * Remove users in Teamgo when they do not require access anymore
+> * Remove users in Teamgo when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Teamgo
 > * [Single sign-on](teamgo-tutorial.md) to Teamgo (recommended)
 
@@ -34,7 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Teamgo](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-teamgo-to-support-provisioning-with-azure-ad'></a>
@@ -42,17 +42,17 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure Teamgo to support provisioning with Microsoft Entra ID
 
 1. Sign-in to the [Teamgo dashboard](https://my.teamgo.co) and go to  the Settings. 
-1. Click on **Integrations** under settings.
-1. Under **Employee Directory**, look for **Microsoft Entra ID** and click on **Enable** button.
+1. Select **Integrations** under settings.
+1. Under **Employee Directory**, look for **Microsoft Entra ID** and select **Enable** button.
 ![Integrations tab](media/teamgo-provisioning-tutorial/enable-azure-in-teamgo.png)
-1. Go to **SCIM Bearer Token** tab and copy the bearer token. The **Secret Token** will be required in the **Step 5**.
+1. Go to **SCIM Bearer Token** tab and copy the bearer token. The **Secret Token** is required in the **Step 5**.
 ![Integration tab](media/teamgo-provisioning-tutorial/scim-bearer-token.png)
 
 <a name='step-3-add-teamgo-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Teamgo from the Microsoft Entra application gallery
 
-Add Teamgo from the Microsoft Entra application gallery to start managing provisioning to Teamgo. If you have previously setup Teamgo for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Teamgo from the Microsoft Entra application gallery to start managing provisioning to Teamgo. If you have previously setup Teamgo for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your Teamgo Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Teamgo. If the connection fails, ensure your Teamgo account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input your Teamgo Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Teamgo. If the connection fails, ensure your Teamgo account has Admin permissions and try again.
 
  	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -95,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Teamgo**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Teamgo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Teamgo for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Teamgo API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Teamgo in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Teamgo for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Teamgo API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering
     |---|---|---|
@@ -122,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airstack so that I can streamline the user management process and ensure that users have the appropriate access to Airstack.
@@ -40,7 +40,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Airstack
 
-* It is recommended that a single Microsoft Entra user is assigned to Airstack to test the automatic user provisioning configuration. Additional users and/or groups can be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Airstack to test the automatic user provisioning configuration. Additional users and/or groups can be assigned later.
 
 * When assigning a user to Airstack, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -54,7 +54,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Airstack Add SCIM](media/airstack-provisioning-tutorial/azureconfig.png)
 
-3.	Select on **Generate** button. Copy the **Secret Token for Azure**. This value will be entered in the Secret Token field in the Provisioning tab of your Airstack application.
+3.	Select **Generate** button. Copy the **Secret Token for Azure**. This value is entered in the Secret Token field in the Provisioning tab of your Airstack application.
 
 	![Airstack Create Token](media/airstack-provisioning-tutorial/generatetoken.png)
 

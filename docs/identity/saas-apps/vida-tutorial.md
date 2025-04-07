@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with VIDA
 
-In this article,  you'll learn how to integrate VIDA with Microsoft Entra ID. When you integrate VIDA with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate VIDA with Microsoft Entra ID. When you integrate VIDA with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to VIDA.
 * Enable your users to be automatically signed-in to VIDA with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of VIDA into Microsoft Entra ID, you need to add VI
 1. In the **Add from the gallery** section, type **VIDA** in the search box.
 1. Select **VIDA** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-vida'></a>
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with VIDA, perform the following steps
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure VIDA SSO](#configure-vida-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create VIDA test user](#create-vida-test-user)** - to have a counterpart of B.Simon in VIDA that is linked to the Microsoft Entra representation of user.
+    1. **[Create VIDA test user](#create-vida-test-user)** - to have a counterpart of B.Simon in VIDA that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **VIDA** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://vitruevida.com/?teamid=<ID>&idp=<IDP_NAME>`
 
 	> [!NOTE]
-	> The Sign-on URL value is not real. Update the value with the actual Sign-On URL. Contact [VIDA Client support team](mailto:support@vitruehealth.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign-on URL value isn't real. Update the value with the actual Sign-On URL. Contact [VIDA Client support team](mailto:support@vitruehealth.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. VIDA application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -120,23 +120,23 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. Sign on to the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
-    b. Click **modify permissions** to obtain required permissions for creating a role.
+    b. Select **modify permissions** to obtain required permissions for creating a role.
 
     ![Graph config1](./media/vida-tutorial/graph.png)
 
-    c. Select the following permissions from the list and click **Modify Permissions**, as shown in the following figure.
+    c. Select the following permissions from the list and select **Modify Permissions**, as shown in the following figure.
 
     ![Graph config2](./media/vida-tutorial/modify-permissions.png)
 
     >[!NOTE]
     >After permissions are granted, log on to the Graph Explorer again.
 
-    d. On the Graph Explorer page, select **GET** from the first drop-down list and **beta** from the second drop-down list. Then enter `https://graph.microsoft.com/beta/servicePrincipals` in the field next to the drop-down lists, and click **Run Query**.
+    d. On the Graph Explorer page, select **GET** from the first drop-down list and **beta** from the second drop-down list. Then enter `https://graph.microsoft.com/beta/servicePrincipals` in the field next to the drop-down lists, and select **Run Query**.
 
     ![Graph configuration.](./media/vida-tutorial/get-beta.png)
 
     >[!NOTE]
-    >If you are using multiple directories, you can enter `https://graph.microsoft.com/beta/contoso.com/servicePrincipals` in the field of the query.
+    >If you're using multiple directories, you can enter `https://graph.microsoft.com/beta/contoso.com/servicePrincipals` in the field of the query.
 
     e. In the **Response Preview** section, extract the appRoles property from the 'Service Principal' for subsequent use.
 
@@ -145,7 +145,7 @@ Follow these steps to enable Microsoft Entra SSO.
     >[!NOTE]
     >You can locate the appRoles property by entering `https://graph.microsoft.com/beta/servicePrincipals/<objectID>` in the field of the query. Note that the `objectID` is the object ID you have copied from the Microsoft Entra ID **Properties** page.
 
-    f. Go back to the Graph Explorer, change the method from **GET** to **PATCH**, paste the following content into the **Request Body** section, and click **Run Query**:
+    f. Go back to the Graph Explorer, change the method from **GET** to **PATCH**, paste the following content into the **Request Body** section, and select **Run Query**:
     
    ```
    { 
@@ -219,17 +219,17 @@ To configure single sign-on on **VIDA** side, you need to send the downloaded **
 
 ### Create VIDA test user
 
-In this section, a user called Britta Simon is created in VIDA. VIDA supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in VIDA, a new one is created after authentication.
+In this section, a user called Britta Simon is created in VIDA. VIDA supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in VIDA, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to VIDA Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to VIDA Sign-on URL where you can initiate the login flow. 
 
 * Go to VIDA Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the VIDA tile in the My Apps, this will redirect to VIDA Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the VIDA tile in the My Apps, this option redirects to VIDA Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 
