@@ -5,7 +5,7 @@ description: Using the Microsoft Entra Conditional Access insights and reporting
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 06/27/2024
+ms.date: 04/07/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -94,7 +94,24 @@ The standard Conditional Access insights and reporting workbook can capture a la
 
 Before proceeding with this optional step, review the [Transformation in Azure Monitor](/azure-monitor/essentials/data-collection-transformations) article for a general overview and cost considerations.
 
+To identify the results to keep or exclude from the transformation, use the following Kusto query in Log Analytics:
 
+```kusto
+SignInLogs
+| extend CAPResult_CF = extract_all(@"(\{[^{}]*""result"":""(success|failure)""[^{}]*\})", tostring(ConditionalAccessPolicies))
+| project-away ConditionalAccessPolicies 
+
+```
+
+To create the Data Collection Rule (DCR) for Sign-in logs:
+
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Monitoring Contributor](/azure/role-based-access-control/built-in-roles/monitor#monitoring-contributor).
+1. Browse to **Log Analytics workspaces** and select your workspace.
+1. Go to **Settings** > **Tables** > select **SignInLogs**.
+1. Open the menu on the right and select **Create transformation**.
+1. Follow the prompts to create the transformation, selecting **Transformation editor** to change any of the details included in the transformation.
+
+Once the transformation is created and deployed successfully, the Conditional Access insights and reporting workbook will be able to load faster. The transformation will only apply to new sign-in logs ingested after the transformation is created. Other workbooks that also pull from this table are also affected by the transformation.
 
 ## Configure a Conditional Access policy in report-only mode
 
