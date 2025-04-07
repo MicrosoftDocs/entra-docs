@@ -56,22 +56,22 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |Port        |Protocol   |Purpose     |
 |------------|-----------|------------|
 |88          |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
-|389         |UDP        |DC locator  |
-|464         |UDP/TCP    |Password Change Request  |
 |123         |UDP        |Network Time Protocol (NTP)  |
 |135         |UDP/TCP    |Domain controller to domain controller and client to domain controller operations  |
 |138         |UDP        |File replication service between domain controllers  |
 |139         |TCP        |File replication service between domain controllers  |
+|389         |UDP        |DC locator  |
 |445         |UDP/TCP    |Replication, User and Computer Authentication, Group Policy  |
+|464         |UDP/TCP    |Password Change Request  |
+|636         |TCP        |LDAP SSL  |
 |3268        |TCP        |Global catalog from client to domain controller  |
 |3269        |TCP        |Global catalog from client to domain controller  |
-|53          |UDP/TCP    |DNS from client to domain controller and domain controller to domain controller  |
 |1025-5000   |UDP/TCP    |Ephemeral ports  |
-|4952-65535  |UDP/TCP    |Ephemeral ports  |
+|49152-65535  |UDP/TCP    |Ephemeral ports  |
 
 
 > [!NOTE]
-> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).
+> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.). To learn more about Windows network port requirements, see [Service overview and network port requirements for Windows](https://learn.microsoft.com/troubleshoot/windows-server/networking/service-overview-and-network-port-requirements)
 
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application Administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
