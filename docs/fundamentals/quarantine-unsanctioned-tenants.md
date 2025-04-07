@@ -5,14 +5,14 @@ author: barclayn
 manager: femila
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: concept
+ms.topic: concept-article
 ms.date: 04/07/2025
 ms.author: barclayn
+#customer intent: As an administrator, I want to quarantine unsanctioned tenants to reduce security risks and ensure compliance with security policies.
 ---
 # Quarantining unsanctioned tenants
 
-
-Quarantining unsanctioned tenants involves isolating suspected tenants using existing Microsoft Entra capabilities which immediately reduce security risk that exists from exposure to such tenants that you don't have administrative control of within your environment. By isolating, you introduce friction between your tenant and theirs, which acts as a scream test. This friction could prompt administrators of the suspected tenants to contact you in need of assistance, giving you the opportunity to verify the legitimacy of the relationships with these tenants and/or regain control over them. If no one is to contact you, then you can leave the tenants in the quarantined state indefinitely.
+Quarantining unsanctioned tenants involves using Microsoft Entra features to isolate tenants that may pose security risks due to lack of administrative oversight. Controlled restrictions can mitigate potential vulnerabilities while encouraging administrators of these tenants to reach out for assistance. This process allows you to validate the legitimacy of their access or regain control over the tenants. If no contact is made, the tenants can remain in a quarantined state to safeguard your environment.
 
 >[!IMPORTANT]
 > This article complements the Microsoft Cloud Footprint FAQ, a document published to help customers find all tenants within their environments, outlining the specific existing Microsoft Entra capabilities administrators can use within their primary tenant to implement the quarantine process against suspected unsanctioned tenants in their discovered inventory. 
@@ -33,8 +33,7 @@ The administrator of the ContosoTest.com tenant contacts you at which point you 
 :::image type="content" source="media/quarantine-unsanctioned-tenant/quarantined.png" alt-text="Quarantined tenant state":::
 
 ## How can I use Microsoft Entra's capabilities to quarantine suspected tenants?
-
-[BRiEF INTRo]
+Microsoft Entra includes features that help administrators quarantine suspected tenants effectively. Administrators can use features like [External ID Cross-tenant Access Settings](../external-id/cross-tenant-access-overview.md), [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md), and [Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) to restrict interactions with potentially risky tenants, enhancing security and compliance within their environments.
 
 ### Using External ID Cross-tenant Access Settings to block user sign-in
 
