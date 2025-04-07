@@ -16,8 +16,8 @@ ms.author: billmath
 
 Microsoft Entra Connect provides 2 options for certificate management: 
 
-1.[Managed by Microsoft Entra Connect (Recommended)](#managed-by-microsoft-entra-connect-recommended)
-2. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc) 
+ 1.[Managed by Microsoft Entra Connect (Recommended)](#managed-by-microsoft-entra-connect-recommended)
+ 2. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc) 
 
 ## Managed by Microsoft Entra Connect (Recommended) 
 Microsoft Entra Connect manages the application and certificate including creation, rotation and deletion of the certificate. The certificate is created in the Current User store with the private key securely stored inside the TPM. The private key is marked as non-exportable, which means it will never leave the TPM boundary. For more information on TPM, see [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview). 
@@ -49,9 +49,9 @@ The following are additional requirements depending on which certificate managem
 
 ### BYOC Prerequisites
 - A certificate is created in an HSM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
-   a.	KeyLength: 2048
-   b.	KeyAlgorithm: RSA
-   c.	KeyHashAlgorithm: SHA256
+  - KeyLength: 2048
+  - KeyAlgorithm: RSA
+  - KeyHashAlgorithm: SHA256
 - A certificate can also be created in the local machine (not recommended). See [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate)
 
 ## Onboarding to Application Based Authentication
