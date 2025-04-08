@@ -53,7 +53,7 @@ Follow these steps to create the app registration:
 
 ## Grant admin consent (external tenants only)
 
-Once you register your application, it gets assigned the **User.Read** permission. However, for external tenants, the customer users themselves can't consent to this permission, or any other permissions that is assigned to it. You as the admin must consent to this permission on behalf of all the users in the tenant:
+Once you register your application, it gets assigned the **User.Read** permission. However, for external tenants, the customer users themselves can't consent to permissions themselves. You as the admin must consent to this permission on behalf of all the users in the tenant:
 
 1. From the **Overview** page of your app registration, under **Manage** select **API permissions**.
 1. Select **Grant admin consent for < tenant name >**, then select **Yes**.
