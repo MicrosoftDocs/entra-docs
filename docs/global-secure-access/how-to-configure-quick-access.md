@@ -18,6 +18,8 @@ With Global Secure Access, you can define specific fully qualified domain names 
 > [!NOTE]
 > Use Quick Access as a transition state in your Zero Trust journey. After Quick Access has enabled you to replace your VPN, [configure per-app access](quickstart-per-app-access.md) to achieve application segmentation and per-app granular controls.
 
+> [!VIDEO https://www.youtube-nocookie.com/embed/MfcZ3zQhF-4]
+
 ## Prerequisites
 
 To configure Quick Access, you must have:
