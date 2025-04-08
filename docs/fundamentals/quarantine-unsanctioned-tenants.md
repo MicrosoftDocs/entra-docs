@@ -1,4 +1,3 @@
----
 ---  
 title: Quarantining unsanctioned tenants  
 description: Isolate unsanctioned tenants using Microsoft Entra features. Follow steps to quarantine unapproved tenants and strengthen security.  
