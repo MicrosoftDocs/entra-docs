@@ -8,7 +8,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: reference
-ms.date: 03/27/2024
+ms.date: 04/08/2025
 ms.author: nicholak
 ms.reviewer: Nicholak-MS
 ms.custom: it-pro
