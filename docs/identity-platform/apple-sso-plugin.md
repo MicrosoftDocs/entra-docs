@@ -50,12 +50,12 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
 - Configuration must be *pushed to the device* to enable the Enterprise SSO plug-in. Apple requires this security constraint.
 - Apple devices must be allowed to reach to both identity provider URLs and its own URLs without additional interception. This means that those URLs need to be excluded from network proxies, interception, and other enterprise systems. 
 
-  The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 as (On the latest operating system versions, Apple relies fully on its CDN):
+  The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 and not targeted with Platform SSO are as follows: (On the latest operating system versions, Apple relies fully on its CDN):
   - `app-site-association.cdn-apple.com`
   - `app-site-association.networking.apple`
   - `config.edge.skype.com` - Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
 
-The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released before 2022:
+The minimum set of URLs that need to be allowed for the SSO plug-in to function on Platform SSO targeted devices or on operating system versions released before 2022:
   - `app-site-association.cdn-apple.com`
   - `app-site-association.networking.apple`
   - `login.microsoftonline.com`
