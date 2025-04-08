@@ -51,9 +51,9 @@ To grant consent to an application on behalf of one user using Microsoft Graph P
 
 ```powershell
 # The app for which consent is being granted.
-$clientAppId = "de8bc8b5-d9f9-48b1-a8ad-b748da725064" # Microsoft Graph Explorer
+$clientAppId = "de8bc8b5-d9f9-48b1-a8ad-b748da725064" # Your client application
 
-# The API to which access will be granted. Microsoft Graph Explorer makes API 
+# The API to which access will be granted. Your client application makes API 
 # requests to the Microsoft Graph API, so we'll use that here.
 $resourceAppId = "00000003-0000-0000-c000-000000000000" # Microsoft Graph API
 
