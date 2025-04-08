@@ -51,7 +51,7 @@ To configure the integration of SAP NetWeaver into Microsoft Entra ID, you need 
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-<a name='configure-and-test-azure-ad-sso-for-sap-netweaver'></a>
+<a name='configure-and-test-microsoft-entra-sso-for-sap-netweaver'></a>
 
 ## Configure and test Microsoft Entra SSO for SAP NetWeaver
 
@@ -59,16 +59,16 @@ Configure and test Microsoft Entra SSO with SAP NetWeaver using a test user call
 
 To configure and test Microsoft Entra SSO with SAP NetWeaver, perform the following steps:
 
-1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.
+1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** to enable your users to use this feature.
     1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SAP NetWeaver using SAML](#configure-sap-netweaver-using-saml)** to configure the SSO settings on application side.
     1. **[Create SAP NetWeaver test user](#create-sap-netweaver-test-user)** to have a counterpart of B.Simon in SAP NetWeaver that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** to verify whether the configuration works.
 1. **[Configure SAP NetWeaver for OAuth​](#configure-sap-netweaver-for-oauth)** to configure the OAuth settings on application side.
-1. **[Request Access Token from Microsoft Entra ID](#request-access-token-from-azure-ad)** to use Microsoft Entra ID as the Identity Provider (IdP).
+1. **[Request Access Token from Microsoft Entra ID](#request-access-token-from-microsoft-entra-id)** to use Microsoft Entra ID as the Identity Provider (IdP).
 
-<a name='configure-azure-ad-sso'></a>
+<a name='configure-microsoft-entra-sso'></a>
 
 ## Configure Microsoft Entra SSO
 
