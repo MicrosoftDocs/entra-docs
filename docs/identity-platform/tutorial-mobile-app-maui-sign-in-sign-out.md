@@ -31,7 +31,7 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Register and configure .NET MAUI mobile app in an external tenant](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
+- [Tutorial: Create a .NET MAUI shell app](tutorial-mobile-app-maui-sign-in-prepare-app.md)
 
 ## Add sign-in and sign-out code
 
