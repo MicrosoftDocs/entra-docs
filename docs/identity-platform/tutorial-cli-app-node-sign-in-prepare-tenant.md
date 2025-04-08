@@ -18,6 +18,8 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare your external tenant to sign in users in a Node.js CLI app
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial series demonstrates how to build a Node.js command line interface (CLI) app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for Node](/javascript/api/%40azure/msal-node) (MSAL Node) library to authenticate your app with your external tenant. Finally, you'll run the application and test the sign-in and sign-out experiences.
 
 In this tutorial;

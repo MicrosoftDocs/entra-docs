@@ -18,6 +18,8 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Prepare a Node.js CLI application for authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial is part 2 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-cli-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
 
 In this tutorial: 

@@ -14,6 +14,8 @@ ms.date: 07/17/2023
 
 # Tutorial: Use role-based access control in your .NET MAUI
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial demonstrates how to add app roles to.NET Multi-platform App UI (.NET MAUI) and receive them in the ID token.
 
 In this tutorial, you learn how to:

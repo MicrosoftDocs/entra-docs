@@ -184,13 +184,13 @@ items:
         - name: .NET MAUI
           items:
             - name: Prepare tenant
-              href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Create .NET MAUI app
-              href: tutorial-desktop-app-maui-sign-in-prepare-app.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Sign in and sign out
-              href: tutorial-desktop-app-maui-sign-in-sign-out.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Use role-based access control
-              href: tutorial-desktop-maui-role-based-access-control.md
+              href: /entra/identity-platform/tutorial-desktop-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: .NET WPF
           items:
             - name: Prepare tenant
@@ -272,11 +272,11 @@ items:
         - name: Node.js
           items:
             - name: Prepare tenant
-              href: tutorial-cli-app-node-sign-in-prepare-tenant.md
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Create Node.js CLI app
-              href: tutorial-cli-app-node-sign-in-prepare-app.md
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Sign in users
-              href: tutorial-cli-app-node-sign-in-sign-out.md
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
 - name: Concepts
   items: 
     - name: Planning guide

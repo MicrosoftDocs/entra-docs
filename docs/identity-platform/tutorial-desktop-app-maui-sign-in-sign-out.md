@@ -14,6 +14,8 @@ ms.date: 06/27/2024
 
 # Tutorial: Sign in users in .NET MAUI app using an external tenant
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial is the final part of a series that demonstrates building a how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform. In [Part 2 of this series](./tutorial-desktop-app-maui-sign-in-prepare-app.md), you created a .NET MAUI shell app, added MSAL SDK support via MSAL helper classes, installed required libraries, and included an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET MAUI shell and run the app on the Windows platform.
 
 In this tutorial, you learn how to:
