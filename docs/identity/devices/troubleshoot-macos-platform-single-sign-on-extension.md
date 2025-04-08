@@ -82,7 +82,10 @@ Please ensure below URLs are exempted from TLS interception/inspection so that P
 - login-us.microsoftonline.com(*)
 - config.edge.skype.com(**)
 
-(*) You only need to allow sovereign cloud domains if you rely on those in your environment. (**) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner. Apple's app-site-association domains are critical for SSO extension functioning.
+Apple's app-site-association domains are critical for SSO extension functioning. (*) You only need to allow sovereign cloud domains if you rely on those in your environment. (**) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner. 
+
+> [!NOTE] 
+> Platform SSO is not compatible with Tenant Restriction feature as Tenant Restriction needs the login URLs to be inspected. 
 
 ### Temporary passwords issued during password reset can't be synced with Platform SSO
 
