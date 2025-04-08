@@ -156,7 +156,9 @@ If you have configured to send audit log events to [Azure Monitor](entitlement-m
 
 The workbook *Application role assignment activity* shows if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a Global Administrator directly assigning a user to an application role.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader). Make sure you have access to the resource group containing the Azure Monitor workspace.
+
+1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.  
 
 1. If you have multiple subscriptions, select the subscription that contains the workspace.
 
