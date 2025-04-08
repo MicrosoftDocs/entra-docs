@@ -123,4 +123,4 @@ Your Conditional Access success and failure chart displays a color-coded snapsho
 
 - [Configure Log Analytics workspace](tutorial-configure-log-analytics-workspace.md)
 - [Configure diagnostic settings](howto-configure-diagnostic-settings.md)
-- [Integrate activity logs with Log Analytics](howto-integrate-activity-logs-azure-monitor-logs.yml)
+- [Integrate activity logs with Log Analytics](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
