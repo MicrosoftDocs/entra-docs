@@ -22,7 +22,7 @@ This article covers several options for remediating risks. You can enable self-r
 
 ## Types of risk remediation
 
-All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so they're no longer at risk and blocked from access.
+All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so they're no longer at risk or blocked from access.
 
 When Microsoft Entra ID Protection identifies a risk detection and the corresponding risky sign-in as as no longer posing a security threat, the risk state is automatically updated as **Dismissed** and the risk detail as **Microsoft Entra ID Protection assessed sign-in safe**. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
 
