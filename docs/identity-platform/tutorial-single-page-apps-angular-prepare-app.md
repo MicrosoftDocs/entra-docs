@@ -25,15 +25,33 @@ In this tutorial:
 
 ## Prerequisites
 
+
+### [Workforce tenant](#tab/workforce-tenant)
+
+* A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+    * **Redirect URI**: `http://localhost:4200/`.
+
+### [External tenant](#tab/external-tenant)
+
+* An external tenant. To create one, choose from the following methods:
+  * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+    * **Redirect URI**: `http://localhost:4200/`.
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+
+---
+
 * [Angular CLI](https://v17.angular.io/cli#installing-angular-cli)
 * [Node.js 18.19 or newer](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-* A new app registration in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: identity-client-spa
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-    * **Platform configuration**: Single-page application (SPA).
-    * **Redirect URI**: `http://localhost:4200/`.
-* (External Only) A user flow which has been associated with your app registration. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ## Create a new Angular project
 

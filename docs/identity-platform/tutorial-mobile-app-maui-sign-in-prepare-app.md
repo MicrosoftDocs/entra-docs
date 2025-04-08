@@ -17,7 +17,7 @@ ms.date: 03/12/2025
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 
-This tutorial is part 2 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. In this tutorial, you'll add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
+This tutorial is part 1 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In this tutorial, you'll add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
 
 In this tutorial, you'll;
 
@@ -30,10 +30,14 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-- [Tutorial: Register and configure .NET MAUI mobile app in an external tenant](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
-- [.NET SDK](https://dotnet.microsoft.com/download/dotnet/latest)
-- [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
-  - [Instructions for Visual Studio Setup](/dotnet/maui/get-started/installation?tabs=visual-studio)
+* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Mobile and Desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `msal{client_id}://auth` where `{client_id}` is the Application (client) ID of your app.
+* [.NET SDK](https://dotnet.microsoft.com/download/dotnet/latest)
+* [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
+  * [Instructions for Visual Studio Setup](/dotnet/maui/get-started/installation?tabs=visual-studio)
 
 ## Create .NET MAUI shell app
 

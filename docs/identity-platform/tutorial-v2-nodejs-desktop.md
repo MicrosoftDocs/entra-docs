@@ -31,20 +31,15 @@ In this tutorial, you'll
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/en/download/)
-- [Electron](https://www.electronjs.org/)
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
-
-## Register the application
-
-First, complete the steps in [Register an application with the Microsoft identity platform](quickstart-register-app.md) to register your app.
-
-Use the following settings for your app registration:
-
-- Name: `ElectronDesktopApp` (suggested)
-- Supported account types: **Accounts in my organizational directory only (single tenant)**
-- Platform type: **Mobile and desktop applications**
-- Redirect URI: `http://localhost`
+* A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `http://localhost` 
+* [Node.js](https://nodejs.org/en/download/)
+* [Electron](https://www.electronjs.org/)
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 
 ## Create the project
 
