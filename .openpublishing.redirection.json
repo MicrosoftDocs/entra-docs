@@ -671,6 +671,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-api-aspnet-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-api-dotnet-protect-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-api-dotnet-core-test-protected-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-core-call-protected-api",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/quickstart-desktop-app-wpf-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-desktop-app-sign-in",
       "redirect_document_id": false
@@ -987,6 +997,11 @@
     {
       "source_path_from_root": "/docs/external-id/customers/concept-native-authentication.md",
       "redirect_url": "/entra/identity-platform/concept-native-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-identity-protection-customers.md",
+      "redirect_url": "/entra/external-id/customers/concept-supported-features-customers",
       "redirect_document_id": false
     },
     {
@@ -2164,6 +2179,16 @@
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-web-api-dotnet-register-app.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-api-aspnet-core-protect-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app",
       "redirect_document_id": false
     },
     {

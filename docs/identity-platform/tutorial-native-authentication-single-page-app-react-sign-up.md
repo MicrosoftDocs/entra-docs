@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- Complete the steps in [Quickstart:Sign in users in a sample React single-page application by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). This quickstart shows you how to prepare your external tenant and run a sample React code sample.
+- Complete the steps in [Quickstart: Sign in users in a sample React single-page application by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). This quickstart shows you how to prepare your external tenant and run a sample React code sample.
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
 

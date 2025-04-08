@@ -21,6 +21,7 @@ In this article,  you learn how to integrate SAP Business Technology Platform wi
 * Control in Microsoft Entra ID who has access to SAP Business Technology Platform.
 * Enable your users to be automatically signed-in to SAP Business Technology Platform with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
+* Assign users in Microsoft Entra to SAP Business technology Platform roles.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
@@ -238,7 +239,10 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you select the SAP Business Technology Platform tile in the My Apps, you should be automatically signed in to the SAP Business Technology Platform for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
+## Create groups for SAP Business Technology Platform application roles and assign groups to the Business Technology Platform role collection
+
+You can create Microsoft Entra security groups and map those group IDs to the application roles. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
+
 ## Related content
 
 * Once you configure SAP Business Technology Platform you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
-* [Manage access to SAP BTP apps via groups](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276)

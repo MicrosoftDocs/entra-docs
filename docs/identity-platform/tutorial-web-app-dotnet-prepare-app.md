@@ -30,34 +30,31 @@ In this tutorial:
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
 * A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 * An ASP.NET Core developer certificate. Install one using [dotnet dev-certs](/dotnet/core/additional-tools/self-signed-certificates-guide#with-dotnet-dev-certs)
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
-* A workforce tenant. You can use your **Default Directory** or [set up a new tenant](./quickstart-create-new-tenant.md).
-* An application registered in the Microsoft Entra admin center. Use the following setup for the purposes of this tutorial series:
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
-* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./quickstart-register-app.md#add-credentials) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
+* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./how-to-add-credentials.md) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
 
 ### [External tenant](#tab/external-tenant)
 
 * An external tenant. If you don't have one, [create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* A [self-service sign-up user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used across multiple applications.
-* An application registered in the Microsoft Entra admin center,  Use the following setup for your app.
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
-* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./quickstart-register-app.md#add-credentials) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
-* To use your application in your external tenant; 
-  * [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
-  * [Grant admin consent for your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only).
+* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./how-to-add-credentials.md) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ---
 

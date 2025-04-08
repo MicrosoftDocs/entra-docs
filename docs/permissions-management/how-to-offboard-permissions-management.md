@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 04/03/2025
 ms.author: jfields
 ---
 
@@ -21,7 +21,7 @@ On October 01, 2025, Permissions Management will be automatically offboarded and
 
 ## Why is Permissions Management being retired? 
 
-Microsoft made the decision to retire Permissions Management as part of a strategic realignment to focus Microsoft's Security investments on core identity categories, using AI for security and securing AI. 
+The decision to phase out Microsoft Entra Permissions Management from the Microsoft Security portfolio was made after deep consideration of our innovation portfolio and how we can focus on delivering the best innovations aligned to our differentiating areas and partners with the ecosystem on adjacencies. We remain committed to delivering top-tier solutions across the Microsoft Entra portfolio, which includes Microsoft Entra ID, Microsoft Entra Suite (encompassing ID Protection, ID Governance, Verified ID, Internet Access, and Private Access), Microsoft Entra External ID, Microsoft Entra Workload ID, and more.
 
 
 ## Recommended solutions
