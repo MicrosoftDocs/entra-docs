@@ -12,6 +12,7 @@ ms.date: 04/08/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
+ai-usage: ai-assisted
 
 #customer intent: As a designated reviewer, I want to review and take action on admin consent requests, so that I can approve, deny, or block access to applications based on the requests.
 ---
