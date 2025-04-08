@@ -41,7 +41,7 @@ To analyze activity logs with Log Analytics, you need the following roles and re
   - Global Reader
   - Security Administrator
 
-If you haven't already created a Log Analytics workspace, complete the [Configure Log Analytics workspace](tutorial-configure-log-analytics-workspace) tutorial.
+If you haven't already created a Log Analytics workspace, complete the [Configure Log Analytics workspace](tutorial-configure-log-analytics-workspace.md) tutorial.
 
 ## Create a custom workbook
 
@@ -119,7 +119,8 @@ You can add Kusto queries to your workbook. The example is based on a query that
 
 Your Conditional Access success and failure chart displays a color-coded snapshot of your tenant.
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Improve Log Analytics performance](tutorial-improve-log-analytics-performance.md)
+- [Configure Log Analytics workspace](tutorial-configure-log-analytics-workspace.md)
+- [Configure diagnostic settings](howto-configure-diagnostic-settings.md)
+- [Integrate activity logs with Log Analytics](howto-integrate-activity-logs-azure-monitor-logs.yml)
