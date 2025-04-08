@@ -22,7 +22,7 @@ This article covers several options for remediating risks. You can enable self-r
 
 ## Types of risk remediation
 
-All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so they're no longer at risk and blocked from access.
+All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so they're no longer at risk or blocked from access.
 
 When Microsoft Entra ID Protection identifies a risk detection and the corresponding risky sign-in as as no longer posing a security threat, the risk state is automatically updated as **Dismissed** and the risk detail as **Microsoft Entra ID Protection assessed sign-in safe**. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
 
@@ -32,7 +32,7 @@ Self-remediation options include:
 
 - Set up risk-based policies to allow users to self-remediate their risks.
 - Allow users to self-remediate their user risks using self-service password reset (SSPR).
-- Require users to reset their password to remediate their user risk.
+- Initiate a password reset for the user to remediate their user risk.
 
 Manual remediation options include:
 
@@ -44,13 +44,13 @@ You can also [remediate in Microsoft Defender for Identity](/defender-for-identi
 
 ## User self-remediation
 
-As an IT administrator, you have several options to configure self-remediation for users. If your organization has a hybrid environment, you can allow on-premises password changes to reset user risks. You must enable on-premises password reset to remediate user risks before users can self-remediate in those scenarios.
+As an IT administrator, you have several options to configure self-remediation for users. 
 
-### Allow on-premises password reset to remediate user risks
+### Configure password hash synchronization
 
-Organizations who enable [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) can allow password changes on-premises to remediate user risk.
+Hybrid environments should enable [password hash synchronization](../identity/hybrid/connect/whatis-phs.md) to allow users to self-remediate their user risks. This configuration allows users to change their password on-premises, which automatically remediates their user risk in Microsoft Entra ID Protection.
 
-This configuration provides organizations two new capabilities:
+This feature provides two benefits:
 
 - Risky hybrid users can self-remediate without administrator intervention. When a password is changed on-premises, user risk is automatically remediated within Microsoft Entra ID Protection, resetting the current user risk state.
 - Organizations can proactively deploy [user risk policies that require password changes](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) to confidently protect their hybrid users. This option strengthens your organization's security posture and simplifies security management by ensuring that user risks are promptly addressed, even in complex hybrid environments.
