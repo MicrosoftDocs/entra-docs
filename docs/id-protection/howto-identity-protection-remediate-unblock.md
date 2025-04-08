@@ -46,11 +46,9 @@ You can also [remediate in Microsoft Defender for Identity](/defender-for-identi
 
 As an IT administrator, you have several options to configure self-remediation for users. 
 
-### Configure password hash synchronization
+### Allow on-premises password reset to remediate user risks
 
-Hybrid environments should enable [password hash synchronization](../identity/hybrid/connect/whatis-phs.md) to allow users to self-remediate their user risks. This configuration allows users to change their password on-premises, which automatically remediates their user risk in Microsoft Entra ID Protection.
-
-This feature provides two benefits:
+If your organization has a hybrid environment, you can allow on-premises password changes to reset user risks with [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md). You must enable password hash synchronization *before* users can self-remediate in those scenarios.
 
 - Risky hybrid users can self-remediate without administrator intervention. When a password is changed on-premises, user risk is automatically remediated within Microsoft Entra ID Protection, resetting the current user risk state.
 - Organizations can proactively deploy [user risk policies that require password changes](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) to confidently protect their hybrid users. This option strengthens your organization's security posture and simplifies security management by ensuring that user risks are promptly addressed, even in complex hybrid environments.
@@ -61,8 +59,7 @@ To configure this setting:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator).
 1. Browse to **Protection** > **Identity Protection** > **Settings**.
-1. Check the box to **Allow on-premises password change to reset user risk**.
-1. Select **Save**.
+1. Check the box to **Allow on-premises password change to reset user risk** and select **Save**.
 
 > [!NOTE]
 > Allowing on-premises password change to reset user risk is an opt-in only feature. Customers should evaluate this feature before enabling in production environments. We recommend customers secure the on-premises password change or reset flows. For example, requiring multifactor authentication before allowing users to change their password on-premises using a tool like [Microsoft Identity Manager's Self-Service Password Reset Portal](/microsoft-identity-manager/working-with-self-service-password-reset).
