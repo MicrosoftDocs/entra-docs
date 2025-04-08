@@ -68,6 +68,21 @@ If the Enterprise SSO plug-in fails to activate after system updates are applied
     ```console
     sudo swcutil reset
     ```
+### TLS Inspection URLs to be excluded for Platform SSO
+Please ensure below URLs are exempted from TLS interception/inspection so that Platform SSO token acquisition and refresh can be successfully performed on Platform SSO targeted devices:
+
+- app-site-association.cdn-apple.com
+- app-site-association.networking.apple
+- login.microsoftonline.com
+- login.microsoft.com
+- sts.windows.net
+- login.partner.microsoftonline.cn(*)
+- login.chinacloudapi.cn(*)
+- login.microsoftonline.us(*)
+- login-us.microsoftonline.com(*)
+- config.edge.skype.com(**)
+
+(*) You only need to allow sovereign cloud domains if you rely on those in your environment. (**) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner. Apple's app-site-association domains are critical for SSO extension functioning.
 
 ### Temporary passwords issued during password reset can't be synced with Platform SSO
 
