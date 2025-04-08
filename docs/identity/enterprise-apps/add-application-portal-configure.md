@@ -13,6 +13,7 @@ ms.author: jomondi
 ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps
+ai-usage: ai-assisted
 
 #customer intent: As a Microsoft Entra admin, I want to configure the properties of an enterprise application, so that I can control how the application is represented and accessed by users.
 ---
