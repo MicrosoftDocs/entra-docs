@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 09/09/2024
+ms.date: 04/08/2025
 ms.author: cmulligan
 ms.custom: it-pro, seo-july-2024
 
@@ -25,7 +25,7 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 ## Prerequisites
 
 - An Azure subscription. 
-- An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription or to a resource group within the subscription.
+- An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription.
 
 ## Create a new tenant with external configurations 
 
