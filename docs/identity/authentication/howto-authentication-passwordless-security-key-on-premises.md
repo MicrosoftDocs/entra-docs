@@ -22,7 +22,7 @@ Microsoft Entra ID can issue Kerberos ticket-granting tickets (TGTs) for one or 
 
 A Microsoft Entra Kerberos server object is created in your on-premises Active Directory instance and then securely published to Microsoft Entra ID. The object isn't associated with any physical servers. It's simply a resource that can be used by Microsoft Entra ID to generate Kerberos TGTs for your Active Directory domain.
 
-:::image type="Image" source="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png" alt-text="Diagram showing how to get a TGT from Microsoft Entra ID and Active Directory Domain Services." lightbox="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png":::
+:::image type="Image" source="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process-modified.png" alt-text="Diagram showing how to get a TGT from Microsoft Entra ID and Active Directory Domain Services." lightbox="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png":::
 
 1. A user signs in to a Windows 10 device with an FIDO2 security key and authenticates to Microsoft Entra ID.
 1. Microsoft Entra ID checks the directory for a Kerberos Server key that matches the user's on-premises Active Directory domain.
