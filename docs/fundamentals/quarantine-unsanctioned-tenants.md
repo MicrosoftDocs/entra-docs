@@ -21,7 +21,15 @@ Refer to this article only after reviewing the Microsoft Cloud Footprint FAQ to 
 
 ## When should I quarantine a tenant?  
 
-You are an IT Admin for "Contoso". Your primary tenant is "Contoso.com". To secure data in the central Contoso tenant, you need to ensure users and applications with privileged access to your tenant are in tenants that properly secure these resources. Likewise, you want to ensure that external tenants in which your tenant has permissions into are known and following secure practices. To do this, you want to find all tenants that have inbound or outbound relationships with your primary tenant.  
+Quarantining a tenant is a proactive measure administrators can take when organizations identify tenants that may not be properly managed or secured. Unsanctioned tenants can be the result of various scenarios, including:
+
+- The tenant was created by an employee without proper oversight or approval.
+- The tenant is suspected of being compromised or misconfigured, leading to potential security risks.
+- The tenant is associated with a third-party service or application that is not recognized or trusted by the organization.
+
+### Let's look at an example scenario
+
+As an IT administrator for Contoso, your primary tenant is Contoso.com. To protect the primary tenant's data, you need to ensure users and applications with privileged access to it are in tenants that properly secure these resources. Likewise, you want to ensure that external tenants in which your tenant has permissions into are known and following secure practices. To do this, you want to find all tenants that have inbound or outbound relationships with your primary tenant.  
 After following the [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint.md), you identified a few potential tenants that may or may not belong to your company. Let’s call these tenants ContosoTest.com and ContosoDemo.com for scenario purposes. Because you don't know who the global admins are for these tenants, you worry they are possibly employee-managed and may not comply with your organization’s security policies, posing a major security risk to your environment if they stay unmanaged.  
 Since you don’t have direct control over ContosoTest.com and ContosoDemo.com and can only modify settings on the Contoso.com tenant, you want to quarantine them to minimize potential vulnerabilities that come from exposure to these tenants. However, it's crucial that any changes you make are easily reversible, ensuring that no critical systems are unintentionally affected in the process. Quarantining introduces enough friction between your tenant and the suspected tenants to encourage their administrators to contact your helpdesk.  
 
@@ -32,6 +40,7 @@ The administrator of the ContosoTest.com tenant contacts you at which point you 
 :::image type="content" source="media/quarantine-unsanctioned-tenant/quarantined.png" alt-text="Quarantined tenant state":::  
 
 ## How can I use Microsoft Entra's capabilities to quarantine suspected tenants?  
+
 Microsoft Entra includes features that help administrators quarantine suspected tenants effectively. Administrators can use features like [External ID Cross-tenant Access Settings](../external-id/cross-tenant-access-overview.md), [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md), and [Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) to restrict interactions with potentially risky tenants, enhancing security and compliance within their environments.  
 
 ### Using External ID Cross-tenant Access Settings to block user sign-in  
