@@ -16,7 +16,7 @@ ms.date: 06/05/2023
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial is part 2 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app. In [Part 1 of this series](./tutorial-desktop-app-maui-sign-in-prepare-tenant.md) you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to create a .NET MAUI shell app, add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
+This tutorial is part 1 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app. This tutorial demonstrates how to create a .NET MAUI shell app, add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
 
 In this tutorial, you'll:
 
@@ -29,11 +29,14 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Register and configure a .NET MAUI app in an external tenant](./tutorial-desktop-app-maui-sign-in-prepare-tenant.md)
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
-- [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
-  - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
-  - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+* [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
+  * [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
+  * [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
 
 ## Create .NET MAUI app
 
