@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 02/27/2025
+ms.date: 04/08/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
@@ -126,7 +126,10 @@ Content-type: application/json
 ```
 :::zone-end
 
-## Use Microsoft Graph to configure application properties
+> [!NOTE]
+> Managed identities are distinct from Microsoft Entra App Registrations. Managed identities only have a service principal object and do not possess an application object, which is typically used for granting app permissions. As a result, global admins cannot change the settings of a managed identity, as the security boundary is the resource itself.
+
+## Use Microsoft Graph to configure advanced app properties
 
 You can also configure other advanced properties of both app registrations and enterprise applications (service principals) through Microsoft Graph. These properties include permissions and role assignments. For more information, see [Create and manage a Microsoft Entra application using Microsoft Graph](/graph/tutorial-applications-basics#configure-other-basic-properties-for-your-app).
 
