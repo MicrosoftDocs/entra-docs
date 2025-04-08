@@ -21,7 +21,7 @@ Refer to this article only after reviewing the Microsoft Cloud Footprint FAQ to 
 
 ## When should I quarantine a tenant?  
 
-Quarantining a tenant is a proactive measure administrators can take when organizations identify tenants that may not be properly managed or secured. Unsanctioned tenants can be the result of various scenarios, including:
+Quarantining a tenant is a proactive measure administrators can use when organizations identify tenants that may not be properly managed or secured. Unsanctioned tenants can be the result of various scenarios, including:
 
 - The tenant was created by an employee without proper oversight or approval.
 - The tenant is suspected of being compromised or misconfigured, leading to potential security risks.
@@ -29,8 +29,10 @@ Quarantining a tenant is a proactive measure administrators can take when organi
 
 ### Let's look at an example scenario
 
-As an IT administrator for Contoso, your primary tenant is Contoso.com. To protect the primary tenant's data, you need to ensure users and applications with privileged access to it are in tenants that properly secure these resources. Likewise, you want to ensure that external tenants in which your tenant has permissions into are known and following secure practices. To do this, you want to find all tenants that have inbound or outbound relationships with your primary tenant.  
-After following the [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint.md), you identified a few potential tenants that may or may not belong to your company. Let’s call these tenants ContosoTest.com and ContosoDemo.com for scenario purposes. Because you don't know who the global admins are for these tenants, you worry they are possibly employee-managed and may not comply with your organization’s security policies, posing a major security risk to your environment if they stay unmanaged.  
+You are an administrator at Contoso, you manage the primary tenant, Contoso.com. To protect the primary tenant's data, you need to ensure users and applications with privileged access are in tenants that properly secure these resources.
+
+ Likewise, you want to ensure that external tenants in which your tenant has permissions into are known and following secure practices. To do this, you want to find all tenants that have inbound or outbound relationships with your primary tenant.  
+After following the [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint.md), you identify a few tenants that may or may not belong to your company. Let’s call these tenants ContosoTest.com and ContosoDemo.com for scenario purposes. Because you don't know who the global admins are for these tenants, you worry they are possibly employee-managed and may not comply with your organization’s security policies, posing a major security risk to your environment if they stay unmanaged.  
 Since you don’t have direct control over ContosoTest.com and ContosoDemo.com and can only modify settings on the Contoso.com tenant, you want to quarantine them to minimize potential vulnerabilities that come from exposure to these tenants. However, it's crucial that any changes you make are easily reversible, ensuring that no critical systems are unintentionally affected in the process. Quarantining introduces enough friction between your tenant and the suspected tenants to encourage their administrators to contact your helpdesk.  
 
 :::image type="content" source="media/quarantine-unsanctioned-tenant/quarantine-unsanctioned-tenant-overview.png" alt-text="Overview of quarantining unsanctioned tenants":::  
@@ -43,7 +45,7 @@ The administrator of the ContosoTest.com tenant contacts you at which point you 
 
 Microsoft Entra includes features that help administrators quarantine suspected tenants effectively. Administrators can use features like [External ID Cross-tenant Access Settings](../external-id/cross-tenant-access-overview.md), [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md), and [Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) to restrict interactions with potentially risky tenants, enhancing security and compliance within their environments.  
 
-### Using External ID Cross-tenant Access Settings to block user sign-in  
+## Using External ID Cross-tenant Access Settings to block user sign-in  
 
 **License Required: Entra ID P1**  
 
@@ -61,7 +63,7 @@ For more information on managing Cross-tenant access settings, see:
 
 ## Using Global Secure Access and Universal Tenant Restrictions to block user sign-in  
 
-**License Required: Entra ID P1**  
+**License Required**: Entra ID P1  
 
 **Actions Against Suspected Tenant**:  
 Tenant Restrictions v2 (TRv2) and Global Secure Access (GSA) effectively prevent authentication into unauthorized or suspect tenants across all managed devices and networks. As an administrator, you can create policies to [block users from signing into and accessing the specific suspected tenant using custom TRv2 configurations](../entra/external-id/tenant-restrictions-v2.md#step-2-configure-tenant-restrictions-v2-for-specific-partners). You can then apply these created policies using [Universal Tenant Restrictions v2](../global-secure-access/how-to-universal-tenant-restrictions.md) as part of GSA to provide both authentication plane and data plane protection without disrupting authentication for other existing tenants.  
@@ -74,6 +76,24 @@ For more information on using TRv2 and GSA, see:
 - [What is Global Secure Access?](../global-secure-access/overview-what-is-global-secure-access.md)  
 - [Global Secure Access and Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md)  
 - [Configure tenant restrictions - Microsoft Entra ID](../external-id/tenant-restrictions-v2.md)  
+
+
+## Revoking permissions for Multi-Tenants Applications and Service Principals
+
+**License Required**: Entra ID P1
+
+### Actions Against Suspected Tenant:
+
+Entra allows customers to restrict inbound application access for third-party multi-tenant apps where the tenant in which the app was registered is considered a suspect tenant. To do this, administrators must find the correct service principal, which corresponds to the application registered in the suspect tenant. The appOwnerOrganizationId property on the service principal object will list the tenantId in which the application was registered. At this time, this can only be done programmatically via MSGraph API:
+
+MSGraph:
+Request Headers: { ConsistencyLevel: eventual }
+GET https://graph.microsoft.com/v1.0/servicePrincipals?$count=true&$filter=appOwnerOrganizationId eq {tenantId}
+
+After finding the correct service principal, you can either review and revoke permissions granted to the application or delete the service principal all together. Note that, deleting a service principal is a restorable action up to 30 days.
+
+For more information on multi-tenant apps and service principals, see Apps & service principals in Microsoft Entra ID - Microsoft identity platform | Microsoft Learn.
+
 
 ## Cancelling subscriptions provisioned in suspected tenants  
 
