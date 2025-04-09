@@ -40,7 +40,7 @@ To identify and get details of all applications in your tenant that are currentl
 
 ### [Sign-ins Workbook](#tab/sign-ins-Workbook)
 
-The sign-ins Workbook in the Microsoft Entra admin center consolidates logs from various types of sign-in events, including interactive, non-interactive, and service principal sign-ins. This aggregation offers detailed insights into the usage of ADAL applications across your tenant to help you fully understand and manage migration of your ADAL applications. For a more detailed analysis and deeper investigation of ADAL app sign-in data, you can enable the [Microsoft Entra sign-ins workbook](../identity-platform/howto-get-list-of-all-auth-library-apps.md) in your tenant. This tool supports the migration by providing comprehensive sign-in data insights.
+The sign-ins Workbook in the Microsoft Entra admin center consolidates logs from various types of sign-in events, including interactive, non-interactive, and service principal sign-ins. This aggregation offers detailed insights into the usage of ADAL applications across your tenant to help you fully understand and manage migration of your ADAL applications. For a more detailed analysis and deeper investigation of ADAL app sign-in data, you can enable the [Microsoft Entra sign-ins workbook](../../identity-platform/howto-get-list-of-all-auth-library-apps.md) in your tenant. This tool supports the migration by providing comprehensive sign-in data insights.
 
 ### [Microsoft Graph API](#tab/Microsoft-Graph-API)
 
