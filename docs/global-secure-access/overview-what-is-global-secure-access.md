@@ -78,30 +78,33 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 > Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. Enforcement follows a 90-day trial period that began with General Availability on July 1, 2024.
 
 
-## Feature comparison table
+### Feature comparison table
 
 | Feature                          | Entra P1/P2 License - Microsoft traffic profile | Internet Access License* - Internet Access profile | Private Access License* - Private Access profile |
-| Windows client                   |  ✅          | ✅               | ✅              |
-| macOS client                     |  ✅          | ✅               | ✅              |
-| Mobile client (iOS, Android)     |  ✅          | ✅               | ✅              |
-| Traffic logs                     |  ✅          | ✅               | ✅              |
-| Remote network (branch connectivity) | ✅       | ✅               |                 |
-| Universal Tenant Restrictions    |  ✅          |                  |                 |
-| Compliant network check          |  ✅          |                  |                 |
-| Source IP restoration            |  ✅          |                  |                 |
-| Microsoft 365 Enriched logs      |  ✅          |                  |                 |
-| Universal Conditional Access (CA)|  ✅          | ✅               |                 |
-| Context-aware network security   |              | ✅               |                 |
-| Web category filtering           |              | ✅               |                 |
-| Fully qualified domain name (FQDN) filtering |  | ✅               |                 |
-| Universal CAE                    |  ✅          | ✅               | ✅              |
-| VPN replacement with an identity-centric ZTNA |  |                  | ✅              |
-| Quick Access                     |               |                  | ✅              |
-| App Discovery                    |               |                  | ✅              |
-| Private DNS                      |               |                  | ✅              |
-| Single sign-on across all private apps |         |                  | ✅              |
-| Marketplace availability         |               |                  | ✅              |
-| Private network connector multi-cloud support |   |                  | ✅              |
+|----------------------------------|------------------------------------------------|---------------------------------------------------|--------------------------------------------------|
+| Windows client                   | ✅                                              | ✅                                               | ✅                                              |
+| macOS client                     | ✅                                              | ✅                                               | ✅                                              |
+| Mobile client (iOS, Android)     | ✅                                              | ✅                                               | ✅                                              |
+| Traffic logs                     | ✅                                              | ✅                                               | ✅                                              |
+| Remote network (branch connectivity) | ✅                                          | ✅                                               |                                                  |
+| Universal Tenant Restrictions    | ✅                                              |                                                   |                                                  |
+| Compliant network check          | ✅                                              |                                                   |                                                  |
+| Source IP restoration            | ✅                                              |                                                   |                                                  |
+| Microsoft 365 Enriched logs      | ✅                                              |                                                   |                                                  |
+| Universal Conditional Access (CA)| ✅                                              | ✅                                               |                                                  |
+| Context-aware network security   |                                                  | ✅                                               |                                                  |
+| Web category filtering           |                                                  | ✅                                               |                                                  |
+| Fully qualified domain name (FQDN) filtering |                                      | ✅                                               |                                                  |
+| Universal CAE                    | ✅                                               | ✅                                               | ✅                                              |
+| VPN replacement with an identity-centric ZTNA |                                     |                                                   | ✅                                              |
+| Quick Access                     |                                                  |                                                   | ✅                                              |
+| App Discovery                    |                                                  |                                                   | ✅                                              |
+| Private DNS                      |                                                  |                                                   | ✅                                              |
+| Single sign-on across all private apps |                                            |                                                   | ✅                                              |
+| Marketplace availability         |                                                  |                                                   | ✅                                              |
+| Private network connector multi-cloud support |                                     |                                                   | ✅                                              |
+
+*Included in Microsoft Entra Suite
 
 *Included in Microsoft Entra Suite
 
