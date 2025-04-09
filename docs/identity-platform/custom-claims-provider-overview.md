@@ -66,5 +66,4 @@ The authentication events trigger for Azure Functions allows you to implement a 
 ## See also
 
 - [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
-- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md) article.
