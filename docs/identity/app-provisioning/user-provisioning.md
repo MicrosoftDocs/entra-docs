@@ -6,9 +6,11 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: overview
-ms.date: 03/04/2025
+ms.date: 04/09/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
+#customer intent: As an IT admin, I want to understand app provisioning in Microsoft Entra ID so that I can automate user account management across applications.  
 ---
 # What is app provisioning in Microsoft Entra ID?
 
