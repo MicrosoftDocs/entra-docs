@@ -77,6 +77,39 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 > [!IMPORTANT]
 > Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. Enforcement follows a 90-day trial period that began with General Availability on July 1, 2024.
 
+
+## Feature comparison table
+
+| License                          | Feature                                      | Entra P1/P2 | Internet Access* | Private Access* |
+|----------------------------------|----------------------------------------------|-------------|------------------|-----------------|
+| Forwarding profile               | Microsoft traffic profile                   | ✅          | ✅               |                 |
+|                                  | Internet Access profile                     |             | ✅               |                 |
+|                                  | Private Access profile                      |             |                  | ✅              |
+| Windows client                   |                                              | ✅          | ✅               | ✅              |
+| MacOS client                     |                                              | ✅          | ✅               | ✅              |
+| Mobile client (iOS, Android)     |                                              | ✅          | ✅               | ✅              |
+| Traffic logs                     |                                              | ✅          | ✅               | ✅              |
+| Remote network (branch connectivity) |                                          | ✅          | ✅               |                 |
+| Universal Tenant Restrictions    |                                              | ✅          |                  |                 |
+| Compliant network check          |                                              | ✅          |                  |                 |
+| Source IP restoration            |                                              | ✅          |                  |                 |
+| Microsoft 365 Enriched logs      |                                              | ✅          |                  |                 |
+| Universal Conditional Access (CA)|                                              | ✅          | ✅               |                 |
+| Context-aware network security   |                                              |             | ✅               |                 |
+| Web category filtering           |                                              |             | ✅               |                 |
+| Fully qualified domain name (FQDN) filtering |                                  |             | ✅               |                 |
+| Universal CAE                    |                                              | ✅          | ✅               | ✅              |
+| VPN replacement with an identity-centric ZTNA |                                |             |                  | ✅              |
+| Quick Access                     |                                              |             |                  | ✅              |
+| App Discovery                    |                                              |             |                  | ✅              |
+| Private DNS                      |                                              |             |                  | ✅              |
+| Single sign-on across all private apps |                                        |             |                  | ✅              |
+| Marketplace availability         |                                              |             |                  | ✅              |
+| Private network connector multicloud support |                                 |             |                  | ✅              |
+
+*Included in Microsoft Entra Suite
+
+
 **Remote Network licensing**
 
 The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable  remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-will-be-allocated-per-tenant). To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
