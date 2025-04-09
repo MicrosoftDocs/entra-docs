@@ -635,8 +635,6 @@
                   href: custom-extension-tokenissuancestart-setup.md
                 - name: Configure a custom claims provider token issuance event
                   href: custom-extension-tokenissuancestart-configuration.md
-                - name: Configure a SAML app to call a custom claims provider
-                  href: custom-extension-configure-saml-app.md
                 - name: Custom claims provider reference
                   href: custom-claims-provider-reference.md
             - name: Attribute collection
