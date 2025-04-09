@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 04/09/2025
 ms.author: billmath
 ms.reviewer: arvinh
 ---
