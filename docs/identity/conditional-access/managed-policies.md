@@ -148,7 +148,7 @@ This policy covers all users in your organization and requires them to use multi
 
 The managed policy and the sign-in logs are the two places where you can see the effect of these policies on your organization.
 
-Review the **Policy impact on sign-ins** section of the managed policy to see a summary of how the policy affects your environment.
+Review the **Policy impact** tab of the managed policy to see a summary of how the policy affects your environment.
 
 :::image type="content" source="media/managed-policies/microsoft-managed-policy-impact-on-sign-in.png" alt-text="Screenshot showing the effect of a policy on the organization.":::
 
