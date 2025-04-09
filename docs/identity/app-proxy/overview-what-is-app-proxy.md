@@ -11,6 +11,7 @@ ms.date: 04/09/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom:
+ai-usage: ai-assisted
 
 #customer intent: As an IT admin, I want to securely publish on-premises web applications externally so that remote users can access them without a VPN.  
 ---
