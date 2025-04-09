@@ -17,7 +17,7 @@ ms.reviewer: saumadan
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to remove unused credentials from apps. This recommendation is called `StaleAppCreds` in the recommendations API in Microsoft Graph. 
+This article covers the recommendation to remove unused credentials from apps. This recommendation is called `staleAppCreds` in the recommendations API in Microsoft Graph. 
 
 ## Prerequisites
 
@@ -91,18 +91,18 @@ To retrieve all recommendations for your tenant:
 GET https://graph.microsoft.com/beta/directory/recommendations
 ```
 
-From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_StaleAppCreds`.
+From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_staleAppCreds`.
 
 To identify impacted resources:
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_StaleAppCreds
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_staleAppCreds
 ```
 
 To filter the resources based on their status (for example, *active* resources):
 
 ```http
-GET https://graph.microsoft.com/eta/directory/recommendations/{tenantId}_StaleAppCreds/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
+GET https://graph.microsoft.com/eta/directory/recommendations/{tenantId}_staleAppCreds/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
 ```
 
 - Take note of the `AppId`, `CredentialId`, and origin of the credential you want to remove.
@@ -114,7 +114,7 @@ GET https://graph.microsoft.com/eta/directory/recommendations/{tenantId}_StaleAp
 
 ```json
 {
-  "id": "aaaabbbb-0000-cccc-1111-dddd2222eeee_StaleAppCreds",
+  "id": "aaaabbbb-0000-cccc-1111-dddd2222eeee_staleAppCreds",
   "recommendationType": "staleAppCreds",
   "createdDateTime": "2022-09-07T21:25:36Z",
   "impactStartDateTime": "2022-09-07T21:25:36Z",
