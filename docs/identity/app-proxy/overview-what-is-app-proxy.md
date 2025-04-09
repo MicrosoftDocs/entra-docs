@@ -7,10 +7,12 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/21/2025
+ms.date: 04/09/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom:
+
+#customer intent: As an IT admin, I want to securely publish on-premises web applications externally so that remote users can access them without a VPN.  
 ---
 
 # Using Microsoft Entra application proxy to publish on-premises apps for remote users
