@@ -17,7 +17,7 @@ ms.reviewer:  jupetter
 
 [Microsoft Entra recommendations](overview-recommendations.md) provide you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to migrate from MFA server to Microsoft Entra MFA. This recommendation is called `MfaServerDeprecation` in the recommendations API in Microsoft Graph.
+This article covers the recommendation to migrate from MFA server to Microsoft Entra MFA. This recommendation is called `mfaServerDeprecation` in the recommendations API in Microsoft Graph.
 
 ## Description
 
