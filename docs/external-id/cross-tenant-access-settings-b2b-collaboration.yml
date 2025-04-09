@@ -115,11 +115,11 @@ procedureSection:
 
       2. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings** 
 
-      3. Select the link in the **Inbound access** column and the **B2B collaboration** If you block access for all external users and groups, you also need to block access to all your internal applications (on the.
+      3. Select the link in the **Inbound access** column and the **B2B collaboration** If you block access for all external users and groups, you also need to block access to all your internal applications.
 
       4. If you're configuring inbound access settings for a specific organization, select an option:
 
-          - **Default settings**: Select this option if you want the organization to use the default inbound settings (as configured on the **Default** settings If you block access for all external users and groups, you also need to block access to all your internal applications (on the). If customized settings were already configured for this organization, you need to select **Yes** to confirm that you want all settings to be replaced by the default settings. Then select **Save**, and skip the rest of the steps in this procedure.
+          - **Default settings**: Select this option if you want the organization to use the default inbound settings (as configured on the **Default** settings If you block access for all external users and groups, you also need to block access to all your internal applications. If customized settings were already configured for this organization, you need to select **Yes** to confirm that you want all settings to be replaced by the default settings. Then select **Save**, and skip the rest of the steps in this procedure.
 
           - **Customize settings**: Select this option if you want to customize the settings to enforce for this organization instead of the default settings. Continue with the rest of the steps in this procedure.
 
@@ -189,7 +189,7 @@ procedureSection:
 
       ### Considerations for allowing Microsoft applications
 
-      If you want to configure **Cross-tenant access settings** to allow only a designated set of applications, consider adding the Microsoft applications shown in the following table. For example, if you configure an allow list and only allow SharePoint Online, the user can't access My Apps or register for MFA in the resource tenant. To ensure a smooth end user experience, include the following applications in your inbound and outbound collaboration settings.
+      If you want to configure **Cross-tenant access settings** to allow only a designated set of applications, consider adding the Microsoft applications shown in the following table. For example, if you configure an allowlist and only allow SharePoint Online, the user can't access My Apps or register for MFA in the resource tenant. To ensure a smooth end user experience, include the following applications in your inbound and outbound collaboration settings.
 
       |Application|Resource ID|Available in portal|Details|
       |----|----|----|----|
