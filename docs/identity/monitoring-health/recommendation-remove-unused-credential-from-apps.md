@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/22/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
 
@@ -91,18 +91,18 @@ To retrieve all recommendations for your tenant:
 GET https://graph.microsoft.com/beta/directory/recommendations
 ```
 
-From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_Microsoft.Identity.IAM.Insights.StaleAppCreds`.
+From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_StaleAppCreds`.
 
 To identify impacted resources:
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.StaleAppCreds
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_StaleAppCreds
 ```
 
 To filter the resources based on their status (for example, *active* resources):
 
 ```http
-GET https://graph.microsoft.com/eta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.StaleAppCreds/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
+GET https://graph.microsoft.com/eta/directory/recommendations/{tenantId}_StaleAppCreds/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
 ```
 
 - Take note of the `AppId`, `CredentialId`, and origin of the credential you want to remove.
@@ -114,7 +114,7 @@ GET https://graph.microsoft.com/eta/directory/recommendations/536279f6-15cc-45f2
 
 ```json
 {
-  "id": "536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.StaleAppCreds",
+  "id": "aaaabbbb-0000-cccc-1111-dddd2222eeee_StaleAppCreds",
   "recommendationType": "staleAppCreds",
   "createdDateTime": "2022-09-07T21:25:36Z",
   "impactStartDateTime": "2022-09-07T21:25:36Z",

@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/07/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: jamesmantu
 
@@ -39,6 +39,7 @@ MSAL is designed to enable a secure solution without developers having to worry 
 To identify and get details of all applications in your tenant that are currently using ADAL, you can use Sign-ins Workbook. To get the list of all apps programmatically, you can also use Microsoft Graph API or the Microsoft Graph PowerShell SDK.
 
 ### [Sign-ins Workbook](#tab/sign-ins-Workbook)
+
 The sign-ins Workbook in the Microsoft Entra admin center consolidates logs from various types of sign-in events, including interactive, non-interactive, and service principal sign-ins. This aggregation offers detailed insights into the usage of ADAL applications across your tenant to help you fully understand and manage migration of your ADAL applications. For a more detailed analysis and deeper investigation of ADAL app sign-in data, you can enable the [Microsoft Entra sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) in your tenant. This tool supports the migration by providing comprehensive sign-in data insights.
 
 ### [Microsoft Graph API](#tab/Microsoft-Graph-API)
@@ -48,8 +49,8 @@ You can use Microsoft Graph to identify apps that need to be migrated to MSAL. T
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **GET** as the HTTP method from the dropdown.
 1. Set the API version to **beta**.
-1. Run the following query in Microsoft Graph, replacing the `<TENANT_ID>` placeholder with your tenant ID. This query returns a list of the impacted resources in your tenant.
-    -  `https://graph.microsoft.com/beta/directory/recommendations/<TENANT_ID>_Microsoft.Identity.IAM.Insights.AdalToMsalMigration/impactedResources`
+1. Run the following query in Microsoft Graph, replacing the `{tenantId}` placeholder with your tenant ID. This query returns a list of the impacted resources in your tenant.
+    -  `https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.AdalToMsalMigration/impactedResources`
 
 The following response provides the details of the impacted resources using ADAL:
 
@@ -85,7 +86,7 @@ You can run the following set of commands in Windows PowerShell. These commands 
 1. Open Windows PowerShell as an administrator.
 
 1. Connect to Microsoft Graph:
-    - `Connect-MgGraph -Tenant <YOUR_TENANT_ID>`
+    - `Connect-MgGraph -Tenant {tenantId}`
 
 1. Select your profile:
     - `Select-MgProfile beta`

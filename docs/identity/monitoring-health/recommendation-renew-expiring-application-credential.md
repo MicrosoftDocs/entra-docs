@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/22/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
 
@@ -92,18 +92,18 @@ To retrieve all recommendations for your tenant:
 GET https://graph.microsoft.com/beta/directory/recommendations
 ```
 
-From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry`.
+From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_ApplicationCredentialExpiry`.
 
 To identify impacted resources:
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_ApplicationCredentialExpiry
 ```
 
 To filter the resources based on their status (for example, *active* resources):
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights. ApplicationCredentialExpiry’/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
+GET https://graph.microsoft.com/beta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_ ApplicationCredentialExpiry’/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
 ```
 
 Take note of the `AppId`, `CredentialId`, and `Origin` of the credential you want to remove. To remove the credential, use the following Microsoft Graph guidance:
@@ -117,7 +117,7 @@ Take note of the `AppId`, `CredentialId`, and `Origin` of the credential you wan
 
 ```json
  {
-  "id": "536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry",
+  "id": "aaaabbbb-6666-cccc-7777-dddd8888eeee_ApplicationCredentialExpiry",
   "recommendationType": "applicationCredentialExpiry",
   "createdDateTime": "2022-06-08T00:08:01Z",
   "impactStartDateTime": "2022-06-08T00:08:01Z",
