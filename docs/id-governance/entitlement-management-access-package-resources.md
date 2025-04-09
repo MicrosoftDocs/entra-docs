@@ -73,7 +73,7 @@ If you want the users who had a resource role membership to also be assigned to 
 
 ## Add resource roles
 
-[!NOTE] You need to be a Global Administrator or a Privileged Role Administrator with Catalog Owner permissions to add Entra Roles to a catalog. Once an Entra Role is added to a catalog, Identity Governance Administrators and Access Package Managers can create access packages containing that Entra Role, and other users with permissions to manage access packages can assign users to that Entra Role.
+[!NOTE] You need to be a Global Administrator or a Privileged Role Administrator with Catalog Owner permissions to add Entra Roles to a catalog. Once an Entra Role is added to a catalog, Identity Governance Administrators and Access Package Managers can create access packages containing that Entra Role, and other users with permissions to manage access packages can assign users to that Entra Role. Similarly, Applications with EntitlementManagement.RW.All permissions cannot add Microsoft Entra Roles to catalogs unless they also have the Global Administrator or Privileged Role Administrator role with necessary Entitlement Management permissions.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
