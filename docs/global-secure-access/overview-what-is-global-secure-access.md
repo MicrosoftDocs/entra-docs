@@ -106,9 +106,6 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 
 *Included in Microsoft Entra Suite
 
-*Included in Microsoft Entra Suite
-
-
 **Remote Network licensing**
 
 The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable  remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-will-be-allocated-per-tenant). To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
