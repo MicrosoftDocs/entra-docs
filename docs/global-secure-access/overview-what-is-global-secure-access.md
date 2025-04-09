@@ -81,7 +81,7 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 ### Feature comparison table
 
 | Feature                          | Entra P1/P2 License - Microsoft traffic profile | Internet Access License* - Internet Access profile | Private Access License* - Private Access profile |
-|----------------------------------|------------------------------------------------|---------------------------------------------------|--------------------------------------------------|
+|----------------------------------|:----------------------------------------------:|:-------------------------------------------------:|:-----------------------------------------------:|
 | Windows client                   | ✅                                              | ✅                                               | ✅                                              |
 | macOS client                     | ✅                                              | ✅                                               | ✅                                              |
 | Mobile client (iOS, Android)     | ✅                                              | ✅                                               | ✅                                              |
@@ -95,7 +95,7 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 | Context-aware network security   |                                                  | ✅                                               |                                                  |
 | Web category filtering           |                                                  | ✅                                               |                                                  |
 | Fully qualified domain name (FQDN) filtering |                                      | ✅                                               |                                                  |
-| Universal CAE                    | ✅                                               | ✅                                               | ✅                                              |
+| Universal CAE                    | ✅                                              | ✅                                               | ✅                                              |
 | VPN replacement with an identity-centric ZTNA |                                     |                                                   | ✅                                              |
 | Quick Access                     |                                                  |                                                   | ✅                                              |
 | App Discovery                    |                                                  |                                                   | ✅                                              |
