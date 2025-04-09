@@ -82,7 +82,7 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 
 | Feature                          | Entra P1/P2 License - Microsoft traffic profile | Internet Access License* - Internet Access profile | Private Access License* - Private Access profile |
 | Windows client                   |  ✅          | ✅               | ✅              |
-| MacOS client                     |  ✅          | ✅               | ✅              |
+| macOS client                     |  ✅          | ✅               | ✅              |
 | Mobile client (iOS, Android)     |  ✅          | ✅               | ✅              |
 | Traffic logs                     |  ✅          | ✅               | ✅              |
 | Remote network (branch connectivity) | ✅       | ✅               |                 |
@@ -101,7 +101,7 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 | Private DNS                      |               |                  | ✅              |
 | Single sign-on across all private apps |         |                  | ✅              |
 | Marketplace availability         |               |                  | ✅              |
-| Private network connector multicloud support |   |                  | ✅              |
+| Private network connector multi-cloud support |   |                  | ✅              |
 
 *Included in Microsoft Entra Suite
 
