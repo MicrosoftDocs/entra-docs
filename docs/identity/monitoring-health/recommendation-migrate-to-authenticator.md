@@ -42,7 +42,7 @@ The Microsoft Authenticator app is available for Android and iOS. Microsoft Auth
 
 2. Educate users on how to add a work or school account. 
 
-## Next steps
+## Related content
 
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)

@@ -160,7 +160,7 @@ GET https://graph.microsoft.com/eta/directory/recommendations/{tenantId}_StaleAp
 
 If the origin of the credential is **service principal**, there are a few considerations and extra steps to follow.
 
-Because there's often multiple service principals for a single application, it may be easier to navigate to Enterprise apps to view everything in one place.
+Because there's often multiple service principals for a single application, it might be easier to navigate to Enterprise apps to view everything in one place.
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Search for and open the application that was surfaced as part of this recommendation.

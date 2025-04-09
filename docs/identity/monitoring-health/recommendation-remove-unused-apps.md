@@ -31,7 +31,7 @@ This article covers the recommendation to investigate unused applications. This 
 This recommendation shows up if your tenant has applications that haven't been used for over 90 days. The following scenarios are included in this recommendation:
 
 - The app was created but never used.
-- The app isn't [soft deleted](../../identity-platform/howto-restore-app.md) from the application portfolio.
+- The app isn't [soft deleted](../identity-platform/howto-restore-app.md) from the application portfolio.
 - The app isn't used by the tenant where it resides nor any of its instances (Service Principal) in other tenants. 
 - It's a client app that calls other resource apps, but hasn't been issued any tokens in the past 90 days.
 - It's a resource app that doesn't have a record of any client apps requesting a token in the past 90 days.
@@ -56,7 +56,7 @@ This recommendation is available in the Microsoft Entra admin center and using t
 
 ## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-Applications that the recommendation identified appear in the list of **Impacted resources** at the bottom of the recommendation. 
+Applications identified by the recommendation appear in the list of **Impacted resources** at the bottom of the recommendation. 
 
 ### Review the applications
 
@@ -77,8 +77,8 @@ There are many reasons why an app might be unused. Consider the app's usage scen
 
 To remove the application:
 
-1. [Soft delete](../../identity-platform/howto-restore-app.md) the app from your tenant.
-1. Wait 15 days and then [permanently delete the app](../../identity-platform/howto-restore-app.md#permanently-delete-an-application).
+1. [Soft delete](../identity-platform/howto-restore-app.md) the app from your tenant.
+1. Wait 15 days and then [permanently delete the app](../identity-platform/howto-restore-app.md#permanently-delete-an-application).
 
 To indicate the application is still needed and skip the recommendation:
 
