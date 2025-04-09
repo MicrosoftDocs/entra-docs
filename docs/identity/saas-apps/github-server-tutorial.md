@@ -28,7 +28,7 @@ In this article,  you learn how to integrate GitHub Enterprise Server with Micro
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* GitHub Enterprise Server, ready for [initialization](https://docs.github.com/github-ae@latest/admin/configuration/initializing-github-ae).
+* GitHub Enterprise Server, ready for [getting started](https://docs.github.com/en/enterprise-server@latest/get-started/onboarding/getting-started-with-github-enterprise-server).
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
@@ -38,7 +38,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 
 * GitHub Enterprise Server supports **SP** and **IDP** initiated SSO.
 * GitHub Enterprise Server supports **Just In Time** user provisioning.
-* GitHub Enterprise Server supports [Automated user provisioning](github-ae-provisioning-tutorial.md).
+* GitHub Enterprise Server supports [Automated user provisioning](github-server-provisioning-tutorial.md).
 
 ## Adding GitHub Enterprise Server from the gallery
 
@@ -111,10 +111,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Select **Save**.
 
-    ![Screenshot shows to manage claim for attributes.](./media/github-ae-tutorial/administrator.png "Claims")
+    ![Screenshot shows to manage claim for attributes.](./media/github-server-tutorial/administrator.png "Claims")
 
     > [!NOTE]
-    > To know the instructions on how to add a claim, please follow the [link](https://docs.github.com/en/github-ae@latest/admin/authentication/configuring-authentication-and-provisioning-for-your-enterprise-using-azure-ad).
+    > To know the instructions on how to add a claim, please follow the [link](https://docs.github.com/enterprise-server@latest/admin/managing-iam/using-saml-for-enterprise-iam/enabling-encrypted-assertions).
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -130,13 +130,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure GitHub Enterprise Server SSO
 
-To configure SSO on GitHub Enterprise Server side, you need to follow the instructions mentioned [here](https://docs.github.com/github-ae@latest/admin/authentication/configuring-saml-single-sign-on-for-your-enterprise#enabling-saml-sso).
+To configure SSO on GitHub Enterprise Server side, you need to follow the instructions mentioned [here](https://docs.github.com/enterprise-server@latest/admin/managing-iam/using-saml-for-enterprise-iam/configuring-saml-single-sign-on-for-your-enterprise).
 
 ### Create GitHub Enterprise Server test user
 
 In this section, a user called B.Simon is created in GitHub Enterprise Server. GitHub Enterprise Server supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in GitHub Enterprise Server, a new one is created after authentication.
 
-GitHub Enterprise Server also supports automatic user provisioning, you can find more details [here](./github-ae-provisioning-tutorial.md) on how to configure automatic user provisioning.
+GitHub Enterprise Server also supports automatic user provisioning, you can find more details [here](./github-server-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
 ## Test SSO 
 
@@ -156,6 +156,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 ## Related content
 
-* [Configuring user provisioning for your enterprise](https://docs.github.com/github-ae@latest/admin/authentication/configuring-user-provisioning-for-your-enterprise).
+* [Configuring user provisioning for your enterprise](https://docs.github.com/enterprise-server@latest/admin/managing-iam/provisioning-user-accounts-with-scim).
 
 * Once you configure GitHub Enterprise Server you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
