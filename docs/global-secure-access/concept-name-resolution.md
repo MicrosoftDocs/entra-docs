@@ -6,7 +6,7 @@ ms.topic: conceptual
 ms.date: 04/08/2025  
 ms.author: justinha  
 ms.reviewer: justinha  
-
+---
 # DNS handling in Microsoft Entra Private Access
 
 This article describes the DNS name resolution in Microsoft Entra Private Access for various scenarios and configurations, including IA, PA, and private DNS within PA.
