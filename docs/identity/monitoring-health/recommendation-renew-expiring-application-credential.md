@@ -170,4 +170,4 @@ Take note of the `AppId`, `CredentialId`, and `Origin` of the credential you wan
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
-- [Learn about app and service principal objects in Microsoft Entra ID](../identity-platform/app-objects-and-service-principals.md)
+- [Learn about app and service principal objects in Microsoft Entra ID](../../identity-platform/app-objects-and-service-principals.md)

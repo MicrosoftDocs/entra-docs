@@ -21,7 +21,7 @@ This article covers the recommendation to migrate apps from Active Directory Fed
 
 ## Description
 
-As an admin responsible for managing applications, you want your applications to use the security features of Microsoft Entra ID and maximize their value. This recommendation shows up if your tenant has apps on ADFS that can 100% be migrated to Microsoft Entra ID. For more information, see [Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID](../identity/enterprise-apps/migrate-adfs-apps-stages.md).
+As an admin responsible for managing applications, you want your applications to use the security features of Microsoft Entra ID and maximize their value. This recommendation shows up if your tenant has apps on ADFS that can 100% be migrated to Microsoft Entra ID. For more information, see [Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID](../../identity/enterprise-apps/migrate-adfs-apps-stages.md).
 
 ## Value 
 
@@ -29,10 +29,10 @@ Using Microsoft Entra ID gives you granular per-application access controls to s
 
 ## Action plan
 
-1. [Install Microsoft Entra Connect](../identity/hybrid/connect/how-to-connect-install-roadmap.md) on your AD FS server. 
+1. [Install Microsoft Entra Connect](../../identity/hybrid/connect/how-to-connect-install-roadmap.md) on your AD FS server. 
 1. [Review the AD FS application activity report](~/identity/enterprise-apps/migrate-adfs-application-activity.md) to get insights about your AD FS applications. 
-1. Read the solution guide for [migrating applications to Microsoft Entra ID](../identity/enterprise-apps/migrate-adfs-apps-stages.md). 
-1. Migrate applications to Microsoft Entra ID. For more information, see the article [Migrate from federation to cloud authentication](../identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md).
+1. Read the solution guide for [migrating applications to Microsoft Entra ID](../../identity/enterprise-apps/migrate-adfs-apps-stages.md). 
+1. Migrate applications to Microsoft Entra ID. For more information, see the article [Migrate from federation to cloud authentication](../../identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md).
 
 ### Guided walkthrough
 

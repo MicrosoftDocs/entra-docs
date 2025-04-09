@@ -24,7 +24,7 @@ This article covers the recommendation to migrate from the Azure Active Director
 
 The **Migrate from ADAL to MSAL** recommendation is created to raise awareness and alert you about all applications using ADAL within your tenant. This recommendation is triggered for tenants with applications using ADAL. It labels any application that requests a token via ADAL as an "ADAL application," including those applications using both ADAL and MSAL.
 
-Azure Active Directory Authentication Library (ADAL) has been deprecated. We strongly recommend migrating to the Microsoft Authentication Library (MSAL), which replaces ADAL. Microsoft **no longer releases new features and security fixes on ADAL**. Applications using ADAL won't be able to utilize the latest security features, leaving them vulnerable to future security threats. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](../identity-platform/msal-migration.md). 
+Azure Active Directory Authentication Library (ADAL) has been deprecated. We strongly recommend migrating to the Microsoft Authentication Library (MSAL), which replaces ADAL. Microsoft **no longer releases new features and security fixes on ADAL**. Applications using ADAL won't be able to utilize the latest security features, leaving them vulnerable to future security threats. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](../../identity-platform/msal-migration.md). 
 
 ## How it works
 
@@ -32,7 +32,7 @@ The system checks daily for new ADAL token requests over the past 30 days. If an
 
 ## Value 
 
-MSAL is designed to enable a secure solution without developers having to worry about the implementation details. MSAL simplifies how tokens are acquired, managed, cached, and refreshed. MSAL also uses best practices for resilience. For more information on MSAL supported scenarios, see [Migrate applications to MSAL](../identity-platform/msal-migration.md#why-switch-to-msal).
+MSAL is designed to enable a secure solution without developers having to worry about the implementation details. MSAL simplifies how tokens are acquired, managed, cached, and refreshed. MSAL also uses best practices for resilience. For more information on MSAL supported scenarios, see [Migrate applications to MSAL](../../identity-platform/msal-migration.md#why-switch-to-msal).
 
 ## Action plan
 
@@ -94,7 +94,7 @@ You can run the following set of commands in Windows PowerShell. These commands 
 1. Get a list of your recommendations:
     - `Get-MgDirectoryRecommendation | Format-List`
 
-1. Update the code for your apps using the instructions in [How to migrate to MSAL](../identity-platform/msal-migration.md#how-to-migrate-to-msal).
+1. Update the code for your apps using the instructions in [How to migrate to MSAL](../../identity-platform/msal-migration.md#how-to-migrate-to-msal).
 
 ---
 
@@ -127,6 +127,6 @@ You can find the detailed steps in the [Microsoft Entra sign-ins workbook](~/ide
 
 ## Related content
 
-- [Get a list of apps using ADAL in your tenant](../identity-platform/howto-get-list-of-all-auth-library-apps.md)
+- [Get a list of apps using ADAL in your tenant](../../identity-platform/howto-get-list-of-all-auth-library-apps.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)

@@ -26,7 +26,7 @@ As an admin, you want to maintain security for your company’s resources, but y
 
 The *remember multifactor authentication on trusted device* feature sets a persistent cookie on the browser when a user selects the *Don't ask again for X days* option at sign-in. The user isn't prompted again for MFA from that browser until the cookie expires. If the user opens a different browser on the same device or clears the cookies, they're prompted again to verify.
 
-For more information, see [Configure Microsoft Entra multifactor authentication settings](../identity/authentication/howto-mfa-mfasettings.md).
+For more information, see [Configure Microsoft Entra multifactor authentication settings](../../identity/authentication/howto-mfa-mfasettings.md).
 
 This recommendation shows up if the **remember multifactor authentication** feature is set to less than 30 days.
 
@@ -36,7 +36,7 @@ This recommendation improves your user's productivity and minimizes the sign-in 
 
 ## Action plan
 
-1. Review the [How to configure Microsoft Entra multifactor authentication settings](../identity/authentication/howto-mfa-mfasettings.md) article.
+1. Review the [How to configure Microsoft Entra multifactor authentication settings](../../identity/authentication/howto-mfa-mfasettings.md) article.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../../identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
