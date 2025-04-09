@@ -89,7 +89,7 @@ To add a Microsoft Entra role programmatically, you'd use the following code:
 
 ## Add a Microsoft Entra role as a resource in an access package using Graph
 
-You can add Microsoft Entra roles as resources in an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All permission`, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to create an access package containing Microsoft Entra roles and assign users to that access package. 
+You can add Microsoft Entra roles as resources in an access package using Microsoft Graph. A user in an appropriate role that has Global Administrator or Privileged Resource Administrator and Catalog Owner permissions, or an application with those permissions, can call the API to create an access package containing Microsoft Entra roles and assign users to that access package. The delegated `EntitlementManagement.ReadWrite.All permission` is not sufficient to perform these operations.
 
 ## Add a Microsoft Entra role as a resource in an access package using PowerShell 
 
