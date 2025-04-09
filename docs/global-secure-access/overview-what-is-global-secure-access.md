@@ -80,32 +80,28 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 
 ## Feature comparison table
 
-| License                          | Feature                                      | Entra P1/P2 | Internet Access* | Private Access* |
-|----------------------------------|----------------------------------------------|-------------|------------------|-----------------|
-| Forwarding profile               | Microsoft traffic profile                   | ✅          | ✅               |                 |
-|                                  | Internet Access profile                     |             | ✅               |                 |
-|                                  | Private Access profile                      |             |                  | ✅              |
-| Windows client                   |                                              | ✅          | ✅               | ✅              |
-| MacOS client                     |                                              | ✅          | ✅               | ✅              |
-| Mobile client (iOS, Android)     |                                              | ✅          | ✅               | ✅              |
-| Traffic logs                     |                                              | ✅          | ✅               | ✅              |
-| Remote network (branch connectivity) |                                          | ✅          | ✅               |                 |
-| Universal Tenant Restrictions    |                                              | ✅          |                  |                 |
-| Compliant network check          |                                              | ✅          |                  |                 |
-| Source IP restoration            |                                              | ✅          |                  |                 |
-| Microsoft 365 Enriched logs      |                                              | ✅          |                  |                 |
-| Universal Conditional Access (CA)|                                              | ✅          | ✅               |                 |
-| Context-aware network security   |                                              |             | ✅               |                 |
-| Web category filtering           |                                              |             | ✅               |                 |
-| Fully qualified domain name (FQDN) filtering |                                  |             | ✅               |                 |
-| Universal CAE                    |                                              | ✅          | ✅               | ✅              |
-| VPN replacement with an identity-centric ZTNA |                                |             |                  | ✅              |
-| Quick Access                     |                                              |             |                  | ✅              |
-| App Discovery                    |                                              |             |                  | ✅              |
-| Private DNS                      |                                              |             |                  | ✅              |
-| Single sign-on across all private apps |                                        |             |                  | ✅              |
-| Marketplace availability         |                                              |             |                  | ✅              |
-| Private network connector multicloud support |                                 |             |                  | ✅              |
+| Feature                          | Entra P1/P2 License - Microsoft traffic profile | Internet Access License* - Internet Access profile | Private Access License* - Private Access profile |
+| Windows client                   |  ✅          | ✅               | ✅              |
+| MacOS client                     |  ✅          | ✅               | ✅              |
+| Mobile client (iOS, Android)     |  ✅          | ✅               | ✅              |
+| Traffic logs                     |  ✅          | ✅               | ✅              |
+| Remote network (branch connectivity) | ✅       | ✅               |                 |
+| Universal Tenant Restrictions    |  ✅          |                  |                 |
+| Compliant network check          |  ✅          |                  |                 |
+| Source IP restoration            |  ✅          |                  |                 |
+| Microsoft 365 Enriched logs      |  ✅          |                  |                 |
+| Universal Conditional Access (CA)|  ✅          | ✅               |                 |
+| Context-aware network security   |              | ✅               |                 |
+| Web category filtering           |              | ✅               |                 |
+| Fully qualified domain name (FQDN) filtering |  | ✅               |                 |
+| Universal CAE                    |  ✅          | ✅               | ✅              |
+| VPN replacement with an identity-centric ZTNA |  |                  | ✅              |
+| Quick Access                     |               |                  | ✅              |
+| App Discovery                    |               |                  | ✅              |
+| Private DNS                      |               |                  | ✅              |
+| Single sign-on across all private apps |         |                  | ✅              |
+| Marketplace availability         |               |                  | ✅              |
+| Private network connector multicloud support |   |                  | ✅              |
 
 *Included in Microsoft Entra Suite
 
