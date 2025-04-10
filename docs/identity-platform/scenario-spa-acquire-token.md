@@ -5,11 +5,11 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: 
-ms.date: 06/27/2024
+ms.date: 04/10/2025
 ms.service: identity-platform
 
 ms.topic: how-to
-s.reviewer: negoe
+ms.reviewer: negoe
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 
