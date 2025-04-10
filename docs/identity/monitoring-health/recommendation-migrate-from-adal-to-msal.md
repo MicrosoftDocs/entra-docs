@@ -50,7 +50,7 @@ You can use Microsoft Graph to identify apps that need to be migrated to MSAL. T
 1. Select **GET** as the HTTP method from the dropdown.
 1. Set the API version to **beta**.
 1. Run the following query in Microsoft Graph, replacing the `{tenantId}` placeholder with your tenant ID. This query returns a list of the impacted resources in your tenant.
-    -  `https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.adalToMsalMigration/impactedResources`
+    -  `https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_adalToMsalMigration/impactedResources`
 
 The following response provides the details of the impacted resources using ADAL:
 
