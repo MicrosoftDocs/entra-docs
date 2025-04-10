@@ -43,7 +43,7 @@ The following claims need to be configured in the SAML 2.0 token issued by the I
 |Attribute                                                            |Value                                                 |
 |---------------------------------------------------------------------|------------------------------------------------------|
 |NameID Format                                                        |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`|
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | emailaddress                                         |
+|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | The user's email address                             |
 
 
 The next section illustrates how to configure the required attributes and claims using AD FS as an example of a SAML 2.0 IdP.
