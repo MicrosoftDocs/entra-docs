@@ -178,7 +178,7 @@ When a user is blocked for either scenario, they'll receive a 50053 authenticati
 
 To unblock an account based on high confidence sign-in risk, you have the following options:
 
-1. **Add the IPs being used to sign in to the Trusted location settings** - If the sign-in is performed from a known location for your company, you can add the IP to the trusted list. For more information, see [Conditional Access: Network assignment](../identity/conditional-access/concept-assignment-network#trusted-locations).
+1. **Add the IPs being used to sign in to the Trusted location settings** - If the sign-in is performed from a known location for your company, you can add the IP to the trusted list. For more information, see [Conditional Access: Network assignment](../identity/conditional-access/concept-assignment-network.md#trusted-locations).
 1. **Use a modern authentication protocol** - If the sign-in is performed using a legacy protocol, switching to a modern method will unblock the attempt.
 
 ## Token theft related detections
