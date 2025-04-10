@@ -23,6 +23,8 @@ Additionally, by enforcing the requirement that applications must be registered 
 
 You must act **before March 31, 2026**, to avoid authentication failure of applications. 
 
+If you identified traffic using service principal-less authentication between **February 11 and March 11, 2025**, you can continue using it until **March 2026**. However, any traffic that was not detected during **Feb 11 to March 11** or any new traffic starting after **March 11, 2025** will be blocked starting **April 2025**.
+
 ## Use sign-in logs to find service principal-less applications
 
 First, you'll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
