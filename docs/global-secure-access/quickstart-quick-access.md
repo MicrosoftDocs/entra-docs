@@ -21,6 +21,8 @@ This quickstart shows you the steps needed to configure Quick Access to private 
 > [!NOTE]
 > Use Quick Access as a transition phase in your Zero Trust journey. After Quick Access has enabled you to replace your VPN, [configure per-app access](quickstart-per-app-access.md) to achieve application segmentation and per-app granular controls.
 
+> [!VIDEO https://www.youtube-nocookie.com/embed/MfcZ3zQhF-4]
+
 ## Prerequisites
 
 Administrators who interact with **Global Secure Access** features must have the [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference). Some features might also require other roles.
