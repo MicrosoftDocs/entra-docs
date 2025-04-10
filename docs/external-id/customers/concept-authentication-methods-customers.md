@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 03/12/2025
+ms.date: 04/10/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 #customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
@@ -79,7 +79,7 @@ The following screenshots show the sign-in with Facebook experience. In the sign
 
 Learn how to [add Facebook as an identity provider](how-to-facebook-federation-customers.md).
 
-### Apple sign-in (preview)
+### Apple sign-in
 
 By setting up federation with Apple, you can allow users to sign in to your applications with their own Apple accounts. After you add Apple as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with an Apple account.
 
