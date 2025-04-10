@@ -37,6 +37,8 @@ To access deployment logs:
 
 To filter the deployment logs to a specific detail, select **Add filter** and then enter the detail for the filter. For example, to look at all the logs for remote network activity, select the activity and then select **Remote Network** and then select **Apply**.
 
+![Screenshot of the deployment log activity details.](media/how-to-view-deployment-logs/traffic-activity-details.png)
+
 
 ## Supported scenarios 
 
