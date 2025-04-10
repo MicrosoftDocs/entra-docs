@@ -121,7 +121,7 @@ For more information, see [Compare groups](/office365/admin/create-groups/compar
     | Microsoft 365 | Microsoft 365 Group that isn't Teams-enabled. Used for collaboration between users, both inside and outside your company. |
     | Team | Microsoft 365 Group that is Teams-enabled. Used for collaboration between users, both inside and outside your company. |
 
-1. In the **Role** list, select **Owner** or **Member**.
+1. In the **Role** list, select the role you want to assign. If the [group is managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), eligible memberships such as **Eligible Owner** and **Eligible Member** are also options that can be selected.
 
     You typically select the Member role. If you select the Owner role, then users become an owner of the group, which allows those users to add or remove other members or owners.
 
