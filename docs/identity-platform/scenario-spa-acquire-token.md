@@ -4,10 +4,8 @@ description: Learn how to acquire a token in a single-page app and call a web AP
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: 
 ms.date: 04/10/2025
 ms.service: identity-platform
-
 ms.topic: how-to
 ms.reviewer: negoe
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
