@@ -40,7 +40,7 @@ When you configure a federated identity credential, there are several important 
 - *issuer* is the URL of the Microsoft Entra tenant's Authority URL in the form `https://login.microsoftonline.com/{tenant}/v2.0`. Both the Microsoft Entra app and managed identity must belong to the same tenant. If the `issuer` claim has leading or trailing whitespace in the value, the token exchange is blocked.   
 - `subject`: This is the case-sensitive GUID of the managed identity’s **Object (Principal) ID** assigned to the Azure workload. The managed identity must be in the same tenant as the app registration, even if the target resource is in a different cloud. The Microsoft identity platform will reject the token exchange if the `subject` in the federated identity credential configuration does not exactly match the managed identity's Principal ID.
     > [!IMPORTANT]
-    > Only User-Assigned Managed Identities can be used as a federated credential for Apps. System-Assigned Identities are not supported.
+    > Only user-assigned managed identities can be used as a federated credential for apps. system-assigned identities aren't supported.
     
 - *audiences* specifieds the value that appears in the `aud` claim in the managed identity token (Required). The value must be one of the following depending on the target cloud.
     - **Microsoft Entra ID global service**: `api://AzureADTokenExchange`
