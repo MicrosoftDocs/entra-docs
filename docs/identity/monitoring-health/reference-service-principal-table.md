@@ -39,7 +39,6 @@ These logs are only available by configuring diagnostic settings in Microsoft En
 | AAD Applications ARM RP | c8e14c19-0ae6-4966-bd07-17e5ffa8e4ce | Creates and manages first party and non-Microsoft apps in internal Microsoft Services and infrastructure tenants only.<br/>This app doesn't work outside of allowlisted tenants. |
 | App Protection | c6e44401-4d0a-4542-ab22-ecd4c90d28d7 | Automatically disables applications based on user-defined and predefined policies.<br/>This app doesn't create app registrations or service principals in your tenant but can disable a service principal associated with a suspicious application. |
 | Azure AD Application Proxy | 47ee738b-3f1a-4fc7-ab11-37e4822b007e | Provides ability to publish applications inside your private network and provides access to users outside your network.<br/>This app is used as part of workflows for both Microsoft Entra Private Access and Microsoft Entra Application Proxy. |
-| Azure AD Notification | fc03f97a-9db0-4627-a216-ec98ce54e018 | |
 | Azure ESTS Service | fc03f97a-9db0-4627-a216-ec98ce54e018 | Standards compliant authentication service for Microsoft Entra. |
 | Azure HDInsight Cluster API | fc03f97a-9db0-4627-a216-ec98ce54e018 | Big data analytics service that includes the Apache Hadoop and Apache Spark ecosystems, which enables the processing of massive amounts of data. |
 | Azure Machine Learning | 0736f41a-0425-4b46-bdb5-1563eff02385 | Cloud service for accelerating and managing the machine learning project lifecycle. |
