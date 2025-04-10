@@ -6,7 +6,7 @@ manager: femila
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 04/10/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -71,7 +71,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 
 
 > [!NOTE]
-> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.). To learn more about Windows network port requirements, see [Service overview and network port requirements for Windows](https://learn.microsoft.com/troubleshoot/windows-server/networking/service-overview-and-network-port-requirements)
+> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.). To learn more about Windows network port requirements, see [Service overview and network port requirements for Windows](/troubleshoot/windows-server/networking/service-overview-and-network-port-requirements)
 
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application Administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
