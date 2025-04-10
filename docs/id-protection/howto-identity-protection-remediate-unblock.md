@@ -5,7 +5,7 @@ description: Learn how to configure user self-remediation and manually remediate
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 04/07/2025
+ms.date: 04/10/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -46,24 +46,6 @@ You can also [remediate in Microsoft Defender for Identity](/defender-for-identi
 
 As an IT administrator, you have several options to configure self-remediation for users. 
 
-### Allow on-premises password reset to remediate user risks
-
-If your organization has a hybrid environment, you can allow on-premises password changes to reset user risks with [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md). You must enable password hash synchronization *before* users can self-remediate in those scenarios.
-
-- Risky hybrid users can self-remediate without administrator intervention. When a password is changed on-premises, user risk is automatically remediated within Microsoft Entra ID Protection, resetting the current user risk state.
-- Organizations can proactively deploy [user risk policies that require password changes](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) to confidently protect their hybrid users. This option strengthens your organization's security posture and simplifies security management by ensuring that user risks are promptly addressed, even in complex hybrid environments.
-
-:::image type="content" source="media/howto-identity-protection-remediate-unblock/allow-on-premises-password-reset-user-risk.png" alt-text="Screenshot showing the location of the Allow on-premises password change to reset user risk checkbox." lightbox="media/howto-identity-protection-remediate-unblock/allow-on-premises-password-reset-user-risk.png":::
-
-To configure this setting:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator).
-1. Browse to **Protection** > **Identity Protection** > **Settings**.
-1. Check the box to **Allow on-premises password change to reset user risk** and select **Save**.
-
-> [!NOTE]
-> Allowing on-premises password change to reset user risk is an opt-in only feature. Customers should evaluate this feature before enabling in production environments. We recommend customers secure the on-premises password change or reset flows. For example, requiring multifactor authentication before allowing users to change their password on-premises using a tool like [Microsoft Identity Manager's Self-Service Password Reset Portal](/microsoft-identity-manager/working-with-self-service-password-reset).
-
 ### Risk-based policy
 
 You can allow users to self-remediate their sign-in risks and user risks by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md). If users pass the required access control, such as multifactor authentication or secure password change, then their risks are automatically remediated. The corresponding risk detections, risky sign-ins, and risky users are reported with the risk state **Remediated** instead of **At risk**.
@@ -78,7 +60,7 @@ For risk-based policies to be applied to allow self-remediation, users must firs
 
 If a risk-based policy is applied during sign-in where the criteria isn't met, the user is blocked. This block occurs because the user can't perform the required step, so admin intervention is required to unblock the user.
 
-Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, so administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary, such as [blocking access from locations](~/identity/conditional-access/policy-block-by-location.md) or lowering the acceptable risk in their policies.
+Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, so administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary, such as [blocking access from locations](../identity/conditional-access/policy-block-by-location.md) or lowering the acceptable risk in their policies.
 
 ### Self-service password reset
 
@@ -95,10 +77,11 @@ Administrators can generate a temporary password or require the user to reset th
 By generating a temporary password, you can immediately bring an identity back into a safe state. This method requires contacting the affected users because they need to know what the temporary password is. Because the password is temporary, the user is prompted to change the password to something new during the next sign-in.
 
 - You can generate passwords for cloud and hybrid users in the Microsoft Entra admin center.
-- You can generate passwords for hybrid users from an on-premises directory when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting is enabled.
-
-   > [!WARNING]
-   > Don't select the option **User must change password at next logon** unless you previously enabled password hash synchronization to allow on-premises password changes to remediate user risk.
+- You can generate passwords for hybrid users from your on-premises directory if the following settings are in place:
+   - Follow the guidance to [implement password hash synchronization](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md).
+   - Enable the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting in Entra ID Protection.
+   - Enable [Self-service password reset](../identity/authentication/tutorial-enable-sspr.md).
+   - In Active Directory, only select the option **User must change password at next logon** if everything in the previous bullets are enabled.
 
 #### Require the user to reset password
 
@@ -106,6 +89,24 @@ Requiring the users to reset passwords enables self-recovery without contacting 
 
 - Cloud and hybrid users can complete a secure password change. This method only applies to users that can perform MFA already. For users that aren't registered, this option isn't available.
 - Hybrid users can complete a password change from an on-premises or hybrid joined Windows device, when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting is enabled.
+
+### Allow on-premises password reset to remediate user risks
+
+If your organization has a hybrid environment, you can allow on-premises password changes to reset user risks with [password hash synchronization](../identity/hybrid/connect/whatis-phs.md). You must enable password hash synchronization *before* users can self-remediate in those scenarios.
+
+- Risky hybrid users can self-remediate without administrator intervention. When a password is changed on-premises, user risk is automatically remediated within Microsoft Entra ID Protection, resetting the current user risk state.
+- Organizations can proactively deploy [user risk policies that require password changes](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) to confidently protect their hybrid users. This option strengthens your organization's security posture and simplifies security management by ensuring that user risks are promptly addressed, even in complex hybrid environments.
+
+:::image type="content" source="media/howto-identity-protection-remediate-unblock/allow-on-premises-password-reset-user-risk.png" alt-text="Screenshot showing the location of the Allow on-premises password change to reset user risk checkbox." lightbox="media/howto-identity-protection-remediate-unblock/allow-on-premises-password-reset-user-risk.png":::
+
+To configure this setting:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator).
+1. Browse to **Protection** > **Identity Protection** > **Settings**.
+1. Check the box to **Allow on-premises password change to reset user risk** and select **Save**.
+
+> [!NOTE]
+> Allowing on-premises password change to reset user risk is an opt-in only feature. Customers should evaluate this feature before enabling in production environments. We recommend customers secure the on-premises password change or reset flows. For example, requiring multifactor authentication before allowing users to change their password on-premises using a tool like [Microsoft Identity Manager's Self-Service Password Reset Portal](/microsoft-identity-manager/working-with-self-service-password-reset).
 
 ## Administrator manual remediation
 
@@ -115,7 +116,7 @@ In some situations, you might need to manually remediate or confirm a user's ris
 
 If after investigation you confirm the user account isn't at risk of being compromised, you can dismiss the risky user.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator).
 1. Browse to **Protection** > **Identity Protection** > **Risky users**, and select the affected user.
 1. Select **Dismiss user(s) risk**. When you select **Dismiss user risk**, the user is no longer at risk, and all the risky sign-ins and corresponding risk detections are dismissed.
 
@@ -139,8 +140,8 @@ If after investigation, an account is confirmed compromised:
    1. [Request a password reset](#manual-password-reset).
    1. Block the user if you suspect the attacker can reset the password or do multifactor authentication for the user.
    1. [Revoke refresh tokens](/entra/identity/users/users-revoke-access).
-   1. [Disable any devices](~/identity/devices/manage-device-identities.md) that are considered compromised.
-   1. If using [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
+   1. [Disable any devices](../identity/devices/manage-device-identities.md) that are considered compromised.
+   1. If using [continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
 
 For more information about what happens when confirming compromise, see [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
 
@@ -177,7 +178,7 @@ When a user is blocked for either scenario, they'll receive a 50053 authenticati
 
 To unblock an account based on high confidence sign-in risk, you have the following options:
 
-1. **Add the IPs being used to sign in to the Trusted location settings** - If the sign-in is performed from a known location for your company, you can add the IP to the trusted list. For more information, see [Conditional Access: Network assignment](/entra/identity/conditional-access/concept-assignment-network#trusted-locations).
+1. **Add the IPs being used to sign in to the Trusted location settings** - If the sign-in is performed from a known location for your company, you can add the IP to the trusted list. For more information, see [Conditional Access: Network assignment](../identity/conditional-access/concept-assignment-network#trusted-locations).
 1. **Use a modern authentication protocol** - If the sign-in is performed using a legacy protocol, switching to a modern method will unblock the attempt.
 
 ## Token theft related detections
