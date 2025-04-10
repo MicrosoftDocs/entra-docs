@@ -42,7 +42,7 @@ When you configure a federated identity credential, there are several important 
     > [!IMPORTANT]
     > Only user-assigned managed identities can be used as a federated credential for apps. system-assigned identities aren't supported.
     
-- *audiences* specifieds the value that appears in the `aud` claim in the managed identity token (Required). The value must be one of the following depending on the target cloud.
+- *audiences* specifies the value that appears in the `aud` claim in the managed identity token (Required). The value must be one of the following depending on the target cloud.
     - **Microsoft Entra ID global service**: `api://AzureADTokenExchange`
     - **Microsoft Entra ID for US Government**: `api://AzureADTokenExchangeUSGov`
     - **Microsoft Entra China operated by 21Vianet**: `api://AzureADTokenExchangeChina`
