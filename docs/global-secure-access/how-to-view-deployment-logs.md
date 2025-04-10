@@ -17,7 +17,7 @@ ms.custom:
 
 # How to use the Global Secure Access deployment logs (preview)
 
-Deployment logs provide visibility into the status and progress of configuration changes made in Global Secure Access. Unlike other logging features, deployment logs focus specifically on tracking configuration updates, such as forwarding profile redistributions and remote network changes, providing detailed insights into their deployment status and success across the global network. These logs help administrators track and troubleshoot deployment updates, such as forwarding profile redistributions and remote network updates, across the global network. 
+Deployment logs provide visibility into the status and progress of configuration changes made in Global Secure Access. Unlike other logging features, deployment logs focus specifically on tracking configuration updates. For example, forwarding profile redistributions and remote network changes. Deployment logs provide detailed insights into the deployment status and success across the global network. These logs help administrators track and troubleshoot deployment updates, such as forwarding profile redistributions and remote network updates, across the global network. 
 
 This article describes how to view and analyze deployment logs, configure diagnostic settings, and understand log fields. 
 
@@ -57,10 +57,10 @@ The following table describes the fields available in the deployment logs:
 | Name            | Description                                                                 |
 |-----------------|-----------------------------------------------------------------------------|
 | **Date**        | The timestamp when the event occurred.                                      |
-| **Activity**    | The type of configuration change (e.g., Redistribute Forwarding Profile).   |
-| **Status**      | The outcome of the deployment (e.g., Deployment Successful, Deployment Failed). |
+| **Activity**    | The type of configuration change (for example, Redistribute Forwarding Profile).   |
+| **Status**      | The outcome of the deployment (for example, Deployment Successful, Deployment Failed). |
 | **Initiated By**| The account or admin who initiated the change.                              |
-| **Type**        | The category of the configuration change (e.g., forwardingProfile, remoteNetwork). |
+| **Type**        | The category of the configuration change (for example, forwardingProfile, remoteNetwork). |
 | **Request ID**  | A unique identifier for tracking the deployment.                            |
 | **Error Messages** | Specific error messages for failed deployments.                          |
 
