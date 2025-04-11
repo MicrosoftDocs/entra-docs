@@ -15,7 +15,7 @@ In this tutorial, you learn how to create customized reports in [Azure Data Expl
 
 This tutorial complements reporting options such as [archiving and reporting with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md), which focuses on exporting the audit log into Azure Monitor for retention and analysis. By comparison, exporting Microsoft Entra ID and Microsoft Entra ID Governance data to Azure Data Explorer provides flexibility for creating custom reports on Microsoft Entra objects, including historical and deleted objects.
 
-Here's a video that provides a quick overview of reporting on Microsoft Entra ID Governance data using Azure Data Explorer
+Here's a video that provides a quick overview of reporting on Microsoft Entra ID Governance data using Azure Data Explorer.
 
 >[!VIDEO https://www.youtube.com/embed/Ewsd4GsnmWY]
 
