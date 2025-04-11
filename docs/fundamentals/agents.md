@@ -41,4 +41,4 @@ It runs in the context of the administrator who configured the agent.
 
 #### Role-based access ​
 
-Administrators need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
+Administrators need the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
