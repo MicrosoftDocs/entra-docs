@@ -291,12 +291,6 @@ items:
       href: ../direct-federation-overview.md
     - name: Multifactor authentication (MFA)
       href: concept-multifactor-authentication-customers.md
-    - name: Custom authentication extensions
-      items:
-        - name: Overview
-          href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Custom claims provider
-          href: ~/identity-platform/custom-claims-provider-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication
       items:
         - name: Native authentication
@@ -313,6 +307,8 @@ items:
       href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
+    - name: Adding your own business logic
+      href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
     - name: Frequently asked questions (FAQ)
@@ -410,6 +406,8 @@ items:
               displayName: custom attributes
             - name: Add attributes to the token
               href: how-to-add-attributes-to-token.md
+        - name: Use custom URL domains
+          href: how-to-custom-url-domain.md
         - name: Use custom URL domains
           href: how-to-custom-url-domain.md
         - name: Configure optional claims
