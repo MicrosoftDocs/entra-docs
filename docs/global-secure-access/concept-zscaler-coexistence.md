@@ -3,7 +3,7 @@ title: Learn about Security Service Edge (SSE) coexistence with Microsoft and Zs
 description: Microsoft and Zscaler’s Security Service Edge (SSE) coexistence solution guide.
 author: kenwith
 ms.author: kenwith
-manager: rkarlin
+manager: femila
 ms.topic: conceptual
 ms.date: 04/11/2025
 ms.service: global-secure-access
