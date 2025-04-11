@@ -92,7 +92,7 @@ If the only applications connected to AD are those being configured for resilien
 
 Another option is to use [Microsoft Entra certificate-based authentication (CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). AD also supports certificate authentication, and some organizations have issued smartcards, virtual smartcards, or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
 
-## Deploy a relying party STS and configure Microsoft Entra as an identity provider
+## Deploy a relying party STS
 
 If you haven't already done so, [deploy AD FS](/windows-server/identity/ad-fs/ad-fs-deployment) or a similar identity technology on one or more Windows Servers at a site. This AD FS will be configured to operate as a relying party STS, so can't be the same installation as another AD FS configured as an identity provider to provide claims to Microsoft Entra.
 
@@ -106,7 +106,23 @@ If you haven't already done so, [deploy AD FS](/windows-server/identity/ad-fs/ad
 
 If you are using certificate based authentication, then you will also need to configure AD FS to authenticate users with certificates. For more information, see [Configure AD FS support for user certificate authentication](/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication).
 
-Then, perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. Performing that tutorial will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
+## Secure the relying party STS
+
+<!-- 1. securing the local STS.. For ADFS we should point towards existing Secure ADFS content...  -->
+
+## Connect federated applications to the relying party STS
+
+<!--
+
+2. Session continuation... not clear to me how we make sure that a session that uses AD as IdP to start (connectivity down) then is invalidated when connectivity is restored so the session can be evaluated by Entra.
+3. Multiple local apps.. when the local STS is servicing multiple apps.. and how to reflect the multiple underling local apps behind the local STS individually in Entra.
+4. High level considerations. as in the apps that we service off the local STS should be limited to a bare minimum of absolutely required apps during loss of connectivity.
+
+-->
+
+## Configure Microsoft Entra as an identity provider to the relying party STS
+
+Perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. Performing that tutorial will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
 
 ## Configure AD as an LDAP source in the relying party STS
 
