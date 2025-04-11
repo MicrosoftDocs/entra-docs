@@ -31,8 +31,9 @@ For example, when calling the MSOnline PowerShell cmdlet `Get-MsolUserRole`, Mic
 
 
 ## What won't be impacted
- - Your sync service will run as usual, and changes will continue to sync to Entra
- - The ability to upgrade your Entra Connect Sync instance. You can still perform the upgrade after April 30, 2025
+
+ - Your sync service will run as usual, and changes will continue to sync to Microsoft Entra.
+ - The ability to upgrade your Microsoft Entra Connect Sync instance. You can still perform the upgrade after April 30, 2025.
    
 >[!NOTE]
 >If you're unable to upgrade by the deadline, you can still restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You will, however, lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 30, 2025 and when you upgrade**.
@@ -53,7 +54,32 @@ To upgrade to the latest version.
 
 To assist customers with the upgrade process, we perform autoupgrades for select releases, which can help streamline the upgrade process for you. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), ensure that you meet the [minimum requirements](how-to-connect-install-automatic-upgrade.md#auto-upgrade-eligibility) for autoupgrade. 
 
-## Consider moving to Microsoft Entra Cloud Sync  
+### Workaround for enabling Staging mode post MSOnline retirement
+
+Past the MSOnline retirement date, older versions of Microsoft Entra Connect can’t switch Staging mode via the wizard.
+
+You can safely proceed with the in-place upgrade to fully restore Microsoft Entra Connect functionally, but in case you want to enable Staging mode prior to upgrade your server, the following workaround via PowerShell is available.
+
+> [!NOTE]
+> The following cmdlet is not supported in PowerShell 7 and only works on older Microsoft Entra Connect versions that have MSOnline module dependencies.
+
+1. Open a PowerShell session with "Run As Administrator" and run the following commands to import ADSyncTools module. If ADSyncTools is already present, this command updates it, otherwise it installs the latest version.
+
+   ```PowerShell
+   if (Get-Module -Name ADSyncTools -ListAvailable) {Update-Module -Name ADSyncTools} else {Install-Module -Name ADSyncTools}
+   Import-Module ADSyncTools
+   ```
+
+1. To enable staging mode, type:
+
+   ```PowerShell
+   Enable-ADSyncToolsStagingMode
+   ```
+
+1. You can now upgrade your server while in Staging mode. After the server has been upgraded you can switch staging mode as normally via the wizard and re-enable the sync scheduler.
+
+
+## Consider moving to Microsoft Entra Cloud Sync
 
 If you're eligible, we recommend migrating from Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync. Microsoft Entra Cloud Sync is the new sync client that works from the cloud and allows customers to set up and manage their sync preferences online. We recommend that you use Cloud Sync because we're introducing new features that improve the sync experiences through Cloud Sync. You can avoid future migrations by choosing Cloud Sync if that's the right option for you. Use the https://aka.ms/EvaluateSyncOptions to see if Cloud Sync is the right sync client for you. 
 
@@ -78,3 +104,4 @@ If you aren't yet eligible to move to Cloud Sync, use this table for more inform
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
 - [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 - [Microsoft Entra Connect version history](reference-connect-version-history.md)
+
