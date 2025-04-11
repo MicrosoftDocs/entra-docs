@@ -76,10 +76,13 @@ For details, see:
 - [About custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/entra/external-id/customers/context/customers-context).
 - [Configure a custom claims provider for a token issuance event](~/identity-platform/custom-extension-tokenissuancestart-configuration.md?context=/azure/active-directory/external-identities/customers/context/customers-context) using a custom claims provider.
 
-## See also
+## Related content
 
-- To learn more about how custom extensions work, see [Custom authentication extensions](~/identity-platform/custom-extension-overview.md?context=/entra/external-id/customers/context/customers-context).
-- [Create a REST API with a token issuance start event](~/identity-platform/custom-extension-tokenissuancestart-setup.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
-- [Configure a custom claims provider for a token issuance event](~/identity-platform/custom-extension-tokenissuancestart-configuration.md?context=/azure/active-directory/external-identities/customers/context/customers-context).
-- [Configure custom authentication extensions for attribute collection start and submit events](~/identity-platform/custom-extension-attribute-collection.md?context=/entra/external-id/customers/context/customers-context) with a sample OpenID Connect application.
-- See the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.
+To learn more about custom authentication extensions, see the following articles in the Microsoft identity platform documentation:
+
+- [Custom authentication extensions](~/identity-platform/custom-extension-overview.md).
+- [Create a REST API with a token issuance start event](~/identity-platform/custom-extension-tokenissuancestart-setup.md).
+- [Configure a custom claims provider for a token issuance event](~/identity-platform/custom-extension-tokenissuancestart-configuration.md).
+- [Configure custom authentication extensions for attribute collection start and submit events](~/identity-platform/custom-extension-attribute-collection.md) with a sample OpenID Connect application.
+
+See the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.
