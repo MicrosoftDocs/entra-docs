@@ -18,7 +18,9 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Authenticate users in a Node.js CLI application
 
-This tutorial is the final part of a tutorial series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 2 of this series](./tutorial-cli-app-node-sign-in-prepare-app.md), you built a Node.js CLI application and prepared it for authentication. This tutorial shows you how to authenticate users in the Node.js CLI application you built.
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
+This tutorial is the final part of a tutorial series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-cli-app-node-sign-in-prepare-app.md), you built a Node.js CLI application and prepared it for authentication. This tutorial shows you how to authenticate users in the Node.js CLI application you built.
 
 > [!div class="checklist"]
 >
@@ -153,5 +155,5 @@ To run and test your Node.js CLI application, ensure you've replaced the placeho
 
 ## See also 
 
-- [Enable password reset](how-to-enable-password-reset-customers.md)
-- [Customize branding for your sign-in experience](./how-to-customize-branding-customers.md)
+- [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md)
+- [Customize branding for your sign-in experience](../external-id/customers/how-to-customize-branding-customers.md)
