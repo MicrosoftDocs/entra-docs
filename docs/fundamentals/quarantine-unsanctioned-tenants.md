@@ -19,7 +19,7 @@ Refer to this article only after reviewing the Microsoft Cloud Footprint FAQ to 
 
 ## What is quarantining unsanctioned tenants?
 
-Quarantining unsanctioned tenants involves using Microsoft Entra features to isolate tenants that may pose security risks due to lack of administrative oversight. Controlled restrictions can mitigate potential vulnerabilities while encouraging administrators of these tenants to reach out for assistance. This process allows you to validate the legitimacy of their access or regain control over the tenants. If no contact is made, the tenants can remain in a quarantined state to safeguard your environment.  
+Quarantining involves isolating suspected unsanctioned tenants by using existing Entra capabilities. This immediately reduces security risk that exists from exposure to such tenants that you do not have administrative control of within your environment. By isolating, you introduce friction between your tenant and theirs, which acts as a scream test. This friction prompts administrators of the suspected tenants to contact you in need of assistance, giving you the opportunity to verify the legitimacy of the relationships with these tenants and/or regain control over them. If no one is to contact you, then you can leave the tenants in the quarantined state indefinitely.
 
  
 
