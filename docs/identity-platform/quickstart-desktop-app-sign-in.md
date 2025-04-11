@@ -412,7 +412,7 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 
 #### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
-- [Tutorial: Create a .NET MAUI app](../external-id/customers/tutorial-desktop-app-maui-sign-in-prepare-app.md).
+- [Tutorial: Create a .NET MAUI app](./tutorial-desktop-app-maui-sign-in-prepare-app.md).
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 
