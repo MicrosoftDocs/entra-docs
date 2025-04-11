@@ -70,13 +70,13 @@ You can safely proceed with the in-place upgrade to fully restore Microsoft Entr
    Import-Module ADSyncTools
    ```
 
-1.	To enable staging mode, type:
+1. To enable staging mode, type:
 
    ```PowerShell
    Enable-ADSyncToolsStagingMode
    ```
 
-1.	You can now upgrade your server while in Staging mode. After the server has been upgraded you can switch staging mode as normally via the wizard and re-enable the sync scheduler.
+1. You can now upgrade your server while in Staging mode. After the server has been upgraded you can switch staging mode as normally via the wizard and re-enable the sync scheduler.
 
 
 ## Consider moving to Microsoft Entra Cloud Sync
