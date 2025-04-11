@@ -20,11 +20,11 @@ With Microsoft Entra ID Protection and Conditional Access, you can:
 * Automate remediation of risky sign-ins and compromised users
 * Block users in specific cases.
 
-Conditional Access policies that integrate user and sign-in risk have an impact on the sign in experience for users. Allowing users to use tools like Microsoft Entra multifactor authentication and self-service password reset can lessen the impact. These tools, along with the appropriate policy choices, give users a self-remediation option when they need it while still enforcing strong security controls.
+Conditional Access policies that integrate user and sign-in risk affect the sign in experience for users. Allowing users to use tools like Microsoft Entra multifactor authentication and self-service password reset can lessen the impact. These tools, along with the appropriate policy choices, give users a self-remediation option when they need it while still enforcing strong security controls.
 
 ## Multifactor authentication registration
 
-When an administrator enables the ID Protection policy requiring Microsoft Entra multifactor authentication registration, users can use Microsoft Entra multifactor authentication to self-remediate. Configuring this policy gives users a 14-day period to register, after which they are forced to register.
+When an administrator enables the ID Protection policy requiring Microsoft Entra multifactor authentication registration, users can use Microsoft Entra multifactor authentication to self-remediate. Configuring this policy gives users a 14-day period to register, after which they're forced to register.
 
 ### Registration interrupt
 

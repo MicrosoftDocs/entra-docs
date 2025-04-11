@@ -51,7 +51,7 @@ Organizations can choose to block access when risk is detected. Blocking sometim
 > [!WARNING]
 > Users must register for Microsoft Entra multifactor authentication before they face a situation requiring remediation. For hybrid users that are synced from on-premises, password writeback must be enabled. Users not registered are blocked and require administrator intervention.
 > 
-> Password change (I know my password and want to change it to something new) outside of the risky user policy remediation flow does not meet the requirement for secure password change.
+> Password change (I know my password and want to change it to something new) outside of the risky user policy remediation flow doesn't meet the requirement for secure password change.
 
 ## Enable policies
 
