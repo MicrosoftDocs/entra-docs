@@ -21,7 +21,7 @@ The deadline has been extended by three weeks from the earlier communicated date
 
 Though the deadline has been extended, if you are not yet on a minimum supported version, you'll experience the following impacts after the original date:
 
-- After April 7, 2025, configuration of Active Directory Federation Services (ADFS) scenarios through Microsoft Entra Connect wizard won't work.
+ - After April 7, 2025, configuration of Active Directory Federation Services (ADFS) scenarios through Microsoft Entra Connect wizard won't work.
  - After April 7, 2025, configuration of PingFederate scenarios through the Microsoft Entra Connect wizard won't work.
  - After April 30, 2025, all authentication requests to Microsoft Entra ID on the Microsoft Entra Connect wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes.
 
@@ -31,8 +31,9 @@ For example, when calling the MSOnline PowerShell cmdlet `Get-MsolUserRole`, Mic
 
 
 ## What won't be impacted
-- Your sync service will run as usual, and changes will continue to sync to Entra
- - The ability to upgrade your Entra Connect Sync instance. You can still perform the upgrade after April 30, 2025
+
+ - Your sync service will run as usual, and changes will continue to sync to Microsoft Entra.
+ - The ability to upgrade your Microsoft Entra Connect Sync instance. You can still perform the upgrade after April 30, 2025.
    
 >[!NOTE]
 >If you're unable to upgrade by the deadline, you can still restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You will, however, lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 30, 2025 and when you upgrade**.
@@ -62,21 +63,20 @@ You can safely proceed with the in-place upgrade to fully restore Microsoft Entr
 > [!NOTE]
 > The following cmdlet is not supported in PowerShell 7 and only works on older Microsoft Entra Connect versions that have MSOnline module dependencies.
 
-1. Open a PowerShell session with "Run As Administrator" and install or update ADSyncTools module with the following commands:
+1. Open a PowerShell session with "Run As Administrator" and run the following commands to import ADSyncTools module. If ADSyncTools is already present, this command updates it, otherwise it installs the latest version.
 
-```PowerShell
-# Note: If ADSyncTools is already present, this command updates it, otherwise it installs the latest version.
-if (Get-Module -Name ADSyncTools -ListAvailable) {Update-Module -Name ADSyncTools} else {Install-Module -Name ADSyncTools}
-Import-Module ADSyncTools
-```
+   ```PowerShell
+   if (Get-Module -Name ADSyncTools -ListAvailable) {Update-Module -Name ADSyncTools} else {Install-Module -Name ADSyncTools}
+   Import-Module ADSyncTools
+   ```
 
-2.	To enable staging mode, type:
+1.	To enable staging mode, type:
 
-```PowerShell
-Enable-ADSyncToolsStagingMode
-```
+   ```PowerShell
+   Enable-ADSyncToolsStagingMode
+   ```
 
-3.	You can now upgrade your server while in Staging mode. After the server has been upgraded you can switch staging mode as normally via the wizard and re-enable the sync scheduler.
+1.	You can now upgrade your server while in Staging mode. After the server has been upgraded you can switch staging mode as normally via the wizard and re-enable the sync scheduler.
 
 
 ## Consider moving to Microsoft Entra Cloud Sync
