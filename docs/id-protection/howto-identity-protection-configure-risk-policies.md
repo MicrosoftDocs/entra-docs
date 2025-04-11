@@ -5,7 +5,7 @@ description: Enable and configure risk policies in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 03/19/2025
+ms.date: 04/11/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
