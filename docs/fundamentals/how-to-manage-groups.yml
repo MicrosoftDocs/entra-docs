@@ -6,7 +6,7 @@ metadata:
   description: Instructions about how to create and update Microsoft Entra groups, such as membership and settings.
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: amycolannino
+  manager: femila
   ms.date: 02/12/2025
   ms.service: entra
   ms.subservice: fundamentals

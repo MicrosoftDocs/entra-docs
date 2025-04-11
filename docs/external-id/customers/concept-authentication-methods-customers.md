@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 02/21/2025
+ms.date: 03/12/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 #customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
@@ -59,7 +59,7 @@ For an optimal sign-in experience, federate with social identity providers whene
 
 When you enable social identity providers, users can select from the social identity providers options you make available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID, a client or app secret, or a certificate, which you can then use to configure your external tenant.
 
-### Google sign-in (preview)
+### Google sign-in
 
 By setting up federation with Google, you can allow users to sign in to your applications with their own Gmail accounts. After you add Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
 
@@ -69,7 +69,7 @@ The following screenshots show the sign-in with Google experience. In the sign-i
 
 Learn how to [add Google as an identity provider](how-to-google-federation-customers.md).
 
-### Facebook sign-in (preview)
+### Facebook sign-in
 
 By setting up federation with Facebook, you can allow users to sign in to your applications with their own Facebook accounts. After you add Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
 
@@ -90,14 +90,14 @@ Learn how to [add Apple as an identity provider](how-to-apple-federation-custome
 
 You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As a result, updating the federation setup by adding, changing, or removing domains won't affect the experience for existing users.
 
-A user who enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers will be redirected to authenticate with that identity provider. If they've been invited, any pending invitation will be redeemed with that identity. If they don't have an account, they may be prompted for additional details and the account will be created.
+A user who enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers will be redirected to authenticate with that identity provider. If they don't have an account, they may be prompted for additional details and the account will be created.
 
 For more information, see [SAML/WS-Fed identity providers](../direct-federation-overview.md). For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
 
 > [!NOTE]
 > SAML/WS-Fed federation is generally available for workforce tenants.
 
-## Custom OIDC identity provider (preview)
+## Custom OIDC identity provider
 
 You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
 

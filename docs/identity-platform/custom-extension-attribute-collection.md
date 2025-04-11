@@ -747,5 +747,5 @@ To test your custom authentication extension, follow these steps:
 
 ## Next steps
 
-- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-reference.md)
-- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-reference.md)
+- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-retrieve-return-data.md)
+- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-retrieve-return-data.md)

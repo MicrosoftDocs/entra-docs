@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Single-page application: sign-in and sign-out
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Before you can get tokens to access APIs in your application, you need an authenticated user context. To authenticate a user, you can use a [Pop-up window](#sign-in-with-a-pop-up-window) and/or a [Redirect](#sign-in-with-a-redirect) sign in method.
 
 If your application has access to an authenticated user context or ID token, you can skip the sign in step, and directly acquire tokens. For details, see [Single sign-on (SSO) with user hint](msal-js-sso.md#with-user-hint).

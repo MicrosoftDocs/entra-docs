@@ -2,10 +2,10 @@
 title: 'Microsoft Entra Connect: Cloud authentication via Staged Rollout'
 description: This article explains how to migrate from federated authentication, to cloud authentication, by using a Staged Rollout.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/20/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -257,7 +257,8 @@ You can monitor the users and groups added or removed from Staged Rollout and us
 ## Remove a user from Staged Rollout
 
 Removing a user from the group disables Staged Rollout for that user. To disable the Staged Rollout feature, slide the control back to **Off**.
-
+>[!Important]
+> When removing a user from a group in staged rollout for certificate-based authentication, where the user has signed-into Windows devices with a certificate, it is recommended to keep the user enabled for the certificate based authentication method in Entra ID. The user should remain enabled for certificate based authentication after removal from staged rollout for long enough that the user can sign-in to Windows and refresh their primary refresh token using the federated identity provider. 
 ## Frequently asked questions
 
 **Q: Can I use this capability in production?**

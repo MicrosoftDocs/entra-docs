@@ -2,10 +2,10 @@
 title: Create Custom Reports Using Microsoft Entra and Application Data
 description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from Microsoft Entra.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: tutorial
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ---
 
@@ -16,6 +16,8 @@ In this tutorial, you learn how to create customized reports in [Azure Data Expl
 This tutorial complements reporting options such as [archiving and reporting with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md), which focuses on exporting the audit log into Azure Monitor for retention and analysis. By comparison, exporting Microsoft Entra ID data to Azure Data Explorer provides flexibility for creating custom reports on Microsoft Entra objects, including historical and deleted objects.
 
 Use of Azure Data Explorer also enables data aggregation from additional sources, with massive scalability, flexible schemas, and retention policies. Azure Data Explorer is especially helpful when you need to retain user access data for years, perform ad hoc investigations, or run custom queries on access data.
+
+:::image type="content" source="media/custom-entitlement-report-with-adx-and-entra-id/adx-1.png" alt-text="Conceptual drawing showing data extraction and queries." lightbox="media/custom-entitlement-report-with-adx-and-entra-id/adx-1.png":::
 
 This tutorial illustrates how to show configuration, users, and access rights exported from Microsoft Entra alongside data exported from other sources, such as applications with access rights in their own SQL databases. You can then use the Kusto Query Language (KQL) in Azure Data Explorer to build custom reports based on your organization's requirements.
 

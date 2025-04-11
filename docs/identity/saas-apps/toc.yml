@@ -1,7 +1,7 @@
   items:
-  - name: Application tutorials
+  - name: Application articles
     href: tutorial-list.md
-  - name: Single sign-on tutorials
+  - name: Single sign-on articles
     expanded: true
     items:
     - name: 0 - 9
@@ -3271,7 +3271,7 @@
         href: zwayam-tutorial.md
       - name: Zylo
         href: zylo-tutorial.md  
-  - name: User provisioning tutorials
+  - name: User provisioning articles
     expanded: true
     items:
     - name: 0 - 9
@@ -3692,6 +3692,8 @@
         href: open-text-directory-services-provisioning-tutorial.md
       - name: Oracle Cloud Infrastructure Console
         href: oracle-cloud-infrastructure-console-provisioning-tutorial.md
+      - name: Oracle E-Business Suite
+        href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Oracle Fusion ERP
         href: oracle-fusion-erp-provisioning-tutorial.md
       - name: Oracle HCM
@@ -3794,6 +3796,8 @@
         href: sas-viya-sso-provisioning-tutorial.md
       - name: SchoolStream ASA
         href: schoolstream-asa-provisioning-tutorial.md
+      - name: SCIM (cloud)
+        href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SCIM (on-premises)
         href: ~/identity/app-provisioning/on-premises-scim-provisioning.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: ScreenSteps
@@ -3828,6 +3832,8 @@
         href: smallstep-ssh-provisioning-tutorial.md
       - name: Snowflake
         href: snowflake-provisioning-tutorial.md
+      - name: SOAP and REST
+        href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Soloinsight-CloudGate SSO
         href: soloinsight-cloudgate-sso-provisioning-tutorial.md
       - name: SoSafe

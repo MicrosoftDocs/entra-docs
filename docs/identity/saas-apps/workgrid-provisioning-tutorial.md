@@ -16,17 +16,17 @@ ms.author: thomasakelo
 
 # Configure Workgrid  for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Workgrid  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Workgrid.
+The objective of this article is to demonstrate the steps to be performed in Workgrid  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Workgrid.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Workgrid tenant](https://www.workgrid.com/)
 * A user account in Workgrid  with Admin permissions.
 
@@ -39,23 +39,23 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Workgrid 
 
-* It is recommended that a single Microsoft Entra user is assigned to Workgrid  to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Workgrid  to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Workgrid, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up Workgrid for provisioning
 
-Before configuring Workgrid  for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Workgrid.
+Before configuring Workgrid  for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Workgrid.
 
 1. Log in into Workgrid. Navigate to **Users > User Provisioning**.
 
 	![Screenshot of the Workgrid U I with the Users and User Provisioning options called out.](media/Workgrid-provisioning-tutorial/user.png)
 
-2. Under **Account Management API**, click **Create Credentials**.
+2. Under **Account Management API**, select **Create Credentials**.
 
 	![Screenshot of the Account Management A P I section with the Create Credentials option called out.](media/Workgrid-provisioning-tutorial/scim.png)
 
-3. Copy the **SCIM Endpoint** and **Access Token** values. These will be entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Workgrid application.
+3. Copy the **SCIM Endpoint** and **Access Token** values. These is entered in the **Tenant URL** and **Secret Token** field in the Provisioning tab of your Workgrid application.
 
 	![Screenshot of the Account Management A P I section with S C I M Endpoint and Access Token called out.](media/Workgrid-provisioning-tutorial/token.png)
 
@@ -77,7 +77,7 @@ To configure Workgrid  for automatic user provisioning with Microsoft Entra ID, 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Workgrid  based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Workgrid , following the instructions provided in the [Workgrid  Single sign-on tutorial](Workgrid-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for Workgrid , following the instructions provided in the [Workgrid  Single sign-on  article](Workgrid-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-workgrid--in-azure-ad'></a>
 
@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the Admin Credentials section, input the **SCIM Endpoint** and **Access Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to Workgrid. If the connection fails, ensure your Workgrid account has Admin permissions and try again.
+1. Under the Admin Credentials section, input the **SCIM Endpoint** and **Access Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to Workgrid. If the connection fails, ensure your Workgrid account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Workgrid**.
 
@@ -149,7 +149,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |members|Reference||
 
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Workgrid, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -159,7 +159,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

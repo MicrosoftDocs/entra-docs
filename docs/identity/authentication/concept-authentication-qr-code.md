@@ -5,12 +5,13 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/20/2025
+ms.date: 03/26/2025
 
 ms.author: justinha
 author: aanjusingh
+contributors: minatoruan
 ms.reviewer: anjusingh
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -46,7 +47,7 @@ Policy | Values
 -------|--------
 Allowed characters | Numbers (0-9) 
 Unallowed characters | - Characters (A-Z, a-z)<br>- Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } \| \ : ' , . ? / ` ~ " ( ) ; < >)<br>- Unicode characters<br>- Blank space 
-Minimum PIN length |  8-20 digits 
+PIN length |  8-20 digits 
 PIN complexity     | Enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An **Invalid PIN** error appears if the PIN includes unallowed characters or is less than the minimum PIN length. 
 
 ## Best security practices to implement with QR code authentication 
@@ -54,9 +55,11 @@ PIN complexity     | Enforced to avoid repetition and common sequences. The foll
 We recommend the following measures when you enable QR code authentication method as it's a single-factor authentication (something you know).  
 
 - QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant authentication or MFA for IW.
+- Don't enable QR code authentication for all the users in your tenant. Enable only for target users who will be using this auth method, for example, create a group for frontline workers and enable QR code auth only for them in Microsoft Entra Authentication Methods policies.
 - Combine QR code authentication with Conditional Access policies as another security layer. We recommended policies such as compliant devices, access within network, allow for certain applications, and shared device mode. 
 - Enforce phishing-resistant authentication or MFA when users access resources from outside of the store or workplace network.
 - Replace QR codes that are lost or stolen.
+- Enforce [sign-in risk based Conditional Access policy](/entra/id-protection/concept-identity-protection-policies#sign-in-risk-based-conditional-access-policy) to block access.
 
 ## QR code configurations in the Authentication method policy
 
@@ -135,6 +138,7 @@ For more information about how to optimize the sign-in experience, see:
 - QR code scan by barcode scanners
 - QR code authentication doesn't work with desktop apps or browsers
 - Custom tenant endpoint for sign in 
+- Configurable PIN protection policies that define account lockout threshold, duration, or PIN complexity
 
 ## Related content
 

@@ -43,7 +43,7 @@ Also, perform the following tasks:
 * Define a redirect URI scheme.
 * Require permissions for your app to call another app.
 * Have a specific form for the redirect URI.
-* [Register a redirect URI](quickstart-register-app.md#add-a-redirect-uri) in the Azure portal.
+* [Add a redirect URI](how-to-add-redirect-uri.md) in the Azure portal.
 
 ### Enable keychain access
 

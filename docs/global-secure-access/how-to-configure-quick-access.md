@@ -3,7 +3,7 @@ title: How to Configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
 author: kenwith
 ms.author: kenwith
-manager: rkarlin
+manager: femila
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.service: global-secure-access
@@ -14,6 +14,11 @@ ms.reviewer: katabish
 # How to configure Quick Access for Global Secure Access
 
 With Global Secure Access, you can define specific fully qualified domain names (FQDNs) or IP addresses of private resources to include in the traffic for Microsoft Entra Private Access. Your organization's employees can then access the apps and sites that you specify. This article describes how to configure Quick Access for Microsoft Entra Private Access.
+
+> [!NOTE]
+> Use Quick Access as a transition state in your Zero Trust journey. After Quick Access has enabled you to replace your VPN, [configure per-app access](quickstart-per-app-access.md) to achieve application segmentation and per-app granular controls.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/MfcZ3zQhF-4]
 
 ## Prerequisites
 

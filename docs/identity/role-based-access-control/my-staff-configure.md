@@ -3,7 +3,7 @@ title: Use My Staff to delegate user management
 description:  Delegate user management using My Staff and administrative units
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control

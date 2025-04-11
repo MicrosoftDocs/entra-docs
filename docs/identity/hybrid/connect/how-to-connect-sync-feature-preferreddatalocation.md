@@ -4,9 +4,9 @@ description: Describes how to put your Microsoft 365 user resources close to the
 author: billmath
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 12/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

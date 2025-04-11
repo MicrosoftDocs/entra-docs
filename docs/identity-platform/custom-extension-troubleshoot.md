@@ -17,7 +17,7 @@ titleSuffix: Microsoft identity platform
 
 # Troubleshoot your custom authentication extension
 
-Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
+Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) to receive tokens with claims from an external store.
 
 ## Error behavior
 
@@ -55,7 +55,7 @@ Use the following table to diagnose an error code.
 |Error code |Error name |Description |
 |----|----|----|
 |1003000 | EventHandlerUnexpectedError | There was an unexpected error when processing an event handler.|
-|1003001 | CustomExtenstionUnexpectedError | There was an unexpected error while calling a custom extension API.|
+|1003001 | CustomExtensionUnexpectedError | There was an unexpected error while calling a custom extension API.|
 |1003002 | CustomExtensionInvalidHTTPStatus | The custom extension API returned an invalid HTTP status code. Check that the API returns an accepted status code defined for that custom extension type.|
 |1003003 | CustomExtensionInvalidResponseBody | There was a problem parsing the custom extension's response body. Check that the API response body is in an acceptable schema for that custom extension type.|
 |1003004 | CustomExtensionThrottlingError | There are too many custom extension requests. This exception is thrown for custom extension API calls when throttling limits are reached.|
@@ -238,5 +238,4 @@ One of the most common issues is that your custom claims provider API doesn't re
 ## See also
 
 - [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
-- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md) article.

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Lusha
 
-In this article, you'll learn how to integrate Lusha with Microsoft Entra ID. Lusha is a sales intelligence solution that delivers instant and accurate contact and company data to help leading sales, marketing, and recruitment teams speed up sales with less work. When you integrate Lusha with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Lusha with Microsoft Entra ID. Lusha is a sales intelligence solution that delivers instant and accurate contact and company data to help leading sales, marketing, and recruitment teams speed up sales with less work. When you integrate Lusha with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Lusha.
 * Enable your users to be automatically signed-in to Lusha with their Microsoft Entra accounts.
@@ -76,7 +76,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     In the **Sign on URL** textbox, type the URL:
     `https://auth.lusha.com/sso-login`
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -94,15 +94,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Lusha Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Lusha Sign-on URL where you can initiate the login flow.  
 
 * Go to Lusha Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Lusha for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Lusha for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Lusha tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Lusha for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Lusha tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Lusha for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
