@@ -355,13 +355,13 @@ groups:
   - id: identity-governance-guest-offboard
     title: Offboard
 # Owner: sidandrews
-- id: azure-interface-portal-cli-powershell
+- id: interface-portal-cli-powershell
   title: Azure interface
   prompt: Choose an Azure interface
   pivots:
-  - id: azure-interface-cli
+  - id: interface-cli
     title: Azure CLI
-  - id: azure-interface-portal
+  - id: interface-portal
     title: Azure portal
-  - id: azure-interface-shell
+  - id: interface-shell
     title: Azure PowerShell

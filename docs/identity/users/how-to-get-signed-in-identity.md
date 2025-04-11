@@ -7,12 +7,12 @@ ms.reviewer: barclayn
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 04/10/2025
-zone_pivot_groups: azure-interface-portal-cli-powershell
+ms.date: 04/11/2025
+zone_pivot_groups: interface-portal-cli-powershell
 #Customer Intent: As a developer, I want to get my current signed-in identity for Azure CLI, so that my security team can grant me role-based access control permissions to access Azure resources.
 ---
 
-# Get the signed in account's identity to use with Azure services
+# Get the signed in Microsoft Entra account's identity
 
 This article gives simple steps to get the identity of the currently signed in account. You can use this identity information later to grant role-based access control access to the signed in account to either manage data or resources in Azure.
 
@@ -22,17 +22,17 @@ The current Azure CLI session could be signed in with a human identity (your acc
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-::: zone pivot="azure-interface-cli"
+::: zone pivot="interface-cli"
 
 [!INCLUDE [Azure CLI prerequisites](~/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
 ::: zone-end
 
-::: zone pivot="azure-interface-portal"
+::: zone pivot="interface-portal"
 
 ::: zone-end
 
-::: zone pivot="azure-interface-shell"
+::: zone pivot="interface-shell"
 
 [!INCLUDE [Azure PowerShell prerequisites](~/reusable-content/azure-powershell/azure-powershell-requirements-no-header.md)]
 
@@ -42,7 +42,7 @@ The current Azure CLI session could be signed in with a human identity (your acc
 
 Use the command line to query the graph for information about your account's unique identifier.
 
-::: zone pivot="azure-interface-cli"
+::: zone pivot="interface-cli"
 
 1. Get the details for the currently logged-in account using [`az ad signed-in-user`](/cli/azure/ad/signed-in-user#az-ad-signed-in-user-show).
 
@@ -74,7 +74,7 @@ Use the command line to query the graph for information about your account's uni
 
 ::: zone-end
 
-::: zone pivot="azure-interface-portal"
+::: zone pivot="interface-portal"
 
 Use the in-portal panes for Microsoft Entra ID to get details of your currently signed-in user account.
 
@@ -85,7 +85,7 @@ Use the in-portal panes for Microsoft Entra ID to get details of your currently 
     :::image source="media/get-signed-in-identity/home-entra-id-option.png" lightbox="media/get-signed-in-identity/home-entra-id-option-full.png" alt-text="Screenshot of the Microsoft Entra ID option in the 'Home' page of the Azure portal.":::
 
     > [!TIP]
-    > If this option is not listed, select **More services** and then search for **Microsoft Entra ID** using the search term **"Entra"**.
+    > If this option isn't listed, select **More services** and then search for **Microsoft Entra ID** using the search term **"Entra"**.
 
 1. Within the **Overview** pane for the Microsoft Entra ID tenant, select **Users** inside the **Manage** section of the service menu.
 
@@ -107,7 +107,7 @@ Use the in-portal panes for Microsoft Entra ID to get details of your currently 
 
 ::: zone-end
 
-::: zone pivot="azure-interface-shell"
+::: zone pivot="interface-shell"
 
 1. Get the details for the currently logged-in account using [`Get-AzADUser`](/powershell/module/az.resources/get-azaduser).
 
