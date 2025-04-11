@@ -183,8 +183,6 @@ items:
       items:
         - name: .NET MAUI
           items:
-            - name: Prepare tenant
-              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Create .NET MAUI app
               href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Sign in and sign out
@@ -204,8 +202,6 @@ items:
           items:
             - name: .NET MAUI
               items:
-                - name: Prepare tenant
-                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Create .NET MAUI app
                   href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in and sign out
@@ -222,8 +218,6 @@ items:
                   href: /entra/identity-platform/tutorial-mobile-app-android-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: iOS
               items:
-                - name: Prepare tenant
-                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Prepare app
                   href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Sign in users
@@ -271,8 +265,6 @@ items:
       items:
         - name: Node.js
           items:
-            - name: Prepare tenant
-              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Create Node.js CLI app
               href: /entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Sign in users
