@@ -16,8 +16,8 @@ ms.author: billmath
 
 Microsoft Entra Connect provides 2 options for certificate management: 
 
- 1.[Managed by Microsoft Entra Connect (Recommended)](#managed-by-microsoft-entra-connect-recommended)
- 2. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc) 
+1. [Managed by Microsoft Entra Connect (Recommended)](#managed-by-microsoft-entra-connect-recommended)
+2. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc) 
 
 ## Managed by Microsoft Entra Connect (Recommended) 
 Microsoft Entra Connect manages the application and certificate including creation, rotation and deletion of the certificate. The certificate is stored in the Local Machine store. The private key is marked as non-exportable, which means it will never leave the machine boundary. You can improve your security by installing this on a machine with Trusted Platform Module (TPM). In such a case, the private key will be securely stored inside TPM. For more information on TPM, see [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview). 
