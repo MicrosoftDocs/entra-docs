@@ -1,6 +1,6 @@
 ---
 title: Create Custom Reports Using Application Data
-description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from additional sources in addition to Microsoft Entra
+description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from more sources in addition to Microsoft Entra
 author: billmath
 manager: femila
 ms.service: entra-id-governance
@@ -9,13 +9,13 @@ ms.date: 04/11/2025
 ms.author: billmath
 ---
 
-# Tutorial: Create customized reports in Azure Data Explorer by using data from other sources
+# Tutorial: Create customized reports in Azure Data Explorer using data from other sources
 
 The tutorial [Create customized reports in Azure Data Explorer by using data from Microsoft Entra](custom-entitlement-report-with-adx-and-entra-id.md) shows how to create customized reports in [Azure Data Explorer](/azure/data-explorer/data-explorer-overview) by using data from Microsoft Entra ID and Microsoft Entra ID Governance services.
 
-You can also bring in data to Azure Data Explorer from sources beyond Microsoft Entra. Scenario for this capability include:
+You can also bring in data to Azure Data Explorer from sources beyond Microsoft Entra. Scenarios for this capability include:
 
-- An admin wants to view events in the audit log with additional details about users, access packages or other objects which aren't part of the audit record itself.
+- An admin wants to view events in the audit log with additional details about users, access packages, or other objects which aren't part of the audit record itself.
 - An admin wants to view all users added to an application from Microsoft Entra ID and their access rights in the application's own repository, such as a SQL database.
 
 These types of reports aren't built into Microsoft Entra ID. However, you can create these reports yourself by extracting data from Microsoft Entra ID and combining data by using custom queries in Azure Data Explorer.
