@@ -170,6 +170,8 @@
       items:
       - name: Customized reports in Azure Data Explorer
         href: custom-entitlement-report-with-adx-and-entra-id.md
+      - name: Customized reports with other sources
+        href: custom-entitlement-report-with-other-sources.md
 - name: Concepts
   expanded: true
   items:
