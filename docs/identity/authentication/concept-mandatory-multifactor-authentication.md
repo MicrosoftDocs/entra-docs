@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/02/2025
+ms.date: 04/09/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -115,7 +115,7 @@ Changes are required if you use the [azidentity](https://pkg.go.dev/github.com/A
 - Use [DefaultAzureCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#DefaultAzureCredential) or [EnvironmentCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#EnvironmentCredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#UsernamePasswordCredential) ([**deprecated** as of the `1.8.3-beta.1` release](https://github.com/Azure/azure-sdk-for-go/blob/main/sdk/azidentity/CHANGELOG.md#183-beta1-unreleased))
+- Using [UsernamePasswordCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#UsernamePasswordCredential) ([**deprecated** as of the `1.9.0` release](https://github.com/Azure/azure-sdk-for-go/blob/main/sdk/azidentity/CHANGELOG.md#190-2025-04-08))
 
 ### [Java](#tab/java)
 

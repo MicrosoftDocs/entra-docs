@@ -469,6 +469,5 @@ To test your custom claims provider, follow these steps:
 
 ## See also
 
-- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md)
 - [Troubleshoot your custom authentication extensions API](custom-extension-troubleshoot.md)

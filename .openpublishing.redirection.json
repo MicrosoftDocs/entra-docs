@@ -636,6 +636,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/custom-extension-configure-saml-app.md",
+      "redirect_url": "/entra/identity-platform/custom-claims-provider-overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
       "redirect_document_id": false
@@ -2179,6 +2184,16 @@
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-web-api-dotnet-register-app.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-api-aspnet-core-protect-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app",
       "redirect_document_id": false
     },
     {
