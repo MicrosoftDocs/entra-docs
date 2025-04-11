@@ -78,15 +78,14 @@ Operations on managed identities can be performed by using an Azure Resource Man
 | Sharing across Azure resources | Can’t be shared. <br/> It can only be associated with a single Azure resource. | Can be shared. <br/> The same user-assigned managed identity can be associated with more than one Azure resource. |
 | Common use cases | Workloads contained within a single Azure resource. <br/> Workloads needing independent identities. <br/> For example, an application that runs on a single virtual machine. | Workloads that run on multiple resources and can share a single identity. <br/> Workloads needing preauthorization to a secure resource, as part of a provisioning flow. <br/> Workloads where resources are recycled frequently, but permissions should stay consistent. <br/> For example, a workload where multiple virtual machines need to access the same resource. |
 
-## What Azure services support the feature?
 ## How can I use managed identities for Azure resources?
 
 You can use managed identities by following the steps below: 
 
 1. Create a managed identity in Azure. You can choose between system-assigned managed identity or user-assigned managed identity. 
     1. When using a user-assigned managed identity, you assign the managed identity to the "source" Azure Resource, such as a Virtual Machine, Azure Logic App or an Azure Web App.
-3. Authorize the managed identity to have access to the "target" service.
-4. Use the managed identity to access a resource. In this step, you can use the Azure SDK with the Azure.Identity library. Some "source" resources offer connectors that know how to use Managed identities for the connections. In that case, you use the identity as a feature of that "source" resource.
+1. Authorize the managed identity to have access to the "target" service.
+1. Use the managed identity to access a resource. In this step, you can use the Azure SDK with the Azure.Identity library. Some "source" resources offer connectors that know how to use Managed identities for the connections. In that case, you use the identity as a feature of that "source" resource.
 
 
 ## Which Azure services support the feature?
@@ -113,7 +112,7 @@ For example, you can use an Azure Virtual Machine (VM) as Azure Compute. You can
 
 Workload Identity Federation enables using a managed identity as a credential, just like certificate or password, on Entra ID Applications. Whenever an Entra ID app is required, this is the recommended way to be credential-free. There's a limit of 20 FICs when using managed identities as FIC on an Entra ID App.
 
-A workload acting in the capacity of Entra ID application can be hosted on any Azure compute which has a managed identity. The workload uses the managed identity to acquire a token to be exchanged for an Entra ID Application token, via workload identity federation. This feature is also referred to as managed identity as FIC (Federated Identity Credentials).
+A workload acting in the capacity of Entra ID application can be hosted on any Azure compute which has a managed identity. The workload uses the managed identity to acquire a token to be exchanged for an Entra ID Application token, via workload identity federation. This feature is also referred to as managed identity as FIC (Federated Identity Credentials). For more information, see [configure an application to trust a managed identity](/entra/workload-id/workload-identity-federation-config-app-trust-managed-identity).
 
 ## Next steps
 
