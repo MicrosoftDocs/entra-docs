@@ -375,8 +375,6 @@
           href: tutorial-v2-windows-desktop.md
         - name: .NET MAUI
           items:
-            - name: Prepare tenant
-              href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
             - name: Create .NET MAUI app
               href: tutorial-desktop-app-maui-sign-in-prepare-app.md
             - name: Sign in and sign out
@@ -577,8 +575,6 @@
       href: quickstart-cli-app-node-sign-in-users.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: Prepare tenant
-          href: tutorial-cli-app-node-sign-in-prepare-tenant.md
         - name: Create Node.js CLI app
           href: tutorial-cli-app-node-sign-in-prepare-app.md
         - name: Sign in users

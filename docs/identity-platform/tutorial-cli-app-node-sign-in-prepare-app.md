@@ -37,6 +37,7 @@ In this tutorial:
   * Directory (tenant) ID
 * Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost`
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 * Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 * [Node.js](https://nodejs.org).
 
@@ -108,7 +109,7 @@ The `msalConfig` object contains a set of configuration options that can be used
 
 - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For instance, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant domain name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For instance, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant domain name, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 In the configuration object, you also add `LoggerOptions`, which contains two options:
 

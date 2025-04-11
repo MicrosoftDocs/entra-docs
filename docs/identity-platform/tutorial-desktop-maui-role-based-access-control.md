@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - [Tutorial: Sign in users in .NET MAUI shell app](tutorial-desktop-app-maui-sign-in-sign-out.md)
-- [Using role-based access control (RBAC) for applications](how-to-use-app-roles-customers.md)
+- [Using role-based access control (RBAC) for applications](../external-id/customers/how-to-use-app-roles-customers.md)
 
 ## Receive groups and roles claims in .NET MAUI
 
