@@ -408,8 +408,6 @@ items:
               href: how-to-add-attributes-to-token.md
         - name: Use custom URL domains
           href: how-to-custom-url-domain.md
-        - name: Use custom URL domains
-          href: how-to-custom-url-domain.md
         - name: Configure optional claims
           href: /entra/identity-platform/optional-claims?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json 
         - name: Custom authentication extensions
