@@ -17,7 +17,7 @@ ms.author: barclayn
 
 ## What is quarantining a tenant?
 
-Quarantining involves isolating suspected unsanctioned tenants by using existing Entra capabilities. This immediately reduces security risk that exists from exposure to such tenants that you do not have administrative control of within your environment. By isolating, you introduce friction between your tenant and theirs, which acts as a scream test. This friction prompts administrators of the suspected tenants to contact you in need of assistance, giving you the opportunity to verify the legitimacy of the relationships with these tenants and/or regain control over them. If no one is to contact you, then you can leave the tenants in the quarantined state indefinitely.
+Quarantining involves isolating suspected unsanctioned tenants by using existing Microsoft Entra capabilities. This immediately reduces security risk that exists from exposure to such tenants that you do not have administrative control of within your environment. By isolating, you introduce friction between your tenant and theirs, which acts as a scream test. This friction prompts administrators of the suspected tenants to contact you in need of assistance, giving you the opportunity to verify the legitimacy of the relationships with these tenants and/or regain control over them. If no one is to contact you, then you can leave the tenants in the quarantined state indefinitely.
 
 
 ## When should I quarantine a tenant? 
@@ -38,7 +38,7 @@ The administrator of the ContosoTest.com tenant contacts you. At this point, you
 **License Required: Entra ID P1**  
 
 **Actions Against Suspected Tenant**:  
-Microsoft Entra organizations can use Cross-tenant access with External ID to scope which users of other external Entra organizations have access to your resources and which users from your organization have access to other external Entra organizations. These policies will let you restrict inbound or outbound login attempts with a suspect tenant without disrupting collaboration with other tenants. An administrator can [add an organization](../external-id/cross-tenant-access-settings-b2b-collaboration.yml?source=recommendations#add-an-organization) and configure customized settings to block [inbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings) and [outbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings) user-sign for the suspected tenant. 
+Microsoft Entra organizations can use Cross-tenant access with External ID to scope which users of other external Entra organizations have access to your resources and which users from your organization have access to other external Entra organizations. These policies let you restrict inbound or outbound login attempts with a suspect tenant without disrupting collaboration with other tenants. An administrator can [add an organization](../external-id/cross-tenant-access-settings-b2b-collaboration.yml?source=recommendations#add-an-organization) and configure customized settings to block [inbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings) and [outbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings) user-sign for the suspected tenant. 
 
 
 **Secure-by-default**:  
@@ -84,7 +84,7 @@ GET https://graph.microsoft.com/v1.0/servicePrincipals?$count=true&$filter=appOw
 ```
 
 
-After finding the correct service principal, you can either [review and revoke permissions granted to the application](../identity/enterprise-apps/manage-application-permissions.md?pivots=ms-graph) or [delete the service principal](../identity/enterprise-apps/delete-application-portal.md?pivots=ms-graph) all together. Note that, deleting a service principal is a [restorable action up to 30 days](../identity/enterprise-apps/delete-recover-faq.yml#how-do-i-restore-deleted-applications-or-service-principals-).
+After finding the correct service principal, you can either [review and revoke permissions granted to the application](../identity/enterprise-apps/manage-application-permissions.md?pivots=ms-graph) or [delete the service principal](../identity/enterprise-apps/delete-application-portal.md?pivots=ms-graph) all together. Deleting a service principal is a [restorable action up to 30 days](../identity/enterprise-apps/delete-recover-faq.yml#how-do-i-restore-deleted-applications-or-service-principals-).
 
 For more information on multi-tenant apps and service principals, see Apps & service principals in Microsoft Entra ID.
 - [Apps & service principals in Microsoft Entra ID](../identity-platform/app-objects-and-service-principals.md)
@@ -96,7 +96,7 @@ License Required: None, available to all paying customers with a Microsoft billi
 
 #### Actions Against Suspected Tenant:
 
-Use the following resources when you discover a tenant based on your billing account relationships but do not recognize the tenant which the subscription services are provisioned within. Canceled Azure and M365 subscriptions can be reactivated during the grace period ([30 to 90 days after canceling](/azure/cost-management-billing/manage/cancel-azure-subscription)) before being permanently deleted. If needed, please contact [support](https://support.microsoft.com/topic/customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2) for assistance on canceling and deleting subscriptions.
+Use the following resources when you discover a tenant based on your billing account relationships but do not recognize the tenant which the subscription services are provisioned within. Canceled Azure and M365 subscriptions can be reactivated during the grace period ([30 to 90 days after canceling](/azure/cost-management-billing/manage/cancel-azure-subscription)) before being permanently deleted. If needed, contact [support](https://support.microsoft.com/topic/customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2) for assistance on canceling and deleting subscriptions.
 
 ## Related content  
 
