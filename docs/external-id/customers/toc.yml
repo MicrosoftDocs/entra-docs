@@ -183,14 +183,12 @@ items:
       items:
         - name: .NET MAUI
           items:
-            - name: Prepare tenant
-              href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
             - name: Create .NET MAUI app
-              href: tutorial-desktop-app-maui-sign-in-prepare-app.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Sign in and sign out
-              href: tutorial-desktop-app-maui-sign-in-sign-out.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Use role-based access control
-              href: tutorial-desktop-maui-role-based-access-control.md
+              href: /entra/identity-platform/tutorial-desktop-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: .NET WPF
           items:
             - name: Prepare tenant
@@ -204,8 +202,6 @@ items:
           items:
             - name: .NET MAUI
               items:
-                - name: Prepare tenant
-                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Create .NET MAUI app
                   href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in and sign out
@@ -222,8 +218,6 @@ items:
                   href: /entra/identity-platform/tutorial-mobile-app-android-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: iOS
               items:
-                - name: Prepare tenant
-                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Prepare app
                   href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Sign in users
@@ -271,12 +265,10 @@ items:
       items:
         - name: Node.js
           items:
-            - name: Prepare tenant
-              href: tutorial-cli-app-node-sign-in-prepare-tenant.md
             - name: Create Node.js CLI app
-              href: tutorial-cli-app-node-sign-in-prepare-app.md
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Sign in users
-              href: tutorial-cli-app-node-sign-in-sign-out.md
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
 - name: Concepts
   items: 
     - name: Planning guide
@@ -291,12 +283,6 @@ items:
       href: ../direct-federation-overview.md
     - name: Multifactor authentication (MFA)
       href: concept-multifactor-authentication-customers.md
-    - name: Custom authentication extensions
-      items:
-        - name: Overview
-          href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Custom claims provider
-          href: ~/identity-platform/custom-claims-provider-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication
       items:
         - name: Native authentication
@@ -313,6 +299,8 @@ items:
       href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
+    - name: Adding your own business logic
+      href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
     - name: Frequently asked questions (FAQ)
@@ -422,8 +410,6 @@ items:
                   href: ~/identity-platform/custom-extension-tokenissuancestart-setup.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Configure a custom claims provider token issuance event
                   href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Configure a SAML app to call a custom claims provider
-                  href: ~/identity-platform/custom-extension-configure-saml-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Custom claims provider reference
                   href: ~/identity-platform/custom-claims-provider-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Attribute collection
