@@ -864,6 +864,7 @@ Example of usage within the workflow:
 Allows all refresh and browser session tokens to be revoked for a user. This invalidates all the refresh tokens and browser session tokens issued to applications for a user, except external user sign-in sessions because external users sign in through their home tenant.
 
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/revoke-refresh-tokens-task.png" alt-text="Screenshot of the revoke refresh tokens task.":::
 
 
 For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user** task are as follows:
