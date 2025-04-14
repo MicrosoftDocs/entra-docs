@@ -14,7 +14,7 @@ ms.author: barclayn
 # Quarantine unsanctioned tenants  
 
 >[!IMPORTANT]
-> Refer to this article only after reviewing [the Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) to discover your organization’s inventory of tenants. This article outlines the specific existing Microsoft Entra capabilities administrators can leverage within their primary tenant to quarantine suspected unsanctioned tenants in their discovered list of tenants. 
+> Refer to this article only after reviewing [the Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) to discover your organization's inventory of tenants. This article outlines the specific existing Microsoft Entra capabilities administrators can leverage within their primary tenant to quarantine suspected unsanctioned tenants in their discovered list of tenants. 
 
 ## What does it mean to quarantine a tenant?
 
@@ -22,12 +22,13 @@ Quarantine involves isolating suspected unsanctioned tenants by using existing M
 
 
 ## When should I quarantine a tenant? 
+
 You are an IT Admin for the company "Contoso” with the primary tenant of "Contoso.com."  To secure data in the central Contoso tenant, you need to ensure users and applications with privileged access to your tenant are in tenants that properly secure these resources. Likewise, you want to ensure that external tenants in which your tenant has permissions into are known and following secure practices. To secure Contoso, you want to find all tenants that have inbound or outbound relationships with your primary tenant. 
-After following the [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint), you have identified a few potential tenants that may or may not belong to your company. Let’s call these tenants ContosoTest.com and ContosoDemo.com for scenario purposes. Because you don’t know who the global admins are for these tenants, you worry they are possibly employee-managed and do not comply with your organization’s security policies. This poses a major security risk to your environment if they stay unmanaged.
-Since you don’t have direct control over ContosoTest.com and ContosoDemo.com, you can only modify settings on the Contoso.com tenant. You want to quarantine them to minimize potential vulnerabilities that come from the exposure to these tenants. However, it's crucial that any changes you make are easily reversible, ensuring that no critical systems are unintentionally affected in the process. After quarantine, you introduced enough friction between your tenant and the suspected tenants to encourage the administrators of the tenants to contact your helpdesk. 
+After following the [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint), you have identified a few potential tenants that may or may not belong to your company. Let's call these tenants ContosoTest.com and ContosoDemo.com for scenario purposes. Because you don’t know who the global admins are for these tenants, you worry they are possibly employee-managed and do not comply with your organization’s security policies. This poses a major security risk to your environment if they stay unmanaged.
+Since you don't have direct control over ContosoTest.com and ContosoDemo.com, you can only modify settings on the Contoso.com tenant. You want to quarantine them to minimize potential vulnerabilities that come from the exposure to these tenants. However, it's crucial that any changes you make are easily reversible, ensuring that no critical systems are unintentionally affected in the process. After quarantine, you introduced enough friction between your tenant and the suspected tenants to encourage the administrators of the tenants to contact your helpdesk. 
 
 
-:::image type="content" source="media/quarantine-unsanctioned-tenant/identified.png" alt-text="diagram that showed unsactioned tenants discovered in the environment.":::  
+:::image type="content" source="media/quarantine-unsanctioned-tenant/identified.png" alt-text="Diagram that showed unsactioned tenants discovered in the environment.":::  
 
 
 The administrator of the ContosoTest.com tenant contacts you. At this point, you determine that the tenant was employee-created and that you should be added as an administrator within the tenant to regain control. You no longer quarantine the ContosoTest.com tenant. However, no administrators from the ContosoDemo.com tenant contact you, so you leave the tenant in the quarantined state.
@@ -42,8 +43,8 @@ The administrator of the ContosoTest.com tenant contacts you. At this point, you
 **License Required: Entra ID P1**  
 
 **Actions Against Suspected Tenant**:  
-Microsoft Entra organizations can use Cross-tenant access with External ID to scope which users of other external Entra organizations have access to your resources and which users from your organization have access to other external Entra organizations. These policies let you restrict inbound or outbound login attempts with a suspect tenant without disrupting collaboration with other tenants. An administrator can [add an organization](../external-id/cross-tenant-access-settings-b2b-collaboration.yml?source=recommendations#add-an-organization) and configure customized settings to block [inbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings) and [outbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings) user-sign for the suspected tenant. 
 
+Microsoft Entra organizations can use Cross-tenant access with External ID to scope which users of other external Entra organizations have access to your resources and which users from your organization have access to other external Entra organizations. These policies let you restrict inbound or outbound login attempts with a suspect tenant without disrupting collaboration with other tenants. An administrator can [add an organization](../external-id/cross-tenant-access-settings-b2b-collaboration.yml?source=recommendations#add-an-organization) and configure customized settings to block [inbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings) and [outbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings) user-sign for the suspected tenant. 
 
 **Secure-by-default**:  
 
@@ -88,24 +89,22 @@ Request Headers: { ConsistencyLevel: eventual }
 GET https://graph.microsoft.com/v1.0/servicePrincipals?$count=true&$filter=appOwnerOrganizationId eq {tenantId}
 ```
 
-
 After finding the correct service principal, you can either [review and revoke permissions granted to the application](../identity/enterprise-apps/manage-application-permissions.md?pivots=ms-graph) or [delete the service principal](../identity/enterprise-apps/delete-application-portal.md?pivots=ms-graph) all together. Deleting a service principal is a [restorable action up to 30 days](../identity/enterprise-apps/delete-recover-faq.yml#how-do-i-restore-deleted-applications-or-service-principals-).
 
 For more information on multitenant apps and service principals, see Apps & service principals in Microsoft Entra ID.
+
 - [Apps & service principals in Microsoft Entra ID](../identity-platform/app-objects-and-service-principals.md)
 
-
-## Cancelling subscriptions provisioned in suspected tenants  
+## Canceling subscriptions provisioned in suspected tenants  
 
 License Required: None, available to all paying customers with a Microsoft billing account  
 
 **Actions Against Suspected Tenant**:
 
-Use the following resources when you discover a tenant based on your billing account relationships but do not recognize the tenant which the subscription services are provisioned within. Canceled Azure and M365 subscriptions can be reactivated during the grace period ([30 to 90 days after canceling](/azure/cost-management-billing/manage/cancel-azure-subscription)) before being permanently deleted. If needed, contact [support](https://support.microsoft.com/topic/customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2) for assistance on canceling and deleting subscriptions.
+Use the following resources when you discover a tenant based on your billing account relationships but do not recognize the tenant which the subscription services are provisioned within. Canceled Azure and Microsoft 365 subscriptions can be reactivated during the grace period ([30 to 90 days after canceling](/azure/cost-management-billing/manage/cancel-azure-subscription)) before being permanently deleted. If needed, contact [support](https://support.microsoft.com/topic/customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2) for assistance on canceling and deleting subscriptions.
 
-
-- For more information on quarantine by canceling Azure, see  [Cancel and delete your Azure subscription](/azure/cost-management-billing/manage/cancel-azure-subscription)  
-- For more information on quarantine by canceling M365, see [Cancel your Microsoft business subscription in the Microsoft 365 admin center](/microsoft-365/commerce/subscriptions/cancel-your-subscription)  
+- For more information on quarantining by canceling Azure, see  [Cancel and delete your Azure subscription](/azure/cost-management-billing/manage/cancel-azure-subscription). 
+- For more information on quarantining by canceling Microsoft 365, see [Cancel your Microsoft business subscription in the Microsoft 365 admin center](/microsoft-365/commerce/subscriptions/cancel-your-subscription).
 
 ## Related content  
 
