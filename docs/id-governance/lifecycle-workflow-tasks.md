@@ -880,14 +880,13 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 
 ```Example for usage within the workflow
 {
-            "category": "leaver,mover",
-            "continueOnError": true,
-            "displayName": "Revoke all refresh tokens for user (Preview)",
-            "description": "Revoke all refresh tokens for user",
-            "isEnabled": true,
-            "taskDefinitionId": "509589a4-0466-4471-829e-49c5e502bdee",
-            "version": 1,
-            "parameters": []
+    "category": "leaver, mover",
+    "continueOnError": false,
+    "description": "Revoke all refresh tokens for user (Preview)",
+    "displayName": "Revoke all refresh tokens for user",
+    "isEnabled": true,
+    "taskDefinitionId": "509589a4-0466-4471-829e-49c5e502bdee",
+    "arguments": []
 }
 ```
 
