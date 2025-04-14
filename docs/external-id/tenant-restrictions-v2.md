@@ -4,7 +4,7 @@ description: Use tenant restrictions to control the types of external accounts y
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 04/14/2025
 
 ms.author: mimart
 author: msmimart
