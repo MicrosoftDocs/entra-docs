@@ -2,7 +2,7 @@
 title: Archive for Microsoft Entra releases and announcements
 description: The What's new release notes in the Overview section of this content set contain six months of activity. After six months, the items are removed from the main article and put into this archive article.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra 
 ms.subservice: fundamentals
 ms.topic: whats-new
@@ -20,6 +20,87 @@ This article includes information about the releases and change announcements ac
 For a more dynamic experience, you can now find the archive information in the Microsoft Entra admin center. To learn more, see [What's new (preview)](./whats-new-overview.md).
 
 ---
+
+## September 2024
+
+### Public preview - New Conditional Access Template Requiring Device Compliance 
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+A new Conditional Access template requiring device compliance is now available in Public Preview. This template restricts access to company resources exclusively to devices enrolled in mobile device management (MDM) and compliant with company policy. Requiring device compliance improves data security, reducing risk of data breaches, malware infections, and unauthorized access. This is a recommended best practice for users and devices targeted by compliance policy through MDM. For more information, see: [Common policy: Create a Conditional Access policy requiring device compliance.](../identity/conditional-access/policy-all-users-device-compliance.md)
+
+---
+
+### Public preview - Tenant admin can fail certificate based auth when the end user certificate issuer isn't configured with a certificate revocation list
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+With Certificate based authentication, a CA can be uploaded without a CRL endpoint, and certificate-based authentication won't fail if an issuing CA doesn't have a CRL specified.
+
+To strengthen security and avoid misconfigurations, an Authentication Policy Administrator can require CBA authentication to fail if no CRL is configured for a CA that issues an end user certificate. For more information, see: [Understanding CRL validation (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-crl-validation-preview).
+
+---
+
+### General Availability: Microsoft Authenticator on Android is FIPS 140 compliant for Microsoft Entra authentication
+
+**Type:** New feature    
+**Service category:** Microsoft Authenticator App    
+**Product capability:** User Authentication    
+
+Beginning with version 6.2408.5807, Microsoft Authenticator for Android is compliant with Federal Information Processing Standard (FIPS 140-3) for all Microsoft Entra authentications, including phishing-resistant device-bound passkeys, push multifactor authentication (MFA), passwordless phone sign-in (PSI), and time-based one-time passcodes (TOTP). No changes in configuration are required in Microsoft Authenticator or Microsoft Entra ID Admin Portal to enable this capability. Microsoft Authenticator on iOS is already FIPS 140 compliant, as announced last year. For more information, see: [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](../identity/authentication/concept-authentication-authenticator-app.md).
+
+---
+
+### General Availability - Microsoft Entra External ID extension for Visual Studio Code
+
+**Type:** Changed feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+
+[Microsoft Entra External ID Extension for VS Code](https://aka.ms/ciamvscode/newsletter/marketplace) provides a streamlined, guided experience to help you kickstart identity integration for customer-facing apps. With this extension, you can create external tenants, set up a customized and branded sign-in experience for external users, and quickly bootstrap your projects with preconfigured External ID samples—all within Visual Studio Code. Additionally, you can view and manage your external tenants, applications, user flows, and branding settings directly within the extension.
+
+For more information, see: [Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code](../external-id/customers/visual-studio-code-extension.md).
+
+---
+
+### Public Preview - Custom Claims API for Claims Configuration of Enterprise Apps
+
+**Type:** New feature    
+**Service category:** Enterprise Apps    
+**Product capability:** SSO    
+
+Custom Claims API allows admins to manage and update additional claims for their Enterprise Applications seamlessly through MS Graph. The Custom Claims API offers a simplified and user friendly API experience for claims management for our customers. With the introduction of Custom Claims API, we achieved UX and API interoperability. Admins can now use Microsoft Entra admin center and MS Graph API interchangeably to manage claims configurations for their Enterprise Applications. It facilitates admins to execute their automations using the API while allowing the flexibility to update claims on the Microsoft Entra admin center as required on the same policy object. For more information, see: [Customize claims using Microsoft Graph Custom Claims Policy (preview)](../identity-platform/claims-customization-custom-claims-policy.md).
+
+---
+
+### General Availability - Cross-tenant manager synchronization
+
+**Type:** New feature    
+**Service category:** Provisioning    
+**Product capability:** Identity Governance    
+
+Support for synchronizing the manager attribute using cross-tenant synchronization is now generally available. For more information, see: [Attributes](../identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md#attributes).
+
+---
+
+### Public Preview - Request on behalf of
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+Entitlement Management enables admins to create access packages to manage their organization’s resources. Admins can either directly assign users to an access package, or configure an access package policy that allows users and group members to request access. This option to create self-service processes is useful, especially as organizations scale and hire more employees. However, new employees joining an organization might not always know what they need access to, or how they can request access. In this case, a new employee would likely rely on their manager to guide them through the access request process.
+
+Instead of having new employees navigate the request process, managers can request access packages for their employees, making onboarding faster and more seamless. To enable this functionality for managers, admins can select an option when setting up an access package policy that allows managers to request access on their employees' behalf.
+
+Expanding self-service request flows to allow requests on behalf of employees ensures that users have timely access to necessary resources, and increases productivity. For more information, see: [Request access package on-behalf-of other users (Preview)](../id-governance/entitlement-management-request-behalf.md).
+
+---
+
 
 ## August 2024
 
@@ -152,7 +233,7 @@ To learn more, see [Automated employee mover tasks when they change jobs using t
 
 ---
 
-### General Availability -  Device based conditional access to M365/Azure resources on Red Hat Enterprise Linux
+### General Availability -  Device based Conditional Access to M365/Azure resources on Red Hat Enterprise Linux
 
 **Type:** New feature    
 **Service category:** Conditional Access    
@@ -883,7 +964,7 @@ We released a new premium user risk detection in Identity Protection called *Sus
 **Service category:** Conditional Access    
 **Product capability:** Access Control    
 
-Conditional access policies can now be filtered on actor, target resources, conditions, grant control, and session control. The granular filtering experience can help admins quickly discover policies containing specific configurations. For more information, see: [What is Conditional Access?](../identity/conditional-access/overview.md).
+Conditional Access policies can now be filtered on actor, target resources, conditions, grant control, and session control. The granular filtering experience can help admins quickly discover policies containing specific configurations. For more information, see: [What is Conditional Access?](../identity/conditional-access/overview.md).
 
 ---
 
@@ -1292,7 +1373,7 @@ To further protect your organization, Microsoft is now limiting this functionali
 **Service category:** Conditional Access                     
 **Product capability:** User Authentication            
 
-In an ever-evolving security landscape, the Microsoft Authenticator is updating its security baseline for Location Based Access Control (LBAC) conditional access policies. Microsoft does this to disallow authentications where the user might be using a different location than the actual GPS location of the mobile device. Today, it's possible for users to modify the location reported by the device on iOS and Android devices. The Authenticator app starts to deny LBAC authentications where we detect that the user isn't using the actual location of the mobile device where the Authenticator is installed.
+In an ever-evolving security landscape, the Microsoft Authenticator is updating its security baseline for Location Based Access Control (LBAC) Conditional Access policies. Microsoft does this to disallow authentications where the user might be using a different location than the actual GPS location of the mobile device. Today, it's possible for users to modify the location reported by the device on iOS and Android devices. The Authenticator app starts to deny LBAC authentications where we detect that the user isn't using the actual location of the mobile device where the Authenticator is installed.
 
 In the November 2023 release of the Authenticator app, users who are modifying the location of their device sees a denial message in the app when doing an LBAC authentication. Microsoft ensures that users aren’t using older app versions to continue authenticating with a modified location. Beginning January 2024, any users that are on Android Authenticator 6.2309.6329 version or prior and iOS Authenticator version 6.7.16 or prior are blocked from using LBAC. To determine which users are using older versions of the Authenticator app, you can use [our MSGraph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod).
 

@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 08/01/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: sempofu, micrider
 ---
 # Troubleshooting Enterprise State Roaming settings in Microsoft Entra ID

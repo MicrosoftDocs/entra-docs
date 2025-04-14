@@ -36,5 +36,3 @@ An external tenant follows the Microsoft Entra user and group management model a
 | Create/update/delete a security group via the Microsoft Graph API | Yes |
 | Change security group members using the Microsoft Entra admin center | Yes |
 | Change security group members using the Microsoft Graph API | Yes |
-| Scale up to 50,000 users and 50,000 groups | Not currently available |
-| Add 50,000 users to at least two groups | Not currently available |

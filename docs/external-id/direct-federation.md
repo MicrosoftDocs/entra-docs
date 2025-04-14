@@ -68,15 +68,15 @@ Refer to the following tables for the required values.
 |-------------------------|-----------------------------------------------|--------------------------------------------|
 |AssertionConsumerService |`https://login.microsoftonline.com/login.srf`  |`https://<tenantID>.ciamlogin.com/login.srf`|
 |Audience                 |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.      |`https://login.microsoftonline.com/<tenant ID>/`<br>Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.      |
-|Issuer                   |The issuer URI of the partner's IdP, git stfor example `http://www.example.com/exk10l6w90DHM0yi...`    |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
+|Issuer                   |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`    |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
 
 
 **Table 2. Required claims for the SAML 2.0 token issued by the IdP.**
 
-|Attribute Name                                                        |Value         |
-|----------------------------------------------------------------------|--------------|
+|Attribute Name                                                        |Value                                                  |
+|----------------------------------------------------------------------|-------------------------------------------------------|
 |NameID Format                                                         |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` |
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`  | emailaddress |
+|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`  | The user's email address                              |
 
 #### To configure a WS-Fed identity provider
 
@@ -173,7 +173,7 @@ You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph
 
 ### Step 4: Configure redemption order (B2B collaboration in workforce tenants)
 
-If you're configuring federation in your workforce tenant for B2B collaboration with a verified domain, make sure the federated IdP is used first during invitation redemption. [Configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP. For B2B collaboration with a verified domain, make the federated IdP the primary identity provider for invitation redemption. over other identity providers during invitation redemption.  
+If you're configuring federation in your workforce tenant for B2B collaboration with a verified domain, make sure the federated IdP is used first during invitation redemption. [Configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP.
 
 You can test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
 

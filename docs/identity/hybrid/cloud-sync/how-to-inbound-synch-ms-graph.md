@@ -3,11 +3,11 @@ title: 'How to programmatically configure cloud sync using MS Graph API'
 description: This topic describes how to enable inbound synchronization using just the Graph API
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

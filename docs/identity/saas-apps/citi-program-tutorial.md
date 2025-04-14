@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -122,13 +122,13 @@ To configure single sign-on on **CITI Program** side, you need to send the copie
 
 In this section, you test your Microsoft Entra single sign-on configuration with the following options. 
 
-* Click on **Test this application**, this will redirect to CITI Program Sign-on URL, where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to CITI Program Sign-on URL, where you can initiate the login flow. 
 
 * Go to CITI Program Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. Clicking the CITI Program tile in the My Apps will redirect to CITI Program Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. Selecting the CITI Program tile in the My Apps will redirect to CITI Program Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-CITI Program supports just-in-time user provisioning. First-time SSO users will be prompted to either: 
+CITI Program supports just-in-time user provisioning. First-time SSO users are prompted to either: 
 
 * Link their existing CITI Program account in case they already have one
 ![SSOHaveAccount](https://user-images.githubusercontent.com/46728557/228357500-a74489c7-8c5f-4cbe-ad47-9757d3d9fbe6.PNG "Link existing CITI Program account")

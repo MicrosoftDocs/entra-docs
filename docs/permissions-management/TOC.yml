@@ -17,6 +17,8 @@
     - name: Onboard Permissions Management on the Microsoft Entra tenant
       expanded: true
       items:
+      - name: Permissions Management offboarding for product deprecation
+        href: how-to-offboard-permissions-management.md
       - name: Enable Permissions Management in your organization 
         href: onboard-enable-tenant.md
       - name: Onboard an AWS account

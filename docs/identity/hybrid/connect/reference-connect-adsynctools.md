@@ -2,15 +2,15 @@
 title: 'Microsoft Entra Connect: ADSyncTools PowerShell Reference'
 description: This document provides reference information for the ADSyncTools.psm1 PowerShell module.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.topic: reference
 
 
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ---
 
 # Microsoft Entra Connect:  ADSyncTools PowerShell Reference
@@ -992,7 +992,7 @@ Import ImmutableID from Microsoft Entra ID
 Import-ADSyncToolsSourceAnchor [-Output] <String> [-IncludeSyncUsersFromRecycleBin] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Generates a file with all Microsoft Entra ID synchronized users containing the ImmutableID value in GUID format Requirements: MSOnline PowerShell Module
+Generates a file with all Microsoft Entra ID synchronized users containing the ImmutableID value in GUID format 
 ### EXAMPLES
 #### EXAMPLE 1
 ```

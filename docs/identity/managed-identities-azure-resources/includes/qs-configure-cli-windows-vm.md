@@ -37,7 +37,7 @@ To create an Azure VM with the system-assigned managed identity enabled, your ac
 1. Create a VM using [az vm create](/cli/azure/vm/#az-vm-create). The following example creates a VM named *myVM* with a system-assigned managed identity, as requested by the `--assign-identity` parameter, with the specified `--role` and `--scope`. The `--admin-username` and `--admin-password` parameters specify the administrative user name and password account for virtual machine sign-in. Update these values as appropriate for your environment: 
 
    ```azurecli-interactive 
-   az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --generate-ssh-keys --assign-identity --role contributor --scope mySubscription --admin-username azureuser --admin-password myPassword12
+   az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --generate-ssh-keys --assign-identity --role contributor --scope /Subscriptions/mySubscriptionId/resourceGroups/myResourceGroup --admin-username azureuser --admin-password myPassword12
    ```
 
 ### Enable system-assigned managed identity on an existing Azure VM

@@ -2,10 +2,10 @@
 title: 'Microsoft Entra Connect: Cloud authentication via Staged Rollout'
 description: This article explains how to migrate from federated authentication, to cloud authentication, by using a Staged Rollout.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/20/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

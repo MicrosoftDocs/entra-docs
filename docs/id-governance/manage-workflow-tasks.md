@@ -3,7 +3,7 @@ title: Manage workflow versions
 description: This article guides a user on managing workflow versions with Lifecycle Workflows.
 author: OWinfreyATL
 ms.author: owinfrey
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to

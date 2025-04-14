@@ -6,11 +6,11 @@ description: Step-by-step guidance to migrate MFA server settings to Microsoft E
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jpettere
 ---
 # MFA Server migration 

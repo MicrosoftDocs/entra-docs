@@ -2,7 +2,7 @@
 title: Sign-ins requiring Microsoft Entra MFA
 description: Learn about the Microsoft Entra Health signals and alerts for sign-ins that require Microsoft Entra multifactor authentication
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

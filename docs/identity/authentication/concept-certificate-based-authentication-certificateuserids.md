@@ -5,11 +5,11 @@ description: Learn about certificate user IDs for Microsoft Entra certificate-ba
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/03/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: femila
 ms.reviewer: vranganathan
 ms.custom: has-adal-ref
 ---
@@ -197,7 +197,7 @@ To prevent synchronization errors, make sure the values being synchronized follo
 
 Before you begin, make sure all user accounts that are synchronized from on-premises Active Directory have:
 
-- 5 or fewer values in their altSecurityIdentities attributes 
+- 10 or fewer values in their altSecurityIdentities attributes 
 - No value with more than 1,024 characters
 - No duplicate values
   

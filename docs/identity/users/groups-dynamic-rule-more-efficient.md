@@ -3,7 +3,7 @@ title: Create simpler and faster rules for dynamic membership groups
 description: How to optimize your membership rules to automatically populate groups.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual

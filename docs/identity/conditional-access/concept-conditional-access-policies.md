@@ -9,7 +9,7 @@ ms.date: 03/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Building a Conditional Access policy

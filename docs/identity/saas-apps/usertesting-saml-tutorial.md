@@ -83,7 +83,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://app.usertesting.com/sessions/from_idp`
 
      > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [UserTesting Client support team](mailto:support@usertesting.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [UserTesting Client support team](mailto:support@usertesting.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
     
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -107,15 +107,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to UserTesting Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to UserTesting Sign-on URL where you can initiate the login flow.  
 
 * Go to UserTesting Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the UserTesting for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the UserTesting for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the UserTesting tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the UserTesting for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the UserTesting tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the UserTesting for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

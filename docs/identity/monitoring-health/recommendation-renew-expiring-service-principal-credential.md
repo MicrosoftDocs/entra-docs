@@ -3,11 +3,11 @@ title: Renew expiring service principal credentials recommendation
 description: Learn how the Microsoft Entra recommendation to renew expiring service principal credentials work and why it's important.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/22/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
 
@@ -88,18 +88,18 @@ To retrieve all recommendations for your tenant:
 GET https://graph.microsoft.com/beta/directory/recommendations
 ```
 
-From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_Microsoft.Identity.IAM.Insights.servicePrincipalKeyExpiry`.
+From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_servicePrincipalKeyExpiry`.
 
 To identify impacted resources:
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.servicePrincipalKeyExpiry
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_servicePrincipalKeyExpiry
 ```
 
 To filter the list of resources based on their status, for example only resources that are marked as `active`:
 
 ```http
-https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights. servicePrincipalKeyExpiry/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
+https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_ servicePrincipalKeyExpiry/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
 ```
 
 - Take note of the `AppId`, `CredentialId`, and the origin of the credential you want to remove.
@@ -114,7 +114,7 @@ https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.
 
 ```json
 {
-  "id": "536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.ServicePrincipalKeyExpiry",
+  "id": "ddddeeee-3333-ffff-4444-aaaa5555bbbb_ServicePrincipalKeyExpiry",
   "recommendationType": "servicePrincipalKeyExpiry",
   "createdDateTime": "2022-05-29T00:11:17Z",
   "impactStartDateTime": "2022-05-29T00:11:17Z",

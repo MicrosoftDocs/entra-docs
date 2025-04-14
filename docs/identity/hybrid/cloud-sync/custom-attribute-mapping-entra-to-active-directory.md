@@ -2,11 +2,11 @@
 title: 'Microsoft Entra Cloud Sync directory extensions for provisioning to Active Directory'
 description: This article provides information on directory extensions for provisioning to Active Directory with cloud sync.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
-ms.date: 12/16/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 ---

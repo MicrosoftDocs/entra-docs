@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: how-to
 ms.date: 10/21/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref
 ---

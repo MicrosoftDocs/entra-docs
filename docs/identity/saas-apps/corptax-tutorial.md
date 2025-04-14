@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CorpTax so that I can control who has access to CorpTax, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -27,10 +27,8 @@ If you want to know more details about SaaS app integration with Microsoft Entra
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Corptax, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/)
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Corptax single sign-on enabled subscription
 
 ## Scenario description
@@ -61,9 +59,9 @@ To configure and test Microsoft Entra single sign-on with Corptax, you need to c
 
 1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
 2. **[Configure Corptax Single Sign-On](#configure-corptax-single-sign-on)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Corptax test user](#create-corptax-test-user)** - to have a counterpart of Britta Simon in Corptax that is linked to the Microsoft Entra representation of user.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
+5. **[Create Corptax test user](#create-corptax-test-user)** - to have a counterpart of Britta Simon in Corptax that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -81,7 +79,7 @@ To configure Microsoft Entra single sign-on with Corptax, perform the following 
 
 1. On the **Select a Single sign-on method** dialog, select **SAML/WS-Fed** mode to enable single sign-on.
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit_urls.png)
 
@@ -92,7 +90,7 @@ To configure Microsoft Entra single sign-on with Corptax, perform the following 
     In the **Sign-on URL** text box, type a URL:
     `https://asp.corptax.com`
 
-1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click **Download** to download **Federation Metadata XML** and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, select **Download** to download **Federation Metadata XML** and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -102,48 +100,7 @@ To configure single sign-on on **Corptax** side, you need to send the downloaded
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-The objective of this section is to create a test user called Britta Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to Corptax.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Corptax**.
-
-	![Enterprise applications blade](common/enterprise_applications.png)
-
-2. In the applications list, type and select **Corptax**.
-
-	![The Corptax link in the Applications list](common/all_applications.png)
-
-3. In the menu on the left, select **Users and groups**.
-
-    ![The "Users and groups" link](common/users_groups_blade.png)
-
-4. Click the **Add user** button, then select **Users and groups** in the **Add Assignment** dialog.
-
-    ![The Add Assignment pane](common/add_assign_user.png)
-
-5. In the **Users and groups** dialog select **Britta Simon** in the Users list, then click the **Select** button at the bottom of the screen.
-
-6. If you are expecting any role value in the SAML assertion then in the **Select Role** dialog select the appropriate role for the user from the list, then click the **Select** button at the bottom of the screen.
-
-7. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ### Create Corptax test user
 
@@ -152,7 +109,7 @@ In this section, you create a user called Britta Simon in Corptax. Work with [C
 ### Test single sign-on
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
-When you click the Corptax tile in the Access Panel, you should be redirected to the below Corptax page- 
+When you select the Corptax tile in the Access Panel, you should be redirected to the below Corptax page- 
 
 ![image](media/corptax-tutorial/corptaxlogin.png)
 

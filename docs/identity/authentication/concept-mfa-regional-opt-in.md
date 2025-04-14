@@ -5,11 +5,11 @@ description: To protect customers, some regions require a support ticket to requ
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 author: aloom3
 ms.author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: aloom3
 ms.custom: references_regions
 ---

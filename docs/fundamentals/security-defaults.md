@@ -9,7 +9,7 @@ ms.date: 04/15/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: sama
 ---
 # Security defaults in Microsoft Entra ID
@@ -34,7 +34,7 @@ These basic controls include:
 ### Who should use Conditional Access?
 
 - If you're an organization with Microsoft Entra ID P1 or P2 licenses, security defaults are probably not right for you.
-- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/conditional-access/overview).
+- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/conditional-access/concept-conditional-access-policy-common).
 
 ## Enabling security defaults
 

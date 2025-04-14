@@ -2,11 +2,11 @@
 title: Tutorial - Customize Microsoft Entra attribute mappings in Application Provisioning
 description: Learn about attribute mappings for Software as a Service (SaaS) apps in Microsoft Entra Application Provisioning. Learn what attributes are and how you can modify them to address your business needs.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 02/28/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 ---

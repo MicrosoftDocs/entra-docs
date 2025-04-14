@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to elia so that I can streamline the user management process and ensure that users have the appropriate access to elia.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both elia and Microsoft 
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in elia.
-> * Remove users in elia when they do not require access anymore.
+> * Remove users in elia when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and elia.
 > * [Single sign-on](elia-tutorial.md) to elia (recommended).
 
@@ -37,7 +37,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and elia](~/identity/app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Configure elia to support provisioning with Microsoft Entra ID
@@ -48,13 +48,9 @@ Contact elia support to configure elia to support provisioning with Microsoft En
 
 Add elia from the Microsoft Entra application gallery to start managing provisioning to elia. If you have previously setup elia for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to elia 
 
@@ -81,7 +77,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your elia Tenant URL, Token Endpoint, Client Identifier and Client Secret. Click **Test Connection** to ensure Microsoft Entra ID can connect to elia. If the connection fails, ensure your elia account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your elia Tenant URL, Token Endpoint, Client Identifier and Client Secret. Select **Test Connection** to ensure Microsoft Entra ID can connect to elia. If the connection fails, ensure your elia account has Admin permissions and try again.
 
  	![Screenshot of Token.](media/elia-provisioning-tutorial/connection.png)
 
@@ -123,18 +119,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 6: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
 
-* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
-* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## More resources
 
