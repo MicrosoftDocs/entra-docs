@@ -1,5 +1,5 @@
 ---  
-title: Quarantining unsanctioned tenants  
+title: Quarantine unsanctioned tenants  
 description: Isolate unsanctioned tenants using Microsoft Entra features. Follow steps to quarantine unapproved tenants and strengthen security.  
 author: barclayn  
 manager: femila  
@@ -11,27 +11,27 @@ ms.author: barclayn
 #customer intent: As an administrator, I want to quarantine unsanctioned tenants to reduce security risks and ensure compliance with security policies.  
 ---  
 
-# Quarantining unsanctioned tenants  
+# Quarantine unsanctioned tenants  
 
 > Refer to this article only after reviewing [the Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) to discover your organization’s inventory of tenants. This article outlines the specific existing Microsoft Entra capabilities administrators can leverage within their primary tenant to quarantine suspected unsanctioned tenants in their discovered list of tenants. 
 
-## What is quarantining a tenant?
+## What does it mean to quarantine a tenant?
 
-Quarantining involves isolating suspected unsanctioned tenants by using existing Microsoft Entra capabilities. This immediately reduces security risk that exists from exposure to such tenants that you do not have administrative control of within your environment. By isolating, you introduce friction between your tenant and theirs, which acts as a scream test. This friction prompts administrators of the suspected tenants to contact you in need of assistance, giving you the opportunity to verify the legitimacy of the relationships with these tenants and/or regain control over them. If no one is to contact you, then you can leave the tenants in the quarantined state indefinitely.
+Quarantine involves isolating suspected unsanctioned tenants by using existing Microsoft Entra capabilities. This immediately reduces security risk that exists from exposure to such tenants that you do not have administrative control of within your environment. By isolating, you introduce friction between your tenant and theirs, which acts as a scream test. This friction prompts administrators of the suspected tenants to contact you in need of assistance, giving you the opportunity to verify the legitimacy of the relationships with these tenants and/or regain control over them. If no one is to contact you, then you can leave the tenants in the quarantined state indefinitely.
 
 
 ## When should I quarantine a tenant? 
 You are an IT Admin for the company "Contoso” with the primary tenant of "Contoso.com."  To secure data in the central Contoso tenant, you need to ensure users and applications with privileged access to your tenant are in tenants that properly secure these resources. Likewise, you want to ensure that external tenants in which your tenant has permissions into are known and following secure practices. To secure Contoso, you want to find all tenants that have inbound or outbound relationships with your primary tenant. 
 After following the [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint), you have identified a few potential tenants that may or may not belong to your company. Let’s call these tenants ContosoTest.com and ContosoDemo.com for scenario purposes. Because you don’t know who the global admins are for these tenants, you worry they are possibly employee-managed and do not comply with your organization’s security policies. This poses a major security risk to your environment if they stay unmanaged.
-Since you don’t have direct control over ContosoTest.com and ContosoDemo.com, you can only modify settings on the Contoso.com tenant. You want to quarantine them to minimize potential vulnerabilities that come from the exposure to these tenants. However, it's crucial that any changes you make are easily reversible, ensuring that no critical systems are unintentionally affected in the process. After quarantining, you introduced enough friction between your tenant and the suspected tenants to encourage the administrators of the tenants to contact your helpdesk. 
+Since you don’t have direct control over ContosoTest.com and ContosoDemo.com, you can only modify settings on the Contoso.com tenant. You want to quarantine them to minimize potential vulnerabilities that come from the exposure to these tenants. However, it's crucial that any changes you make are easily reversible, ensuring that no critical systems are unintentionally affected in the process. After quarantine, you introduced enough friction between your tenant and the suspected tenants to encourage the administrators of the tenants to contact your helpdesk. 
 
 
-:::image type="content" source="media/quarantine-unsanctioned-tenant/identified.png" alt-text="diagram that showed unsactioned tenants discovered in the environment":::  
+:::image type="content" source="media/quarantine-unsanctioned-tenant/identified.png" alt-text="diagram that showed unsactioned tenants discovered in the environment.":::  
 
 
 The administrator of the ContosoTest.com tenant contacts you. At this point, you determine that the tenant was employee-created and that you should be added as an administrator within the tenant to regain control. You no longer quarantine the ContosoTest.com tenant. However, no administrators from the ContosoDemo.com tenant contact you, so you leave the tenant in the quarantined state.
 
-:::image type="content" source="media/quarantine-unsanctioned-tenant/quarantine-unsanctioned-tenant-overview.png" alt-text="Overview of quarantining unsanctioned tenants":::  
+:::image type="content" source="media/quarantine-unsanctioned-tenant/quarantine-unsanctioned-tenant-overview.png" alt-text="Diagram showing an overview of quarantine unsanctioned tenants":::  
 
 
 ## How can I use Microsoft Entra's capabilities to quarantine suspected tenants?  
@@ -103,8 +103,8 @@ License Required: None, available to all paying customers with a Microsoft billi
 Use the following resources when you discover a tenant based on your billing account relationships but do not recognize the tenant which the subscription services are provisioned within. Canceled Azure and M365 subscriptions can be reactivated during the grace period ([30 to 90 days after canceling](/azure/cost-management-billing/manage/cancel-azure-subscription)) before being permanently deleted. If needed, contact [support](https://support.microsoft.com/topic/customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2) for assistance on canceling and deleting subscriptions.
 
 
-- For more information on quarantining by canceling Azure, see  [Cancel and delete your Azure subscription](/azure/cost-management-billing/manage/cancel-azure-subscription)  
-- For more information on quarantining by canceling M365, see [Cancel your Microsoft business subscription in the Microsoft 365 admin center](/microsoft-365/commerce/subscriptions/cancel-your-subscription)  
+- For more information on quarantine by canceling Azure, see  [Cancel and delete your Azure subscription](/azure/cost-management-billing/manage/cancel-azure-subscription)  
+- For more information on quarantine by canceling M365, see [Cancel your Microsoft business subscription in the Microsoft 365 admin center](/microsoft-365/commerce/subscriptions/cancel-your-subscription)  
 
 ## Related content  
 
