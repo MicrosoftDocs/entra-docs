@@ -47,7 +47,7 @@ An administrator can [configure default settings](../external-id/cross-tenant-ac
 For more information on managing Cross-tenant access settings, see:  
 
 - [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).  
-- [Cross-tenant access settings](../external-id/cross-tenant-access-settings-b2b-collaboration?source=recommendations.md).  
+- [Cross-tenant access settings](../external-id/cross-tenant-access-settings-b2b-collaboration.yml?source=recommendations).  
 
 ### Using Global Secure Access and Universal Tenant Restrictions to block user sign-in  
 
@@ -84,7 +84,7 @@ GET https://graph.microsoft.com/v1.0/servicePrincipals?$count=true&$filter=appOw
 ```
 
 
-After finding the correct service principal, you can either [review and revoke permissions granted to the application](../enterprise-apps/manage-application-permissions.md?pivots=ms-graph) or [delete the service principal](../enterprise-apps/delete-application-portal.md?pivots=ms-graph) all together. Note that, deleting a service principal is a [restorable action up to 30 days](/enterprise-apps/delete-recover-faq.yml#how-do-i-restore-deleted-applications-or-service-principals-).
+After finding the correct service principal, you can either [review and revoke permissions granted to the application](../identity/enterprise-apps/manage-application-permissions.md?pivots=ms-graph) or [delete the service principal](../identity/enterprise-apps/delete-application-portal.md?pivots=ms-graph) all together. Note that, deleting a service principal is a [restorable action up to 30 days](../identity/enterprise-apps/delete-recover-faq.yml#how-do-i-restore-deleted-applications-or-service-principals-).
 
 For more information on multi-tenant apps and service principals, see Apps & service principals in Microsoft Entra ID.
 - [Apps & service principals in Microsoft Entra ID](../identity-platform/app-objects-and-service-principals.md)
