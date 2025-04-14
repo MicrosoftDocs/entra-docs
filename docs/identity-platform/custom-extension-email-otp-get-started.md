@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.reviewer: almars
-ms.date: 9/30/2024
+ms.date: 02/13/2025
 ms.service: identity-platform
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
@@ -19,7 +19,7 @@ titleSuffix: Microsoft identity platform
 This article provides a guide on configuring and setting up a custom email provider for the One Time Passcode (OTP) Send event type. The event is triggered when an OTP email is activated, it allows you to call a REST API to use your own email provider by calling a REST API.
 
 > [!TIP]
-> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmailOTP)
+> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmail)
 >
 > To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
 
@@ -85,7 +85,7 @@ This how-to guide demonstrates the OTP send event using Azure Communication Serv
 1. From the menu, select **Code + Test**.
 1. Replace the entire code with the following code snippet.
 
-    :::code language="csharp" source="~/../custom-authentication-extension/OnOtpSend/CustomEmailACS.cs":::
+    :::code language="csharp" source="~/../authentication-events-function/Functions/OnOtpSend/CustomEmailACS.cs":::
 
 1. Select **Get Function Url**, and copy the **Function key** URL, which is henceforth used and referred to as `{Function_Url}`. Close the function.
 
@@ -94,7 +94,7 @@ This how-to guide demonstrates the OTP send event using Azure Communication Serv
 1. From the menu, select **Code + Test**.
 1. Replace the entire code with the following code snippet.
 
-    :::code language="csharp" source="~/../custom-authentication-extension/OnOtpSend/CustomEmailSendGrid.cs":::
+    :::code language="csharp" source="~/../authentication-events-function/Functions/OnOtpSend/CustomEmailSendGrid.cs":::
 
 1. Select **Get Function Url**, and copy the **Function key** URL, which is henceforth used and referred to as `{Function_Url}`. Close the function.
 ---
@@ -123,7 +123,7 @@ You can access your Communication Services connection strings and service endpoi
 
     | Setting      | Value (Example) | Description |
     | ------------ | ---------------- | ----------- |
-    | **mail_connectionString** | A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u | The Azure Communication Services Primary Key. | 
+    | **mail_connectionString** | `https://ciamotpcommsrvc.unitedstates.communication.azure.com/:accesskey=A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u` | The Azure Communication Services endpoint | 
     | **mail_sender** | <from.email@myemailprovider.com> | The from email address. |
     | **mail_subject** | CIAM Demo | The subject of the email. |
 
@@ -298,7 +298,7 @@ Follow these steps to connect the *My Test application* with your custom authent
     }
     ```
 
-1. Record the **id** value of the created listener object, which is used later in this article in place of `{customListenerOjectId}`.
+1. Record the **id** value of the created listener object, which is used later in this article in place of `{customListenerObjectId}`.
 
 ---
 
@@ -341,13 +341,13 @@ In your app registration, under **Overview**, copy the **Application (client) ID
 
 The **jwt.ms** test application uses the implicit flow. Enable implicit flow in *My Test application* registration:
 
+> [!IMPORTANT]
+>
+> Microsoft recommends using the most secure authentication flow available. The authentication flow used for testing in this procedure requires a very high degree of trust in the application, and carries risks that are not present in other flows. This approach shouldn't be used for authenticating users to your production apps ([learn more](v2-oauth2-implicit-grant-flow.md)).
+
 1. Under **Manage**, select **Authentication**.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
 1. Select **Save**.
-
-> [!NOTE]
-> 
-> The **jwt.ms** app uses the implicit flow to get an ID token and is for testing purposes only. The implicit flow is not recommended for production applications. For production applications, use the authorization code flow.
 
 ## Step 5: Protect your Azure Function
 
@@ -418,7 +418,7 @@ To test your custom email provider, follow these steps:
 
 If an error occurs within your extension API, by default Entra ID will not send an OTP to the user. You can instead set the behavior on error to fall back to the Microsoft Provider.
 
-To enable this, run the following request. Replace `{customListenerOjectId}` with the custom authentication listener ID recorded earlier.
+To enable this, run the following request. Replace `{customListenerObjectId}` with the custom authentication listener ID recorded earlier.
 
 - You need the *EventListener.ReadWrite.All* delegated permission.
 

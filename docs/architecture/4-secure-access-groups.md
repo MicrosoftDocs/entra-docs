@@ -121,7 +121,7 @@ Use Microsoft Entra security groups to assign:
 
 Learn more:
 
-* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+* [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 * [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md). 
 
 > [!NOTE]

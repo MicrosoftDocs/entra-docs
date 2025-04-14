@@ -6,7 +6,7 @@ metadata:
   description: Add your organization's privacy information, privacy contact, and technical contact to your directory.
   author: barclayn
   ms.author: barclayn
-  ms.date: 12/04/2023
+  ms.date: 12/13/2024
   ms.service: entra
   ms.topic: how-to
   ms.custom:
@@ -32,9 +32,6 @@ procedureSection:
       Your privacy and technical information is located in the **Properties** area of the Microsoft Entra admin center.
 
       ### To access the properties area and add your privacy information
-
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Billing Administrator](../identity/role-based-access-control/permissions-reference.md#billing-administrator).

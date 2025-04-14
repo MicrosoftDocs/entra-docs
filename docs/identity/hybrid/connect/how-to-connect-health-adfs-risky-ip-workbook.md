@@ -3,12 +3,12 @@ title: Microsoft Entra Connect Health with AD FS risky IP report workbook
 description: Describes the Microsoft Entra Connect Health AD FS risky IP report with Azure Monitor Workbooks.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.author: billmath
 ms.custom:
 ms.collection:
@@ -44,7 +44,7 @@ The risky IP workbook analyzes data from ADFSSignInLogs to help you detect passw
 
 [![Screenshot that a view of the Workbook with locations.](./media/how-to-connect-health-adfs-risky-ip-workbook/workbook-template-overview-1.png)](./media/how-to-connect-health-adfs-risky-ip-workbook/workbook-template-overview-1.png#lightbox)
 
-- The workook displays a map visualization and region breakdown for a quick analysis of risky IP location.
+- The workbook displays a map visualization and region breakdown for a quick analysis of risky IP location.
 - Risky IP details table parallels the functionality of the past Risky IP report. For details on the fields in the table, view the below section.
 - Risky IP timeline displays a quick view of any anomalies or spikes in requests in a timeline view
 - Sign in details and error counts by IP allows a detailed filtered view by IP or user, to expand on the details table. 
@@ -65,7 +65,6 @@ Filter the report by IP address or user name to see an expanded view of sign-ins
 
 ## Accessing the workbook
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To access the workbook:
 

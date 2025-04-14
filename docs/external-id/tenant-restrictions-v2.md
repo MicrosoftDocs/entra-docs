@@ -33,7 +33,7 @@ For example, suppose a user in your organization has created a separate account 
 |**1**     | Contoso configures **Tenant restrictions** in their cross-tenant access settings to block all external accounts and external apps. Contoso adds TRv2 enforcement signaling with TRv2 header either via [Universal TRv2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access) or a [corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy) and Microsoft Entra ID will enforce TRv2 policy when the header is present on the request.      |
 |**2**     |  A user using a Contoso-managed device tries to sign in to an external app using an account from an unknown tenant. The TRv2 HTTP header with Contoso's tenant ID and the tenant restrictions policy ID is added to the authentication request.        |
 |**3**     | *Authentication plane protection:* Microsoft Entra ID will enforce Contoso's TRv2 policy and block external accounts from accessing external tenants during the authentication as per the Contoso TRv2 policy.        |
-|**4**     | *Data plane protection (preview):* Microsoft Entra ID will block any anonymous access to SharePoint file or anonymous teams meeting join as well as block user access to the resource with an infiltrated token.       |
+|**4**     | *Data plane protection (preview):* Microsoft Entra ID will block any anonymous access to Microsoft Forms, SharePoint file or anonymous teams meeting join as well as block user access to the resource with an infiltrated token.       |
 |||
 
 Tenant restrictions v2 provides options for both authentication plane protection and data plane protection. 
@@ -62,8 +62,8 @@ Tenant restrictions v2 can be scoped to specific users, groups, organizations, o
 - All Office apps (all versions/release channels).
 - Universal Windows Platform (UWP) .NET applications.
 - Auth plane protection for all applications that authenticate with Microsoft Entra ID, including all Microsoft first-party applications and any third-party applications that use Microsoft Entra ID for authentication.
-- Data plane protection for SharePoint Online and Exchange Online.
-- Anonymous access protection for SharePoint Online, OneDrive, and Teams (with Federation Controls configured).
+- Data plane protection for SharePoint Online, Exchange Online and Microsoft Graph.
+- Anonymous access protection for Forms, SharePoint Online, OneDrive, and Teams (with Federation Controls configured).
 - Authentication and Data plane protection for Microsoft tenant or Consumer accounts.
 - When using Universal tenant restrictions in Global Secure Access, all browsers and platforms.
 - When using Windows Group Policy, Microsoft Edge and all websites in Microsoft Edge.
@@ -85,7 +85,7 @@ The following table compares the features in each version.
 |**Policy enforcement limitation**    | Manage corporate proxies by adding tenants to the Microsoft Entra traffic allowlist. The character limit of the header value in Restrict-Access-To-Tenants: `<allowed-tenant-list>` limits the number of tenants that can be added. |     Managed by a cloud policy in the cross-tenant access policy. Default policy at tenant level and a partner policy is created for each external tenant.  |
 |**Malicious tenant requests** | Microsoft Entra ID blocks malicious tenant authentication requests to provide authentication plane protection.         |    Microsoft Entra ID blocks malicious tenant authentication requests to provide authentication plane protection.     |
 |**Granularity**           | Limited to tenant and all Microsoft Accounts.        |   Tenant, user, group, and application granularity. (User-level granularity isn't supported with Microsoft Accounts.)      |
-|**Anonymous access**      | Anonymous access to Teams meetings and file sharing is allowed.         |   Anonymous access to Teams meetings is blocked. Access to anonymously shared resources (“Anyone with the link”) is blocked.      |
+|**Anonymous access**      | Anonymous access to Teams meetings and file sharing is allowed.         |   Anonymous access to Teams meetings is blocked. Access to anonymously shared resources (“Anyone with the link”) is blocked. Anonymous access to Forms is blocked.     |
 |**Microsoft Accounts**          |Uses a Restrict-MSA header to block access to consumer accounts.         |  Allows control of Microsoft Accounts (MSA and Live ID) authentication on both the identity and data planes.<br></br>For example, if you enforce tenant restrictions by default, you can create a Microsoft Accounts-specific policy that allows users to access specific apps with their Microsoft Accounts, for example: <br> Microsoft Learn (app ID `18fbca16-2224-45f6-85b0-f7bf2b39b3f3`), or <br> Microsoft Enterprise Skills Initiative (app ID `195e7f27-02f9-4045-9a91-cd2fa1c2af2f`).       |
 |**Proxy management**      | Manage corporate proxies by adding tenants to the Microsoft Entra traffic allowlist.         |   For corporate proxy authentication plane protection, configure the proxy to set tenant restrictions v2 signals on all traffic.      |
 |**Platform support**      |Supported on all platforms. Provides only authentication plane protection.        |     Universal tenant restrictions in Global Secure Access support any operating system, browser, or device form factor.<br></br>Corporate proxy authentication plane protection supports macOS, Chrome browser, and .NET applications.<br></br>Windows device management supports Windows operating systems and Microsoft Edge.     |
@@ -168,7 +168,6 @@ Settings for tenant restrictions v2 are located in the Microsoft Entra admin cen
 
 #### To configure default tenant restrictions
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
@@ -405,9 +404,7 @@ To test the tenant restrictions v2 policy on a device, follow these steps.
 1. Retrieve the **Tenant ID** and **Policy ID** you recorded earlier (in step 7 under [To configure default tenant restrictions](#to-configure-default-tenant-restrictions)) and enter them in the following fields (leave all other fields blank):
 
    - **Microsoft Entra Directory ID**: Enter the **Tenant ID** you recorded earlier. by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
-   - **Policy GUID**: The ID for your cross-tenant access policy. It's the **Policy ID** you recorded earlier. You can also find this ID by using the Graph Explorer command [https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default](https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default).
-
-    [//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default)
+   - **Policy GUID**: The ID for your cross-tenant access policy. It's the **Policy ID** you recorded earlier.
 
      :::image type="content" source="media/tenant-restrictions-v2/windows-cloud-policy-details.png" alt-text="Screenshot of Windows Cloud Policy Details.":::
 
@@ -446,6 +443,11 @@ Trv2 is enforced by the following resources which will address token infiltratio
 - SharePoint Online like OneDrive app
 - Exchange Online like Outlook app
 - Office.com / Office Apps
+
+## Tenant restrictions and Microsoft Forms (preview)
+
+### Anonymous access
+Tenant restrictions v2 automatically block all anonymous / unauthenticated identity access to externally hosted Forms when TRv2 is enforced.
 
 ## Tenant restrictions and Microsoft Teams (preview)
 

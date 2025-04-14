@@ -30,7 +30,6 @@ By default, language customization is enabled for users signing up to ensure a c
 
 ## Customize your strings 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Language customization enables you to customize any string in your user flow.
 

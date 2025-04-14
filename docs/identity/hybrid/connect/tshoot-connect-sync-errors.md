@@ -3,12 +3,12 @@ title: 'Microsoft Entra Connect: Troubleshoot errors during synchronization'
 description: This article explains how to troubleshoot errors that occur during synchronization with Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 2209d5ce-0a64-447b-be3a-6f06d47995f8
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 01/16/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -65,7 +65,7 @@ An InvalidHardMatch error occurs during synchronization when there’s an attemp
 
 We advise customers to enable *BlockCloudObjectTakeoverThroughHardMatchEnabled* unless they need it to take over existent accounts in Microsoft Entra ID.
 
-If you need to clear an **InvalidHardtMatch** error and match the account successfully, you can enable hard match again as descripted in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
+If you need to clear an **InvalidHardMatch** error and match the account successfully, you can enable hard match again as described in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
 
 ### InvalidSoftMatch
 
@@ -83,7 +83,7 @@ Microsoft Entra schema doesn't allow two or more objects to have the same value 
 * objectId
 * immutableId
 
-Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
+[Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
 
 This feature doesn't fix the duplication errors, so the data still needs to be fixed. But it allows provisioning of new objects that are otherwise blocked from being provisioned because of duplicated values in Microsoft Entra ID. This capability also reduces the number of synchronization errors returned to the synchronization client.
 

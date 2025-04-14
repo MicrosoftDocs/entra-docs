@@ -2,10 +2,10 @@
 title: 'Microsoft Entra ID Governance licensing fundamentals'
 description: This article describes shows the licensing requirements for Microsoft Entra ID Governance features.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 11/7/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ---
 
@@ -20,11 +20,12 @@ The following licenses are available for use with Microsoft Entra ID Governance 
 - **Microsoft Entra ID P1** - Microsoft Entra ID P1 is available as a standalone product or included with Microsoft 365 E3 for enterprise customers and Microsoft 365 Business Premium for small to medium businesses. 
 - **Microsoft Entra ID P2** - Microsoft Entra ID P2 is available as a standalone product or included with Microsoft 365 E5 for enterprise customers.
 - **Microsoft Entra ID Governance** - Microsoft Entra ID Governance is an advanced set of identity governance capabilities available for Microsoft Entra ID P1 and P2 customers. Microsoft Entra ID Governance is available as five products **Microsoft Entra ID Governance**, **Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2**, **Microsoft Entra ID Governance Step up for Microsoft Entra ID F2**, **Microsoft Entra ID Governance for Government** and **Microsoft Entra ID Governance Add-on for Microsoft Entra ID P2 for Government**. These five products differ only in their prerequisites; they contain both the entitlement management, privileged identity management and access reviews capabilities that were in Microsoft Entra ID P2, and additional advanced identity governance capabilities.
+- **Microsoft Entra Suite** - Microsoft Entra Suite is a complete cloud-based solution for workforce access, available for Microsoft Entra ID P1 and P2 customers. Microsoft Entra Suite brings together **Microsoft Entra Private Access**, **Microsoft Entra Internet Access**, **Microsoft Entra ID Governance**, **Microsoft Entra ID Protection**, and **Microsoft Entra Verified ID**. The Microsoft Entra ID Governance portion provides the same identity governance capabilities as the **Microsoft Entra ID Governance** subscription. The difference is that they have different prerequisites.
 
 >[!NOTE]
 >Some Microsoft Entra ID Governance scenarios can be configured to depend upon other features that aren't covered by Microsoft Entra ID Governance.  These features might have additional licensing requirements.  See the [Identity Governance overview](identity-governance-overview.md) for more information on governance scenarios that rely on additional features.
 
-Microsoft Entra ID Governance products aren't yet available in the US national clouds.
+The Microsoft Entra ID Governance for Government and Microsoft Entra ID Governance Add-on for Microsoft Entra ID P2 for Government products are available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments.
 
 ### Governance products and prerequisites
 
@@ -93,7 +94,7 @@ Users don't need to be assigned a Microsoft Entra ID Governance license, but the
 
 All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license operates on a monthly active usage (MAU) model. Customers are able to acquire licenses matching their anticipated business guest MAU.
 
-We anticipate making these licenses available in late 2024. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
+We anticipate making these licenses available in the second quarter (Q2) of 2025. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
 
 For more information, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
 

@@ -3,10 +3,10 @@ title: Tutorial - Integrate an existing forest and a new forest with a single Mi
 description: Learn how to add cloud sync to an existing hybrid identity environment.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -65,7 +65,6 @@ If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md
 
 ## Configure Microsoft Entra Cloud Sync
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to configure provisioning:
 

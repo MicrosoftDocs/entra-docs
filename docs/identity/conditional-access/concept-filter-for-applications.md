@@ -8,7 +8,7 @@ ms.date: 03/11/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: calebb, oanae
 
 ms.custom: subject-rbac-steps
@@ -32,7 +32,7 @@ Custom security attributes are security sensitive and can only be managed by del
 | [Attribute Definition Administrator](../role-based-access-control/permissions-reference.md#attribute-definition-administrator) | Define and manage the definition of custom security attributes. |
 | [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader) | Read the definition of custom security attributes. |
 
-Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign a role](../role-based-access-control/manage-roles-portal.yml#assign-a-role).
+Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign Microsoft Entra roles](../role-based-access-control/manage-roles-portal.md#assign-roles-with-tenant-scope).
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
@@ -79,7 +79,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ## Configure custom attributes
 

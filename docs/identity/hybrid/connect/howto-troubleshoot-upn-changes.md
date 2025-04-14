@@ -12,9 +12,9 @@ ms.reviewer: jsimmons, andresc
 
 ---
 
-# Plan and troubleshoot User Principal Name changes in Microsoft Entra ID
+# Plan and troubleshoot UserPrincipalName changes in Microsoft Entra ID
 
-The User Principal Name (UPN) attribute is an internet communication standard for user accounts. A UPN consists of: 
+The UserPrincipalName (UPN) attribute is an internet communication standard for user accounts. A UPN consists of: 
 
 * **Prefix**: User account name
 * **Suffix**: Domain name server (DNS) domain name 
@@ -67,8 +67,8 @@ Users sign in to Microsoft Entra ID with their userPrincipalName attribute value
 
 When you use Microsoft Entra ID with on-premises Active Directory, user accounts are synchronized with the Microsoft Entra Connect service. The Microsoft Entra Connect wizard uses the userPrincipalName attribute from the on-premises Active Directory as the UPN in Microsoft Entra ID. You can change it to a different attribute in a custom installation.
 
-   >[!NOTE]
-   > Define a process for updating a User Principal Name (UPN) for users and your organization. 
+> [!NOTE]
+> Define a process for updating a UserPrincipalName for users and your organization. 
 
 When you synchronize user accounts from Active Directory to Microsoft Entra ID, ensure the UPNs in Active Directory map to verified domains in Microsoft Entra ID. If the userPrincipalName attribute value doesn't correspond to a verified domain in Microsoft Entra ID, synchronization replaces the suffix with .onmicrosoft.com.
 
@@ -125,13 +125,13 @@ Users might experience SSO issues with applications that depend on Microsoft Ent
 1. Allow time for the UPN change to sync to Microsoft Entra ID.
 2. Verify the new UPN appears in the [Microsoft Entra admin center](https://entra.microsoft.com).
 3. Tell users to select **Other user** to sign in with a new UPN.
-4. Verify with [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) in Microsoft Graph PowerShell.
+1. Verify with [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) in Microsoft Graph PowerShell.
 
-   >[!NOTE]
+      >[!NOTE]
    > After users sign in with a new UPN, references to the previous UPN might appear on the **Access work or school** Windows setting.
 
    ![Screenshot of User-1 and Other-user domains, on the sign-in screen.](./media/howto-troubleshoot-upn-changes/other-user.png)
-
+   
 <a name='hybrid-azure-ad-joined-devices'></a>
 
 ### Microsoft Entra hybrid joined devices issues
@@ -162,23 +162,6 @@ To unjoin a device from Microsoft Entra ID, run the following command at a comma
 
    >[!TIP]
    >Windows 7 and 8.1 devices aren't affected by this issue.
-
-## Mobile Application Management app protection policies
-
-### Known issues: Broken connections
-
-If your organization uses Mobile Application Management (MAM) to protect corporate data, MAM app protection policies aren't resilient during UPN changes. This issue can break the connection between MAM enrollments and active users in MAM integrated applications. This scenario can leave data unprotected.
-
-Learn more: 
-
-* [App protection policies overview](/mem/intune/apps/app-protection-policy)
-* [FAQs about MAM and app protection](/mem/intune/apps/mam-faq)
-
-**Workaround**
-
-After UPN changes, the Administrator wipes data from affected devices to force users to reauthenticate and reenroll with new UPNs.
-
-Learn [how to wipe only corporate data from Intune-managed apps](/mem/intune/apps/apps-selective-wipe).
 
 ## Microsoft Authenticator issues
 
@@ -233,7 +216,6 @@ On Android and iOS, brokers like Authenticator enable:
 Learn more:
 
 * [Microsoft Entra Conditional Access documentation](~/identity/conditional-access/index.yml)
-* [Use Authenticator or Intune Company Portal on Xamarin applications](~/identity-platform/msal-net-use-brokers-with-xamarin-apps.md).
 
 **Known issues: user prompts**
 
@@ -270,6 +252,21 @@ Users can't use phone sign-in because they didn't receive notification. If the u
 **Workaround**
 
 On the account enabled for phone sign-in, on the drop-down menu, the user selects **Disable phone sign-in**. 
+
+## Mobile Device Management
+ 
+### Known issues: Device re-registration required
+ 
+If your organization uses Mobile Device Management and the Intune App or the Company Portal app to manage your devices, device registration isn’t resilient during UPN changes. Upon changing the UPN, the device will be detected as unregistered with Entra, and users will be required to sign in and register the device again for management and Conditional Access to continue to work. Until registration is complete, the user may not be able to access any corporate resources on this device.  
+ 
+Learn more:
+ 
+* [Device enrollment guide for Microsoft Intune](/mem/intune/fundamentals/deployment-guide-enrollment)
+* [Use Conditional Access with Microsoft Intune compliance policies](/mem/intune/protect/conditional-access)
+ 
+**Workaround**
+ 
+After UPN changes, the end users are required to sign in and follow the in-app prompts to register again.
 
 ## Security key (FIDO2) issues
 

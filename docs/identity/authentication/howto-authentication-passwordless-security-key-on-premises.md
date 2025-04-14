@@ -5,11 +5,11 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/11/2024
+ms.date: 03/21/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: calui
 ---
 # Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID 
@@ -128,6 +128,8 @@ To then **set** the desired cloud environment, run the following:
 _(Example: For US Government Cloud)_
 
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
+   > [!Tip]
+   > For Additional information comparing Azure commercial and sovereign clouds, See: [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 
@@ -287,7 +289,6 @@ If you encounter issues or want to share feedback about this passwordless securi
 
 ## Passwordless security key sign-in FAQ
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Here are some answers to commonly asked questions about passwordless sign-in:
 
@@ -326,6 +327,10 @@ Make sure that enough DCs are patched to respond in time to service your resourc
 
 > [!NOTE]
 > The `/keylist` switch in the `nltest` command is available in client Windows 10 v2004 and later.
+
+### Is there a maximum number of groups per token for Microsoft Entra Kerberos?
+ 
+Yes, you can have up to 1,010 groups per token.
 
 ### Do FIDO2 security keys work in a Windows login with RODC present in the hybrid environment?
 

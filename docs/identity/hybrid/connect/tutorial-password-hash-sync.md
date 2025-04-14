@@ -3,11 +3,11 @@ title: 'Tutorial: Use password hash sync for hybrid identity in a single Active 
 description: Learn how to set up a hybrid identity environment by using password hash sync to integrate a Windows Server Active Directory forest with Microsoft Entra ID.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

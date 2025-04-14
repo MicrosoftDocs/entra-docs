@@ -3,7 +3,7 @@ title: How to use Microsoft Entra workbooks
 description: Learn how to use Azure Monitor workbooks for Microsoft Entra ID, for analyzing identity related activity, trends, and gaps.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -30,7 +30,6 @@ When using workbooks, you can either start with an empty workbook, or use an exi
 ## Access Microsoft Entra workbooks
 <a name='how-to-access-azure-workbooks-for-azure-ad'></a>
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.

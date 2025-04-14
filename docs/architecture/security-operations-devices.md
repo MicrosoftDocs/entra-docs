@@ -149,7 +149,7 @@ The [Microsoft Entra Joined Device Local Administrator](../identity/role-based-a
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |
-| Users added to global or device admin roles| High| Audit logs| Activity type = Add member to role.| Look for: new users added to these Microsoft Entra roles, subsequent anomalous behavior by machines or users.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/4ad195f4fe6fdbc66fb8469120381e8277ebed81/Detections/AuditLogs/UserAddedtoAdminRole.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
+| Users added to Global Administrator or Microsoft Entra Joined Device Local Administrator roles| High| Audit logs| Activity type = Add member to role.| Look for: new users added to these Microsoft Entra roles, subsequent anomalous behavior by machines or users.<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/4ad195f4fe6fdbc66fb8469120381e8277ebed81/Detections/AuditLogs/UserAddedtoAdminRole.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 
 ## Non-Azure AD sign-ins to virtual machines
 

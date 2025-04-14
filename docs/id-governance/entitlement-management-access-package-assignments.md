@@ -2,7 +2,7 @@
 title: View, add, and remove assignments for an access package in entitlement management - Microsoft Entra
 description: Learn how to view, add, and remove assignments for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -25,7 +25,6 @@ To use entitlement management and assign users to access packages, you must have
 
 ## View who has an assignment
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]

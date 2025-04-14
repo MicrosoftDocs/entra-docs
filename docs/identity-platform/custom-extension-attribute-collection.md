@@ -41,7 +41,6 @@ In addition to creating a custom authentication extension for the attribute coll
 
 ## Step 1: Create a custom authentication extensions REST API (Azure Function app)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In this step, you create an HTTP trigger function API using Azure Functions. The function API is the source of the business logic for your user flows. After creating your trigger function, you can configure it for either of the following events:
 
@@ -748,5 +747,5 @@ To test your custom authentication extension, follow these steps:
 
 ## Next steps
 
-- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-reference.md)
-- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-reference.md)
+- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-retrieve-return-data.md)
+- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-retrieve-return-data.md)

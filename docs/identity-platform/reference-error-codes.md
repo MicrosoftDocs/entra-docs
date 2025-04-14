@@ -5,11 +5,11 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 09/27/2024
+ms.date: 02/03/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: error-reference
 #Customer intent: As a developer troubleshooting authentication errors, I want to understand the meaning and possible resolutions for the AADSTS error codes returned by the Microsoft Entra security token service, so that I can effectively debug and fix authentication issues in my application.
 ---
 
@@ -86,6 +86,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS230109 | CachedCredentialNonGWAuthNRequestsNotSupported - Backup Auth Service only allows AuthN requests from Microsoft Entra Gateway. This error is returned when traffic targets the backup auth service directly instead of going through the reverse proxy.  |
 | AADSTS28002 | Provided value for the input parameter scope '{scope}' isn't valid when requesting an access token. Specify a valid scope. |
 | AADSTS28003 | Provided value for the input parameter scope can't be empty when requesting an access token using the provided authorization code. Specify a valid scope.|
+| AADSTS399284 | InboundIdTokenIssuerInvalid - The inbound ID token received in the federation has an invalid issuer. Either it is empty, or it does not match the realm identifier. |
 | AADSTS40008 | OAuth2IdPUnretryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40009 | OAuth2IdPRefreshTokenRedemptionUserError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40010 | OAuth2IdPRetryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
@@ -112,7 +113,10 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50014 | GuestUserInPendingState - The user account doesn’t exist in the directory. An application likely chose the wrong tenant to sign into, and the currently logged in user was prevented from doing so since they didn't exist in your tenant. If this user should be able to sign in, add them as a guest. For further information, please visit [add B2B users](/azure/active-directory/b2b/add-users-administrator). |
 | AADSTS50015 | ViralUserLegalAgeConsentRequiredState - The user requires legal age group consent. |
 | AADSTS50017 | CertificateValidationFailed - Certification validation failed, reasons for the following reasons:<ul><li>Cannot find issuing certificate in trusted certificates list</li><li>Unable to find expected CrlSegment</li><li>Cannot find issuing certificate in trusted certificates list</li><li>Delta CRL distribution point is configured without a corresponding CRL distribution point</li><li>Unable to retrieve valid CRL segments because of a timeout issue</li><li>Unable to download CRL</li></ul>Contact the tenant admin. |
+| AADSTS500141 | The user's redemption is complete but the request was not initiated by the target application. |
+| AADSTS5001256 | Failed to complete authentication with external provider due to invalid id_token. Failure details: {details} |
 | AADSTS50020 | UserUnauthorized - Users are unauthorized to call this endpoint. User account '{email}' from identity provider '{idp}' does not exist in tenant '{tenant}' and cannot access the application '{appid}'({appName}) in that tenant. This account needs to be added as an external user in the tenant first. Sign out and sign in again with a different Microsoft Entra user account. If this user should be a member of the tenant, they should be invited via the [B2B system](~/external-id/add-users-administrator.yml). For additional information, visit [AADSTS50020](/troubleshoot/azure/active-directory/error-code-aadsts50020-user-account-identity-provider-does-not-exist). |
+| AADSTS500207 | The account type can't be used for the resource you're trying to access. |
 | AADSTS500208 | The domain is not a valid login domain for the account type - This situation occurs when the user's account does not match the expected account type for the given tenant. For instance, if the tenant is configured to allow only work or school accounts, and the user tries to sign in with a personal Microsoft account, they will receive this error.
 | AADSTS500212 | NotAllowedByOutboundPolicyTenant - The user's administrator has set an outbound access policy that doesn't allow access to the resource tenant. |
 | AADSTS500213 | NotAllowedByInboundPolicyTenant - The resource tenant's cross-tenant access policy doesn't allow this user to access this tenant. |
@@ -381,6 +385,10 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS7000114| Application 'appIdentifier' isn't allowed to make application on-behalf-of calls.|
 | AADSTS7500529 | The value ‘SAMLId-Guid’ isn't a valid SAML ID - Microsoft Entra ID uses this attribute to populate the InResponseTo attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, id6c1c178c166d486687be4aaf5e482730 is a valid ID. |
 | AADSTS9002341 | V2Error: `invalid_grant` - The user is required to permit single sign-On (SSO). This error occurs when the user has not granted the necessary permissions for the application to perform SSO. The user should be redirected to the consent screen to grant the necessary permissions. Refer to [this announcement](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/upcoming-changes-to-windows-single-sign-on/ba-p/4008151) for more information."|
+| AADSTS901011 | NoEmailAddressCollectedFromExternalOidcIDP - No email address was obtained from the external OpenID Connect (OIDC) identity provider. This usually happens when the user selects **Hide my email** upon signing up. |
+| AADSTS901012 | EmailAddressCollectedFromExternalOidcIDPNotVerified - No verified email address was obtained from the identity provider. The email address is not verified in the ID token from the external OIDC identity provider.  |
+| AADSTS901014 | NoExternalIdentifierCollectedFromExternalOidcIDP - The external identifier does not exist in the ID token from the external OIDC identity provider. |
+| AADSTS650059 | The application is not configured for use in the tenant. The value `AzureADMyOrg` set for application property `signInAudience` is limiting its use in the tenant. |
 
 ## Next steps
 

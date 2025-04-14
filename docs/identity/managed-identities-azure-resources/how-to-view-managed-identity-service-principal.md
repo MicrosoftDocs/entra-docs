@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 06/04/2024
+ms.date: 03/14/2025
 ms.author: ryanwi
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
 

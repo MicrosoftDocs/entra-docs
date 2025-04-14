@@ -3,11 +3,11 @@ title: Manage access to custom security attributes in Microsoft Entra ID
 description: Learn how to manage access to custom security attributes in Microsoft Entra ID.
 author: rolyon
 ms.author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/01/2024
+ms.date: 03/30/2025
 ms.collection: M365-identity-device-management
 ---
 
@@ -106,7 +106,6 @@ To grant access to the appropriate people, follow these steps to assign one of t
 
 ### Assign roles at attribute set scope
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The following examples show how to assign a custom security attribute role to a principal at an attribute set scope named Engineering.
 
@@ -154,17 +153,6 @@ Content-type: application/json
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[New-AzureADMSRoleAssignment](/powershell/module/azuread/new-azureadmsroleassignment)
-
-```powershell
-$roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
-$directoryScope = "/attributeSets/Engineering"
-$roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScope
-```
-
 ---
 
 ### Assign roles at tenant scope
@@ -206,17 +194,6 @@ Content-type: application/json
     "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "directoryScopeId": "/"
 }
-```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[New-AzureADMSRoleAssignment](/powershell/module/azuread/new-azureadmsroleassignment)
-
-```powershell
-$roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
-$directoryScope = "/"
-$roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScope
 ```
 
 ---

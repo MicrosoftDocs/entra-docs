@@ -198,7 +198,7 @@ First, create a new project in the Google Developers Console to obtain a client 
 You'll now set the Google client ID and client secret. You can use the Microsoft Entra admin center or PowerShell to do so. Be sure to test your Google federation configuration by inviting yourself. Use a Gmail address and try to redeem the invitation with your invited Google account. 
 
 **To configure Google federation in the Microsoft Entra admin center** 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers** and then on the **Google** line, select **Configure**.
 1. Enter the client ID and client secret you obtained earlier. Select **Save**:
 
@@ -245,7 +245,7 @@ At this point, the Google identity provider is set up in your Microsoft Entra te
 You can delete your Google federation setup. If you do so, Google guest users who already redeemed their invitation can't sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
  
 **To delete Google federation in the Microsoft Entra admin center**
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. On the **Google** line, select (**Configured**), and then select **Delete**.
    

@@ -1,11 +1,11 @@
 ---
 title: Include file for application integration partners
 description: Include file for application integration partners for identity and access management (IAM), and for identity governance and administration (IGA), using the System for Cross Domain Identity Management (SCIM) protocol to reach more systems. These systems include Enterprise Resource Planning (ERP), Electronic Health Record (EHR), and Human Capital Management (HCM) applications. Partners also have integrations with applications that use the Lightweight Directory Access Protocol (LDAP), or that require integration with software development kits (SDKs).
-author: markwahl-msft
+author: billmath
 ms.service: entra-id
 ms.topic: include
 ms.date: 05/27/2024
-ms.author: mwahl
+ms.author: billmath
 ms.custom: include file
 ---
 
@@ -19,7 +19,7 @@ The following descriptions and lists of applications are provided by the partner
 With 1,000+ customer deployments, Aquera delivers HR process and Identity Integration for Microsoft Active Directory (AD) and Microsoft Entra ID. Aquera automates user account provisioning and deprovisioning throughout the employee lifecycle to enable joiner, mover, leaver automation. Aquera’s prebuilt, out-of-the-box [HR Sync Connectors](https://azuremarketplace.microsoft.com/marketplace/apps/aquerainc1584125423571.hr-sync-for-microsoft-entra-id-azure-ad-by-aquera?tab=Overview) enable 50+ HR/HCM systems of record to automate HR-driven user and account inbound provisioning to AD and Microsoft Entra ID. Beyond HR systems of record, Aquera SCIM Gateway for Microsoft Entra ID provisions and deprovisions users, accounts, and groups (where available) to non-gallery apps through industry-standard System for Cross-domain Identity Management (SCIM). Since 2020, [Microsoft and Aquera have extended Microsoft Entra ID connectivity to hundreds of apps not found in the Microsoft Entra App Gallery](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/automate-user-provisioning-for-more-applications-with-our-new/ba-p/1751668).
 
 The Aquera SCIM Gateway delivers out-of-the-box connectivity between Microsoft Entra ID and the provisioning target applications, directories, databases, devices, files, or 3rd-party identity providers (IDPs) for B2B partners, which aren't included in the [Microsoft Entra App Gallery](https://portal.azure.com/#view/Microsoft_AAD_IAM/AppGalleryBladeV2), or where Gallery apps do not support automatic provisioning. Microsoft + Aquera extend [Microsoft Entra ID to scale identity management](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-lifecycle-management-software) as user identities, roles, and entitlements change dynamically.
-The Aquera catalog of over 900 prebuilt connectors supports multiple integration methods including REST, SQL, LDAP, SOAP, and SCIM, and SCIM that isn't compatible with Microsoft Entra ID. Additionally, the connectors support web service APIs, admin console automation, SDKs, code libraries, files, and [Microsoft API-driven Inbound Provisioning](https://learn.microsoft.com/entra/identity/app-provisioning/inbound-provisioning-api-concepts). 
+The Aquera catalog of over 900 prebuilt connectors supports multiple integration methods including REST, SQL, LDAP, SOAP, and SCIM, and SCIM that isn't compatible with Microsoft Entra ID. Additionally, the connectors support web service APIs, admin console automation, SDKs, code libraries, files, and [Microsoft API-driven Inbound Provisioning](~/identity/app-provisioning/inbound-provisioning-api-concepts.md). 
 
 
 #### Contact Information
@@ -45,7 +45,7 @@ The IDF Gateway for Microsoft Entra ID provides lifecycle management for import 
 
 #### Contact information
 * Company website: https://www.idmworks.com/identity-forge
-* Contact information: https://www.idmworks.com/contacts/
+* Contact information: https://www.idmworks.com/contact/
 
 #### Popular applications supported
 
@@ -74,6 +74,24 @@ Furthermore, KloudIdentity provides a Software Development Kit (SDK) to customiz
 
 #### Popular applications supported
 KloudIdentity provides a universal connector platform; Hence any LOB application can be integrated with REST or SOAP APIs, PowerShell scripts, and SDK approach.
+
+### Quorum Systems Identity DNA
+#### Description
+
+Identity DNA is Quorum’s purpose built platform designed to complement and enhance native Microsoft Entra ID Governance capabilities. The service acts as a System for Cross-domain Identity Management (SCIM) gateway, and it is deployed in customer's Azure environment and managed via CICD pipelines.
+
+The Identity DNA platform is designed to handle complex integration scenarios while allowing customers to enhance end to end identity flow, achieving a better user experience and addressing key business and technical challenges.
+
+The Identity DNA platform is able to connect to any application through a number of pre defined connections (REST API, SOAP API, Database, PowerShell, or CSV) to data sources either in the cloud or on-premises. 
+
+Identity DNA then converts that data to a System for Cross-domain Identity Management (SCIM) payload and delivers that to the Entra provisioning service. The Identity DNA platform allows for data between applications to be synced bidirectionally ensuring disparate systems identities are kept up to date with ease.
+
+#### Contact information
+* Company website: https://quorumsystems.com.au/
+* AppSource Listing: Entra User ID Provisioning https://appsource.microsoft.com/en-us/marketplace/consulting-services/quorumsystemsptyltd1587621343059.entrauseridprovisioning
+
+#### Popular applications supported
+Identity DNA can be integrated with any line of business application that has REST or SOAP API's, Databases, PowerShell scripts, or even other directory services such as LDAP.
 
 ### Traxion SCIM Gateway
 #### Description

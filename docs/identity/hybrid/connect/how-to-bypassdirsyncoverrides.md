@@ -3,11 +3,11 @@ title: How to use the BypassDirSyncOverridesEnabled feature of a Microsoft Entra
 description: Describes how to use BypassDirSyncOverridesEnabled tenant feature to restore synchronization of Mobile and OtherMobile attributes from on-premises Active Directory.
 
 author: billmath
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.author: billmath
 ms.topic: how-to
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.subservice: hybrid-connect
 ---
 
@@ -40,7 +40,7 @@ Compare-ADSyncToolsDirSyncOverrides -Credential $(Get-Credential)
 ```
 
 >[!NOTE]
-> The target API used by this feature does not handle authentication user interactions. MFA or conditional policies will block authentication. When prompted to enter credentials, please use a Global Administrator account that doesn't have MFA enabled or any Conditional Access policy applied. As a last resort, please create a temporary Global Administrator user account without MFA or Conditional Access that can be deleted after completing the desired operations using the BypassDirSyncOverridees feature.
+> The target API used by this feature does not handle authentication user interactions. MFA or conditional policies will block authentication. When prompted to enter credentials, please use a Global Administrator account that doesn't have MFA enabled or any Conditional Access policy applied. As a last resort, please create a temporary Global Administrator user account without MFA or Conditional Access that can be deleted after completing the desired operations using the BypassDirSyncOverrides feature.
 
 This function will export a CSV file with a list of users where Mobile or OtherMobile values in on-premises Active Directory are different than the respective MobilePhone or AlternateMobilePhones in Microsoft Entra ID.
 
