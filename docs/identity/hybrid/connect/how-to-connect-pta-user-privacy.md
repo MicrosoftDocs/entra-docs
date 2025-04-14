@@ -73,8 +73,8 @@ You should regularly check the contents of **%ProgramData%\Microsoft\Azure AD Co
 
 You can either review and delete these files using Windows Explorer or you can use the following script to perform the necessary actions:
 
-```
-$Files = ((Get-childitem -Path "$env:programdata\microsoft\azure ad connect authentication agent\trace" -Recurse).VersionInfo).FileName 
+```powershell
+$Files = ((Get-ChildItem -Path "$env:programdata\microsoft\azure ad connect authentication agent\trace" -Recurse).VersionInfo).FileName 
  
 Foreach ($file in $files) { 
     {Remove-Item -Path $File -Force} 
