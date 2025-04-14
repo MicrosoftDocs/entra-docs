@@ -108,11 +108,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure itslearning SSO
 
-To configure single sign-on on **itslearning** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [itslearning support team](mailto:support@itslearning.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To set up single sign-on (SSO), begin by contacting your itslearning sales representative or account manager for pricing information and to be connected with the technical team. They need the App Federation Metadata URL from your Microsoft Entra configuration. If you're unsure who to reach out to, contact our [support team](mailto:support@itslearning.com) for assistance.
 
 ### Create itslearning test user
 
-In this section, you create a user called Britta Simon in itslearning. Work with [itslearning support team](mailto:support@itslearning.com) to add the users in the itslearning platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in itslearning. Work with itslearning technical team to add the users in the itslearning platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
