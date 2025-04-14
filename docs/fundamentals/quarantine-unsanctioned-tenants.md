@@ -58,7 +58,7 @@ Tenant Restrictions v2 (TRv2) and Global Secure Access (GSA) effectively prevent
 
 **Secure-by-default**:  
 
-As an administrator, you can [configure default restrictions](../external-id/tenant-restrictions-v2.md#step-1-configure-default-tenant-restrictions-v2) and then [allow users to sign into and access specific organizations](../external-id/tenant-restrictions-v2.md#step-2-configure-tenant-restrictions-v2-for-specific-partners), and Microsoft Entra ID would prevent authentication to all other tenants once applying policies using [Universal Tenant Restrictions v2](../global-secure-access/how-to-universal-tenant-restrictions.md) as part of GSA. Enabling TRv2 in audit mode and applying TRv2 policies with GSA will show all activity including attempts to access foreign tenants.  
+As an administrator, you can [configure default restrictions](../external-id/tenant-restrictions-v2.md#step-1-configure-default-tenant-restrictions-v2) and then [allow users to sign into and access specific organizations](../external-id/tenant-restrictions-v2.md#step-2-configure-tenant-restrictions-v2-for-specific-partners), Microsoft Entra ID would prevent authentication on to all other tenants once applying policies using [Universal Tenant Restrictions v2](../global-secure-access/how-to-universal-tenant-restrictions.md) as part of GSA. Enabling TRv2 in audit mode and applying TRv2 policies with GSA shows all activity including attempts to access foreign tenants.    
 
 For more information on using TRv2 and GSA, see:
 
@@ -73,7 +73,7 @@ For more information on using TRv2 and GSA, see:
 
 #### Actions Against Suspected Tenant:
 
-Microsoft Entra allows customers to restrict inbound application access for third-party multi-tenant apps where the tenant in which the app was registered is considered a suspect tenant. To do this, administrators must find the correct service principal, which corresponds to the application registered in the suspect tenant. The appOwnerOrganizationId property on the service principal object will list the tenantId in which the application was registered. At this time, this can only be done programmatically via MSGraph API:
+Microsoft Entra allows customers to restrict inbound application access for third-party multi-tenant apps where the tenant in which the app was registered is considered a suspect tenant. To restrict access, administrators must find the correct service principal, which corresponds to the application registered in the suspect tenant. The appOwnerOrganizationId property on the service principal object lists the tenantId in which the application was registered. Capturing these service principals can only be done programmatically via MSGraph API: :
 
 MSGraph:
 Request Headers: { ConsistencyLevel: eventual }
