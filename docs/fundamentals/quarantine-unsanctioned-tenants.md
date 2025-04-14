@@ -71,7 +71,7 @@ For more information on using TRv2 and GSA, see:
 
 **License Required**: Entra ID P1
 
-#### Actions Against Suspected Tenant:
+**Actions Against Suspected Tenant**:
 
 Microsoft Entra allows customers to restrict inbound application access for third-party multitenant apps where the tenant in which the app was registered is considered a suspect tenant. To restrict access, administrators must find the correct service principal, which corresponds to the application registered in the suspect tenant. The appOwnerOrganizationId property on the service principal object lists the tenantId in which the application was registered. Capturing these service principals can only be done programmatically via MSGraph API: :
 
@@ -94,11 +94,11 @@ For more information on multitenant apps and service principals, see Apps & serv
 
 License Required: None, available to all paying customers with a Microsoft billing account  
 
-#### Actions Against Suspected Tenant:
+**Actions Against Suspected Tenant**:
 
 Use the following resources when you discover a tenant based on your billing account relationships but do not recognize the tenant which the subscription services are provisioned within. Canceled Azure and M365 subscriptions can be reactivated during the grace period ([30 to 90 days after canceling](/azure/cost-management-billing/manage/cancel-azure-subscription)) before being permanently deleted. If needed, contact [support](https://support.microsoft.com/topic/customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2) for assistance on canceling and deleting subscriptions.
 
-## Related content  
 
 - For more information on quarantining by canceling Azure, see  [Cancel and delete your Azure subscription](/azure/cost-management-billing/manage/cancel-azure-subscription)  
 - For more information on quarantining by canceling M365, see [Cancel your Microsoft business subscription in the Microsoft 365 admin center](/microsoft-365/commerce/subscriptions/cancel-your-subscription)  
+## Related content  
