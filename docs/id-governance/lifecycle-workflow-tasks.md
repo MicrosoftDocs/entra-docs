@@ -866,7 +866,7 @@ Allows all refresh and browser session tokens to be revoked for a user. This inv
 You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 
 
-For Microsoft Graph, the parameters for the **Remove all refresh tokens for user** task are as follows:
+For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
