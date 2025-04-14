@@ -54,7 +54,7 @@ For more information on managing Cross-tenant access settings, see:
 **License Required**: Entra ID P1  
 
 **Actions Against Suspected Tenant**:  
-Tenant Restrictions v2 (TRv2) and Global Secure Access (GSA) effectively prevent authentication into unauthorized or suspect tenants across all managed devices and networks. As an administrator, you can create policies to [block users from signing into and accessing the specific suspected tenant using custom TRv2 configurations](../entra/external-id/tenant-restrictions-v2.md#step-2-configure-tenant-restrictions-v2-for-specific-partners). You can then apply these created policies using [Universal Tenant Restrictions v2](../global-secure-access/how-to-universal-tenant-restrictions.md) as part of GSA to provide both authentication plane and data plane protection without disrupting authentication for other existing tenants.  
+Tenant Restrictions v2 (TRv2) and Global Secure Access (GSA) effectively prevent authentication into unauthorized or suspect tenants across all managed devices and networks. As an administrator, you can create policies to [block users from signing into and accessing the specific suspected tenant using custom TRv2 configurations](../external-id/tenant-restrictions-v2.md#step-2-configure-tenant-restrictions-v2-for-specific-partners). You can then apply these created policies using [Universal Tenant Restrictions v2](../global-secure-access/how-to-universal-tenant-restrictions.md) as part of GSA to provide both authentication plane and data plane protection without disrupting authentication for other existing tenants.  
 
 **Secure-by-default**:  
 
@@ -100,5 +100,5 @@ Use the following resources when you discover a tenant based on your billing acc
 
 ## Related content  
 
-- For more information on quarantining by canceling Azure, see  [Cancel and delete your Azure subscription](/azure/cost-management-billing/manage/cancel-azure-subscription)  
+- For more information on quarantining by canceling Azure, see  [Cancel and delete your Azure subscription](azure/cost-management-billing/manage/cancel-azure-subscription)  
 - For more information on quarantining by canceling M365, see [Cancel your Microsoft business subscription in the Microsoft 365 admin center](/microsoft-365/commerce/subscriptions/cancel-your-subscription)  
