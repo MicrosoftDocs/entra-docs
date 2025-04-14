@@ -103,6 +103,8 @@ SignInLogs
 
 ```
 
+The query looks specifically at Conditional Access policies that result in a success or failure. Other values you can include in the query include `notApplied`, `reportOnlySuccess`, `reportOnlyFailure`, `reportOnlyNotApplied`, and `notEnabled`.
+
 To create the Data Collection Rule (DCR) for Sign-in logs:
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Monitoring Contributor](/azure/role-based-access-control/built-in-roles/monitor#monitoring-contributor).
@@ -111,7 +113,9 @@ To create the Data Collection Rule (DCR) for Sign-in logs:
 1. Open the menu on the right and select **Create transformation**.
 1. Follow the prompts to create the transformation, selecting **Transformation editor** to change any of the details included in the transformation.
 
-Once the transformation is created and deployed successfully, the Conditional Access insights and reporting workbook will be able to load faster. The transformation only applies to new sign-in logs ingested after the transformation is created. Other workbooks that also pull from this table are affected by the transformation.
+Once the transformation is created and deployed successfully, the Conditional Access insights and reporting workbook should load faster. The transformation only applies to new sign-in logs ingested after the transformation is created. Other workbooks that also pull from this table are affected by the transformation.
+
+Keep in mind that if you exclude certain policy results from the transformation, you won't see any of those results in the workbook once the transformation is running. 
 
 ## Configure a Conditional Access policy in report-only mode
 

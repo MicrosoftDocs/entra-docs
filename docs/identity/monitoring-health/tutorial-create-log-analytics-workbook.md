@@ -45,7 +45,7 @@ If you haven't already created a Log Analytics workspace, complete the [Configur
 
 ## Create a custom workbook
 
-In addition to querying the data with KQL, you can create a custom workbook for further analysis and alerting. The least privileged role to create or update a workbook is the **Security Administrator** role.
+In addition to querying the data with Kusto Query Language (KQL), you can create a custom workbook for further analysis and alerting. The least privileged role to create or update a workbook is the **Security Administrator** role.
 
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
 
