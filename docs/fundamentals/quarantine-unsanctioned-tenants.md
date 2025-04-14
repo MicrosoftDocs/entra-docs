@@ -108,4 +108,4 @@ Use the following resources when you discover a tenant based on your billing acc
 
 ## Related content  
 
-- [the Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) 
+- [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) 
