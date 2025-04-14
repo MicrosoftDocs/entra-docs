@@ -41,7 +41,7 @@ This topic covers how to enable the QR code authentication method in the Authent
 
 ## Enable QR code authentication method
 
-You can enable the QR code authentication method by using the Microsoft Entra admin center or Microsoft Graph API. 
+You can enable the QR code authentication method by using the Microsoft Entra admin center or Microsoft Graph API.
 
 ### Enable QR code authentication method in the Microsoft Entra admin center
 
@@ -86,6 +86,9 @@ This example enables QR code authentication for a group, with a PIN length of 10
   ```https
   204 No Response
   ```
+
+> [!NOTE]
+> Once QR code authentication is scoped to a user e.g. via a group, the user must first successfully complete an interactive or non-interactive authentication before the QR code can be used. Whilst most users will likely complete a successful authentication before they use QR code authentication, some may not which will result in an _Incorrect QR code_ error.
 
 ## Add QR code authentication method for a user
 
