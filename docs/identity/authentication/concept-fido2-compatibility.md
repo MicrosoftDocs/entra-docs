@@ -81,7 +81,7 @@ If you registered more than three passkeys, sign in with a passkey might not wor
 
 The following sections cover support for passkey (FIDO2) authentication in Microsoft Entra ID for:
 
-- [Native app support with authentication broker](#microsoft-app-support-with-authentication-broker)
+- [Microsoft app support with authentication broker](#microsoft-app-support-with-authentication-broker)
 - [Microsoft app support without authentication broker](#microsoft-app-support-without-authentication-broker)
 - [Third-party app support without authentication broker](#third-party-app-support-without-authentication-broker)
 - [Third-party Identity Provider (IdP) support](#third-party-idp-support)
