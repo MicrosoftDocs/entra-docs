@@ -17,7 +17,7 @@ Microsoft Entra agents work seamlessly with [Microsoft Security Copilot](/copilo
 
 ### Microsoft Entra Conditional Access optimization agent
 
-The [Conditional Access optimization agent](../identity/conditional-access/agent-optimization.md) ensures all users are protected by policy. It enforces policies based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. In preview, the agent evaluates policies requiring multifactor authentication (MFA), enforces device-based controls (device compliance, app protection policies, and Domain Joined Devices), and blocks legacy authentication and device-code flow.
+The [Conditional Access optimization agent](../identity/conditional-access/agent-optimization.md) ensures all users are protected by policy. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. In preview, the agent evaluates policies requiring multifactor authentication (MFA), enforces device based controls (device compliance, app protection policies, and Domain Joined Devices), and blocks legacy authentication and device code flow.
 
 #### Trigger​
 
