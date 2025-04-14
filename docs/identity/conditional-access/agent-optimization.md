@@ -22,11 +22,13 @@ The Conditional Access optimization agent helps you ensure all users are protect
 ### Limitations
 
 - Once agents are started they can't be stopped or paused. It may take a few minutes to run.
+- The agent currently runs as the user who enables it.
+- In preview you should only run the agent from the Microsoft Entra admin center.
 
 ## Getting started
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. From the new home page, select **Try now** from the agent notification card, review the details, then select **Start agent** to begin your first run.
+1. From the new home page, select **Try now** from the agent notification card, review the details, then select **Start agent** to begin your first run. 
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-try-now.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-try-now.png":::
 
