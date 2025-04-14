@@ -13,6 +13,7 @@ ms.author: barclayn
 
 # Quarantine unsanctioned tenants  
 
+>[!IMPORTANT]
 > Refer to this article only after reviewing [the Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) to discover your organization’s inventory of tenants. This article outlines the specific existing Microsoft Entra capabilities administrators can leverage within their primary tenant to quarantine suspected unsanctioned tenants in their discovered list of tenants. 
 
 ## What does it mean to quarantine a tenant?
@@ -108,4 +109,4 @@ Use the following resources when you discover a tenant based on your billing acc
 
 ## Related content  
 
-- [the Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) 
+- [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) 
