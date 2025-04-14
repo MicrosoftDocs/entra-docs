@@ -7,17 +7,13 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 04/10/2025
+ms.date: 04/11/2025
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
 # Microsoft service principal sign-in logs table
 
 The Microsoft service principal sign-in logs capture service-to-service authentication events for Microsoft services in your tenant. While not necessary for security investigations, the information can be useful for understanding how your services are interacting with each other.
-
-This article provides a table that maps the application IDs from the logs to the application name and a brief description of the application. This table is not exhaustive and will grow over time.
-
-Some application display names might include acronyms or abbreviations from previous application names. For example, some services still retain "AAD" (Azure Active Directory) in their display name, even though the service was rebranded to Microsoft Entra. 
 
 ## How to access the logs
 
@@ -32,6 +28,10 @@ These logs are only available by configuring diagnostic settings in Microsoft En
 1. Select the **Save** button.
 
 ## Microsoft service principal sign-in logs
+
+This table maps the application IDs from the logs to the application name and a brief description of the application. This table is not exhaustive and will grow over time.
+
+Some application display names might include acronyms or abbreviations from previous application names. For example, some services still retain "AAD" (Azure Active Directory) in their display name, even though the service was rebranded to Microsoft Entra ID. 
 
 | Application display name | Application ID | Description |
 |---|---|---|
