@@ -26,11 +26,11 @@ The Conditional Access optimization agent helps you ensure all users are protect
 ## Getting started
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. From the new home page, select **Try now** from the agent notification card, then select **Start agent** to begin your s run.
+1. From the new home page, select **Try now** from the agent notification card, review the details, then select **Start agent** to begin your first run.
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-try-now.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-try-now.png":::
 
-1. When the agent overview page loads, you'll see the **Agent status**, **Triggers**, and any **Recent suggestions** and **Recent activity**
+1. When the agent overview page loads, you'll see the **Agent status**, **Triggers**, **Recent suggestions** and **Recent activity**
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
 
@@ -38,8 +38,20 @@ The Conditional Access optimization agent helps you ensure all users are protect
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-suggestion.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-suggestion.png":::
 
-1. Newly created policies exclude the user who executes the agent by default. Organizations should as a best practice exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
-1. Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+1. Newly created policies are created in report-only mode and exclude the user who executes the agent by default. Organizations should as a best practice exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
+   1. Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+
+## Reviewing results
+
+The agent might run and:
+
+- Not identify any unprotected users or recommend any changes
+- Suggest creation of a new Conditional Access policy in report-only mode
+- Suggest adding newly created users to an existing polcy
+
+## Remove agent
+
+If you no longer wish to use the Conditional Access optimization agent, you can remove it using the **Settings** tab of the agent.
 
 ## Related content
 
