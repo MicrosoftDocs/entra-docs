@@ -25,11 +25,14 @@ You are an IT Admin for the company "Contoso” with the primary tenant of "Cont
 After following the [Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint), you have identified a few potential tenants that may or may not belong to your company. Let’s call these tenants ContosoTest.com and ContosoDemo.com for scenario purposes. Because you don’t know who the global admins are for these tenants, you worry they are possibly employee-managed and do not comply with your organization’s security policies. This poses a major security risk to your environment if they stay unmanaged.
 Since you don’t have direct control over ContosoTest.com and ContosoDemo.com, you can only modify settings on the Contoso.com tenant. You want to quarantine them to minimize potential vulnerabilities that come from the exposure to these tenants. However, it's crucial that any changes you make are easily reversible, ensuring that no critical systems are unintentionally affected in the process. After quarantining, you introduced enough friction between your tenant and the suspected tenants to encourage the administrators of the tenants to contact your helpdesk. 
 
-:::image type="content" source="media/quarantine-unsanctioned-tenant/quarantine-unsanctioned-tenant-overview.png" alt-text="Overview of quarantining unsanctioned tenants":::  
+
+:::image type="content" source="media/quarantine-unsanctioned-tenant/identified.png" alt-text="diagram that showed unsactioned tenants discovered in the environment":::  
+
 
 The administrator of the ContosoTest.com tenant contacts you. At this point, you determine that the tenant was employee-created and that you should be added as an administrator within the tenant to regain control. You no longer quarantine the ContosoTest.com tenant. However, no administrators from the ContosoDemo.com tenant contact you, so you leave the tenant in the quarantined state.
 
-:::image type="content" source="media/quarantine-unsanctioned-tenant/quarantined.png" alt-text="Quarantined tenant state":::  
+:::image type="content" source="media/quarantine-unsanctioned-tenant/quarantine-unsanctioned-tenant-overview.png" alt-text="Overview of quarantining unsanctioned tenants":::  
+
 
 ## How can I use Microsoft Entra's capabilities to quarantine suspected tenants?  
 
