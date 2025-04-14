@@ -107,6 +107,8 @@ items:
     href: how-to-find-tenant.yml
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
+  - name: Quarantining unsanctioned tenants 
+    href: quarantine-unsanctioned-tenants.md
   - name: Inaccessible tenant due to inactivity
     href: inaccessible-tenant.md
 - name: Reference
