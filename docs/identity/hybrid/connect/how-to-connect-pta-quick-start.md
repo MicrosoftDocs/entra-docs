@@ -106,7 +106,7 @@ Follow these instructions to verify that you have enabled Pass-through Authentic
 4. Verify that the **Pass-through authentication** feature appears as **Enabled**.
 1. Select **Pass-through authentication**. The **Pass-through authentication** pane lists the servers where your Authentication Agents are installed.
 
-   ![Screenhot shows Microsoft Entra admin center: Microsoft Entra Connect pane.](./media/how-to-connect-pta-quick-start/azure-ad-connect-blade.png)
+   ![Screenshot shows Microsoft Entra admin center: Microsoft Entra Connect pane.](./media/how-to-connect-pta-quick-start/azure-ad-connect-blade.png)
    
    ![Screenshot shows Microsoft Entra admin center: Pass-through Authentication pane.](./media/how-to-connect-pta-quick-start/pta-server-list.png)
    
