@@ -67,13 +67,13 @@ For more information on using TRv2 and GSA, see:
 - [Configure tenant restrictions - Microsoft Entra ID](../external-id/tenant-restrictions-v2.md)  
 
 
-### Revoking permissions for Multi-Tenants Applications and Service Principals
+### Revoking permissions for multitenants Applications and Service Principals
 
 **License Required**: Entra ID P1
 
 #### Actions Against Suspected Tenant:
 
-Microsoft Entra allows customers to restrict inbound application access for third-party multi-tenant apps where the tenant in which the app was registered is considered a suspect tenant. To restrict access, administrators must find the correct service principal, which corresponds to the application registered in the suspect tenant. The appOwnerOrganizationId property on the service principal object lists the tenantId in which the application was registered. Capturing these service principals can only be done programmatically via MSGraph API: :
+Microsoft Entra allows customers to restrict inbound application access for third-party multitenant apps where the tenant in which the app was registered is considered a suspect tenant. To restrict access, administrators must find the correct service principal, which corresponds to the application registered in the suspect tenant. The appOwnerOrganizationId property on the service principal object lists the tenantId in which the application was registered. Capturing these service principals can only be done programmatically via MSGraph API: :
 
 MSGraph:
 Request Headers: { ConsistencyLevel: eventual }
@@ -86,7 +86,7 @@ GET https://graph.microsoft.com/v1.0/servicePrincipals?$count=true&$filter=appOw
 
 After finding the correct service principal, you can either [review and revoke permissions granted to the application](../identity/enterprise-apps/manage-application-permissions.md?pivots=ms-graph) or [delete the service principal](../identity/enterprise-apps/delete-application-portal.md?pivots=ms-graph) all together. Deleting a service principal is a [restorable action up to 30 days](../identity/enterprise-apps/delete-recover-faq.yml#how-do-i-restore-deleted-applications-or-service-principals-).
 
-For more information on multi-tenant apps and service principals, see Apps & service principals in Microsoft Entra ID.
+For more information on multitenant apps and service principals, see Apps & service principals in Microsoft Entra ID.
 - [Apps & service principals in Microsoft Entra ID](../identity-platform/app-objects-and-service-principals.md)
 
 
