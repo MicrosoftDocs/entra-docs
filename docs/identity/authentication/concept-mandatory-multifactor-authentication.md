@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/02/2025
+ms.date: 04/14/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -192,7 +192,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Microsoft 365 message center: A message appears in the Microsoft 365 message center with message ID: **MC862873**. This message has the same information as the email and service health notification. 
 
-After enforcement, a banner appears in Microsoft Entra multifactor authentication:
+After enforcement, a banner appears in the [Azure portal](https://aka.ms/managemfaforazure):
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/enforcement-banner.png" alt-text="Screenshot of a banner in Microsoft Entra multifactor authentication that shows mandatory MFA is enforced."
 
@@ -206,7 +206,7 @@ If you're using a federated Identity Provider (IdP), such as Active Directory Fe
 
 We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
 
-Starting on March 3, 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) and use MFA before they can postpone the start date of MFA enforcement.  
+Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. If you postponed the start date for Phase 1, Phase 2 enforcement *doesn't* begin before the start date you choose. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) and use MFA before they can postpone the start date of MFA enforcement.  
 
 Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
 
