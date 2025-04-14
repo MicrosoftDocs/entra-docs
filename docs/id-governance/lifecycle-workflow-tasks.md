@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 08/27/2024
+ms.date: 04/14/2025
 ---
 
 # Lifecycle Workflow built-in tasks
