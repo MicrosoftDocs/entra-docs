@@ -166,7 +166,7 @@
         href: /graph/tutorial-lifecycle-workflows-scheduled-leaver?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
       - name: Automate employee mover tasks - Microsoft Entra admin center
         href: tutorial-mover-custom-workflow-portal.md   
-      - name: Manage lifecycle workflows using Microsoft Security Copilot
+      - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
         href: ~/fundamentals/copilot-entra-lifecycle-workflow.md  
     - name: Reporting and analytics
       items:
