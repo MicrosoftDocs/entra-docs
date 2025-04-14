@@ -12,7 +12,10 @@ ms.author: billmath
 
 # Hardening update to Microsoft Entra Connect Sync by April 30, 2025 
 
-In October 2024, we released new versions (2.4.xx.0) of Microsoft Entra Connect Sync. These versions contain a back-end service change that hardens our services and readies Connect Sync for the [MSOnline PowerShell retirement](https://aka.ms/msonlineretirement) in April 2025. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 30, 2025**.
+In October 2024, we released new versions [2.4.18.0](reference-connect-version-history.md#24180) of Microsoft Entra Connect Sync. These versions contain a back-end service change that hardens our services and readies Connect Sync for the [MSOnline PowerShell retirement](https://aka.ms/msonlineretirement) in April 2025. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 30, 2025**.
+
+>[!IMPORTANT]
+>**All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 30, 2025**.
 
 The deadline has been extended by three weeks from the earlier communicated date of April 7, 2025.
 
