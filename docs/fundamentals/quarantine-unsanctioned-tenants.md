@@ -42,6 +42,7 @@ Microsoft Entra organizations can use Cross-tenant access with External ID to sc
 
 
 **Secure-by-default**:  
+
 An administrator can [configure default settings](../external-id/cross-tenant-access-settings-b2b-collaboration.yml?source=recommendations#configure-default-settings) to block all inbound sign-in attempts from external users of a suspected tenant. Likewise, one can block all outbound user sign-in for users of your own tenant into a suspected tenant. Then, you can [add an organization](../external-id/cross-tenant-access-settings-b2b-collaboration.yml?source=recommendations#add-an-organization) and configure customized settings to allow user sign-in only [inbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings)  from and [outbound](../external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings) to specified tenants. These settings would enable you to secure your tenant by default and only allow B2B collaboration with trusted tenants.
 
 For more information on managing Cross-tenant access settings, see:  
@@ -101,4 +102,7 @@ Use the following resources when you discover a tenant based on your billing acc
 
 - For more information on quarantining by canceling Azure, see  [Cancel and delete your Azure subscription](/azure/cost-management-billing/manage/cancel-azure-subscription)  
 - For more information on quarantining by canceling M365, see [Cancel your Microsoft business subscription in the Microsoft 365 admin center](/microsoft-365/commerce/subscriptions/cancel-your-subscription)  
+
 ## Related content  
+
+- [the Microsoft Cloud Footprint FAQ](/azure/cost-management-billing/manage/discover-cloud-footprint) 
