@@ -62,17 +62,7 @@ There are limitations in the implementation of ID Protection for B2B collaborati
 - **Guest users do not appear in the risky users report**. This limitation is due to the risk evaluation occurring in the B2B user's home directory.
 - Administrators **cannot dismiss or remediate a risky B2B collaboration user** in their resource directory. This limitation is due to administrators in the resource directory not having access to the B2B user's home directory.
 
-### Why can't I remediate risky B2B collaboration users in my directory?
 
-The risk evaluation and remediation for B2B users occurs in their home directory. Due to this fact, the guest users don't appear in the risky users report in the resource directory and admins in the resource directory can't force a secure password reset for these users.
-
-### What do I do if a B2B collaboration user was blocked due to a risk-based policy in my organization?
-
-If a risky B2B user in your directory is blocked by your risk-based policy, the user needs to remediate that risk in their home directory. Users can remediate their risk by performing a secure password reset in their home directory [as outlined previously](#unblock-your-account). If they don't have self-service password reset enabled in their home directory, they need to contact their own organization's IT Staff to have an administrator manually dismiss their risk or reset their password.
-
-### How do I prevent B2B collaboration users from being impacted by risk-based policies?
-
-Excluding B2B users from your organization's risk-based Conditional Access policies prevents B2B users from being impacted by risk evaluation. To exclude these B2B users, create a group in Microsoft Entra ID that contains all of your organization's guest users. Then, add this group as an exclusion for your built-in ID Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
 
 ## Next steps
 

@@ -111,20 +111,6 @@ This section provides a detailed list of those IP addresses that aren't consider
 
 :::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-trusted-network.png" alt-text="Screenshot showing the trusted network section of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-trusted-network.png":::
 
-## FAQs
-
-### What if I don’t use Microsoft Entra for multifactor authentication? 
-
-If you don’t use Microsoft Entra multifactor authentication, you might still see sign-in risk remediated in your environment if you use a non-Microsoft MFA provider. [External authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) make it possible to remediate risk when using a non-Microsoft MFA provider. 
-
-### What if I am in a hybrid environment? 
-
-User risk can be self-remediated using a [secure password change](howto-identity-protection-remediate-unblock.md#user-self-remediation) if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks). 
-
-### I just received a high-risk alert but they aren't showing up in this report? 
-
-If the user is assigned high risk, but hasn't signed-in yet, you don't see them in this report. The report only uses sign-in logs to populate this data. If you have high risk users that haven't signed in, they aren't counted in this report. 
-
 ## Next steps
 
 - [What are Microsoft Entra workbooks?](../identity/monitoring-health/overview-workbooks.md)
