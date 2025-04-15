@@ -23,49 +23,41 @@ This tutorial series demonstrates how to build a Node.js daemon client app and p
 In this tutorial;
 
 > [!div class="checklist"]
-> - Register a web API in the Microsoft Entra admin center, and record its identifiers
+> - Register a web API in the Microsoft Entra admin center
 > - Configure app roles for the web API
 > - Register a client daemon application
 > - Grant permissions to the daemon app
-> - Create a client secret for your daemon app
 
 If you've already registered a client daemon application and a web API in the Microsoft Entra admin center, you can skip the steps in this tutorial, then proceed to [Acquire access token for calling an API](tutorial-daemon-node-call-api-build-app.md).
 
 ## Prerequisites
 
-- An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* An external tenant. To create one, choose from the following methods: 
+  * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  * [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+  * Directory (tenant) subdomain. Refer to [read your tenant details](../external-id//customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) for your tenant subdomain.
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 
 ## Register a web API application
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/register-api-app.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/register-api-app.md)]
 
 ## Configure app roles
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-app-role.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-app-role.md)]
 
 ## Configure idtyp token claim
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-optional-claims-access.md)]
-
-## Register the daemon app
-
-[!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
-
-## Create a client secret
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-app-client-secret.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
 
 ## Grant API permissions to the daemon app
 
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-app-permissions.md)]
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
-## Collect your app registration details
 
-In the next step, you prepare your daemon app application. Make sure you've the following details:
-
-- The Application (client) ID of the client daemon app that you registered.
 - The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 - The application secret value for the daemon app you created.
 - The Application (client) ID of the web API app you registered.

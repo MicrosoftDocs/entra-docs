@@ -15,6 +15,8 @@ ms.date: 06/27/2024
 
 # Tutorial: Authenticate users to your WPF desktop application
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-external.md)]
+
 This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra External ID.
 
 In this tutorial, you'll:
@@ -26,9 +28,15 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your external tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
-- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+  * Directory (tenant) domain name (for example, *contoso.onmicrosoft.com* or *contoso.com*). 
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `https://login.microsoftonline.com/common/oauth2/nativeclient`
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
+* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
 ## Create a WPF desktop application
 
@@ -88,7 +96,7 @@ dotnet add package Microsoft.Identity.Client.Broker
     }
     ```
 
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-wpf.md)]
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url-dot-net-wpf.md)]
 
 ## Modify the project file
 
