@@ -173,10 +173,10 @@ items:
         - name: Node.js
           items:                
             - name: Prepare tenant
-              href: tutorial-daemon-node-call-api-prepare-tenant.md
+              href: /entra/identity-platform/tutorial-daemon-node-call-api-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               displayName: client credentials flow 
             - name: Acquire access token and call API
-              href: tutorial-daemon-node-call-api-build-app.md
+              href: /entra/identity-platform/tutorial-daemon-node-call-api-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: .NET acquire access token and call API
           href: /entra/identity-platform/tutorial-dotnet-daemon-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Desktop app
@@ -192,9 +192,9 @@ items:
         - name: .NET WPF
           items:
             - name: Prepare tenant
-              href: tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md
+              href: /entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Sign in and sign out
-              href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
+              href: /entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               displayName: Windows Presentation Form
     - name: Mobile
       items:
