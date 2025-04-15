@@ -4,7 +4,7 @@ description: Enable secure cross-cloud B2B collaboration between organizations i
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/05/2024
+ms.date: 04/14/2025
 
 ms.author: mimart
 author: msmimart
@@ -57,7 +57,8 @@ In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to c
 1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Microsoft cloud settings**.
 1. Select the checkboxes next to the external Microsoft Azure clouds you want to enable.
 
-   ![Screenshot showing Microsoft cloud settings.](media/cross-cloud-settings/cross-cloud-settings.png)
+   :::image type="content" source="media/cross-cloud-settings/cross-cloud-settings.png" alt-text="Screenshot showing Microsoft cloud settings." border="true":::
+
 
 > [!NOTE]
 > Selecting a cloud doesn't automatically enable B2B collaboration with organizations in that cloud. You'll need to add the organization you want to collaborate with, as described in the next section.
@@ -71,12 +72,12 @@ Follow these steps to add the tenant you want to collaborate with to your Organi
 1. Select **Add organization**.
 1. On the **Add organization** pane, type the tenant ID for the organization (cross-cloud lookup by domain name isn't currently available).
 
-   ![Screenshot showing adding an organization.](media/cross-cloud-settings/cross-tenant-add-organization.png)
+   :::image type="content" source="media/cross-cloud-settings/cross-tenant-add-organization.png" alt-text="Screenshot showing adding an organization." border="true":::
 
 1. Select the organization in the search results, and then select **Add**.
 1. The organization appears in the **Organizational settings** list. At this point, all access settings for this organization are inherited from your default settings.
 
-   ![Screenshot showing an organization added with default settings.](media/cross-cloud-settings/org-specific-settings-inherited.png)
+   :::image type="content" source="media/cross-cloud-settings/org-specific-settings-inherited.png" alt-text="Screenshot showing an organization added with default settings." border="true":::
 
 1. If you want to change the cross-tenant access settings for this organization, select the **Inherited from default** link under the **Inbound access** or **Outbound access** column. Then follow the detailed steps in these sections:
 
