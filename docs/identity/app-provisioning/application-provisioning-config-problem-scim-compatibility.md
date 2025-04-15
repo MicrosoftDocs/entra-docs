@@ -10,6 +10,7 @@ ms.topic: reference
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Known issues and resolutions with SCIM 2.0 protocol compliance of the Microsoft Entra user provisioning service
