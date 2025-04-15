@@ -4,7 +4,7 @@ description: Learn how to build a protected web API and configure your applicati
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 05/08/2023
+ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
