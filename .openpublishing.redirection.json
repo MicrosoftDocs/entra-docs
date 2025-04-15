@@ -696,6 +696,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-node-call-api-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-daemon-node-call-api-build-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-node-call-api-build-app.md",
       "redirect_url": "/entra/identity-platform/tutorial-daemon-node-call-api-build-app",
       "redirect_document_id": false

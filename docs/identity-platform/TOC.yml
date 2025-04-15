@@ -562,7 +562,11 @@
         - name: .NET acquire token and call API
           href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
-          href: tutorial-v2-nodejs-console.md
+          items:
+            - name: Acquire access token and call API
+              href: tutorial-daemon-node-call-api-build-app.md
+            - name: Call Microsoft Graph API
+              href: tutorial-v2-nodejs-console.md
     - name: Samples
       href: sample-v2-code.md#service--daemon
     - name: How-to
