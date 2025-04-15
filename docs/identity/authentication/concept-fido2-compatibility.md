@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/14/2025
+ms.date: 04/15/2025
 
 author: justinha
 ms.author: justinha
@@ -125,7 +125,10 @@ If the user has yet to install an authentication broker, they can still sign in 
 
 ### Third-party IdP support 
 
-On iOS and Mac devices that are managed by Mobile Device Management (MDM), third-party IdPs can implement their own signle sign-on (SSO) extension.
+> [!NOTE]
+> Passkey authentication with a third-party IdP isn't supported in third-party apps using authentication broker, or Microsoft apps on Android at this time.
+
+On iOS and Mac devices that are managed by Mobile Device Management (MDM), third-party IdPs can implement their own single sign-on (SSO) extension.
 Apple's extensible SSO framework on MDM-managed devices enables identity providers to intercept network requests directed to their URLs. 
 When the SSO extension of the identity provider intercepts a network request, they can implement a custom authentication handshake. 
 This allows them to use a system browser or native Apple APIs for passkey authentication without needing changes in Microsoft applications.
@@ -134,9 +137,6 @@ For more information, see the following Apple documentation:
 
 - [ExtensibleSingleSignOn Device Management Profile](https://developer.apple.com/documentation/devicemanagement/extensiblesinglesignon)
 - [Enterprise single sign-on (SSO) API collection](https://developer.apple.com/documentation/authenticationservices/enterprise-single-sign-on-sso?language=objc)
-
-> [!NOTE]
-> Passkey authentication with a third-party IdP isn't supported in third-party apps using authentication broker, or Microsoft apps on Android at this time.
 
 ## Considerations for each platform
 

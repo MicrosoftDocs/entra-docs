@@ -47,7 +47,7 @@ The recommended options for implementing authentication are, in order:
 
 FIDO2 is supported for Android apps that use MSAL with [BROWSER as the authorization user agent](/entra/msal/android/msal-configuration#authorization_user_agent) or broker integration. Broker is shipped in Microsoft Authenticator, Company Portal, or Link to Windows app on Android. 
 
-If you aren't using MSAL, you should still use the system web browser for authentication. Features such as SSO and Conditional Access rely on a shared web surface provided by the system web browser. For more information, see [Chrome Custom Tabs](https://developer.chrome.com/docs/multidevice/android/customtabs/).
+If you aren't using MSAL, you should still use the system web browser for authentication. Features such as SSO and Conditional Access rely on a shared web surface provided by the system web browser. 
 
 ### iOS and macOS
 
