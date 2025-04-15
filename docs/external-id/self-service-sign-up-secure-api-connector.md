@@ -4,7 +4,7 @@ description: Secure your custom RESTful APIs used as API connectors in self-serv
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 04/15/2025
 
 ms.author: mimart
 author: msmimart
