@@ -15,7 +15,7 @@ ms.date: 06/27/2024
 
 # Tutorial: Authenticate users to your WPF desktop application
 
-[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-external.md)]
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-external-only.md)]
 
 This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra External ID.
 
@@ -443,13 +443,13 @@ Run your app and sign in to test the application
 1. In your terminal, navigate to the root folder of your WPF app and run the app by running the command `dotnet run` in your terminal.
 1. After you launch the sample, you should see a window with a **Sign-In** button. Select the **Sign-In** button.
 
-    :::image type="content" source="./media/tutorial-desktop-wpf-dotnet-sign-in-build-app/wpf-sign-in-screen.png" alt-text="Screenshot of sign-in screen for a WPF desktop application.":::
+    :::image type="content" source="../external-id/customers/media/tutorial-desktop-wpf-dotnet-sign-in-build-app/wpf-sign-in-screen.png" alt-text="Screenshot of sign-in screen for a WPF desktop application.":::
 
 1. On the sign-in page, enter your account email address. If you don't have an account, select **No account? Create one**, which starts the sign-up flow. Follow through this flow to create a new account and sign in.
 1. Once you sign in, you'll see a screen displaying successful sign-in and basic information about your user account stored in the retrieved token. The basic information is displayed in the *Token Info* section of the sign-in screen 
 
 ## See also
 
-- [Sign in users in a sample Electron desktop application by using Microsoft Entra External ID](./how-to-desktop-app-electron-sample-sign-in.md)
-- [Sign in users in a sample .NET MAUI desktop application by using Microsoft Entra External ID](./how-to-desktop-app-maui-sample-sign-in.md)
-- [Customize branding for your sign-in experience](./how-to-customize-branding-customers.md)
+- [Sign in users in a sample Electron desktop application by using Microsoft Entra External ID](../external-id/customers/how-to-desktop-app-electron-sample-sign-in.md)
+- [Sign in users in a sample .NET MAUI desktop application by using Microsoft Entra External ID](../external-id/customers/how-to-desktop-app-maui-sample-sign-in.md)
+- [Customize branding for your sign-in experience](../external-id/customers/how-to-customize-branding-customers.md)

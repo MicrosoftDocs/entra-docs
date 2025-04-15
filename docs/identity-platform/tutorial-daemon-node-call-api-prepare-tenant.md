@@ -34,7 +34,7 @@ If you've already registered a client daemon application and a web API in the Mi
 
 * An external tenant. To create one, choose from the following methods: 
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
-  * [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
@@ -58,7 +58,7 @@ If you've already registered a client daemon application and a web API in the Mi
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
 
-- The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+- The Directory (tenant) subdomain where you registered your daemon app. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 - The application secret value for the daemon app you created.
 - The Application (client) ID of the web API app you registered.
 
