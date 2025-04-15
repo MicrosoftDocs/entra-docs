@@ -7,6 +7,7 @@ manager: femila
 ms.topic: how-to
 ms.date: 03/19/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 ---
 
 # How to use the Global Secure Access enriched Microsoft 365 logs

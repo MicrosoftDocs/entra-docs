@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 04/10/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Use Kerberos for single sign-on (SSO) to your resources with Microsoft Entra Private Access

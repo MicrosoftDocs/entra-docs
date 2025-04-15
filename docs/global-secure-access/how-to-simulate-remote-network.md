@@ -8,6 +8,7 @@ ms.author: kenwith
 author: kenwith
 manager: femila
 ms.reviewer: absinh
+ai-usage: ai-assisted
 
 # Customer intent: As an IT administrator, I want to configure Global Secure Access with an Azure virtual network so I can better understand how the service can be implemented in my organization.
 ---
