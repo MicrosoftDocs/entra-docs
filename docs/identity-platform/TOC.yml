@@ -379,8 +379,6 @@
                 href: tutorial-v2-windows-desktop.md
             - name: ASP.NET Core
               items:
-              - name: Prepare tenant
-                href: tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md
               - name: Create WPF app
                 href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
         - name: .NET MAUI

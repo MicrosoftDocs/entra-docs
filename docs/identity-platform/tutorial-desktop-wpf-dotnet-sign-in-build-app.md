@@ -17,7 +17,7 @@ ms.date: 06/27/2024
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra External ID.
+This tutorial demonstrates how to build a Windows Presentation Form (WPF) desktop app and prepare it for authentication using the Microsoft Entra admin center.
 
 In this tutorial, you'll:
 

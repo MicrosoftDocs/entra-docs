@@ -191,8 +191,6 @@ items:
               href: /entra/identity-platform/tutorial-desktop-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: .NET WPF
           items:
-            - name: Prepare tenant
-              href: /entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Sign in and sign out
               href: /entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               displayName: Windows Presentation Form

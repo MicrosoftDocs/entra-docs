@@ -701,12 +701,12 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "docs/external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-build-app.md",
+      "source_path_from_root": "/docs/external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-build-app.md",
       "redirect_url": "/entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-build-app",
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "docs/external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md",
+      "source_path_from_root": "/docs/external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md",
       "redirect_url": "/entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-build-app",
       "redirect_document_id": false
     },
