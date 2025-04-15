@@ -26,12 +26,6 @@ You can access the provisioning logs in the Microsoft Entra admin center by brow
 
 The provisioning logs record all the operations performed by the provisioning service, including querying Microsoft Entra ID for assigned users that are in scope for provisioning, querying the target app for the existence of those users, comparing the user objects between the system. Then add, update, or disable the user account in the target system based on the comparison.
 
-## General Problem Areas with Provisioning to consider
-General problem areas to consider include:
-
-- [Provisioning service doesn't appear to start](#provisioning-service-does-not-appear-to-start)
-- [Provisioning logs say users are skipped and not provisioned, even though they're assigned](#provisioning-logs-say-users-are-skipped-and-not-provisioned-even-though-they-are-assigned)
-
 ## Provisioning service doesn't appear to start
 If you set the **Provisioning Status** to be **On** in the **Enterprise applications &gt; \[Application Name\] &gt;Provisioning** section of the Microsoft Entra admin center. However no other status details are shown on that page after subsequent reloads, it's likely that the service is running but hasn't completed an initial cycle yet. Check the **Provisioning logs** to determine what operations the service is performing, and if there are any errors.
 

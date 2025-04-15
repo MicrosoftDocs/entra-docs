@@ -46,7 +46,7 @@ The logs display the identity, action taken, source system, target system, and t
     - Examples of Other include if the source and target system details already match, so no change was made.
 - **Source System** and **Target System**: Paired together, these details show which system the identity is coming from and where it's being provisioned.
 - **Status**: Possible values include Success, Failure, Skipped, and Warning.
-    - There are several scenarios that could trigger the Skipped status. For details on these scenarios, see [No users are being provisioned](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md#provisioning-logs-say-users-are-skipped-and-not-provisioned-even-though-they-are-assigned)
+    - There are several scenarios that could trigger the Skipped status. For details on these scenarios, see [No users are being provisioned](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md)
 
 Select an item from the provisioning logs to see more details about this item, such as the steps taken to provision the user and tips for troubleshooting issues. The details are grouped into four tabs.
 
