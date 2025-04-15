@@ -4,7 +4,7 @@ description: Learn how to create and prepare an ASP.NET Core application for aut
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 01/18/2024
+ms.date: 04/15/2025
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -60,9 +60,9 @@ In this tutorial:
 
 ## Create an ASP.NET Core project
 
-In this section, you'll create an ASP.NET Core project in Visual Studio Code.
+In this section, you create an ASP.NET Core project in Visual Studio Code.
 
-1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
+1. Open Visual Studio Code and select **File > Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
 1. Enter the following command to make a Model View Controller (MVC) ASP.NET Core project.
 
