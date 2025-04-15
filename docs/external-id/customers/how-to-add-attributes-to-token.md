@@ -55,9 +55,9 @@ You can specify which built-in or custom attributes you want to include as claim
 
 1. On the **Attributes & Claims** page, select **Add new claim**.
 1. Enter a **Name**.
-1. Next to **Source**, select **Attribute**. Then use the drop down list to select the built-in attribute.
+1. Next to **Source**, select **Attribute**. Then use the drop-down list to select the built-in attribute.
 
-    :::image type="content" source="media/how-to-add-attributes-to-token/add-built-in-claim.png" alt-text="Screenshot of the drop down list of built-in attributes." border="true":::
+    :::image type="content" source="media/how-to-add-attributes-to-token/add-built-in-claim.png" alt-text="Screenshot of the drop-down list of built-in attributes." border="true":::
 
 1. Select **Save**. Repeat for all built-in attributes you want to add.
 
