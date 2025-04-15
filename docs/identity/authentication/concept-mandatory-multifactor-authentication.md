@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/14/2025
+ms.date: 04/15/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -178,7 +178,7 @@ The enforcement of MFA rolls out in two phases:
 
 - **Phase 1**: Starting in October 2024, MFA is required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-- **Phase 2**: Starting July 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+- **Phase 2**: Starting July 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 ## Notification channels 
 
