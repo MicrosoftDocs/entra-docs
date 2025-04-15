@@ -33,7 +33,7 @@ In a hybrid scenario, where accounts exist on-premises Active Directory Domain S
 - **Modern Authentication**: Supports multifactor authentication (MFA), passwordless options, and conditional access policies.
 - **Seamless Access**: Authenticate to Azure services without VPN or direct on-premises connections.
 - **Simplified Infrastructure and Management**: Reduces reliance on on-premises infrastructure, making management easier with fewer authentication servers required.
-- **Enhanced Security**: Centralized authentication with advanced security features like [single sign-on](../manage-apps/what-is-single-sign-on.md), [multifactor authentication](../authentication/concept-mfa-howitworks.md), [conditional access](../conditional-access/overview.md), and [Windows Hello for Business cloud trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-trust).
+- **Enhanced Security**: Centralized authentication with advanced security features like [single sign-on](../enterprise-apps/what-is-single-sign-on.md), [multifactor authentication](concept-mfa-howitworks.md), [conditional access](../conditional-access/overview.md), and [Windows Hello for Business cloud trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-trust).
 - **Azure Integration**: Works seamlessly with Azure services, requiring minimal configuration.
 - **Scalability and Reliability**: Uses Azure's infrastructure for authentication at scale, supporting large-scale deployments with ease.
 - **Interoperability**: Compatible with various operating systems and devices.
@@ -112,10 +112,10 @@ Microsoft Entra Kerberos enables your Microsoft Entra ID tenant to function as a
     - Synchronize on-premises AD DS users to Microsoft Entra ID. For details, see the [Microsoft Entra Connect installation guide](../hybrid/how-to-connect-install-prerequisites.md).
 
 2. **Enable Microsoft Entra Kerberos**:
-    - Configure Azure Files or other services to use Microsoft Entra Kerberos authentication. For instructions, see [Enable Microsoft Entra Kerberos for Azure Files](../storage/files/storage-files-identity-auth-hybrid-cloud-trust.md?tabs=azure-portal).
+    - Configure Azure Files or other services to use Microsoft Entra Kerberos authentication. For instructions, see [Enable Microsoft Entra Kerberos for Azure Files](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal).
 
 3. **Client Configuration**:
-    - Ensure Windows clients are up to date and [configured for Microsoft Entra Kerberos](../azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow.md?view=azuresql#configure-the-group-policy-object-gpo).
+    - Ensure Windows clients are up to date and [configured for Microsoft Entra Kerberos](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo).
 
 4. **Manage Service Principals**:
     - Monitor and rotate service principal passwords as required.
@@ -131,6 +131,6 @@ Administrators benefit from streamlined management, enhanced security features, 
 
 ## Learn more
 
--   [Create the trusted domain object](../storage/files/storage-files-identity-auth-hybrid-cloud-trust.md?tabs=azure-portal#create-the-trusted-domain-object)
--   [Configure clients to retrieve Kerberos tickets](../storage/files/storage-files-identity-auth-hybrid-identities-enable.md?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
+-   [Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal#create-the-trusted-domain-object)
+-   [Configure clients to retrieve Kerberos tickets](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable.md?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
 
