@@ -46,7 +46,7 @@ The following are additional requirements depending on which certificate managem
 > - It is recommended to use the TPM to provide a hardware-based security boundary, as opposed to the Local Machine store. To check the status of your TPM use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm?view=windowsserver2025-ps) PowerShell cmdlet. If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Generation 2 virtual machine security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable Trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm)
 
 ### BYOC Prerequisites
-- A certificate is created in an HSM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
+- A certificate is created in an HSM or TPM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
   - KeyLength: 2048
   - KeyAlgorithm: RSA
   - KeyHashAlgorithm: SHA256
@@ -75,29 +75,29 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
 
  - Managed by Microsoft Entra Connect:
   
-   ``` powershell
+``` powershell
    Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName>
-   ```
+```
 
  - Use BYOC:
  
  > [!NOTE] 
  > The certificate thumbprint needs to be provided when registering the application. 
 
-  ``` powershell
+ ``` powershell
   Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
-  ```
+ ```
 Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
  - Managed by Microsoft Entra Connect:
-  ``` powershell
+ ``` powershell
   Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName>
-  ```
+ ```
  - Use BYOC:
  
-   ``` powershell
+``` powershell
    Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint> ```
 
 Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;certificateThumbprint&gt; with the CertificateThumbPrint
