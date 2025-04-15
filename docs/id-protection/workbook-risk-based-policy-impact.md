@@ -5,7 +5,7 @@ description: Take a proactive look at the impact of risk-based Conditional Acces
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 04/11/2025
+ms.date: 04/15/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -111,8 +111,8 @@ This section provides a detailed list of those IP addresses that aren't consider
 
 :::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-trusted-network.png" alt-text="Screenshot showing the trusted network section of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-trusted-network.png":::
 
-## Next steps
+## Related content
 
 - [What are Microsoft Entra workbooks?](../identity/monitoring-health/overview-workbooks.md)
-- [How To: Investigate risk](howto-identity-protection-investigate-risk.md)
 - [What are risk detections?](concept-identity-protection-risks.md)
+- [ID Protection FAQs](id-protection-faq.yml)
