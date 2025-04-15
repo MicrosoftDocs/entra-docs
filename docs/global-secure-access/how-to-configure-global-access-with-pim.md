@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: katabish
+ai-usage: ai-assisted
 ---
 
 # Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
