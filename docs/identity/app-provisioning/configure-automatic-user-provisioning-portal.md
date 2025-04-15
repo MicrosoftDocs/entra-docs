@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Managing user account provisioning for enterprise apps in the Microsoft Entra admin center
