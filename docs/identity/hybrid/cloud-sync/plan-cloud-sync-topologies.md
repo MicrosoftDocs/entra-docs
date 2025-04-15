@@ -3,10 +3,10 @@ title: Microsoft Entra Cloud Sync supported topologies and scenarios
 description: Learn about various on-premises and Microsoft Entra topologies that use Microsoft Entra Cloud Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -21,10 +21,10 @@ This article describes various on-premises and Microsoft Entra topologies that u
 
 For more information, see the following video.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWJ8l5]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d]
 
 ## Things to remember about all scenarios and topologies
-The information below should be kept in mind, when selecting a solution.
+The following information should be kept in mind, when selecting a solution.
 
 - Users and groups must be uniquely identified across all forests.
 - Matching across forests doesn't occur with cloud sync.
@@ -53,7 +53,7 @@ Multiple AD forests are a common topology, with one or multiple domains, and a s
 ### Existing forest with Microsoft Entra Connect, new forest with cloud Provisioning
 ![Diagram that shows the topology for an existing forest and a new forest.](media/tutorial-existing-forest/existing-forest-new-forest-2.png)
 
-This scenario topology is similar to the multi-forest scenario, however this one involves an existing Microsoft Entra Connect environment and then bringing on a new forest using Microsoft Entra Cloud Sync.  For an example of this scenario see [Tutorial: An existing forest with a single Microsoft Entra tenant](tutorial-existing-forest.md)
+This scenario topology is similar to the multi-forest scenario. However, this one involves an existing Microsoft Entra Connect environment and then bringing on a new forest using Microsoft Entra Cloud Sync.  For an example of this scenario see [Tutorial: An existing forest with a single Microsoft Entra tenant](tutorial-existing-forest.md)
 
 
 
@@ -78,7 +78,7 @@ An example would be:
  - One forest (1) contains most of the attributes.
  - A second forest (2) contains a few attributes.
 
- Since the second forest doesn't have network connectivity to the Microsoft Entra Connect server, the object can't be merged through Microsoft Entra Connect. Cloud sync in the second forest allows the attribute value to be retrieved from the second forest. The value can then be merged with the object in Microsoft Entra ID that is synced by Microsoft Entra Connect.
+ Since the second forest doesn't have network connectivity to the Microsoft Entra Connect server, the object can't be merged through Microsoft Entra Connect. Cloud sync in the second forest allows the attribute value to be retrieved from the second forest. Microsoft Entra Connect syncs the object in Microsoft Entra ID, and then the value can be merged with it.
 
 This configuration is advanced and there are a few caveats to this topology: 
 
@@ -86,9 +86,9 @@ This configuration is advanced and there are a few caveats to this topology:
  2. The `ms-DS-ConsistencyGuid` of the user object in the second forest must match that of the corresponding object in Microsoft Entra ID.
  3. You must populate the `UserPrincipalName` attribute and the `Alias` attribute in the second forest and it must match the ones that are synced from the first forest. 
  4. You must remove all attributes from the attribute mapping in the cloud sync configuration that don't have a value or may have a different value in the second forest – you can't have overlapping attribute mappings between the first forest and the second one. 
- 5. If there's no matching object in the first forest, for an object that is synced from the second forest, then cloud sync will still create the object in Microsoft Entra ID. The object will only have the attributes that are defined in the mapping configuration of cloud sync for the second forest. 
- 6. If you delete the object from the second forest, it will be temporarily soft deleted in Microsoft Entra ID. It will be restored automatically after the next Microsoft Entra Connect Sync cycle.  
- 7. If you delete the object from the first forest, it will be soft deleted from Microsoft Entra ID.  The object won't be restored unless a change is made to the object in the second forest. After 30 days the object will be hard deleted from Microsoft Entra ID and if a change is made to the object in the second forest it will be created as a new object in Microsoft Entra ID. 
+ 5. If there's no matching object in the first forest, for an object that is synced from the second forest, then cloud sync still creates the object in Microsoft Entra ID. The object only has the attributes that are defined in the mapping configuration of cloud sync for the second forest. 
+ 6. If you delete the object from the second forest, it temporarily soft deletes in Microsoft Entra ID. It automatically restores after the next Microsoft Entra Connect Sync cycle.  
+ 7. If you delete the object from the first forest, it is soft deleted from Microsoft Entra ID. The object won't be restored unless a change is made to the object in the second forest. After 30 days, the object is hard deleted from Microsoft Entra ID. If a change is made to the object in the second forest, it's created as a new object in Microsoft Entra ID. 
 
 ## Microsoft Entra ID to Active Directory supported topologies
 
@@ -113,7 +113,7 @@ The following topologies are supported for provisioning from Microsoft Entra ID 
  - The onPremisesObjectIdentifier must match a corresponding objectGUID in the target AD environment.
  - An on-premises users objectGUID attribute to a cloud users onPremisesObjectIdentifier attribute can be synchronized using either Microsoft Entra Cloud Sync ([1.1.1370.0](../cloud-sync/reference-version-history.md#1113700)) or Microsoft Entra Connect Sync ([2.2.8.0](../connect/reference-connect-version-history.md#2280))
  - Inside your tenant you may share a common group that contains users from both forests.
- - However, users that don't exist in the other forest, WILL NOT be provisioned as members of the group when it's provisioned on-premises.  So if you have a group in Microsoft Entra ID that contains users from contoso.com and fabrikam.com, only the users that exist in the contoso.com forest will be members of the group when it's provisioned to contoso.com.  And same with fabrikam.  
+ - However, users that don't exist in the other forest, aren't provisioned as members of the group when it's provisioned on-premises. So if you have a group in Microsoft Entra ID that contains users from contoso.com and fabrikam.com, only users that exist in the contoso.com forest are members of the group when provisioned to contoso.com. The same is true with fabrikam.  
 
 
 ## Next steps 

@@ -5,10 +5,10 @@ description: Learn which apps are supported for users to sign in to Microsoft En
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 ms.author: justinha
 author: aanjusingh
-manager: amycolannino
+manager: femila
 ms.reviewer: anjusingh
 ---
 
@@ -42,15 +42,15 @@ For the same reason, Microsoft Office mobile apps (except Microsoft Teams, Compa
 
 | Unsupported Microsoft apps| Examples |
 | --- | --- |
-| Native desktop Microsoft apps | Microsoft Teams, O365 apps, Word, Excel, and so on.|
+| Native desktop Microsoft apps | Microsoft Teams, Microsoft 365 apps, Word, Excel, and so on.|
 | Native mobile Microsoft apps (except Microsoft Teams, Company portal, and Microsoft Azure) | Outlook, Edge, Power BI, Stream, SharePoint, Power Apps, Word, and so on.|
 | Microsoft 365 web apps (accessed directly on web) | [Outlook](https://outlook.live.com/owa/), [Word](https://office.live.com/start/Word.aspx), [Excel](https://office.live.com/start/Excel.aspx), [PowerPoint](https://office.live.com/start/PowerPoint.aspx)|  
 
 ## Support for Non-Microsoft apps 
 
-To make Non-Micorosoft apps compatible with the SMS sign-in feature: 
+To make Non-Microsoft apps compatible with the SMS sign-in feature: 
 - Integrate Non-Microsoft web apps with Microsoft Entra ID and use Microsoft Entra authentication. Use Security Assertion Markup Language [SAML](~/identity/enterprise-apps/add-application-portal-setup-sso.md) or OpenID Connect [OIDC](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to integrate with Microsoft Entra SSO. 
-- Integrate Non-Microsoft on-prem apps with Microsoft Entra ID using [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
+- Integrate Non-Microsoft on-premises apps with Microsoft Entra ID using [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
 - Integrate Non-Microsoft client apps with [Microsoft identity platform](~/identity-platform/v2-overview.md) for authentication 
     - [Sample app iOS](~/identity-platform/tutorial-v2-ios.md)
     - [Sample app Android](~/identity-platform/tutorial-v2-android.md)

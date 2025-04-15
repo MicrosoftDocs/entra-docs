@@ -6,11 +6,11 @@ description: Learn how to configure and use app passwords for legacy application
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: michmcla
 ---
 # Enforce Microsoft Entra multifactor authentication with legacy applications using app passwords
@@ -76,7 +76,6 @@ In this scenario, you use the following credentials:
 
 ## Allow users to create app passwords
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 By default, users can't create app passwords. The app passwords feature must be enabled before users can use them. To give users the ability to create app passwords, **admin needs** to complete the following steps:
 

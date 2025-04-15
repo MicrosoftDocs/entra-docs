@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect: Next steps and how to manage Microsoft Entra Co
 description: Learn how to extend the default configuration and operational tasks for Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: c18bee36-aebf-4281-b8fc-3fe14116f1a5
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -30,7 +30,6 @@ Now that your users are synchronized to the cloud, you need to assign them a lic
 
 ### To assign a Microsoft Entra ID P1 or P2 or Enterprise Mobility Suite License
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. On the left, select **Active Directory**.

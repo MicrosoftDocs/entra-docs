@@ -46,7 +46,7 @@ The risky user summary contains three sections:
 
 In this example, suggested remediations are to: 
 
-- Create sign-in risk and user risk based [conditional access policies](/entra/id-protection/howto-identity-protection-configure-risk-policies).  
+- Create sign-in risk and user risk based [Conditional Access policies](/entra/id-protection/howto-identity-protection-configure-risk-policies).  
 
 Suggested help and documentation are:
 - [What is risk in ID Protection?](/entra/id-protection/concept-identity-protection-risks)

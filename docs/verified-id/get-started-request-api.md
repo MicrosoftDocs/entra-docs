@@ -3,11 +3,10 @@ title: Call the Request Service REST API
 description: Learn how to issue and verify by using the Request Service REST API.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 06/16/2022
+ms.date: 12/13/2024
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm trying to learn how to use the Request Service API and integrate it into my business application.
@@ -465,7 +464,7 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 
 # [With FaceCheck](#tab/facecheck)
 
-Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt is not supported then.
+Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt isn't supported then.
 
 ```JSON
 {

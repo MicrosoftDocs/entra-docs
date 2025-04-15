@@ -4,12 +4,12 @@ description: This topic document describes how to update Microsoft Entra Connect
 
 keywords: AD DS account, Active Directory account, password
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 76b19162-8b16-4960-9e22-bd64e6675ecc
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

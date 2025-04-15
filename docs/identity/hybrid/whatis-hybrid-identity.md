@@ -4,11 +4,11 @@ description: Hybrid identity is having a common user identity for authentication
 keywords: introduction to Azure AD Connect, Azure AD Connect overview, what is Azure AD Connect, install active directory
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 59bd209e-30d7-4a89-ae7a-e415969825ea
 ms.service: entra-id
 ms.topic: overview
-ms.date: 12/04/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid
 ms.author: billmath
 

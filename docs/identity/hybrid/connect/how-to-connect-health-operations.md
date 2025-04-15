@@ -3,13 +3,13 @@ title: Microsoft Entra Connect Health operations
 description: This article describes additional operations that can be performed after you have deployed Microsoft Entra Connect Health.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 86cc3840-60fb-43f9-8b2a-8598a9df5c94
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/04/2024
+ms.date: 04/09/2025
 ms.author: billmath
 
 

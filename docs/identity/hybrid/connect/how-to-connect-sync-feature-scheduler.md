@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect Sync: Scheduler'
 description: This topic describes the built-in scheduler feature in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 6b1a598f-89c0-4244-9b20-f4aaad5233cf
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 12/04/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -45,11 +45,11 @@ To see your current configuration settings, go to PowerShell and run `Get-ADSync
 
 ![GetSyncScheduler](./media/how-to-connect-sync-feature-scheduler/getsynccyclesettings2016.png)
 
-If you see **The sync command or cmdlet is not available** when you run this cmdlet, then the PowerShell module is not loaded. This problem could happen if you run Microsoft Entra Connect on a domain controller or on a server with higher PowerShell restriction levels than the default settings. If you see this error, then run `Import-Module ADSync` to make the cmdlet available.
+If you see **The sync command or cmdlet isn't available** when you run this cmdlet, then the PowerShell module isn't loaded. This problem could happen if you run Microsoft Entra Connect on a domain controller or on a server with higher PowerShell restriction levels than the default settings. If you see this error, then run `Import-Module ADSync` to make the cmdlet available.
 
-* **AllowedSyncCycleInterval**. The shortest time interval between synchronization cycles allowed by Microsoft Entra ID. You cannot synchronize more frequently than this setting and still be supported.
-* **CurrentlyEffectiveSyncCycleInterval**. The schedule currently in effect. It has the same value as CustomizedSyncInterval (if set) if it is not more frequent than AllowedSyncInterval. If you use a build before 1.1.281 and you change CustomizedSyncCycleInterval, this change takes effect after next synchronization cycle. From build 1.1.281 the change takes effect immediately.
-* **CustomizedSyncCycleInterval**. If you want the scheduler to run at any other frequency than the default 30 minutes, then you configure this setting. In the picture above, the scheduler has been set to run every hour instead. If you set this setting to a value lower than AllowedSyncInterval, then the latter is used.
+* **AllowedSyncCycleInterval**. The shortest time interval between synchronization cycles allowed by Microsoft Entra ID. You can't synchronize more frequently than this setting and still be supported.
+* **CurrentlyEffectiveSyncCycleInterval**. The schedule currently in effect. It has the same value as CustomizedSyncInterval (if set) if it isn't more frequent than AllowedSyncInterval. If you use a build before 1.1.281 and you change CustomizedSyncCycleInterval, this change takes effect after next synchronization cycle. From build 1.1.281 the change takes effect immediately.
+* **CustomizedSyncCycleInterval**. If you want the scheduler to run at any other frequency than the default 30 minutes, then you configure this setting. In the previous picture, the scheduler is set to run every hour instead. If you set this setting to a value lower than AllowedSyncInterval, then the latter is used.
 * **NextSyncCyclePolicyType**. Either Delta or Initial. Defines if the next run should only process delta changes, or if the next run should do a full import and sync. The latter would also reprocess any new or changed rules.
 * **NextSyncCycleStartTimeInUTC**. Next time the scheduler starts the next sync cycle.
 * **PurgeRunHistoryInterval**. The time operation logs should be kept. These logs can be reviewed in the synchronization service manager. The default is to keep these logs for 7 days.
@@ -66,7 +66,7 @@ You can change some of these settings with `Set-ADSyncScheduler`. The following 
 * SyncCycleEnabled
 * MaintenanceEnabled
 
-In earlier builds of Microsoft Entra Connect, **isStagingModeEnabled** was exposed in Set-ADSyncScheduler. It is **unsupported** to set this property. The property **SchedulerSuspended** should only be modified by Connect. It is **unsupported** to set this with PowerShell directly.
+In earlier builds of Microsoft Entra Connect, **isStagingModeEnabled** was exposed in Set-ADSyncScheduler. It's **unsupported** to set this property. The property **SchedulerSuspended** should only be modified by Connect. It's **unsupported** to set this with PowerShell directly.
 
 The scheduler configuration is stored in Microsoft Entra ID. If you have a staging server, any change on the primary server also affects the staging server (except IsStagingModeEnabled).
 
@@ -87,7 +87,7 @@ To disable the scheduler, run `Set-ADSyncScheduler -SyncCycleEnabled $false`.
 
 ![Disable the scheduler](./media/how-to-connect-sync-feature-scheduler/schedulerdisable.png)
 
-When you've made your changes, do not forget to enable the scheduler again with `Set-ADSyncScheduler -SyncCycleEnabled $true`.
+When you make changes, do not forget to enable the scheduler again with `Set-ADSyncScheduler -SyncCycleEnabled $true`.
 
 ## Start the scheduler
 The scheduler is by default run every 30 minutes. In some cases, you might want to run a sync cycle in between the scheduled cycles or you need to run a different type.
@@ -123,10 +123,10 @@ Different configuration changes require different sync steps to ensure the chang
 - Made changes to the Synchronization rules
     - A Full Sync is required on the Connector for the changed Synchronization rules
 - Changed [filtering](how-to-connect-sync-configure-filtering.md) so a different number of objects should be included
-    - A Full Import is required on the Connector for each AD Connector UNLESS you are using Attribute-based filtering based on attributes that are already being imported into the sync engine
+    - A Full Import is required on the Connector for each AD Connector. The exception is if you're using Attribute-based filtering based on attributes that are already being imported into the sync engine
 
 ### Customizing a sync cycle run the right mix of Delta and Full sync steps
-To avoid running a full sync cycle you can mark specific Connectors to run a Full step using the following cmdlets.
+To avoid running a full sync cycle, you can mark specific Connectors to run a Full step using the following cmdlets.
 
 `Set-ADSyncSchedulerConnectorOverride -Connector <ConnectorGuid> -FullImportRequired $true`
 
@@ -134,7 +134,7 @@ To avoid running a full sync cycle you can mark specific Connectors to run a Ful
 
 `Get-ADSyncSchedulerConnectorOverride -Connector <ConnectorGuid>` 
 
-Example:  If you made changes to the synchronization rules for Connector “AD Forest A” that don’t require any new attributes to be imported you would run the following cmdlets to run a delta sync cycle which also did a Full Sync step for that Connector.
+Example:  If you made changes to the synchronization rules for Connector “AD Forest A” that don’t require any new imported attributes, then you would run the following cmdlets to run a delta sync cycle which also did a Full Sync step for that Connector.
 
 `Set-ADSyncSchedulerConnectorOverride -ConnectorName “AD Forest A” -FullSyncRequired $true`
 
@@ -154,10 +154,10 @@ If the scheduler is currently running a synchronization cycle, you might need to
 
 ![Screenshot shows Cannot change configuration error message.](./media/how-to-connect-sync-feature-scheduler/synccyclerunningerror.png)
 
-When a sync cycle is running, you cannot make configuration changes. You could wait until the scheduler has finished the process, but you can also stop it so you can make your changes immediately. Stopping the current cycle is not harmful and pending changes are processed with next run.
+When a sync cycle is running, you can't make configuration changes. You could wait until the scheduler finishes the process, but you can also stop it so you can make your changes immediately. Stopping the current cycle isn't harmful and pending changes are processed with next run.
 
 1. Start by telling the scheduler to stop its current cycle with the PowerShell cmdlet `Stop-ADSyncSyncCycle`.
-2. If you use a build before 1.1.281, then stopping the scheduler does not stop the current Connector from its current task. To force the Connector to stop, take the following actions:
+2. If you use a build before 1.1.281, then stopping the scheduler doesn't stop the current Connector from its current task. To force the Connector to stop, take the following actions:
 
    ![Screenshot shows Synchronization Service Manager with Connectors selected and a running connector highlighted with the Stop action selected.](./media/how-to-connect-sync-feature-scheduler/stopaconnector.png)
 
@@ -168,7 +168,7 @@ The scheduler is still active and starts again on next opportunity.
 ## Custom scheduler
 The cmdlets documented in this section are only available in build [1.1.130.0](reference-connect-version-history.md) and later.
 
-If the built-in scheduler does not satisfy your requirements, then you can schedule the Connectors using PowerShell.
+If the built-in scheduler doesn't satisfy your requirements, then you can schedule the Connectors using PowerShell.
 
 ### Invoke-ADSyncRunProfile
 You can start a profile for a Connector in this way:
@@ -181,7 +181,7 @@ The names to use for [Connector names](how-to-connect-sync-service-manager-ui-co
 
 ![Invoke Run Profile](./media/how-to-connect-sync-feature-scheduler/invokerunprofile.png)  
 
-The `Invoke-ADSyncRunProfile` cmdlet is synchronous, that is, it does not return control until the Connector has completed the operation, either successfully or with an error.
+The `Invoke-ADSyncRunProfile` cmdlet is synchronous, that is, it doesn't return control until the Connector completes the operation, either successfully or with an error.
 
 When you schedule your Connectors, the recommendation is to schedule them in the following order:
 
@@ -195,7 +195,7 @@ When you schedule your Connectors, the recommendation is to schedule them in the
 This order is how the built-in scheduler runs the Connectors.
 
 ### Get-ADSyncConnectorRunStatus
-You can also monitor the sync engine to see if it is busy or idle. This cmdlet returns an empty result if the sync engine is idle and is not running a Connector. If a Connector is running, it returns the name of the Connector.
+You can also monitor the sync engine to see if it's busy or idle. This cmdlet returns an empty result if the sync engine is idle and isn't running a Connector. If a Connector is running, it returns the name of the Connector.
 
 ```
 Get-ADSyncConnectorRunStatus
@@ -205,7 +205,7 @@ Get-ADSyncConnectorRunStatus
 In the picture above, the first line is from a state where the sync engine is idle. The second line from when the Microsoft Entra Connector is running.
 
 ## Scheduler and installation wizard
-If you start the installation wizard, then the scheduler is temporarily suspended. This behavior is because it is assumed you make configuration changes and these settings cannot be applied if the sync engine is actively running. For this reason, do not leave the installation wizard open since it stops the sync engine from performing any synchronization actions.
+If you start the installation wizard, then the scheduler is temporarily suspended. This behavior is because it's assumed you make configuration changes and these settings can't be applied if the sync engine is actively running. For this reason, do not leave the installation wizard open since it stops the sync engine from performing any synchronization actions.
 
 ## Next steps
 Learn more about the [Microsoft Entra Connect Sync](how-to-connect-sync-whatis.md) configuration.

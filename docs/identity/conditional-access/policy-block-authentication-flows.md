@@ -4,10 +4,10 @@ description: Use Conditional Access policy to restrict how device code flow and 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/05/2024
+ms.date: 04/01/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: anjusingh, ludwignick
 ---
 # Block authentication flows with Conditional Access policy 
@@ -41,11 +41,11 @@ For organizations that have no established use of device code flow, blocking can
 1. Confirm your settings and set **Enable policy** to **Report-only**. 
 1. Select **Create** to create to enable your policy. 
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**. 
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)] 
 
 ## Authentication transfer policies 
 
-The ability to control [authentication transfer](concept-authentication-transfer.md) is in preview, use the **Authentication flows** condition in Conditional Access to manage the feature. You might want to block authentication transfer if you don’t want users to transfer authentication from their PC to a mobile device. For example, if you don’t allow Outlook to be used on personal devices by certain groups. Blocking authentication transfer can be done with the following Conditional Access policy:   
+Use the **Authentication flows** condition in Conditional Access to manage the feature. You might want to block [authentication transfer](concept-authentication-transfer.md) if you don’t want users to transfer authentication from their PC to a mobile device. For example, if you don’t allow Outlook to be used on personal devices by certain groups. Blocking authentication transfer can be done with the following Conditional Access policy:   
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Browse to **Protection** > **Conditional Access**. 

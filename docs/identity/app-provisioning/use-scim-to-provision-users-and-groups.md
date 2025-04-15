@@ -3,11 +3,11 @@ title: Tutorial - Develop a SCIM endpoint for user provisioning to apps from Mic
 description: System for Cross-domain Identity Management (SCIM) standardizes automatic user provisioning. In this tutorial, you learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and start automating provisioning users and groups into your cloud applications.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 10/22/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -156,12 +156,12 @@ There are several endpoints defined in the SCIM RFC. You can start with the `/Us
 |/User|Perform CRUD operations on a user object.|
 |/Group|Perform CRUD operations on a group object.|
 |/Schemas|The set of attributes supported by each client and service provider can vary. One service provider might include `name`, `title`, and `emails`, while another service provider uses `name`, `title`, and `phoneNumbers`. The schemas endpoint allows for discovery of the attributes supported.|
-|/Bulk|Bulk operations allow you to perform operations on a large collection of resource objects in a single operation (for example, update memberships for a large group).|
+|/Bulk|Bulk operations allow you to perform operations on a large collection of resource objects in a single operation (for example, update memberships for a large group). While we don't support SCIM /Bulk today, this is something we aim to support in the future to help improve performance. |
 |/ServiceProviderConfig|Provides details about the features of the SCIM standard that are supported, for example, the resources that are supported and the authentication method.|
 |/ResourceTypes|Specifies metadata about each resource.|
 
 > [!NOTE]
-> Use the `/Schemas` endpoint to support custom attributes or if your schema changes frequently as it enables a client to retrieve the most up-to-date schema automatically. Use the `/Bulk` endpoint to support groups.
+> Use the `/Schemas` endpoint to support custom attributes or if your schema changes frequently as it enables a client to retrieve the most up-to-date schema automatically. Use the `/Bulk` endpoint to support groups. While we don't support the /Bulk endpoint today, this is something we aim to support in the future to help improve performance.
 
 <a name='understand-the-azure-ad-scim-implementation'></a>
 
@@ -1309,7 +1309,6 @@ Check with your application provider, or your application provider's documentati
 
 ### Getting started
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Applications that support the SCIM profile described in this article can be connected to Microsoft Entra ID using the "non-gallery application" feature in the Microsoft Entra application gallery. Once connected, Microsoft Entra ID runs a synchronization process. The process runs every 40 minutes. The process queries the application's SCIM endpoint for assigned users and groups, and creates or modifies them according to the assignment details.
 
@@ -1345,7 +1344,7 @@ Applications that support the SCIM profile described in this article can be conn
 1. Select **Provision on-demand** in the left panel. Search for a user that is in scope for provisioning and provision them on-demand. Repeat with other users that you would like to test provisioning with.
 1. Once your configuration is complete, select **Overview** in the left panel.
 1. Select **Properties**.
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Appy** to save the changes.   
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Apply** to save the changes.   
 1. Select **Start provisioning** to start the Microsoft Entra provisioning service. 
 
 

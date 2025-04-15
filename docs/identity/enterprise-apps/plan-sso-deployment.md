@@ -1,6 +1,6 @@
 ---
 title: Plan a single sign-on deployment
-description: Plan the deployment of single sign-on in Microsoft Entra ID.
+description: 'SSO deployment planning: Streamline role assignments, certificate updates, and licensing for Microsoft Entra ID to ensure uninterrupted access.' 
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 03/19/2024
+ms.date: 03/31/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management

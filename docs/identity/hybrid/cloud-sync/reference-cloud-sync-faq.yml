@@ -3,10 +3,10 @@ metadata:
   title: Microsoft Entra Cloud Sync FAQ
   description: This document describes frequently asked questions for cloud sync.
   author: billmath
-  manager: amycolannino
+  manager: femila
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 10/22/2024
+  ms.date: 12/17/2024
   ms.subservice: hybrid-cloud-sync
   ms.author: billmath
   

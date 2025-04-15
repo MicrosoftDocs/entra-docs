@@ -34,7 +34,6 @@ Using the information in this tutorial, an administrator of the application lear
 
 ## Create an access review
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The administrator wants to make sure that users or guests have appropriate access. They decide to ask users of the application to participate in an access review and recertify or attest to their need for access. When the access review is finished, they can then make changes and remove access from users who no longer need it. For more information, see
 [Manage user and guest user access with access reviews](~/id-governance/manage-access-review.md).

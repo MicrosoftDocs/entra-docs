@@ -3,11 +3,11 @@ title: 'Migrate Microsoft Entra Connect to Microsoft Entra Cloud Sync| Microsoft
 description: Describes steps to migrate Microsoft Entra Connect to Microsoft Entra Cloud Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -34,7 +34,7 @@ Microsoft Entra Cloud Sync is the future for accomplishing your hybrid identity 
 |Move users into new OU (optional)|If you're using a new OU, move the users that are in scope for this pilot into that OU now. Before continuing, let Microsoft Entra Connect pick up the changes so that it's synchronizing them in the new OU.| 
 |Run PowerShell on OU|You can run the following PowerShell cmdlet to get the counts of the users that are in the pilot OU. </br>`Get-ADUser -Filter * -SearchBase "<DN path of OU>"`</br> Example: `Get-ADUser -Filter * -SearchBase "OU=Finance,OU=UserAccounts,DC=FABRIKAM,DC=COM"`|
 |Stop the scheduler|Before creating new sync rules, you need to stop the Microsoft Entra Connect scheduler. For more information, see [how to stop the scheduler](../connect/how-to-connect-sync-feature-scheduler.md#stop-the-scheduler).
-|Create the custom sync rules|In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU you created or identified previously. The inbound sync rule is a join rule with a target attribute of cloudNoFlow. You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. For more information, see [Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest](tutorial-pilot-aadc-aadccp.md#create-custom-user-inbound-rule) tutorial for how to create these rules.|
+|Create the custom sync rules|In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU you created or identified previously. The inbound sync rule is a join rule with a target attribute of cloudNoFlow. You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. For more information, see [Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest](tutorial-pilot-aadc-aadccp.md#create-a-custom-user-inbound-rule) tutorial for how to create these rules.|
 |Install the provisioning agent|If you haven't done so, install the provisioning agent. For more information, see [how to install the agent](how-to-install.md).|
 |Configure cloud sync|Once the agent is installed, you need to configure cloud sync. In the configuration, you need to create a scope to the OU that was created or identified previously. For more information, see [Configuring cloud sync](how-to-configure.md).|
 |Verify pilot users are synchronizing and being provisioned|Verify that the users are now being synchronized in the portal. You can use the PowerShell script below to get a count of the number of users that have the on-premises pilot OU in their distinguished name. This number should match the count of users in the previous step. If you create a new user in this OU, verify that it's being provisioned.|
@@ -67,12 +67,11 @@ Microsoft Entra Cloud Sync is the future for accomplishing your hybrid identity 
 #
 #
 
-
-Connect-AzureAD -Confirm
+Connect-MgGraph -Scopes "User.Read.All"
 
 #Declare variables
 
-$Users = Get-AzureADUser -All:$true -Filter "DirSyncEnabled eq true"
+$Users = Get-EntraUser -All:$true -Filter "DirSyncEnabled eq true"
 $OU = "OU=Sales,DC=contoso,DC=com"
 $counter = 0
 

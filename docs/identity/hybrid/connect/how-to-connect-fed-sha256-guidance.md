@@ -4,13 +4,13 @@ description: This page provides guidelines for changing SHA algorithm for federa
 keywords: SHA1,SHA256,M365,federation,aadconnect,adfs,ad fs,change sha,federation trust,relying party trust
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: cf6880e2-af78-4cc9-91bc-b64de4428bbd
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 04/09/2025
 ms.author: billmath
 
 

@@ -2,7 +2,7 @@
 title: Add or deactivate custom security attribute definitions in Microsoft Entra ID
 description: Learn how to add new custom security attribute definitions or deactivate custom security attribute definitions in Microsoft Entra ID.
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
@@ -27,7 +27,6 @@ To add or deactivate custom security attributes definitions, you must have:
 
 ## Add an attribute set
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 An attribute set is a collection of related attributes. All custom security attributes must be part of an attribute set. Attribute sets cannot be renamed or deleted.
 

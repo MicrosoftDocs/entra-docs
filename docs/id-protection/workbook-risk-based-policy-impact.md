@@ -1,15 +1,15 @@
 ---
 title: Impact analysis of risk-based access policies workbook
-description: Take a proactive look at the impact of risk-based policies in your environment.
+description: Take a proactive look at the impact of risk-based Conditional Access policies in your environment.
 
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 07/18/2024
+ms.date: 04/11/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: chuqiaoshi
 ---
 # Workbook: Impact analysis of risk-based access policies
@@ -46,18 +46,18 @@ Administrators can use this information to see which users might be impacted ove
 
 ## How to access the workbook
 
-This workbook doesn't require that you create any Conditional Access policies, even ones in report-only mode. The only prerequisite is that you have your sign-in logs sent to a Log Analytics workspace. For more information about how to enable this prerequisite, see the article [How to use Microsoft Entra Workbooks](../identity/monitoring-health/howto-use-workbooks.md). You can access the workbook directly in the Identity Protection blade or go to Workbooks for an editable version: 
+This workbook doesn't require that you create any Conditional Access policies, even ones in report-only mode. The only prerequisite is that you have your sign-in logs sent to a Log Analytics workspace. For more information about how to enable this prerequisite, see the article [How to use Microsoft Entra Workbooks](../identity/monitoring-health/howto-use-workbooks.md). You can access the workbook directly in Identity Protection or go to Workbooks for an editable version: 
 
-In the Identity Protection blade:
+In Identity Protection:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Protection** > **Identity Protection** > **Impact Analysis Report**.
+1. Browse to **Protection** > **Identity Protection** > **Risk policy impact analysis**.
 
 In Workbooks: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
-1. Select the **Impact analysis of risk-based access policies** workbook under **Identity Protection**.
+1. Select the **Impact analysis of risk-based access policies** workbook under **ID Protection**.
 
 ### Navigate the workbook
 
@@ -87,7 +87,7 @@ User risk scenarios three and four are going to help you if you already have som
 
 :::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-sign-in.png" alt-text="Screenshot showing the sign-in risk sections of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-sign-in.png":::
 
-Next, let us look at sign-in risk scenarios three and four. If you use MFA, you'll likely have activity here even if you don't have any risk-based access policies enabled. Sign-in risks are automatically remediated when MFA is performed successfully. Scenario four looks at the high-risk sign-ins that weren't successful due to risk-based access policies. If you have policies enabled, but are still seeing sign-ins you expect to be blocked or remediated with MFA, you might have gaps in your policies. If that is the case, we recommend reviewing your policies and using the details section of this workbook to help investigate any gaps. 
+Next, let us look at sign-in risk scenarios three and four. If you use MFA, you likely have activity here even if you don't have any risk-based access policies enabled. Sign-in risks are automatically remediated when MFA is performed successfully. Scenario four looks at the high-risk sign-ins that weren't successful due to risk-based access policies. If you have policies enabled, but are still seeing sign-ins you expect to be blocked or remediated with MFA, you might have gaps in your policies. If that is the case, we recommend reviewing your policies and using the details section of this workbook to help investigate any gaps. 
 
 Scenarios 5 and 6 for user risk scenarios show that remediation is happening. This section gives you insight into how many users are changing their password from on-premises or through self-service password reset (SSPR). If these numbers don't make sense for your environment, for example you didn't think SSPR was enabled, use the details to investigate. 
 
@@ -111,7 +111,7 @@ This section provides a detailed list of those IP addresses that aren't consider
 
 :::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-trusted-network.png" alt-text="Screenshot showing the trusted network section of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-trusted-network.png":::
 
-## FAQ: 
+## FAQs
 
 ### What if I don’t use Microsoft Entra for multifactor authentication? 
 
@@ -119,7 +119,7 @@ If you don’t use Microsoft Entra multifactor authentication, you might still s
 
 ### What if I am in a hybrid environment? 
 
-User risk can be self-remediated using a [secure password change](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy) if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks). 
+User risk can be self-remediated using a [secure password change](howto-identity-protection-remediate-unblock.md#user-self-remediation) if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks). 
 
 ### I just received a high-risk alert but they aren't showing up in this report? 
 

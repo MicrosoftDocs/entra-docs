@@ -12,7 +12,7 @@ ms.date: 08/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
-# Customer intent: As an application administrator, I want to configure linked-based single sign-on for my application in Microsoft Entra ID, so that users can access the application through the My Apps or Microsoft 365 portal and be redirected to the correct sign-in page.
+# Customer intent: As an Application Administrator, I want to configure linked-based single sign-on for my application in Microsoft Entra ID, so that users can access the application through the My Apps or Microsoft 365 portal and be redirected to the correct sign-in page.
 ---
 
 # Add linked single sign-on to an application
@@ -27,7 +27,6 @@ Some common scenarios where linked-based SSO is valuable include:
 - Add deep links to specific web pages that you want to appear on your user's access pages.
 - Add a link to an application that doesn't require authentication. The linked option doesn't provide sign-on functionality through Microsoft Entra credentials, but you can still use some of the other features of enterprise applications. For example, you can use audit logs and add a custom logo and application name.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Prerequisites
 

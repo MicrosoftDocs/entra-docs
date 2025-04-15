@@ -5,11 +5,11 @@ description: Learn how to find and address gaps in strong authentication coverag
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/19/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckMS 
-manager: amycolannino
+manager: femila
 ms.reviewer: inbarc
 ---
 # Find and address gaps in strong authentication coverage for your administrators

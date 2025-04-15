@@ -4,7 +4,7 @@ description: List of services supporting managed identities
 
 author: rwike77
 ms.author: ryanwi
-ms.date: 03/14/2024
+ms.date: 02/27/2025
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: managed-identities
@@ -14,7 +14,7 @@ manager: CelesteDG
 
 # Azure services that can use managed identities to access other services
 
-Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. Using a managed identity, you can authenticate to any [service that supports Microsoft Entra authentication](./services-id-authentication-support.md) without managing credentials. We are integrating managed identities for Azure resources and Microsoft Entra authentication across Azure. This page provides links to services' content that can use managed identities to access other Azure resources. Each entry in the table includes a link to service documentation discussing managed identities.
+Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. Using a managed identity, you can authenticate to any service that supports Microsoft Entra authentication without managing credentials. We are integrating managed identities for Azure resources and Microsoft Entra authentication across Azure. This page provides links to services' content that can use managed identities to access other Azure resources. Each entry in the table includes a link to service documentation discussing managed identities.
 
 >[!IMPORTANT]
 > New technical content is added daily. This list does not include every article that talks about managed identities. Please refer to each service's content set for details on their managed identities support. Resource provider namespace information is available in the article titled [Resource providers for Azure services](/azure/azure-resource-manager/management/azure-services-resource-providers).
@@ -37,11 +37,13 @@ The following Azure services support managed identities for Azure resources:
 | Azure Batch                     | [Configure customer-managed keys for your Azure Batch account with Azure Key Vault and Managed Identity](/azure/batch/batch-customer-managed-key)  </BR> [Configure managed identities in Batch pools](/azure/batch/managed-identity-pools)          |
 | Azure Blueprints                | [Stages of a blueprint deployment](/azure/governance/blueprints/concepts/deployment-stages)                              |
 | Azure Cache for Redis           | [Managed identity for storage accounts with Azure Cache for Redis](/azure/azure-cache-for-redis/cache-managed-identity) |
+| Azure Chaos Studio              | [Permissions and security in Azure Chaos Studio](/azure/chaos-studio/chaos-studio-permissions-security#user-assigned-managed-identity)        |
 | Azure Communications Gateway    | [Deploy Azure Communications Gateway](/azure/communications-gateway/deploy) |
 | Azure Communication Services    | [How to use Managed Identity with Azure Communication Services](/azure/communication-services/how-tos/managed-identity)
 | Azure Container Apps            | [Managed identities in Azure Container Apps](/azure/container-apps/managed-identity) |
 | Azure Container Instance        | [How to use managed identities with Azure Container Instances](/azure/container-instances/container-instances-managed-identity)                                                                                          |
 | Azure Container Registry        | [Use an Azure-managed identity in ACR Tasks](/azure/container-registry/container-registry-tasks-authentication-managed-identity)                                                                       |
+| Azure CycleCloud                | [Using Managed Identities](/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8)    |
 | Azure AI services        | [Configure customer-managed keys with Azure Key Vault for Azure AI services](/azure/ai-services/encryption/cognitive-services-encryption-keys-portal)                                                                          |
 | Azure Data Box                  | [Use customer-managed keys in Azure Key Vault for Azure Data Box](/azure/databox/data-box-customer-managed-encryption-key-portal)                                                                                             |
 | Azure Data Explorer             | [Configure managed identities for your Azure Data Explorer cluster](/azure/data-explorer/configure-managed-identities-cluster?tabs=portal)                                                                                                     |
@@ -52,6 +54,8 @@ The following Azure services support managed identities for Azure resources:
 | Azure Digital Twins             | [Enable a managed identity for routing Azure Digital Twins events](/azure/digital-twins/how-to-enable-managed-identities-portal)                                                                                            |
 | Azure Event Grid                | [Event delivery with a managed identity](/azure/event-grid/managed-service-identity)|
 | Azure Event Hubs                | [Authenticate a managed identity with Microsoft Entra ID to access Event Hubs Resources](/azure/event-hubs/authenticate-managed-identity)|
+| Azure File Sync                 | [How to use managed identities with Azure File Sync](/azure/storage/file-sync/file-sync-managed-identities)|
+| Azure Files                     | [Access Azure file shares using Microsoft Entra ID with Azure Files OAuth over REST](/azure/storage/files/authorize-oauth-rest)|
 | Azure Health Data Services workspace services | [Authentication and authorization for Azure Health Data Services](/azure/healthcare-apis/authentication-authorization)|
 | Azure Health Data Services de-identification service | [Use managed identities with the de-identification service](/azure/healthcare-apis/deidentification/managed-identities)|
 | Azure Image Builder             | [Azure Image Builder overview](/azure/virtual-machines/image-builder-overview#permissions)                                                                                                    |
@@ -67,6 +71,7 @@ The following Azure services support managed identities for Azure resources:
 | Azure Monitor                   | [Azure Monitor customer-managed key](/azure/azure-monitor/logs/customer-managed-keys?tabs=portal)                                                                                              |
 | Azure Policy                    | [Remediate non-compliant resources with Azure Policy](/azure/governance/policy/how-to/remediate-resources)      |
 | Microsoft Purview                   | [Credentials for source authentication in Microsoft Purview](/purview/manage-credentials) |
+| Azure Quantum                   | [Authenticate using a managed identity](/azure/quantum/optimization-authenticate-managed-identity)        |
 | Azure Resource Mover            | [Move resources across regions (from resource group)](/azure/resource-mover/move-region-within-resource-group)|
 | Azure Site Recovery             | [Replicate machines with private endpoints](/azure/site-recovery/azure-to-azure-how-to-enable-replication-private-endpoints#enable-the-managed-identity-for-the-vault)                                  |
 | Azure Search                    | [Set up an indexer connection to a data source using a managed identity](/azure/search/search-howto-managed-identities-data-sources)                                                                                            |

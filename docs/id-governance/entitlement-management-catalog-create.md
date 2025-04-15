@@ -2,7 +2,7 @@
 title: Create and manage a catalog of resources in entitlement management
 description: Learn how to create a new container of resources and access packages in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 editor: HANKI
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -216,7 +216,6 @@ To remove resources from a catalog:
 
 ## Add more catalog owners
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 The user who created a catalog becomes the first catalog owner. To delegate management of a catalog, add users to the catalog owner role. Adding more catalog owners helps to share the catalog management responsibilities.
 

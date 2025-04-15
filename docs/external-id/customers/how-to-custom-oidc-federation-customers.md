@@ -6,16 +6,16 @@ author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/12/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
 
 #Customer intent: As a developer, devops, or it administrator, I want to learn how to add an OpenID Connect identity provider for my external tenant.
 ---
-# Add OpenID Connect as an external identity provider (preview)
+# Add OpenID Connect as an external identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -26,7 +26,7 @@ When you add an OIDC identity provider to your user flow's sign-in options, user
 ## Prerequisites
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
-- A [registered application](how-to-register-ciam-app.md) in the tenant.
+- A [registered application](/entra/identity-platform/quickstart-register-app) in the tenant.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Set up your OpenID Connect identity provider
@@ -50,17 +50,17 @@ To configure OpenID connect federation with your identity provider in Microsoft 
 
 - **Well-known endpoint**
 - **Issuer URI**
-- **Client ID** 
+- **Client ID**
 - **Client Authentication Method**
 - **Client Secret**
-- **Scope** 
+- **Scope**
 - **Response Type**
-- **Claims mapping** (optional)
+- **Claims mapping**
   - Sub
   - Name
   - Given name
   - Family name
-  - Email
+  - Email (required)
   - Email_verified
   - Phone number
   - Phone_number_verified
@@ -89,7 +89,7 @@ After you configured your identity provider, in this step you'll configure a new
    > [!NOTE]
    > Configuring other Microsoft Entra tenants as an external identity provider is currently not supported. Consequently, the `microsoftonline.com` domain in the issuer URI is not accepted.
 
-   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Client secret needs to be provided if client_secret authentication is selected. If private_key_jwt is selected, private key needs to be provided.
+   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Client secret needs to be provided if client_secret authentication is selected. If private_key_jwt is selected, private key needs to be provided in the OpenID provider metadata (well-known endpoint), retrievable via the property jwks_uri.
    - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post`, `client_secret_jwt` and `private_key_jwt` authentication methods are supported.
    > [!NOTE]
    > Due to possible security issues, client_secret_basic client authentication method is not supported.
@@ -116,5 +116,5 @@ At this point, the OIDC identity provider has been set up in your Microsoft Entr
 
 ## Related content
 
-- [Add an Azure AD B2C tenant as an OIDC identity provider (preview)](how-to-b2c-federation-customers.md)
-- [OIDC claims mapping (preview)](reference-oidc-claims-mapping-customers.md)
+- [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
+- [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

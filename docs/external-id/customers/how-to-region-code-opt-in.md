@@ -50,9 +50,9 @@ Starting January 2025, the following country codes will be deactivated by defaul
 | 359 | Bulgaria |
 | 226 | Burkina Faso |
 | 257 | Burundi |
+| 238 | Cabo Verde |
 | 855 | Cambodia |
 | 237 | Cameroon |
-| 238 | Cape Verde |
 | 235 | Central African Republic |
 | 269 | Comoros |
 | 243 | Congo (Democratic Republic of the) |
@@ -164,7 +164,7 @@ Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy to activat
 
 ### How to activate telecom for regions
 
-To enable telephony traffic from currently deactivated country codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric country codes for the five countries within that region.
+To enable telephony traffic from currently deactivated country codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric country codes for the specific countries within that region.
 
 #### Example REST APIs
 

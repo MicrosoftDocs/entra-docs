@@ -2,15 +2,18 @@
 title: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management
 description: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: faq
-ms.date: 05/13/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Frequently asked questions (FAQs)
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article answers frequently asked questions (FAQs) about Microsoft Entra Permissions Management.
 
@@ -113,11 +116,11 @@ For information about permissions usage reports, see [Generate and download the 
 
 ## Does Permissions Management integrate with third-party ITSM (Information Technology Service Management) tools?
 
-Integration with ITMS tools, such as ServiceNow, is in the future roadmap.
+Integration with ITSM tools, such as ServiceNow, is in the future roadmap.
 
 ## How is Permissions Management being deployed?
 
-Customers assigned the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) role must first onboard Permissions Management to their Microsoft Entra tenant, and then onboard their AWS accounts, GCP projects, and Azure subscriptions. More details about onboarding can be found in our [product documentation](onboard-enable-tenant.md).
+Customers assigned the [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) role must first onboard Permissions Management to their Microsoft Entra tenant, and then onboard their AWS accounts, GCP projects, and Azure subscriptions. More details about onboarding can be found in our [product documentation](onboard-enable-tenant.md).
 
 ## How long does it take to deploy Permissions Management?
 
@@ -141,7 +144,7 @@ If a customer initiates a free Permissions Management 45-day trial and does not 
 
 If a customer decides to discontinue licensing the service, all previously collected data is deleted within 30 days of license termination.
 
-Customers can also remove, export or modify specific data if a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) using the Permissions Management service files an official Data Subject Request. To file a request:
+Customers can also remove, export or modify specific data if a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) using the Permissions Management service files an official Data Subject Request. To file a request:
 
 If you're an enterprise customer, you can contact your Microsoft representative, account team, or tenant admin to file a high-priority IcM support ticket requesting a Data Subject Request. Do not include details or any personally identifiable information in the IcM request. We'll reach out to you for these details only after an IcM is filed.
 

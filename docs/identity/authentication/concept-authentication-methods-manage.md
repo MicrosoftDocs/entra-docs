@@ -5,12 +5,12 @@ description: Learn about the authentication methods policy and different ways to
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/03/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
 ms.reviewer: jpettere
-manager: amycolannino
+manager: femila
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
 # Manage authentication methods for Microsoft Entra ID
@@ -40,7 +40,7 @@ Two other policies, located in **Multifactor authentication** settings and **Pas
 >[!Important]
 >In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
 
-To manage the legacy MFA policy, browes to **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
+To manage the legacy MFA policy, browse to **Protection** > **Authentication methods** > **Policies** >**Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
 :::image type="content" border="true" source="./media/concept-authentication-methods-manage/service-settings.png" alt-text="Screenshot of MFA service settings.":::
 

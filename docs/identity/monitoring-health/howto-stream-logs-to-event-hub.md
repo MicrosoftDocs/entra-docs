@@ -2,7 +2,7 @@
 title: Stream Microsoft Entra logs to an event hub
 description: Learn how to stream Microsoft Entra activity logs to an event hub for SIEM tool integration and analysis.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -27,7 +27,6 @@ This article shows how you can stream your logs to an event hub, to integrate wi
 
 ## Stream logs to an event hub
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 [!INCLUDE [diagnostic-settings-include](../../includes/diagnostic-settings-include.md)]
 
