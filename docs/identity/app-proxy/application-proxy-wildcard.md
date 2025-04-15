@@ -11,6 +11,7 @@ ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
+ai-usage: ai-assisted
 ---
 
 # Wildcard applications in the Microsoft Entra application proxy

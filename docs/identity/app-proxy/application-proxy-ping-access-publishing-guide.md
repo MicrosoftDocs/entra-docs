@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Header based authentication for single sign-on with application proxy and PingAccess

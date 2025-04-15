@@ -9,6 +9,7 @@ ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.custom: template-how-to
+ai-usage: ai-assisted
 ---
 
 # Add your own Traffic Manager to application proxy
