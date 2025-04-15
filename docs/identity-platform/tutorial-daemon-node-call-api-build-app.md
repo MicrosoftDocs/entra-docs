@@ -23,18 +23,37 @@ This tutorial is the final part of a series that demonstrates how to prepare you
 In this tutorial;
 
 > [!div class="checklist"]
+> - Configure app roles for the web API
+> - Grant permissions to the daemon app
 > - Create a Node.js app in Visual Studio Code, then install dependencies.
 > - Enable the Node.js app to acquire an access token for calling a web API.
 
 ## Prerequisites
 
-- [Tutorial: Prepare your external tenant to authorize a Node.js daemon application](tutorial-daemon-node-call-api-prepare-tenant.md).
-- A protected web API that is running and ready to accept requests. If you haven't created one, see the [create a protected web API tutorial](./tutorial-web-api-dotnet-core-build-app.md). Ensure this web API is using the app registration details you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md). Make sure your web API exposes the following endpoints via HTTPS:
-    - `GET /api/todolist` to get all todos.
-    - `POST /api/todolist` to add a TODO.
-- [Node.js](https://nodejs.org).
-- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
-- Registration details for the Node.js daemon app and web API you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md).
+* Register a new client app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+  * Directory (tenant) domain name (for example, *contoso.onmicrosoft.com* or *contoso.com*). 
+* Add a client secret to your client app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
+
+* A protected web API that is running and ready to accept requests. If you haven't created one, see the [create a protected web API tutorial](./tutorial-web-api-dotnet-core-build-app.md). Ensure this web API is using the app registration details you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md). Make sure your web API exposes the following endpoints via HTTPS:
+    * `GET /api/todolist` to get all todos.
+    * `POST /api/todolist` to add a TODO.
+* [Node.js](https://nodejs.org).
+* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+* Registration details for the Node.js daemon app and web API you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md).
+
+## Configure app roles
+
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-app-role.md)]
+
+## Configure idtyp token claim
+
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
+
+## Grant API permissions to the daemon app
+
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
 ## Create the Node.js daemon project
 
