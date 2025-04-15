@@ -18,7 +18,7 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Call a web API from your Node.js daemon application
 
-This tutorial demonstrates how to prepare your Node.js daemon client app using the [Open Authorization (OAuth) 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API. You'll build Node.js application using [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authorization to your app.
+This tutorial demonstrates how to prepare your Node.js daemon client app using the [Open Authorization (OAuth) 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API. You'll build a Node.js application using [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authorization to your app.
 
 In this tutorial;
 
