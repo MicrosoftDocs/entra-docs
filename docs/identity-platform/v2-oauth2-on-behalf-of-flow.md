@@ -252,6 +252,18 @@ The resource service (API) identified in the request should be the API for which
 
 Regardless of which API is identified in the authorization request, the consent prompt is combined with all required permissions configured for the client app. All required permissions configured for each middle tier API listed in the client's required permissions list, which identified the client as a known client application, are also included. 
 
+> [!IMPORTANT]
+> When requesting an access token using `.default`, do **not** combine it with delegated scopes like `User.Read`, `Mail.Read`, `profile`, or `offline_access` in the same `scope` parameter. Doing so results in an `AADSTS70011` error, because `.default` refers to pre-consented static permissions while the others require dynamic user consent at runtime.
+>
+> ✅ The only exception is when using **combined consent** with the [known client applications](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow#knownclientapplications) pattern. In that case, it's valid to request:
+>
+> ```
+> scope=openid https://middle-tier-api.example.com/.default
+> ```
+>
+> This flow allows the user to consent to both the frontend and the downstream API in one prompt. In some cases, `offline_access` may also work alongside `.default` to issue a refresh token, but mixing `.default` with other delegated scopes (e.g., `User.Read`) remains unsupported.
+
+
 ### Preauthorized applications
 
 Resources can indicate that a given application always has permission to receive certain scopes. This is useful to make connections between a front-end client and a back-end resource more seamless. A resource can [declare multiple preauthorized applications](reference-app-manifest.md#preauthorizedapplications-attribute) (`preAuthorizedApplications`) in its manifest. Any such application can request these permissions in an OBO flow and receive them without the user providing consent.
