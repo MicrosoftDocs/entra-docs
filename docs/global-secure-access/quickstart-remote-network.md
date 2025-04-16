@@ -7,6 +7,7 @@ manager: femila
 ms.service: global-secure-access
 ms.topic: quickstart
 ms.date: 02/21/2025
+ai-usage: ai-assisted
 
 #customer intent: As an administrator, I want learn how to create a remote network so that I can begin acquiring remote network traffic in Global Secure Access.
 

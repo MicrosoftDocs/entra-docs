@@ -9,6 +9,7 @@ ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: katabish
+ai-usage: ai-assisted
 
 # Customer intent: As an IT admin, I need to enable and manage the Internet Access traffic forwarding profile so that internet access I configured can forward traffic according to the profile.
 ---

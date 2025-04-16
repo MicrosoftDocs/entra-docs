@@ -11,6 +11,7 @@ ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 
 #customer intent: As an IT admin, I want to understand how to configure Microsoft and Zscaler Security Service Edge (SSE) coexistence so that I can deploy a unified SASE solution.  
+ai-usage: ai-assisted
 ---
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Zscaler

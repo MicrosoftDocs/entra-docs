@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: scenarios:getting-started, has-adal-ref
-ms.date: 03/20/2024
+ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -129,7 +129,7 @@ Applications running on a device without a browser can still call an API on beha
 
 Though we don't recommend that you use it, the [username/password flow](scenario-desktop-acquire-token-username-password.md) is available in public client applications. This flow is still needed in some scenarios like DevOps.
 
-Using the username/password flow constrains your applications. For instance, applications can't sign in a user who needs to use multifactor authentication or the Conditional Access tool in Microsoft Entra ID. Your applications also don't benefit from single sign-on. Authentication with the username/password flow goes against the principles of modern authentication and is provided only for legacy reasons.
+Using the username/password flow constrains your applications and is no longer considered secure. For instance, applications can't sign in a user who needs to use multifactor authentication or the Conditional Access tool in Microsoft Entra ID. Your applications also don't benefit from single sign-on. Authentication with the username/password flow goes against the principles of modern authentication and is provided only for legacy reasons.
 
 In desktop apps, if you want the token cache to persist, you can customize the [token cache serialization](/entra/msal/dotnet/how-to/token-cache-serialization). By implementing dual token cache serialization, you can use backward-compatible and forward-compatible token caches.
 
@@ -141,7 +141,7 @@ Similar to a desktop app, a mobile app calls the interactive token-acquisition m
 
 ![A mobile app calling a web API](media/scenarios/mobile-app.svg)
 
-MSAL iOS and MSAL Android use the system web browser by default. However, you can direct them to use the embedded web view instead. There are specificities that depend on the mobile platform: Universal Windows Platform (UWP), iOS, or Android.
+MSAL iOS and MSAL Android use the system web browser by default. However, you can direct them to use the embedded web view instead. There are specificities that depend on the mobile platform: iOS, or Android.
 
 Some scenarios, like those that involve Conditional Access related to a device ID or a device enrollment, require a broker to be installed on the device. Examples of brokers are Microsoft Company Portal on Android and Microsoft Authenticator on Android and iOS.
 
@@ -212,7 +212,6 @@ Microsoft Authentication Libraries support multiple platforms:
 - Native iOS
 - Node.js
 - Python
-- Windows 10/UWP
 
 You can also use various languages to build your applications.
 

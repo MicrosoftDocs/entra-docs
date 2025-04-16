@@ -50,7 +50,7 @@ You can either review and delete these files using Windows Explorer or you can u
 
 
 ```
-$Files = ((Get-childitem -Path "$env:programdata\aadconnect" -Recurse).VersionInfo).FileName
+$Files = ((Get-ChildItem -Path "$env:programdata\aadconnect" -Recurse).VersionInfo).FileName
 Foreach ($file in $files) {
 If ($File.ToUpper() -ne "$env:programdata\aadconnect\PERSISTEDSTATE.XML".toupper()) # Do not delete this file
     {Remove-Item -Path $File -Force}
