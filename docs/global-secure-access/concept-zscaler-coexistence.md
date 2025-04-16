@@ -1,17 +1,20 @@
 ---
-title: Learn about Security Service Edge (SSE) coexistence with Microsoft and Zscaler.
-description: Microsoft and Zscaler’s Security Service Edge (SSE) coexistence solution guide.
+title: 'Configure Microsoft and Zscaler SSE for Unified SASE Solutions  '
+description: 'Learn how to configure Microsoft and Zscaler SSE for unified SASE solutions to enhance security and connectivity in your organization.  '
 author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: concept-article
-ms.date: 04/11/2025
+ms.date: 04/16/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
-
-#customer intent: As an IT admin, I want to understand how to configure Microsoft and Zscaler Security Service Edge (SSE) coexistence so that I can deploy a unified SASE solution.  
 ai-usage: ai-assisted
+ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:04/16/2025
+  - ai-gen-description
 ---
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Zscaler
