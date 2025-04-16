@@ -3,13 +3,13 @@ title: Using Microsoft Entra Connect Health with sync
 description: This is the Microsoft Entra Connect Health page that discusses how to monitor Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 1dfbeaba-bda2-4f68-ac89-1dbfaf5b4015
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 

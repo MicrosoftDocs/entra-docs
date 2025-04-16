@@ -1,16 +1,15 @@
 ---
 title: What is group-based licensing
-description: Learn about Microsoft Entra group-based licensing, including how it works, key features, and best practices.
+description: Learn about Microsoft Entra group-based licensing, including how it works,
+  key features, and best practices.
 author: barclayn
-manager: amycolannino
-
+manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 01/31/2025
 ms.author: barclayn
 ms.reviewer: krbain
-# Customer intent: As an IT admin, I want to understand group-based licensing, so I can effectively assign licenses to users in my organization.
 ---
 
 # What is group-based licensing in Microsoft Entra ID?
@@ -64,4 +63,4 @@ To learn more about other scenarios for license management through group-based l
 - [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-migrate-users.md)
 - [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-change-licenses.md)
 - [Microsoft Entra group-based licensing additional scenarios](~/identity/users/licensing-group-advanced.md)
-- [PowerShell examples for group-based licensing in Microsoft Entra ID](~/identity/users/licensing-ps-examples.md)
+- [Licensing PowerShell examples](~/identity/users/licensing-powershell-graph-examples.md)

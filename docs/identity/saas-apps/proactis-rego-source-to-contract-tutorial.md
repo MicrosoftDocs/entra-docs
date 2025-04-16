@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://www.proactisplaza.com/authentication/saml/<CustomerName>`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Proactis Rego Source-to-Contract Client support team](mailto:helpdesk@proactis.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Proactis Rego Source-to-Contract Client support team](mailto:helpdesk@proactis.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **Download** to download the certificate and save it on your computer.
 
@@ -100,11 +100,11 @@ In this section, you create a user called Britta Simon at Proactis Rego Source-t
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Proactis Rego Source-to-Contract Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Proactis Rego Source-to-Contract Sign-on URL where you can initiate the login flow. 
 
 * Go to Proactis Rego Source-to-Contract Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Proactis Rego Source-to-Contract tile in the My Apps, this will redirect to Proactis Rego Source-to-Contract Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Proactis Rego Source-to-Contract tile in the My Apps, this option redirects to Proactis Rego Source-to-Contract Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

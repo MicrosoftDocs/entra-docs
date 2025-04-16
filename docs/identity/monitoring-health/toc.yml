@@ -84,6 +84,8 @@ items:
       href: howto-stream-logs-to-event-hub.md
     - name: Configure a Log Analytics workspace
       href: tutorial-configure-log-analytics-workspace.md
+    - name: Create a custom Log Analytics workbook
+      href: tutorial-create-log-analytics-workbook.md
     - name: Integrate activity logs with Azure Monitor logs
       href: howto-integrate-activity-logs-with-azure-monitor-logs.yml  
     - name: Analyze activity logs in Log Analytics
@@ -137,7 +139,7 @@ items:
       href: howto-use-workbooks.md
     - name: Authentication prompts analysis
       href: workbook-authentication-prompts-analysis.md
-    - name: Conditional access gap analyzer
+    - name: Conditional Access gap analyzer
       href: workbook-conditional-access-gap-analyzer.md
     - name: Cross-tenant access activity 
       href: workbook-cross-tenant-access-activity.md

@@ -81,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://<SUBDOMAIN>.udemy.com`
 
 	> [!Note]
-    > This value is not real. Update this value with the actual Sign-on URL. Contact [Udemy Business SAML Client support team](mailto:ufbsupport@udemy.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > This value isn't real. Update this value with the actual Sign-on URL. Contact [Udemy Business SAML Client support team](mailto:ufbsupport@udemy.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Udemy Business SAML application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -95,7 +95,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| firstName | user.givenname |
 	| lastName | user.surname |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -105,17 +105,17 @@ To configure single sign-on on **Udemy Business SAML** side, you need to send th
 
 ### Create Udemy Business SAML test user
 
-In this section, a user called B.Simon is created in Udemy Business SAML. Udemy Business SAML supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Udemy Business SAML, a new one is created after authentication.
+In this section, a user called B.Simon is created in Udemy Business SAML. Udemy Business SAML supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Udemy Business SAML, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Udemy Business SAML Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Udemy Business SAML Sign-on URL where you can initiate the login flow. 
 
 * Go to Udemy Business SAML Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Udemy Business SAML tile in the My Apps, this will redirect to Udemy Business SAML Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Udemy Business SAML tile in the My Apps, this option redirects to Udemy Business SAML Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

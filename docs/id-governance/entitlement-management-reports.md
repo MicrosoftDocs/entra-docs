@@ -2,12 +2,12 @@
 title: View reports & logs in entitlement management
 description: Learn how to view the user assignments report and audit logs in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 editor: jocastel-MSFT
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/30/2024
+ms.date: 03/10/2025
 ms.author: owinfrey
 ms.reviewer: jocastel
 #Customer intent: As an administrator, I want view resources a user has access to and view request logs for auditing purposes.
@@ -136,11 +136,13 @@ To view events for an access package, you must have access to the underlying Azu
 - Reports Reader  
 - Application Administrator  
 
-1. In the Microsoft Entra admin center, select **Identity** then select **Workbooks** under **Monitoring & health**. If you only have one subscription, move on to step 3. 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader). Make sure you have access to the resource group containing the Azure Monitor workspace.
+
+1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.  
 
 1. If you have multiple subscriptions, select the subscription that contains the workspace.  
 
-1. Select the workbook named *Access Package Activity*. 
+1. Once you have selected the subscription, or if you only have one subscription, select the workbook named *Access Package Activity*.
 
 1. In that workbook, select a time range (change to **All** if not sure), and select an access package ID from the drop-down list of all access packages that had activity during that time range. The events related to the access package that occurred during the selected time range will be displayed.
 
@@ -154,11 +156,13 @@ If you have configured to send audit log events to [Azure Monitor](entitlement-m
 
 The workbook *Application role assignment activity* shows if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a Global Administrator directly assigning a user to an application role.
 
-1. In the Microsoft Entra admin center, select **Identity** then select **Workbooks** under **Monitoring & health**. If you only have one subscription, move on to step 3.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader). Make sure you have access to the resource group containing the Azure Monitor workspace.
+
+1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.  
 
 1. If you have multiple subscriptions, select the subscription that contains the workspace.
 
-1. Select the workbook named *Application role assignment activity*.
+1. Once you have selected the subscription, or if you only have one subscription, select the workbook named *Access Package Activity*.
 
     [ ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara-sml.png) ](./media/entitlement-management-access-package-incompatible/workbook-ara-lrg.png#lightbox)
 

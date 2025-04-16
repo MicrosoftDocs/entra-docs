@@ -2,7 +2,7 @@
 title: Troubleshoot account lockout in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot common problems that cause user accounts to be locked out in Microsoft Entra Domain Services.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services
@@ -22,7 +22,7 @@ This troubleshooting article outlines why account lockouts happen and how you ca
 
 A user account in a Domain Services managed domain is locked out when a defined threshold for unsuccessful sign-in attempts has been met. This account lockout behavior is designed to protect you from repeated brute-force sign-in attempts that may indicate an automated digital attack.
 
-**By default, if there are 5 bad password attempts in 2 minutes, the account is locked out for 30 minutes.**
+**By default, if there are 5 bad password attempts within 2 minutes, the account will be locked. It will automatically unlock after 30 minutes.**
 
 The default account lockout thresholds are configured using fine-grained password policy. If you have a specific set of requirements, you can override these default account lockout thresholds. However, it's not recommended to increase the threshold limits to try to reduce the number account lockouts. Troubleshoot the source of the account lockout behavior first.
 

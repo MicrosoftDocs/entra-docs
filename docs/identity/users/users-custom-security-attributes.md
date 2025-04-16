@@ -3,13 +3,13 @@ title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.date: 08/25/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref
 ---
 
 # Assign, update, list, or remove custom security attributes for a user
@@ -22,7 +22,6 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
-- [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
     
@@ -154,10 +153,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a multi-string value to a user
@@ -201,21 +196,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
         }
     }
 }
-```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[Set-AzureADMSUser](/powershell/module/azuread/set-azureadmsuser)
-
-```powershell
-$attributes = @{
-    Engineering = @{
-        "@odata.type" = "#Microsoft.DirectoryServices.CustomSecurityAttributeValue"
-        "Project@odata.type" = "#Collection(String)"
-        Project = @("Baker","Cascade")
-    }
-}
-Set-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -CustomSecurityAttributes $attributes
 ```
 
 ---
@@ -263,10 +243,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a multi-integer value to a user
@@ -312,10 +288,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a Boolean value to a user
@@ -358,10 +330,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -408,10 +376,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Update a custom security attribute assignment with a Boolean value for a user
@@ -454,10 +418,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -502,21 +462,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
         }
     }
 }
-```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[Set-AzureADMSUser](/powershell/module/azuread/set-azureadmsuser)
-
-```powershell
-$attributesUpdate = @{
-    Engineering = @{
-        "@odata.type" = "#Microsoft.DirectoryServices.CustomSecurityAttributeValue"
-        "Project@odata.type" = "#Collection(String)"
-        Project = @("Alpine","Baker")
-    }
-}
-Set-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -CustomSecurityAttributes $attributesUpdate 
 ```
 
 ---
@@ -608,15 +553,6 @@ If there are no custom security attributes assigned to the user or if the callin
 {
     "customSecurityAttributes": null
 }
-```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[Get-AzureADMSUser](/powershell/module/azuread/get-azureadmsuser)
-
-```powershell
-$user1 = Get-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -Select CustomSecurityAttributes
-$user1.CustomSecurityAttributes
 ```
 
 ---
@@ -711,10 +647,6 @@ ConsistencyLevel: eventual
     ]
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -826,10 +758,6 @@ ConsistencyLevel: eventual
     ]
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 
@@ -946,10 +874,6 @@ ConsistencyLevel: eventual
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Remove a single-valued custom security attribute assignment from a user
@@ -994,10 +918,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
-
 ---
 
 #### Remove a multi-valued custom security attribute assignment from a user
@@ -1039,10 +959,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-None
 
 ---
 

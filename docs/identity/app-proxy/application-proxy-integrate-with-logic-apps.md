@@ -5,10 +5,11 @@ author: kenwith
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 09/19/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: kfriedemann
 ms.custom:
+ai-usage: ai-assisted
 ---
 # Securely integrate Azure Logic Apps with on premises  APIs using Microsoft Entra application proxy
 

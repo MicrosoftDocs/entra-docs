@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Wistia
 
-In this article, you'll learn how to integrate Wistia with Microsoft Entra ID. Sign into Wistia with Microsoft Entra ID and start to level up your video marketing strategy. Learn more about Wistia video marketing platform at wistia.com. When you integrate Wistia with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Wistia with Microsoft Entra ID. Sign into Wistia with Microsoft Entra ID and start to level up your video marketing strategy. Learn more about Wistia video marketing platform at wistia.com. When you integrate Wistia with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Wistia.
 * Enable your users to be automatically signed-in to Wistia with their Microsoft Entra accounts.
@@ -81,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<AccountName>.wistia.com/login/sso`
 
     > [!Note]
-    > This value is not the real. Update this value with the actual Sign on URL. Contact [Wistia Client support team](mailto:support@wistia.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > This value isn't the real. Update this value with the actual Sign on URL. Contact [Wistia Client support team](mailto:support@wistia.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Wistia application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -95,7 +95,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | lastName | user.surname |
     | email | user.mail |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -105,17 +105,17 @@ To configure single sign-on on **Wistia** side, you need to send the **App Feder
 
 ### Create Wistia test user
 
-In this section, a user called B.Simon is created in Wistia. Wistia supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Wistia, a new one is created after authentication.
+In this section, a user called B.Simon is created in Wistia. Wistia supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Wistia, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Wistia Sign on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Wistia Sign on URL where you can initiate the login flow. 
 
 * Go to Wistia Sign on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Wistia tile in the My Apps, this will redirect to Wistia Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Wistia tile in the My Apps, this option redirects to Wistia Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

@@ -2,12 +2,13 @@
 title: Troubleshoot problems installing the Microsoft Entra private network connector
 description: Troubleshoot problems installing the Microsoft Entra private network connector.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 04/15/2024
+ms.date: 02/21/2025
 ms.author: kenwith
-ms.reviewer: ashishj
+ms.reviewer: ashishj,dhruvinshah
+ai-usage: ai-assisted
 ---
 
 # Troubleshoot problems installing the private network connector

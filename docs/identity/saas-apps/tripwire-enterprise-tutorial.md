@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Tripwire Enterprise
 
-In this article, you'll learn how to integrate Tripwire Enterprise with Microsoft Entra ID. Tripwire Enterprise is the leading compliance monitoring solution, using file integrity monitoring (FIM) and security configuration management (SCM). When you integrate Tripwire Enterprise with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Tripwire Enterprise with Microsoft Entra ID. Tripwire Enterprise is the leading compliance monitoring solution, using file integrity monitoring (FIM) and security configuration management (SCM). When you integrate Tripwire Enterprise with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Tripwire Enterprise.
 * Enable your users to be automatically signed-in to Tripwire Enterprise with their Microsoft Entra accounts.
@@ -68,11 +68,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file** then perform the following steps:
 
-	a. Click **Upload metadata file**.
+	a. Select **Upload metadata file**.
 
     ![Screenshot shows how to upload metadata file.](common/upload-metadata.png "File")
 
-	b. Click on **folder logo** to select the metadata file and click **Upload**.
+	b. Select **folder logo** to select the metadata file and select **Upload**.
 
 	![Screenshot shows to choose metadata file.](common/browse-upload-metadata.png "Folder")
 
@@ -98,9 +98,9 @@ To create a Tripwire Enterprise user, please see **Creating a User Account** sec
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Tripwire Enterprise for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Tripwire Enterprise for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Tripwire Enterprise tile in the My Apps, you should be automatically signed in to the Tripwire Enterprise for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Tripwire Enterprise tile in the My Apps, you should be automatically signed in to the Tripwire Enterprise for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
