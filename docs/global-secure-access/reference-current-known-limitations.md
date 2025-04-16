@@ -256,8 +256,7 @@ Known limitations for traffic forwarding profiles include:
 
 ## Private Access limitations
 Known limitations for Private Access include:   
-- Avoid overlapping app segments between Quick Access and Global Secure Access apps.
-- Avoid overlapping app segments between Quick Access and per-app access.
+- Avoid overlapping app segments between Global Secure Access apps.
 - Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
 - At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
 
