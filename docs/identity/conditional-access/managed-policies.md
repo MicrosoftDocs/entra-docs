@@ -183,7 +183,7 @@ These policies can be thought of as logical if then statements.
 
 ### What if I want to make more changes?
 
-Administrators might choose to make further changes to these policies by duplicating them using the **Duplicate** button in the policy list view. This new policy can be configured in the same way as any other Conditional Access policy with starting from a Microsoft recommended position. Be careful that you don't inadvertently lower your security posture with those changes.
+Administrators might choose to make further changes to these policies by duplicating them using the **Duplicate** button in the policy list view. This new policy can be configured in the same way as any other Conditional Access policy with starting from a Microsoft recommended position. Be careful not to lower your security posture with those changes.
 
 ### What administrator roles are covered by these policies?
 
@@ -191,20 +191,20 @@ Administrators might choose to make further changes to these policies by duplica
 
 ### What if I use a different solution for multifactor authentication?
 
-Multifactor authentication completed using [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) satisfies the MFA requirements of the Microsoft-managed policies.
+Multifactor authentication using [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) satisfies the MFA requirements of Microsoft-managed policies.
 
 When multifactor authentication is completed via a federated identity provider (IdP), it might satisfy Microsoft Entra ID MFA requirements depending on your configuration. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](/entra/identity/authentication/how-to-mfa-expected-inbound-assertions).
 
 ### What if I use Certificate-Based Authentication?
 
-Depending on your configuration of Certificate-Based Authentication (CBA), it can function as either [single or multifactor authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
+Depending on your Certificate-Based Authentication (CBA) configuration, it can function as [single or multifactor authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
 
-* If your organization has CBA configured as single-factor, users must use a second authentication method to satisfy MFA. For more information on the allowed combinations of authentication methods to MFA with single-factor CBA, see [MFA with single factor certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
-* If your organization has CBA configured as multifactor, users can complete MFA with their CBA authentication method.
+* If your organization configures CBA as single-factor, users must use a second authentication method to satisfy MFA. For more information on the allowed combinations of authentication methods to MFA with single-factor CBA, see [MFA with single factor certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
+* If your organization configures CBA as multifactor, users can complete MFA with their CBA authentication method.
 
 ### What if I use custom controls?
 
-[Custom controls don't satisfy multifactor authentication claim requirements](controls.md#creating-custom-controls). If your organization uses custom controls you should [migrate to external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), the replacement of custom controls. Your external authentication provider needs to support external authentication methods and provide you with the necessary configuration guidance for their integration.
+[Custom controls don't satisfy multifactor authentication claim requirements](controls.md#creating-custom-controls). If your organization uses custom controls you should [migrate to external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), the replacement of custom controls. Your external authentication provider must support external authentication methods and provide the necessary configuration guidance for integration.
 
 ## Related content
 
