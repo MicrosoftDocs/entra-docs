@@ -97,11 +97,11 @@ Get-EntraUserCBAAuthorizationInfo -UserId ‘user@contoso.com'
 
 |Attribute     | Value             |
 |---------------|------------------|
-|Id               | aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
-|DisplayName       | Contoso User|
-|UserPrincipalName | user@contoso.com|
-|UserType          | Member|
-|AuthorizationInfo | @{CertificateUserIds=System.Object[]; RawAuthorizationInfo=System.Collections.Hashtable}|
+|Id               | `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`|
+|DisplayName       | `Contoso User`|
+|UserPrincipalName | `user@contoso.com`|
+|UserType          | `Member`|
+|AuthorizationInfo | `@{CertificateUserIds=System.Object[]; RawAuthorizationInfo=System.Collections.Hashtable}`|
 
 This command retrieves the authorization information for the user with the specified User Principal Name.
 
