@@ -65,7 +65,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. In the **Redirect URIs** textbox, use the URL associated with your LifeBalance Program subscription in this format. These usually have the following pattern:
     `https://<LifeBalance Domain>/api/azure_token`
 
-        + If you do not have a custom domain yet, please contact the [LifeBalance Program support team](mailto:info@lifebalanceprogram.com)
+        + If you do not have a custom domain yet, please contact the [LifeBalance Program support team](mailto:info@lifebalanceprogram.com).
 
         [![Screenshot of showing the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
 
