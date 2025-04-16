@@ -143,12 +143,13 @@ The **authConfig.js** file contains the configuration settings for the authentic
 
     ```javascript
     /**
-    * Configuration object to be passed to MSAL instance on creation. 
+     * Configuration object to be passed to MSAL instance on creation. 
     * For a full list of MSAL.js configuration parameters, visit:
     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
     */
     const msalConfig = {
         auth: {
+            clientId: "Enter_the_Application_Id_Here",
             // WORKFORCE TENANT
             authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", //  Replace the placeholder with your tenant info
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
@@ -209,11 +210,8 @@ The **authConfig.js** file contains the configuration settings for the authentic
             msalConfig: msalConfig,
             loginRequest: loginRequest,
         };
-        module.exports = {
-            msalConfig: msalConfig,
-            loginRequest: loginRequest,
-        };
     }
+
     ```
 
 1. Replace the following values with the values from the Microsoft Entra admin center:
@@ -233,6 +231,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     */
     const msalConfig = {
         auth: {
+            clientId: "Enter_the_Application_Id_Here",
             // EXTERNAL TENANT
             authority: "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/", // Replace the placeholder with your tenant subdomain
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
@@ -293,11 +292,8 @@ The **authConfig.js** file contains the configuration settings for the authentic
             msalConfig: msalConfig,
             loginRequest: loginRequest,
         };
-        module.exports = {
-            msalConfig: msalConfig,
-            loginRequest: loginRequest,
-        };
     }
+
      ```
 
 1. Replace the following values with the values from the Microsoft Entra admin center:
