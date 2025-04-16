@@ -139,15 +139,15 @@ When trying to access any of these resources, the user is required to complete m
 
 ### Require multifactor authentication for admins
 
-This policy covers any user with one of the admin roles we consider to be highly privileged:
+This policy applies to users with highly privileged admin roles:
 
 [!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
 
-Because of the power these highly privileged accounts have, they're required to use multifactor authentication whenever they sign into any application. 
+These accounts must use multifactor authentication to sign in to any application. 
 
 ### Require multifactor authentication for all users
 
-This policy covers all users in your organization and requires them to use multifactor authentication whenever they sign in. In most cases, the session persists on the device and users don't have to complete multifactor authentication when they interact with another application. 
+This policy applies to all users in your organization and requires multifactor authentication for every sign-in. In most cases, sessions persist on devices, so users don't need to complete multifactor authentication when interacting with other applications. 
 
 ## Monitor and review
 
