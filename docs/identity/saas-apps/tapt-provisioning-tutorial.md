@@ -24,14 +24,14 @@ automatically provisions and deprovisions users in **Tapt** using the
 To configure automatic user provisioning for Tapt, you need:
 
 - A Microsoft Entra tenant.
-- A user account with [Global Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference) permissions.
+- A user account with [Global Administrator](/entra/identity/role-based-access-control/permissions-reference) permissions.
 - A Tapt user with administrative privileges.
 
 ## Step 1: Plan your provisioning deployment
 
-- Learn about how the [provisioning service works](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-provisioning).
-- Determine who will be in [scope for provisioning](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts?pivots=app-provisioning).
-- Determine what data to [map between Microsoft Entra ID and Tapt.](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts?pivots=app-provisioning)
+- Learn about how the [provisioning service works](/entra/identity/app-provisioning/user-provisioning).
+- Determine who will be in [scope for provisioning](/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts?pivots=app-provisioning).
+- Determine what data to [map between Microsoft Entra ID and Tapt.](/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts?pivots=app-provisioning)
 
 
 ## Step 2: Creating the Tapt application in Microsoft Entra application gallery
@@ -62,7 +62,7 @@ To configure automatic user provisioning for Tapt, you need:
 
 5. Go back to the Microsoft Entra application you just created and apply the relevant values.
 
-# Admin credentials
+## Admin credentials
 
 In the **Admin Credentials** section:
 
@@ -120,5 +120,5 @@ In the **Admin Credentials** section:
 
 ## Additional resources
 
-- [Attribute mappings](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/user-attributes)
-- [Provisioning logs](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/use-scim-to-provision-users)
+- [Attribute mappings](/entra/identity/app-provisioning/user-attributes)
+- [Provisioning logs](/entra/identity/app-provisioning/use-scim-to-provision-users)

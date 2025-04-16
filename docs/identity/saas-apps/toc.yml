@@ -2791,6 +2791,8 @@
         href: tanium-sso-tutorial.md
       - name: TAP App Security
         href: tap-app-security-tutorial.md  
+      - name: Tapt App Security
+        href: tapt-provisioning-tutorial.md    
       - name: TargetProcess
         href: target-process-tutorial.md
       - name: TAS
