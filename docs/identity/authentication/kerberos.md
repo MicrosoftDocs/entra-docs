@@ -55,6 +55,9 @@ Microsoft Entra Kerberos enables your Microsoft Entra ID tenant to function as a
     - The TGT is stored in the client's Kerberos ticket cache.
     - The client recognizes the Microsoft Entra ID tenant as a separate Kerberos realm for cloud resources.
 
+>[!NOTE]
+> The Cloud TGT is not a replacement for the on-premises TGT. It is an additional ticket that allows access to cloud resources.The on-premises TGT is still required for accessing on-premises resources.
+
 3. **Realm Mapping and Azure Tenant Info**:
     - Windows LSASS manages the Kerberos Cloud TGT, realm mapping, and Azure tenant information.
     - For Azure Virtual Desktop, the user receives both a PRT and Cloud TGT.
@@ -131,7 +134,7 @@ Administrators benefit from streamlined management, enhanced security features, 
 
 ## Learn more
 
--   [Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal#create-the-trusted-domain-object)
+-   [Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal&preserve-view=true#create-the-trusted-domain-object)
 -   [Configure clients to retrieve Kerberos tickets](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
 -   [Configure the Group Policy Object (GPO) for Azure SQL managed instance](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo)
 
