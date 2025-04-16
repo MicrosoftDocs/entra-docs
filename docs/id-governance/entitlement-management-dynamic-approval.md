@@ -104,12 +104,21 @@ To create a custom extension and its underlying Logic App, you'd do the followin
 
 
 ## Reference the custom extension in an access package assignment policy.
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+
+Once you've created the custom extension and Logic app, you can reference the custom extension in an access package assignment policy by doing the following steps:
+
+1. Select the catalog in which the custom extension was created.
+
+1. On the catalog screen, select **Access packages**, and select the access package for the policy you want to update.
+
+1. On the access package overview page, select **Policies**, and select the policy to edit.
+    :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-policies-list.png" alt-text="Screenshot of the policies list for an access package.":::
+1.  On the **Edit policy** screen under **Requests**, set the **Require approval* box to yes, and you will be able to add your custom extension as the first approver.
+  :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approver.png" alt-text="Screenshot of the custom extension as first approver in access package policy.":::  
+1. Select **Update**.
+
+Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**:
+:::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
 
 ## Configure the Logic App and corresponding business logic.
 TODO: Add introduction sentence(s)
