@@ -17,7 +17,7 @@ ms.date: 03/12/2025
 
 This tutorial is part 1 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In this tutorial, you'll add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

@@ -16,7 +16,7 @@ ms.topic: tutorial
 
 In this tutorial you'll configure a React single-page application (SPA) for authentication. In [part 1 of this series](tutorial-single-page-app-react-prepare-app.md), you created a React SPA and prepared it for authentication. In this tutorial, you'll learn how to add authentication flows by adding [Microsoft Authentication Library (MSAL)](msal-overview.md) functional components to your app and build a responsive user interface (UI) for your app.
 
-In this tutorial, you
+In this tutorial, you:
 
 > [!div class="checklist"]
 > - Add functional components to the application

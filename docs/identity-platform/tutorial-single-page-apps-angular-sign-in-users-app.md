@@ -16,7 +16,7 @@ ms.topic: tutorial
 
 This tutorial is part 2 of a series that demonstrates building an Angular single-page application (SPA) and adding authentication using the Microsoft identity platform.  In [Part 1 of this series](tutorial-single-page-apps-angular-prepare-app.md), you created an Angular SPA and added initial configurations. 
 
-In this tutorial, you
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

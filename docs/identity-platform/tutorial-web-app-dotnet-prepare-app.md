@@ -19,8 +19,7 @@ In this tutorial, you create an ASP.NET Core web app and configure it for authen
 
 In this tutorial, you:
 
-> [!div class="checklist"]
->
+> [!div class="checklist"]s
 > * Create an ASP.NET Core web app
 > * Create a self-signed certificate
 > * Configure the settings for the application

@@ -21,7 +21,7 @@ ms.custom:
  
 This tutorial demonstrates how to sign in user automatically after sign-up in an Android app by using native authentication. 
  
-In this tutorial, you  
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

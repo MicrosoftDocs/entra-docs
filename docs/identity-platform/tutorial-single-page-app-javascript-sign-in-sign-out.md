@@ -17,7 +17,7 @@ ms.date: 02/11/2024
 
 This tutorial is the final part of a series that demonstrates building a JavaScript single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [part 2 of this series](tutorial-single-page-app-javascript-configure-authentication.md), you added authentication flows to a JavaScript SPA and built a responsive UI. This final step shows you how to test sign-in and sign-out functionality in your app.
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
 > * Add code to the *claimUtils.js* file to create the claims table

@@ -33,7 +33,6 @@ In this tutorial, you:
 
 - [Tutorial: Sign in users in iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-sign-in.md)
 
-
 ## Call API
 
 Once you have a token, your app can use it in the HTTP header to make an authorized request to the Microsoft Graph:

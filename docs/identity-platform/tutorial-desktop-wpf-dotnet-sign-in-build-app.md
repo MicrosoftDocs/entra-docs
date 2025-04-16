@@ -16,7 +16,7 @@ ms.date: 04/16/2025
 
 This tutorial demonstrates how to build a Windows Presentation Form (WPF) desktop app and prepare it for authentication using the Microsoft Entra admin center.
 
-In this tutorial, you
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

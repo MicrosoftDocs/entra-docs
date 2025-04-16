@@ -16,7 +16,7 @@ ms.date: 03/12/2025
 
 This tutorial demonstrates how to add app roles to .NET Multi-platform App UI (.NET MAUI) and receive them in the ID token.
 
-In this tutorial, you
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

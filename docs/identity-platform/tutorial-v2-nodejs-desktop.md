@@ -18,7 +18,7 @@ In this tutorial, you build an Electron desktop application that signs in users 
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-In this tutorial, you'll
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

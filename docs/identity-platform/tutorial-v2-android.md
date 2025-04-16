@@ -18,7 +18,7 @@ In this tutorial, you build an Android app that integrates with the Microsoft En
 
 When you've completed this tutorial, your application accepts sign-ins of personal Microsoft accounts (including outlook.com, live.com, and others) and work or school accounts from any company or organization that uses Microsoft Entra ID.
 
-In this tutorial, you
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

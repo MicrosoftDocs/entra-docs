@@ -21,7 +21,7 @@ In this tutorial, you add sign-in and sign-out logic to your Android app. This c
 
 This tutorial is part 2 of the 3-part tutorial series.
 
-In this tutorial, you
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
