@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Use role-based access control in your .NET MAUI app using the Microsoft identity platform"
+title: "Tutorial: Use role-based access control in your .NET MAUI mobile app using the Microsoft identity platform"
 description: This tutorial demonstrates how to add app roles to .NET Multi-platform App UI (.NET MAUI) and receive them in the ID token.
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,13 +10,13 @@ ms.custom:
 ms.date: 03/12/2025
 ---
 
-# Tutorial: Use role-based access control in your .NET MAUI app
+# Tutorial: Use role-based access control in your .NET MAUI mobile app
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This tutorial demonstrates how to add app roles to .NET Multi-platform App UI (.NET MAUI) and receive them in the ID token.
 
-In this tutorial, you learn how to:
+In this tutorial, you
 
 > [!div class="checklist"]
 >

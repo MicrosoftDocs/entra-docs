@@ -16,7 +16,7 @@ ms.topic: tutorial
 
 This tutorial is the final part of a series that demonstrates building an Angular single-page application (SPA) and adding authentication using the Microsoft identity platform. In [Part 2 of this series](tutorial-single-page-apps-angular-sign-in-users-app.md), you created an Angular SPA and prepared it for authentication with your workforce tenant. 
 
-In this tutorial:
+In this tutorial, you
 
 > [!div class="checklist"]
 > * Add data processing to your Angular application.

@@ -21,7 +21,7 @@ ms.custom:
 
 This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your Android mobile app by using native authentication. 
 
-In this tutorial, you learn how to: 
+In this tutorial, you 
 
 > [!div class="checklist"]
 > 

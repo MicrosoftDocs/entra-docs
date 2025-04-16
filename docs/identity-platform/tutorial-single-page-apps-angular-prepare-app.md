@@ -16,7 +16,7 @@ ms.topic: tutorial
 
 This tutorial is the first part of a series that demonstrates building an Angular single-page application (SPA), adding authentication and extracting user data using Microsoft identity platform.
 
-In this tutorial: 
+In this tutorial, you 
 
 > [!div class="checklist"]
 > * Create a new Angular project

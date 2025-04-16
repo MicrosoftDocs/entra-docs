@@ -19,7 +19,7 @@ ms.topic: tutorial
 
 In this tutorial, Android developers learn how to add shared device mode support in an Android application using the Microsoft Authentication Library (MSAL) for Android.
  
-In this tutorial:
+In this tutorial, you
 
 > [!div class="checklist"]
 >

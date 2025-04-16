@@ -18,7 +18,7 @@ ms.topic: tutorial
 
 This tutorial series demonstrates how to protect an ASP.NET Core web API with the Microsoft identity platform to limit it's access to only authorized users and client apps. The web API you build uses both delegated permissions (scopes) and application permissions (app roles).
 
-In this tutorial, you'll:
+In this tutorial, you
 
 > [!div class="checklist"]
 >

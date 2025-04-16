@@ -21,7 +21,7 @@ ms.custom:
 
 This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS/macOS Swift app.
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

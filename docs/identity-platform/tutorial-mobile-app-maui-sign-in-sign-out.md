@@ -16,7 +16,7 @@ ms.date: 03/12/2025
 
 This tutorial is the final part of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 2 of this series](./tutorial-mobile-app-maui-sign-in-prepare-app.md) you added a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET MAUI and run the shell app on the Android platform.
 
-In this tutorial, you'll:
+In this tutorial, you
 
 > [!div class="checklist"]
 >

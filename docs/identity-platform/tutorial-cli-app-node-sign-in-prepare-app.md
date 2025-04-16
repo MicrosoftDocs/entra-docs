@@ -18,7 +18,7 @@ ms.custom:
 
 This tutorial is part 1 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
 
-In this tutorial: 
+In this tutorial, you 
 
 > [!div class="checklist"]
 >

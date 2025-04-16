@@ -21,7 +21,7 @@ ms.custom:
 
 This tutorial demonstrates how to sign in user automatically after sign-up in an iOS/macOS app by using native authentication. 
 
-In this tutorial, you learn how to:  
+In this tutorial, you:  
 
 > [!div class="checklist"]
 >

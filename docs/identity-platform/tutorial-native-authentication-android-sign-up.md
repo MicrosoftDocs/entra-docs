@@ -22,7 +22,7 @@ ms.custom:
 
 This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collect user attributes in your Android mobile app using native authentication. 
 
-In this tutorial, you learn how to: 
+In this tutorial, you: 
 
 
 > [!div class="checklist"]

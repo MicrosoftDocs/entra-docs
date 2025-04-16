@@ -21,7 +21,7 @@ ms.custom:
  
 This tutorial demonstrates how `isBrowserRequired()` error happens and how you can resolve it. The utility method `isBrowserRequired()` checks the need for a fallback mechanism for various scenarios where native authentication isn't sufficient to complete the authentication flow in functional and safe manner. 
  
-In this tutorial, you learn how to:  
+In this tutorial, you:  
 
 > [!div class="checklist"]
 >

@@ -19,7 +19,7 @@ ms.custom:
 
 In this tutorial, you learn how to acquire an access token and call an API in your Android mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for Android allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
-In this tutorial, you learn how to: 
+In this tutorial, you: 
 
 > [!div class="checklist"]
 > 

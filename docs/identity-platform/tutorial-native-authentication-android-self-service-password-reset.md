@@ -21,7 +21,7 @@ ms.custom:
  
 This tutorial demonstrates how to enable users to change or reset their password, with no administrator or help desk involvement.
   
-In this tutorial, you learn how to: 
+In this tutorial, you: 
  
 > [!div class="checklist"]
 >

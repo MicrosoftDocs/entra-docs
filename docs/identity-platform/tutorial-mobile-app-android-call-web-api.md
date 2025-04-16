@@ -18,7 +18,7 @@ ms.custom:
 
 This is the third tutorial in the tutorial series that guides you on calling a protected web API using Microsoft Entra External ID.
 
-In this tutorial, you'll:
+In this tutorial, you
 
 > [!div class="checklist"]
 >

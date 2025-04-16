@@ -17,7 +17,7 @@ ms.date: 02/11/2024
 
 In this tutorial you'll build a JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a JavaScript SPA using `npm`, create files needed for authentication and authorization and add your tenant details to the source code. The application can be used for employees in a workforce tenant or for customers using an external tenant.
 
-In this tutorial, you'll:
+In this tutorial, you
 
 > [!div class="checklist"]
 > * Create a new JavaScript project
