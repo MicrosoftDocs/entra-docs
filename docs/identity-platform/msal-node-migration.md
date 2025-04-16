@@ -4,7 +4,7 @@ description: How to update your existing Node.js application to use the Microsof
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-adal-ref, devx-track-js
+ms.custom:
 ms.date: 04/26/2021
 ms.service: identity-platform
 

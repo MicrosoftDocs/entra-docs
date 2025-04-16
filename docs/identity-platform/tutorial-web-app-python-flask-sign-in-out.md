@@ -18,7 +18,7 @@ ms.date: 02/24/2025
 
 This tutorial guides you on securing a Python Flask Web app.
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

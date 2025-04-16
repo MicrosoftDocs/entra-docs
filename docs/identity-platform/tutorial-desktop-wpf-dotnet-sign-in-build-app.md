@@ -1,16 +1,13 @@
 ---
 title: "Tutorial: Authenticate users to your WPF desktop application"
 description: Learn how to sign in and sign out user to your WPF desktop app.
-
 author: SHERMANOUKO
-manager: mwongerapk
-
 ms.author: shermanouko
-ms.service: entra-external-id
-ms.subservice: external
-ms.custom: devx-track-dotnet
+manager: mwongerapk
+ms.service: identity-platform
+ms.custom:
 ms.topic: tutorial
-ms.date: 06/27/2024
+ms.date: 04/16/2025
 ---
 
 # Tutorial: Authenticate users to your WPF desktop application
@@ -19,7 +16,7 @@ ms.date: 06/27/2024
 
 This tutorial demonstrates how to build a Windows Presentation Form (WPF) desktop app and prepare it for authentication using the Microsoft Entra admin center.
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
