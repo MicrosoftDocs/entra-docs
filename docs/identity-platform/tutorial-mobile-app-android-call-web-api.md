@@ -1,17 +1,13 @@
 ---
-title: Call a protected web API in Android app
+title: Call a protected web API in an Android app using the Microsoft identity platform
 description: The tutorials provide a step-by-step guide on how to call a protected web API in Android app for authentication. 
-
 author: henrymbuguakiarie
 manager: mwongerapk
-
 ms.author: henrymbugua
-ms.service: entra-external-id
-
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 01/27/2025
-ms.custom: developer
+ms.custom:
 
 #Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra External ID
 ---

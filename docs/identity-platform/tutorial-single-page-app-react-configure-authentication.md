@@ -1,16 +1,16 @@
 ---
-title: "Tutorial: Add sign-in and sign-out components to a React SPA"
+title: "Tutorial: Add sign-in and sign-out components to a React single-page app (SPA)"
 description: Learn how to add authentication to a React single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 02/25/2025
 ms.service: identity-platform
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to use functional components to add sign in and sign out experiences in my React application.
 ---
 
-# Tutorial: Add sign in and sign out functional components in a React single page app
+# Tutorial: Add sign in and sign out functional components in a React single-page app
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 

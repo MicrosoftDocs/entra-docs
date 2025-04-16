@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/12/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an iOS/macOS app by using native authentication
 ---
 

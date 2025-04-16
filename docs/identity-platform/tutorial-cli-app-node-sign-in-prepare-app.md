@@ -1,17 +1,13 @@
 ---
 title: "Tutorial: Create a Node.js CLI app for authentication"
 description: Learn how to build a Node.js CLI app that signs in users in an external tenant
- 
 author: Dickson-Mwendia
 manager: mwongerapk
-
 ms.author: dmwendia
-ms.service: entra-external-id
- 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 06/24/2024
-ms.custom: developer, devx-track-js
+ms.date: 06/24/2025
+ms.custom:
 
 #Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in an external tenant.
 ---

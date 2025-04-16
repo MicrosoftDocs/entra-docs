@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 09/02/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn how to automatically sign-in a user after sign-up in an iOS/macOS app by using native authentication.
 ---
 

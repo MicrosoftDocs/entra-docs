@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Extract user data with an Angular SPA"
+title: "Tutorial: Extract user data with an Angular single-page app (SPA)"
 description: Learn how extract user data using an Angular single-page app (SPA).
 author: garrodonnell
 manager: celested

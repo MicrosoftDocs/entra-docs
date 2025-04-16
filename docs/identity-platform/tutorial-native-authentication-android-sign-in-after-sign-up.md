@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 03/20/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to automatically sign in user after a sign-up flow by using native authentication so that I don't start a fresh sign-in flow.
 ---
 

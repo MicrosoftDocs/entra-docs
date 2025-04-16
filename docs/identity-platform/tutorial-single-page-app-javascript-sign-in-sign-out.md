@@ -1,18 +1,17 @@
 ---
-title: "Tutorial: Sign in and sign out of a JavaScript SPA"
+title: "Tutorial: Sign in and sign out of a JavaScript single-page app (SPA)"
 description: Learn how to test sign-in and sign-out in a JavaScript single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.service: entra-external-id
-ms.subservice: external
-ms.custom: devx-track-js
+ms.service: identity-platform
+ms.custom:
 ms.topic: tutorial
 ms.date: 02/11/2024
 #Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out using the Microsoft identity platform.
 ---
 
-# Tutorial: Sign in and sign out of a JavaScript SPA
+# Tutorial: Sign in and sign out of a JavaScript single-page app (SPA)
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 

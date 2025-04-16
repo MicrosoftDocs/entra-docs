@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/19/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS/macOS app by using native authentication.
 ---
 

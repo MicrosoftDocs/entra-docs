@@ -4,11 +4,10 @@ description: In this tutorial, you build an Android app that uses the Microsoft 
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-adal-ref
+ms.custom:
 ms.date: 02/24/2024
 ms.reviewer: negoe
 ms.service: identity-platform
-
 ms.topic: tutorial
 #Customer intent: As an Android developer, I want to integrate the Microsoft Entra ID into my Android app, so that users can sign in with their personal Microsoft accounts or work/school accounts and access the Microsoft Graph API.
 ---

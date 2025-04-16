@@ -1,16 +1,15 @@
 ---
-title: "Tutorial: Sign in and sign out of a React single-page app"
+title: "Tutorial: Sign in and sign out of a React single-page app (SPA)"
 description: Learn how to test sign-in and sign-out in a React single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 ms.author: owenrichards
 ms.date: 09/25/2023
 ms.service: identity-platform
-
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a user interface and access the Microsoft Graph API
 ---
 
-# Tutorial: Sign in and sign out of a React SPA
+# Tutorial: Sign in and sign out of a React single-page app
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 

@@ -1,17 +1,17 @@
 ---
-title: "Tutorial: Prepare a JavaScript single-page application for authentication"
+title: "Tutorial: Prepare a JavaScript single-page app (SPA) for authentication"
 description: Learn how to prepare a JavaScript single-page app (SPA) for authentication using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.service: identity-platform
-ms.custom: devx-track-js
+ms.custom:
 ms.topic: tutorial
 ms.date: 02/11/2024
 #Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Prepare a JavaScript single-page application for authentication
+# Tutorial: Prepare a JavaScript single-page app for authentication
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 

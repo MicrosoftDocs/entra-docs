@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-api
+ms.custom:
 ms.date: 12/19/2023
 ms.service: identity-platform
 

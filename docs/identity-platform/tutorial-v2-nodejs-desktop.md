@@ -4,7 +4,7 @@ description: In this tutorial, you build an Electron desktop app that can sign i
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 02/17/2021
 ms.service: identity-platform
 

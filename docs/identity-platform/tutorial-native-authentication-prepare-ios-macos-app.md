@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 09/30/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS/macOS app for native authentication using Microsoft Entra External ID.
 ---
 

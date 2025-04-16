@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Sign in user in Angular Single-page Application"
-description: Sign in user in an Angular Single-page Application in a Microsoft Entra tenant to manage authentication and secure user access.
+title: "Tutorial: Sign in user in Angular single-page app (SPA)"
+description: Sign in user in an Angular single-page app (SPA) in a Microsoft Entra tenant to manage authentication and secure user access.
 author: garrodonnell
 manager: celested
 ms.author: godonnell
