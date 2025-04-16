@@ -50,7 +50,181 @@ Synchronized users must have at least **Hybrid Identity Administrator** role to 
 >[!NOTE]
 >Active Directory administrators can make changes that impact the certificateUserIds value in Microsoft Entra ID for any synchronized account. Administrators can include accounts with delegated administrative privilege over synchronized user accounts, or administrative rights over the Microsoft Entra Connect servers.
 
-## Update certificateUserIds
+## How to get CertificateUserIds values from end user certificate
+
+For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/microsoftgraph/installation).
+
+1. Start PowerShell with administrator privileges.
+1. Install and import the Microsoft Graph PowerShell SDK.
+
+   ```powershell
+   Install-Module Microsoft.Graph -Scope AllUsers
+   Import-Module Microsoft.Graph.Authentication
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+
+1. Connect to the tenant and accept all.
+
+   ```powershell
+      Connect-MGGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All" -TenantId <tenantId>
+   ``` 
+
+1. Install Microsoft Entra powershell module
+   ```powershell
+       Install-Module -Name Microsoft.Entra -RequiredVersion 1.0.6 -AllowClobber
+   ```
+
+More information on CertificateBasedAuthentication module [here] (https://github.com/microsoftgraph/entra-powershell/module/docs/entra-powershell-v1.0/CertificateBasedAuthentication)
+
+### Get-EntraUserCBAAuthorizationInfo
+
+Get-EntraUserCBAAuthorizationInfo helps retrieve authorization information for a Microsoft Entra ID user, including certificate-based authentication identifiers.
+
+**Syntax:**
+Get-EntraUserCBAAuthorizationInfo
+ [-UserId] <String>
+ [-Raw]
+ [<CommonParameters>]
+
+**Example 1: Get authorization information for a user by User Principal Name**
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All' 
+Get-EntraUserCBAAuthorizationInfo -UserId ‘user@contoso.com'
+```
+
+**Response:**
+|Attribute| Value|
+|-------|------|
+|Id               | aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
+|DisplayName       | Contoso User|
+|UserPrincipalName | user@contoso.com|
+|UserType          | Member|
+|AuthorizationInfo | @{CertificateUserIds=System.Object[]; RawAuthorizationInfo=System.Collections.Hashtable}|
+
+This command retrieves the authorization information for the user with the specified User Principal Name.
+
+**Example 2: Retrieve authorization information for a user**
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All'
+$userInfo = Get-EntraUserCBAAuthorizationInfo -UserId 'SawyerM@contoso.com'
+$userInfo.AuthorizationInfo.CertificateUserIds | Format-Table Type, TypeName, Value
+```
+
+**Response:**
+|Type       |       TypeName               |                         Value|
+|----        |         --------         |         	      -------|
+|PN  | 	PrincipalName| 	`user@contoso.com`|
+|S   | 	Subject  |     			`CN=user@contoso.com`|
+|SKI 	|SubjectKeyIdentifier|		`1111112222333344445555`|
+
+This example retrieves the authorization information.
+
+**Example 3: Extract specific certificate user IDs**
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All'
+$userInfo = Get-EntraUserCBAAuthorizationInfo -UserId user@contoso.com'
+$userInfo.AuthorizationInfo.CertificateUserIds | Where-Object Type -eq "PN" | Select-Object -ExpandProperty Value
+```
+
+**Response:**
+user@contoso.com
+
+This example retrieves the authorization information and then filters to display only the Principal Name certificate values.
+
+### Get-EntraUserCertificateUserIdsFromCertificate
+
+Returns an object with the certificate values needed to configure CertificateUserIDs for Certificate-Based Authentication in Microsoft Entra ID.
+
+**Syntax:**
+Get-EntraUserCertificateUserIdsFromCertificate
+ [-Path] <string>
+ [[-Certificate] <System.Security.Cryptography.X509Certificates.X509Certificate2> [-CertificateMapping] <string>]
+ [<CommonParameters>]
+
+**Example 1: Retrieve certificate object from a certificate path**
+
+```powershell
+Get-EntraUserCertificateUserIdsFromCertificate -Path 'C:\path\to\certificate.cer'
+```
+
+**Response:**
+
+|Name                 |          			Value|
+|----                    |      			 -----|
+|Subject                 |      			X509:`<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`|
+|IssuerAndSerialNumber   |      	 	X509:`<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8qR9sV0uD`|
+|RFC822Name             |       		X509:`<RFC822>user@contoso.com`|
+|SHA1PublicKey          |       		X509:`<SHA1-PUKEY>cA2eB3gH4iJ5kL6mN7oP8qR9sT`
+|IssuerAndSubject       |        		X509:`<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`|
+|SKI                    |        			X509:`<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`|
+|PrincipalName            |      		X509:`<PN>user@contoso.com`|
+
+This example shows how to get all possible certificate mappings as an object.
+
+**Example 2: Retrieve certificate object from a certificate path and certificate mapping**
+
+```powershell
+Get-EntraUserCertificateUserIdsFromCertificate -Path 'C:\path\to\certificate.cer' -CertificateMapping 'Subject' 
+```
+
+**Response:**
+`X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`
+
+This command returns the PrincipalName property.
+
+**Example 3: Retrieve certificate object from a certificate**
+
+ ```powershell
+$text = "-----BEGIN CERTIFICATE-----
+MIIDiz...=
+-----END CERTIFICATE-----"
+$bytes = [System.Text.Encoding]::UTF8.GetBytes($text)
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($bytes)
+Get-EntraUserCertificateUserIdsFromCertificate -Certificate $certificate -CertificateMapping 'Subject'
+```
+**Response:**
+`X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`
+
+This command returns the PrincipalName property.
+
+### Set-EntraUserCBACertificateUserId
+
+Sets certificate-based authentication user IDs for a user in Microsoft Entra ID using a certificate file or object.
+
+**Syntax**
+Set-EntraUserCBACertificateUserId
+ -UserId <string>
+ [-CertPath <string>]
+ [-Cert <System.Security.Cryptography.X509Certificates.X509Certificate2>]
+ -CertificateMapping <string[]>
+ [<CommonParameters>]
+
+**Example 1: Update user's certificate authorization information using certificate path**
+
+```powershell
+Connect-Entra -Scopes 'Directory.ReadWrite.All', 'User.ReadWrite.All'
+Set-EntraUserCBACertificateUserId -UserId ‘user@contoso.com' -CertPath 'C:\path\to\certificate.cer' -CertificateMapping @('Subject', 'PrincipalName')
+```
+
+This example sets the certificate user IDs for the specified user using a certificate file, mapping both the Subject and PrincipalName fields. You can use Get-EntraUserCBAAuthorizationInfo command to view updated details.
+
+**Example 2: Update user's certificate authorization information using a certificate**
+
+```powershell
+Connect-Entra -Scopes 'Directory.ReadWrite.All', 'User.ReadWrite.All'
+$text = '-----BEGIN CERTIFICATE-----
+MIIDiz...=
+-----END CERTIFICATE-----'
+$bytes = [System.Text.Encoding]::UTF8.GetBytes($text)
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($bytes)
+Set-EntraUserCBACertificateUserId -UserId user@contoso.com' -Cert $certificate -CertificateMapping @('RFC822Name', 'SKI')
+```
+This example sets the certificate user IDs for the specified user using a certificate object, mapping the RFC822Name and SKI fields. You can use Get-EntraUserCBAAuthorizationInfo command to view updated details.
+
+## Update certificateUserIds using Entra Portal
  
 Use the following steps to update certificateUserIds for users:
 
