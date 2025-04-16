@@ -23,7 +23,7 @@ Additionally, by enforcing the requirement that applications must be registered 
 
 You must act **before March 31, 2026**, to avoid authentication failure of applications. 
 
-If you identified traffic using service principal-less authentication between **February 11 and March 11, 2025**, you can continue using it until **March 2026**. However, any traffic that was not detected during **Feb 11 to March 11** or any new traffic starting after **March 11, 2025** will be blocked starting **April 2025**.
+If you identified traffic using service principal-less authentication between **February 11th and March 11th, 2025**, it will continue to work until **March 2026**. However, any traffic that was not detected during this period or any new traffic starting after **March 11, 2025** will be blocked starting **April 2025**.
 
 ## Use sign-in logs to find service principal-less applications
 
