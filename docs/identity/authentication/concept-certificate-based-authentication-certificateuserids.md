@@ -82,9 +82,9 @@ Get-EntraUserCBAAuthorizationInfo helps retrieve authorization information for a
 
 **Syntax:**
 Get-EntraUserCBAAuthorizationInfo
- '[-UserId] <String>'
- '[-Raw]'
- '[<CommonParameters>]'
+ `[-UserId] <String>`
+ `[-Raw]`
+ `[<CommonParameters>]`
 
 **Example 1: Get authorization information for a user by User Principal Name**
 
@@ -142,9 +142,9 @@ Returns an object with the certificate values needed to configure CertificateUse
 
 **Syntax:**
 Get-EntraUserCertificateUserIdsFromCertificate
- '[-Path] <string>'
- '[[-Certificate] <System.Security.Cryptography.X509Certificates.X509Certificate2> [-CertificateMapping] <string>]'
- '[<CommonParameters>]'
+ `[-Path] <string>`
+ `[[-Certificate] <System.Security.Cryptography.X509Certificates.X509Certificate2> [-CertificateMapping] <string>]`
+ `[<CommonParameters>]`
 
 **Example 1: Retrieve certificate object from a certificate path**
 
@@ -198,11 +198,11 @@ Sets certificate-based authentication user IDs for a user in Microsoft Entra ID 
 
 **Syntax**
 Set-EntraUserCBACertificateUserId
- -UserId <string>'
- '[-CertPath <string>]'
- '[-Cert <System.Security.Cryptography.X509Certificates.X509Certificate2>]'
- '-CertificateMapping <string[]>'
- '[<CommonParameters>]'
+ -UserId <string>`
+ `[-CertPath <string>]`
+ `[-Cert <System.Security.Cryptography.X509Certificates.X509Certificate2>]`
+ `-CertificateMapping <string[]>`
+ `[<CommonParameters>]`
 
 **Example 1: Update user's certificate authorization information using certificate path**
 
