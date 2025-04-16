@@ -18,23 +18,40 @@ ms.custom: developer, devx-track-js
 
 # Tutorial: Call a web API from your Node.js daemon application
 
-This tutorial is the final part of a series that demonstrates how to prepare your Node.js daemon client app using the [Open Authorization (OAuth) 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API. in [Part 1 of this series](./tutorial-daemon-node-call-api-prepare-tenant.md), you registered a web API and daemon app in the Microsoft Entra admin center and granted permissions. This final step demonstrates how to build a Node.js application using the [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authorization to your app.
+This tutorial demonstrates how to prepare your Node.js daemon client app using the [Open Authorization (OAuth) 2.0 client credentials grant flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), then configure it to acquire an access token for calling a web API. You'll build a Node.js application using [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authorization to your app.
 
 In this tutorial;
 
 > [!div class="checklist"]
+> - Configure app roles for the web API
+> - Grant permissions to the daemon app
 > - Create a Node.js app in Visual Studio Code, then install dependencies.
 > - Enable the Node.js app to acquire an access token for calling a web API.
 
 ## Prerequisites
 
-- [Tutorial: Prepare your external tenant to authorize a Node.js daemon application](tutorial-daemon-node-call-api-prepare-tenant.md).
-- A protected web API that is running and ready to accept requests. If you haven't created one, see the [create a protected web API tutorial](./tutorial-protect-web-api-dotnet-core-build-app.md). Ensure this web API is using the app registration details you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md). Make sure your web API exposes the following endpoints via HTTPS:
-    - `GET /api/todolist` to get all todos.
-    - `POST /api/todolist` to add a TODO.
-- [Node.js](https://nodejs.org).
-- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
-- Registration details for the Node.js daemon app and web API you created in the [prepare tenant tutorial](tutorial-daemon-node-call-api-prepare-tenant.md).
+* Register a new client app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+  * Directory (tenant) domain name (for example, *contoso.onmicrosoft.com* or *contoso.com*). 
+* Add a client secret to your client app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
+* A protected web API that is running and ready to accept requests. Make sure your web API exposes the following endpoints via HTTPS:
+    * `GET /api/todolist` to get all todos.
+    * `POST /api/todolist` to add a TODO.
+* [Node.js](https://nodejs.org).
+* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+
+## Configure app roles
+
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-app-role.md)]
+
+## Configure idtyp token claim
+
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
+
+## Grant API permissions to the daemon app
+
+[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
 ## Create the Node.js daemon project
 
@@ -108,13 +125,13 @@ In your *authConfig.js* file, replace:
 
 - `Enter_the_Application_Id_Here` with the Application (client) ID of the client daemon app that you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 - `Enter_the_Client_Secret_Here` with the client daemon app secret value that you copied earlier.
 
 - `Enter_the_Web_Api_Application_Id_Here` with the Application (client) ID of the web API app that you copied earlier.
 
-Notice that the `scopes` property in the `protectedResources` variable is the resource identifier (application ID URI) of the [web API](tutorial-daemon-node-call-api-prepare-tenant.md#register-a-web-api-application) that you registered earlier. The complete scope URI looks similar to `api://Enter_the_Web_Api_Application_Id_Here/.default`.
+Notice that the `scopes` property in the `protectedResources` variable is the resource identifier (application ID URI) of the web API that you registered as part of the prerequisites. The complete scope URI looks similar to `api://Enter_the_Web_Api_Application_Id_Here/.default`.
 
 ## Acquire an access token
 
@@ -273,7 +290,7 @@ const todos = await fetch.callApi(auth.apiConfig.uri, authResponse.accessToken);
 
 At this point, you're ready to test your client daemon app and web API:
 
-1. Use the steps you learned in [Secure an ASP.NET web API](./tutorial-protect-web-api-dotnet-core-build-app.md) tutorial to start your web API. Your web API is now ready to serve client requests. If you don't run your web API on port `44351` as specified in the *authConfig.js* file, make sure you update the *authConfig.js* file to use the correct web API's port number.
+1. Use the steps you learned in the [Secure an ASP.NET web API](./tutorial-web-api-dotnet-core-build-app.md) tutorial to start your web API. Your web API is now ready to serve client requests. If you don't run your web API on port `44351` as specified in the *authConfig.js* file, make sure you update the *authConfig.js* file to use the correct web API's port number.
 
 1. In your terminal, make sure you're in the project folder that contains your daemon Node.js app such as `ciam-call-api-node-daemon`, then run the following command:
 

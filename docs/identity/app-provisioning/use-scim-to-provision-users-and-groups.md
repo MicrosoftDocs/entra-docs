@@ -10,6 +10,7 @@ ms.topic: tutorial
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 # Tutorial: Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID
 

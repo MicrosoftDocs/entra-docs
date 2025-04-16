@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Optimize traffic flow with Microsoft Entra application proxy
