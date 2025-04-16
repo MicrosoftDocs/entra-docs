@@ -41,28 +41,52 @@ For SMS verification, the following region codes require an opt-in. This means t
 |:----------- |:---------------------------------------------- |
 | 222         |  Mauritania                                    |
 | 998         |  Uzbek                                         |
-| 63 | Philippines | 
-| 20 | Egypt | 
-| 967 | Yemen | 
-| 84 | Vietnam | 
-| 62 | Indonesia | 
-| 234 | Nigeria | 
-| 972 | Israel | 
-| 233 | Ghana | 
-| 92 | Pakistan | 
-| 966 | Saudi Arabia | 
-| 971 | United Arab Emriates | 
-| 94 | Sri Lanka | 
-| 258 | Mozambique | 
-| 502 | Guatemala | 
-| 974 | Qatar | 
-| 591 | Bolivia | 
-| 254 | Kenya | 
-| 255 | Tanzania | 
-| 7 | Russia / Kazakhstan | 
-| 380 | Ukraine | 
-| 216 | Tunisia | 
-| 212 | Morocco | 
+| 63          | Philippines                                    | 
+| 20          | Egypt                                          | 
+| 967         | Yemen                                          | 
+| 84          | Vietnam                                        | 
+| 62          | Indonesia                                      | 
+| 234         | Nigeria                                        | 
+| 972         | Israel                                         | 
+| 233         | Ghana                                          | 
+| 92          | Pakistan                                       | 
+| 966         | Saudi Arabia                                   | 
+| 971         | United Arab Emriates                           | 
+| 94          | Sri Lanka                                      | 
+| 258         | Mozambique                                     | 
+| 502         | Guatemala                                      | 
+| 974         | Qatar                                          | 
+| 591         | Bolivia                                        | 
+| 254         | Kenya                                          | 
+| 255         | Tanzania                                       | 
+| 380         | Ukraine                                        | 
+| 216         | Tunisia                                        | 
+| 212         | Morocco                                        | 
+| 1658        | Jamica                                         |
+| 32          | Belgium                                        |
+| 1671        | Guam                                           |
+| 91          | India                                          |
+| 680         | Palau                                          |
+| 595         | Paraguay                                       |
+| 51          | Peru                                           |
+| 1670        | Northern Mariana Islands                       |
+| 378         | San Marino                                     |
+| 27          | South Africa                                   |
+| 688         | Tuvalu                                         |
+| 54          | Argentina                                      |
+| 1246        | Barbados                                       |
+| 679         | Fiji                                           |
+| 49          | Germany                                        |
+| 590         | Saint Barthelemy, Saint Martin, Guadeloupe     |
+| 60          | Malaysia                                       |
+| 596         | Martinique                                     |
+| 230         | Mauritius                                      |
+| 31          | Netherlands                                    |
+| 599         | Curacao, Netherlands Antilles                  |
+| 850         | North Korea                                    |
+| 1787        | Puerto Rico                                    |
+| 1939        | Puerto Rico                                    |
+| 1784        | Saint Vincent and the Grenadines               |
 
 ## Voice verification
 For voice verification, the following region codes require an opt-in.
