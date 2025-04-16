@@ -576,6 +576,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/global-secure-access/concept-zscaler-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-zscaler-coexistence",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-provisioning/application-provisioning-config-problem.md",
       "redirect_url": "/entra/identity",
       "redirect_document_id": false
