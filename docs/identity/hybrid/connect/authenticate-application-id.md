@@ -114,7 +114,7 @@ Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;c
  ```
 
  ## Certificate Rollover using PowerShell
-Microsoft Entra Connect will warn if the certificate roll over is due. That is, expiring in less than or equal to 150 days. It will emit an error if certificate is already expired. These warning and errors can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
+Microsoft Entra Connect will warn if the certificate roll over is due. That is, expiring in less than or equal to 150 days. It will emit an error if certificate is already expired. These warnings (Event Id 1011) and errors (Event Id 1012) can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
 
 When you get a warning from Microsoft Entra Connect Sync when using the BYOC option, it's **highly recommended you generate a new key and certificate and roll over the certificate** used by Connect Sync using PowerShell.
 
