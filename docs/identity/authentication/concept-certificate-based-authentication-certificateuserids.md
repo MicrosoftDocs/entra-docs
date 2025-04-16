@@ -74,7 +74,7 @@ For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/mi
        Install-Module -Name Microsoft.Entra -RequiredVersion 1.0.6 -AllowClobber
    ```
 
-More information on CertificateBasedAuthentication module [here] (https://github.com/microsoftgraph/entra-powershell/module/docs/entra-powershell-v1.0/CertificateBasedAuthentication)
+More information on CertificateBasedAuthentication module [here](https://github.com/microsoftgraph/entra-powershell/module/docs/entra-powershell-v1.0/CertificateBasedAuthentication)
 
 ### Get-EntraUserCBAAuthorizationInfo
 
@@ -94,8 +94,9 @@ Get-EntraUserCBAAuthorizationInfo -UserId ‘user@contoso.com'
 ```
 
 **Response:**
-|Attribute| Value|
-|-------|------|
+
+|Attribute     | Value             |
+|---------------|------------------|
 |Id               | aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
 |DisplayName       | Contoso User|
 |UserPrincipalName | user@contoso.com|
@@ -113,8 +114,9 @@ $userInfo.AuthorizationInfo.CertificateUserIds | Format-Table Type, TypeName, Va
 ```
 
 **Response:**
-|Type       |       TypeName               |                         Value|
-|----        |         --------         |         	      -------|
+
+|Type       |       TypeName             |     Value|
+|-------   |    ----------------         |     -------|
 |PN  | 	PrincipalName| 	`user@contoso.com`|
 |S   | 	Subject  |     			`CN=user@contoso.com`|
 |SKI 	|SubjectKeyIdentifier|		`1111112222333344445555`|
