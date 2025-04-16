@@ -198,7 +198,7 @@ Sets certificate-based authentication user IDs for a user in Microsoft Entra ID 
 
 **Syntax**
 Set-EntraUserCBACertificateUserId
- -UserId <string>`
+ `-UserId <string>`
  `[-CertPath <string>]`
  `[-Cert <System.Security.Cryptography.X509Certificates.X509Certificate2>]`
  `-CertificateMapping <string[]>`
