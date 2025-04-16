@@ -81,6 +81,30 @@ Microsoft Entra Kerberos enables your Microsoft Entra ID tenant to function as a
     - The AP-REQ is provided to SMB, which includes it in the request to Azure Files.
     - Azure Files decrypts the ticket and grants access.
     - FSLogix can now read the user profile from Azure Files and load the Azure Virtual Desktop session.
+    
+```mermaid
+flowchart TD
+    A[User signs in] --> B[Cloud Authentication Provider]
+    B --> C[Primary Refresh Token (PRT)]
+    C --> D[Cloud TGT Issued]
+    D --> E[Service Ticket Request]
+    E --> F[Service Ticket Issued]
+    F --> G[Resource Access]
+    G --> H[FSLogix loads user profile from Azure Files]
+```
+
+```mermaid
+flowchart TD
+    A[1. User Authentication] --> B[2. Cloud TGT Issuance]
+    B --> C[3. Realm Mapping and Azure Tenant Info]
+    C --> D[4. Service Ticket Request]
+    D --> E[5. Service Ticket Issuance]
+    E --> F[6. Resource Access]
+    F --> G[FSLogix loads user profile from Azure Files]
+```
+
+
+
 
 ## Example Use Cases
 
