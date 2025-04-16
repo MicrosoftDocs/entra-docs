@@ -31,7 +31,7 @@ ms.topic: quickstart
 > 
 > - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 > - [Python 2.7+](https://www.python.org/downloads/release/python-2713/) or [Python 3+](https://www.python.org/downloads/release/python-364/)
-> - [Flask](https://flask.palletsprojects.com/en/3.0.x/), [Flask-Session](https://pypi.org/project/Flask-Session/), [requests](https://github.com/psf/requests/graphs/contributors)
+> - [Flask](https://flask.palletsprojects.com/stable/), [Flask-Session](https://pypi.org/project/Flask-Session/), [requests](https://github.com/psf/requests/graphs/contributors)
 > - [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)
 > 
 > #### Step 1: Configure your application in Microsoft Entra admin center

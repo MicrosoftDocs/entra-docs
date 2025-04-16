@@ -7,7 +7,7 @@ ms.author: dmwendia
 ms.custom: has-adal-ref
 ms.reviewer: saeeda, brianmel
 ms.service: identity-platform
-
+ms.date: 04/16/2025
 ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about considerations for using Xamarin iOS and MSAL.NET.
 ---

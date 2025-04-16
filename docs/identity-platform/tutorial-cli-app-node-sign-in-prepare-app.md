@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.author: dmwendia
 ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 06/24/2025
+ms.date: 04/16/2025
 ms.custom:
 
 #Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in an external tenant.
