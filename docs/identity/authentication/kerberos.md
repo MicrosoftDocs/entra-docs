@@ -56,7 +56,7 @@ Microsoft Entra Kerberos enables your Microsoft Entra ID tenant to function as a
     - The client recognizes the Microsoft Entra ID tenant as a separate Kerberos realm for cloud resources.
 
 >[!NOTE]
-> The Cloud TGT is not a replacement for the on-premises TGT. It is an additional ticket that allows access to cloud resources.The on-premises TGT is still required for accessing on-premises resources.
+> The Cloud TGT isn't a replacement for the on-premises TGT. It is an another ticket that allows access to cloud resources. The on-premises TGT is still required for accessing on-premises resources.
 
 3. **Realm Mapping and Azure Tenant Info**:
     - Windows LSASS manages the Kerberos Cloud TGT, realm mapping, and Azure tenant information.
@@ -65,9 +65,9 @@ Microsoft Entra Kerberos enables your Microsoft Entra ID tenant to function as a
     - The Kerberos stack maintains the Cloud TGT and realm mapping, using a KDC Proxy to route Kerberos traffic to Microsoft Entra ID.
 
 4. **Service Ticket Request**:
-    - When the user accesses a service (e.g., Azure Files), the client requests a service ticket from Microsoft Entra ID by presenting the TGT.
+    - When the user accesses a service (for example, Azure Files), the client requests a service ticket from Microsoft Entra ID by presenting the TGT.
     - The client sends a Ticket Granting Service Request (TGS-REQ) to Microsoft Entra ID.
-    - Kerberos identifies the service (e.g., cifs/mystuff.file.core.windows.net) and maps the domain to KERBEROS.MICROSOFTONLINE.COM.
+    - Kerberos identifies the service (for example, cifs/mystuff.file.core.windows.net) and maps the domain to KERBEROS.MICROSOFTONLINE.COM.
     - The KDC Proxy protocol enables Kerberos communication over the internet.
 
 5. **Service Ticket Issuance**:
@@ -106,7 +106,7 @@ Microsoft Entra Kerberos enables your Microsoft Entra ID tenant to function as a
 
 - **Hybrid Identities Only**: Currently supports only users synchronized from on-premises AD DS (hybrid users). Cloud-only Microsoft Entra ID accounts aren't supported.
 - **Password Expiration**: Service principal passwords for storage accounts expire every six months and need to be rotated to maintain access.
-- **Permissions Management**: Configuring NTFS permissions on Azure Files may still require connectivity to an on-premises domain controller.
+- **Permissions Management**: Configuring NTFS permissions on Azure Files can still require connectivity to an on-premises domain controller.
 - **Client Requirements**: Clients must be running supported versions of Windows with the necessary updates to utilize Microsoft Entra Kerberos.
 
 ## Getting Started with Microsoft Entra Kerberos
@@ -135,6 +135,6 @@ Administrators benefit from streamlined management, enhanced security features, 
 ## Learn more
 
 -   [Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal&preserve-view=true#create-the-trusted-domain-object)
--   [Configure clients to retrieve Kerberos tickets](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
+-   [Configure clients to retrieve Kerberos tickets](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune&preserve-view=true#configure-the-clients-to-retrieve-kerberos-tickets)
 -   [Configure the Group Policy Object (GPO) for Azure SQL managed instance](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo)
 
