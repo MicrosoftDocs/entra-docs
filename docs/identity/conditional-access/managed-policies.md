@@ -1,6 +1,6 @@
 ---
-title: Microsoft-managed Conditional Access policies
-description: Secure your resources with Microsoft-managed policies and take action to require multifactor authentication to reduce the risk of compromise.
+title: Microsoft-Managed Conditional Access Policies for Enhanced Security
+description: Secure your resources with Microsoft-managed Conditional Access policies. Require multifactor authentication to reduce compromise risks.
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: swethar
 ---
-# Microsoft-managed policies
+# Microsoft-managed Conditional Access policies
 
 As mentioned in the [Microsoft Digital Defense Report](https://www.microsoft.com/security/security-insider/microsoft-digital-defense-report-2023) from October 2023,
 
@@ -23,9 +23,9 @@ cybersecurity. Together, we can build cyber resilience through innovative action
 
 As part of this work, we're making Microsoft-managed policies available in Microsoft Entra tenants around the world. These [simplified Conditional Access policies](#what-is-conditional-access) require multifactor authentication, which a [recent study](https://arxiv.org/abs/2305.00945) finds reduces the risk of compromise by more than 99%.
 
-:::image type="content" source="media/managed-policies/microsoft-managed-policy.png" alt-text="Screenshot of a Microsoft-managed policy in the Microsoft Entra admin center." lightbox="media/managed-policies/microsoft-managed-policy-expanded-full.png":::
+:::image type="content" source="media/managed-policies/microsoft-managed-policy.png" alt-text="Screenshot of a Microsoft-managed Conditional Access policy in the Microsoft Entra admin center." lightbox="media/managed-policies/microsoft-managed-policy-expanded-full.png":::
 
-## How do they work?
+## How Microsoft-managed policies work
 
 Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
 
