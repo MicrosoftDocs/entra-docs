@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 04/15/2025
+ms.date: 04/16/2025
 ms.author: barclayn
 ms.reviewer:
 ---
@@ -109,7 +109,7 @@ Microsoft Entra Kerberos enables your Microsoft Entra ID tenant to function as a
 ## Getting Started with Microsoft Entra Kerberos
 
 1. **Set Up Microsoft Entra Connect**:
-    - Synchronize on-premises AD DS users to Microsoft Entra ID. For details, see the [Microsoft Entra Connect installation guide](../hybrid/how-to-connect-install-prerequisites.md).
+    - Synchronize on-premises AD DS users to Microsoft Entra ID. For details, see the [Microsoft Entra Connect installation guide](../hybrid/connect/how-to-connect-install-prerequisites.md).
 
 2. **Enable Microsoft Entra Kerberos**:
     - Configure Azure Files or other services to use Microsoft Entra Kerberos authentication. For instructions, see [Enable Microsoft Entra Kerberos for Azure Files](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal).
@@ -121,7 +121,7 @@ Microsoft Entra Kerberos enables your Microsoft Entra ID tenant to function as a
     - Monitor and rotate service principal passwords as required.
 
 5. **Monitor Authentication Activity**:
-    - Use [Microsoft Entra ID reports and monitoring tools](../reports-monitoring/overview.md) to keep track of authentication events.
+    - Use [Microsoft Entra ID reports and monitoring tools](../monitoring-health/overview-monitoring-health.md) to keep track of authentication events.
 
 ## Conclusion
 
@@ -132,5 +132,5 @@ Administrators benefit from streamlined management, enhanced security features, 
 ## Learn more
 
 -   [Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal#create-the-trusted-domain-object)
--   [Configure clients to retrieve Kerberos tickets](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable.md?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
+-   [Configure clients to retrieve Kerberos tickets](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
 
