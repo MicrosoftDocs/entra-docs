@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Register an app in Microsoft Entra ID"
+title: "How to register an app in Microsoft Entra ID"
 description: Learn how to register your app in Microsoft Entra ID and configure it for single-tenant or multitenant use.
 author: cilwerner
 manager: CelesteDG
@@ -7,11 +7,11 @@ ms.author: cwerner
 ms.custom: mode-other
 ms.date: 01/29/2025
 ms.service: identity-platform
-ms.topic: quickstart
+ms.topic: how-to
 #Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
 ---
 
-# Quickstart: Register an application in Microsoft Entra ID
+# Register an application in Microsoft Entra ID
 
 In this quickstart, you learn how to register an application in Microsoft Entra ID. This process is essential for establishing a trust relationship between your application and the Microsoft identity platform. By completing this quickstart, you enable identity and access management (IAM) for your app, allowing it to securely interact with Microsoft services and APIs. 
 
