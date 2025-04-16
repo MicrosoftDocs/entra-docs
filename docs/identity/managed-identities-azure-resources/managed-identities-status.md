@@ -55,6 +55,7 @@ The following Azure services support managed identities for Azure resources:
 | Azure Event Grid                | [Event delivery with a managed identity](/azure/event-grid/managed-service-identity)|
 | Azure Event Hubs                | [Authenticate a managed identity with Microsoft Entra ID to access Event Hubs Resources](/azure/event-hubs/authenticate-managed-identity)|
 | Azure File Sync                 | [How to use managed identities with Azure File Sync](/azure/storage/file-sync/file-sync-managed-identities)|
+| Azure Files                     | [Access Azure file shares using Microsoft Entra ID with Azure Files OAuth over REST](/azure/storage/files/authorize-oauth-rest)|
 | Azure Health Data Services workspace services | [Authentication and authorization for Azure Health Data Services](/azure/healthcare-apis/authentication-authorization)|
 | Azure Health Data Services de-identification service | [Use managed identities with the de-identification service](/azure/healthcare-apis/deidentification/managed-identities)|
 | Azure Image Builder             | [Azure Image Builder overview](/azure/virtual-machines/image-builder-overview#permissions)                                                                                                    |

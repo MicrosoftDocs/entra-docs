@@ -7,7 +7,7 @@ manager: femila
 ms.subservice: hybrid-connect
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/04/2025
+ms.date: 04/09/2025
 ms.author: billmath
 author: billmath
 ---

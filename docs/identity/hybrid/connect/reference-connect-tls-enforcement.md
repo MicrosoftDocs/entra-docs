@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: reference
 ms.tgt_pltfrm: na
-ms.date: 9/14/2021
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

@@ -1,5 +1,5 @@
 ---
-title: "Web API app registration and API permissions "
+title: "Web API app registration and API permissions"
 description: In this quickstart, you learn how to configure app registration and API permissions for a Web API, and how to grant admin consent to these permissions. 
 author: cilwerner
 manager: CelesteDG
@@ -9,13 +9,13 @@ ms.date: 01/27/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
 
-ms.topic: quickstart
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to configure my web API's app registration with permissions client applications can use to obtain scoped access to the API.
 ---
 
-# Quickstart: Configure app permissions for a web API
+# Configure app permissions for a web API
 
-In this quickstart, you provide a client app registered with the Microsoft identity platform with scoped, permissions-based access to your own web API. You also provide the client app access to Microsoft Graph.
+In this how-to guide, you provide a client app registered with the Microsoft identity platform with scoped, permissions-based access to your own web API. You also provide the client app access to Microsoft Graph.
 
 By specifying a web API's scopes in your client app's registration, the client app can obtain an access token containing those scopes from the Microsoft identity platform. Within its code, the web API can then provide permission-based access to its resources based on the scopes found in the access token.
 

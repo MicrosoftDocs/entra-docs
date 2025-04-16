@@ -6,7 +6,7 @@ manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.reviewer: markwahl-msft
 ---
