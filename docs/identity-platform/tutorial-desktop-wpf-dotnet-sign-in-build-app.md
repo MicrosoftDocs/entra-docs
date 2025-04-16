@@ -1,7 +1,8 @@
 ---
 title: "Tutorial: Authenticate users to your WPF desktop application"
 description: Learn how to sign in and sign out user to your WPF desktop app.
-ms.author: SHERMANOUKO
+author: SHERMANOUKO
+ms.author: shermanouko
 manager: mwongerapk
 ms.service: identity-platform
 ms.custom:
