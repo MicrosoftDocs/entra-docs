@@ -121,7 +121,7 @@ Verify configurations for clients:
 
  Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
-1. Access these websites from the browsers: `bing.com`, `salesforce.com`, `Instagram.com`.
+1. Access these websites from the browser: `bing.com`, `salesforce.com`, `Instagram.com`.
 1. In the system tray, right-click **Global Secure Access Client** and select **Advanced Diagnostics** > **Traffic** tab.
 1. Scroll to observe that the Global Secure Access client **isn't** capturing traffic from these websites.
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs.
@@ -180,7 +180,7 @@ Verify configurations for clients:
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
-1. Access these websites from the browsers: `bing.com`, `salesforce.com`, `Instagram.com`.
+1. Access these websites from the browser: `bing.com`, `salesforce.com`, `Instagram.com`.
 1. In the system tray, right-click **Global Secure Access Client** and select **Advanced Diagnostics** > **Traffic** tab.
 1. Scroll to observe that the Global Secure Access client **isn't** capturing traffic from these websites.
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs.
@@ -239,7 +239,7 @@ Verify configurations for clients:
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
-1. Access these websites from the browsers: `bing.com`, `salesforce.com`, `Instagram.com`.
+1. Access these websites from the browser: `bing.com`, `salesforce.com`, `Instagram.com`.
 1. In the system tray, right-click **Global Secure Access Client** and select **Advanced Diagnostics** > **Traffic** tab.
 1. Scroll to observe that the Global Secure Access client **isn't** capturing traffic from these websites.
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs.
@@ -308,7 +308,7 @@ Verify configurations for clients:
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
-1. Access these websites from the browsers: `bing.com`, `salesforce.com`, `Instagram.com`, Outlook Online (`outlook.com`, `outlook.office.com`, `outlook.office365.com`), SharePoint Online (`<yourtenantdomain>.sharepoint.com`).
+1. Access these websites from the browser: `bing.com`, `salesforce.com`, `Instagram.com`, Outlook Online (`outlook.com`, `outlook.office.com`, `outlook.office365.com`), SharePoint Online (`<yourtenantdomain>.sharepoint.com`).
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**. Validate traffic related to these sites is captured in the Global Secure Access traffic logs.
 1. Access your private application set up in Zscaler Private Access. For example, using Remote Desktop (RDP).
 1. Sign in to ZPA Admin Console and browse to Dashboard > Applications and Dashboard > Users or Analytics > Diagnostics > Logs. Validate traffic related to the private application is present in the Dashboard or traffic logs.
