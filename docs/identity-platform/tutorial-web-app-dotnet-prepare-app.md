@@ -17,9 +17,10 @@ ms.topic: tutorial
 
 In this tutorial, you create an ASP.NET Core web app and configure it for authentication. This is part 1 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. This application can be used for employees in a workforce tenant or for customers using an external tenant
 
-In this tutorial, you
+In this tutorial, you:
 
 > [!div class="checklist"]
+>
 > * Create an ASP.NET Core web app
 > * Create a self-signed certificate
 > * Configure the settings for the application

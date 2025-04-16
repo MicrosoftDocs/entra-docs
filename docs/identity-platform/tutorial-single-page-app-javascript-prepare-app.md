@@ -143,7 +143,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
 
     ```javascript
     /**
-     * Configuration object to be passed to MSAL instance on creation. 
+    * Configuration object to be passed to MSAL instance on creation. 
     * For a full list of MSAL.js configuration parameters, visit:
     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
     */
@@ -211,7 +211,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
             loginRequest: loginRequest,
         };
     }
-
     ```
 
 1. Replace the following values with the values from the Microsoft Entra admin center:
@@ -293,7 +292,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
             loginRequest: loginRequest,
         };
     }
-
      ```
 
 1. Replace the following values with the values from the Microsoft Entra admin center:
