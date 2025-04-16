@@ -1,5 +1,5 @@
 ---
-title: "Quickstart: Create a Microsoft Entra tenant"
+title: "Create a Microsoft Entra tenant"
 description: In this quickstart, you learn how to create a Microsoft Entra tenant for use in developing applications that use the Microsoft identity platform for authentication and authorization.
 author: OwenRichards1
 manager: CelesteDG
@@ -9,11 +9,11 @@ ms.date: 10/01/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: quickstart
+ms.topic: how-to
 #Customer intent: As an application developer, I need to create a Microsoft identity environment so I can use it to register applications.
 ---
 
-# Quickstart: Set up a tenant
+# Set up a new Microsoft Entra tenant
 
 To build apps that use the Microsoft identity platform for identity and access management, you need access to a Microsoft Entra *tenant*. It's in the Microsoft Entra tenant that you register and manage your apps, configure their access to data in Microsoft 365 and other web APIs, and enable features like Conditional Access.
 
