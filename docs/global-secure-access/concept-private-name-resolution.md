@@ -31,9 +31,10 @@ A high-level Private DNS flow for Windows clients is shown in the diagram below.
 
 :::image type="content" source="media/concept-private-name-resolution/image1.png" alt-text="Screenshot of a network diagram showing the high-level Private DNS flow for Windows clients.":::
 
+:::image type="content" source="media/concept-private-name-resolution/image2.png" alt-text="Screenshot of a diagram showing DNS queries resolved via Private DNS when a DNS suffix is configured in Quick Access."::: 
+
 When a DNS suffix is configured in Quick Access, all DNS queries for fully qualified domain names (FQDN) ending with the matching suffixes are resolved via Private DNS, including those used to define Enterprise Apps.
 
-:::image type="content" source="media/concept-private-name-resolution/image2.png" alt-text="Screenshot of a diagram showing DNS queries resolved via Private DNS when a DNS suffix is configured in Quick Access.":::  
 
 ## Single Label Domain (SLD) resolution
 
@@ -42,10 +43,11 @@ The Private DNS provides name resolution for SLD without a domain suffix. An NRP
 > [!NOTE]  
 > For some applications such as Kerberos authentication, it is important to have the correct SPN. GSA synthetic suffix may break Kerberos flow, so it is recommended to use FQDN for applications that require Kerberos authentication.
 
+
 To learn how to enable Private DNS with Quick Access, see [How to configure Quick Access](/entra/global-secure-access/how-to-configure-quick-access).
 
-To learn how Private DNS works with SSO, see [Use Kerberos for single sign-on (SSO) to your resources with Microsoft Entra Private Access](/entra/global-secure-access/use-kerberos-for-single-sign-on-sso-with-microsoft-entra-private-access).
+To learn how Private DNS works with SSO, see [Use Kerberos for single sign-on (SSO) to your resources with Microsoft Entra Private Access](/entra/global-secure-access/how-to-configure-kerberos-sso).
 
-To learn tips on DNS troubleshooting, [Troubleshoot application access - Global Secure Access](/entra/global-secure-access/troubleshoot-app-access#how-does-dns-work-with-global-secure-access).
+To learn tips on DNS troubleshooting, see [Troubleshoot application access - Global Secure Access](/entra/global-secure-access/troubleshoot-app-access#how-does-dns-work-with-global-secure-access).
 
-To learn hostname acquisition advanced diagnostics, [Troubleshoot the Global Secure Access client: diagnostics - Global Secure Access](/entra/global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics#hostname-acquisition-tab). 
+To learn hostname acquisition advanced diagnostics, see [Troubleshoot the Global Secure Access client: diagnostics - Global Secure Access](/entra/global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics#hostname-acquisition-tab). 
