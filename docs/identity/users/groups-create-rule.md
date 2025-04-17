@@ -1,6 +1,6 @@
 ---
-title: Create or edit a dynamic membership group and get its processing status
-description: How to create or update rules for dynamic membership groups in the Azure portal, and check its processing status.
+title: Create or Edit a Dynamic Membership Group and Get Its Processing Status
+description: Learn how to create or update rules for dynamic membership groups in the Azure portal and check their processing status.
 
 author: barclayn
 manager: femila
@@ -16,14 +16,14 @@ ms.custom: it-pro
 
 # Create or update a dynamic membership group in Microsoft Entra ID
 
-You can use rules to determine dynamic membership groups based on user or device properties In Microsoft Entra ID, part of Microsoft Entra. This article tells how to set up a rule for a dynamic membership groups in the Azure portal. 
+You can use rules to determine dynamic membership groups based on user or device properties in Microsoft Entra ID. This article describes how to set up a rule for a dynamic membership groups in the Azure portal.
 
-Group membership based on user or device properties is supported for security groups and Microsoft 365 groups. When you apply a rule for a dynamic membership group, user and device attributes are evaluated for matches with the membership rule. When an attribute changes for a user or device, all rules for dynamic membership groups in the organization are processed for changes. Users and devices are added or removed if they meet the conditions for a dynamic membership group. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
+Group membership based on user or device properties is supported for security groups and Microsoft 365 groups. When you apply a rule for a dynamic membership group, user and device attributes are evaluated for matches with the membership rule. When an attribute changes for a user or device, all rules for dynamic membership groups in the organization are processed for changes. Users and devices are added or removed if they meet the conditions for a dynamic membership group. In Microsoft Entra ID, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
 > [!NOTE]
-> Security groups can be used for either devices or users, but Microsoft 365 groups can include only users. 
+> Security groups can be used for either devices or users, but Microsoft 365 groups can include only users.
 
-Using dynamic membership groups requires Microsoft Entra ID P1 license or Intune for Education license. For more information, see [Manage rules for dynamic membership groups in Microsoft Entra ID](./groups-dynamic-membership.md) for more details. 
+Using dynamic membership groups requires a Microsoft Entra ID P1 license or an Intune for Education license. For more information, see [Manage rules for dynamic membership groups in Microsoft Entra ID](./groups-dynamic-membership.md).
 
 ## Rule builder in the Azure portal
 
@@ -43,28 +43,27 @@ Here are some examples of advanced rules or syntax for which we recommend that y
 
 For examples of syntax, supported properties, operators, and values for a membership rule, see [Manage rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-membership.md).
 
-## To create a rule for a dynamic membership group
-
+## Create a rule for a dynamic membership group
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.> **Groups**.
 1. Select **All groups**, and select **New group**.
 
-   :::image type="content" source="./media/groups-create-rule/create-new-group.png" alt-text="Screenshot showing how to select the Add new group action.":::
+   :::image type="content" source="./media/groups-create-rule/create-new-group.png" alt-text="Screenshot that shows how to select the Add new group action.":::
 
 1. On the **Group** page, enter a name and description for the new group. Select a **Membership type** for either users or devices, and then select **Add dynamic query**. The rule builder supports up to five expressions. To add more than five expressions, you must use the text box.
 
    :::image type="content" source="./media/groups-create-rule/add-dynamic-group-rule.png" alt-text="Screenshot that shows the All groups page with the New group action selected.":::
 
 1. To see the custom extension properties available for your membership query:
-   1. Select **Get custom extension properties**
+   1. Select **Get custom extension properties**.
    1. Enter the application ID, and then select **Refresh properties**.
 1. After creating the rule, select **Save**.
 1. Select **Create** on the **New group** page to create the group.
 
 If the rule you entered isn't valid, an explanation of why the rule couldn't be processed is displayed in a notification in the portal. Read it carefully to understand how to fix the rule.
 
-## To update an existing rule
+## Update an existing rule
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.
@@ -72,10 +71,10 @@ If the rule you entered isn't valid, an explanation of why the rule couldn't be 
 1. Select a group to open its profile.
 1. On the profile page for the group, select **Dynamic membership rules**. The rule builder supports up to five expressions. To add more than five expressions, you must use the text box.
 
-   :::image type="content" source="./media/groups-create-rule/update-dynamic-group-rule.png" alt-text="Screenshot showing how to add a rule for a dynamic membership group.":::
+   :::image type="content" source="./media/groups-create-rule/update-dynamic-group-rule.png" alt-text="Screenshot that shows how to add a rule for a dynamic membership group.":::
 
 1. To see the custom extension properties available for your membership rule:
-   1. Select **Get custom extension properties**
+   1. Select **Get custom extension properties**.
    1. Enter the application ID, and then select **Refresh properties**.
 1. After updating the rule, select **Save**.
 
@@ -89,34 +88,34 @@ You can see the rule processing status and the last membership change date on th
   
   :::image type="content" source="./media/groups-create-rule/group-status.png" alt-text="Screenshot of a diagram of the dynamic membership group status.":::
 
-The following status messages can be shown for **Dynamic rule processing** status:
+The following status messages can appear for **Dynamic rule processing** status:
 
-- **Evaluating**:  The group change has been received and the updates are being evaluated.
+- **Evaluating**: The group change has been received and the updates are being evaluated.
 - **Processing**: Updates are being processed.
 - **Update complete**: Processing completed and all applicable updates made.
 - **Processing error**:  Processing couldn't be completed because of an error evaluating the membership rule.
-- **Update paused**: Rule for dynamic membership group updates paused by the administrator. MembershipRuleProcessingState is set to “Paused”.
+- **Update paused**: Rule for dynamic membership group updates paused by the administrator. `MembershipRuleProcessingState` is set to `Paused`.
 - **Not started**: Processing not started yet.
 
->[!NOTE]
->In this screen you now may also choose to **Pause processing**. Previously, this option was only available through the modification of the membershipRuleProcessingState property. Those assigned at least the [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator) role can manage this setting and can pause and resume dynamic membership group processing. Group owners without the correct roles do not have the rights needed to edit this setting.
+> [!NOTE]
+> In this screen, you can now also choose to **Pause processing**. Previously, this option was only available through the modification of the membershipRuleProcessingState property. Those assigned at least the [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator) role can manage this setting and can pause and resume dynamic membership group processing. Group owners without the correct roles do not have the rights needed to edit this setting.
 
 The following status messages can be shown for **Last membership change** status:
 
-- &lt;**Date and time**&gt;: The last time the membership was updated.
+- **\<Date and time\>**: The last time the membership was updated.
 - **In Progress**: Updates are currently in progress.
 - **Unknown**: The last update time can't be retrieved. The group might be new.
 
 > [!IMPORTANT]
-> After pausing and unpausing processing of dynamic membership groups, the "Last membership change" date will show a placeholder value. This value is updated once the processing completes.
+> After pausing and unpausing processing of dynamic membership groups, the "Last membership change" date will show a placeholder value. This value is updated after the processing finishes.
 
-If an error occurs while processing the membership rule for a specific group, an alert is shown on the top of the **Overview page** for the group. If no pending dynamic membership groups updates can be processed for all the groups within the organization for more than 24 hours, an alert is shown on the top of **All groups**.
+If an error occurs while processing the membership rule for a specific group, an alert appears on the top of the **Overview page** for the group. If no pending dynamic membership groups updates can be processed for all the groups within the organization for more than 24 hours, an alert appears on the top of **All groups**.
 
-:::image type="content" source="./media/groups-create-rule/processing-error.png" alt-text="Screenshot showing how to process error message alerts.":::
+:::image type="content" source="./media/groups-create-rule/processing-error.png" alt-text="Screenshot that shows how to process error message alerts.":::
 
-## Next steps
+## Related content
 
-The following articles provide additional information on how to use groups in Microsoft Entra ID.
+The following articles provide additional information on how to use groups in Microsoft Entra ID:
 
 - [See existing groups](~/fundamentals/groups-view-azure-portal.md)
 - [Create a new group and adding members](/entra/fundamentals/how-to-manage-groups)
