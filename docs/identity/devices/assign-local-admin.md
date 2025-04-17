@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: how-to
 ms.date: 06/27/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer:
 
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices

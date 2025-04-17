@@ -14,6 +14,9 @@ ms.topic: how-to
 
 # Single-page application: Code configuration
 
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Learn how to configure the code for your single-page application (SPA).
 
 ## Microsoft libraries supporting single-page apps

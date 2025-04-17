@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Automate User provisioning into SAP BTP with Microsoft Entra ID'
+title: Automate User provisioning into SAP BTP with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP BTP using SAP Cloud Identity Services.
 
 author: ZollnerdMSFT
@@ -7,31 +7,30 @@ manager: TeeEarls
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/01/2024
 ms.author: zollnerd
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP BTP.
 ---
 
-# Tutorial: Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP BTP
+# Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP BTP
 
-This tutorial describes the steps you need to perform in SAP Cloud Identity Services and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to SAP BTP using the Microsoft Entra provisioning service and SAP Cloud Identity Services. For important details on what Microsoft Entra provisioning does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+This article describes the steps you need to perform in SAP Cloud Identity Services and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to SAP BTP using the Microsoft Entra provisioning service and SAP Cloud Identity Services. For important details on what Microsoft Entra provisioning does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in SAP BTP to enable single sign-on to SAP BTP
-> * Remove users in SAP BTP when they do not require access anymore
+> * Remove users in SAP BTP when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and SAP BTP
 
 You can also manage access to SAP BTP applications, using Microsoft Entra ID Governance to populate groups associated to roles in the application's BTP role collection. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An SAP BTP app (SAP BTP ABAP environment or SAP BTP XS Advanced UAA Cloud Foundry)
 * SAP Cloud Identity Services tenant
 * A user account on SAP Identity Provisioning admin console with Admin permissions. Make sure you have access to the proxy systems in the Identity Provisioning admin console. If you don't see the **Proxy Systems** tile, create an incident for component **BC-IAM-IPS** to request access to this tile.
@@ -54,9 +53,9 @@ To prepare for provisioning users into SAP BTP or other SAP applications integra
 
 There are two ways to provision users from Microsoft Entra into SAP Cloud Identity Services.
 
-* If you will be using groups from Microsoft Entra ID, such as to assign users to roles in SAP BTP cloud, then use SAP Cloud Identity Services provisioning. First, create Microsoft Entra groups for your SAP business roles used in SAP Analytics Cloud. Then, in SAP Cloud Identity Services provisioning, [configure Microsoft Entra ID as a source](https://help.sap.com/docs/identity-provisioning/identity-provisioning/microsoft-azure-active-directory) to bring users and groups from Microsoft Entra ID to SAP Cloud Identity Services and map the created groups to your SAP business roles. For more information, see [SAP documentation on how to provision users from Microsoft Azure AD to SAP Cloud Identity Services - Identity Authentication](https://blogs.sap.com/2022/02/04/provision-users-from-microsoft-azure-ad-to-sap-cloud-identity-services-identity-authentication/).
+* If you be using groups from Microsoft Entra ID, such as to assign users to roles in SAP BTP cloud, then use SAP Cloud Identity Services provisioning. First, create Microsoft Entra groups for your SAP business roles used in SAP Analytics Cloud. Then, in SAP Cloud Identity Services provisioning, [configure Microsoft Entra ID as a source](https://help.sap.com/docs/identity-provisioning/identity-provisioning/microsoft-azure-active-directory) to bring users and groups from Microsoft Entra ID to SAP Cloud Identity Services and map the created groups to your SAP business roles. For more information, see [SAP documentation on how to provision users from Microsoft Azure AD to SAP Cloud Identity Services - Identity Authentication](https://blogs.sap.com/2022/02/04/provision-users-from-microsoft-azure-ad-to-sap-cloud-identity-services-identity-authentication/).
 
-* Alternatively, if you do not need to use groups in Microsoft Entra ID, then you can use the Microsoft Entra provisioning service. In this scenario, create an application representing SAP BTP, and assign users who need access to SAP BTP to that application. Then, configure [automatic user provisioning with Microsoft Entra ID to SAP Cloud Identity Services for](sap-cloud-platform-identity-authentication-provisioning-tutorial.md). Wait for those users to be provisioned into SAP Cloud Identity Services, and verify they have the attributes necessary for your SAP BTP target.
+* Alternatively, if you don't need to use groups in Microsoft Entra ID, then you can use the Microsoft Entra provisioning service. In this scenario, create an application representing SAP BTP, and assign users who need access to SAP BTP to that application. Then, configure [automatic user provisioning with Microsoft Entra ID to SAP Cloud Identity Services for](sap-cloud-platform-identity-authentication-provisioning-tutorial.md). Wait for those users to be provisioned into SAP Cloud Identity Services, and verify they have the attributes necessary for your SAP BTP target.
 
 > [!NOTE]
 > Start small. Test with a small set of users and groups before rolling out to everyone. Check the users have the right access in SAP downstream targets and when they sign in, they have the right roles.
@@ -69,10 +68,12 @@ At this step, use SAP Cloud Identity Services Identity Provisioning to configure
 
 After you configure provisioning for users into your SAP applications, you should enable Single sign-on for them. Microsoft Entra ID can serve as the identity provider and authentication authority for your SAP applications, and can provide group memberships in claims. If you have not already done so, then configure [Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services](sap-hana-cloud-platform-identity-authentication-tutorial.md).
 
-For more information on how to configure single sign-on to SAP SaaS and modern apps, see [enable SSO](~/id-governance/sap.md#enable-sso).
+## Step 6: Manage access via assigning groups to the SAP BTP role collection
 
-## Next steps
+You can manage access to SAP BTP applications using Microsoft Entra ID Governance to populate groups associated to roles in the application's BTP role collection. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
+
+## Related content
 
 * [Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID](sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
 * [Configure Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services](sap-hana-cloud-platform-identity-authentication-tutorial.md)
-* [Manage access to SAP BTP applications](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
+* [Enable SSO to SAP SaaS and modern apps](~/id-governance/sap.md#enable-sso)

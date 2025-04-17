@@ -1,7 +1,7 @@
 ---
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.service: global-secure-access
 ms.topic: include
 ms.date: 12/23/2024

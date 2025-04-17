@@ -4,7 +4,7 @@ description: Learn how to build a single-page application (app registration)
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 04/29/2024
 ms.service: identity-platform
 
@@ -13,6 +13,8 @@ ms.topic: how-to
 ---
 
 # Single-page application: App registration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 To register a single-page application (SPA) in the Microsoft identity platform, complete the following steps. The registration steps differ between MSAL.js 1.0, which supports the implicit grant flow, and MSAL.js 2.0, which supports the authorization code flow with PKCE. If you are using MSAL.js 1.0, we recommend you migrate to MSAL.js 2.0 to take advantage of the authorization code flow with PKCE which is more secure.
 

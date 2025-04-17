@@ -3,13 +3,14 @@ title: Quarantine status in Microsoft Entra Application Provisioning
 description: When you've configured an application for automatic user provisioning, learn what a provisioning status of Quarantine means and how to clear it.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 07/08/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Application provisioning in quarantine status

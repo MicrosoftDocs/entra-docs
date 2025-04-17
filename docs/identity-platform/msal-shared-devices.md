@@ -22,7 +22,7 @@ To allow employees to use an organization's apps across shared devices, develope
 
 - **Single sign-on:** Allow users to sign into one of the apps that support shared device mode and gain seamless authentication across all other SDM supported apps without having to reenter their credentials. Exempt users from First Run Experience (FRE) screens on shared devices. 
 - **Single sign out:** Enable users to sign out of the device without needing to sign out individually from each SDM supported application. Signing out assures users that their data won’t be shown to subsequent device users, provided apps ensure cleaning up of any cached user data.
-- **Security via Conditional Access policies support:** Provide admins the ability to target specific conditional access policies on shared devices, ensuring that employees have access to company data only when their shared device meets internal compliance standards.
+- **Security via Conditional Access policies support:** Provide admins the ability to target specific Conditional Access policies on shared devices, ensuring that employees have access to company data only when their shared device meets internal compliance standards.
 
 ## Supported and unsupported scenarios
 

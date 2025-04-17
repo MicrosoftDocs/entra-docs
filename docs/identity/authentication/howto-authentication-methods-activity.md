@@ -5,11 +5,11 @@ description: Overview of the authentication methods that users register to sign 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/24/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: sopand
-manager: amycolannino
+manager: femila
 ms.reviewer: dawoo
 ---
 # Authentication Methods Activity 

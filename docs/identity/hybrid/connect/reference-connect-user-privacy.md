@@ -3,11 +3,11 @@ title: 'Microsoft Entra Connect and user privacy'
 description: This document describes how to obtain GDPR compliancy with Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -50,7 +50,7 @@ You can either review and delete these files using Windows Explorer or you can u
 
 
 ```
-$Files = ((Get-childitem -Path "$env:programdata\aadconnect" -Recurse).VersionInfo).FileName
+$Files = ((Get-ChildItem -Path "$env:programdata\aadconnect" -Recurse).VersionInfo).FileName
 Foreach ($file in $files) {
 If ($File.ToUpper() -ne "$env:programdata\aadconnect\PERSISTEDSTATE.XML".toupper()) # Do not delete this file
     {Remove-Item -Path $File -Force}

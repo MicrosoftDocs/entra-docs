@@ -1,15 +1,15 @@
 ---
 title: Regional telecom restrictions
-description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Micorsoft Azure B2C
+description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Microsoft Azure B2C
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 author: aloom3
 ms.author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: aloom3
 ms.custom: references_regions
 ---
@@ -21,7 +21,7 @@ As a protection for our customers, Microsoft doesn't automatically support telep
 
 In today's digital world, telecommunication services have become ingrained into our lives. But, advancements come with a risk of fraudulent activities. International Revenue Share Fraud (IRSF) is a threat with severe financial implications that also makes using services more difficult. Let's look at IRSF fraud more in-depth.  
 
-IRSF is a type of telephony fraud where criminals exploit the billing system of telecommunication services providers to make profit for themselves. Bad actors gain unauthorized access to a telecommunication network and divert traffic to those networks to skim profit for every transaction that is sent to that network. To divert traffic, bad actors steal existing usernames and passwords, create new usernames and passwords, or try a host of other things to send text message messages and voice calls through their telecommunication network. Bad actors take advantage of multifactor authentication screens, which require a text message or voice call before a user can access their account. This activity causes exorbitant charges and makes services unreliable for our customers, causing downtime, and system errors.  
+IRSF is a type of telephony fraud where criminals exploit the billing system of telecommunication services providers to make profit for themselves. Bad actors gain unauthorized access to a telecommunication network and divert traffic to those networks to skim profit for every transaction that is sent to that network. To divert traffic, bad actors steal existing usernames and passwords, create new usernames and passwords, or try a host of other things to send text messages and voice calls through their telecommunication network. Bad actors take advantage of multifactor authentication screens, which require a text message or voice call before a user can access their account. This activity causes exorbitant charges and makes services unreliable for our customers, causing downtime, and system errors.  
 
 Here's how an IRSF attack may happen:  
 
@@ -36,6 +36,7 @@ IRSF poses a significant threat to online businesses and can cause reputational 
 ## SMS verification
 
 For SMS verification, the following region codes require an opt-in. This means that if you'd like to use telecom in these regions, you'll have to reach out to support. 
+
 
 | Region Code | Region Name                                    |
 |:----------- |:---------------------------------------------- |
@@ -87,6 +88,7 @@ For SMS verification, the following region codes require an opt-in. This means t
 | 1787        | Puerto Rico                                    |
 | 1939        | Puerto Rico                                    |
 | 1784        | Saint Vincent and the Grenadines               |
+
 
 ## Voice verification
 For voice verification, the following region codes require an opt-in.

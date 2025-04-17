@@ -4,10 +4,9 @@ titleSuffix: Microsoft Entra Verified ID
 description: Reference of error codes for Microsoft Entra Verified ID APIs
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
 ms.date: 01/30/2025
 ms.author: barclayn
 

@@ -4,7 +4,7 @@ description: Restrict guest user access permissions using the Azure portal, Powe
 
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
+manager: femila
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
@@ -26,9 +26,6 @@ Limited access (default)     | Guests can see membership of all non-hidden group
 When guest access is restricted, guests can view only their own user profile. Permission to view other users isn't allowed even if the guest is searching by User Principal Name or objectId. Restricted access also restricts guest users from seeing the membership of groups they're in. For more information about the overall default user permissions, including guest user permissions, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
 
 ## Update in the Microsoft Entra admin center
-
-
-We’ve made changes to the existing Azure portal controls for guest user permissions.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select **Identity**  > **External Identities**.

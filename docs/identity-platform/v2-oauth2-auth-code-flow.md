@@ -5,11 +5,11 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 04/08/2024
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
-ms.topic: concept-article
+ms.topic: reference
 #Customer intent: As a developer building a web application, I want to implement the OAuth 2.0 authorization code flow with PKCE and OpenID Connect, so that I can obtain authorized access to protected resources like web APIs and authenticate users in my application.
 ---
 
@@ -47,7 +47,7 @@ The `spa` redirect type is backward-compatible with the implicit flow. Apps curr
 If you attempt to use the authorization code flow without setting up CORS for your redirect URI, you'll see this error in the console:
 
 ```http
-access to XMLHttpRequest at 'https://login.microsoftonline.com/common/v2.0/oauth2/token' from origin 'yourApp.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+access to XMLHttpRequest at 'https://login.microsoftonline.com/common/oauth2/v2.0/token' from origin 'yourApp.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
 
 If so, visit your app registration and update the redirect URI for your app to use the `spa` type.

@@ -2,21 +2,21 @@
 title: Secure Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to disable weak ciphers, old protocols, and NTLM password hash synchronization for a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 12/03/2024
+ms.date: 03/14/2025
 ms.author: justinha
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Harden a Microsoft Entra Domain Services managed domain
 
-By default, Microsoft Entra Domain Services enables the use of ciphers such as NTLM v1 and TLS v1. These ciphers may be required for some legacy applications, but are considered weak and can be disabled if you don't need them. If you have on-premises hybrid connectivity using Microsoft Entra Connect, you can also disable the synchronization of NTLM password hashes.
+By default, Microsoft Entra Domain Services enables the use of ciphers such as NTLM v1 and TLS v1. These ciphers may be required for some legacy applications, but are considered weak and should be disabled if you don't need them. If you have on-premises hybrid connectivity using Microsoft Entra Connect, you can also disable the synchronization of NTLM password hashes.
 
-This article shows you how to harden a managed domain by using setting setting such as: 
+This article shows you how to harden a managed domain by using settings such as: 
 
 - Disable NTLM v1 and TLS v1 ciphers
 - Disable NTLM password hash synchronization
@@ -101,7 +101,7 @@ $securitySettings = @{"DomainSecuritySettings"=@{"NtlmV1"="Disabled";"SyncNtlmPa
 Finally, apply the defined security settings to the managed domain using the [Set-AzResource][Set-AzResource] cmdlet. Specify the Domain Services resource from the first step, and the security settings from the previous step.
 
 ```powershell
-Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -ApiVersion “2021-03-01” -Verbose -Force
+Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -ApiVersion "2021-03-01" -Verbose -Force
 ```
 
 It takes a few moments for the security settings to be applied to the managed domain.
