@@ -50,7 +50,12 @@ Synchronized users must have at least **Hybrid Identity Administrator** role to 
 >[!NOTE]
 >Active Directory administrators can make changes that impact the certificateUserIds value in Microsoft Entra ID for any synchronized account. Administrators can include accounts with delegated administrative privilege over synchronized user accounts, or administrative rights over the Microsoft Entra Connect servers.
 
-## How to get CertificateUserIds values from end user certificate
+## How to find the correct CertificateUserIds values for a user from the end user certificate using power shell module
+
+Certificate UserIds follow a certain pattern for its values as per the UserName binding configurations on the tenant. 
+The following powershell command helps an admin to retrieve the exact values for Certificate UserIds attribute for a user from a end user certificate. 
+Admin can also get the current values in Certificate UserIds attribute for an user for a given username binding and 
+set the value of the Certificate UserIds attribute.
 
 More information at [Microsoft Entra PowerShell Installation](/powershell/entra-powershell/installation?view=entra-powershell&tabs=powershell%2Cv1&pivots=windows#installation) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation). 
 
@@ -62,12 +67,6 @@ More information at [Microsoft Entra PowerShell Installation](/powershell/entra-
    Import-Module Microsoft.Graph.Authentication
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
-
-1. Connect to the tenant and accept all.
-
-   ```powershell
-      Connect-MGGraph -Scopes "Directory.Read.All", "User.Read.All" -TenantId <tenantId>
-   ``` 
 
 1. Install Microsoft Entra powershell module (Minimum required version is 1.0.6)
    ```powershell
@@ -301,7 +300,7 @@ Content-Type: application/json
     }
 }
 ```
-## Update certificateUserIds using PowerShell commands
+## Update certificateUserIds using MSGraph PowerShell commands
 
 For this configuration, you can use [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation).
 
@@ -309,7 +308,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 1. Install and import the Microsoft Graph PowerShell SDK.
 
    ```powershell
-       Install-Module Microsoft.Graph -Scope AllUsers
+       Install-Module Microsoft.Graph -Scope CurrentUser
        Import-Module Microsoft.Graph.Authentication
        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
