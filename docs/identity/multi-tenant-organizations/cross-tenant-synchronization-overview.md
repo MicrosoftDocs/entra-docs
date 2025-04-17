@@ -119,6 +119,8 @@ In the source tenant: Using this feature requires Microsoft Entra ID P1 licenses
 
 In the target tenant: Cross-tenant sync relies on the Microsoft Entra External ID billing model. To understand the external identities licensing model, see [MAU billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md). You will also need at least one Microsoft Entra ID P1 license in the target tenant to enable auto-redemption.
 
+[Cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) requires TBD licenses.
+
 ## Frequently asked questions
 
 #### Clouds

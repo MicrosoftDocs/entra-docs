@@ -14,3 +14,5 @@ ms.custom: include file
 | --- | --- |
 | Power BI | - Support for UserType Member in Power BI is currently in preview. For more information, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite). |
 | Azure Virtual Desktop | - External member and external guest aren't supported in Azure Virtual Desktop. |
+| Azure Virtual Desktop | - For limitations related to Azure Virtual Desktop, see TBD. |
+| Microsoft Teams | - For limitations related to Azure Government, see TBD. |
