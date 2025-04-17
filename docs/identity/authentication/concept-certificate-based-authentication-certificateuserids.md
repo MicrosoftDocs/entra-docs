@@ -69,12 +69,12 @@ For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/mi
       Connect-MGGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All" -TenantId <tenantId>
    ``` 
 
-1. Install Microsoft Entra powershell module
+1. Install Microsoft Entra powershell module (Minimum required version is 1.0.6)
    ```powershell
        Install-Module -Name Microsoft.Entra -AllowClobber
    ```
 
-More information on CertificateBasedAuthentication module [here](https://github.com/microsoftgraph/entra-powershell/module/docs/entra-powershell-v1.0/CertificateBasedAuthentication)
+More information on CertificateBasedAuthentication module [here](/powershell/module/microsoft.entra/?view=entra-powershell#certificate-based-authentication)
 
 ### Get-EntraUserCBAAuthorizationInfo
 
@@ -109,7 +109,7 @@ This command retrieves the authorization information for the user with the speci
 
 ```powershell
 Connect-Entra -Scopes 'User.Read.All'
-$userInfo = Get-EntraUserCBAAuthorizationInfo -UserId 'SawyerM@contoso.com'
+$userInfo = Get-EntraUserCBAAuthorizationInfo -UserId 'user@contoso.com'
 $userInfo.AuthorizationInfo.CertificateUserIds | Format-Table Type, TypeName, Value
 ```
 
