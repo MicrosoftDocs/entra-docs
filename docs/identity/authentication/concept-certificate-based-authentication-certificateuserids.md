@@ -52,13 +52,13 @@ Synchronized users must have at least **Hybrid Identity Administrator** role to 
 
 ## How to get CertificateUserIds values from end user certificate
 
-For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/microsoftgraph/installation).
+More information at [Microsoft Entra PowerShell Installation](/powershell/entra-powershell/installation?view=entra-powershell&tabs=powershell%2Cv1&pivots=windows#installation) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation). 
 
-1. Start PowerShell with administrator privileges.
+1. Start PowerShell.
 1. Install and import the Microsoft Graph PowerShell SDK.
 
    ```powershell
-   Install-Module Microsoft.Graph -Scope AllUsers
+   Install-Module Microsoft.Graph -Scope CurrentUser
    Import-Module Microsoft.Graph.Authentication
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
@@ -66,12 +66,12 @@ For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/mi
 1. Connect to the tenant and accept all.
 
    ```powershell
-      Connect-MGGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All" -TenantId <tenantId>
+      Connect-MGGraph -Scopes "Directory.Read.All", "User.Read.All" -TenantId <tenantId>
    ``` 
 
 1. Install Microsoft Entra powershell module (Minimum required version is 1.0.6)
    ```powershell
-       Install-Module -Name Microsoft.Entra -AllowClobber
+       Install-Module -Name Microsoft.Entra
    ```
 
 More information on CertificateBasedAuthentication module [here](/powershell/module/microsoft.entra/?view=entra-powershell#certificate-based-authentication)
