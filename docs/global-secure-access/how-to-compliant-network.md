@@ -8,6 +8,7 @@ ms.author: kenwith
 author: kenwith
 manager: femila
 ms.reviewer: smistry
+ai-usage: ai-assisted
 ---
 # Enable compliant network check with Conditional Access
 

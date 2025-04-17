@@ -9,6 +9,7 @@ ms.subservice: app-proxy
 ms.topic: conceptual
 ms.date: 02/21/2025
 ms.author: kenwith
+ai-usage: ai-assisted
 ---
 
 # Plan a Microsoft Entra application proxy deployment

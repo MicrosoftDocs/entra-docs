@@ -8,6 +8,7 @@ ms.topic: reference
 ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
+ai-usage: ai-assisted
 ---
 # Global Secure Access Web content filtering categories
 

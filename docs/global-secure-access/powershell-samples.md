@@ -8,6 +8,7 @@ ms.topic: sample
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: sumi
+ai-usage: ai-assisted
 ---
 
 # Global Secure Access PowerShell examples

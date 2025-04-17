@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # How to enable native client applications to interact with proxy applications

@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Microsoft Entra application proxy and Qlik Sense 

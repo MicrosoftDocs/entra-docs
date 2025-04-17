@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/28/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web app so that customer users edit profile after completing a multifactor authentication (MFA) in their external tenant
 ---
 

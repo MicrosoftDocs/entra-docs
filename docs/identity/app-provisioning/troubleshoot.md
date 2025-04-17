@@ -9,6 +9,7 @@ ms.topic: troubleshooting
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: asteen, arvinh
+ai-usage: ai-assisted
 ---
 
 # Problem configuring user provisioning to a Microsoft Entra gallery application

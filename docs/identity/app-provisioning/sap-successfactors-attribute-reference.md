@@ -10,6 +10,7 @@ ms.topic: reference
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: chmutali
+ai-usage: ai-assisted
 ---
 
 # SAP SuccessFactors attribute reference for Microsoft Entra ID

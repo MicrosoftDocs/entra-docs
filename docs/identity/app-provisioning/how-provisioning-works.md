@@ -10,6 +10,7 @@ ms.topic: conceptual
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # How Application Provisioning works in Microsoft Entra ID

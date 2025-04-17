@@ -8,6 +8,7 @@ ms.author: kenwith
 author: kenwith
 manager: femila
 ms.reviewer: smistry
+ai-usage: ai-assisted
 ---
 # Universal Conditional Access through Global Secure Access
 

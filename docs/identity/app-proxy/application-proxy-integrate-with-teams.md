@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: harshja
+ai-usage: ai-assisted
 ---
 
 # Access your on-premises applications through Microsoft Teams with Microsoft Entra application proxy

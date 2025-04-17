@@ -10,6 +10,7 @@ ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom: has-adal-ref
+ai-usage: ai-assisted
 ---
 # Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises
 

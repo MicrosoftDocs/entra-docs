@@ -372,7 +372,15 @@
         - name: Node.js Electron
           href: tutorial-v2-nodejs-desktop.md
         - name: Windows Presentation Foundation (WPF)
-          href: tutorial-v2-windows-desktop.md
+          items: 
+            - name: .NET Framework
+              items:
+              - name: Sign in and call Microsoft Graph
+                href: tutorial-v2-windows-desktop.md
+            - name: ASP.NET Core
+              items:
+              - name: Create WPF app
+                href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
         - name: .NET MAUI
           items:
             - name: Create .NET MAUI app
@@ -554,7 +562,11 @@
         - name: .NET acquire token and call API
           href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
-          href: tutorial-v2-nodejs-console.md
+          items:
+            - name: Acquire access token and call API
+              href: tutorial-daemon-node-call-api-build-app.md
+            - name: Call Microsoft Graph API
+              href: tutorial-v2-nodejs-console.md
     - name: Samples
       href: sample-v2-code.md#service--daemon
     - name: How-to
@@ -579,7 +591,7 @@
           href: tutorial-cli-app-node-sign-in-prepare-app.md
         - name: Sign in users
           href: tutorial-cli-app-node-sign-in-sign-out.md
-- name: Scenarios
+- name: How-to
   items:
     - name: Build
       items:

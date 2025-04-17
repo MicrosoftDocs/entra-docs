@@ -9,6 +9,7 @@ ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
+ai-usage: ai-assisted
 
 # Customer intent: As an IT admin, I need to enable and manage the Private Access traffic forwarding profile so that the private access apps I configured can forward traffic according to the profile.
 ---

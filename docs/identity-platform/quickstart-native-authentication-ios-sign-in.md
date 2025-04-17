@@ -11,7 +11,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: how-to
 ms.date: 02/23/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn about how to configure native authentication iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID.
 ---
 

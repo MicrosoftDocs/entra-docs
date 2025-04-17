@@ -4,7 +4,7 @@ description: Learn about the process of registering your application so it can i
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom: scenarios:getting-started
+ms.custom:
 ms.date: 04/26/2024
 ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
 ms.service: identity-platform

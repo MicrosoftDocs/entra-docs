@@ -4,7 +4,7 @@ description: Learn about initializing client applications using the Microsoft Au
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js, 
+ms.custom:
 ms.date: 02/27/2024
 ms.reviewer: saeeda
 ms.service: identity-platform

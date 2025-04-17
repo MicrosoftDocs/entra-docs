@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj, besilvei
+ai-usage: ai-assisted
 ---
 
 # Using Application Gateway WAF to protect your applications

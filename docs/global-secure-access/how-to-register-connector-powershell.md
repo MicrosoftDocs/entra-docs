@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Create an unattended installation script for the Microsoft Entra private network connector

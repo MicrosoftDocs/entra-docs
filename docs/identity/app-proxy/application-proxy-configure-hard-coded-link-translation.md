@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Redirect hard coded links for apps published with Microsoft Entra application proxy

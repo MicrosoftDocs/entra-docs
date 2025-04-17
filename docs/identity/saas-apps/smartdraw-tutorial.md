@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://cloud.smartdraw.com/sso/saml/login/<DOMAIN>`
+    `https://app.smartdraw.com/sso/saml/login/<DOMAIN>`
 
     > [!NOTE]
 	> The Sign-on URL value isn't real. You update the Sign-on URL value with the actual Sign-on URL, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.

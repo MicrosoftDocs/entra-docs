@@ -1,23 +1,22 @@
 ---
 title: "Tutorial: Authenticate users to your WPF desktop application"
 description: Learn how to sign in and sign out user to your WPF desktop app.
-
 author: SHERMANOUKO
-manager: mwongerapk
-
 ms.author: shermanouko
-ms.service: entra-external-id
-ms.subservice: external
-ms.custom: devx-track-dotnet
+manager: mwongerapk
+ms.service: identity-platform
+ms.custom:
 ms.topic: tutorial
-ms.date: 06/27/2024
+ms.date: 04/16/2025
 ---
 
 # Tutorial: Authenticate users to your WPF desktop application
 
-This tutorial is the final part of a series that demonstrates building a Windows Presentation Form (WPF) desktop app and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to build your .NET WPF desktop app and sign in and sign out a user using Microsoft Entra External ID.
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you'll:
+This tutorial demonstrates how to build a Windows Presentation Form (WPF) desktop app and prepare it for authentication using the Microsoft Entra admin center.
+
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -26,9 +25,15 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your external tenant to sign in user in .NET WPF application](./tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md).
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
-- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+  * Directory (tenant) domain name (for example, *contoso.onmicrosoft.com* or *contoso.com*). 
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `https://login.microsoftonline.com/common/oauth2/nativeclient`
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
+* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
 
 ## Create a WPF desktop application
 
@@ -88,7 +93,7 @@ dotnet add package Microsoft.Identity.Client.Broker
     }
     ```
 
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-wpf.md)]
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url-dot-net-wpf.md)]
 
 ## Modify the project file
 
@@ -435,13 +440,13 @@ Run your app and sign in to test the application
 1. In your terminal, navigate to the root folder of your WPF app and run the app by running the command `dotnet run` in your terminal.
 1. After you launch the sample, you should see a window with a **Sign-In** button. Select the **Sign-In** button.
 
-    :::image type="content" source="./media/tutorial-desktop-wpf-dotnet-sign-in-build-app/wpf-sign-in-screen.png" alt-text="Screenshot of sign-in screen for a WPF desktop application.":::
+    :::image type="content" source="../external-id/customers/media/tutorial-desktop-wpf-dotnet-sign-in-build-app/wpf-sign-in-screen.png" alt-text="Screenshot of sign-in screen for a WPF desktop application.":::
 
 1. On the sign-in page, enter your account email address. If you don't have an account, select **No account? Create one**, which starts the sign-up flow. Follow through this flow to create a new account and sign in.
 1. Once you sign in, you'll see a screen displaying successful sign-in and basic information about your user account stored in the retrieved token. The basic information is displayed in the *Token Info* section of the sign-in screen 
 
 ## See also
 
-- [Sign in users in a sample Electron desktop application by using Microsoft Entra External ID](./how-to-desktop-app-electron-sample-sign-in.md)
-- [Sign in users in a sample .NET MAUI desktop application by using Microsoft Entra External ID](./how-to-desktop-app-maui-sample-sign-in.md)
-- [Customize branding for your sign-in experience](./how-to-customize-branding-customers.md)
+- [Sign in users in a sample Electron desktop application by using Microsoft Entra External ID](../external-id/customers/how-to-desktop-app-electron-sample-sign-in.md)
+- [Sign in users in a sample .NET MAUI desktop application by using Microsoft Entra External ID](../external-id/customers/how-to-desktop-app-maui-sample-sign-in.md)
+- [Customize branding for your sign-in experience](../external-id/customers/how-to-customize-branding-customers.md)

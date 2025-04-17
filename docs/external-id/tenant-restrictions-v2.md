@@ -4,7 +4,7 @@ description: Use tenant restrictions to control the types of external accounts y
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 04/14/2025
 
 ms.author: mimart
 author: msmimart
@@ -100,7 +100,7 @@ When enabling TRv2 on proxy, you will be able to enforce TRv2 only on authentica
 
 Step 1: **Configuring allowed list of partner tenants**
 
-**TRv1:** Tenant Restrictions v1 (TRv1) lets you create an allow list of tenant IDs and/or Microsoft sign-in endpoints to ensure that users access external tenants that your organization authorizes. TRv1 achieved it by adding **`Restrict-Access-To-Tenants: <allowed-tenant-list>`** header on the proxy. For ex: `Restrict-Access-To-Tenants: " contoso.com, fabrikam.com, dogfood.com". [Learn more](~/identity/enterprise-apps/tenant-restrictions.md) about tenant restrictions v1.
+**TRv1:** Tenant Restrictions v1 (TRv1) lets you create an allowlist of tenant IDs and/or Microsoft sign-in endpoints to ensure that users access external tenants that your organization authorizes. TRv1 achieved it by adding **`Restrict-Access-To-Tenants: <allowed-tenant-list>`** header on the proxy. For ex: `Restrict-Access-To-Tenants: " contoso.com, fabrikam.com, dogfood.com". [Learn more](~/identity/enterprise-apps/tenant-restrictions.md) about tenant restrictions v1.
   
 **TRv2:** With Tenant Restrictions v2 (TRv2), the configuration is moved to the server side cloud policy and there is no need for the TRv1 header. 
 

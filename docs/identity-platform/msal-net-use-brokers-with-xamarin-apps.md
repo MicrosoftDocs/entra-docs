@@ -4,7 +4,7 @@ description: Learn how to setup Xamarin iOS applications that can use the Micros
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
+ms.custom: has-adal-ref
 ms.date: 06/05/2024
 ms.reviewer: jmprieur, saeeda
 ms.service: identity-platform

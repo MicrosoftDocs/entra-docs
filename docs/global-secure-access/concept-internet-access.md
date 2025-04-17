@@ -9,7 +9,7 @@ ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
-
+ai-usage: ai-assisted
 ---
 
 # Learn about Microsoft Entra Internet Access for all apps

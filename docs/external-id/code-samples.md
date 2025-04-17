@@ -5,7 +5,7 @@ description: Code and PowerShell samples for Microsoft Entra B2B collaboration
  
 ms.service: entra-external-id
 ms.topic: sample
-ms.date: 01/23/2024
+ms.date: 04/15/2025
 
 ms.author: mimart
 author: msmimart

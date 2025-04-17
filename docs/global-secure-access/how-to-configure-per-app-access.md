@@ -9,6 +9,7 @@ ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
+ai-usage: ai-assisted
 ---
 # How to configure per-app access using Global Secure Access applications
 

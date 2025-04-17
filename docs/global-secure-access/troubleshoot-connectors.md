@@ -8,6 +8,7 @@ ms.topic: troubleshooting
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj,dhruvinshah
+ai-usage: ai-assisted
 ---
 
 # Troubleshoot problems installing the private network connector

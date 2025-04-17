@@ -11,6 +11,7 @@ ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
+ai-usage: ai-assisted
 ---
 
 # On-demand provisioning in Microsoft Entra ID

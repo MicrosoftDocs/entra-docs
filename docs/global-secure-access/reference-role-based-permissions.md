@@ -6,6 +6,7 @@ ms.author: kenwith
 manager: femila
 ms.topic: reference
 ms.date: 03/05/2025
+ai-usage: ai-assisted
 
 ms.service: global-secure-access
 ---

@@ -418,7 +418,7 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 
 #### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
-- [Tutorial: Authenticate users to your WPF desktop application](../external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
+- [Tutorial: Authenticate users to your WPF desktop application](./tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 

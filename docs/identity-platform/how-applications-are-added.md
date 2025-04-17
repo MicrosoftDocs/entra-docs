@@ -4,7 +4,7 @@ description: What does it mean for an application to be added to Microsoft Entra
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom:
 ms.date: 10/26/2022
 ms.reviewer: sureshja
 ms.service: identity-platform

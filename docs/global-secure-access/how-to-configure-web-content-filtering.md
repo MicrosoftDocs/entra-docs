@@ -9,6 +9,7 @@ ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
+ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering

@@ -9,6 +9,7 @@ ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: kfriedemann
 ms.custom:
+ai-usage: ai-assisted
 ---
 # Securely integrate Azure Logic Apps with on premises  APIs using Microsoft Entra application proxy
 

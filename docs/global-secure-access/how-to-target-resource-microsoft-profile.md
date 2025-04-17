@@ -9,6 +9,7 @@ ms.author: kenwith
 author: kenwith
 manager: femila
 ms.reviewer: alexpav
+ai-usage: ai-assisted
 ---
 # Apply Conditional Access policies to Global Secure Access traffic
 

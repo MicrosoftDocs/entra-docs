@@ -38,11 +38,11 @@ Your custom authentication extension in Microsoft Entra ID makes an HTTP call to
 
 ### Request to the external REST API
 
-The request to your REST API is in the format shown below. In this example, the request includes user identities information along with built-in attributes (givenName and companyName) and custom attributes (universityGroups, graduationYear, and onMailingList).
+The request to your REST API is in the format shown in the following example. In this example, the request includes user identities information along with built-in attributes (givenName and companyName) and custom attributes (universityGroups, graduationYear, and onMailingList).
 
-The request contains the user attributes that are selected in the user flow for collection during self-service sign-up, including built-in attributes (for example, givenName and companyName) and [custom attributes that have already been defined](~/external-id/customers/how-to-define-custom-attributes.md) (for example, universityGroups, graduationYear, and onMailingList). Your REST API can't add new attributes.
+The request contains the user attributes that are selected in the user flow for collection during self-service sign-up. Included are built-in attributes (for example, givenName and companyName) and [custom attributes already defined](~/external-id/customers/how-to-define-custom-attributes.md) (for example, universityGroups, graduationYear, and onMailingList). Your REST API can't add new attributes.
 
-The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password is not sent. For attributes with multiple values, the values are sent as a comma-delimited string.
+The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password isn't sent. For attributes with multiple values, the values are sent as a comma-delimited string.
 
 #### JSON
 

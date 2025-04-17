@@ -3,13 +3,11 @@ title: "Tutorial: Create a .NET MAUI shell app, add MSAL SDK, and include an ima
 description: This tutorial demonstrates how to create a .NET MAUI shell app, add MSAL SDK support via MSALClient helper, and include an image resource.
 author: henrymbuguakiarie
 manager: mwongerapk
-
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.topic: tutorial
-ms.subservice: external
-ms.custom: devx-track-dotnet
-ms.date: 06/05/2023
+ms.custom:
+ms.date: 04/16/2025
 ---
 
 # Tutorial: Create a .NET MAUI app
@@ -18,7 +16,7 @@ ms.date: 06/05/2023
 
 This tutorial is part 1 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app. This tutorial demonstrates how to create a .NET MAUI shell app, add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

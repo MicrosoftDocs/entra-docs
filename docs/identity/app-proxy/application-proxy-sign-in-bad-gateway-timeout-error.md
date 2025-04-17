@@ -9,6 +9,7 @@ ms.topic: troubleshooting
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: asteen
+ai-usage: ai-assisted
 ---
 
 # Troubleshoot "corporate app can't be accessed" error in application proxy

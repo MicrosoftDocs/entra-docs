@@ -10,6 +10,7 @@ ms.topic: conceptual
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj, asteen
+ai-usage: ai-assisted
 ---
 
 # How to configure single sign-on to an application proxy application

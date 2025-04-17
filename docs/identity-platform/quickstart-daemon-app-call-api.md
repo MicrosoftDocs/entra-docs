@@ -32,9 +32,10 @@ The sample app you use in this quickstart acquires an access token to call Micro
   * Application Developer
   * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-daemon-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 
 #### [.NET](#tab/asp-dot-net-core-workforce)
 
@@ -58,12 +59,6 @@ The sample app you use in this quickstart acquires an access token to call Micro
 * A suitable code editor.
 
 --- 
-
-## Create a client secret
-
-[!INCLUDE [add-app-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
-
-[!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
 
 ## Grant API permissions to the daemon app
 

@@ -10,6 +10,7 @@ ms.topic: tutorial
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 # Tutorial: Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID
 
@@ -156,12 +157,12 @@ There are several endpoints defined in the SCIM RFC. You can start with the `/Us
 |/User|Perform CRUD operations on a user object.|
 |/Group|Perform CRUD operations on a group object.|
 |/Schemas|The set of attributes supported by each client and service provider can vary. One service provider might include `name`, `title`, and `emails`, while another service provider uses `name`, `title`, and `phoneNumbers`. The schemas endpoint allows for discovery of the attributes supported.|
-|/Bulk|Bulk operations allow you to perform operations on a large collection of resource objects in a single operation (for example, update memberships for a large group).|
+|/Bulk|Bulk operations allow you to perform operations on a large collection of resource objects in a single operation (for example, update memberships for a large group). While we don't support SCIM /Bulk today, this is something we aim to support in the future to help improve performance. |
 |/ServiceProviderConfig|Provides details about the features of the SCIM standard that are supported, for example, the resources that are supported and the authentication method.|
 |/ResourceTypes|Specifies metadata about each resource.|
 
 > [!NOTE]
-> Use the `/Schemas` endpoint to support custom attributes or if your schema changes frequently as it enables a client to retrieve the most up-to-date schema automatically. Use the `/Bulk` endpoint to support groups.
+> Use the `/Schemas` endpoint to support custom attributes or if your schema changes frequently as it enables a client to retrieve the most up-to-date schema automatically. Use the `/Bulk` endpoint to support groups. While we don't support the /Bulk endpoint today, this is something we aim to support in the future to help improve performance.
 
 <a name='understand-the-azure-ad-scim-implementation'></a>
 

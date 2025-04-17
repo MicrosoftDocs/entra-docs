@@ -1,7 +1,6 @@
 ---
 title: Call an API in iOS/macOS app by using native authentication
 description: Learn how to acquire multiple access tokens and call an API in iOS/macOS app by using native authentication.
-
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
@@ -9,7 +8,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/12/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an iOS/macOS app by using native authentication
 ---
 
@@ -17,9 +16,9 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you learn how to acquire an access token and call an API in your iOS/macOS app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS/macOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
+In this tutorial, you learn how to acquire an access token and call an API in your iOS/macOS app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS/macOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate.
 
-In this tutorial, you learn how to: 
+In this tutorial, you: 
 
 > [!div class="checklist"]
 > 
@@ -30,7 +29,6 @@ In this tutorial, you learn how to:
 
 - Complete the steps in [Sign in users and call an API in sample iOS mobile app by using native authentication](quickstart-native-authentication-ios-call-api.md).
 - Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md). This tutorial shows you how to sign in users in your iOS/macOS app by using native authentication.
-
 
 ## Acquire one or multiple access tokens
 

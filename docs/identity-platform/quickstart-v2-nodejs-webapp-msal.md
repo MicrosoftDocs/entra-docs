@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: cilwerner
 manager: celested
 ms.author: cwerner
-ms.custom: scenarios:getting-started, "languages:js", devx-track-js, mode-api
+ms.custom:
 ms.date: 11/22/2021
 ms.service: identity-platform
 

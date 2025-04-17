@@ -8,6 +8,7 @@ ms.author: kenwith
 author: kenwith
 manager: femila
 ms.reviewer: alexpav
+ai-usage: ai-assisted
 ---
 # Source IP restoration
 

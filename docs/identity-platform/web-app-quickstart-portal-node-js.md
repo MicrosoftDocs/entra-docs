@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: Dickson-Mwendia
 manager: celested
 ms.author: dmwendia
-ms.custom: scenarios:getting-started, "languages:js", devx-track-js, mode-api
+ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform
 

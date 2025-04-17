@@ -6,7 +6,7 @@ manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: identity-platform
-ms.custom: devx-track-dotnet
+ms.custom:
 ms.topic: tutorial
 ms.date: 02/24/2025
 

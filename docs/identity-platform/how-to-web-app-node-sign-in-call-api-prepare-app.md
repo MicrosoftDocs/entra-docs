@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025
-ms.custom: developer, devx-track-js
+ms.custom:
 #Customer intent: As a developer, I want to learn about how to start building my Node.js web app so that I can call a web API 
 ---
 

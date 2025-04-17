@@ -4,11 +4,10 @@ description: Learn how to set up your Node.js web application for profile editin
 author: kengaderdus
 manager: mwongerapz
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025
-ms.custom: developer
+ms.custom:
 #Customer intent: As a developer, I want to set up my Node.js web app for profile editing so that customer users can update their profile after a successful sign-in.
 ---
 

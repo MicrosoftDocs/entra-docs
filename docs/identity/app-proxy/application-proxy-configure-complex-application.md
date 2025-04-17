@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: dhruvinshah
+ai-usage: ai-assisted
 ---
 
 # Understand complex applications in Microsoft Entra application proxy

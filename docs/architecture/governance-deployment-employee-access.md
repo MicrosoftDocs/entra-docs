@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/25/2025
+ms.date: 04/17/2025
 ms.author: gasinh
 
 #customer intent: My goal is to understand deployment of Microsoft Entra ID Governance in my test and production environments.
@@ -102,7 +102,12 @@ To extend governance workflows, integrate Logic Apps with entitlement management
 1. Go to [Trigger Azure Logic Apps with custom extensions in entitlement management](/azure/active-directory/governance/entitlement-management-logic-apps-integration). 
 2. Use the instructions to create and add a custom extension to a catalog.
 3. Edit the custom extension.
-3. Add custom extensions to an access package. 
+3. Add custom extensions to an access package.
+
+See the following video to learn about custom extenstions and access packages in Microsoft Entra ID Governance.
+
+> [!VIDEO 4fdc4503-b3c9-42b7-b36b-375aea3024a9]
+
 
 ## Access recertification: Access reviews
 

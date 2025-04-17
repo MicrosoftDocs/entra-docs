@@ -143,8 +143,6 @@
         href: entitlement-management-ticketed-provisioning.md
       - name: Automated Teams Messaging Integration
         href: entitlement-management-custom-teams-extension.md      
-      - name: Customized entitlement reports in Azure Data Explorer
-        href: custom-entitlement-report-with-adx-and-entra-id.md      
  
     - name: Access Reviews
       items:
@@ -168,6 +166,15 @@
         href: /graph/tutorial-lifecycle-workflows-scheduled-leaver?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
       - name: Automate employee mover tasks - Microsoft Entra admin center
         href: tutorial-mover-custom-workflow-portal.md   
+      - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
+        href: ~/fundamentals/copilot-entra-lifecycle-workflow.md  
+    - name: Reporting and analytics
+      items:
+      - name: Customized reports in Azure Data Explorer
+        href: custom-entitlement-report-with-adx-and-entra-id.md
+      - name: Customized reports with other sources
+        href: custom-entitlement-report-with-other-sources.md
+
 - name: Concepts
   expanded: true
   items:

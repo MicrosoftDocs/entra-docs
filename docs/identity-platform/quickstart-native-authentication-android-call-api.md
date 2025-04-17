@@ -11,7 +11,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 08/21/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a developer, I want to call a web API from a sample Android mobile app so that I can experience how Microsoft Entra's native authentication works.
 ---
 

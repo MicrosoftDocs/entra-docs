@@ -9,6 +9,7 @@ ms.topic: tutorial
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Tutorial - Customize user provisioning attribute-mappings for SaaS applications in Microsoft Entra ID

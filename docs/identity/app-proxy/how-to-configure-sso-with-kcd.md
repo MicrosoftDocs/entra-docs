@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Kerberos Constrained Delegation for single sign-on (SSO) to your apps with application proxy

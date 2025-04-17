@@ -4,7 +4,7 @@ description: Code samples for API connectors in self-service sign-up flows for M
  
 ms.service: entra-external-id
 ms.topic: sample
-ms.date: 01/23/2024
+ms.date: 04/14/2025
 
 ms.author: mimart
 author: msmimart

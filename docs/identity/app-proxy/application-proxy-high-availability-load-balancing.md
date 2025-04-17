@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # High availability and load balancing of your private network connectors and applications

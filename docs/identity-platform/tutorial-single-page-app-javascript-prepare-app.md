@@ -1,23 +1,23 @@
 ---
-title: "Tutorial: Prepare a JavaScript single-page application for authentication"
+title: "Tutorial: Prepare a JavaScript single-page app (SPA) for authentication"
 description: Learn how to prepare a JavaScript single-page app (SPA) for authentication using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.service: identity-platform
-ms.custom: devx-track-js
+ms.custom:
 ms.topic: tutorial
 ms.date: 02/11/2024
 #Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Prepare a JavaScript single-page application for authentication
+# Tutorial: Prepare a JavaScript single-page app for authentication
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 In this tutorial you'll build a JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a JavaScript SPA using `npm`, create files needed for authentication and authorization and add your tenant details to the source code. The application can be used for employees in a workforce tenant or for customers using an external tenant.
 
-In this tutorial, you'll:
+In this tutorial, you
 
 > [!div class="checklist"]
 > * Create a new JavaScript project
@@ -149,6 +149,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     */
     const msalConfig = {
         auth: {
+            clientId: "Enter_the_Application_Id_Here",
             // WORKFORCE TENANT
             authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", //  Replace the placeholder with your tenant info
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
@@ -209,10 +210,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
             msalConfig: msalConfig,
             loginRequest: loginRequest,
         };
-        module.exports = {
-            msalConfig: msalConfig,
-            loginRequest: loginRequest,
-        };
     }
     ```
 
@@ -233,6 +230,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     */
     const msalConfig = {
         auth: {
+            clientId: "Enter_the_Application_Id_Here",
             // EXTERNAL TENANT
             authority: "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/", // Replace the placeholder with your tenant subdomain
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
@@ -289,10 +287,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
 
     // exporting config object for jest
     if (typeof exports !== 'undefined') {
-        module.exports = {
-            msalConfig: msalConfig,
-            loginRequest: loginRequest,
-        };
         module.exports = {
             msalConfig: msalConfig,
             loginRequest: loginRequest,
