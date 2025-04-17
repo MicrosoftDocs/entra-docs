@@ -8,7 +8,7 @@ ms.date: 03/30/2025
 ---
 # Service principal-less authentication mitigation
 
-From March 2026, Microsoft Entra ID will no longer support service principal-less authentication behavior. In this article, you'll learn how to prepare for the deprecation of service principal-less authentication. As a tenant administrator you will verify access, create an enterprise application, and verify tokens.
+From March 2026, Microsoft Entra ID will no longer support service principal-less authentication behavior. In this article, you'll learn how to prepare for the deprecation of service principal-less authentication. As a tenant administrator you'll verify access, create an enterprise application, and verify tokens.
 
 ## Prerequisites
 - An account in the resource tenant with at least the **Application administrator** or **Cloud application administrator** role assigned. 
@@ -22,6 +22,8 @@ This change to service principal-less authentication will make client service pr
 Additionally, by enforcing the requirement that applications must be registered in every tenant where they authenticate, we reinforce tenant administrator’s governance of all access, including the ability to write conditional access policies for these applications. 
 
 You must act **before March 31, 2026**, to avoid authentication failure of applications. 
+
+If you identified traffic using service principal-less authentication between **February 11th and March 11th, 2025**, it will continue to work until **March 2026**. However, any traffic that wasn't detected during this period or any new traffic starting after **March 11, 2025** will be blocked starting **April 2025**.
 
 ## Use sign-in logs to find service principal-less applications
 

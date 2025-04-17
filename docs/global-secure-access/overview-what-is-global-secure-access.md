@@ -113,5 +113,6 @@ The remote network (branch connectivity) feature is included in both the Microso
 
 ## Related content
 
+- [Video: 425 Show "Is Global Secure Access Right for You?"](https://youtu.be/2OSbu7d8IOU)
 - [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md)
 - [Stay in the loop with the latest Microsoft Entra ID updates](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/bg-p/Identity)
