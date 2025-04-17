@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/25/2025
+ms.date: 04/17/2025
 ms.author: gasinh
 
 #customer intent: My goal is to deploy Microsoft Entra ID Governance in my test and production environments.
@@ -83,7 +83,9 @@ Learn more in the video about [HR-driven user provisioning with SuccessFactors](
 
 ## Cloud HR to Active Directory
 
-Learn how to [configure API-driven inbound provisioning to on-premises Active Directory (AD)](../identity/app-provisioning/inbound-provisioning-api-configure-app.md). 
+Use the following video to learn about inbound provisioning for on-premises Active Directory.
+
+> [!VIDEO fa17234c-ecc7-4c87-82e9-6609270e1744]
 
 ## Deploy Workday to Active Directory
 
