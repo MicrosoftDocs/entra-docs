@@ -29,6 +29,7 @@ This article describes the steps to configure cross-tenant synchronization using
 > [!IMPORTANT]
 > Cross-cloud synchronization is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 This article describes the steps to configure cross-tenant synchronization between Microsoft clouds, such as Microsoft Azure commercial and Microsoft Azure Government, using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
 
 :::image type="content" source="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png" alt-text="Diagram that shows cross-cloud synchronization between source tenant and target tenant." lightbox="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png":::
