@@ -1,17 +1,13 @@
 ---
 title: "Tutorial: Call a web API from your Node.js daemon application"
 description: Learn about how to prepare your Node.js client daemon app, then configure it to acquire an access token for calling a web API.
-
 author: kengaderdus
 manager: mwongerapk
-
 ms.author: kengaderdus
-ms.service: entra-external-id
-
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 08/27/2024
-ms.custom: developer, devx-track-js
+ms.custom:
 
 #Customer intent: As a developer, devops, I want to learn about how to call a web API from my own daemon app with an external tenant
 ---

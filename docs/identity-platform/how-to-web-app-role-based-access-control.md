@@ -9,7 +9,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025
-ms.custom: developer, devx-track-js
+ms.custom:
 #Customer intent: As a dev, devops or IT admin, I want to learn learn how to use roles and groups present in a security token so that I can to control access to various resources in my Node.js web application.
 ---
 

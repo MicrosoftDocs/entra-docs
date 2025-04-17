@@ -8,6 +8,7 @@ ms.topic: reference
 ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.custom: references_regions
+ai-usage: ai-assisted
 ---
 # Global Secure Access points of presence and IP addresses
 
