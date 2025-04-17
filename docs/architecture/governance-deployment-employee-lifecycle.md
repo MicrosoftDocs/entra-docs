@@ -83,9 +83,11 @@ Learn more in the video about [HR-driven user provisioning with SuccessFactors](
 
 ## Cloud HR to Active Directory
 
-Use the following video to learn about inbound provisioning for on-premises Active Directory.
+Use the following video to learn about API-driven inbound provisioning for on-premises Active Directory.
+
 
 > [!VIDEO fa17234c-ecc7-4c87-82e9-6609270e1744]
+
 
 ## Deploy Workday to Active Directory
 
