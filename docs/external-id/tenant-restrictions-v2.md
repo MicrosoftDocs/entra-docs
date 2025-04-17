@@ -574,7 +574,7 @@ Use Microsoft Graph to get policy information:
             }
         ]
     },
-    "applications": {
+    "applications": {https://github.com/MicrosoftDocs/entra-docs-pr/pull/7963$0
         "accessType": "allowed",
         "targets": [
             {
