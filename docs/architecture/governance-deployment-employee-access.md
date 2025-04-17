@@ -108,6 +108,7 @@ See the following video to learn about custom extenstions and access packages in
 
 > [!VIDEO 4fdc4503-b3c9-42b7-b36b-375aea3024a9]
 
+
 ## Access recertification: Access reviews
 
 For access recertification, you can review access rights with recurring [access reviews](../id-governance/access-reviews-overview.md). Manage group membership, resource access, and role assignments, also meet compliance requirements.  
