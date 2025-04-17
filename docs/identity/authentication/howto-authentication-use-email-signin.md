@@ -9,9 +9,9 @@ ms.topic: how-to
 ms.date: 03/12/2025
 
 ms.author: justinha
-author: calui
+author: justinha
 manager: femila
-ms.reviewer: calui
+ms.reviewer: rahulnagraj
 ---
 # Sign-in to Microsoft Entra ID with email as an alternate login ID (Preview)
 
