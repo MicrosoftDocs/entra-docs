@@ -71,7 +71,7 @@ For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/mi
 
 1. Install Microsoft Entra powershell module
    ```powershell
-       Install-Module -Name Microsoft.Entra -RequiredVersion 1.0.6 -AllowClobber
+       Install-Module -Name Microsoft.Entra -AllowClobber
    ```
 
 More information on CertificateBasedAuthentication module [here](https://github.com/microsoftgraph/entra-powershell/module/docs/entra-powershell-v1.0/CertificateBasedAuthentication)
