@@ -149,6 +149,10 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Understand Transport Layer Security inspection 
+        href: concept-transport-layer-security.md 
+      - name: Configure Transport Layer Security inspection 
+        href: how-to-transport-layer-security.md 
   - name: Logs and monitoring
     expanded: false
     items:
@@ -228,9 +232,9 @@ items:
     href: reference-web-content-filtering-categories.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
-  - name: FAQs
+  - name: Global Secure Access FAQs
     href: resource-faq.yml
-  - name: TLS Inspection FAQs
+  - name: Transport Layer Security inspection FAQs
     href: faq-transport-layer-security.yml
   - name: Connector version history
     href: reference-version-history.md
