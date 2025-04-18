@@ -65,7 +65,7 @@ By the end of this article, you'll be able to:
 - [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
 ::: zone-end
 ::: zone pivot="cross-cloud-synchronization"
-- Microsoft Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
+- Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 - [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role to configure cross-tenant synchronization.
 - [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
@@ -78,7 +78,7 @@ By the end of this article, you'll be able to:
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 ::: zone-end
 ::: zone pivot="cross-cloud-synchronization"
-- Microsoft Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
+- Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 ::: zone-end
 
@@ -358,7 +358,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 1. On the **Attribute Mapping** page, scroll down to review the user attributes that are synchronized between tenants in the **Attribute Mappings** section.
 
-    The first attribute, alternativeSecurityIdentifier, is an internal attribute used to uniquely identify the user across tenants, match users in the source tenant with existing users in the target tenant, and ensure that each user only has one account. The matching attribute cannot be changed. Attempting to change the matching attribute or adding additional matching attributes will result in a `schemaInvalid` error.
+    The first attribute, alternativeSecurityIdentifier, is an internal attribute used to uniquely identify the user across tenants, match users in the source tenant with existing users in the target tenant, and ensure that each user only has one account. The matching attribute can't be changed. Attempting to change the matching attribute or adding additional matching attributes will result in a `schemaInvalid` error.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping.png" alt-text="Screenshot of the Attribute Mapping page that shows the list of Microsoft Entra attributes." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping.png":::
 
@@ -374,7 +374,7 @@ Attribute mappings allow you to define how data should flow between the source t
     | **Guest** | Users will be created as external guests (B2B collaboration users) in the target tenant. |
 
     > [!NOTE]
-    > If the B2B user already exists in the target tenant then **Member (userType)** will not changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
+    > If the B2B user already exists in the target tenant, then **Member (userType)** won't changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
 
     The user type you choose has the following limitations for apps or services (but aren't limited to):
 
@@ -494,7 +494,7 @@ Once you've started a provisioning job, you can monitor the status.
 
     You can also view audit logs in the target tenant.
 
-1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross tenant synchronziation in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
+1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross-tenant synchronization in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png" alt-text="Screenshot of the Audit logs page in the target tenant that lists the log entries for user management." lightbox="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png":::
 
@@ -624,13 +624,13 @@ Change the Guest invite settings in the target tenant to a less restrictive sett
 
 #### Symptom - UserPrincipalName does not update for existing B2B users in pending acceptance state
 
-When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UserPrincipalName (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
+When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UserPrincipalName (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case, the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
 
 The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (using the example above the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
 
 **Cause**
 
-This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The UserPrincipalName is not updated in the following scenarios:
+This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user doesn't have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and won't update the UPN value. The UserPrincipalName isn't updated in the following scenarios:
 
 1. The UPN and mail are different for a user when was manually invited.
 1. The user was invited prior to enabling cross-tenant sync.
@@ -639,7 +639,7 @@ This issue happens when the **B2B user which was manually invited into the targe
 
 **Solution**
 
-To resolve the issue, run on-demand provisioning for the affected users to update the UPN. You can also restart provisioning to update the UPN for all affected users. Please note that this triggers an initial cycle, which can take a long time for large tenants. To get a list of manual invited users in pending acceptance state, you can use a script, please see the below sample.
+To resolve the issue, run on-demand provisioning for the affected users to update the UPN. You can also restart provisioning to update the UPN for all affected users. Note that this triggers an initial cycle, which can take a long time for large tenants. To get a list of manual invited users in pending acceptance state, you can use a script, see the following sample.
 
 ```powershell
 Connect-MgGraph -Scopes "User.Read.All"
