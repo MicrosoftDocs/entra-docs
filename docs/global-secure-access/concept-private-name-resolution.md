@@ -17,11 +17,23 @@ Private DNS service allows you to add domain suffixes for the organization to th
 
 A high-level Private DNS flow for Windows clients is shown in the following diagram.
 
+:::row:::
+   :::column span="2":::
+      **Configuration**
 
-Configuration | Data path
---------------|----------
-- Admin enables Private DNS and adds a DNS suffix from Quick Access.<br>- 
-On the client, an entry in the Name Resolution Policy Table (NRPT) is generated for the suffix to resolve via the GSA client.<br>- Client traffic forwarding profile is updated to send private DNS queries to the GSA edge. | 1. User requests a DNS query for app.contoso.com. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge.<br>2. DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access. <br>3. Connector local resolvers resolve the DNS query and return it back to the DNS proxy.<br>4. DNS proxy responds back to the client with the internal IP. Client stores the internal IP address and returns a synthetic IP to the application.  
+      Admin enables Private DNS and adds a DNS suffix from Quick Access. 
+      On the client, an entry in the Name Resolution Policy Table (NRPT) is generated for the suffix to resolve via the GSA client.
+      Client traffic forwarding profile is updated to send private DNS queries to the GSA edge. 
+   :::column-end:::
+   :::column span="":::
+      **Datapath**
+
+      1. User requests a DNS query for app.contoso.com. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge. 
+      2. DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access.  
+      3. Connector local resolvers resolve the DNS query and return it back to the DNS proxy. 
+      4. DNS proxy responds back to the client with the internal IP. Client stores the internal IP address and returns a synthetic IP to the application.
+   :::column-end:::
+:::row-end:::
 
 :::image type="content" border="true" source="media/concept-private-name-resolution/queries.png" alt-text="Screenshot of a diagram showing DNS queries resolved via Private DNS when a DNS suffix is configured in Quick Access."::: 
 
