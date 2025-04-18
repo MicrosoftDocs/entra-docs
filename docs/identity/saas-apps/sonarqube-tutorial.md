@@ -64,7 +64,7 @@ To configure and test Microsoft Entra SSO with SonarQube, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SonarQube SSO](#configure-sonarqube-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create SonarQube test user](#create-sonarqube-test-user)** - to have a counterpart of B.Simon in SonarQube that is linked to the Microsoft Entra representation of user.
+    1. **[Create SonarQube test user](#create-sonarqube-test-user)** - to have a counterpart of B.Simon in SonarQube that's linked to the Microsoft Entra representation of user.
     1. **[Configure SAML Group Attribute for SonarQube](#configure-saml-group-attribute-for-sonarqube) - to enable B.Simon to use Microsoft Entra single sign-on. 
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO.
 		`https://servicescode-dev.westus.cloudapp.azure.com`
 
 	> [!NOTE]
-	> This value is not real. Update the value with actual Reply URL which are explained later in the article.
+	> This value isn't real. Update the value with actual Reply URL which are explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -109,39 +109,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable B.Simon to use single sign-on by granting access to SonarQube.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SonarQube**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
-   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Added Assignment** dialog, select the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure SonarQube SSO
 
 1. Open a new web browser window and sign into your SonarQube company site as an administrator.
 
-1. Select on **Administration > Configuration > Security** and go to the **SAML Plugin** perform the following steps.
+1. Select **Administration > Configuration > Security** and go to the **SAML Plugin** perform the following steps.
 
 1. Copy the following details from the IdP metadata and paste them into the corresponding text fields in the SonarQube plugin.
 	1. IdP Entity ID
@@ -184,7 +158,7 @@ To set up SAML group attribute and use AzureAD groups for permissions in SonarQu
    1. Save the changes
    1. Go to Administration > Security > Groups in SonarQube
    1. Map the AzureAD groups to SonarQube groups:
-        *  For each AzureAD group, create a corresponding group in SonarQube if it does not exist.
+        *  For each AzureAD group, create a corresponding group in SonarQube if it doesn't exist.
         * Ensure the names of the groups match exactly between AzureAD and SonarQube.
 
 ### Create SonarQube test user
@@ -195,11 +169,11 @@ In this section, you create a user called B.Simon in SonarQube. Work with [Sonar
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select on **Test this application**, this will redirect to SonarQube Sign-on URL where you can initiate the sign-in flow. 
+* Select **Test this application**, this option redirects to SonarQube Sign-on URL where you can initiate the sign-in flow. 
 
 * Go to SonarQube Sign-on URL directly and initiate the sign-in flow from there.
 
-* You can use Microsoft My Apps. When you select the SonarQube tile in the My Apps, this will redirect to SonarQube Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the SonarQube tile in the My Apps, this option redirects to SonarQube Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

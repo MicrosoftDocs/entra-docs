@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Using Azure Front Door for geo-acceleration in Microsoft Entra application proxy

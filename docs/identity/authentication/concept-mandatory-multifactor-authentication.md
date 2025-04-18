@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/13/2025
+ms.date: 04/15/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -14,7 +14,7 @@ ms.reviewer: nashahid, gkinasewitz
 ---
 # Planning for mandatory multifactor authentication for Azure and other admin portals 
 
-At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW166lD) shows that MFA can block more than 99.2% of account compromise attacks. 
+At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://www.microsoft.com/security/blog/2019/08/20/one-simple-action-you-can-take-to-prevent-99-9-percent-of-account-attacks) shows that MFA can block more than 99.2% of account compromise attacks. 
 
 That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
 
@@ -27,7 +27,7 @@ The scope of enforcement includes which applications plan to enforce MFA, applic
 ### Applications
 
 > [!NOTE]
-> The date of enforcement for Phase 2 has changed to summer of 2025.
+> The date of enforcement for Phase 2 has changed to July 1, 2025.
 
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
@@ -36,10 +36,10 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
-| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Summer 2025 |
-| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | Summer 2025 |
-| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Summer 2025 |
-| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | Summer 2025 | 
+| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | July 1, 2025 |
+| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | July 1, 2025 |
+| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | July 1, 2025 |
+| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | July 1, 2025 | 
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
@@ -83,7 +83,7 @@ Changes are required if you use the [msal4j](https://central.sonatype.com/artifa
 
 ### [Node.js](#tab/js)
 
-Changes are required if you use the [@azure/msal-node](https://www.npmjs.com/package/@azure/msal-node) package and one of the following APIs in your application:
+Changes are required if you use the [@azure/msal-node](https://www.npmjs.com/package/@azure/msal-node) package and one of the following APIs in your application. These APIs are [**deprecated** as of the `3.2.3` release](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/CHANGELOG.md#323-1).
 
 - [ClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/clientapplication#@azure-msal-node-clientapplication-acquiretokenbyusernamepassword)
 - [IConfidentialClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/iconfidentialclientapplication#@azure-msal-node-iconfidentialclientapplication-acquiretokenbyusernamepassword)
@@ -115,7 +115,7 @@ Changes are required if you use the [azidentity](https://pkg.go.dev/github.com/A
 - Use [DefaultAzureCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#DefaultAzureCredential) or [EnvironmentCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#EnvironmentCredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#UsernamePasswordCredential) ([**deprecated** as of the `1.8.3-beta.1` release](https://github.com/Azure/azure-sdk-for-go/blob/main/sdk/azidentity/CHANGELOG.md#183-beta1-unreleased))
+- Using [UsernamePasswordCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#UsernamePasswordCredential) ([**deprecated** as of the `1.9.0` release](https://github.com/Azure/azure-sdk-for-go/blob/main/sdk/azidentity/CHANGELOG.md#190-2025-04-08))
 
 ### [Java](#tab/java)
 
@@ -172,13 +172,13 @@ For example, if your organization chose to retain Microsoft's [security defaults
 ## Enforcement phases 
 
 > [!NOTE]
-> The date of enforcement for Phase 2 has changed to the summer of 2025.
+> The date of enforcement for Phase 2 has changed to July 1, 2025.
 
 The enforcement of MFA rolls out in two phases: 
 
 - **Phase 1**: Starting in October 2024, MFA is required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-- **Phase 2**: In the summer of 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+- **Phase 2**: Starting July 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 ## Notification channels 
 
@@ -192,7 +192,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Microsoft 365 message center: A message appears in the Microsoft 365 message center with message ID: **MC862873**. This message has the same information as the email and service health notification. 
 
-After enforcement, a banner appears in Microsoft Entra multifactor authentication:
+After enforcement, a banner appears in the [Azure portal](https://aka.ms/managemfaforazure):
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/enforcement-banner.png" alt-text="Screenshot of a banner in Microsoft Entra multifactor authentication that shows mandatory MFA is enforced."
 
@@ -206,7 +206,7 @@ If you're using a federated Identity Provider (IdP), such as Active Directory Fe
 
 We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
 
-Starting on March 3, 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) and use MFA before they can postpone the start date of MFA enforcement.  
+Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. If you postponed the start date for Phase 1, Phase 2 enforcement *doesn't* begin before the start date you choose. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) and use MFA before they can postpone the start date of MFA enforcement.  
 
 Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
 

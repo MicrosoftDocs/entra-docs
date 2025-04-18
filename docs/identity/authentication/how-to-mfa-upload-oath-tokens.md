@@ -6,10 +6,10 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 03/24/2025
 
 ms.author: justinha
-author: justinha
+author: efdake
 ms.reviewer: lvandenende
 manager: femila
 

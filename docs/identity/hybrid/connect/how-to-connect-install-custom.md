@@ -8,7 +8,7 @@ manager: femila
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 03/12/2025
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -377,7 +377,7 @@ Configure PingFederate as the federation server for each federated Azure domain.
 
 You're prompted to enter credentials so that the web application server can establish a secure connection to the AD FS server. These credentials must be for a local administrator account on the AD FS server.
 
-:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-ping-1.png" alt-text="Screenshot of the export settings page." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-ping-1.png":::
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-ping-2.png" alt-text="Screenshot of the export settings page." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-ping-2.png":::
 
 Contact your PingFederate administrator to resolve any validation issues.  The following image shows information about a PingFederate server that has no valid trust relationship with Azure.
 

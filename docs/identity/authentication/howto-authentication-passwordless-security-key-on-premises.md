@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 04/16/2025
 
 ms.author: justinha
 author: justinha
@@ -20,7 +20,7 @@ This topic shows how to enable passwordless authentication to on-premises resour
 
 Microsoft Entra ID can issue Kerberos ticket-granting tickets (TGTs) for one or more of your Active Directory domains. With this functionality, users can sign in to Windows with modern credentials, such as FIDO2 security keys, and then access traditional Active Directory-based resources. Kerberos Service Tickets and authorization continue to be controlled by your on-premises Active Directory domain controllers (DCs).
 
-A Microsoft Entra Kerberos server object is created in your on-premises Active Directory instance and then securely published to Microsoft Entra ID. The object isn't associated with any physical servers. It's simply a resource that can be used by Microsoft Entra ID to generate Kerberos TGTs for your Active Directory domain.
+A Microsoft Entra Kerberos server object is created in your on-premises Active Directory instance and then securely published to Microsoft Entra ID by using Microsoft Entra Connect. The object isn't associated with any physical servers. It's simply a resource that can be used by Microsoft Entra ID to generate Kerberos TGTs for your Active Directory domain.
 
 :::image type="Image" source="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png" alt-text="Diagram showing how to get a TGT from Microsoft Entra ID and Active Directory Domain Services." lightbox="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png":::
 
@@ -327,6 +327,10 @@ Make sure that enough DCs are patched to respond in time to service your resourc
 
 > [!NOTE]
 > The `/keylist` switch in the `nltest` command is available in client Windows 10 v2004 and later.
+
+### Is there a maximum number of groups per token for Microsoft Entra Kerberos?
+ 
+Yes, you can have up to 1,010 groups per token.
 
 ### Do FIDO2 security keys work in a Windows login with RODC present in the hybrid environment?
 

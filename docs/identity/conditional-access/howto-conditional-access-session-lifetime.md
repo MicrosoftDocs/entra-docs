@@ -101,6 +101,7 @@ We factor for five minutes of clock skew when **every time** is selected in poli
 
 * If you configure sign-in frequency for mobile devices: Authentication after each sign-in frequency interval could be slow, it can take 30 seconds on average. Also, it could happen across various apps at the same time.
 * On iOS devices: If an app configures certificates as the first authentication factor and the app has both Sign-in frequency and [Intune mobile application management policies](/mem/intune/apps/app-lifecycle) applied, end-users are blocked from signing in to the app when the policy triggers.
+* Microsoft Entra Private Access does not yet support setting sign-in frequency to every time. 
 
 ## Next steps
 

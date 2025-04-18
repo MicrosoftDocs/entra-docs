@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.author: billmath
 
 
@@ -26,8 +26,16 @@ Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Conne
 
 For feature feedback, vote at [Connect Health User Voice channel](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
 
+## March 2025
+**Agent Updates**
+
+Microsoft Entra Connect Health (version 4.5.2520.0)
+  - Addresses a data upload size limit issue
+  - Quality improvements
+
 ## May 2024
 **Agent Updates**
+
 Microsoft Entra Connect Health (version 4.5.2487.0)
   - Updated installer to allow for specifying proxy server configuration
   - Updated installer to default to Public Cloud with the option to specify US Government cloud

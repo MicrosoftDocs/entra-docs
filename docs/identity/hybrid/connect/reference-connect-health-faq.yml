@@ -8,7 +8,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: hybrid-connect
   ms.tgt_pltfrm: na
-  ms.custom: has-azure-ad-ps-ref
+  ms.custom: no-azure-ad-ps-ref
   ms.topic: faq
   ms.date: 12/27/2024
   ms.author: billmath
@@ -202,11 +202,6 @@ sections:
           CheckForMS17-010
           
           ```
-          
-      - question: |
-          Why does the PowerShell cmdlet 'Get-MsolDirSyncProvisioningError' show fewer sync errors in the result?
-        answer: |
-          <i>Get-MsolDirSyncProvisioningError</i> only returns DirSync provisioning errors. The Connect Health portal also shows other sync error types such as export errors. Read more about [Microsoft Entra Connect Sync errors](./tshoot-connect-sync-errors.md).
           
       - question: |
           Why are my AD FS audits not being generated?

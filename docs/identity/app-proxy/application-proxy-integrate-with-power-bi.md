@@ -10,6 +10,7 @@ ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom: has-adal-ref
+ai-usage: ai-assisted
 ---
 
 # Enable remote access to Power BI Mobile with Microsoft Entra application proxy

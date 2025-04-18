@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Phenom TXM
 
-In this article,  you will learn how to integrate Phenom TXM with Microsoft Entra ID. When you integrate Phenom TXM with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Phenom TXM with Microsoft Entra ID. When you integrate Phenom TXM with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Phenom TXM.
 * Enable your users to be automatically signed-in to Phenom TXM with their Microsoft Entra accounts.
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with Phenom TXM, perform the following
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Phenom TXM SSO](#configure-phenom-txm-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Phenom TXM test user](#create-phenom-txm-test-user)** - to have a counterpart of B.Simon in Phenom TXM that is linked to the Microsoft Entra representation of user.
+    1. **[Create Phenom TXM test user](#create-phenom-txm-test-user)** - to have a counterpart of B.Simon in Phenom TXM that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,7 +74,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Phenom TXM** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -100,39 +100,13 @@ Follow these steps to enable Microsoft Entra SSO.
     | Staging | `https://login-stg.phenompro.com` |
     | Production | `https://login.phenom.com` |
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you will create a test user in the Azure portal called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you will enable B.Simon to use Azure single sign-on by granting access to Phenom TXM.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Phenom TXM**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Phenom TXM SSO
 
@@ -164,23 +138,23 @@ In this section, you will enable B.Simon to use Azure single sign-on by granting
 
 1. In a different web browser window, log in to your Phenom TXM website as an administrator.
 
-1. Go to **Users** tab and click **Create Users** > **Create single new User**.
+1. Go to **Users** tab and select **Create Users** > **Create single new User**.
 
 1. In the **Create User** page, perform the following steps:
 
-    a. In the **User Information** section, enter a valid **First Name**, **Last Name** and **Work Email** in the textboxes and click **Continue**.
+    a. In the **User Information** section, enter a valid **First Name**, **Last Name** and **Work Email** in the textboxes and select **Continue**.
 
     ![Screenshot that shows the User Information fields.](./media/phenom-txm-tutorial/name.png "User Information")
 
-    b. In the **Assign Tenants** section, **Select Tenants** and click **Continue**.
+    b. In the **Assign Tenants** section, **Select Tenants** and select **Continue**.
 
     ![Screenshot that shows the Tenants Information fields.](./media/phenom-txm-tutorial/details.png "Tenants")
 
-    c. In the **Assign Roles** section, **Select roles** from the dropdown and click **Continue**.
+    c. In the **Assign Roles** section, **Select roles** from the dropdown and select **Continue**.
 
     ![Screenshot that shows the Roles Mapping for Users.](./media/phenom-txm-tutorial/role.png "Mapping")
 
-    d. In the **Summary** section, review your selections and click **Finish** to create a user.
+    d. In the **Summary** section, review your selections and select **Finish** to create a user.
 
     ![Screenshot that shows the Phenom TXM Summary section.](./media/phenom-txm-tutorial/finish.png "Summary")
 
@@ -190,15 +164,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Phenom TXM Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Phenom TXM Sign-on URL where you can initiate the login flow.  
 
 * Go to Phenom TXM Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Phenom TXM for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Phenom TXM for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Phenom TXM tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Phenom TXM for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Phenom TXM tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Phenom TXM for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

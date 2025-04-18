@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom:
-ms.date: 09/27/2024
+ms.date: 04/15/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -84,7 +84,7 @@ Example:
 
 ```json
 
-"accessTokenAcceptedVersion": 2
+"requestedAccessTokenVersion": 2
 
 ```
 

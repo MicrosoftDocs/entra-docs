@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/01/2024
-ms.custom: developer
+ms.custom:
 
 #Customer intent: As a dev, devops, I want to add sign-up with email one-time passcode or email and password, and collect user attributes in your Android mobile app using native authentication.
 ---
@@ -22,7 +22,7 @@ ms.custom: developer
 
 This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collect user attributes in your Android mobile app using native authentication. 
 
-In this tutorial, you learn how to: 
+In this tutorial, you: 
 
 
 > [!div class="checklist"]

@@ -5,7 +5,7 @@ author: kengaderdus
 manager: mwongerapk
 ms.service: identity-platform
 ms.topic: quickstart
-ms.date: 11/20/2024
+ms.date: 03/10/2025
 ms.author: kengaderdus
 zone_pivot_groups: entra-tenants
 
@@ -13,6 +13,8 @@ zone_pivot_groups: entra-tenants
 ---
 
 # Quickstart: Sign in users in a sample web app
+
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 ::: zone pivot="workforce"
 
@@ -26,58 +28,46 @@ In this quickstart, you use a sample web app to show you how to sign in users an
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [Node](#tab/node-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Web
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:3000/auth/redirect`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 * [Node.js](https://nodejs.org/en/download/package-manager)
+
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Web
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
+* Add a self-signed certificate to your app registration. **Do not** use self-signed certificates in production apps. Use a certificate from a trusted certificate authority or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=certificate). Create the certificate using the following command:
+  ```console
+  dotnet dev-certs https -ep ./certificate.crt --trust
+  ```
 * A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 
 #### [Python Flask](#tab/python-flask-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Web
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:5000/getAToken`
 * [Python 3 +](https://www.python.org/downloads/)
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 
 ---
-
-## Add app client secret or certificate
-
-#### [Node](#tab/node-workforce)
-
-[!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
-
-#### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
-
-[!INCLUDE [add-app-certificate-asp-dot-net.md](./includes/register-app/add-app-certificate-asp-dot-net.md)]
-
-#### [Python Flask](#tab/python-flask-workforce)
-
-[!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
-
----
-
-[!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
 
 ## Clone or download sample web application 
 
@@ -122,7 +112,7 @@ For you to sign in users with the sample app, you need to update it with your ap
 
 #### [Node](#tab/node-workforce)
 
-In the *ms-identity-node-main* folder, open the *.env* file in the *App* folder. Replace the following placeholders:
+In the *ms-identity-node* folder, open the *App/.env* file, then replace the following placeholders:
 
 | Variable  |  Description | Example(s) |
 |-----------|--------------|------------|
@@ -168,7 +158,7 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
     ```console
     cd flask-web-app
     ```
-1. Create an *.env* file in the root folder of the project using *.env.sample* as a guide.
+1. Create an *.env* file in the root folder of the project using *.env.sample.entra-id* as a guide.
 
     ```python
     # The following variables are required for the app to run.
@@ -211,9 +201,10 @@ The sample hosts a web server on localhost, port 3000. When a web browser access
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
-1. In your project directory, use the terminal to enter the following command;
+1. In your project directory, use the terminal to enter the following commands:
 
     ```console
+    cd ms-identity-docs-code-dotnet/web-app-aspnet
     dotnet run
     ```
 
@@ -264,7 +255,7 @@ The following diagram demonstrates how the sample app works:
 
 :::image type="content" source="media/quickstart-v2-python-webapp/topology.png" alt-text="Diagram that shows how the sample app generated by this quickstart works.":::
 
-1. The application uses the [`identity` package](https://pypi.org/project/identity/) to obtain an access token from the Microsoft identity platform. This package is built on top of the Microsoft Authentication Library (MSAL) for Python to simplify authentication and authorization in web apps.
+1. The application uses the [`identity` package](https://github.com/azure-samples/ms-identity-python) to obtain an access token from the Microsoft identity platform. This package is built on top of the Microsoft Authentication Library (MSAL) for Python to simplify authentication and authorization in web apps.
 
 1. The access token you obtain in the previous step is used as a bearer token to authenticate the user when calling the Microsoft Graph API.
 
@@ -302,7 +293,6 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
@@ -311,56 +301,51 @@ In this quickstart, you use a sample web app to show you how to sign in users in
 
 #### [Node](#tab/node-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-web-app*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-    * **Platform configuration**: Web
-    * **Redirect URI**: `http://localhost:3000/auth/redirect`
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `http://localhost:3000/auth/redirect`
+  * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
-* [Node.js](https://nodejs.org).
+* [Node.js](https://nodejs.org/en/download/package-manager)
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-web-app*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-    * **Platform configuration**: Web
-    * **Redirect URI**: `https://localhost:7274/signin-oidc`
-    * **Front-channel logout URL**: `https://localhost:7274/signout-callback-oidc`
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `https://localhost:5001/signin-oidc`
+  * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * A minimum version of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 #### [Python Django](#tab/python-django-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-web-app*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-    * **Platform configuration**: Web
-    * **Redirect URI**: `http://localhost:5000/getAToken`
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `http://localhost:5000/getAToken`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
-* [Python 3+](https://www.python.org/).
+* [Python 3 +](https://www.python.org/downloads/)
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 
 #### [Python Flask](#tab/python-flask-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-web-app*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-    * **Platform configuration**: Web
-    * **Redirect URI**: `http://localhost:3000/getAToken`
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `http://localhost:5000/getAToken`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
-* [Python 3+](https://www.python.org/)
+* [Python 3 +](https://www.python.org/downloads/)
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
   
 ---
-
-## Add app client secret
-
-[!INCLUDE [ciam-add-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
-
-[!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
-
-## Grant admin consent
-
-[!INCLUDE [ciam-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Clone or download sample web application 
 
@@ -493,14 +478,14 @@ For you to sign in users with the sample app, you need to update it with your ap
 1. Open the *appsettings.json* file.
 1. In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is *caseyjensen@onmicrosoft.com*, the value you should enter is *casyjensen*.
 1. Find the `Enter_the_Application_Id_Here` value and replace it with the application ID (clientId) of the app you registered in the Microsoft Entra admin center.
-1. Replace `Enter_the_Client_Secret_Here` with the client secret value you set up in [Add app client secret](#add-app-client-secret).
+1. Replace `Enter_the_Client_Secret_Here` with the client secret value you set up.
 
 
 #### [Python Django](#tab/python-django-external)
 
 1. Open your project files on Visual Studio Code or the editor you're using.
 
-1. Create an *.env* file in the root folder of the project using *.env.sample* file as a guide.
+1. Create an *.env* file in the root folder of the project using *.env.sample.external-id* file as a guide.
 
 1. In your *.env* file, provide the following environment variables:
 
@@ -514,7 +499,7 @@ For you to sign in users with the sample app, you need to update it with your ap
 
 1. Open your project files on Visual Studio Code or the editor you're using.
 
-1. Create an *.env* file in the root folder of the project using *.env.sample* file as a guide.
+1. Create an *.env* file in the root folder of the project using *.env.sample.external-id* file as a guide.
 
 1. In your *.env* file, provide the following environment variables:
 
@@ -583,8 +568,6 @@ If you want to build an app similar to the sample you've run, complete the steps
 
 Run the app to see the sign-in experience at play.
 
-[!INCLUDE [python-identity-library-warning](../external-id/customers/includes/python-identity-library-alert.md)]
-
 1. In your terminal, run the following command:
 
     ```console
@@ -618,8 +601,6 @@ When the users select the **Logout** link, the app clears its session, the redir
 #### [Python Flask](#tab/python-flask-external)
 
 Run the app to see the sign-in experience at play.
-
-[!INCLUDE [python-identity-library-warning](../external-id/customers/includes/python-identity-library-alert.md)]
 
 [!INCLUDE [python-flask-web-app-run-app](../external-id/customers/includes/run-app/flask-web-app.md)]
 

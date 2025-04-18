@@ -63,4 +63,4 @@ To learn more about other scenarios for license management through group-based l
 - [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-migrate-users.md)
 - [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-change-licenses.md)
 - [Microsoft Entra group-based licensing additional scenarios](~/identity/users/licensing-group-advanced.md)
-- [PowerShell examples for group-based licensing in Microsoft Entra ID](~/identity/users/licensing-ps-examples.md)
+- [Licensing PowerShell examples](~/identity/users/licensing-powershell-graph-examples.md)

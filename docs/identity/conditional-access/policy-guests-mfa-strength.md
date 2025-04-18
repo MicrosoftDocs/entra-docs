@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy with authentication stren
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/27/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -66,7 +66,7 @@ Use the following steps to create a Conditional Access policy that applies an au
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After you confirm your settings using [report-only mode](howto-conditional-access-insights-reporting.md), an administrator can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ## Related content
 

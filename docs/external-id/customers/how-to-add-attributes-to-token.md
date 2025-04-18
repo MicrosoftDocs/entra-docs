@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 01/19/2024
+ms.date: 04/14/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -40,24 +40,24 @@ You can specify which built-in or custom attributes you want to include as claim
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select your application in the list to open the application's **Overview** page.
 
-    :::image type="content" source="media/how-to-add-attributes-to-token/select-app.png" alt-text="Screenshot of the overview page of the app registration.":::
+    :::image type="content" source="media/how-to-add-attributes-to-token/select-app.png" alt-text="Screenshot of the overview page of the app registration." border="true":::
 
 1. In the **Essentials** section, under **Managed application in local directory**, select the link showing the name of your application.
 
-    :::image type="content" source="media/how-to-add-attributes-to-token/managed-app-in-local-directory-link.png" alt-text="Screenshot of the managed application in local directory link.":::
+    :::image type="content" source="media/how-to-add-attributes-to-token/managed-app-in-local-directory-link.png" alt-text="Screenshot of the managed application in local directory link." border="true":::
 
 1. Under **Manage**, select **Single Sign-on**.
 1. In the **Attributes & Claims** section, select the **Edit** icon.
 
-    :::image type="content" source="media/how-to-add-attributes-to-token/single-sign-on-edit.png" alt-text="Screenshot of the attributes and claims section and the edit icon.":::
+    :::image type="content" source="media/how-to-add-attributes-to-token/single-sign-on-edit.png" alt-text="Screenshot of the attributes and claims section and the edit icon." border="true":::
 
 ### To add a built-in attribute to the token as a claim
 
 1. On the **Attributes & Claims** page, select **Add new claim**.
 1. Enter a **Name**.
-1. Next to **Source**, select **Attribute**. Then use the drop down list to select the built-in attribute.
+1. Next to **Source**, select **Attribute**. Then use the drop-down list to select the built-in attribute.
 
-    :::image type="content" source="media/how-to-add-attributes-to-token/add-built-in-claim.png" alt-text="Screenshot of the drop down list of built-in attributes.":::
+    :::image type="content" source="media/how-to-add-attributes-to-token/add-built-in-claim.png" alt-text="Screenshot of the drop-down list of built-in attributes." border="true":::
 
 1. Select **Save**. Repeat for all built-in attributes you want to add.
 
@@ -67,12 +67,9 @@ You can specify which built-in or custom attributes you want to include as claim
 1. Enter a **Name**.
 1. Next to **Source**, select **Directory schema extension**.
 
-    :::image type="content" source="media/how-to-add-attributes-to-token/manage-claim-directory-schema.png" alt-text="Screenshot of the Directory schema extension option.":::
+    :::image type="content" source="media/how-to-add-attributes-to-token/manage-claim-directory-schema.png" alt-text="Screenshot of the Directory schema extension option." border="true":::
 
 1. In the **Select Application** pane, select **b2c-extensions-app** (the app that contains all extension attributes for your external tenant), and then choose **Select**.
-
-    :::image type="content" source="media/how-to-add-attributes-to-token/edit-select-application.png" alt-text="Screenshot of the Select Application pane.":::
-
 1. In the **Add Extension Attributes** pane, find the custom attribute you want to add as a claim to the token, and then select it.
 1. Select **Add**.
 1. Select **Save**. Repeat for each custom attribute you want to add.

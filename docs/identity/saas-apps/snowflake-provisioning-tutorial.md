@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and Snowflake](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-snowflake-to-support-provisioning-with-azure-ad'></a>
@@ -69,7 +69,7 @@ Before you configure Snowflake for automatic user provisioning with Microsoft En
 
     ![Screenshot of a worksheet in the Snowflake UI with the SCIM access token called out.](media/Snowflake-provisioning-tutorial/step-2.png)
 
-1. Create the custom role AAD_PROVISIONER. All users and roles in Snowflake created by Microsoft Entra ID will be owned by the scoped down AAD_PROVISIONER role.
+1. Create the custom role AAD_PROVISIONER. All users and roles in Snowflake created by Microsoft Entra ID is owned by the scoped down AAD_PROVISIONER role.
 
     ![Screenshot showing the custom role.](media/Snowflake-provisioning-tutorial/step-3.png)
 
@@ -87,15 +87,9 @@ Before you configure Snowflake for automatic user provisioning with Microsoft En
 
 Add Snowflake from the Microsoft Entra application gallery to start managing provisioning to Snowflake. If you previously set up Snowflake for single sign-on (SSO), you can use the same application. However, we recommend that you create a separate app when you're initially testing the integration. [Learn more about adding an application from the gallery](~/identity/enterprise-apps/add-application-portal.md).
 
-## Step 4: Define who will be in scope for provisioning
+## Step 4: Define who is in scope for provisioning
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application, or based on attributes of the user or group. If you choose to scope who will be provisioned to your app based on assignment, you can use the [steps to assign users and groups to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md). If you choose to scope who will be provisioned based solely on attributes of the user or group, you can [use a scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-Keep these tips in mind:
-
-* When you're assigning users and groups to Snowflake, you must select a role other than Default Access. Users with the Default Access role are excluded from provisioning and will be marked as not effectively entitled in the provisioning logs. If the only role available on the application is the Default Access role, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add more roles.
-
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to Snowflake
 
@@ -174,7 +168,7 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
 
 1. Define the users and groups that you want to provision to Snowflake by choosing the desired values in **Scope** in the **Settings** section. 
 
-    If this option is not available, configure the required fields under **Admin Credentials**, select **Save**, and refresh the page. 
+    If this option isn't available, configure the required fields under **Admin Credentials**, select **Save**, and refresh the page. 
 
     ![Screenshot that shows choices for provisioning scope.](common/provisioning-scope.png)
 
@@ -186,11 +180,7 @@ This operation starts the initial synchronization of all users and groups define
 
 ## Step 6: Monitor your deployment
 
-After you've configured provisioning, use the following resources to monitor your deployment:
-
-* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully.
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion.
-* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. [Learn more about quarantine states](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Connector limitations
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Insperity ExpensAble so that I can control who has access to Insperity ExpensAble, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra single sign-on with Insperity ExpensAble, 
 2. **[Configure Insperity ExpensAble Single Sign-On](#configure-insperity-expensable-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Insperity ExpensAble test user](#create-insperity-expensable-test-user)** - to have a counterpart of Britta Simon in Insperity ExpensAble that is linked to the Microsoft Entra representation of user.
+5. **[Create Insperity ExpensAble test user](#create-insperity-expensable-test-user)** - to have a counterpart of Britta Simon in Insperity ExpensAble that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -81,7 +81,7 @@ To configure Microsoft Entra single sign-on with Insperity ExpensAble, perform t
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -93,9 +93,9 @@ To configure Microsoft Entra single sign-on with Insperity ExpensAble, perform t
     `https://server.expensable.com/esapp/Authenticate?companyId=<company ID>`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [Insperity ExpensAble Client support team](https://www.insperity.com/products/expense-management/support/express/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. Contact [Insperity ExpensAble Client support team](https://www.insperity.com/products/expense-management/support/express/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -115,40 +115,7 @@ To configure single sign-on on **Insperity ExpensAble** side, you need to send t
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-The objective of this section is to create a test user called Britta Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to Insperity ExpensAble.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Insperity ExpensAble**.
-
-	![Enterprise applications blade](common/enterprise-applications.png)
-
-1. In the applications list, select **Insperity ExpensAble**.
-
-	![The Insperity ExpensAble link in the Applications list](common/all-applications.png)
-
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ### Create Insperity ExpensAble test user
 
@@ -158,7 +125,7 @@ In this section, you create a user called Britta Simon in Insperity ExpensAble. 
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Insperity ExpensAble tile in the Access Panel, you should be automatically signed in to the Insperity ExpensAble for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Insperity ExpensAble tile in the Access Panel, you should be automatically signed in to the Insperity ExpensAble for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 

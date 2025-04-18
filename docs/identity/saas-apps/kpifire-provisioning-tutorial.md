@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to kpifire so that I can streamline the user management process and ensure that users have the appropriate access to kpifire.
@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both kpifire and Microso
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in kpifire
-> * Remove users in kpifire when they do not require access anymore
+> * Remove users in kpifire when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and kpifire
 > * Provision groups and group memberships in kpifire
 > * [Single sign-on](kpifire-tutorial.md) to kpifire (recommended)
@@ -31,15 +31,14 @@ This article describes the steps you need to perform in both kpifire and Microso
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A [kpifire tenant](https://www.kpifire.com/).
 * A user account in kpifire with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
 
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and kpifire](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-kpifire-to-support-provisioning-with-azure-ad'></a>
@@ -50,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 	[ ![kpifire token generation](media/kpifire-provisioning-tutorial/kpifire-token-generation.png) ](media/kpifire-provisioning-tutorial/kpifire-token-generation.png#lightbox)
 
-1. Copy and save the SCIM token. This value will be entered in the **Secret Token** field in the Provisioning tab of your kpifire application. 
+1. Copy and save the SCIM token. This value is entered in the **Secret Token** field in the Provisioning tab of your kpifire application. 
 
 
 <a name='step-3-add-kpifire-from-the-azure-ad-application-gallery'></a>
@@ -59,14 +58,9 @@ The scenario outlined in this article assumes that you already have the followin
 
 Add kpifire from the Microsoft Entra application gallery to start managing provisioning to kpifire. If you have previously setup kpifire for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
-
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to kpifire 
 
@@ -105,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Mappings** section, select **Synchronize Microsoft Entra users to kpifire**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to kpifire in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in kpifire for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the kpifire API supports filtering users based on that attribute. Select **Save** to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to kpifire in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in kpifire for update operations. If you change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the kpifire API supports filtering users based on that attribute. Select **Save** to commit any changes.
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
@@ -144,11 +138,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 
 ## Step 6: Monitor your deployment
 
-After you've configured provisioning, use the following resources to monitor your deployment:
-
-* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users were provisioned successfully or unsuccessfully.
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion.
-* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. To learn more about quarantine states, see [Application provisioning status of quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## More resources
 

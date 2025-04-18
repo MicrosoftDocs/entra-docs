@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adobe Creative Cloud so that I can control who has access to Adobe Creative Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Adobe Creative Cloud
 
-In this article,  you'll learn how to integrate Adobe Creative Cloud with Microsoft Entra ID. When you integrate Adobe Creative Cloud with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Adobe Creative Cloud with Microsoft Entra ID. When you integrate Adobe Creative Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adobe Creative Cloud.
 * Enable your users to be automatically signed-in to Adobe Creative Cloud with their Microsoft Entra accounts.
@@ -43,7 +43,7 @@ To configure the integration of Adobe Creative Cloud into Microsoft Entra ID, yo
 1. In the **Add from the gallery** section, type **Adobe Creative Cloud** in the search box.
 1. Select **Adobe Creative Cloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-adobe-creative-cloud'></a>
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Adobe Creative Cloud, perform the
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Adobe Creative Cloud SSO](#configure-adobe-creative-cloud-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Adobe Creative Cloud test user](#create-adobe-creative-cloud-test-user)** - to have a counterpart of B.Simon in Adobe Creative Cloud that is linked to the Microsoft Entra representation of user.
+    1. **[Create Adobe Creative Cloud test user](#create-adobe-creative-cloud-test-user)** - to have a counterpart of B.Simon in Adobe Creative Cloud that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Adobe Creative Cloud** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.okta.com/saml2/service-provider/<token>`
 
 	> [!NOTE]
-	> The Identifier value is not real. Follow the guidance on the step 4 of **Configure Adobe Cloud SSO** section. In that you can open the **Federation Metadata XML file** and get the Entity ID value from it and put that as an Identifier value in Microsoft Entra configuration. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Identifier value isn't  real. Follow the guidance on the step 4 of **Configure Adobe Cloud SSO** section. In that you can open the **Federation Metadata XML file** and get the Entity ID value from it and put that as an Identifier value in Microsoft Entra configuration. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Adobe Creative Cloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -109,33 +109,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable B.Simon to use Azure single sign-on by granting access to Adobe Creative Cloud.
-
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. In the applications list, select **Adobe Creative Cloud**.
-1. In the app's overview page, find the **Manage** section, and select **Users and groups**.
-1. Select **Add user**. Then, in the **Add Assignment** dialog box, select **Users and groups**.
-1. In the **Users and groups** dialog box, select **B.Simon** from the list of users. Then choose **Select** at the bottom of the screen.
-1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-1. In the **Add Assignment** dialog box, select **Assign**.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Adobe Creative Cloud SSO
 
@@ -178,11 +152,11 @@ In order to enable Microsoft Entra users to sign into Adobe Creative Cloud, they
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Adobe Creative Cloud Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Adobe Creative Cloud Sign-on URL where you can initiate the login flow. 
 
 * Go to Adobe Creative Cloud Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Adobe Creative Cloud tile in the My Apps, this will redirect to Adobe Creative Cloud Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Adobe Creative Cloud tile in the My Apps, this option redirects to Adobe Creative Cloud Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

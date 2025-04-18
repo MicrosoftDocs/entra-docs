@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Sto
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Storegate tenant](https://www.storegate.com)
 * A user account on a Storegate with Administrator permissions.
 
@@ -40,15 +40,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ### Important tips for assigning users to Storegate
 
-* It is recommended that a single Microsoft Entra user is assigned to Storegate to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Storegate to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Storegate, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up Storegate for provisioning
 
-Before configuring Storegate for automatic user provisioning with Microsoft Entra ID, you will need to retrieve some provisioning information from Storegate.
+Before configuring Storegate for automatic user provisioning with Microsoft Entra ID, you need to retrieve some provisioning information from Storegate.
 
-1. Sign in to your [Storegate Admin Console](https://ws1.storegate.com/identity/core/login?signin=c71fb8fe18243c571da5b333d5437367) and navigate to the settings by clicking on the user icon in the upper right corner and select **Account Settings**.
+1. Sign in to your [Storegate Admin Console](https://ws1.storegate.com/identity/core/login?signin=c71fb8fe18243c571da5b333d5437367) and navigate to the settings by selecting the user icon in the upper right corner and select **Account Settings**.
 
 	![Storegate Add SCIM](media/storegate-provisioning-tutorial/admin.png)
 
@@ -58,7 +58,7 @@ Before configuring Storegate for automatic user provisioning with Microsoft Entr
 
 	![Storegate toggle button](media/storegate-provisioning-tutorial/sso.png)
 
-3. Copy the **Tenant URL** and **Token**. These values will be entered in the **Tenant URL** and **Secret Token** fields respectively in the Provisioning tab of your Storegate application. 
+3. Copy the **Tenant URL** and **Token**. These values are entered in the **Tenant URL** and **Secret Token** fields respectively in the Provisioning tab of your Storegate application. 
 
 ## Add Storegate from the gallery
 
@@ -74,11 +74,11 @@ To configure Storegate for automatic user provisioning with Microsoft Entra ID, 
 
 	![Storegate OIDC Add](media/storegate-provisioning-tutorial/signup.png)
 
-1. Sign in to your [Storegate Admin Console](https://ws1.storegate.com/identity/core/login?signin=c71fb8fe18243c571da5b333d5437367) and navigate to the settings by clicking on the user icon in the upper right corner and select **Account Settings**.
+1. Sign in to your [Storegate Admin Console](https://ws1.storegate.com/identity/core/login?signin=c71fb8fe18243c571da5b333d5437367) and navigate to the settings by selecting the user icon in the upper right corner and select **Account Settings**.
 
 	![Storegate login](media/storegate-provisioning-tutorial/admin.png)
 
-1. Within settings navigate to **Team > Settings** and click on toggle switch in the Single sign-on section, this will start the consent-flow. Click on **Activate**.
+1. Within settings navigate to **Team > Settings** and select toggle switch in the Single sign-on section, this will start the consent-flow. Select **Activate**.
 
 	![Storegate team](media/storegate-provisioning-tutorial/team.png)
 
@@ -89,7 +89,7 @@ To configure Storegate for automatic user provisioning with Microsoft Entra ID, 
 
 	![Storegate OIDC login](media/storegate-provisioning-tutorial/login.png)
 
-1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Storegate account.
+1. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Storegate account.
 
 
 ## Configure automatic user provisioning to Storegate 
@@ -120,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1.  Under the **Admin Credentials** section, input `https://dialpad.com/scim` in **Tenant URL**. Input the value that you retrieved and saved earlier from Storegate in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Storegate. If the connection fails, ensure your Storegate account has Admin permissions and try again.
+1.  Under the **Admin Credentials** section, input `https://dialpad.com/scim` in **Tenant URL**. Input the value that you retrieved and saved earlier from Storegate in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Storegate. If the connection fails, ensure your Storegate account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -128,7 +128,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Storegate**.
 
@@ -153,7 +153,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
