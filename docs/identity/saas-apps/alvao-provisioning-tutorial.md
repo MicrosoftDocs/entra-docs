@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure ALVAO to support provisioning with Microsoft Entra ID
 1. Find your **Tenant SCIM Endpoint URL**, which should have the format `{ALVAO REST API address}/scim` (for example, https://app.contoso.com/alvaorestapi/scim).
-1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Active Directory and Microsoft Entra ID](https://doc.alvao.com/en/11.2/ui/administration/settings/activedirectory)** and copy its value.
+1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Microsoft Entra ID](https://doc.alvao.com/en/25/ui/administration/settings/microsoft-entra-id)** and copy its value.
 
 <a name='step-3-add-alvao-from-the-azure-ad-application-gallery'></a>
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Save**.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to ALVAO**.
+1. Under the **Mappings** section, select **Provision Azure Active Directory Users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to ALVAO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ALVAO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the ALVAO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -121,10 +121,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
    > [!NOTE]
    >For advanced settings see:
-   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
-   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/object-attribute-mapping)
+   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/25/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
+   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/25/admin-guide/users/authentication/aad/provisioning/object-attribute-mapping)
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to ALVAO**.
+1. Under the **Mappings** section, select **Provision Azure Active Directory Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to ALVAO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in ALVAO for update operations. Select the **Save** button to commit any changes.
 
