@@ -1,6 +1,6 @@
 ---
-title: How to sign in users who are locked out by mandatory Microsoft Entra multifactor authentication (MFA) 
-description: A script to sign in users who are locked out by mandatory Microsoft Entra multifactor authentication to Azure and other management portals.
+title: How to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory Microsoft Entra multifactor authentication (MFA) requirement 
+description: A script to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory Microsoft Entra multifactor authentication (MFA) requirement.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
@@ -12,7 +12,7 @@ ms.reviewer: nashahid
 
 # Customer intent: As an identity administrator, I want to unlock users who are locked out by mandatory Microsoft Entra multifactor authentication (MFA).
 ---
-# How to sign in users who are locked out by mandatory MFA
+# How to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory MFA requirement
 
 Users might not be able to sign into the Azure portal, Microsoft Entra admin center or Microsoft Intune admin center if they have trouble using their MFA method after the mandatory requirement to use MFA is rolled out to their tenant. 
  
