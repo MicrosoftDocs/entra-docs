@@ -119,18 +119,9 @@ In the source tenant: Using this feature requires Microsoft Entra ID P1 licenses
 
 In the target tenant: Cross-tenant sync relies on the Microsoft Entra External ID billing model. To understand the external identities licensing model, see [MAU billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md). You will also need at least one Microsoft Entra ID P1 license in the target tenant to enable auto-redemption.
 
-[Cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) requires TBD licenses.
+[Cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) requires Microsoft Entra ID Governance or Microsoft Entra Suite licenses. For more information, see [Microsoft Entra ID Governance licensing fundamentals](../../id-governance/licensing-fundamentals.md).
 
 ## Frequently asked questions
-
-#### Clouds
-
-Which clouds can cross-tenant synchronization be used in?
-
-- Cross-tenant synchronization is supported within the commercial cloud and Azure Government.
-- Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud.
-- Synchronization is only supported between two tenants in the same Azure cloud. For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). Synchronization between commercial and GCC is supported. 
-- Cross-cloud (such as public cloud to Azure Government) isn't currently supported. 
 
 #### Existing B2B users
 
@@ -176,7 +167,7 @@ I have existing B2B collaboration users. What will happen to them?
 What user attributes can be synchronized?
 
 - Cross-tenant synchronization will sync commonly used attributes on the user object in Microsoft Entra ID, including (but not limited to) displayName, userPrincipalName, and directory extension attributes.
-- Cross-tenant synchronization supports provisioning the manager attribute in the commercial cloud. Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute.
+- Cross-tenant synchronization supports provisioning the manager attribute in the Azure commercial cloud. Manager synchronization is not yet supported in the US Government cloud. Both the user and their manager must be in scope for cross-tenant synchronization, in order to provision the manager attribute.
   - For cross-tenant synchronization configurations created after January 2024 with the default schema / attribute mappings:
     - The manager attribute will automatically be added to the attribute mappings.
     - Manager updates will apply on the incremental cycle for users that are undergoing changes (ex: manager change). The sync engine doesn't automatically update all existing users that were provisioned previously.
@@ -296,6 +287,28 @@ How can I deprovision all the users that are currently in scope of cross-tenant 
 If the sync relationship is severed, are external users previously managed by cross-tenant synchronization deleted in the target tenant?
 
 - No. No changes are made to the external users previously managed by cross-tenant synchronization if the relationship is severed (for example, if the cross-tenant synchronization policy is deleted).
+
+#### Clouds
+
+Within the same cloud, which clouds can cross-tenant synchronization be used in?
+
+- Cross-tenant synchronization is supported within the Azure commercial cloud and Azure Government.
+- Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet (Azure in China) cloud.
+
+#### Cross-cloud synchronization
+
+Is [cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) supported?
+
+- Cross-cloud synchronization (such as Azure commercial cloud to Azure Government cloud) is supported and is currently in preview.
+- Cross-cloud synchronization is supported in the Azure commercial cloud, Azure Government cloud, and Azure operated by 21Vianet (Azure in China) cloud.
+- For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). Synchronization between commercial and GCC is supported. 
+
+[!INCLUDE [cross-cloud-synchronization-pairs-include](../../includes/cross-cloud-synchronization-pairs-include.md)]
+
+What are the differences between cross-tenant synchronization and cross-cloud synchronization?
+
+- Cross-tenant synchronization and cross-cloud synchronization are built using the same technologies and are fundamentally the same. The primary difference is that synchronization occurs across clouds instead of within the same cloud.
+- Synchronization of the manager attributue is not yet supported in cross-cloud synchronization.
 
 ## Next steps
 

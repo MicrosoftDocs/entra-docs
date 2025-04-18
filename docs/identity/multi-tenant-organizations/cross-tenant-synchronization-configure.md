@@ -36,13 +36,7 @@ This article describes the steps to configure cross-tenant synchronization betwe
 
 ## Supported cloud pairs
 
-Cross-cloud synchronization supports these cloud pairs:
-
-| Source | Target |
-| --- | --- |
-| Azure commercial | Azure Government |
-| Azure Government | Azure commercial |
-| Azure commercial | Azure operated by 21Vianet |
+[!INCLUDE [cross-cloud-synchronization-pairs-include](../../includes/cross-cloud-synchronization-pairs-include.md)]
 
 ## Limitations
 
@@ -62,15 +56,29 @@ By the end of this article, you'll be able to:
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
+::: zone pivot="same-cloud-synchronization"
 - Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 - [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role to configure cross-tenant synchronization.
 - [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
+::: zone-end
+::: zone pivot="cross-cloud-synchronization"
+- Microsoft Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
+- [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role to configure cross-tenant synchronization.
+- [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
+::: zone-end
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
+::: zone pivot="same-cloud-synchronization"
 - Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
+::: zone-end
+::: zone pivot="cross-cloud-synchronization"
+- Microsoft Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
+::: zone-end
 
 ::: zone pivot="same-cloud-synchronization"
 
@@ -222,9 +230,16 @@ In this step, you automatically redeem invitations in the source tenant.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-tenant synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
 
+    When you select this check box, it grants an underlying service principal the following permissions:
+
+    - TBD
+    - TBD
+
 6. Select **Create**.
 
     It can take up to 15 seconds for the configuration that you just created to appear in the list.
+
+    On the Configurations page for cross-cloud synchronization, the tenant ID and name will be empty.
 
 ::: zone-end
 
@@ -631,6 +646,14 @@ $users | Select-Object DisplayName, UserPrincipalName | Export-Csv "C:\Temp\Gues
 ```
 
 Then you can use [provisionOnDemand with PowerShell](/graph/api/synchronization-synchronizationjob-provisionondemand?tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. For more information, see [Known limitations for on-demand provisioning](/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations).
+
+::: zone pivot="cross-cloud-synchronization"
+
+#### Symptom - Cross-cloud synchronization error
+
+TBD
+
+::: zone-end
 
 ## Next steps
 
