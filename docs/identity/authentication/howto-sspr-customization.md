@@ -59,10 +59,10 @@ You can customize the sign-in page, for example, to add a logo that appears alon
 
 The graphics that you choose appear in the following circumstances:
 
-* After a user enters their username
+* After a user enters their username.
 * If the user accesses the customized URL:
-   * By passing the `whr` parameter to the password reset page, like `https://login.microsoftonline.com/?whr=contoso.com`
-   * By passing the `username` parameter to the password reset page, like `https://login.microsoftonline.com/?username=admin@contoso.com`
+   * By passing the `whr` parameter to the password reset page, like `https://login.microsoftonline.com/?whr=contoso.com`.
+   * By passing the `username` parameter to the password reset page, like `https://login.microsoftonline.com/?username=admin@contoso.com`.
 
 SSPR honors browser language settings. When there's a customization for browser language, the page appears in the browser language customization. Otherwise, it falls to the default locale customization.
 

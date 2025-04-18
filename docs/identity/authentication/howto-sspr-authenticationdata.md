@@ -17,23 +17,23 @@ ms.custom: has-azure-ad-ps-ref
 ---
 # Prepopulate user authentication contact information for Microsoft Entra self-service password reset (SSPR)
 
-To use Microsoft Entra self-service password reset (SSPR), authentication information for a user must be present. Most organizations have users register their authentication data themselves while collecting information for multifactor authentication. Some organizations prefer to bootstrap this process through synchronization of authentication data that already exists in Active Directory Domain Services. This synchronized data is made available to Microsoft Entra ID and SSPR without requiring user interaction. When users need to change or reset their password, they can do so even if they haven't previously registered their contact information.
+To use Microsoft Entra self-service password reset (SSPR), authentication information for a user must be present. Most organizations have users register their authentication data themselves while collecting information for multifactor authentication.
+
+Some organizations prefer to bootstrap this process through synchronization of authentication data that already exists in Active Directory Domain Services. This synchronized data is made available to Microsoft Entra ID and SSPR without requiring user interaction. When users need to change or reset their password, they can do so even if they haven't previously registered their contact information.
 
 You can prepopulate authentication contact information if you meet the following requirements:
 
 * You formatted the data in your on-premises directory properly.
 * You configured [Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-express.md) for your Microsoft Entra tenant.
 
-Phone numbers must be in the format *+CountryCode PhoneNumber*, such  as *+1 4251234567*.
+Phone numbers must be in the format *+CountryCode PhoneNumber*, such as *+1 4251234567*. Further restrictions are:
 
-> [!NOTE]
-> There must be a space between the country code and the phone number.
->
-> Password reset doesn't support phone extensions. Even in the *+1 4251234567X12345* format, extensions are removed before the call is placed.
+- There must be a space between the country code and the phone number.
+- Password reset doesn't support phone extensions. Even in the *+1 4251234567X12345* format, extensions are removed before the call is placed.
 
 ## Fields populated
 
-If you use the default settings in Microsoft Entra Connect, the following mappings are made to populate authentication contact information for SSPR:
+If you use the default settings in Microsoft Entra Connect, the following mappings are made to populate authentication contact information for SSPR.
 
 | On-premises Active Directory | Microsoft Entra ID     |
 |------------------------------|--------------|
@@ -42,9 +42,9 @@ If you use the default settings in Microsoft Entra Connect, the following mappin
 
 After a user verifies their mobile phone number, the **Phone** field under **Authentication contact info** in Microsoft Entra ID is also populated with that number.
 
-## Authentication contact info
+## Authentication contact information
 
-On the **Authentication methods** page for a Microsoft Entra user in the Microsoft Entra admin center, users who are assigned at least the [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) role can manually set the authentication contact information for anyone. You can review existing methods under the **Usable authentication methods** section or by selecting **+Add authentication method**, as shown in the following example.
+On the **Authentication methods** page for a Microsoft Entra user in the Microsoft Entra admin center, users who are assigned at least the [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) role can manually set the authentication contact information for anyone. You can review existing methods under the **Usable authentication methods** section or by selecting **+Add authentication method**.
 
 :::image type="content" source="media/howto-sspr-authenticationdata/user-authentication-contact-info.png" alt-text="Screenshot that shows how to manage authentication methods":::
 
@@ -55,9 +55,9 @@ The following considerations apply for this authentication contact information:
 
 ## Security questions and answers
 
-The security questions and answers are stored securely in your Microsoft Entra tenant and are accessible to users only via the My Security-Info [Combined registration experience](https://aka.ms/mfasetup). Administrators can't see, set, or modify the contents of another user's questions and answers.
+The security questions and answers are stored securely in your Microsoft Entra tenant and are accessible to users only via the My Security-Info [combined registration experience](https://aka.ms/mfasetup). Administrators can't see, set, or modify the contents of another user's questions and answers.
 
-## What happens when a user registers
+## What happens when a user registers?
 
 When a user registers, the registration page sets the following fields:
 

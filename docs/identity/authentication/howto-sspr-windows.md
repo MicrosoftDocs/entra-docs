@@ -18,10 +18,9 @@ By using self-service password reset (SSPR) in Microsoft Entra ID, users can cha
 
 ![Screenshot that shows examples of Windows sign-in screens with the SSPR link.](./media/howto-sspr-windows/windows-reset-password.png)
 
-> [!IMPORTANT]
-> This article shows an administrator how to enable SSPR for Windows devices in an enterprise.
->
-> If your IT team hasn't enabled the ability to use SSPR from your Windows device or you have problems during sign-in, reach out to your help desk for more assistance.
+This article shows administrators how to enable SSPR for Windows devices in an enterprise.
+
+If your IT team hasn't enabled the ability to use SSPR from your Windows device or you have problems during sign-in, reach out to your help desk for more assistance.
 
 ## General limitations
 
@@ -32,8 +31,9 @@ The following limitations apply to using SSPR from the Windows sign-in screen:
 - Disabling user account control via modification of the [EnableLUA registry key](/openspecs/windows_protocols/ms-gpsb/958053ae-5397-4f96-977f-b7700ee461ec) is known to cause issues.
 - This feature doesn't work for networks with 802.1x network authentication deployed and the option **Perform immediately before user logon**. For networks with 802.1x network authentication deployed, we recommend that you use machine authentication to enable this feature.
 - Microsoft Entra hybrid-joined machines must have network connectivity line of sight to a domain controller to use the new password and update cached credentials. The devices must either be on the organization's internal network or on a virtual private network with network access to an on-premises domain controller. If SSPR is the only requirement, the network connection line to the domain controller isn't required.
-- If you use an image, prior to running `sysprep` ensure that the web cache is cleared for the built-in administrator before you perform the `CopyProfile` step. For more information, see [Performance poor when using custom default user profile](https://support.microsoft.com/help/4056823/performance-issue-with-custom-default-user-profile).
+- If you use an image, before you run `sysprep` ensure that the web cache is cleared for the built-in administrator before you perform the `CopyProfile` step. For more information, see [Performance poor when using custom default user profile](https://support.microsoft.com/help/4056823/performance-issue-with-custom-default-user-profile).
 - The following settings are known to interfere with the ability to use and reset passwords on Windows 10 devices:
+
     - If lock screen notifications are turned off, **Reset password** won't work.
     - `HideFastUserSwitching` is set to **Enabled** or **1**.
     - `DontDisplayLastUserName` is set to **Enabled** or **1**.
@@ -59,7 +59,7 @@ To configure a Windows 11 or Windows 10 device for SSPR on the sign-in screen, r
 
 - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) and [enable Microsoft Entra SSPR](tutorial-enable-sspr.md).
 - Users must register for SSPR before they use this feature on the [Windows sign-in screen](https://aka.ms/ssprsetup).
-    - Not unique to using SSPR from the Windows sign-in screen, all users must provide the authentication contact information before they can reset their password.
+    - All users must provide authentication contact information before they can reset their password, which isn't unique to using SSPR from the Windows sign-in screen.
 - Network proxy requirements:
     - Port 443 to `passwordreset.microsoftonline.com` and `ajax.aspnetcdn.com`.
     - Windows 10 devices require a machine-level proxy configuration or scoped proxy configuration for the temporary `defaultuser1` account that's used to perform SSPR. For more information, see the [Troubleshooting](#proxy-configurations-for-windows-password-reset) section.
@@ -67,17 +67,17 @@ To configure a Windows 11 or Windows 10 device for SSPR on the sign-in screen, r
     - Microsoft Entra joined.
     - Microsoft Entra hybrid joined.
 
-### Enable for Windows 11 and Windows 10 by using Microsoft Intune
+### Enable for Windows 11 and Windows 10 by using Intune
 
-Deploying the configuration change to enable SSPR from the Windows sign-in screen by using Microsoft Intune is the most flexible method. With Microsoft Intune, you can deploy the configuration change to a specific group of machines that you define. This method requires Microsoft Intune enrollment of the device.
+Deploying the configuration change to enable SSPR from the Windows sign-in screen by using Intune is the most flexible method. With Intune, you can deploy the configuration change to a specific group of machines that you define. This method requires Intune enrollment of the device.
 
-#### Create a device configuration policy in Microsoft Intune
+#### Create a device configuration policy in Intune
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
-1. Create a new device configuration profile by going to **Device configuration** > **Profiles**, and then selecting **+ Create Profile**:
-   - For **Platform** choose **Windows 10 and later**.
-   - For **Profile type**, choose **Templates** then select the Custom template.
-1. Select **Create**, and then provide a meaningful name for the profile, such as *Windows 11 sign-in screen SSPR*.
+1. Create a new device configuration profile by going to **Device configuration** > **Profiles** and then selecting **+ Create Profile**:
+   - For **Platform**, choose **Windows 10 and later**.
+   - For **Profile type**, choose **Templates** and then select the **Custom** template.
+1. Select **Create**, and then provide a meaningful name for the profile, such as **Windows 11 sign-in screen SSPR**.
 
     Optionally, provide a meaningful description of the profile, and then select **Next**.
 1. Under **Configuration settings**, select **Add** and provide the following OMA-URI setting to enable the reset password link:
@@ -92,10 +92,10 @@ Deploying the configuration change to enable SSPR from the Windows sign-in scree
 
     For more information, see [Assign user and device profiles in Microsoft Intune](/mem/intune/configuration/device-profile-assign).
 
-1. Configure the applicability rules that you want for your environment, such as to **Assign profile if OS edition is Windows 10 Enterprise**, and then select **Next**.
+1. Configure the applicability rules that you want for your environment, such as **Assign profile if OS edition is Windows 10 Enterprise**, and then select **Next**.
 1. Review your profile, and then select **Create**.
 
-### Enable for Windows 11 and Windows 10 using the Registry
+### Enable for Windows 11 and Windows 10 by using the registry
 
 To enable SSPR on the Windows sign-in screen by using a registry key, follow these steps:
 
@@ -110,13 +110,13 @@ To enable SSPR on the Windows sign-in screen by using a registry key, follow the
 
 ### Troubleshoot Windows 11 and Windows 10 password reset
 
-If you have problems using SSPR from the Windows sign-in screen, the Microsoft Entra audit log includes information about the IP address and `ClientType`, where the password reset occurred, as shown in the following example output:
+If you have problems using SSPR from the Windows sign-in screen, the Microsoft Entra audit log includes information about the IP address and `ClientType`, where the password reset occurred, as shown in the following example output.
 
 ![Screenshot that shows an example Windows 7 password reset in the Microsoft Entra audit log.](media/howto-sspr-windows/windows-7-sspr-azure-ad-audit-log.png)
 
 When users reset their password from the sign-in screen of a Windows 11 or 10 device, a low-privilege temporary account called `defaultuser1` is created. This account is used to keep the password reset process secure.
 
-The account itself has a randomly generated password, which is validated against an organization's password policy, doesn't show up for device sign-in, and is automatically removed after the user resets their password. Multiple `defaultuser` profiles might exist, but you can safely ignore them.
+The account itself has a randomly generated password, which is validated against an organization's password policy. The password doesn't show up for device sign-in and is automatically removed after the user resets their password. Multiple `defaultuser` profiles might exist, but you can safely ignore them.
 
 #### Proxy configurations for Windows password reset
 
@@ -125,7 +125,7 @@ During the password reset, SSPR creates a temporary local user account to connec
 In this case, use one of the following workarounds:
 
 - Configure a machine-wide proxy setting that doesn't depend on the type of user signed in to the machine. For example, you can enable the Group Policy **Make proxy settings per-machine (rather than per-user)** for the workstations.
-- You can also use Per-User proxy configuration for SSPR if you modify the registry template for the default account. The commands are:
+- You can also use per-user proxy configuration for SSPR if you modify the registry template for the default account. The commands are:
     
     ```cmd
     reg load "hku\Default" "C:\Users\Default\NTUSER.DAT"
@@ -144,7 +144,7 @@ To configure a Windows 7, 8, or 8.1 device for SSPR on the Windows sign-in scree
 
 - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) and [enable Microsoft Entra SSPR](tutorial-enable-sspr.md).
 - Users must register for SSPR on the [Windows sign-in screen](https://aka.ms/ssprsetup) before they use this feature.
-    - Not unique to using SSPR from the Windows sign-in screen, all users must provide the authentication contact information before they can reset their password.
+    - All users must provide authentication contact information before they can reset their password, which isn't unique to using SSPR from the Windows sign-in screen.
 - Network proxy requirements:
     - Port 443 to `passwordreset.microsoftonline.com`.
 - Patched Windows 7 or Windows 8.1 operating system.
@@ -154,7 +154,7 @@ To configure a Windows 7, 8, or 8.1 device for SSPR on the Windows sign-in scree
 > [!WARNING]
 > TLS 1.2 must be enabled, not just set to autonegotiate.
 
-### Install
+### Install the SSPR component
 
 For Windows 7, 8, and 8.1, a small component must be installed on the machine to enable SSPR on the Windows sign-in screen. To install this SSPR component, follow these steps:
 
