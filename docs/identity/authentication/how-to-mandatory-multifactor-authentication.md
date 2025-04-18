@@ -14,7 +14,7 @@ ms.reviewer: nashahid, gkinasewitz
 ---
 # How to verify that users are set up for mandatory MFA
 
-This topic covers steps to verify that users in your organization are set up to meet Azure's mandatory MFA requirements. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md).
+This topic covers steps to verify that users in your organization are set up to meet Azure's mandatory MFA requirements. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md). 
 
 ## Verify MFA for a personal account
 
@@ -109,7 +109,7 @@ After you enable users, notify them by email. Tell the users that a prompt is di
 
 Review the following topics to learn more about MFA:
 
-- [How to sign in users who are locked out by mandatory MFA](how-to-unlock-users-for-mandatory-multifactor-authentication.md)
+- [How to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory multifactor authentication (MFA) requirement for the the Azure portal, Microsoft Entra admin center, or Microsoft Intune admin center](how-to-unlock-users-for-mandatory-multifactor-authentication.md)
 - [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md)
 - [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Secure sign-in events with Microsoft Entra multifactor](~/identity/authentication/tutorial-enable-azure-mfa.md)
