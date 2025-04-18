@@ -1,6 +1,6 @@
 ---  
-title: Configure Microsoft Entra Private DNS for Secure Internal Name Resolution  
-description: Step-by-step guide to configure Microsoft Entra Private DNS with Quick Access for secure and efficient internal DNS query resolution in enterprise environments.  
+title: Microsoft Entra Private DNS - Configure Secure Internal Name Resolution  
+description: Learn how to configure Microsoft Entra Private DNS for secure and efficient internal DNS query resolution, replacing legacy VPNs with granular access.  
 author: Justinha  
 contributors:  
 ms.topic: conceptual  
@@ -47,4 +47,4 @@ To learn how Private DNS works with SSO, see [Use Kerberos for single sign-on (S
 
 To learn tips on DNS troubleshooting, see [Troubleshoot application access - Global Secure Access](/entra/global-secure-access/troubleshoot-app-access#how-does-dns-work-with-global-secure-access).
 
-To learn hostname acquisition advanced diagnostics, see [Troubleshoot the Global Secure Access client: diagnostics - Global Secure Access](/entra/global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics#hostname-acquisition-tab). 
+To learn hostname acquisition advanced diagnostics, see [Troubleshoot the Global Secure Access client: diagnostics - Global Secure Access](/entra/global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics#hostname-acquisition-tab).
