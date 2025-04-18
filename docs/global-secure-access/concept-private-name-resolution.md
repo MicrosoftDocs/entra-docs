@@ -28,7 +28,7 @@ A high-level Private DNS flow for Windows clients is shown in the diagram below.
   (3) Connector local resolvers resolve the DNS query and return it back to the DNS proxy.    
   (4) DNS proxy responds back to the client with the internal IP. Client stores the internal IP address and returns a synthetic IP to the application.  
 
-:::image type="content" border=true source="media/concept-private-name-resolution/queries.png" alt-text="Screenshot of a diagram showing DNS queries resolved via Private DNS when a DNS suffix is configured in Quick Access."::: 
+:::image type="content" border="true" source="media/concept-private-name-resolution/queries.png" alt-text="Screenshot of a diagram showing DNS queries resolved via Private DNS when a DNS suffix is configured in Quick Access."::: 
 
 When a DNS suffix is configured in Quick Access, all DNS queries for fully qualified domain names (FQDN) ending with the matching suffixes are resolved via Private DNS, including those used to define Enterprise Apps.
 
