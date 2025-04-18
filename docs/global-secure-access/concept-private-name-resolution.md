@@ -40,6 +40,7 @@ The Private DNS provides name resolution for SLD without a domain suffix. An NRP
 > [!NOTE]  
 > For some applications such as Kerberos authentication, it is important to have the correct SPN. GSA synthetic suffix may break Kerberos flow, so it is recommended to use FQDN for applications that require Kerberos authentication.
 
+## Related content 
 
 To learn how to enable Private DNS with Quick Access, see [How to configure Quick Access](/entra/global-secure-access/how-to-configure-quick-access).
 
