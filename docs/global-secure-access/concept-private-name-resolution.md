@@ -29,9 +29,7 @@ A high-level Private DNS flow for Windows clients is shown in the diagram below.
   - DNS proxy responds back to the client with the internal IP.  
   - Client stores the internal IP address and returns a synthetic IP to the application.  
 
-:::image type="content" source="media/concept-private-name-resolution/image1.png" alt-text="Screenshot of a network diagram showing the high-level Private DNS flow for Windows clients.":::
-
-:::image type="content" source="media/concept-private-name-resolution/image2.png" alt-text="Screenshot of a diagram showing DNS queries resolved via Private DNS when a DNS suffix is configured in Quick Access."::: 
+:::image type="content" border=true source="media/concept-private-name-resolution/queries.png" alt-text="Screenshot of a diagram showing DNS queries resolved via Private DNS when a DNS suffix is configured in Quick Access."::: 
 
 When a DNS suffix is configured in Quick Access, all DNS queries for fully qualified domain names (FQDN) ending with the matching suffixes are resolved via Private DNS, including those used to define Enterprise Apps.
 
