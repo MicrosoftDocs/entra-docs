@@ -4,7 +4,7 @@ description: Step-by-step guide to configure Microsoft Entra Private DNS with Qu
 author: Justinha  
 contributors:  
 ms.topic: conceptual  
-ms.date: 04/16/2025  
+ms.date: 04/18/2025  
 ms.author: justinha  
 ms.reviewer: justinha  
 ---  
