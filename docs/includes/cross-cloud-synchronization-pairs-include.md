@@ -14,4 +14,4 @@ ms.custom: include file
 | --- | --- | --- |
 | Azure commercial | Azure Government | `portal.azure.com` --> `portal.azure.us` |
 | Azure Government | Azure commercial | `portal.azure.us` --> `portal.azure.com` |
-| Azure commercial | Azure operated by 21Vianet (Azure in China) | `portal.azure.com` --> `portal.azure.cn` |
+| Azure commercial | Azure operated by 21Vianet<br/>(Azure in China) | `portal.azure.com` --> `portal.azure.cn` |
