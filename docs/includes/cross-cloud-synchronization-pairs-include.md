@@ -10,8 +10,6 @@ ms.author: rolyon
 ms.custom: include file
 ---
 
-Cross-cloud synchronization supports these cloud pairs:
-
 | Source | Target | Azure portal link domains |
 | --- | --- | --- |
 | Azure commercial | Azure Government | `portal.azure.com` --> `portal.azure.us` |

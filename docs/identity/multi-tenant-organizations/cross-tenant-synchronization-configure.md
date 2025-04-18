@@ -36,6 +36,8 @@ This article describes the steps to configure cross-tenant synchronization betwe
 
 ## Supported cloud pairs
 
+Cross-cloud synchronization supports these cloud pairs:
+
 [!INCLUDE [cross-cloud-synchronization-pairs-include](../../includes/cross-cloud-synchronization-pairs-include.md)]
 
 ## Limitations
