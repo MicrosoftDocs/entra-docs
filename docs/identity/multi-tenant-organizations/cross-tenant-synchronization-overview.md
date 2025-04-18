@@ -305,6 +305,8 @@ Is [cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivot
 
 What cloud pairs are supported for cross-cloud synchronization?
 
+- Cross-cloud synchronization supports these cloud pairs:
+
     [!INCLUDE [cross-cloud-synchronization-pairs-include](../../includes/cross-cloud-synchronization-pairs-include.md)]
 
 What are the differences between cross-tenant synchronization and cross-cloud synchronization?
