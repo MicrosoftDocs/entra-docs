@@ -1,6 +1,6 @@
 ---
 title: How to sign in users who are locked out by mandatory Microsoft Entra multifactor authentication (MFA) 
-description: Steps to verify mandatory multifactor authentication for users who sign in to Azure and other management portals.
+description: A script to sign in users who are locked out by mandatory Microsoft Entra multifactor authentication to Azure and other management portals.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
