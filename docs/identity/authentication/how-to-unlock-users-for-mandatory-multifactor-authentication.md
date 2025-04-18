@@ -14,9 +14,9 @@ ms.reviewer: nashahid
 ---
 # How to sign in users who are locked out by mandatory MFA
 
-Users might not be able to sign in to Azure and other management portals after mandatory Microsoft Entra multifactor authentication (MFA) is enforced for their tenant. If users are blocked from sign-in, you can run the script in this topic to unblock them. 
-
-The script does the following:
+Users might not be able to sign into the Azure portal, Microsoft Entra admin center or Microsoft Intune admin center if they have trouble using their MFA method after the mandatory requirement to use MFA is rolled out to their tenant. 
+ 
+If users are unable to sign in, you can run the following script as a Global Administrator to temporarily postpone the MFA enforcement for your tenant. The script does the following actions:
 
 - Asks for tenant ID, and optionally the date of enforcement. The default date is September 30th, 2025. 
 
