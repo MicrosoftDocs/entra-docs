@@ -22,7 +22,9 @@ A high-level Private DNS flow for Windows clients is shown in the following diag
       **Configuration**
 
       Admin enables Private DNS and adds a DNS suffix from Quick Access. 
+
       On the client, an entry in the Name Resolution Policy Table (NRPT) is generated for the suffix to resolve via the GSA client.
+      
       Client traffic forwarding profile is updated to send private DNS queries to the GSA edge. 
    :::column-end:::
    :::column span="":::
