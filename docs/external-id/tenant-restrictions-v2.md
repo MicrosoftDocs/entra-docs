@@ -270,9 +270,9 @@ Suppose you use tenant restrictions to block access by default, but you want to 
    > User granularity isn't supported with Microsoft Accounts, so the **Select &lt;organization&gt; users and groups** capability isn't available. For other organizations, you could choose **Select &lt;organization&gt; users and groups**, and then perform these steps for each user or group you want to add:
    >
    >- Select **Add external users and groups**.
-   >- In the **Select** pane, type the user name or group name in the search box.
-   >- Select the user or group in the search results.
-   >- If you want to add more, select **Add** and repeat these steps. When you're done selecting the users and groups you want to add, select **Submit**.
+   >- In the **Add external user or group id** pane, type the object ID of the user or group you want to add.
+   >- In the right dropdown, select whether it is a user or group.
+   >- If you want to add more, select **Add** and repeat these steps. When you're done entering the users and groups you want to add, select **Submit**.
 
    :::image type="content" source="media/tenant-restrictions-v2/tenant-restrictions-external-users-organizational-applies-to.png" alt-text="Screenshot showing selecting the external users and groups selections.":::
 
