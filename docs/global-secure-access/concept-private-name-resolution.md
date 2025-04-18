@@ -9,7 +9,7 @@ ms.author: justinha
 ms.reviewer: justinha  
 ---  
 
-# Configure Microsoft Entra Private DNS
+# Understand Microsoft Entra Private DNS
 
 Microsoft Entra Private Access provides a quick and easy way to replace legacy VPNs, providing granular and secure access to internal resources without exposing your full network. DNS plays a vital role by enabling name resolution for critical internal resources without remote users needing to know the configuration of internal DNS systems. Microsoft Entra Private DNS with Quick Access offers a simple setup using Connector local resolvers to respond to DNS queries for internal resources.
 
@@ -23,11 +23,10 @@ A high-level Private DNS flow for Windows clients is shown in the diagram below.
   - Client traffic forwarding profile is updated to send private DNS queries to the GSA edge.  
 
 - Data path:  
-  - User tries to access an enterprise app `https://app.contoso.com`, which triggers a DNS query for app.contoso.com. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge.  
-  - DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access.  
-  - Connector local resolvers resolve the DNS query and return it back to the DNS proxy.  
-  - DNS proxy responds back to the client with the internal IP.  
-  - Client stores the internal IP address and returns a synthetic IP to the application.  
+  (1) User requests a DNS query for app.contoso.com. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge.  
+  (2) DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access.  
+  (3) Connector local resolvers resolve the DNS query and return it back to the DNS proxy.    
+  (4) DNS proxy responds back to the client with the internal IP. Client stores the internal IP address and returns a synthetic IP to the application.  
 
 :::image type="content" border=true source="media/concept-private-name-resolution/queries.png" alt-text="Screenshot of a diagram showing DNS queries resolved via Private DNS when a DNS suffix is configured in Quick Access."::: 
 
