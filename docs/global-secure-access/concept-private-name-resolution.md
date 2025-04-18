@@ -23,11 +23,10 @@ A high-level Private DNS flow for Windows clients is shown in the diagram below.
   - Client traffic forwarding profile is updated to send private DNS queries to the GSA edge.  
 
 - Data path:  
-  - User tries to access an enterprise app `https://app.contoso.com`, which triggers a DNS query for app.contoso.com. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge.  
-  - DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access.  
-  - Connector local resolvers resolve the DNS query and return it back to the DNS proxy.  
-  - DNS proxy responds back to the client with the internal IP.  
-  - Client stores the internal IP address and returns a synthetic IP to the application.  
+  (1) User requests a DNS query for app.contoso.com. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge.  
+  (2) DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access.  
+  (3) Connector local resolvers resolve the DNS query and return it back to the DNS proxy.  DNS proxy responds back to the client with the internal IP.  
+  (4) Client stores the internal IP address and returns a synthetic IP to the application.  
 
 :::image type="content" source="media/concept-private-name-resolution/image1.png" alt-text="Screenshot of a network diagram showing the high-level Private DNS flow for Windows clients.":::
 
