@@ -4,7 +4,7 @@ description: A script to postpone enforcement for a tenant where users are unabl
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/18/2025
+ms.date: 04/19/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -24,7 +24,7 @@ For more information about Azure's mandatory MFA requirements, see [Planning for
 
 The script takes the following actions:
 
-- The script picks the user's tenant if they have one, or presents a list of tenants for them to choose from. Optionally, asks for the date of enforcement. The default date is September 30th, 2025.
+- The script picks the user's tenant if they have one, or presents a list of tenants for them to choose from. Optionally, the script asks for the date of enforcement. The default date is September 30th, 2025.
 - Logs the user into that tenant.
 - Gets the relevant authentication tokens.
 - Checks if user has elevated access. If not, the script does the elevation.
