@@ -62,7 +62,7 @@ Workload identities, such as managed identities and service principals, aren't i
 
 ### Client libraries
 
-The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. After MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications throw exceptions. For more information abot how to migrate from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/), see [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
+The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. After MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications throw exceptions. For more information about how to migrate from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/), see [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
 
 ### [.NET](#tab/dotnet)
 
