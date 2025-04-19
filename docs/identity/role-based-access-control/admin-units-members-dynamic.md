@@ -3,7 +3,7 @@ title: Manage users or devices for an administrative unit with rules for dynamic
 description: Manage users or devices for an administrative unit with rules for dynamic membership groups in Microsoft Entra ID
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control

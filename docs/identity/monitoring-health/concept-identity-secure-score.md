@@ -9,7 +9,7 @@ ms.date: 01/24/2025
 
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.reviewer: guptashi
 
 # Customer intent: As an IT admin, I want to know how to use the Identity Secure Score and related recommendations to improve the security posture of my Microsoft Entra tenant.

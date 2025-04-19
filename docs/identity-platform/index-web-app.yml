@@ -8,7 +8,7 @@ summary: >
 metadata:
   author: Dickson-Mwendia
   ms.author: dmwendia
-  ms.date: 02/02/2024
+  ms.date: 02/11/2025
   ms.service: identity-platform  
   ms.topic: landing-page
 
@@ -19,24 +19,16 @@ landingContent:
     linkLists:
       - linkListType: quickstart
         links:
-          - text: ASP.NET Core
-            url: quickstart-web-app-dotnet-core-sign-in.md
-          - text: Java
-            url: quickstart-web-app-java-sign-in.md
-          - text: Node.js with MSAL
-            url: quickstart-web-app-nodejs-sign-in.md
-          - text: Python Flask
-            url: quickstart-web-app-python-flask.md
+          - text: Web app that signs in users
+            url: quickstart-web-app-sign-in.md
   - title: "Learn by building"
     linkLists:
       - linkListType: tutorial
         links:
           - text: ASP.NET Core
-            url: tutorial-web-app-dotnet-register-app.md
+            url: tutorial-web-app-dotnet-prepare-app.md
           - text: Node.js with Express
             url: tutorial-v2-nodejs-webapp-msal.md
-          - text: Spring
-            url: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
           - text: Python Flask
             url: tutorial-web-app-python-register-app.md
   - title: "Web apps in depth"

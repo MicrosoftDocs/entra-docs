@@ -61,6 +61,8 @@ items:
         href: how-to-install-android-client.md
       - name: Install the iOS client
         href: how-to-install-ios-client.md
+      - name: EDR/antivirus coexistence with Global Secure Access client
+        href: concept-edr-antivirus-coexistence.md
   - name: Remote networks
     expanded: false
     items:
@@ -177,12 +179,14 @@ items:
     items:
       - name: Introduction
         href: ~/architecture/gsa-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
+        href: ~/architecture/gsa-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploy Microsoft Global Secure Access for Microsoft Entra Internet Access
         href: ~/architecture/gsa-deployment-guide-internet-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploy Global Secure Access for Microsoft Traffic
         href: ~/architecture/gsa-deployment-guide-microsoft-traffic.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
-        href: ~/architecture/gsa-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Microsoft Global Secure Access proof-of-concept guidance
+        href: ~/architecture/gsa-poc-guidance-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
   - name: Troubleshoot
     expanded: false
     items:
@@ -192,6 +196,10 @@ items:
         href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
       - name: "Troubleshoot the Global Secure Access client: Health check tab"
         href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
+      - name: "Troubleshoot the Global Secure Access Client: Disabled by Your Organization"
+        href: troubleshoot-global-secure-access-client-disabled.md
+      - name: Troubleshoot application access
+        href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"
         href: troubleshoot-distributed-file-system.md
   - name: Partner ecosystem
@@ -236,7 +244,13 @@ items:
     href: resource-faq.yml
   - name: Transport Layer Security inspection FAQs
     href: faq-transport-layer-security.yml
+  - name: Ciphers for Microsoft Entra Private Access
+    href: reference-ciphers.md       
   - name: Connector version history
     href: reference-version-history.md
   - name: Windows client version history
     href: reference-windows-client-release-history.md
+  - name: macOS client version history
+    href: reference-macos-client-release-history.md
+  - name: Global Secure Access Certifications
+    href: reference-global-secure-access-certifications.md

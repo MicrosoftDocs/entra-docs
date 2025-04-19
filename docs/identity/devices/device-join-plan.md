@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: how-to
 ms.date: 05/29/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: sandeo
 ---
 # How to: Plan your Microsoft Entra join implementation

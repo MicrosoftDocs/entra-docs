@@ -1,38 +1,36 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Displayr'
+title: Microsoft Entra integration with Displayr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Displayr.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Displayr so that I can control who has access to Displayr, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Displayr with Microsoft Entra ID
+# Integrate Displayr with Microsoft Entra ID
 
-In this tutorial, you learn how to integrate Displayr with Microsoft Entra ID. When you integrate Displayr with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Displayr with Microsoft Entra ID. When you integrate Displayr with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Displayr.
 * Enable your users to be automatically signed-in to Displayr with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Displayr single sign-on (SSO) enabled company.
 
 ## Scenario description
 
-In this tutorial, you'll learn to configure Microsoft Entra SSO in your Displayr company.
+In this article,  you learn to configure Microsoft Entra SSO in your Displayr company.
 
 * Displayr supports **SP** initiated SSO.
 
@@ -116,11 +114,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your up Displayr company site as an administrator
 
-4. Select on the **User** icon, then navigate to **Account settings**.
+4. Select the **User** icon, then navigate to **Account settings**.
 
 	![Screenshot that shows the "Settings" icon and "Account" selected.](./media/displayr-tutorial/account.png)
 
-5. Switch to **Settings** from the top menu and scroll down the page to select on **Configure Single Sign On (SAML)**.
+5. Switch to **Settings** from the top menu and scroll down the page to select **Configure Single Sign On (SAML)**.
 
 	![Screenshot that shows the "Settings" tab selected and the "Configure Single Sign On (S A M L)" action selected.](./media/displayr-tutorial/settings.png)
 
@@ -150,12 +148,12 @@ By default, all users in the tenant where you added the Displayr application can
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select on **Test this application**, this will redirect to Displayr Sign-on URL where you can initiate the sign in flow. 
+* Select **Test this application**, this option redirects to Displayr Sign-on URL where you can initiate the sign in flow. 
 
 * Go to Displayr Sign-on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you select the Displayr tile in the My Apps, this will redirect to Displayr Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Displayr tile in the My Apps, this option redirects to Displayr Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Displayr you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

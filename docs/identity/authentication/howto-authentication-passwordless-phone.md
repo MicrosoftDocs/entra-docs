@@ -7,12 +7,12 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jogro
 ---
 
@@ -97,7 +97,7 @@ To register the Authenticator app, follow these steps:
 After users register for the Authenticator app, they need to enable phone sign-in:
 
 1. In **Microsoft Authenticator**, select the account registered.
-1. Select **Enable phone sign-in**.
+1. Select **Set up Passwordless sign-in requests**.
 1. Follow the instructions in the app to finish registering the account for passwordless phone sign-in.
 
 An organization can direct its users to sign in with their phones, without using a password. For further assistance configuring Authenticator and enabling phone sign-in, see [Sign in to your accounts by using the Authenticator app](https://support.microsoft.com/account-billing/sign-in-to-your-accounts-using-the-microsoft-authenticator-app-582bdc07-4566-4c97-a7aa-56058122714c).

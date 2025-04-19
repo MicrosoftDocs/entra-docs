@@ -9,7 +9,7 @@ ms.date: 02/03/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: error-reference
 #Customer intent: As a developer troubleshooting authentication errors, I want to understand the meaning and possible resolutions for the AADSTS error codes returned by the Microsoft Entra security token service, so that I can effectively debug and fix authentication issues in my application.
 ---
 
@@ -388,6 +388,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS901011 | NoEmailAddressCollectedFromExternalOidcIDP - No email address was obtained from the external OpenID Connect (OIDC) identity provider. This usually happens when the user selects **Hide my email** upon signing up. |
 | AADSTS901012 | EmailAddressCollectedFromExternalOidcIDPNotVerified - No verified email address was obtained from the identity provider. The email address is not verified in the ID token from the external OIDC identity provider.  |
 | AADSTS901014 | NoExternalIdentifierCollectedFromExternalOidcIDP - The external identifier does not exist in the ID token from the external OIDC identity provider. |
+| AADSTS650059 | The application is not configured for use in the tenant. The value `AzureADMyOrg` set for application property `signInAudience` is limiting its use in the tenant. |
 
 ## Next steps
 

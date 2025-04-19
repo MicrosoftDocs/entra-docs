@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with TurboRater'
+title: Microsoft Entra integration with TurboRater
 description: Learn how to configure single sign-on between Microsoft Entra ID and TurboRater.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TurboRater so that I can control who has access to TurboRater, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with TurboRater
+# Microsoft Entra integration with TurboRater
 
-In this tutorial, you learn how to integrate TurboRater with Microsoft Entra ID.
+In this article,  you learn how to integrate TurboRater with Microsoft Entra ID.
 
 Integrating TurboRater with Microsoft Entra ID provides you with the following benefits:
 
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with TurboRater, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 TurboRater supports IDP-initiated single sign-on (SSO).
 
@@ -58,8 +58,8 @@ To configure and test Microsoft Entra single sign-on with TurboRater, you need t
 
 1. **[Configure Microsoft Entra single sign-on](#configure-azure-ad-single-sign-on)** to enable your users to use this feature.
 1. **[Configure TurboRater single sign-on](#configure-turborater-single-sign-on)** to configure the single sign-on settings on the application side.
-1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with B. Simon.
-1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable B. Simon to use Microsoft Entra single sign-on.
+1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with B. Simon.
+1. **Assign the Microsoft Entra test user** to enable B. Simon to use Microsoft Entra single sign-on.
 1. **[Create a TurboRater test user](#create-a-turborater-test-user)** so that there's a user named B. Simon in TurboRater who's linked to the Microsoft Entra user named B. Simon.
 1. **[Test single sign-on](#test-single-sign-on)** to verify whether the configuration works.
 
@@ -174,7 +174,7 @@ When you select **TurboRater** in the My Apps portal, you should be automaticall
 
 ## Additional resources
 
-* [List of tutorials for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
+* [List of articles for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
 
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

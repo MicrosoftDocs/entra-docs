@@ -2,15 +2,18 @@
 title: Use queries to see how users access information in an authorization system in Permissions Management
 description: How to use queries to see how users access information in an authorization system in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 11/21/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Use queries to see how users access information
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 The **Audit** dashboard in Permissions Management provides an overview of queries a Permissions Management user has created to review how users access their authorization systems and accounts.
 

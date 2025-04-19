@@ -52,7 +52,7 @@ At this point, you completed the initiate and plan stages of your Secure Access 
 
 ## Configure per-app access
 
-To maximize the value of your Microsoft Entra Private Access deployment, you should transition from Quick Access to per-app access. You can use [Application Discovery](../global-secure-access/how-to-application-discovery.md) feature to quickly create Global Secure Access applications from app segments your users access. You can also use [Global Secure Access Enterprise applications](../global-secure-access/how-to-configure-per-app-access.md#create-a-global-secure-access-application) to do create them manually, or you can use [PowerShell](gsa-poc-private-access.md#use-powershell-to-manage-microsoft-entra-private-access) to automate creation.
+To maximize the value of your Microsoft Entra Private Access deployment, you should transition from Quick Access to per-app access. You can use [Application Discovery](../global-secure-access/how-to-application-discovery.md) feature to quickly create Global Secure Access applications from app segments your users access. You can also use [Global Secure Access Enterprise applications](../global-secure-access/how-to-configure-per-app-access.md) to do create them manually, or you can use [PowerShell](gsa-poc-private-access.md#use-powershell-to-manage-microsoft-entra-private-access) to automate creation.
 
 1. Create the application and scope it to either all users assigned to Quick Access (recommended) or all users that need to access the specific application.
 1. Add at least one app segment to the application. You don't need to add all app segments at the same time. You might prefer to add them slowly so that you can validate traffic flow for each segment.
@@ -80,6 +80,6 @@ After your pilot is complete, you should have a repeatable process and understan
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Internet Access](gsa-deployment-guide-internet-access.md)
 - [Simulate remote network connectivity using Azure Virtual Network Gateway - Global Secure Access](../global-secure-access/how-to-simulate-remote-network.md)
 - [Simulate remote network connectivity using Azure vWAN - Global Secure Access](../global-secure-access/how-to-create-remote-network-vwan.md)
-- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)
 - [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
 - [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)

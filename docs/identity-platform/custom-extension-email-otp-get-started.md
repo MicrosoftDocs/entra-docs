@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.reviewer: almars
-ms.date: 9/30/2024
+ms.date: 02/13/2025
 ms.service: identity-platform
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
@@ -19,7 +19,7 @@ titleSuffix: Microsoft identity platform
 This article provides a guide on configuring and setting up a custom email provider for the One Time Passcode (OTP) Send event type. The event is triggered when an OTP email is activated, it allows you to call a REST API to use your own email provider by calling a REST API.
 
 > [!TIP]
-> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmailOTP)
+> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmail)
 >
 > To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
 
@@ -298,7 +298,7 @@ Follow these steps to connect the *My Test application* with your custom authent
     }
     ```
 
-1. Record the **id** value of the created listener object, which is used later in this article in place of `{customListenerOjectId}`.
+1. Record the **id** value of the created listener object, which is used later in this article in place of `{customListenerObjectId}`.
 
 ---
 
@@ -418,7 +418,7 @@ To test your custom email provider, follow these steps:
 
 If an error occurs within your extension API, by default Entra ID will not send an OTP to the user. You can instead set the behavior on error to fall back to the Microsoft Provider.
 
-To enable this, run the following request. Replace `{customListenerOjectId}` with the custom authentication listener ID recorded earlier.
+To enable this, run the following request. Replace `{customListenerObjectId}` with the custom authentication listener ID recorded earlier.
 
 - You need the *EventListener.ReadWrite.All* delegated permission.
 

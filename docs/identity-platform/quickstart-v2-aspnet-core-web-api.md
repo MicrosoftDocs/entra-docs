@@ -5,8 +5,8 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api
-ms.date: 12/09/2022
+ms.custom:
+ms.date: 04/16/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 

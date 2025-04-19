@@ -3,13 +3,13 @@ title: Application types for the Microsoft identity platform
 description: The types of apps and scenarios supported by the Microsoft identity platform.
 author: cilwerner
 manager: CelesteDG
-ms.author: cwerner
-ms.custom: fasttrack-edit
-ms.date: 11/13/2024
-ms.reviewer: saeeda, jmprieur
+ms.author: owenrichards
+ms.custom:
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
-ms.topic: concept-article
+ms.topic: reference
 #Customer intent: As a developer or admin in the Microsoft identity platform, I want to understand the different types of applications supported by the Microsoft identity platform, so that I can choose the right type of application for my scenario.
 ---
 
@@ -50,7 +50,7 @@ The flow diagram demonstrates the OAuth 2.0 authorization code grant flow (with 
 
 :::image type="content" source="media/v2-oauth-auth-code-spa/oauth-code-spa.svg" alt-text="Diagram showing the OAuth 2.0 authorization code flow between a single-page app and the security token service endpoint." border="false":::
 
-To see this in action, refer to the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-javascript-sign-in.md).
+To see this in action, refer to the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-sign-in.md).
 
 ## Web apps
 

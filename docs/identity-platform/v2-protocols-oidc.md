@@ -4,10 +4,10 @@ description: Sign in Microsoft Entra users by using the Microsoft identity platf
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: 
-ms.date: 07/24/2024
-ms.reviewer: ludwignick
+ms.custom:
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
 ms.topic: reference
 #Customer intent: As a developer integrating authentication into my application, I want to understand how to enable ID tokens for my application registered with the Microsoft identity platform, so that I can verify the identity of the user and obtain other information about them.
@@ -363,9 +363,9 @@ To use the front channel logout feature for a set of applications, you must comp
 
 The front channel logout URL should be a URL that is capable of receiving and responding to HTTP GET requests and should be able to clear any session that identifies the user. Examples of a front channel logout URL could be, but aren't limited to, the following:
 
-* https://example.com/frontchannel_loout
-* https://example.com/signout
-* https://example.com/logout
+* `https://example.com/frontchannel_logout`
+* `https://example.com/signout`
+* `https://example.com/logout`
 
 ## Next steps
 

@@ -2,9 +2,8 @@
 title: Service Partner gallery for Microsoft Entra Verified ID
 description: Learn how to extend and accelerate Verified ID via Service Partners.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.topic: how-to
 ms.date: 01/17/2025
 ms.author: barclayn
@@ -28,7 +27,7 @@ You could select a partner from the list and build seamless end-user experiences
 | :::image type="content" source="media/services-partners/dxc.png" alt-text="Screenshot of DXC logo."::: | [Digital Identity - Connect with DXC](https://dxc.com/us/en/services/security/digital-identity) |
 | :::image type="content" source="media/services-partners/ctc.png" alt-text="Screenshot of CTC logo."::: | [CTC's SELMID offering](https://ctc-insight.com/selmid) |
 | :::image type="content" source="media/services-partners/ey.png" alt-text="Screenshot of EY logo."::: | [EY Security Solutions Supported by Microsoft Verified ID](https://azuremarketplace.microsoft.com/marketplace/apps/ey_global.ey_ss_supported_by_msft_verified_id?tab=Overview) |
-| :::image type="content" source="media/services-partners/formula5.png" alt-text="Screenshot of Formula5 logo."::: | [Verified ID - Formula5](https://formula5.com/accelerator-for-microsoft-entra-verified-id/)<br/>[Azure Marketplace Verified ID offering](https://azuremarketplace.microsoft.com/marketplace/consulting-services/formulaconsultingllc1668008672143.verifiable_credentials_formula5-preview?tab=Overview&flightCodes=d12a14cf40204b39840e5c0f114c1366) |
+| :::image type="content" source="media/services-partners/formula5.png" alt-text="Screenshot of Formula5 logo."::: | [Verified ID - Formula5](https://formula5.com/accelerator-for-microsoft-entra-verified-id/) |
 | :::image type="content" source="media/services-partners/idramp.png" alt-text="Screenshot of IdRamp logo."::: | [Virtual Onboarding with Verified ID](https://idramp.com/virtual-onboarding-with-ms-entra-verified-id/)<br/>[Eradicate passwords with Verified ID](https://idramp.com/eradicate-passwords-with-verified-id-orchestration/)<br/>[Integrated identity orchestration with Verified ID](https://idramp.com/entra-verified-id-integrated-identity-orchestration/)<br/>[Zero Trust collaboration with Verified ID](https://idramp.com/protected-virtual-meetings/)<br/>[Azure Marketplace Verified ID offering](https://azuremarketplace.microsoft.com/marketplace/apps/idrampinc1682537450107.idramp-orchestration?tab=Overview) |
 | :::image type="content" source="media/services-partners/kocho.png" alt-text="Screenshot of Kocho logo."::: | [Connect with Kocho. See Verified Identity in Action](https://kocho.co.uk/contact-us/)<br/>[See Verified Identity in Action](https://kocho.co.uk/solutions/decentralised-identity/) |
 | :::image type="content" source="media/services-partners/softwareone.png" alt-text="Screenshot of SoftwareOne logo."::: | [Verified ID - SoftwareOne](https://www.softwareone.com/) |

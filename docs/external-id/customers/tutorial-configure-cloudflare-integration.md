@@ -10,7 +10,7 @@ ms.date: 08/05/2024
 ms.author: gasinh
 ms.custom: it-pro
 
-#CustomerIntent: As an IT administrator, I want to learn how to enable the Cloudfare Web Application Firewall (WAF) service for a Microsoft Entra External ID tenant with a Cloudflare WAF so that I can protect web applications from common exploits and vulnerabilities.
+#CustomerIntent: As an IT administrator, I want to learn how to enable the Cloudflare Web Application Firewall (WAF) service for a Microsoft Entra External ID tenant with a Cloudflare WAF so that I can protect web applications from common exploits and vulnerabilities.
 ---
 # Configure Cloudflare Web Application Firewall with Microsoft Entra External ID
 
