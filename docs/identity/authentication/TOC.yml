@@ -253,6 +253,8 @@
       href: howto-mfa-userdevicesettings.yml
     - name: Verify mandatory MFA
       href: how-to-mandatory-multifactor-authentication.md
+    - name: Unlock users for mandatory MFA
+      href: how-to-unlock-users-for-mandatory-multifactor-authentication.md
     - name: Federate MFA setup
       href: how-to-mfa-expected-inbound-assertions.md
     - name: Find coverage gaps
