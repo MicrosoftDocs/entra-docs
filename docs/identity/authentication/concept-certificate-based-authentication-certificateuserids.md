@@ -53,8 +53,8 @@ Synchronized users must have at least **Hybrid Identity Administrator** role to 
 ## How to find the correct CertificateUserIds values for a user from the end user certificate using PowerShell module
 
 Certificate UserIds follow a certain pattern for its values as per the UserName binding configurations on the tenant. 
-The following powershell command helps an admin to retrieve the exact values for Certificate UserIds attribute for a user from a end user certificate. 
-Admin can also get the current values in Certificate UserIds attribute for an user for a given username binding and 
+The following PowerShell command helps an admin to retrieve the exact values for Certificate UserIds attribute for a user from an end user certificate. 
+Admin can also get the current values in Certificate UserIds attribute for a user for a given username binding and 
 set the value of the Certificate UserIds attribute.
 
 More information at [Microsoft Entra PowerShell Installation](/powershell/entra-powershell/installation) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation). 
@@ -68,7 +68,7 @@ More information at [Microsoft Entra PowerShell Installation](/powershell/entra-
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
 
-1. Install Microsoft Entra powershell module (Minimum required version is 1.0.6)
+1. Install Microsoft Entra PowerShell module (Minimum required version is 1.0.6)
    ```powershell
        Install-Module -Name Microsoft.Entra
    ```
@@ -225,7 +225,7 @@ Set-EntraUserCBACertificateUserId -UserId user@contoso.com' -Cert $certificate -
 ```
 This example sets the certificate user IDs for the specified user using a certificate object, mapping the RFC822Name and SKI fields. You can use Get-EntraUserCBAAuthorizationInfo command to view updated details.
 
-## Update certificateUserIds using Entra Portal
+## Update certificateUserIds using Microsoft Entra admin center
  
 Use the following steps to update certificateUserIds for users:
 
@@ -366,7 +366,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 Microsoft Entra Connect supports synchronizing values to certificateUserIds from an on-premises Active Directory environment. On-premises Active Directory supports certificate-based authentication and multiple username bindings. Make sure you use the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 
 To use these mapping methods, you need to populate the altSecurityIdentities attribute of user objects in the on-premises Active Directory. 
-In addition, after you apply certificate-based authentication changes on Windows domain controllers as described in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), you may have implemented some of the nonreusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
+In addition, after you apply certificate-based authentication changes on Windows domain controllers as described in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), you may have implemented some of the nonreusable mapping methods (Type=strong) mapping methods to meet the on-premises Active Directory strong certificate binding enforcement requirements. 
 
 To prevent synchronization errors, make sure the values being synchronized follow one of the supported formats for the certificateUserIds.  
 
@@ -379,7 +379,7 @@ Before you begin, make sure all user accounts that are synchronized from on-prem
   Carefully consider if a duplicate value is meant to map a single certificate to multiple on-premises Active Directory accounts. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
 
   >[!NOTE]
-  >In specific scenarios, a subset of users might have a valid business justification to map a single certificate to more than one on-premises Active Directory account. Review these scenarios and where needed, implement separate mapping methods to map to more then one account in both the on-premises Active Directory and Microsoft Entra ID.
+  >In specific scenarios, a subset of users might have a valid business justification to map a single certificate to more than one on-premises Active Directory account. Review these scenarios and where needed, implement separate mapping methods to map to more than one account in both the on-premises Active Directory and Microsoft Entra ID.
 
 **Considerations for ongoing synchronization of certificateUserIds**
 
