@@ -5,7 +5,7 @@ description: Simulate Conditional Access policy results with the What If tool to
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 04/09/2025
+ms.date: 04/21/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,19 +14,20 @@ ms.reviewer: kvenkit
 ---
 # Troubleshoot Conditional Access Policies with the What If Tool
 
-The **Conditional Access What If policy tool** helps you understand the result of [Conditional Access](overview.md) policies in your environment. Instead of manually testing your policies with multiple sign-ins, this tool helps you simulate a sign-in for a user or service principal. The simulation estimates how your policies affect this sign-in and generates a report.
+The **Conditional Access What If policy tool** helps you understand the result of [Conditional Access](overview.md) policies in your environment. It can be useful when simulating uncommon scenarios, enabling you to design more comprehensive security policies. Instead of manually testing your policies with multiple sign-ins, this tool helps you simulate a sign-in for a user or service principal. The simulation estimates how your policies affect this sign-in and generates a report.
 
-The **What If** tool lets you quickly determine the policies that apply to a specific user or single-tenant service principal. Use this information to troubleshoot issues and understand which policies apply to specific sign-in conditions.
+The **What If** tool and [APIs](/graph/api/conditionalaccessroot-evaluate) let you quickly determine the policies that apply to a specific user or single-tenant service principal. Use this information to troubleshoot issues, understand which policies apply to specific sign-in conditions, and test complex sign-in scenarios.
 
 ## How it works
 
-In the improved Conditional Access What If tool powered by the What If Evaluation API, first configure the conditions of the sign-in scenario you want to simulate. These settings might include:
+The Conditional Access What If tool is powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate). To use the tool, start by configuring the conditions of the sign-in scenario you want to simulate. The configuration should include:
 
 - The user or single tenant service principal you want to test.
 - The cloud apps, user action they would attempt to perform, or sensitive data protected by authentication context they would attempt to access.
 - The sign-in conditions under which access would be attempted.
 
-The What If tool doesn't test for [Conditional Access service dependencies](service-dependencies.md). For example, if you're using **What If** to test a Conditional Access policy for Microsoft Teams, the result doesn't consider any policy that applies to Office 365 Exchange Online, a Conditional Access service dependency for Microsoft Teams.
+> [!IMPORTANT]
+> The What If tool doesn't test for [Conditional Access service dependencies](service-dependencies.md). For example, if you're using **What If** to test a Conditional Access policy for Microsoft Teams, the result doesn't consider any policy that applies to Office 365 Exchange Online, a Conditional Access service dependency for Microsoft Teams.
 
 Next, initiate a simulation run that evaluates your settings. Only policies that are enabled or in report-only mode are included in an evaluation run.
 
@@ -38,7 +39,7 @@ You can find the **What If** tool in the **Microsoft Entra admin center** > **Pr
 
 :::image type="content" source="./media/what-if-tool/portal-showing-location-of-what-if-tool.png" alt-text="Screenshot of the Conditional Access Policies page with the What If tool highlighted in the toolbar." border="false" lightbox="media/what-if-tool/portal-showing-location-of-what-if-tool.png":::
 
-Before running the What If tool, provide the conditions you want to evaluate.
+To run the What If evaluation, provide the conditions you want to evaluate.
 
 ## Conditions
 
@@ -64,7 +65,7 @@ The list of policies that don't apply includes the reasons why these policies do
 
 ## Key differences between the What If evaluation API and the legacy experience 
 
-The What-if Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The API is different from the older What If evaluation in a few ways:
+The What If Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The What If tool powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta) is currently in public preview. The API is different from the legacy What If evaluation in a few ways:
 
 1. The What-if API is a public and fully supported API (once the API is generally available). The API can be used through the Conditional Access UX and the MS Graph API.
 1. The logic aligns with the authentication logic used during sign-in to provide more accurate policy evaluation.
@@ -93,5 +94,6 @@ Suppose you have a Conditional Access policy with the following configuration:
 
 ## Related content
 
+- 
 - Learn more about Conditional Access policy application by using the policies report-only mode in [Conditional Access insights and reporting](howto-conditional-access-insights-reporting.md).
 - To configure Conditional Access policies for your environment, see [Conditional Access common policies](concept-conditional-access-policy-common.md).
