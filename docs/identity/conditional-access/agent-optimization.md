@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 
-ms.date: 04/11/2025
+ms.date: 04/21/2025
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
@@ -17,10 +17,11 @@ The Conditional Access optimization agent helps you ensure all users are protect
 
 - You must be assigned the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
 - You must have at least Microsoft Entra ID P1.
-- You must have available [security compute units](/copilot/security/manage-usage).
+- You must have available [security compute units (SCU)](/copilot/security/manage-usage). On average, each agent run consumes 3 SCUs.
 
 ### Limitations
 
+- During the preview, avoid using an account to setup the agent that requires role activation with Privileged Identity Management. Using an account that doesn't have standing permissions may cause authentication failures for the agent.
 - Once agents are started they can't be stopped or paused. It may take a few minutes to run.
 - The agent currently runs as the user who enables it.
 - In preview you should only run the agent from the Microsoft Entra admin center.
