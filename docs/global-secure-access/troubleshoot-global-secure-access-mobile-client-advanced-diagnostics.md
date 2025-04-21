@@ -1,59 +1,72 @@
 ---
 title: "Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostics"
-description: Troubleshoot the Global Secure Access mobile client using the advanced diagnostics utility.
+description: Discover how to use advanced diagnostics to resolve issues with the Global Secure Access mobile client for Android and iOS.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 03/31/2025
+ms.date: 04/21/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
 ms.reviewer: cagautham
-
+ai-usage: ai-assisted
 
 
 # Customer intent: I want to troubleshoot the Global Secure Access mobile client using the Advanced diagnostics utility.
 ---
 # Troubleshoot the Global Secure Access mobile client: Advanced diagnostics
-This document provides troubleshooting guidance for the Global Secure Access mobile client for both Android and iOS. It explores each option in the Advanced diagnostics utility.
+This article explains how to troubleshoot the Global Secure Access mobile client for Android and iOS using the advanced diagnostics utility.
 
 ## Introduction
 The Global Secure Access client runs in the background and routes relevant network traffic to Global Secure Access. It doesn't require user interaction. The advanced diagnostics tool makes the client's behavior visible to the administrator and helps with troubleshooting.
 
-## Launch the advanced diagnostics tool
-To launch the advanced diagnostics tool:
-1. Launch the Microsoft Defender app and select the **Global Secure Access client** tile.   
-1. Tap the **Global Secure Access** icon five times to enable **Troubleshooting**.   
-1. Select **Advanced diagnostics**.   
+## Services section   
+The **Services** section shows the active services running in the traffic forwarding profiles.
 
-## Services option   
-The Services option shows the list of current, active services that are set as part of the forwarding profiles. The tab contains the following information: 
+:::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/services-section.png" alt-text="Screenshot of the Services section in the Global Secure Access mobile client.":::
 
-## Troubleshooting option   
-The Troubleshooting option enables users with multiple options to troubleshoot and share information with the administrator.  
+## Troubleshooting section      
+The Troubleshooting section enables users to troubleshoot and share information with the administrator. To enable the **Troubleshooting** section:
+1. Open the Microsoft Defender app and select the **Global Secure Access client** tile.   
+1. Tap the **Global Secure Access** icon five times.   
+
+In addition to **Get latest policy** and **Clear cached data**, users can also [collect and send logs](#collect-and-send-logs) and [run advanced diagnostics](#advanced-diagnostics).    
 
 ### Collect and send logs   
-This option allows users to collect logs from the client and send to Microsoft support for investigation. On sending logs, user gets an Incident ID on the screen which can be shared with the Microsoft support for reference. To navigate: 
-1. Go to **MSDefender** > **Global Secure Access** > **Troubleshooting** > **Collect and send logs**. 
+This troubleshooting function allows users to collect logs from the client and send the logs to Microsoft support for investigation. To access the **Collect and send logs** function: 
+1. Open the Microsoft Defender app and select the **Global Secure Access client** tile.
+1. Expand the **Troubleshooting** section and select **Collect and send logs**. 
 
-:::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/___.png" alt-text="Screenshot of [].":::
+The user can copy and share the Incident ID with Microsoft Support for their reference.
+
+:::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/incident-id.png" alt-text="Screenshot of a sample pop-up Incident ID message.":::
 
 ### Advanced diagnostics   
-This option lists insights on the health of the client and utility for capturing Network and HOSTNAME traffic. To navigate:
-1. Go to **MSDefender** > **Global Secure Access** > **Troubleshooting** > **Advanced diagnostics**. 
+This troubleshooting function shows the client's health and lets users capture network and hostname traffic. To access the **Advanced diagnostics** function:
+1. Open the Microsoft Defender app and select the **Global Secure Access client** tile.
+1. Expand the **Troubleshooting** section and select **Advanced diagnostics**. 
 
-:::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/___.png" alt-text="Screenshot of []."::: 
+#### Health Check tests 
+The **Health Check** runs a series of device and policy tests to verify that the client and its components are working correctly. To run the health check:
+1. Navigate to the **Advanced diagnostics** view.
+1. Select **Health Check**. 
 
-## Health Check option 
-The **Health Check** option under Advanced diagnostics executes common tests to verify that the client works correctly and that its components are running. Select **Refresh Health Check** to view the updated test status. To navigate:
-1. Go to MSDefender > Global Secure Access > Troubleshooting > Advanced diagnostics > Health Check. 
+To update the health check status, select **Refresh Health Check**.   
 
-:::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/___.png" alt-text="Screenshot of []."::: 
+:::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/refresh-health-check.png" alt-text="Screenshot of the Health Check view showing that the completed device and policy tests passed."::: 
 
-### Network and hostname traffic 
-Using this option, the user can capture network and hostname traffic. We recommend that users start the traffic capture, reproduce the issue, and then stop the capture. Users can review the captured traffic by clicking on the **NETWORK** and **HOSTNAME** tabs. User can then use the DOWNLOAD option to get the captured traffic to share with Microsoft Support. To navigate:
-1. Go to MSDefender >  Global Secure Access > Troubleshooting > Advanced diagnostics > Network and hostname traffic.
+#### Network and hostname traffic 
+This function allows users to capture information about their network and hostname traffic. A good practice is to start the traffic capture, reproduce the issue, and then stop the capture. To capture network and hostname traffic:
+1. Navigate to the **Advanced diagnostics** view.
+1. Select **Network and hostname traffic**.
+1. Select **START**.
+1. Reproduce the issue.
+1. Select **STOP** to stop capturing network and hostname traffic.   
 
-:::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/___.png" alt-text="Screenshot of []."::: 
+To review the captured traffic, go to the **NETWORK** and **HOSTNAME** tabs.   
+
+To download the captured traffic to share with Microsoft Support, select **DOWNLOAD**.   
+
+:::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/network-host-name.png" alt-text="Screenshot of Network and hostname traffic view showing a list of sample network traffic."::: 
 
 ## Related content
-* Troubleshoot the Global Secure Access Client for Windows: Advance Diagnostics
+* [Troubleshoot the Global Secure Access Client for Windows: Advance Diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md)
