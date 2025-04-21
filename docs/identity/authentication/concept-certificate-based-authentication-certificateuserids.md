@@ -50,14 +50,14 @@ Synchronized users must have at least **Hybrid Identity Administrator** role to 
 >[!NOTE]
 >Active Directory administrators can make changes that impact the certificateUserIds value in Microsoft Entra ID for any synchronized account. Administrators can include accounts with delegated administrative privilege over synchronized user accounts, or administrative rights over the Microsoft Entra Connect servers.
 
-## How to find the correct CertificateUserIds values for a user from the end user certificate using power shell module
+## How to find the correct CertificateUserIds values for a user from the end user certificate using PowerShell module
 
 Certificate UserIds follow a certain pattern for its values as per the UserName binding configurations on the tenant. 
 The following powershell command helps an admin to retrieve the exact values for Certificate UserIds attribute for a user from a end user certificate. 
 Admin can also get the current values in Certificate UserIds attribute for an user for a given username binding and 
 set the value of the Certificate UserIds attribute.
 
-More information at [Microsoft Entra PowerShell Installation](/powershell/entra-powershell/installation?view=entra-powershell&tabs=powershell%2Cv1&pivots=windows#installation) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation). 
+More information at [Microsoft Entra PowerShell Installation](/powershell/entra-powershell/installation) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation). 
 
 1. Start PowerShell.
 1. Install and import the Microsoft Graph PowerShell SDK.
@@ -73,7 +73,7 @@ More information at [Microsoft Entra PowerShell Installation](/powershell/entra-
        Install-Module -Name Microsoft.Entra
    ```
 
-More information on CertificateBasedAuthentication module [here](/powershell/module/microsoft.entra/?view=entra-powershell#certificate-based-authentication)
+More information on CertificateBasedAuthentication module [here](/powershell/module/microsoft.entra)
 
 ### Get-EntraUserCBAAuthorizationInfo
 
