@@ -5,7 +5,7 @@ description: Learn how an administrator create a list to allow or block B2B coll
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 09/18/2024
+ms.date: 04/16/2025
 
 ms.author: mimart
 author: msmimart
