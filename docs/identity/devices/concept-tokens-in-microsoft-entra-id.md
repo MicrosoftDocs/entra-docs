@@ -104,48 +104,48 @@ internet.
 
 ### Harden your devices
 
-Perform the following configurations and deployments to harden all devices/endpoints as frontline of defense against malware-based token theft. Before you get started, ensure that your devices are enrolled with Intune, and that [Microsoft Defender for Endpoint](../../defender-endpoint/mde-planning-guide.md) is deployed.
+Perform the following configurations and deployments to harden all devices/endpoints as frontline of defense against malware-based token theft. Before you get started, ensure that your devices are enrolled with Intune, and that [Microsoft Defender for Endpoint](/defender-endpoint/mde-planning-guide.md) is deployed.
 
 |Control | Windows 10/11 | macOS | Linux|
 |------|------|------|------|
-| [Enable Microsoft Defender Antivirus always-on protection](~/defender-endpoint/configure-real-time-protection-microsoft-defender-antivirus) for real-time protection, behavior monitoring, and heuristics to identify malware based on known suspicious and malicious activities. | X | X  | X  |
-| [Enable Microsoft Defender Antivirus cloud protection](~/defender-endpoint/enable-cloud-protection-microsoft-defender-antivirus) to help protect against malware on your endpoints and across your network. | X | X | X |
-| [Enable network protection in Microsoft Defender for Endpoint](~/defender-endpoint/network-protection) to protect devices from certain Internet-based events by preventing connections to malicious or suspicious sites. | X | X | X |
-| [Enable tamper protection in Microsoft Defender for Endpoint](~/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection) to protect certain security settings, such as virus and threat protection, from being disabled or changed.  | X | X | - |
-| [Create a device compliance policy in Intune](~/mem/intune/protect/advanced-threat-protection-configure) that requires the machine risk level designation by Microsoft Defender for Endpoint as *low* or *clear* for compliance. | X| X | - |
+| [Enable Microsoft Defender Antivirus always-on protection](/defender-endpoint/configure-real-time-protection-microsoft-defender-antivirus) for real-time protection, behavior monitoring, and heuristics to identify malware based on known suspicious and malicious activities. | X | X  | X  |
+| [Enable Microsoft Defender Antivirus cloud protection](/defender-endpoint/enable-cloud-protection-microsoft-defender-antivirus) to help protect against malware on your endpoints and across your network. | X | X | X |
+| [Enable network protection in Microsoft Defender for Endpoint](/defender-endpoint/network-protection) to protect devices from certain Internet-based events by preventing connections to malicious or suspicious sites. | X | X | X |
+| [Enable tamper protection in Microsoft Defender for Endpoint](/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection) to protect certain security settings, such as virus and threat protection, from being disabled or changed.  | X | X | - |
+| [Create a device compliance policy in Intune](/mem/intune/protect/advanced-threat-protection-configure) that requires the machine risk level designation by Microsoft Defender for Endpoint as *low* or *clear* for compliance. | X| X | - |
 
 Even with device hardening policies in place, organizations must [create a Conditional Access policy](/conditional-access/policy-all-users-device-compliance) that requires users to use a **compliant device** to access all resources. This ensures your devices have successfully deployed your device-hardening configurations and that users can't access applications and resources from unmanaged or insecure devices.
 
 ### Other configurations for Windows
 
-- [Configure Credential Guard](~/windows/security/identity-protection/credential-guard/configure?tabs=intune) to isolate the Local Security Authority, protecting against credential theft from memory. 
-- Review your [Windows Enrollment Attestation](~/mem/intune/enrollment/windows-enrollment-attestation) report. Validate your Windows devices meet your TPM requirements. Take corrective action on any device that fails the TPM attestation.
+- [Configure Credential Guard](/windows/security/identity-protection/credential-guard/configure?tabs=intune) to isolate the Local Security Authority, protecting against credential theft from memory. 
+- Review your [Windows Enrollment Attestation](/mem/intune/enrollment/windows-enrollment-attestation) report. Validate your Windows devices meet your TPM requirements. Take corrective action on any device that fails the TPM attestation.
 
 ### Other configurations for macOS
 
-- [Disable iCloud Keychain sync with Microsoft Intune](~/mem/intune/configuration/device-restrictions-macos#settings-apply-to-all-enrollment-types-1) to prevent synchronization of Entra tokens that may be stored in Keychain.
-- [Enable Microsoft Enterprise SSO plug-in for Apple devices](~/entra/identity-platform/apple-sso-plugin) to enable Enterprise Apps to leverage the Primary Refresh Token (PRT) for authentication.
-- [Configure Platform SSO for macOS devices](~/mem/intune/configuration/platform-sso-macos) (secure enclave) to provide secure, phishing-resistant authentication to Mac devices using hardware-bound cryptographic keys. 
+- [Disable iCloud Keychain sync with Microsoft Intune](/mem/intune/configuration/device-restrictions-macos#settings-apply-to-all-enrollment-types-1) to prevent synchronization of Entra tokens that may be stored in Keychain.
+- [Enable Microsoft Enterprise SSO plug-in for Apple devices](../identity-platform/apple-sso-plugin) to enable Enterprise Apps to leverage the Primary Refresh Token (PRT) for authentication.
+- [Configure Platform SSO for macOS devices](/mem/intune/configuration/platform-sso-macos) (secure enclave) to provide secure, phishing-resistant authentication to Mac devices using hardware-bound cryptographic keys. 
 
 
 ### Harden mobile devices
 
-Mobile devices such as iOS and Android can be hardened using [mobile threat defense](~/defender-business/mdb-mtd).
+Mobile devices such as iOS and Android can be hardened using [mobile threat defense](/defender-business/mdb-mtd).
 Mobile threat defense includes a range of capabilities that can protect against compromised devices, and web threats that can block malware from being installed in the first place, preventing token exfiltration (and other threats) early in the kill chain.
 
 ### Microsoft Defender XDR Attack Disruption
 
-Adversary-in-the-middle (AiTM) is a covered scenario in Microsoft Defender XDR Attack disruption, which provides coordinated threat defense early in the kill chain of an attack. Deploy all Defender XDR workloads (Defender for Identity, Defender for Office, and Defender for Cloud Apps) and ensure Attack Disruption is configured in Microsoft Defender XDR by following all documented [pre-requisites and configurations](~/defender-xdr/configure-attack-disruption). Attack disruption detects AiTM attacks at an early stage and disrupt the attack by applying mitigating security controls automatically to endpoints and identities.
+Adversary-in-the-middle (AiTM) is a covered scenario in Microsoft Defender XDR Attack disruption, which provides coordinated threat defense early in the kill chain of an attack. Deploy all Defender XDR workloads (Defender for Identity, Defender for Office, and Defender for Cloud Apps) and ensure Attack Disruption is configured in Microsoft Defender XDR by following all documented [pre-requisites and configurations](/defender-xdr/configure-attack-disruption). Attack disruption detects AiTM attacks at an early stage and disrupt the attack by applying mitigating security controls automatically to endpoints and identities.
 
 ### Harden against internet threats
 
-Organizations who use Microsoft Edge should enable [Microsoft Defender SmartScreen](~/deployedge/microsoft-edge-security-smartscreen).
+Organizations who use Microsoft Edge should enable [Microsoft Defender SmartScreen](/deployedge/microsoft-edge-security-smartscreen).
 Microsoft Defender SmartScreen provides an early warning system against websites that might engage in phishing attacks or attempt to distribute malware through a focused attack.
 
 Microsoft Entra Internet Access provides more protection covering the entire Internet. Organizations can deploy Global Secure
-Access (GSA) clients to managed devices to block malicious and/or unauthorized web content using [web content filtering](~/entra/global-secure-access/how-to-configure-web-content-filtering).
+Access (GSA) clients to managed devices to block malicious and/or unauthorized web content using [web content filtering](/global-secure-access/how-to-configure-web-content-filtering).
 This reduces the likelihood of users navigating to malicious websites which can lead to the installation of malware or otherwise compromising
-the device. Administrators should, at minimum, block the *illegal software* category but should also review and consider blocking all [liability web categories](~/entra/global-secure-access/reference-web-content-filtering-categories#liability).
+the device. Administrators should, at minimum, block the *illegal software* category but should also review and consider blocking all [liability web categories](/global-secure-access/reference-web-content-filtering-categories#liability).
 
 ### Restrict use of device code flow
 
@@ -180,13 +180,13 @@ unable to re-authenticate, access is denied, preventing the stolen sign-in sessi
 
 [Learn how to configure Authentication Context in Conditional Access](/conditional-access/concept-conditional-access-cloud-apps#authentication-context).
 
-[Learn how to use Authentication Context in applications (developer guidance)](~/entra/identity-platform/developer-guide-conditional-access-authentication-context).
+[Learn how to use Authentication Context in applications (developer guidance)](/identity-platform/developer-guide-conditional-access-authentication-context).
 
 ### Require interactive authentication for risky sign-ins
 
 With Entra ID Identity Protection, enhanced by more detections from Microsoft Defender for Endpoint, Entra ID can detect suspicious sign-in attempts in real time. For instance, if an attacker steals and attempts to replay a refresh token, Entra ID Identity Protection may identify that the sign-in has unfamiliar properties and elevate the sign-in risk level for this event. Administrators should configure a Conditional Access policy that requires interactive phishing-resistant authentication (sign-in frequency set to every time) for medium or higher sign-in risk levels. If the attacker is unable to re-authenticate, access is denied, preventing the stolen sign-in session from being used to gain or extend unauthorized access.
 
-[Learn how to configure Risk-Based Conditional Access policies](~/entra/id-protection/howto-identity-protection-configure-risk-policies).
+[Learn how to configure Risk-Based Conditional Access policies](/id-protection/howto-identity-protection-configure-risk-policies).
 
 ### Detect and remediate high-risk users
 
@@ -198,14 +198,14 @@ exploiting any unauthorized access they may have achieved.
 Applications that support continuous access evaluation automatically revoke access in near-real time when high user risk is detected, issuing a redirect back to Entra ID for reauthentication and
 re-authorization.
 
-[Learn how to configure Risk-Based Conditional Access policies](~/entra/id-protection/howto-identity-protection-configure-risk-policies).
+[Learn how to configure Risk-Based Conditional Access policies](/id-protection/howto-identity-protection-configure-risk-policies).
 
 ## Microsoft Defender XDR
 
 Deploy Defender XDR workloads to alert on suspicious or anomalous behaviors surrounding token theft.
 
 - Use [Defender for Office 365](https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365) to detect and block malicious emails, links, and files
-- Use MicrosoftDefender for Cloud Apps [connectors](~/defender-cloud-apps/enable-instant-visibility-protection-and-governance-actions-for-your-apps), Microsoft 365 Defender raises AiTM-related alerts in multiple scenarios. For Entra ID customers using Microsoft Edge, attempts by attackers to replay session cookies to access cloud applications are detected by Defender for Cloud Apps connectors for [Office 365](~/defender-cloud-apps/connect-office-365) and [Azure](~/defender-cloud-apps/connect-azure). 
+- Use MicrosoftDefender for Cloud Apps [connectors](/defender-cloud-apps/enable-instant-visibility-protection-and-governance-actions-for-your-apps), Microsoft 365 Defender raises AiTM-related alerts in multiple scenarios. For Entra ID customers using Microsoft Edge, attempts by attackers to replay session cookies to access cloud applications are detected by Defender for Cloud Apps connectors for [Office 365](/defender-cloud-apps/connect-office-365) and [Azure](/defender-cloud-apps/connect-azure). 
 
 Microsoft Defender XDR when using Defender for Cloud Apps connectors and Defender for Endpoint can raise these alerts:
 
@@ -214,18 +214,18 @@ Microsoft Defender XDR when using Defender for Cloud Apps connectors and Defende
 
 ## Other detections
 
-[**Entra ID Protection risk detections**](~/id-protection/concept-identity-protection-risks#risk-detections-mapped-to-riskeventtype)
+[**Entra ID Protection risk detections**](/id-protection/concept-identity-protection-risks#risk-detections-mapped-to-riskeventtype)
 - Anomalous Token
 - Attacker in the Middle
 - Unfamiliar sign-in properties
 
-[**Microsoft Defender for Office 365 detections**](~/purview/alert-policies#threat-management-alert-policies)
+[**Microsoft Defender for Office 365 detections**](/purview/alert-policies#threat-management-alert-policies)
 - Email messages containing malicious file removed after delivery 
 - Email messages from a campaign removed after delivery 
 - A potentially malicious URL click was detected
 - A user clicked through to a potentially malicious URL 
 
-[**Microsoft Defender for Cloud Apps anomaly detections**](~/defender-cloud-apps/anomaly-detection-policy)
+[**Microsoft Defender for Cloud Apps anomaly detections**](/defender-cloud-apps/anomaly-detection-policy)
 
 - Impossible travel activity
 - Activity from infrequent country
@@ -283,7 +283,7 @@ Additionally, in certain scenarios such as with applications that support Contin
 Organizations should deploy Global Secure Access to establish a secure network connection between client devices and resources, also known as a compliant network. Administrators can then create a Conditional Access policy that mandates the use of a compliant network to access any Enterprise App integrated with Entra ID. This measure prevents the replay of sign-in session artifacts from devices not managed by the
 organization.
 
-[Learn how to configure compliant network check with Entra ID](~/global-secure-access/how-to-compliant-network).
+[Learn how to configure compliant network check with Entra ID](/global-secure-access/how-to-compliant-network).
 
 ### Protect Sign-in Sessions with traditional network controls
 
@@ -299,7 +299,7 @@ near-real time. Organizations can further improve IP-based network enforcements 
 
 For applications that aren't CAE-capable, organizations can protect their app sessions with controls available on the application side. For instance, some applications support IP-based enforcement at the application layer in addition to those enforced by the Identity Provider (IdP). The application then rejects the use of any app session artifact used outside the trusted network. Tunneling app-specific traffic via company-owned networks can be achieved through Source IP Anchoring with Global Secure Access, as well as other traditional network solutions such as VPNs.
 
-[Learn about Source IP Anchoring with Global Secure Access](~/global-secure-access/source-ip-anchoring).
+[Learn about Source IP Anchoring with Global Secure Access](/global-secure-access/source-ip-anchoring).
 
 ## Summary of token protection strategy
 
