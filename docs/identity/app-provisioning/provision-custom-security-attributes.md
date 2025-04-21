@@ -1,24 +1,21 @@
 ---
-title: Provision custom security attributes from HR sources (preview)
+title: Provision custom security attributes from HR sources
 description: Learn how to provision custom security attributes from HR sources.
 author: jenniferf-skc
 manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/04/2025
+ms.date: 04/30/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# Provision custom security attributes from HR sources (preview)
+# Provision custom security attributes from HR sources
 
-Custom security attribute provisioning enables customers to set custom security attributes automatically using Microsoft Entra inbound provisioning capabilities. With this public preview, you can source values for custom security attributes from authoritative sources, such as those from HR systems. Custom security attribute provisioning supports the following sources: Workday, SAP SuccessFactors, and other integrated HR systems that use API-driven provisioning. The provisioning target is your Microsoft Entra ID tenant.
+Custom security attribute provisioning enables customers to set custom security attributes automatically using Microsoft Entra inbound provisioning capabilities. With this public feature, you can source values for custom security attributes from authoritative sources, such as those from HR systems. Custom security attribute provisioning supports the following sources: Workday, SAP SuccessFactors, and other integrated HR systems that use API-driven provisioning. The provisioning target is your Microsoft Entra ID tenant.
 
 :::image type="content" source="media/provision-custom-security-attributes/about-custom-security-attributes.png" alt-text="Diagram of custom security attributes architecture.":::
-
-> [!NOTE]
-> We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all). Normal service level agreements (SLAs) don't apply to public previews, and only limited customer support is available. In addition, this preview doesn't support custom security attributes provisioning to enterprise SaaS apps or on-premises Active Directory functionality.
 
 ## Custom security attributes 
 
@@ -32,7 +29,7 @@ To provision custom security attributes, you must meet the following prerequisit
    - [Workday to Microsoft Entra ID user provisioning](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md)
    - [SAP SuccessFactors to Microsoft Entra ID user provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
    - [API-driven provisioning to Microsoft Entra ID](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)
-- Active custom security attributes in your tenant for discovery during the attribute mapping process. Before using this preview feature, you must [create custom security attribute sets](~/fundamentals/custom-security-attributes-add.md) in your Microsoft Entra ID tenant.
+- Active custom security attributes in your tenant for discovery during the attribute mapping process. Before using this feature, you must [create custom security attribute sets](~/fundamentals/custom-security-attributes-add.md) in your Microsoft Entra ID tenant.
 - To configure custom security attributes in the attribute mapping of your inbound provisioning app, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who is assigned the Microsoft Entra roles of [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) and [Attribute Provisioning Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-provisioning-administrator):
    - **Application Administrator** is required to create and update the provisioning app.
    - **Attribute Provisioning Administrator** is required to add or remove custom security attributes in the attribute mapping section of the provisioning app.
@@ -360,7 +357,7 @@ This configuration assigns the custom security attributes to hybrid users synchr
 
 ## API permissions for custom security attributes provisioning
 
-This preview feature introduces the following new Graph API permissions. This functionality enables you to access and modify provisioning app schemas that contain custom security attribute mappings, either directly or on behalf of the signed-in user.
+This feature introduces the following new Graph API permissions. This functionality enables you to access and modify provisioning app schemas that contain custom security attribute mappings, either directly or on behalf of the signed-in user.
 
 1. **CustomSecAttributeProvisioning.ReadWrite.All**: This permission grants the calling app ability to read and write the attribute mapping that contains custom security attributes. This permission with `Application.ReadWrite.OwnedBy` or `Synchronization.ReadWrite.All` or `Application.ReadWrite.All` (from least to highest privilege) is required to edit a provisioning app that contains custom security attributes mappings. This permission enables you to get the complete schema that includes the custom security attributes and to update or reset the schema with custom security attributes.
 
