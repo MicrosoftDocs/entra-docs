@@ -85,7 +85,7 @@ Suppose you have a Conditional Access policy with the following configuration:
 - Location: United States
 - Sign-in risk: High
 
-| Example | Parameters | Result based on current What If evaluation | Result based on the new What If evaluation API |
+| Example | Parameters | Result based on legacy What If evaluation | Result based on the new What If evaluation API |
 | :---: | --- | :---: | :---: |
 | 1 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" | Applies | Does not apply |
 | 2 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" | Applies | Does not apply |
