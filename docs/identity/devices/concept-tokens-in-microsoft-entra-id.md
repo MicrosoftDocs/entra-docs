@@ -104,7 +104,7 @@ internet.
 
 ### Harden your devices
 
-Perform the following configurations and deployments to harden all devices/endpoints as frontline of defense against malware-based token theft. Before you get started, ensure that your devices are enrolled with Intune, and that [Microsoft Defender for Endpoint](~/defender-endpoint/mde-planning-guide.md) is deployed.
+Perform the following configurations and deployments to harden all devices/endpoints as frontline of defense against malware-based token theft. Before you get started, ensure that your devices are enrolled with Intune, and that [Microsoft Defender for Endpoint](../../defender-endpoint/mde-planning-guide.md) is deployed.
 
 |Control | Windows 10/11 | macOS | Linux|
 |------|------|------|------|
