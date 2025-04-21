@@ -4,12 +4,12 @@ description: Explore the types of tokens used in Microsoft Entra ID, their role 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 03/26/2025
+ms.date: 04/21/2025
 
 ms.author: jfields
 author: jenniferf-skc
 manager: femila
-ms.reviewer: 
+ms.reviewer: jbley 
 ---
 
 # Introduction
@@ -116,7 +116,7 @@ Preventing a successful token theft incident from occurring in the first place i
 Organizations should harden devices against device-based token exfiltration methods using Microsoft Defender for Endpoint and Microsoft Intune. Organizations should also deploy controls to prevent users from accessing malicious or risky destinations on the
 internet.
 
-## Harden your devices
+### Harden your devices
 
 Perform the following configurations and deployments to harden all devices/endpoints as first line of defense against malware-based token theft. Before you get started, ensure that you have enrolled your devices in Intune, and that you have deployed [Microsoft Defender for Endpoint](../defender-endpoint/mde-planning-guide.md).
 
@@ -147,368 +147,199 @@ Even with device hardening policies in place, organizations must [create a Condi
 Mobile devices such as iOS and Android can be hardened using [mobile threat defense](../defender-business/mdb-mtd).
 Mobile threat defense includes a range of capabilities which can protect against compromised devices and web threats which can block malware from being installed in the first place, preventing token exfiltration (and other threats) early in the kill chain.
 
-## Microsoft Defender XDR Attack Disruption
+### Microsoft Defender XDR Attack Disruption
 
 Adversary-in-the-middle (AiTM) is a covered scenario in Microsoft Defender XDR Attack disruption, which provides coordinated threat defense early in the kill chain of an attack. Deploy all Defender XDR workloads (Defender for Identity, Defender for Office, and Defender for Cloud Apps) and ensure Attack Disruption is configured in Microsoft Defender XDR by following all documented [pre-requisites and configurations](../defender-xdr/configure-attack-disruption). Attack disruption will detect AiTM attacks at a very early stage and disrupt the attack by applying mitigating security controls automatically to endpoints and identities.
 
-## Harden against internet threats
+### Harden against internet threats
 
 Organizations who use Microsoft Edge should enable [Microsoft Defender SmartScreen](../deployedge/microsoft-edge-security-smartscreen).
-Microsoft Defender SmartScreen provides an early warning system against websites that might engage in phishing attacks or attempt to distributemalware through a focused
+Microsoft Defender SmartScreen provides an early warning system against websites that might engage in phishing attacks or attempt to distribute malware through a focused
 attack.
 
 Microsoft Entra Internet Access provides additional protection covering the entire Internet. Organizations can deploy Global Secure
 Access (GSA) clients to managed devices to block malicious and/or unauthorized web content using [web content filtering](../global-secure-access/how-to-configure-web-content-filtering).
 This reduces the likelihood of users navigating to malicious websites which can lead to the installation of malware or otherwise compromising
-the device software* category but should also review and consider blocking all [liability web categories](../global-secure-access/reference-web-content-filtering-categories#liability)*.*  
-](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+the device. Administrators should at minimum block the *illegal software* category but should also review and consider blocking all [liability web categories](../global-secure-access/reference-web-content-filtering-categories#liability).
 
-## Restrict Use of Device Code Flow
+### Restrict Use of Device Code Flow
 
-[[Device code flow is particularly useful for devices that have limited
+Device code flow is particularly useful for devices that have limited
 input capabilities or lack a web browser. However, device code flow can
 be used as part of a phishing attack or to access corporate resources on
 unmanaged devices. You can configure the device code flow control along
-with other controls in your Conditional Access policies. For example, if
-d[def]om devices, you
-might choose to block device code flow everywhere except for android
-devices in a specific network
-location.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+with other controls in your Conditional Access policies. For example, if device code flow is used for android based conference room devices, you might choose to block device code flow everywhere except for android devices in a specific network location. 
 
-[[You should only allow device code flow where necessary. Microsoft
-recommends blocking device code flow wherever
-possible.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+You should only allow device code flow where necessary. Microsoft recommends blocking device code flow wherever possible.
 
-[[[Learn more about Conditional Access Authentication
-flows](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-authentication-flows#device-code-flow).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[Learn more about Conditional Access Authentication flows](../identity/conditional-access/concept-authentication-flows#device-code-flow).
 
-## [[Harden your internet access](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
 
-- 
-- 
+### Token theft-detect and mitigate
 
-# [[[Enforce compliant network check for Microsoft traffic](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network) and all authentication traffic. The Global Secure Access client uses mTLS to secure all tunneled traffic. This will prevent tokens and credentials from being intercepted even if users are tricked into connecting to malicious Wi-fi. Compliant network check also provide protection against token replay which is covered later in this article.Configure Threat Intelligence with Microsoft Entra Internet Access to block web destinations that are known to be malicious by Microsoft threat intelligence sources.Token Theft – Detect and Mitigate](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Organizations should actively monitor for successful or attempted token theft attacks. There are a number of alerts generated from various
+Microsoft products that can indicate potential token theft or account compromise. A high-level summary of these detections is listed below. For an in-depth guide on how to monitor for, detect, and respond to
+identified token theft using a SIEM, refer to the [Token theft playbook](../security/operations/token-theft-playbook).
 
-[[Organizations should actively monitor for successful or attempted[def][def]
-token theft attacks. There are a number of alerts generated from various
-Microsoft products that can indicate potential token theft or account
-compromise. A high-level summary of these detections is listed below.
-For an in-depth guide on how to monitor for, detect, and respond to
-identified token theft using a SIEM, refer to the [Token
-the](https://learn.microsoft.com/en-us/security/operations/token-theft-playbook)
-ft[def][def]
-playbook.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+### Conditional Access Policies
 
-## [[Conditional Access Policies](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-
-[[In addition to Token Protection and network-based controls,
+In addition to Token Protection and network-based controls,
 organizations should also configure the following Conditional Access
-policies:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+policies:
 
-- 
-- [def][def]
-- 
+- Require interactive re-authentication for sensitive operations (authentication context)
+- Require interactive authentication for risky sign-ins
+- Mitigate and remediate high risk usersThese Conditional Access policies provide additional automated token theft remediation and/or address additional threat vectors which could be used in token-based
+attacks.
 
-[[Require interactive reauthentication for sensitive operations
-(authentication context)Require interactive authentication for risky
-sign-insMitigate and remediate high risk usersThese Conditional Access
-policies provide additional automated token theft remediation and/or
-address additional threat vectors which could be used in token-based
-attacks.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+### Require interactive re-authentication for sensitive operations
 
-### [[Require interactive reauthentication for sensitive operations](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Organizations can configure certain actions with authentication contexts to trigger the evaluation of Conditional Access policies outside of the normal authentication flows. For example, a Conditional
+Access policy can be configured to evaluate when an administrator activates a role in Privileged Identity Management (PIM) or when a user performs a specific action within an application. Administrators should
+configure a Conditional Access policy that requires interactive phishing-resistant authentication (sign-in frequency set to every time) for authentication context actions deemed sensitive. If the attacker is
+unable to re-authenticate, access will be denied, preventing the stolen sign-in session from being used to complete the sensitive operation.
 
-[[Organizations can configure certain actions with authentication
-contexts to trigger the evaluation of Conditional Access policies
-outside of the normal authentication flows. For example, a Conditional
-Access policy can be configured to evaluate when an administrator
-activates a role in Privileged Identity Management (PIM) or when a user
-performs a specific action within an application. Administrators should
-configure a Conditional Access policy that requires interactive
-phishing-resistant authentication (sign-in frequency set to every time)
-for authentication context actions deemed sensitive. If the attacker is
-unable to re-authenticate, access will be denied, preventing the stolen
-sign-in session from being used to complete the sensitive
-operation.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[Learn how to configure Authentication Context in Conditional Access](../identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context).
 
-[[[Learn how to configure Authentication Context in Conditional
-Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[Learn how to use Authentication Context in applications (developer guidance)](../identity-platform/developer-guide-conditional-access-authentication-context).
 
-[[[Learn how to use Authentication Context in applications (developer
-guidance)](https://learn.microsoft.com/en-us/entra/identity-platform/developer-guide-conditional-access-authentication-context).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+### Require interactive authentication for risky sign-ins
 
-### [[Require interactive authentication for risky sign-ins](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+With Entra ID Identity Protection, enhanced by additional detections from Microsoft Defender for Endpoint, Entra ID can detect suspicious
+sign-in attempts in real time. For instance, if an attacker steals and attempts to replay a refresh token, Entra ID Identity Protection may
+identify that the sign-in has unfamiliar properties and elevate the sign-in risk level for this event. Administrators should configure a Conditional Access policy that requires interactive phishing-resistant
+authentication (sign-in frequency set to every time) for medium or higher sign-in risk levels. If the attacker is unable to re-authenticate, access is denied, preventing the stolen sign-in session from being used to gain or extend unauthorized access.
 
-[[With Entra ID Identity Protection, enhanced by additional detections
-from Microsoft Defender for Endpoint, Entra ID can detect suspicious
-sign-in attempts in real time. For instance, if an attacker steals and[def][def]
-attempts to replay a refresh token, Entra ID Identity Protection may
-identify that the sign-in has unfamiliar properties and elevate the
-sign-in risk level for this event. Administrators should configure a[def][def]
-Conditional Access policy that requires interactive phishing-resistant
-authentication (sign-in frequency set to every time) for medium or
-higher sign-in risk levels. If the attacker is unable to
-re-authenticate, access will be denied, preventing the stolen sign-in
-session from being used to gain or extend unauthorized
-access.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[Learn how to configure Risk-Based Conditional Access policies](../id-protection/howto-identity-protection-configure-risk-policies).
 
-[[[Learn how to configure Risk-Based Conditional Access
-policies](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+### Detect and remediate high risk users
 
-### [[Detect and remediate high risk users](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+With Entra ID Identity Protection, enhanced by additional detections from Microsoft Defender for Endpoint, Entra ID generates a user risk score for every account, indicating the level of certainty regarding
+whether the account has been compromised. If Entra ID or Microsoft Defender for Endpoint detects signs of successful token theft, it is
+highly likely that the user’s risk score will be set to “High.” When this occurs, you can automatically block or remediate the account (e.g., secure password change), preventing the adversary from further
+exploiting any unauthorized access they may have achieved.
 
-[[With Entra ID Identity Protection, enhanced by additional detections
-from Microsoft Defender for Endpoint, Entra ID generates a user risk
-score for every account, indicating the level of certainty regarding
-whether the account has been compromised. If Entra ID or Microsoft
-Defender for Endpoint detects signs of successful token theft, it is
-highly likely that the user’s risk score will be set to “High.” When[def][def]
-this occurs, you can automatically block or remediate the account (e.g.,
-secure password change), preventing the adversary from further
-exploiting any unauthorized access they may have
-achieved.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Applications that support continuous access evaluation automatically revoke access in near-real time when high user risk is detected, issuing a redirect back to Entra ID for re-authentication and
+re-authorization.
 
-[[Applications that support continuous access evaluation will also
-automatically revoke access in near-real time when high user risk is
-detected, issuing a redirect back to Entra ID for re-authentication and
-re-authorization.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[Learn how to configure Risk-Based Conditional Access policies](../id-protection/howto-identity-protection-configure-risk-policies).
 
-[[[Learn how to configure Risk-Based Conditional Access
-policies](https://learn.microsoft.com/en-us/entra/id-protection/howto-identity-protection-configure-risk-policies).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## Microsoft Defender XDR
 
-## [[Microsoft Defender XDR](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Deploy Defender XDR workloads to alert on suspicious or anomalous behaviors surrounding token
+theft.
 
-[[Deploy Defender XDR workloads to alert on suspicious or anomalous
-behaviors surrounding token
-theft.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+- Use [Defender for Office 365](../security/business/siem-and-xdr/microsoft-defender-office-365) to detect and block malicious emails, links, and files
+- Use MicrosoftDefender for Cloud Apps [connectors](../defender-cloud-apps/enable-instant-visibility-protection-and-governance-actions-for-your-apps), Microsoft 365 Defender raises AiTM-related alerts in multiple scenarios. For Entra ID customers using Microsoft Edge, attempts by attackers to replay session cookies to access cloud applications are detected by Defender for Cloud Apps connectors for [Office 365](../defender-cloud-apps/connect-office-365) and [Azure](../defender-cloud-apps/connect-azure). 
 
-- 
-- [def][def]
+Microsoft Defender XDR when using Defender for Cloud Apps connectors and Defender for Endpoint can raise the following
+alerts:
 
-[[Use [Defender for Office
-365](https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-defender-office-365)
-to detect and block malicious emails, links, and filesUsing Microsoft
-Defender for Cloud Apps
-[connectors](https://learn.microsoft.com/defender-cloud-apps/enable-instant-visibility-protection-and-governance-actions-for-your-apps),
-Microsoft 365 Defender raises AiTM-related alerts in multiple scenarios.
-For Entra ID customers using Microsoft Edge, attempts by attackers to
-replay session cookies to access cloud applications are detected by
-Defender for Cloud Apps connectors for [Office
-365](https://learn.microsoft.com/defender-cloud-apps/connect-office-365)
-and
-[Azure](https://learn.microsoft.com/defender-cloud-apps/connect-azure).Microsoft
-Defender XDR when using Defender for Cloud Apps connectors and Defender
-for Endpoint can raise the following
-alerts:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+- Stolen session cookie was used
+- Possible AiTM phishing attempt
 
-- 
-- 
+## Additional detections
 
-## [[Stolen session cookie was usedPossible AiTM phishing attemptAdditional detections](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[**Entra ID Protection risk detections**](../id-protection/concept-identity-protection-risks#risk-detections-mapped-to-riskeventtype)
+- Anomalous Token
+- Attacker in the Middle
+- Unfamiliar sign-in properties
 
-[[[**Entra ID Protection risk
-detections**](https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks#risk-detections-mapped-to-riskeventtype)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-[def][def]
-- 
-- 
-- 
+[**Microsoft Defender for Office 365 detections**](../purview/alert-policies#threat-management-alert-policies)
+- Email messages containing malicious file removed after delivery 
+- Email messages from a campaign removed after delivery 
+- A potentially malicious URL click was detected
+- A user clicked through to a potentially malicious URL 
 
-[[Anomalous TokenAttacker in the MiddleUnfamiliar sign-in
-properties[**Microsoft Defender for Office 365
-detections**](https://learn.microsoft.com/en-us/purview/alert-policies#threat-management-alert-policies)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
-[def][def]
-- 
-- 
-- 
-- 
+[**Microsoft Defender for Cloud Apps anomaly detections**](../defender-cloud-apps/anomaly-detection-policy)
 
-[[Email messages containing malicious file removed after delivery Email
-messages from a campaign removed after delivery A potentially malicious
-URL click was detectedA user clicked through to a potentially malicious[def][def]
-URL [**Microsoft Defender for Cloud Apps anomaly
-detections**](https://learn.microsoft.com/en-us/defender-cloud-apps/anomaly-detection-policy)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+- Impossible travel activity
+- Activity from infrequent country
 
-- 
-- 
+[**Microsoft Defender XDR Business Email Compromise mitigation**](../security/blog/2023/06/08/detecting-and-mitigating-a-multi-stage-aitm-phishing-and-bec-campaign/)
 
-[[Impossible travel activityActivity from infrequent country[**Microsoft
-Defender XDR Business Email Compromise
-mitigation**](https://www.microsoft.com/en-us/security/blog/2023/06/08/detecting-and-mitigating-a-multi-stage-aitm-phishing-and-bec-campaign/)](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+- Business Email Compromise (BEC) related credential harvesting attack
+- Suspicious phishing emails sent by BEC-related user
 
-- [def][def]
-- 
+## Token Theft – Protect against replay
 
-# [[Business Email Compromise (BEC) related credential harvesting attackSuspicious phishing emails sent by BEC-related userToken Theft – Protect against replay](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+If an adversary is able to successfully steal a token, organizations can enable certain capabilities that will automatically reduce the
+exposure of, or completely prevent, the stolen token from being replayed, thus defeating the attack. These capabilities include:
 
-[[If an adversary is able to successfully steal a token, organizations
-can enable certain capabilities that will automatically reduce the
-exposure of, or completely prevent, the stolen token from being[def][def]
-replayed, thus defeating the attack. These capabilities
-include:](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+- Enforcing Token Protection in Conditional Access to secure sign-in sessions
+- Enforcing access is only allowed via secure networks
 
-- 
-- 
+### Enforce Token Protection
 
-## [[Enforcing Token Protection in Conditional Access to secure sign-in sessionsEnforcing access is only allowed via secure networksEnforce Token Protection](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+**Entra Primary Refresh Token**
 
-### [[Entra Primary Refresh Token](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+For devices registered or joined, Entra ID generates a multi-application Refresh Token used for application SSO and named
+Primary Refresh Token (PRT).
 
-[[For devices registered or joined, Entra ID generates a
-multi-application Refresh Token used for application SSO and named
-Primary Refresh Token
-(PRT).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+PRT are secure by design, they are protected with a cryptographically secure tie between the PRT and the device (client secret) to which it is
+issued. The client secret is securely stored on platform specific hardware secure storage like Trusted Platform Module (TPM) for Windows, Keystore System for Android, or Secure Enclave for iOS and macOS.
+Without the client secret, the PRT token is rendered ineffective and cannot be replayed if stolen.
 
-[[PRT are secure by design, they are protected with a cryptographically
-secure tie between the PRT and the device (client secret) to which it is
-issued. The client secret is securely stored on platform specific
-hardware secure storage like Trusted Platform Module (TPM) for Windows,
-Keystore System for Android, or Secure Enclave for iOS and macOS.
-Without the client secret, the PRT token is rendered ineffective and
-cannot be replayed if
-stolen.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+**Token Protection in Conditional Access**
 
-### [[Token Protection in Conditional Access](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Enforcing Token Protection in Conditional Access ensures that only refresh tokens which are cryptographically bound to the device can be
+used. Bearer refresh tokens, which can be used from any device, are automatically rejected. This method provides the highest level of security for protecting sign-in sessions, as the token can only be used
+on the device it was originally issued to. At the time of publication of this post, Token Protection in Conditional Access is available for
+Windows native applications connecting to Microsoft Teams, SharePoint,and Exchange. We are continuously working to expand the scope of Token Protection by adding support for additional platforms, applications, and
+resources. For an updated list of supported apps and resources, please refer to this article. [Token protection in Microsoft Entra Conditional Access - Microsoft Entra ID \| Microsoft Learn](../identity/conditional-access/concept-token-protection#requirements).
 
-[[Enforcing Token Protection in Conditional Access ensures that only
-refresh tokens which are cryptographically bound to the device can be
-used. Bearer refresh tokens, which can be used from any device, are
-automatically rejected. This method provides the highest level of
-security for protecting sign-in sessions, as the token can only be used
-on the device it was originally issued to. At the time of publication of
-this post, Token Protection in Conditional Access is available for
-Windows native applications connecting to Microsoft Teams, SharePoint,
-and Exchange. We are continuously working to expand the scope of Token
-Protection by adding support for additional platforms, applications, and
-resources. For an updated list of supported apps and resources, please
-refer to this article. [Token protection in Microsoft Entra Conditional
-Access - Microsoft Entra ID \| Microsoft
-Learn](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-token-protection#requirements).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Organizations are encouraged to pilot and deploy Token Protection for all supported applications, devices, and platforms. Applications that do not support Token Protection should be safeguarded with additional
+policies such as network-based policies.
 
-[[Organizations are encouraged to pilot and deploy Token Protection for
-all supported applications, devices, and platforms. Applications that do
-not support Token Protection should be safeguarded with additional
-policies such as network-based
-policies.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Check the following article to learn more and get deployment guidance:
+[Learn how to configure Token Protection](../identity/conditional-access/concept-token-protection).
 
-[[Check the following article to learn more and get deployment guidance
-[Learn how to configure Token[def][def]
-Protection](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-token-protection).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+> [!NOTE]
+> Token Protection in Conditional Access requires the use of PRT’s. Scenarios such as the use of unregistered devices aren't available as those devices don't have a PRT.
 
-[[NOTE: Token Protection in Conditional Access requires the use of
-PRT’s. Scenarios such as use of unregistered devices will not be
-available as those devices will not have a
-PRT.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+> [!NOTE]
+> Entra Token Protection only applies to the user who signed into the device. For example, if you unlock a Windows device with a standard account but then access a resource authenticating under a different account, the latter identity cannot be protected by Entra Token Protection as they do not have a valid PRT available.
 
-[[NOTE: Entra Token Protection only applies to the user who signed into
-the device. For example, if you unlock a Windows device with a standard
-account but then access a resource authenticating under a different[def][def]
-account, the latter identity cannot be protected by Entra Token
-Protection as they do not have a valid PRT
-available.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## Implement network-based enforcements
 
-## [[Implement network-based enforcements](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+While Entra Token Protection is the most secure method of protecting sign-in session tokens, it is limited in its scope of application coverage and only applies to the user who signed into the device. To further reduce the attack surface, organizations can implement network-based enforcement policies which can cover a broader range of applications, often covering all Enterprise apps. Network-based policies
+can also cover additional identities beyond the user who is signed in to the device.
 
-[[While Entra Token Protection is the most secure method of protecting
-sign-in session tokens, it is limited in its scope of application
-coverage and only applies to the user who signed into the device. To
-further reduce the attack surface, organizations can implement
-network-based enforcement policies which can cover a broader range of
-applications, often covering all Enterprise apps. Network-based policies
-can also cover additional identities beyond the user who is signed in to
-the
-device.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Network-based policies prevent sign-in session artifacts (such as refresh tokens) from being replayed outside of designated networks, effectively thwarting token theft and replay attacks that exfiltrate sign-in sessions beyond your organizational boundary. While internal threat vectors may still pose a risk due to their access to the same network, forcing threat actors to operate within your organizational
+boundary significantly increases the likelihood of detecting and mitigating threats through additional security controls.
 
-[[Network-based policies prevent sign-in session artifacts (such as
-refresh tokens) from being replayed outside of designated networks,
-effectively thwarting token theft and replay attacks that exfiltrate
-sign-in sessions beyond your organizational boundary. While internal
-threat vectors may still pose a risk due to their access to the same
-network, forcing threat actors to operate within your organizational
-boundary significantly increases the likelihood of detecting and
-mitigating threats through additional security
-controls.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Additionally, in certain scenarios such as with applications that support Continuous Access Evaluation, these measures can also be an
+effective way to reduce the attack surface for application session (access token) theft and replay
+attacks.
 
-[[Additionally, in certain scenarios such as with applications that
-support Continuous Access Evaluation, these measures can also be an
-effective way to reduce the attack surface for application session
-(access token) theft and replay
-attacks.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+### Protect Sign-in Sessions with Global Secure Access
 
-### [[Protect Sign-in Sessions with Global Secure Access](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+Organizations should deploy Global Secure Access to establish a secure network connection between client devices and resources, also known as a compliant network. Administrators can then create a Conditional Access
+policy that mandates the use of a compliant network to access any Enterprise App integrated with Entra ID. This measure prevents the replay of sign-in session artifacts from devices not managed by the
+organization.
 
-[[Organizations should deploy Global Secure Access to establish a secure
-network connection between client devices and resources, also known as a
-compliant network. Administrators can then create a Conditional Access
-policy that mandates the use of a compliant network to access any
-Enterprise App integrated with Entra ID. This measure will prevent the
-replay of sign-in session artifacts from devices not managed by the
-organization.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[Learn how to configure compliant network check with Entra ID](../global-secure-access/how-to-compliant-network).
 
-[[[Learn how to configure compliant network check with Entra
-ID](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-compliant-network).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+### Protect Sign-in Sessions with traditional network controls
 
-### [[Protect Sign-in Sessions with traditional network controls](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+As an alternative to Compliant network check, organizations can utilize traditional network solutions such as VPNs to protect sign-in sessions. Administrators can then create a location-based Conditional Access policy that restricts authentication attempts to specific egress IP addresses. However, organizations should consider the performance implications and costs associated with routing traffic through a corporate network. Therefore, Microsoft recommends using Global Secure Access, a fully secure, globally distributed Security Service Edge solution.
 
-[[As an alternative to Compliant network check, organizations can
-utilize traditional network solutions such as VPNs to protect sign-in
-sessions. Administrators can then create a location-based Conditional
-Access policy that restricts authentication attempts to specific egress
-IP addresses. However, organizations should consider the performance
-implications and costs associated with routing traffic through a[def][def]
-corporate network. Therefore, Microsoft recommends using Global Secure
-Access, a fully secure, globally distributed Security Service Edge
-solution.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[Learn how to configure location-based Conditional Access policies with Entra ID](../identity/conditional-access/policy-block-by-location).
 
-[[[Learn how to configure location-based Conditional Access policies
-with Entra
-ID](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-block-by-location).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+### Protect App Sessions with network-based enforcements
 
-### [[Protect App Sessions with network-based enforcements](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+By creating a location-based Conditional Access policies restricting access to specific egress IP addresses, organizations can also protect
+some of their app sessions. A subset of Microsoft Applications, such as SharePoint Online and Exchange Online, use the [Continuous Access Evaluation](../identity/conditional-access/concept-continuous-access-evaluation) (CAE) protocol. CAE-aware apps evaluate network-based enforcements and revoke app session artifacts replayed outside of the trusted network in
+near-real time. Organizations can further improve IP-based network enforcements by [configuring strict location policies with CAE](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement) to ensure that traffic for CAE-capable apps are only accessible from trusted networks.
 
-[[By creating a location-based Conditional Access policies restricting
-access to specific egress IP addresses, organizations can also protect
-some of their app sessions. A subset of Microsoft Applications, such as
-SharePoint Online and Exchange Online, use the [Continuous Access
-Evaluation](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation)
-(CAE) protocol. CAE-aware apps evaluate network-based enforcements and[def][def]
-revoke app session artifacts replayed outside of the trusted network in
-near-real time. Organizations can further improve IP-based network
-enforcements by [configuring strict location policies with
-CAE](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement)
-to ensure that traffic for CAE-capable apps are only accessible from
-trusted
-networks.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+For applications that are not CAE-capable, organizations can protect their app sessions with controls available on the application side. For instance, some applications support IP-based enforcement at the application layer in addition to those enforced by the Identity Provider (IdP). The application then rejects the use of any app session artifact used outside the trusted network. Tunneling app-specific traffic via company-owned networks can be achieved through Source IP Anchoring with Global Secure Access, as well as other traditional network solutions such as VPNs.(mailto:franckh@microsoft.com)
 
-[[For applications that are not CAE-capable, organizations can protect
-their app sessions with controls available on the application side. For
-instance, some applications support IP-based enforcement at the
-application layer in addition to those enforced by the Identity Provider
-(IdP). The application will then reject the use of any app session
-artifact used outside the trusted network. Tunneling app-specific
-traffic via company-owned networks can be achieved through Source IP
-Anchoring [def]
-network solutions such as
-VPNs.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+[Learn about Source IP Anchoring with Global Secure Access](../global-secure-access/source-ip-anchoring).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
 
-[[[Learn about Source IP Anchoring with Global Secure
-Access](https://learn.microsoft.com/en-us/entra/global-secure-access/source-ip-anchoring).](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## Summary of token protection strategy
 
-# [[Summary of token protection strategy](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+In summary, protecting tokens in Microsoft Entra involves a multi-layered defense-in-depth strategy to guard against token theft and replay attacks. This includes hardening devices against malware, leveraging device-based and risk-based Conditional Access, enforcing device-bound tokens, and implementing network-based enforcements. Additionally, organizations should deploy phishing-resistant multi-factor authentication, monitor for suspicious sign-in attempts, and configure Conditional Access policies to require re-authentication for sensitive operations. By following these guidelines, organizations can significantly reduce the risk of unauthorized access and ensure the security of their sign-in sessions and app sessions.
 
-[[In summary, protecting tokens in Microsoft Entra involves a
-multi-layered defense-in-depth strategy to guard against token theft and
-replay attacks. This includes hardening devices against malware,
-leveraging device-based and risk-based Conditional Access, enforcing
-device-bound tokens, and implementing network-based enforcements.
-Additionally, organizations should deploy phishing-resistant[def][def]
-multi-factor authentication, monitor for suspicious sign-in attempts,
-and configure Conditional Access policies to require reauthentication
-for sensitive operations. By following these guidelines, organizations
-can significantly reduce the risk of unauthorized access and ensure the
-security of their sign-in sessions and app
-sessions.](mailto:Alexpav@microsoft.com)](mailto:franckh@microsoft.com)
+## Next steps
 
-
-[def]: onal configurations for macO
-
-[def]: onal configurations for macO
+[Microsoft Entra Conditional Access: Token protection](../conditional-access/concept-token-protection.md)
