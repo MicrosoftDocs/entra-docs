@@ -35,13 +35,13 @@ To disable group creation for nonadmin users in PowerShell:
     Install-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
     Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
     $params = @{
-	TemplateId = "62375ab9-6b52-47ed-826b-58e47e0e304b"
-	Values = @(		
-		@{
-			Name = "EnableGroupCreation"
-			Value = "false"
-		}		
-	)
+  TemplateId = "62375ab9-6b52-47ed-826b-58e47e0e304b"
+  Values = @(    
+    @{
+      Name = "EnableGroupCreation"
+      Value = "false"
+    }    
+  )
     }
     Connect-MgGraph -Scopes "Directory.ReadWrite.All"
     New-MgBetaDirectorySetting -BodyParameter $params
@@ -60,7 +60,7 @@ If you run into this limit, to create any new Dynamic groups, you first need to 
 **I configured a rule on a group but no memberships get updated in the group**  
 1. Verify the values for user or device attributes in the rule. Ensure there are users that satisfy the rule.
 For devices, check the device properties to ensure any synced attributes contain the expected values.  
-2. Check the membership processing status to confirm if it's complete. You can check the [membership processing status](groups-create-rule.md#check-processing-status-for-a-rule) and the last updated date on the **Overview** page for the group.
+2. Check the membership processing status to confirm if it's complete. You can check the [membership processing status](groups-create-rule.md#check-the-processing-status-for-a-rule) and the last updated date on the **Overview** page for the group.
 
 If everything looks good, allow some time for the group to populate. Depending on the size of your Microsoft Entra organization, the group could take up to 24 hours for populating for the first time or after a rule change.
 
