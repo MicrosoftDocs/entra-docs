@@ -9,6 +9,7 @@ ms.topic: tutorial
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Add an on-premises application for remote access through application proxy in Microsoft Entra ID

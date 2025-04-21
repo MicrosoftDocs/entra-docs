@@ -8,6 +8,7 @@ ms.topic: reference
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Microsoft Entra private network connector: version release history

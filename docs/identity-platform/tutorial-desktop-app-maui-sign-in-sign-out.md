@@ -3,20 +3,20 @@ title: "Tutorial: Sign in users in .NET MAUI app using an external tenant"
 description: This tutorial demonstrates how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform.
 author: henrymbuguakiarie
 manager: mwongerapk
-
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.topic: tutorial
-ms.subservice: external
-ms.custom: devx-track-dotnet
-ms.date: 06/27/2024
+ms.custom:
+ms.date: 04/16/2025
 ---
 
 # Tutorial: Sign in users in .NET MAUI app using an external tenant
 
-This tutorial is the final part of a series that demonstrates building a how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform. In [Part 2 of this series](./tutorial-desktop-app-maui-sign-in-prepare-app.md), you created a .NET MAUI shell app, added MSAL SDK support via MSAL helper classes, installed required libraries, and included an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET MAUI shell and run the app on the Windows platform.
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you learn how to:
+This tutorial is the final part of a series that demonstrates building a how to add sign-in and sign-out code in .NET Multi-platform App UI (.NET MAUI) shell and run the app on the Windows platform. In [Part 1 of this series](./tutorial-desktop-app-maui-sign-in-prepare-app.md), you created a .NET MAUI shell app, added MSAL SDK support via MSAL helper classes, installed required libraries, and included an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET MAUI shell and run the app on the Windows platform.
+
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -28,7 +28,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Tutorial: Register and configure a .NET MAUI app in an external tenant](./tutorial-desktop-app-maui-sign-in-prepare-tenant.md)
+- [Tutorial: Create a .NET MAUI app](./tutorial-desktop-app-maui-sign-in-prepare-app.md)
 
 ## Add sign-in and sign-out code
 
@@ -149,10 +149,10 @@ To create `appsettings.json`, follow these steps:
 
 1. In the `appsettings.json`, find the placeholder:
 
-   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+   1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net.md)]
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url-dot-net.md)]
 
 ## Run and test .NET MAUI desktop app
 

@@ -4,7 +4,7 @@ description: In this quickstart, you download and modify a code sample that demo
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api, 
+ms.custom:
 ms.date: 04/03/2025
 ms.reviewer: jmprieur, dmwendia
 ms.service: identity-platform

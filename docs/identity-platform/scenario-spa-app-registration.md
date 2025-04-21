@@ -4,7 +4,7 @@ description: Learn how to build a single-page application (app registration)
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 04/29/2024
 ms.service: identity-platform
 

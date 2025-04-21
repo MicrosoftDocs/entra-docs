@@ -10,7 +10,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: how-to
 ms.date: 02/29/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to configure native authentication Android Kotlin sample app enable customer users to sign up, sign in, sign out and reset password by using Microsoft Entra's native authentication.
 ---
 

@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.reviewer: katabish
+ai-usage: ai-assisted
 ---
 
 # Global Secure Access traffic forwarding profiles

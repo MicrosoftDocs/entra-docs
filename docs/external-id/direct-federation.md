@@ -73,10 +73,10 @@ Refer to the following tables for the required values.
 
 **Table 2. Required claims for the SAML 2.0 token issued by the IdP.**
 
-|Attribute Name                                                        |Value         |
-|----------------------------------------------------------------------|--------------|
+|Attribute Name                                                        |Value                                                  |
+|----------------------------------------------------------------------|-------------------------------------------------------|
 |NameID Format                                                         |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` |
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`  | emailaddress |
+|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`  | The user's email address                              |
 
 #### To configure a WS-Fed identity provider
 

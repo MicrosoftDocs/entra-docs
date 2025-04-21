@@ -18,7 +18,7 @@ ms.date: 02/07/2025
 
 In this tutorial, you learn how to sign in users into a React single-page app (SPA) by using native authentication. 
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 >[!div class="checklist"]
 >
