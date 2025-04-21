@@ -300,7 +300,7 @@ Content-Type: application/json
     }
 }
 ```
-## Update certificateUserIds using MSGraph PowerShell commands
+## Update certificateUserIds using Microsoft Graph PowerShell commands
 
 For this configuration, you can use [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation).
 
