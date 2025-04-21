@@ -57,9 +57,17 @@ If this policy is enabled, then when creating or updating a Microsoft Entra appl
 
 **The newly added URI {URI} must comply with the format 'api://{appId}' or 'api://{tenantId}/{appId}' as per the default app management policy of your organization. If the requestedAccessTokenVersion is set to 2, this restriction may not apply.  See https://aka.ms/identifier-uri-addition-error for more information on this error.**
 
+If you're a developer and you've received this error, check [this guidance](#guidance-for-developers).
+
 ### Security benefit
 
-Todo
+This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim.  We recommend enabling it if possible.
+
+### Enabling and managing the policy
+
+To enable this more restrictive policy in your organization, you can run [this script](todo).
+
+Like the other policy, administrators can also [grant exemptions](todo) to this policy, or [disable it](todo) after it's been enabled.
 
 ### Guidance for developers
 
