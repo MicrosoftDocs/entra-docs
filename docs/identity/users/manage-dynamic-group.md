@@ -29,7 +29,7 @@ The three biggest factors that influence processing and can cause membership upd
 
 - **Number of object changes**: A high volume of user or device changes can create a long processing queue and extend the processing time. Examples include changes to extension attributes, device additions or removals, and bulk user updates.
 
-- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `MemberOf` can increase processing time. Rule complexity is also a contributing factor.  
+- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.  
 
 ## Best practices for managing dynamic membership groups in your tenant
 
@@ -58,7 +58,7 @@ Don't unpause the groups immediately. We recommend waiting a minimum of 24 hours
 
 - Use fewer `-or` operators. Instead, use the `-in` operator to group rules into a single criterion. Grouping rules makes them easier to evaluate.  
 
-- Avoid the use of the [`memberOf`](groups-dynamic-rule-member-of.md) operator if possible. It's currently in preview, and it comes with bugs and limitations. It can also introduce more complexity, particularly if a tenant has a large number of groups or frequent updates. The recommendation is to delete existing `MemberOf` groups in your tenant.
+- Avoid the use of the [`memberOf`](groups-dynamic-rule-member-of.md) operator if possible. It's currently in preview, and it comes with bugs and limitations. It can also introduce more complexity, particularly if a tenant has a large number of groups or frequent updates. The recommendation is to delete existing `memberOf` groups in your tenant.
 
 For more help with optimizing dynamic group processing, review [Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-rule-more-efficient.md).
 
