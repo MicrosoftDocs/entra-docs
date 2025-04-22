@@ -21,15 +21,18 @@ Microsoft Entra Connect provides 2 options for certificate management:
 2. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc) 
 
 ## Managed by Microsoft Entra Connect (Recommended) 
-Microsoft Entra Connect manages the application and certificate including creation, rotation and deletion of the certificate. The certificate is stored in the Local Machine store. For optimal protection of the certificate’s private key, it is recommended that the machine employs a Trusted Platform Module (TPM) solution to establish a hardware-based security boundary. When a TPM is available, key service operations are performed within a dedicated hardware environment. In contrast, if a TPM cannot be used, Entra Connect defaults to storing the certificate in the Local Machine store and marks the private key as non-exportable for additional protection. However, without the hardware isolation provided by a TPM, the private key is secured solely by software safeguards and does not achieve the same level of protection. For more information on TPM, see [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview). 
+Microsoft Entra Connect manages the application and certificate including creation, rotation and deletion of the certificate. The certificate is stored in the Current User store. For optimal protection of the certificate’s private key, it is recommended that the machine employs a Trusted Platform Module (TPM) solution to establish a hardware-based security boundary. When a TPM is available, key service operations are performed within a dedicated hardware environment. In contrast, if a TPM cannot be used, Entra Connect defaults to storing the certificate in the Current User store and marks the private key as non-exportable for additional protection. However, without the hardware isolation provided by a TPM, the private key is secured solely by software safeguards and does not achieve the same level of protection. For more information on TPM, see [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview). 
 
  :::image type="content" source="media/authenticate-application-id/auth-1.png" alt-text="Diagram of authentication with application id." lightbox="media/authenticate-application-id/auth-1.png":::
 
-Microsoft recommendeds the Microsoft Entra Connect certificate management option as we manage the keys and automatically roll-over the certificate on expiry.
+Microsoft recommendeds the Microsoft Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry.
 
 ## Bring Your Own Certificate (BYOC) 
 
-Microsoft Entra Connect Sync manages the application identity that will be used by Entra Connect Sync to authenticate to Microsoft Entra ID, and you manage the certificate credential used by the application. Your administrator is responsible for creating the certificate, rotation and deletion of unused/expired certificates. The certificate should be stored in the Local Machine store. You are responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing. 
+Microsoft Entra Connect Sync manages the application identity that will be used by Entra Connect Sync to authenticate to Microsoft Entra ID, and you manage the certificate credential used by the application. Your administrator is responsible for creating the certificate, rotation and deletion of unused/expired certificates. The certificate should be stored in the Current User store. You are responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing. 
+> [!NOTE]
+> - It is recommended to use the TPM to provide a hardware-based security boundary, as opposed to the Current User store. To check the status of your TPM use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm?view=windowsserver2025-ps) PowerShell cmdlet. If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Generation 2 virtual machine security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable Trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm)
+
 
 ## Prerequisites
 The following prerequisites are required to implement authentication using application identity.
@@ -38,20 +41,13 @@ The following prerequisites are required to implement authentication using appli
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
 - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
 
-The following are additional requirements depending on which certificate management option you select.
-
-### Managed by Entra Connect Sync Prerequisites 
-- Maintenance is enabled and the scheduler isn't suspended.
-
-> [!NOTE]
-> - It is recommended to use the TPM to provide a hardware-based security boundary, as opposed to the Local Machine store. To check the status of your TPM use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm?view=windowsserver2025-ps) PowerShell cmdlet. If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Generation 2 virtual machine security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable Trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm)
-
-### BYOC Prerequisites
+The following are additional requirements for the BYOC certificate management option
 - A certificate is created in an HSM or TPM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
   - KeyLength: 2048
   - KeyAlgorithm: RSA
   - KeyHashAlgorithm: SHA256
-- A certificate can also be created in the local machine (not recommended). See [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate)
+- Grant the ADSync service account permission to perform signing using the private key
+- A certificate can also be created in the Current User (not recommended). See [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate). A warning event 1014 will be emitted if TPM is not used.
 
 ## Onboarding to Application Based Authentication using PowerShell
 Microsoft Entra Connect uses username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps.
@@ -114,10 +110,10 @@ Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;C
  Set-ADSyncScheduler -SyncCycleEnabled $true
  ```
 
- ## Certificate Rollover using PowerShell
-Microsoft Entra Connect will warn if the certificate roll over is due. That is, expiring in less than or equal to 150 days. It will emit an error if certificate is already expired. These warnings (Event Id 1011) and errors (Event Id 1012) can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
+ ## Certificate Rotation using PowerShell
+Microsoft Entra Connect will warn if the certificate rotation is due. That is, expiring in less than or equal to 150 days. It will emit an error if certificate is already expired. These warnings (Event Id 1011) and errors (Event Id 1012) can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
 
-When you get a warning from Microsoft Entra Connect Sync when using the BYOC option, it's **highly recommended you generate a new key and certificate and roll over the certificate** used by Connect Sync using PowerShell.
+When you get a warning from Microsoft Entra Connect Sync when using the BYOC option, it's **highly recommended you generate a new key and certificate and rotate the certificate** used by Connect Sync using PowerShell.
 
 If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance disabled. If this is the case, you'll have to manually manage certificate rotation by going through the steps below.
 
@@ -148,9 +144,9 @@ The new certificate SHA256Hash is optional if you have used the default mode but
  Set-ADSyncScheduler -SyncCycleEnabled $true
  ```
 5. Verify synchronization cycle is successful.
-6. Remove the old certificate from Local Machine store
+6. Remove the old certificate from Current User store
 
-You may roll over the certificate at any point in time as deemed necessary, even if the current certificate is still not due for rotation or the current certificate has already expired.
+You may rotate the certificate at any point in time as deemed necessary, even if the current certificate is still not due for rotation or the current certificate has already expired.
 
 ## Certificate revocation process
 The certificate revocation process allows Authentication Policy Administrators to revoke a previously issued certificate from being used for future authentication. The certificate revocation won't revoke already issued tokens of the user. For more information on this process see [Understanding the certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
