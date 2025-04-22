@@ -34,16 +34,13 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 
 * SolarWinds Orion supports **SP and IDP** initiated SSO.
 
-## Add SolarWinds Orion from the gallery
+## Add SolarWinds Orion application
 
-To configure the integration of SolarWinds Orion into Microsoft Entra ID, you need to add SolarWinds Orion from the gallery to your list of managed SaaS apps.
+To configure the integration of SolarWinds Orion into Microsoft Entra ID, you need to add SolarWinds Orion to your list of managed SaaS apps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **SolarWinds Orion** in the search box.
-1. Select **SolarWinds Orion** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+1. Browse to **Identity** > **Applications** > **Enterprise applications** .
+1. Click **New application** option, click **Create your own application** and use **Integrate any other application you don't find in the gallery (Non-gallery)**.
+1. Name your application **SolarWinds Orion**.
 
 
 <a name='configure-and-test-azure-ad-sso-for-solarwinds-orion'></a>
@@ -68,8 +65,8 @@ To configure and test Microsoft Entra SSO with SolarWinds Orion, perform the fol
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SolarWinds Orion**
-application integration page, find the **Manage** section and select **single sign-on**.
+
+1. Browse to **Identity** > **Applications** > **Enterprise applications**  > **SolarWinds Orion** application integration page, find the Manage section and select single sign-on.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
