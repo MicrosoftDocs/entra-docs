@@ -13,6 +13,7 @@ ms.author: billmath
 ---
 
 # Authenticate to Microsoft Entra ID using Application Identity 
+Entra Connect uses the [Microsoft Entra Connector account](entra/identity/hybrid/connect/reference-connect-accounts-permissions#accounts-used-for-microsoft-entra-connect.md) to authenticate and sync identities from Active Directorty to Entra ID. This account uses username and password to authenticate requests. To enhance the security of the service, we are rolling out an application identity that uses Oauth 2.0 client credential flow with certificate credentials. In this new method, Entra will create a single tenant 3rd party application in Entra ID and use one of the two certificate management options below for the credentials.
 
 Microsoft Entra Connect provides 2 options for certificate management: 
 
@@ -82,12 +83,12 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
  - Use BYOC:
  
  > [!NOTE] 
- > The certificate thumbprint needs to be provided when registering the application. 
+ > The certificate SHA256Hash needs to be provided when registering the application. 
 
  ``` powershell
-  Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint>
+  Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash <CertificateSHA256Hash>
  ```
-Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
+Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
@@ -98,9 +99,9 @@ Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;c
  - Use BYOC:
  
 ``` powershell
-   Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint <certificateThumbprint> ```
+   Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash <CertificateSHA256Hash> ```
 
-Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;certificateThumbprint&gt; with the CertificateThumbPrint
+Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash
 
 5. Run a verification to confirm that you're now using application identity. Run the cmdlet below to get the current authentication and ensure it has the Connector Identity Type as **Application**. 
 
@@ -126,15 +127,15 @@ If the certificate is managed by Microsoft Entra Connect, **no action** is requi
  ``` powershell
  Set-ADSyncScheduler -SyncCycleEnabled $false
  ```
-2. Invoke certificate credential rotation. When the customer is in BYOC mode, the new certificate thumbprint must be provided.
+2. Invoke certificate credential rotation. When the customer is in BYOC mode, the new certificate SHA256Hash must be provided.
 
  ``` powershell
- Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName> -CertificateThumbprint &lt;certificateThumbprint>
+ Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash &lt;CertificateSHA256Hash>
  ```
 
-Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Microsoft Entra ID hybrid administrator, &lt;certificateThumbprint&gt; with the CertificateThumbPrint 
+Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Microsoft Entra ID hybrid administrator, &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
 
-The new certificate thumbprint is optional if you have used the default mode but have maintenance disabled.
+The new certificate SHA256Hash is optional if you have used the default mode but have maintenance disabled.
 
 3. Get the current authentication and confirm it has the Connector Identity Type as **Application**. Use the following PowerShell cmdlet to verify the current authentication.
  
@@ -187,7 +188,7 @@ Get-ADSyncEntraConnectorCredential
  ```
 
 ## Remove legacy service account using PowerShell
-Once you have transitioned to Certificate Based Authentication and Sync is working as expected, you may remove the old username and password service account using PowerShell.
+Once you have transitioned to Application Based Authentication and Sync is working as expected, you may remove the old username and password service account using PowerShell.
 Use the steps below to remove the legacy service account.
 
 1. Add the service account username and password by entering below commands
