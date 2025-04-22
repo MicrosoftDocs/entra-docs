@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/15/2025
+ms.date: 04/18/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -17,6 +17,9 @@ ms.reviewer: nashahid, gkinasewitz
 At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://www.microsoft.com/security/blog/2019/08/20/one-simple-action-you-can-take-to-prevent-99-9-percent-of-account-attacks) shows that MFA can block more than 99.2% of account compromise attacks. 
 
 That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
+
+> [!Important]
+> If a user can't sign in to Azure and other admin portals after rollout of mandatory MFA, a Global Administrator can run a script to postpone the MFA requirement and allow users to sign in. For more information, see [How to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory multifactor authentication (MFA) requirement for the the Azure portal, Microsoft Entra admin center, or Microsoft Intune admin center](how-to-unlock-users-for-mandatory-multifactor-authentication.md).
 
 There's no change for users if your organization already enforces MFA for them, or if they sign in with stronger methods like passwordless or passkey (FIDO2). To verify that MFA is enabled, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md). 
 
@@ -59,7 +62,7 @@ Workload identities, such as managed identities and service principals, aren't i
 
 ### Client libraries
 
-The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. After MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications throw exceptions. For more information abot how to migrate from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/), see [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
+The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. After MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications throw exceptions. For more information about how to migrate from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/), see [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
 
 ### [.NET](#tab/dotnet)
 
@@ -273,6 +276,7 @@ An option to postpone the enforcement start date is available for customers. Glo
 
 Review the following topics to learn more about how to configure and deploy MFA:
 
+- [How to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory multifactor authentication (MFA) requirement for the the Azure portal, Microsoft Entra admin center, or Microsoft Intune admin center](how-to-unlock-users-for-mandatory-multifactor-authentication.md)
 - [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md)
 - [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Secure sign-in events with Microsoft Entra multifactor](~/identity/authentication/tutorial-enable-azure-mfa.md)
