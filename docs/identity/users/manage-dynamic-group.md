@@ -52,13 +52,13 @@ Don't unpause the groups immediately. We recommend waiting a minimum of 24 hours
 
 ### Optimize rule efficiency
 
-- **Avoid Match**: Avoid the use of the `Match` operator in rules as much as possible. Instead, use the `StartsWith`, `Equals`, or `EndsWith` operator.  
+- Avoid the use of the `Match` operator in rules as much as possible. Instead, use the `StartsWith`, `Equals`, or `EndsWith` operator.  
 
-- **Avoid Contains**: Similar to the use of `Match`, avoid the use of the `Contains` operator in rules as much as possible. It can lead to increased processing time.  
+- Avoid the use of the `Contains` operator in rules as much as possible. It can lead to increased processing time.  
 
-- **Use fewer OR operators**: Instead, use the `-in` operator to group rules into a single criterion. Grouping rules makes them easier to evaluate.  
+- Use fewer `-or` operators. Instead, use the `-in` operator to group rules into a single criterion. Grouping rules makes them easier to evaluate.  
 
-- **Minimize the use of MemberOf (at this time)**: [`memberOf`](groups-dynamic-rule-member-of.md) is currently in preview. It can introduce more complexity, particularly if a tenant has a large number of groups or frequent updates. Avoid using this operator if possible, because it comes with bugs and limitations. The recommendation is to delete existing `MemberOf` groups in your tenant.
+- Avoid the use of the [`memberOf`](groups-dynamic-rule-member-of.md) operator if possible. It's currently in preview, and it comes with bugs and limitations. It can also introduce more complexity, particularly if a tenant has a large number of groups or frequent updates. The recommendation is to delete existing `MemberOf` groups in your tenant.
 
 For more help with optimizing dynamic group processing, review [Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-rule-more-efficient.md).
 

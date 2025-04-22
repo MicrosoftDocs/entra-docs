@@ -126,7 +126,7 @@ You can use the following user properties to create a single expression.
 | `mobile` |Any string value or `null` | ```user.mobile -eq "value"```|
 | `objectId` |GUID of the user object | ```user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"```|
 | `onPremisesDistinguishedName` | Any string value or `null` | ```user.onPremisesDistinguishedName -eq "value"```|
-| `onPremisesSecurityIdentifier` | On-premises security identifier (SID) for users who were synchronized from on-premises to the cloud. | ```user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111"``` |
+| `onPremisesSecurityIdentifier` | On-premises security identifier (SID) for users who were synchronized from on-premises to the cloud | ```user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111"``` |
 | `passwordPolicies` |`None`, `DisableStrongPassword`, `DisablePasswordExpiration`, `DisablePasswordExpiration`, `DisableStrongPassword` | ```user.passwordPolicies -eq "DisableStrongPassword"``` |
 | `physicalDeliveryOfficeName` |Any string value or `null` | ```user.physicalDeliveryOfficeName -eq "value"``` |
 | `postalCode` |Any string value or `null` | ```user.postalCode -eq "value"``` |
@@ -154,7 +154,7 @@ For the properties used for device rules, see [Rules for devices](#rules-for-dev
 The following table lists all the supported operators and their syntax for a single expression. You can use operators with or without the hyphen (`-`) prefix. The `Contains` operator does partial string matches but not matches for items in a collection.
 
 > [!CAUTION]
-> For best results, minimize the use of `Match` or `Contains` as much as possible. The article [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that result in better dynamic group processing times. The [`memberOf`](groups-dynamic-rule-member-of.md) operator is in preview and should be used with caution, because it has some limitations.
+> For best results, minimize the use of `Match` or `Contains` as much as possible. The article [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that result in better dynamic group processing times. The [`memberOf`](groups-dynamic-rule-member-of.md) operator is in preview and has some limitations, so use it with caution.
 
 | Operator | Syntax |
 | --- | --- |
@@ -175,7 +175,7 @@ The following table lists all the supported operators and their syntax for a sin
 
 If you want to compare the value of a user attribute against multiple values, you can use the `-in` or `-notIn` operator. Use the bracket symbols (`[` and `]`) to begin and end the list of values.
 
- In the following example, the expression evaluates to `true` if the value of `user.department` equals any of the values in the list:
+In the following example, the expression evaluates to `true` if the value of `user.department` equals any of the values in the list:
 
 ```
    user.department -in ["50001","50002","50003","50005","50006","50007","50008","50016","50020","50024","50038","50039","51100"]
@@ -185,13 +185,11 @@ If you want to compare the value of a user attribute against multiple values, yo
 
 You can use the less than (`-le`) or greater than (`-ge`) operator when you're using the `employeeHireDate` attribute in rules for dynamic membership groups.
 
-Examples:
+Here are examples:
 
 ```
-user.employeehiredate -ge system.now -plus p1d
-```
+user.employeehiredate -ge system.now -plus p1d 
 
-```
 user.employeehiredate -le 2020-06-10T18:13:20Z 
 
 ```
@@ -200,30 +198,28 @@ user.employeehiredate -le 2020-06-10T18:13:20Z
 
 You can use the `-match` operator for matching any regular expression.
 
-Examples:
+For the following example, `Da`, `Dav`, and `David` evaluate to `true`. `aDa` evaluates to `false`.
 
 ```
 user.displayName -match "^Da.*"   
 ```
 
-`Da`, `Dav`, and `David` evaluate to `true`. `aDa` evaluates to `false`.
+For the following example, `David` evaluates to `true`. `Da` evaluates to `false`.
 
 ```
 user.displayName -match ".*vid"
 ```
 
-`David` evaluates to `true`. `Da` evaluates to `false`.
-
 ### Supported values
 
-The values that you use in an expression can consist of several types, including:
+The values that you use in an expression can consist of several types:
 
 - Strings
 - Boolean (`true`, `false`)
 - Numbers
 - Arrays (number array, string array)
 
-When you specify a value within an expression, it's important to use the correct syntax to avoid errors. Some syntax tips are:
+When you specify a value within an expression, it's important to use the correct syntax to avoid errors. Here are some syntax tips:
 
 - Double quotation marks are optional unless the value is a string.
 - Regex and string operations aren't case sensitive.
@@ -233,13 +229,13 @@ When you specify a value within an expression, it's important to use the correct
 
 #### Use of null values
 
-To specify a null value in a rule, you can use the `null` value:
+To specify a `null` value in a rule:
 
 - Use `-eq` or `-ne` when you're comparing the `null` value in an expression.
 - Use quotation marks around the word `null` only if you want it to be interpreted as a literal string value.
-- You can't use the `-not` operator as a comparative operator for the null value. If you use it, you get an error whether you use `null` or `$null`.
+- Don't use the `-not` operator as a comparative operator for the null value. If you use it, you get an error whether you use `null` or `$null`.
 
-The correct way to reference the null value is as follows:
+The correct way to reference the `null` value is as follows:
 
 ```
    user.mail –ne null
@@ -299,7 +295,7 @@ Multi-value properties are collections of objects of the same type. You can use 
 
 #### Using the -any and -all operators
 
-You can use these operators to apply a condition to one or all of the items in the collection:
+You can use the following operators to apply a condition to one or all of the items in the collection:
 
 - `-any`: Satisfied when at least one item in the collection matches the condition.
 - `-all`: Satisfied when all items in the collection match the condition.
@@ -316,7 +312,7 @@ You can use a rule like this one to group all users for whom a Microsoft 365 or 
 
 ##### Example 2
 
-The following expression selects all users who have any service plan that's associated with the Intune service (identified by service name `SCO`):
+The following expression selects all users who have any service plan that's associated with the Intune service (identified by the service name `SCO`):
 
 ```
 user.assignedPlans -any (assignedPlan.service -eq "SCO" -and assignedPlan.capabilityStatus -eq "Enabled")
@@ -362,7 +358,7 @@ The following tips can help you use the rule properly:
 
 - The *manager ID* is the object ID of the manager. You can find it in the manager's profile.
 - For the rule to work, make sure that the `Manager` property is set correctly for users in your organization. You can check the current value in the user's profile.
-- This rule supports only the manager's direct reports. In other words, you can't create a group that has the manager's direct reports *and* their reports.
+- This rule supports only the manager's direct reports. You can't create a group that has the manager's direct reports *and* their reports.
 - You can't combine this rule with any other membership rules.
 
 #### Create a rule for all users
@@ -393,7 +389,9 @@ device.objectId -ne null
 
 ### Extension attributes and custom extension properties
 
-Extension attributes and custom extension properties are supported as string properties in rules for dynamic membership groups. You can sync [extension attributes](/graph/api/resources/onpremisesextensionattributes) from on-premises Windows Server Active Directory. Or you can update extension attributes by using Microsoft Graph.
+Extension attributes and custom extension properties are supported as string properties in rules for dynamic membership groups.
+
+You can [sync extension attributes](/graph/api/resources/onpremisesextensionattributes) from on-premises Windows Server Active Directory. Or you can update extension attributes by using Microsoft Graph.
 
 Extension attributes take the format of `ExtensionAttribute<X>`, where `<X>` equals `1`-`15`. Multi-value extension properties aren't supported in rules for dynamic membership groups.
 
@@ -403,7 +401,7 @@ Here's an example of a rule that uses an extension attribute as a property:
 (user.extensionAttribute15 -eq "Marketing")
 ```
 
-You can sync [custom extension properties](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md) from on-premises Windows Server Active Directory or from a connected software as a service (SaaS) application. You can create custom extension properties by using Microsoft Graph.
+You can [sync custom extension properties](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md) from on-premises Windows Server Active Directory or from a connected software as a service (SaaS) application. You can create custom extension properties by using Microsoft Graph.
 
 Custom extension properties take the format of `user.extension_[GUID]_[Attribute]`, where:
 
@@ -446,7 +444,7 @@ You can use the following device attributes.
  | `accountEnabled` | `true`, `false` | `device.accountEnabled -eq true` |
  | `deviceCategory` | A valid device category name | `device.deviceCategory -eq "BYOD"` |
  | `deviceId` | A valid Microsoft Entra device ID | `device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d"` |
- | `deviceManagementAppId` | A valid mobile device management (MDM) application ID in Microsoft Entra ID | `device.deviceManagementAppId -eq "0000000a-0000-0000-c000-000000000000"` for Microsoft Intune managed devices<br><br>`"54b943f8-d761-4f8d-951e-9cea1846db5a"` for System Center Configuration Manager co-managed devices |
+ | `deviceManagementAppId` | A valid application ID for mobile device management in Microsoft Entra ID | `device.deviceManagementAppId -eq "0000000a-0000-0000-c000-000000000000"` for Microsoft Intune managed devices<br><br>`"54b943f8-d761-4f8d-951e-9cea1846db5a"` for System Center Configuration Manager co-managed devices |
  | `deviceManufacturer` | Any string value | `device.deviceManufacturer -eq "Samsung"` |
  | `deviceModel` | Any string value | `device.deviceModel -eq "iPad Air"` |
  | `displayName` | Any string value | `device.displayName -eq "Rob iPhone"` |
@@ -472,7 +470,7 @@ You can use the following device attributes.
  | `extensionAttribute14` | Any string value | `device.extensionAttribute14 -eq "some string value"` |
  | `extensionAttribute15` | Any string value | `device.extensionAttribute15 -eq "some string value"` |
  | `isRooted` | `true`, `false` | `device.isRooted -eq true` |
- | `managementType` | MDM (for mobile devices) | `device.managementType -eq "MDM"` |
+ | `managementType` | Mobile device management (for mobile devices) | `device.managementType -eq "MDM"` |
  | `memberOf` | Any string value (valid group object ID) | `device.memberOf -any (group.objectId -in ['value'])` |
  | `objectId` | A valid Microsoft Entra object ID | `device.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"` |
  | `profileType` | A valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | `device.profileType -eq "RegisteredDevice"` |

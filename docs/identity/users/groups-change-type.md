@@ -44,9 +44,9 @@ Creating dynamic membership groups eliminates the management overhead of adding 
 
 1. On the **Properties** page for the group, select a **Membership type** value of **Assigned (static)**, **Dynamic User**, or **Dynamic Device**, depending on your desired membership type. For dynamic membership groups, you can use the rule builder to select options for a simple rule or write a membership rule yourself.
 
-   The following steps are an example of changing a group from static to dynamic membership groups for a group of users:
+   The following steps are an example of changing a group of users from static to dynamic membership groups:
 
-   1. Select a **Membership type** of **Dynamic User**. In the dialog that explains the changes to the dynamic membership groups, select **Yes** to continue.
+   1. For **Membership type**, select **Dynamic User**. In the dialog that explains the changes to the dynamic membership groups, select **Yes** to continue.
 
       :::image type="content" source="./media/groups-change-type/select-group-to-convert.png" alt-text="Screenshot of selecting a membership type of dynamic user.":::
   

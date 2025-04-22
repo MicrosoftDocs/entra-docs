@@ -48,7 +48,7 @@ To evaluate the rule for dynamic membership groups, the administrator must be at
 
    :::image type="content" source="./media/groups-dynamic-rule-validation/validate-tab-view-details.png" alt-text="Screenshot that shows detailed results of rule validation.":::
 
-7. You can modify the rule to trigger a new validation of memberships. To see why user isn't a member of the group, select **View details**. Verification details show the result of each expression that composes the rule. Select **OK** to close the details.
+7. You can modify the rule to trigger a new validation of memberships. To see why a user isn't a member of the group, select **View details**. Verification details show the result of each expression that composes the rule. Select **OK** to close the details.
 
 ## Related content
 
