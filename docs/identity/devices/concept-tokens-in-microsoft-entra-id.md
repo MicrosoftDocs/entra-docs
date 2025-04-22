@@ -1,10 +1,10 @@
 ---
 title: Understanding Tokens and How to Protect them in Microsoft Entra
-description: to protect against token theft and replay attacks, explore the types of tokens used in Microsoft Entra, their role in authentication, and strategies.
+description: To protect against token theft and replay attacks, explore the types of tokens used in Microsoft Entra, their role in authentication, and strategies.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 04/21/2025
+ms.date: 04/22/2025
 
 ms.author: jfields
 author: jenniferf-skc
