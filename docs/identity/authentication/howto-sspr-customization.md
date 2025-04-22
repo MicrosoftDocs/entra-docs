@@ -14,7 +14,7 @@ ms.reviewer: tilarso
 ---
 # Customize the user experience for Microsoft Entra self-service password reset
 
-Self-service password reset (SSPR) gives users in Microsoft Entra ID the ability to change or reset their password, with no administrator or help desk involvement. If a user's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work. This ability reduces help-desk calls and loss of productivity when a user can't sign in to their device or an application.
+Self-service password reset (SSPR) gives users in Microsoft Entra ID the ability to change or reset their password, with no administrator or helpdesk involvement. If a user's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work. This ability reduces helpdesk calls and loss of productivity when a user can't sign in to their device or an application.
 
 To improve the SSPR experience for users, you can customize the look and feel of the password reset page, email notifications, or sign-in pages. Customization options help to make it clear to users that they're in the right place and give them confidence that they're accessing company resources.
 
@@ -50,7 +50,7 @@ To find out more about the different administrator roles and how to assign them,
 
 If your organization doesn't want to notify administrators about password reset requests, you can use the following configuration options:
 
-* Customize the help-desk link to provide a web URL address that users can use to get assistance. This option is under **Password Reset** > **Customization** > **Custom helpdesk email or URL**.
+* Customize the helpdesk link to provide a web URL address that users can use to get assistance. This option is under **Password Reset** > **Customization** > **Custom helpdesk email or URL**.
 * Enable self-service password reset for all users. This option is under **Password Reset** > **Properties**. If you don't want users to reset their own passwords, you can scope access to an empty group. *We don't recommend this option.*
 
 ## Customize the sign-in page and access panel

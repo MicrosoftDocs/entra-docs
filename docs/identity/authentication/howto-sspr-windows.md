@@ -14,13 +14,13 @@ ms.reviewer: tilarso
 ---
 # Enable Microsoft Entra self-service password reset on the Windows sign-in screen
 
-By using self-service password reset (SSPR) in Microsoft Entra ID, users can change or reset their password with no administrator or help desk involvement. Typically, users open a web browser on another device to access the [SSPR portal](https://aka.ms/sspr). To improve the experience on computers that run Windows 7, 8, 8.1, 10, and 11, you can enable users to reset their password on the Windows sign-in screen.
+By using self-service password reset (SSPR) in Microsoft Entra ID, users can change or reset their password with no administrator or helpdesk involvement. Typically, users open a web browser on another device to access the [SSPR portal](https://aka.ms/sspr). To improve the experience on computers that run Windows 7, 8, 8.1, 10, and 11, you can enable users to reset their password on the Windows sign-in screen.
 
 ![Screenshot that shows examples of Windows sign-in screens with the SSPR link.](./media/howto-sspr-windows/windows-reset-password.png)
 
 This article shows administrators how to enable SSPR for Windows devices in an enterprise.
 
-If your IT team hasn't enabled the ability to use SSPR from your Windows device or you have problems during sign-in, reach out to your help desk for more assistance.
+If your IT team hasn't enabled the ability to use SSPR from your Windows device or you have problems during sign-in, reach out to your helpdesk for more assistance.
 
 ## General limitations
 
