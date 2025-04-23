@@ -263,7 +263,7 @@ If it's the first time, you're applying an application management policy the `id
 
 You can also confirm that the policy is applied by creating a new application and checking if the restrictions are enforced. For example, if you try to create a new application with a client secret or symmetric key, you should receive an error indicating that the operation is not allowed as shown in the below screenshot.
 
-:::image type="content" source="/media/tutorial-enforce-secret-standards/client-secrets-blocked.png" alt-text="Screenshot of the Entra admin center showing a warning that client secrets are blocked by tenant wide policy.":::
+:::image type="content" source="media/tutorial-enforce-secret-standards/client-secrets-blocked.png" alt-text="Screenshot of the Entra admin center showing a warning that client secrets are blocked by tenant wide policy.":::
 
 ## Related content
 
