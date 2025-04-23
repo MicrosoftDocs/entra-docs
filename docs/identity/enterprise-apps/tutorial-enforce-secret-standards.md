@@ -67,7 +67,7 @@ Connect-MgGraph -Scopes 'Policy.Read.All'
 # Get the default application management policy
 Get-MgPolicyDefaultAppManagementPolicy | format-list
 ```
-For more info on this cmdlet, see [Get-MgPolicyDefaultAppManagementPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicydefaultappmanagementpolicy?view=graph-powershell-1.0).
+For more info on this cmdlet, see [Get-MgPolicyDefaultAppManagementPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicydefaultappmanagementpolicy?view=graph-powershell-1.0&preserve-view=true).
 
 ### Output
 
@@ -94,7 +94,7 @@ Sign into Microsoft Graph explorer with at least a [Cloud Application Administra
 ```http
 GET https://graph.microsoft.com/v1.0/policies/defaultAppManagementPolicy
 ```
-For more info on this request, see [Get tenantAppManagementPolicy](/graph/api/tenantappmanagementpolicy-get?view=graph-rest-1.0&tabs=http).
+For more info on this request, see [Get tenantAppManagementPolicy](/graph/api/tenantappmanagementpolicy-get?view=graph-rest-1.0&tabs=http&preserve-view=true).
 
 ### Response
 
@@ -196,7 +196,7 @@ applicationRestrictions = @{
 # Update the default application management policy
 Update-MgPolicyDefaultAppManagementPolicy -BodyParameter $params
 ```
-For more info on this cmdlet, see [Update-MgPolicyDefaultAppManagementPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicydefaultappmanagementpolicy?view=graph-powershell-1.0).
+For more info on this cmdlet, see [Update-MgPolicyDefaultAppManagementPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicydefaultappmanagementpolicy?view=graph-powershell-1.0&preserve-view=true).
 
 :::zone-end
 
@@ -243,7 +243,7 @@ Content-Type: application/json
 }
 ```
 
-For more info on this request, see [Update tenantAppManagementPolicy](/graph/api/tenantappmanagementpolicy-update?view=graph-rest-1.0&tabs=http).
+For more info on this request, see [Update tenantAppManagementPolicy](/graph/api/tenantappmanagementpolicy-update?view=graph-rest-1.0&tabs=http&preserve-view=true).
 
 ### Response
 
