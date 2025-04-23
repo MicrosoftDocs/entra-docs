@@ -24,7 +24,6 @@ sections:
           Authenticator passkeys are backed by hardware. 
 
           On iOS, Authenticator stores the private key in the [Secure Enclave](https://support.apple.com/guide/security/secure-enclave-sec59b0b31ff/web).
-          For more information about the APIs that Authenticator relies upon, see the [Apple developer documentation](https://developer.apple.com/documentation/security/ksecattrtokenidsecureenclave) and [Protecting keys with the Secure Enclave](https://developer.apple.com/documentation/security/protecting-keys-with-the-secure-enclave).
  
           On Android, Authenticator uses the [Android Keystore system API](https://developer.android.com/privacy-and-security/keystore) to securely store device-bound passkeys. 
           The Android Keystore system supports binding key material to the secure hardware of an Android device, in this order of preference:
