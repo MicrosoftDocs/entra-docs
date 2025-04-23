@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 02/04/2025
+ms.date: 04/01/2025
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: whats-new
@@ -15,6 +15,36 @@ manager: CelesteDG
 # What's new in docs: External ID in external tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
+
+## March 2025
+
+### New articles
+
+- [Migrating users to Microsoft Entra External ID](how-to-migrate-users.md)
+
+### Updated articles
+
+- [Customize the language of the authentication experience](how-to-customize-languages-customers.md) - Editorial updates
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md) - OpenID Connect federation is generally available
+- [Add Facebook as an identity provider](how-to-facebook-federation-customers.md) - Facebook federation is generally available
+- [Add Google as an identity provider](how-to-google-federation-customers.md) - Google federation is generally available
+- [Create a sign-up and sign-in user flow for an external tenant app](how-to-user-flow-sign-up-sign-in-customers.md) - Removed disable sign-up in a sign-up and sign-in user flow
+- [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Added clarification
+- [Manage user accounts for consumers and business customers](how-to-manage-customer-accounts.md) - Added clarification
+- [Default user permissions in external tenants](reference-user-permissions.md) - Updated default permissions
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added default permissions
+
+## February 2025
+
+### New articles
+
+- [Add the SAML/WS-Fed identity provider to a user flow (preview)](how-to-saml-ws-federation-self-service-sign-up.md)
+
+### Updated articles
+
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md) - Email claim is now mandatory
+- [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Updated billing for phone charges
+- [Identity providers for external tenants](concept-authentication-methods-customers.md) - Included SAML/WS-Fed details
 
 ## January 2025
 
@@ -34,26 +64,4 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 
 ### Updated articles
 
-- [Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)](how-to-b2c-federation-customers.md) - Editorial updates
-
-## December 2024
-
-### Updated articles
-
-- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added pricing and ID Governance details
-
-## November 2024
-
-### New articles
-
-- [Add Apple as an identity provider (preview)](how-to-apple-federation-customers.md)
-- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md)
-- [Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)](how-to-b2c-federation-customers.md)
-- [OpenID Connect claims mapping (preview)](reference-oidc-claims-mapping-customers.md)
-- [Regions requiring opt-in for SMS verification (preview)](how-to-region-code-opt-in.md)
-
-### Updated articles
-
-- [Gain insights into your app users’ activity](how-to-user-insights.md) - Added MFA Usage dashboard details
-- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) - Opt-in telephony regions update
-- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Opt-in telephony regions update
+- [Add Azure AD B2C tenant as an OpenID Connect identity provider](how-to-b2c-federation-customers.md) - Editorial updates

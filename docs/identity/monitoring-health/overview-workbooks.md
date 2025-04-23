@@ -1,16 +1,16 @@
 ---
-
 title: What are Microsoft Entra workbooks?
 description: Learn how to create and work with Microsoft Entra workbooks, for identity monitoring, alerts, and data visualization.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: monitoring-health
-ms.date: 03/29/2024
+ms.date: 02/25/2025
 ms.author: sarahlipsey
 ms.reviewer: tspring
+
 # Customer intent: As a Microsoft Entra administrator, I want a visualization tool that I can customize for my tenant.
 ---
 
@@ -61,7 +61,7 @@ Public workbook templates are built, updated, and deprecated to reflect the need
 - [Sensitive Operations Report](workbook-sensitive-operations-report.md)
 - [Sign-ins using legacy authentication](workbook-legacy-authentication.md)
 
-## Next steps
+## Related content
 
 - Learn [how to use Azure Workbooks for Microsoft Entra ID](./howto-use-workbooks.md)
 - [Create your own workbook](/azure/azure-monitor/visualize/workbooks-create-workbook)

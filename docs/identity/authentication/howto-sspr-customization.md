@@ -5,11 +5,11 @@ description: Learn how to customize user display and experience options for Micr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/14/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
 ---
 # Customize the user experience for Microsoft Entra self-service password reset
@@ -63,6 +63,8 @@ The graphics you choose are shown in the following circumstances:
 * If the user accesses the customized URL:
    * By passing the `whr` parameter to the password reset page, like `https://login.microsoftonline.com/?whr=contoso.com`
    * By passing the `username` parameter to the password reset page, like `https://login.microsoftonline.com/?username=admin@contoso.com`
+
+SSPR will honor browser language settings. When there is a customization for browser language, the page will display in the browser language customization. Otherwise, it falls to the default locale customization.
 
 ### Directory name
 

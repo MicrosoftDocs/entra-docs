@@ -3,9 +3,9 @@ title: How to Create Remote Networks
 description: Learn how to create remote networks, for remote locations such as branch offices, for Global Secure Access.
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 12/23/2024
+ms.date: 02/25/2025
 ms.service: global-secure-access
 ms.reviewer: absinh
 

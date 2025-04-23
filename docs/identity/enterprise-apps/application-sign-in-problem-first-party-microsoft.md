@@ -311,7 +311,7 @@ To assign a license to a group, follow these steps:
 
 To check or validate a single Conditional Access policy:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 1. Select the **Conditional Access** navigation item.
@@ -348,7 +348,7 @@ To check or validate a single application’s currently configured Conditional A
 
 To check or validate a single Conditional Access policy:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select the **Conditional Access** navigation item.
 1. Select the policy you're interested in inspecting.

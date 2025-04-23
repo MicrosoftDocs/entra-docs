@@ -3,10 +3,10 @@ title: Scenario - Using directory extensions with group provisioning to Active D
 description: This topic describes how to extend the schema of a group with a new attribute. Then use the new attribute to filter groups for provisioning to Active Directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

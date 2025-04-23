@@ -2,12 +2,12 @@
 title: Scoped synchronization using PowerShell for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to use Microsoft Graph PowerShell to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell, azure-ad-ref-level-one-done

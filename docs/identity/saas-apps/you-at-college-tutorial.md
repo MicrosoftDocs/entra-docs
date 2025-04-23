@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with YOU at College
 description: Learn how to configure single sign-on between Microsoft Entra ID and YOU at College.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and YOU at College so that I can control who has access to YOU at College, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -81,7 +81,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://sso.youatcollege.com/idp-<domain>.php`
 
     > [!NOTE]
-    > This value is not real. Update this value with the actual Sign on URL. Contact [YOU at College Client support team](mailto:technology@gritdigitalhealth.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > This value isn't real. Update this value with the actual Sign on URL. Contact [YOU at College Client support team](mailto:technology@gritdigitalhealth.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -103,17 +103,17 @@ In this section, a user called B.Simon is created in YOU at College. YOU at Coll
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to YOU at College Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to YOU at College Sign-on URL where you can initiate the login flow. 
 
 * Go to YOU at College Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the YOU at College tile in the My Apps, this will redirect to YOU at College Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the YOU at College tile in the My Apps, this option redirects to YOU at College Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure YOU at College you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

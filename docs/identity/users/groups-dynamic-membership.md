@@ -3,7 +3,7 @@ title: Manage rules for dynamic membership groups in Microsoft Entra ID
 description: How to manage rules for dynamic membership groups to automatically populate group members and rule references.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
@@ -474,7 +474,7 @@ The following device attributes can be used.
 These articles provide additional information on groups in Microsoft Entra ID.
 
 - [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Create a new group and adding members](/entra/fundamentals/how-to-manage-groups)
+- [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups for users](groups-create-rule.md)

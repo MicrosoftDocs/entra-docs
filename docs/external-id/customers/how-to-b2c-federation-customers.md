@@ -6,16 +6,16 @@ author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 01/22/2025
+ms.date: 03/12/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn how to configure an Azure AD B2C tenant as an identity provider for my external tenant.
 ---
-# Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)
+# Add Azure AD B2C tenant as an OpenID Connect identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -84,7 +84,7 @@ To create an application:
 13. Record the secret's **Value**. You need this value when you configure the identity provider in the next section.
 
 
-## Configure your Azure AD B2C tenant as an identity provider.
+## Configure your Azure AD B2C tenant as an identity provider in your external tenant
 
 Construct your OpenID Connect `well-known` endpoint: replace `<your-B2C-tenant-name>` with the name of your Azure AD B2C tenant. 
 
@@ -107,7 +107,7 @@ OR
   - **Name**: name
   - **Given name**: given_name
   - **Family name**: family_name
-  - **Email**: email
+  - **Email** (required): email
 
 Create the identity provider and attach it to your user flow associated with your application for sign in and sign up.
 

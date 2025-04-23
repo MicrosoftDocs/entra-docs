@@ -3,12 +3,12 @@ title: 'Microsoft Entra Connect: Declarative Provisioning Expressions'
 description: Explains the declarative provisioning expressions.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: e3ea53c8-3801-4acf-a297-0fb9bb1bf11d
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/18/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

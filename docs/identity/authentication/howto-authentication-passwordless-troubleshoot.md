@@ -5,11 +5,11 @@ description: Learn about some known issues and ways to troubleshoot passwordless
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 01/08/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: aakapo
 ---
 # Troubleshooting for hybrid deployments of FIDO2 security keys in Microsoft Entra ID 

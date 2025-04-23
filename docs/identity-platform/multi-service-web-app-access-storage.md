@@ -25,7 +25,7 @@ You want to add access to the Azure data plane (Azure Storage, Azure SQL Databas
 
 A managed identity from Microsoft Entra ID allows App Service to access resources through role-based access control (RBAC), without requiring app credentials. After assigning a managed identity to your web app, Azure takes care of the creation and distribution of a certificate. People don't have to worry about managing secrets or app credentials.
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

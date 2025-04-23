@@ -2,12 +2,12 @@
 title: Join a Windows Server VM to a Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, learn how to join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 05/21/2024
+ms.date: 02/05/2025
 ms.author: justinha
 #Customer intent: As a server administrator, I want to learn how to join a Windows Server VM to a Microsoft Entra Domain Services managed domain to provide centralized identity and policy.
 ---
@@ -41,9 +41,9 @@ To complete this tutorial, you need the following resources:
 
 If you already have a VM that you want to domain-join, skip to the section to [join the VM to the managed domain](#join-the-vm-to-the-managed-domain).
 
-## Sign in to the Microsoft Entra admin center
+## Sign in to the Azure portal
 
-In this tutorial, you create a Windows Server VM to join to your managed domain using the Microsoft Entra admin center. To get started, first sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+In this tutorial, you create a Windows Server VM to join to your managed domain using the Azure portal. To get started, first sign in to the [Azure portal](https://portal.azure.com).
 
 ## Create a Windows Server virtual machine
 
@@ -51,7 +51,7 @@ To see how to join a computer to a managed domain, let's create a Windows Server
 
 If you already have a VM that you want to domain-join, skip to the section to [join the VM to the managed domain](#join-the-vm-to-the-managed-domain).
 
-1. From the Microsoft Entra admin center menu or from the **Home** page, select **Create a resource**.
+1. From the Azure portal menu or from the **Home** page, select **Create a resource**.
 
 1. Below **Virtual machine**, click **Create**.
 

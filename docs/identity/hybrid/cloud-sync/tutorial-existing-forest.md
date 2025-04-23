@@ -3,10 +3,10 @@ title: Tutorial - Integrate an existing forest and a new forest with a single Mi
 description: Learn how to add cloud sync to an existing hybrid identity environment.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect: Automatic upgrade'
 description: This topic describes the built-in automatic upgrade feature in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 6b395e8f-fa3c-4e55-be54-392dd303c472
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -58,6 +58,7 @@ Automatic upgrade will not be eligible to proceed if any of the following condit
 
 | Result Message | Description |
 | --- | --- |
+|UpgradeNotSupportedTLSVersionIncorrect|Your TLS version is lower than 1.2. Follow [our guide](reference-connect-tls-enforcement.md) to update your TLS.
 |UpgradeNotSupportedCustomizedSyncRules|There are custom synchronization rules configured in Microsoft Entra Connect. <br/>**Note:** After version 2.2.1.0, this condition no longer prevents auto upgrade.|
 |UpgradeNotSupportedInvalidPersistedState|The installation isn't an Express settings or a DirSync upgrade.|
 |UpgradeNotSupportedNonLocalDbInstall|You aren't using a SQL Server Express LocalDB database.|

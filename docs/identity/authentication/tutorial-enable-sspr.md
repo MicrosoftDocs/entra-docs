@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra self-serv
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/16/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
@@ -44,7 +44,7 @@ To finish this tutorial, you need the following resources and privileges:
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
     * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 * A group that the non-administrator user is a member of, likes *SSPR-Test-Group*. You'll enable SSPR for this group in this tutorial.
-    * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
+    * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
 ## Enable self-service password reset
 

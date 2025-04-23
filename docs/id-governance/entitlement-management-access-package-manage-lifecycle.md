@@ -2,7 +2,7 @@
 title: Convert guest user lifecycle in entitlement management - Microsoft Entra
 description: Learn how to convert guest user access package assignments for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
