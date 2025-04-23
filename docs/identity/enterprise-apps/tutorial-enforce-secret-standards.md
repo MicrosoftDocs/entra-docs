@@ -22,9 +22,9 @@ Ensuring that applications in your organization are using secure authentication 
 Policies can be applied to all applications in your organization or to specific applications. In this tutorial, you learn:
 
 > [!div class="checklist"]
-> * Learn about recommend restrictions for secrets and certificates.
+> * Learn about recommended restrictions for secrets and certificates.
 > * Read the current application management policy for your tenant. 
-> * Update that policy to enforce restrictions.
+> * Update the application policy to enforce restrictions.
 > * Confirm that the policy has been applied.
 
 > [!Important]
@@ -46,16 +46,13 @@ Attacks on applications often target secrets such as passwords, keys, and certif
 
 * **Disable symmetric key usage in applications**: Symmetric keys are similar to client secrets in that they're shared between the application and the resource it accesses. This means that if an attacker gains access to the symmetric key, they can impersonate the application and access the resource. Symmetric keys are also more difficult to manage than asymmetric keys, as they require both parties to share the same key.
 
-* **Limit asymmetric key (certificate) lifetime to 180 days**: Certificates provide a more secure way to authenticate applications than client secrets. However, they can still be compromised if not managed properly. By limiting the lifetime of certificates, you can reduce the risk of long-lived certificates being exploited by attackers. Certificates should be rotated regularly to ensure that they aren't compromised. The recommended maximum lifetime for certificates is 180 days. This means that you should rotate your certificates at least every 180 days. Setting a shorter lifetime for highly sensitive applications can further reduce the risk of compromise.
+* **Limit asymmetric key (certificate) lifetime to 180 days**: Certificates provide a more secure way to authenticate applications than client secrets. However, they can still be compromised if not managed properly. By limiting the lifetime of certificates, you can reduce the risk of long-lived certificates being exploited by attackers. Certificates should be rotated regularly to ensure that they aren't compromised. The recommended maximum lifetime for certificates is 180 days. This means that you should rotate your certificates at least every 180 days. Setting a shorter lifetime for highly sensitive applications can further reduce the risk of compromise. We also recommend you configure automatic rotation of certificates using Azure Key Vault. To learn more, see[Automate the rotation of a secret for resources that use one set of authentication credentials](/azure/key-vault/secrets/tutorial-rotation)
 
 To learn more about recommended security practices for Microsoft Entra tenants, see [Configure Microsoft Entra for increased security](https://aka.ms/EntraSecurityRecommendations).
 
 ## Read your tenant application management policy
 
 Before you create a new application management policy, you can read your existing policy to see if it meets your needs. The following example shows how to read the default application management policy for your tenant. You can also reuse this API request to confirm the policy has been applied later in this tutorial.
-
-> [!Important]
-> It's important at this stage to make a copy of the current policy settings before you update them. This will allow you to revert back to the original settings if needed. You can do this by exporting the current policy settings to a file or by taking a screenshot of the settings.
 
 ### Example
 
@@ -126,6 +123,9 @@ Content-type: application/json
 ```
 
 :::zone-end
+
+> [!Important]
+> Make a copy of the current policy settings before you update them. This will allow you to revert back to the original settings if needed. You can do this by copying the current policy settings to a file or by taking a screenshot of the settings. You will not be able to find the original settings after you update them if you have not saved them.
 
 ## Update the application management policy
 
@@ -263,6 +263,7 @@ If it's the first time, you're applying an application management policy you not
 
 ## Related content
 
+* To learn how to automate secret rotation, see [Automate the rotation of a secret for resources that use one set of authentication credentials](/azure/key-vault/secrets/tutorial-rotation).
 * To learn more about available restrictions and policy settings, see [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy)
 * To learn more about security best practices for your organization, see[Configure Microsoft Entra for increased security](https://aka.ms/EntraSecurityRecommendations).
 * To learn more about alternatives to authenticating with secrets, see [Migrate applications away from secret-based authentication](../enterprise-apps/migrate-applications-from-secrets.md)
