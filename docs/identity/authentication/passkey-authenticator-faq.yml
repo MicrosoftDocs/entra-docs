@@ -38,7 +38,7 @@ sections:
       - question: |
           Can I restore or sync Authenticator passkeys to a new device?
         answer: |
-          Authenticator passkeys are only device-bound and can't be synced. For more information, see [Device-bound passkeys in Microsoft Authenticator](/entra/identity/authenticator/passkeys#device-bound-passkey).
+          Authenticator passkeys are only device-bound and can't be synced. For more information, see [Device-bound passkeys in Microsoft Authenticator](/entra/identity/authentication/concept-authentication-authenticator-app#device-bound-passkey).
       - question: |
           Do I need to enable Bluetooth to perform cross-device authentication?
         answer: |
