@@ -33,9 +33,10 @@ sections:
           - [Trusted Execution Environment (TEE)](https://source.android.com/docs/security/features/trusty)
 
           On Android, Authenticator only stores a passkey (private key) if the Android device has one of these two secure hardware options. 
+          If neither hardware option exists, Authenticator passkey registration fails, even if attestation is disabled.
 
       - question: |
-          Can I save Authenticator passkeys anywhere else?
+          Can I restore or sync Authenticator passkeys to a new device?
         answer: |
           Authenticator passkeys are only device-bound and can't be synced. For more information, see [Device-bound passkeys in Microsoft Authenticator](/entra/identity/authenticator/passkeys#device-bound-passkey).
       - question: |
