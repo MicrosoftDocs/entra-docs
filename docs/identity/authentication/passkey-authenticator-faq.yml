@@ -22,6 +22,7 @@ sections:
           How does Microsoft Authenticator store passkeys on a device?
         answer: |
           Authenticator passkeys are backed by hardware. 
+
           On iOS, Authenticator stores the private key in the [Secure Enclave](https://support.apple.com/guide/security/secure-enclave-sec59b0b31ff/web).
           For more information about the APIs that Authenticator relies upon, see the [Apple developer documentation](https://developer.apple.com/documentation/security/ksecattrtokenidsecureenclave) and [Protecting keys with the Secure Enclave](https://developer.apple.com/documentation/security/protecting-keys-with-the-secure-enclave).
  
@@ -36,7 +37,7 @@ sections:
       - question: |
           Can I save Authenticator passkeys anywhere else?
         answer: |
-          Authenticator passkeys are only device-bound and can't be synced. 
+          Authenticator passkeys are only device-bound and can't be synced. For more information, see [Device-bound passkeys in Microsoft Authenticator](/entra/identity/authenticator/passkeys#device-bound-passkey).
       - question: |
           Do I need to enable Bluetooth to perform cross-device authentication?
         answer: |
