@@ -104,9 +104,9 @@ Organizations should actively monitor for successful or attempted token theft at
 
 Organizations should configure the following Conditional Access policies:
 
-1. Require interactive reauthentication for sensitive operations (authentication context)
-1. Require interactive authentication for risky sign-ins
-1. Detect and remediate high-risk users
+- Require interactive reauthentication for sensitive operations (authentication context)
+- Require interactive authentication for risky sign-ins
+- Detect and remediate high-risk users
 
 These Conditional Access policies provide more automated token theft remediation and/or address other threat vectors that could be used in token-based
 attacks.
@@ -185,13 +185,13 @@ exposure of, or completely prevent, the stolen token from being replayed, thus d
 
 ### Enforce Token Protection
 
-- **Entra Primary Refresh Token**
+**Entra Primary Refresh Token**
 
 For devices which are Entra-joined or Entra-registered, Entra ID generates a multi-application Refresh Token used for application SSO, also known as the [Primary Refresh Token (PRT)](concept-primary-refresh-token.md).
 
 Primary Refresh Tokens (PRTs) are secure by design. They're protected with a cryptographically secure tie between the PRT and the device (client secret) to which the PRT is issued. The client secret is securely stored on platform-specific hardware such as Trusted Platform Modules (TPM) for Windows, Keystore System for Android, and Secure Enclave for iOS and macOS. Without the client secret, the PRT token is rendered ineffective and cannot be replayed if stolen.
 
-- **Token Protection in Conditional Access**
+**Token Protection in Conditional Access**
 
 Enforcing Token Protection in Conditional Access ensures that only refresh tokens which are cryptographically bound to the device are used. Bearer refresh tokens, which can be used from any device, are automatically rejected. This method provides the highest level of security for protecting sign-in sessions, as the token can only be used from the device it was originally issued to. At the time of publication of this post, Token Protection in Conditional Access is available for Windows native applications connecting to Microsoft Teams, SharePoint, and Exchange. We're continuously working to expand the scope of Token Protection by adding support for extra platforms, applications, and resources. For an updated list of supported apps and resources, please refer to this article. [Token protection in Microsoft Entra Conditional Access - Microsoft Entra ID \| Microsoft Learn](../conditional-access/concept-token-protection.md#requirements).
 
@@ -217,18 +217,18 @@ boundary significantly increases the likelihood of detecting and mitigating thre
 
 Additionally, in certain scenarios such as with applications that support Continuous Access Evaluation, these measures can also be an effective way to be an effective way to mitigate token theft and replay of application session tokens such as access tokens.
 
-- **Protect Sign-in sessions with Global Secure Access**
+**Protect Sign-in sessions with Global Secure Access**
 
 Organizations should deploy Global Secure Access to establish a secure network connection between client devices and resources, also known as a compliant network. Administrators can then create a Conditional Access policy that mandates the use of a compliant network to access any Enterprise App integrated with Entra ID. This measure prevents the replay of sign-in session artifacts from devices not managed by the
 organization.
 
-- **Protect Sign-in Sessions with traditional network controls**
+**Protect Sign-in Sessions with traditional network controls**
 
 As an alternative to Compliant network check, organizations can utilize traditional network solutions such as VPNs to protect sign-in sessions. Administrators can then create a location-based Conditional Access policy that restricts authentication attempts to specific egress IP addresses. However, organizations should consider the performance implications and costs associated with routing traffic through a corporate network. Therefore, Microsoft recommends using Global Secure Access, a fully secure, globally distributed Security Service Edge solution.
 
 [Learn how to configure location-based Conditional Access policies with Entra ID](../conditional-access/policy-block-by-location.md).
 
-- **Protect App Sessions with network-based enforcements**
+**Protect App Sessions with network-based enforcements**
 
 By creating a location-based Conditional Access policies restricting access to specific egress IP addresses, organizations can also protect
 some of their app sessions. A subset of Microsoft Applications, such as SharePoint Online and Exchange Online, use the [Continuous Access Evaluation](../conditional-access/concept-continuous-access-evaluation.md) (CAE) protocol. CAE-aware apps evaluate network-based enforcements and revoke app session artifacts replayed outside of the trusted network in
