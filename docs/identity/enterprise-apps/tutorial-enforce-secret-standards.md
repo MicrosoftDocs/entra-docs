@@ -259,7 +259,11 @@ Once the request is sent, you should receive a response indicating that the poli
 
 Once you update your application management policy, you can confirm that it's applied by reading the default application management policy again as [shown earlier](#read-your-tenant-application-management-policy). The response should show the updated policy with the restrictions you applied.
 
-If it's the first time, you're applying an application management policy you notice that the `id` field is changed from `00000000-0000-0000-0000-000000000000` to a new GUID. This change indicates that the policy is created.
+If it's the first time, you're applying an application management policy the `id` field should have changed from `00000000-0000-0000-0000-000000000000` to a new GUID. This change indicates that the policy is created.
+
+You can also confirm that the policy is applied by creating a new application and checking if the restrictions are enforced. For example, if you try to create a new application with a client secret or symmetric key, you should receive an error indicating that the operation is not allowed as shown in the below screenshot.
+
+:::image type="content" source="media/tutorial-enforce-secret-standards/client-secrets-blocked.png" alt-text="Screenshot of the Entra admin center showing a warning that client secrets are blocked by tenant wide policy.":::
 
 ## Related content
 
