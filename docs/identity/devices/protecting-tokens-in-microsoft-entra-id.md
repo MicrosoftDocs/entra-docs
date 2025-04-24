@@ -14,7 +14,7 @@ ms.reviewer: jbley
 
 # Protecting tokens in Microsoft Entra
 
-This article is a continuation to [Understanding tokens in Microsoft Entra ID](concept-tokens-in-microsoft-entra-id.md). This article assumes you've read Understanding tokens in Microsoft Entra ID and provides concrete steps you can take to mitigate the risk of successful token theft/replay attacks in your environment.
+This article is a continuation to [Understanding tokens in Microsoft Entra ID](concept-tokens-microsoft-entra-id.md). This article assumes you've read Understanding tokens in Microsoft Entra ID and provides concrete steps you can take to mitigate the risk of successful token theft/replay attacks in your environment.
 
 The recommendations of this article span across multiple Microsoft technology solutions which have a range of licensing requirements.
 Ensure that you've the proper licensing for:
