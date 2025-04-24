@@ -184,7 +184,7 @@ You can verify the processing either from the Microsoft Entra admin center or us
 
 ### Verify processing from Microsoft Entra admin center 
 1. Log in to [Microsoft Entra admin center](https://entra.microsoft.com) with at least [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823) login credentials.
-1. Browse to **Microsoft Entra ID** > ** **Applications** > **Enterprise applications**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Under all applications, use the search filter text box to find and open your API-driven provisioning application.
 1. Open the Provisioning blade. The landing page displays the status of the last run.
 1. Select **View provisioning logs** to open the provisioning logs blade. Alternatively, you can select the menu option **Monitor** > **Provisioning logs**.
