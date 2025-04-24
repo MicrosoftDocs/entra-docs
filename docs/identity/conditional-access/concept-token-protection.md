@@ -191,7 +191,7 @@ AADNonInteractiveUserSignInLogs
 | project Id,ConditionalAccessPolicies, Status,UserPrincipalName, AppDisplayName, ResourceDisplayName 
 | where ConditionalAccessPolicies != "[]" 
 | where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" 
-//Add userPrinicpalName if you want to filter  
+//Add userPrincipalName if you want to filter  
 // | where UserPrincipalName =="<user_principal_Name>" 
 | mv-expand todynamic(ConditionalAccessPolicies) 
 | where ConditionalAccessPolicies ["enforcedSessionControls"] contains '["Binding"]' or ConditionalAccessPolicies ["enforcedSessionControls"] contains '["SignInTokenProtection"]' 
