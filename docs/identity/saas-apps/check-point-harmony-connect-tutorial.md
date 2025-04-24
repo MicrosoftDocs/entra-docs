@@ -137,7 +137,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Check Point Harmony Connect website as an administrator.
 
-1. Go to the **Policy** -> **Access Control** and create a **new rule** and select **(+)** to add **New User**. 
+1. Go to the **Policy** > **Access Control** and create a **new rule** and select **(+)** to add **New User**. 
 
 	![screenshot for create new user.](./media/check-point-harmony-connect-tutorial/add-new-user.png)
 

@@ -119,7 +119,7 @@ Follow these steps to enable Microsoft Entra SSO.
 ## Configure Meraki Dashboard SSO
 1. In a different web browser window, sign in to your Meraki Dashboard company site as an administrator
 
-4. Navigate to **Organization** -> **Settings**.
+4. Navigate to **Organization** > **Settings**.
 
    ![Meraki Dashboard Settings tab](./media/meraki-dashboard-tutorial/configure-1.png)
 
@@ -139,7 +139,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign into meraki dashboard as an administrator.
 
-1. Navigate to **Organization** -> **Administrators**.
+1. Navigate to **Organization** > **Administrators**.
 
    ![Meraki Dashboard Administrators](./media/meraki-dashboard-tutorial/user-1.png)
 

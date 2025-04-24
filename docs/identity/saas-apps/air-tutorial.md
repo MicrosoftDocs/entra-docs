@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Select the **Workspace** at the top left corner.
 
-1. Go to the **Settings** -> **SECURITY &IDENTITY** tab and perform the perform the following steps:
+1. Go to the **Settings** > **SECURITY &IDENTITY** tab and perform the perform the following steps:
 
     ![Screenshot for Air configuration](./media/air-tutorial/integration.png)
 
@@ -123,7 +123,7 @@ Log in to the Air website as an administrator.
 
 1. Select the **Workspace** at the top left corner.
 
-1. Go to the **Settings** -> **MEMBERS** tab and select **Add members**.
+1. Go to the **Settings** > **MEMBERS** tab and select **Add members**.
 
 1. Give the Email address and select **Invite**.
 

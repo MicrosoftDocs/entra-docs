@@ -150,7 +150,7 @@ When Microsoft Entra provisioning service queries SuccessFactors, it retrieves a
 
 To retrieve more attributes, follow the steps listed:
     
-1. Browse to **Enterprise Applications** -> **SuccessFactors App** -> **Provisioning** -> **Edit Provisioning** -> **attribute-mapping page**.
+1. Browse to **Enterprise Applications** > **SuccessFactors App** > **Provisioning** > **Edit Provisioning** > **attribute-mapping page**.
 1. Scroll down and click **Show advanced options**.
 1. Click on **Edit attribute list for SuccessFactors**. 
 
