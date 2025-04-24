@@ -123,7 +123,7 @@ For Microsoft Entra users to be able to sign in, they must be provisioned to the
 
 1. Sign in to your Rally Software tenant.
 
-2. Go to **Setup \> USERS**, and then select **+ Add New**.
+2. Go to **Setup** > **USERS**, and then select **+ Add New**.
    
     ![Users](./media/rally-software-tutorial/add-user.png "Users")
 

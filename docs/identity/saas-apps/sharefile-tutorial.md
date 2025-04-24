@@ -123,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows the Administration page.](./media/sharefile-tutorial/settings.png "Administration")
 
-1. In the Admin Settings, go to the **Security** -> **Login & Security Policy**.
+1. In the Admin Settings, go to the **Security** > **Login & Security Policy**.
    
     ![Screenshot shows the Account Administration page.](./media/sharefile-tutorial/settings-security.png "Account Administration")
 
@@ -151,7 +151,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your **Citrix ShareFile** tenant.
 
-2. Select **People** -> **Manage Users Home** -> **Create New Users** -> **Create Employee**.
+2. Select **People** > **Manage Users Home** > **Create New Users** > **Create Employee**.
    
 	![Screenshot shows to Create Employee.](./media/sharefile-tutorial/create-user.png "Create Employee")
 

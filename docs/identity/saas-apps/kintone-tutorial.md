@@ -108,7 +108,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Users & System Administration](./media/kintone-tutorial/user.png "Users & System Administration")
 
-1. Under **System Administration \> Security** select **Login**.
+1. Under **System Administration** > **Security** select **Login**.
 
     ![Login](./media/kintone-tutorial/system.png "Login")
 

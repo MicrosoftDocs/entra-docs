@@ -213,7 +213,7 @@ In order to enable Microsoft Entra users to log in to Jobscience, they must be p
 1. Go to Setup.
    
    ![Screenshot shows the Setup item.](./media/jobscience-tutorial/ic784358.png "Setup")
-1. Go to **Manage Users \> Users**.
+1. Go to **Manage Users** > **Users**.
    
    ![Users](./media/jobscience-tutorial/ic784369.png "Users")
 1. Select **New User**.

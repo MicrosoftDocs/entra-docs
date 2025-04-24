@@ -136,7 +136,7 @@ To enable Microsoft Entra users to log in to Huddle, they must be provisioned in
 
 2. Select **Workspace**.
 
-3. Select **People \> Invite People**.
+3. Select **People** > **Invite People**.
 
 	![People](./media/huddle-tutorial/tasks.png "People")
 

@@ -178,7 +178,7 @@ In order to enable Microsoft Entra users to sign into TOPdesk - Public, they mus
 
 1. Sign on to your **TOPdesk - Public** company site as administrator.
 
-2. In the menu on the top, select **TOPdesk \> New \> Support Files \> Person**.
+2. In the menu on the top, select **TOPdesk** > **New** > **Support Files** > **Person**.
    
     ![Person](./media/topdesk-public-tutorial/files.png "Person")
 

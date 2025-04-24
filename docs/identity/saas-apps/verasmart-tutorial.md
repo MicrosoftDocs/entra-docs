@@ -104,7 +104,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to the VeraSMART as an administrator.
 
-1. Go to the **Administration** -> **Security** -> **Authentication Configuration**.
+1. Go to the **Administration** > **Security** > **Authentication Configuration**.
 
     ![Screenshot shows VeraSMART with Administration, then Security, then Authentication Configuration selected.](./media/verasmart-tutorial/configuration.png)
 

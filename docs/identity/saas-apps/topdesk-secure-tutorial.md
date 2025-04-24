@@ -174,7 +174,7 @@ In the case of TOPdesk - Secure, provisioning is a manual task.
 
 1. Sign on to your **TOPdesk - Secure** company site as administrator.
 
-2. In the menu on the top, select **TOPdesk \> New \> Support Files \> Operator**.
+2. In the menu on the top, select **TOPdesk** > **New** > **Support Files** > **Operator**.
 
     ![Operator](./media/topdesk-secure-tutorial/support-files.png "Operator")
 
