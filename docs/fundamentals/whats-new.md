@@ -34,13 +34,13 @@ As communicated [earlier](https://techcommunity.microsoft.com/blog/microsoft-ent
 
 ---
 
-### Public Preview - CConditional Access What If evaluation API
+### Public Preview - Conditional Access What If evaluation API
 
 **Type:** New feature    
 **Service category:** Conditional Access    
 **Product capability:** Access Control    
 
-Conditional Access What If evaluation API – Leverage the What If tool using the Microsoft Graph API to programmatically evaluate the applicability of conditional access policies in your tenant on user, and service principal, sign-ins. For more information, see: [conditionalAccessRoot: evaluate](/graph/api/conditionalaccessroot-evaluate).
+Conditional Access What If evaluation API – Leverage the What If tool using the Microsoft Graph API to programmatically evaluate the applicability of conditional access policies in your tenant on user, and service principal sign-ins. For more information, see: [conditionalAccessRoot: evaluate](/graph/api/conditionalaccessroot-evaluate).
 
 ---
 
