@@ -22,6 +22,49 @@ This article provides information about the latest releases and change announcem
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+## April 2025
+
+### Public Preview - As an end user, I can see suggestions about which access packages to request
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+Microsoft Entra ID Governance: access package request suggestions – As communicated earlier, we're excited to introduce a new feature in My Access: a curated list of _suggested_ access packages. This capability will allow users to quickly view the most relevant access packages (based off their peers' access packages and previous requests) without scrolling through a long list. In December you can enable the preview in the Opt-in Preview Features for Identity Governance. From January, this setting will be enabled by default.
+
+---
+
+### Public Preview - Conditional Access What If API
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Access Control    
+
+Conditional Access What If evaluation API – Leverage the What If tool using the Microsoft Graph API to programmatically evaluate the applicability of conditional access policies in your tenant on user and service principal sign-ins.
+
+---
+
+### Public Preview - Manage refresh tokens for mover and leaver scenarios with Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Now customers can configure a Lifecycle workflows task to automatically revoke access tokens when employees move within or leave the organization.
+
+---
+
+### Private Preview - Entra ID Protection Risk Management Agent
+
+**Type:** New feature    
+**Service category:** Identity Protection    
+**Product capability:** Identity Security & Protection    
+
+Private Preview Sign-up: Entra ID Protection Risk Management Agent. We are excited to announce the private preview for the Entra ID Protection Risk Management Agent. Today, it is challenging for Security Analysts to resolve identity risks in a timely manner. Manual investigation and remediation can take from hours to days, exposing users and organizations at risk for a longer time. To address this challenge, we're introducing an ID Protection Risk Management Agent, which will monitor for risks, immediately respond, autonomously investigate and triage risky users and risky sign-ins and suggest one-click remediation actions.
+
+---
+
+
 ## March 2025
 
 ### Microsoft Entra Permissions Management end of sale and retirement
