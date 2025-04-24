@@ -22,7 +22,7 @@ The agent also evaluates all existing enabled policies to propose potential cons
 - You must be assigned the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
 - You must have at least [Microsoft Entra ID P1](overview.md#license-requirements).
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage). On average, each agent run consumes 3 SCUs.
-- Device-based controls require Microsoft Intune licenses
+- Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 
 ### Limitations
 
