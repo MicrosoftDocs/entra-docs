@@ -203,7 +203,7 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 |COMPANY|Out|BAPIUSCOMP|company|
 |DEFAULTS|Out|BAPIUSDEFAUL|defaults| 
 |LOGONDATA|Out|BAPILOGOND|logonData|
-|WITH_USERNAME|In|String| 
+|WITH_USERNAME|In|String||
 |ROWS|Out|Int32|returnedSize|
 
  18. Select OK. The warning sign disappears. The details of a user are stored in the above listed variables. Your IF activity looks like this:
@@ -379,7 +379,7 @@ There's no need to implement pagination in export workflows. There's only one ob
 
 |Name|Variable Type|Scope|Default|
 |-----|-----|-----|-----|
-|userName|String|Sequence| 
+|userName|String|Sequence||
 |bapiret2Table|SAPECC.TABLE_OF_BAPIRET2|Sequence|new TABLE_OF_BAPIRET2()|
 
  4. As we defined userName property as an immutable ID, an anchor, we need to extract userName value from a collection of anchors of our export object. Drag and drop ForEachWithBodyFactory activity from the Toolbox into your Sequence activity. Replace **item** variable name with **anchor**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AnchorAttribute```. In the Value field, type ```objectToExport.AnchorAttributes```. 
@@ -471,15 +471,15 @@ name with **schemaAttr**, switch to properties and choose TypeArgument of ```Mic
 |Case|Assignment| 
 |-----|-----|
 |city|addressX.city = "X" address.city = xValue| 
-company|companyX.company = "X" company.company = xValue| 
-department|address.departmentX = "X" address.department = xValue| 
-email|addressX.e_mail = "X" address.e_mail = xValue| 
-expirationTime|logOnDataX.GLTGB = "X" logOnData.GLTGB = xValue| 
-firstname|addressX.firstname = "X" address.firstname = xValue| 
-lastName|addressX.lastname = "X" address.lastname = xValue| 
-middleName|addressX.middlename = "X" address.middlename = xValue| 
-telephoneNumber|addressX.TEL1_Numbr = "X" address.TEL1_Numbr = xValue| 
-jobTitle|addressX.function = "X" address.function = xValue| 
+|company|companyX.company = "X" company.company = xValue| 
+|department|address.departmentX = "X" address.department = xValue| 
+|email|addressX.e_mail = "X" address.e_mail = xValue| 
+|expirationTime|logOnDataX.GLTGB = "X" logOnData.GLTGB = xValue| 
+|firstname|addressX.firstname = "X" address.firstname = xValue| 
+|lastName|addressX.lastname = "X" address.lastname = xValue| 
+|middleName|addressX.middlename = "X" address.middlename = xValue| 
+|telephoneNumber|addressX.TEL1_Numbr = "X" address.TEL1_Numbr = xValue| 
+|jobTitle|addressX.function = "X" address.function = xValue| 
 
 Your Export Replace workflow looks like this: 
 

@@ -100,8 +100,7 @@ You can ask a sponsor, such as the owner of a group, to review a guest's need fo
 3. After the reviewers give input, stop the access review and apply the changes. For more information, see [Complete an access review of groups or applications](complete-access-review.md).
 
 > [!NOTE]
->  You can block external identities from signing-in to your tenant and delete the external identities from your tenant after 30 days. During this period, settings, results, reviewers or Audit logs under the current review won't be viewable or configurable. For more information, see  [Disable and delete external identities with Microsoft Entra access reviews
-](access-reviews-external-users.md#disable-and-delete-external-identities-with-azure-ad-access-reviews).
+>  You can block external identities from signing-in to your tenant and delete the external identities from your tenant after 30 days. During this period, settings, results, reviewers or Audit logs under the current review won't be viewable or configurable. For more information, see  [Disable and delete external identities with Microsoft Entra access reviews](access-reviews-external-users.md#disable-and-delete-external-identities-with-azure-ad-access-reviews).
 
  
 ### Ask guests to review their own access to an application

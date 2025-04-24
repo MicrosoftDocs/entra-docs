@@ -146,7 +146,7 @@ To view events for an access package, you must have access to the underlying Azu
 
 1. In that workbook, select a time range (change to **All** if not sure), and select an access package ID from the drop-down list of all access packages that had activity during that time range. The events related to the access package that occurred during the selected time range will be displayed.
 
-    [ ![View access package events](./media/entitlement-management-logs-and-reporting/view-events-access-package-sml.png) ](./media/entitlement-management-logs-and-reporting/view-events-access-package-lrg.png#lightbox)
+    [![View access package events](./media/entitlement-management-logs-and-reporting/view-events-access-package-sml.png)](./media/entitlement-management-logs-and-reporting/view-events-access-package-lrg.png#lightbox)
 
     Each row includes the time, access package ID, the name of the operation, the object ID, UPN, and the display name of the user who started the operation. More details are included in JSON.
 
@@ -164,7 +164,7 @@ The workbook *Application role assignment activity* shows if there have been cha
 
 1. Once you have selected the subscription, or if you only have one subscription, select the workbook named *Access Package Activity*.
 
-    [ ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara-sml.png) ](./media/entitlement-management-access-package-incompatible/workbook-ara-lrg.png#lightbox)
+    [![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara-sml.png)](./media/entitlement-management-access-package-incompatible/workbook-ara-lrg.png#lightbox)
 
 1. If you select to omit entitlement activity, then only changes to application roles that weren't made by entitlement management are shown. For example, you would see a row if a Global Administrator had directly assigned a user to an application role.
 
