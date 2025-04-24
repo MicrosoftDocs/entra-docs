@@ -590,7 +590,7 @@ External authentication methods enable you to use your preferred multifactor aut
 **Service category:** MS Graph    
 **Product capability:** Monitoring & Reporting    
 
-Due to popular demand and increased confidence in the stability of the properties, the update adds `LastSuccessfulSignIn` &` LastSuccessfulSigninDateTime` into V1. Feel free to take dependencies on these properties in your production environments now. For more information, see: [signInActivity resource type](/graph/api/resources/signinactivity).
+Due to popular demand and increased confidence in the stability of the properties, the update adds `LastSuccessfulSignIn` & `LastSuccessfulSigninDateTime` into V1. Feel free to take dependencies on these properties in your production environments now. For more information, see: [signInActivity resource type](/graph/api/resources/signinactivity).
 
 ---
 
