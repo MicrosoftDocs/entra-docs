@@ -1,6 +1,6 @@
 ---
-title: "Set up SSO with Azure Entra ID for Human Focus"
-description: "Step-by-step guide to configure single sign-on between Azure Entra ID and Human Focus."
+title: "Set up SSO with Micorsoft Entra ID for Human Focus"
+description: "Step-by-step guide to configure single sign-on between Microsoft Entra ID and Human Focus."
 author: mazharhf
 ms.author: placeholder
 ms.date: 2025-04-25
@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.service: entra-id
 ---
 
-# Human Focus Single Sign-On (SSO) Setup for Azure AD
+# Human Focus Single Sign-On (SSO) Setup for Microsoft Entra ID
 
-Follow these steps to set up Single Sign-On (SSO) for Human Focus using Azure AD.
+Follow these steps to set up Single Sign-On (SSO) for Human Focus using Microsoft Entra ID formerly Azure Active Directory (Azure AD).
 
-## Step 1: Log in to Azure AD
+## Step 1: Log in to Microsoft Entra ID
 
-1. Login to Azure AD.
+1. Login to Microsoft Entra ID.
 2. Click on **Enterprise Applications**.
    ![Enterprise Applications](common/HF-overview.png)
 
@@ -76,7 +76,7 @@ email, and click on Save.
 1. In the **Set up <app_name>** section, you will find important data such as:
 
     - Login URL
-    - Azure AD Identifier
+    - Microsoft Entra ID Identifier
     - Logout URL
 
 2. Send this information to Human Focus.
