@@ -36,19 +36,19 @@ Customers are required to migrate to the new schematized CrossTenantAccessPolicy
 
 Two options are available for migrating your existing policies to the new schema supported by the Microsoft Graph API: 
 
-- Method 1: Migrate in place. Follow this method if your policy is in a production environment and data needs to be migrated.
-- Method 2: Replace policy with blank new policy. The simplest method is to just replace the old policy by creating a new one using the new API. 
+- Method 1: [Migrate in place](#method-1-migrate-in-place). Follow this method if your policy is in a production environment and data needs to be migrated.
+- Method 2: [Replace policy with blank new policy](#method-2-replace-the-policy-with-a-new-blank-policy). The simplest method is to replace the old policy by creating a new one using the new API. 
 
-Migration needs to be performed only once. After migrating, you’ll no longer need to modify the JSON directly. The Microsoft Graph API will manage the underlying JSON for you. 
+You only need to perform migration once. After migrating, you don't need to modify the JSON directly. The Microsoft Graph API will manage the underlying JSON for you. 
 
-### Pre-check
+### Pre-check: Determine if migration is necessary
 
 > [!NOTE]
 > If you’ve received communication regarding upgrading manually, this pre-check is most likely failing.
 
 Before you begin, verify that migration is necessary by attempting to access the new CrossTenantAccessPolicy Microsoft Graph API. If an unsupported policy JSON is in use, an error will occur indicating an outdated schema. To run this check, you need an account with the Global Administrator, Security Administrator, or Conditional Access Administrator role.
 
-1. Using Graph Explorer, sign in to your tenant and ensure you’ve consented to directory.AccessAsUser.All.
+1. Using Graph Explorer, sign in to your tenant and ensure you’ve consented to `directory.AccessAsUser.All`.
 
 1. Run the following requests:
 
@@ -57,13 +57,14 @@ GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
 GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/partners
 ```
 
-1. If you receive a Bad Request error in either response, you must migrate your JSON to a supported schema. If you receive OK – 200 in both responses, you are using a supported schema. Migration is either complete or not required.
+1. If you receive a `Bad Request` error in either response, you must migrate your JSON to a supported schema. If you receive `OK – 200` in both responses, you are using a supported schema. Migration is either complete or not required.
+
 1. Before moving on, ensure you have a backup copy of your current cross-tenant access policy to revert to if you encounter issues during migration.
 
 ## Method 1: Migrate in place
 
 > [!IMPORTANT]
-> Before you begin, read the section “Details about the new policy schema” in this document.
+> Before you begin, read the section [Details about the new policy schema](#details-about-the-new-policy-schema) in this document.
 
 1. Review the changes to the schema and familiarize yourself with the template. Using the samples in this document, modify your existing JSON to match the correct format. 
 
@@ -112,8 +113,8 @@ Disconnect-Graph
 
 Before you create policies using the new API, review this entire section to understand the changes to the schema.
 
-### ‘AllowAccess’ is no longer supported 
-This applies equally to ‘FromMyTenancy’ and ‘ToMyTenancy’ sections.
+### AllowAccess is no longer supported 
+This applies equally to `FromMyTenancy` and `ToMyTenancy` sections.
 
 #### Before
 
@@ -180,7 +181,7 @@ This applies equally to ‘FromMyTenancy’ and ‘ToMyTenancy’ sections.
 
 ### Trust settings must be moved to a separate entry
 
-In the **ToMyTenancy** section, trust settings must now be placed in a separate entry from the affordances for B2B Collaboration and Direct Connect. The JSON trust settings include **AcceptMFA**, **AcceptCompliantDevice**, and **AcceptHybridAzureADJoinedDevice**.
+In the `ToMyTenancy` section, trust settings must now be placed in a separate entry from the affordances for B2B Collaboration and Direct Connect. The JSON trust settings include `AcceptMFA` `AcceptCompliantDevice`, and `AcceptHybridAzureADJoinedDevice`.
 
 #### Before
 
@@ -298,7 +299,7 @@ Creating multiple configurations of users or groups accessing or being blocked f
 
 #### Examples of valid configurations
 
-The following configuration allows all users in group ‘aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb’ on the home tenant to access ‘Office365’ in all external tenants, while the second baseline configuration blocks all the home users from external access via B2B Direct Connect.
+The following configuration allows all users in group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` on the home tenant to access `Office365` in all external tenants, while the second baseline configuration blocks all the home users from external access via B2B Direct Connect.
 
 ```json
 "FromMyTenancy": [
@@ -317,7 +318,7 @@ The following configuration allows all users in group ‘aaaaaaaa-0000-1111-2222
 ]	
 ```
 
-This configuration allows B2B Direct Connect access to all external tenants for all users in the group ‘aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb’ in the home tenant. It also blocks access to one external application with application Id ‘cccccccc-2222-3333-4444-dddddddddddd’. The last configuration blocks access to the rest of the users in the home tenant for the B2B Direct Connect feature. 
+This configuration allows B2B Direct Connect access to all external tenants for all users in the group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` in the home tenant. It also blocks access to one external application with application Id `cccccccc-2222-3333-4444-dddddddddddd`. The last configuration blocks access to the rest of the users in the home tenant for the B2B Direct Connect feature. 
 
 ```json
 "ToMyTenancy": [
@@ -581,7 +582,7 @@ The following is an example of a properly configured policy. You can use this as
 }
 ```
 
-### Method 2: Replace the policy with a new blank policy
+## Method 2: Replace the policy with a new blank policy
 
 If you don’t need to migrate policies in place (for example, you’re doing this in a test environment), you can simply replace the old policy with a blank one. Then you can build your policies using the new API. To replace an old policy, run the steps above and upload the following policy:
 
