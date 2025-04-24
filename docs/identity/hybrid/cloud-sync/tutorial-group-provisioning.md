@@ -76,7 +76,7 @@ To configure provisioning, follow these steps.
 
    10.  Change **Mapping type** to **Expression**
    11. In the expression box, enter the following:
-     ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+     ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com")```
    12. Change the **Default value** to be OU=Groups,DC=contoso,DC=com.
      :::image type="content" source="media/tutorial-group-provision/group-provision-2.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/tutorial-group-provision/group-provision-2.png":::
 
@@ -89,7 +89,7 @@ To configure provisioning, follow these steps.
 
 ## Test configuration 
 >[!NOTE]
->When using on-demand provisioning, members aren't automatically provsisioned. You need to select which members you wish to test on and there's a 5 member limit.
+>When using on-demand provisioning, members aren't automatically provisioned. You need to select which members you wish to test on and there's a 5 member limit.
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
@@ -117,6 +117,6 @@ Do the following:
 
 
 ## Next steps 
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)

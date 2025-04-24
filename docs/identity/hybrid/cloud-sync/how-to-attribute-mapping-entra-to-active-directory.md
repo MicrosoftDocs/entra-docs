@@ -20,7 +20,7 @@ You can customize the default attribute-mappings according to your business need
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
-The following document will guide you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you're looking for information on attribute mapping from AD to Microsoft Entra ID, see [ Attribute mapping - Active Directory to Microsoft Entra ID](how-to-attribute-mapping.md).
+The following document will guide you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you're looking for information on attribute mapping from AD to Microsoft Entra ID, see [Attribute mapping - Active Directory to Microsoft Entra ID](how-to-attribute-mapping.md).
 
 ## Schema for Microsoft Entra ID to Active Directory configurations
 Currently, the AD Schema isn't discoverable and there's fixed set of mappings. The following table provides the default mappings and schema for the Microsoft Entra ID to Active Directory configurations.
@@ -61,7 +61,7 @@ The default target container is OU=User,DC=&lt;domain selected at configuration 
 
 Multiple target containers can also be configured using an attribute mapping expression with the Switch() function. With this expression, if the displayName value is Marketing or Sales, the group is created in the corresponding OU. If there's no match, then the group is created in the default OU.
 
- ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com") ```
+ ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com")```
 
  :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/config-6.png":::
 
@@ -172,6 +172,6 @@ To create an attribute based filter use the following steps:
 For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md).
 
 ## Next steps 
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)

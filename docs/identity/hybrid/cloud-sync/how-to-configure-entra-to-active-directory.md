@@ -13,7 +13,7 @@ ms.author: billmath
 ---
 
 # Provision Microsoft Entra ID to Active Directory - Configuration
-The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you are looking for information on provisioning from AD to Microsoft Entra ID, see [ Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure.md)
+The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you are looking for information on provisioning from AD to Microsoft Entra ID, see [Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure.md)
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
@@ -68,7 +68,7 @@ You can scope the agent to synchronize all or specific security groups. You can 
  
  Multiple target containers can be configured using an attribute mapping expression with the Switch() function. With this expression, if the displayName value is Marketing or Sales, the group is created in the corresponding OU. If there's no match, then the group is created in the default OU.
 
- ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com") ```
+ ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com")```
 
  :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/config-6.png":::
 
@@ -174,6 +174,6 @@ To delete a configuration, follow these steps.
 
 
 ## Next steps 
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)

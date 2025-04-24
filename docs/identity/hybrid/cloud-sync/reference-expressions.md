@@ -34,6 +34,7 @@ The syntax for Expressions for Attribute Mappings is reminiscent of Visual Basic
 * For string constants, if you need a backslash ( \ ) or quotation mark ( " ) in the string, it must be escaped with the backslash ( \ ) symbol. For example: "Company name: \\"Contoso\\""
 
 ## List of functions
+
 | List of functions | Description |
 |-----|----|
 |[Append](#append)|Takes a source string value and appends the suffix to the end of it.|

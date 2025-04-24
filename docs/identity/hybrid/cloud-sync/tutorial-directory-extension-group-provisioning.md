@@ -272,7 +272,7 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
 1. You can now browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync > Overview** page to Review and Enable our configuration to start synchronizing.
 
 ## Next steps 
-- [Use Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+- [Use Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
