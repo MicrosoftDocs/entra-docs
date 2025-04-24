@@ -34,6 +34,7 @@ It can't be used with other user identifiers, such as a username or phone number
 QR code authentication is a single-factor method in which the PIN (something you know) is a credential.
 
 ## Benefits of QR code authentication
+
 Benefit | Description
 --------|------------
 Easier and faster sign-in | Frontline workers don't have to enter complex usernames or passwords to sign in multiple times into shared devices throughout their shift.

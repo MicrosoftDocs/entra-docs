@@ -79,7 +79,7 @@ To set up the appropriate permissions for password writeback to occur, complete 
 * **Write lockoutTime**
  * **Write pwdLastSet**
 
-    [ ![Set the appropriate permissions in Active Users and Computers for the account that is used by Microsoft Entra Connect](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions-cropped.png) ](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions.png#lightbox)
+    [![Set the appropriate permissions in Active Users and Computers for the account that is used by Microsoft Entra Connect](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions-cropped.png)](media/tutorial-enable-sspr-writeback/set-ad-ds-permissions.png#lightbox)
    
 1. When ready, select **Apply / OK** to apply the changes.
 1. From the **Permissions** tab, select **Add**.
