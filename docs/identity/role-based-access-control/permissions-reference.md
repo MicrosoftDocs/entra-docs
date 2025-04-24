@@ -743,13 +743,13 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 
 Users with this role have permissions to manage compliance-related features in the Microsoft Purview compliance portal, Microsoft 365 admin center, Azure, and Microsoft 365 Defender portal. Assignees can also manage all features within the Exchange admin center and create support tickets for Azure and Microsoft 365. For more information, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).
 
-In | Can do
------ | ----------
-[Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Protect and manage your organization's data across Microsoft 365 services<br>Manage compliance alerts
-[Microsoft Purview Compliance Manager](/microsoft-365/compliance/compliance-manager) | Track, assign, and verify your organization's regulatory compliance activities
-[Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request<br><br>This role has the same permissions as the [Compliance Administrator role group](/microsoft-365/security/office-365-security/scc-permissions) in Microsoft 365 Defender portal role-based access control.
-[Intune](/mem/intune/fundamentals/role-based-access-control) | View all Intune audit data
-[Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br>Can view all the built-in reports under Data Management
+| In | Can do |
+| ----- | ---------- |
+| [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Protect and manage your organization's data across Microsoft 365 services<br>Manage compliance alerts |
+| [Microsoft Purview Compliance Manager](/microsoft-365/compliance/compliance-manager) | Track, assign, and verify your organization's regulatory compliance activities |
+| [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request<br><br>This role has the same permissions as the [Compliance Administrator role group](/microsoft-365/security/office-365-security/scc-permissions) in Microsoft 365 Defender portal role-based access control. |
+| [Intune](/mem/intune/fundamentals/role-based-access-control) | View all Intune audit data |
+| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br>Can view all the built-in reports under Data Management |
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -766,13 +766,13 @@ In | Can do
 
 Users with this role have permissions to track data in the Microsoft Purview compliance portal, Microsoft 365 admin center, and Azure. Users can also track compliance data within the Exchange admin center, Compliance Manager, and Teams & Skype for Business admin center and create support tickets for Azure and Microsoft 365. For more information about the differences between Compliance Administrator and Compliance Data Administrator, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).
 
-In | Can do
------ | ----------
-[Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Monitor compliance-related policies across Microsoft 365 services<br>Manage compliance alerts
-[Microsoft Purview Compliance Manager](/microsoft-365/compliance/compliance-manager) | Track, assign, and verify your organization's regulatory compliance activities
-[Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request<br><br>This role has the same permissions as the [Compliance Data Administrator role group](/microsoft-365/security/office-365-security/scc-permissions) in Microsoft 365 Defender portal role-based access control.
-[Intune](/mem/intune/fundamentals/role-based-access-control) | View all Intune audit data
-[Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br>Can view all the built-in reports under Data Management
+| In | Can do |
+| ----- | ---------- |
+| [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Monitor compliance-related policies across Microsoft 365 services<br>Manage compliance alerts |
+| [Microsoft Purview Compliance Manager](/microsoft-365/compliance/compliance-manager) | Track, assign, and verify your organization's regulatory compliance activities |
+| [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request<br><br>This role has the same permissions as the [Compliance Data Administrator role group](/microsoft-365/security/office-365-security/scc-permissions) in Microsoft 365 Defender portal role-based access control. |
+| [Intune](/mem/intune/fundamentals/role-based-access-control) | View all Intune audit data |
+| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br>Can view all the built-in reports under Data Management |
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1253,7 +1253,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/serviceAction/activateService | Can perform the "activate service" action for a service |
 > | microsoft.directory/serviceAction/disableDirectoryFeature | Can perform the "disable directory feature" service action |
 > | microsoft.directory/serviceAction/enableDirectoryFeature | Can perform the "enable directory feature" service action |
-> | microsoft.directory/serviceAction/getAvailableExtentionProperties | Can perform the getAvailableExtentionProperties service action |
+> | microsoft.directory/serviceAction/getAvailableExtensionProperties | Can perform the getAvailableExtensionProperties service action |
 > | microsoft.directory/servicePrincipalCreationPolicies/basic/update | Update basic properties of service principal creation policies |
 > | microsoft.directory/servicePrincipalCreationPolicies/create | Create service principal creation policies |
 > | microsoft.directory/servicePrincipalCreationPolicies/delete | Delete service principal creation policies |
@@ -1416,7 +1416,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/roleAssignments/allProperties/read | Read all properties of role assignments |
 > | microsoft.directory/roleDefinitions/allProperties/read | Read all properties of role definitions |
 > | microsoft.directory/scopedRoleMemberships/allProperties/read | View members in administrative units |
-> | microsoft.directory/serviceAction/getAvailableExtentionProperties | Can perform the getAvailableExtentionProperties service action |
+> | microsoft.directory/serviceAction/getAvailableExtensionProperties | Can perform the getAvailableExtensionProperties service action |
 > | microsoft.directory/servicePrincipalCreationPolicies/standard/read | Read standard properties of service principal creation policies |
 > | microsoft.directory/servicePrincipals/allProperties/read | Read all properties (including privileged properties) on servicePrincipals |
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
@@ -1797,7 +1797,7 @@ Assign the IoT Device Administrator role to users who need to do the following t
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/certificateBasedDeviceAuthConfigurations/create | Create Certificate Authorities configurations for IoT Device trust and authentication |
-> | microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update | Update crendential related properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update | Update credential related properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
 > | microsoft.directory/certificateBasedDeviceAuthConfigurations/delete | Delete certificate authority configurations for Internet of Things (IoT) device |
 > | microsoft.directory/certificateBasedDeviceAuthConfigurations/standard/read | Read standard properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
 > | microsoft.directory/deviceTemplates/create | Create Internet of Things (IoT) device templates |
@@ -2438,20 +2438,20 @@ Users in this role can create, manage, and delete content for Microsoft Search i
 
 This is a [privileged role](privileged-roles-permissions.md). Users with this role have permissions to manage security-related features in the Microsoft 365 Defender portal, Microsoft Entra ID Protection, Microsoft Entra Authentication, Azure Information Protection, and Microsoft Purview compliance portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).
 
-In | Can do
---- | ---
-[Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Monitor security-related policies across Microsoft 365 services<br>Manage security threats and alerts<br>View reports
-[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for resetting passwords
-[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role<br>**Cannot** manage Microsoft Entra role assignments or settings
-[Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports
-Azure Advanced Threat Protection | Monitor and respond to suspicious security activity
-[Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory
-[Intune](/mem/intune/fundamentals/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference)
-[Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions
-[Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
-[Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen.
-[Password Protection](~/identity/authentication/concept-password-ban-bad.md) | Configure custom banned password list or on-premises password protection.
-[Cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) | Configure cross-tenant access settings for users in another tenant. Security Administrators can't directly create and delete users, but can indirectly create and delete synchronized users from another tenant when both tenants are configured for cross-tenant synchronization, which is a privileged permission.
+| In | Can do |
+| --- | --- |
+| [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Monitor security-related policies across Microsoft 365 services<br>Manage security threats and alerts<br>View reports |
+| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for resetting passwords |
+| [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role<br>**Cannot** manage Microsoft Entra role assignments or settings |
+| [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports |
+| Azure Advanced Threat Protection | Monitor and respond to suspicious security activity |
+| [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory |
+| [Intune](/mem/intune/fundamentals/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference) |
+| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions |
+| [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services |
+| [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen. |
+| [Password Protection](~/identity/authentication/concept-password-ban-bad.md) | Configure custom banned password list or on-premises password protection. |
+| [Cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) | Configure cross-tenant access settings for users in another tenant. Security Administrators can't directly create and delete users, but can indirectly create and delete synchronized users from another tenant when both tenants are configured for cross-tenant synchronization, which is a privileged permission. |
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2577,16 +2577,16 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 
 This is a [privileged role](privileged-roles-permissions.md). Users with this role have global read-only access on security-related feature, including all information in Microsoft 365 Defender portal, Microsoft Entra ID Protection, Privileged Identity Management, as well as the ability to read Microsoft Entra sign-in reports and audit logs, and in Microsoft Purview compliance portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).
 
-In | Can do
---- | ---
-[Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | View security-related policies across Microsoft 365 services<br>View security threats and alerts<br>View reports
-[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | View all ID Protection reports and Overview
-[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Privileged Role Administrator), if the user is eligible for them.
-[Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | View security policies<br>View and investigate security threats<br>View reports
-[Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | View and investigate alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role.
-[Intune](/mem/intune/fundamentals/role-based-access-control) | Views user, device, enrollment, configuration, and application information. Cannot make changes to Intune.
-[Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read permissions.
-[Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
+| In | Can do |
+| --- | --- |
+| [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | View security-related policies across Microsoft 365 services<br>View security threats and alerts<br>View reports |
+| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | View all ID Protection reports and Overview |
+| [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Privileged Role Administrator), if the user is eligible for them. |
+| [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | View security policies<br>View and investigate security threats<br>View reports |
+| [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | View and investigate alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role. |
+| [Intune](/mem/intune/fundamentals/role-based-access-control) | Views user, device, enrollment, configuration, and application information. Cannot make changes to Intune. |
+| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read permissions. |
+| [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services |
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |

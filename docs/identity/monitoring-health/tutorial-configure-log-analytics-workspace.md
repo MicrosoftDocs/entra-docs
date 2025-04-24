@@ -144,11 +144,11 @@ Count the sign ins by day:
 
 Take five random entries and project the columns you wish to see in the results:
 
-- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated `
+- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated`
 
 Take the top 5 in descending order and project the columns you wish to see:
 
-- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated `
+- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated`
 
 Create a new column by combining the values to two other columns:
 
