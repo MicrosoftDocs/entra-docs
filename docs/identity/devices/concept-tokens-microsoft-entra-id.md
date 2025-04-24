@@ -43,7 +43,7 @@ There are many kinds of tokens, but they generally fall into one of two categori
 
 Tokens may also vary depending on the client application. Web applications accessed via browsers sometimes use different kinds of tokens compared with native apps such as Outlook and Teams.
 
-:::image type="content" source="media/concept-tokens-in-microsoft-entra-id/tokens-evaluated-by-microsoft-entra-id.png" alt-text="Screenshot of tokens evaluated by Microsoft Entra ID and other applications and services.":::
+:::image type="content" source="media/concept-tokens-microsoft-entra-id/tokens-evaluated-by-microsoft-entra-id.png" alt-text="Screenshot of tokens evaluated by Microsoft Entra ID and other applications and services.":::
 
 As a best practice, you want to prioritize protecting your sign-in session tokens first as these tokens can last for weeks or months, potentially enabling persistent unauthorized access if stolen.
 

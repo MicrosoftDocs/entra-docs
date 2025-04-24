@@ -36,7 +36,7 @@ There are several capabilities you can enable to reduce your attack surface area
 
 The following is a high-level summary capturing the key areas organizations should focus on as part of their token theft protection strategy.
 
-:::image type="content" source="media/protecting-tokens-in-microsoft-entra-id/defense-against-attacks.png" alt-text="Diagram showing defense strategies against token theft":::
+:::image type="content" source="media/protecting-tokens-microsoft-entra-id/defense-against-attacks.png" alt-text="Diagram showing defense strategies against token theft.":::
 
 ## Token Theft – minimize risk
 
@@ -202,7 +202,7 @@ Check the following article to learn more and get deployment guidance:
 [Learn how to configure Token Protection](../conditional-access/concept-token-protection.md).
 
 > [!NOTE]
-> Token Protection in Conditional Access requires the use of PRT’s. Scenarios such as the use of unregistered devices aren't available as those devices don't have a PRT.
+> Token Protection in Conditional Access requires the use of PRTs. Scenarios such as the use of unregistered devices aren't available as those devices don't have a PRT.
 
 > [!NOTE]
 > Entra Token Protection only applies to the user who signed into the device. For example, if you unlock a Windows device with a standard account but then access a resource authenticating under a different account, the latter identity can't be protected by Entra Token Protection as they don't have a valid PRT available.
