@@ -7,7 +7,7 @@ manager: celestedg
 ms.author: mimart
 ms.service: entra-external-id
 
-ROBOTS: NOINDEX
+ROBOTS: NOINDEX, NOFOLLOW
 ms.subservice: external
 ms.topic: how-to
 ms.date: 04/24/2025
@@ -15,11 +15,11 @@ ms.date: 04/24/2025
 
 # Migrate CrossTenantAccessPolicy JSON to the new Microsoft Graph API
 
-A new version of the CrossTenantAccessPolicy Microsoft Graph API is now available, which enhances the functionality and management of your policies. Any cross-tenant access policies created during the Microsoft Teams Shared Channels and B2B collaboration private preview will need to be updated to the new version. This document describes the changes to the schema supported by the Microsoft Graph API and provides the steps for migrating your policies.
+A new version of the CrossTenantAccessPolicy Microsoft Graph API is now available, which enhances the functionality and management of your policies. Any cross-tenant access policies created during the Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration private preview must be updated to the new version. This document describes the changes to the schema supported by the Microsoft Graph API and provides the steps for migrating your policies.
 
 ## Background
 
-Legacy XTAP policies were created by tenant admins using the hidden Microsoft Graph API by setting serialized JSON, for example:
+During the private preview Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration, admins created cross-tenant access policies by using the hidden Microsoft Graph API and setting serialized JSON, for example:
 
 ```json
 POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy
@@ -30,7 +30,7 @@ POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy
 }
 ```
 
-Customers are required to migrate to the new schematized CrossTenantAccessPolicy Microsoft Graph API. Due to the redesign of the API and backend JSON schema, the new API doesn’t support the existing policies created during private preview.
+However, due to the redesign of the API and backend JSON schema, and the new API doesn’t support cross-tenant access policies that were created during private preview. Therefore, customers are required to migrate to the new schematized CrossTenantAccessPolicy Microsoft Graph API.
 
 ## How to migrate to the new API
 
@@ -39,7 +39,7 @@ Two options are available for migrating your existing policies to the new schema
 - Method 1: [Migrate in place](#method-1-migrate-in-place). Follow this method if your policy is in a production environment and data needs to be migrated.
 - Method 2: [Replace policy with blank new policy](#method-2-replace-the-policy-with-a-new-blank-policy). The simplest method is to replace the old policy by creating a new one using the new API. 
 
-You only need to perform migration once. After migrating, you don't need to modify the JSON directly. The Microsoft Graph API will manage the underlying JSON for you. 
+You need to perform migration only once. After migration, you don't need to modify the JSON directly. The Microsoft Graph API will manage the underlying JSON for you. 
 
 ### Pre-check: Determine if migration is necessary
 
