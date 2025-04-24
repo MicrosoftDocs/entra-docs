@@ -28,6 +28,7 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 - During the preview, avoid using an account to setup the agent that requires role activation with Privileged Identity Management. Using an account that doesn't have standing permissions may cause authentication failures for the agent.
 - Once agents are started they can't be stopped or paused. It may take a few minutes to run.
+- For policy consolidation each agent run only looks at 4 similar policy pairs
 - The agent currently runs as the user who enables it.
 - In preview you should only run the agent from the Microsoft Entra admin center.
 
