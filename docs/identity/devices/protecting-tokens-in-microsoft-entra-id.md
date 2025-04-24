@@ -4,7 +4,7 @@ description: To protect against token theft and replay attacks, explore the type
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 04/23/2025
+ms.date: 04/24/2025
 
 ms.author: jfields
 author: jenniferf-skc
@@ -96,7 +96,7 @@ You should only allow device code flow where necessary. Microsoft recommends blo
 [Learn more about Conditional Access Authentication flows](../conditional-access/concept-authentication-flows.md#device-code-flow).
 
 
-## Token theft - detect and mitigate
+## Token Theft - detect and mitigate
 
 Organizations should actively monitor for successful or attempted token theft attacks. There are many alerts generated from various Microsoft products that can indicate potential token theft or account compromise. A high-level summary of these detections is listed below. For an in-depth guide on how to monitor for, detect, and respond to identified token theft using a SIEM, refer to the [Token theft playbook](/security/operations/token-theft-playbook).
 

@@ -4,7 +4,7 @@ description: To protect against token theft and replay attacks, explore the type
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 04/22/2025
+ms.date: 04/24/2025
 
 ms.author: jfields
 author: jenniferf-skc
