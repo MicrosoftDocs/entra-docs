@@ -184,7 +184,7 @@ If you changed the configuration by using **domain** or **organizational-unit** 
 
 If you changed the configuration by using **attribute** filtering, then you need to do a **Full Synchronization**.
 
-As a best practice, make sure your server is in [Staging mode ](/entra/identity/hybrid/connect/how-to-connect-sync-staging-server#change-currently-active-sync-server-to-staging-mode)and start an **Initial** sync cycle which will run a full import and full synchronization on all connectors using the PowerShell command `Start-ADSyncSyncCycle -PolicyType Initial`.
+As a best practice, make sure your server is in [Staging mode](/entra/identity/hybrid/connect/how-to-connect-sync-staging-server#change-currently-active-sync-server-to-staging-mode)and start an **Initial** sync cycle which will run a full import and full synchronization on all connectors using the PowerShell command `Start-ADSyncSyncCycle -PolicyType Initial`.
 
 To manually start a run profile, do the following steps:
 

@@ -52,7 +52,7 @@ The following documentation provides reference information for the `ADSync` Powe
  PS C:\> (Get-ADsyncConnector -Identifier 'b891884f-051e-4a83-95af-2544101c9083').ConnectivityParameters['UserName'].Value
  # Get the Microsoft Entra credential
  PS C:\> $credEntra = Get-Credential
- # Add or updatethe synchronization service account
+ # Add or update the synchronization service account
  PS C:\> Add-ADSyncAADServiceAccount -AADCredential $credEntra -Name Sync_CONNECT01
  ```
 
@@ -1638,7 +1638,7 @@ The following documentation provides reference information for the `ADSync` Powe
 ### PARAMETERS
 
 #### -AutoUpgradeState
- The AtuoUpgrade state. Accepted values: Suspended, Enabled, Disabled.
+ The AutoUpgrade state. Accepted values: Suspended, Enabled, Disabled.
 
  ```yaml
  Type: AutoUpgradeConfigurationState
@@ -1858,7 +1858,7 @@ The following documentation provides reference information for the `ADSync` Powe
 
 #### Example 1
  ```powershell
- PS C:\> Set-ADSyncSchedulerConnectorOverride -Connectorname "contoso.com" -FullImportRequired $true
+ PS C:\> Set-ADSyncSchedulerConnectorOverride -ConnectorName "contoso.com" -FullImportRequired $true
  -FullSyncRequired $false
  ```
 

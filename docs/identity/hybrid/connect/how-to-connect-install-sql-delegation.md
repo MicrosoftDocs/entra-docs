@@ -23,9 +23,9 @@ To use this feature, you need to realize that there are several moving parts and
 
 |Role|Description|
 |-----|-----|
-|Domain or Forest AD administrator|Creates the domain level service account that is used by Microsoft Entra Connect to run the sync service. For more information on service accounts, see [Accounts and permissions](reference-connect-accounts-permissions.md).
+|Domain or Forest AD administrator|Creates the domain level service account that is used by Microsoft Entra Connect to run the sync service. For more information on service accounts, see [Accounts and permissions](reference-connect-accounts-permissions.md).|
 |SQL administrator|Creates the ADSync database and grants login + dbo access to the Microsoft Entra Connect administrator and the service account created by the domain/forest admin.|
-Microsoft Entra Connect administrator|Installs Microsoft Entra Connect and specifies the service account during custom installation.
+|Microsoft Entra Connect administrator|Installs Microsoft Entra Connect and specifies the service account during custom installation.|
 
 <a name='steps-for-installing-azure-ad-connect-using-sql-delegated-permissions'></a>
 

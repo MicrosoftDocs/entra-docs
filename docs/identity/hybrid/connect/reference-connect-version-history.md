@@ -36,10 +36,10 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 The following table lists related topics:
 
-Topic | Details
---------- | --------- |
-Steps to upgrade from Microsoft Entra Connect | Different methods to [upgrade from a previous version to the latest](how-to-upgrade-previous-version.md) Microsoft Entra Connect release.
-Required permissions | For permissions required to apply an update, see [Microsoft Entra Connect: Accounts and permissions](reference-connect-accounts-permissions.md#upgrade).
+| Topic | Details |
+| --------- | --------- |
+| Steps to upgrade from Microsoft Entra Connect | Different methods to [upgrade from a previous version to the latest](how-to-upgrade-previous-version.md) Microsoft Entra Connect release. |
+| Required permissions | For permissions required to apply an update, see [Microsoft Entra Connect: Accounts and permissions](reference-connect-accounts-permissions.md#upgrade). |
 
 <a name='retiring-azure-ad-connect-1x-versions'></a>
 
@@ -160,7 +160,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule. Adding this rule allows the sync engine to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled, in a scenario where:
   - the same user is represented across different forests, and 
   - the user is disabled in one of the forests
-- Introduced a registry key that allows you to set the precedence number for custom rules to be more than 100, if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence,** allowing for more custom rules. If no value is set, 100 is the default.
+- Introduced a registry key that allows you to set the precedence number for custom rules to be more than 100, if needed. The precedence of the first standard rule can be set using the key **HKLM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence,** allowing for more custom rules. If no value is set, 100 is the default.
 - Cmdlets in ADSync PowerShell module that communicate with Microsoft Entra ID now require Microsoft Entra ID login, for example, `Add-ADSyncAADServiceAccount` or `Get-ADSyncExportDeletionThreshold`
 
 

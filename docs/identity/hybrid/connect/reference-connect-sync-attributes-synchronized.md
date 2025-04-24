@@ -30,6 +30,7 @@ In this case, start with the list of attributes in this topic and identify those
 >
 
 ## Microsoft 365 Apps for enterprise
+
 | Attribute Name | User | Comment |
 | --- |:---:| --- |
 | accountEnabled |X |Defines if an account is enabled. |
@@ -43,6 +44,7 @@ In this case, start with the list of attributes in this topic and identify those
 | userPrincipalName |X |UPN is the login ID for the user. Most often the same as [mail] value. |
 
 ## Exchange Online
+
 | Attribute Name | User | Contact | Group | Comment |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Defines if an account is enabled. |
@@ -166,6 +168,7 @@ In this case, start with the list of attributes in this topic and identify those
 | wWWHomePage |X |X | | |
 
 ## SharePoint Online
+
 | Attribute Name | User | Contact | Group | Comment |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Defines if an account is enabled. |
@@ -243,12 +246,12 @@ In this case, start with the list of attributes in this topic and identify those
 | title |X |X | | |
 | unauthOrig |X |X |X | |
 | url |X |X | | |
-| usageLocation |X | | |mechanical property. The user’s country/region
-. Used for license assignment. |
+| usageLocation |X | | |mechanical property. The user’s country/region. Used for license assignment. |
 | userPrincipalName |X | | |UPN is the login ID for the user. Most often the same as [mail] value. |
 | wWWHomePage |X |X | | |
 
 ## Teams and Skype for Business Online
+
 | Attribute Name | User | Contact | Group | Comment |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Defines if an account is enabled. |
@@ -298,6 +301,7 @@ In this case, start with the list of attributes in this topic and identify those
 | wWWHomePage |X |X | | |
 
 ## Azure RMS
+
 | Attribute Name | User | Contact | Group | Comment |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Defines if an account is enabled. |
@@ -314,6 +318,7 @@ In this case, start with the list of attributes in this topic and identify those
 | userPrincipalName |X | | |This UPN is the login ID for the user. Most often the same as [mail] value. |
 
 ## Intune
+
 | Attribute Name | User | Contact | Group | Comment |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Defines if an account is enabled. |
@@ -333,6 +338,7 @@ In this case, start with the list of attributes in this topic and identify those
 | userPrincipalName |X | | |UPN is the login ID for the user. Most often the same as [mail] value. |
 
 ## Dynamics CRM
+
 | Attribute Name | User | Contact | Group | Comment |
 | --- |:---:|:---:|:---:| --- |
 | accountEnabled |X | | |Defines if an account is enabled. |
