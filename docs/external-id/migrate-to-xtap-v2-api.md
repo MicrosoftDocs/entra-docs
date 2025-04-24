@@ -15,11 +15,11 @@ ms.date: 04/24/2025
 
 # Migrate CrossTenantAccessPolicy JSON to the new Microsoft Graph API
 
-A new version of the CrossTenantAccessPolicy Microsoft Graph API is now available, which enhances the functionality and management of your policies. Any cross-tenant access policies created during the Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration private preview must be updated to the new version. This document describes the changes to the schema supported by the Microsoft Graph API and provides the steps for migrating your policies.
+A new version of the CrossTenantAccessPolicy Microsoft Graph API is now available, which enhances the functionality and management of your policies. Any cross-tenant access policies created during the Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration preview must be updated to the new version. This document describes the changes to the schema supported by the Microsoft Graph API and provides the steps for migrating your policies.
 
 ## Background
 
-During the private preview of Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration, admins created cross-tenant access policies using the hidden Microsoft Graph API and serialized JSON, for example:
+During the preview of Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration, admins created cross-tenant access policies using the hidden Microsoft Graph API and serialized JSON, for example:
 
 ```json
 POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy
@@ -41,14 +41,14 @@ Two options are available for migrating your existing policies to the new schema
 
 You need to perform migration only once. After migration, you don't need to modify the JSON directly because the Microsoft Graph API manages the underlying JSON for you.
 
-### Pre-check: Determine if migration is necessary
+### Precheck: Determine if migration is necessary
 
 > [!NOTE]
-> If you’ve already received a communication instructing you to upgrade manually, this pre-check is most likely failing.
+> If you already received a communication instructing you to upgrade manually, this precheck is most likely failing.
 
 First, determine if migration is necessary by trying to access the new CrossTenantAccessPolicy Microsoft Graph API. If you encounter an error indicating an outdated schema, it means an unsupported policy JSON is in use. To perform this check, you must have an account with one of the following roles: Global Administrator, Security Administrator, or Conditional Access Administrator.
 
-1. Using Graph Explorer, sign in to your tenant and ensure you’ve consented to `directory.AccessAsUser.All`.
+1. Using Graph Explorer, sign in to your tenant and consent to `directory.AccessAsUser.All`.
 
 1. Run the following requests:
    
@@ -110,7 +110,7 @@ First, determine if migration is necessary by trying to access the new CrossTena
 
 1. Close PowerShell.
 
-1. Repeat the steps in the “Pre-check” section to make sure the API returns a valid response in both the default and partner’s endpoints.
+1. Repeat the steps in [Precheck: Determine if migration is necessary](#precheck-determine-if-migration-is-necessary) to make sure the API returns a valid response in both the default and partner’s endpoints.
 
 ## Details about the new policy schema
 
@@ -249,7 +249,7 @@ In the `ToMyTenancy` section, trust settings must now be placed in a separate en
 ]
 ```	
 
-### Multiple configurations of users/groups for an application are not supported
+### Multiple configurations of users/groups for an application aren't supported
 
 Creating multiple configurations of users or groups accessing or being blocked from specific applications is no longer supported. Previously, the policy JSON schema allowed for many complex combinations of users and groups who were allowed or blocked for a specific application. For example, a policy could specify that users in Group A could access Application A, while users in Group B could be blocked from accessing Application B. The new schema only supports allowing or blocking users and groups, and allowing or blocking a set of applications. This change covers most scenarios and makes the feature more intuitive.
 
@@ -305,7 +305,7 @@ The following configurations are **no longer supported** by the new schema:
 
 #### Examples of valid configurations
 
-The following configuration allows all users in group ‘aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb’ on the home tenant to access ‘Office365’ in all external tenants, while the second baseline configuration blocks all the home users from external access via B2B Direct connect.
+The following configuration allows all users in group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` on the home tenant to access `Office365` in all external tenants. The second baseline configuration blocks all the home users from external access via B2B direct connect.
 
 ```json
 "FromMyTenancy": [
@@ -324,7 +324,7 @@ The following configuration allows all users in group ‘aaaaaaaa-0000-1111-2222
 ]	
 ```
 
-The following configuration allows B2B direct connect access to all external tenants for all users in the group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` in the home tenant. It also blocks access to one external application with application Id `cccccccc-2222-3333-4444-dddddddddddd`. The last configuration blocks access to the rest of the users in the home tenant for the B2B direct connect feature. 
+The following configuration allows B2B direct connect access to all external tenants for all users in the group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` in the home tenant. It also blocks access to one external application with application ID `cccccccc-2222-3333-4444-dddddddddddd`. The last configuration blocks access to the rest of the users in the home tenant for the B2B direct connect feature. 
 
 ```json
 "ToMyTenancy": [
@@ -348,7 +348,7 @@ The following configuration allows B2B direct connect access to all external ten
 
 ### Baseline settings are required when targets are specified
 
-In the new design, if you specify affordances for specific targets, you also need to add a baseline affordance that doesn’t specify any targets. This baseline affordance will then apply to the remaining targets. Otherwise, those targets will have the opposite affordance applied. Adding a baseline will ensure that targets will retain your intended affordance even when company or service defaults change.
+In the new design, if you specify affordances for specific targets, you also need to add a baseline affordance that doesn’t specify any targets. This baseline affordance applies to the remaining targets. Otherwise, those targets have the opposite affordance applied. Adding a baseline ensures that targets retain your intended affordance even when company or service defaults change.
 
 #### Before
 
@@ -426,7 +426,7 @@ In the new design, if you specify affordances for specific targets, you also nee
 
 ### Template for CrossTenantAccessPolicy
 
-The following is an example of a properly configured policy. You can use this as a template and delete the sections that are not relevant to you.
+The following example shows a properly configured policy. You can use this example as a template and delete the sections that aren't relevant to you.
 
 ```json
 {
@@ -590,7 +590,7 @@ The following is an example of a properly configured policy. You can use this as
 
 ## Method 2: Replace the policy with a new blank policy
 
-If migrating existing policies isn't necessary (such as when working in a test environment), you can simply replace the old policy with a blank one. Then you can create your policies using the new API. To replace an old policy, follow the steps outlined above and upload the following policy:
+If migrating existing policies isn't necessary (such as when working in a test environment), you can replace the old policy with a blank one. Then you can create your policies using the new API. To replace an old policy, follow the steps outlined previously and upload the following policy:
 
 ```json
 { "CrossTenantAccessPolicy": { "Version": 1, "LastModified": "2021-09-20 16:14:00", "TenantGroup":[]} }
