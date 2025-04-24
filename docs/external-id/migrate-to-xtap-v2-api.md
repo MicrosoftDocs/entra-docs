@@ -19,7 +19,7 @@ A new version of the CrossTenantAccessPolicy Microsoft Graph API is now availabl
 
 ## Background
 
-During the private preview Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration, admins created cross-tenant access policies by using the hidden Microsoft Graph API and setting serialized JSON, for example:
+During the private preview of Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration, admins created cross-tenant access policies using the hidden Microsoft Graph API and serialized JSON, for example:
 
 ```json
 POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy
@@ -30,7 +30,7 @@ POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy
 }
 ```
 
-However, due to the redesign of the API and backend JSON schema, and the new API doesn’t support cross-tenant access policies that were created during private preview. Therefore, customers are required to migrate to the new schematized CrossTenantAccessPolicy Microsoft Graph API.
+However, with the redesign of the API and backend JSON schema, the new API no longer supports these previously created policies. As a result, customers must migrate to the new schematized CrossTenantAccessPolicy Microsoft Graph API.
 
 ## How to migrate to the new API
 
@@ -44,9 +44,9 @@ You need to perform migration only once. After migration, you don't need to modi
 ### Pre-check: Determine if migration is necessary
 
 > [!NOTE]
-> If you’ve received communication regarding upgrading manually, this pre-check is most likely failing.
+> If you’ve already received a communication instructing you to upgrade manually, this pre-check is most likely failing.
 
-Before you begin, verify that migration is necessary by attempting to access the new CrossTenantAccessPolicy Microsoft Graph API. If an unsupported policy JSON is in use, an error will occur indicating an outdated schema. To run this check, you need an account with the Global Administrator, Security Administrator, or Conditional Access Administrator role.
+Before starting, ensure that migration is necessary by trying to access the new CrossTenantAccessPolicy Microsoft Graph API. If you encounter an error indicating an outdated schema, it means an unsupported policy JSON is in use. To perform this check, you must have an account with one of the following roles: Global Administrator, Security Administrator, or Conditional Access Administrator.
 
 1. Using Graph Explorer, sign in to your tenant and ensure you’ve consented to `directory.AccessAsUser.All`.
 
@@ -57,7 +57,7 @@ GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
 GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/partners
 ```
 
-1. If you receive a `Bad Request` error in either response, you must migrate your JSON to a supported schema. If you receive `OK – 200` in both responses, you are using a supported schema. Migration is either complete or not required.
+1. If you receive a `Bad Request` error in either response, it means you need to migrate your JSON to a supported schema. However, if you receive an `OK – 200` status in both responses, it indicates that you're already using a supported schema, and migration is either complete or not required.
 
 1. Before moving on, ensure you have a backup copy of your current cross-tenant access policy to revert to if you encounter issues during migration.
 
@@ -114,7 +114,7 @@ Disconnect-Graph
 Before you create policies using the new API, review this entire section to understand the changes to the schema.
 
 ### AllowAccess is no longer supported 
-This applies equally to `FromMyTenancy` and `ToMyTenancy` sections.
+The `AllowAccess` setting is no longer supported in the `FromMyTenancy` and `ToMyTenancy` sections.
 
 #### Before
 
@@ -181,7 +181,7 @@ This applies equally to `FromMyTenancy` and `ToMyTenancy` sections.
 
 ### Trust settings must be moved to a separate entry
 
-In the `ToMyTenancy` section, trust settings must now be placed in a separate entry from the affordances for B2B Collaboration and Direct Connect. The JSON trust settings include `AcceptMFA` `AcceptCompliantDevice`, and `AcceptHybridAzureADJoinedDevice`.
+In the `ToMyTenancy` section, trust settings must now be placed in a separate entry from the affordances for B2B collaboration and B2B direct connect. The JSON trust settings include `AcceptMFA`, `AcceptCompliantDevice`, and `AcceptHybridAzureADJoinedDevice`.
 
 #### Before
 
@@ -299,7 +299,7 @@ Creating multiple configurations of users or groups accessing or being blocked f
 
 #### Examples of valid configurations
 
-The following configuration allows all users in group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` on the home tenant to access `Office365` in all external tenants, while the second baseline configuration blocks all the home users from external access via B2B Direct Connect.
+The following configuration allows all users in group ‘aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb’ on the home tenant to access ‘Office365’ in all external tenants, while the second baseline configuration blocks all the home users from external access via B2B Direct connect.
 
 ```json
 "FromMyTenancy": [
@@ -318,7 +318,7 @@ The following configuration allows all users in group `aaaaaaaa-0000-1111-2222-b
 ]	
 ```
 
-This configuration allows B2B Direct Connect access to all external tenants for all users in the group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` in the home tenant. It also blocks access to one external application with application Id `cccccccc-2222-3333-4444-dddddddddddd`. The last configuration blocks access to the rest of the users in the home tenant for the B2B Direct Connect feature. 
+The following configuration allows B2B direct connect access to all external tenants for all users in the group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` in the home tenant. It also blocks access to one external application with application Id `cccccccc-2222-3333-4444-dddddddddddd`. The last configuration blocks access to the rest of the users in the home tenant for the B2B direct connect feature. 
 
 ```json
 "ToMyTenancy": [
@@ -584,7 +584,7 @@ The following is an example of a properly configured policy. You can use this as
 
 ## Method 2: Replace the policy with a new blank policy
 
-If you don’t need to migrate policies in place (for example, you’re doing this in a test environment), you can simply replace the old policy with a blank one. Then you can build your policies using the new API. To replace an old policy, run the steps above and upload the following policy:
+If migrating existing policies isn't necessary (such as when working in a test environment), you can simply replace the old policy with a blank one. Then you can create your policies using the new API. To replace an old policy, follow the steps outlined above and upload the following policy:
 
 ```json
 { "CrossTenantAccessPolicy": { "Version": 1, "LastModified": "2021-09-20 16:14:00", "TenantGroup":[]} }
