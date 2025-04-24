@@ -249,7 +249,9 @@ In the `ToMyTenancy` section, trust settings must now be placed in a separate en
 
 Creating multiple configurations of users or groups accessing or being blocked from specific applications is no longer supported. Previously, the policy JSON schema allowed for many complex combinations of users and groups who were allowed or blocked for a specific application. For example, a policy could specify that users in Group A could access Application A, while users in Group B could be blocked from accessing Application B. The new schema only supports allowing or blocking users and groups, and allowing or blocking a set of applications. This change covers most scenarios and makes the feature more intuitive.
 
-#### Examples of configurations that are NO longer supported
+#### Examples of configurations that are no longer supported
+
+The following configurations are **no longer supported** by the new schema:
 
 ```json
 "FromMyTenancy": [
