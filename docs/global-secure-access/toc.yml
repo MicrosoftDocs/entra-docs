@@ -43,6 +43,8 @@ items:
     href: concept-connectors.md
   - name: Private network connector groups
     href: concept-connector-groups.md
+  - name: Understand Private DNS
+    href: concept-private-name-resolution.md
   - name: Understand remote network connectivity
     href: concept-remote-network-connectivity.md
   - name: Universal Continuous Access Evaluation
