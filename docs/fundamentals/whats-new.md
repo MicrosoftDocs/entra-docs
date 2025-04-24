@@ -24,23 +24,23 @@ This article provides information about the latest releases and change announcem
 
 ## April 2025
 
-### Public Preview - As an end user, I can see suggestions about which access packages to request
+### Public Preview - [Opt-out] Microsoft Entra ID Governance: access package request suggestions
 
 **Type:** New feature    
 **Service category:** Entitlement Management    
 **Product capability:** Entitlement Management    
 
-Microsoft Entra ID Governance: access package request suggestions – As communicated earlier, we're excited to introduce a new feature in My Access: a curated list of _suggested_ access packages. This capability will allow users to quickly view the most relevant access packages (based off their peers' access packages and previous requests) without scrolling through a long list. In December you can enable the preview in the Opt-in Preview Features for Identity Governance. From January, this setting will be enabled by default.
+As communicated [earlier](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/whats-new-in-microsoft-entra---september-2024/4253153), we're excited to introduce a new feature in My Access: a curated list of *suggested* access packages. This capability will allow users to quickly view the most relevant access packages (based off their peers' access packages and previous requests) without scrolling through a long list. In December you can [enable the preview in the Opt-in Preview Features for Identity Governance](https://entra.microsoft.com/?feature.msaljs=true#view/Microsoft_AAD_ERM/DashboardBlade/~/elmSetting). From January, this setting will be enabled by default.
 
 ---
 
-### Public Preview - Conditional Access What If API
+### Public Preview - CConditional Access What If evaluation API
 
 **Type:** New feature    
 **Service category:** Conditional Access    
 **Product capability:** Access Control    
 
-Conditional Access What If evaluation API – Leverage the What If tool using the Microsoft Graph API to programmatically evaluate the applicability of conditional access policies in your tenant on user and service principal sign-ins.
+Conditional Access What If evaluation API – Leverage the What If tool using the Microsoft Graph API to programmatically evaluate the applicability of conditional access policies in your tenant on user, and service principal, sign-ins. For more information, see: [conditionalAccessRoot: evaluate](/graph/api/conditionalaccessroot-evaluate).
 
 ---
 
@@ -50,17 +50,17 @@ Conditional Access What If evaluation API – Leverage the What If tool using th
 **Service category:** Lifecycle Workflows    
 **Product capability:** Identity Governance    
 
-Now customers can configure a Lifecycle workflows task to automatically revoke access tokens when employees move within or leave the organization.
+Now customers can configure a Lifecycle workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user (Preview)](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user-preview).
 
 ---
 
-### Private Preview - Entra ID Protection Risk Management Agent
+### General Availability - Microsoft Entra ID Protection Risk Management Agent
 
 **Type:** New feature    
-**Service category:** Identity Protection    
-**Product capability:** Identity Security & Protection    
+**Service category:** Managed identities for Azure resources    
+**Product capability:** Access Control    
 
-Private Preview Sign-up: Entra ID Protection Risk Management Agent. We are excited to announce the private preview for the Entra ID Protection Risk Management Agent. Today, it is challenging for Security Analysts to resolve identity risks in a timely manner. Manual investigation and remediation can take from hours to days, exposing users and organizations at risk for a longer time. To address this challenge, we're introducing an ID Protection Risk Management Agent, which will monitor for risks, immediately respond, autonomously investigate and triage risky users and risky sign-ins and suggest one-click remediation actions.
+You can now use managed identities as federated credentials for Microsoft Entra apps, enabling secure, secret-less authentication in both single- and multi-tenant scenarios. This eliminates the need to store and manage client secrets or certificates when using Microsoft Entra app to access Azure resources across tenants. This capability aligns with Microsoft’s [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative) pillar of protecting identities and secrets across systems. Learn how to configure this capability in the [official documentation](../workload-id/workload-identity-federation-config-app-trust-managed-identity.md).
 
 ---
 
