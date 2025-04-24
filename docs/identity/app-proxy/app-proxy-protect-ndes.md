@@ -8,6 +8,7 @@ ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
+ai-usage: ai-assisted
 ---
 
 # Integrate with Microsoft Entra application proxy on a Network Device Enrollment Service (NDES) server

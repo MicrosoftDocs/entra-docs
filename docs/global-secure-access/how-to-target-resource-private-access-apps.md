@@ -9,6 +9,7 @@ ms.author: kenwith
 author: kenwith
 manager: femila
 ms.reviewer: katabish
+ai-usage: ai-assisted
 ---
 
 # Apply Conditional Access policies to Private Access apps

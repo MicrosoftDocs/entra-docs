@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the **Basic SAML Configuration** section, if you want to configure the application in IDP initiated mode, perform the following steps:
 
-   1. Make sure **Reply URL** is set to: https://console.spotinst.com/auth/saml.
+   1. Make sure **Reply URL** is set to: https://console.spotinst.com/spt/auth/signIn.
    1. In **Relay State**, enter your Spotinst Organization ID, which you can also confirm on the **SSO** tab.
    1. **Sign-on URL** must be empty.
 

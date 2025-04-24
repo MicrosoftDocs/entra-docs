@@ -4,7 +4,7 @@ description: This document provides reference information for the ADSyncTools.ps
 author: billmath
 manager: femila
 ms.service: entra-id
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.topic: reference
@@ -1091,7 +1091,7 @@ Remove-ADSyncToolsAadObject [-Credential] <PSCredential> [-SourceAnchor] <Object
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjecType in batches of 10 objects The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
+Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjectType in batches of 10 objects The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
 ### EXAMPLES
 #### EXAMPLE 1
 ```

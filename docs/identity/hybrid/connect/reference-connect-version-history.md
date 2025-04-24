@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: femila
 ms.topic: reference
-ms.date: 03/07/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: no-azure-ad-ps-ref
@@ -22,7 +22,7 @@ This article helps you keep track of the versions that have released and the cha
 ### Breaking Change on Entra Connect Sync
 
 > [!WARNING]
-> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync wizard. You must upgrade your connect sync version to [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or higher to maintain connect sync wizard capabilities such as schema refresh, configuration of staging mode and user-sign in changes. No action is required if you have upgraded your Entra Connect sync server. [Learn More](harden-update-ad-fs-pingfederate.md)
+> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) will start impacting the Microsoft Entra Connect Sync wizard in April 2025. You must upgrade your Connect Sync version **by 30 April 2025** to maintain Connect Sync wizard capabilities such as schema refresh, configuration of staging mode, and user-sign in changes. The minimum supported versions are [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or any newer version. No action is required if your Microsoft Entra Connect Sync server is within the recommended version range. [Learn More](harden-update-ad-fs-pingfederate.md)
 
 ## Looking for the latest versions?
 
@@ -58,10 +58,10 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 |Version|End of support date|
 |-----|-----|
-|[2.3.2.0](#2320)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.6.0](#2360)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.8.0](#2380)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.20.0](#23200)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.20.0](#23200)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
@@ -190,7 +190,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Improved error messaging in the Wizard when TLS settings don't meet the prerequisites.
 - Fixed a bug with the password hash not syncing on changing the SMART CARD REQUIRED bit flag. This fix won't allow the passwords in Microsoft Entra ID and Active Directory to be in sync for scenarios where smart card is used as an authentication method. [Learn more](how-to-connect-password-hash-synchronization.md#password-hash-synchronization-and-smart-card-authentication) 
 - Fixed a bug where auto upgrade endpoints were configured incorrectly for some clouds.
-- Fixed an issue where auto upgrade could fail when trying to get the service account.
 
 
 ## 2.3.20.0

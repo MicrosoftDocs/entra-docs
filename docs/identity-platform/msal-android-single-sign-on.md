@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms,reviewer: negoe
-ms.date: 02/26/2024
+ms.date: 04/10/2025
 ms.devlang: java
 ms.service: identity-platform
 
@@ -16,11 +16,11 @@ ms.topic: how-to
 
 # Enable cross-app SSO on Android using MSAL
 
-Single sign-on (SSO) allows users to only enter their credentials once and have those credentials automatically work across applications.It enhances user experience and improves security by reducing the number of passwords users need to manage, lowering the risk of password fatigue and associated vulnerabilities.
+Single sign-on (SSO) allows users to only enter their credentials once and have those credentials automatically work across applications. It enhances user experience and improves security by reducing the number of passwords users need to manage, lowering the risk of password fatigue and associated vulnerabilities.
 
-The [Microsoft identity platform](./index.yml) and the Microsoft Authentication Library (MSAL) help you enable SSO across your suite of applications. By enabling Broker capability you can extend SSO across the entire device.
+The [Microsoft identity platform](./index.yml) and the Microsoft Authentication Library (MSAL) help you enable SSO across your suite of applications. By enabling Broker capability, you can extend SSO across the entire device.
 
-In this how-to, you'll learn how to configure the SDKs used by your application to provide SSO to your customers.
+In this how-to, you learn how to configure the Software Development Kits (SDKs) used by your application to provide SSO to your customers.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ There are two ways for applications using MSAL for Android to achieve SSO:
 - Through a [broker application](#sso-through-brokered-authentication)
 - Through the [system browser](#sso-through-system-browser)
 
-  It's recommended to use a broker application for benefits like device-wide SSO, account management, and Conditional Access. However, it requires your users to download additional applications.
+  It's recommended to use a broker application for benefits like device-wide SSO, account management, and Conditional Access. However, it requires your users to download extra applications.
 
 ## SSO through brokered authentication
 
@@ -65,7 +65,7 @@ Broker-hosting apps can be installed by the device owner from their app store (t
 - Enrolled in Device Management or
 - Enrolled in Intune App Protection
 
-If the device with above mentioned requirements doesn't already have a broker app installed, MSAL instructs the user to install one as soon as the app attempts to get a token interactively. The app will then lead the user through the steps to make the device compliant with the required policy. If there is no policy requirement, or the user is signing in with Microsoft account, then Broker app installation isn't required. 
+If the device with above mentioned requirements doesn't already have a broker app installed, MSAL instructs the user to install one as soon as the app attempts to get a token interactively. The app will then lead the user through the steps to make the device compliant with the required policy. If there's no policy requirement, or the user is signing in with Microsoft account, then Broker app installation isn't required. 
 
 ### Effects of installing and uninstalling a broker
 
@@ -79,7 +79,7 @@ Installing a broker doesn't require the user to sign in again. Only when the use
 - The user's account no longer meets a Conditional Access policy.
 - The user revoked their consent for the app to be associated with their account.
 
-**Multiple brokers** - If multiple brokers are installed on a device, MSAL will identify the active broker on its own to complete the authentication process
+**Multiple brokers** - If multiple brokers are installed on a device, MSAL identifies the active broker on its own to complete the authentication process
 
 #### When a broker is uninstalled
 
@@ -161,7 +161,7 @@ Android applications have the option to use the `WEBVIEW`, system browser, or Ch
 
 ### Authorization agents
 
-Choosing a specific strategy for authorization agents is important and represents additional functionality apps can customize. We recommend using 'WEBVIEW'. To know more about other configuration values (see [Understand the Android MSAL configuration file](msal-configuration.md).
+Choosing a specific strategy for authorization agents is important and represents extra functionality apps can customize. We recommend using 'WEBVIEW'. To know more about other configuration values (see [Understand the Android MSAL configuration file](msal-configuration.md).
 
 MSAL supports authorization using a `WEBVIEW`, or the system browser. The image below shows how it looks using the `WEBVIEW`, or the system browser with CustomTabs or without CustomTabs:
 
@@ -170,14 +170,14 @@ MSAL supports authorization using a `WEBVIEW`, or the system browser. The image 
 ### SSO implications
 
 
-If the application uses a `WEBVIEW` strategy without integrating with brokered auth into their app, users won't have a single sign-on experience across the device or between native apps and web apps.
+If the application uses a `WEBVIEW` strategy without integrating with brokered auth into their app, users won't have a SSO experience across the device or between native apps and web apps.
 
 Applications can be integrated with MSAL to use the `BROWSER` to authorize. Unlike WEBVIEW, `BROWSER` share a cookie jar with the default system browser enabling fewer sign-ins with web or other native apps that have integrated with Custom Tabs.
 
 If the application uses MSAL with a broker like Microsoft Authenticator, Intune Company Portal, or Link to Windows, then users can have SSO experience across applications if they have an active sign-in with one of the apps.
 
 > [!NOTE]
-> MSAL with broker utilizes WebView and provides Single Sign-On (SSO) for all the applications consuming MSAL library and participating in brokered auth. The SSO state from broker is not extended to other apps which do not use MSAL.
+> MSAL with broker utilizes WebView and provides SSO for all the applications consuming MSAL library and participating in brokered auth. The SSO state from broker isn't extended to other apps which don't use MSAL.
 
 ### WebView
 
@@ -187,7 +187,7 @@ To use the in-app WebView, put the following line in the app configuration JSON 
 "authorization_user_agent" : "WEBVIEW"
 ```
 
-When using the in-app `WEBVIEW`, the user signs in directly to the app. The tokens are kept inside the sandbox of the app and aren't available outside the app's cookie jar. As a result, the user can't have SSO experience across applications unless the apps integrate with the Microsoft Authenticator app, Intune Company Portal or Link to Windows.
+When using the in-app `WEBVIEW`, the user signs in directly to the app. The tokens are kept inside the sandbox of the app and aren't available outside the app's cookie jar. As a result, the user can't have SSO experience across applications unless the apps integrate with the Microsoft Authenticator app, Intune Company Portal, or Link to Windows.
 
 However, `WEBVIEW` does provide the capability to customize the look and feel for sign-in UI. See [Android WebViews](https://developer.android.com/reference/android/webkit/WebView) for more about how to do this customization.
 
@@ -199,7 +199,7 @@ We recommend using WEBVIEW, though we provide option to use browser and a [custo
 "authorization_user_agent" : "BROWSER"
 ```
 
-Use this approach to provide SSO experience through the device's browser. MSAL uses a shared cookie jar, which allows other native apps or web apps to achieve SSO on the device by using the persist session cookie set by MSAL.
+Use this approach to provide SSO experience through the device's browser. MSAL uses a shared cookie jar, which allows other native apps or web apps to achieve SSO on the device by using the persisted session cookie set by MSAL.
 
 ### Browser selection heuristic
 
@@ -231,7 +231,7 @@ The following browsers have been tested to see if they correctly redirect to the
 
 [Shared device mode for Android devices](msal-android-shared-devices.md) allows you to configure an Android device so that it can be easily shared by multiple employees.
 
-For more information on broker applications go to following pages:
+For more information on broker applications, see:
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
 - [Intune Company Portal](/mem/intune/user-help/sign-in-to-the-company-portal)
 - [Link to Windows](https://aka.ms/LTWBroker)

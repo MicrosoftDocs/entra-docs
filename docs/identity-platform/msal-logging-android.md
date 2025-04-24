@@ -4,7 +4,7 @@ description: Learn how to log errors and exceptions in MSAL for Android.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: devx-track-extended-java
+ms.custom:
 ms.date: 01/25/2021
 ms.reviewer: saeeda, negoe
 ms.service: identity-platform

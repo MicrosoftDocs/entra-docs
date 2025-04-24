@@ -324,16 +324,16 @@
       href: index-web-api.yml
     - name: Quickstart
       items:
-        - name: Sign in users
-          href: quickstart-web-api-aspnet-sign-in.md
+        - name: Call a protected web API
+          href: quickstart-web-api-dotnet-protect-app.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
           items: 
           - name: Create a web API and protect its endpoints
             href: tutorial-web-api-dotnet-core-build-app.md
-          - name: Test a protected web API
-            href: tutorial-web-api-dotnet-core-test-protected-api.md
+          - name: Call a protected web API
+            href: tutorial-web-api-dotnet-core-call-protected-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
@@ -372,7 +372,23 @@
         - name: Node.js Electron
           href: tutorial-v2-nodejs-desktop.md
         - name: Windows Presentation Foundation (WPF)
-          href: tutorial-v2-windows-desktop.md
+          items: 
+            - name: .NET Framework
+              items:
+              - name: Sign in and call Microsoft Graph
+                href: tutorial-v2-windows-desktop.md
+            - name: ASP.NET Core
+              items:
+              - name: Create WPF app
+                href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
+        - name: .NET MAUI
+          items:
+            - name: Create .NET MAUI app
+              href: tutorial-desktop-app-maui-sign-in-prepare-app.md
+            - name: Sign in and sign out
+              href: tutorial-desktop-app-maui-sign-in-sign-out.md
+            - name: Use role-based access control
+              href: tutorial-desktop-maui-role-based-access-control.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#desktop
@@ -434,8 +450,6 @@
           items:
             - name: Browser-delegated authentication
               items:
-                - name: Prepare tenant
-                  href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
                 - name: Prepare your app
                   href: tutorial-mobile-app-maui-sign-in-prepare-app.md
                 - name: Add sign in and sign out
@@ -479,8 +493,6 @@
           items:
             - name: Browser-delegated authentication
               items:
-                - name: Prepare tenant
-                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md?pivots=workforce-tenant
                 - name: Prepare app
                   href: tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce-tenant
                 - name: Sign in users
@@ -550,7 +562,11 @@
         - name: .NET acquire token and call API
           href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
-          href: tutorial-v2-nodejs-console.md
+          items:
+            - name: Acquire access token and call API
+              href: tutorial-daemon-node-call-api-build-app.md
+            - name: Call Microsoft Graph API
+              href: tutorial-v2-nodejs-console.md
     - name: Samples
       href: sample-v2-code.md#service--daemon
     - name: How-to
@@ -569,7 +585,13 @@
   items:
     - name: Quickstarts 
       href: quickstart-cli-app-node-sign-in-users.md?pivots=workforce
-- name: Scenarios
+    - name: Tutorials
+      items:
+        - name: Create Node.js CLI app
+          href: tutorial-cli-app-node-sign-in-prepare-app.md
+        - name: Sign in users
+          href: tutorial-cli-app-node-sign-in-sign-out.md
+- name: How-to
   items:
     - name: Build
       items:
@@ -582,6 +604,10 @@
               href: quickstart-create-new-tenant.md
             - name: Register app or web API
               href: quickstart-register-app.md
+            - name: Add a redirect URI to an app
+              href: how-to-add-redirect-uri.md
+            - name: Add credentials to an app
+              href: how-to-add-credentials.md
             - name: Expose scopes in web API registration
               href: quickstart-configure-app-expose-web-apis.md
             - name: Grant scoped permission to web API
@@ -635,18 +661,16 @@
                   href: custom-extension-tokenissuancestart-setup.md
                 - name: Configure a custom claims provider token issuance event
                   href: custom-extension-tokenissuancestart-configuration.md
-                - name: Configure a SAML app to call a custom claims provider
-                  href: custom-extension-configure-saml-app.md
                 - name: Custom claims provider reference
                   href: custom-claims-provider-reference.md
             - name: Attribute collection
               items: 
                 - name: Create attribute collection start and submit events
                   href: custom-extension-attribute-collection.md
-                - name: Attribute collection start custom extension reference
-                  href: custom-extension-OnAttributeCollectionStart-reference.md
-                - name: Attribute collection submit custom extension reference
-                  href: custom-extension-OnAttributeCollectionSubmit-reference.md
+                - name: Retrieve data from attribute collection start event
+                  href: custom-extension-OnAttributeCollectionStart-retrieve-return-data.md
+                - name: Retrieve data from attribute collection submit event
+                  href: custom-extension-OnAttributeCollectionSubmit-retrieve-return-data.md
             - name: Configure a custom email provider for one time code send events
               href: custom-extension-email-otp-get-started.md
             - name: Troubleshoot your custom authentication extension
@@ -921,14 +945,6 @@
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
-    - name: Custom authentication extensions reference
-      items:
-        - name: Custom claims provider reference
-          href: custom-claims-provider-reference.md
-        - name: Attribute collection start custom extension reference
-          href: custom-extension-OnAttributeCollectionStart-reference.md
-        - name: Attribute collection submit custom extension reference
-          href: custom-extension-OnAttributeCollectionSubmit-reference.md
     - name: Native authentication API reference
       href: reference-native-authentication-api.md
     - name: Endpoint reference

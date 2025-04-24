@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 # Skip deletion of user accounts that go out of scope in Microsoft Entra ID
 

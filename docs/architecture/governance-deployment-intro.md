@@ -230,12 +230,12 @@ Learn how to [plan a lifecycle workflow deployment](../id-governance/lifecycle-w
 
 ### Provision and onboard apps
 
-Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), legacy apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
+Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), private/on-premises apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
 
 |Target system|Approach|Guidance|
 |---|---|---|
-|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, legacy systems </br>|- [Automated app user provisioning](../identity/app-provisioning/user-provisioning.md) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
-|Legacy apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, private/on-premises systems </br>|- [Automated app user provisioning](../identity/app-provisioning/user-provisioning.md) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|Private/on-premises apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
 |Software-as-a-Service (SaaS) apps integrated with Microsoft Entra ID |Automated app user provisioning|[Automated app user provisioning](../identity/app-provisioning/user-provisioning.md)|
 
 ### Common tasks
