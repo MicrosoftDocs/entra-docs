@@ -1,5 +1,5 @@
 ---
-title: "Set up SSO with Micorsoft Entra ID for Human Focus"
+title: "Set up SSO with Microsoft Entra ID for Human Focus"
 description: "Step-by-step guide to configure single sign-on between Microsoft Entra ID and Human Focus."
 author: mazharhf
 ms.author: placeholder
