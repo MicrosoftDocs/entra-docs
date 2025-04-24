@@ -15,11 +15,11 @@ ms.date: 04/24/2025
 
 # Migrate CrossTenantAccessPolicy JSON to the new Microsoft Graph API
 
-A new version of the CrossTenantAccessPolicy Microsoft Graph API is now available, which enhances the functionality and management of your policies. Any cross-tenant access policies created during the Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration preview must be updated to the new version. This document describes the changes to the schema supported by the Microsoft Graph API and provides the steps for migrating your policies.
+A new version of the CrossTenantAccessPolicy Microsoft Graph API is now available, which enhances the functionality and management of your policies. Any cross-tenant access policies created during the Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration preview must be updated to version 2. This document describes the changes to the schema supported by the Microsoft Graph API and provides the steps for migrating your policies.
 
 ## Background
 
-During the preview of Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration, admins created cross-tenant access policies using the hidden Microsoft Graph API and serialized JSON, for example:
+During the preview of Microsoft Teams Shared Channels and Microsoft Entra External ID B2B collaboration, admins created cross-tenant access policies using version 1 of the CrossTenantAccessPolicy Microsoft Graph API and serialized JSON, for example:
 
 ```json
 POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy
@@ -30,18 +30,9 @@ POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy
 }
 ```
 
-However, with the redesign of the API and backend JSON schema, the new API no longer supports these previously created policies. As a result, customers must migrate to the new schematized CrossTenantAccessPolicy Microsoft Graph API.
+However, with the redesign of the API and backend JSON schema in version 2, the new API no longer supports these previously created policies. As a result, customers must migrate to the new schematized CrossTenantAccessPolicy Microsoft Graph API.
 
-## How to migrate to the new API
-
-Two options are available for migrating your existing policies to the new schema supported by the Microsoft Graph API: 
-
-- [Method 1: Migrate in place](#method-1-migrate-in-place). Follow this method if your policy is in a production environment and data needs to be migrated.
-- [Method 2: Replace the policy with a new blank policy](#method-2-replace-the-policy-with-a-new-blank-policy). The simplest method is to replace the old policy by creating a new one using the new API. 
-
-You need to perform migration only once. After migration, you don't need to modify the JSON directly because the Microsoft Graph API manages the underlying JSON for you.
-
-### Precheck: Determine if migration is necessary
+## Precheck: Determine if migration is necessary
 
 > [!NOTE]
 > If you already received a communication instructing you to upgrade manually, this precheck is most likely failing.
@@ -61,7 +52,16 @@ First, determine if migration is necessary by trying to access the new CrossTena
 
 1. Before moving on, ensure you have a backup copy of your current cross-tenant access policy to revert to if you encounter issues during migration.
 
-## Method 1: Migrate in place
+## How to migrate to the new API
+
+Two options are available for migrating your existing policies to the new schema supported by the Microsoft Graph API: 
+
+- [Method 1: Migrate in place](#method-1-migrate-in-place). Follow this method if your policy is in a production environment and data needs to be migrated.
+- [Method 2: Replace the policy with a new blank policy](#method-2-replace-the-policy-with-a-new-blank-policy). The simplest method is to replace the old policy by creating a new one using the new API. 
+
+You need to perform migration only once. After migration, you don't need to modify the JSON directly because the Microsoft Graph API manages the underlying JSON for you.
+
+### Method 1: Migrate in place
 
 > [!IMPORTANT]
 > Before you begin, read the section [Details about the new policy schema](#details-about-the-new-policy-schema) in this document.
@@ -111,6 +111,16 @@ First, determine if migration is necessary by trying to access the new CrossTena
 1. Close PowerShell.
 
 1. Repeat the steps in [Precheck: Determine if migration is necessary](#precheck-determine-if-migration-is-necessary) to make sure the API returns a valid response in both the default and partner’s endpoints.
+
+### Method 2: Replace the policy with a new blank policy
+
+If migrating existing policies isn't necessary (such as when working in a test environment), you can replace the old policy with a blank one. Then you can create your policies using the new API. See [Details about the new policy schema](#details-about-the-new-policy-schema) in this document. 
+
+To replace an old policy, upload the following policy:
+
+```json
+{ "CrossTenantAccessPolicy": { "Version": 1, "LastModified": "2021-09-20 16:14:00", "TenantGroup":[]} }
+```
 
 ## Details about the new policy schema
 
@@ -586,12 +596,4 @@ The following example shows a properly configured policy. You can use this examp
     ]
   }
 }
-```
-
-## Method 2: Replace the policy with a new blank policy
-
-If migrating existing policies isn't necessary (such as when working in a test environment), you can replace the old policy with a blank one. Then you can create your policies using the new API. To replace an old policy, follow the steps outlined previously and upload the following policy:
-
-```json
-{ "CrossTenantAccessPolicy": { "Version": 1, "LastModified": "2021-09-20 16:14:00", "TenantGroup":[]} }
 ```
