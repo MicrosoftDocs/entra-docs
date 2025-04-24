@@ -215,7 +215,7 @@ can also cover additional identities beyond the user who is signed in to the dev
 Network-based policies prevent sign-in session artifacts (such as refresh tokens) from being replayed outside of designated networks, effectively thwarting token theft and replay attacks that exfiltrate sign-in sessions beyond your organizational boundary. While internal threat vectors may still pose a risk due to their access to the same network, forcing threat actors to operate within your organizational
 boundary significantly increases the likelihood of detecting and mitigating threats through other security controls.
 
-Additionally, in certain scenarios such as with applications that support Continuous Access Evaluation, these measures can also be an effective way to be an effective way to mitigate token theft and replay of application session tokens such as access tokens.
+Additionally, in certain scenarios such as with applications that support Continuous Access Evaluation, these measures can also be an effective way to mitigate token theft and replay of application session tokens such as access tokens.
 
 **Protect Sign-in sessions with Global Secure Access**
 
