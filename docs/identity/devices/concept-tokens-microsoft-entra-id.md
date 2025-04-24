@@ -75,4 +75,4 @@ In this article, we focus primarily on how to defeat attacks that are directed t
 
 ## Next steps
 
-To understand how to protect tokens in Microsoft Entra ID, continue to [Protecting tokens in Microsoft Entra ID](protecting-tokens-in-microsoft-entra-id.md).
+To understand how to protect tokens in Microsoft Entra ID, continue to [Protecting tokens in Microsoft Entra ID](protecting-tokens-microsoft-entra-id.md).
