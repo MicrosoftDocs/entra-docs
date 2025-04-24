@@ -94,6 +94,5 @@ Suppose you have a Conditional Access policy with the following configuration:
 
 ## Related content
 
-- 
 - Learn more about Conditional Access policy application by using the policies report-only mode in [Conditional Access insights and reporting](howto-conditional-access-insights-reporting.md).
 - To configure Conditional Access policies for your environment, see [Conditional Access common policies](concept-conditional-access-policy-common.md).
