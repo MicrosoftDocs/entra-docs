@@ -2,8 +2,8 @@
 title: "Set up SSO with Microsoft Entra ID for Human Focus"
 description: "Step-by-step guide to configure single sign-on between Microsoft Entra ID and Human Focus."
 author: mazharhf
-ms.author: placeholder
-ms.date: 2025-04-25
+ms.author: mazharali@humanfocus.co.uk  (macrosoft partner account)
+ms.date: 04/25/2025
 ms.topic: how-to
 ms.service: entra-id
 ---
