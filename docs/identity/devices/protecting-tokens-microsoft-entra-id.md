@@ -30,9 +30,9 @@ Ensure that you've the proper licensing for:
 
 There are several capabilities you can enable to reduce your attack surface area and reduce the risk of successful token compromise. In the next sections we'll cover many Microsoft security capabilities that fall into one of three categories:
 
-1. **Minimize risk** – Harden or reduce the attack surface making successful token theft more difficult.
-2. **Detect + Mitigate** – Detect successful token theft and configure automatic mitigation if possible.
-3. **Protect against replay** – Block replay or reduce the impact of successful token theft. 
+- **Minimize risk**: Harden or reduce the attack surface making successful token theft more difficult.
+- **Detect + Mitigate**: Detect successful token theft and configure automatic mitigation if possible.
+- **Protect against replay**: Block replay or reduce the impact of successful token theft. 
 
 The following is a high-level summary capturing the key areas organizations should focus on as part of their token theft protection strategy.
 
@@ -244,4 +244,4 @@ In summary, protecting tokens in Microsoft Entra involves a multi-layered defens
 
 ## Next steps
 
-[Microsoft Entra Conditional Access: Token protection](../conditional-access/concept-token-protection.md)
+- [Microsoft Entra Conditional Access: Token protection](../conditional-access/concept-token-protection.md)
