@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your ArcGIS Online company site as an administrator
 
-2. Go to the **Organization** -> **Settings**. 
+2. Go to the **Organization** > **Settings**. 
 
 3. In the left menu, select **Security** and select **New SAML login** in the Logins tab.
 
@@ -136,7 +136,7 @@ In the case of ArcGIS Online, provisioning is a manual task.
 
 1. Log in to your **ArcGIS** tenant.
 
-2. Go to the **Organization** -> **Members** and select **Invite members**.
+2. Go to the **Organization** > **Members** and select **Invite members**.
 
 3. Select **Add members without sending invitations** method, and then select **Next**.
 

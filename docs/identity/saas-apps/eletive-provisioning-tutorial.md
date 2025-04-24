@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Eletive to support provisioning with Microsoft Entra ID
 
-1. Sign in to [Eletive](https://app.eletive.com/). Navigate to **Settings** -> **Features**.
+1. Sign in to [Eletive](https://app.eletive.com/). Navigate to **Settings** > **Features**.
 
     ![Features](media/eletive-provisioning-tutorial/settings.png)
 
@@ -53,7 +53,7 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Integrations](media/eletive-provisioning-tutorial/scim.png)
 
-3.	Navigate to **Settings** -> **Integrations**.
+3.	Navigate to **Settings** > **Integrations**.
 
 4.	Select **User Provisioning**.
 

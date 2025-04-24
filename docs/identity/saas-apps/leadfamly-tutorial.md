@@ -123,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign into Leadfamly website as an administrator.
 
-2. Go to **Account** -> **Users** -> **Invite user**.
+2. Go to **Account** > **Users** > **Invite user**.
 
 ![Users Section](./media/leadfamly-tutorial/users.png "Users Section") 
 

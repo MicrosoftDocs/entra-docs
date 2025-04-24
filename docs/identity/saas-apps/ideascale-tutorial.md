@@ -125,7 +125,7 @@ To configure Microsoft Entra single sign-on with IdeaScale, perform the followin
 
     ![Community Settings](./media/ideascale-tutorial/ic790847.png "Community Settings")
 
-3. Go to **Security \> Single Signon Settings**.
+3. Go to **Security** > **Single Signon Settings**.
 
     ![Screenshot shows Single Signon Settings selected from the Security menu.](./media/ideascale-tutorial/ic790848.png "Single Signon Settings")
 
@@ -161,7 +161,7 @@ To enable Microsoft Entra users to log into IdeaScale, they must be provisioned 
 
     ![Community Settings](./media/ideascale-tutorial/ic790847.png "Community Settings")
 
-3. Go to **Basic Settings \> Member Management**.
+3. Go to **Basic Settings** > **Member Management**.
 
 4. Select **Add Member**.
 

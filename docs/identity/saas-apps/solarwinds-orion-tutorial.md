@@ -125,7 +125,7 @@ application integration page, find the **Manage** section and select **single si
 
 ## Configure SolarWinds Orion SSO
 
-1. Log in to the SolarWinds Orion and go to the **Settings** -> **All Settings**.
+1. Log in to the SolarWinds Orion and go to the **Settings** > **All Settings**.
 
     ![Screenshot shows All Settings selected from Settings.](./media/solarwinds-orion-tutorial/settings.png)
 
@@ -155,7 +155,7 @@ application integration page, find the **Manage** section and select **single si
 
 ### Create SolarWinds Orion test user
 
-1. Log in to the SolarWinds Orion website and go to the **Settings** -> **All Settings**.
+1. Log in to the SolarWinds Orion website and go to the **Settings** > **All Settings**.
 
     ![Screenshot shows All Settings selected from Settings.](./media/solarwinds-orion-tutorial/settings.png)
 

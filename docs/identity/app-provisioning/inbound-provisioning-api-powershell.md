@@ -68,7 +68,7 @@ The PowerShell sample script published in the [Microsoft Entra inbound provision
 ## Download the PowerShell script
 
 1. Access the GitHub repository [`entra-id-inbound-provisioning`](https://github.com/AzureAD/entra-id-inbound-provisioning). 
-1. Use the **Code** -> **Clone**  or **Code** -> **Download ZIP** option to copy contents of this repository into your local folder. 
+1. Use the **Code** > **Clone**  or **Code** > **Download ZIP** option to copy contents of this repository into your local folder. 
 1. Navigate to the folder **PowerShell/CSV2SCIM**. It has the following directory structure:
    - src
      - CSV2SCIM.ps1 (main script)
@@ -185,7 +185,7 @@ To illustrate the procedure, let's use the CSV file `Samples/csv-with-2-records.
     $ClientCertificate = New-SelfSignedCertificate -Subject 'CN=CSV2SCIM' -KeyExportPolicy 'NonExportable' -CertStoreLocation Cert:\CurrentUser\My
     $ThumbPrint = $ClientCertificate.ThumbPrint
     ```
-    The generated certificate is stored **Current User\Personal\Certificates**. You can view it using the **Control Panel** -> **Manage user certificates** option. 
+    The generated certificate is stored **Current User\Personal\Certificates**. You can view it using the **Control Panel** > **Manage user certificates** option. 
 1. To associate this certificate with a valid service principal, log in to your Microsoft Entra admin center as Application Administrator.
 1. Open [the service principal you configured](inbound-provisioning-api-grant-access.md#configure-a-service-principal) under **App Registrations**.
 1. Copy the **Object ID** from the **Overview** blade. Use the value to replace the string `<AppObjectId>`. Copy the **Application (client) Id**. We will use it later and it is referenced as `<AppClientId>`.

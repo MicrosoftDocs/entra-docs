@@ -495,7 +495,7 @@ Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](~
 #### How do I know the version of my Provisioning Agent?
 
 1. Sign in to the Windows server where the Provisioning Agent is installed.
-1. Go to **Control Panel** -> **Uninstall or Change a Program** menu.
+1. Go to **Control Panel** > **Uninstall or Change a Program** menu.
 1. Look for the version corresponding to the entry **Microsoft Entra Connect Provisioning Agent**.
 
 #### Does Microsoft automatically push Provisioning Agent updates?
@@ -568,7 +568,7 @@ Yes, one Provisioning Agent can be configured to handle multiple AD domains as l
 #### How do I uninstall the Provisioning Agent?
 
 * Sign in to the Windows server where the Provisioning Agent is installed.
-* Go to **Control Panel** -> **Uninstall or Change a Program** menu
+* Go to **Control Panel** > **Uninstall or Change a Program** menu
 * Uninstall the following programs:
   * Microsoft Entra Connect Provisioning Agent
   * Microsoft Entra Connect Agent Updater

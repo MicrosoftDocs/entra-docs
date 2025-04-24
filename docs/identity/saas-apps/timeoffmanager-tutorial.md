@@ -118,7 +118,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign into your TimeOffManager company site as an administrator.
 
-2. Go to **Account \> Account Options \> Single Sign-On Settings**.
+2. Go to **Account** > **Account Options** > **Single Sign-On Settings**.
    
 	![Screenshot shows Single Sign-On Settings selected from Account Options.](./media/timeoffmanager-tutorial/account.png "Single Sign-On Settings")
 
