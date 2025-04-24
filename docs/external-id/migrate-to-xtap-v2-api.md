@@ -36,26 +36,26 @@ However, with the redesign of the API and backend JSON schema, the new API no lo
 
 Two options are available for migrating your existing policies to the new schema supported by the Microsoft Graph API: 
 
-- Method 1: [Migrate in place](#method-1-migrate-in-place). Follow this method if your policy is in a production environment and data needs to be migrated.
-- Method 2: [Replace policy with blank new policy](#method-2-replace-the-policy-with-a-new-blank-policy). The simplest method is to replace the old policy by creating a new one using the new API. 
+- [Method 1: Migrate in place](#method-1-migrate-in-place). Follow this method if your policy is in a production environment and data needs to be migrated.
+- [Method 2: Replace the policy with a new blank policy](#method-2-replace-the-policy-with-a-new-blank-policy). The simplest method is to replace the old policy by creating a new one using the new API. 
 
-You need to perform migration only once. After migration, you don't need to modify the JSON directly. The Microsoft Graph API will manage the underlying JSON for you. 
+You need to perform migration only once. After migration, you don't need to modify the JSON directly because the Microsoft Graph API manages the underlying JSON for you.
 
 ### Pre-check: Determine if migration is necessary
 
 > [!NOTE]
 > If you’ve already received a communication instructing you to upgrade manually, this pre-check is most likely failing.
 
-Before starting, ensure that migration is necessary by trying to access the new CrossTenantAccessPolicy Microsoft Graph API. If you encounter an error indicating an outdated schema, it means an unsupported policy JSON is in use. To perform this check, you must have an account with one of the following roles: Global Administrator, Security Administrator, or Conditional Access Administrator.
+First, determine if migration is necessary by trying to access the new CrossTenantAccessPolicy Microsoft Graph API. If you encounter an error indicating an outdated schema, it means an unsupported policy JSON is in use. To perform this check, you must have an account with one of the following roles: Global Administrator, Security Administrator, or Conditional Access Administrator.
 
 1. Using Graph Explorer, sign in to your tenant and ensure you’ve consented to `directory.AccessAsUser.All`.
 
 1. Run the following requests:
-
-```http
-GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
-GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/partners
-```
+   
+   ```http
+   GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default
+   GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/partners
+   ```
 
 1. If you receive a `Bad Request` error in either response, it means you need to migrate your JSON to a supported schema. However, if you receive an `OK – 200` status in both responses, it indicates that you're already using a supported schema, and migration is either complete or not required.
 
@@ -70,40 +70,43 @@ GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/partners
 
 1. Make sure you have the Microsoft Graph module installed for PowerShell. 
 
-1. Start PowerShell and connect to your tenant: 
-Connect-Graph -Scopes "Directory.AccessAsUser.All"
+1. Start PowerShell and connect to your tenant:
+
+   ```json
+   Connect-Graph -Scopes "Directory.AccessAsUser.All"
+   ```
 
 1. Follow the instructions and open a web browser to sign in and enter your Global Administrator credentials.
 
 1. Read the updated JSON file into PowerShell using the following command. This command assumes the JSON file is in the current folder: 
 
-```json
-$policy = Get-Content .\CrossTenantAccessPolicy.json
-```
+   ```json
+   $policy = Get-Content .\CrossTenantAccessPolicy.json
+   ```
 
 1. Run the following command to convert the JSON to the correct format for ingestion using Microsoft Graph: 
 
-```json
-$json = "{\"displayName\": \"Cross Tenant Access Policy\", \"definition\":[\""+[string]$($policy.trim()).Replace("", \"\\\"").Replace("\r*\n", "")+"\"] }"
-```
+   ```json
+   $json = "{\"displayName\": \"Cross Tenant Access Policy\", \"definition\":[\""+[string]$($policy.trim()).Replace("", \"\\\"").Replace("\r*\n", "")+"\"] }"
+   ```
 
 1. Run the following command to update the existing policy:
 
-```json
-Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy" -Body $json -Headers @{"Content-Type"="application/json"}
-```
+   ```json
+   Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy" -Body $json -Headers @{"Content-Type"="application/json"}
+   ```
 
-1. Finally, run the following command to verify the policy was updated successfully: 
+1. Run the following command to verify the policy was updated successfully: 
 
-```json
-Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy" | %{$_.definition}
-```
+   ```json
+   Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy" | %{$_.definition}
+   ```
 
 1. Disconnect from the tenant: 
 
-```json
-Disconnect-Graph
-```
+   ```json
+   Disconnect-Graph
+   ```
 
 1. Close PowerShell.
 
@@ -113,7 +116,8 @@ Disconnect-Graph
 
 Before you create policies using the new API, review this entire section to understand the changes to the schema.
 
-### AllowAccess is no longer supported 
+### AllowAccess is no longer supported
+
 The `AllowAccess` setting is no longer supported in the `FromMyTenancy` and `ToMyTenancy` sections.
 
 #### Before
