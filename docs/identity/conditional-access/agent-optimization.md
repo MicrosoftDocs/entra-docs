@@ -46,8 +46,10 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-suggestion.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-suggestion.png":::
 
-1. Newly created policies are created in report-only mode and exclude the user who executes the agent by default. Organizations should as a best practice exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
+1. Newly created policies are created in report-only mode. Organizations should as a best practice exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
    1. Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ## Reviewing results
 
