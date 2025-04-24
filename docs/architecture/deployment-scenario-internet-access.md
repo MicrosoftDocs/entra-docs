@@ -129,14 +129,14 @@ In this section, we block access to inappropriate sites for all users in the org
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
 1. Browse to **Global Secure Access** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
-   [ ![Screenshot of Web content filtering policies with a red box highlighting the Create policy control to create baseline web filtering policy.](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-inline.png)](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox)
+   [![Screenshot of Web content filtering policies with a red box highlighting the Create policy control to create baseline web filtering policy.](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-inline.png)](media/deployment-scenario-internet-access/web-content-filtering-policies-baseline-expanded.png#lightbox)
 
 1. On **Create a web content filtering policy** > **Basics**, complete these fields:
    - **Name**: Baseline Internet Access Block Rule
    - **Description**: Add a description
    - **Action**: Block
 
-     [ ![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
+     [![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
 
 1. Select **Next**.
 1. On **Create a web content filtering policy** > **Policy Rules**, select **Add Rule**.
@@ -159,13 +159,13 @@ In this section, we block access to inappropriate sites for all users in the org
 1. Select **Add**.
 1. On **Create a web content filtering policy** > **Policy Rules**, confirm your selections.
 
-   [ ![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy, Policy Rules.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-review-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-review-baseline-expanded.png#lightbox)
+   [![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy, Policy Rules.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-review-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-review-baseline-expanded.png#lightbox)
 
 1. Select **Next**.
 1. On **Create a web content filtering policy** > **Review**, confirm your policy configuration.
 1. Select **Create policy**.
 
-   [ ![Screenshot of Global Secure Access, Security profiles, Review tab for baseline policy.](media/deployment-scenario-internet-access/security-profiles-create-policy-review-baseline-inline.png)](media/deployment-scenario-internet-access/security-profiles-create-policy-review-baseline-expanded.png#lightbox)
+   [![Screenshot of Global Secure Access, Security profiles, Review tab for baseline policy.](media/deployment-scenario-internet-access/security-profiles-create-policy-review-baseline-inline.png)](media/deployment-scenario-internet-access/security-profiles-create-policy-review-baseline-expanded.png#lightbox)
 
 1. To confirm policy creation, view it in **Manage web content filtering policies**.
 
@@ -193,7 +193,7 @@ In this section, we create a security profile that allows access to social netwo
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
 1. Browse to **Global Secure Access** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
-   [ ![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
+   [![Screenshot of Enterprise applications, Create Global Secure Access application, Web content filtering policies, Create a web content filtering policy.](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-inline.png)](media/deployment-scenario-internet-access/create-web-content-filtering-policy-basics-baseline-expanded.png#lightbox)
 
 1. On **Create a web content filtering policy** > **Basics**, complete these fields:
    - **Name**: Allow Social Networking sites
@@ -220,7 +220,7 @@ In this section, we create a security profile that allows access to social netwo
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles**. Select **Create profile**.
 
-   [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
+   [![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
 1. On **Create a profile** > **Basics**, complete these fields:
    - **Profile name**: Allow Social Networking sites
@@ -274,7 +274,7 @@ In this section, we create a new security profile that allows access to hacking 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
 1. Browse to **Global Secure Access** > **Secure** > **Web content filtering policies** > **Create policy** > [**Configure Global Secure Access content filtering**](../global-secure-access/how-to-configure-web-content-filtering.md).
 
-   [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
+   [![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
 1. On **Create a web content filtering policy** > **Basics**, complete these fields:
    - **Name**: Allow Hacking sites
@@ -302,7 +302,7 @@ In this section, we create a new security profile that allows access to hacking 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles**. Select **Create profile**.
 
-   [ ![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
+   [![Screenshot of Security profiles with a red box highlighting the Create profile control.](media/deployment-scenario-internet-access/security-profiles-inline.png)](media/deployment-scenario-internet-access/security-profiles-expanded.png#lightbox)
 
 1. On **Create a profile** > **Basics**, complete these fields:
    - **Profile name**: Allow Hacking sites

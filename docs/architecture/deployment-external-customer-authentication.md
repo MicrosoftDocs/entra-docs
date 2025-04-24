@@ -29,7 +29,7 @@ When users attempt to authenticate at an application, they're redirected to a Mi
 
 After users complete the flow, a token, an authorization code, or an error goes to the application via a browser redirect. The flow appears in the following diagram. 
 
-   [ ![Diagram of a browser redirect flow.](media/deployment-external/user-flow-browser-redirect.png)](media/deployment-external/user-flow-browser-redirect-expanded.png#lightbox)
+   [![Diagram of a browser redirect flow.](media/deployment-external/user-flow-browser-redirect.png)](media/deployment-external/user-flow-browser-redirect-expanded.png#lightbox)
 
 ## Native user experience
 
@@ -39,7 +39,7 @@ Use the [native authentication](../external-id/customers/concept-native-authenti
 
 Microsoft implementation of these authentication APIs is based on the draft standard [OAuth 2.0 Direct Interaction Grants](https://drafts.aaronpk.com/oauth-direct-interaction-grant/draft-parecki-oauth-direct-interaction-grant.html). See a flow in the following diagram.
 
-[ ![Diagram of native authentication.](media/deployment-external/native-authentication.png)](media/deployment-external/native-authentication-expanded.png#lightbox)
+[![Diagram of native authentication.](media/deployment-external/native-authentication.png)](media/deployment-external/native-authentication-expanded.png#lightbox)
 
 The client direct interactions pattern enables the client to manage and render the user interface, offering a native application experience. This approach uses native authentication APIs for authentication tasks.  
 
@@ -55,13 +55,13 @@ Learn more about [delegated access](../identity-platform/delegated-access-primer
 
 See the following example profile edit in the diagram. 
 
-   [ ![Diagram illustrating a profile edit.](media/deployment-external/profile-edit.png)](media/deployment-external/profile-edit-expanded.png#lightbox)
+   [![Diagram illustrating a profile edit.](media/deployment-external/profile-edit.png)](media/deployment-external/profile-edit-expanded.png#lightbox)
 
 Learn more about [setting up a Node.js web application for profile editing](). 
 
 Learn how to [edit a user profile](../external-id/customers/how-to-web-app-node-edit-profile-prepare-app.md). Discover how profile edit applications work with middleware API for additional security. The following diagram illustrates middleware API and MFA.  
 
-   [ ![Diagram of a profile edit.](media/deployment-external/middleware-api.png)](media/deployment-external/middleware-api-expanded.png#lightbox)
+   [![Diagram of a profile edit.](media/deployment-external/middleware-api.png)](media/deployment-external/middleware-api-expanded.png#lightbox)
 
 ## Next steps
 

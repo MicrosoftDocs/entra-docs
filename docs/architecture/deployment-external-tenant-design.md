@@ -33,7 +33,7 @@ The following table has attributes to define your user model, and in which scena
 
 The following diagram illustrates how the options in the previous table integrate into a user flow.  
 
-   [ ![Diagram of a user flow integration based on options.](media/deployment-external/user-flow-integration.png) ](media/deployment-external/user-flow-integration-expanded.png#lightbox)
+   [![Diagram of a user flow integration based on options.](media/deployment-external/user-flow-integration.png)](media/deployment-external/user-flow-integration-expanded.png#lightbox)
 
 ### Attributes in the user directory
 
@@ -43,7 +43,7 @@ To use Microsoft Entra External ID extension attributes, a schema extension is a
 
 When you define the extension attribute, the name stored in the directory follows the format: **extension_GUID_Name**. The GUID is the Application ID of the application object, which the schema extension is registered against. This value is directory specific. The following screenshot shows the **b2c-extensions-app**, its Application ID, and the attribute name returned by Microsoft Graph API. 
 
-   [ ![Diagram of the B2C extension attributes.](media/deployment-external/b2c-extensions-app.png)](media/deployment-external/b2c-extensions-app-expanded.png#lightbox)
+   [![Diagram of the B2C extension attributes.](media/deployment-external/b2c-extensions-app.png)](media/deployment-external/b2c-extensions-app-expanded.png#lightbox)
 
 **GET**: [Extension properties](https://graph.microsoft.com/v1.0/applications/d29c324a-ede6-48d4-bc6a-e11d7748f1be/extensionProperties)
 

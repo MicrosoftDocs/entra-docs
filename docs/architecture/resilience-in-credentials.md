@@ -37,6 +37,7 @@ Because authentication methods have different dependencies, it's a good idea to 
 For second factors, the Microsoft Authenticator app or other authenticator apps using time-based one time passcode (TOTP) or OAuth hardware tokens have the fewest dependencies and are, therefore, more resilient.
 
 ## Additional Detail on External (Non-Entra) Dependencies
+
 |Authentication Method|External (Non-Entra) Dependency|More Information|
 |---------------------|-------------------------------|---|
 |Certificate Based Authentication (CBA)|In most cases (depending on configuration) CBA will require a revocation check. This adds an external dependency on the CRL distribution point (CDP) |[Understanding the certificate revocation process](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)|

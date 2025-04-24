@@ -162,7 +162,7 @@ When conducting access reviews, you can review groups that have guest user membe
 
 The **New access review** dialog, with the **Review type** tab, and guest user options highlighted. 
 
-   [ ![Screenshot of the New access review dialog with guest user options highlighted.](media/governance-deployment/guest-user-options.png)](media/governance-deployment/guest-user-options-expanded.png#lightbox)
+   [![Screenshot of the New access review dialog with guest user options highlighted.](media/governance-deployment/guest-user-options.png)](media/governance-deployment/guest-user-options-expanded.png#lightbox)
 
 ### Access review history report
 

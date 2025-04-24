@@ -19,7 +19,7 @@ Many deployments include a production and at least one nonproduction environment
 
 The deployments typically include production, development, staging, or development tenants, etc. Tenants are attached to subscriptions for billing. In certain cases, customers prefer the nonproduction billing separate from production billing. Subscription choice affects billing. Use the following job aid to document this tenant information. 
 
-|Use|Tenant name|Billing subscription
+|Use|Tenant name|Billing subscription|
 |---|---|---|
 |Production|||
 |Development|||
@@ -44,7 +44,7 @@ Learn more about [custom URL domains in external tenants](../external-id/custome
 
 In the following diagram, see the custom domain example. 
 
-   [ ![Diagram of a custom domain example.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
+   [![Diagram of a custom domain example.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
 
 When using other WAF protection in your solution, block access to the default **ciamlogin.com** domain name. Without this change, attackers use the domain name and bypass WAF protections. 
 

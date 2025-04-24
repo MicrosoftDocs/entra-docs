@@ -237,7 +237,7 @@ To learn more, see the [App Service Environment overview](/azure/app-service/env
 9. [Employee job profile change](../id-governance/lifecycle-workflow-templates.md)
 10. [Automate preoffboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
 11. [Automate offboarding](/azure/active-directory/governance/tutorial-scheduled-leaver-portal)
-12. [Automate post-affboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
+12. [Automate post-offboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
 13. [Trigger Logic Apps with custom extensions](/azure/active-directory/governance/trigger-custom-task)
 
 ### Supported tasks and workflows
