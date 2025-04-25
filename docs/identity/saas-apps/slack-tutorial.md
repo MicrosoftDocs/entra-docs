@@ -133,7 +133,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your up Slack company site as an administrator
 
-2. select your workspace name in the top left, then go to **Settings & administration** -> **Workspace settings**.
+2. select your workspace name in the top left, then go to **Settings & administration** > **Workspace settings**.
 
      ![Screenshot of Configure single sign-on for Microsoft Entra ID.](./media/slack-tutorial/tutorial-slack-team-settings.png)
 

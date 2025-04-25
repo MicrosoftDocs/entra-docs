@@ -1,5 +1,5 @@
 ---
-title: Configure an application to trust a managed identity (preview)
+title: Configure an application to trust a managed identity
 description: Learn how to configure an application to trust a managed identity in Microsoft Entra ID.
 author: cilwerner
 manager: CelesteDG
@@ -11,7 +11,7 @@ ms.reviewer: hosamsh
 #Customer intent: As an application developer, I want to configure my application to trust a managed identity so that I can access Microsoft Entra protected resources without needing to use or manage application secrets or certificates.
 ---
 
-# Configure an application to trust a managed identity (preview)
+# Configure an application to trust a managed identity
 
 This article describes how to configure a Microsoft Entra application to trust a managed identity. You can then exchange the managed identity token for an access token that can access Microsoft Entra protected resources without needing to use or manage App secrets.
 

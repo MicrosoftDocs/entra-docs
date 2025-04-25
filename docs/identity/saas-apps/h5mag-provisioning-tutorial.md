@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure H5mag to support provisioning with Microsoft Entra ID
 
-1. Log in to your [H5mag environment](https://account.h5mag.com/login) and navigate to **[Account](https://account.h5mag.com/account)** -> **[Provisioning & SSO](https://account.h5mag.com/account/provisioning)**.
+1. Log in to your [H5mag environment](https://account.h5mag.com/login) and navigate to **[Account](https://account.h5mag.com/account)** > **[Provisioning & SSO](https://account.h5mag.com/account/provisioning)**.
 
 2. Select the **Generate Token** button. The provisioning URL and API Token is displayed. These values are entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your H5mag application.
 

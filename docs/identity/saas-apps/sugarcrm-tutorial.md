@@ -148,7 +148,7 @@ In order to enable Microsoft Entra users to sign in to Sugar CRM, they must be p
 
     ![Screenshot shows the Administration section where you can select User Management.](./media/sugarcrm-tutorial/ic795893.png "Administration")
 
-1. Go to **Users \> Create New User**.
+1. Go to **Users** > **Create New User**.
 
     ![Create New User](./media/sugarcrm-tutorial/ic795894.png "Create New User")
 

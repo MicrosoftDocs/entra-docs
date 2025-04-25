@@ -27,8 +27,8 @@ Manage your accounts in one central location: the Azure portal.
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* LifeBalance Program single sign-on (SSO) enabled subscription.
+* A Microsoft Entra subscription. If you don't have a Microsoft Entra subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* LifeBalance Program single sign-on (SSO) enabled subscription with a custom domain. If you don't have a LifeBalance Program subscription you can visit the [LifeBalance sales page](https://sales.lifebalanceprogram.com/).
 
 ## Add LifeBalance Program from the gallery
 
@@ -62,8 +62,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
-    1. In the **Redirect URIs** textbox, type a URL using the following pattern:
-    `https://<SUBDOMAIN>.lifebalanceprogram.com/api/azure_token`
+    1. In the **Redirect URIs** textbox, use the URL associated with your LifeBalance Program subscription in this format. These usually have the following pattern:
+    `https://<LifeBalance Domain>/api/azure_token`
+
+        + If you do not have a custom domain yet, please contact the [LifeBalance Program support team](mailto:info@lifebalanceprogram.com).
 
         [![Screenshot of showing the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
 
@@ -108,4 +110,4 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 ## Configure LifeBalance Program SSO
 
-To complete the OAuth/OIDC federation setup on **LifeBalance Program** side, you need to send the copied values like  Tenant ID, Application ID, and Client Secret from Entra to [LifeBalance Program support team](mailto:info@lifebalanceprogram.com). They set this setting to have the OIDC connection set properly on both sides.
+To complete the OAuth/OIDC federation setup on **LifeBalance Program** side, you need to send the copied values for Tenant ID, Application ID, and Client Secret from Entra to [LifeBalance Program SSO support team](mailto:sso@lifebalanceprogram.com) via secure email. The LifeBalance SSO team will set these values to have the OIDC connection set properly on both sides.

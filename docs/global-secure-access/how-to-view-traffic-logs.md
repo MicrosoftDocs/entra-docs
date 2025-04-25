@@ -5,8 +5,9 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 04/24/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
 
@@ -50,7 +51,7 @@ The top of the page displays a summary of all transactions as well as a breakdow
 
 Select any log from the list to view the details. These details provide valuable information that can be used to filter the logs for specific details or to troubleshoot a scenario. The details can be added as a column and used to filter the logs.
 
-![Screenshot of the traffic log activity details.](media/how-to-view-traffic-logs/traffic-activity-details.png)
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-log-details.png" alt-text="Screenshot of Traffic log details page.":::
 
 ### Filter and column options
 
@@ -67,6 +68,18 @@ For example if you want to look at all the logs from a specific connection:
 1. In the field that appears, paste the `connectionId` and select **Apply**.
 
     ![Screenshot of the traffic log filter.](media/how-to-view-traffic-logs/traffic-log-filter.png)
+
+## Connection logs
+
+Connection logs provide a summary of all associated transactions, including the total transaction count and blocked transactions, allowing for quick identification of any blocked activity.   
+
+A connection represents multiple transactions occurring in the last 24 hours and sharing the same flow correlation ID. While the transaction logs provide detailed information about individual transactions, connection logs offer a higher-level overview by aggregating multiple transactions. Connections are logged in real time with Active/Closed status, providing admins with near real-time traffic visibility.
+
+We are currently previewing a new tab in the Traffic logs blade for you to view Connections:
+
+:::image type="content" source="media/how-to-view-traffic-logs/traffic-logs-connections-tab.png" alt-text="Screenshot of the new Connections tab on the Traffic logs page.":::
+
+Transactions associated with each Connection are viewed by selecting the **Transactions** tab.
 
 ### Troubleshooting scenarios
 
@@ -98,8 +111,6 @@ You can export the Global Secure Access traffic logs (preview) to an endpoint fo
     * **Archive to a storage account:** Provide the number of days you'd like to retain the data in the **Retention days** boxes that appear next to the log categories. Select the appropriate details from the menus that appear.
     * **Stream to an event hub:** Select the appropriate details from the menus that appear.
     * **Send to partner solution:** Select the appropriate details from the menus that appear.
-
-
 
 ## Next steps
 

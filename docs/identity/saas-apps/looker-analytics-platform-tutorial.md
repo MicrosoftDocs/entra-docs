@@ -111,7 +111,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign into Looker Analytics Platform website as an administrator.
 
-1. Go to the **Admin** -> **Authentication** -> **SAML**
+1. Go to the **Admin** > **Authentication** > **SAML**
 
     ![screenshot for SAML option](./media/looker-analytics-platform-tutorial/admin.png)
 

@@ -49,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to [BrowserStack](https://www.browserstack.com/users/sign_in) as a user with **Owner** permissions.
 
-2. Navigate to **Account** -> **Settings & Permissions**. Select the **Security** tab.
+2. Navigate to **Account** > **Settings & Permissions**. Select the **Security** tab.
 
 3. Under **Auto User Provisioning**, select **Configure**.
 

@@ -103,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your Panorama9 company site as an administrator.
 
-2. Navigate to **Manage** -> **Extensions** -> **Single Sign-On**.
+2. Navigate to **Manage** > **Extensions** > **Single Sign-On**.
 
 4. In the **Settings** section, perform the following steps:
    

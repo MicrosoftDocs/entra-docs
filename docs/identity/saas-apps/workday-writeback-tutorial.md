@@ -294,7 +294,7 @@ Once the Workday provisioning app configurations are complete, you can turn on t
 
 1. In the **Provisioning** tab, set the **Provisioning Status** to **On**.
 
-1. In the **Scope** dropdown, select **Sync all users and groups**. With this option, the Writeback app writes back mapped attributes of all users from Microsoft Entra ID to Workday, subject to the scoping rules defined under **Mappings** -> **Source Object Scope**. 
+1. In the **Scope** dropdown, select **Sync all users and groups**. With this option, the Writeback app writes back mapped attributes of all users from Microsoft Entra ID to Workday, subject to the scoping rules defined under **Mappings** > **Source Object Scope**. 
 
    > [!div class="mx-imgBorder"]
    > ![Select Writeback scope](./media/sap-successfactors-inbound-provisioning/select-writeback-scope.png)
