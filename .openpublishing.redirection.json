@@ -2312,11 +2312,6 @@
     "redirect_document_id": false
   },
   {
-    "source_path_from_root": "/docs/identity-platform/saml-claims-customization.md",
-    "redirect_url": "/entra/identity-platform/custom-claims-provider-overview",
-    "redirect_document_id": false
-  },
-  {
     "source_path_from_root": "/docs/identity-platform/howto-build-services-resilient-to-metadata-refresh.md",
     "redirect_url": "/entra/identity-platform/",
     "redirect_document_id": false
