@@ -493,7 +493,8 @@ For help with diagnosing KCD-related problems, see archived the F5 BIG-IP deploy
 
 ## Resources
 
-* My F5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/27.html)
+* My F5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
+
 * [Forget passwords, go passwordless](https://www.microsoft.com/security/business/identity/passwordless)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)
