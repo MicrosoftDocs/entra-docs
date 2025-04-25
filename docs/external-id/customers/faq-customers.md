@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: faq
-ms.date: 02/21/2025
+ms.date: 04/25/2025
 ms.author: mimart
 ms.custom: it-pro
 ---
@@ -73,6 +73,9 @@ Yes, we rebranded some items in the admin center and in our messaging to best ma
 |Azure AD B2B collaboration   | External ID B2B collaboration           |
 |Azure AD B2B direct connect  | External ID B2B direct connect          |
 |Customer tenant              | External tenant                         |
+
+> [!NOTE]
+> A Microsoft Entra tenant can be created in either a workforce tenant configuration or an external tenant configuration. [Learn more about tenant configurations](../tenant-configurations.md).
 
 ### How can I get started with External ID?
 
