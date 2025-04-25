@@ -72,6 +72,9 @@ Microsoft Platform SSO has introduced support for the [UserSecureEnclaveKeyBiome
 - When this policy is enabled, users are prompted for Touch ID authentication whenever the User Secure Enclave Key is accessed. Prompting will occur during PSSO registration, browser re-authentication scenarios using the user key as a passkey, and authentication during login to obtain the PSSO token.
 - Enabling this policy requires that the device supports Touch ID biometric authentication. Users need to configure Touch ID to proceed with PSSO registration. Administrators should ensure that users have a biometric-supported device or an external keyboard supporting Touch ID before enabling this policy.
 
+> [!NOTE]
+> There is no option for password fallback while authenticating with User Secure Enclave Key when UserSecureEnclaveKeyBiometricPolicy is enabled. Therefore, users will not be able to authenticate to Microsoft Entra ID if they do not have Touch ID biometrics available.
+
 #### Requirements for UserSecureEnclaveKeyBiometricPolicy
 
 - Operating system: macOS 14.6 and later
