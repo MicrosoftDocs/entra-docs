@@ -16,7 +16,7 @@ ms.reviewer: calebb
 
 The [What If tool](what-if-tool.md) in Conditional Access is powerful when trying to understand why a policy was or wasn't applied to a user in a specific circumstance or if a policy would apply in a known state.
 
-The What If tool is located in the **Microsoft Entra admin center** > **Protection** > **Conditional Access** > **Policies** > **What If**.
+The What If tool is located in the **Microsoft Entra admin center** > **Entra ID** > **Conditional Access** > **Policies** > **What If**.
 
 ![Conditional Access What If tool at default state](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-tool.png)
 

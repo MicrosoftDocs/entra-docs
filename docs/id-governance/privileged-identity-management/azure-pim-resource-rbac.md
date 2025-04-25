@@ -25,7 +25,7 @@ To see the actions a specific user took in various resources, view the Azure res
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**. 
 
 1. Select the resource you want to view activity and activations for.
 
@@ -47,7 +47,7 @@ You may have a compliance requirement where you must provide a complete list of 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**. 
 
 1. Select the resource you want to export role assignments for, such as a subscription.
 
@@ -67,7 +67,7 @@ Resource audit gives you a view of all role activity for a resource.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**. 
 
 1. Select the resource you want to view audit history for.
 
@@ -91,7 +91,7 @@ My audit enables you to view your personal role activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**. 
 
 1. Select the resource you want to view audit history for.
 
@@ -109,7 +109,7 @@ My audit enables you to view your personal role activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
 
 1. Use the **Service** filter to display only audit events for the Privileged identity Management service. On the **Audit logs** page, you can:
 

@@ -20,7 +20,7 @@ The Microsoft service principal sign-in logs capture service-to-service authenti
 These logs are only available by configuring diagnostic settings in Microsoft Entra to route the logs to an endpoint of your choice. For full guidance on this process, see [Configure diagnostic settings](howto-configure-diagnostic-settings.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostics**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostics**.
 1. Adjust the filters accordingly.
 1. Select **+ Add diagnostic setting**.
 1. Select the **MicrosoftServicePrincipalSignInLogs**. 

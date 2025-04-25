@@ -50,7 +50,7 @@ This recommendation is available in the Microsoft Entra admin center and using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
 
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 
 1. Select the **Recommendations** tab and select the **Renew expiring application credentials** recommendation.
 
@@ -63,7 +63,7 @@ This recommendation is available in the Microsoft Entra admin center and using t
 1. Select **More Details** from the **Actions** column.
 
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Certificates & secrets** area of the app registration to renew the expiring credential.
-    1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and locate the application for which the credential needs to be rotated.
+    1. Alternatively, browse to **Entra ID** > **App registrations** and locate the application for which the credential needs to be rotated.
 
       :::image type="content" source="media/recommendation-renew-expiring-application-credential/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-renew-expiring-application-credential/app-registrations-list-expanded.png":::
 

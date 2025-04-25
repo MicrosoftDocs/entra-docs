@@ -119,7 +119,7 @@ The basic steps to configure diagnostic settings are as follows:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. 
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**. 
 
 1. Any existing diagnostic settings appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
 

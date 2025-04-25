@@ -48,7 +48,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
       - |
-        Browse to **Identity** > **Settings** > **Domain names** > **Add custom domain**.
+        Browse to **Entra ID** > **Domain names** > **Add custom domain**.
 
           :::image type="content" source="media/add-custom-domain/add-custom-domain.png" alt-text="Screenshot of Custom domain names page, with Add custom domain shown.":::
       - |
@@ -86,7 +86,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
       - |
-        Browse to **Identity** > **Settings** > **Domain names**.
+        Browse to **Entra ID** > **Domain names**.
       - |
         In **Custom domain names**, select the custom domain name. In this example, select **contoso.com**.
 

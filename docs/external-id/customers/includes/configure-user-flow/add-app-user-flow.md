@@ -9,9 +9,9 @@ ms.manager: mwongerapk
 ---
 For the customer users to see the sign-up or sign-in experience when they use your app, you need to associate your app with a user flow. Although many applications can be associated with your user flow, a single application can only be associated with one user flow.
 
-1. On the sidebar menu, select **Identity**.
+1. On the sidebar menu, select **Entra ID** > **External Identities**.
 
-1. Select **External Identities**, then **User flows**.
+1. Select **User flows**.
 
 1. In the **User flows** page, select the **User flow name** you created earlier, for example, *SignInSignUpSample*.
 

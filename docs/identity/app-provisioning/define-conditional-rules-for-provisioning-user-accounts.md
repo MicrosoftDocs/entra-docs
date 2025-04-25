@@ -72,7 +72,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 ::: zone pivot="app-provisioning"
 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 
 3. Select the application for which you have configured automatic provisioning: for example, "ServiceNow".
 
@@ -80,7 +80,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 ::: zone pivot="cross-tenant-synchronization"
 
-2. Browse to **Identity** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
+2. Browse to **Entra ID** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
 
 3. Select your configuration.
 

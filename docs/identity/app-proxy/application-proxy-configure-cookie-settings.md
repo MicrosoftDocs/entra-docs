@@ -43,7 +43,7 @@ Additionally, if your back-end application has cookies that need third-party con
 To set the cookie settings using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 5. Under **Additional Settings**, set the cookie setting to **Yes** or **No**.
 6. Select **Save** to apply your changes. 
 

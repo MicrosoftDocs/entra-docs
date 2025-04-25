@@ -41,7 +41,7 @@ Before configuring Cisco Webex for automatic user provisioning with Microsoft En
 **To add Cisco Webex from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Cisco Webex**, select **Cisco Webex** from result panel then select **Add** button to add the application.
 
     ![Screenshot shows the Cisco Webex in the results list.](media/cisco-webex-provisioning-tutorial/search-cisco-app.png)
@@ -69,7 +69,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Cisco Webex in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cisco Webex**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Cisco Webex**.
 
     ![Screenshot shows the Enterprise applications blade.](common/enterprise-applications.png)
 

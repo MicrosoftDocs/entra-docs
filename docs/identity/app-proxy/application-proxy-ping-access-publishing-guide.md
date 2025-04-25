@@ -40,7 +40,7 @@ This article outlines the steps to publish an application for the first time. Th
 The private network connector is a Windows Server service that directs traffic from your remote employees to your published applications. For more detailed installation instructions, see [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](application-proxy-add-on-premises-application.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 1. Select **Download connector service**.
 1. Follow the installation instructions.
 
@@ -102,7 +102,7 @@ Now assign a user for application testing and choose header-based single sign-on
 
 Then make sure your redirect URL is set to your external URL:
 
-1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
+1. Browse to **Entra ID** > **App registrations** and select your application.
 1. Select the link next to **Redirect URIs**. The link shows the amount of redirect Uniform Resource Identifiers (URIs) setup for web and public clients. The **\<application name> - Authentication** page appears.
 1. Check whether the external URL that you assigned to your application earlier is in the **Redirect URIs** list. If it isn't, add the external URL now, using a redirect URI type of **Web**, and select **Save**.
 
@@ -134,7 +134,7 @@ Collect three Globally Unique Identifiers (GUIDs). Use the GUIDs to set up your 
 
 To collect this information:
 
-1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
+1. Browse to **Entra ID** > **App registrations** and select your application.
 1. Next to the **Application (client) ID** value, select the **Copy to clipboard** icon, then copy and save it. You specify this value later as PingAccess's client ID.
 1. Next the **Directory (tenant) ID** value, also select **Copy to clipboard**, then copy and save it. You specify this value later as PingAccess's issuer.
 1. From the sidebar of the **App registrations** for your application, select **Certificates and secrets** > **New client secret**. The **Add a client secret** page appears.
@@ -150,7 +150,7 @@ To collect this information:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
-1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
+1. Browse to **Entra ID** > **App registrations** and select your application.
 1. From the sidebar of the **App registrations** page for your application, select **Manifest**. The manifest JSON code for your application's registration appears.
 1. Search for the `acceptMappedClaims` field, and change the value to `True`.
 1. Select **Save**.

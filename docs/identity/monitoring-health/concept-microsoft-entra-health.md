@@ -26,7 +26,7 @@ When these metrics and signals are paired together, you get a comprehensive view
 Scenario monitoring and SLA Attainment are available in the Microsoft Entra Health area of the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Health**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Health**.
 
 The page opens to the SLA Attainment page.
 
