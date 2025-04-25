@@ -119,14 +119,14 @@ You will need to identify which applications at a site are in scope for being co
 * Applications which rely solely on an [Microsoft Authentication Library (MSAL) SDK](~/identity-platform/msal-overview.md) for token issuance cannot be connected to a relying party STS.
 * Applications which have been previously hardcoded with a single federation metadata endpoint or issuer certificate may require additional changes to remove that dependency prior to being integrated with a relying party STS.
 * Applications which are capable of supporting multiple identity providers may wish to retain the existing connection to Microsoft Entra.
-* The applications which are associated with a relying party STS will be represented as a single application in Microsoft Entra, so those applications will need to have the same users, CA policies, supplied claims and other settings applicable to them.
+* The applications which are associated with a relying party STS will be represented as a single application in Microsoft Entra, so those applications will need to have the same users, CA policies, supplied claims, and other settings applicable to them. If two applications rely upon Microsoft Entra to limit token issuance to different user populations, or have different CA requirements, they cannot both be connected to the same relying party STS.
 
 ## Configure Microsoft Entra as an identity provider to the relying party STS
 
 Perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. Performing that tutorial will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
 
  > [!NOTE]
- > A single application representation is used in Microsoft Entra for each relying party STS, independent of the number of applications connected to that relying party STS. If you have multiple applications connected to a single relying party STS, then they will share a common application in Microsoft Entra, so must have the same users, CA policies, supplied claims and other settings in Microsoft Entra.
+ > A single application representation is used in Microsoft Entra for each relying party STS, independent of the number of applications connected to that relying party STS. If you have multiple applications connected to a single relying party STS, then they will share a common application in Microsoft Entra, so must have the same users, CA policies, supplied claims, and other settings in Microsoft Entra.
 
 ## Configure AD as an LDAP source in the relying party STS
 
