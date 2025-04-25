@@ -39,7 +39,7 @@ To deploy Platform SSO for macOS, you need the meet following minimum requiremen
 * A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
 * [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
 * Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later installed. This version is required before users are targeted for PSSO.
-* Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](/identity/devices/troubleshoot-macos-platform-single-sign-on-extension?tabs=macOS14#insufficient-permissions).
+* Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](./troubleshoot-macos-platform-single-sign-on-extension?tabs=macOS14#insufficient-permissions).
 
 ## Configuration
 
@@ -69,8 +69,8 @@ Platform Credential for macOS can also be used as a phishing resistant credentia
 
 Microsoft Platform SSO has introduced support for the [UserSecureEnclaveKeyBiometricPolicy](https://developer.apple.com/documentation/authenticationservices/asauthorizationproviderextensionloginconfiguration/usersecureenclavekeybiometricpolicy) when using Platform SSO with the UserSecureEnclaveKey authentication method. This policy enhances security by requiring users to authenticate with Touch ID whenever the User Secure Enclave Key needs to be accessed.
 
-- When this policy is enabled, users will be prompted for Touch ID authentication whenever the User Secure Enclave Key is accessed. This includes during PSSO registration, browser re-authentication scenarios using the user key as a passkey, and authentication during login to obtain the PSSO token.
-- Enabling this policy requires that the device supports Touch ID biometric authentication. Users will need to configure Touch ID to proceed with PSSO registration. Administrators should ensure that users have a biometric-supported device or an external keyboard supporting Touch ID before enabling this policy.
+- When this policy is enabled, users are prompted for Touch ID authentication whenever the User Secure Enclave Key is accessed. Prompting will occur during PSSO registration, browser re-authentication scenarios using the user key as a passkey, and authentication during login to obtain the PSSO token.
+- Enabling this policy requires that the device supports Touch ID biometric authentication. Users need to configure Touch ID to proceed with PSSO registration. Administrators should ensure that users have a biometric-supported device or an external keyboard supporting Touch ID before enabling this policy.
 
 #### Requirements for UserSecureEnclaveKeyBiometricPolicy
 
@@ -91,11 +91,11 @@ High-security customers can opt-in to enable this feature by setting a flag in t
 
 #### Benefits of UserSecureEnclaveKeyBiometricPolicy
 
-- Enhanced Security: The User Secure Enclave Key access is hardware-protected and can only be accessed after successful Touch ID authentication, providing an additional layer of security.
+- Enhanced Security: The User Secure Enclave Key access is hardware-protected and can only be accessed after successful Touch ID authentication, providing an extra layer of security.
 
 #### Drawbacks of UserSecureEnclaveKeyBiometricPolicy
 
-- Additional Prompts: Users will encounter extra prompts during PSSO registration as the key is accessed multiple times during the process.
+- More Prompts: Users will encounter extra prompts during PSSO registration as the key is accessed multiple times during the process.
 - Biometric-Only Access: The PSSO passkey can only be accessed with biometric authentication. There is no password fallback. If the device is unlocked with a password, users will still be prompted for biometric authentication to obtain the PSSO token.
 
 ## National Institute of Standards and Technology (NIST)
