@@ -121,16 +121,12 @@ You will need to identify which applications at a site are in scope for being co
 * Applications which are capable of supporting multiple identity providers may wish to retain the existing connection to Microsoft Entra.
 * The applications which are associated with a relying party STS will be represented as a single application in Microsoft Entra, so those applications will need to have the same users, CA policies, supplied claims and other settings applicable to them.
 
-
-<!--
-1. Multiple local apps.. when the local STS is servicing multiple apps.. and how to reflect the multiple underling local apps behind the local STS individually in Entra.
--->
-
-
-
 ## Configure Microsoft Entra as an identity provider to the relying party STS
 
 Perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. Performing that tutorial will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
+
+ > [!NOTE]
+ > A single application representation is used in Microsoft Entra for each relying party STS, independent of the number of applications connected to that relying party STS. If you have multiple applications connected to a single relying party STS, then they will share a common application in Microsoft Entra, so must have the same users, CA policies, supplied claims and other settings in Microsoft Entra.
 
 ## Configure AD as an LDAP source in the relying party STS
 
@@ -243,10 +239,7 @@ For a simple environment, you can implement a monitor by using a PowerShell scri
 
 ### Configure session invalidation (optional)
 
-<!--
-
-2. Session continuation... not clear to me how we make sure that a session that uses AD as IdP to start (connectivity down) then is invalidated when connectivity is restored so the session can be evaluated by Entra.
--->
+Your applications may also have user sessions that are derived from the user having been authenticated. For example, a browser-based application may authenticate a user and then store a browser cookie indicating the user has been authenticated. You may wish to have your applications rely upon the disconnected identity providers for as short a period as possible. For example, if a user had not used an application before, and then the first time the user tried to connect to an application was when the site was disconnected, then the authentication was performed by Windows Server AD. Following that authentication, the application may have stored a session cookie for the user to be able to continue to interact with the application without needing to re-authenticate. However, once the site is reconnected, you may wish to have the user be re-authenticated by Microsoft Entra, so that the Microsoft Entra policies such as conditional access can be applied. This will require invalidating any session state for those users that was derived from Windows Server AD, such as by informing the application to not allow session state generated during a particular time window. How this is provided to the application will vary by applications.
 
 ## Complete configuration
 
