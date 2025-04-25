@@ -9,7 +9,7 @@ ms.date: 02/03/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: error-reference
 #Customer intent: As a developer troubleshooting authentication errors, I want to understand the meaning and possible resolutions for the AADSTS error codes returned by the Microsoft Entra security token service, so that I can effectively debug and fix authentication issues in my application.
 ---
 
@@ -130,7 +130,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50048 | SubjectMismatchesIssuer - Subject mismatches Issuer claim in the client assertion. Contact the tenant admin. |
 | AADSTS50049 | NoSuchInstanceForDiscovery - Unknown or invalid instance. |
 | AADSTS50050 | MalformedDiscoveryRequest - The request is malformed. |
-| AADSTS50053 | This error can result from two different reasons: <br><ul><li>IdsLocked - The account is locked because the user tried to sign in too many times with an incorrect user ID or password. The user is blocked due to repeated sign-in attempts. See [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md).</li><li>Or, sign-in was blocked because it came from an IP address with malicious activity.</li></ul> <br>To determine which failure reason caused this error, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).  Navigate to your Microsoft Entra tenant and then **Monitoring & health** -> **Sign-in logs**.  Find the failed user sign-in with **Sign-in error code** 50053 and check the **Failure reason**.|
+| AADSTS50053 | This error can result from two different reasons: <br><ul><li>IdsLocked - The account is locked because the user tried to sign in too many times with an incorrect user ID or password. The user is blocked due to repeated sign-in attempts. See [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md).</li><li>Or, sign-in was blocked because it came from an IP address with malicious activity.</li></ul> <br>To determine which failure reason caused this error, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).  Navigate to your Microsoft Entra tenant and then **Monitoring & health** > **Sign-in logs**.  Find the failed user sign-in with **Sign-in error code** 50053 and check the **Failure reason**.|
 | AADSTS50055 | InvalidPasswordExpiredPassword - The password is expired. The user's password is expired, and therefore their login or session was ended. They will be offered the opportunity to reset it, or can ask an admin to reset it via [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.yml). |
 | AADSTS50056 | Invalid or null password: password doesn't exist in the directory for this user. The user should be asked to enter their password again. |
 | AADSTS50057 | UserDisabled - The user account is disabled. The user object in Active Directory backing this account has been disabled. An admin can re-enable this account [through PowerShell](/powershell/module/activedirectory/enable-adaccount) |
@@ -388,6 +388,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS901011 | NoEmailAddressCollectedFromExternalOidcIDP - No email address was obtained from the external OpenID Connect (OIDC) identity provider. This usually happens when the user selects **Hide my email** upon signing up. |
 | AADSTS901012 | EmailAddressCollectedFromExternalOidcIDPNotVerified - No verified email address was obtained from the identity provider. The email address is not verified in the ID token from the external OIDC identity provider.  |
 | AADSTS901014 | NoExternalIdentifierCollectedFromExternalOidcIDP - The external identifier does not exist in the ID token from the external OIDC identity provider. |
+| AADSTS650059 | The application is not configured for use in the tenant. The value `AzureADMyOrg` set for application property `signInAudience` is limiting its use in the tenant. |
 
 ## Next steps
 

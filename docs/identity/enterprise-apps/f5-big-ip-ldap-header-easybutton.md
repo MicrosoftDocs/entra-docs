@@ -353,4 +353,4 @@ To validate the APM service account for LDAP queries, use the following command 
 
  ```ldapsearch -xLLL -H 'ldap://192.168.0.58' -b "CN=partners,dc=contoso,dc=lds" -s sub -D "CN=f5-apm,CN=partners,DC=contoso,DC=lds" -w 'P@55w0rd!' "(cn=testuser)"```
 
-For more information, see the F5 article [K11072: Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072). You can use a BIG-IP reference table to help diagnose LDAP-related issues in AskF5 document, [LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/5.html).
+For more information, see the F5 article [K11072: Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072). You can use a BIG-IP reference table to help diagnose LDAP-related issues in AskF5 document, [LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/5.html).

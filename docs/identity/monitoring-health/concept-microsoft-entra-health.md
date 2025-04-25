@@ -2,7 +2,7 @@
 title: Learn about Microsoft Entra Health monitoring
 description: Monitor the health of your tenant through several identity scenarios and authentication availability rates with Microsoft Entra Health
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
@@ -19,7 +19,7 @@ When these metrics and signals are paired together, you get a comprehensive view
 
 > [!IMPORTANT]
 > Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. The Microsoft Entra admin center experience is being released to customers in phases, so you might not see all the features described in this article.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Access Microsoft Entra Health
 

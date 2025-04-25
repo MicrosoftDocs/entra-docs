@@ -16,18 +16,18 @@ ms.author: thomasakelo
 
 # Configure StarLeaf for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in StarLeaf and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to StarLeaf.
+The objective of this article is to demonstrate the steps to be performed in StarLeaf and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to StarLeaf.
 
 > [!NOTE]
->  This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+>  This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 > This connector is currently in Preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A StarLeaf tenant](https://starleaf.com/).
 * A user account in StarLeaf with Admin permissions.
 
@@ -50,7 +50,7 @@ Before you configure StarLeaf for automatic user provisioning with Microsoft Ent
 
 	![Screenshot of the StarLeaf Admin Console with the Integrations and Add integration options called out.](media/starleaf-provisioning-tutorial/image00.png)
 
-2. Select the **Type** to be Microsoft Entra ID. Enter a suitable name in **Name**. Click **Apply**.
+2. Select the **Type** to be Microsoft Entra ID. Enter a suitable name in **Name**. Select **Apply**.
 
 	![Screenshot of the Add integration dialog box with the Type and Name text boxes called out.](media/starleaf-provisioning-tutorial/image01.png)
 
@@ -90,7 +90,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the Admin Credentials section, input the **SCIM Base URL** and **Access Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to StarLeaf. If the connection fails, ensure your StarLeaf account has Admin permissions and try again.
+5. Under the Admin Credentials section, input the **SCIM Base URL** and **Access Token** values retrieved earlier in **Tenant URL** and **Secret Token** respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to StarLeaf. If the connection fails, ensure your StarLeaf account has Admin permissions and try again.
 
 	![Screenshot of the Tenant URL + Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -98,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Notification Email.](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to StarLeaf**.
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	![Screenshot of the Attribute Mappings section showing nine mappings displayed.](media/starleaf-provisioning-tutorial/userattribute.png)
 
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 
 11. To enable the Microsoft Entra provisioning service for StarLeaf, change the **Provisioning Status** to **On** in the **Settings** section.
@@ -118,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the provisioning scope.](common/provisioning-scope.png)
 
-13. When you're ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Screenshot of saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

@@ -44,7 +44,7 @@ A flexible federated identity credentials expression is made up of three parts, 
 
 | Name | Description | Example |
 | --- | --- | --- |
-| Claim lookup | The claim lookup must follow the pattern of `claims[‘<claimName>’]` | `claims['sub']` |
+| Claim lookup | The claim lookup must follow the pattern of `claims['<claimName>']` | `claims['sub']` |
 | Operator | The operator portion must be just the operator name, separated from the claim lookup and comparand by a single space | `matches` |
 | Comparand | The comparand contains what you intend to compare the claim specified in the lookup against – it must be contained within single quotes | `'repo:contoso/contoso-repo:ref:refs/heads/*'` |
 
@@ -70,9 +70,9 @@ Flexible federated identity credentials currently support the use of a few opera
 
 | Operator | Description | Example |
 | --- | --- | --- |
-| `matches` | Enables the use of single-character (denoted by `?`) and multi-character (denoted by `*`) wildcard matching for the specified claim  | &#8226; `“claims[‘sub’] matches ‘repo:contoso/contoso-repo:ref:refs/heads/*’”` <br/>&#8226; `“claims[‘sub’] matches ‘repo:contoso/contoso-repo-*:ref:refs/heads/????’”` |
-| `eq` | Used for explicitly matching against a specified claim | &#8226; `“claims[‘sub’] eq ‘repo:contoso/contoso-repo:ref:refs/heads/main’”`  |
-| `and` | Boolean operator for combining expressions against multiple claims | &#8226; `“claims[‘sub’] eq ‘repo:contoso/contoso-repo:ref:refs/heads/main’ and claims[‘job_workflow_ref’] matches ‘foo-org/bar-repo /.github/workflows/*@refs/heads/main’”` |
+| `matches` | Enables the use of single-character (denoted by `?`) and multi-character (denoted by `*`) wildcard matching for the specified claim  | &#8226; `"claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'"` <br/>&#8226; `"claims['sub'] matches 'repo:contoso/contoso-repo-*:ref:refs/heads/????'"` |
+| `eq` | Used for explicitly matching against a specified claim | &#8226; `"claims['sub'] eq 'repo:contoso/contoso-repo:ref:refs/heads/main'"`  |
+| `and` | Boolean operator for combining expressions against multiple claims | &#8226; `"claims['sub'] eq 'repo:contoso/contoso-repo:ref:refs/heads/main' and claims['job_workflow_ref'] matches 'foo-org/bar-repo /.github/workflows/*@refs/heads/main'"` |
 
 
 ## Issuer URLs, supported claims, and operators by platform

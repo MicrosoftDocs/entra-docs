@@ -4,8 +4,8 @@ description: This article details the known issues and limitations you might enc
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
-manager: amycolannino
-ms.date: 12/23/2024
+manager: femila
+ms.date: 03/12/2025
 ms.service: global-secure-access
 
 
@@ -225,7 +225,6 @@ Known limitations for remote networks include:
 
 ## Access controls limitations
 Known limitations for access controls include:   
-- Continuous access evaluation (CAE) isn't currently supported for Universal Conditional Access for Microsoft traffic.
 - Applying Conditional Access policies to Private Access traffic isn't currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
 - Microsoft traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access Client.
 - Compliant network check data plane enforcement (preview) with Continuous Access Evaluation is supported for SharePoint Online and Exchange Online.
@@ -259,7 +258,7 @@ Known limitations for Private Access include:
 - Avoid overlapping app segments between Quick Access and Global Secure Access apps.
 - Avoid overlapping app segments between Quick Access and per-app access.
 - Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.   
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   

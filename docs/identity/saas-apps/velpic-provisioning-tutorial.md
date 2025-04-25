@@ -16,22 +16,22 @@ ms.author: thomasakelo
 
 # Configuring Velpic for Automatic User Provisioning
 
-The objective of this tutorial is to show you the steps you need to perform in Velpic and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Velpic.
+The objective of this article is to show you the steps you need to perform in Velpic and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Velpic.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Velpic tenant with the Enterprise plan or better enabled
 * A user account in Velpic with Admin permissions
 
 ## Assigning users to Velpic
 
-Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that have been "assigned" to an application in Microsoft Entra ID will be synchronized. 
+Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that have been "assigned" to an application in Microsoft Entra ID is synchronized. 
 
 Before configuring and enabling the provisioning service, you need to decide what users and/or groups in Microsoft Entra ID represent the users who need access to your Velpic app. Once decided, you can assign these users to your Velpic app by following the instructions here:
 
@@ -73,15 +73,15 @@ This section guides you through connecting your Microsoft Entra ID to Velpic's u
 
 7. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox below.
 
-8. Click **Save**.
+8. Select **Save**.
 
 9. Under the Mappings section, select **Synchronize Microsoft Entra users to Velpic**.
 
-10. In the **Attribute Mappings** section, review the user attributes that will be synchronized from Microsoft Entra ID to Velpic. The attributes selected as **Matching** properties will be used to match the user accounts in Velpic for update operations. Select the Save button to commit any changes.
+10. In the **Attribute Mappings** section, review the user attributes that's synchronized from Microsoft Entra ID to Velpic. The attributes selected as **Matching** properties are used to match the user accounts in Velpic for update operations. Select the Save button to commit any changes.
 
 11. To enable the Microsoft Entra provisioning service for Velpic, change the **Provisioning Status** to **On** in the **Settings** section
 
-12. Click **Save**.
+12. Select **Save**.
 
 This starts the initial synchronization of any users and/or groups assigned to Velpic in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity reports, which describe all actions performed by the provisioning service.
 

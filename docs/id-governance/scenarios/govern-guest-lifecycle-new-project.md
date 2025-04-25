@@ -2,10 +2,10 @@
 title: 'Plan new governance scenarios for business partners and external users with Microsoft ID Governance'
 description: Describes overview of getting started with new business partner and external user scenarios.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 zone_pivot_groups: identity-governance-guest-new-project
 ms.author: billmath
 ---
@@ -108,7 +108,7 @@ You're the IT admin at a bustling tech company, Contoso, and often face the chal
 Some of your key requirements include, 
 
  - Diverse guest onboarding needs with different departments requiring unique levels of access. 
- - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust conditional access policies and multifactor authentication to protect sensitive data. 
+ - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust Conditional Access policies and multifactor authentication to protect sensitive data. 
  - A seamless and user friendly onboarding process for both you as an IT admin, and your external users. External users should be able to quickly and easily access the resources they require without unnecessary delays. 
  - Integration with existing collaboration tools like Microsoft Teams and SharePoint, along with the option for Self-Service Sign-Up (SSSU) 
  - Capability to govern guest by regularly monitoring guest user activity, set an expiration on access and periodic access reviews ensure that guest access remains appropriate over time. For more information, see [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) and [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
@@ -162,7 +162,7 @@ IT teams can delegate partner access to empower employees to collaborate with pa
 
 Compile and assess your organization's scenarios to help assess employee versus business partner access to resources. Financial institutions might have compliance standards that restrict employee access to resources such as account information. Conversely, the same institutions can enable delegated partner access for projects such as marketing campaigns.
 
-  ![Diagram of a balance of IT team goverened access to partner self-service.](../../architecture/media/secure-external-access/1-scenarios.png)
+  ![Diagram of a balance of IT team governed access to partner self-service.](../../architecture/media/secure-external-access/1-scenarios.png)
 
 #### Scenario considerations
 
@@ -182,7 +182,7 @@ Proper security architectural design is an essential component of ensuring a sec
 
 
 #### Suggested documentation
-Finally, you should review the following documentation. Reviewing this documentation will allow you to devise and create a security plan that can be used with your business partner and exteranl user scenarios.
+Finally, you should review the following documentation. Reviewing this documentation will allow you to devise and create a security plan that can be used with your business partner and external user scenarios.
 
 - [Microsoft Entra External ID deployment architectures with Microsoft Entra](../../architecture/external-identity-deployment-architectures.md)
 - [Secure external Collaboration](../../architecture/1-secure-access-posture.md)
@@ -278,7 +278,7 @@ Now you may have additional requirements that need to be assigned to guest users
 
 For instance, you may have an access package that is assigned to your regular users and you want a similar package assigned to guest users. You can use entitlement management to assign the guest users to these access packages. See [View, add, and remove assignments for an access package in entitlement management](../entitlement-management-access-package-assignments.md)
 
-You may opt to create a new package, not touching your exisiting one, and assign guest users to that package. For more information see:
+You may opt to create a new package, not touching your existing one, and assign guest users to that package. For more information see:
  - [Creating an access package](../entitlement-management-access-package-create.md)
  - [Configure an automatic assignment policy for an access package in entitlement management](../entitlement-management-access-package-auto-assignment-policy.md)
  - [Change lifecycle settings for an access package in entitlement management](../entitlement-management-access-package-lifecycle-policy.md)

@@ -3,11 +3,11 @@ title: Plan cloud HR application to Microsoft Entra user provisioning
 description: This article describes the deployment process of integrating cloud HR systems, such as Workday and SuccessFactors, with Microsoft Entra ID. Integrating Microsoft Entra ID with your cloud HR system results in a complete identity lifecycle management system.
 
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 05/24/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: arvinh
 ---

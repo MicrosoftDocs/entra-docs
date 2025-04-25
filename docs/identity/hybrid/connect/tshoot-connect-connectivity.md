@@ -3,17 +3,17 @@ title: 'Microsoft Entra Connect: Troubleshoot Microsoft Entra connectivity issue
 description: Learn how to troubleshoot connectivity issues with Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
 
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ---
 # Troubleshoot Microsoft Entra Connect connectivity issues
 
@@ -206,7 +206,7 @@ The MFA challenge was canceled.
 
 ### Connect to MSOnline failed
 
-Authentication was successful, but Azure AD PowerShell has an authentication problem.
+Authentication was successful, but Microsoft Entra PowerShell has an authentication problem.
 
 
 ### Privileged Identity Management enabled

@@ -3,12 +3,13 @@ title: How to configure Global Secure Access web content filtering
 description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
 author: kenwith    
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
+ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
@@ -102,7 +103,7 @@ The following flow diagram illustrates web content filtering policies blocking o
 |1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
 |2|The client redirects to Microsoft Entra ID for authentication and authorization.|
 |3|The user and device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
-|4|After the user and device authenticate, Conditional Access matches on Internet Access CA rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
+|4|After the user and device authenticate, Conditional Access matches on Internet Access Conditional Access rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
 |5|Microsoft Entra ID presents the token to Microsoft Security Service Edge for validation.|
 |6|The tunnel establishes between the Global Secure Access client and Microsoft Security Service Edge.|
 |7|Traffic starts being acquired and tunnels through the Internet Access tunnel.|

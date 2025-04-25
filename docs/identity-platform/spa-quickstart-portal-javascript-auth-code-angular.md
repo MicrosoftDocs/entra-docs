@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform
 
@@ -98,4 +98,4 @@ ms.topic: quickstart
 > Next, try a step-by-step tutorial to learn how to build a React SPA from scratch that signs in users and calls the Microsoft Graph API to get user profile data:
 > 
 > > [!div class="nextstepaction"]
-> > [Tutorial: Sign in users and call Microsoft Graph from a React single-page app](./tutorial-single-page-app-react-register-app.md)
+> > [Tutorial: Sign in users and call Microsoft Graph from a React single-page app](./tutorial-single-page-app-react-prepare-app.md)

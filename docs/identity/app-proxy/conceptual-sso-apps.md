@@ -3,13 +3,14 @@ title: Security Assertion Markup Language (SAML) single sign-on (SSO) for on-pre
 description: Learn how to provide single sign-on (SSO) for on-premises applications that are secured with Security Assertion Markup Language (SAML) authentication. Provide remote access to on-premises apps with application proxy.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/06/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Security Assertion Markup Language (SAML) single sign-on (SSO) for on-premises applications with application proxy

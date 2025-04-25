@@ -39,7 +39,7 @@ You can use the user insights feature for the following scenarios:
 To access and view data from application user activity, you must have:
 
 - A Microsoft Entra External ID [external tenant](quickstart-tenant-setup.md).
-- [Registered application(s)](how-to-register-ciam-app.md) with some sign-in and sign-up data.
+- [Registered application(s)](/entra/identity-platform/quickstart-register-app) with some sign-in and sign-up data.
 
 ## How to access the Application user activity dashboards
 
@@ -84,7 +84,7 @@ The **MFA Usage** dashboard gives you a summary of monthly MFA authentication pe
 
 - Users registered for MFA
 - Types of MFA usage with a summary of success vs failure count over a period of 12 months
-- CAPTHA triggers and activity in the last 30 days
+- CAPTCHA triggers and activity in the last 30 days
 
     :::image type="content" source="media/how-to-user-insights/mfa-dashboard.png" alt-text="Screenshot of the MFA Usage dashboard.":::
 
@@ -92,7 +92,7 @@ The **MFA Usage** dashboard gives you a summary of monthly MFA authentication pe
 
 To better understand MFA performance, we have added new metrics to the MFA Usage dashboard. These metrics provide actionable insights into SMS-based MFA usage.
 
-- **Conditional Access (CA) policies requiring MFA**: This metric helps you identify which CA policies require MFA, allowing you to pinpoint any security gaps.
+- **Conditional Access policies requiring MFA**: This metric helps you identify which Conditional Access policies require MFA, allowing you to pinpoint any security gaps.
 - **Number of users registered for MFA**: This metric tracks how many users are registered for MFA and which methods they use. This information helps you evaluate the level of MFA adoption.
 
 We have added several new metrics to help you detect potential telecom fraud. Microsoft Entra External ID uses CAPTCHA for SMS MFA to help to prevent automated attacks by distinguishing human users from bots. If a risky user is detected, we block the user from signing in or ask the user to complete a CAPTCHA before sending an SMS verification code. To help you visualize the effectiveness of this method, we have added the following metrics to the dashboard:

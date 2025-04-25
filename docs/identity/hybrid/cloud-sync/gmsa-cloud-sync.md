@@ -2,10 +2,10 @@
 title: 'Use a group managed service account with Microsoft Entra Cloud Sync '
 description: This document details using a gMSA account with cloud sync
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ---

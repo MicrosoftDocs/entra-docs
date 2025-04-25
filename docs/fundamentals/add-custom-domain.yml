@@ -1,19 +1,17 @@
 ### YamlMime:HowTo
-
 metadata:
   title: Add your custom domain
   description: Instructions about how to add your custom domain name to your tenant.
   author: barclayn
   ms.author: barclayn
-  manager: amycolannino
+  manager: femila
   ms.reviewer: elkuzmen
-  ms.date: 01/31/2025
+  ms.date: 03/05/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
-
 title: |
   Add your custom domain name to your tenant
 introduction: |

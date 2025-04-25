@@ -3,10 +3,10 @@ title: Tutorial - Basic Active Directory on-premises and Microsoft Entra environ
 
 description: Learn how to create a basic AD and Microsoft Entra environment.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -127,7 +127,7 @@ Now that you've created and renamed the VM created, and it has a static IP addre
   $DatabasePath = "c:\windows\NTDS"
   $DomainMode = "WinThreshold"
   $DomainName = "contoso.com"
-  $DomaninNetBIOSName = "CONTOSO"
+  $DomainNetBIOSName = "CONTOSO"
   $ForestMode = "WinThreshold"
   $LogPath = "c:\windows\NTDS"
   $SysVolPath = "c:\windows\SYSVOL"
