@@ -1253,7 +1253,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/serviceAction/activateService | Can perform the "activate service" action for a service |
 > | microsoft.directory/serviceAction/disableDirectoryFeature | Can perform the "disable directory feature" service action |
 > | microsoft.directory/serviceAction/enableDirectoryFeature | Can perform the "enable directory feature" service action |
-> | microsoft.directory/serviceAction/getAvailableExtensionProperties | Can perform the getAvailableExtensionProperties service action |
+> | microsoft.directory/serviceAction/getAvailableExtentionProperties | Can perform the getAvailableExtentionProperties service action |
 > | microsoft.directory/servicePrincipalCreationPolicies/basic/update | Update basic properties of service principal creation policies |
 > | microsoft.directory/servicePrincipalCreationPolicies/create | Create service principal creation policies |
 > | microsoft.directory/servicePrincipalCreationPolicies/delete | Delete service principal creation policies |
@@ -1416,7 +1416,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/roleAssignments/allProperties/read | Read all properties of role assignments |
 > | microsoft.directory/roleDefinitions/allProperties/read | Read all properties of role definitions |
 > | microsoft.directory/scopedRoleMemberships/allProperties/read | View members in administrative units |
-> | microsoft.directory/serviceAction/getAvailableExtensionProperties | Can perform the getAvailableExtensionProperties service action |
+> | microsoft.directory/serviceAction/getAvailableExtentionProperties | Can perform the getAvailableExtentionProperties service action |
 > | microsoft.directory/servicePrincipalCreationPolicies/standard/read | Read standard properties of service principal creation policies |
 > | microsoft.directory/servicePrincipals/allProperties/read | Read all properties (including privileged properties) on servicePrincipals |
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
@@ -1797,7 +1797,7 @@ Assign the IoT Device Administrator role to users who need to do the following t
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/certificateBasedDeviceAuthConfigurations/create | Create Certificate Authorities configurations for IoT Device trust and authentication |
-> | microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update | Update credential related properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update | Update crendential related properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
 > | microsoft.directory/certificateBasedDeviceAuthConfigurations/delete | Delete certificate authority configurations for Internet of Things (IoT) device |
 > | microsoft.directory/certificateBasedDeviceAuthConfigurations/standard/read | Read standard properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
 > | microsoft.directory/deviceTemplates/create | Create Internet of Things (IoT) device templates |
