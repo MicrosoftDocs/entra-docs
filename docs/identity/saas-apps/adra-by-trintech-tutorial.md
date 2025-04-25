@@ -118,7 +118,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Download the **Service Provider metadata file** by selecting **here** in the Adra page and upload this metadata file.
 
-   [ ![Screenshot that shows the Configuration Settings.](./media/adra-by-trintech-tutorial/settings.png "Configuration")](./media/adra-by-trintech-tutorial/settings.png#lightbox)
+   [![Screenshot that shows the Configuration Settings.](./media/adra-by-trintech-tutorial/settings.png "Configuration")](./media/adra-by-trintech-tutorial/settings.png#lightbox)
 
 1. Select the **Add a new federated identity provider** button and enter the details for the required fields accordingly.
 

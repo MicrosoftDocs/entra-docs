@@ -106,17 +106,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Airbase|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||&check;
-   |emails[type eq "work"].value|String||&check;
-   |name.givenName|String||
-   |name.familyName|String||
-   |externalId|String||&check;
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
-   |urn:ietf:params:scim:schemas:extension:airbase:2.0:User:accountingPolicy|String||
-   |urn:ietf:params:scim:schemas:extension:airbase:2.0:User:subsidiary|String||
-   |urn:ietf:params:scim:schemas:extension:airbase:2.0:User:role|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |emails[type eq "work"].value|String||&check;|
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |externalId|String||&check;|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|||
+   |urn:ietf:params:scim:schemas:extension:airbase:2.0:User:accountingPolicy|String|||
+   |urn:ietf:params:scim:schemas:extension:airbase:2.0:User:subsidiary|String|||
+   |urn:ietf:params:scim:schemas:extension:airbase:2.0:User:role|String|||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

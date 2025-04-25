@@ -28,11 +28,11 @@ Only the group's owners can update membership. You can give group owners the abi
 
 Microsoft 365 groups provide collaboration opportunities for your users. You can create groups in any of the Microsoft 365 applications, such as SharePoint, and Microsoft Teams. You can also create Microsoft 365 groups in Azure portals by using Microsoft Graph PowerShell or from the My Groups portal. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md).
 
-Groups created in | Security group default behavior | Microsoft 365 group default behavior
------------------- | ------------------------------- | ---------------------------------
-[Microsoft Graph PowerShell](/entra/identity/users/groups-settings-v2-cmdlets) | Only owners can add members.<br>Visible but not available to join in MyApp Groups Access Panel. | Open to join for all users.
-[Azure portal](https://portal.azure.com) | Only owners can add members.<br>Visible but not available to join in My Groups portal.<br>Owner isn't assigned automatically at group creation. | Open to join for all users.
-[My Groups portal](https://myaccount.microsoft.com/groups) | Users can manage groups and request access to join groups here.<br>Membership options can be changed when a group is created. | Open to join for all users.<br>Membership options can be changed when a group is created.
+| Groups created in | Security group default behavior | Microsoft 365 group default behavior |
+| ------------------ | ------------------------------- | --------------------------------- |
+| [Microsoft Graph PowerShell](/entra/identity/users/groups-settings-v2-cmdlets) | Only owners can add members.<br>Visible but not available to join in MyApp Groups Access Panel. | Open to join for all users. |
+| [Azure portal](https://portal.azure.com) | Only owners can add members.<br>Visible but not available to join in My Groups portal.<br>Owner isn't assigned automatically at group creation. | Open to join for all users. |
+| [My Groups portal](https://myaccount.microsoft.com/groups) | Users can manage groups and request access to join groups here.<br>Membership options can be changed when a group is created. | Open to join for all users.<br>Membership options can be changed when a group is created. |
 
 ## Self-service group management scenarios
 
