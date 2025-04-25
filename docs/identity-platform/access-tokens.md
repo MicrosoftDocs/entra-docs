@@ -190,7 +190,7 @@ For these applications, Microsoft Entra ID exposes tenant-independent versions o
 
 ### Validate the signing key issuer
 
-Applications using the v2.0 tenant-independant metadata need to validate the signing key issuer.
+Applications using the v2.0 tenant-independent metadata need to validate the signing key issuer.
 
 #### Keys document and signing key issuer
 
