@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/18/2025
+ms.date: 04/25/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -219,7 +219,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: If the tenant is only used for testing, is MFA required? 
 
-**Answer**: Yes, every Azure tenant will require MFA, there are no exceptions. 
+**Answer**: Yes, every Azure tenant will require MFA, with no exception for test environments.  
 
 **Question**: How does this requirement impact the Microsoft 365 admin center?
 
@@ -229,13 +229,17 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
-**Question**: Will I need to complete MFA if I choose the option to **Stay signed in**?
+**Question**: Do I need to complete MFA if I choose the option to **Stay signed in**?
 
 **Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to these [applications](#applications).
 
-**Question**: Will the enforcement apply to B2B guest accounts?
+**Question**: Does the enforcement apply to B2B guest accounts?
 
 **Answer**: Yes, MFA has to be adhered either from the partner resource tenant, or the user's home tenant if it's set up properly to send MFA claims to the resource tenant by using cross-tenant access. 
+
+**Question**: Does the enforcement apply to Azure for US Government or Azure sovereign clouds?
+
+**Answer**: Microsoft enforces mandatory MFA only in the public Azure cloud. Microsoft doesn't currently enforce MFA in Azure for US Government or other Azure sovereign clouds. 
 
 **Question**: How can we comply if we enforce MFA by using another identity provider or MFA solution, and we don't enforce by using Microsoft Entra MFA? 
 
