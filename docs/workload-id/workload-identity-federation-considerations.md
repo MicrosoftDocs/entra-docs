@@ -188,4 +188,4 @@ The following error codes may be returned when creating, updating, getting, list
 | 400 | Federated Identity Credential name '{ficName}' is invalid. | Alphanumeric, dash, underscore, no more than 3-120 symbols. First symbol is alphanumeric. |
 | 404 | The parent user-assigned identity doesn't exist. | Check user assigned identity name in federated identity credentials resource path. |
 | 400 | Issuer and subject combination already exists for this Managed Identity. | This is a constraint. List all federated identity credentials associated with the user-assigned identity to find existing federated identity credential. |
-| 409 | Conflict | Concurrent write request to federated identity credential resources under the same user-assigned identity has been denied.
+| 409 | Conflict | Concurrent write request to federated identity credential resources under the same user-assigned identity has been denied. |

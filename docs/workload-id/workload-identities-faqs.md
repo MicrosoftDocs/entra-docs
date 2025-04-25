@@ -42,9 +42,9 @@ The free features come with a subscription for a commercial online service such 
 | Application management policies | IT admins can enforce best practices for how apps are configured | Yes | Yes |
 |Access reviews for service provider-assigned privileged roles  | Closely monitor workload identities with impactful permissions |    |  Yes |
 | App Health Recommendations | Identify unused or inactive workload identities and their risk levels. Get remediation guidelines. |  | Yes |
-|  **Microsoft Entra Conditional Access**     |   |   |    
+|  **Microsoft Entra Conditional Access**     |   |   |    |
 | Conditional Access policies for workload identities |Define the condition for a workload to access a resource, such as an IP range. Doesn't cover managed identities. | |  Yes | 
-|**Microsoft Entra ID Protection**  |  | |
+|**Microsoft Entra ID Protection**  |  | | |
 |ID Protection for workload identities  | Detect and remediate compromised workload identities | | Yes |
 
 ## How much is the Workload ID Premium plan? 

@@ -38,7 +38,7 @@ To enable this exchange, register an application with your identity provider. If
 | Setting | Value |
 | ------- | ----- |
 | Application name | `<Issuer Name> Verifiable Credential Service` |
-| Redirect URI | `vcclient://openid/ ` |
+| Redirect URI | `vcclient://openid/` |
 
 
 After you register an application with your identity provider, record its client ID. You'll use it in the section that follows. You also need to write down the URL to the well-known endpoint for the OIDC compatible identity provider. The Issuing Service uses this endpoint to download the public keys needed to validate the ID token once that it’s sent by Authenticator.

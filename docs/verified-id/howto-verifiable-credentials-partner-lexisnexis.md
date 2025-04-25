@@ -46,7 +46,7 @@ As a developer you need to share the steps in this section with your tenant admi
 1. Select on **Select Issuer**.
 1. Look for LexisNexis in the Search/select issuers drop-down. 
    
-   [ :::image type="content" source="./media/verified-id-partner-lexisnexis/select-issuer.png" alt-text="Screenshot of the select issuer section of the portal showing LexisNexis as the choice.":::](./media/verified-id-partner-lexisnexis/select-issuer.png#lightbox)
+   [:::image type="content" source="./media/verified-id-partner-lexisnexis/select-issuer.png" alt-text="Screenshot of the select issuer section of the portal showing LexisNexis as the choice.":::](./media/verified-id-partner-lexisnexis/select-issuer.png#lightbox)
    
 1. Check the credential type you discussed with LexisNexis Customer success manager for your specific needs.
 1. Choose **Add** and then choose **Review**.
