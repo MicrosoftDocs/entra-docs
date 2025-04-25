@@ -5,7 +5,7 @@ description: Learn how to use Microsoft Entra ID Protection for B2B users to sec
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 04/15/2025
+ms.date: 04/25/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -42,7 +42,7 @@ From the [Risky users report](https://portal.azure.com/#blade/Microsoft_AAD_IAM/
 
 ### Manually dismiss user's risk
 
-If password reset isn't an option for you, you can choose to manually dismiss user risk. Dismissing user risk doesn't have any affect on the user's existing password, but this process changes the user's **Risk State** from **At Risk** to **Dismissed**. It's important that you change the user's password using whatever means are available to you in order to bring the identity back to a safe state. 
+If password reset isn't an option for you, you can choose to manually dismiss user risk. Dismissing user risk doesn't have any effect on the user's existing password, but this process changes the user's **Risk State** from **At Risk** to **Dismissed**. It's important that you change the user's password using whatever means are available to you in order to bring the identity back to a safe state. 
 
 To dismiss user risk, go to the [Risky users report](https://portal.azure.com/#blade/Microsoft_AAD_IAM/SecurityMenuBlade/RiskyUsers) in the Microsoft Entra Security menu. Search for the impacted user using the 'User' filter and select the user. Select the **Dismiss user risk** option from the toolbar. This action might take a few minutes to complete and update the user risk state in the report.
 

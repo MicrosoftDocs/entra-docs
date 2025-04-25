@@ -37,7 +37,7 @@ sections:
 
           We also recommend turning on Conditional Access policies in **Report-Only** mode to understand how policies work in the tenant without affecting your users' ability to access the resources they need. You can also check the **[Impact analysis of risk-based policies** workbook](workbook-risk-based-policy-impact.md) in ID Protection. 
       - question: |
-          How do I prevent B2B collaboration users from being affected by risk-based policies?
+          How do I prevent risk-based policies from affecting B2B collaboration users?
         answer: |
           Excluding B2B users from your organization's risk-based Conditional Access policies prevents B2B users from being impacted by risk evaluation. To exclude these B2B users, create a group in Microsoft Entra ID that contains all of your organization's guest users. Then, add this group as an exclusion for your built-in ID Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
       - question: |
