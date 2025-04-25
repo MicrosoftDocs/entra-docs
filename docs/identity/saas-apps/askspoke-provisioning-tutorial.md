@@ -114,19 +114,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
    | Attribute                                                             | Type      | Supported For Filtering |
    | --------------------------------------------------------------------- | --------- | ----------------------- |
    | userName                                                              | String    | &check;                 |
-   | emails[type eq "work"].value                                          | String    |
-   | active                                                                | Boolean   |
-   | title                                                                 | String    |
-   | name.givenName                                                        | String    |
-   | name.familyName                                                       | String    |
-   | name.formatted                                                        | String    |
-   | addresses[type eq "work"].locality                                    | String    |
-   | addresses[type eq "work"].country                                     | String    |
-   | addresses[type eq "work"].region                                      | String    |
-   | externalId                                                            | String    |
-   | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department | String    |
-   | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager    | Reference |
-   | urn:ietf:params:scim:schemas:extension:SpokeCustom:2.0:User:startDate | String    |
+   | emails[type eq "work"].value                                          | String    |                         |
+   | active                                                                | Boolean   |                         |
+   | title                                                                 | String    |                         |
+   | name.givenName                                                        | String    |                         |
+   | name.familyName                                                       | String    |                         |
+   | name.formatted                                                        | String    |                         |
+   | addresses[type eq "work"].locality                                    | String    |                         |
+   | addresses[type eq "work"].country                                     | String    |                         |
+   | addresses[type eq "work"].region                                      | String    |                         |
+   | externalId                                                            | String    |                         |
+   | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department | String    |                         |
+   | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager    | Reference |                         |
+   | urn:ietf:params:scim:schemas:extension:SpokeCustom:2.0:User:startDate | String    |                         |
 
 10.   Under the **Mappings** section, select **Synchronize Microsoft Entra groups to askSpoke**.
 
@@ -135,7 +135,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       | Attribute   | Type      | Supported For Filtering |
       | ----------- | --------- | ----------------------- |
       | displayName | String    | &check;                 |
-      | members     | Reference |
+      | members     | Reference |                         |
 
 12.   To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

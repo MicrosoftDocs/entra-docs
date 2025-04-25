@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    ` https://api.assetinfinity.io/api/auth/signinSaml/<CustomerName>`
+    `https://api.assetinfinity.io/api/auth/signinSaml/<CustomerName>`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
     ` https://api.assetinfinity.io/api/auth/signinSamlAcs/<CustomerName> `

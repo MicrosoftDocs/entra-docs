@@ -96,8 +96,8 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In addition to above, Athena Systems Login Platform application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
-	| Name | Source Attribute|
-	| ------- | --------- |
+	|  Name  | Source Attribute |
+	| ------ | ---------------- |
 	| Client | user.companyname |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.

@@ -111,8 +111,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       |Attribute|Type|Supported for filtering|
       |---|---|---|
-      |displayName|String|&check;
-      |members|Reference|
+      |displayName|String|&check;|
+      |members|Reference||
 
 12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

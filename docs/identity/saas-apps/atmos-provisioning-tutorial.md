@@ -119,9 +119,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       |Attribute|Type|Supported for filtering|Required by Atmos|
       |---|---|---|---|
-      |displayName|String|&check;|&check;      
-      |members|Reference||
-      |externalId|String||&check;
+      |displayName|String|&check;|&check;|
+      |members|Reference|||
+      |externalId|String||&check;|
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

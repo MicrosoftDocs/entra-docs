@@ -120,20 +120,20 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Asana|
    |---|---|---|---|
-   |userName|String|&check;|&check;   
-   |active|Boolean||
-   |name.formatted|String||
-   |title|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
-   |addresses[type eq "work"].country|String||
-   |addresses[type eq "work"].region|String||
-   |addresses[type eq "work"].locality|String||
-   |phoneNumbers[type eq "work"].value|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean|||
+   |name.formatted|String|||
+   |title|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|||
+   |addresses[type eq "work"].country|String|||
+   |addresses[type eq "work"].region|String|||
+   |addresses[type eq "work"].locality|String|||
+   |phoneNumbers[type eq "work"].value|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|||
 
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Asana**.
@@ -142,8 +142,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       |Attribute|Type|Supported for filtering|Required by Asana|
       |---|---|---|---|
-      |displayName|String|&check;|&check;      
-      |members|Reference||
+      |displayName|String|&check;|&check;|
+      |members|Reference|||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

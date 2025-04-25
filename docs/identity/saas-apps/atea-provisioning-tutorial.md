@@ -100,7 +100,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Atea in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Atea for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Atea API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-      Attribute|Type|Supported for filtering|Required by LawVu|
+      |Attribute|Type|Supported for filtering|Required by LawVu|
       |---|---|---|---|
       |userName|String|&check;|&check;|
       |active|Boolean||&check;|

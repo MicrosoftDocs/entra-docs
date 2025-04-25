@@ -109,10 +109,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|
    |---|---|---|
-   |userName|String|&check;
-   |externalId|String|
-   |active|Boolean|
-   |displayName|String|
+   |userName|String|&check;|
+   |externalId|String||
+   |active|Boolean||
+   |displayName|String||
 
 10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

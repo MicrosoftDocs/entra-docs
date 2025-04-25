@@ -99,19 +99,19 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for Filtering|
    |---|---|---|
    |userName|String|&check;|
-   |title|String|
-   |emails[type eq "work"].value|String|
-   |preferredLanguage|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |addresses[type eq "work"].streetAddress|String|
-   |addresses[type eq "work"].locality|String|
-   |addresses[type eq "work"].region|String|
-   |addresses[type eq "work"].postalCode|String|
-   |addresses[type eq "work"].country|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |externalId|String|
-   |urn:ietf:params:scim:schemas:extension:Bentley:2.0:User:isSoftDeleted|String|
+   |title|String||
+   |emails[type eq "work"].value|String||
+   |preferredLanguage|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |addresses[type eq "work"].streetAddress|String||
+   |addresses[type eq "work"].locality|String||
+   |addresses[type eq "work"].region|String||
+   |addresses[type eq "work"].postalCode|String||
+   |addresses[type eq "work"].country|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |externalId|String||
+   |urn:ietf:params:scim:schemas:extension:Bentley:2.0:User:isSoftDeleted|String||
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Bentley - Automatic User Provisioning**.
 
@@ -120,9 +120,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |Attribute|Type|Supported for Filtering|
       |---|---|---|
       |displayName|String|&check;|
-      |externalId|String|
-      |members|Reference|
-      |urn:ietf:params:scim:schemas:extension:Bentley:2.0:Group:description|String|
+      |externalId|String||
+      |members|Reference||
+      |urn:ietf:params:scim:schemas:extension:Bentley:2.0:Group:description|String||
 
 12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

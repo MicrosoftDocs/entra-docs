@@ -111,10 +111,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for Filtering|
    |---|---|---|
    |emails[type eq "work"].value|String|&check;|
-   |active|Boolean|
-   |userName|String|
-   |name.givenName|String|
-   |name.familyName|String|
+   |active|Boolean||
+   |userName|String||
+   |name.givenName|String||
+   |name.familyName|String||
    
 
 10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
