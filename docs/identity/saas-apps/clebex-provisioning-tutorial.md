@@ -47,7 +47,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to Clebex HUB.
 
-2. Navigate to **Connectors** -> **SCIM** -> **Azure SCIM**.
+2. Navigate to **Connectors** > **SCIM** > **Azure SCIM**.
 
 3. Toggle the **Is active** button.
 
@@ -74,7 +74,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Clebex in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 

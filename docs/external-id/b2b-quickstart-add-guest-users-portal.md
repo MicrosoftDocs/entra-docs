@@ -38,7 +38,7 @@ To complete the scenario in this quickstart, you need:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 
    :::image type="content" source="media/quickstart-add-users-portal/all-users-page.png" alt-text="Screenshot of the All users page.":::
 
@@ -93,7 +93,7 @@ Now sign in as the guest user to see the invitation.
 When no longer needed, delete the test guest user.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **User settings**.
+1. Browse to **Entra ID** > **Users** > **User settings**.
 1. Select the test user, and then select **Delete user**.
 
 ## Next steps

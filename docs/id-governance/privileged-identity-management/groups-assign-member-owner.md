@@ -34,7 +34,7 @@ Follow these steps to make a user eligible member or owner of a group. You need 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**. 
 
 1. Here you can view groups that are already enabled for PIM for Groups.
 
@@ -80,7 +80,7 @@ Follow these steps to update or remove an existing role assignment. You need per
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**. 
 
 1. Here you can view groups that are already enabled for PIM for Groups.
 

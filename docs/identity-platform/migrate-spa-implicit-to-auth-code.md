@@ -36,7 +36,7 @@ If you'd like to continue using your existing app registration for your applicat
 Follow these steps for app registrations that are currently configured with **Web** platform redirect URIs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** >  **Applications** > **App registrations**, select your application, and then **Authentication**.
+1. Browse to **Entra ID** > **App registrations**, select your application, and then **Authentication**.
 1. In the **Web** platform tile under **Redirect URIs**, select the warning banner indicating that you should migrate your URIs.
 
     :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-01-implicit-warning-banner.png" alt-text="Implicit flow warning banner on web app tile in Azure portal":::

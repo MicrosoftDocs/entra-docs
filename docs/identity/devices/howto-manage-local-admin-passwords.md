@@ -81,7 +81,7 @@ Other than the built-in Microsoft Entra roles like [Cloud Device Administrator](
 To enable Windows LAPS with Microsoft Entra ID, you must take actions in Microsoft Entra ID and the devices you wish to manage. We recommend organizations [manage Windows LAPS using Microsoft Intune](/mem/intune/protect/windows-laps-policy). If your devices are Microsoft Entra joined but not using or don't support Microsoft Intune, you can deploy Windows LAPS for Microsoft Entra ID manually. For more information, see the article [Configure Windows LAPS policy settings](/windows-server/identity/laps/laps-management-policy-settings).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator).
-1. Browse to **Identity** > **Devices** > **Overview** > **Device settings**
+1. Browse to **Entra ID** > **Devices** > **Overview** > **Device settings**
 1. Select **Yes** for the **Enable Local Administrator Password Solution (LAPS)** setting, then select **Save**. You might also use the Microsoft Graph API [Update deviceRegistrationPolicy](/graph/api/deviceregistrationpolicy-update?view=graph-rest-beta&preserve-view=true) to complete this task.
 1. Configure a client-side policy and set the **BackUpDirectory** to be Microsoft Entra ID.
 
@@ -110,11 +110,11 @@ You can also use Microsoft Graph API [Get deviceLocalCredentialInfo](/graph/api/
 
 ## List all Windows LAPS enable devices
 
-To list all Windows LAPS enabled devices, you can browse to **Identity** > **Devices** > **Overview** > **Local administrator password recovery** or use the Microsoft Graph API.
+To list all Windows LAPS enabled devices, you can browse to **Entra ID** > **Devices** > **Overview** > **Local administrator password recovery** or use the Microsoft Graph API.
 
 ## Auditing local administrator password update and recovery
 
-To view audit events, you can browse to **Identity** > **Devices** > **Overview** > **Audit logs**, then use the **Activity** filter and search for **Update device local administrator password** or **Recover device local administrator password** to view the audit events.
+To view audit events, you can browse to **Entra ID** > **Devices** > **Overview** > **Audit logs**, then use the **Activity** filter and search for **Update device local administrator password** or **Recover device local administrator password** to view the audit events.
 
 ## Conditional Access policies for local administrator password recovery
 

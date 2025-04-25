@@ -54,7 +54,7 @@ Most federated applications that support SAML 2.0, WS-Federation, or OpenID conn
 
 Microsoft Entra ID also supports direct single sign-on links to individual applications that support password-based single sign-on, linked single sign-on, and any form of federated single sign-on.
 
-Direct sign-on links are crafted URLs that send a user through the Microsoft Entra sign-in process for a specific application. The user doesn't need to launch the application from My Apps or Microsoft 365. These **User access URLs** can be found under the properties of available enterprise applications. In the Microsoft Entra admin center, select **Identity** > **Applications** > **Enterprise applications**. Select the application, and then select **Properties**.
+Direct sign-on links are crafted URLs that send a user through the Microsoft Entra sign-in process for a specific application. The user doesn't need to launch the application from My Apps or Microsoft 365. These **User access URLs** can be found under the properties of available enterprise applications. In the Microsoft Entra admin center, select **Entra ID** > **Enterprise apps**. Select the application, and then select **Properties**.
 
 ![Example of the User access URL in X properties](media/end-user-experiences/direct-sign-on-link.png)
 
@@ -78,7 +78,7 @@ As an admin, you can choose to try out new app launcher features while they are 
 To enable or disable previews for your app launchers:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. On the left menu, select **App launchers**, then select **Settings**.
 1. Under **Preview settings**, toggle the checkboxes for the previews you want to enable or disable. To opt into a preview, toggle the associated checkbox to the checked state. To opt out of a preview, toggle the associated checkbox to the unchecked state.
 1. Select **Save**. Wait a few minutes for the changes to take effect.

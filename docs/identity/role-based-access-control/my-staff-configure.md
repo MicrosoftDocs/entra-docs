@@ -46,7 +46,7 @@ After configuring administrative units, you can apply this scope to your users w
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Users** > **User settings**.
+1. Browse to **Entra ID** > **Users** > **User settings**.
 
 1. Under **User feature**, select **Manage user feature settings**.
 

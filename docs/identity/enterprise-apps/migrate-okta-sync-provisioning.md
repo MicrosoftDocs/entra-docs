@@ -207,7 +207,7 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agent can synchronize objects.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**. 
+2. Browse to **Entra ID** > **Entra Connect** > **Connect Sync**. 
 3. Select **Configuration** profile.
 4. Select **Enable**.
 5. Return to the provisioning menu and select **Logs**.

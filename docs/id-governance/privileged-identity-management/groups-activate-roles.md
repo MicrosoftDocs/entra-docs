@@ -34,7 +34,7 @@ When you need to take on a group membership or ownership, you can request activa
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **My roles** > **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **My roles** > **Groups**. 
     >[!NOTE]
     > You may also use this [short link](https://aka.ms/pim) to open the **My roles** page directly.
 
@@ -62,7 +62,7 @@ You can view the status of your pending requests to activate.  n It is important
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **My requests** **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **My requests** **Groups**. 
 
 1. Review list of requests.
 
@@ -73,7 +73,7 @@ You can view the status of your pending requests to activate.  n It is important
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **My requests** **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **My requests** **Groups**. 
 
     :::image type="content" source="media/pim-for-groups/pim-group-8.png" alt-text="Screenshot of where to select the request you want to cancel." lightbox="media/pim-for-groups/pim-group-8.png":::
 

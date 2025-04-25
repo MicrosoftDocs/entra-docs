@@ -95,7 +95,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 
 1. Search for the emergency access account and select the user's name.
 

@@ -63,7 +63,7 @@ After setting up RDS and Microsoft Entra application proxy for your environment,
    >[!Note]
    >Your users are asked to authenticate once to Microsoft Entra ID and once to RD Web, but they have single sign-on to RD Gateway.
 
-1. Browse to **Identity** > **Applications** > **App registrations**. Choose your app from the list.
+1. Browse to **Entra ID** > **App registrations**. Choose your app from the list.
 1. Under **Manage**, select **Branding**.
 1. Update the **Home page URL** field to point to your RD Web endpoint (like `https://<rdhost>.com/RDWeb`).
 
