@@ -125,7 +125,7 @@ items:
                   - name: Configure app for authentication
                     href: /entra/identity-platform/tutorial-single-page-app-react-configure-authentication
                   - name: Sign in and sign out
-                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-iign-out
+                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out
         - name: Native authentication
           items:
             - name: React

@@ -104,8 +104,8 @@ The required info in the sample code can be found in the Microsoft Entra admin c
 | --- | --- |
 | \<Tenant ID> | **Identity** > **Overview** > **Properties** |
 | \<App ID of the Native app> | **Application registration** > *your native application* > **Overview** > **Application ID** |
-| \<Scope> | **Application registration** > *your native application* > **API permissions** > select on the Permission API (user_impersonation) > A panel with the caption **user_impersonation** appears on the right hand side. > The scope is the URL in the edit box.
-| \<Proxy App URL> | the External URL and path to the API
+| \<Scope> | **Application registration** > *your native application* > **API permissions** > select on the Permission API (user_impersonation) > A panel with the caption **user_impersonation** appears on the right hand side. > The scope is the URL in the edit box. |
+| \<Proxy App URL> | the External URL and path to the API |
 
 After you edit the MSAL code with these parameters, your users can authenticate to native client applications even when they're outside of the corporate network.
 

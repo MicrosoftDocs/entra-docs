@@ -152,6 +152,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 > Saving a new scoping filter triggers a new full sync for the application, where all users in the source system are evaluated again against the new scoping filter. If a user in the application was previously in scope for provisioning, but falls out of scope, their account is disabled or deprovisioned in the application. To override this default behavior, refer to [Skip deletion for user accounts that go out of scope](~/identity/app-provisioning/skip-out-of-scope-deletions.md).
 
 ## Common scoping filters
+
 | Target Attribute| Operator | Value | Description|
 |----|----|----|----|
 |userPrincipalName|REGEX MATCH|`.*\@domain.com`|All users with `userPrincipal` that have the domain `@domain.com` are in scope for provisioning. |
