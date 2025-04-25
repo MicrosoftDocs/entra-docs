@@ -39,7 +39,7 @@ Follow these steps to use the **Run user flow** feature to test your user flow.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select your user flow from the list. At least one application with a redirect URI must be associated with this user flow (see the [Prerequisites](#prerequisites)).
 

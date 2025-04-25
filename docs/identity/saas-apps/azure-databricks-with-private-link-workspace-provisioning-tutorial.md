@@ -33,7 +33,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
+1. Browse to **Entra ID** > **Entra Connect** > **Cloud sync**.
 
    [![Screenshot of new UX screen.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-entra-connect-new-ux.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-entra-connect-new-ux.png#lightbox)
 
@@ -53,7 +53,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 Once the agent is installed, no further configuration is necessary on-premises, and all provisioning configurations are then managed. 
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Add the **On-premises SCIM app** from the [gallery](~/identity/enterprise-apps/add-application-portal.md).
 1. From the left hand menu, navigate to the **Provisioning** option and select **Get started**.
 1. Select **Automatic** from the dropdown list and expand the **On-Premises Connectivity** option.

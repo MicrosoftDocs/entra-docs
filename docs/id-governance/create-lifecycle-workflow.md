@@ -34,7 +34,7 @@ To create a workflow based on a template:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Create a workflow**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create a workflow**.
 
 1. On the **Choose a workflow** page, select the workflow template that you want to use.
 

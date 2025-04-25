@@ -171,7 +171,7 @@ Settings for tenant restrictions v2 are located in the Microsoft Entra admin cen
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select  **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**, then select  **Cross-tenant access settings**.
 
 1. Select the **Default settings** tab.
 
@@ -225,7 +225,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) or a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. Select  **Organizational settings**. 
 
@@ -344,7 +344,7 @@ To ensure sign-ins are restricted on all devices and apps in your corporate netw
    |---------|---------|-----------------|
    |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       | aaaabbbb-0000-cccc-1111-dddd2222eeee:1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5|
 
-   - `TenantID` is your Microsoft Entra tenant ID. Find this value by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
+   - `TenantID` is your Microsoft Entra tenant ID. Find this value by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) and browsing to **Entra ID** > **Overview** > **Properties**.
    - `policyGUID` is the object ID for your cross-tenant access policy. Find this value by calling `/crosstenantaccesspolicy/default` and using the “id” field returned.
 
 1. On your corporate proxy, send the tenant restrictions v2 header to the following Microsoft login domains:
@@ -403,7 +403,7 @@ To test the tenant restrictions v2 policy on a device, follow these steps.
 
 1. Retrieve the **Tenant ID** and **Policy ID** you recorded earlier (in step 7 under [To configure default tenant restrictions](#to-configure-default-tenant-restrictions)) and enter them in the following fields (leave all other fields blank):
 
-   - **Microsoft Entra Directory ID**: Enter the **Tenant ID** you recorded earlier. by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
+   - **Microsoft Entra Directory ID**: Enter the **Tenant ID** you recorded earlier. by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) and browsing to **Entra ID** > **Overview** > **Properties**.
    - **Policy GUID**: The ID for your cross-tenant access policy. It's the **Policy ID** you recorded earlier.
 
      :::image type="content" source="media/tenant-restrictions-v2/windows-cloud-policy-details.png" alt-text="Screenshot of Windows Cloud Policy Details.":::

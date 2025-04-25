@@ -113,7 +113,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Protection** > **Custom security attributes**.
+1. Browse to **Entra ID** > **Custom security attributes**.
 
 1. Select the attribute set you want grant access to.
 
@@ -163,7 +163,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
     :::image type="content" source="./media/custom-security-attributes-manage/manage-tenant.png" alt-text="Screenshot of assigning attribute roles at tenant scope." lightbox="./media/custom-security-attributes-manage/manage-tenant.png":::
 

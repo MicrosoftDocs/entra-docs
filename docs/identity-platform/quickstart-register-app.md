@@ -29,7 +29,7 @@ Follow these steps to create the app registration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
-1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
+1. Browse to **Entra ID** > **App registrations** and select **New registration**.
 1. Enter a meaningful **Name** for your, for example *identity-client-app*. App users can see this name, and it can be changed at any time. You can have multiple app registrations with the same name.
 1. Under **Supported account types**, specify who can use the application. We recommend you select **Accounts in this organizational directory only** for most applications. Refer to the table for more information on each option.
 
@@ -49,7 +49,7 @@ Follow these steps to create the app registration:
     :::image type="content" source="./media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="./media/quickstart-register-app/portal-03-app-reg-02.png":::
 
 > [!IMPORTANT]
-> New app registrations are hidden to users by default. When you're ready for users to see the app on their [My Apps page](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) you can enable it. To enable the app, in the Microsoft Entra admin center navigate to **Identity** > **Applications** > **Enterprise applications** and select the app. Then on the **Properties** page, set **Visible to users?** to **Yes**.
+> New app registrations are hidden to users by default. When you're ready for users to see the app on their [My Apps page](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) you can enable it. To enable the app, in the Microsoft Entra admin center navigate to **Entra ID** > **Enterprise apps** and select the app. Then on the **Properties** page, set **Visible to users?** to **Yes**.
 
 ## Grant admin consent (external tenants only)
 

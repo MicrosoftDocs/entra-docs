@@ -63,7 +63,7 @@ A sign-in logs entry has the following linkable identifier claims.
 To view the sign-in logs from the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader).
-2. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+2. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 3. Filter by time, or by specific user to look at the specific log entries.
 4. Click any sign-in log entry.
 5. **Basic Info** shows the User ID, Resource Tenant ID, Session ID, Unique Token Identifier, and Date. **Devices** shows the Device ID for registered and domain-joined devices.

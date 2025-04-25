@@ -90,7 +90,7 @@ This section guides you through the steps to set up the Microsoft Entra provisio
 ### Configure automatic user provisioning for Contentful in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
    ![Screenshot that shows the Enterprise applications menu in the Azure portal, with All applications highlighted.](common/enterprise-applications.png)
 

@@ -43,7 +43,7 @@ Once you've registered both your client app and web API and you've exposed the A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select your client application (*not* your web API).
+1. Browse to **Entra ID** > **App registrations**, and then select your client application (*not* your web API).
 1. Select **API permissions**, then **Add a permission** and select **My APIs** in the sidebar.
 
 
@@ -100,7 +100,7 @@ In the following steps, you grant permission to Microsoft Graph's *Files.Read.Al
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select your client application.
+1. Browse to **Entra ID** > **App registrations**, and then select your client application.
 1. Select **API permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**.
 1. All permissions exposed by Microsoft Graph are shown under **Select permissions**.
 1. Select the permission or permissions you want to grant your application. As an example, you might have a daemon app that scans files in your organization, alerting on a specific file type or name. Under **Select permissions**, expand **Files**, and then select the `Files.Read.All` permission.

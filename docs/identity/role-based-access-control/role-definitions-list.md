@@ -34,7 +34,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
     :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 

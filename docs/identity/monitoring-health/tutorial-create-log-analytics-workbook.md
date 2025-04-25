@@ -47,7 +47,7 @@ If you haven't already created a Log Analytics workspace, complete the [Configur
 
 In addition to querying the data with Kusto Query Language (KQL), you can create a custom workbook for further analysis and alerting. The least privileged role to create or update a workbook is the **Security Administrator** role.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**. 
 
 1. In the **Quickstart** section, select **Empty**.
 
@@ -85,7 +85,7 @@ In addition to querying the data with Kusto Query Language (KQL), you can create
 
 You can add Kusto queries to your workbook. The example is based on a query that shows the distribution of successful and failed sign-ins with applied Conditional Access policies. The least privileged role to create or update a workbook is the **Security Administrator** role.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**. 
 
 1. In the **Conditional Access** section, select **Conditional Access Insights and Reporting**.
 

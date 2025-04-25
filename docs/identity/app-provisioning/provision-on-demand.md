@@ -29,14 +29,14 @@ Use on-demand provisioning to provision a user or group in seconds. Among other 
 
 ::: zone pivot="app-provisioning"
 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > select your application.
+2. Browse to **Entra ID** > **Enterprise apps** > select your application.
 3. Select **Provisioning**.
 
 ::: zone-end
 
 ::: zone pivot="cross-tenant-synchronization"
 
-2. Browse to **Identity** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
+2. Browse to **Entra ID** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
 3. Select your configuration, and then go to the **Provisioning** configuration page.
 
 ::: zone-end

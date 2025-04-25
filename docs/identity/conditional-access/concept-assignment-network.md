@@ -71,7 +71,7 @@ With this option, you can select one or more named locations. For a policy with 
 
 ## How are these locations defined?
 
-Locations are defined and exist in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Named locations**. Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role can create and update named locations. 
+Locations are defined and exist in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access** > **Named locations**. Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role can create and update named locations. 
 
 :::image type="content" source="media/concept-assignment-network/named-locations.png" alt-text="Screenshot of named locations in the Microsoft Entra admin center." lightbox="media/concept-assignment-network/named-locations.png":::
 
@@ -184,7 +184,7 @@ A policy that uses the location condition to block access is considered restrict
 ## Define locations
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
 1. Choose **IP ranges location** or **Countries location**.
 1. Give your location a name.
 1. Provide the IP ranges in CIDR format or select the **Country lookup method** and country names.
