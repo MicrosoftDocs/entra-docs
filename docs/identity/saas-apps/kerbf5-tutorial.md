@@ -244,7 +244,7 @@ Follow these steps to enable Microsoft Entra SSO.
 ## Advanced Configuration
 
 >[!NOTE]
->For reference select [here](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+>For reference select [here](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
 
 ### Configuring an Active Directory AAA server
 
