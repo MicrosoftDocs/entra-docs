@@ -107,7 +107,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different browser window, sign on to your WhosOnLocation company site as administrator.
 
-2. Select **Tools** -> **Account**.
+2. Select **Tools** > **Account**.
 
     ![Screenshot shows Account selected from the Tools menu in the WhosOnLocation site.](./media/whosonlocation-tutorial/tools.png "Account")
 

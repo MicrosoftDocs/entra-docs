@@ -47,12 +47,12 @@ Enable WAF for a domain.
 
 1. In the DNS console, for CNAME, enable the proxy setting.
 
-   [ ![Screenshot of CNAME options.](media/tutorial-configure-cloudflare-integration/proxy-settings.png)](media/tutorial-configure-cloudflare-integration/proxy-settings-expanded.png#lightbox)
+   [![Screenshot of CNAME options.](media/tutorial-configure-cloudflare-integration/proxy-settings.png)](media/tutorial-configure-cloudflare-integration/proxy-settings-expanded.png#lightbox)
 
 2. Under DNS, for **Proxy status**, select **Proxied**.
 3. The status turns orange.
 
-   [ ![Screenshot of proxied status.](media/tutorial-configure-cloudflare-integration/proxied-status.png)](media/tutorial-configure-cloudflare-integration/proxied-status-expanded.png#lightbox)
+   [![Screenshot of proxied status.](media/tutorial-configure-cloudflare-integration/proxied-status.png)](media/tutorial-configure-cloudflare-integration/proxied-status-expanded.png#lightbox)
 
 ## Cloudflare security controls
 
@@ -65,7 +65,7 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 3. Select **DDoS**.
 4. A message appears. 
 
-    [ ![Screenshot of DDoS protection message.](media/tutorial-configure-cloudflare-integration/ddos-message.png)](media/tutorial-configure-cloudflare-integration/ddos-message-expanded.png#lightbox)
+    [![Screenshot of DDoS protection message.](media/tutorial-configure-cloudflare-integration/ddos-message.png)](media/tutorial-configure-cloudflare-integration/ddos-message-expanded.png#lightbox)
 
 ### Bot protection
 
@@ -134,7 +134,7 @@ For the following instructions, you can add custom HTML pages for visitors.
 2. For **Cloudflare Managed Ruleset**, select **Enabled**.
 3. For **Cloudflare OWASP Core Ruleset**, select **Enabled**.
 
-   [ ![Screenshot of rule sets.](media/tutorial-configure-cloudflare-integration/rulesets.png)](media/tutorial-configure-cloudflare-integration/ruleset-expanded.png#lightbox)
+   [![Screenshot of rule sets.](media/tutorial-configure-cloudflare-integration/rulesets.png)](media/tutorial-configure-cloudflare-integration/ruleset-expanded.png#lightbox)
 
 ## Next steps
 

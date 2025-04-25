@@ -224,7 +224,7 @@ For SMS verification, the following region codes require an opt-in. This means t
 | 596    | Martinique     |
 | 230    | Mauritius      |
 | 31     | Netherlands    |
-| 599    | Curacao, Netherlands Antilles |
+| 599    | Curacao |
 | 850    | North Korea    |
 | 1787   | Puerto Rico    |
 | 1939   | Puerto Rico    |

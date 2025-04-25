@@ -97,6 +97,8 @@ items:
       href: howto-configure-health-alert-emails.md
     - name: How to investigate Microsoft Entra Health alerts
       href: howto-investigate-health-scenario-alerts.md
+    - name: Conditional Access block policy
+      href: scenario-health-conditional-access-block-policy.md
     - name: Sign-ins requiring a compliant or managed device
       href: scenario-health-sign-ins-compliant-managed-device.md
     - name: Sign-ins requiring MFA

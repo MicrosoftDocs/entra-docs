@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to Podbean as an Administrator.
 
-1. Select **Settings** -> **SSO Login** on the left sidebar.
+1. Select **Settings** > **SSO Login** on the left sidebar.
 
 1. Select the URL, which is showing in the below image to download the **Podbean SSO Metadata File** and save it in your computer.
 

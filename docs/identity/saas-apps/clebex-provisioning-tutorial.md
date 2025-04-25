@@ -47,7 +47,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to Clebex HUB.
 
-2. Navigate to **Connectors** -> **SCIM** -> **Azure SCIM**.
+2. Navigate to **Connectors** > **SCIM** > **Azure SCIM**.
 
 3. Toggle the **Is active** button.
 

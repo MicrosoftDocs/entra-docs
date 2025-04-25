@@ -30,6 +30,10 @@
     href: device-sso-to-on-premises-resources.md
   - name: Primary Refresh Tokens
     href: concept-primary-refresh-token.md
+  - name: Understanding tokens in Microsoft Entra ID 
+    href: concept-tokens-microsoft-entra-id.md
+  - name: Protecting tokens in Microsoft Entra ID
+    href: protecting-tokens-microsoft-entra-id.md 
   - name: macOS Platform Single Sign-on overview 
     href: macos-psso.md
 - name: How-to guides

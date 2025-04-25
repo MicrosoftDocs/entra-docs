@@ -112,7 +112,7 @@ To enable Microsoft Entra users to log in to 15Five, they must be provisioned in
 
     ![Manage Company](./media/15five-tutorial/profile.png "Manage Company")
 
-3. Go to **People \> Add PEOPLE**.
+3. Go to **People** > **Add PEOPLE**.
 
     ![People](./media/15five-tutorial/account.png "People")
 

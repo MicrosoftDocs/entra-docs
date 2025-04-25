@@ -99,7 +99,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In another browser window, sign on to your [Small Improvements](https://small-improvements.com) company site as an administrator.
 
-1. From the main dashboard page, select **Admin** -> **Integrations** on the left.
+1. From the main dashboard page, select **Admin** > **Integrations** on the left.
 
     ![Screenshot shows the Integrations button selected.](./media/smallimprovements-tutorial/admin.png) 
 
@@ -133,7 +133,7 @@ To enable Microsoft Entra users to log in to Small Improvements, they must be pr
 
 1. Sign-on to your Small Improvements company site as an administrator.
 
-1. From the Home page, go to the menu on the left, select **Admin** -> **Settings**.
+1. From the Home page, go to the menu on the left, select **Admin** > **Settings**.
 
     ![Screenshot shows the Settings button selected.](./media/smallimprovements-tutorial/admin-settings.png) 
 

@@ -123,8 +123,8 @@ To enable verbose logging:
     1. Click **Review + create**, then **Create**.
 3. Create a table under the new workspace. 
 	1. Select the workspace name you created. 
-	1. Navigate to **Workspace -> Settings -> Tables**. 
-	1. Click **Create -> New Custom Log (MMA-based)**.
+	1. Navigate to **Workspace** > ** **Settings** > **Tables**. 
+	1. Click **Create** > **New Custom Log (MMA-based)**.
 	1. Select log file from the virtual machine (VM) location (`C:\logs\connector_logs.log`).
 	1. Set delimiter as **New Line**.
 	1. Add Collection Path Type – windows & Path as `C:\logs\connector_logs.log`. 
@@ -195,7 +195,7 @@ Here are the steps to provide access to an external user:
 	1. Go to the [Azure portal](https://portal.azure.com/).
 	1. In the search bar, type **Microsoft Entra ID**, then select it.
 2.	Add a New Guest User:
-	1. In the Microsoft Entra ID dashboard, select **Manage -> Users**.
+	1. In the Microsoft Entra ID dashboard, select **Manage** > **Users**.
 	1. Click on **+ New user**, then select **Invite external user**.
 	1. Enter the external user's email address and fill in the required information.
 	1. Click **Invite** to send an invitation to the external user.

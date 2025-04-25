@@ -113,7 +113,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your Clebex company site as an administrator
 
-1. Go to the COMPANY ADMIN -> **Connectors** -> **Single Sign On (SSO)** and select **select**.
+1. Go to the COMPANY ADMIN -> **Connectors** > **Single Sign On (SSO)** and select **select**.
 
     ![Screenshot to select connector type.](./media/clebex-tutorial/single-sign-on.png)
 

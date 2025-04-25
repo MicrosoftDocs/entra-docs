@@ -388,4 +388,4 @@ Use the **View Variables** link to help determine SSO issues, particularly if th
 Learn more:
 
 * [Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072)
-* Go to techdocs.f5.com for [Manual Chapter: LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/5.html)
+* Go to techdocs.f5.com for [Manual Chapter: LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/5.html)

@@ -136,7 +136,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your IntelligenceBank company site as an administrator.
 
-1. Go to **Admin** -> **Users** and select **Add New User Icon** to add the **User**.
+1. Go to **Admin** > **Users** and select **Add New User Icon** to add the **User**.
 
     ![Screenshot shows the Users icon selected in the Users tab.](./media/intelligencebank-tutorial/creating-user.PNG)
 

@@ -129,7 +129,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to iSAMS as an Administrator.
 
-2.  Go to the **Control Panel Home** -> **Security & Permissions** -> **User Accounts** -> **User Options & Tasks** -> **Modify User Properties**.
+2.  Go to the **Control Panel Home** > **Security & Permissions** > **User Accounts** > **User Options & Tasks** > **Modify User Properties**.
 3. In the resulting pop-up window, select the **Account Details** tab, and change the **Authorization** to that of your newly created Identity Provider.
 
     ![Screenshot shows Account Details with a value for Authorization.](./media/isams-tutorial/account-details.png)

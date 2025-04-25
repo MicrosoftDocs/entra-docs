@@ -112,7 +112,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to Brightidea using the administrator credentials.
 
-2. To get to the SSO feature in your Brightidea system, navigate to **Enterprise Setup** -> **Authentication Tab**. There you see two sub tabs: Auth Selection & SAML Profiles.
+2. To get to the SSO feature in your Brightidea system, navigate to **Enterprise Setup** > **Authentication Tab**. There you see two sub tabs: Auth Selection & SAML Profiles.
 
     ![Screenshot shows the Brightidea site with the Authentication tab selected.](./media/brightidea-tutorial/authentication.png)
 

@@ -114,7 +114,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 1. Log in to ecFreight2 Application as an administrator.
 
-1. Go to **Admin** -> **System Parameter** -> **Single Sign On** and perform the following steps:
+1. Go to **Admin** > **System Parameter** > **Single Sign On** and perform the following steps:
 
     ![Screenshot shows account setting for the configuration.](./media/ecfreight2-tutorial/value.png "Security")
 

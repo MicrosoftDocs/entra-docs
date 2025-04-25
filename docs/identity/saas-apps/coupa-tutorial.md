@@ -112,7 +112,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign on to your Coupa company site as an administrator.
 
-2. Go to **Setup \> Security Control**.
+2. Go to **Setup** > **Security Control**.
 
     ![Security Controls](./media/coupa-tutorial/setup.png "Security Controls")
 

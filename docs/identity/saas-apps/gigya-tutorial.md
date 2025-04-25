@@ -99,7 +99,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, log into your Gigya company site as an administrator.
 
-2. Go to **Settings \> SAML Login**, and then select the **Add** button.
+2. Go to **Settings** > **SAML Login**, and then select the **Add** button.
    
     ![SAML Login](./media/gigya-tutorial/login.png "SAML Login")
 
@@ -127,7 +127,7 @@ In order to enable Microsoft Entra users to log into Gigya, they must be provisi
 
 1. Log in to your **Gigya** company site as an administrator.
 
-2. Go to **Admin \> Manage Users**, and then select **Invite Users**.
+2. Go to **Admin** > **Manage Users**, and then select **Invite Users**.
    
     ![Manage Users](./media/gigya-tutorial/users.png "Manage Users")
 

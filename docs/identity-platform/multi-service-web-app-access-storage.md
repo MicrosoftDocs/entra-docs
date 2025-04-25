@@ -172,7 +172,7 @@ In the [Azure portal](https://portal.azure.com), go into your storage account to
 
 1. In the **Role** tab, select **Storage Blob Data Contributor** role from the dropdown and then select **Next**.  
 
-1. In the **Members** tab, select **Assign access to** -> **Managed identity** and then select **Members** -> **Select members**.  In the **Select managed identities** window, find and select the managed identity created for your App Service in the **Managed identity** dropdown.  Select the **Select** button.  
+1. In the **Members** tab, select **Assign access to** > **Managed identity** and then select **Members** > **Select members**.  In the **Select managed identities** window, find and select the managed identity created for your App Service in the **Managed identity** dropdown.  Select the **Select** button.  
 
 1. Select **Review and assign** and then select **Review and assign** once more.  
  

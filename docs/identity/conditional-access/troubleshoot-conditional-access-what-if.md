@@ -61,7 +61,7 @@ Many organizations create policies based on network locations, permitting truste
 
 To validate that a configuration is appropriate, an administrator could use the What If tool to mimic access, from a location that should be allowed and from a location that should be denied.
 
-[ ![What If tool showing results with Block access](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png)](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png#lightbox)
+[![What If tool showing results with Block access](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png)](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png#lightbox)
 
 In this instance, the user would be blocked from accessing any cloud app on their trip to North Korea as Contoso blocked access from that location.
 

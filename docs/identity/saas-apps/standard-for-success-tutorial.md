@@ -117,7 +117,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Standard for Success K-12 company site as an administrator with superuser access.
 
-1. From the menu, navigate to **Utilities** -> **Tools & Features**.
+1. From the menu, navigate to **Utilities** > **Tools & Features**.
 
 1.	Scroll down to **Single Sign On Settings** and select the **Microsoft Azure Single Sign On** link and perform the following steps:
 
@@ -139,7 +139,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, log into your Standard for Success K-12 website as an administrator with superuser privileges.
 
-1. From the menu, navigate to **Utilities** -> **Accounts Manager**, then select **Create New User** and perform the following steps:
+1. From the menu, navigate to **Utilities** > **Accounts Manager**, then select **Create New User** and perform the following steps:
 
     ![Screenshot that shows the User Information fields.](./media/standard-for-success-tutorial/name.png "User Information")
 

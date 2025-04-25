@@ -129,7 +129,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Teamgo website as an administrator.
 
-1. Select  **Kiosks** button and go to the **Settings** -> **Integrations** in the left navigation.
+1. Select  **Kiosks** button and go to the **Settings** > **Integrations** in the left navigation.
 
 1. In the **Integrations**, go to the **Single sign-on** tab and select **Configure**.
 

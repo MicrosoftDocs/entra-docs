@@ -138,7 +138,7 @@ To enable Microsoft Entra users to sign in to TeamSeer, they must be provisioned
 
 1. Sign in to your **TeamSeer** company site as an administrator.
 
-1. Go to **HR Admin \> Users** and then select **Run the New User wizard**.
+1. Go to **HR Admin** > **Users** and then select **Run the New User wizard**.
 
     ![Screenshot shows the H R Admin tab where you can select a wizard to run.](./media/teamseer-tutorial/account.png "HR Admin")
 

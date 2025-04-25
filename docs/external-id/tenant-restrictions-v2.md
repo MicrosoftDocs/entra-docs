@@ -342,7 +342,7 @@ To ensure sign-ins are restricted on all devices and apps in your corporate netw
 
    |Header name  |Header Value  | Sample Value |
    |---------|---------|-----------------|
-   |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       | aaaabbbb-0000-cccc-1111-dddd2222eeee:1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5
+   |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       | aaaabbbb-0000-cccc-1111-dddd2222eeee:1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5|
 
    - `TenantID` is your Microsoft Entra tenant ID. Find this value by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
    - `policyGUID` is the object ID for your cross-tenant access policy. Find this value by calling `/crosstenantaccesspolicy/default` and using the “id” field returned.

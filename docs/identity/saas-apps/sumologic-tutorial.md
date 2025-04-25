@@ -136,7 +136,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your SumoLogic company site as an administrator.
 
-1. Go to **Manage** -> **Security**.
+1. Go to **Manage** > **Security**.
 
     ![Manage](./media/sumologic-tutorial/security.png "Manage")
 
@@ -176,7 +176,7 @@ In order to enable Microsoft Entra users to sign in to SumoLogic, they must be p
 
 1. Sign in to your **SumoLogic** tenant.
 
-1. Go to **Manage \> Users**.
+1. Go to **Manage** > **Users**.
 
     ![Screenshot shows Users selected from the Manage menu.](./media/sumologic-tutorial/user.png "Users")
 

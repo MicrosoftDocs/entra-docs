@@ -103,7 +103,7 @@ To configure single sign-on on **FM:Systems** side, you need to send the downloa
 
 1. In a web browser window, sign into your FM:Systems company site as an administrator.
 
-2. Go to **System Administration \> Manage Security \> Users \> User list**.
+2. Go to **System Administration** > **Manage Security** > **Users** > **User list**.
    
     ![System Administration](./media/fm-systems-tutorial/user.png "System Administration")
 

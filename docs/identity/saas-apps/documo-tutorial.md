@@ -104,7 +104,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Documo website as an administrator.
 
-1. Go to the **Account Settings** -> **Security**.
+1. Go to the **Account Settings** > **Security**.
 
     ![screenshot for security page.](./media/documo-tutorial/security.png)
 

@@ -171,7 +171,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot of AWS services page, with IAM highlighted.](./media/amazon-web-service-tutorial/identity-access-management.png)
 
-1. Go to **Access management** -> **Identity Providers** and select **Add provider** button.
+1. Go to **Access management** > **Identity Providers** and select **Add provider** button.
 
     ![Screenshot of IAM page, with Identity Providers and Create Provider highlighted.](./media/amazon-web-service-tutorial/add-provider.png)
 

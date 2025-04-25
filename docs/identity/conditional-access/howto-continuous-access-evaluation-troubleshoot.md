@@ -24,7 +24,7 @@ Administrators can monitor user sign-ins where continuous access evaluation (CAE
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**. 
 1. Apply the **Is CAE Token** filter. 
 
-[ ![Screenshot showing how to add a filter to the sign-in log to see where CAE is being applied or not.](./media/howto-continuous-access-evaluation-troubleshoot/sign-ins-log-apply-filter.png) ](./media/howto-continuous-access-evaluation-troubleshoot/sign-ins-log-apply-filter.png#lightbox)
+[![Screenshot showing how to add a filter to the sign-in log to see where CAE is being applied or not.](./media/howto-continuous-access-evaluation-troubleshoot/sign-ins-log-apply-filter.png)](./media/howto-continuous-access-evaluation-troubleshoot/sign-ins-log-apply-filter.png#lightbox)
 
 From here, admins are presented with information about their user’s sign-in events. Select any sign-in to see details about the session, like which Conditional Access policies applied and if CAE enabled. 
 

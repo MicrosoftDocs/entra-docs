@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://company.humanity.com/includes/saml/`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [Humanity Client support team](https://www.humanity.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact the Humanity client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

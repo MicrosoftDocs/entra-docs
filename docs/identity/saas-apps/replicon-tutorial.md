@@ -135,7 +135,7 @@ The objective of this section is to create a user called B.Simon in Replicon.
 
 1. In a web browser window, sign into your Replicon company site as an administrator.
 
-2. Go to **Administration \> Users**.
+2. Go to **Administration** > **Users**.
 
     ![Users](./media/replicon-tutorial/administration.png "Users")
 
