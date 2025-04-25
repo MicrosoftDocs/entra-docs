@@ -54,7 +54,7 @@ Now customers can configure a Lifecycle workflows task to automatically revoke a
 
 ---
 
-### General Availability - Microsoft Entra ID Protection Risk Management Agent
+### General Availability - Use managed identities as credentials in Microsoft Entra apps
 
 **Type:** New feature    
 **Service category:** Managed identities for Azure resources    
