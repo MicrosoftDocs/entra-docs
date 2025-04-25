@@ -33,12 +33,16 @@ You can view deployment logs using the Microsoft Entra admin center.
 To access deployment logs: 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference).
 1. Navigate to **Global Secure Access** > **Monitor** > **Deployment logs**.
-1. Use filters to narrow results based on activity type, status, or other fields. 
+1. Use filters to narrow results based on activity type, status, or other fields.
+
+### Filter options
 
 To filter the deployment logs to a specific detail, select **Add filter** and then enter the detail for the filter. For example, to look at all the logs for remote network activity, select the activity and then select **Remote Network** and then select **Apply**.
 
 ![Screenshot of the deployment log activity details.](media/how-to-view-deployment-logs/traffic-activity-details.png)
 
+> [!NOTE]
+> A notification shows up at the top right corner of the page when making a configuration change. Click the notification to see the progress of the deployment.
 
 ## Supported scenarios 
 
@@ -48,9 +52,8 @@ The Global Secure Access configuration activities included in deployment logs ar
 - Audit Logs Settings 
 - Cross Tenant Access Settings 
 - Conditional Access Settings 
-- Forwarding Options 
+- IP Forwarding Options 
 - Forwarding Profile 
-
 
 ## Deployment log fields
 
