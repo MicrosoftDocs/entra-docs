@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: overview
-ms.date: 04/24/2025
+ms.date: 04/25/2025
 ms.service: global-secure-access
 ms.custom: references_regions
 ai-usage: ai-assisted
@@ -95,7 +95,7 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 | Context-aware network security   |                                                  | ✅                                               |                                                  |
 | Web category filtering           |                                                  | ✅                                               |                                                  |
 | Fully qualified domain name (FQDN) filtering |                                      | ✅                                               |                                                  |
-| Universal CAE                    | ✅                                              | ✅                                               | ✅                                              |
+| Universal Continuous Access Evaluation (CAE) | ✅                                   | ✅                                               | ✅                                              |
 | VPN replacement with an identity-centric ZTNA |                                     |                                                   | ✅                                              |
 | Quick Access                     |                                                  |                                                   | ✅                                              |
 | App Discovery                    |                                                  |                                                   | ✅                                              |
