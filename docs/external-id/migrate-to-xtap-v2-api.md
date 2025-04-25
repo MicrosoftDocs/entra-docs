@@ -72,7 +72,7 @@ You need to perform migration only once. After migration, you don't need to modi
 
 1. Start PowerShell and connect to your tenant:
 
-   ```json
+   ```powershell
    Connect-Graph -Scopes "Directory.AccessAsUser.All"
    ```
 
@@ -80,31 +80,31 @@ You need to perform migration only once. After migration, you don't need to modi
 
 1. Read the updated JSON file into PowerShell using the following command. This command assumes the JSON file is in the current folder: 
 
-   ```json
+   ```powershell
    $policy = Get-Content .\CrossTenantAccessPolicy.json
    ```
 
 1. Run the following command to convert the JSON to the correct format for ingestion using Microsoft Graph: 
 
-   ```json
+   ```powershell
    $json = "{\"displayName\": \"Cross Tenant Access Policy\", \"definition\":[\""+[string]$($policy.trim()).Replace("", \"\\\"").Replace("\r*\n", "")+"\"] }"
    ```
 
 1. Run the following command to update the existing policy:
 
-   ```json
+   ```powershell
    Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy" -Body $json -Headers @{"Content-Type"="application/json"}
    ```
 
 1. Run the following command to verify the policy was updated successfully: 
 
-   ```json
+   ```powershell
    Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy" | %{$_.definition}
    ```
 
 1. Disconnect from the tenant: 
 
-   ```json
+   ```powershell
    Disconnect-Graph
    ```
 
