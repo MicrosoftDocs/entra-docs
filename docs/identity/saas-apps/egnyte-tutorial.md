@@ -142,7 +142,7 @@ To enable Microsoft Entra users to sign in to Egnyte, they must be provisioned i
 
 1. Sign in to your **Egnyte** company site as administrator.
 
-2. Go to **Settings \> Users & Groups**.
+2. Go to **Settings** > **Users & Groups**.
 
 3. Select **Add New User**, and then select the type of user you want to add.
    

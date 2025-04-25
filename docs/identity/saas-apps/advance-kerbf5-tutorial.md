@@ -244,7 +244,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
         ![Screenshot that shows the APM Delegation Account Properties > Delegation tab.](./media/advance-kerbf5-tutorial/configure25.png)
 
-1. Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+1. Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
 
 1. Appendix- SAML – F5 BIG-IP Variable mappings shown below:
 

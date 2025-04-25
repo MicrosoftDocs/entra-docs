@@ -99,11 +99,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, log in to your Sprinklr company site as an administrator.
 
-1. Go to **Administration \> Settings**.
+1. Go to **Administration** > **Settings**.
 
     ![Administration](./media/sprinklr-tutorial/settings.png "Administration")
 
-1. Go to **Manage Partner \> Single Sign** on from the left pane.
+1. Go to **Manage Partner** > **Single Sign** on from the left pane.
 
     ![Manage Partner](./media/sprinklr-tutorial/users.png "Manage Partner")
 
@@ -141,11 +141,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Sprinklr company site as an administrator.
 
-1. Go to **Administration \> Settings**.
+1. Go to **Administration** > **Settings**.
 
     ![Administration](./media/sprinklr-tutorial/settings.png "Administration")
 
-1. Go to **Manage Client \> Users** from the left pane.
+1. Go to **Manage Client** > **Users** from the left pane.
 
     ![Screenshot shows the Add User button in Settings/Users.](./media/sprinklr-tutorial/client.png "Settings")
 

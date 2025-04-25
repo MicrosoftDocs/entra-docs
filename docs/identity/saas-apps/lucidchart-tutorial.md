@@ -102,7 +102,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Team](./media/lucidchart-tutorial/ic791190.png "Team")
 
-3. Select **Applications \> Manage SAML**.
+3. Select **Applications** > **Manage SAML**.
 
     ![Manage SAML](./media/lucidchart-tutorial/ic791191.png "Manage SAML")
 

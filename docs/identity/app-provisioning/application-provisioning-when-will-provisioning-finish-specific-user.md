@@ -59,7 +59,7 @@ The time to provision a user, group, or group membership varies based on several
 - Some target systems implement request rate limits and throttling, which can impact performance during large sync operations. Under these conditions, an app that receives too many requests too fast might slow its response rate or close the connection. Gallery applications are configured to adhere to the rate limits set by the application developer, with no action required by an administrator configuring provisioning. 
 - Sync jobs for which all users are created for the first time take about twice as long as sync jobs for which all users are matched to existing users.
 - The number of failures that the provisioning service has to retry on a given sync cycle impacts performance. Check the progress bar and [provisioning logs](check-status-user-account-provisioning.md) for any failures and remediate them.
-- Provisioning jobs in quarantine run at a reduced frequency. Review the quarantine reason and remeditate it to restore the typical execution frequency.
+- Provisioning jobs in quarantine run at a reduced frequency. Review the quarantine reason and remediate it to restore the typical execution frequency.
 
 For the configuration **Sync assigned user and groups only**, you can use the following formulas to determine the **approximate** minimum and maximum expected **initial cycle** times:
 
