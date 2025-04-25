@@ -239,7 +239,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Does the enforcement apply to Azure for US Government or Azure sovereign clouds?
 
-**Answer**: No, Microsoft doesn't enforce mandatory multifactor authentication in Azure for US Government and other Azure sovereign clouds. 
+**Answer**: Microsoft enforces mandatory MFA only in the public Azure cloud. Microsoft doesn't currently enforce MFA in Azure for US Government and other Azure sovereign clouds. 
 
 **Question**: How can we comply if we enforce MFA by using another identity provider or MFA solution, and we don't enforce by using Microsoft Entra MFA? 
 
