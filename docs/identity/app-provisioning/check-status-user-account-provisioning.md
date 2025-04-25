@@ -41,10 +41,10 @@ This article uses the following terms:
 
 To get provisioning report information for a given application:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **Provisioning logs** in the **Activity** section. You can also browse to the Enterprise Application for which provisioning is configured. For example, if you're provisioning users to LinkedIn Elevate, the navigation path to the application details is:
 
-**Identity** > **Applications** > **Enterprise applications** > **All applications** > **LinkedIn Elevate**
+**Entra ID** > **Enterprise apps** > **All applications** > **LinkedIn Elevate**
 
 From the all applications area, you access both the provisioning progress bar and provisioning logs.
 

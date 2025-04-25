@@ -42,7 +42,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of AirWatch into Microsoft Entra ID, you need to add AirWatch from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **AirWatch** in the search box.
 1. Select **AirWatch** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -70,7 +70,7 @@ To configure and test Microsoft Entra SSO with AirWatch, perform the following s
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AirWatch** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **AirWatch** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -146,7 +146,7 @@ Follow these steps to enable Microsoft Entra SSO.
    1. Select the **Import Identity Provider Settings** and select **Upload** to upload the XML file that you downloaded in Step4 above.
 1. In the **Request** section, perform the following steps:
    1. As **Request Binding Type**, select **POST**.
-   1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AirWatch**. 
+   1. Browse to **Entra ID** > **Enterprise apps** > **AirWatch**. 
    1. Under the **AirWatch Configuration** section, select **Configure AirWatch** to open **Configure sign-on** window
    1. Copy the **SAML Single Sign-On Service URL** from the **Quick Reference** section, and then paste it into the **Identity Provider Single Sign-On URL** textbox.
    1. As **NameID Format**, select **Email Address**.

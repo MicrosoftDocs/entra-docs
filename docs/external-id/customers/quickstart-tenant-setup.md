@@ -30,7 +30,7 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 ## Create a new tenant with external configurations 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. Browse to **Identity** > **Overview** > **Manage tenants**.
+1. Browse to **Entra ID** > **Overview** > **Manage tenants**.
 1. Select **Create**.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/create-tenant.png" alt-text="Screenshot of the create tenant option.":::

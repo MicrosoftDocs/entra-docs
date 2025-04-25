@@ -51,12 +51,12 @@ This workbook doesn't require that you create any Conditional Access policies, e
 In Identity Protection:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Protection** > **Identity Protection** > **Risk policy impact analysis**.
+1. Browse to **ID Protection** > **Dashboard** > **Risk policy impact analysis**.
 
 In Workbooks: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 1. Select the **Impact analysis of risk-based access policies** workbook under **ID Protection**.
 
 ### Navigate the workbook

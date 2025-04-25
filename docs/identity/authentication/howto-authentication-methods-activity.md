@@ -44,7 +44,7 @@ The following roles have the required permissions:
 To access authentication method Usage and insights:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication Methods** > **Activity**.
+1. Browse to **Entra ID** > **Authentication methods** > **Activity**.
 1. There are two tabs in the report: **Registration** and **Usage**.
 
    ![Authentication Methods Activity overview](media/how-to-authentication-methods-usage-insights/registration-usage-tabs.png)

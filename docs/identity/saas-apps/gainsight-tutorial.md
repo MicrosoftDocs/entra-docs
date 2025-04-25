@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Gainsight** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Gainsight** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. Provide any dummy url like (`https://gainsight.com`) in the **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** in **Basic SAML Configuration**.
 

@@ -76,7 +76,7 @@ To send your identity log information to your new workspace, you need to configu
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Select **Add diagnostic setting**.
 
@@ -100,7 +100,7 @@ Your selected logs might take up to 15 minutes for the logs to populate in your 
 
 With your logs streaming to your Log Analytics workspace, you can run queries using the **Kusto Query Language (KQL)**. The least privileged role to run queries is the **Reports Reader** role
 
-1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Log Analytics**.
 
 1. In the **Search** textbox, type your query, and select **Run**. 
 

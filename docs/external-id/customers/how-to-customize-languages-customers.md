@@ -98,7 +98,7 @@ Language customization in the external tenant lets your user flow accommodate di
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).  
 2. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-3. Browse to **Identity** > **External Identities** > **User flows**.
+3. Browse to **Entra ID** > **External Identities** > **User flows**.
 4. Select the user flow that you want to enable for translations.
 5. Select **Languages**.
 6. On the **Languages** page for the user flow, select the language that you want to customize.

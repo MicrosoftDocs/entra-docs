@@ -42,7 +42,7 @@ The Conditional Access gap analyzer workbook helps you to verify that your Condi
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Conditional Access Gap Analyzer** workbook from the **Conditional Access** section.
 

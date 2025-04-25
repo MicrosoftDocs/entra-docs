@@ -54,7 +54,7 @@ To check the tenant:
 > [!TIP]
 > To find the tenant ID, you can:
 > * Hover over your account name to get the directory or tenant ID.
-> * Select **Identity** > **Overview** and look for **Tenant ID**.
+> * Browse to **Entra ID** > **Overview** > **Properties** and look for **Tenant ID**.
 
 If you don't have a tenant associated with your account, you'll see a GUID under your account name. You won't be able to do actions like registering apps until you create a Microsoft Entra tenant.
 

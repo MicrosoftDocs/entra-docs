@@ -40,7 +40,7 @@ Only certain events recorded in the Activity Logs are needed to see application 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least a [Reports reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader) role
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. In the left-hand navigation underneath **Activity**, browse to **Audit logs**.
 
@@ -57,7 +57,7 @@ To view the activity logs for a resource application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least a [Reports reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader) role
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. Search for the resource application that owns the permission. For example, if you want to view which applications were awarded the Microsoft Graph `Mail.Read` permission in the last 30 days, search for *Microsoft Graph*.
 

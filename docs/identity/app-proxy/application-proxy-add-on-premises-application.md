@@ -49,7 +49,7 @@ If your organization uses proxy servers to connect to the internet, you need to 
 
 Add on-premises applications to Microsoft Entra ID.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **New application**.
 1. Select **Add an on-premises application** button, which appears about halfway down the page in the **On-premises applications** section. Alternatively, you can select **Create your own application** at the top of the page and then select **Configure application proxy for secure remote access to an on-premises application**.
 1. In the **Add your own on-premises application** section, provide the following information about your application:

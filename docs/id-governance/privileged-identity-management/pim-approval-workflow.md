@@ -25,7 +25,7 @@ As a delegated approver, you receive an email notification when a Microsoft Entr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Approve requests**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Approve requests**.
 
     :::image type="content" source="./media/azure-ad-pim-approval-workflow/resources-approve-pane.png" alt-text="Screenshot showing the **Approve requests** page showing request to review Microsoft Entra roles.":::
 

@@ -49,7 +49,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select **New user flow**.
 
@@ -89,7 +89,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 If you want your customer users to only sign in and not sign up, you can disable the sign-up experience in your user flow by using the [Update authenticationEventsFlow API in Microsoft Graph](/graph/api/authenticationeventsflow-update), and updating the **onInteractiveAuthFlowStart** property > **isSignUpAllowed** property to `false`. You need to know the ID of the user flow whose sign-up you want to disable. You can't read the user flow ID from the Microsoft Entra admin center, but you can retrieve it via Microsoft Graph API if you know the app associated with it.
 
 1. Read the application ID associated with the user flow:
-    1. Browse to **Identity > External Identities > User flows**.
+    1. Browse to **Entra ID** > **External Identities** > **User flows**.
     1. From the list, select your user flow.
     1. In the left menu, under **Use**, select **Applications**.
     1. From the list, under **Application (client) ID** column, copy the Application (client) ID.
