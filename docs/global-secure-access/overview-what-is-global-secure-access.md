@@ -102,7 +102,7 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 | Private Domain Name System (DNS) |                                                  |                                                   | ✅                                              |
 | Single sign-on across all private apps |                                            |                                                   | ✅                                              |
 | Marketplace availability         |                                                  |                                                   | ✅                                              |
-| Private network connector multi-cloud support |                                     |                                                   | ✅                                              |
+| Private network connector multicloud support |                                     |                                                   | ✅                                              |
 
 *Included in Microsoft Entra Suite
 
