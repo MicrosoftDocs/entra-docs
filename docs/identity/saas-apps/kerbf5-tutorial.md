@@ -445,7 +445,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
     ![F5 (Kerberos) configuration](./media/kerbf5-tutorial/configure43.png)
 
-* Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html).
+* Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html).
 
 ### Create F5 test user
 
