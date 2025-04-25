@@ -100,7 +100,7 @@ Deploying the configuration change to enable SSPR from the Windows sign-in scree
 To enable SSPR on the Windows sign-in screen by using a registry key, follow these steps:
 
 1. Sign in to the Windows PC by using administrative credentials.
-1. Select **Windows** + **R** to open the **Run** dialog, and then run **regedit** as an administrator
+1. Select **Windows** + **R** to open the **Run** dialog, and then run **regedit** as an administrator.
 1. Set the following registry key:
 
     ```cmd
