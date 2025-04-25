@@ -58,7 +58,7 @@ Now customers can configure a Lifecycle workflows task to automatically revoke a
 
 **Type:** New feature    
 **Service category:** Managed identities for Azure resources    
-**Product capability:** Access Control    
+**Product capability:** Identity Security & Protection   
 
 You can now use managed identities as federated credentials for Microsoft Entra apps, enabling secure, secret-less authentication in both single- and multi-tenant scenarios. This eliminates the need to store and manage client secrets or certificates when using Microsoft Entra app to access Azure resources across tenants. This capability aligns with Microsoft’s [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative) pillar of protecting identities and secrets across systems. Learn how to configure this capability in the [official documentation](../workload-id/workload-identity-federation-config-app-trust-managed-identity.md).
 
