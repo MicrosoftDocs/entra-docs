@@ -693,16 +693,6 @@
               href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
     - name: Secure
       items:
-        - name: Build for resilience
-          items:
-            - name: Development Overview
-              href: ~/architecture/resilience-app-development-overview.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: Client applications
-              href: ~/architecture/resilience-client-app.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: Daemon applications
-              href: ~/architecture/resilience-daemon-app.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: OpenID Connect metadata refresh
-              href: howto-build-services-resilient-to-metadata-refresh.md
         - name: Use Continuous Access Evaluation APIs
           displayName: cae
           href: app-resilience-continuous-access-evaluation.md
