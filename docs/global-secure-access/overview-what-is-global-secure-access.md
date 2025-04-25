@@ -99,7 +99,7 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 | VPN replacement with an identity-centric ZTNA |                                     |                                                   | ✅                                              |
 | Quick Access                     |                                                  |                                                   | ✅                                              |
 | App Discovery                    |                                                  |                                                   | ✅                                              |
-| Private DNS                      |                                                  |                                                   | ✅                                              |
+| Private Domain Name System (DNS) |                                                  |                                                   | ✅                                              |
 | Single sign-on across all private apps |                                            |                                                   | ✅                                              |
 | Marketplace availability         |                                                  |                                                   | ✅                                              |
 | Private network connector multi-cloud support |                                     |                                                   | ✅                                              |
