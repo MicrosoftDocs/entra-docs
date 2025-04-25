@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 
-ms.date: 04/24/2025
+ms.date: 04/25/2025
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
@@ -21,7 +21,7 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 - You must be assigned the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
 - You must have at least [Microsoft Entra ID P1](overview.md#license-requirements).
-- You must have available [security compute units (SCU)](/copilot/security/manage-usage). On average, each agent run consumes 3 SCUs.
+- You must have available [security compute units (SCU)](/copilot/security/manage-usage). On average, each agent run consumes less than 1 SCU.
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 
 ### Limitations
@@ -30,23 +30,25 @@ The agent also evaluates all existing enabled policies to propose potential cons
 - Once agents are started they can't be stopped or paused. It may take a few minutes to run.
 - For policy consolidation each agent run only looks at 4 similar policy pairs
 - The agent currently runs as the user who enables it.
+- 
 - In preview you should only run the agent from the Microsoft Entra admin center.
 
 ## Getting started
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. From the new home page, select **Try now** from the agent notification card, review the details, then select **Start agent** to begin your first run. 
+1. From the new home page, select **Go to agents** from the agent notification card. 
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-try-now.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-try-now.png":::
 
-1. When the agent overview page loads, you'll see the **Agent status**, **Triggers**, **Recent suggestions** and **Recent activity**
+1. Select **View details** under the Conditional Access Optimization Agent, then select **Start agent** to begin your first run. 
+
+   :::image type="content" source="media/agent-optimization/conditional-access-optimization-start-agent.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-start-agent.png":::
+
+1. When the agent overview page loads, you'll see most recent and next scheduled runtimes, performance highlights, recent suggestions, and recent activity.
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
 
 1. Selecting a suggestion provides you with more detail to back up the suggestion, along with the ability to review the changes in the policy viewer or in JSON format.
-
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-suggestion.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-suggestion.png":::
-
 1. Newly created policies are created in report-only mode. Organizations should as a best practice exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
    1. Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
 
@@ -60,10 +62,15 @@ The agent might run and:
 - Suggest creation of a new Conditional Access policy in report-only mode
 - Suggest adding newly created users to an existing polcy
 
+### Providing feedback
+
+Use the **Give Microsoft feedback** button at the top of the agent window to provide feedback to Microsoft about the agent.
+
 ## Remove agent
 
-If you no longer wish to use the Conditional Access optimization agent, you can remove it using the **Settings** tab of the agent.
+If you no longer wish to use the Conditional Access optimization agent, you can remove it using the **Remove agent** button at the top of the agent window.
 
 ## Related content
 
-[Conditional Access policy templates](concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
+- [Conditional Access policy templates](concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
+- [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)
