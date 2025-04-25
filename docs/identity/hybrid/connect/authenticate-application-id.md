@@ -7,12 +7,13 @@ manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 12/16/2024
+ms.date: 04/25/2025
 ms.subservice: hybrid
 ms.author: billmath
 ---
 
 # Authenticate to Microsoft Entra ID using Application Identity 
+
 Entra Connect uses the [Microsoft Entra Connector account](entra/identity/hybrid/connect/reference-connect-accounts-permissions#accounts-used-for-microsoft-entra-connect.md) to authenticate and sync identities from Active Directorty to Entra ID. This account uses username and password to authenticate requests. To enhance the security of the service, we are rolling out an application identity that uses Oauth 2.0 client credential flow with certificate credentials. In this new method, Entra or Administrator will create a single tenant 3rd party application in Entra ID and use one of the relevant certificate management options below for the credentials.
 
 Microsoft Entra Connect provides 3 options for application/certificate management: 
@@ -22,11 +23,11 @@ Microsoft Entra Connect provides 3 options for application/certificate managemen
 3. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc)
 
 ## Managed by Microsoft Entra Connect (Recommended) 
-Microsoft Entra Connect manages the application and certificate including creation, rotation and deletion of the certificate. The certificate is stored in the Current User store. For optimal protection of the certificate’s private key, it is recommended that the machine employs a Trusted Platform Module (TPM) solution to establish a hardware-based security boundary. When a TPM is available, key service operations are performed within a dedicated hardware environment. In contrast, if a TPM cannot be used, Entra Connect defaults to storing the certificate in the Current User store and marks the private key as non-exportable for additional protection. However, without the hardware isolation provided by a TPM, the private key is secured solely by software safeguards and does not achieve the same level of protection. For more information on TPM, see [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview). 
+Microsoft Entra Connect manages the application and certificate including creation, rotation and deletion of the certificate. The certificate is stored in the Current User store. For optimal protection of the certificate’s private key, it is recommended that the machine employs a Trusted Platform Module (TPM) solution to establish a hardware-based security boundary. When a TPM is available, key service operations are performed within a dedicated hardware environment. In contrast, if a TPM cannot be used, Entra Connect defaults to storing the certificate in the default Microsoft Software Key Storage Provider and marks the private key as non-exportable for additional protection. However, without the hardware isolation provided by a TPM, the private key is secured solely by software safeguards and does not achieve the same level of protection. For more information on TPM, see [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview). 
 
  :::image type="content" source="media/authenticate-application-id/auth-1.png" alt-text="Diagram of authentication with application id." lightbox="media/authenticate-application-id/auth-1.png":::
 
-Microsoft recommendeds the Microsoft Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry.
+Microsoft recommendeds the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.4.252.0. Note that we use the maintenance task to check if the certificate is due for rotation and automatically rotate the certificate, so if the scheduler is suspended or maintenance task is disabled, auto rotation will not happen even though the certificate is managed by Entra Connect sync
 
 The Microsoft Entra Managed is set up during initial installation or upgrade process on the Entra Connect Connect Wizard as shown below
 
@@ -41,25 +42,27 @@ In this set up, the customer administrator manages the application that will be 
 
 ## Bring Your Own Certificate (BYOC) 
 
+
 In this set up, the administrator manages the certificate credential used by the application. The administrator is responsible for creating the certificate, rotation and deletion of unused/expired certificates. The certificate should be stored in the Current User store. The admistrator is responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing. 
+
 > [!NOTE]
-> - It is recommended to use the TPM to provide a hardware-based security boundary, as opposed to the Current User store. To check the status of your TPM use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm?view=windowsserver2025-ps) PowerShell cmdlet. If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Generation 2 virtual machine security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable Trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm)
+> - It is recommended to use a TPM or an HSM to provide a hardware-based security boundary, as opposed to the default. To check the status of your TPM use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm?view=windowsserver2025-ps) PowerShell cmdlet. If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Generation 2 virtual machine security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable Trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm)
 
 
 ## Prerequisites
 The following prerequisites are required to implement authentication using application identity.
 
-- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [x.x.x.x](reference-connect-version-history.md) or greater.
+- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.4.252.0](reference-connect-version-history.md) or greater.
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
-- On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
+- On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later.
+- Optional: TPM 2.0 present and ready to use (recommended for security)
 
 The following are additional requirements for the BYOC certificate management option
-- A certificate is created in an HSM or TPM using a CNG provider and the private key is marked as non-exportable. The following certificate configurations are supported:
+- A certificate is created in an HSM or TPM using a CNG provider and the private key is marked as non-exportable. A warning event 1014 will be emitted if TPM is not used. The following certificate configurations are supported:
   - KeyLength: 2048
   - KeyAlgorithm: RSA
   - KeyHashAlgorithm: SHA256
 - Grant the ADSync service account permission to perform signing using the private key
-- A certificate can also be created in the Current User (not recommended). See [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate). A warning event 1014 will be emitted if TPM is not used.
 
 The following are additional requirements for the BYOA application management option
 - The customer creates a certificate as instructed in BYOC Prerequisites above.
@@ -67,7 +70,8 @@ The following are additional requirements for the BYOA application management op
 - Customer registers the certificate with the application 
 
 ## Onboarding to Application Based Authentication using PowerShell
-Microsoft Entra Connect uses username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps.
+This section is only relevant if using the BYOC or BYOA option. 
+Microsoft Entra Connect versions lower than 2.4.252.0 use username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps on Microsoft Connect Sync version equal to or higher than 2.4.252.0.
 
 > [!NOTE]
 > Ensure that you're on the Microsoft Entra Connect server and the ADSync PowerShell module is installed.
@@ -77,7 +81,7 @@ Microsoft Entra Connect uses username and password by default for authenticating
  ``` powershell
  Get-ADSyncEntraConnectorCredential
  ```
- This should return the Connector Identity Type as **ServiceAccount**. 
+ This should return the Connector Identity Type currently in use. 
 
 2. Disable the scheduler to ensure no sync cycles run until this change is completed.
 
@@ -100,7 +104,7 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
  ``` powershell
   Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash <CertificateSHA256Hash>
  ```
-Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
+Replace <AdminUserPrincipalName> with the AdminUserPrincipalName and <CertificateSHA256Hash> with the CertificateSHA256Hash 
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
@@ -111,9 +115,10 @@ Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;C
  - Use BYOC:
  
 ``` powershell
-   Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash <CertificateSHA256Hash> ```
+   Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash <CertificateSHA256Hash>
+```
 
-Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash
+Replace <AdminUserPrincipalName> with the AdminUserPrincipalName and <CertificateSHA256Hash> with the CertificateSHA256Hash
 
 5. Run a verification to confirm that you're now using application identity. Run the cmdlet below to get the current authentication and ensure it has the Connector Identity Type as **Application**. 
 
@@ -121,17 +126,19 @@ Replace &lt;AdminUserPrincipalName&gt; with the AdminUserPrincipalName and &lt;C
  Get-ADSyncEntraConnectorCredential
  ```
 
-5. Re-enable the scheduler to begin synchronization service using command below
+6. Re-enable the scheduler to begin synchronization service using command below
  ``` powershell
  Set-ADSyncScheduler -SyncCycleEnabled $true
  ```
+7. [Remove the Directory Synchronization Account (DSA) from Entra ID (Recommended)](#remove-legacy-service-account-using-powershell)
 
  ## Certificate Rotation using PowerShell
+
 Microsoft Entra Connect will warn if the certificate rotation is due. That is, expiring in less than or equal to 150 days. It will emit an error if certificate is already expired. These warnings (Event Id 1011) and errors (Event Id 1012) can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
 
-When you get a warning from Microsoft Entra Connect Sync when using the BYOC option, it's **highly recommended you generate a new key and certificate and rotate the certificate** used by Connect Sync using PowerShell.
-
 If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance disabled. If this is the case, you'll have to manually manage certificate rotation by going through the steps below.
+
+When you get a warning from Microsoft Entra Connect Sync when using the BYOC option, it's **highly recommended you generate a new key and certificate and rotate the certificate** used by Connect Sync using PowerShell.
 
 
 1. Disable the scheduler to ensure no sync cycles run until this change is completed. Use the following PowerShell cmdlet to disable the scheduler.
@@ -139,15 +146,20 @@ If the certificate is managed by Microsoft Entra Connect, **no action** is requi
  ``` powershell
  Set-ADSyncScheduler -SyncCycleEnabled $false
  ```
-2. Invoke certificate credential rotation. When the customer is in BYOC mode, the new certificate SHA256Hash must be provided.
+2. Invoke certificate credential rotation as below when using the Entra Managed option (default mode) but the scheduler is suspended or maintenance disabled.
 
  ``` powershell
- Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash &lt;CertificateSHA256Hash>
+ Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName>
  ```
 
-Replace &lt;AdminUserPrincipalName&gt; with the UserPrincipalName of the Microsoft Entra ID hybrid administrator, &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
+If in BYOC mode, the new certificate SHA256Hash must be provided as below.
 
-The new certificate SHA256Hash is optional if you have used the default mode but have maintenance disabled.
+ ``` powershell
+ Invoke-ADSyncApplicationCredentialRotation –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash <CertificateSHA256Hash>
+ ```
+
+Replace <AdminUserPrincipalName> with the UserPrincipalName of the Microsoft Entra ID hybrid administrator, <CertificateSHA256Hash> with the CertificateSHA256Hash 
+
 
 3. Get the current authentication and confirm it has the Connector Identity Type as **Application**. Use the following PowerShell cmdlet to verify the current authentication.
  
@@ -160,47 +172,16 @@ The new certificate SHA256Hash is optional if you have used the default mode but
  Set-ADSyncScheduler -SyncCycleEnabled $true
  ```
 5. Verify synchronization cycle is successful.
-6. Remove the old certificate from Current User store
+6. Remove the old certificate from Current User store for BYOC and BYOA options
 
 You may rotate the certificate at any point in time as deemed necessary, even if the current certificate is still not due for rotation or the current certificate has already expired.
 
 ## Certificate revocation process
 The certificate revocation process allows Authentication Policy Administrators to revoke a previously issued certificate from being used for future authentication. The certificate revocation won't revoke already issued tokens of the user. For more information on this process see [Understanding the certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
 
-## Roll back to legacy service account using PowerShell
-If you want to go back to the legacy service account, you have the option to revert to using service account to mitigate the issue promptly using PowerShell. Use the steps below to roll back to the service account.
-
-1. Disable the scheduler with below command to ensure no sync cycles run until this change is completed
- 
- ``` powershell
- Set-ADSyncScheduler -SyncCycleEnabled $false
- ```
-2. Add the service account username and password by entering below commands
-
- ``` powershell 
- $HACredential
- ```
-3. You'll be prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password. Enter the username and password.
-
-4. Next, add the service account
-
- ``` powershell
-Add-ADSyncAADServiceAccount -AADCredential $HACredential
- ```
-
-5. Get the current authentication mechanism with below command and to confirm that the ConnectorIdentityType is back to **ServiceAccount**.
- 
- ``` powershell
-Get-ADSyncEntraConnectorCredential
- ```
-6. Re-enable the scheduler to begin synchronization service using command below
-
- ``` powershell
- Set-ADSyncScheduler -SyncCycleEnabled $true
- ```
-
 ## Remove legacy service account using PowerShell
-Once you have transitioned to Application Based Authentication and Sync is working as expected, you may remove the old username and password service account using PowerShell.
+Once you have transitioned to Application Based Authentication and Sync is working as expected, it is **strongly recommended** that you remove the legacy DSA username and password service account using PowerShell. If using a custom account that cannot be removed,  deprivilege it and remove the DSA role from it.
+
 Use the steps below to remove the legacy service account.
 
 1. Add the service account username and password by entering below commands
@@ -218,6 +199,30 @@ Use the steps below to remove the legacy service account.
 
 The ServiceAccountName is the first part of the UserPrincipalName of the service account used in Microsoft Entra ID. You can find this user in the list of users in Entra Portal. If UPN is contoso@fabrikam.com then use **contoso** as the ServiceAccountName
 
+## Roll back to legacy service account using PowerShell
+If you want to go back to the legacy service account, you have the option to revert to using service account to mitigate the issue promptly using PowerShell. Use the steps below to roll back to the service account.
+
+1. Disable the scheduler with below command to ensure no sync cycles run until this change is completed
+ 
+ ``` powershell
+ Set-ADSyncScheduler -SyncCycleEnabled $false
+ ```
+2. Add the service account. You'll be prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password. Enter the credentials.
+
+ ``` powershell
+Add-ADSyncAADServiceAccount
+ ```
+
+3. Get the current authentication mechanism with below command and to confirm that the ConnectorIdentityType is back to **ServiceAccount**.
+ 
+ ``` powershell
+Get-ADSyncEntraConnectorCredential
+ ```
+4. Re-enable the scheduler to begin synchronization service using command below
+
+ ``` powershell
+ Set-ADSyncScheduler -SyncCycleEnabled $true
+ ```
 ## Next steps
 
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
