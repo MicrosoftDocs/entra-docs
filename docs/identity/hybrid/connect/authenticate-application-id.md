@@ -13,12 +13,13 @@ ms.author: billmath
 ---
 
 # Authenticate to Microsoft Entra ID using Application Identity 
-Entra Connect uses the [Microsoft Entra Connector account](entra/identity/hybrid/connect/reference-connect-accounts-permissions#accounts-used-for-microsoft-entra-connect.md) to authenticate and sync identities from Active Directorty to Entra ID. This account uses username and password to authenticate requests. To enhance the security of the service, we are rolling out an application identity that uses Oauth 2.0 client credential flow with certificate credentials. In this new method, Entra will create a single tenant 3rd party application in Entra ID and use one of the two certificate management options below for the credentials.
+Entra Connect uses the [Microsoft Entra Connector account](entra/identity/hybrid/connect/reference-connect-accounts-permissions#accounts-used-for-microsoft-entra-connect.md) to authenticate and sync identities from Active Directorty to Entra ID. This account uses username and password to authenticate requests. To enhance the security of the service, we are rolling out an application identity that uses Oauth 2.0 client credential flow with certificate credentials. In this new method, Entra or Administrator will create a single tenant 3rd party application in Entra ID and use one of the relevant certificate management options below for the credentials.
 
-Microsoft Entra Connect provides 2 options for certificate management: 
+Microsoft Entra Connect provides 3 options for application/certificate management: 
 
 1. [Managed by Microsoft Entra Connect (Recommended)](#managed-by-microsoft-entra-connect-recommended)
-2. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc) 
+2. [Bring Your Own Application (BYOA)](#bring-your-own-application-byoa)
+3. [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc)
 
 ## Managed by Microsoft Entra Connect (Recommended) 
 Microsoft Entra Connect manages the application and certificate including creation, rotation and deletion of the certificate. The certificate is stored in the Current User store. For optimal protection of the certificate’s private key, it is recommended that the machine employs a Trusted Platform Module (TPM) solution to establish a hardware-based security boundary. When a TPM is available, key service operations are performed within a dedicated hardware environment. In contrast, if a TPM cannot be used, Entra Connect defaults to storing the certificate in the Current User store and marks the private key as non-exportable for additional protection. However, without the hardware isolation provided by a TPM, the private key is secured solely by software safeguards and does not achieve the same level of protection. For more information on TPM, see [Trusted Platform Module Technology Overview](/windows/security/hardware-security/tpm/trusted-platform-module-overview). 
@@ -27,9 +28,20 @@ Microsoft Entra Connect manages the application and certificate including creati
 
 Microsoft recommendeds the Microsoft Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry.
 
+The Microsoft Entra Managed is set up during initial installation or upgrade process on the Entra Connect Connect Wizard as shown below
+
+*Installation Wizard Image*
+
+This can also be set up during a second pass on the wizard as shown below
+
+*Second pass Wizard image*
+
+## Bring Your Own Application (BYOA) 
+In this set up, the customer administrator manages the application that will be used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. 
+
 ## Bring Your Own Certificate (BYOC) 
 
-Microsoft Entra Connect Sync manages the application identity that will be used by Entra Connect Sync to authenticate to Microsoft Entra ID, and you manage the certificate credential used by the application. Your administrator is responsible for creating the certificate, rotation and deletion of unused/expired certificates. The certificate should be stored in the Current User store. You are responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing. 
+In this set up, the administrator manages the certificate credential used by the application. The administrator is responsible for creating the certificate, rotation and deletion of unused/expired certificates. The certificate should be stored in the Current User store. The admistrator is responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing. 
 > [!NOTE]
 > - It is recommended to use the TPM to provide a hardware-based security boundary, as opposed to the Current User store. To check the status of your TPM use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm?view=windowsserver2025-ps) PowerShell cmdlet. If using Hyper-V VMs, the TPM can be enabled by checking Security &gt; Enable Trusted Platform Module. This can only be done on a  generation 2 virtual machines. Generation 1 virtual machines can't be converted to a generation 2 virtual machines. For more information see [Generation 2 virtual machine security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable Trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm)
 
@@ -48,6 +60,11 @@ The following are additional requirements for the BYOC certificate management op
   - KeyHashAlgorithm: SHA256
 - Grant the ADSync service account permission to perform signing using the private key
 - A certificate can also be created in the Current User (not recommended). See [Create a self-signed public certificate to authenticate your application](/entra/identity-platform/howto-create-self-signed-certificate). A warning event 1014 will be emitted if TPM is not used.
+
+The following are additional requirements for the BYOA application management option
+- The customer creates a certificate as instructed in BYOC Prerequisites above.
+- Customer registers an application with Entra and creates service principal.
+- Customer registers the certificate with the application 
 
 ## Onboarding to Application Based Authentication using PowerShell
 Microsoft Entra Connect uses username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps.
@@ -75,7 +92,6 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
 ``` powershell
    Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName>
 ```
-
  - Use BYOC:
  
  > [!NOTE] 
