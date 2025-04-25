@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 02/04/2025
+ms.date: 04/25/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 ---
@@ -74,6 +74,7 @@ The service provides alerts for the following scenarios:
 - [Sign-ins requiring a Conditional Access compliant device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring a Conditional Access managed device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
+- [Conditional Access block policy](scenario-health-conditional-access-block-policy.md)
 
 ## Related content
 

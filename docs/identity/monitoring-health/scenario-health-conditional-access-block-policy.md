@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/18/2025
+ms.date: 04/25/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -59,7 +59,7 @@ Investigating an alert starts with gathering data. With Microsoft Entra Health i
 
 1. Review the sign-in logs.
     - [Review the sign-in log details](concept-sign-in-log-activity-details.md).
-    - Look for sign-ins where the Conditional Access status is "failure".
+    - Look for sign-ins where the Conditional Access status is "failure."
 
 1. Check the audit logs for recent policy changes.
     - [Use the audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md).
@@ -73,7 +73,7 @@ The Microsoft Entra Health signal for Conditional Access block policy could trig
 
 These changes could be intentional or unintentional.
 
-- If the change was intentional, no additional action is likely needed.
+- If the change was intentional, no other action is likely needed.
 - If the change is unintentional, you should review the modified Conditional Access policy in the audit logs.
 
 ## Mitigate common issues
@@ -85,14 +85,14 @@ The following common issues could cause the Conditional Access block policy aler
 The Conditional Access block alert can trigger if there’s an increase in the "You can’t get there from here" error message during sign-in. This message appears if the application the user is trying to access can only be accessed from devices or client applications that meet the organization’s mobile device management policy.
 
 - A spike in a large number of users receiving this alert could indicate a change to the organization’s mobile device management policy.
-- A spike for a small number of users could indicate an issue with their specific device.
+- A spike for a few users could indicate an issue with their specific device.
 
 To investigate:
 
 Go to the **Affected entities** section of the selected scenario and select **View** for users.
 
 - If the issue is affecting a larger number of users, there might be a change to the mobile device management policy that you need to address.
-- If the issue is affecting a small number of users, it could be related to their specific device. They might need to join their devices to the organization's network. Select a user to navigate directly to their profile.
+- If the issue is affecting a few users, it could be related to their specific device. They might need to join their devices to the organization's network. Select a user to navigate directly to their profile.
 
 To remediate issues affecting a large number of users:
 
@@ -111,7 +111,7 @@ To remediate issues affecting a large number of users:
         - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access' and operationType eq 'Delete'`
         - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access' and activityDateTime ge 2024-12-04T22:03:57.2013763Z`
 
-1. Review your mobile device management policies to ensure they are configured correctly. Sign in to the [Microsoft Intune admin center](https://intune.microsoft.com/) as an [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) and browse to **Devices** > **Configuration** to review your policies.
+1. Review your mobile device management policies to ensure they're configured correctly. Sign in to the [Microsoft Intune admin center](https://intune.microsoft.com/) as an [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) and browse to **Devices** > **Configuration** to review your policies.
 
 To remediate issues affecting specific users:
 
