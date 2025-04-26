@@ -90,16 +90,16 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       |Attribute|Type|Supported for filtering|Required by ClearView Trade|
       |---|---|---|---|
-      |userName|String|&check;|&check;
-      |active|Boolean||&check;
-      |emails[type eq "work"].value|String||
-      |name.givenName|String||&check;
-      |name.familyName|String||&check;
-      |addresses[type eq "work"].country|String||
-      |phoneNumbers[type eq "work"].value|String||
-      |externalId|String||&check;
+      |userName|String|&check;|&check;|
+      |active|Boolean||&check;|
+      |emails[type eq "work"].value|String|||
+      |name.givenName|String||&check;|
+      |name.familyName|String||&check;|
+      |addresses[type eq "work"].country|String|||
+      |phoneNumbers[type eq "work"].value|String|||
+      |externalId|String||&check;|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for ClearView Trade, change the **Provisioning Status** to **On** in the **Settings** section.
 

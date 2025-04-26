@@ -102,7 +102,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| ---------------|  --------- |
 	| urn:oid:2.16.840.1.113730.3.1.241 | user.displayname |
 	| urn:oid:2.16.840.1.113730.3.1.3 | user.employeeid |
-	| urn:oid:1.3.6.1.4.1.22704.1.1.1.8 | [other user attribute] |
+
 	> [!NOTE]
 	> The Source Attribute is what is generally recommended but not necessarily a rule. For example, if user.mail is unique and scoped, it can also be passed as urn:oid:1.3.6.1.4.1.5923.1.1.1.6.
 

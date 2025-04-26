@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| uid | user.userprincipalname |
 
 	> [!NOTE]
-	>  The source attribute value is by default mapped to userpricipalname. This can be changed to user.mail or user.onpremiseuserprincipalname or any other value as per the setting in Webex.
+	>  The source attribute value is by default mapped to userprincipalname. This can be changed to user.mail or user.onpremiseuserprincipalname or any other value as per the setting in Webex.
 
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.

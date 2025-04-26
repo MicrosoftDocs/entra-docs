@@ -76,7 +76,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| **Reply URL** | 
 	|------------|
     | `https://couchbase-capella.us.auth0.com/login/callback` |
-	|` https://couchbase-capella.us.auth0.com/login/callback?connection=<Connection_UUID>` |
+	|`https://couchbase-capella.us.auth0.com/login/callback?connection=<Connection_UUID>` |
 
 	c. In the **Sign on URL** textbox, type the URL:
 	`https://cloud.couchbase.com/enterprise-sso`

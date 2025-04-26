@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `urn:auth0:colab-production:<customer>`
 
     b. In the **Reply URL** textbox, type a URL using the following pattern:
-    ` https://login.colabsoftware.com/login/callback?connection=<Customer>`
+    `https://login.colabsoftware.com/login/callback?connection=<Customer>`
 
 1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
 

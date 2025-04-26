@@ -136,13 +136,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for Filtering|
    |---|---|---|
    |userName|String|&check;|
-   |externalId|String|
-   |active|Boolean|
-   |displayName|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.formatted|String|
-   |urn:ietf:params:scim:schemas:extension:ciscoumbrella:2.0:User:nativeObjectId|String|
+   |externalId|String||
+   |active|Boolean||
+   |displayName|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.formatted|String||
+   |urn:ietf:params:scim:schemas:extension:ciscoumbrella:2.0:User:nativeObjectId|String||
 
 > [!NOTE]
 > If you have imported the objectGUID attribute for users via Microsoft Entra Connect (refer Step 2), add a mapping from objectGUID to urn:ietf:params:scim:schemas:extension:ciscoumbrella:2.0:User:nativeObjectId.
@@ -154,9 +154,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |Attribute|Type|Supported for Filtering|
       |---|---|---|
       |displayName|String|&check;|
-      |externalId|String|
-      |members|Reference|
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+      |externalId|String||
+      |members|Reference||
+
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Cisco User Management for Secure Access, change the **Provisioning Status** to **On** in the **Settings** section.
 
