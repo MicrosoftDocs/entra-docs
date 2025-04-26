@@ -38,15 +38,15 @@ The agent also evaluates all existing enabled policies to propose potential cons
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. From the new home page, select **Go to agents** from the agent notification card. 
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-try-now.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-try-now.png":::
+   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-try-now.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/agent-optimization/conditional-access-optimization-agent-try-now.png":::
 
 1. Select **View details** under the Conditional Access Optimization Agent, then select **Start agent** to begin your first run. 
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-start-agent.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-start-agent.png":::
+   :::image type="content" source="media/agent-optimization/conditional-access-optimization-start-agent.png" alt-text="Screenshot showing the Conditional Access Oprimization Agent configuration page." lightbox="media/agent-optimization/conditional-access-optimization-start-agent.png":::
 
 1. When the agent overview page loads, you see most recent and next scheduled runtimes, performance highlights, recent suggestions, and recent activity.
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot" lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
+   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot showing the Conditional Access Oprimization Agent enabled in an organization." lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
 
 1. Selecting a suggestion provides you with more detail to back up the suggestion, along with the ability to review the changes in the policy viewer or in JSON format.
 1. Newly created policies are created in report-only mode. As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
