@@ -433,7 +433,8 @@ You can use WDAC in two different ways to protect against unenlightened apps:
 
 For both options, you must first create an WDAC policy. Then, optionally, convert it to an AppIdTagging policy. Finally, apply it to your devices after testing it on a test machine.  
 
->[!NOTE] These steps require an up to date Windows device in order to get access to the latest PowerShell commandlets needed to create the policy.  
+> [!NOTE]
+> These steps require an up to date Windows device in order to get access to the latest PowerShell commandlets needed to create the policy.  
 
 #### Step:1 Use the WDAC Wizard to create a policy 
 1. Install the [WDAC wizard](/windows/security/application-security/application-control/app-control-for-business/design/appcontrol-wizard)
