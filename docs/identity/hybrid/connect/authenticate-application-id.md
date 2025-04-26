@@ -117,8 +117,12 @@ Replace <AdminUserPrincipalName> with the AdminUserPrincipalName and <Certificat
 ``` powershell
    Add-ADSyncApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash <CertificateSHA256Hash>
 ```
-
-Replace <AdminUserPrincipalName> with the AdminUserPrincipalName and <CertificateSHA256Hash> with the CertificateSHA256Hash
+ - Use BYOA:
+   
+``` powershell
+   Add-EntraApplicationRegistration –UserPrincipalName <AdminUserPrincipalName> -CertificateSHA256Hash <CertificateSHA256Hash> –ApplicationAppId <appId>
+```
+Replace <AdminUserPrincipalName> with the AdminUserPrincipalName , <CertificateSHA256Hash> with the CertificateSHA256Hash and <appId> with the Id of the application created in Entra
 
 5. Run a verification to confirm that you're now using application identity. Run the cmdlet below to get the current authentication and ensure it has the Connector Identity Type as **Application**. 
 
@@ -201,6 +205,9 @@ The ServiceAccountName is the first part of the UserPrincipalName of the service
 
 ## Roll back to legacy service account using PowerShell
 If you want to go back to the legacy service account, you have the option to revert to using service account to mitigate the issue promptly using PowerShell. Use the steps below to roll back to the service account.
+
+ > [!NOTE] 
+ > As part of the roll back, we will need to recreate the DSA account. This nedd account may take up to 15 minutes to take effect so you may get an Access Denied error when you re-enable the Sync Cycle.
 
 1. Disable the scheduler with below command to ensure no sync cycles run until this change is completed
  
