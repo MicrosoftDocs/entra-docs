@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `sp.fidelityworldwideinvestments.com`
 
     b. In the **Reply URL** text box, type the URL:
-    `https://sso.sp.fidelity.co.uk/sp/ACS.saml2 `
+    `https://sso.sp.fidelity.co.uk/sp/ACS.saml2`
 
     c. In the **Sign-on URL** text box, type the URL:
     `https://cat-idr560.fidelity.co.uk/planviewer/jsp/home.jsp`

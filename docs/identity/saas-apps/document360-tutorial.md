@@ -92,7 +92,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
     | **Sign on URL** |
     |-----------| 
-    | `https://identity.document360.io ` |
+    | `https://identity.document360.io` |
     | **(or)** |
     | `https://identity.us.document360.io` |
 

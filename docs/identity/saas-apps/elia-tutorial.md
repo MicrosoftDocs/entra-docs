@@ -67,7 +67,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   [ ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration") ](common/edit-urls.png#lightbox)
+   [![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")](common/edit-urls.png#lightbox)
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **PEM certificate download** to download the certificate and save it on your computer.
 
-	[ ![Screenshot of a certificate showing the Certificate download link.](common/certificate-base64-download.png) ](common/certificate-base64-download.png#lightbox)
+	[![Screenshot of a certificate showing the Certificate download link.](common/certificate-base64-download.png)](common/certificate-base64-download.png#lightbox)
 
 1. On the **Set up elia** section, copy the appropriate URL(s) based on your requirement.
 

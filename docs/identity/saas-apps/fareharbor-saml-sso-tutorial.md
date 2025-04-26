@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     |**Sign on URL**|
     |---------------|
     |`https://fareharbor.com/login/`|
-    |` https://<ENVIRONMENT>.fareharbor.com/login/`|
+    |`https://<ENVIRONMENT>.fareharbor.com/login/`|
 
 	> [!NOTE]
 	> These values aren't real. Update these values with the actual Reply URL and Sign on URL. Contact [Fareharbor SAML SSO support team](mailto:support@fareharbor.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
