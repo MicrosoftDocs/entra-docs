@@ -419,7 +419,7 @@ View events related to tenant restrictions in Event Viewer.
    
 ## Block Chrome, Firefox and .NET applications like PowerShell
 
-To block you need to enable Windows firewall setting as well as set up Windows Defender Application Control (WDAC)
+To block you need to set up Windows Defender Application Control (WDAC) as well as enable Windows firewall setting.
 
 ### Set up Windows Defender Application Control (WDAC) to control access to Microsoft resources
 
@@ -433,7 +433,7 @@ You can use WDAC in two different ways to protect against unenlightened apps:
 
 For both options, you must first create an WDAC policy. Then, optionally, convert it to an AppIdTagging policy. Finally, apply it to your devices after testing it on a test machine.  
 
-> [!NOTE] These steps require an up to date Windows device in order to get access to the latest PowerShell commandlets needed to create the policy.  
+>[!NOTE] These steps require an up to date Windows device in order to get access to the latest PowerShell commandlets needed to create the policy.  
 
 #### Step:1 Use the WDAC Wizard to create a policy 
 1. Install the [WDAC wizard](/windows/security/application-security/application-control/app-control-for-business/design/appcontrol-wizard)
@@ -487,7 +487,8 @@ gupdate /force
    
 ### Test TRv2 blocks access
 
-After you enable the firewall and WDAC setting, try signing in using a Chrome browser and access office.com. Sign-in should fail with the following message:
+After you enable the firewall and WDAC setting, try signing in using a Chrome browser and access office.com. Sign-in should fail with the following message.
+
 :::image type="content" source="media/tenant-restrictions-v2/end-user-access-blocked.png" alt-text="Screenshot showing internet access is blocked.":::
 
 ## Tenant restrictions and Data plane support (preview)
