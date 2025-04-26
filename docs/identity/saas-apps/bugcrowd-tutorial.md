@@ -80,7 +80,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://identity.bugcrowd.com `
+    `https://identity.bugcrowd.com`
 
 	> [!NOTE]
 	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Bugcrowd support team](https://bugcrowd-support.freshdesk.com/support/tickets/new) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.

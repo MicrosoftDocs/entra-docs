@@ -121,12 +121,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |active|Boolean|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.formatted|String|
-   |phoneNumbers[type eq "mobile"].value|String|
+   |active|Boolean||
+   |emails[type eq "work"].value|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.formatted|String||
+   |phoneNumbers[type eq "mobile"].value|String||
 
    Custom extension attributes can be added by navigating to **Show advanced options > Edit attribute list for Bizagi**. The custom extension attributes must be prefixed with **urn:ietf:params:scim:schemas:extension:bizagi:2.0:UserProperties:**. For example, if custom extension attribute is **IdentificationNumber**, the attribute must be added as **urn:ietf:params:scim:schemas:extension:bizagi:2.0:UserProperties:IdentificationNumber**. Select **Save** to commit any changes.
    
@@ -137,7 +137,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > [!NOTE]
 > Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, and so on). The properties linked to parametric tables or multiple types aren't supported yet.
 
-10. To configure scoping filters, see the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, see the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Bizagi Studio for Digital Process Automation, in the **Settings** section, change the **Provisioning Status** to **On**.
 

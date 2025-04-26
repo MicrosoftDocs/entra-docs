@@ -122,20 +122,20 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for Filtering|
    |---|---|---|
-   |userName|String|&check;
-   |active|Boolean|
-   |displayName|String|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |externalId|String|
-   |title|String|
-   |preferredLanguage|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|
+   |userName|String|&check;|
+   |active|Boolean||
+   |displayName|String||
+   |emails[type eq "work"].value|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |externalId|String||
+   |title|String||
+   |preferredLanguage|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
 
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Bpanda**.
@@ -144,11 +144,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       |Attribute|Type|Supported for Filtering|
       |---|---|---|
-      |displayName|String|&check;
-      |externalId|String|
-      |members|Reference|
+      |displayName|String|&check;|
+      |externalId|String||
+      |members|Reference||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Bpanda, change the **Provisioning Status** to **On** in the **Settings** section.
 

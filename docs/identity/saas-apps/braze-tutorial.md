@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following step:
 
     In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<SUBDOMAIN>.braze.com/auth/saml/callback `
+    `https://<SUBDOMAIN>.braze.com/auth/saml/callback`
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

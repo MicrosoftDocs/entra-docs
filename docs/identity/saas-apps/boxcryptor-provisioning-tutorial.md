@@ -99,11 +99,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for Filtering|
    |---|---|---|
    |userName|String|&check;|
-   |preferredLanguage|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |externalId|String|
-   |addresses[type eq "work"].country|String|
+   |preferredLanguage|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |externalId|String||
+   |addresses[type eq "work"].country|String||
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Boxcryptor**.
 
@@ -112,10 +112,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |Attribute|Type|Supported for Filtering|
       |---|---|---|
       |displayName|String|&check;|
-      |externalId|String|
-      |members|Reference|
+      |externalId|String||
+      |members|Reference||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Boxcryptor, change the **Provisioning Status** to **On** in the **Settings** section.
 
