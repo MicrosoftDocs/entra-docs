@@ -42,15 +42,17 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 1. Select **View details** under the Conditional Access Optimization Agent, then select **Start agent** to begin your first run. 
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-start-agent.png" alt-text="Screenshot showing the Conditional Access Oprimization Agent configuration page." lightbox="media/agent-optimization/conditional-access-optimization-start-agent.png":::
+   :::image type="content" source="media/agent-optimization/conditional-access-optimization-start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization Agent configuration page." lightbox="media/agent-optimization/conditional-access-optimization-start-agent.png":::
 
 1. When the agent overview page loads, you see most recent and next scheduled runtimes, performance highlights, recent suggestions, and recent activity.
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot showing the Conditional Access Oprimization Agent enabled in an organization." lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
+   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot showing the Conditional Access Optimization Agent enabled in an organization." lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
 
 1. Selecting a suggestion provides you with more detail to back up the suggestion, along with the ability to review the changes in the policy viewer or in JSON format.
 1. Newly created policies are created in report-only mode. As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
-   1. Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+
+> [!TIP]
+> Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
