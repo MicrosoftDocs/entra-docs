@@ -431,7 +431,8 @@ You can use WDAC in two different ways to protect against unenlightened apps:
 - Prevent the use of unenlightened apps entirely (i.e. block PowerShell or Chrome entirely from being run).  This can be done using a standard WDAC policy that controls which apps can be run.  
 - Allow the use of unenlightened apps, but block them from accessing Microsoft resources using a special WDAC policy, called an “AppIdTagging policy”.   
 
-For both options, you must first create an WDAC policy. Then, optionally, convert it to an AppIdTagging policy. Finally, apply it to your devices after testing it on a test machine.  
+For both options, you must first create an WDAC policy. Then, optionally, convert it to an AppIdTagging policy. Finally, apply it to your devices after testing it on a test machine. 
+More info on [Creating your App Control AppId Tagging Policies](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/app-control-for-business/appidtagging/design-create-appid-tagging-policies)
 
 > [!NOTE]
 > These steps require an up to date Windows device in order to get access to the latest PowerShell commandlets needed to create the policy.  
@@ -448,19 +449,22 @@ For both options, you must first create an WDAC policy. Then, optionally, conver
 After creating your policy in the Wizard, or creating your own using PowerShell, convert the .xml output to an AppIdTagging policy, which marks the apps you want to allow as being allowed to access Microsoft resources. The GUID output is your new Policy ID.
 
 ```powershell
-Set-CIPolicyIdInfo -ResetPolicyID .\policy.xml -AppIdTaggingPolicy -AppIdTaggingKey "M365ResourceAccessEnforced" -AppIdTaggingValue "True" 
+   Set-CIPolicyIdInfo -ResetPolicyID .\policy.xml -AppIdTaggingPolicy -AppIdTaggingKey "M365ResourceAccessEnforced" -AppIdTaggingValue "True" 
 ```
+
 #### Step3: Compiling and Deploying the policy for testing 
 
 After editing the policy and converting it to an AppID tagging policy, compile it with the policy ID matching the file name.
 ```powershell
-ConvertFrom-CIPolicy .\policy.xml ".\{PolicyID}.cip"
+   ConvertFrom-CIPolicy .\policy.xml ".\{PolicyID}.cip"
 ```
+
 Then deploy the policy to your CiPolicies\Active directory.
 
 ```powershell
-copy ".\{Policy ID}.cip" c:\windows\system32\codeintegrity\CiPolicies\Active\ 
+   copy ".\{Policy ID}.cip" c:\windows\system32\codeintegrity\CiPolicies\Active\ 
 ```
+
 Refresh the policies on your system, by calling [RefreshPolicy.exe](https://www.microsoft.com/en-us/download/details.aspx?id=102925)
 
 ### Enable Windows Firewall setting
@@ -477,13 +481,13 @@ For example, if a customer adds PowerShell to their tenant restrictions v2 CIP p
 
 1. Select the **Enable firewall protection of Microsoft endpoints** checkbox, and then select **OK**.
 
-:::image type="content" source="media/tenant-restrictions-v2/cloud-policy-block.png" alt-text="Screenshot showing enabling the firewall policy.":::
+   :::image type="content" source="media/tenant-restrictions-v2/cloud-policy-block.png" alt-text="Screenshot showing enabling the firewall policy.":::
 
 1. Refresh group policy on your device by running gpudate
    
-```powershell
-gupdate /force
-```
+   ```powershell
+      gupdate /force
+   ```
 1. Restart the device
    
 ### Test TRv2 blocks access
@@ -562,18 +566,19 @@ OneDrive for consumer accounts (via onedrive.live.com) doesn't support tenant re
 
 Tenant restrictions v2 will also block service principal access. 
 
-1. Enable client signaling using firewall or corporate proxy. Login using service principal
+- Enable client signaling using firewall or corporate proxy. Login using service principal
 
    ```powershell
        $client_id = "00001111-aaaa-2222-bbbb-3333cccc4444"
        $clientSecret = Get-Credential -Username $client_id
        Connect-MgGraph -TenantId "aaaabbbb-0000-cccc-1111-dddd2222eeee" -ClientSecretCredential $clientSecret
    ```
+   
 Fails with 
 Connect-MgGraph : ClientSecretCredential authentication failed: AADSTS5000211: A tenant restrictions policy added to this request by a device or network
 administrator does not allow access to 'tenant'.
 
-1. Enable client signaling using Windows GPO. You need to check 'Enable firewall protection on MIcrosoft endpoints' and WDAC enablement. See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell).     
+- Enable client signaling using Windows GPO. You need to check 'Enable firewall protection on MIcrosoft endpoints' and WDAC enablement. See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell).     
 
 ## Sign-in logs
 
