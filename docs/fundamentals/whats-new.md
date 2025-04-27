@@ -24,13 +24,13 @@ This article provides information about the latest releases and change announcem
 
 ## April 2025
 
-### Public Preview - [Opt-out] Microsoft Entra ID Governance: access package request suggestions
+### Public Preview - Microsoft Entra ID Governance: suggested access packages in My Access
 
 **Type:** New feature    
 **Service category:** Entitlement Management    
 **Product capability:** Entitlement Management    
 
-As communicated [earlier](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/whats-new-in-microsoft-entra---september-2024/4253153), we're excited to introduce a new feature in My Access: a curated list of *suggested* access packages. This capability will allow users to quickly view the most relevant access packages (based off their peers' access packages and previous requests) without scrolling through a long list. In December you can [enable the preview in the Opt-in Preview Features for Identity Governance](https://entra.microsoft.com/?feature.msaljs=true#view/Microsoft_AAD_ERM/DashboardBlade/~/elmSetting). From January, this setting will be enabled by default.
+In December 2024, we introduced a new feature in My Access: a curated list of suggested access packages. Users view the most relevant access packages, based on their peers' access packages and previous assignments, without scrolling through a long list. By May 2025, suggestions will be enabled by default and we'll introduce a new card in the Entra Admin Center Entitlement Management control configurations for admins to see My Access settings. We recommend admins turn on the peer-based insights for suggested access packages via this setting. For more information, see: [Suggested access packages in My Access (Preview)](../id-governance/entitlement-management-suggested-access-packages.md).
 
 ---
 
