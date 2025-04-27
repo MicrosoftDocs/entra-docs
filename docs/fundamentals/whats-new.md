@@ -24,7 +24,7 @@ This article provides information about the latest releases and change announcem
 
 ## April 2025
 
-### Public Preview - Microsoft Entra ID Governance: suggested access packages in My Access
+### Public Preview - Microsoft Entra ID Governance: Suggested access packages in My Access
 
 **Type:** New feature    
 **Service category:** Entitlement Management    
