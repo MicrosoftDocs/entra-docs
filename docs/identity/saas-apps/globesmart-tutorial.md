@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     | Environment  | URL |
     |-------------|----|
-    | Sandbox | ` https://aperianglobal-staging.auth0.com/login/callback?connection=<INSTANCE_NAME>`|
+    | Sandbox | `https://aperianglobal-staging.auth0.com/login/callback?connection=<INSTANCE_NAME>`|
     | Production | `https://auth.aperianglobal.com/login/callback?connection=<INSTANCE_NAME>`|
     | | |
 
@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     | Environment  | URL |
     |-------------|----|
-    | Sandbox | ` https://staging.aperianglobal.com?sp=<INSTANCE_NAME>`|
+    | Sandbox | `https://staging.aperianglobal.com?sp=<INSTANCE_NAME>`|
     | Production | `https://globesmart.aperianglobal.com?sp=<INSTANCE_NAME>`|
     | | |
 

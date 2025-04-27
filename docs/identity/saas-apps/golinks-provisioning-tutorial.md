@@ -104,14 +104,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
    |userName|String|&check;|
-   |externalId|String|
-   |active|Boolean|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
+   |externalId|String||
+   |active|Boolean||
+   |emails[type eq "work"].value|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for GoLinks, change the **Provisioning Status** to **On** in the **Settings** section.
 
