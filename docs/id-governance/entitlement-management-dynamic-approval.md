@@ -1,11 +1,12 @@
 ---
 title: Externally determine the approval requirements for an Entitlement management access package
-description: A tutorial on determining the approval requirements for an entitlement access package using a custom extension.
+description: An how-to guide on dynamically determining the approval requirements for an access package externally using a custom extension.
 author: owinfreyATL
+manager: femila
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
-ms.topic: tutorial #Required; leave this attribute/value as-is
+ms.topic: how-to 
 ms.date: 04/12/2025
 
 #CustomerIntent: As a < type of user >, I want < what? > so that < why? > .
@@ -38,23 +39,9 @@ For example: "Tutorial: Create a Node.js and Express app in Visual Studio".
 
 -->
 
-# Tutorial: Externally determine the approval requirements for an Entitlement management access package
+# Create a custom extension to externally determine the approval requirements for an entitlement management access package.
 
-<!-- 2. Introductory paragraph ----------------------------------------------------------
 
-Required: Lead with a light intro that describes, in customer-friendly language, what common scenario the 
-customer will accomplish in the Tutorial. Answer the fundamental “why would I want to do this?” question. Keep it short.
-
-Readers should have a clear idea of what they will do in this article after reading the introduction.
-
-* Introduction immediately follows the H1 text.
-* Introduction section should be between 1-3 paragraphs.
-* Don’t link away from the article to other content.
-* Don't use a bulleted list of article H2 sections.
-
-Example: Azure Monitor alerts proactively notify you when important conditions are found in your monitoring data. Metric alert rules create an alert when a metric value from an Azure resource exceeds a threshold.
-
--->
 
 Scenario: Use custom extensibility and an Azure Logic App to externally determine the approval requirements of an Entitlement Management access package request. 
 
@@ -65,6 +52,10 @@ In this tutorial, you'll:
 > * Create the custom extension and its underlying Logic App.
 > * Reference the custom extension in an access package assignment policy.
 > * Configure the Logic App and corresponding business logic.
+
+## License requirements
+
+[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
 ## Prerequisites
 
@@ -80,32 +71,32 @@ Required: If you need to sign in to the portal to do the Tutorial, this H2 and l
 
 -->
 
-## Create the custom extension and its underlying Logic App.
+## Create the custom extension and its underlying logic App.
 
-To create a custom extension and its underlying Logic App, you'd do the following steps:
+To create a custom extension and its underlying Azure Logic App, you'd do the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Catalog owner](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) of the catalog where the custom extension will be located.
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
-1. On the Catalogs screen, you can select an existing catalog to create your custom extension in, or create a new catalog.
+1. On the Catalogs overview screen, you can select an existing catalog to create your custom extension in, or create a new catalog.
 
-1. On the catalog screen where you want to create your custom extension, select **Custom extensions**.
+1. On the specific catalog screen where you want to create your custom extension, select **Custom extensions**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extensibility-catalog-screen.png" alt-text="Screenshot of catalog screen where custom extension is being added.":::
 1. Select “Add a custom extension” and add a name and description for the custom extension. When finished, select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-basics.png" alt-text="Screenshot of custom extension basics.":::
 1. On the **Extension Type** screen, select **Request workflow (triggered when an access package is request, approved, granted or removed)**, then select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extension-type.png" alt-text="Screenshot of selecting the extension type for a custom extension.":::
-1. On the **Extension Confirugation screen**, for Behavior select **Launch and wait**, for Response data select **Approval Stage (Preview)**, and then select **Next**.
+1. On the **Extension Configuration screen**, for Behavior select **Launch and wait**, for Response data select **Approval Stage (Preview)**, and then select **Next**.
 
-1. On the **Details** screen, choose a subscription, resource group, and name for the Logic App being created. Once you have entered in this information, select **Create a logic app**. Once the logic app is created, select **Next**.
+1. On the **Details** screen, choose a subscription, resource group, and name for the logic App being created. Once you have entered in this information, select **Create a logic app**. Once the logic app is created, select **Next**.
 
 1. On the **Review + create** screen, make sure all your details are correct then select **Create**. 
 
 
 ## Reference the custom extension in an access package assignment policy.
 
-Once you've created the custom extension and Logic app, you can reference the custom extension in an access package assignment policy by doing the following steps:
+Once you've created the custom extension and logic app, you can reference the custom extension in an access package assignment policy by doing the following steps:
 
 1. Select the catalog in which the custom extension was created.
 
@@ -113,20 +104,25 @@ Once you've created the custom extension and Logic app, you can reference the cu
 
 1. On the access package overview page, select **Policies**, and select the policy to edit.
     :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-policies-list.png" alt-text="Screenshot of the policies list for an access package.":::
-1.  On the **Edit policy** screen under **Requests**, set the **Require approval* box to yes, and you will be able to add your custom extension as the first approver.
+1.  On the **Edit policy** screen under **Requests**, set the **Require approval* box to yes, and you are able to add your custom extension as the first approver.
   :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approver.png" alt-text="Screenshot of the custom extension as first approver in access package policy.":::  
 1. Select **Update**.
 
 Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**:
 :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
 
-## Configure the Logic App and corresponding business logic.
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+## Configure the Azure Logic App and corresponding business logic.
+
+With the Azure logic app created, you must edit the logic app so that it can communicate with Microsoft Entra. To edit the logic app, you'd do the following steps:
+
+
+1. Sign in to the Azure portal and go to the subscription, resource group, or logic app itself with the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of at least [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor).
+
+1. On the logic app created, go to **Development Tools** > **Logic app designer**.
+
+1. On the designer screen, remove everything under the **manual** trigger, and select the **Add an action** button.
+    :::image type="content" source="media/entitlement-management-dynamic-approval/logic-app-add-action.png" alt-text="Screenshot of  adding action in logic app designer.":::
+1. 
 
 ## Related content
 
