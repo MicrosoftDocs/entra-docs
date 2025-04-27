@@ -119,6 +119,10 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21851](../includes/secure-recommendations/21851.md)]
 
+### Admin consent workflow is enabled
+
+[!INCLUDE [21809](../includes/secure-recommendations/21809.md)]
+
 ## Monitoring
 
 ### Diagnostic settings are configured for all Microsoft Entra logs 
