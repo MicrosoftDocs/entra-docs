@@ -166,7 +166,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![Screenshot for claim conditions.](./media/jiramicrosoft-tutorial/claim-conditions.png)
 
 	>[!NOTE]
-	>  Give the NameID value as `user.userprinciplename` for Members and `user.mail` for External Guests.
+	>  Give the NameID value as `user.userprincipalname` for Members and `user.mail` for External Guests.
 
 	d. **Save** the changes and verify the SSO for external guest users.
 

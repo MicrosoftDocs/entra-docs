@@ -97,17 +97,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |active|Boolean|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.formatted|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |externalId|String|
+   |active|Boolean||
+   |emails[type eq "work"].value|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.formatted|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |externalId|String||
   
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Iris Intranet, change the **Provisioning Status** to **On** in the **Settings** section.
 

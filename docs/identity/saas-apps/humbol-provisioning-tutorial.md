@@ -103,25 +103,25 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Humbol|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||&check;
-   |title|String||
-   |emails[type eq "work"].value|String||&check;
-   |preferredLanguage|String||
-   |name.givenName|String||&check;
-   |name.familyName|String||&check;
-   |addresses[type eq "work"].locality|String||
-   |addresses[type eq "work"].region|String||
-   |addresses[type eq "work"].country|String||
-   |roles[primary eq "True"].value|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |title|String|||
+   |emails[type eq "work"].value|String||&check;|
+   |preferredLanguage|String|||
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |addresses[type eq "work"].locality|String|||
+   |addresses[type eq "work"].region|String|||
+   |addresses[type eq "work"].country|String|||
+   |roles[primary eq "True"].value|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
 
    > [!NOTE]
    > * If you include `roles[primary eq "True"].value` every user must have precisely one role. 
    > * Another option is to remove the role attribute mapping and manage Humbol user roles inside the Humbol application.
    
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Humbol, change the **Provisioning Status** to **On** in the **Settings** section.
 

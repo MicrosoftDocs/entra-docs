@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | App | URL |
     |--------|------|
     | For EDC | `Informatica` |
-    | For Axon | `https://<host name: port number>/saml/metadata`
+    | For Axon | `https://<host name: port number>/saml/metadata` |
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<host name: port number>/administrator/Login.do`
