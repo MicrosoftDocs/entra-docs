@@ -33,12 +33,14 @@ The Microsoft Entra Managed is set up during initial installation or upgrade pro
 
 *Installation Wizard Image*
 
+*upgrade wizard image*
+
 This can also be set up during a second pass on the wizard as shown below
 
 *Second pass Wizard image*
 
 ## Bring Your Own Application (BYOA) 
-In this set up, the customer administrator manages the application that will be used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. 
+In this set up, the customer administrator manages the application that will be used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](identity-platform/howto-create-service-principal-portal.md)
 
 ## Bring Your Own Certificate (BYOC) 
 
