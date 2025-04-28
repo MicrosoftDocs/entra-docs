@@ -106,7 +106,8 @@ Provide a GUID to identify the key in the application manifest (`$keyId`).
 
 In the Azure app registration for the client application:
 1. Select **Manifest** to open the application manifest.
-2. Replace the *keyCredentials* property with your new certificate information using the following schema.
+2. Select Microsoft Graph App Manifest
+3. Replace the *keyCredentials* property with your new certificate information using the following schema.
 
    ```JSON
    "keyCredentials": [
@@ -115,11 +116,11 @@ In the Azure app registration for the client application:
            "keyId": "$keyid",
            "type": "AsymmetricX509Cert",
            "usage": "Verify",
-           "value":  "$base64Value"
+           "key":  "$base64Value"
        }
    ]
    ```
-3. Save the edits to the application manifest and then upload the manifest to Microsoft identity platform.
+4. Save the edits to the application manifest and then upload the manifest to Microsoft identity platform.
 
    The `keyCredentials` property is multi-valued, so you may upload multiple certificates for richer key management.
    
