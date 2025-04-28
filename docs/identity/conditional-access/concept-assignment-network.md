@@ -5,7 +5,7 @@ description: Using network locations as assignments in a Microsoft Entra Conditi
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 05/22/2024
+ms.date: 04/28/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -19,7 +19,7 @@ Administrators can create policies that target specific network locations as a s
 :::image type="content" source="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png" alt-text="Diagram showing concept of Conditional Access signals plus decision to enforce organizational policy." lightbox="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png":::
 
 > [!NOTE]
-> Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's first line of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.
+> Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's frontline of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.
 
 Organizations might use these locations for common tasks like: 
 
@@ -29,7 +29,7 @@ Organizations might use these locations for common tasks like:
 A user's location is found using their public IP address or the GPS coordinates provided by the Microsoft Authenticator app. Conditional Access policies apply to all locations by default.
 
 > [!TIP]
-> The **Location** condition has moved and is renamed **Network**. At first this condition will appear at both the **Assignment** level, and under **Conditions**.
+> The **Location** condition moved and was renamed **Network**. At first this condition appears at both the **Assignment** level, and under **Conditions**.
 > 
 > Updates or changes appear in both locations. The functionality remains the same and existing policies using **Location** continue to work without changes.
 
@@ -124,6 +124,7 @@ When selecting **Determine location by GPS coordinates**, users must have the Mi
 - Every time the user shares their GPS location, the app does jailbreak detection using the same logic as the Microsoft Intune MAM SDK. If the device is jailbroken, the location isn't considered valid, and the user isn't granted access. 
    - The Microsoft Authenticator app on Android uses the Google Play Integrity API to facilitate jailbreak detection. If the Google Play Integrity API is unavailable, the request is denied and the user isn't able to access the requested resource unless the Conditional Access policy is disabled. For more information about the Microsoft Authenticator app, see the article [Common questions about the Microsoft Authenticator app](https://support.microsoft.com/account-billing/common-questions-about-the-microsoft-authenticator-app-12d283d1-bcef-4875-9ae5-ac360e2945dd).
 - Users might modify the GPS location as reported by iOS and Android devices. As a result, the Microsoft Authenticator app denies authentications where the user might be using a different location than the actual GPS location of the mobile device where the app is installed. Users who modify the location of their device get a denial message for GPS location-based based policies.
+- The country code returned depends on the device platform API: For example one platform might report US for Puerto Rico, while another reports US.
 
 > [!NOTE]
 > A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, even though they aren't blocked from signing in.
@@ -135,7 +136,7 @@ GPS location doesn't work when only [passwordless authentication methods](~/iden
 Multiple Conditional Access policies might prompt users for their GPS location before all are applied. Because of the way Conditional Access policies are applied, a user might be denied access if they pass the location check but fail another policy. For more information about policy enforcement, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
 
 > [!IMPORTANT]
-> Users may receive prompts every hour letting them know that Microsoft Entra ID is checking their location in the Authenticator app. This feature should only be used to protect very sensitive apps where this behavior is acceptable or where access must be restricted for a specific country/region.
+> Users might receive prompts every hour letting them know that Microsoft Entra ID is checking their location in the Authenticator app. This feature should only be used to protect very sensitive apps where this behavior is acceptable or where access must be restricted for a specific country/region.
 
 #### Include unknown countries/regions
 
