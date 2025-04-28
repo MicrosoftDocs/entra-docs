@@ -5,7 +5,7 @@ description: Simulate Conditional Access policy results with the What If tool to
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 04/21/2025
+ms.date: 04/28/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -94,6 +94,5 @@ Suppose you have a Conditional Access policy with the following configuration:
 
 ## Related content
 
-- 
 - Learn more about Conditional Access policy application by using the policies report-only mode in [Conditional Access insights and reporting](howto-conditional-access-insights-reporting.md).
 - To configure Conditional Access policies for your environment, see [Conditional Access common policies](concept-conditional-access-policy-common.md).
