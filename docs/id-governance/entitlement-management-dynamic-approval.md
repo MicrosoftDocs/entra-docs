@@ -75,7 +75,7 @@ Required: If you need to sign in to the portal to do the Tutorial, this H2 and l
 
 To create a custom extension and its underlying Azure Logic App, you'd do the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Catalog owner](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) of the catalog where the custom extension will be located.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) of the catalog where the custom extension will be located.
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
