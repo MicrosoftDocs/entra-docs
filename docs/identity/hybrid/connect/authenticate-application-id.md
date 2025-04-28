@@ -36,20 +36,19 @@ The Microsoft Entra Connect Sync managed application and credential is automatic
 
 *Installation Wizard Completion Image*
 
-In the case of manual upgrade, the administrator must  explicitly opt in to application identity as shown below
+*upgrade wizard image*
+
+This can also be set up during a second pass on the wizard as shown below
+
 *Upgrade Wizard Opt in Image*
 
-The administrator can also choose to setup application identity using the recommended option as an additional task as shown below
 
 *Second pass Wizard image*
 
 ## Bring Your Own Application (BYOA) 
-In this set up, the customer administrator manages the application that will be used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. 
-The administrator can configure application identity in BYOA mode using Powershell. The certificate should be stored in Local Machine store in BYOA mode.
 
-The application and service principal need to be created in Entra using MSGraph with the certificate credential and the following permissions:
- - AWS
- - SSPR
+In this set up, the customer administrator manages the application that will be used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](identity-platform/howto-create-service-principal-portal.md)
+
 
 ## Bring Your Own Certificate (BYOC) 
 
