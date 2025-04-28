@@ -1,6 +1,7 @@
 - name: Microsoft Entra ID Protection Documentation
   href: index.yml
 - name: Overview
+  expanded: true
   items:
   - name: What is Microsoft Entra ID Protection?
     href: overview-identity-protection.md

@@ -77,21 +77,19 @@ ID Protection requires users to be assigned one or more of the following roles.
 
 | Role | Can do | Can't do |
 | --- | --- | --- |
-| [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) | Full access to ID Protection | Reset password for a user |
-| [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) | View all ID Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
-| [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) | View all ID Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
 | [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) | Read-only access to ID Protection |   |
 | [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) | Reset user passwords |   |
+| [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) | View all ID Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
+| [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) | View all ID Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
+| [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) | Full access to ID Protection | Reset password for a user |
 
-Currently, the Security Operator role can't access the Risky sign-ins report.
-
-Conditional Access Administrators can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
+The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
 
 ## License requirements
 
 [!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
 
-| Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 |
+| Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 / Microsoft Entra Suite |
 | --- | --- | --- | --- | --- |
 | Risk policies | Sign-in and user risk policies (via ID Protection or Conditional Access) | No | No | Yes |
 | Security reports | Overview | No | No | Yes |
@@ -100,7 +98,7 @@ Conditional Access Administrators can create policies that factor in user or sig
 | Security reports | Risk detections | No | Limited Information. No details drawer.| Full access |
 | Notifications | Users at risk detected alerts | No | No | Yes |
 | Notifications | Weekly digest | No | No | Yes | 
-| MFA registration policy |   | No | No | Yes |
+| MFA registration policy | Require MFA (via Conditional Access) | No | No | Yes |
 
 More information on these rich reports can be found in the article, [How To: Investigate risk](howto-identity-protection-investigate-risk.md#navigating-the-reports).
 
