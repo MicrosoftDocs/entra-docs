@@ -30,7 +30,7 @@ To evaluate the rule for dynamic membership groups, the administrator must be at
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a Groups Administrator.
 
-2. Browse to **Identity** > **Groups** > **All groups**.
+2. Browse to **Entra ID** > **Groups** > **All groups**.
 
 3. Select an existing dynamic group or create a new dynamic group, and then select **Dynamic membership rules**.
 

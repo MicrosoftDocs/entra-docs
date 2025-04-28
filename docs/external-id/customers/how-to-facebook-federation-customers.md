@@ -73,7 +73,7 @@ If you don't already have a Facebook account, sign up at [https://www.facebook.c
 After you create the Facebook application, in this step you set the Facebook client ID and client secret in Microsoft Entra ID. You can use the Microsoft Entra admin center or PowerShell to do so. To configure Facebook federation in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 2. On the **Built-in** tab, next to **Facebook**, select **Configure**.
 
    <!-- ![Screenshot that shows how to add Facebook identity provider in Microsoft Entra ID.](./media/sign-in-with-facebook/configure-facebook-idp.png)-->
@@ -113,7 +113,7 @@ Use the client ID and client secret from the app you created in [Create a Facebo
 
 At this point, the Facebook identity provider has been set up in your external tenant, but it's not yet available in any of the sign-in pages. To add the Facebook identity provider to a user flow:
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the Facebook identity provider.
 1. Under Settings, select **Identity providers**
 1. Under **Other Identity Providers**, select **Facebook**.

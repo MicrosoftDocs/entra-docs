@@ -109,7 +109,7 @@ With Azure, you're able to use [Azure Key Vault](/azure/key-vault/secrets/about-
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. Under Manage, select App registrations > New registration.
 
@@ -121,7 +121,7 @@ With Azure, you're able to use [Azure Key Vault](/azure/key-vault/secrets/about-
 
 After registering your application, you must add a client secret by following these steps: 
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. select your application.
 

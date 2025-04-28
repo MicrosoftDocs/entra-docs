@@ -45,7 +45,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Select **New group**.
    
@@ -94,7 +94,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Select the group you need to manage.
       - |
@@ -116,7 +116,7 @@ procedureSection:
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
 
       - |
         Select the group you need to manage.
@@ -139,7 +139,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Scroll through the list or enter a group name in the search box. Select the group you need to manage.
       - |
@@ -174,7 +174,7 @@ procedureSection:
       - | 
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         On the **All groups** page, search for and select the group you want to become a member of another group.
 
@@ -227,7 +227,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Search for and select the group you want to delete.
       - |

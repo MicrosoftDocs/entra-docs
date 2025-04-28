@@ -34,7 +34,7 @@ Do the following steps to track the progress of access reviews as they're comple
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews**.
+1. Browse to **ID Governance** > **Access Reviews**.
  
 1. In the list, select an access review.
  

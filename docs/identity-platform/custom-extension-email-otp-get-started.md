@@ -321,7 +321,7 @@ Follow these steps to register the **jwt.ms** web application:
 ### 4.1 Register a test web application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-developer).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.

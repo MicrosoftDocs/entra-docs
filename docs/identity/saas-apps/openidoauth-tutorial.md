@@ -20,7 +20,7 @@ ms.custom:
 ## Process of adding an OpenID application from the gallery
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
     ![The Enterprise applications blade](common/enterprise-applications.png)
 

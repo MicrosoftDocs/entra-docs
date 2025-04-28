@@ -39,7 +39,7 @@ There are several ways to view or analyze the Provisioning logs:
 To access the logs in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Provisioning logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Provisioning logs**.
 
 ## How to download the provisioning logs
 
@@ -67,7 +67,7 @@ The JSON file is downloaded in a format to reduce the size of the download. This
 
 - Use PowerShell to format the JSON. This script produces a JSON output in a format that includes tabs and spaces:
 
-  ` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
+  `$JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
 
   `$JSONContent | ConvertTo-Json > <PATH TO OUTPUT THE JSON FILE>`
 
@@ -77,7 +77,7 @@ You can use any programming language that you're comfortable with. The following
 
 - [Read the JSON file](/powershell/module/microsoft.powershell.utility/convertfrom-json):
 
-    ` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
+    `$JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
 
 Now you can parse the data according to your scenario. Here are a couple of examples:
 
@@ -87,12 +87,13 @@ Now you can parse the data according to your scenario. Here are a couple of exam
 
 - Output all change IDs for events where the action was "create":
 
-  `foreach ($provitem in $JSONContent) { `
-  `   if ($provItem.action -eq 'Create') {`
-  `       $provitem.changeId `
-  `   }`
-  `}`
-
+  ```powershell
+  foreach ($provitem in $JSONContent) {
+     if ($provItem.action -eq 'Create') {
+         $provitem.changeId
+     }
+  }
+  ```
 ## What you should know
 
 Here are some tips and considerations for analyzing the provisioning logs:

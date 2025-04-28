@@ -52,7 +52,7 @@ The **Sign-ins using legacy authentication** workbook lets you see all legacy au
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Sign-ins using legacy authentication** workbook from the **Usage** section.
 

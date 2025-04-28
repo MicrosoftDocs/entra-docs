@@ -68,7 +68,7 @@ The branding elements are called out in the following example. Text descriptions
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
-1. Browse to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Entra ID** > **Custom Branding**.
     - If you currently have a customized sign-in experience, the **Edit** button is available.
 
    :::image type="content" source="media/how-to-customize-branding/customize-branding-getting-started.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button." lightbox="media/how-to-customize-branding/customize-branding-getting-started.png":::
@@ -181,7 +181,7 @@ You can create a personalized sign-in experience for users who sign in using a s
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
-1. Browse to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Entra ID** > **Custom Branding**.
 
 1. Select **Add browser language**.
 

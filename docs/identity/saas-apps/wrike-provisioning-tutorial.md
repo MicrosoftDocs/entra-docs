@@ -77,7 +77,7 @@ Before you configure Wrike for automatic user provisioning with Microsoft Entra 
 To add Wrike from the Microsoft Entra application gallery, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.Wrike**, select **Wrike** in the results panel, and then select **Add** to add the application.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.Wrike**, select **Wrike** in the results panel, and then select **Add** to add the application.
 
 	![Wrike in the results list](common/search-new-app.png)
 
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### Configure automatic user provisioning for Wrike in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Wrike**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Wrike**.
 
 	![The Wrike link in the Applications list](common/all-applications.png)
 

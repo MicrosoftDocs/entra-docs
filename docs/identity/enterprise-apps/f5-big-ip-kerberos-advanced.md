@@ -92,7 +92,7 @@ This article covers the advanced configuration, a flexible SHA implementing that
 Before BIG-IP can hand off preauthentication to Microsoft Entra ID, register it in your tenant. This process initiates SSO between both entities. The app you create from the F5 BIG-IP gallery template is the relying party that represents the SAML SP for the BIG-IP published application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**, then select **New application**.
 3. The **Browse Microsoft Entra Gallery** pane appears with tiles for cloud platforms, on-premises applications, and featured applications. Applications in the **Featured applications** section have icons that indicate whether they support federated SSO and provisioning. 
 4. In the Azure gallery, search for **F5**, and select **F5 BIG-IP APM Microsoft Entra ID integration**.
 
@@ -493,7 +493,8 @@ For help with diagnosing KCD-related problems, see archived the F5 BIG-IP deploy
 
 ## Resources
 
-* My F5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+* My F5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
+
 * [Forget passwords, go passwordless](https://www.microsoft.com/security/business/identity/passwordless)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)
