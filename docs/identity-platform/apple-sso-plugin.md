@@ -76,7 +76,7 @@ The minimum set of URLs that need to be allowed for the SSO plug-in to function 
   > [!WARNING]
   > If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. SSO plugin won't work reliably without fully excluding Apple CDN domains from interception, and you'll experience intermittent issues until you do so. If your organization use OS versions released after 2022, there is no need to exclude Microsoft login URLs from TLS interspection. Customers using Tenant Restriction feature can do TLS inspection on Microsoft login URLs and add the necessary headers on the request.
   > [!NOTE]
-  > Platform SSO is not compatible with Tenant Restriction v2 feature that uses Corportate proxy. Alternative options are listed [here](https://review.learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2?branch=pr-en-us-7963#known-limitation)
+  > Platform SSO is not compatible with the Microsoft Entra ID Tenant Restriction v2 feature when Tenant Restrictions is deployed using a corporate proxy. Alternative options are listed [here](/external-id/tenant-restrictions-v2.md#known-limitation)
 
   If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error`, `1000 com.apple.AuthenticationServices.AuthorizationError` or `1001 Unexpected`.
 
