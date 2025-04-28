@@ -273,7 +273,7 @@ The following configurations are **no longer supported** by the new schema:
     "AllowNativeFederation": true,
     "Targets": {
       "Groups": [
-        "8fcf03b8-7697-4459-b4ec-cddd89122900"
+        "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
       ]
     },
     "Applications": ["Office365"]
@@ -296,7 +296,7 @@ The following configurations are **no longer supported** by the new schema:
     "AllowAccess": true,
     "Targets": {
       "Groups": [
-        "8fcf03b8-7697-4459-b4ec-cddd89122900"
+        "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
       ]
     },
     "Applications": ["Office365"]
@@ -323,7 +323,7 @@ The following configuration allows all users in group `aaaaaaaa-0000-1111-2222-b
     "AllowNativeFederation": true,
     "Targets": {
       "Groups": [
-        "8fcf03b8-7697-4459-b4ec-cddd89122900"
+        "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
       ]
     },
     "Applications": ["Office365"]
@@ -342,7 +342,7 @@ The following configuration allows B2B direct connect access to all external ten
     "AllowNativeFederation": true,
     "Targets": {
       "Groups": [
-        "8fcf03b8-7697-4459-b4ec-cddd89122900"
+        "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
       ]
     }
   },
