@@ -123,6 +123,10 @@ sections:
           Does the cloud provisioning agent require a preferred domain controller list be set?
         answer: |
           No. The preferred domain controller list is specified during [agent installation](how-to-install.md) but it's optional.  If no preferred DCs are configured, then the agent uses any available DC in the domain.
+      - question: |
+          I have a multi-forest environment and the network between the two forests is using NAT (Network Address Translation). Is using Microsoft Entra Cloud Sync between these two forests supported?
+        answer: |
+          No, using Microsoft Entra Cloud Sync over NAT isn't supported because it's dependent on Active Directory which does not support NAT. See [support boundaries for Active Directory over NAT](https://learn.microsoft.com/troubleshoot/windows-server/active-directory/support-for-active-directory-over-nat).
 
 
 
