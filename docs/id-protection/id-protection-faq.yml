@@ -31,30 +31,30 @@ sections:
         answer: |
           Check out our guidance on deploying phishing-resistant passwordless authentication: [Get started with a phishing-resistant passwordless authentication deployment](../identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md)
       - question: |
-          Should we add **Enforce sign-in frequency - Every time** to our Conditional Access policies for high risk?
+          Should we add "Enforce sign-in frequency - Every time" to our Conditional Access policies for high risk?
         answer: |
           This setting depends on your organization's risk tolerance. Some organizations might choose to block high risk. Enforcing sign-in every time can lead to sign-in or MFA fatigue, which can increase the chance of a phishing attack.
 
-          We also recommend turning on Conditional Access policies in **Report-Only** mode to understand how policies work in the tenant without affecting your users' ability to access the resources they need. You can also check the **[Impact analysis of risk-based policies** workbook](workbook-risk-based-policy-impact.md) in ID Protection. 
+          We also recommend turning on Conditional Access policies in **Report-Only** mode to understand how policies work in the tenant without affecting your users' ability to access the resources they need. You can also check the [**Impact analysis of risk-based policies** workbook](workbook-risk-based-policy-impact.md) in ID Protection. 
       - question: |
           How do I prevent risk-based policies from affecting B2B collaboration users?
         answer: |
           Excluding B2B users from your organization's risk-based Conditional Access policies prevents B2B users from being affected by risk evaluation. To exclude these B2B users, create a group in Microsoft Entra ID that contains all of your organization's guest users. Then, add this group as an exclusion for your built-in ID Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
       - question: |
-          I just received a high-risk alert but they aren't showing up in the **Impact analysis of risk-based policies** workbook. Why?
+          I just received a high-risk alert but they aren't showing up in the "Impact analysis of risk-based policies" workbook. Why?
         answer: |
           If the user is assigned high risk, but hasn't signed-in yet, you won't see them in this report. The report only uses sign-in logs to populate this data.
 
   - name: Remediation
     questions:
       - question: |
-          When does ID Protection autoremediate **sign-in risk** without a risk-based policy in place?
+          When does ID Protection autoremediate sign-in risk without a risk-based policy in place?
         answer: |
           ID Protection autoremediates sign-in risk when the user immediately provides a second factor, such as multifactor authentication (MFA) following their risky sign-in. Providing this second factor composes a strong authentication.
            
           ID Protection also operates two models for risk assessment on sign-ins. The first is the real-time model that uses limited information to make a fast determination during the sign-in. Second is an offline model that uses other sign-in data once the sign-in is complete. The offline model can close risk when it reassesses the risk score as safe. This assessment applies to real-time and offline detections of any risk level.  
       - question: |
-          When does ID Protection autoremediate **user risk** without a risk-based policy in place?
+          When does ID Protection autoremediate user risk without a risk-based policy in place?
         answer: |
           ID Protection autoresolves users with low user risk after six months without elevation of user risk. Risky users with medium or high risk aren't autoresolved without a risk policy or admin dismissal.
       - question: |
