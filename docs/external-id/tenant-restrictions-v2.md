@@ -432,7 +432,7 @@ You can use WDAC in two different ways to protect against unenlightened apps:
 - Allow the use of unenlightened apps, but block them from accessing Microsoft resources using a special WDAC policy, called an “AppIdTagging policy”.   
 
 For both options, you must first create an WDAC policy. Then, optionally, convert it to an AppIdTagging policy. Finally, apply it to your devices after testing it on a test machine. 
-More info on [Creating your App Control AppId Tagging Policies](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/app-control-for-business/appidtagging/design-create-appid-tagging-policies)
+More info on [Creating your App Control AppId Tagging Policies](/windows/security/application-security/application-control/app-control-for-business/appidtagging/design-create-appid-tagging-policies)
 
 > [!NOTE]
 > These steps require an up to date Windows device in order to get access to the latest PowerShell commandlets needed to create the policy.  
