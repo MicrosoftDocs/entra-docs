@@ -60,7 +60,7 @@ To configure an on-premises app to use a custom domain, you need a verified Micr
 
 To create and verify a custom domain:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Settings** > **Domain names**.
+1. Browse to **Entra ID** > **Domain names**.
 1. Select **Add custom domain**. 
 1. Enter your custom domain name and select **Add Domain**. 
 1. On the domain page, copy the TXT record information for your domain. 
@@ -73,7 +73,7 @@ For more detailed instructions, see [Add your custom domain name using the Micro
 
 To publish your app through application proxy with a custom domain:
 
-1. For a new app, in the Microsoft Entra admin center, browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. For a new app, in the Microsoft Entra admin center, browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 1. Select **New application**. In the **On-premises applications** section, select **Add an on-premises application**. 
    
    For an app already in **Enterprise applications**, select it from the list, and then select **Application proxy** in the left navigation. 
@@ -110,7 +110,7 @@ To publish your app through application proxy with a custom domain:
        > [!IMPORTANT] 
        > Ensure that you are properly using a CNAME record that points to the *`msappproxy.net`* domain. Do not point records to IP addresses or server DNS names since these are not static and may impact the resiliency of the service.
    
-11. To check that the DNS record is configured correctly, use the [nslookup](https://social.technet.microsoft.com/wiki/contents/articles/29184.nslookup-for-beginners.aspx) command to confirm that your external URL is reachable and the *`msapproxy.net`* domain appears as an alias.
+11. To check that the DNS record is configured correctly, use the [nslookup](https://social.technet.microsoft.com/wiki/contents/articles/29184.nslookup-for-beginners.aspx) command to confirm that your external URL is reachable and the *`msappproxy.net`* domain appears as an alias.
 
 Your application is now set up to use the custom domain. Be sure to assign users to your application before you test or release it. 
 

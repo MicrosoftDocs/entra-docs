@@ -35,7 +35,7 @@ sections:
           How can an administrator enable Microsoft Entra CBA?
         answer: |        
           1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-          2. Browse to **Protection** > **Authentication methods** > **Policies**.
+          2. Browse to **Entra ID** > **Authentication methods** > **Policies**.
           3. Select the **Certificate-based Authentication** policy.
           4. On the **Enable and Target** tab, select **Enable**.
 

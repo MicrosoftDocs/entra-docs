@@ -44,7 +44,7 @@ Use the [Microsoft Entra admin center](https://entra.microsoft.com) to check the
 ### To verify the scheduled synchronization task
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect sync**.
+2. Browse to **Entra ID** > **Entra Connect** > **Connect sync**.
 4. At the top of the page, note the last synchronization.
 
 ![Directory sync time](./media/how-to-connect-post-installation/verify2.png)

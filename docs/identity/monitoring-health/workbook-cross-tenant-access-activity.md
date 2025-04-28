@@ -36,7 +36,7 @@ For more information, see the [Microsoft Entra External ID documentation](~/exte
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Cross-tenant access activity** workbook from the **Usage** section.
 

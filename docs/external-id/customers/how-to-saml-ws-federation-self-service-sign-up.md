@@ -32,7 +32,7 @@ Once you've configured federation with a SAML or WS-Fed identity provider by fol
 
 1. Switch to your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select the user flow where you want to add the identity provider.
 

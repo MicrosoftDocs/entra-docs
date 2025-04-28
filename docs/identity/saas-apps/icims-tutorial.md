@@ -61,7 +61,7 @@ Follow these steps to create a Microsoft Entra Application Registration for your
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 2. If you have access to multiple tenants, use the Settings icon in the top menu to switch to the tenant in which you want to register the application from the Directories + subscriptions menu.
-3. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
+3. Browse to **Entra ID** > **App registrations** and select **New registration**.
 4. Enter a display Name for your application. Users of your application might see the display name when they use the app, for example during sign-in. You can change the display name at any time and multiple app registrations can share the same name.
 5. Specify who can use the application, sometimes called its sign-in audience as **Accounts in this organizational directory only**.
 6. Specify a Redirect URI based on your ICIMS datacenter:
@@ -112,7 +112,7 @@ In this section, you add a permission to your application to sign in users and r
 In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -128,7 +128,7 @@ In this section, you create a test user called B.Simon.
 In this section, you enable B.Simon to use single sign-on by granting access to ICIMS.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ICIMS**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ICIMS**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.

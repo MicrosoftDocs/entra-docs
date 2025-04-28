@@ -43,7 +43,7 @@ To configure the integration of HighGear into Microsoft Entra ID, you need to ad
 **To add HighGear from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **HighGear** in the search box.
 1. Select **HighGear** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -72,7 +72,7 @@ In this section, you can learn how to enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with your HighGear system, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HighGear** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **HighGear** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -153,7 +153,7 @@ To configure HighGear for Single Sign-On, please log in to your HighGear system.
 The objective of this section is to create a test user called Britta Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -169,7 +169,7 @@ The objective of this section is to create a test user called Britta Simon.
 In this section, you enable Britta Simon to use Azure single sign-on by granting access to HighGear.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HighGear**.
+1. Browse to **Entra ID** > **Enterprise apps** > **HighGear**.
 
     ![The HighGear link in the Applications list](common/all-applications.png)
 

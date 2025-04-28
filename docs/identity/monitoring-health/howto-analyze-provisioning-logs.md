@@ -39,7 +39,7 @@ There are several ways to view or analyze the Provisioning logs:
 To access the logs in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Provisioning logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Provisioning logs**.
 
 ## How to download the provisioning logs
 

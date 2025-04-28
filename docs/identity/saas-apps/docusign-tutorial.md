@@ -47,7 +47,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of DocuSign into Microsoft Entra ID, you must add DocuSign from the gallery to your list of managed SaaS apps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **DocuSign** in the search box.
 1. Select **DocuSign** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -75,7 +75,7 @@ To configure and test Microsoft Entra SSO with DocuSign, perform the following s
 To enable Microsoft Entra SSO in the Azure portal, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **DocuSign** application integration page, find the **Manage** section, and then select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **DocuSign** application integration page, find the **Manage** section, and then select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

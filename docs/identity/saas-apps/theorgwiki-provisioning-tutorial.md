@@ -73,7 +73,7 @@ Before configuring TheOrgWiki for automatic user provisioning with Microsoft Ent
 To configure TheOrgWiki for automatic user provisioning with Microsoft Entra ID, you need to add TheOrgWiki from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **TheOrgWiki**, select **TheOrgWiki** in the results panel. 
 
 	![TheOrgWiki in the results list](common/search-new-app.png)
@@ -104,7 +104,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for TheOrgWiki in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 

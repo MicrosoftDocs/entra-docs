@@ -36,7 +36,7 @@ To configure the integration of SmartTrace into Microsoft Entra ID, you need to 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **SmartTrace** in the search box.
 
@@ -48,7 +48,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SmartTrace** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SmartTrace** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -101,7 +101,7 @@ In this section, you create a test user called B.Simon.
 In this section, you enable B.Simon to use single sign-on by granting access to SmartTrace.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SmartTrace**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SmartTrace**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.

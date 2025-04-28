@@ -91,7 +91,7 @@ See, [Quickstart: Register an application with the Microsoft identity platform](
 Register the Easy Button client in Microsoft Entra ID, then establishes a trust between SAML SP instances of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations** > **New registration**.
+2. Browse to **Entra ID** > **App registrations** > **New registration**.
 3. Enter a **Name** for the new application. 
 4. In **Accounts in this organizational directory only**, specify who can use the application.
 5. Select **Register**.

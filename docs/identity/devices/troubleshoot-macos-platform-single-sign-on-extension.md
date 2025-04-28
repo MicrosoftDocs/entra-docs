@@ -222,7 +222,7 @@ We'd love to hear your feedback. You should include the following information:
 
 If a user has insufficient permissions to complete Microsoft Entra ID join and registration, no error message is shown. For the device join and registration to complete successfully, the user initiating the registration flow must be allowlisted.
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Identity** > **Devices** > **Overview** > **Device Settings**.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Entra ID** > **Devices** > **Overview** > **Device Settings**.
 1. Under **Microsoft Entra ID join and registration settings**, ensure that the **All** option is selected in the toggle menu for **Users may join devices to Microsoft Entra**.
 1. Select **Save** to apply the changes.
 

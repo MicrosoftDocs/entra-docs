@@ -202,7 +202,7 @@ After you add a group claim configuration to the **User Attributes & Claims** co
 
 You can also configure group claims in the [optional claims](~/identity-platform/optional-claims.md) section of the [application manifest](~/identity-platform/reference-app-manifest.md).
 
-1. In the portal, select **Identity** > **Applications** > **App registrations** > **Select Application** > **Manifest**.
+1. In the portal, select **Entra ID** > **App registrations** > **Select Application** > **Manifest**.
 
 2. Enable group membership claims by changing `groupMembershipClaims`.
 
