@@ -51,7 +51,7 @@ Selecting this checkbox requires users to perform Microsoft Entra multifactor au
 
 ### Require authentication strength
 
-Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Protection** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
+Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Entra ID** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
 
 ### Require device to be marked as compliant
 

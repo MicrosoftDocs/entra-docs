@@ -49,7 +49,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to [BrowserStack](https://www.browserstack.com/users/sign_in) as a user with **Owner** permissions.
 
-2. Navigate to **Account** -> **Settings & Permissions**. Select the **Security** tab.
+2. Navigate to **Account** > **Settings & Permissions**. Select the **Security** tab.
 
 3. Under **Auto User Provisioning**, select **Configure**.
 
@@ -86,7 +86,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for BrowserStack Single Sign-on in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 

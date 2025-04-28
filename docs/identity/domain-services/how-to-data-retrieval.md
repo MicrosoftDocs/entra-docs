@@ -31,7 +31,7 @@ To add a new user, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/azure/active-directory/roles/permissions-reference#user-administrator).
 
-1. Browse to **Identity** > **Users**, and then select **New user**.
+1. Browse to **Entra ID** > **Users**, and then select **New user**.
 
     ![Add a user through Users - All users in Microsoft Entra ID](./media/tutorial-create-management-vm/add-user-in-users-all-users.png)
 

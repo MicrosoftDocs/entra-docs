@@ -41,7 +41,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who has an eligible role assignment.
       - |
-        Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.  For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
+        Browse to **ID Governance** > **Privileged Identity Management** > **My roles**.  For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
       - |
         Select **Microsoft Entra roles** to see a list of your eligible Microsoft Entra roles.
 
@@ -220,7 +220,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
       - |
-        Browse to **Identity governance** > **Privileged Identity Management** > **My requests**.
+        Browse to **ID Governance** > **Privileged Identity Management** > **My requests**.
       - |
         When you select **My requests** you see a list of your Microsoft Entra role and Azure resource role requests.
 
@@ -236,7 +236,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
       - |
-        Browse to **Identity governance** > **Privileged Identity Management** > **My requests**.
+        Browse to **ID Governance** > **Privileged Identity Management** > **My requests**.
       - |
         For the role that you want to cancel, select the **Cancel** link.
 

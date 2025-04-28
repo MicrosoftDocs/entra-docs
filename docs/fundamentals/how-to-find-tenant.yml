@@ -27,7 +27,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
       - |
-        Browse to **Identity** > **Overview** > **Properties**.
+        Browse to **Entra ID** > **Overview** > **Properties**.
 
         :::image type="content" source="media/how-to-find-tenant/identity-overview-properties.png" alt-text="Microsoft Entra ID - Identity Properties overview":::
       - |

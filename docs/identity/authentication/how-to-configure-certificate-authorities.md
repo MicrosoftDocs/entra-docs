@@ -34,7 +34,7 @@ To configure certificate authorities to enable CBA in the Microsoft Entra admin 
 [!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
+1. Browse to **Entra ID** > **Identity Secure Score** > **Certificate authorities**.
 1. To upload a CA, select **Upload**: 
    1. Select the CA file.
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.

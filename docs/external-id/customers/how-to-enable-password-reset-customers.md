@@ -44,7 +44,7 @@ The following screenshots show the self-service password rest flow. From the app
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. From the list of **User flows**, select the user flow you want to enable SSPR.
 1. Make sure that the sign-up user flow registers **Email with password** as an authentication method under **Identity providers**.
 
@@ -56,7 +56,7 @@ To enable self-service password reset, you need to enable the email one-time pas
 
    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
    
-   1. Browse to **Identity** > **Protection** > **Authentication methods**. 
+   1. Browse to **Entra ID** > **Authentication methods**. 
 
    1. Under **Policies** > **Method** select **Email OTP**.
    

@@ -35,7 +35,7 @@ When the evaluation finishes, the tool generates a report of the affected polici
 
 ## Run the What If tool
 
-You can find the **What If** tool in the **Microsoft Entra admin center** > **Protection** > **Conditional Access** > **Policies** > **What If**.
+You can find the **What If** tool in the **Microsoft Entra admin center** > **Entra ID** > **Conditional Access** > **Policies** > **What If**.
 
 :::image type="content" source="./media/what-if-tool/portal-showing-location-of-what-if-tool.png" alt-text="Screenshot of the Conditional Access Policies page with the What If tool highlighted in the toolbar." border="false" lightbox="media/what-if-tool/portal-showing-location-of-what-if-tool.png":::
 

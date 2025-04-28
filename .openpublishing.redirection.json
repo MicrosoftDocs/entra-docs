@@ -696,6 +696,61 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-node-call-api-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-daemon-node-call-api-build-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-node-call-api-build-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-daemon-node-call-api-build-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-build-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-build-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-build-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-cli-app-node-sign-in-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-cli-app-node-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-cli-app-node-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-cli-app-node-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-desktop-app-maui-sign-in-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-desktop-app-maui-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-desktop-app-maui-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-desktop-app-maui-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-desktop-maui-role-based-access-control.md",
+      "redirect_url": "/entra/identity-platform/tutorial-desktop-maui-role-based-access-control",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/how-to-run-native-authentication-sample-android-app.md",
       "redirect_url": "/entra/identity-platform/quickstart-native-authentication-android-sign-in",
       "redirect_document_id": false

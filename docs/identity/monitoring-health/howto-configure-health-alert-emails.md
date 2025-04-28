@@ -58,7 +58,7 @@ Email notification settings can be configured for each scenario in the Microsoft
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Health** and select the **Health monitoring** tab.
+1. Browse to **Entra ID** > **Monitoring & health** > **Health** and select the **Health monitoring** tab.
 
 1. Select the scenario you want to configure email notifications for.
 

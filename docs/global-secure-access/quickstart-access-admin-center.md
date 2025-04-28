@@ -7,6 +7,7 @@ manager: femila
 ms.service: global-secure-access
 ms.topic: quickstart
 ms.date: 02/21/2025
+ai-usage: ai-assisted
 
 #customer intent: As a decision maker, I want learn how to access the Global Secure Access area of the Microsoft Entra admin center so that I can understand how to configure and use the product.
 

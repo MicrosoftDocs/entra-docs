@@ -42,7 +42,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Civic Platform into Microsoft Entra ID, you need to add Civic Platform from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Civic Platform** in the search box.
 1. Select **Civic Platform** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -70,7 +70,7 @@ To configure and test Microsoft Entra SSO with Civic Platform, perform the follo
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Civic Platform** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Civic Platform** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows SAML Signing Certificate page where you can copy App Federation Metadata U r l.](common/copy-metadataurl.png)
 
-1. Navigate to **Identity** > **Applications** > **App registrations**, select your application.
+1. Navigate to **Entra ID** > **App registrations**, select your application.
 
 1. Copy the **Directory (tenant) ID** and store it into Notepad.
 
@@ -100,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Copy the application (client) ID](media/civic-platform-tutorial/application.png)
 
-1. Navigate to **Identity** > **Applications** > **App registrations**, select your application. Select **Certificates & secrets**.
+1. Navigate to **Entra ID** > **App registrations**, select your application. Select **Certificates & secrets**.
 
 1. Select **Client secrets -> New client secret**.
 

@@ -11,7 +11,7 @@ ms.custom: Identity-Managed-Definition
 
 1. From the Azure portal menu, select **Microsoft Entra ID**.
 
-1. Navigate to **Identity** > **Overview** > **Manage tenants**.
+1. Navigate to **Entra ID** > **Overview** > **Manage tenants**.
 
 1. Select **Create**.
 

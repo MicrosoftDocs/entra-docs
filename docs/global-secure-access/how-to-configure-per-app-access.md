@@ -9,6 +9,7 @@ ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
+ai-usage: ai-assisted
 ---
 # How to configure per-app access using Global Secure Access applications
 
@@ -167,7 +168,7 @@ You can enable or disable access to the Global Secure Access app using the Globa
 Conditional Access policies for per-app access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:
 
 - Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select an application and then select **Conditional Access** from the side menu.
-- Go to **Protection** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
+- Go to **Entra ID** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
 
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md).
 
