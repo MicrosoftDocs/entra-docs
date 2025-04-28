@@ -1,26 +1,24 @@
 ---
 title: "Tutorial: Create a Node.js CLI app for authentication"
 description: Learn how to build a Node.js CLI app that signs in users in an external tenant
- 
 author: Dickson-Mwendia
 manager: mwongerapk
-
 ms.author: dmwendia
-ms.service: entra-external-id
- 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 06/24/2024
-ms.custom: developer, devx-track-js
+ms.date: 04/16/2025
+ms.custom:
 
 #Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in an external tenant.
 ---
 
 # Tutorial: Prepare a Node.js CLI application for authentication
 
-This tutorial is part 2 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](./tutorial-cli-app-node-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial: 
+This tutorial is part 1 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
+
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -30,9 +28,18 @@ In this tutorial:
 
 ## Prerequisites
 
-- [Tutorial: Prepare your external tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md)
-- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
-- [Node.js](https://nodejs.org).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `http://localhost`
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+* Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+* [Node.js](https://nodejs.org).
+
+## Enable public client flow
+
+[!INCLUDE [Enable public client](../external-id/customers/includes/register-app/enable-public-client-flow.md)]
 
 ## Create a new Node.js application project
 
@@ -98,7 +105,7 @@ The `msalConfig` object contains a set of configuration options that can be used
 
 - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For instance, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant domain name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+- `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For instance, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant domain name, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 In the configuration object, you also add `LoggerOptions`, which contains two options:
 

@@ -101,6 +101,10 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21885](../includes/secure-recommendations/21885.md)]
 
+### Service principals use safe redirect URIs
+
+[!INCLUDE [23183](../includes/secure-recommendations/23183.md)]
+
 ## External collaboration
 
 ### Guests can't invite other guests

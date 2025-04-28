@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Eletive to support provisioning with Microsoft Entra ID
 
-1. Sign in to [Eletive](https://app.eletive.com/). Navigate to **Settings** -> **Features**.
+1. Sign in to [Eletive](https://app.eletive.com/). Navigate to **Settings** > **Features**.
 
     ![Features](media/eletive-provisioning-tutorial/settings.png)
 
@@ -53,7 +53,7 @@ The scenario outlined in this article assumes that you already have the followin
 
     ![Integrations](media/eletive-provisioning-tutorial/scim.png)
 
-3.	Navigate to **Settings** -> **Integrations**.
+3.	Navigate to **Settings** > **Integrations**.
 
 4.	Select **User Provisioning**.
 
@@ -85,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Eletive in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 

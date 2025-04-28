@@ -38,7 +38,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Gigya into Microsoft Entra ID, you need to add Gigya from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Gigya** in the search box.
 1. Select **Gigya** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -66,7 +66,7 @@ To configure and test Microsoft Entra SSO with Gigya, perform the following step
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Gigya** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Gigya** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -99,7 +99,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, log into your Gigya company site as an administrator.
 
-2. Go to **Settings \> SAML Login**, and then select the **Add** button.
+2. Go to **Settings** > **SAML Login**, and then select the **Add** button.
    
     ![SAML Login](./media/gigya-tutorial/login.png "SAML Login")
 
@@ -127,7 +127,7 @@ In order to enable Microsoft Entra users to log into Gigya, they must be provisi
 
 1. Log in to your **Gigya** company site as an administrator.
 
-2. Go to **Admin \> Manage Users**, and then select **Invite Users**.
+2. Go to **Admin** > **Manage Users**, and then select **Invite Users**.
    
     ![Manage Users](./media/gigya-tutorial/users.png "Manage Users")
 

@@ -45,7 +45,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To set up the integration of Predictix Assortment Planning into Microsoft Entra ID, you need to add Predictix Assortment Planning from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![The Enterprise applications blade](common/enterprise-applications.png)
 
@@ -82,7 +82,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with Predictix Assortment Planning, take these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Predictix Assortment Planning** application integration page, select **Single sign-on**:
+1. Browse to **Entra ID** > **Enterprise apps** > **Predictix Assortment Planning** application integration page, select **Single sign-on**:
 
     ![Select Single sign-on](common/select-sso.png)
 
@@ -140,7 +140,7 @@ To configure single sign-on on the Predictix Assortment Planning side, you need 
 In this section, you create a test user named Britta Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -155,7 +155,7 @@ In this section, you create a test user named Britta Simon.
 In this section, you enable Britta Simon to use Microsoft Entra single sign-on by granting her access to Predictix Assortment Planning.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Predictix Assortment Planning**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Predictix Assortment Planning**.
 
    ![List of applications](common/all-applications.png)
 

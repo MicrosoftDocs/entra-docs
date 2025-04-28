@@ -9,6 +9,7 @@ ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
+ai-usage: ai-assisted
 ---
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Zscaler

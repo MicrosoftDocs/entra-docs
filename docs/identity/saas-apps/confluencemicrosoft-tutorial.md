@@ -62,7 +62,7 @@ As of now, following versions of Confluence are supported:
 - Confluence: 6.0.1 to 6.15.9
 - Confluence: 7.0.1 to 7.20.3
 - Confluence: 8.0.0 to 8.9.8
-- Confluence: 9.0.1 to 9.3.1
+- Confluence: 9.0.1 to 9.4.0
 
 > [!NOTE]
 > Please note that our Confluence Plugin also works on Ubuntu Version 16.04
@@ -78,7 +78,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Confluence SAML SSO by Microsoft into Microsoft Entra ID, you need to add Confluence SAML SSO by Microsoft from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Confluence SAML SSO by Microsoft** in the search box.
 1. Select **Confluence SAML SSO by Microsoft** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -106,7 +106,7 @@ To configure and test Microsoft Entra SSO with Confluence SAML SSO by Microsoft,
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Confluence SAML SSO by Microsoft** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Confluence SAML SSO by Microsoft** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

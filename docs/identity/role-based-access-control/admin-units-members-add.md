@@ -41,7 +41,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity**.
+1. Browse to **Entra ID**.
 
 1. Browse to one of the following:
 
@@ -63,7 +63,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit you want to add users, groups, or devices to.
 
@@ -83,7 +83,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit you want to add users to.
 
@@ -107,7 +107,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](permissions-reference.md#groups-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit you want to create a new group in.
 

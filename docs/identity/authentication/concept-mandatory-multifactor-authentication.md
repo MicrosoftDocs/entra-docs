@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/09/2025
+ms.date: 04/25/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -17,6 +17,9 @@ ms.reviewer: nashahid, gkinasewitz
 At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://www.microsoft.com/security/blog/2019/08/20/one-simple-action-you-can-take-to-prevent-99-9-percent-of-account-attacks) shows that MFA can block more than 99.2% of account compromise attacks. 
 
 That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
+
+> [!Important]
+> If a user can't sign in to Azure and other admin portals after rollout of mandatory MFA, a Global Administrator can run a script to postpone the MFA requirement and allow users to sign in. For more information, see [How to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory multifactor authentication (MFA) requirement for the the Azure portal, Microsoft Entra admin center, or Microsoft Intune admin center](how-to-unlock-users-for-mandatory-multifactor-authentication.md).
 
 There's no change for users if your organization already enforces MFA for them, or if they sign in with stronger methods like passwordless or passkey (FIDO2). To verify that MFA is enabled, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md). 
 
@@ -59,7 +62,7 @@ Workload identities, such as managed identities and service principals, aren't i
 
 ### Client libraries
 
-The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. After MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications throw exceptions. For more information abot how to migrate from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/), see [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
+The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. After MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications throw exceptions. For more information about how to migrate from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/), see [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
 
 ### [.NET](#tab/dotnet)
 
@@ -178,7 +181,7 @@ The enforcement of MFA rolls out in two phases:
 
 - **Phase 1**: Starting in October 2024, MFA is required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-- **Phase 2**: Starting July 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+- **Phase 2**: Starting July 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 ## Notification channels 
 
@@ -192,7 +195,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Microsoft 365 message center: A message appears in the Microsoft 365 message center with message ID: **MC862873**. This message has the same information as the email and service health notification. 
 
-After enforcement, a banner appears in Microsoft Entra multifactor authentication:
+After enforcement, a banner appears in the [Azure portal](https://aka.ms/managemfaforazure):
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/enforcement-banner.png" alt-text="Screenshot of a banner in Microsoft Entra multifactor authentication that shows mandatory MFA is enforced."
 
@@ -206,7 +209,7 @@ If you're using a federated Identity Provider (IdP), such as Active Directory Fe
 
 We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
 
-Starting on March 3, 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) and use MFA before they can postpone the start date of MFA enforcement.  
+Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. If you postponed the start date for Phase 1, Phase 2 enforcement *doesn't* begin before the start date you choose. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) and use MFA before they can postpone the start date of MFA enforcement.  
 
 Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
 
@@ -216,7 +219,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: If the tenant is only used for testing, is MFA required? 
 
-**Answer**: Yes, every Azure tenant will require MFA, there are no exceptions. 
+**Answer**: Yes, every Azure tenant will require MFA, with no exception for test environments.  
 
 **Question**: How does this requirement impact the Microsoft 365 admin center?
 
@@ -226,13 +229,17 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
-**Question**: Will I need to complete MFA if I choose the option to **Stay signed in**?
+**Question**: Do I need to complete MFA if I choose the option to **Stay signed in**?
 
 **Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to these [applications](#applications).
 
-**Question**: Will the enforcement apply to B2B guest accounts?
+**Question**: Does the enforcement apply to B2B guest accounts?
 
 **Answer**: Yes, MFA has to be adhered either from the partner resource tenant, or the user's home tenant if it's set up properly to send MFA claims to the resource tenant by using cross-tenant access. 
+
+**Question**: Does the enforcement apply to Azure for US Government or Azure sovereign clouds?
+
+**Answer**: Microsoft enforces mandatory MFA only in the public Azure cloud. Microsoft doesn't currently enforce MFA in Azure for US Government or other Azure sovereign clouds. 
 
 **Question**: How can we comply if we enforce MFA by using another identity provider or MFA solution, and we don't enforce by using Microsoft Entra MFA? 
 
@@ -273,6 +280,7 @@ An option to postpone the enforcement start date is available for customers. Glo
 
 Review the following topics to learn more about how to configure and deploy MFA:
 
+- [How to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory multifactor authentication (MFA) requirement for the the Azure portal, Microsoft Entra admin center, or Microsoft Intune admin center](how-to-unlock-users-for-mandatory-multifactor-authentication.md)
 - [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md)
 - [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Secure sign-in events with Microsoft Entra multifactor](~/identity/authentication/tutorial-enable-azure-mfa.md)

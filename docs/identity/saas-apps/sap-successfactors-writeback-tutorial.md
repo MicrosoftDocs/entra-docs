@@ -217,7 +217,7 @@ This section provides steps for
 **To configure SuccessFactors Writeback:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 5. Search for **SuccessFactors Writeback**, and add that app from the gallery.
 
@@ -298,8 +298,8 @@ Once the SuccessFactors provisioning app configurations are complete, you can tu
 1. In the **Provisioning** tab, set the **Provisioning Status** to **On**.
 
 1. Select **Scope**. You can select from one of the following options: 
-   * **Sync all users and groups**: Select this option if you plan to write back mapped attributes of all users from Microsoft Entra ID to SuccessFactors, subject to the scoping rules defined under **Mappings** -> **Source Object Scope**. 
-   * **Sync only assigned users and groups**: Select this option if you plan to write back mapped attributes of only users that you have assigned to this application in the **Application** -> **Manage** -> **Users and groups** menu option. These users are also subject to the scoping rules defined under **Mappings** -> **Source Object Scope**.
+   * **Sync all users and groups**: Select this option if you plan to write back mapped attributes of all users from Microsoft Entra ID to SuccessFactors, subject to the scoping rules defined under **Mappings** > **Source Object Scope**. 
+   * **Sync only assigned users and groups**: Select this option if you plan to write back mapped attributes of only users that you have assigned to this application in the **Application** > **Manage** > **Users and groups** menu option. These users are also subject to the scoping rules defined under **Mappings** > **Source Object Scope**.
 
    > [!div class="mx-imgBorder"]
    > ![Select Writeback scope](./media/sap-successfactors-inbound-provisioning/select-writeback-scope.png)

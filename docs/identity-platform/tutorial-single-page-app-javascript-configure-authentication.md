@@ -1,18 +1,17 @@
 ---
-title: "Tutorial: Add sign-in and sign-out flows to a JavaScript SPA"
+title: "Tutorial: Add sign-in and sign-out flows to a JavaScript single-page app (SPA)"
 description: Learn how to add authentication to a JavaScript single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.service: entra-external-id
-ms.subservice: external
-ms.custom: devx-track-js
+ms.service: identity-platform
+ms.custom:
 ms.topic: tutorial
 ms.date: 02/11/2024
-#Customer intent: As a developer, I want to learn how to configure  JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
+#Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Add sign-in and sign-out flows to a JavaScript SPA
+# Tutorial: Add sign-in and sign-out flows to a JavaScript single-page app
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 

@@ -30,7 +30,7 @@ Use your Microsoft Entra account with Atlassian JIRA server to enable single sig
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-- JIRA Core and Software 7.0 to 9.17.4 or JIRA Service Desk 3.0 to 4.22.1 should be installed and configured on Windows 64-bit version.
+- JIRA Core and Software 7.0 to 10.5.1 or JIRA Service Desk 3.0 to 5.12.22 should be installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
 - Note the supported versions for JIRA Plugin are mentioned in below section.
 - JIRA server is reachable on the Internet particularly to the Microsoft Entra login page for authentication and should able to receive the token from Microsoft Entra ID.
@@ -51,8 +51,8 @@ To get started, you need the following items:
 
 ## Supported versions of JIRA
 
-* JIRA Core and Software: 7.0 to 9.17.4.
-* JIRA Service Desk 3.0 to 4.22.1.
+* JIRA Core and Software: 7.0 to 10.5.1.
+* JIRA Service Desk 3.0 to 5.12.22.
 * JIRA also supports 5.2. For more details, select [Microsoft Entra single sign-on for JIRA 5.2](jira52microsoft-tutorial.md).
 
 > [!NOTE]
@@ -76,7 +76,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of JIRA SAML SSO by Microsoft into Microsoft Entra ID, you need to add JIRA SAML SSO by Microsoft from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **JIRA SAML SSO by Microsoft** in the search box.
 1. Select **JIRA SAML SSO by Microsoft** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -104,7 +104,7 @@ To configure and test Microsoft Entra SSO with JIRA SAML SSO by Microsoft, perfo
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **JIRA SAML SSO by Microsoft** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **JIRA SAML SSO by Microsoft** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

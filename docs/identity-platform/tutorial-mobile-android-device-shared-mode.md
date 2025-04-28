@@ -17,7 +17,7 @@ ms.topic: tutorial
 
 In this tutorial, you learn how to add shared device mode support to an Android device with the Microsoft Authenticator App or a Mobile Device Management (MDM) tool like Microsoft Intune. Employees sign in once for single sign-on (SSO) to all SDM-supported apps and sign out to make the device ready for the next user with no access to previous data.
 
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

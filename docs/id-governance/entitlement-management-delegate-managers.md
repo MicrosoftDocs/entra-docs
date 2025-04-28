@@ -38,7 +38,7 @@ Follow these steps to assign a user to the access package manager role:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner.    
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to add administrators to.
 
@@ -57,7 +57,7 @@ Follow these steps to remove a user from the access package manager role:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner.
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to add administrators to.
 

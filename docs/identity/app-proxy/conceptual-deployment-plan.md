@@ -9,6 +9,7 @@ ms.subservice: app-proxy
 ms.topic: conceptual
 ms.date: 02/21/2025
 ms.author: kenwith
+ai-usage: ai-assisted
 ---
 
 # Plan a Microsoft Entra application proxy deployment
@@ -225,7 +226,7 @@ Once your application is published, it should be accessible by typing its extern
 ### Enable pre-authentication
 
 Verify that your application is accessible through application proxy accessing it via the external URL.
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications** and choose the app you want to manage.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications** and choose the app you want to manage.
 
 
 2. Select **application proxy**.

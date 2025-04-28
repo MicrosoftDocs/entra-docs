@@ -44,7 +44,7 @@ To configure the integration of smartvid.io into Microsoft Entra ID, you need to
 **To add smartvid.io from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, type **smartvid.io**, select **smartvid.io** from result panel then select **Add** button to add the application.
 
 	 ![smartvid.io in the results list](common/search-new-app.png)
@@ -74,7 +74,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with smartvid.io, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **smartvid.io** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **smartvid.io** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 

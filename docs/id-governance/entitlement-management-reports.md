@@ -30,7 +30,7 @@ This report enables you to list all of the users who are assigned to an access p
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. On the Access packages page, select the access package of interest.
 
@@ -44,7 +44,7 @@ This report enables you to list all of the access packages a user can request an
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Reports**.
+1. Browse to **ID Governance** > **Entitlement management** > **Reports**.
 
 1. Select **Access packages for a user**.
 
@@ -66,7 +66,7 @@ This report enables you to list the resources currently assigned to a user in en
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Reports**.
+1. Browse to **ID Governance** > **Entitlement management** > **Reports**.
 
 1. Select **Resource assignments for a user**.
 
@@ -86,7 +86,7 @@ To get extra details on how a user requested and received access to an access pa
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Audit logs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Audit logs**.
 
 1. At the top, change the **Category** to either `EntitlementManagement` or `UserManagement`, depending on the audit record you're looking for.  
 
@@ -116,7 +116,7 @@ When the user's access package assignment expires, is canceled by the user, or r
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
 1. On the Connected organizations page, select **Download**.
 
@@ -138,7 +138,7 @@ To view events for an access package, you must have access to the underlying Azu
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader). Make sure you have access to the resource group containing the Azure Monitor workspace.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.  
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.  
 
 1. If you have multiple subscriptions, select the subscription that contains the workspace.  
 
@@ -158,7 +158,7 @@ The workbook *Application role assignment activity* shows if there have been cha
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader). Make sure you have access to the resource group containing the Azure Monitor workspace.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.  
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.  
 
 1. If you have multiple subscriptions, select the subscription that contains the workspace.
 

@@ -57,7 +57,7 @@ Follow the guidelines in the [create and assign a user account](~/identity/enter
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SpedTrack** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SpedTrack** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file** then perform the following steps:

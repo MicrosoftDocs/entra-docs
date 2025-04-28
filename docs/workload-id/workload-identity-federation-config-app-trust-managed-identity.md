@@ -1,5 +1,5 @@
 ---
-title: Configure an application to trust a managed identity (preview)
+title: Configure an application to trust a managed identity
 description: Learn how to configure an application to trust a managed identity in Microsoft Entra ID.
 author: cilwerner
 manager: CelesteDG
@@ -11,7 +11,7 @@ ms.reviewer: hosamsh
 #Customer intent: As an application developer, I want to configure my application to trust a managed identity so that I can access Microsoft Entra protected resources without needing to use or manage application secrets or certificates.
 ---
 
-# Configure an application to trust a managed identity (preview)
+# Configure an application to trust a managed identity
 
 This article describes how to configure a Microsoft Entra application to trust a managed identity. You can then exchange the managed identity token for an access token that can access Microsoft Entra protected resources without needing to use or manage App secrets.
 
@@ -67,7 +67,7 @@ In this section, you'll configure a federated identity credential on an existing
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). Check that you are in the tenant where your application is registered.
-1. Browse to **Identity** > **Applications** > **App registrations**, and select your application in the main window.
+1. Browse to **Entra ID** > **App registrations**, and select your application in the main window.
 1. Under **Manage**, select **Certificates & secrets**.
 1. Select the Federated credentials tab and select **Add credential**.
 
