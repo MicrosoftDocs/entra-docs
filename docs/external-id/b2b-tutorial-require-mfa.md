@@ -1,11 +1,9 @@
 ---
 title: 'Tutorial - multifactor authentication for B2B'
 description: In this tutorial, learn how to require multifactor authentication when you use Microsoft Entra B2B to collaborate with external users and partner organizations.
-
- 
 ms.service: entra-external-id
 ms.topic: tutorial
-ms.date: 04/09/2025
+ms.date: 04/28/2025
 
 ms.author: cmulligan
 author: csmulligan
@@ -70,26 +68,26 @@ To complete the scenario in this tutorial, you need:
 
 1. You can optionally add further details to the user under the **Properties** and **Assignments** tabs.
 1. Select **Review + invite** to automatically send the invitation to the guest user. A **Successfully invited user** message appears.
-1. After you send the invitation, the user account is automatically added to the directory as a guest.
+1. After you send the invitation, the user account is added to the directory as a guest.
 
 ## Test the sign-in experience before MFA setup
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using your test user name and password.
-1. You should be able to access the Microsoft Entra admin center using only your sign-in credentials. No other authentication is required.
-1. Sign out.
+1. Access the Microsoft Entra admin center using only your sign-in credentials. No other authentication is required.
+1. Sign out of the Microsoft Entra admin center.
 
 ## Create a conditional access policy that requires MFA
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
-1. Give your policy a name, like **Require MFA for B2B portal access**. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Name your policy, like **Require MFA for B2B portal access**. Create a meaningful standard for naming policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, choose **Select users and groups**, and then select **Guest or external users**. You can assign the policy to different [external user types](authentication-conditional-access.md#assigning-conditional-access-policies-to-external-user-types), built-in directory roles, or users and groups. 
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-user-access.png" alt-text="Screenshot showing selecting all guest users.":::
 
-1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, select **Windows Azure Service Management API**, and then select **Select**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Windows Azure Service Management API**, and then **Select** the resource.
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-app-access.png" alt-text="Screenshot showing the Cloud apps page and the Select option." lightbox="media/tutorial-mfa/tutorial-mfa-app-access.png":::
 
@@ -97,7 +95,7 @@ To complete the scenario in this tutorial, you need:
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-grant-access.png" alt-text="Screenshot showing the option for requiring multifactor authentication.":::
 
-1. Under the **Enable policy**, select **On**.
+1. Under **Enable policy**, select **On**.
 1. Select **Create**.
 
 ## Use the What If option to simulate sign-in
@@ -118,7 +116,7 @@ To complete the scenario in this tutorial, you need:
 1. On the **Cloud apps** page, in the applications list, choose **Windows Azure Service Management API**, and then choose **Select**.
 1. Select **What If**, and verify that your new policy appears under **Evaluation results** on the **Policies that will apply** tab.
 
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-whatif-4.png" alt-text="Screenshot showing the results of the What If evaluation.":::
+    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-whatif-4.png" alt-text="Screenshot that shows the results of the What If evaluation.":::
 
 ## Test your conditional access policy
 
