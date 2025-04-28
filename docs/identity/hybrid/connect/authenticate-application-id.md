@@ -32,46 +32,6 @@ Microsoft recommendeds the Entra Connect certificate management option as we man
 > [!NOTE]
 > We use the maintenance task to check if the certificate is due for rotation and automatically rotate the certificate, so if the scheduler is suspended or maintenance task is disabled, auto rotation will not happen even though the certificate is managed by Entra Connect Sync.
 
-The Microsoft Entra Connect Sync managed application and credential is automatically set up during initial installation for new installs.  You will can confirm that Microsoft Entra Connect is using the application identity by using the PowerShell cmdlet `Get-ADSyncEntraConnectorCredential`
-
- :::image type="content" source="media/authenticate-application-id/auth-2.png" alt-text="Screenshot of Get-ADSyncEntraConnectorCredential." lightbox="media/authenticate-application-id/auth-2.png":::
-
-For upgrades, you can select the **Configure application based authentication to Microsoft Entra ID (Preview)** box, to upgrade to using the certificate credentials.
-
- :::image type="content" source="media/authenticate-application-id/auth-3.png" alt-text="Screenshot of configuring application based authentication." lightbox="media/authenticate-application-id/auth-3.png":::
-
- If you did not select the box during upgrade, you will be shown the following recommendaton once installation completes.
-
- :::image type="content" source="media/authenticate-application-id/auth-5.png" alt-text="Screenshot of recommendation." lightbox="media/authenticate-application-id/auth-5.png":::
-
-If you did not select the box during upgrade, or want to switch to application based authentication you can do this through tasks.
-
-In tasks, select  **Configure application based authentication to Microsoft Entra ID (Preview)** and then follow the prompts.
-
- :::image type="content" source="media/authenticate-application-id/auth-4.png" alt-text="Screenshot of configuring application based authentication under tasks." lightbox="media/authenticate-application-id/auth-4.png":::
-
- Once you have application authentication enabled you will see an additional option in tasks. The **Rotate application certificate** option will now be available. From here, you can rotate the certificate manually. However, Microsoft recommendeds the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.4.252.0. 
-
- :::image type="content" source="media/authenticate-application-id/auth-6.png" alt-text="Screenshot of rotate application certificate under tasks." lightbox="media/authenticate-application-id/auth-6.png":::
-
- ### Viewing the Certificate
- You can view the cerificate information by going to tasks and then selecting **View or export current configuration** and then scroll down to certificate details.  You will find the folllowing:
-
-|Property|Description|
-|-----|-----|
-|Certificate managed by|Whether the cerificate is managed by Microsoft Entra Connect Sync or not.|
-|Automatic rotation enabled|Whether or not automatic rotation is enabled.|
-|Certificate thumbprint|Unique identifier for the certificate|
-|Certificate SHA256 Hash|A fingerprint for the certificate generated using the SHA-256 hashing algorithm.|
-|Subject name|Identifies the entity associated with the certificate|
-|Issued by|Who is the issuer of the cerificate|
-|Serial number|Uniquely identifies the certificate among certs by the same issuer|
-|Not valid before|The first date that the cerificate is valid.|
-|Not valid after|The last date the certificate is valid.|
-
- :::image type="content" source="media/authenticate-application-id/auth-7.png" alt-text="Screenshot of certificate." lightbox="media/authenticate-application-id/auth-7.png":::
-
-
  ## Bring Your Own Application (BYOA) 
 
 In this set up, the customer administrator manages the application that will be used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](identity-platform/howto-create-service-principal-portal.md)
@@ -88,6 +48,11 @@ In this set up, the administrator manages the certificate credential used by the
 
 ## Prerequisites
 The following prerequisites are required to implement authentication using application identity.
+
+>[!IMPORTANT]
+> New Micrsoft Entra Connect Sync Versions will only be available via the Microsoft Entra admin center 
+>
+> Following up on our earlier [What’s New](../../../fundamentals/whats-new#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra Admin Center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
 - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.4.252.0](reference-connect-version-history.md) or greater.
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
@@ -107,7 +72,28 @@ The following are additional requirements for the BYOA application management op
 - Customer registers an application with Entra and creates service principal.
 - Customer registers the certificate with the application 
 
-## Onboarding to Application Based Authentication using PowerShell
+
+## Installation and upgrade (Managed by Microsoft Entra Connect)
+The Microsoft Entra Connect Sync managed application and credential is automatically set up during initial installation for new installs.  You will can confirm that Microsoft Entra Connect is using the application identity by using the PowerShell cmdlet `Get-ADSyncEntraConnectorCredential`
+
+ :::image type="content" source="media/authenticate-application-id/auth-2.png" alt-text="Screenshot of Get-ADSyncEntraConnectorCredential." lightbox="media/authenticate-application-id/auth-2.png":::
+
+For upgrades, you can select the **Configure application based authentication to Microsoft Entra ID (Preview)** box, to upgrade to using the certificate credentials.
+
+ :::image type="content" source="media/authenticate-application-id/auth-3.png" alt-text="Screenshot of configuring application based authentication." lightbox="media/authenticate-application-id/auth-3.png":::
+
+ If you did not select the box during upgrade, you will be shown the following recommendaton once installation completes.
+
+ :::image type="content" source="media/authenticate-application-id/auth-5.png" alt-text="Screenshot of recommendation." lightbox="media/authenticate-application-id/auth-5.png":::
+
+If you did not select the box during upgrade, or want to switch to application based authentication you can do this through tasks.
+
+In tasks, select  **Configure application based authentication to Microsoft Entra ID (Preview)** and then follow the prompts.
+
+ :::image type="content" source="media/authenticate-application-id/auth-4.png" alt-text="Screenshot of configuring application based authentication under tasks." lightbox="media/authenticate-application-id/auth-4.png":::
+
+
+### Onboarding to Application Based Authentication using PowerShell
 This section is only relevant if using the BYOC or BYOA option. 
 Microsoft Entra Connect versions lower than 2.4.252.0 use username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps on Microsoft Connect Sync version equal to or higher than 2.4.252.0.
 
@@ -174,12 +160,35 @@ Replace <CertificateSHA256Hash> with the CertificateSHA256Hash and <appId> with 
  ```
 7. [Remove the Directory Synchronization Account (DSA) from Entra ID (Recommended)](#remove-legacy-service-account-using-powershell)
 
- ## Certificate Rotation using PowerShell
+ ## Viewing the Certificate
+ You can view the cerificate information by going to tasks and then selecting **View or export current configuration** and then scroll down to certificate details.  You will find the folllowing:
 
+|Property|Description|
+|-----|-----|
+|Certificate managed by|Whether the cerificate is managed by Microsoft Entra Connect Sync or BYOC.|
+|Automatic rotation enabled|Whether or not automatic rotation is enabled.|
+|Certificate thumbprint|Unique identifier for the certificate|
+|Certificate SHA256 Hash|A fingerprint for the certificate generated using the SHA-256 hashing algorithm.|
+|Subject name|Identifies the entity associated with the certificate|
+|Issued by|Who is the issuer of the cerificate|
+|Serial number|Uniquely identifies the certificate among certs by the same issuer|
+|Not valid before|The first date that the cerificate is valid.|
+|Not valid after|The last date the certificate is valid.|
+
+ :::image type="content" source="media/authenticate-application-id/auth-7.png" alt-text="Screenshot of certificate." lightbox="media/authenticate-application-id/auth-7.png":::
+
+
+ ##  On-Demand Certificate Rotation 
 Microsoft Entra Connect will warn if the certificate rotation is due. That is, expiring in less than or equal to 150 days. It will emit an error if certificate is already expired. These warnings (Event Id 1011) and errors (Event Id 1012) can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
 
 If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance disabled. If this is the case, you'll have to manually manage certificate rotation by going through the steps below.
 
+### Using the wizard
+ Once you have application authentication enabled you will see an additional option in tasks. The **Rotate application certificate** option will now be available. From here, you can rotate the certificate manually. However, Microsoft recommendeds the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.4.252.0. 
+
+ :::image type="content" source="media/authenticate-application-id/auth-6.png" alt-text="Screenshot of rotate application certificate under tasks." lightbox="media/authenticate-application-id/auth-6.png":::
+
+### Using PowerShell
 When you get a warning from Microsoft Entra Connect Sync when using the BYOC option, it's **highly recommended you generate a new key and certificate and rotate the certificate** used by Connect Sync using PowerShell.
 
 

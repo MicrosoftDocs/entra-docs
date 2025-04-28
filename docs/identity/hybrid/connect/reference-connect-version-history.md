@@ -20,6 +20,12 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 This article helps you keep track of the versions that have released and the changes in those versions.
 
 ### Breaking Change on Entra Connect Sync
+>[!IMPORTANT]
+> New Micrsoft Entra Connect Sync Versions will only be available via the Microsoft Entra admin center 
+>
+> Following up on our earlier [What’s New](../../../fundamentals/whats-new#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra Admin Center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
+
+
 
 > [!WARNING]
 > The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) will start impacting the Microsoft Entra Connect Sync wizard in April 2025. You must upgrade your Connect Sync version **by 30 April 2025** to maintain Connect Sync wizard capabilities such as schema refresh, configuration of staging mode, and user-sign in changes. The minimum supported versions are [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or any newer version. No action is required if your Microsoft Entra Connect Sync server is within the recommended version range. [Learn More](harden-update-ad-fs-pingfederate.md)
