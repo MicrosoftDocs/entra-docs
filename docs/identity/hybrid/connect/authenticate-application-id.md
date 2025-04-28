@@ -14,7 +14,7 @@ ms.author: billmath
 
 # Authenticate to Microsoft Entra ID using Application Identity 
 
-Entra Connect uses the [Microsoft Entra Connector account](reference-connect-accounts-permissions.md#accounts-used-for-microsoft-entra-connect) to authenticate and sync identities from Active Directory to Entra ID. This account uses username and password to authenticate requests. To enhance the security of the service, we're rolling out an application identity that uses Oauth 2.0 client credential flow with certificate credentials. In this new method, Entra or Administrator will create a single tenant third party application in Entra ID and use one of the relevant certificate management options below for the credentials.
+Entra Connect uses the [Microsoft Entra Connector account](reference-connect-accounts-permissions.md#accounts-used-for-microsoft-entra-connect) to authenticate and sync identities from Active Directory to Entra ID. This account uses username and password to authenticate requests. To enhance the security of the service, we're rolling out an application identity that uses Oauth 2.0 client credential flow with certificate credentials. In this new method, Entra or Administrator creates a single tenant third party application in Entra ID and use one of the relevant certificate management options below for the credentials.
 
 Microsoft Entra Connect provides 3 options for application/certificate management: 
 
@@ -34,7 +34,7 @@ Microsoft recommends the Entra Connect certificate management option as we manag
 
  ## Bring Your Own Application (BYOA) 
 
-In this set up, the customer administrator manages the application that will be used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](../../../identity-platform/howto-create-service-principal-portal.md)
+In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](../../../identity-platform/howto-create-service-principal-portal.md)
 
 
 ## Bring Your Own Certificate (BYOC) 
@@ -60,7 +60,7 @@ The following prerequisites are required to implement authentication using appli
 - Optional: TPM 2.0 present and ready to use (recommended for security)
 
 The following are additional requirements for the BYOC certificate management option
-- A certificate is created in an HSM or TPM using a CNG provider and the private key is marked as non-exportable. A warning event 1014 will be emitted if TPM isn't used. The following certificate configurations are supported:
+- A certificate is created in an HSM or TPM using a CNG provider and the private key is marked as non-exportable. A warning event 1014 is emitted if TPM isn't used. The following certificate configurations are supported:
  - KeyLength: 2048
  - KeyAlgorithm: RSA
  - KeyHashAlgorithm: SHA256
@@ -179,12 +179,12 @@ Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash and &lt;app
 
 
  ## On-Demand Certificate Rotation 
-Microsoft Entra Connect will warn if the certificate rotation is due. That is, expiring in less than or equal to 150 days. It will emit an error if certificate is already expired. These warnings (Event ID 1011) and errors (Event ID 1012) can be found in the Application event log. This message will be emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
+Microsoft Entra Connect warns if the certificate rotation is due. That is, expiring in less than or equal to 150 days. It emits an error if certificate is already expired. These warnings (Event ID 1011) and errors (Event ID 1012) can be found in the Application event log. This message is emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
 
 If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance disabled. If this is the case, you'll have to manually manage certificate rotation by going through the steps.
 
 ### Using the wizard
- Once you have application authentication enabled you'll see an additional option in tasks. The **Rotate application certificate** option will now be available. From here, you can rotate the certificate manually. However, Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.4.252.0. 
+ Once you have application authentication enabled you'll see an additional option in tasks. The **Rotate application certificate** option is now be available. From here, you can rotate the certificate manually. However, Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.4.252.0. 
 
  :::image type="content" source="media/authenticate-application-id/auth-6.png" alt-text="Screenshot of rotate application certificate under tasks." lightbox="media/authenticate-application-id/auth-6.png":::
 
