@@ -79,7 +79,7 @@ To complete the scenario in this tutorial, you need:
 ## Create a conditional access policy that requires MFA
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Name your policy, like **Require MFA for B2B portal access**. Create a meaningful standard for naming policies.
 1. Under **Assignments**, select **Users or workload identities**.
