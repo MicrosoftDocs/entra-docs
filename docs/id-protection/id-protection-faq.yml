@@ -68,7 +68,7 @@ sections:
       - question: |
           If I deploy a risk policy, will the system autoremediate users differently or do I need to redo past remediations? 
         answer: |
-          No. The system relies on the grant controls specified in the Conditional Access policy for all remediation. This policy-driven approach gives you more control over access to resources. If the user risk policy requires a block, Conditional Access enforces that. If the sign-in risk policy requires MFA, Conditional Access enforces a new MFA challenge (when there's no MFA claim on an existing token). So, if Alice always had her risky sign-ins autoremediated thanks to another MFA policy, nothing changes in her user experience when you deploy a risk policy that requires MFA.  
+          The system relies on the grant controls specified in the Conditional Access policy for all remediation. This policy-driven approach gives you more control over access to resources. If the user risk policy requires a block, Conditional Access enforces that. If the sign-in risk policy requires MFA, Conditional Access enforces a new MFA challenge (when there's no MFA claim on an existing token). So, if Alice always had her risky sign-ins autoremediated thanks to another MFA policy, nothing changes in her user experience when you deploy a risk policy that requires MFA.  
       - question: |
           Why can't I remediate risky B2B collaboration users in my directory?
         answer: |
