@@ -39,11 +39,11 @@ sections:
       - question: |
           How do I prevent risk-based policies from affecting B2B collaboration users?
         answer: |
-          Excluding B2B users from your organization's risk-based Conditional Access policies prevents B2B users from being impacted by risk evaluation. To exclude these B2B users, create a group in Microsoft Entra ID that contains all of your organization's guest users. Then, add this group as an exclusion for your built-in ID Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
+          Excluding B2B users from your organization's risk-based Conditional Access policies prevents B2B users from being affected by risk evaluation. To exclude these B2B users, create a group in Microsoft Entra ID that contains all of your organization's guest users. Then, add this group as an exclusion for your built-in ID Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
       - question: |
           I just received a high-risk alert but they aren't showing up in the **Impact analysis of risk-based policies** workbook. Why?
         answer: |
-          If the user is assigned high risk, but hasn't signed-in yet, you don't see them in this report. The report only uses sign-in logs to populate this data. If you have high risk users that haven't signed in, they aren't counted in this report. 
+          If the user is assigned high risk, but hasn't signed-in yet, you won't see them in this report. The report only uses sign-in logs to populate this data.
 
   - name: Remediation
     questions:
