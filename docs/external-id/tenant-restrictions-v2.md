@@ -580,6 +580,14 @@ administrator does not allow access to 'tenant'.
 
 - Enable client signaling using Windows GPO. You need to check 'Enable firewall protection on MIcrosoft endpoints' and WDAC enablement. See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell).     
 
+## Tenant Restrictions with Microsoft Enterprise SSO plug-in for Apple devices
+
+The Microsoft Enterprise SSO plug-in for Apple devices provides single sign-on (SSO) for Microsoft Entra accounts on macOS, iOS, and iPadOS across all applications that support Apple's enterprise single sign-on feature. To use the Microsoft Enterprise SSO plug-in for Apple devices certain URLs need to be excluded from network proxies, interception, and other enterprise systems.
+
+If your organization use Apple OS versions released after 2022, there is no need to exclude Microsoft login URLs from TLS interspection. Customers using Tenant Restriction feature can do TLS inspection on Microsoft login URLs and add the necessary headers on the request. More information at [Apple SSO](/entra/identity-platform/apple-sso-plugin#requirements)
+
+Customers can [validate Networking Configuration on macOS device](/entra/identity/devices/troubleshoot-mac-sso-extension-plugin?tabs=flowchart-ios#validate-networking-configuration-on-macos-device) to make sure SSO configuration is not broken due to TLS inspection.
+
 ## Sign-in logs
 
 Microsoft Entra sign-in logs let you view details about sign-ins with a tenant restrictions v2 policy in place. When a B2B user signs into a resource tenant to collaborate, a sign-in log is generated in both the home tenant and the resource tenant. These logs include information such as the application being used, email addresses, tenant name, and tenant ID for both the home tenant and the resource tenant. The following example shows a successful sign-in:
