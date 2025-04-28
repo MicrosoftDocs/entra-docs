@@ -111,18 +111,46 @@ Once you've created the custom extension and logic app, you can reference the cu
 Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**:
 :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
 
-## Configure the Azure Logic App and corresponding business logic.
+## Set up identity and role for the logic app
 
 With the Azure logic app created, you must edit the logic app so that it can communicate with Microsoft Entra. To edit the logic app, you'd do the following steps:
 
 
 1. Sign in to the Azure portal and go to the subscription, resource group, or logic app itself with the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of at least [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor).
 
+1. On the logic app created, go to **Settings** > **Identity**.
+
+1. On the Identity page, enable the system assigned managed identity
+    :::image type="content" source="media/entitlement-management-dynamic-approval/enable-logic-app-identity.png" alt-text="Screenshot of enabling logic app system assigned managed identity.":::
+1. Select **Save**.
+
+1. Back in the Microsoft Entra admin center go to the catalog in which you created the custom extension and select **Roles and administrators**.   
+
+1. On the roles and administrators page, select **Add access package assignment manager**, and select the logic app you just created.
+    :::image type="content" source="media/entitlement-management-dynamic-approval/add-logic-app-role.png" alt-text="Screenshot of adding logic app as access package assignment manager for a catalog.":::
+  
+
+## Configure the Azure Logic App and corresponding business logic.
+
+With the Azure logic app given the access package assignment manager role, you must now go to logic app and edit it to communicate with Microsoft Entra. To do this, you'd do the following steps:
+
 1. On the logic app created, go to **Development Tools** > **Logic app designer**.
 
 1. On the designer screen, remove everything under the **manual** trigger, and select the **Add an action** button.
     :::image type="content" source="media/entitlement-management-dynamic-approval/logic-app-add-action.png" alt-text="Screenshot of  adding action in logic app designer.":::
-1. 
+1. On the Add an Action screen, select **HTTP**.
+
+1. On the **HTTP** screen under Parameters, enter the following parameters:
+    URI: https://graph.microsoft.com/beta@{triggerBody()?['CallbackUriPath']}
+    Method: POST
+    Body: Your own custom logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard)
+    Authentication Type: Managed identity
+    Managed Identity: System-assigned managed identity
+    Audience: https://graph.microsoft.com
+1. Under HTTP Settings, disable **Asynchronous Pattern**. 
+    :::image type="content" source="media/entitlement-management-dynamic-approval/disable-asynchronous-pattern.png" alt-text="Screenshot of disabling asynchronous pattern in a logic app http call.":::
+1. After you have made changes to the HTTP trigger, select **Save** on the logic app. 
+
 
 ## Related content
 
