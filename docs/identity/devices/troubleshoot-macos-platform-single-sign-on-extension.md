@@ -85,7 +85,7 @@ Please ensure below URLs are exempted from TLS interception/inspection so that P
 Apple's app-site-association domains are critical for SSO extension functioning. (*) You only need to allow sovereign cloud domains if you rely on those in your environment. (**) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner. 
 
 > [!NOTE] 
-> Platform SSO is not compatible with Tenant Restriction feature as Tenant Restriction needs the login URLs to be inspected. 
+> Platform SSO is not compatible with Tenant Restrictions v2 feature that uses Corportate proxy. Alternative options are listed [here](https://review.learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2?branch=pr-en-us-7963#known-limitation) 
 
 ### Temporary passwords issued during password reset can't be synced with Platform SSO
 
