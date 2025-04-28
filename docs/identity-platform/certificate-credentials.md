@@ -106,7 +106,7 @@ Provide a GUID to identify the key in the application manifest (`$keyId`).
 
 In the Azure app registration for the client application:
 1. Select **Manifest** to open the application manifest.
-2. Select Microsoft Graph App Manifest
+2. Select Microsoft Graph App Manifest.
 3. Replace the *keyCredentials* property with your new certificate information using the following schema.
 
    ```JSON
