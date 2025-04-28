@@ -43,7 +43,7 @@ To run the What If evaluation, provide the conditions you want to evaluate.
 
 ## Conditions
 
-The following conditions are required: identity, target resource, device platform, and client app. All other conditions are optional and are assumed to be set to ‘none’ by default if no value is provided. For definitions of these conditions, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
+The following conditions are required: identity, target resource, device platform, and client app. All other conditions are optional and are assumed to be set to **none** by default if no value is provided. For definitions of these conditions, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
 
 :::image type="content" source="./media/what-if-tool/supply-conditions-to-evaluate-in-the-what-if-tool.png" alt-text="Screenshot of the What If page showing fields for entering conditions." border="false" lightbox="media/what-if-tool/supply-conditions-to-evaluate-in-the-what-if-tool.png":::
 
@@ -61,11 +61,11 @@ The list of policies that apply also includes [grant controls](concept-condition
 
 The list of policies that don't apply includes the reasons why these policies don't apply. For each listed policy, the reason represents the first condition that wasn't satisfied.
 
-‘Has filter’ indicates whether the policy has app filters that leverage custom security attributes.
+**Has filter** indicates whether the policy has app filters that use custom security attributes.
 
 ## Key differences between the What If evaluation API and the legacy experience 
 
-The What If Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The What If tool powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta) is currently in public preview. The API is different from the legacy What If evaluation in a few ways:
+The What If Evaluation API is a Microsoft Graph API that is called by the Conditional Access experience. The What If tool powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate) is currently in public preview. The API is different from the legacy What If evaluation in a few ways:
 
 1. The What-if API is a public and fully supported API (once the API is generally available). The API can be used through the Conditional Access UX and the MS Graph API.
 1. The logic aligns with the authentication logic used during sign-in to provide more accurate policy evaluation.
