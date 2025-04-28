@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 04/28/2025
 ms.author: sarahlipsey
 ms.reviewer: madansr7
 
@@ -67,6 +67,8 @@ To view the details of the sign-in activity for an application, select the **Vie
 The sign-in activity graph uses interactive user sign-ins. Select a day in the application usage graph to see a detailed list of the sign-in activities for the application. This detailed list is actually the sign-in log with the filter set to the selected application and date. The details of any sign-in failures appear below the table.
 
 ![Screenshot of the sign-in activity details for a selected application.](./media/concept-usage-insights-report/application-activity-sign-in-detail.png)
+
+This report now includes applications that authenticate *to* or are authenticated *by* other Microsoft Cloud Services applications in your tenant. These applications might appear in this report but when you select the **View sign-in activity** link, the results say "Not found." This message indicates that the application was only instantiated in your tenant, meaning only an instance of it appears in this report to indicate a service-to-service authentication. The application itself doesn't have a service principal in your tenant. We realize that this message might cause confusion and are working to improve the experience.
 
 ### Application activity using Microsoft Graph
 
