@@ -90,16 +90,16 @@ The following are the user properties that you can use to create a single expres
 
 ### Properties of type boolean
 
-Properties | Allowed values | Usage
---- | --- | ---
-accountEnabled |true false |```user.accountEnabled -eq true```
-dirSyncEnabled |true false |```user.dirSyncEnabled -eq true```
+| Properties | Allowed values | Usage |
+| --- | --- | --- |
+| accountEnabled | true false | ```user.accountEnabled -eq true``` |
+| dirSyncEnabled | true false | ```user.dirSyncEnabled -eq true``` |
 
 ### Properties of type dateTime
 
 | Properties | Allowed values | Usage |
 | --- | --- | --- |
-| employeeHireDate (Preview) |Any DateTimeOffset value or keyword system.now | ```user.employeeHireDate -eq "value"``` |
+| employeeHireDate (Preview) | Any DateTimeOffset value or keyword system.now | ```user.employeeHireDate -eq "value"``` |
 
 ### Properties of type string
 
@@ -117,9 +117,9 @@ dirSyncEnabled |true false |```user.dirSyncEnabled -eq true```
 | mail |Any string value or *null* (SMTP address of the user) | ```user.mail -eq "value"``` or ```user.mail -notEndsWith "@Contoso.com"``` |
 | mailNickName |Any string value (mail alias of the user) | ```user.mailNickName -eq "value"``` or ```user.mailNickname -endsWith "-vendor"``` |
 | memberOf | Any string value (valid group object ID) | ```user.memberOf -any (group.objectId -in ['value'])``` |
-| mobile |Any string value or *null* | ```user.mobile -eq "value" ```|
-| objectId |GUID of the user object | ```user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" ```|
-| onPremisesDistinguishedName | Any string value or *null* | ```user.onPremisesDistinguishedName -eq "value" ```|
+| mobile |Any string value or *null* | ```user.mobile -eq "value"``` |
+| objectId |GUID of the user object | ```user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"```|
+| onPremisesDistinguishedName | Any string value or *null* | ```user.onPremisesDistinguishedName -eq "value"```|
 | onPremisesSecurityIdentifier | On-premises security identifier (SID) for users who were synchronized from on-premises to the cloud. | ```user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111"``` |
 | passwordPolicies |None<br>DisableStrongPassword<br>DisablePasswordExpiration<br>DisablePasswordExpiration, DisableStrongPassword | ```user.passwordPolicies -eq "DisableStrongPassword"``` |
 | physicalDeliveryOfficeName |Any string value or *null* | ```user.physicalDeliveryOfficeName -eq "value"``` |
@@ -281,7 +281,7 @@ Multi-value properties are collections of objects of the same type. They can be 
 
 | Properties | Values | Usage |
 | --- | --- | --- |
-| assignedPlans | Each object in the collection exposes the following string properties: capabilityStatus, service, servicePlanId | ```user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled") ```|
+| assignedPlans | Each object in the collection exposes the following string properties: capabilityStatus, service, servicePlanId | ```user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled")```|
 | proxyAddresses | SMTP: alias@domain smtp: alias@domain | ```(user.proxyAddresses -any (\_ -startsWith "contoso"))``` |
 
 ### Using the -any and -all operators
@@ -424,42 +424,42 @@ The following device attributes can be used.
 
 <!-- docutune:disable -->
 
- Device attribute  | Values | Example
- ----- | ----- | ----------------
- accountEnabled | true false | device.accountEnabled -eq true
- deviceCategory | a valid device category name | device.deviceCategory -eq "BYOD"
- deviceId | a valid Microsoft Entra device ID | device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d"
- deviceManagementAppId | a valid MDM application ID in Microsoft Entra ID | device.deviceManagementAppId -eq "0000000a-0000-0000-c000-000000000000" for Microsoft Intune managed or "54b943f8-d761-4f8d-951e-9cea1846db5a" for System Center Configuration Manager Co-managed devices
- deviceManufacturer | any string value | device.deviceManufacturer -eq "Samsung"
- deviceModel | any string value | device.deviceModel -eq "iPad Air"
- displayName | any string value | device.displayName -eq "Rob iPhone"
- deviceOSType | any string value | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iOS")<br>device.deviceOSType -startsWith "AndroidEnterprise" <br>device.deviceOSType -eq "AndroidForWork"<br>device.deviceOSType -eq "Windows"
- deviceOSVersion | any string value | device.deviceOSVersion -eq "9.1"<br>device.deviceOSVersion -startsWith "10.0.1"
- deviceOwnership | Personal, Company, Unknown | device.deviceOwnership -eq "Company"
- devicePhysicalIds | any string value used by Autopilot, such as all Autopilot devices, OrderID, or PurchaseOrderID  | device.devicePhysicalIDs -any _ -startsWith "[ZTDId]"<br>(device.devicePhysicalIds -any _ -eq "[OrderID]:179887111881"<br>(device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342"
- deviceTrustType | AzureAD, ServerAD, Workplace | device.deviceTrustType -eq "AzureAD"
- enrollmentProfileName | Apple Device Enrollment Profile name, Android Enterprise Corporate-owned dedicated device Enrollment Profile name, or Windows Autopilot profile name | device.enrollmentProfileName -eq "DEP iPhones"
- extensionAttribute1 | any string value | device.extensionAttribute1 -eq "some string value"
- extensionAttribute2 | any string value | device.extensionAttribute2 -eq "some string value"
- extensionAttribute3 | any string value | device.extensionAttribute3 -eq "some string value"
- extensionAttribute4 | any string value | device.extensionAttribute4 -eq "some string value"
- extensionAttribute5 | any string value | device.extensionAttribute5 -eq "some string value"
- extensionAttribute6 | any string value | device.extensionAttribute6 -eq "some string value"
- extensionAttribute7 | any string value | device.extensionAttribute7 -eq "some string value"
- extensionAttribute8 | any string value | device.extensionAttribute8 -eq "some string value"
- extensionAttribute9 | any string value | device.extensionAttribute9 -eq "some string value"
- extensionAttribute10 | any string value | device.extensionAttribute10 -eq "some string value"
- extensionAttribute11 | any string value | device.extensionAttribute11 -eq "some string value"
- extensionAttribute12 | any string value | device.extensionAttribute12 -eq "some string value"
- extensionAttribute13 | any string value | device.extensionAttribute13 -eq "some string value"
- extensionAttribute14 | any string value | device.extensionAttribute14 -eq "some string value"
- extensionAttribute15 | any string value | device.extensionAttribute15 -eq "some string value"
- isRooted | true false | device.isRooted -eq true
- managementType | MDM (for mobile devices) | device.managementType -eq "MDM"
- memberOf | Any string value (valid group object ID) | device.memberOf -any (group.objectId -in ['value']) 
- objectId | a valid Microsoft Entra object ID | device.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
- profileType | a valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | device.profileType -eq "RegisteredDevice"
- systemLabels | a read-only string matching the Intune device property for tagging Modern Workplace devices | device.systemLabels -startsWith "M365Managed" SystemLabels
+| Device attribute  | Values | Example |
+| ----- | ----- | ---------------- |
+| accountEnabled | true false | device.accountEnabled -eq true |
+| deviceCategory | a valid device category name | device.deviceCategory -eq "BYOD" |
+| deviceId | a valid Microsoft Entra device ID | device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d" |
+| deviceManagementAppId | a valid MDM application ID in Microsoft Entra ID | device.deviceManagementAppId -eq "0000000a-0000-0000-c000-000000000000" for Microsoft Intune managed or "54b943f8-d761-4f8d-951e-9cea1846db5a" for System Center Configuration Manager Co-managed devices |
+| deviceManufacturer | any string value | device.deviceManufacturer -eq "Samsung" |
+| deviceModel | any string value | device.deviceModel -eq "iPad Air" |
+| displayName | any string value | device.displayName -eq "Rob iPhone" |
+| deviceOSType | any string value | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iOS")<br>device.deviceOSType -startsWith "AndroidEnterprise" <br>device.deviceOSType -eq "AndroidForWork"<br>device.deviceOSType -eq "Windows" |
+| deviceOSVersion | any string value | device.deviceOSVersion -eq "9.1"<br>device.deviceOSVersion -startsWith "10.0.1" |
+| deviceOwnership | Personal, Company, Unknown | device.deviceOwnership -eq "Company" |
+| devicePhysicalIds | any string value used by Autopilot, such as all Autopilot devices, OrderID, or PurchaseOrderID | device.devicePhysicalIDs -any _ -startsWith "[ZTDId]"<br>(device.devicePhysicalIds -any _ -eq "[OrderID]:179887111881"<br>(device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342" |
+| deviceTrustType | AzureAD, ServerAD, Workplace | device.deviceTrustType -eq "AzureAD" |
+| enrollmentProfileName | Apple Device Enrollment Profile name, Android Enterprise Corporate-owned dedicated device Enrollment Profile name, or Windows Autopilot profile name | device.enrollmentProfileName -eq "DEP iPhones" |
+| extensionAttribute1 | any string value | device.extensionAttribute1 -eq "some string value" |
+| extensionAttribute2 | any string value | device.extensionAttribute2 -eq "some string value" |
+| extensionAttribute3 | any string value | device.extensionAttribute3 -eq "some string value" |
+| extensionAttribute4 | any string value | device.extensionAttribute4 -eq "some string value" |
+| extensionAttribute5 | any string value | device.extensionAttribute5 -eq "some string value" |
+| extensionAttribute6 | any string value | device.extensionAttribute6 -eq "some string value" |
+| extensionAttribute7 | any string value | device.extensionAttribute7 -eq "some string value" |
+| extensionAttribute8 | any string value | device.extensionAttribute8 -eq "some string value" |
+| extensionAttribute9 | any string value | device.extensionAttribute9 -eq "some string value" |
+| extensionAttribute10 | any string value | device.extensionAttribute10 -eq "some string value" |
+| extensionAttribute11 | any string value | device.extensionAttribute11 -eq "some string value" |
+| extensionAttribute12 | any string value | device.extensionAttribute12 -eq "some string value" |
+| extensionAttribute13 | any string value | device.extensionAttribute13 -eq "some string value" |
+| extensionAttribute14 | any string value | device.extensionAttribute14 -eq "some string value" |
+| extensionAttribute15 | any string value | device.extensionAttribute15 -eq "some string value" |
+| isRooted | true false | device.isRooted -eq true |
+| managementType | MDM (for mobile devices) | device.managementType -eq "MDM" |
+| memberOf | Any string value (valid group object ID) | device.memberOf -any (group.objectId -in ['value']) |
+| objectId | a valid Microsoft Entra object ID | device.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" |
+| profileType | a valid [profile type](/graph/api/resources/device?view=graph-rest-1.0&preserve-view=true#properties) in Microsoft Entra ID | device.profileType -eq "RegisteredDevice" |
+| systemLabels | a read-only string matching the Intune device property for tagging Modern Workplace devices | device.systemLabels -startsWith "M365Managed" SystemLabels |
 
 <!-- docutune:enable -->
 

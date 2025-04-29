@@ -104,12 +104,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Acunetix 360|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||&check;
-   |emails[type eq "work"].value|String||&check;
-   |name.givenName|String||&check;
-   |name.familyName|String||&check;
-   |phoneNumbers[type eq "mobile"].value|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |emails[type eq "work"].value|String||&check;|
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |phoneNumbers[type eq "mobile"].value|String|||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Acunetix 360**.
 
@@ -117,8 +117,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Acunetix 360|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |members|Reference|||
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

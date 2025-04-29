@@ -118,16 +118,16 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Adobe Identity Management (SAML) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Adobe Identity Management (SAML) for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Adobe Identity Management (SAML) API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by Adobe Identity Management (SAML)
+   |Attribute|Type|Supported for filtering|Required by Adobe Identity Management (SAML)|
    |---|---|---|---|
-   |userName|String|&check;|&check;   
-   |active|Boolean||
-   |emails[type eq "work"].value|String||
-   |addresses[type eq "work"].country|String||
-   |name.givenName|String||
-   |name.familyName|String||
-   |urn:ietf:params:scim:schemas:extension:Adobe:2.0:User:emailAliases|String||
-   |urn:ietf:params:scim:schemas:extension:Adobe:2.0:User:eduRole|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean|||
+   |emails[type eq "work"].value|String|||
+   |addresses[type eq "work"].country|String|||
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |urn:ietf:params:scim:schemas:extension:Adobe:2.0:User:emailAliases|String|||
+   |urn:ietf:params:scim:schemas:extension:Adobe:2.0:User:eduRole|String|||
 
     > [!NOTE]
     > The **eduRole** field accepts values like `Teacher or Student`, anything else is ignored.
@@ -136,10 +136,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Adobe Identity Management (SAML) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Adobe Identity Management (SAML) for update operations. Select the **Save** button to commit any changes.
 
-      |Attribute|Type|Supported for filtering|Required by Adobe Identity Management (SAML)
+      |Attribute|Type|Supported for filtering|Required by Adobe Identity Management (SAML)|
       |---|---|---|---|
-      |displayName|String|&check;|&check;
-      |members|Reference||
+      |displayName|String|&check;|&check;|
+      |members|Reference|||
 
 12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

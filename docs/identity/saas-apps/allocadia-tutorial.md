@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| **Identifier** |
 	|------- |
 	| For test environment - `https://na2standby.allocadia.com` |
-	| For production environment - `https://na2.allocadia.com`
+	| For production environment - `https://na2.allocadia.com` |
 
     b. In the **Reply URL** text box, type one of the following URLs:
 

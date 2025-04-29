@@ -115,10 +115,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute| Type  |Supported for filtering|Required by Akamai Enterprise Application Access|
    |---|---|---|---|
-   |userName| String |&check;|&check;
+   |userName| String |&check;|&check;|
    |active| Boolean |||
    |displayName| String |||
-   |emails[type eq "work"].value| String ||&check;
+   |emails[type eq "work"].value| String ||&check;|
    |name.givenName| String |||
    |name.familyName| String |||
    |phoneNumbers[type eq "mobile"].value| String|||
@@ -131,7 +131,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Akamai Enterprise Application Access|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
+   |displayName|String|&check;|&check;|
    |externalId|String|||
    |members|Reference|||
    

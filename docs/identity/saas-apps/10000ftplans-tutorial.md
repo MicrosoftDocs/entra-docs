@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://rm.smartsheet.com/saml/acs`
     
     c. In the **Sign-on URL** text box, type the URL:
-    ` https://rm.smartsheet.com`
+    `https://rm.smartsheet.com`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select the copy icon to copy **App Federation Metadata Url**. Save it on your computer.
 

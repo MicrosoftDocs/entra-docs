@@ -65,11 +65,11 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
    | Property | Value |
    |:-----|:-------|
-   | Select what to review | **Teams + Groups**|
-   |Review scope | **Select Teams + groups** |
-   |Group| Select the dynamic group |
-   |Scope| **Guest users only**|
-   |(Optional) Review inactive guests | Check the box for **Inactive users (on tenant level) only**.<br> Enter the number of days that constitute inactivity.|
+   | Select what to review | **Teams + Groups** |
+   | Review scope | **Select Teams + groups** |
+   | Group | Select the dynamic group |
+   | Scope | **Guest users only** |
+   | (Optional) Review inactive guests | Check the box for **Inactive users (on tenant level) only**.<br> Enter the number of days that constitute inactivity. |
 
    ![Screenshot shows the review type dialog for multi-stage review for guests to self-attest continued access.](./media/clean-up-stale-guest-accounts/review-type-multi-stage-review.png)
 
@@ -77,21 +77,21 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 6. Configure Reviews:
 
-   |Property | Value |
+   | Property | Value |
    |:------------|:-------------|
-   | **First stage review** |     |
-   | Multi-stage review| Check the box|
-   |Select reviewers | **Users review their own access**|
+   | **First stage review** | |
+   | Multi-stage review | Check the box |
+   | Select reviewers | **Users review their own access** |
    | Stage duration (in days) | Enter the number of days |
-   |**Second stage review** |            |
-   | Select reviewers | **Group owner(s)** or **Selected user(s) or group(s)**|
-   |Stage duration (in days) |  Enter the number of days.<br>(Optional) Specify a fallback reviewer.|
-   | **Specify recurrence of review** |    |
-   | Review recurrence | Select your preference from the drop-down|
-   |Start date| Select a date|
-   |End| Select your preference |
-   | **Specify reviewees to go to the next stage** | | 
-   | Reviewees going to the next stage | Select reviewees. For example, select users who self-approved or responded **Don't know**.
+   | **Second stage review** | |
+   | Select reviewers | **Group owner(s)** or **Selected user(s) or group(s)** |
+   | Stage duration (in days) | Enter the number of days.<br>(Optional) Specify a fallback reviewer. |
+   | **Specify recurrence of review** | |
+   | Review recurrence | Select your preference from the drop-down |
+   | Start date| Select a date |
+   | End | Select your preference |
+   | **Specify reviewees to go to the next stage** | |
+   | Reviewees going to the next stage | Select reviewees. For example, select users who self-approved or responded **Don't know**. |
 
     ![Screenshot shows the first stage review for multi-stage review for guests to self-attest continued access.](./media/clean-up-stale-guest-accounts/first-stage-review-for-multi-stage-review.png)
 
@@ -102,11 +102,11 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
    | Property | Value |
    |:--------|:-------|
    | **Upon completion settings**| |
-   |Auto apply results to resource| Check the box|
-   |If reviewers don't respond | **Remove access** |
-   | Action to apply on denied guest users | **Block user from signing in for 30 days, then remove user from the tenant**|
-   | (Optional) At end of review, send notification to | Specify other users or groups to notify.|
-   | **Enable reviewer decision helpers** |  |
+   | Auto apply results to resource| Check the box |
+   | If reviewers don't respond | **Remove access** |
+   | Action to apply on denied guest users | **Block user from signing in for 30 days, then remove user from the tenant** |
+   | (Optional) At end of review, send notification to | Specify other users or groups to notify. |
+   | **Enable reviewer decision helpers** | |
    | Additional content for reviewer email | Add a custom message for reviewers |
    | All other fields| Leave the default values for the remaining options. |
 
@@ -130,12 +130,12 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 4. Configure Review type:
 
-   |Property | Value |
+   | Property | Value |
    |:---------|:------------|
    | Select what to review | **Teams + Groups** |
    | Review scope | **Select Teams + groups** |
    | Group | Select the dynamic group |
-   | Scope | **Guest users only**
+   | Scope | **Guest users only** |
    | Inactive users (on tenant level) only | Check the box |
    | Days inactive | Enter the number of days that constitutes inactivity |
 
@@ -150,10 +150,10 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
    | Property | Value |
    |:----|:---|
-   | **Specify reviewers** |  |
-   | Select reviewers | Select **Group owner(s)** or a user or group.<br>(Optional) To enable the process to remain automated, select a reviewer who will take no action.|  
-   | **Specify recurrence of review**| | 
-   | Duration (in days) | Enter or select a value based on your preference|
+   | **Specify reviewers** | |
+   | Select reviewers | Select **Group owner(s)** or a user or group.<br>(Optional) To enable the process to remain automated, select a reviewer who will take no action. |
+   | **Specify recurrence of review** | |
+   | Duration (in days) | Enter or select a value based on your preference |
    | Review recurrence | Select your preference from the drop-down |
    | Start date | Select a date |
    | End | Choose an option |
@@ -169,7 +169,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
    | **Upon completion settings** | |
    | Auto apply results to resource | Check the box |
    | If reviews don't respond | **Remove access** |
-   | Action to apply on denied guest users | **Block user from signing in for 30 days, then remove user from the tenant**  |
+   | Action to apply on denied guest users | **Block user from signing in for 30 days, then remove user from the tenant** |
    | **Enable reviewer decision helpers** | |
    | No sign-in within 30 days | Check the box |
    | All other fields | Check/uncheck the boxes based on your preference. |

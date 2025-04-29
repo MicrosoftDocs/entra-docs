@@ -112,56 +112,56 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Airtable|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||
-   |displayName|String||
-   |title|String||
-   |emails[type eq "work"].value|String||
-   |preferredLanguage|String||
-   |name.givenName|String||&check;
-   |name.familyName|String||&check;
-   |name.formatted|String||
-   |addresses[type eq "work"].formatted|String||
-   |addresses[type eq "work"].streetAddress|String||
-   |addresses[type eq "work"].locality|String||
-   |addresses[type eq "work"].region|String||
-   |addresses[type eq "work"].postalCode|String||
-   |addresses[type eq "work"].country|String||
-   |phoneNumbers[type eq "work"].value|String||
-   |phoneNumbers[type eq "mobile"].value|String||
-   |phoneNumbers[type eq "fax"].value|String||
-   |externalId|String||
-   |nickName|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value|String||
-   |addresses[type eq "home"].formatted|String||
-   |addresses[type eq "home"].streetAddress|String||
-   |addresses[type eq "home"].locality|String||
-   |addresses[type eq "home"].region|String||
-   |addresses[type eq "home"].postalCode|String||
-   |addresses[type eq "home"].country|String||
-   |addresses[type eq "other"].formatted|String||
-   |addresses[type eq "other"].streetAddress|String||
-   |addresses[type eq "other"].locality|String||
-   |addresses[type eq "other"].region|String||
-   |addresses[type eq "other"].postalCode|String||
-   |addresses[type eq "other"].country|String||
-   |emails[type eq "home"].value|String||
-   |emails[type eq "other"].value|String||
-   |locale|String||
-   |name.honorificPrefix|String||
-   |name.honorificSuffix|String||
-   |name.middleName|String||
-   |name.familyName|String||
-   |phoneNumbers[type eq "home"].value|String||
-   |phoneNumbers[type eq "other"].value|String||
-   |phoneNumbers[type eq "pager"].value|String||
-   |timezone|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
-   |userType|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean|||
+   |displayName|String|||
+   |title|String|||
+   |emails[type eq "work"].value|String|||
+   |preferredLanguage|String|||
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |name.formatted|String|||
+   |addresses[type eq "work"].formatted|String|||
+   |addresses[type eq "work"].streetAddress|String|||
+   |addresses[type eq "work"].locality|String|||
+   |addresses[type eq "work"].region|String|||
+   |addresses[type eq "work"].postalCode|String|||
+   |addresses[type eq "work"].country|String|||
+   |phoneNumbers[type eq "work"].value|String|||
+   |phoneNumbers[type eq "mobile"].value|String|||
+   |phoneNumbers[type eq "fax"].value|String|||
+   |externalId|String|||
+   |nickName|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value|String|||
+   |addresses[type eq "home"].formatted|String|||
+   |addresses[type eq "home"].streetAddress|String|||
+   |addresses[type eq "home"].locality|String|||
+   |addresses[type eq "home"].region|String|||
+   |addresses[type eq "home"].postalCode|String|||
+   |addresses[type eq "home"].country|String|||
+   |addresses[type eq "other"].formatted|String|||
+   |addresses[type eq "other"].streetAddress|String|||
+   |addresses[type eq "other"].locality|String|||
+   |addresses[type eq "other"].region|String|||
+   |addresses[type eq "other"].postalCode|String|||
+   |addresses[type eq "other"].country|String|||
+   |emails[type eq "home"].value|String|||
+   |emails[type eq "other"].value|String|||
+   |locale|String|||
+   |name.honorificPrefix|String|||
+   |name.honorificSuffix|String|||
+   |name.middleName|String|||
+   |name.familyName|String|||
+   |phoneNumbers[type eq "home"].value|String|||
+   |phoneNumbers[type eq "other"].value|String|||
+   |phoneNumbers[type eq "pager"].value|String|||
+   |timezone|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|||
+   |userType|String|||
 
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Airtable**.
@@ -170,8 +170,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Airtable|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |members|Reference|||
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
