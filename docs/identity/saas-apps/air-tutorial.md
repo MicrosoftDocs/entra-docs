@@ -40,7 +40,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Air into Microsoft Entra ID, you need to add Air from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Air** in the search box.
 1. Select **Air** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -69,7 +69,7 @@ To configure and test Microsoft Entra SSO with Air, perform the following steps:
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Air** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Air** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Select the **Workspace** at the top left corner.
 
-1. Go to the **Settings** -> **SECURITY &IDENTITY** tab and perform the perform the following steps:
+1. Go to the **Settings** > **SECURITY &IDENTITY** tab and perform the perform the following steps:
 
     ![Screenshot for Air configuration](./media/air-tutorial/integration.png)
 
@@ -123,7 +123,7 @@ Log in to the Air website as an administrator.
 
 1. Select the **Workspace** at the top left corner.
 
-1. Go to the **Settings** -> **MEMBERS** tab and select **Add members**.
+1. Go to the **Settings** > **MEMBERS** tab and select **Add members**.
 
 1. Give the Email address and select **Invite**.
 

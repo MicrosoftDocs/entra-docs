@@ -10,6 +10,7 @@ ms.topic: reference
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: zhchia, arvinh
+ai-usage: ai-assisted
 ---
 
 # Enable automatic user provisioning for your multi-tenant application in Microsoft Entra ID

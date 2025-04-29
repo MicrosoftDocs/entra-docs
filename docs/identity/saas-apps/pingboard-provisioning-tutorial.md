@@ -53,7 +53,7 @@ This section guides you through connecting your Microsoft Entra ID to the Pingbo
 ### To configure automatic user account provisioning to Pingboard in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. If you already configured Pingboard for single sign-on, search for your instance of Pingboard by using the search field. Otherwise, select **Add** and search for **Pingboard** in the application gallery. Select **Pingboard** from the search results, and add it to your list of applications.
 

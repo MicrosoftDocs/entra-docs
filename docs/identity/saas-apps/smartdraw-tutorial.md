@@ -40,7 +40,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of SmartDraw into Microsoft Entra ID, you need to add SmartDraw from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **SmartDraw** in the search box.
 1. Select **SmartDraw** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -68,7 +68,7 @@ To configure and test Microsoft Entra SSO with SmartDraw, perform the following 
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SmartDraw** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SmartDraw** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://cloud.smartdraw.com/sso/saml/login/<DOMAIN>`
+    `https://app.smartdraw.com/sso/saml/login/<DOMAIN>`
 
     > [!NOTE]
 	> The Sign-on URL value isn't real. You update the Sign-on URL value with the actual Sign-on URL, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.

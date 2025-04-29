@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: femila
 ms.topic: reference
-ms.date: 03/07/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: no-azure-ad-ps-ref
@@ -190,7 +190,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Improved error messaging in the Wizard when TLS settings don't meet the prerequisites.
 - Fixed a bug with the password hash not syncing on changing the SMART CARD REQUIRED bit flag. This fix won't allow the passwords in Microsoft Entra ID and Active Directory to be in sync for scenarios where smart card is used as an authentication method. [Learn more](how-to-connect-password-hash-synchronization.md#password-hash-synchronization-and-smart-card-authentication) 
 - Fixed a bug where auto upgrade endpoints were configured incorrectly for some clouds.
-- Fixed an issue where auto upgrade could fail when trying to get the service account.
 
 
 ## 2.3.20.0

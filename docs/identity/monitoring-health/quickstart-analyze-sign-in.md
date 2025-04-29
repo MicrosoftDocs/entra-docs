@@ -43,7 +43,7 @@ This section provides you with the steps to analyze a failed sign-in. Filter the
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader). 
 
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 
 1. Adjust the filter to view only the records for Isabella Simonsen:
 

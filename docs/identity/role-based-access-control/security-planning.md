@@ -81,7 +81,7 @@ After you start using Microsoft Entra Privileged Identity Management:
 
 1. To switch directories where you want to use Privileged Identity Management, select your user name in the upper right corner of the Microsoft Entra admin center.
 
-1. Browse to **Identity governance** > **Privileged Identity Management**.
+1. Browse to **ID Governance** > **Privileged Identity Management**.
 
 Make sure the first person to use PIM in your organization is assigned to the [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) and [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) roles. Only Privileged Role Administrators can manage the Microsoft Entra directory role assignments of users. The PIM security wizard walks you through the initial discovery and assignment experience. You can exit the wizard without making any additional changes at this time.
 

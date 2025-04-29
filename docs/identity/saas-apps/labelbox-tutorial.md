@@ -32,7 +32,7 @@ To configure the integration of Labelbox into Microsoft Entra ID, you need to ad
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **Labelbox** in the search box.
 
@@ -44,7 +44,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Labelbox** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Labelbox** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 

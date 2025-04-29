@@ -81,7 +81,7 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 1. Save your access token to your clipboard or computer before leaving the page.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. If you have already configured LinkedIn Elevate for single sign-on, search for your instance of LinkedIn Elevate using the search field. Otherwise, select **Add** and search for **LinkedIn Elevate** in the application gallery. Select LinkedIn Elevate from the search results, and add it to your list of applications.
 

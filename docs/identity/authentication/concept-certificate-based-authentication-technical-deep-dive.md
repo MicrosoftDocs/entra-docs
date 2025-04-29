@@ -145,7 +145,7 @@ For passwordless sign-in to work, users should disable legacy notification throu
    >[!IMPORTANT]
    >In the preceding configuration, make sure you chose **Passwordless** option. You need to change the **Authentication mode** for any groups added for PSI to **Passwordless**. If you choose **Any**, CBA and PSI don't work.
 
-1. Select **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
+1. Select **Entra ID** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/configure.png" alt-text="Screenshot of how to configure multifactor authentication settings.":::
 
@@ -241,13 +241,13 @@ Mapping types based on user names and email addresses are considered low-affinit
 |:--------------------------|:----------------------------------------:|:----------------------:|:----:|
 |PrincipalName | `X509:<PN>bob@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
 |RFC822Name	| `X509:<RFC822>user@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
-|IssuerAndSubject (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
-|Subject (preview)| `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
+|IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
+|Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
 |SKI | `X509:<SKI>aB1cD2eF3gH4iJ5kL6-mN7oP8qR=` | certificateUserIds | high-affinity |
 |SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` | certificateUserIds | high-affinity |
-|IssuerAndSerialNumber (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
 
-### Define Affinity binding at the tenant level and override with custom rules (Preview)
+### Define Affinity binding at the tenant level and override with custom rules
 
 With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based on Issuer and Policy OID, or Policy OID, or Issuer.
 
@@ -424,7 +424,7 @@ The following steps are a typical flow of the CRL check:
 
 >[!NOTE]
 >Microsoft Entra ID checks the CRL of the issuing CA and other CAs in the PKI trust chain up to the root CA. We have a limit of up to 10 CAs from the leaf client certificate for CRL validation in the PKI chain. The limitation is to make sure a bad actor doesn't bring down the service by uploading a PKI chain with a huge number of CAs with a bigger CRL size.
-If the tenant's PKI chain has more than 5 CAs, andif there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration.
+If the tenant's PKI chain has more than 5 CAs, and if there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration.
  
 
 >[!IMPORTANT]

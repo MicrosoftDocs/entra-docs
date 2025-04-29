@@ -11,7 +11,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 08/21/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a developer, I want to call a web API from a sample Android mobile app so that I can experience how Microsoft Entra's native authentication works.
 ---
 
@@ -23,11 +23,10 @@ In this quickstart you learn how to configure a sample Android mobile applicatio
 
 ## Prerequisites
 
-- [Sign in users in sample Android (Kotlin) mobile app by using native authentication](quickstart-native-authentication-android-sign-in.md).
-
-### Register a web API application
-
-[!INCLUDE [register-api-app](../external-id/customers//includes/register-app/register-api-app.md)]
+* [Sign in users in sample Android (Kotlin) mobile app by using native authentication](quickstart-native-authentication-android-sign-in.md).
+* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application for your web API with the following configuration. For detailed steps, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
+   * **Name**: *ciam-ToDoList-api.*
+   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 
 ### Configure API scopes
 

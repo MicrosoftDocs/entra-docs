@@ -51,7 +51,7 @@ Before you begin, [follow these steps](~/fundamentals/custom-security-attributes
 
 ### Define custom security attributes in your Microsoft Entra ID tenant
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com), access the option to add custom security attributes from the **Protection** menu.  You need to have at least an **Attribute Definition Administrator** role to complete this task.
+In the [Microsoft Entra admin center](https://entra.microsoft.com), access the option to add custom security attributes from **Entra ID** > **Custom security attributes**.  You need to have at least an **Attribute Definition Administrator** role to complete this task.
 
 This example includes custom security attributes that you could add to your tenant. Use the attribute set `HRConfidentialData` and then add the following attributes to:
 

@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: conditional-access
 
 ms.topic: conceptual
-ms.date: 04/03/2025
+ms.date: 04/08/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -48,7 +48,7 @@ The following steps help create two Conditional Access policies to support the f
 Policy 1: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, and for Access controls, Grant access, but require multifactor authentication and require device to be marked as compliant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -136,7 +136,7 @@ The following device attributes can be used with the filter for devices conditio
 | extensionAttribute1-15 | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | extensionAttributes1-15 are attributes that customers can use for device objects. Customers can update any of the extensionAttributes1 through 15 with custom values and use them in the filter for devices condition in Conditional Access. Any string value can be used. | (device.extensionAttribute1 -eq "SAW") |
 
 > [!IMPORTANT]
-> Customers should avoid using Entra device properties (ones that can be modified or manipulated by an end user) just on its own when creating a device filter rule. As an example, use of displayName that can be modified by end user or model, manufacturer, etc. sourced from registry entries that can be manipualted by the end user. Microsoft recommends using these properties in conjunction (use of AND clause) with some of the other properties on the device that are not modifiable by the end user when creating a device filter rule in Conditional Access.
+> Customers should avoid using Entra device properties (ones that can be modified or manipulated by an end user) just on its own when creating a device filter rule. As an example, use of displayName that can be modified by end user or model, manufacturer, etc. sourced from registry entries that can be manipulated by the end user. Microsoft recommends using these properties in conjunction (use of AND clause) with some of the other properties on the device that are not modifiable by the end user when creating a device filter rule in Conditional Access.
 
 > [!WARNING] 
 > Devices must be Microsoft Intune managed, compliant, or Microsoft Entra hybrid joined for a value to be available in extensionAttributes1-15 at the time of the Conditional Access policy evaluation.

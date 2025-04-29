@@ -122,7 +122,7 @@ In general, the permissions should be statically defined for a given application
 To configure the list of statically requested permissions for an application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
+1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. Select an application, or [create an app](quickstart-register-app.md) if you haven't already.
 1. On the application's **Overview** page, under **Manage**, select **API Permissions** > **Add a permission**.
 1. Select **Microsoft Graph** from the list of available APIs. Then add the permissions that your application requires.

@@ -72,7 +72,7 @@ Add Workplace from Meta from the Microsoft Entra application gallery to start ma
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Workplace from Meta App based on user assignments in Microsoft Entra ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -177,7 +177,7 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the given s
 > Be sure to note any changes made to the settings listed in the previous section before completing the following steps. Failure to do so results in the loss of customized settings. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Workplace from Meta**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Workplace from Meta**.
 1. In the Properties section of your new custom app, copy the Object ID.
 
 	![Screenshot of Workplace from Meta app in the Azure portal](./media/workplace-by-facebook-provisioning-tutorial/app-properties.png)

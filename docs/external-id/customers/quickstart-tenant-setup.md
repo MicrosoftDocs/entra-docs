@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 09/09/2024
+ms.date: 04/08/2025
 ms.author: cmulligan
 ms.custom: it-pro, seo-july-2024
 
@@ -25,12 +25,12 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 ## Prerequisites
 
 - An Azure subscription. 
-- An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription or to a resource group within the subscription.
+- An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription.
 
 ## Create a new tenant with external configurations 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. Browse to **Identity** > **Overview** > **Manage tenants**.
+1. Browse to **Entra ID** > **Overview** > **Manage tenants**.
 1. Select **Create**.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/create-tenant.png" alt-text="Screenshot of the create tenant option.":::

@@ -56,7 +56,7 @@ Microsoft Entra workforce tenants must be linked to an Azure subscription for pr
 
 2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings | Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
 
-3. Browse to **Identity** > **External identities** > **Overview**.
+3. Browse to **Entra ID** > **External Identities** > **Overview**.
 
 5. Under **Subscriptions**, select **Linked subscriptions**.
 

@@ -43,6 +43,8 @@ items:
     href: concept-connectors.md
   - name: Private network connector groups
     href: concept-connector-groups.md
+  - name: Understand Private DNS
+    href: concept-private-name-resolution.md
   - name: Understand remote network connectivity
     href: concept-remote-network-connectivity.md
   - name: Universal Continuous Access Evaluation
@@ -61,6 +63,8 @@ items:
         href: how-to-install-android-client.md
       - name: Install the iOS client
         href: how-to-install-ios-client.md
+      - name: EDR/antivirus coexistence with Global Secure Access client
+        href: concept-edr-antivirus-coexistence.md
   - name: Remote networks
     expanded: false
     items:
@@ -124,6 +128,8 @@ items:
         href: concept-private-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
+      - name: Enable Multi-Geo Capability
+        href: how-to-enable-multi-geo.md
       - name: Register connector - silent Install
         href: how-to-register-connector-powershell.md
       - name: Configure per-app access
@@ -173,12 +179,14 @@ items:
     items:
       - name: Introduction
         href: ~/architecture/gsa-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
+        href: ~/architecture/gsa-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploy Microsoft Global Secure Access for Microsoft Entra Internet Access
         href: ~/architecture/gsa-deployment-guide-internet-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
       - name: Deploy Global Secure Access for Microsoft Traffic
         href: ~/architecture/gsa-deployment-guide-microsoft-traffic.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
-        href: ~/architecture/gsa-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Microsoft Global Secure Access proof-of-concept guidance
+        href: ~/architecture/gsa-poc-guidance-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
   - name: Troubleshoot
     expanded: false
     items:

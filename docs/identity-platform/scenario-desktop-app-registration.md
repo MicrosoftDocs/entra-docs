@@ -36,7 +36,7 @@ If your desktop application uses interactive authentication, you can sign in use
 
 The redirect URIs to use in a desktop application depend on the flow you want to use.
 
-Specify the redirect URI for your app by [configuring the platform settings](quickstart-register-app.md#add-a-redirect-uri) for the app in **App registrations** in the Microsoft Entra admin center.
+Specify the redirect URI for your app by [configuring the platform settings](./how-to-add-redirect-uri.md) for the app in **App registrations** in the Microsoft Entra admin center.
 
 - For apps that use [Web Authentication Manager (WAM)](scenario-desktop-acquire-token-wam.md), redirect URIs need not be configured in MSAL, but they must be configured in the [app registration](scenario-desktop-acquire-token-wam.md#redirect-uri).
 

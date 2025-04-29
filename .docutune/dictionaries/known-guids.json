@@ -3871,5 +3871,7 @@
   "Dayforce People Connector" : "6817703f-e5b3-4eec-b11f-ba6367f1b156",
   "Dynamics 365 Human Resources" : "f9be0c49-aa22-4ec6-911a-c5da515226ff",
   "Internet Information Services" : "4dc3e181-e14b-4a21-b022-59fc669b0914",
-  "EXCatalog - Centralized Deployment" : "61bcc63f-b860-4280-8280-3e4fb5ea7726"
+  "EXCatalog - Centralized Deployment" : "61bcc63f-b860-4280-8280-3e4fb5ea7726",
+  "Azure Arc-enabled Kubernetes cluster server app ID" : "6256c85f-0aad-4d50-b960-e6e9b21efe35",
+  "Azure Arc-enabled Kubernetes cluster client app ID" : "3f4439ff-e698-4d6d-84fe-09c9d574f06b"
 }

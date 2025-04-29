@@ -44,7 +44,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **Guest user access**, choose the level of access you want guest users to have:
   
@@ -60,7 +60,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **Guest invite settings**, choose the appropriate settings:
 
@@ -75,7 +75,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **Enable guest self-service sign up via user flows**, select **Yes** if you want to be able to create user flows that let users sign up for apps. For more information about this setting, see [Add a self-service sign-up user flow to an app](self-service-sign-up-user-flow.yml).
 
@@ -85,7 +85,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **External user leave settings**, you can control whether external users can remove themselves from your organization.
 
@@ -103,7 +103,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **Collaboration restrictions**, you can choose whether to allow or deny invitations to the domains you specify and enter specific domain names in the text boxes. For multiple domains, enter each domain on a new line. For more information, see [Allow or block invitations to B2B users from specific organizations](allow-deny-list.md).
 

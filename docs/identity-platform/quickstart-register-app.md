@@ -1,19 +1,19 @@
 ---
-title: "Quickstart: Register an app in Microsoft Entra ID"
-description: In this quickstart, you learn how to register an application in a Microsoft Entra tenant.
+title: "How to register an app in Microsoft Entra ID"
+description: Learn how to register your app in Microsoft Entra ID and configure it for single-tenant or multitenant use.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-other
 ms.date: 01/29/2025
 ms.service: identity-platform
-ms.topic: quickstart
+ms.topic: how-to
 #Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
 ---
 
-# Quickstart: Register an application in Microsoft Entra ID
+# Register an application in Microsoft Entra ID
 
-In this quickstart, you learn how to register an application in Microsoft Entra ID. This process is essential for establishing a trust relationship between your application and the Microsoft identity platform. By completing this quickstart, you enable identity and access management (IAM) for your app, allowing it to securely interact with Microsoft services and APIs. 
+In this how-to guide, you learn how to register an application in Microsoft Entra ID. This process is essential for establishing a trust relationship between your application and the Microsoft identity platform. By completing this quickstart, you enable identity and access management (IAM) for your app, allowing it to securely interact with Microsoft services and APIs. 
 
 ## Prerequisites
 
@@ -29,9 +29,9 @@ Follow these steps to create the app registration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
-1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
+1. Browse to **Entra ID** > **App registrations** and select **New registration**.
 1. Enter a meaningful **Name** for your, for example *identity-client-app*. App users can see this name, and it can be changed at any time. You can have multiple app registrations with the same name.
-1. Under **Supported account types**, specify who can use the application. We recommend you select **Accounts in this organizational directory only** for most applications. Refer to the table below for more information on each option.
+1. Under **Supported account types**, specify who can use the application. We recommend you select **Accounts in this organizational directory only** for most applications. Refer to the table for more information on each option.
 
    | Supported account types | Description   |
    | ----------------------- | ------------- |
@@ -49,118 +49,20 @@ Follow these steps to create the app registration:
     :::image type="content" source="./media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="./media/quickstart-register-app/portal-03-app-reg-02.png":::
 
 > [!IMPORTANT]
-> New app registrations are hidden to users by default. When you're ready for users to see the app on their [My Apps page](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) you can enable it. To enable the app, in the Microsoft Entra admin center navigate to **Identity** > **Applications** > **Enterprise applications** and select the app. Then on the **Properties** page, set **Visible to users?** to **Yes**.
+> New app registrations are hidden to users by default. When you're ready for users to see the app on their [My Apps page](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) you can enable it. To enable the app, in the Microsoft Entra admin center navigate to **Entra ID** > **Enterprise apps** and select the app. Then on the **Properties** page, set **Visible to users?** to **Yes**.
 
 ## Grant admin consent (external tenants only)
 
-Once you register your application, it gets assigned the **User.Read** permission. However, for external tenants, the customer users themselves can't consent to this permission. You as the admin must consent to this permission on behalf of all the users in the tenant:
+Once you register your application, it gets assigned the **User.Read** permission. However, for external tenants, the customer users themselves can't consent to permissions themselves. You as the admin must consent to this permission on behalf of all the users in the tenant:
 
 1. From the **Overview** page of your app registration, under **Manage** select **API permissions**.
 1. Select **Grant admin consent for < tenant name >**, then select **Yes**.
 1. Select **Refresh**, then verify that **Granted for < tenant name >** appears under **Status** for the permission.
 
-## Add a redirect URI
+## Related content
 
-A *redirect URI* is where the Microsoft identity platform sends security tokens after authentication. You can configure redirect URIs in **Platform configurations** in the Microsoft Entra admin center. For **Web** and **Single-page applications**, you need to specify a redirect URI manually. For **Mobile and desktop** platforms, you select from generated redirect URIs. Follow these steps to configure settings based on your target platform or device:
-
-1. In the Microsoft Entra admin center, in **App registrations**, select your application.
-1. Under **Manage**, select **Authentication**.
-1. Under **Platform configurations**, select **Add a platform**.
-1. Under **Configure platforms**, select the tile for your application type (platform) to configure its settings.
-
-   :::image type="content" source="./media/quickstart-register-app/portal-04-app-reg-03-platform-config.png" alt-text="Screenshot of the platform configuration pane in the Azure portal." border="false":::
-
-   | Platform  | Configuration settings | Example |
-   | --------- |------------------------|---------|
-   | **Web**   | Enter the **Redirect URI** for a web app that runs on a server. Front channel logout URLs can also be added | Node.js: <br>&#8226; `http://localhost:3000/auth/redirect` <br> ASP.NET Core:<br>  &#8226; `https://localhost:7274/signin-oidc` <br>  &#8226; `https://localhost:7274/signout-callback-oidc` (Front-channel logout URL) <br> Python: <br>&#8226; `http://localhost:3000/getAToken` |
-   | **Single-page application** | Enter a **Redirect URI** for client-side apps using JavaScript, Angular, React.js, or Blazor WebAssembly. Front channel logout URLs can also be added | JavaScript, React: <br>&#8226; `http://localhost:3000` <br>Angular: <br>&#8226; `http://localhost:4200/`|
-   | **iOS / macOS** | Enter the app **Bundle ID**, which generates a redirect URI for you. Find it in **Build Settings** or in Xcode in *Info.plist*. | <br>Workforce tenant: <br>&#8226; `com.<yourname>.identitysample.MSALMacOS` <br>External tenant: <br>&#8226; `com.microsoft.identitysample.ciam.MSALiOS` |
-   | **Android** | Enter the app **Package name**, which generates a redirect URI for you. Find it in the *AndroidManifest.xml* file. Also generate and enter the **Signature hash**. | Kotlin: <br>&#8226; `com.azuresamples.msaldelegatedandroidkotlinsampleapp` <br>.NET MAUI: <br>&#8226; `msal{CLIENT_ID}://auth`  <br> Java: <br>&#8226; `com.azuresamples.msalandroidapp` |
-   | **Mobile and desktop applications** | Select this platform for desktop apps or mobile apps not using MSAL or a broker. Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | Embedded browser desktop app: <br>&#8226; `https://login.microsoftonline.com/common/oauth2/nativeclient` <br> System browser desktop app:<br>&#8226; `http://localhost` |
-
-1. Select **Configure** to complete the platform configuration.
-
-### Redirect URI restrictions
-
-There are some restrictions on the format of the redirect URIs you add to an app registration. For details about these restrictions, see [Redirect URI (reply URL) restrictions and limitations](./reply-url.md).
-
-## Add credentials
-
-After registering an app, you can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime, and are used by [confidential client applications](./msal-client-applications.md) that access a web API. 
-
-:::image type="content" source="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
-
-### [Add a certificate](#tab/certificate)
-
-Sometimes called a *public key*, a certificate is the recommended credential type because they're considered more secure than client secrets. 
-
-1. In the Microsoft Entra admin center, in **App registrations**, select your application.
-2. Select **Certificates & secrets** > **Certificates** > **Upload certificate**.
-3. Select the file you want to upload. It must be one of the following file types: *.cer*, *.pem*, *.crt*.
-4. Select **Add**.
-
-In production, you should use a certificate signed by a well known certificate authority (CA) such as [Azure Key Vault](https://azure.microsoft.com/products/key-vault/). For more information about using a certificate as an authentication method in your application, see [Microsoft identity platform application authentication certificate credentials](./certificate-credentials.md).
-
-### [Add a client secret](#tab/client-secret)
-
-Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identify itself.
-
-Client secrets are less secure than certificate or federated credentials and therefore should **not be used** in production environments. While they may be convenient for local app development, it is imperative to use certificate or federated credentials for any applications running in production to ensure higher security.
-
-1. In the Microsoft Entra admin center, in **App registrations**, select your application.
-1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
-1. Add a description for your client secret.
-1. Select an expiration for the secret or specify a custom lifetime.
-    - Client secret lifetime is limited to two years (24 months) or less. You can't specify a custom lifetime longer than 24 months.
-    - Microsoft recommends that you set an expiration value of less than 12 months.
-1. Select **Add**.
-1. *Record the secret's value* for use in your client application code. This secret value is *never displayed again* after you leave this page.
-
-To learn more about client secret vulnerabilities, refer to [Migrate applications away from secret-based authentication](/entra/identity/enterprise-apps/migrate-applications-from-secrets).
-
-If you're using an Azure DevOps service connection that automatically creates a service principal, you need to update the client secret from the Azure DevOps portal site instead of directly updating the client secret. Refer to this document on how to update the client secret from the Azure DevOps portal site:
-[Troubleshoot Azure Resource Manager service connections](/azure/devops/pipelines/release/azure-rm-endpoint#service-principals-token-expired).
-
-### [Add a federated credential](#tab/federated-credential)
-
-Federated identity credentials are a type of credential that allows workloads, such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](~/workload-id/workload-identity-federation.md).
-
-To add a federated credential, follow these steps:
-
-1. In the Microsoft Entra admin center, in **App registrations**, select your application.
-1. Select **Certificates & secrets** > **Federated credentials** > **Add credential**.
-1. In the **Federated credential scenario** drop-down box, select one of the supported scenarios, and follow the corresponding guidance to complete the configuration.
-
-    - **Customer managed keys** for encrypt data in your tenant using Azure Key Vault in another tenant.
-    - **GitHub actions deploying Azure resources** to [configure a GitHub workflow](~/workload-id/workload-identity-federation-create-trust.md#github-actions) to get tokens for your application and deploy assets to Azure.
-    - **Kubernetes accessing Azure resources** to configure a [Kubernetes service account](~/workload-id/workload-identity-federation-create-trust.md#kubernetes) to get tokens for your application and access Azure resources.
-    - **Other issuer** to configure the application to [trust a managed identity](~/workload-id/workload-identity-federation-config-app-trust-managed-identity.md) or an identity managed by an external [OpenID Connect provider](~/workload-id/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
-
-For more information on how to get an access token with a federated credential, see [Microsoft identity platform and the OAuth 2.0 client credentials flow](./v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential).
-
----
-
-## Next step
-
-### [Expose a web API](#tab/expose-a-web-api)
-
-After registering an app, you can configure it to expose a web API. To learn how, refer to;
-
-> [!div class="nextstepaction"]
-> [Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md)
-
-### [Explore sample code](#tab/explore-sample-code)
-
-The Microsoft identity platform offers a variety of code samples tailored for different application types and platforms. To explore these samples, refer to;
-
-> [!div class="nextstepaction"]
-> [Microsoft identity platform code samples](./sample-v2-code.md)
-
-### [Add an app to a user flow](#tab/add-an-app-to-a-user-flow)
-
-For applications in external tenants, you can add the application to a user flow for customers to have a streamlined experience. To learn how, refer to;
-
-> [!div class="nextstepaction"]
-> [Add your application to a user flow](/entra/external-id/customers/how-to-user-flow-add-application)
-
----
+- [Add a redirect URI to your application](how-to-add-redirect-uri.md)
+- [Add credentials to your application](how-to-add-credentials.md)
+- [Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md)
+- [Microsoft identity platform code samples](./sample-v2-code.md)
+- [Add your application to a user flow](/entra/external-id/customers/how-to-user-flow-add-application)
