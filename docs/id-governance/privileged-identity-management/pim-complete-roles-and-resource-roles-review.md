@@ -24,7 +24,7 @@ Once the review has been created, follow the steps in this article to complete t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one or more prerequisite roles.
 
-1. Browse to **Identity governance** > **Privileged Identity Management**. 
+1. Browse to **ID Governance** > **Privileged Identity Management**. 
 
 1. For **Microsoft Entra roles**, select **Microsoft Entra roles**. For **Azure resources**, select **Azure resources**
 

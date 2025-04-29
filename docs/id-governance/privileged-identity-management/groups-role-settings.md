@@ -28,7 +28,7 @@ To open the settings for a group role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
 
 1. Select the group for which you want to configure role settings.
 

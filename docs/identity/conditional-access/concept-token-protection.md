@@ -104,7 +104,7 @@ Users who perform specialized roles like those described in [Privileged access s
 The steps that follow help create a Conditional Access policy to require token protection for Exchange Online and SharePoint Online on Windows devices.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -157,7 +157,7 @@ Use Microsoft Entra sign-in log to verify the outcome of a token protection enfo
 :::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Select a specific request to determine if the policy is applied or not.
 1. Go to the **Conditional Access** or **Report-Only** pane depending on its state and select the name of your policy requiring token protection.
 1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
@@ -191,7 +191,7 @@ AADNonInteractiveUserSignInLogs
 | project Id,ConditionalAccessPolicies, Status,UserPrincipalName, AppDisplayName, ResourceDisplayName 
 | where ConditionalAccessPolicies != "[]" 
 | where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" 
-//Add userPrinicpalName if you want to filter  
+//Add userPrincipalName if you want to filter  
 // | where UserPrincipalName =="<user_principal_Name>" 
 | mv-expand todynamic(ConditionalAccessPolicies) 
 | where ConditionalAccessPolicies ["enforcedSessionControls"] contains '["Binding"]' or ConditionalAccessPolicies ["enforcedSessionControls"] contains '["SignInTokenProtection"]' 

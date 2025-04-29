@@ -47,7 +47,7 @@ To check if the prerequisite products for a Microsoft Entra ID Governance produc
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as a [License Administrator](../identity/role-based-access-control/permissions-reference.md#license-administrator).
 
-1. In the **Identity** menu, expand **Billing** and select **Licenses**.
+1. Browse to **Billing** > **Licenses**.
 
 1. In the **Manage** menu, select **Licensed features**.  The information bar indicates the current Microsoft Entra ID license plan.
 

@@ -78,7 +78,7 @@ Between June 13 2024 and January 7 2025, you can follow the steps below and use 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an [Application Developer](/entra/identity/role-based-access-control/permissions-reference#application-developer). 
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. Select **New registration** and create a new app registration.
 
@@ -92,7 +92,7 @@ Between June 13 2024 and January 7 2025, you can follow the steps below and use 
 
 Starting January 7 2025, the Microsoft Entra admin center will no longer support app manifests in Azure AD Graph format. However, you can perform the conversion manually.
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. Select **New registration** and create a new app registration.
 

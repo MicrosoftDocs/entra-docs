@@ -1,10 +1,10 @@
 ---
-title: Retrieve and return data from an OnAttributeCollectionStart event (preview)
+title: Retrieve and return data from an OnAttributeCollectionStart event
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionStart event for External ID customer configurations.
 author: msmimart
 manager: CelesteDG
 ms.author: mimart
-ms.date: 04/01/2025
+ms.date: 04/28/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -12,7 +12,7 @@ titleSuffix: Microsoft identity platform
 #customer intent: As a developer creating a custom authentication extension for user sign-up flows, I want to understand the REST API schema for the OnAttributeCollectionStart event, so that I can design and implement my own REST API to handle attribute collection requests and responses before the user enters attributes.
 ---
 
-# Retrieve and return data from an OnAttributeCollectionStart event (preview)
+# Retrieve and return data from an OnAttributeCollectionStart event
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 

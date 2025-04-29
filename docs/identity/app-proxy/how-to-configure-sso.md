@@ -22,7 +22,7 @@ To configure SSO, first make sure that your application is configured for Pre-Au
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 
  Look for the “Pre Authentication” field, and make sure that is set. 
 

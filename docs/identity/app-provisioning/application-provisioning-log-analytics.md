@@ -29,7 +29,7 @@ To integrate provisioning logs with Azure Monitor logs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
     :::image type="content" source="media/application-provisioning-log-analytics/diagnostic-settings.png" alt-text="Screenshot of accessing diagnostic settings." lightbox="media/application-provisioning-log-analytics/diagnostic-settings.png":::
 
@@ -37,7 +37,7 @@ To integrate provisioning logs with Azure Monitor logs:
 
     :::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Screenshot of enabling application provisioning logs." lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
 
-1. Browse to **Identity** > **Monitoring & health** > **Log Analytics** and begin querying the data.
+1. Browse to **Entra ID** > **Monitoring & health** > **Log Analytics** and begin querying the data.
 
 > [!NOTE]
 > It can take some time before logs appear in Log Analytics after first enabling the integration. If you receive an error that the subscription is not registered to use *microsoft.insights* then check back after a few minutes.

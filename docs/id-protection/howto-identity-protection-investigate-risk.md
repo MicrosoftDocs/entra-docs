@@ -18,7 +18,7 @@ Microsoft Entra ID Protection provides organizations with reporting they can use
 
 ## Navigating the reports
 
-The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Identity Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
+The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **ID Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/view-high-risk-users-from-id-protection-dashboard.png" alt-text="Screenshot showing the number of high risk users widget from the ID Protection dashboard.":::
 

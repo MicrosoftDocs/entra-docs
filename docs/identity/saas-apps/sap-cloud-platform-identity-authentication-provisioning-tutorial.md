@@ -72,7 +72,7 @@ If SAP Cloud Identity Services is already configured for single-sign on from Mic
 **To add SAP Cloud Identity Services from the Microsoft Entra application gallery using the Microsoft Entra admin center, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. To add the app from the gallery, type **SAP Cloud Identity Services** in the search box.
 1. Select **SAP Cloud Identity Services** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for SAP Cloud Identity Services in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -184,10 +184,10 @@ This operation starts the initial synchronization of all users defined in **Scop
 It's recommended that a single new Microsoft Entra test user is assigned to SAP Cloud Identity Services to test the automatic user provisioning configuration.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and a User Administrator.
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**.
 1. Type in the **User principal name** and **Display Name** of the new test user. The user principal name must be unique and not the same of any current or previous Microsoft Entra user or SAP Cloud Identity Services user. Select **Review + create** and **Create**.
-1. Once the test user is created, browse to **Identity** > **Applications** > **Enterprise Applications**.
+1. Once the test user is created, browse to **Entra ID** > **Enterprise apps**.
 1. Select the SAP Cloud Identity Services application.
 1. Select **Users and groups** and then select **Add user/group**.
 1. In the **Users and groups** , select **None Selected**, and in text box, type the user principal name of the test user.
@@ -208,7 +208,7 @@ You can also optionally verify what the Microsoft Entra provisioning service wil
 
 Finally, you can remove the test user from Microsoft Entra ID.
 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select the test user, select **Delete**, and select **OK**. This action soft-deletes the test user from Microsoft Entra ID.
 
 You can also then remove the test user from SAP Cloud Identity Services.

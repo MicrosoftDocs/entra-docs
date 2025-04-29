@@ -67,7 +67,7 @@ In this section, you'll configure a federated identity credential on an existing
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). Check that you are in the tenant where your application is registered.
-1. Browse to **Identity** > **Applications** > **App registrations**, and select your application in the main window.
+1. Browse to **Entra ID** > **App registrations**, and select your application in the main window.
 1. Under **Manage**, select **Certificates & secrets**.
 1. Select the Federated credentials tab and select **Add credential**.
 

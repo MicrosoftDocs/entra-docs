@@ -67,7 +67,7 @@ Before configuring Elium for automatic user provisioning with Microsoft Entra ID
 To configure Elium for automatic user provisioning with Microsoft Entra ID, you must also add Elium from the Microsoft Entra application gallery to your list of managed software-as-a-service (SaaS) applications. Follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
      ![Microsoft Entra Enterprise applications blade](common/enterprise-applications.png)
 
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 To configure automatic user provisioning for Elium in Microsoft Entra ID, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
     ![Microsoft Entra Enterprise applications blade](common/enterprise-applications.png)
 

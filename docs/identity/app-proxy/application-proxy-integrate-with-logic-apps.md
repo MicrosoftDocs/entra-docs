@@ -47,7 +47,7 @@ When a new Enterprise Application is created, a matching App Registration is als
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. From the *App Registrations* window, select the **All applications** tab option.
 

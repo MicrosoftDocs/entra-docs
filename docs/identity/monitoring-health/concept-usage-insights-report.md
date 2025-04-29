@@ -37,7 +37,7 @@ You can access the Usage and insights reports from the Azure portal and using Mi
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage & insights**.
 
 The **Usage & insights** reports are also available from the **Enterprise applications** area of Microsoft Entra ID. All users can access their own sign-ins at the [My Sign-Ins portal](https://mysignins.microsoft.com/security-info).
 

@@ -35,7 +35,7 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity**.
+1. Browse to **Entra ID**.
 
 1. Browse to one of the following:
 
@@ -53,7 +53,7 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit that you want to list the users, groups, or devices for.
 
@@ -69,7 +69,7 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Devices** > **All devices**.
+1. Browse to **Entra ID** > **Devices** > **All devices**.
 
 1. Select the filter for administrative unit.
 
@@ -81,7 +81,7 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity**.
+1. Browse to **Entra ID**.
 
 1. Browse to one of the following:
 

@@ -52,7 +52,7 @@ To publish the SecretAPI web API through application proxy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. At the top of the **Enterprise applications - All applications** page, select **New application**.
 
@@ -104,7 +104,7 @@ Native apps are programs developed to use on a particular platform or device. Be
 To register the AppProxyNativeAppSample native app:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **App registrations**.
+1. Browse to **Entra ID** > **Enterprise apps** > **App registrations**.
 
 1. Select **New registration**.
 

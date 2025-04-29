@@ -42,7 +42,7 @@ The following settings are available:
 To configure account lockout settings, complete these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Multifactor authentication** > **Account lockout**. You might need to click **Show more** to see **Multifactor authentication**.
+1. Browse to **Entra ID** > **Multifactor authentication** > **Account lockout**. You might need to click **Show more** to see **Multifactor authentication**.
 1. Enter the values for your environment, and then select **Save**.
 
     ![Screenshot that shows the account lockout settings.](./media/howto-mfa-mfasettings/account-lockout-settings.png)
@@ -61,7 +61,7 @@ If you don't have a Microsoft Entra ID P2 license for risk-based policies, you c
 To enable **Report suspicious activity** from the Authentication methods policy **Settings**:   
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Settings**. 
+1. Browse to **Entra ID** > **Authentication methods** > **Settings**. 
 1. Set **Report suspicious activity** to **Enabled**. The feature remains disabled if you choose **Microsoft managed**. For more information about Microsoft managed values, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
    :::image type="content" border="true" source="media/howto-mfa-mfasettings/report-suspicious-activity.png" alt-text="Screenshot of how to enable Report suspicious activity.":::
 1. Select **All users** or a specific group. 
@@ -74,9 +74,9 @@ When a user reports an MFA prompt as suspicious, the event shows up in the sign-
 
 | Report | Admin center | Details |
 |--------------|--------|---------|
-| Risk detections report | **Protection** > **Identity Protection** > **Risk detection** | Detection type: **User Reported Suspicious Activity**<br>Risk level: **High**<br>Source **End user reported** |
-| Sign-in logs | **Identity** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied** |
-| Audit logs   | **Identity** > **Monitoring & health** > **Audit logs** | The suspicious activity appears under **Activity type** |
+| Risk detections report | **ID Protection** > **Dashboard** > **Risk detection** | Detection type: **User Reported Suspicious Activity**<br>Risk level: **High**<br>Source **End user reported** |
+| Sign-in logs | **Entra ID** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied** |
+| Audit logs   | **Entra ID** > **Monitoring & health** > **Audit logs** | The suspicious activity appears under **Activity type** |
 
 >[!NOTE]
 >A user isn't reported as High Risk if they perform passwordless authentication.
@@ -123,7 +123,7 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 > Be sure to include the header row in your CSV file.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Go to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
+1. Go to **Entra ID** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
 
 Depending on the size of the CSV file, it might take a few minutes to process. Select **Refresh** to get the status. If there are any errors in the file, you can download a CSV file that lists them. The field names in the downloaded CSV file are different from those in the uploaded version.
 
@@ -181,7 +181,7 @@ The following table lists more numbers for different countries/regions.
 
 To configure your own caller ID number, complete the following steps:
 
-1. Go to **Protection** > **Multifactor authentication** > **Phone call settings**.
+1. Go to **Entra ID** > **Multifactor authentication** > **Phone call settings**.
 1. Set the **MFA caller ID number** to the number you want users to see on their phones. Only US-based numbers are allowed.
 1. Select **Save**.
 
@@ -238,7 +238,7 @@ You can use the following sample scripts to create your own custom messages. The
 
 To use your own custom messages, complete the following steps:
 
-1. Go to **Protection** > **Multifactor authentication** > **Phone call settings**.
+1. Go to **Entra ID** > **Multifactor authentication** > **Phone call settings**.
 1. Select **Add greeting**.
 1. Choose the **Type** of greeting, such as **Greeting (standard)** or  **Authentication successful**.
 1. Select the **Language**. See the previous section on [custom message language behavior](#custom-message-language-behavior).
@@ -249,7 +249,7 @@ To use your own custom messages, complete the following steps:
 
 Settings for app passwords, trusted IPs, verification options, and remembering multifactor authentication on trusted devices are available in the service settings. This is a legacy portal.
 
-You can access service settings from the [Microsoft Entra admin center](https://entra.microsoft.com) by going to **Protection** > **Multifactor authentication** > **Getting started** > **Configure** > **Additional cloud-based MFA settings**. A window or tab opens with additional service settings options.
+You can access service settings from the [Microsoft Entra admin center](https://entra.microsoft.com) by going to **Entra ID** > **Multifactor authentication** > **Getting started** > **Configure** > **Additional cloud-based MFA settings**. A window or tab opens with additional service settings options.
 
 ### Trusted IPs
 
@@ -289,7 +289,7 @@ Regardless of whether trusted IPs are defined, multifactor authentication is req
 You can use Conditional Access rules to define named locations by using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
 1. Select **New location**.
 1. Enter a name for the location.
 1. Select **Mark as trusted location**.
@@ -301,7 +301,7 @@ You can use Conditional Access rules to define named locations by using the foll
 To enable trusted IPs by using Conditional Access policies, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** >  **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
 1. Select **Configure multifactor authentication trusted IPs**.
 1. On the **Service Settings** page, under **Trusted IPs**, choose one of these options:
 
@@ -324,7 +324,7 @@ To enable trusted IPs by using Conditional Access policies, complete the followi
 If you don't want to use Conditional Access policies to enable trusted IPs, you can configure the service settings for Microsoft Entra multifactor authentication by using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Multifactor authentication** > **Additional cloud-based MFA settings**. 
+1. Browse to **Entra ID** > **Multifactor authentication** > **Additional cloud-based MFA settings**. 
 1. On the **Service settings** page, under **Trusted IPs**, choose one or both of the following options:
 
    * **For requests from federated users on my intranet**: To choose this option, select the checkbox. All federated users who sign in from the corporate network bypass multifactor authentication by using a claim that's issued by AD FS. Ensure that AD FS has a rule to add the intranet claim to the appropriate traffic. If the rule doesn't exist, create the following rule in AD FS:
@@ -361,7 +361,7 @@ For more information, see [What authentication and verification methods are avai
 To enable or disable verification methods, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **Per-user MFA**.
 1. Under **Multifactor authentication** at the top of the page, select **Service settings**.
 1. On the **Service settings** page, under **Verification options**, select or clear the appropriate checkboxes.
@@ -402,7 +402,7 @@ The feature reduces the number of authentications on web apps, which normally pr
 To enable and configure the option to allow users to remember their MFA status and bypass prompts, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **Per-user MFA**.
 1. Under **Multifactor authentication** at the top of the page, select **service settings**.
 1. On the **service settings** page, under **remember multifactor authentication**, select **Allow users to remember multifactor authentication on devices they trust**.

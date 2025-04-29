@@ -41,7 +41,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Contentstack into Microsoft Entra ID, you need to add Contentstack from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Contentstack** in the search box.
 1. Select **Contentstack** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -64,7 +64,7 @@ To configure and test Microsoft Entra SSO with Contentstack, perform the followi
 
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and browse to **Entra ID** > **Enterprise apps**.
 1. Now select **+ New Application** and search for Contentstack then select **Create**. Once created, now go to **Setup single sign on** or select the **Single sign-on** link from the left menu.
     
     ![Screenshot shows the new application creation.](./media/contentstack-tutorial/create.png "app creation")

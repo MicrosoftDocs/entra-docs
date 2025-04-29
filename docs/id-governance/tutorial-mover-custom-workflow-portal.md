@@ -58,7 +58,7 @@ Use the following steps to create a mover workflow for a user making a job chang
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Create workflow**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create workflow**.
 
 1. From the templates, select **Employee job profile change**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template.png" alt-text="Screenshot of selecting the employee job profile change template.":::

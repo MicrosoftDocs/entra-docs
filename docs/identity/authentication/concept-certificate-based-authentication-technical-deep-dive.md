@@ -145,7 +145,7 @@ For passwordless sign-in to work, users should disable legacy notification throu
    >[!IMPORTANT]
    >In the preceding configuration, make sure you chose **Passwordless** option. You need to change the **Authentication mode** for any groups added for PSI to **Passwordless**. If you choose **Any**, CBA and PSI don't work.
 
-1. Select **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
+1. Select **Entra ID** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/configure.png" alt-text="Screenshot of how to configure multifactor authentication settings.":::
 
