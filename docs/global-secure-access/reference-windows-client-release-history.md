@@ -3,12 +3,12 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 04/28/2025
+ms.date: 04/29/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
 ms.reviewer: lirazbarak
-
+ai-usage: ai-assisted
 
 ---
 # Global Secure Access client for Windows release notes
@@ -25,11 +25,11 @@ The current version of the Global Secure Access client is available to download 
 ## Version 2.18.62
 Released for download on April 29, 2025.
 ### Functional changes
-- Bug fix: Canonical name (CNAME) records are resolved as A records to resolve a Kerberos browser authentication issue.   
+- Bug fix: Canonical name (CNAME) records resolve as A records to fix a Kerberos browser authentication issue.   
 - The default client authentication is Web Account Manager (WAM).   
 ### Other changes
 - Bug fix: the client retries connecting to traffic profiles after they're removed from the portal.   
-- Bug fix: adds support for operating system names with non-ASCII characters (relevant for some non-English Windows versions).   
+- Bug fix: adds support for operating system names with non-ASCII characters, relevant for some non-English Windows versions.   
 - Added and improved health check tests.   
 - Improvements and bug fixes for Advanced diagnostics.   
 - Miscellaneous bug fixes and improvements.   
@@ -57,7 +57,7 @@ Released for download on November 26, 2024.
 ### Functional changes
 - Adds support for mTLS connections to Global Secure Access. 
 > [!NOTE]
-> The mTLS connection rolls out gradually to customers through the service in the cloud. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
+> The mTLS connection rolls out gradually to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
 - Adds support for restricting nonprivileged users from disabling and enabling the Global Secure Access client on their device.
 - Show health check tests when loading a log zip file to Advanced diagnostics.
 - Adds support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, the Global Secure Access client can be installed on the guest machine, on the host machine, or both. 
