@@ -5,7 +5,7 @@ description: Automation to detect, remediate, investigate, and analyze risk data
 ms.service: entra-id-protection
 
 ms.topic: overview
-ms.date: 02/28/2025
+ms.date: 04/29/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -86,7 +86,7 @@ ID Protection requires users to be assigned one or more of the following roles.
 
 ## License requirements
 
-[!INCLUDE [Active Directory P2 license](../includes/entra-p2-license.md)]
+[!INCLUDE [Active Directory P2 license](../includes/entra-p2-license.md)] The following table describes the key capabilities of Microsoft Entra ID Protection and the licensing requirements for each capability. Refer to the Microsoft Entra plans and pricing page for pricing details.
 
 | Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 / Microsoft Entra Suite |
 | --- | --- | --- | --- | --- |
@@ -99,9 +99,22 @@ ID Protection requires users to be assigned one or more of the following roles.
 | Notifications | Weekly digest | No | No | Yes | 
 | MFA registration policy | Require MFA (via Conditional Access) | No | No | Yes |
 
-More information on these rich reports can be found in the article, [How To: Investigate risk](howto-identity-protection-investigate-risk.md#navigating-the-reports).
+To view the **Risky workload identities** report and the **Workload identity detections** tab in the **Risk detections** report, you need Workload Identities Premium licensing. For more information, see [Securing workload identities](concept-workload-identity-risk.md).
 
-To use workload identity risk, including the **Risky workload identities** and **Workload identity detections** tab in the **Risk detections** panes in the admin center, you need Workload Identities Premium licensing. For more information, see the article [Securing workload identities](concept-workload-identity-risk.md).
+### Microsoft Defender
+
+Microsoft Entra ID Protection receives signals from the Microsoft Defender products for several risk detections, so you also need the appropriate license for the Microsoft Defender product that owns the signal you're interested in.
+
+| Risk detection | Microsoft Defender product | Required License |
+| --- | --- | --- |
+| Activity from anonymous IP address | Microsoft Defender for Cloud Apps | Microsoft 365 E5, EMS E5, or standalone license |
+| Impossible travel | Microsoft Defender for Cloud Apps | Microsoft 365 E5, EMS E5, or standalone license |
+| Mass access to sensitive files | Microsoft Defender for Cloud Apps | Microsoft 365 E5, EMS E5, or standalone license |
+| New country | Microsoft Defender for Cloud Apps | Microsoft 365 E5, EMS E5, or standalone license |
+| Suspicious inbox rules | Microsoft Defender for Office 365 | Microsoft 365 E5 or Office 365 E5 |
+| Attacker in the Middle | Microsoft 365 Defender Apps | Microsoft 365 E5 |
+| Possible attempt to access Primary Refresh Token | Microsoft Defender for Endpoint | Microsoft 365 E5 or standalone license |
+
 
 ## Next steps
 
