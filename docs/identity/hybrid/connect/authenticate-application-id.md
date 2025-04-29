@@ -124,7 +124,7 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
  - Use BYOC:
  
  > [!NOTE] 
- > The certificate SHA256Hash needs to be provided when registering the application. 
+ > The certificate SHA256Hash needs to be provided when registering the application. The hash can be generated using the [generation script.](#script-to-generate-the-sha256-hash-of-the-certificate) 
 
  ``` powershell
  Add-EntraApplicationRegistration -CertificateSHA256Hash &lt;CertificateSHA256Hash>
@@ -231,8 +231,26 @@ Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash and &lt;app
 
 You may rotate the certificate at any point in time, even if the current certificate is still not due for rotation or the current certificate has expired.
 
+## Script to Generate the SHA256 Hash of the Certificate
+``` powershell
+# Get raw data from X509Certificate cert
+$certRawDataString = $cert.GetRawCertData()
+
+# Compute SHA256Hash of certificate 
+$sha256 = [System.Security.Cryptography.SHA256]::Create()
+$hashBytes = $sha256.ComputeHash($certRawDataString)
+
+# Convert hash to bytes for PowerShell (Core) 7.1+:
+$certHash = [System.Convert]::ToHexString($hashBytes)
+
+# Convert hash to bytes for older PowerShell:
+$certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
+```
 ## Certificate revocation process
-The certificate revocation process allows Authentication Policy Administrators to revoke a previously issued certificate from being used for future authentication. The certificate revocation doesn't revoke already issued tokens of the user. For more information, see [Understanding the certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
+
+For self-signed certificates, either Entra Managed and BYOC, the customer must perform manual revocation by removing the keyCredential from the Entra third party application in the Entra portal or deleting the application entirely.
+
+For BYOC certificates issued by a certificate authority (CA) registered with Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
 
 ## Remove legacy service account using PowerShell
 Once you've transitioned to Application Based Authentication and Sync is working as expected, it's **strongly recommended** that you remove the legacy DSA username and password service account using PowerShell. If using a custom account that can't be removed, deprivilege it and remove the DSA role from it.
