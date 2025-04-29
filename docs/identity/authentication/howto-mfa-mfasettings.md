@@ -76,7 +76,7 @@ When a user reports an MFA prompt as suspicious, the event shows up in the sign-
 |--------------|--------|---------|
 | Risk detections report | **ID Protection** > **Dashboard** > **Risk detection** | Detection type: **User Reported Suspicious Activity**<br>Risk level: **High**<br>Source **End user reported** |
 | Sign-in logs | **Entra ID** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied** |
-| Audit logs   | **Entra ID** > **Monitoring & health** > **Audit logs** | The suspecious activity appears under **Activity type** |
+| Audit logs   | **Entra ID** > **Monitoring & health** > **Audit logs** | The suspicious activity appears under **Activity type** |
 
 >[!NOTE]
 >A user isn't reported as High Risk if they perform passwordless authentication.
