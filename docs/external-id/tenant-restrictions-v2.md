@@ -674,7 +674,7 @@ Use Microsoft Graph to get policy information:
 ## Known limitation
 Tenant Restrictions v2 is supported on all clouds however TRv2 is not enforced with request going across cross clouds. 
 
-Tenant Restrictions v2 will not work with [macOS Platform signle sign-on (PSSO)](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy or Windows GPO. Customers with TRv2 and PSSO should use Universal TRv2 with GSA client signaling. This is an Apple limitation where PSSO is not compatible with tenant restrictions when headers are injected by an intermediary network solution like proxy or Windows GPO that uses a certificate trust chain outside of Apple system root certificates.
+Tenant Restrictions v2 will not work with [macOS Platform signle sign-on (PSSO)](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers with TRv2 and PSSO should use Universal TRv2 with GSA client signaling. This is an Apple limitation where PSSO is not compatible with tenant restrictions when headers are injected by an intermediary network solution like proxy that uses a certificate trust chain outside of Apple system root certificates.
 
 ## Next steps
 
