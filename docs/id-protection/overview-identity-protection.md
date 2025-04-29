@@ -76,18 +76,17 @@ Organizations might store data for longer periods by changing the diagnostic set
 ID Protection requires users to be assigned one or more of the following roles.
 
 | Role | Can do | Can't do |
-| --- | --- | --- |
-| [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) | Read-only access to ID Protection |   |
-| [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) | Reset user passwords |   |
-| [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) | View all ID Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
-| [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) | View all ID Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
-| [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) | Full access to ID Protection | Reset password for a user |
-
-The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
+| ---  | ---    | ---      |
+| [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) | Read-only access to ID Protection | Write access to ID Protection |
+| [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) | Reset user passwords | Read or write to ID Protection |
+| [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) | Create policies that factor in user or sign-in risk as a condition | Read or write to legacy ID Protection policies |
+| [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) | View all ID Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
+| [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) | View all ID Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
+| [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) | Full access to ID Protection | Reset password for a user |
 
 ## License requirements
 
-[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
+[!INCLUDE [Active Directory P2 license](../includes/entra-p2-license.md)]
 
 | Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 / Microsoft Entra Suite |
 | --- | --- | --- | --- | --- |
