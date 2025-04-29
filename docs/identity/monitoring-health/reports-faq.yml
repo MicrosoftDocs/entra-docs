@@ -8,7 +8,7 @@ metadata:
   ms.service: entra-id
   ms.topic: faq
   ms.subservice: monitoring-health
-  ms.date: 04/28/2025
+  ms.date: 04/29/2025
   ms.author: sarahlipsey
   ms.reviewer: egreenberg14
 
@@ -65,7 +65,7 @@ sections:
           Depending on your license, Microsoft Entra ID stores activity logs for between 7 and 30 days. For more information, see [Microsoft Entra report retention policies](reference-reports-data-retention.md).
   
       - question: |
-          Why do I see "Not found" when I select **View sign-in activity** from the **Usage and Insights** report?
+          Why do I see "Not found" when I select an app from the **Usage and Insights** report?
         answer: |
           The **Usage and Insights** report now includes service-to-service authentication for Microsoft Cloud Services applications. If an application appears in this list, it likely means that it authenticated to or from an application that is homed in your tenant. But the application in the list is not homed in your tenant, only an instance of it appears in the report to show the authentication.
 
