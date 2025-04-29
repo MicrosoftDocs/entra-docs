@@ -103,7 +103,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |userName|String|&check;|&check;
     |emails[type eq "work"].value|String|&check;|&check;
     |active|Boolean||&check;
-    |roles[primary eq "True"].value|String||&check;
     |displayName|String||&check;
     |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||&check;
 
