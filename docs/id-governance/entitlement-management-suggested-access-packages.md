@@ -25,7 +25,7 @@ Follow these steps to enable suggested access packages in My Access.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Settings**.
+1. Browse to **ID Governance** > **Entitlement management** > **Settings**.
 
 1. Select **Edit**.
 

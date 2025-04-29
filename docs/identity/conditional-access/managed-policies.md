@@ -27,7 +27,7 @@ As part of this work, we're making Microsoft-managed policies available in Micro
 
 ## How Microsoft-managed policies work
 
-Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
+Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access** > **Policies**.
 
 You can edit the state of a policy and what identities the policy should exclude. Exclude your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
 
@@ -160,7 +160,7 @@ Review the **Policy impact** tab of the managed policy to see a summary of how t
 Analyze the **Microsoft Entra sign-in logs** to see details about how the policies affect sign-in activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Use some or all of the following filters:
    - **Correlation ID** when you have a specific event to investigate.
    - **Conditional Access** to see policy failure and success.

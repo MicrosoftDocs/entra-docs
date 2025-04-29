@@ -62,7 +62,7 @@ Alternatively, you can use the [Enterprise App Configuration Wizard](https://por
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Document360** application integration page, find the **Manage** section and select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Document360** application integration page, find the **Manage** section and select **single sign-on**.
 2. On the **Select a single sign-on method** page, select **SAML**.
 3. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

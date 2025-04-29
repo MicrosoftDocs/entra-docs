@@ -115,7 +115,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Configure notifications | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | [Configure settings](../hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
 > | Configure sync notifications | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
-> | Read ADFS security reports | [Security Reader](/azure/role-based-access-control/built-in-roles#security-reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner)
+> | Read ADFS security reports | [Security Reader](/azure/role-based-access-control/built-in-roles#security-reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Read all configuration | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Read sync errors | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Read sync services | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
@@ -405,7 +405,7 @@ Here are the least privileged roles you should use when performing tasks for [au
 > | Enable or disable authentication methods | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | View, provision on behalf of, and manage individual user authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
 > | Configure password protection | [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Configure smart lockout | [Security Administrator](permissions-reference.md#security-administrator) |
+> | Configure smart lockout | [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 
 ## Security - Conditional Access least privileged roles

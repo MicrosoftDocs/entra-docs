@@ -49,7 +49,7 @@ We recommend you securely store the test usernames and passwords as [secrets](/a
 Create some test users in your tenant for testing. Since the test users are not actual humans, we recommend you assign complex passwords and securely store these passwords as [secrets](/azure/key-vault/secrets/about-secrets) in Azure Key Vault.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** and create one or more test user accounts in your directory.
 1. The example test later in this article uses a single test user.  [Add the test username and password as secrets](/azure/key-vault/secrets/quick-create-portal) in the key vault you created previously. Add the username as a secret named "TestUserName" and the password as a secret named "TestPassword".
 
@@ -106,8 +106,8 @@ Your tenant likely has a Conditional Access policy that [requires multifactor au
 
 To exclude user accounts:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).   
-1. Browse to **Identity** > **Security Center** in the left navigation pane and then select **Conditional Access**.
-1. In **Policies**, select the Conditional Access policy that requires MFA.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select the Conditional Access policy that requires MFA.
 1. Select **Users or workload identities**.
 1. Select the **Exclude** tab and then the **Users and groups** checkbox.
 1. Select the user account(s) to exclude in **Select excluded users**.

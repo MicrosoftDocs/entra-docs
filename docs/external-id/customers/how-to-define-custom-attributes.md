@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 05/15/2024
+ms.date: 04/28/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -34,7 +34,7 @@ Learn more about custom user attributes in [User profile attributes](concept-use
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Identity** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External Identities** > **Overview**.
 
 1. Select **Custom user attributes**. The list contains all user attributes available in the tenant, including any custom user attributes that have been created. The **Attribute type** column indicates whether an attribute is built-in or custom.
 
@@ -56,7 +56,7 @@ Follow these steps to add custom user attributes to a user flow you've already c
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select the user flow from the list.
 
@@ -72,7 +72,7 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. From the list, select your user flow.
 
@@ -180,7 +180,7 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 Use these steps to find the application ID for the extensions app:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **App registrations** > **All applications**.
+1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. Select the application **b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.**
 1. On the **Overview** page, use the **Application (client) ID** value, for example: `12345678-abcd-1234-1234-ab123456789`, but remove the hyphens.
 

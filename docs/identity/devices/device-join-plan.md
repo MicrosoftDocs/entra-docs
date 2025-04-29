@@ -214,7 +214,7 @@ Choose your deployment approach or approaches by reviewing the previous table an
 
 ## Configure your device settings
 
-The [Microsoft Entra admin center](https://entra.microsoft.com) allows you to control the deployment of Microsoft Entra joined devices in your organization. To configure the related settings, browse to **Identity** > **Devices** > **All devices** > **Device settings**. [Learn more](manage-device-identities.md)
+The [Microsoft Entra admin center](https://entra.microsoft.com) allows you to control the deployment of Microsoft Entra joined devices in your organization. To configure the related settings, browse to **Entra ID** > **Devices** > **All devices** > **Device settings**. [Learn more](manage-device-identities.md)
 
 <a name='users-may-join-devices-to-azure-ad'></a>
 

@@ -127,7 +127,7 @@ If you have users in Active Directory and are using Microsoft Entra Connect clou
 Use the steps below to autodiscover these attributes and set up a corresponding mapping to Microsoft Entra ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
+1. Browse to **Entra ID** > **Entra Connect** > **Cloud sync**.
 1. Select the configuration you wish to add the extension attribute and mapping.
 1. Under **Manage attributes** select **click to edit mappings**.
 1. Select **Add attribute mapping**. The attributes are automatically be discovered.

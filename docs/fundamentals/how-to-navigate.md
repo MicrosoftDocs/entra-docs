@@ -55,7 +55,7 @@ There are many ways to find features and several portals you can use, including 
 
 In our documentation, we primarily focus on the Microsoft Entra admin center and the shortest route to features. We guide users to features using a left to right navigation method like the following example:
 
-- Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+- Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 :::image type="content" source="media/how-to-navigate/navigation-example.png" alt-text="Screenshot showing an example of how to navigate using the steps found in an article.":::
 
