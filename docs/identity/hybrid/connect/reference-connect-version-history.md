@@ -105,7 +105,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 04/29/2025: Released for download via the Microsoft Entra Admin center.
 
 ### Added Features
-- Modern Authentication enabled allowing customers to configure application-based authentication for enhanced security
+- Modern Authentication enabled allowing customers to configure application-based authentication for enhanced securit (Public Preview).
 
 ### Updated Features
 - Upgraded the bundled health agent to version 4.5.2520.0
