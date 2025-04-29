@@ -36,6 +36,7 @@ Microsoft recommends the Entra Connect certificate management option as we manag
 
 In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](../../../identity-platform/howto-create-service-principal-portal.md)
 
+The application and service princial need to be created in Entra using MSGraph with the certificate credential and the AdminWebService and SSPR (if necessary) permissions
 
 ## Bring Your Own Certificate (BYOC) 
 
@@ -208,9 +209,12 @@ If in BYOC mode, the new certificate SHA256Hash must be provided.
  ``` powershell
  Invoke-ADSyncApplicationCredentialRotation -CertificateSHA256Hash <CertificateSHA256Hash>
  ```
+If in BYOA mode, the new certificate SHA256Hash and the Application Id must be provided
 
-Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
-
+``` powershell
+ Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash> –ApplicationAppId <appId>
+```
+Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash and &lt;appId&gt; with the Id of the application created in Entra
 
 3. Get the current authentication and confirm it has the Connector Identity Type as **Application**. Use the following PowerShell cmdlet to verify the current authentication.
  
