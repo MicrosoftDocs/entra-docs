@@ -580,6 +580,14 @@ administrator does not allow access to 'tenant'.
 
 - Enable client signaling using Windows GPO. You need to check 'Enable firewall protection on MIcrosoft endpoints' and WDAC enablement. See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell).     
 
+## Tenant Restrictions with Microsoft Enterprise SSO plug-in for Apple devices
+
+The Microsoft Enterprise SSO plug-in for Apple devices provides single sign-on (SSO) for Microsoft Entra accounts on macOS, iOS, and iPadOS across all applications that support Apple's enterprise single sign-on feature. To use the Microsoft Enterprise SSO plug-in for Apple devices certain URLs need to be excluded from network proxies, interception, and other enterprise systems.
+
+If your organization use Apple OS versions released after 2022, there is no need to exclude Microsoft login URLs from TLS interspection. Customers using Tenant Restriction feature can do TLS inspection on Microsoft login URLs and add the necessary headers on the request. More information at [Apple SSO](/entra/identity-platform/apple-sso-plugin#requirements)
+
+Customers can [validate Networking Configuration on macOS device](/entra/identity/devices/troubleshoot-mac-sso-extension-plugin?tabs=flowchart-ios#validate-networking-configuration-on-macos-device) to make sure SSO configuration is not broken due to TLS inspection.
+
 ## Sign-in logs
 
 Microsoft Entra sign-in logs let you view details about sign-ins with a tenant restrictions v2 policy in place. When a B2B user signs into a resource tenant to collaborate, a sign-in log is generated in both the home tenant and the resource tenant. These logs include information such as the application being used, email addresses, tenant name, and tenant ID for both the home tenant and the resource tenant. The following example shows a successful sign-in:
@@ -665,6 +673,8 @@ Use Microsoft Graph to get policy information:
 
 ## Known limitation
 Tenant Restrictions v2 is supported on all clouds however TRv2 is not enforced with request going across cross clouds. 
+
+Tenant Restrictions v2 will not work with [macOS Platform signle sign-on (PSSO)](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers should use either Windows GPO or Universal TRv2 with GSA client signaling. This is an Apple limitation where PSSO is not compatible with tenant restrictions when headers are injected by an intermediary network solution like proxy that uses a certificate trust chain outside of Apple system root certificates.
 
 ## Next steps
 

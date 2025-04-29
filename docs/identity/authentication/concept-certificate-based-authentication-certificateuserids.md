@@ -145,6 +145,13 @@ Get-EntraUserCertificateUserIdsFromCertificate
  `[[-Certificate] <System.Security.Cryptography.X509Certificates.X509Certificate2> [-CertificateMapping] <string>]`
  `[<CommonParameters>]`
 
+If the values from the certificate are too long, you can send the output to a file and copy from there.
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All'
+Get-EntraUserCertificateUserIdsFromCertificate -Path C:\Downloads\test.pem | Format-List | Out-File -FilePath ".\certificateUserIds.txt"
+```
+
 **Example 1: Retrieve certificate object from a certificate path**
 
 ```powershell
