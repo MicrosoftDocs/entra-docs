@@ -6,7 +6,7 @@ ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 04/25/2025
 ms.author: justinha
-author: najshahid
+author: justinha
 manager: femila
 ms.reviewer: nashahid, gkinasewitz
 
