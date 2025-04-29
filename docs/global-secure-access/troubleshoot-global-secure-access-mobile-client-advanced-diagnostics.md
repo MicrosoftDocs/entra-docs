@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostic
 description: Discover how to use advanced diagnostics to resolve issues with the Global Secure Access mobile client for Android and iOS.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 04/21/2025
+ms.date: 04/29/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
@@ -25,9 +25,9 @@ The **Services** section shows the active services running in the traffic forwar
 :::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/services-section.png" alt-text="Screenshot of the Services section in the Global Secure Access mobile client.":::
 
 ## Troubleshooting section      
-The Troubleshooting section enables users to troubleshoot and share information with the administrator. To enable the **Troubleshooting** section:
+The Troubleshooting section enables users to troubleshoot and share information with the administrator. To view the **Troubleshooting** section:
 1. Open the Microsoft Defender app and select the **Global Secure Access client** tile.   
-1. Tap the **Global Secure Access** icon five times.   
+1. Select the **Troubleshooting** section to open it.   
 
 In addition to **Get latest policy** and **Clear cached data**, users can also [collect and send logs](#collect-and-send-logs) and [run advanced diagnostics](#advanced-diagnostics).    
 
@@ -69,4 +69,4 @@ To download the captured traffic to share with Microsoft Support, select **DOWNL
 :::image type="content" source="media/troubleshoot-global-secure-access-mobile-client-advanced-diagnostics/network-host-name.png" alt-text="Screenshot of Network and hostname traffic view showing a list of sample network traffic."::: 
 
 ## Related content
-* [Troubleshoot the Global Secure Access Client for Windows: Advance Diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md)
+* [Troubleshoot the Global Secure Access Client for Windows: Advanced Diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md)
