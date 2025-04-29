@@ -143,7 +143,7 @@ With the Azure logic app given the access package assignment manager role, you m
 1. On the **HTTP** screen under Parameters, enter the following parameters:
     URI: https://graph.microsoft.com/beta@{triggerBody()?['CallbackUriPath']}
     Method: POST
-    Body: Your own custom logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard). 
+    Body: Your own custom logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard). For an example of the body action see: [](entitlement-management-dynamic-approval.md)
     Authentication Type: Managed identity
     Managed Identity: System-assigned managed identity
     Audience: https://graph.microsoft.com
@@ -151,8 +151,60 @@ With the Azure logic app given the access package assignment manager role, you m
     :::image type="content" source="media/entitlement-management-dynamic-approval/disable-asynchronous-pattern.png" alt-text="Screenshot of disabling asynchronous pattern in a logic app http call.":::
 1. After you have made changes to the HTTP trigger, select **Save** on the logic app. 
 
+## Verify the extension worked
 
+To verify whether or not the custom extension works, you can request access to the access package, and view the request details via **Requests** on the access package page by doing the following the steps:
 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, the Access package manager, and the Access package assignment manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
+
+1. On the Access packages page, open the access package you want to view requests of.
+
+1. Select **Requests**.
+
+1. On the requests page, select the request you want to view details of and confirm that the access package was successfully delivered.
+    :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-request-details.png" alt-text="viewing the details of the request for the access package.":::
+    
+
+## HTTP body example
+
+The following example of an action that can be placed in the HTTP body is a logic app that identifies the primary approver. [You'll have to pass your own variables](/azure/logic-apps/logic-apps-create-variables-store-values?tabs=consumption) into this code where prompted:
+
+```
+{
+  "data": {
+    "@@odata.type": "microsoft.graph.assignmentRequestApprovalStageCallbackData",
+    "approvalStage": {
+      "durationBeforeAutomaticDenial": "P2D",
+      "escalationApprovers": [],
+      "fallbackEscalationApprovers": [],
+      "fallbackPrimaryApprovers": [],
+      "isApproverJustificationRequired": false,
+      "isEscalationEnabled": false,
+      "primaryApprovers": [
+        {
+          "@@odata.type": "#microsoft.graph.singleUser",
+          "description": "This is the dynamically assigned variable.",
+          "id": "<Dynamically assigned variable>",
+          "isBackup": false
+        }
+      ]
+    },
+    "customExtensionStageInstanceDetail": "A approval stage from Logic Apps",
+    "customExtensionStageInstanceId": "@{triggerBody()?['CustomExtensionStageInstanceId']}",
+    "stage": "assignmentRequestDeterminingApprovalRequirements"
+  },
+  "source": "Entra",
+  "type": "microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestCreated"
+}
+```
+
+Although the example uses a user ID, the primaryApprovers and escalationApprovers section can contain any valid [subjectSet](/graph/api/resources/subjectset). The approval section of the code must follow the parameters as shown here: [accessPackageApprovalStage](/graph/api/resources/accesspackageapprovalstage).
+
+> [!NOTE]
+> While the Logic App is being called against the Beta version of the API, the parameters are using the v1.0 endpoint.
 
 ## Related content
 
