@@ -20,6 +20,7 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 This article helps you keep track of the versions that have released and the changes in those versions.
 
 ### Breaking Change on Entra Connect Sync
+
 >[!IMPORTANT]
 > New Micrsoft Entra Connect Sync Versions will only be available via the Microsoft Entra admin center 
 >
@@ -72,7 +73,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
-|[2.4.131.0](#241310)||
+|[2.4.131.0](#241310)|30 April 2026|(12 months after release of x.x.xxx.x)
 
 **All other versions are not supported**
 
@@ -96,6 +97,19 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+
+## x.x.xxx.x
+
+### Release status
+
+04/29/2025: Released for download via the Microsoft Entra Admin center.
+
+### Added Features
+- Modern Authentication enabled allowing customers to configure application-based authentication for enhanced security
+
+### Updated Features
+- Upgraded the bundled health agent to version 4.5.2520.0
+- Moved from download center to azure portal for downloads
 
 ## 2.4.131.0
 
