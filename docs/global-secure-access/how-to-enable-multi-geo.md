@@ -53,8 +53,24 @@ To enable the multi-Geo capability for Microsoft Entra Private Access, complete 
 
 > [!NOTE]
 > - Multi-Geo connectors aren't available through Quick Access. Multi-Geo supports only private enterprise apps.   
-> - Multi-Geo doesn't support the Domain Name System (DNS) experience.   
+> - Multi-Geo doesn't support the Domain Name System (DNS) experience.
+> - Mulit-Geo doesn't support Japan region selection through Entra admin center.   
 
+## Enable multi-Geo capability for Japan region
+To select Japan as **country/region** for the connector group, use Microsoft Graph APIs. Connector group UI expereince through Entra Portal does not support Japan region yet. Instructions are listed below: 
+- Open Microsoft [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) and login with the tenant account.
+- Create [Connector Group](https://learn.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-beta&tabs=http) using Graph API. Use 'region' property to assign the region to 'japan'.  E.g., Run the POST request below with region set to "japan" to create a connector group assigned to Japan.
+
+### Example HTTP Request
+```http
+POST https://graph.microsoft.com/beta/onPremisesPublishingProfiles/applicationProxy/connectorGroups
+Content-type: application/json
+
+{
+  "name": "<Connector Group Name>"
+  "region: "japan"
+}
+```
 ## Related content
 
 * [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md)
