@@ -129,7 +129,7 @@ The migration states you might consider using are as follows:
 | Migration states       | Action plan                                   |
 | ---------------------- | --------------------------------------------- |
 | **Initial Request** | Find the app and contact the owner for more information |
-| **Assessment Complete** | App owner evaluates the app requirements and returns the app questionnaire</td>
+| **Assessment Complete** | App owner evaluates the app requirements and returns the app questionnaire</td> |
 | **Configuration in Progress** | Develop the changes necessary to manage authentication against Microsoft Entra ID |
 | **Test Configuration Successful** | Evaluate the changes and authenticate the app against the test Microsoft Entra tenant in the test environment |
 | **Production Configuration Successful** | Change the configurations to work against the production AD tenant and assess the app authentication in the test environment |
