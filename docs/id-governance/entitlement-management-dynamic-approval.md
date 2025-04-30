@@ -67,7 +67,7 @@ Once you've created the custom extension and logic app, you can reference the cu
 Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**.
 :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
 
-## Set logic apps assigned identity and assign its role
+## Set logic app assigned identity and assign its role
 
 With the Azure logic app created, you must enable its system assigned identity, and give it the proper role by doing the following steps:
 
@@ -86,7 +86,7 @@ With the Azure logic app created, you must enable its system assigned identity, 
     :::image type="content" source="media/entitlement-management-dynamic-approval/add-logic-app-role.png" alt-text="Screenshot of adding logic app as access package assignment manager for a catalog.":::
   
 
-## Configure the Azure Logic App and corresponding business logic
+## Configure the logic app and corresponding business logic
 
 With the Azure Logic App given the access package assignment manager role for the catalog, you must now go to logic app to edit it to communicate with Microsoft Entra and add your business logic. To do this, you'd do the following steps:
 
