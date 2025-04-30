@@ -34,7 +34,7 @@ Microsoft recommends the Entra Connect certificate management option as we manag
 
  ## Bring Your Own Application (BYOA) 
 
-In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa)
+In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](https://learn.microsoft.com/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa)
 
 ## Bring Your Own Certificate (BYOC) 
 
@@ -81,7 +81,7 @@ For upgrades, you can select the **Configure application based authentication to
 
  :::image type="content" source="media/authenticate-application-id/auth-3.png" alt-text="Screenshot of configuring application based authentication." lightbox="media/authenticate-application-id/auth-3.png":::
 
- If you didn't select the box during upgrade, you are shown the following recommendation once installation completes.
+ If you didn't select the box during upgrade, you're shown the following recommendation once installation completes.
 
  :::image type="content" source="media/authenticate-application-id/auth-5.png" alt-text="Screenshot of recommendation." lightbox="media/authenticate-application-id/auth-5.png":::
 
@@ -130,7 +130,7 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
 Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
 
 - Use BYOA
-[Register a Microsoft Entra app and create a service principal.](graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id) . Note the application Id as it will be necessary in the next section.
+[Register a Microsoft Entra app and create a service principal.](https://learn.microsoft.com/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id) . Note the application Id as it will be necessary in the next section.
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
@@ -183,7 +183,7 @@ Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash and &lt;app
  ## On-Demand Certificate Rotation 
 Microsoft Entra Connect warns if the certificate rotation is due. That is, expiring in less than or equal to 150 days. It emits an error if certificate is already expired. These warnings (Event ID 1011) and errors (Event ID 1012) can be found in the Application event log. This message is emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
 
-If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance is disabled. Entra Connect Sync will add the new certificate credential to the application and try to remove the old certificate credential. If it fails to remove the old certificate credential you will see an error event in Application logs in event viewer. If you see such an error, you can run the following in Powershell to clean up the old certificate credential from Entra. The cmdlet takes the CertificateId of the certificate that needs to be removed which can be gotten from the log or Entra portal.
+If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance is disabled. Entra Connect Sync will add the new certificate credential to the application and try to remove the old certificate credential. If it fails to remove the old certificate credential you'll see an error event in Application logs in event viewer. If you see such an error, you can run the following in PowerShell to clean up the old certificate credential from Entra. The cmdlet takes the CertificateId of the certificate that needs to be removed which can be gotten from the log or Microsoft Entra admin center.
  ``` powershell
 Remove-EntraApplicationKey -CertificateId <certificateId>
  ```
@@ -276,7 +276,7 @@ $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 
 ## Certificate revocation process
 
-For self-signed certificates, either Entra Managed and BYOC, the customer must perform manual revocation by removing the keyCredential from the Entra third party application in the Entra portal or deleting the application entirely.
+For self-signed certificates, either Entra Managed and BYOC, the customer must perform manual revocation by removing the keyCredential from the Entra third party application in the Microsoft Entra admin center or deleting the application entirely.
 
 For BYOC certificates issued by a certificate authority (CA) registered with Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
 
@@ -290,7 +290,7 @@ Use the following steps to remove the legacy service account.
  ``` powershell 
  $HACredential
  ```
- 2. You are prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password. Enter the username and password.
+ 2. You're prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password. Enter the username and password.
 
  3. Next, add the service account.
 
@@ -311,7 +311,7 @@ If you want to go back to the legacy service account, you have the option to rev
  ``` powershell
  Set-ADSyncScheduler -SyncCycleEnabled $false
  ```
-2. Add the service account. You are prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password. Enter the credentials.
+2. Add the service account. You're prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password. Enter the credentials.
 
  ``` powershell
 Add-ADSyncAADServiceAccount
