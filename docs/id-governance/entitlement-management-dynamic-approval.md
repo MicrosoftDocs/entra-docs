@@ -9,11 +9,11 @@ ms.subservice: entitlement-management
 ms.topic: how-to 
 ms.date: 04/12/2025
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? > .
+#CustomerIntent: As an IT admin, I want to create custom extensions so that I can determine approvers externally .
 ---
 
 
-# Create a custom extension to externally determine the approval requirements for an entitlement management access package.
+# Create a custom extension to externally determine the approval requirements for an entitlement management access package
 
 In entitlement management, approvers for requests for access packages can either be directly assigned, or determined dynamically based on attributes. While entitlement management natively supports dynamic approval options such as the requestor's manager, second-level manager, sponsor from a connected organization, or the requestor, these options don't cover all scenarios. With [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview), you're able to determine approvals for access packages through an external system. This allows a look up to find up to date information across different attributes when a request for an access package is made.
 
@@ -165,8 +165,5 @@ Although the example uses a user ID, the primaryApprovers and escalationApprover
 
 ## Related content
 
+- [Trigger Logic Apps with custom extensions in entitlement management](entitlement-management-logic-apps-integration.md)
 - [Tutorial: Integrating Microsoft Entra Entitlement Management with Microsoft Teams using Custom Extensibility and Logic Apps](entitlement-management-custom-teams-extension.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
