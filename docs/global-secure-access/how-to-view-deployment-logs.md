@@ -6,7 +6,7 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: how-to
-ms.date: 04/25/2025
+ms.date: 04/30/2025
 ms.service: global-secure-access
 ms.custom:
   - ai-gen-docs-bap
@@ -35,7 +35,8 @@ To access deployment logs:
 1. Navigate to **Global Secure Access** > **Monitor** > **Deployment logs**.
 1. Use filters to narrow results based on activity type, status, or other fields.
 
-Deployment logs can also be accessed when a change is made to the configuration of GSA. A notification shows up at the top right corner of the page when making a configuration change. Click the notification to see the progress of the deployment. 
+Deployment logs can also be accessed when a change is made to the configuration of Global Secure Access. A notification shows up at the top right corner of the page when making a configuration change. Click the notification to see the progress of the deployment.
+
 ![image](https://github.com/user-attachments/assets/e118dc03-97dd-45d9-8fb7-1459ac99485a)
 
 ### Filter options
