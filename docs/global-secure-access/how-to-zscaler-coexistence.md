@@ -247,7 +247,7 @@ Test traffic flow:
 1. Validate traffic related to these sites is present in Zscaler logs.
 1. Access your private application set up in Zscaler Private Access. For example, open an RDP session to a private server.
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**.
-1. Validate traffic related to the RDP session isn’t in the Global Secure Access traffic logs
+1. Validate traffic related to the RDP session **isn’t** in the Global Secure Access traffic logs
 1. Sign in to Zscaler Private Access (ZPA) admin portal and browse to **Analytics** > **Diagnostics** > **Logs**. Validate traffic related to the RDP session is present in the Dashboard or Diagnostic logs.
 1. Access Outlook Online (`outlook.com`, `outlook.office.com`, `outlook.office365.com`), SharePoint Online (`<yourtenantdomain>.sharepoint.com`).  
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
