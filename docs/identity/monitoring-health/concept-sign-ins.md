@@ -18,7 +18,7 @@ Microsoft Entra logs all sign-ins into a Microsoft Entra tenant, which includes 
 
 Reviewing sign-in errors and patterns provides valuable insight into how your users access applications and services. The sign-in logs provided by Microsoft Entra ID are a powerful type of [activity log](overview-monitoring-health.md) that you can analyze. This article describes several key aspects of the sign-in logs.
 
-Two other activity logs are also available to help monitor the health of your tenant:
+Three other activity logs are also available to help monitor the health of your tenant:
 
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant, such as users and group management or updates applied to your tenant’s resources.
 - **[Sign-ups (preview)](concept-sign-ups.md)** - For [external tenants](../../external-id/tenant-configurations.md) only, information about all self-service sign-up attempts, including successful sign-ups and failed attempts.

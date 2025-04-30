@@ -88,7 +88,7 @@ Try using the following queries for sign-in activity:
 
 Try using the following queries for sign-up activity in your [external tenant](../../external-id/tenant-configurations.md):
 
-- To find sign-up attempts that failed during user object creation:
+- To find sign-up attempts that failed or were interrupted during a specific step, such as user object creation:
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode ne 0 and signUpStage eq 'userCreation'`
 
 - To find sign-up attempts that failed during email validation:
