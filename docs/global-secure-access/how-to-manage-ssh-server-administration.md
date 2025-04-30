@@ -64,7 +64,7 @@ Assign users and groups to the application.
 4. Select **Users and groups**.
 5. Add users and groups that require access.
 
-Create [Microsoft Entra Conditional Access](/identity/conditional-access/overview) policy for the application and configure policies for app access at the application level. You can create and apply policy in two places: 
+Create [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) policy for the application and configure policies for app access at the application level. You can create and apply policy in two places: 
 
 1. Browse to **Global Secure Access**.
 2. Select **Applications**, then select **Enterprise application**.
