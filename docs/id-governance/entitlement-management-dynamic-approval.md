@@ -35,19 +35,19 @@ To create a custom extension, and its underlying Azure Logic App, you'd do the f
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
-1. On the Catalogs overview screen, select an existing catalog where your custom extension will be located, or create a new catalog.
+1. On the Catalogs overview page, select an existing catalog where your custom extension will be located, or create a new catalog.
 
-1. On the specific catalog screen where you want to create your custom extension, select **Custom extensions**.
-    :::image type="content" source="media/entitlement-management-dynamic-approval/extensibility-catalog-screen.png" alt-text="Screenshot of catalog screen where custom extension is being added.":::
+1. On the specific catalog page where you want to create your custom extension, select **Custom extensions**.
+    :::image type="content" source="media/entitlement-management-dynamic-approval/extensibility-catalog-screen.png" alt-text="Screenshot of catalog page where custom extension is being added.":::
 1. Select **Add a custom extension** and add a name and description for the custom extension. When finished, select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-basics.png" alt-text="Screenshot of custom extension basics.":::
-1. On the **Extension Type** screen, select **Request workflow (triggered when an access package is request, approved, granted, or removed)** and select **Next**.
+1. On the **Extension Type** page, select **Request workflow (triggered when an access package is request, approved, granted, or removed)** and select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extension-type.png" alt-text="Screenshot of selecting the extension type for a custom extension.":::
-1. On the **Extension Configuration** screen, for Behavior select **Launch and wait**, for Response data select **Approval Stage (Preview)**, and then select **Next**.
+1. On the **Extension Configuration** page, for Behavior select **Launch and wait**, for Response data select **Approval Stage (Preview)**, and then select **Next**.
 
-1. On the **Details** screen, choose a subscription, resource group, and name for the logic App being created. Once you've entered this information, select **Create a logic app**. Once the logic app is created, select **Next**.
+1. On the **Details** page, choose a subscription, resource group, and name for the logic App being created. Once you've entered this information, select **Create a logic app**. Once the logic app is created, select **Next**.
 
-1. On the **Review + create** screen, make sure all your details are correct, then select **Create**. 
+1. On the **Review + create** page, make sure all your details are correct, then select **Create**. 
 
 
 ## Reference the custom extension in an access package assignment policy
@@ -56,11 +56,11 @@ Once you've created the custom extension and logic app, you can reference the cu
 
 1. Select the catalog where the custom extension was created.
 
-1. On the catalog screen, select **Access packages**, and select the access package for the policy you want to update.
+1. On the catalog page, select **Access packages**, and select the access package for the policy you want to update.
 
 1. On the access package overview page, select **Policies**, and select the policy to edit.
     :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-policies-list.png" alt-text="Screenshot of the policies list for an access package.":::
-1.  On the **Edit policy** screen under **Requests**, set the **Require approval** box to yes, and you're able to add your custom extension as an approver. The example here shows the custom extension being used as the first approver.
+1.  On the **Edit policy** page under **Requests**, set the **Require approval** box to yes, and you're able to add your custom extension as an approver. The example here shows the custom extension being used as the first approver.
   :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approver.png" alt-text="Screenshot of the custom extension as first approver in access package policy.":::  
 1. Select **Update**.
 
