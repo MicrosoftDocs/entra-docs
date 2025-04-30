@@ -21,9 +21,9 @@ The objective of this article is to show the steps required to perform in Salesf
 
 The scenario outlined in this article assumes that you already have the following items:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Salesforce.com tenant.
-* A Salesforce account username and password and the token. In future, if you reset the account password, Salesforce provides you with a new token and you need to edit the Salesforce provisioning settings.
+* A Salesforce account username and password, and the token. See [configure automatic user account provisioning](#configure-automatic-user-account-provisioning) for how to get the token. In future, if you reset the account password, Salesforce provides you with a new token and you need to edit the Salesforce provisioning settings.
 * A custom user profile in Salesforce for the integration user. Once you have created a custom profile in the Salesforce portal, edit the profile's Administrative Permissions to enable the following:
 
     * API Enabled.
@@ -31,10 +31,10 @@ The scenario outlined in this article assumes that you already have the followin
     * Manage Users: Enabling this option automatically enables the following: 
     Assign Permission Sets, Manage Internal UsersManage IP Addresses, Manage Login Access Policies, Manage Password Policies, Manage Profiles and Permission Sets, Manage Roles, Manage Sharing, Reset User Passwords and Unlock Users, View All Users, View Roles and Hierarchy, View Setup and Configuration.
 
-See also Salesforce [Create or Clone Profiles](https://help.salesforce.com/s/articleView?id=sf.users_profiles_cloning.htm&type=5) documentation.
+  See also Salesforce [Create or Clone Profiles](https://help.salesforce.com/s/articleView?id=sf.users_profiles_cloning.htm&type=5) documentation.
 
-> [!Note]
-> Assign the permissions directly to this profile. Don't add the permissions through permission sets.
+  > [!Note]
+  > Assign the permissions directly to this profile. Don't add the permissions through permission sets.
 
 > [!IMPORTANT]
 > If you're using a Salesforce.com trial account, then you'll be unable to configure automated user provisioning. Trial accounts don't have the necessary API access enabled until they are purchased. You can get around this limitation by using a free [developer account](https://developer.salesforce.com/signup) to complete this article.
@@ -54,7 +54,7 @@ Before configuring and enabling the provisioning service, you need to decide whi
 * When assigning a user to Salesforce, you must select a valid user role. The "Default Access" role doesn't work for provisioning. Note that some roles may require licensing in Salesforce.
 
     > [!NOTE]
-    > This app imports profiles from Salesforce as part of the provisioning process, which you may want to select when assigning users in Microsoft Entra ID. Please note that the profiles that get imported from Salesforce appear as Roles in Microsoft Entra ID. Roles shouldn't be manually edited in Microsoft Entra ID when doing role imports. If you wish to assign users to a custom profile, then wait for profiles to be imported from Salesforce before assigning users to an application.
+    > As part of the provisioning process, Microsoft Entra imports profiles from Salesforce. The profiles that get imported from Salesforce appear as application roles in Microsoft Entra ID, so you can select when assigning users in Microsoft Entra ID.  If you wish to assign users to a custom profile, then wait for profiles to be imported from Salesforce before assigning users to an application. Please note that the application roles shouldn't be manually edited in Microsoft Entra ID when doing role imports.
 
 ### Identifying existing users in Salesforce
 
@@ -68,7 +68,7 @@ import-csv .\User.csv | where {$_.IsActive -eq '1'}  | sort UserName | ft UserNa
 
 ## Enable automated user provisioning
 
-This section guides you through connecting your Microsoft Entra ID to [Salesforce's user account provisioning API - v40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api.meta/api/implementation_considerations.htm)
+This section guides you through connecting your Microsoft Entra ID to [Salesforce's user account provisioning API - v40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api.meta/api/implementation_considerations.htm).
 
 > [!Tip]
 > You may also choose to enabled SAML-based Single Sign-On for Salesforce, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
@@ -139,7 +139,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 
 ## Assign users
 
-Once the testing is complete, and a user is successfully provisioned to Salesforce, then you will want to ensure any other users needing Salesforce are assigned to the application roles. You can assign any additional authorized users to the Salesforce application by following one of the instructions here:
+Once the testing is complete, and a user is successfully provisioned to Salesforce, then you will want to ensure any other users needing Salesforce are assigned to the application roles. This includes any users who currently have active accounts in Salesforce, as described in the section [Identifying existing users in Salesforce](#identifying-existing-users-in-salesforce). You can assign these and any additional authorized users to the Salesforce application in Microsoft Entra by following one of the instructions here:
 
 * You can [assign each individual user to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) in the Microsoft Entra admin center,
 * You can assign individual users to the application via Microsoft Graph or the PowerShell cmdlet `New-MgServicePrincipalAppRoleAssignedTo`, or
@@ -156,7 +156,7 @@ As users that are in assigned to the application are updated in Microsoft Entra 
 * **SalesforceLicenseLimitExceeded:** The user could not be created in Salesforce because there are no available licenses for this user. Either procure additional licenses for the target application, or [review your user assignments](~/id-governance/access-reviews-application-preparation.md) to ensure that the correct users are assigned.
 * **SalesforceDuplicateUserName:** The user can't be provisioned because it has a Salesforce.com 'Username' that's duplicated in another Salesforce.com tenant.  In Salesforce.com, values for the 'Username' attribute must be unique across all Salesforce.com tenants.  By default, a user’s userPrincipalName in Microsoft Entra ID becomes their 'Username' in Salesforce.com.   You have two options.  One option is to find and rename the user with the duplicate 'Username' in the other Salesforce.com tenant, if you administer that other tenant as well.  The other option is to remove access from the Microsoft Entra user to the Salesforce.com tenant with which your directory is integrated. We will retry this operation on the next synchronization attempt. 
 * **SalesforceRequiredFieldMissing:** Salesforce requires certain attributes to be present on the user to successfully create or update the user. This user is missing one of the required attributes. Ensure that attributes such as email and alias are populated on all users that you would like to be provisioned into Salesforce. You can scope users that don't have these attributes out using [attribute based scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-* The default attribute mapping for provisioning to Salesforce includes the SingleAppRoleAssignments expression to map appRoleAssignments in Microsoft Entra ID to ProfileName in Salesforce. Ensure that the users don't have multiple app role assignments in Microsoft Entra ID as the attribute mapping only supports provisioning one role. 
+* The default attribute mapping for provisioning to Salesforce includes the SingleAppRoleAssignments expression to map appRoleAssignments in Microsoft Entra ID to ProfileName in Salesforce. Ensure that the users don't have multiple app role assignments in Microsoft Entra ID as the attribute mapping only supports provisioning one role. If you have a group of users where the group is assigned to one role, then a member of that group can't have a direct assignment to the Salesforce application with a different role.
 * Salesforce requires that email updates be approved manually before being changed. As a result, you may see multiple entries in the provisioning logs to update the user's email (until the email change has been approved).
 
 
