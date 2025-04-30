@@ -59,7 +59,7 @@ To enable the multi-Geo capability for Microsoft Entra Private Access, complete 
 ## Enable multi-Geo capability for Japan region
 The UI experience through the Microsoft Entra admin center doesn't support the Japan region yet. To select Japan as **country/region** for the connector group, use Microsoft Graph APIs:
 - Open Microsoft [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and login with the tenant account.
-- Create a [Connector Group](/graph/api/connectorgroup-post?view=graph-rest-beta&tabs=http&preserve-view=true) using the Graph API. Use `region` property to assign the region to Japan. For example, run the `POST` request with region set to `Japan` to create a connector group assigned to Japan.
+- Create a [Connector Group](/graph/api/connectorgroup-post?view=graph-rest-beta&tabs=http&preserve-view=true) using Graph API. Use `region` property to assign the region to Japan. For example, run the `POST` request with region set to `Japan` to create a connector group assigned to Japan.
 
 ### Example HTTP Request
 ```http
