@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.highground.com/#/login/<company-slug>`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [HighGround Client support team](https://youearnedit.freshdesk.com/support/home) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact HighGround client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -139,11 +139,11 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 ## Configure HighGround SSO
 
-To configure single sign-on on **HighGround** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [HighGround support team](https://youearnedit.freshdesk.com/support/home). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **HighGround** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to HighGround support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create HighGround test user
 
-In this section, you create a user called Britta Simon in HighGround. Work with [HighGround support team](https://youearnedit.freshdesk.com/support/home) to add the users in the HighGround platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in HighGround. Work with HighGround support team to add the users in the HighGround platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
