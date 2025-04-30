@@ -6,7 +6,7 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: how-to
-ms.date: 04/16/2025
+ms.date: 04/30/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
@@ -119,7 +119,7 @@ Verify configurations for clients:
 1. Navigate to **Zscaler Client** > **Private Access**. Verify **Service Status** is `DISABLED`.
 
 > [!NOTE]
-> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check).
+> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
  Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
@@ -178,7 +178,7 @@ Verify configurations for clients:
 1. Navigate to **Zscaler Client** > **Private Access**. Verify **Service Status** is `ON` and Authentication Status is `Authenticated`.
 
 > [!NOTE]
-> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check).
+> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
@@ -237,7 +237,7 @@ Verify configurations for clients:
 1. Navigate to **Zscaler Client** > **Private Access**. Verify **Service Status** is `ON` and Authentication Status is `Authenticated`.
 
 > [!NOTE]
-> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check).
+> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
@@ -306,7 +306,7 @@ Verify configurations for clients:
 1. Navigate to **Zscaler Client** > **Internet Security**. Verify **Service Status** is `DISABLED`.
 
 > [!NOTE]
-> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check).
+> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
