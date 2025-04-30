@@ -28,7 +28,7 @@ Follow these steps to enable suggested access packages in My Access.
 1. Browse to **ID Governance** > **Entitlement management** > **Preview Features**.
 
 1. Select **Show suggested access packages in My Access**. 
-    :::image type="content" source="media/entitlement-management-suggested-access-packages/opt-in-features-selection.png" alt-text="Screenshot of the opt in feature selection option." lightbox="media/entitlement-management-suggested-access-packages/opt-in-features-selection.png":::
+    :::image type="content" source="media/entitlement-management-suggested-access-packages/opt-in-features-selection.png" alt-text="Screenshot of opt-in feature selection option." lightbox="media/entitlement-management-suggested-access-packages/opt-in-features-selection.png":::
 1. Select **Save**.
 
 1. Sign in to the My Access portal at https://myaccess.microsoft.com. Select **Access packages** to see your suggested access packages.  
