@@ -96,7 +96,7 @@ An administrator can manually provide this contact information, or users can go 
 1. To apply the registration settings, select **Save**.
 
 > [!NOTE]
-> The interruption to request to register contact information during signing in only occurs if the conditions configured on the settings are met. This only applies to users and admin accounts that are enabled to reset passwords using Microsoft Entra self-service password reset. 
+> The interruption to register contact information during signing in only occurs if the conditions configured on the settings are met. This only applies to users and admin accounts that are enabled to reset passwords using Microsoft Entra self-service password reset. 
 
 ## Set up notifications and customizations
 

@@ -192,12 +192,14 @@ items:
     items:
       - name: Troubleshoot connectors
         href: troubleshoot-connectors.md
-      - name: "Troubleshoot the Global Secure Access client: Advanced diagnostics"
-        href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
+      - name: "Troubleshoot the Global Secure Access client for Windows: Advanced diagnostics"
+        href: troubleshoot-global-secure-access-client-advanced-diagnostics.md    
       - name: "Troubleshoot the Global Secure Access client: Health check tab"
         href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
-      - name: "Troubleshoot the Global Secure Access Client: Disabled by Your Organization"
+      - name: "Troubleshoot the Global Secure Access client: Disabled by your organization"
         href: troubleshoot-global-secure-access-client-disabled.md
+      - name: "Troubleshoot the Global Secure Access mobile client: Advanced diagnostics"
+        href: troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md           
       - name: Troubleshoot application access
         href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"

@@ -492,7 +492,7 @@ The solution is to uninstall the older AADLoginForLinux VM extension from the VM
 
 #### Installation failures when using an HTTP proxy
 
-The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open ` /lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
+The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open `/lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
 ```
 [Service]
 Environment="http_proxy=http://proxy.example.com:80/"
@@ -543,7 +543,7 @@ The OpenSSH server version in the target VM 7.4 is too old. Version incompatible
 
 Workaround:
 
-- Adding option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `az ssh vm ` command.
+- Adding option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `az ssh vm` command.
 
 ```azurecli-interactive
 az ssh vm -n myVM -g MyResourceGroup -- -A -o "PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"
