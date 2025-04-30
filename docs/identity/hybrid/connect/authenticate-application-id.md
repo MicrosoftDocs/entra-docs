@@ -121,15 +121,18 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
 ``` powershell
  Add-EntraApplicationRegistration
 ```
- - Use BYOC:
+ - Use BYOC
  
  > [!NOTE] 
  > The certificate SHA256Hash needs to be provided when registering the application. The hash can be generated using the [generation script.](#script-to-generate-the-sha256-hash-of-the-certificate) 
 
  ``` powershell
- Add-EntraApplicationRegistration -CertificateSHA256Hash &lt;CertificateSHA256Hash>
+ Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash>
  ```
 Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
+
+- Use BYOA
+[Register a Microsoft Entra app and create a service principal.](../../../identity-platform/howto-create-service-principal-portal.md) . Note the application Id as it will be necessary in the next section.
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
@@ -182,8 +185,10 @@ Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash and &lt;app
  ## On-Demand Certificate Rotation 
 Microsoft Entra Connect warns if the certificate rotation is due. That is, expiring in less than or equal to 150 days. It emits an error if certificate is already expired. These warnings (Event ID 1011) and errors (Event ID 1012) can be found in the Application event log. This message is emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if scheduler is suspended or maintenance is enabled or disabled.
 
-If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance disabled. If this is the case, you'll have to manually manage certificate rotation by going through the steps.
-
+If the certificate is managed by Microsoft Entra Connect, **no action** is required from your end unless the scheduler is suspended or maintenance is disabled. Entra Connect Sync will add the new certificate credential to the application and try to remove the old certificate credential. If it fails to remove the old certificate credential you will see an error event in Application logs in event viewer. If you see such an error, you can run the following in Powershell to clean up the old certificate credential from Entra. The cmdlet takes the CertificateId of the certificate that needs to be removed which can be gotten from the log or Entra portal.
+ ``` powershell
+Remove-EntraApplicationKey -CertificateId <certificateId>
+ ```
 ### Using the wizard
  Once you have application authentication enabled you'll see an additional option in tasks. The **Rotate application certificate** option is now available. From here, you can rotate the certificate manually. However, Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.4.252.0. 
 
@@ -209,12 +214,12 @@ If in BYOC mode, the new certificate SHA256Hash must be provided.
  ``` powershell
  Invoke-ADSyncApplicationCredentialRotation -CertificateSHA256Hash <CertificateSHA256Hash>
  ```
-If in BYOA mode, the new certificate SHA256Hash and the Application Id must be provided
+If in BYOA mode, the new certificate SHA256Hash must be provided
 
 ``` powershell
- Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash> –ApplicationAppId <appId>
+ Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash>
 ```
-Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash and &lt;appId&gt; with the ID of the application created in Entra
+Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash
 
 3. Get the current authentication and confirm it has the Connector Identity Type as **Application**. Use the following PowerShell cmdlet to verify the current authentication.
  
