@@ -78,9 +78,9 @@ For more information, see [Apply Conditional Access policies to Private Access a
 
 ## Global Secure Access client review and testing
 
-In this section find links to guidance to install and configure the Microsoft Global Secure Access [client](concept-clients,md) on user devices.  
+In this section find links to guidance to install and configure the Microsoft Global Secure Access [client](concept-clients.md) on user devices.  
 
-To install on operating systems, see [Windows](how-to-install-windows-client.md) and [macOS](how-to-install-macos-client,md).  
+To install on operating systems, see [Windows](how-to-install-windows-client.md) and [macOS](how-to-install-macos-client.md).  
 
 ### Configuration checklist
 
