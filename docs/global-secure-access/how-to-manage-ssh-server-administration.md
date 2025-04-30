@@ -87,9 +87,9 @@ To install on operating systems, see [Windows](how-to-install-windows-client.md)
 Use the following checklist to help confirm configuration.
 
 * Ensure the server is running and accessible by the SSH port.
-* Confirm correct host firewall configuration.
+* Confirm the correct host firewall configuration.
   * Find guidance in [OpenSSH Server configuration for Windows](/windows-server/administration/OpenSSH/openssh-server-configuration).
-* On the Windows taskbar, right-click the **Global Secure Access** client.
+* Go to the Windows taskbar. Right-click the **Global Secure Access** client.
   * Select **Advanced Diagnostics** > **Forwarding profile** > **Private Access**.
 * Validate the application appears in the access profile.
 * Access the SSH services from the client device.  
