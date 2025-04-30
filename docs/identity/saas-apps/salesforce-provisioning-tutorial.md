@@ -56,6 +56,16 @@ Before configuring and enabling the provisioning service, you need to decide whi
     > [!NOTE]
     > This app imports profiles from Salesforce as part of the provisioning process, which you may want to select when assigning users in Microsoft Entra ID. Please note that the profiles that get imported from Salesforce appear as Roles in Microsoft Entra ID. Roles shouldn't be manually edited in Microsoft Entra ID when doing role imports. If you wish to assign users to a custom profile, then wait for profiles to be imported from Salesforce before assigning users to an application.
 
+### Identifying existing users in Salesforce
+
+Prior to integration with Microsoft Entra, your Salesforce account may already have one or more users, created by a Salesforce administrator or other processes. You can determine which users are already present by using the Salesforce export data feature. For more information, see [Export Backup Data from Salesforce](https://help.salesforce.com/s/articleView?id=xcloud.admin_exportdata.htm). When exporting from Salesforce, ensure that `User` data is included in the exported data set, and select a export file encoding that allows for all names for users in the organization, such as `Unicode (UTF-8)`.
+
+Once you have the exported data from Salesforce, then you can extract the `User.csv` file and open in Excel, or in PowerShell, to view the list of active users already in Salesforce.
+
+```powershell
+import-csv .\User.csv | where {$_.IsActive -eq '1'}  | sort UserName | ft UserName
+```
+
 ## Enable automated user provisioning
 
 This section guides you through connecting your Microsoft Entra ID to [Salesforce's user account provisioning API - v40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api.meta/api/implementation_considerations.htm)
