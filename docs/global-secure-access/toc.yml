@@ -222,7 +222,7 @@ items:
            - name: Coexistence with Palo Alto Networks
              href: concept-palo-alto-coexistence.md
            - name: Coexistence with Zscaler
-             href: concept-zscaler-coexistence.md
+             href: how-to-zscaler-coexistence.md
            - name: Coexistence with Netskope
              href: concept-netskope-coexistence.md
        - name: Find a Microsoft services partner
