@@ -117,17 +117,17 @@ We recommend the following practices to govern external access with entitlement 
   - [View, add, and remove assignments for an access package in entitlement management](~/id-governance/entitlement-management-access-package-assignments.md)
   - [Create a new access package in entitlement management](~/id-governance/entitlement-management-access-package-create.md)
 
-### ### Identity Governance - Control Configurations 
+### Identity Governance - Control Configurations 
 
-Select the **Lifecycle of external users setting in Control Configurations** to remove users from your directory when their access packages expire. The following settings apply to users onboarded with entitlement management. 
+Select the **Lifecycle of external users** setting in Control Configurations to remove users from your directory when their access packages expire. The following settings apply to users onboarded with entitlement management. 
 
-   ![Screenshot of settings and entries for Manage the lifecycle of external users.](media/secure-external-access/6-manage-external-lifecycle.png)
+ :::image type="content" source="media/secure-external-access/6-manage-external-lifecycle.png" alt-text="Screenshot of settings and entries for Manage the lifecycle of external users.":::
 
 ### Delegate catalog and package management
 
 You can delegate catalog and package management to business owners, who have more information on who should access. See, [Delegation and roles in entitlement managements](~/id-governance/entitlement-management-delegate.md)
 
-   ![Screenshot of options and entries under Roles and administrators.](media/secure-external-access/6-catalog-management.png)
+   :::image type="content" source="media/secure-external-access/6-catalog-management.png" alt-text="Screenshot of options and entries under Roles and administrators.":::
 
 ### Enforce access package expiration
 
