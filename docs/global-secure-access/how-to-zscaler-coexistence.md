@@ -190,7 +190,7 @@ Test traffic flow:
 1. Access your private application set up in Zscaler Private Access. For example, open an RDP session to a private server.
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**.
 1. Validate traffic related to the SMB file share private app is captured and that traffic related to the RDP session **isn't** captured in the Global Secure Access traffic logs
-1. Sign in to Zscaler Private Access (ZPA) admin portal and browse to **Analytics** > **Web Insights** > **Logs**. Validate traffic related to the RDP session is present and that traffic related to the SMB file share **isn't** in the Dashboard or traffic logs.
+1. Sign in to Zscaler Private Access (ZPA) admin portal and browse to **Analytics** > **Diagnostics** > **Logs**. Validate traffic related to the RDP session is present and that traffic related to the SMB file share **isn't** in the Dashboard or Diagnostic logs.
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
 1. Scroll to confirm the Global Secure Access client handled private application traffic for the SMB file share and didn't handle the RDP session traffic.
 
