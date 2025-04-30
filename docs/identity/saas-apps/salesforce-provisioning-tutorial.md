@@ -41,17 +41,17 @@ See also Salesforce [Create or Clone Profiles](https://help.salesforce.com/s/art
 
 If you're using a Salesforce Sandbox environment, see the [Salesforce Sandbox integration  article](./salesforce-sandbox-tutorial.md).
 
-## Assigning users to Salesforce
+## Plan for assigning users to Salesforce
 
 Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that are "assigned" to an application in Microsoft Entra ID are synchronized.
 
-Before configuring and enabling the provisioning service, you need to decide which users or groups in Microsoft Entra ID need access to your Salesforce app. You can assign these users to your Salesforce app by following the instructions in [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)
+Before configuring and enabling the provisioning service, you need to decide which users or groups in Microsoft Entra ID need access to your Salesforce app. 
 
 ### Important tips for assigning users to Salesforce
 
-* It's recommended that a single Microsoft Entra user is assigned to Salesforce to test the provisioning configuration. More users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Salesforce to test the provisioning configuration. More users and/or groups can assigned later, through the mechanisms described in [Assign users](#assign-users).
 
-* When assigning a user to Salesforce, you must select a valid user role. The "Default Access" role doesn't work for provisioning
+* When assigning a user to Salesforce, you must select a valid user role. The "Default Access" role doesn't work for provisioning. Note that some roles may require licensing in Salesforce.
 
     > [!NOTE]
     > This app imports profiles from Salesforce as part of the provisioning process, which you may want to select when assigning users in Microsoft Entra ID. Please note that the profiles that get imported from Salesforce appear as Roles in Microsoft Entra ID. Roles shouldn't be manually edited in Microsoft Entra ID when doing role imports. If you wish to assign users to a custom profile, then wait for profiles to be imported from Salesforce before assigning users to an application.
@@ -129,12 +129,26 @@ The objective of this section is to outline how to enable user provisioning of A
 > [!NOTE]
 > Once the users are provisioned in the Salesforce application, administrator need to configure the language specific settings for them. Please see [this](https://help.salesforce.com/articleView?id=setting_your_language.htm&type=5) article for more details on language configuration.
 
-This starts the initial synchronization of any users and/or groups assigned to Salesforce in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your Salesforce app.
+This starts the initial synchronization of any users and/or groups assigned to Salesforce in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running.
+
+## Monitoring
+
+You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your Salesforce app.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
+## Assign users
+
+Once the testing is complete, and a user is successfully provisioned to Salesforce, then you will want to ensure any other users needing Salesforce are assigned to the application roles. You can assign any additional authorized users to the Salesforce application by following one of the instructions here:
+
+* You can [assign each individual user to the application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) in the Microsoft Entra admin center,
+* You can assign individual users to the application via Microsoft Graph or the PowerShell cmdlet `New-MgServicePrincipalAppRoleAssignedTo`, or
+* if your organization has a license for Microsoft Entra ID Governance, you can also [deploy entitlement management policies for automating access assignment](~/id-governance/identity-governance-applications-deploy.md#deploy-entitlement-management-policies-for-automating-access-assignment), to add or remove assignments as people join the organization, or leave or change roles.  You can [create an entitlement management access package for this application](~/id-governance/entitlement-management-access-package-create-app.md). You can have policies for users to be assigned access, either when they request, [by an administrator](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-a-user), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or through [lifecycle workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
+
+As users that are in assigned to the application are updated in Microsoft Entra ID, those changes are automatically provisioned to Salesforce.
+
 ## Common issues
-* If you're having issues authorizing access to Salesforce ensure the following:
+* If you're having issues enabling provisioning to Salesforce ensure the following:
     * The credentials used have admin access to Salesforce.
     * The version of Salesforce that you're using supports Web Access (such as Developer, Enterprise, Sandbox, and Unlimited editions of Salesforce.)
     * Web API access is enabled for the user.
