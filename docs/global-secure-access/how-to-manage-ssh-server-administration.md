@@ -13,7 +13,7 @@ ai-usage: human-only
 
 # Management for SSH-based server administration
 
-It's widely recognized by the IT industry that IT administrators use Secure Shell (SSH) as a critical service. Admins enable security while managing configuration, deployment, and maintenance of servers and applications in an organization's infrastructure. SSH is a secure way to access and manage devices over an unsecured network. SSH encryption protocols, ensure the integrity and confidentiality of administrative tasks and remote system interactions, pivotal for operational efficiency and risk reduction. 
+There's wide recognition in the IT industry that IT administrators use Secure Shell (SSH) as a critical service. Admins enable security while managing configuration, deployment, and maintenance of servers and applications in an organization's infrastructure. SSH is a secure way to access and manage devices over an unsecured network. SSH encryption protocols, ensure the integrity and confidentiality of administrative tasks and remote system interactions, pivotal for operational efficiency and risk reduction. 
 
 In this guide, learn to configure and establish an SSH connection using Microsoft Entra Private Access for enhanced security. Organizations use Private Access to modernize user access to private apps and resources.
 
