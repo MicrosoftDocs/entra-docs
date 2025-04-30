@@ -34,9 +34,7 @@ Microsoft recommends the Entra Connect certificate management option as we manag
 
  ## Bring Your Own Application (BYOA) 
 
-In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](../../../identity-platform/howto-create-service-principal-portal.md)
-
-The application and service principal need to be created in Entra using MSGraph with the certificate credential and the AdminWebService and SSPR (if necessary) permissions
+In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id.md). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa)
 
 ## Bring Your Own Certificate (BYOC) 
 
@@ -70,7 +68,7 @@ The following are additional requirements for the BYOC certificate management op
 
 The following are additional requirements for the BYOA application management option
 - The customer creates a certificate as instructed in BYOC Prerequisites above.
-- Customer registers an application with Entra and creates service principal.
+- Customer registers an application with Entra and creates service principal. The necessary [permissions](#microsoft-graph-permissions-for-byoa) are granted via graph.
 - Customer registers the certificate with the application 
 
 
@@ -132,7 +130,7 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
 Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
 
 - Use BYOA
-[Register a Microsoft Entra app and create a service principal.](../../../identity-platform/howto-create-service-principal-portal.md) . Note the application Id as it will be necessary in the next section.
+[Register a Microsoft Entra app and create a service principal.](graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id.md) . Note the application Id as it will be necessary in the next section.
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
@@ -251,6 +249,31 @@ $certHash = [System.Convert]::ToHexString($hashBytes)
 # Convert hash to bytes for older PowerShell:
 $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 ```
+## Microsoft Graph permissions for BYOA
+### ADSynchronization.ReadWrite.All
+|Category|Application|Delegated|
+|-----|-----|-----|
+|Identifier|0b41ed4d-5f52-442b-8952-ea7d90719860|0b41ed4d-5f52-442b-8952-ea7d90719860|
+|DisplayText|Read, write, and manage identity synchronization with on-premises via Microsoft Entra Connect Sync|Read, write, and manage identity synchronization with on-premises via Microsoft Entra Connect Sync|
+|Description|Allows the app to read, write, and manage identity data synced with on-premises via Microsoft Entra Connect Sync|Allows the app to read, write, and manage identity data synced with on-premises via Microsoft Entra Connect Sync|
+|AdminConsentRequired|Yes|Yes|
+
+### PasswordWriteback.RefreshClient.All
+|Category|Application|Delegated|
+|-----|-----|-----|
+|Identifier|fc7e8088-95b5-453e-8bef-b17ecfec5ba3|-|
+|DisplayText|Read, write and manage self-service password reset writeback configuration|-|
+|Description|Allows the app to refresh and recreate on-premises configuration for Microsoft self-service password reset.|-|
+|AdminConsentRequired|Yes|-|
+
+### PasswordWriteback.RegisterClientVersion.All
+|Category|Application|Delegated|
+|-----|-----|-----|
+|Identifier|e006e431-a65b-4f3e-8808-77d29d4c5f1a|-|
+|DisplayText|Read, write and manage Microsoft Entra Connect Sync Agent|-|
+|Description|Allows the app to register a newer version of on-premises Microsoft Entra Connect Sync Agent.|-|
+|AdminConsentRequired|Yes|-|
+
 ## Certificate revocation process
 
 For self-signed certificates, either Entra Managed and BYOC, the customer must perform manual revocation by removing the keyCredential from the Entra third party application in the Entra portal or deleting the application entirely.
