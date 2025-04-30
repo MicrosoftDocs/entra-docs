@@ -105,7 +105,7 @@ With the Azure logic app given the access package assignment manager role, you m
     Audience: https://graph.microsoft.com
 1. Under HTTP Settings, disable **Asynchronous Pattern**. 
     :::image type="content" source="media/entitlement-management-dynamic-approval/disable-asynchronous-pattern.png" alt-text="Screenshot of disabling asynchronous pattern in a logic app http call.":::
-1. After you've made changes to the HTTP trigger, select **Save** on the logic app. 
+1. After you've made changes to the HTTP trigger, select **Save**. 
 
 ## Verify the extension worked
 
