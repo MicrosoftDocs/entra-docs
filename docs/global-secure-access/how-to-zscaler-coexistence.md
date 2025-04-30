@@ -36,7 +36,7 @@ This guide outlines how to configure and deploy Microsoft Entra solutions alongs
 
     In this scenario, Global Secure Access handles all Microsoft 365 traffic. Zscaler Private Access handles Private application traffic and Zscaler Internet Access handles Internet traffic.
 
-4. **Microsoft Entra Internet Access and Microsoft Entra Microsoft Access and Zscaler Private Access**
+4. **Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Zscaler Private Access**
 
     In this scenario, Global Secure Access handles Internet and Microsoft traffic. Zscaler only captures private application traffic. Therefore, the Zscaler Internet Access module is disabled from the Zscaler portal.
 
