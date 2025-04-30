@@ -22,9 +22,9 @@ This article helps you keep track of the versions that have released and the cha
 ### Breaking Change on Entra Connect Sync
 
 >[!IMPORTANT]
-> New Micrsoft Entra Connect Sync Versions will only be available via the Microsoft Entra admin center 
+> New Micrsoft Entra Connect Sync Versions will only be available via the Microsoft Entra Admin center 
 >
-> Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra Admin Center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
+> Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra Admin center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
 
 
@@ -119,7 +119,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 03/27/2025: Released for download and auto upgrade.
 
 >[!NOTE]
->Auto upgrade will run from the release date until 15 April 2025. If your environment is not upgraded by then, it means the auto upgrade attempt failed and you will need to perform a [manual upgrade](how-to-upgrade-previous-version.md). You can check the [Application event logs](how-to-connect-install-automatic-upgrade.md#troubleshooting) for reasons for the failure of the auto upgrade.
+>Auto upgrade will run from the release date until 15 April 2025. If your environment isn't upgraded by then, it means the auto upgrade attempt failed and you need to perform a [manual upgrade](how-to-upgrade-previous-version.md). You can check the [Application event logs](how-to-connect-install-automatic-upgrade.md#troubleshooting) for reasons for the failure of the auto upgrade.
 
 ### Updated Features
 - Removed the pre-requisite check for the SchUseStrongCrypto registry key being enabled. This version uses .NET 4.7.2 which uses strong cryptography by default.
@@ -179,8 +179,8 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Updated Features
 - The step **Connect to Microsoft Entra ID** in the Connect Sync Wizard won't require password before redirecting you to the login page.
 - Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule. Adding this rule allows the sync engine to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled, in a scenario where:
-  - the same user is represented across different forests, and 
-  - the user is disabled in one of the forests
+ - the same user is represented across different forests, and 
+ - the user is disabled in one of the forests
 - Introduced a registry key that allows you to set the precedence number for custom rules to be more than 100, if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence,** allowing for more custom rules. If no value is set, 100 is the default.
 - Cmdlets in ADSync PowerShell module that communicate with Microsoft Entra ID now require Microsoft Entra ID login, for example, `Add-ADSyncAADServiceAccount` or `Get-ADSyncExportDeletionThreshold`
 
@@ -748,11 +748,11 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
  - We added a member attribute to the Out to AD - Group SOAInAAD - Exchange rule to limit members in writeback groups to 50,000.
 - We updated sync rules to support group writeback V2:
  - If the In from Microsoft Entra ID - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-  - The updated rule is disabled by default, so targetWritebackType is null.
-  - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
+ - The updated rule is disabled by default, so targetWritebackType is null.
+ - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
  - If the Out to AD - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-  - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
-  - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
+ - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
+ - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
  - If the Cloned Custom Sync Rule doesn't flow some Mail and Exchange attributes, the new Exchange Sync Rule adds those attributes.
 - We added support for [Selective Password Hash Synchronization](./how-to-connect-selective-password-hash-synchronization.md).
 - We added the new [Single Object Sync cmdlet](./how-to-connect-single-object-sync.md). Use this cmdlet to troubleshoot your Microsoft Entra Connect Sync configuration.
