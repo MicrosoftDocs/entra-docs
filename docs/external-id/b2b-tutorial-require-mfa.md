@@ -37,7 +37,7 @@ In this tutorial, you will:
 > [!div class="checklist"]
 >
 > - Test the sign-in experience before setting up MFA.
-> - Create a Conditional Access policy that requires MFA for access to a cloud app in your environment. In this tutorial, we’ll use the Windows Azure Service Management API app to illustrate the process.
+> - Create a Conditional Access policy that requires MFA for access to a cloud app in your environment. In this tutorial, we’ll use the Azure Resource Manager app to illustrate the process.
 > - Use the What If tool to simulate MFA sign-in.
 > - Test your Conditional Access policy.
 > - Clean up the test user and policy.
@@ -56,7 +56,7 @@ To complete the scenario in this tutorial, you need:
 ## Create a test guest user in Microsoft Entra ID
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. Browse to **Entra ID** > **Users**.
 1. Select **New user** and then **Invite external user**.
 
@@ -78,7 +78,7 @@ To complete the scenario in this tutorial, you need:
 
 ## Create a conditional access policy that requires MFA
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [conditional access administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Name your policy, like **Require MFA for B2B portal access**. Create a meaningful standard for naming policies.
@@ -87,7 +87,7 @@ To complete the scenario in this tutorial, you need:
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-user-access.png" alt-text="Screenshot showing selecting all guest users.":::
 
-1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Windows Azure Service Management API**, and then **Select** the resource.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Azure Resource Manager**, and then **Select** the resource.
 
     :::image type="content" source="media/tutorial-mfa/tutorial-mfa-app-access.png" alt-text="Screenshot showing the Cloud apps page and the Select option." lightbox="media/tutorial-mfa/tutorial-mfa-app-access.png":::
 
@@ -100,23 +100,7 @@ To complete the scenario in this tutorial, you need:
 
 ## Use the What If option to simulate sign-in
 
-1. On the **Conditional Access | Policies** page, select **What If**.
-
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if.png" alt-text="Screenshot that highlights where to select the What if option on the Conditional Access | Policies page.":::
-
-1. Select the link under **User**. 
-1. In the search box, type the name of your test guest user. Choose the user in the search results, and then choose **Select**.
-
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-user.png" alt-text="Screenshot that shows a guest user selected.":::
-
-1. Select the link under **Cloud apps, actions, or authentication content**. Choose **Select resources**, and then choose the link under **Select**.
-
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-app.png" alt-text="Screenshot that shows the app selected." lightbox="media/tutorial-mfa/tutorial-mfa-what-if-app.png":::
-
-1. On the **Cloud apps** page, in the applications list, choose **Windows Azure Service Management API**, and then choose **Select**.
-1. Select **What If**, and verify that your new policy appears under **Evaluation results** on the **Policies that will apply** tab.
-
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-whatif-4.png" alt-text="Screenshot that shows the results of the What If evaluation.":::
+The **Conditional Access What If policy tool** helps you understand the effects of Conditional Access policies in your environment. Instead of manually testing your policies with multiple sign-ins, you can use this tool to simulate a user's sign-in. The simulation predicts how this sign-in will affect your policies and generates a report. For more information, see [Use the What If tool to understand Conditional Access policies](/entra/identity/conditional-access/what-if-tool).
 
 ## Test your conditional access policy
 
@@ -134,7 +118,7 @@ To complete the scenario in this tutorial, you need:
 
 When no longer needed, remove the test user and the test Conditional Access policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. Browse to **Entra ID** > **Users**.
 1. Select the test user, and then select **Delete user**.
 
