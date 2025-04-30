@@ -129,20 +129,3 @@ When no longer needed, remove the test user and the test Conditional Access poli
 ## Next steps
 
 In this tutorial, you created a Conditional Access policy that requires guest users to use MFA when signing in to one of your cloud apps. To learn more about adding guest users for collaboration, go to [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
-1. On the **Conditional Access | Policies** page, select **What If**.
-
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if.png" alt-text="Screenshot that highlights where to select the What if option on the Conditional Access | Policies page.":::
-
-1. Select the link under **User**. 
-1. In the search box, type the name of your test guest user. Choose the user in the search results, and then choose **Select**.
-
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-user.png" alt-text="Screenshot that shows a guest user selected.":::
-
-1. Select the link under **Cloud apps, actions, or authentication content**. Choose **Select resources**, and then choose the link under **Select**.
-
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-what-if-app.png" alt-text="Screenshot that shows the app selected." lightbox="media/tutorial-mfa/tutorial-mfa-what-if-app.png":::
-
-1. On the **Cloud apps** page, in the applications list, choose **Azure Resource Manager**, and then choose **Select**.
-1. Select **What If**, and verify that your new policy appears under **Evaluation results** on the **Policies that will apply** tab.
-
-    :::image type="content" source="media/tutorial-mfa/tutorial-mfa-whatif-4.png" alt-text="Screenshot that shows the results of the What If evaluat
