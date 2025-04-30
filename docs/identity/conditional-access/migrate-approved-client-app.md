@@ -79,6 +79,4 @@ Organizations can choose to deploy this policy using the following steps.
 
 For more information on application protection policies, see: 
 
-[App protection policies overview](/mem/intune/apps/app-protection-policy)
-
-[How to create and assign app protection policies](https://learn.microsoft.com/en-us/intune/intune-service/apps/app-protection-policies)
+[Create and assign app protection policies](/intune/intune-service/apps/app-protection-policies)
