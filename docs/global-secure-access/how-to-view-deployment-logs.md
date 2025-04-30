@@ -37,7 +37,8 @@ To access deployment logs:
 
 Deployment logs can also be accessed when a change is made to the configuration of Global Secure Access. A notification shows up at the top right corner of the page when making a configuration change. Click the notification to see the progress of the deployment.
 
-![image](https://github.com/user-attachments/assets/e118dc03-97dd-45d9-8fb7-1459ac99485a)
+![Screenshot of the deployment progress notification.](media/how-to-view-deployment-logs/deployment-logs.png)
+
 
 ### Filter options
 
