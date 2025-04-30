@@ -264,7 +264,7 @@ In this scenario, Global Secure Access handles Internet and Microsoft 365 traffi
 For this scenario, you need to configure:
 - [Enable Microsoft Entra Microsoft Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-microsoft-profile.md#enable-the-microsoft-traffic-profile) and [Microsoft Entra Internet Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-internet-access-profile.md#prerequisites).
 - Install and configure the [Global Secure Access client for Windows](how-to-install-windows-client.md) or [macOS](how-to-install-macos-client.md).
-- Add an [Microsoft Entra Internet Access traffic forwarding profile policy custom bypass](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-internet-access-profile.md#internet-access-traffic-forwarding-profile-policies) to exclude ZPA server.
+- Add an [Microsoft Entra Internet Access traffic forwarding profile policy custom bypass](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-internet-access-profile.md#internet-access-traffic-forwarding-profile-policies) to exclude ZPA service.
 
 Adding a custom bypass for Zscaler in Global Secure Access:
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Internet access profile**. Under **Internet access policies** select **View**.
