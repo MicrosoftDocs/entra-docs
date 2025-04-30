@@ -6,8 +6,8 @@ author: HULKsmashGithub
 manager: femila
 ms.service: global-secure-access
 ms.topic: how-to   
-ms.date: 04/23/2025
-ms.reviewer: Sumeet Mittal   
+ms.date: 04/30/2025
+ms.reviewer: sumi
 
 #customer intent: As an IT admin, I want to enable Multi-Geo Capability for Microsoft Entra Private Access so that I can optimize traffic flow from Microsoft Entra Clients to Microsoft Entra Apps.
 
