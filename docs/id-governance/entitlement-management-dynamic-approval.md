@@ -9,7 +9,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to 
 ms.date: 04/12/2025
 
-#CustomerIntent: As an IT admin, I want to create custom extensions so that I can determine approvers externally .
+#CustomerIntent: As an IT admin, I want to create custom extensions so that I can determine approvers of an access package externally.
 ---
 
 
@@ -25,9 +25,9 @@ In entitlement management, approvers for access package requests can either be d
 ## Prerequisites
 
 - At least the [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) role of the catalog where the custom extension will be created.
-- At least the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) on the Logic App itself or on the resource group, subscription, or management group that the workflow is in. 
+- At least the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) on the Logic App itself or on the resource group, subscription, or management group that the logic app is in. 
 
-## Create the custom extension and logic App
+## Create the custom extension and Azure Logic App
 
 To create a custom extension, and its underlying Azure Logic App, you'd do the following steps:
 
@@ -35,7 +35,7 @@ To create a custom extension, and its underlying Azure Logic App, you'd do the f
 
 1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
 
-1. On the Catalogs overview screen, you can select an existing catalog to create your custom extension in, or create a new catalog.
+1. On the Catalogs overview screen, select an existing catalog to create your custom extension in, or create a new catalog.
 
 1. On the specific catalog screen where you want to create your custom extension, select **Custom extensions**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extensibility-catalog-screen.png" alt-text="Screenshot of catalog screen where custom extension is being added.":::
@@ -67,9 +67,9 @@ Once you've created the custom extension and logic app, you can reference the cu
 Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**:
 :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
 
-## Set up identity and role for the logic app
+## Set logic apps assigned identity and assign its role
 
-With the Azure logic app created, you must edit the logic app so that it can communicate with Microsoft Entra. To edit the logic app, you'd do the following steps:
+With the Azure logic app created, you must enable its system assigned identity, and give it the proper role by doing the following steps:
 
 
 1. Sign in to the Azure portal and go to the logic app with the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of at least [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor).
