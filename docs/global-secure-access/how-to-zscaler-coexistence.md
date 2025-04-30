@@ -70,7 +70,7 @@ To integrate Zscaler Private Access and Zscaler Internet Access with Microsoft G
 Configure the Zscaler Client Connector app profile to work with Microsoft Entra service Fully Qualified Domain Names (FQDNs) and Internet Protocol (IP) addresses. 
 
 These entries need to be present in the app profiles for every scenario:
-- IPs: `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`
+- IPs: `150.171.15.0/24`, `150.171.18.0/24`, `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `151.206.0.0/16`, `6.6.0.0/16`
 - FQDNs: `internet.edgediagnostic.globalsecureaccess.microsoft.com`, `m365.edgediagnostic.globalsecureaccess.microsoft.com`, `private.edgediagnostic.globalsecureaccess.microsoft.com`, `aps.globalsecureaccess.microsoft.com`, `<tenantid>.internet.client.globalsecureaccess.microsoft.com`, `<tenantid>.m365.client.globalsecureaccess.microsoft.com`, `<tenantid>.private.client.globalsecureaccess.microsoft.com`, `<tenand_id>.private-backup.client.globalsecureaccess.microsoft.com`, `<tenand_id>.internet-backup.client.globalsecureaccess.microsoft.com`, `<tenand_id>.m365-backup.client.globalsecureaccess.microsoft.com`.
 - Install and configure Zscaler Client Connector software.
 
