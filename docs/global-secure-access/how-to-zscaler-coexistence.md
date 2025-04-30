@@ -63,7 +63,7 @@ To integrate Zscaler Private Access and Zscaler Internet Access with Microsoft G
 - Configure Zscaler Internet Access. To learn more about configuring Zscaler, see [Step-by-Step Configuration Guide for ZIA](https://help.zscaler.com/zia/step-step-configuration-guide-zia).
 - Configure Zscaler Private Access. To learn more about configuring Zscaler, see [Step-by-Step Configuration Guide for ZPA](https://help.zscaler.com/zpa/step-step-configuration-guide-zpa).
 - Set up and configure Zscaler Client Connector forwarding profiles.  To learn more about configuring Zscaler, see [Configuring Forwarding Profiles for Zscaler Client Connector](https://help.zscaler.com/zscaler-client-connector/configuring-forwarding-profiles-zscaler-client-connector).
-- Set up and configure Zscaler Client Connector app profiles with Global Secure Access bypasses.
+- Set up and configure Zscaler Client Connector app profiles with Global Secure Access bypasses.  To learn more about configuring Zscaler, see [Configuring Zscaler Client Connector App Profiles](https://help.zscaler.com/zscaler-client-connector/configuring-zscaler-client-connector-app-profiles).
 
 ### Global Secure Access service FQDNs and IPs bypasses
 
