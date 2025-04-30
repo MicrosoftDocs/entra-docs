@@ -6,9 +6,9 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 02/23/2023
+ms.date: 04/29/2025
 ms.author: jricketts
-ms.reviewer: ajburnle
+ms.reviewer: jercon
 ---
 
 # Manage external access with Microsoft Entra entitlement management
@@ -50,7 +50,7 @@ Learn more:
 
 The following diagram shows a typical governance lifecycle of an external user gaining access to an access package, with an expiration.
 
-   ![A diagram of the external user governance cycle.](media/secure-external-access/6-governance-lifecycle.png)
+ :::image type="content" source="media/secure-external-access/6-governance-lifecycle.png" alt-text="A diagram of the external user governance cycle.":::
 
 ### Self-service external access
 
@@ -133,7 +133,7 @@ You can delegate catalog and package management to business owners, who have mor
 
 You can enforce access expiration for external users. See, [Change lifecycle settings for an access package in entitlement management](~/id-governance/entitlement-management-access-package-lifecycle-policy.md).
 
-   ![Screenshot of options and entries for Expiration.](media/secure-external-access/6-access-package-expiration.png)
+ :::image type="content" source="media/secure-external-access/6-access-package-expiration.png" alt-text="Screenshot of options and entries for Expiration.":::
 
 - For the end date of a project-based access package, use **On date** to set the date.
   - Otherwise we recommend expiration to be no longer 365 days, unless it's a multiyear project
@@ -144,7 +144,7 @@ You can enforce access expiration for external users. See, [Change lifecycle set
 
 You can enforce reviews of guest-access packages to avoid inappropriate access for guests. See, [Manage guest access with access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
 
-   ![Screenshot of options and entries under New access package.](media/secure-external-access/6-new-access-package.png)
+ :::image type="content" source="media/secure-external-access/6-new-access-package.png" alt-text="Screenshot of options and entries under New access package.":::
 
 - Enforce quarterly reviews
 - For compliance-related projects, set the reviewers to be reviewers, rather than self-review for external users.
