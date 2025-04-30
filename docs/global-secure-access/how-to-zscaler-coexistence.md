@@ -235,7 +235,7 @@ Verify configurations for clients:
 1. Navigate to **Zscaler Client** > **Private Access**. Verify **Service Status** is `ON` and Authentication Status is `Authenticated`.
 
 > [!NOTE]
-> For information troubleshooting health check failures: Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn.
+> For information troubleshooting health check failures, see [Troubleshoot the Global Secure Access client diagnostics - Health check](troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 Test traffic flow:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
