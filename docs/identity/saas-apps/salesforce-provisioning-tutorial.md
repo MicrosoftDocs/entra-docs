@@ -24,7 +24,7 @@ The scenario outlined in this article assumes that you already have the followin
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Salesforce.com tenant.
 * A Salesforce account username and password and the token. In future, if you reset the account password, Salesforce provides you with a new token and you need to edit the Salesforce provisioning settings.
-* A custom user profile in Salesforce. Once you have created a custom profile in the Salesforce portal, edit the profile's Administrative Permissions to enable the following:
+* A custom user profile in Salesforce for the integration user. Once you have created a custom profile in the Salesforce portal, edit the profile's Administrative Permissions to enable the following:
 
     * API Enabled.
 
@@ -34,10 +34,7 @@ The scenario outlined in this article assumes that you already have the followin
 See also Salesforce [Create or Clone Profiles](https://help.salesforce.com/s/articleView?id=sf.users_profiles_cloning.htm&type=5) documentation.
 
 > [!Note]
-> Assign the permissions directly to the profile. Don't add the permissions through permission sets.
-
-> [!Note]
-> Roles shouldn't be manually edited in Microsoft Entra ID when doing role imports.
+> Assign the permissions directly to this profile. Don't add the permissions through permission sets.
 
 > [!IMPORTANT]
 > If you're using a Salesforce.com trial account, then you be unable to configure automated user provisioning. Trial accounts don't have the necessary API access enabled until they are purchased. You can get around this limitation by using a free [developer account](https://developer.salesforce.com/signup) to complete this article.
@@ -57,7 +54,7 @@ Before configuring and enabling the provisioning service, you need to decide whi
 * When assigning a user to Salesforce, you must select a valid user role. The "Default Access" role doesn't work for provisioning
 
     > [!NOTE]
-    > This app imports profiles from Salesforce as part of the provisioning process, which the customer may want to select when assigning users in Microsoft Entra ID. Please note that the profiles that get imported from Salesforce appear as Roles in Microsoft Entra ID.
+    > This app imports profiles from Salesforce as part of the provisioning process, which you may want to select when assigning users in Microsoft Entra ID. Please note that the profiles that get imported from Salesforce appear as Roles in Microsoft Entra ID. Roles shouldn't be manually edited in Microsoft Entra ID when doing role imports. If you wish to assign users to a custom profile, then wait for profiles to be imported from Salesforce before assigning users to an application.
 
 ## Enable automated user provisioning
 
