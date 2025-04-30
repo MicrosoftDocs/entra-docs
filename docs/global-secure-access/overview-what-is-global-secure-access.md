@@ -29,7 +29,7 @@ The Global Secure Access features streamline the roll-out and management of the 
 
 ## Microsoft Entra Internet Access
 
-Microsoft Entra Internet Access secures access to all internet and SaaS apps and resources while protecting your organization against internet threats, malicious network traffic, and unsafe or noncompliant content with an identity-centric secure web gateway (SWG).
+Microsoft Entra Internet Access protects access to internet and SaaS apps with an identity-based secure web gateway, blocking threats, unsafe content, and malicious traffic.
 
 ### Key features
 
