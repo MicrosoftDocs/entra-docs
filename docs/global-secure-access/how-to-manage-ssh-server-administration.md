@@ -13,9 +13,9 @@ ai-usage: human-only
 
 # Management for SSH-based server administration
 
-It's widely recognized by the IT industry that IT administrators use Secure Shell (SSH) as a critical service to enable security while managing configuration, deployment, and maintenance of servers and applications in an organization's infrastructure. SSH is a secure way to access and manage devices over an unsecured network. SSH encryption protocols, ensure the integrity and confidentiality of administrative tasks and remote system interactions, which are pivotal to maintain operational efficiency and reduce potential security risks. 
+It's widely recognized by the IT industry that IT administrators use Secure Shell (SSH) as a critical service. Admins enable security while managing configuration, deployment, and maintenance of servers and applications in an organization's infrastructure. SSH is a secure way to access and manage devices over an unsecured network. SSH encryption protocols, ensure the integrity and confidentiality of administrative tasks and remote system interactions, pivotal for operational efficiency and risk reduction. 
 
-In this guide learn to configure and establish an SSH connection using Microsoft Entra Private Access for enhanced security. Organizations use Private Access to modernize user access to private apps and resources.
+In this guide, learn to configure and establish an SSH connection using Microsoft Entra Private Access for enhanced security. Organizations use Private Access to modernize user access to private apps and resources.
 
 You can [learn more about Private Access](concept-private-access.md).
 
@@ -32,7 +32,7 @@ Ensure you meet the following prerequisites.
 * **Licensing** - Learn about licensing and the products that make up [Microsoft Global Secure Access](overview-what-is-global-secure-access.md)
   * Learn more about [Microsoft Entra plans and pricing](https://aka.ms/azureadlicense)
 * **A remote server with SSH** enabled
-* **GSA private connector** with network connectivity to the resource
+* **Microsoft Global Secure Access (GSA) private connector** with network connectivity to the resource
   * Learn how to [configure connectors](how-to-configure-connectors.md)
 * **A device with the GSA client** on Microsoft Entra joined, or Microsoft Entra hybrid joined
 * **Private Access profile** enabled
@@ -78,7 +78,7 @@ For more information, see [Apply Conditional Access policies to Private Access a
 
 ## Global Secure Access client review and testing
 
-In this section find links to guidance to install and configure the Microsoft Global Secure Access [client](concept-clients.md) on user devices.  
+In this section, find links to guidance to install and configure the Microsoft Global Secure Access [client](concept-clients.md) on user devices.  
 
 To install on operating systems, see [Windows](how-to-install-windows-client.md) and [macOS](how-to-install-macos-client.md).  
 
@@ -88,11 +88,11 @@ Use the following checklist to help confirm configuration.
 
 * Ensure the server is running and accessible by the SSH port.
 * Confirm correct host firewall configuration.
-  * For guidance, see [OpenSSH Server configuration for Windows](/windows-server/administration/OpenSSH/openssh-server-configuration).
-* On the Windows taskbar right-click the **Global Secure Access** client
+  * Find guidance in [OpenSSH Server configuration for Windows](/windows-server/administration/OpenSSH/openssh-server-configuration).
+* On the Windows taskbar, right-click the **Global Secure Access** client.
   * Select **Advanced Diagnostics** > **Forwarding profile** > **Private Access**.
 * Validate the application appears in the access profile.
-* From the client device, access the SSH services.  
+* Access the SSH services from the client device.  
 
 ## Connection failure
 
