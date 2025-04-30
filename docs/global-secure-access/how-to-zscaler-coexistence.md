@@ -257,7 +257,7 @@ Test traffic flow:
 
 ## Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access and with Zscaler Private Access
 
-In this scenario, Global Secure Access handles Internet and Microsoft traffic. Zscaler only captures private application traffic. Therefore, the Zscaler Internet Access module is disabled from the Zscaler portal.
+In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Zscaler only captures private application traffic. Therefore, the Zscaler Internet Access module is disabled from the Zscaler portal.
 
 ### Microsoft Entra Internet and Microsoft Access configuration 4
 
