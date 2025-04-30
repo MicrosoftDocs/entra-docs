@@ -42,8 +42,7 @@ The rows in a downloaded CSV template are:
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Select **Identity**.
-1. Select **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. Open the group from which you're removing members and then select **Members**.
 1. On the **Members** page, select **Remove members**.
 1. On the **Bulk remove group members** page, select **Download** to get the CSV file template with required group member properties.

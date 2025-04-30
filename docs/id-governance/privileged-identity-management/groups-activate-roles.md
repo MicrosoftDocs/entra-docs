@@ -24,13 +24,17 @@ This article is for eligible members or owners who want to activate their group 
 >
 >Application may provide access to users based on their group membership. In some situations, application access may not immediately reflect the fact that user was added to the group or removed from it. If application previously cached the fact that user is not member of the group – when user tries to access application again, access may not be provided. Similarly, if application previously cached the fact that user is member of the group – when group membership is deactivated, user may still get access. Specific situation depends on the application’s architecture. For some applications, signing out and signing back in may help to get access added or removed.
 
+## PIM for Groups and ownership deactivation
+
+[!INCLUDE [groups-deactivation-include](../includes/groups-deactivation-include.md)]
+
 ## Activate a role
 
 When you need to take on a group membership or ownership, you can request activation by using the **My roles** navigation option in PIM.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **My roles** > **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **My roles** > **Groups**. 
     >[!NOTE]
     > You may also use this [short link](https://aka.ms/pim) to open the **My roles** page directly.
 
@@ -58,7 +62,7 @@ You can view the status of your pending requests to activate.  n It is important
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **My requests** **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **My requests** **Groups**. 
 
 1. Review list of requests.
 
@@ -69,7 +73,7 @@ You can view the status of your pending requests to activate.  n It is important
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **My requests** **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **My requests** **Groups**. 
 
     :::image type="content" source="media/pim-for-groups/pim-group-8.png" alt-text="Screenshot of where to select the request you want to cancel." lightbox="media/pim-for-groups/pim-group-8.png":::
 

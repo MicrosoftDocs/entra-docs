@@ -35,7 +35,7 @@ To add an enterprise application to your Microsoft Entra tenant, you need:
 To assign an owner to an enterprise application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application that you want to add an owner to.
 1. Select **Owners**, and then select **Add** to get a list of user accounts that you can choose an owner from.
 1. Search for and select the user account that you want to be an owner of the application.

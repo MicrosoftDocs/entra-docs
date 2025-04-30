@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -41,7 +41,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Ardoq into Microsoft Entra ID, you need to add Ardoq from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Ardoq** in the search box.
 1. Select **Ardoq** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Ardoq, perform the following step
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Ardoq SSO](#configure-ardoq-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Ardoq test user](#create-ardoq-test-user)** - to have a counterpart of B.Simon in Ardoq that is linked to the Microsoft Entra representation of user.
+    1. **[Create Ardoq test user](#create-ardoq-test-user)** - to have a counterpart of B.Simon in Ardoq that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,7 +70,7 @@ To configure and test Microsoft Entra SSO with Ardoq, perform the following step
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Ardoq** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Ardoq** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -143,13 +143,13 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select on **Test this application**, this will redirect to Ardoq Sign on URL where you can initiate the sign in flow.  
+* Select **Test this application**, this option redirects to Ardoq Sign on URL where you can initiate the sign in flow.  
 
 * Go to Ardoq Sign-on URL directly and initiate the sign in flow from there.
 
 #### IDP initiated:
 
-* Select on **Test this application**, and you should be automatically signed in to the Ardoq for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the Ardoq for which you set up the SSO 
 
 You can also use Microsoft My Apps to test the application in any mode. When you select the Ardoq tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign in flow and if configured in IDP mode, you should be automatically signed in to the Ardoq for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 

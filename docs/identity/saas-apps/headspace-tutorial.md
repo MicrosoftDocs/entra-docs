@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Headspace
 
-In this article,  you'll learn how to integrate Headspace with Microsoft Entra ID. When you integrate Headspace with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Headspace with Microsoft Entra ID. When you integrate Headspace with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Headspace.
 * Enable your users to be automatically signed-in to Headspace with their Microsoft Entra accounts.
@@ -46,11 +46,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Headspace into Microsoft Entra ID, you need to add Headspace from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Headspace** in the search box.
 1. Select **Headspace** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-headspace'></a>
 
@@ -64,7 +64,7 @@ To configure and test Microsoft Entra SSO with Headspace, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Headspace SSO](#configure-headspace-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Headspace test user](#create-headspace-test-user)** - to have a counterpart of B.Simon in Headspace that is linked to the Microsoft Entra representation of user.
+    1. **[Create Headspace test user](#create-headspace-test-user)** - to have a counterpart of B.Simon in Headspace that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,9 +74,9 @@ To configure and test Microsoft Entra SSO with Headspace, perform the following 
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Headspace** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Headspace** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
     ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://headspace.com/sso-login`
 
     > [!Note]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Headspace Client support team](mailto:employer-solution-squad@headspace.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Headspace Client support team](mailto:employer-solution-squad@headspace.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Headspace application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -108,7 +108,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In order to fill Headspace's requirements, please follow the steps below to correctly configure the necessary Attributes & Claims:
 
-	1. Click the pencil or **Edit** in the Attributes & Claims modal which should open a new page.
+	1. Select the pencil or **Edit** in the Attributes & Claims modal which should open a new page.
 
 	2. Update the claims to match the below image, see step 3 for configuring `email`.
 	
@@ -130,10 +130,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -146,15 +146,15 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Headspace.
+In this section, you enable B.Simon to use single sign-on by granting access to Headspace.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Headspace**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Headspace**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Add Assignment** dialog, select the **Assign** button.
 
 ## Configure Headspace SSO
 
@@ -162,17 +162,17 @@ To configure single sign-on on **Headspace** side, you need to send the download
 
 ### Create Headspace test user
 
-In this section, a user called B.Simon is created in Headspace. Headspace supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Headspace, a new one is created after authentication.
+In this section, a user called B.Simon is created in Headspace. Headspace supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Headspace, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Headspace Sign on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Headspace Sign on URL where you can initiate the login flow. 
 
 * Go to Headspace Sign on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Headspace tile in the My Apps, this will redirect to Headspace Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Headspace tile in the My Apps, this option redirects to Headspace Sign on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

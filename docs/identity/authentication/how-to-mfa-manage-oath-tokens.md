@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 03/26/2025
 
 ms.author: justinha
 author: justinha
@@ -48,17 +48,17 @@ You can view and enable hardware OATH tokens in the Authentication methods polic
 To enable hardware OATH tokens in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
+1. Browse to **Entra ID** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
 1. Select **Enable**, choose which groups of users to include in the policy, and select **Save**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/enable.png" alt-text="Screenshot of how to enable hardware OATH tokens in the Microsoft Entra admin center.":::
 
-We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
+We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Entra ID** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
 
 
 ## Scenario: Admin creates, assigns, and activates a hardware OATH token 
 
-This scenario covers how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps. For more information on the permissions required to invoke these APIs and to inspect the request-response samples, see the Microsoft Graph API documentation for [Create hardwareOathTokenAuthenticationMethodDevice](/graph/api/authenticationmethoddevice-post-hardwareoathdevices?view=graph-rest-beta&preserve-view=true) operation.
+This scenario covers how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps. For more information about the permissions required to invoke these APIs and to inspect the request-response samples, see [Create hardwareOathTokenAuthenticationMethodDevice](/graph/api/authenticationmethoddevice-post-hardwareoathdevices?view=graph-rest-beta&preserve-view=true).
 
 >[!NOTE]
 >There might be up to a 20-minute delay for the policy propagation. Allow an hour for the policy to update before users can sign in with their hardware OATH token and see it in their [Security info](https://mysignins.microsoft.com/security-info).
@@ -343,3 +343,4 @@ To identify and remove the legacy token.
 ## Related content
 
 Learn more about [OATH tokens](concept-authentication-oath-tokens.md).
+Learn how to [create one or more hardwareOathTokenAuthenticationMethodDevices](/graph/api/authenticationmethoddevice-update).

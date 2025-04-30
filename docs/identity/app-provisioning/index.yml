@@ -13,6 +13,7 @@ metadata:
   author: kenwith
   ms.author: kenwith
   manager: femila
+  ai-usage: ai-assisted
 landingContent:
   - title: Provision users and groups to a cloud app
     linkLists:

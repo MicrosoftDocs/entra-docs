@@ -40,7 +40,7 @@ items:
     - name: Create or delete users
       href: how-to-create-delete-users.yml
     - name: Assign roles to users
-      href: users-assign-role-azure-portal.yml
+      href: how-to-assign-roles-to-users.yml
     - name: Default user permissions
       href: users-default-permissions.md
     - name: Manage user profile info
@@ -89,7 +89,9 @@ items:
 - name: Microsoft Security Copilot + Microsoft Entra
   items:
   - name: Overview
-    href: copilot-security-entra.md  
+    href: copilot-security-entra.md
+  - name: Security Copilot agents in Microsoft Entra
+    href: agents.md
   - name: Respond to identity threats using risky user summarization
     href: copilot-entra-risky-user-summarization.md  
   - name: Manage lifecycle workflows using Microsoft Security Copilot
@@ -107,17 +109,10 @@ items:
     href: how-to-find-tenant.yml
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
+  - name: Quarantine unsanctioned tenants 
+    href: quarantine-unsanctioned-tenants.md
   - name: Inaccessible tenant due to inactivity
     href: inaccessible-tenant.md
-  - name: Support access requests
-    expanded: false
-    items:
-      - name: What are support access requests (preview)?
-        href: concept-support-access-requests.md
-      - name: Approve and manage support access requests (preview)
-        href: how-to-manage-support-access-requests.md
-      - name: View support access request activity logs
-        href: how-to-view-support-access-request-logs.md
 - name: Reference
   expanded: false
   items:

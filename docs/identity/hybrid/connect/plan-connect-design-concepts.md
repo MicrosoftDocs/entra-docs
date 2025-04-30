@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.custom: azure-ad-connect
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

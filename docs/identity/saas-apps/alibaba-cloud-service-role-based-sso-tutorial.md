@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alibaba Cloud Service (Role-based SSO) so that I can control who has access to Alibaba Cloud Service (Role-based SSO), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Alibaba Cloud Service (Role-based SSO)
 
-In this article,  you'll learn how to integrate Alibaba Cloud Service (Role-based SSO) with Microsoft Entra ID. When you integrate Alibaba Cloud Service (Role-based SSO) with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Alibaba Cloud Service (Role-based SSO) with Microsoft Entra ID. When you integrate Alibaba Cloud Service (Role-based SSO) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Alibaba Cloud Service (Role-based SSO).
 * Enable your users to be automatically signed-in to Alibaba Cloud Service (Role-based SSO) with their Microsoft Entra accounts.
@@ -39,14 +39,14 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Alibaba Cloud Service (Role-based SSO) into Microsoft Entra ID, you need to add Alibaba Cloud Service (Role-based SSO) from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Alibaba Cloud Service (Role-based SSO)** in the search box.
 1. Select **Alibaba Cloud Service (Role-based SSO)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-5. On the **Alibaba Cloud Service (Role-based SSO)** page, click **Properties** in the left-side navigation pane, and copy the **object ID** and save it on your computer for subsequent use.
+5. On the **Alibaba Cloud Service (Role-based SSO)** page, select **Properties** in the left-side navigation pane, and copy the **object ID** and save it on your computer for subsequent use.
 
     ![Properties config](./media/alibaba-cloud-service-role-based-sso-tutorial/Properties.png)
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-alibaba-cloud-service-role-based-sso'></a>
 
@@ -61,7 +61,7 @@ To configure and test Microsoft Entra SSO with Alibaba Cloud Service (Role-based
     1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure Role-Based Single Sign-On in Alibaba Cloud Service](#configure-role-based-single-sign-on-in-alibaba-cloud-service)** - to enable your users to use this feature.
     1. **[Configure Alibaba Cloud Service (Role-based SSO) SSO](#configure-alibaba-cloud-service-role-based-sso-sso)** - to configure the Single Sign-On settings on application side.
-    1. **[Create Alibaba Cloud Service (Role-based SSO) test user](#create-alibaba-cloud-service-role-based-sso-test-user)** - to have a counterpart of Britta Simon in Alibaba Cloud Service (Role-based SSO) that is linked to the Microsoft Entra representation of user.
+    1. **[Create Alibaba Cloud Service (Role-based SSO) test user](#create-alibaba-cloud-service-role-based-sso-test-user)** - to have a counterpart of Britta Simon in Alibaba Cloud Service (Role-based SSO) that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -71,17 +71,17 @@ To configure and test Microsoft Entra SSO with Alibaba Cloud Service (Role-based
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Alibaba Cloud Service (Role-based SSO)** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Alibaba Cloud Service (Role-based SSO)** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
     ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
-    a. Click **Upload metadata file**.
+    a. Select **Upload metadata file**.
 
-    b. Click on **folder logo** to select the metadata file and click **Upload**.
+    b. Select **folder logo** to select the metadata file and select **Upload**.
 
 
     >[!NOTE]
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     c. Once the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in Alibaba Cloud Service (Role-based SSO) section textbox:
 
     > [!Note]
-    > If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
+    > If the **Identifier** and **Reply URL** values don't get auto populated, then fill in the values manually according to your requirement.
 
 1. Alibaba Cloud Service (Role-based SSO) require roles to be configured in Microsoft Entra ID. The role claim is pre-configured so you don't have to configure it but you still need to create them in Microsoft Entra ID using this [article](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui).
 
@@ -113,13 +113,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 2. In the left-side navigation pane, select **SSO**.
 
-3. On the **Role-based SSO** tab, click **Create IdP**.
+3. On the **Role-based SSO** tab, select **Create IdP**.
 
-4. On the displayed page, enter `AAD` in the IdP Name field, enter a description in the **Note** field, click **Upload** to upload the federation metadata file you downloaded before, and click **OK**.
+4. On the displayed page, enter `AAD` in the IdP Name field, enter a description in the **Note** field, select **Upload** to upload the federation metadata file you downloaded before, and select **OK**.
 
-5. After the IdP is successfully created, click **Create RAM Role**.
+5. After the IdP is successfully created, select **Create RAM Role**.
 
-6. In the **RAM Role Name** field enter `AADrole`, select `AAD` from the **Select IdP** drop-down list and click OK.
+6. In the **RAM Role Name** field enter `AADrole`, select `AAD` from the **Select IdP** drop-down list and select OK.
 
    >[!NOTE]
    >You can grant permission to the role as needed. After creating the IdP and the corresponding role, we recommend that you save the ARNs of the IdP and the role for subsequent use. You can obtain the ARNs on the IdP information page and the role information page.
@@ -130,23 +130,23 @@ Follow these steps to enable Microsoft Entra SSO.
 
    1. Sign in to the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
-   1. Click **modify permissions** to obtain required permissions for creating a role.
+   1. Select **modify permissions** to obtain required permissions for creating a role.
 
        ![Graph config1](./media/alibaba-cloud-service-role-based-sso-tutorial/graph01.png)
 
-   1. Select the following permissions from the list and click **Modify Permissions**, as shown in the following figure.
+   1. Select the following permissions from the list and select **Modify Permissions**, as shown in the following figure.
 
        ![Graph config2](./media/alibaba-cloud-service-role-based-sso-tutorial/graph02.png)
 
        > [!NOTE]
        > After permissions are granted, sign in to the Graph Explorer again.
 
-   1. On the Graph Explorer page, select **GET** from the first drop-down list and **beta** from the second drop-down list. Then enter `https://graph.microsoft.com/beta/servicePrincipals` in the field next to the drop-down lists, and click **Run Query**.
+   1. On the Graph Explorer page, select **GET** from the first drop-down list and **beta** from the second drop-down list. Then enter `https://graph.microsoft.com/beta/servicePrincipals` in the field next to the drop-down lists, and select **Run Query**.
 
        ![Graph config3](./media/alibaba-cloud-service-role-based-sso-tutorial/graph03.png)
 
        > [!NOTE]
-       > If you are using multiple directories, you can enter `https://graph.microsoft.com/beta/contoso.com/servicePrincipals` in the field of the query.
+       > If you're using multiple directories, you can enter `https://graph.microsoft.com/beta/contoso.com/servicePrincipals` in the field of the query.
 
    1. In the **Response Preview** section, extract the appRoles property from the 'Service Principal' for subsequent use.
 
@@ -155,7 +155,7 @@ Follow these steps to enable Microsoft Entra SSO.
        > [!NOTE]
        > You can locate the appRoles property by entering `https://graph.microsoft.com/beta/servicePrincipals/<objectID>` in the field of the query. Note that the `objectID` is the object ID you have copied from the Microsoft Entra ID **Properties** page.
 
-   1. Go back to the Graph Explorer, change the method from **GET** to **PATCH**, paste the following content into the **Request Body** section, and click **Run Query**:
+   1. Go back to the Graph Explorer, change the method from **GET** to **PATCH**, paste the following content into the **Request Body** section, and select **Run Query**:
 
        ```json
          {
@@ -187,7 +187,7 @@ Follow these steps to enable Microsoft Entra SSO.
        ```
 
        > [!NOTE]
-       > The `value` is the ARNs of the IdP and the role you created in the RAM console. Here, you can add multiple roles as needed. Microsoft Entra ID will send the value of these roles as the claim value in SAML response. However, you can only add new roles after the `msiam_access` part for the patch operation. To smooth the creation process, we recommend that you use an ID generator, such as GUID Generator, to generate IDs in real time.
+       > The `value` is the ARNs of the IdP and the role you created in the RAM console. Here, you can add multiple roles as needed. Microsoft Entra ID sends the value of these roles as the claim value in SAML response. However, you can only add new roles after the `msiam_access` part for the patch operation. To smooth the creation process, we recommend that you use an ID generator, such as GUID Generator, to generate IDs in real time.
 
    1. After the 'Service Principal' is patched with the required role, attach the role with the Microsoft Entra user (u2) by following the steps of **Assign the Microsoft Entra test user** section of the article.
 
@@ -204,12 +204,12 @@ In this section, you create a user called Britta Simon in Alibaba Cloud Service 
 After the preceding configurations are completed, test Alibaba Cloud Service (Role-based SSO) by following these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Alibaba Cloud Service (Role-based SSO)**.
-1. Select **Single sign-on**, and click **Test**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Alibaba Cloud Service (Role-based SSO)**.
+1. Select **Single sign-on**, and select **Test**.
 
     ![Test config1](./media/alibaba-cloud-service-role-based-sso-tutorial/test03.png)
 
-1. Click **Sign in as current user**.
+1. Select **Sign in as current user**.
 
     ![Test config2](./media/alibaba-cloud-service-role-based-sso-tutorial/test04.png)
 

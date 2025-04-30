@@ -22,7 +22,7 @@ This article describes the steps you need to perform in both Rollbar and Microso
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Rollbar
-> * Remove users in Rollbar when they do not require access anymore
+> * Remove users in Rollbar when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Rollbar
 > * Provision groups and group memberships in Rollbar
 > * [Single sign-on](./rollbar-tutorial.md) to Rollbar (recommended)
@@ -38,16 +38,16 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Rollbar](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-rollbar-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure Rollbar to support provisioning with Microsoft Entra ID
 
-Before configuring Rollbar for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Rollbar.
+Before configuring Rollbar for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Rollbar.
 
-1. Sign in to your [Rollbar Admin Console](https://rollbar.com/login/). Click on **Account Settings**.
+1. Sign in to your [Rollbar Admin Console](https://rollbar.com/login/). Select **Account Settings**.
 
 	![Rollbar Admin Console](media/rollbar-provisioning-tutorial/image00.png)
 
@@ -55,7 +55,7 @@ Before configuring Rollbar for automatic user provisioning with Microsoft Entra 
 
 	![Rollbar Identity Provider](media/rollbar-provisioning-tutorial/idp.png)
 
-3. Scroll down to **Provisioning Options**. Copy the access token. This value will be entered in the **Secret Token** field in the provisioning tab of your Rollbar application. Select the **Enable user and team provisioning** checkbox and click on **Save**.
+3. Scroll down to **Provisioning Options**. Copy the access token. This value is entered in the **Secret Token** field in the provisioning tab of your Rollbar application. Select the **Enable user and team provisioning** checkbox and select **Save**.
 
 	![Rollbar Access Token](media/rollbar-provisioning-tutorial/token.png)
 
@@ -64,16 +64,11 @@ Before configuring Rollbar for automatic user provisioning with Microsoft Entra 
 
 ## Step 3: Add Rollbar from the Microsoft Entra application gallery
 
-Add Rollbar from the Microsoft Entra application gallery to start managing provisioning to Rollbar. If you have previously setup Rollbar for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Rollbar from the Microsoft Entra application gallery to start managing provisioning to Rollbar. If you have previously setup Rollbar for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
-
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to Rollbar 
 
@@ -84,7 +79,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Rollbar in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -100,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input the access token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Rollbar. If the connection fails, ensure your Rollbar account has admin permissions and try again.
+5. Under the **Admin Credentials** section, input the access token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Rollbar. If the connection fails, ensure your Rollbar account has admin permissions and try again.
 
  	![Provisioning](./media/rollbar-provisioning-tutorial/admin.png)
 
@@ -112,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Rollbar**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to Rollbar in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Rollbar for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Rollbar API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+9. Review the user attributes that are synchronized from Microsoft Entra ID to Rollbar in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Rollbar for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the Rollbar API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -143,18 +138,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 6: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
 
-1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Additional resources
 

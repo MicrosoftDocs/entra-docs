@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Alohi
 
-In this article,  you'll learn how to integrate Alohi with Microsoft Entra ID. When you integrate Alohi with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Alohi with Microsoft Entra ID. When you integrate Alohi with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Alohi.
 * Enable your users to be automatically signed-in to Alohi with their Microsoft Entra accounts.
@@ -41,7 +41,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Alohi into Microsoft Entra ID, you need to add Alohi from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Alohi** in the search box.
 1. Select **Alohi** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -57,7 +57,7 @@ To configure and test Microsoft Entra SSO with Alohi, perform the following step
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Alohi SSO](#configure-alohi-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Alohi test user](#create-alohi-test-user)** - to have a counterpart of B.Simon in Alohi that is linked to the Microsoft Entra ID representation of user.
+    1. **[Create Alohi test user](#create-alohi-test-user)** - to have a counterpart of B.Simon in Alohi that's linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -65,13 +65,13 @@ To configure and test Microsoft Entra SSO with Alohi, perform the following step
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Alohi** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Alohi** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
@@ -105,7 +105,7 @@ To configure single sign-on on **Alohi** side, you need to send the downloaded *
 
 ### Create Alohi test user
 
-In this section, a user called Britta Simon is created in Alohi. Alohi supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Alohi, a new one is created after authentication.
+In this section, a user called Britta Simon is created in Alohi. Alohi supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Alohi, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -113,15 +113,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Alohi Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. This option redirects to Alohi Sign on URL where you can initiate the login flow.  
  
 * Go to Alohi Sign-on URL directly and initiate the login flow from there.
  
 #### IDP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Alohi for which you set up the SSO.
+* Select **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Alohi for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the Alohi tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Alohi for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Alohi tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Alohi for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

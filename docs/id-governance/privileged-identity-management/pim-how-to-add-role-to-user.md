@@ -32,7 +32,7 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
 
 1. Select **Roles** to see the list of roles for Microsoft Entra permissions.
 
@@ -72,7 +72,7 @@ For certain roles, the scope of the granted permissions can be restricted to a s
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select the **User Administrator**.
 
@@ -245,7 +245,7 @@ Follow these steps to update or remove an existing role assignment. **Microsoft 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles**. 
 
 1. Select **Roles** to see the list of roles for Microsoft Entra ID.
 

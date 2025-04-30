@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator
 
-In this article,  you'll learn how to integrate HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator.
 * Enable your users to be automatically signed-in to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with their Microsoft Entra accounts.
@@ -41,7 +41,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator into Microsoft Entra ID, you need to add HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator** in the search box.
 1. Select **HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -63,9 +63,9 @@ To configure and test Microsoft Entra SSO with HPE Aruba Networking EdgeConnect 
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -75,21 +75,21 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
     ![Screenshot shows the system settings of the Enterprise Authentication.](./media/hpe-aruba-networking-edgeconnect-global-enterprise-orchestrator-tutorial/remote.png "Administration")
 
-    b. In the **Remote Authentication** dialog, click **+Add New Server**.
+    b. In the **Remote Authentication** dialog, select **+Add New Server**.
 
     c. Select **SAML** from the **Type** field.
 
     d. In the **Name** field, enter a name for your SAML configuration.
 
-    e. Click the copy icon next to the **ACS URL** field.
+    e. Select the copy icon next to the **ACS URL** field.
 
     f. Navigate back to **Basic SAML Configuration** section on **Microsoft Set up single sign-on with SAML** page and paste the values as shown in the image below:
 
     ![Screenshot shows the configuration of the Enterprise Authentication.](./media/hpe-aruba-networking-edgeconnect-global-enterprise-orchestrator-tutorial/server.png "Configure")
 
-    g. Click **Save** to close the **Basic SAML Configuration** section.
+    g. Select **Save** to close the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **Attributes & Claims** section, click the edit icon and copy the highlighted entry below, and paste the information into the **Username Attribute** field in Orchestrator as shown below:
+1. On the **Set up single sign-on with SAML** page, in the **Attributes & Claims** section, select the edit icon and copy the highlighted entry below, and paste the information into the **Username Attribute** field in Orchestrator as shown below:
 
     ![Screenshot shows the attributes settings of the Enterprise Authentication.](./media/hpe-aruba-networking-edgeconnect-global-enterprise-orchestrator-tutorial/global.png "Claims")
 
@@ -107,16 +107,16 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Remote Authentication Server** dialog, set the **Default role** field. Example: SuperAdmin. (This is the last item on the dropdown list.) The Default role is needed if you did not define Role Based Access Control (RBAC) in the roles attributes in the Attributes & Claims section.
 
-1. Click **Save** on the Remote Authentication Server dialog.
+1. Select **Save** on the Remote Authentication Server dialog.
 
 1. You have successfully configured SAML SSO authentication on the Orchestrator. The next step is to create a test user and assign the Orchestrator application to that user to verify if SAML is configured successfully.
 
 ### Create a Microsoft Entra ID test user
 
-In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
+In this section, you create a test user in the Microsoft Entra admin center called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -127,18 +127,18 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
 
 ### Assign the Test user to the HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator application
 
-In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator.
+In this section, you enable B.Simon to use Microsoft Entra single sign-on by granting access to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator.
 
 1.	Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-2.	Browse to **Identity** > **Applications** > **Enterprise applications** > **HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator**.
+2.	Browse to **Entra ID** > **Enterprise apps** > **HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator**.
 3.	In the app's overview page, select **Users and groups**.
 4.	Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
 
-    a. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
+    a. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
 
-    b. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+    b. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
 
-    c. In the **Add Assignment** dialog, click the **Assign** button.
+    c. In the **Add Assignment** dialog, select the **Assign** button.
 
 ## Test SSO 
 
@@ -146,15 +146,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator Sign on URL where you can initiate the login flow.  
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator Sign on URL where you can initiate the login flow.  
  
 * Go to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator Sign-on URL directly and initiate the login flow from there.
  
 #### IDP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator for which you set up the SSO.
+* Select **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Related content
 

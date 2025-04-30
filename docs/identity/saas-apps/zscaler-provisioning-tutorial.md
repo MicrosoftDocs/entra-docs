@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Zsc
 
 The scenario outlined in this article assumes that you already have the following:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler tenant.
 * A user account in Zscaler with Admin permissions.
 
@@ -40,8 +40,8 @@ Before configuring Zscaler for automatic user provisioning with Microsoft Entra 
 **To add Zscaler from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **Zscaler**, select **Zscaler** from result panel then click **Add** button to add the application.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+1. In the search box, type **Zscaler**, select **Zscaler** from result panel then select **Add** button to add the application.
 
 	![Zscaler in the results list](common/search-new-app.png)
 
@@ -55,7 +55,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ### Important tips for assigning users to Zscaler
 
-* It is recommended that a single Microsoft Entra user is assigned to Zscaler to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Zscaler to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Zscaler, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -71,14 +71,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > You may also choose to enable SAML-based single sign-on for Zscaler, following the instructions provided in the [Zscaler single sign-on  article](zscaler-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 > [!NOTE]
-> When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships. Please be aware that the restart can take time if you are syncing all users and groups in your tenant or have assigned large groups with 50K+ members. 
+> When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships. Please be aware that the restart can take time if you're syncing all users and groups in your tenant or have assigned large groups with 50K+ members. 
 
 <a name='to-configure-automatic-user-provisioning-for-zscaler-in-azure-ad'></a>
 
 ### To configure automatic user provisioning for Zscaler in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler**.
 1. Select the **Provisioning** tab.
 
 	![Screenshot of the Zscaler - Provisioning Enterprise Application sidebar with the Provisioning option highlighted.](./media/zscaler-provisioning-tutorial/provisioning-tab.png)
@@ -89,17 +89,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Admin Credentials** section, input the **Tenant URL** and **Secret Token** of your Zscaler account as described in Step 6.
 
-1. To obtain the **Tenant URL** and **Secret Token**, navigate to **Administration > Authentication Settings** in the Zscaler portal user interface and click on **SAML** under **Authentication Type**.
+1. To obtain the **Tenant URL** and **Secret Token**, navigate to **Administration > Authentication Settings** in the Zscaler portal user interface and select **SAML** under **Authentication Type**.
 
 	![Screenshot of the Authentication Settings page.](./media/zscaler-provisioning-tutorial/secret-token-1.png)
 
-1. Click on **Configure SAML** to open **Configuration SAML** options.
+1. Select **Configure SAML** to open **Configuration SAML** options.
 
 	![Screenshot of the Configure SAML dialog box with the Base URL and Bearer Token text boxes called out.](./media/zscaler-provisioning-tutorial/secret-token-2.png)
 
 1. Select **Enable SCIM-Based Provisioning** to retrieve **Base URL** and **Bearer Token**, then save the settings. Copy the **Base URL** to **Tenant URL**, and **Bearer Token**  to **Secret Token**.
 
-1. Upon populating the fields shown in Step 5, click **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler. If the connection fails, ensure your Zscaler account has Admin permissions and try again.
+1. Upon populating the fields shown in Step 5, select **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler. If the connection fails, ensure your Zscaler account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Notification Email text box.](./media/zscaler-provisioning-tutorial/notification.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler**.
 
@@ -143,7 +143,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Scope setting with the Sync only assigned users and groups option highlighted.](./media/zscaler-provisioning-tutorial/scoping.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 

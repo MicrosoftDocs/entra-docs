@@ -11,7 +11,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 08/21/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS sample app.
 ---
 
@@ -23,7 +23,10 @@ In this quickstart you learn how to configure iOS sample application to call an 
 
 ## Prerequisites
 
-- [Sign in users in sample iOS (Swift) mobile app by using native authentication](quickstart-native-authentication-ios-sign-in.md).
+* [Sign in users in sample iOS (Swift) mobile app by using native authentication](quickstart-native-authentication-ios-sign-in.md).
+* Register a new application in the [Microsoft Entra admin center](https://entra.microsoft.com) for your web API, configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 
 ### Register a web API application
 

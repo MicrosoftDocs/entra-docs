@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: femila
   ms.reviewer: adelle.dimitui
-  ms.date: 04/22/2024
+  ms.date: 03/17/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -75,7 +75,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |
-        Browse to **Identity** > **Users** > **All users**.
+        Browse to **Entra ID** > **Users**.
 
           :::image type="content" source="media/how-to-create-delete-users/all-users-page.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
       - |
@@ -103,7 +103,7 @@ procedureSection:
 
         ### Properties
 
-        There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Identity** > **Users** > **All users** and select a user to update.
+        There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Entra ID** > **Users** and select a user to update.
 
         - **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest.
         - **Job information:** Add any job-related information, such as the user's job title, department, or manager.
@@ -153,7 +153,7 @@ procedureSection:
       - |
         Make sure you're signed in to your external tenant. Use the **Settings** icon :::image type="icon" source="media/how-to-create-delete-users/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
       - |
-        Browse to **Identity** > **Users** > **All users**.
+        Browse to **Entra ID** > **Users**.
       - |
         Select  **New user** > **Create new external user**.
 
@@ -186,7 +186,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **Users** > **All users**.
+        Browse to **Entra ID** > **Users**.
       - |  
         Select  **New user** > **Invite external user**.
 
@@ -208,7 +208,7 @@ procedureSection:
 
         When you invite an external guest user by sending an email invitation, you can check the status of the invitation from the user's details.
 
-        1. Browse to **Identity** > **Users** > **All users**.
+        1. Browse to **Entra ID** > **Users**.
         1. Select the invited guest user.
         1. In the **My Feed** section, locate the **B2B collaboration** tile. 
             - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email.
@@ -240,7 +240,7 @@ procedureSection:
         To delete a user, follow these steps:
 
         1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-        1. Browse to **Identity** > **Users** > **All users**.
+        1. Browse to **Entra ID** > **Users**.
         1. Search for and select the user you want to delete.
         1. Select **Delete user**.
 

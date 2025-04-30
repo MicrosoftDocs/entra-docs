@@ -4,10 +4,10 @@ description: Sign in Microsoft Entra users by using the Microsoft identity platf
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: 
-ms.date: 07/24/2024
-ms.reviewer: ludwignick
+ms.custom:
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
 ms.topic: reference
 #Customer intent: As a developer integrating authentication into my application, I want to understand how to enable ID tokens for my application registered with the Microsoft identity platform, so that I can verify the identity of the user and obtain other information about them.
@@ -32,7 +32,7 @@ The *ID token* introduced by OpenID Connect is issued by the authorization serve
 ID tokens aren't issued by default for an application registered with the Microsoft identity platform. ID tokens for an application are enabled by using one of the following methods:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Applications** > **App registrations** > *\<your application\>* > **Authentication**.
+1. Browse to **Entra ID** > **App registrations** > *\<your application\>* > **Authentication**.
 1. Under **Platform configurations**, select **Add a platform**. 
 1. In the pane that opens, select the appropriate platform for your application. For example, select **Web** for a web application.
 1. Under Redirect URIs, add the redirect URI of your application. For example, `https://localhost:8080/`.
@@ -40,7 +40,7 @@ ID tokens aren't issued by default for an application registered with the Micros
 
 Or:
 
-1. Select **Identity** > **Applications** > **App registrations** > *\<your application\>* > **Manifest**.
+1. Select **Entra ID** > **App registrations** > *\<your application\>* > **Manifest**.
 1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](reference-app-manifest.md).
 
 If ID tokens aren't enabled for your app and one is requested, the Microsoft identity platform returns an `unsupported_response` error similar to:
@@ -76,7 +76,7 @@ The value of `{tenant}` varies based on the application's sign-in audience as sh
 
 To find the OIDC configuration document in the Microsoft Entra admin center, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and then:
 
-1. Browse to **Identity** > **Applications** > **App registrations** > *\<your application\>* > **Endpoints**.
+1. Browse to **Entra ID** > **App registrations** > *\<your application\>* > **Endpoints**.
 1. Locate the URI under **OpenID Connect metadata document**.
 
 ### Sample request

@@ -10,12 +10,14 @@ ms.service: identity-platform
 
 ms.topic: tutorial
 ms.date: 05/09/2024
-ms.custom: developer
+ms.custom:
 zone_pivot_groups: entra-tenants
 #Customer intent: As a developer, I want to sign in users in iOS (Swift) app for authentication using Microsoft Entra ID.
 ---
 
 # Tutorial: Sign in users in iOS (Swift) mobile app
+
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 ::: zone pivot="workforce"
 

@@ -107,7 +107,10 @@ To create a managed domain, complete the fields in the *Basics* window of the Mi
 
 ## Create and configure the virtual network
 
-To provide connectivity, an Azure virtual network and a dedicated subnet are needed. Domain Services is enabled in this virtual network subnet. In this tutorial, you create a virtual network, though you could instead choose to use an existing virtual network. In either approach, you must create a dedicated subnet for use by Domain Services.
+To provide connectivity, an Azure virtual network and a dedicated subnet are needed. Domain Services is enabled in this virtual network subnet. In this tutorial, you create a virtual network, though you could instead choose to use an existing virtual network. In either approach, you must create a dedicated subnet for use by Domain Services. 
+
+   > [!TIP]
+   > Because you must use the Microsoft Entra Domain Services deployment IPs as the DNS resolver in the VNET in which it resides, we recommend a dedicated Azure virtual network if using a different DNS service and configuring conditional forwarders on Microsoft Entra Domain Services itself.
 
 Some considerations for this dedicated virtual network subnet include the following areas:
 
@@ -123,7 +126,7 @@ Complete the fields in the *Network* window as follows:
     1. If you choose to create a virtual network, enter a name for the virtual network, such as *myVnet*, then provide an address range, such as *10.0.1.0/24*.
     1. Create a dedicated subnet with a clear name, such as *DomainServices*. Provide an address range, such as *10.0.1.0/24*.
 
-    [ ![Create a virtual network and subnet for use with Microsoft Entra Domain Services](./media/tutorial-create-instance-advanced/create-vnet.png)](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
+    [![Create a virtual network and subnet for use with Microsoft Entra Domain Services](./media/tutorial-create-instance-advanced/create-vnet.png)](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
 
     Make sure to pick an address range that is within your private IP address range. IP address ranges you don't own that are in the public address space cause errors within Domain Services.
 

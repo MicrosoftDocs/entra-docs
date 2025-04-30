@@ -27,7 +27,7 @@ This article shows you how to configure Microsoft Entra ID in Foodee and Microso
 
 This article assumes that you've met the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Foodee tenant](https://www.food.ee/about-us/)
 * A user account in Foodee with Admin permissions
 
@@ -68,7 +68,7 @@ To configure Foodee for automatic user provisioning by using Microsoft Entra ID,
 To add Foodee from the Microsoft Entra application gallery, do the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![The Enterprise applications pane](common/enterprise-applications.png)
 
@@ -90,7 +90,7 @@ In this section, you configure the Microsoft Entra provisioning service to creat
 Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![Enterprise applications pane](common/enterprise-applications.png)
 

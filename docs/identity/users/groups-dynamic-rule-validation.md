@@ -1,5 +1,5 @@
 ---
-title: Validate rules for dynamic membership groups membership (Preview)
+title: Validate rules for dynamic membership groups membership
 description: How to test members against a rule for a dynamic membership groups in Microsoft Entra ID.
 
 author: barclayn
@@ -13,9 +13,9 @@ ms.reviewer: yukarppa
 ms.custom: it-pro
 ---
 
-# Validate rules for dynamic membership groups in Microsoft Entra ID (Preview) 
+# Validate rules for dynamic membership groups in Microsoft Entra ID 
 
-Microsoft Entra ID provides the means to validate rules for dynamic membership groups (in public preview). On the **Validate rules** tab, you can validate that rule against sample group members to confirm the rule is working as expected. When you create or update rules for dynamic membership groups, you want to know whether a user or a device is a member of the group. This knowledge helps you evaluate whether a user or device meets the rule criteria and help you troubleshoot when membership isn't expected.
+Microsoft Entra ID provides the means to validate rules for dynamic membership groups. On the **Validate rules** tab, you can validate that rule against sample group members to confirm the rule is working as expected. When you create or update rules for dynamic membership groups, you want to know whether a user or a device is a member of the group. This knowledge helps you evaluate whether a user or device meets the rule criteria and help you troubleshoot when membership isn't expected.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ To evaluate the rule for dynamic membership groups, the administrator must be at
 
 To get started, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
-1. Browse to **Identity** > **Groups** > **All groups**. 
+1. Browse to **Entra ID** > **Groups** > **All groups**. 
 2. Select an existing dynamic group or create a new dynamic group and select **Dynamic membership rules**. You can then see the **Validate Rules** tab.
 
    :::image type="content" source="./media/groups-dynamic-rule-validation/validate-tab.png" alt-text="Screenshot of finding the Validate rules tab and start with an existing rule.":::

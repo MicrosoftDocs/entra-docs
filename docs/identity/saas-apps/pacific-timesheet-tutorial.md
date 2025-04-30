@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Pacific Timesheet so that I can control who has access to Pacific Timesheet, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -44,8 +44,8 @@ To configure the integration of Pacific Timesheet into Microsoft Entra ID, you n
 **To add Pacific Timesheet from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **Pacific Timesheet**, select **Pacific Timesheet** from result panel then click **Add** button to add the application.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+1. In the search box, type **Pacific Timesheet**, select **Pacific Timesheet** from result panel then select **Add** button to add the application.
 
 	 ![Pacific Timesheet in the results list](common/search-new-app.png)
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra single sign-on with Pacific Timesheet, you
 2. **[Configure Pacific Timesheet Single Sign-On](#configure-pacific-timesheet-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create Pacific Timesheet test user](#create-pacific-timesheet-test-user)** - to have a counterpart of Britta Simon in Pacific Timesheet that is linked to the Microsoft Entra representation of user.
+5. **[Create Pacific Timesheet test user](#create-pacific-timesheet-test-user)** - to have a counterpart of Britta Simon in Pacific Timesheet that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -74,7 +74,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with Pacific Timesheet, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Pacific Timesheet** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Pacific Timesheet** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -82,7 +82,7 @@ To configure Microsoft Entra single sign-on with Pacific Timesheet, perform the 
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -97,9 +97,9 @@ To configure Microsoft Entra single sign-on with Pacific Timesheet, perform the 
     `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Pacific Timesheet Client support team](https://www.pacifictimesheet.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Pacific Timesheet Client support team](https://www.pacifictimesheet.com/support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
@@ -119,40 +119,7 @@ To configure single sign-on on **Pacific Timesheet** side, you need to send the 
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user 
-
-The objective of this section is to create a test user called Britta Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to Pacific Timesheet.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Pacific Timesheet**.
-
-	![Enterprise applications blade](common/enterprise-applications.png)
-
-1. In the applications list, select **Pacific Timesheet**.
-
-	![The Pacific Timesheet link in the Applications list](common/all-applications.png)
-
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ### Create Pacific Timesheet test user
 
@@ -162,7 +129,7 @@ In this section, you create a user called Britta Simon in Pacific Timesheet. Wor
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the Pacific Timesheet tile in the Access Panel, you should be automatically signed in to the Pacific Timesheet for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the Pacific Timesheet tile in the Access Panel, you should be automatically signed in to the Pacific Timesheet for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 

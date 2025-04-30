@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Articulate 360
 
-In this article,  you'll learn how to integrate Articulate 360 with Microsoft Entra ID. When you integrate Articulate 360 with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Articulate 360 with Microsoft Entra ID. When you integrate Articulate 360 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Articulate 360.
 * Enable your users to be automatically signed-in to Articulate 360 with their Microsoft Entra accounts.
@@ -44,11 +44,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Articulate 360 into Microsoft Entra ID, you need to add Articulate 360 from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Articulate 360** in the search box.
 1. Select **Articulate 360** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-articulate-360'></a>
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra SSO with Articulate 360, perform the follo
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Articulate 360 SSO](#configure-articulate-360-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Articulate 360 test user](#create-articulate-360-test-user)** - to have a counterpart of B.Simon in Articulate 360 that is linked to the Microsoft Entra representation of user.
+    1. **[Create Articulate 360 test user](#create-articulate-360-test-user)** - to have a counterpart of B.Simon in Articulate 360 that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,9 +72,9 @@ To configure and test Microsoft Entra SSO with Articulate 360, perform the follo
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Articulate 360** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Articulate 360** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
     ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -86,13 +86,13 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** textbox, type the URL:
     `https://id.articulate.com/sso/saml2`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:    
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:    
 
     In the **Sign-on URL** text box, type the URL:
     `https://id.articulate.com/`
 
     > [!Note]
-    > The Identifier value is not real. Update this value with the actual Identifier. Contact [Articulate 360 support team](mailto:enterprise@articulate.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > The Identifier value isn't  real. Update this value with the actual Identifier. Contact [Articulate 360 support team](mailto:enterprise@articulate.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Articulate 360 application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -124,7 +124,7 @@ To configure single sign-on on **Articulate 360** side, you need to send the dow
 
 ### Create Articulate 360 test user
 
-In this section, a user called B.Simon is created in Articulate 360. Articulate 360 supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Articulate 360, a new one is created after authentication.
+In this section, a user called B.Simon is created in Articulate 360. Articulate 360 supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Articulate 360, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -132,15 +132,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Articulate 360 Sign-On URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Articulate 360 Sign-On URL where you can initiate the login flow.  
 
 * Go to Articulate 360 Sign-On URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Articulate 360 for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Articulate 360 for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Articulate 360 tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Articulate 360 for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Articulate 360 tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Articulate 360 for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

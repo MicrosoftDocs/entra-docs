@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps you perform in Visitly
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Visitly tenant](https://www.visitly.io/pricing/)
 * A user account in Visitly with admin permissions
 
@@ -67,7 +67,7 @@ To configure Visitly for automatic user provisioning with Microsoft Entra ID, ad
 To add Visitly from the Microsoft Entra application gallery, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.Visitly**, select **Visitly** in the results panel, and then select **Add** to add the application.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.Visitly**, select **Visitly** in the results panel, and then select **Add** to add the application.
 
 	![Visitly in the results list](common/search-new-app.png)
 
@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### Configure automatic user provisioning for Visitly in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Visitly**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Visitly**.
 
 	![The Visitly link in the Applications list](common/all-applications.png)
 

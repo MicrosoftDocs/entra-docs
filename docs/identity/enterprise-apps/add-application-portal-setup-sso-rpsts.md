@@ -44,7 +44,7 @@ To configure SSO, you need:
 First, create an enterprise application in Microsoft Entra, which enables Microsoft Entra to generate SAML tokens for the relying party STS to provide to the application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. If you have already configured an application representing the relying party STS, then enter the name of the existing application in the search box, select the application from the search results, and continue at the next section.
 1. Select **New application**.
 1. Select **Create your own application**.
@@ -147,3 +147,4 @@ This tutorial illustrates testing the sign-in flow using a web-based application
 
 * [What is application management in Microsoft Entra ID?](what-is-application-management.md)
 * [Govern access for applications in your environment](~/id-governance/identity-governance-applications-prepare.md)
+* [Increase the resilience of authentication for federated applications deployed at sites with colocated users](~/architecture/resilience-for-federated-applications-with-colocated-users.md)

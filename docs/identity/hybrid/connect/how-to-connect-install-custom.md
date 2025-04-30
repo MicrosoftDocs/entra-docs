@@ -8,7 +8,7 @@ manager: femila
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 03/12/2025
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

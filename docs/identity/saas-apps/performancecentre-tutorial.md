@@ -44,8 +44,8 @@ To configure the integration of PerformanceCentre into Microsoft Entra ID, you n
 **To add PerformanceCentre from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **PerformanceCentre**, select **PerformanceCentre** from result panel then click **Add** button to add the application.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+1. In the search box, type **PerformanceCentre**, select **PerformanceCentre** from result panel then select **Add** button to add the application.
 
 	 ![PerformanceCentre in the results list](common/search-new-app.png)
 
@@ -62,7 +62,7 @@ To configure and test Microsoft Entra single sign-on with PerformanceCentre, you
 2. **[Configure PerformanceCentre Single Sign-On](#configure-performancecentre-single-sign-on)** - to configure the Single Sign-On settings on application side.
 3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
 4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create PerformanceCentre test user](#create-performancecentre-test-user)** - to have a counterpart of Britta Simon in PerformanceCentre that is linked to the Microsoft Entra representation of user.
+5. **[Create PerformanceCentre test user](#create-performancecentre-test-user)** - to have a counterpart of Britta Simon in PerformanceCentre that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -74,7 +74,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with PerformanceCentre, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **PerformanceCentre** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **PerformanceCentre** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -82,7 +82,7 @@ To configure Microsoft Entra single sign-on with PerformanceCentre, perform the 
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -97,9 +97,9 @@ To configure Microsoft Entra single sign-on with PerformanceCentre, perform the 
     `http://<companyname>.performancecentre.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [PerformanceCentre Client support team](https://www.performio.co/contact-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL and Identifier. Contact [PerformanceCentre Client support team](https://www.performio.co/contact-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -117,11 +117,11 @@ To configure Microsoft Entra single sign-on with PerformanceCentre, perform the 
 
 1. Sign-on to your **PerformanceCentre** company site as administrator.
 
-2. In the tab on the left side, click **Configure**.
+2. In the tab on the left side, select **Configure**.
    
     ![Screenshot that shows the "PerformanceCenter" menu with "Configure" selected.][10]
 
-3. In the tab on the left side, click **Miscellaneous**, and then click **Single Sign On**.
+3. In the tab on the left side, select **Miscellaneous**, and then select **Single Sign On**.
    
     ![Screenshot that shows the "Configure" tab with "Single Sign-On" selected from the "Miscellaneous" menu.][11]
 
@@ -129,7 +129,7 @@ To configure Microsoft Entra single sign-on with PerformanceCentre, perform the 
    
     ![Screenshot that shows the "Single Sign-On Configuration" section with "S A M L" selected from the "Protocol" menu.][12]
 
-5. Open your downloaded metadata file in notepad, copy the content, paste it into the **Identity Provider Metadata** textbox, and then click **Save**.
+5. Open your downloaded metadata file in notepad, copy the content, paste it into the **Identity Provider Metadata** textbox, and then select **Save**.
    
     ![Screenshot that shows the "Identity Provider Metadata" textbox.][13]
 
@@ -139,40 +139,7 @@ To configure Microsoft Entra single sign-on with PerformanceCentre, perform the 
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user 
-
-The objective of this section is to create a test user called Britta Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to PerformanceCentre.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **PerformanceCentre**.
-
-	![Enterprise applications blade](common/enterprise-applications.png)
-
-1. In the applications list, select **PerformanceCentre**.
-
-	![The PerformanceCentre link in the Applications list](common/all-applications.png)
-
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ### Create PerformanceCentre test user
 
@@ -182,7 +149,7 @@ The objective of this section is to create a user called Britta Simon in Perform
 
 1. Sign on to your PerformanceCentre company site as administrator.
 
-2. In the menu on the left, click **Interrelate**, and then click **Create Participant**.
+2. In the menu on the left, select **Interrelate**, and then select **Create Participant**.
    
     ![Screenshot that shows the "PerformanceCenter" company site "Interrelate -Participants" page with the "Create Participant" button selected.][400]
 
@@ -197,13 +164,13 @@ The objective of this section is to create a user called Britta Simon in Perform
 	
 	b. Select **Client Administrator** as **Choose Role**.
 	
-	c. Click **Save**. 
+	c. Select **Save**. 
 
 ### Test single sign-on 
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the PerformanceCentre tile in the Access Panel, you should be automatically signed in to the PerformanceCentre for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the PerformanceCentre tile in the Access Panel, you should be automatically signed in to the PerformanceCentre for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 

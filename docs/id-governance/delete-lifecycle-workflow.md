@@ -27,7 +27,7 @@ When a workflow is deleted, it enters a soft-delete state. During this period, y
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. On the **Workflows** page, select the workflow that you want to delete. Then select **Delete**.
 

@@ -14,6 +14,8 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Sign in users in a sample Desktop app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 In this quickstart, you’ll use a sample application to learn how to add authentication to a desktop application. The sample application enables users to sign in and sign out and uses the Microsoft Authentication Library (MSAL) to handle authentication.
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
@@ -26,49 +28,33 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *msal-node-desktop*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 
 #### [Node.js Electron](#tab/node-js-workforce)
 
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+    * **Redirect URI**: `http://localhost`
 * [Node.js](https://nodejs.org/en/download/package-manager)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 
-
 #### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
 
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+    * **Redirect URI**: `https://login.microsoftonline.com/common/oauth2/nativeclient` 
+    * **Custom redirect URIs**: `ms-appx-web://microsoft.aad.brokerplugin/{client_id}` where {client_id} is the application (client) ID of your application.
 * [Visual Studio](https://visualstudio.microsoft.com/vs/) with the [Universal Windows Platform development](/windows/apps/windows-app-sdk/set-up-your-development-environment) workload installed
-
----
-
-## Add a redirect URI
-
-You will need to add a redirect URI to your app registration. This URI is used to redirect users to the app after they have signed in.
-
-To specify the app type and redirect URIs to your app registration, follow these steps:
-
-### [Node.js Electron](#tab/node-js-workforce)
-
-1. From the **Overview** page of your registered application, under **Manage**, select **Authentication**.
-1. On the **Platform configurations page**, select **Add a platform** > **Mobile and desktop applications**.
-1. In the **Redirect URIs section**, enter `http://localhost`.
-1. Select **Configure**.
-
-### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
-
-1. From the Overview page of your registered application, under **Manage**, select **Authentication**.
-1. On the **Platform configurations page**, select **Add a platform** > **Mobile and desktop applications**.
-1. In the **Redirect URIs section**, select `https://login.microsoftonline.com/common/oauth2/nativeclient` and in **Custom redirect URIs**, add `ms-appx-web://microsoft.aad.brokerplugin/{client_id}` where {client_id} is the application (client) ID of your application.
-1. Select **Configure**.
 
 ---
 
 ## Download the sample project
 
 ### [Node.js Electron](#tab/node-js-workforce)
+
+> [!NOTE]
+> The Electron sample provided in this tutorial is specifically designed to work with MSAL-node. MSAL-browser is not supported in Electron applications. Ensure you to complete the following steps to set up your project correctly.
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -94,14 +80,13 @@ To specify the app type and redirect URIs to your app registration, follow these
 
 #### [Node.js Electron](#tab/node-js-workforce)
 
-*Extract the project, open the *ms-identity-JavaScript-nodejs-desktop-main* folder, and then open *.authConfig.js* file. Replace the value as follows:
+In your code editor, open the *ms-identity-javascript-nodejs-desktop-main/App/authConfig.js* file. Replace the value as follows:
 
 | Variable  |  Description | Example(s) |
 |-----------|--------------|------------|
 | `Enter_the_Cloud_Instance_Id_Here` | The Azure cloud instance in which your application is registered | `https://login.microsoftonline.com/` (include the trailing forward-slash)|
-| `Enter_the_Tenant_Id_Here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
+| `Enter_the_Tenant_Info_Here` | Tenant ID or Primary domain | `contoso.microsoft.com` or `aaaabbbb-0000-cccc-1111-dddd2222eeee` |
 | `Enter_the_Application_Id_Here` | Client ID of the application you registered | `00001111-aaaa-2222-bbbb-3333cccc4444` |
-| `Enter_the_Redirect_Uri_Here` | Redirect Uri of the application you registered | `msal00001111-aaaa-2222-bbbb-3333cccc4444://auth` |
 | `Enter_the_Graph_Endpoint_Here` | The Microsoft Graph API cloud instance that your app will call | `https://graph.microsoft.com/`  (include the trailing forward-slash)|
 
 Your file should look similar to below:
@@ -145,7 +130,7 @@ Your file should look similar to below:
 
 1. Extract the zip file to a local folder close to the root of the disk, for example, **C:\Azure-Samples**.
 1. Open the project in Visual Studio.
-1. Edit **App.Xaml.cs** and replace the values of the fields `ClientId` and `Tenant` with the following code:
+1. Edit **active-directory-wpf-msgraph-v2/App.xaml.cs** and replace the values of the fields `ClientId` and `Tenant` with the following code:
 
    ```csharp
    private static string ClientId = "Enter_the_Application_Id_here";
@@ -228,62 +213,49 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
   * Application Administrator
   * Application Developer
   * Cloud Application Administrator
-- An external tenant. To create one, choose from the following methods:
+* An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *ciam-desktop-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 
 
 #### [Node.js Electron](#tab/node-js-external)
 
-- [Node.js](https://nodejs.org)
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor* 
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+    * **Redirect URI**: `http://localhost`
+* [Node.js](https://nodejs.org)
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor* 
 
 #### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later
-- [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
-  - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
-  - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
-- [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+    * **Redirect URI**: `msal{client_id}://auth` where {client_id} is the application (client) ID of your application.
+* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later
+* [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
+  * [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
+  * [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 
 #### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+    * **Custom redirect URI**: `https://login.microsoftonline.com/common/oauth2/nativeclient`. This needs to be entered manually.
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 
 ---
 
-## Add a redirect URI
-
-You will need to add a redirect URI to your app registration. This URI is used to redirect users to the app after they have signed in.
-
-#### [Node.js Electron](#tab/node-js-external)
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-platform-redirect-url-electron.md)]
-
-#### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
-
-[!INCLUDE [active-directory-b2c-app-integration-add-platform](../external-id/customers/includes/register-app/add-platform-redirect-url-dotnet-maui.md)]
-
-#### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
-
-[!INCLUDE [active-directory-b2c-wpf-app-platform](../external-id/customers/includes/register-app/add-platform-redirect-url-wpf.md)]  
-
----
-
-## Grant admin consent
-
-[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
 ## Download the sample project
 
 #### [Node.js Electron](#tab/node-js-external)
+
+> [!NOTE]
+> The Electron sample provided in this tutorial is specifically designed to work with MSAL-node. MSAL-browser is not supported in Electron applications. Ensure you complete the following steps to set up your project correctly.
 
 To get the desktop app sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
 
@@ -440,13 +412,13 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 
 #### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
-- [Tutorial: Create a .NET MAUI app](../external-id/customers/tutorial-desktop-app-maui-sign-in-prepare-app.md).
+- [Tutorial: Create a .NET MAUI app](./tutorial-desktop-app-maui-sign-in-prepare-app.md).
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 
 #### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
-- [Tutorial: Authenticate users to your WPF desktop application](../external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
+- [Tutorial: Authenticate users to your WPF desktop application](./tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 

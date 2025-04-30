@@ -128,7 +128,7 @@ If you deployed Microsoft Entra hybrid join, you can deploy another group policy
 Before you convert to Conditional Access, confirm the base MFA tenant settings for your organization.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). 
-2. Browse to **Identity** > **Users** > **All users**.
+2. Browse to **Entra ID** > **Users**.
 3. Select **Per-user MFA** on the top menu of the **Users** pane.
 4. The legacy Microsoft Entra multifactor authentication portal appears. Or select [Microsoft Entra multifactor authentication portal](https://aka.ms/mfaportal).
 
@@ -165,7 +165,7 @@ Before you get started:
 * [Building a Conditional Access policy](~/identity/conditional-access/concept-conditional-access-policies.md)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. Browse to **Identity**.
+1. Browse to **Entra ID** > **Conditional Access**.
 3. To learn how to create a policy in Microsoft Entra ID. See, [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/policy-all-users-mfa-strength.md).
 4. Create a device trust-based Conditional Access rule.
 

@@ -10,7 +10,7 @@ ms.subservice: role-based-access-control
 ms.date: 01/03/2025
 ms.author: rolyon
 ms.reviewer: anandy
-ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
+ms.custom: oldportal, it-pro, no-azure-ad-ps-ref
 ---
 
 # Create or delete administrative units
@@ -42,7 +42,7 @@ You can create a new administrative unit by using either the Microsoft Entra adm
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
     :::image type="content" source="./media/admin-units-manage/nav-to-admin-units.png" alt-text="Screenshot of the Administrative units page." lightbox="./media/admin-units-manage/nav-to-admin-units.png":::
 
@@ -140,7 +140,7 @@ In Microsoft Entra ID, you can delete an administrative unit that you no longer 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit you want to delete.
 
@@ -148,7 +148,7 @@ In Microsoft Entra ID, you can delete an administrative unit that you no longer 
 
 1. Remove all the role assignments with the administrative unit scope.
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Add a check mark next to the administrative unit you want to delete.
 

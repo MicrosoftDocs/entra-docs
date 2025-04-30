@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Netskope Cloud Exchange Administration Console
 
-In this article, you'll learn how to integrate Netskope Cloud Exchange Administration Console with Microsoft Entra ID. The Netskope Cloud Exchange (CE) gives customers powerful integration capabilities to leverage investments across their security and IT stacks. When you integrate Netskope Cloud Exchange Administration Console with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Netskope Cloud Exchange Administration Console with Microsoft Entra ID. The Netskope Cloud Exchange (CE) gives customers powerful integration capabilities to leverage investments across their security and IT stacks. When you integrate Netskope Cloud Exchange Administration Console with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Netskope Cloud Exchange Administration Console.
 * Enable your users to be automatically signed-in to Netskope Cloud Exchange Administration Console with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Netskope Cloud Exchange Administration Console** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Netskope Cloud Exchange Administration Console** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://<Cloud_Exchange_FQDN>/login`
 
 	> [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL based on your cloud exchange deployment. You can also contact [Netskope Cloud Exchange Administration Console support team](mailto:support@netskope.com) to get help to determine these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL based on your cloud exchange deployment. You can also contact [Netskope Cloud Exchange Administration Console support team](mailto:support@netskope.com) to get help to determine these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Netskope Cloud Exchange Administration Console application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -92,7 +92,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| roles | user.assignedroles |
 
    > [!NOTE]
-   > Please click [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID.
+   > Please select [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to know how to configure Role in Microsoft Entra ID.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -114,11 +114,11 @@ In this section, you create a user called Britta Simon at Netskope Cloud Exchang
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Netskope Cloud Exchange Administration Console Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Netskope Cloud Exchange Administration Console Sign-on URL where you can initiate the login flow. 
 
 * Go to Netskope Cloud Exchange Administration Console Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Netskope Cloud Exchange Administration Console tile in the My Apps, this will redirect to Netskope Cloud Exchange Administration Console Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Netskope Cloud Exchange Administration Console tile in the My Apps, this option redirects to Netskope Cloud Exchange Administration Console Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

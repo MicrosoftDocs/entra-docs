@@ -107,10 +107,10 @@ To add another layer of security, a Microsoft Entra tenant administrator can con
 
 To increase security by restricting token issuance only to client apps that have been assigned app roles:
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com), select your app under **Identity** > **Applications** > **App registrations**.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com), select your app under **Entra ID** > **App registrations**.
 1. On the application's **Overview** page, in **Essentials**, find and select its **Managed application in local directory** link to navigate to its **Enterprise Application Overview** page.
 1. Under **Manage**, select **Properties**.
-1. Set **Assignment required?** to **No**.
+1. Set **Assignment required?** to **Yes**.
 1. Select **Save**.
 
 Microsoft Entra ID will now check for app role assignments of client applications that request access tokens for your web API. If a client app hasn't been assigned any app roles, Microsoft Entra ID returns an error message to the client similar to `_invalid_client: AADSTS501051: Application \<application name\> isn't assigned to a role for the \<web API\>_`.

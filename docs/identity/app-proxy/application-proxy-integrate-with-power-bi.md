@@ -10,6 +10,7 @@ ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom: has-adal-ref
+ai-usage: ai-assisted
 ---
 
 # Enable remote access to Power BI Mobile with Microsoft Entra application proxy
@@ -128,7 +129,7 @@ Configure the Application Registration that was automatically created in step 2.
 
 You can use Microsoft Intune to manage the client apps that your company's workforce uses. Intune provides capabilities such as data encryption and access requirements. Enable the Power BI mobile application with the Intune policy.
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the application configured in Step 3 when registering your native client application.
 1. On the application’s page, select **API Permissions**.
 1. Select **Add a permission**.

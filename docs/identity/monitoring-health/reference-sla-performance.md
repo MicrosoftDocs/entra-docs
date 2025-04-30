@@ -43,7 +43,7 @@ The numbers in the table are a global total of Microsoft Entra authentications a
 | ---       | ---     | ---     | ---     | ---     | ---     |
 | January   |         | 99.998% | 99.998% | 99.999% | 99.998% |
 | February  | 99.999% | 99.999% | 99.999% | 99.999% | 99.998% |
-| March     | 99.568% | 99.998% | 99.999% | 99.999% |         |
+| March     | 99.568% | 99.998% | 99.999% | 99.999% | 99.996% |
 | April     | 99.999% | 99.999% | 99.999% | 99.999% |         |
 | May       | 99.999% | 99.999% | 99.999% | 99.999% |         |
 | June      | 99.999% | 99.999% | 99.999% | 99.999% |         |
@@ -67,7 +67,7 @@ In addition to publicly reporting global SLA performance, Microsoft Entra ID pro
 To see the tenant-level SLA:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Monitoring & health** > **Health**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Health**.
 
 Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
 
