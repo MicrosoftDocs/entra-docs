@@ -6,7 +6,7 @@ manager: celestedg
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/19/2024
+ms.date: 04/30/2025
 ms.author: mimart
 ms.reviewer: celested
 
