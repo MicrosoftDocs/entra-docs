@@ -34,7 +34,7 @@ Microsoft recommends the Entra Connect certificate management option as we manag
 
  ## Bring Your Own Application (BYOA) 
 
-In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](https://learn.microsoft.com/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa)
+In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa)
 
 ## Bring Your Own Certificate (BYOC) 
 
@@ -130,7 +130,7 @@ Set-ADSyncScheduler -SyncCycleEnabled $false
 Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash 
 
 - Use BYOA
-[Register a Microsoft Entra app and create a service principal.](https://learn.microsoft.com/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id) . Note the application Id as it will be necessary in the next section.
+[Register a Microsoft Entra app and create a service principal.](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id) . Note the application Id as it will be necessary in the next section.
 
 4. Link Entra Application with Microsoft Entra Connect Sync using Administrator credentials. 
 
