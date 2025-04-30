@@ -54,7 +54,7 @@ To set up Microsoft Entra Global Secure Access and test all scenarios in this do
 - Install and configure the Microsoft Entra private network connector. To learn how to install and configure the connector, see [How to configure connectors](how-to-configure-connectors.md).
     > [!NOTE]
     > Private Network Connectors are required for Microsoft Entra Private Access applications.
-- Configure Quick Access to your private resources and set up Private Domain Name System (DNS) and DNS suffixes. To learn how to configure Quick Access, see How to configure Quick Access.
+- Configure Quick Access to your private resources and set up Private Domain Name System (DNS) and DNS suffixes. To learn how to configure Quick Access, see [How to configure Quick Access](how-to-configure-quick-access.md).
 - Install and configure the Global Secure Access client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md). For macOS, see [Global Secure Access Client for macOS](how-to-install-macos-client.md).
 
 ### Zscaler Private Access and Internet Access
