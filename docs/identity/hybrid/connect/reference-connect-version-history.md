@@ -73,7 +73,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
-|[2.4.131.0](#241310)|30 April 2026|(12 months after release of x.x.xxx.x)
+|[2.4.131.0](#241310)|30 April 2026|(12 months after release of 2.4.257.0)|
+|[2.4.257.0](#242570)||
 
 **All other versions are not supported**
 
@@ -98,11 +99,11 @@ If you want all the latest features and updates, check this page and install wha
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
 
-## x.x.xxx.x
+## 2.4.257.0
 
 ### Release status
 
-04/29/2025: Released for download via the Microsoft Entra Admin center.
+04/30/2025: Released for download via the Microsoft Entra Admin center.
 
 ### Added Features
 - Modern Authentication enabled allowing customers to configure application-based authentication for enhanced securit (Public Preview).
