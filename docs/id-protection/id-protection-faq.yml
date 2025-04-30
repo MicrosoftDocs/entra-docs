@@ -1,0 +1,79 @@
+### YamlMime:FAQ
+metadata:
+  title: Microsoft Entra ID Protection FAQ
+  description: Frequently asked questions around Microsoft Entra ID Protection.
+  
+  ms.service: entra-id-protection
+  ms.topic: faq
+
+  author: shlipsey3
+  ms.author: sarahlipsey
+  manager: femila
+  ms.date: 04/28/2025
+  ms.reviewer: etbasser
+
+title: Frequently asked questions around Microsoft Entra ID Protection
+
+summary: |
+  This article includes answers to frequently asked questions about Microsoft Entra ID Protection. Questions are grouped by **Detections** and **Remediation**.
+  
+  For more information, see [Microsoft Entra ID Protection overview](overview-identity-protection.md). 
+
+sections:
+  - name: Detection
+    questions:
+      - question: |
+          How can I simulate risk to understand why a user is getting flagged?
+        answer: |
+          We have a guide for [how to simulate risk](howto-identity-protection-simulate-risk.md). This guide provides several options to simulating different types of risk. You can also use the [Conditional Access WhatIf](../identity/conditional-access/what-if-tool.md) tool to see how specific policies get applied. We also recommend turning on Conditional Access policies in **Report-Only** mode to understand how policies work in the tenant without affecting your users' ability to access the resources they need. 
+      - question: |
+          What are the best Conditional Access controls for accounts that are passwordless?
+        answer: |
+          Check out our guidance on deploying phishing-resistant passwordless authentication: [Get started with a phishing-resistant passwordless authentication deployment](../identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md)
+      - question: |
+          Should we add "Enforce sign-in frequency - Every time" to our Conditional Access policies for high risk?
+        answer: |
+          This setting depends on your organization's risk tolerance. Some organizations might choose to block high risk. Enforcing sign-in every time can lead to sign-in or MFA fatigue, which can increase the chance of a phishing attack.
+
+          We also recommend turning on Conditional Access policies in **Report-Only** mode to understand how policies work in the tenant without affecting your users' ability to access the resources they need. You can also check the [**Impact analysis of risk-based policies** workbook](workbook-risk-based-policy-impact.md) in ID Protection. 
+      - question: |
+          How do I prevent risk-based policies from affecting B2B collaboration users?
+        answer: |
+          Excluding B2B users from your organization's risk-based Conditional Access policies prevents B2B users from being affected by risk evaluation. To exclude these B2B users, create a group in Microsoft Entra ID that contains all of your organization's guest users. Then, add this group as an exclusion for your built-in ID Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
+      - question: |
+          I just received a high-risk alert but they aren't showing up in the "Impact analysis of risk-based policies" workbook. Why?
+        answer: |
+          If the user is assigned high risk, but hasn't signed-in yet, you won't see them in this report. The report only uses sign-in logs to populate this data.
+
+  - name: Remediation
+    questions:
+      - question: |
+          When does ID Protection autoremediate sign-in risk without a risk-based policy in place?
+        answer: |
+          ID Protection autoremediates sign-in risk when the user immediately provides a second factor, such as multifactor authentication (MFA) following their risky sign-in. Providing this second factor composes a strong authentication.
+           
+          ID Protection also operates two models for risk assessment on sign-ins. The first is the real-time model that uses limited information to make a fast determination during the sign-in. Second is an offline model that uses other sign-in data once the sign-in is complete. The offline model can close risk when it reassesses the risk score as safe. This assessment applies to real-time and offline detections of any risk level.  
+      - question: |
+          When does ID Protection autoremediate user risk without a risk-based policy in place?
+        answer: |
+          ID Protection autoresolves users with low user risk after six months without elevation of user risk. Risky users with medium or high risk aren't autoresolved without a risk policy or admin dismissal.
+      - question: |
+          What if I don't use Microsoft Entra for multifactor authentication?
+        answer: |
+          If you don't use Microsoft Entra multifactor authentication, you might still see sign-in risk remediated in your environment if you use a non-Microsoft MFA provider. [External authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) make it possible to remediate risk when using a non-Microsoft MFA provider. 
+      - question: |
+          What if I am in a hybrid environment?
+        answer: |
+          User risk can be self-remediated using a [secure password change](howto-identity-protection-remediate-unblock.md#user-self-remediation) if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks). 
+      - question: |
+          If I deploy a risk policy, will the system autoremediate users differently or do I need to redo past remediations? 
+        answer: |
+          The system relies on the grant controls specified in the Conditional Access policy for all remediation. This policy-driven approach gives you more control over access to resources. If the user risk policy requires a block, Conditional Access enforces that. If the sign-in risk policy requires MFA, Conditional Access enforces a new MFA challenge (when there's no MFA claim on an existing token). So, if Alice always had her risky sign-ins autoremediated thanks to another MFA policy, nothing changes in her user experience when you deploy a risk policy that requires MFA.  
+      - question: |
+          Why can't I remediate risky B2B collaboration users in my directory?
+        answer: |
+          The risk evaluation and remediation for B2B users occurs in their home directory, so the guest users don't appear in the risky users report in the resource directory. Admins in the resource directory can't force a secure password reset for these users.
+      - question: |
+          What do I do if a B2B collaboration user was blocked due to a risk-based policy in my organization?
+        answer: |
+          If a risky B2B user in your directory is blocked by your risk-based policy, the user needs to remediate that risk in their home directory. Users can remediate their risk by performing a secure password reset in their home directory. If they don't have self-service password reset enabled in their home directory, they need to contact their own organization's IT Staff to have an administrator manually dismiss their risk or reset their password. For more information, see [Remediate user risk](howto-identity-protection-remediate-unblock.md).

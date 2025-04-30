@@ -74,7 +74,7 @@ To enable the custom banned password list and add entries to it, complete the fo
 
     Specify your own custom passwords to ban, as shown in the following example
 
-    [ ![Modify the custom banned password list under Authentication methods](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords-cropped.png) ](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords.png#lightbox)
+    [![Modify the custom banned password list under Authentication methods](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords-cropped.png)](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords.png#lightbox)
 
 1. Leave the option for **Enable password protection on Windows Server Active Directory** to *No*.
 1. To enable the custom banned passwords and your entries, select **Save**.
