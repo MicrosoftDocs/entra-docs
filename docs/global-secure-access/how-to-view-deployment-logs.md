@@ -35,7 +35,7 @@ To access deployment logs:
 1. Navigate to **Global Secure Access** > **Monitor** > **Deployment logs**.
 1. Use filters to narrow results based on activity type, status, or other fields.
 
-Deployment logs can also be accessed when a change is made to the configuration of Global Secure Access. A notification shows up at the top right corner of the page when making a configuration change. Click the notification to see the progress of the deployment.
+Deployment logs can also be accessed when a change is made to the configuration of Global Secure Access. A notification shows up at the top right corner of the page when making a configuration change. Select the notification to see the progress of the deployment.
 
 ![Screenshot of the deployment progress notification.](media/how-to-view-deployment-logs/deployment-logs.png)
 
@@ -47,7 +47,7 @@ To filter the deployment logs to a specific detail, select **Add filter** and th
 ![Screenshot of the deployment log activity details.](media/how-to-view-deployment-logs/traffic-activity-details.png)
 
 > [!NOTE]
-> A notification shows up at the top right corner of the page when making a configuration change. Click the notification to see the progress of the deployment.
+> A notification shows up at the top right corner of the page when making a configuration change. Select the notification to see the progress of the deployment.
 
 ## Supported scenarios 
 
