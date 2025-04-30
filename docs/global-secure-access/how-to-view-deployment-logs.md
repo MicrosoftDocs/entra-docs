@@ -34,6 +34,8 @@ To access deployment logs:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference).
 1. Navigate to **Global Secure Access** > **Monitor** > **Deployment logs**.
 1. Use filters to narrow results based on activity type, status, or other fields.
+Deployment logs can also be accessed when a change is made to the configuration of GSA. A notification shows up at the top right corner of the page when making a configuration change. Click the notification to see the progress of the deployment. 
+![image](https://github.com/user-attachments/assets/e118dc03-97dd-45d9-8fb7-1459ac99485a)
 
 ### Filter options
 
