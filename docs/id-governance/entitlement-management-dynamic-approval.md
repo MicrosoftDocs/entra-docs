@@ -28,7 +28,7 @@ In entitlement management, approvers for requests for access packages can either
 - At least the [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) role of the catalog where the custom extension will be created.
 - At least the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) on the Logic App itself or on the resource group, subscription, or management group that the workflow is in. 
 
-## Create the custom extension and its underlying logic App.
+## Create the custom extension and its underlying logic App
 
 To create a custom extension and its underlying Azure Logic App, you'd do the following steps:
 
@@ -51,7 +51,7 @@ To create a custom extension and its underlying Azure Logic App, you'd do the fo
 1. On the **Review + create** screen, make sure all your details are correct then select **Create**. 
 
 
-## Reference the custom extension in an access package assignment policy.
+## Reference the custom extension in an access package assignment policy
 
 Once you've created the custom extension and logic app, you can reference the custom extension in an access package assignment policy by doing the following steps:
 
@@ -87,7 +87,7 @@ With the Azure logic app created, you must edit the logic app so that it can com
     :::image type="content" source="media/entitlement-management-dynamic-approval/add-logic-app-role.png" alt-text="Screenshot of adding logic app as access package assignment manager for a catalog.":::
   
 
-## Configure the Azure Logic App and corresponding business logic.
+## Configure the Azure Logic App and corresponding business logic
 
 With the Azure logic app given the access package assignment manager role, you must now go to logic app and edit it to communicate with Microsoft Entra. To do this, you'd do the following steps:
 
