@@ -15,8 +15,7 @@ ms.date: 04/12/2025
 
 # Create a custom extension to externally determine the approval requirements for an entitlement management access package
 
-In entitlement management, approvers for requests for access packages can either be directly assigned, or determined dynamically based on attributes. While entitlement management natively supports dynamic approval options such as the requestor's manager, second-level manager, sponsor from a connected organization, or the requestor, these options don't cover all scenarios. With [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview), you're able to determine approvals for access packages through an external system. This allows a look up to find up to date information across different attributes when a request for an access package is made.
-
+In entitlement management, approvers for access package requests can either be directly assigned, or determined dynamically based on attributes. While entitlement management natively supports dynamic approval options such as the requestor's manager, second-level manager, sponsor from a connected organization, or the requestor, these options don't cover all scenarios. With [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview), you're able to determine approvals for access packages through an external system. This allows a look up to find up to date information across different attributes when a request for an access package is made. This article walks you through how to make a custom extension that calls out to a logic app that uses context to determine who is the approver for the access package request.
 
 
 ## License requirements
@@ -28,9 +27,9 @@ In entitlement management, approvers for requests for access packages can either
 - At least the [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) role of the catalog where the custom extension will be created.
 - At least the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) on the Logic App itself or on the resource group, subscription, or management group that the workflow is in. 
 
-## Create the custom extension and its underlying logic App
+## Create the custom extension and logic App
 
-To create a custom extension and its underlying Azure Logic App, you'd do the following steps:
+To create a custom extension, and its underlying Azure Logic App, you'd do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) of the catalog where the custom extension will be located.
 
@@ -110,11 +109,11 @@ With the Azure logic app given the access package assignment manager role, you m
 
 ## Verify the extension worked
 
-To verify whether or not the custom extension works, you can request access to the access package, and view the request details via **Requests** on the access package page by doing the following the steps:
+To verify if the custom extension works, you can request access to the access package, and view the request details via **Requests** on the access package page by doing the following the steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) of the catalog where the custom extension will be located.
     > [!TIP]
-    > Other least privilege roles that can complete this task include the Catalog owner, the Access package manager, and the Access package assignment manager.
+    > Other least privilege roles that can complete this task include the the Access package manager, Access package assignment manager, and Identity Governance Administrator.
 1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open the access package you want to view requests of.
