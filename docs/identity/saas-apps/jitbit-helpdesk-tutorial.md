@@ -80,13 +80,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Sign on URL** text box, type one of the URLs using the following pattern:
-
-	| |
-    | ----------------------------------------|
-	| `https://<hostname>/helpdesk/User/Login`|
-	| `https://<tenant-name>.Jitbit.com`|
-	| |
+	a. In the **Sign on URL** text box, type one of the URLs using the patterns:
+    - `https://<hostname>/helpdesk/User/Login`
+	- `https://<tenant-name>.Jitbit.com`
     
 	> [!NOTE] 
 	> This value isn't real. Update this value with the actual Sign-On URL. Contact [Jitbit Helpdesk Client support team](https://www.jitbit.com/support/) to get this value.
