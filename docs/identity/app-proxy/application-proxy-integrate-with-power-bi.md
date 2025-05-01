@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ms.custom: has-adal-ref
@@ -113,7 +113,7 @@ Configure the Application Registration that was automatically created in step 2.
    - `msauth://com.microsoft.powerbim/izba1HXNWrSmQ7ZvMXgqeZPtNEU%3D`
 
    > [!IMPORTANT]
-   > The redirect URIs must be added for the application to work correctly. If you are configuring the app for both Power BI Mobile iOS and Android, add the redirect URI of type Public Client (Mobile & Desktop) to the list of redirect URIs configured for iOS: `urn:ietf:wg:oauth:2.0:oob`.
+   > The redirect URIs must be added for the application to work correctly. If you're configuring the app for both Power BI Mobile iOS and Android, add the redirect URI of type Public Client (Mobile & Desktop) to the list of redirect URIs configured for iOS: `urn:ietf:wg:oauth:2.0:oob`.
 
 ## Step 4: Connect from the Power BI Mobile App
 
@@ -140,7 +140,7 @@ You can use Microsoft Intune to manage the client apps that your company's workf
 
 ## Troubleshooting
 
-If the application returns an error page after trying to load a report for more than a few minutes, you might need to change the timeout setting. By default, application proxy supports applications that take up to 85 seconds to respond to a request. To lengthen this setting to 180 seconds, select the back-end timeout to **Long** in the application proxy settings page for the application. For tips on how to create fast and reliable reports see [Power BI Reports Best Practices](/power-bi/guidance/power-bi-optimization).
+If the application returns an error page after trying to load a report for more than a few minutes, you might need to change the time-out setting. By default, application proxy supports applications that take up to 85 seconds to respond to a request. To lengthen this setting to 180 seconds, select the back-end time-out to **Long** in the application proxy settings page for the application. For tips on how to create fast and reliable reports see [Power BI Reports Best Practices](/power-bi/guidance/power-bi-optimization).
 
 Using Microsoft Entra application proxy to enable the Power BI mobile app to connect to on premises Power BI Report Server isn't supported with Conditional Access policies that require the Microsoft Power BI app as an approved client app.
 
