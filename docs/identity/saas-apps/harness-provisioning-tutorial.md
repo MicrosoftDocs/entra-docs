@@ -96,7 +96,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > You may also choose to enable SAML-based single sign-on for Harness by following the instructions in the [Harness single sign-on  article](./harness-tutorial.md). You can configure single sign-on independent of automatic user provisioning, although these two features complement each other.
 
 > [!NOTE]
-> To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://docs.harness.io/article/smloyragsm-api-keys) article.
+> To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://developer.harness.io/docs/platform/automation/api/add-and-manage-api-keys/) article.
 
 To configure automatic user provisioning for Harness in Microsoft Entra ID, do the following:
 
