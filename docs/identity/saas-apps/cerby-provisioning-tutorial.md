@@ -111,12 +111,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Cerby|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |emails[type eq "work"].value|String|&check;|&check;   
-   |active|Boolean||&check;
-   |name.givenName|String||&check;
-   |name.familyName|String||&check;
-   |externalId|String||
+   |userName|String|&check;|&check;|
+   |emails[type eq "work"].value|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |externalId|String|||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Cerby**.
 
@@ -124,11 +124,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Cerby|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |externalId|String||
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |externalId|String|||
+   |members|Reference|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Cerby, change the **Provisioning Status** to **On** in the **Settings** section.
 

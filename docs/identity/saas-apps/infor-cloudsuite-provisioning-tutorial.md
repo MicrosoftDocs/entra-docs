@@ -132,22 +132,22 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Infor CloudSuite|
 	|---|---|---|---|
-	|userName|String|&check;|&check;
-	|active|Boolean||
-	|displayName|String||
-	|externalId|String||
-	|name.familyName|String||
-	|name.givenName|String||
-	|displayName|String||
-	|title|String||
-	|emails[type eq "work"].value|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:actorId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:federationId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:ifsPersonId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:lnUser|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:userAlias|String||
+	|userName|String|&check;|&check;|
+	|active|Boolean|||
+	|displayName|String|||
+	|externalId|String|||
+	|name.familyName|String|||
+	|name.givenName|String|||
+	|displayName|String|||
+	|title|String|||
+	|emails[type eq "work"].value|String|||
+	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
+	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:actorId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:federationId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:ifsPersonId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:lnUser|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:userAlias|String|||
 
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Infor CloudSuite**.
@@ -156,11 +156,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	|Attribute|Type|Supported for filtering|Required by Infor CloudSuite|
 	|---|---|---|---|
-	|displayName|String|&check;|&check;
-	|members|Reference||
-	|externalId|String||
+	|displayName|String|&check;|&check;|
+	|members|Reference|||
+	|externalId|String|||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Infor CloudSuite, change the **Provisioning Status** to **On** in the **Settings** section.
 

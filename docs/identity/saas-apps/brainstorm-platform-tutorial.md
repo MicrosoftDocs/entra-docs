@@ -91,7 +91,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	| Name |  Source Attribute|
 	| ---------------|  --------- |
-    | title | user.jobtitle
+    | title | user.jobtitle |
 	| department | user.department |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.

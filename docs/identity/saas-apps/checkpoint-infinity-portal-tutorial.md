@@ -87,7 +87,6 @@ Follow these steps to enable Microsoft Entra SSO.
     |-------------| -------------|
     | EU/US | `cloudinfra.checkpoint.com` |
     | AP | `ap.portal.checkpoint.com` |
-    |
 
     b. In the **Reply URL** text box, type one of the following URLs:
 
@@ -95,7 +94,6 @@ Follow these steps to enable Microsoft Entra SSO.
     |-------------| -------------|
     | EU/US | `https://portal.checkpoint.com/` |
     | AP | `https://ap.portal.checkpoint.com/` |
-    |
 
     c. In the **Sign on URL** text box, type one of the following URLs:
 
@@ -103,7 +101,6 @@ Follow these steps to enable Microsoft Entra SSO.
     |-------------| -------------|
     | EU/US | `https://portal.checkpoint.com/` |
     | AP | `https://ap.portal.checkpoint.com/` |
-    |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
