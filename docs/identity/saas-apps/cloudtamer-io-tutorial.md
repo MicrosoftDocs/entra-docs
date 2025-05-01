@@ -130,7 +130,6 @@ Follow these steps to enable Microsoft Entra SSO.
     | Last Name | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname` |
     | Email | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` |
     |  Username | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name` |
-    |
 
 1. Select **Create IDMS**.
 

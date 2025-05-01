@@ -195,7 +195,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Before enabling SSO, it's recommended that you need to test the SSO settings configured so far. To do so, perform the following steps:
 
-    1. Select the **Test SSO** button and it will take you to Contentstack’s Log in via SSO page where you need to specify your organization's SSO name. 
+    1. Select the **Test SSO** button and it will take you to Contentstack's Log in via SSO page where you need to specify your organization's SSO name. 
     1. Then, select Continue to go to your IdP sign in page.
     1. Sign in to your account and if you're able to sign in to your IdP, your test is successful.
     1. On successful connection, you see a success message as follows.

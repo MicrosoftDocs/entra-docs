@@ -107,16 +107,16 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |externalId|String|
-   |active|Boolean|
-   |emails[type eq "work"].value|String|
-   |displayName|String|
-   |preferredLanguage|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.formatted|String|
+   |externalId|String||
+   |active|Boolean||
+   |emails[type eq "work"].value|String||
+   |displayName|String||
+   |preferredLanguage|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.formatted|String||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Clebex, change the **Provisioning Status** to **On** in the **Settings** section.
 
