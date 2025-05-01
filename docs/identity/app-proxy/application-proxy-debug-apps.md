@@ -1,6 +1,6 @@
 ---
 title: Debug Application Proxy Issues
-description: Learn how to debug issues that might occur when you configure Microsoft Entra application proxy.
+description: Learn about debugging issues that occur when configuring Microsoft Entra application proxy.
 author: kenwith
 manager: femila
 ms.service: entra-id
@@ -20,8 +20,6 @@ This article explains how to troubleshoot issues with Microsoft Entra applicatio
 
 First, check the connector. Learn how in [Debug private network connector issues](application-proxy-debug-connectors.md).
 
-If application proxy issues persist, return to this article to troubleshoot the issue.  
-
 ## Flowchart for application issues
 
 This flowchart helps you debug and fix common issues with the Microsoft Entra application proxy.
@@ -32,12 +30,12 @@ The table after the flowchart contains details about each step.
 
 | Step | Goal | Action |
 |---------|---------|---------|
-|1 | Sign in to the app and check for user-related errors | Open a browser, go to the app, and sign in with your username and password. Check for errors like [This corporate app can't be accessed](application-proxy-sign-in-bad-gateway-timeout-error.md). |
-|2 | Verify user permissions and test app access | Make sure your user account has permissions to use the app from inside the corporate network. Then test signing in to the app by following the steps in [Test the application](application-proxy-add-on-premises-application.md#test-the-application). If sign-in issues continue, see [How to troubleshoot sign-in errors](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). |
-|3 | Confirm correct application proxy configuration | Open a browser and try to use the app. If an error appears immediately, check if the application proxy is set up correctly. For details about specific error messages, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md). |
-|4 | Ensure custom domain setup is correct or troubleshoot errors | If the page doesn't display, check if your custom domain is set up correctly. Review the information in [Work with custom domains](how-to-configure-custom-domain.md).<br></br>If the page doesn't load and an error message appears, troubleshoot the error using the information in [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md).<br></br>If it takes longer than 20 seconds for an error message to appear, there might be a connectivity issue. Follow the steps in [Debug private network connectors](application-proxy-debug-connectors.md). |
-|5 | Debug connectivity issues between the proxy and the connector | If issues persist, go to connector debugging. Complete the steps described in [Debug private network connectors](application-proxy-debug-connectors.md). |
-|6 | Publish all resources and resolve publishing issues | Ensure the publishing path includes all the necessary images, scripts, and style sheets for your application. For details, see [Add an on-premises app to Microsoft Entra ID](application-proxy-add-on-premises-application.md).<br></br>Use the browser's developer tools (F12 tools in Internet Explorer or Microsoft Edge) to troubleshoot publishing issues. See [Application page doesn't display correctly](application-proxy-page-appearance-broken-problem.md).<br></br>Review options to fix broken links in [Links on the page don't work](application-proxy-page-links-broken-problem.md). |
+|1 | Sign in and check for user-related errors | Open a browser and sign into the app with your username and password. Check for errors like [This corporate app can't be accessed](application-proxy-sign-in-bad-gateway-timeout-error.md). |
+|2 | Verify user permissions and test app access | Make sure your user account has permissions for the app from inside the corporate network. Then test signing into the app by following the steps in [Test the application](application-proxy-add-on-premises-application.md#test-the-application). If sign-in issues continue, check [Troubleshoot sign-in errors](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). |
+|3 | Confirm correct application proxy configuration | Open a browser and use the app. If an error appears immediately, check if the application proxy is set up correctly. For details about specific error messages, see [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md). |
+|4 | Ensure custom domain setup is correct or troubleshoot errors | If the page doesn't display, check if your custom domain is set up correctly. Review the information in [Work with custom domains](how-to-configure-custom-domain.md).<br></br>If the page doesn't load and an error message appears, troubleshoot the error using the information in [Troubleshoot application proxy problems and error messages](application-proxy-troubleshoot.md).<br></br>If it takes longer than 20 seconds before an error message appears, there might be a connectivity issue. Follow the steps in [Debug private network connectors](application-proxy-debug-connectors.md). |
+|5 | Debug connectivity issues between the proxy and the connector | If issues persist, try connector debugging. Complete the steps described in [Debug private network connectors](application-proxy-debug-connectors.md). |
+|6 | Publish all resources and resolve publishing issues | Ensure the publishing path includes all the necessary images, scripts, and style sheets for your application. For details, see [Add an on-premises app to Microsoft Entra ID](application-proxy-add-on-premises-application.md).<br></br>Use the browser's developer tools (F12 tools in Internet Explorer or Microsoft Edge) for troubleshooting publishing issues. See [Application page doesn't display correctly](application-proxy-page-appearance-broken-problem.md).<br></br>Review options to fix broken links in [Links on the page don't work](application-proxy-page-links-broken-problem.md). |
 |7 | Minimize network latency | If the page loads slowly, explore ways to reduce network latency in [Considerations for reducing latency](application-proxy-network-topology.md#considerations-for-reducing-latency). |
 |8 | Access more troubleshooting resources | If issues persist, review more articles about [troubleshooting application proxy](application-proxy-troubleshoot.md). |
 
