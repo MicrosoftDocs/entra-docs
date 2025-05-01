@@ -183,7 +183,19 @@ Generate a JSON file with group names and IDs that are used to create custom vie
 
 ```powershell
     # Get all groups and select Id and DisplayName 
-    $groups = Get-MgGroup -All | Select-Object Id,DisplayName 
+    $groups = Get-MgGroup -All | Foreach-Object {
+       $groupObject = @{} 
+       $groupObject["Id"] = $_.Id
+       $groupObject["DisplayName"] = $_.DisplayName
+       $groupObject["SecurityEnabled"] = $_.SecurityEnabled
+       $groupObject["MailEnabled"] = $_.MailEnabled
+       $groupObject["MailNickname"] = $_.MailNickname
+       $groupObject["SecurityIdentifier"] = $_.SecurityIdentifier
+       $date = [datetime]::Parse($_.CreatedDateTime) 
+       $groupObject["CreatedDateTime"] = $date.ToString("yyyy-MM-dd") 
+       $groupObject["SnapshotDate"] = $SnapshotDate
+      [pscustomobject]$groupObject 
+    }
     # Export the groups to a JSON file 
     $groups | ConvertTo-Json | Set-Content ".\EntraGroups.json" 
 ```
