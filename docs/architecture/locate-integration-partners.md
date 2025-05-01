@@ -14,7 +14,7 @@ ms.reviewer: cammart
 
 # Microsoft Entra Suite services and integration partners
 
-Partners can help your organization with the planning and deployment of [Microsoft Entra](../fundamentals/what-is-entra.md) scenarios in Microsoft Entra Suite. This includes: 
+Partners can help your organization with the planning and deployment of [Microsoft Entra](../fundamentals/what-is-entra.md) scenarios in the Microsoft Entra Suite. This includes: 
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 * [Microsoft Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)
