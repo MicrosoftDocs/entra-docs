@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 04/01/2025
+ms.date: 05/01/2025
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: whats-new
