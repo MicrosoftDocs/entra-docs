@@ -6,7 +6,6 @@ ms.subservice: devices
 ms.topic: how-to
 ms.date: 05/01/2025
 ms.author: godonnell
-ms.reviewer: brianmel
 author: garrodonnell
 manager: celested
 
