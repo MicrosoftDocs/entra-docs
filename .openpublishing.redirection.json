@@ -2315,7 +2315,21 @@
     "source_path_from_root": "/docs/identity-platform/deprecate-service-principal-less-authentication.md",
     "redirect_url": "/entra/identity-platform/retire-service-principal-less-authentication",
     "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/identity-platform/howto-build-services-resilient-to-metadata-refresh.md",
+    "redirect_url": "/entra/identity-platform/",
+    "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/identity-platform/v2-howto-get-appsource-certified.md",
+    "redirect_url": "/power-platform/developer/appsource/publish-app",
+    "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/identity-platform/migrate-off-email-claim-authorization.md",
+    "redirect_url": "/entra/identity-platform/",
+    "redirect_document_id": false
   }
-
   ]
 }
