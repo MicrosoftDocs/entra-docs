@@ -22,7 +22,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 
 - [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Added clarification on tenant creation
 - [Create a sign-up and sign-in user flow for an external tenant app](how-to-user-flow-sign-up-sign-in-customers.md) - Added disable sign-up experience to the user flow
-- [Extend authentication flows with your own business logi](concept-custom-extensions.md) - Added custom authentication extensions
+- [Extend authentication flows with your own business logic](concept-custom-extensions.md) - Added custom authentication extensions
 
 ## March 2025
 
