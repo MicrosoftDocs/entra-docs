@@ -81,6 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
 	a. In the **Sign on URL** text box, type one of the URLs using the following pattern:
+
 	| |
     | ----------------------------------------|
 	| `https://<hostname>/helpdesk/User/Login`|
