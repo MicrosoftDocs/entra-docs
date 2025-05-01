@@ -65,5 +65,5 @@ Customers can engage partners in the [Microsoft Solution Partner finder](https:/
 
 ## Next steps
 
-* [Microsoft Entra Suite deployment scenarios](/architecture/deployment-scenario-intro)
-* [Services and integraiton partners for Microsoft Entra ID Governance](/id-governance/services-and-integration-partners)
+* [Microsoft Entra Suite deployment scenarios](deployment-scenario-intro.md)
+* [Services and integraiton partners for Microsoft Entra ID Governance](../id-governance/services-and-integration-partners.md)
