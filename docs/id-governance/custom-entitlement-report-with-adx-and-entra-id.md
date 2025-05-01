@@ -213,7 +213,7 @@ Generate a JSON file with group membership, which is used to create custom views
       Start-Sleep -Milliseconds 200 
     } 
     # Convert the results array to JSON format and save it to a file 
-    $results | ConvertTo-Json | Set-Content "EntraGroupMembership.json" 
+    $results | ConvertTo-Json | Set-Content "EntraGroupMemberships.json" 
 ```
 
 #### Get application and service principal data
@@ -316,7 +316,7 @@ In this section, you import the newly created JSON files for the Microsoft Entra
 
    1. Repeat the preceding steps for each of the JSON files that you generated in the previous section.
 
-At the end of those steps, you have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMembership`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
+At the end of those steps, you have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMemberships`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
 
 ## Extract Microsoft Entra ID Governance data by using PowerShell
 
@@ -520,7 +520,7 @@ let directAssignments = roleAssignments
 // Process group-based assignments 
 
 let groupAssignments = roleAssignments 
-    | join kind=inner EntraGroupMembership on $left.PrincipalId == $right.GroupId // Join with group membership 
+    | join kind=inner EntraGroupMemberships on $left.PrincipalId == $right.GroupId // Join with group membership 
     | mvexpand Members // Expand group members 
     | extend MembersStr = tostring(Members) // Convert the member ID to a string 
     | distinct MembersStr, CreatedDateTime, AppRoleIdStr, SnapshotDate // Get distinct values 
