@@ -277,7 +277,7 @@ Attribute mappings allow you to define how data should flow between the source t
     | **Guest** | Users will be created as external guests (B2B collaboration users) in the target tenant. |
 
     > [!NOTE]
-    > If the B2B user already exists in the target tenant then **Member (userType)** will not changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
+    > If the B2B user already exists in the target tenant then **Member (userType)** will not be changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
 
     The user type you choose has the following limitations for apps or services (but aren't limited to):
 
@@ -397,7 +397,7 @@ Once you've started a provisioning job, you can monitor the status.
 
     You can also view audit logs in the target tenant.
 
-1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross tenant synchronziation in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
+1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross tenant synchronization in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png" alt-text="Screenshot of the Audit logs page in the target tenant that lists the log entries for user management." lightbox="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png":::
 
