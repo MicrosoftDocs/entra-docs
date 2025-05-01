@@ -42,7 +42,8 @@ This article requires that an app is published and tested with application proxy
 1. Select **application proxy**. 
 1. Change the **Pre Authentication type** to **Microsoft Entra ID** and select **Save**. 
 1. Select **Users and Groups**.
-1. Assign users to the application, select **Add user**. 
+1. Assign users to the application.
+1. Select **Add user**. 
 1. If you want to predefine credentials for a user, check the box in front of the user name and select **Update credentials**.
 1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. From the list, select the app that you configured with Password SSO.
