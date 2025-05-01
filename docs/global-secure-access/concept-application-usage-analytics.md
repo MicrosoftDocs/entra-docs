@@ -17,22 +17,22 @@ ms.reviewer: kerenSemel
 
 
 
-## Cloud applications
+## Cloud application analytics
 Cloud Application Discovery provides the administrator visibility and insights on the cloud applications, including generative AI applications, that are used in the organization. These insights include application category, risk score, amount of traffic (transactions, sent and received bytes), which users are accessing the applications.   
 
 This information helps the administrator in identifying generative AI applications, shadow AI applications, shadow IT and enables administrator to understand the security and compliance status better.   
 
 ### Key Capabilities
-
-- Identify the cloud applications accessed by users (using the same cloud application catalog MDA uses), for Internet and M365 traffic.   
+Key capabilities of the Cloud Application analytics feature include:
+- Identify the cloud applications accessed by users (using the same cloud application catalog MDA uses), for Internet and M365 traffic. Details include **Name**, **Category**, **Risk score**, and number of **Users**.  
 <!-- The images in this section have been modified to use approved, fictitious company names from https://microsoft.sharepoint.com/:b:/r/sites/CELAWeb-Copyrights-Trademarks-And-Patents/Shared%20Documents/Approved%20Fictitious%20Company%20Names%20and%20Domain%20Names%20-%20Oct%202024.pdf?csf=1&web=1&e=2JKgvG. -->
 :::image type="content" source="media/concept-application-usage-analytics/application-discovery-cloud.png" alt-text="Screenshot of a list of discovered cloud applications accessed by users.":::
 
 - Identify the generative AI applications accessed by users, for Internet and M365 traffic.   
 :::image type="content" source="media/concept-application-usage-analytics/application-discovery-generative-ai.png" alt-text="Screenshot of a list of discovered generative AI applications accessed by users.":::
 
-- Enrich the traffic log with the cloud application information: application name, category, risk score, security score, legal score, general score.
-:::image type="content" source="media/concept-application-usage-analytics/[ ].png" alt-text="Screenshot of [ ].":::
+- Enrich the traffic log with the **Cloud application** information, including application name, category, risk score, security score, legal score, and general score.
+:::image type="content" source="media/concept-application-usage-analytics/traffic-logs-enrichment.png" alt-text="Screenshot of the cloud application details of the traffic log.":::
 
 - Report on all cloud applications discovered, including insights into the number of transactions, the amount of traffic and which users are accessing.
 :::image type="content" source="media/concept-application-usage-analytics/[ ].png" alt-text="Screenshot of [ ].":::
