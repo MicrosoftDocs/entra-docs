@@ -142,7 +142,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-tenant synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
 
-    You might see a **Setup cross-tenant synchronization across Microsoft clouds** check box. This capability is currently being deployed in stages and is not yet functional.
+    You might see a **Setup cross-tenant synchronization across Microsoft clouds** check box. This capability is currently being deployed in stages. This setting is not yet functional and you shouldn't try to select this check box.
 
 1. Select **Create**.
 

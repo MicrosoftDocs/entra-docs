@@ -128,7 +128,13 @@ Which clouds can cross-tenant synchronization be used in?
 - Cross-tenant synchronization is supported within the commercial cloud and Azure Government.
 - Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud.
 - Synchronization is only supported between two tenants in the same Azure cloud. For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). Synchronization between commercial and GCC is supported. 
-- Cross-cloud synchronization (such as public cloud to Azure Government) isn't supported. This capability is currently being deployed in stages. You might see cross-cloud synchroniztion settings in the Microsoft Entra admin center or Azure portal, but these settings are not yet functional.
+- Cross-cloud synchronization (such as public cloud to Azure Government) isn't supported. This capability is currently being deployed in stages. You might see cross-cloud synchroniztion settings in the Microsoft Entra admin center or Azure portal. These settings are not yet functional and you shouldn't try to select these settings.
+
+What cloud pairs are supported for cross-tenant synchronization?
+
+- Cross-tenant synchronization supports these cloud pairs:
+
+    [!INCLUDE [cross-tenant-synchronization-cloud-pairs-include](../../includes/cross-tenant-synchronization-cloud-pairs-include.md)]
 
 #### Existing B2B users
 
