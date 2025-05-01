@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 10/09/2024
+ms.date: 05/02/2025
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -138,7 +138,13 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. At the top of the page, select **New configuration**.
 
-1. Provide a name for the configuration and select **Create**.
+1. Provide a name for the configuration.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-tenant synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
+
+    You might see a **Setup cross-tenant synchronization across Microsoft clouds** check box. This capability is currently being deployed in stages and is not yet functional.
+
+1. Select **Create**.
 
     It can take up to 15 seconds for the configuration that you just created to appear in the list.
 
