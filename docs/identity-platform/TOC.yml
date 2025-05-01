@@ -738,8 +738,6 @@
               href: howto-add-terms-of-service-privacy-statement.md
         - name: Publish app to a marketplace
           items:
-            - name: Publish to App Source
-              href: v2-howto-get-appsource-certified.md
             - name: Publish to Microsoft Entra App Gallery
               href: ~/identity/enterprise-apps/v2-howto-app-gallery-listing.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: Publish to Microsoft 365 App Stores
@@ -751,8 +749,6 @@
           href: msal-migration.md
         - name: List all apps using ADAL
           href: howto-get-list-of-all-auth-library-apps.md
-        - name: Migrate off email-based authorization
-          href: migrate-off-email-claim-authorization.md
         - name: Azure Active Directory Graph app manifest deprecation
           href: azure-active-directory-graph-app-manifest-deprecation.md
     - name: Deprecate
