@@ -43,6 +43,6 @@ The table after the flowchart contains details about each step.
 
 ## Related content
 
-- [Understand private network connectors](application-proxy-connectors.md)
+- [Understand private network connectors](application-proxy-connectors.md).
 - [Work with existing on-premises proxy servers](application-proxy-configure-connectors-with-proxy-servers.md).
 - [Troubleshoot application proxy and connector errors](application-proxy-troubleshoot.md).
