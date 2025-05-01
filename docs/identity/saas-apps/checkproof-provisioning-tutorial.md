@@ -110,15 +110,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported For Filtering|
    |---|---|--|
    |userName|String|&check;|
-   |active|Boolean|
-   |roles|String|
-   |displayName|String|
-   |emails[type eq "work"].value|String|
-   |preferredLanguage|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |externalId|String|
+   |active|Boolean||
+   |roles|String||
+   |displayName|String||
+   |emails[type eq "work"].value|String||
+   |preferredLanguage|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |externalId|String||
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to CheckProof**.
 
@@ -127,10 +127,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |Attribute|Type|Supported For Filtering|
       |---|---|--|
       |displayName|String|&check;|
-      |externalId|String|
-      |members|Reference|
+      |externalId|String||
+      |members|Reference||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for CheckProof, change the **Provisioning Status** to **On** in the **Settings** section.
 

@@ -99,24 +99,24 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |active|Boolean|
-   |displayName|String|
-   |title|String|
-   |preferredLanguage|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.formatted|String|
-   |name.honorificPrefix|String|
-   |name.honorificSuffix|String|
-   |nickName|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |emails[type eq "work"].value|String|
-   |locale|String|
-   |timezone|String|
-   |userType|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|
+   |active|Boolean||
+   |displayName|String||
+   |title|String||
+   |preferredLanguage|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.formatted|String||
+   |name.honorificPrefix|String||
+   |name.honorificSuffix|String||
+   |nickName|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |emails[type eq "work"].value|String||
+   |locale|String||
+   |timezone|String||
+   |userType|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
    
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to CybSafe**.
@@ -126,9 +126,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |Attribute|Type|Supported for filtering|
       |---|---|---|
       |displayName|String|&check;|
-      |members|Reference|
+      |members|Reference||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for CybSafe, change the **Provisioning Status** to **On** in the **Settings** section.
 
