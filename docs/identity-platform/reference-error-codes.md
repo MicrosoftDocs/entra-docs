@@ -159,7 +159,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50102 | Unable to load CustomClaimsTransformer '{type}' was specified for principal '{principalId}'. |
 | AADSTS50103 | There was an error transforming the claims for the token: {errorMessage} |
 | AADSTS50105 | EntitlementGrantsNotFound - The signed in user isn't assigned to a role for the signed in app. Assign the user to the app. To learn more, see the troubleshooting article for error [AADSTS50105](/troubleshoot/azure/active-directory/error-code-aadsts50105-user-not-assigned-role). |
-| AADSTS50107 |The requested federation realm object '{name}' does not exist. Application error - the login request was malformed and could not be matched with an existing authentication endpoint or instance. |
+| AADSTS50107 |The requested federation realm object '{name}' doesn't exist. Application error - the login request was malformed and couldn't be matched with an existing authentication endpoint or instance. |
 | AADSTS50108 | Claims transformation configuration could not be retrieved. |
 | AADSTS50109 | Claim transformation is unknown from configuration. |
 | AADSTS50111 | Unknown claim transformation was asked to be applied. |
@@ -184,12 +184,12 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50138 | Invalid encryption key environment. |
 | AADSTS50139 | SessionMissingMsaOAuth2RefreshToken - The session is invalid due to a missing external refresh token. |
 | AADSTS50140 | KmsiInterrupt - This error occurred due to "Keep me signed in" interrupt when the user was signing-in. This is an expected part of the sign in flow, where a user is asked if they want to remain signed into their current browser to make further logins easier. For more information, see [The new Microsoft Entra sign-in and “Keep me signed in” experiences rolling out now!](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/the-new-azure-ad-sign-in-and-keep-me-signed-in-experiences/m-p/128267). You can [open a support ticket](~/fundamentals/how-to-get-support.md) with Correlation ID, Request ID, and Error code to get more details.|
-| AADSTS50141 | Protected key is not intended for the authenticated user. |
+| AADSTS50141 | Protected key isn't intended for the authenticated user. |
 | AADSTS50142 | Password change is required due to a conditional access policy. |
 | AADSTS50143 | Session mismatch - Session is invalid because user tenant doesn't match the domain hint due to different resource. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Correlation ID, Request ID, and Error code to get more details. |
 | AADSTS50144 | InvalidPasswordExpiredOnPremPassword - User's Active Directory password has expired. Generate a new password for the user or have the user use the self-service reset tool to reset their password. |
 | AADSTS50147 | Invalid size of the code challenge parameter. Contact the application owner to correct their use of the PKCE parameters. |
-| AADSTS50148 | The code_verifier does not match the code_challenge supplied in the authorization request for PKCE. Contact the application owner to correct their use of the PKCE parameters. |
+| AADSTS50148 | The code_verifier doesn't match the code_challenge supplied in the authorization request for PKCE. Contact the application owner to correct their use of the PKCE parameters. |
 | AADSTS50146 | MissingCustomSigningKey - This app is required to be configured with an app-specific signing key. It's either not configured with one, or the key has expired or isn't yet valid. Please contact the owner of the application. |
 | AADSTS501461 | AcceptMappedClaims is only supported for a token audience matching the application GUID or an audience within the tenant's verified domains. Either change the resource identifier, or use an application-specific signing key. |
 | AADSTS50147 | MissingCodeChallenge - The size of the code challenge parameter isn't valid. |
@@ -200,21 +200,21 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50155 | DeviceAuthenticationFailed - Device authentication failed for this user. |
 | AADSTS50156 | Device tokens are not supported for V2 resource. |
 | AADSTS50157 | User redirection required for routing. |
-| AADSTS50158 | External security challenge not satisfied. User will be redirected to another page or authentication provider to satisfy additional authentication challenges. The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone does not indicate a failure on your users part to sign in. The sign in logs may indicate that this challenge was succesfully passed or failed. |
+| AADSTS50158 | External security challenge not satisfied. User will be redirected to another page or authentication provider to satisfy additional authentication challenges. The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone doesn't indicate a failure on your users' part to sign in. The sign in logs may indicate that this challenge was successfully passed or failed. |
 | AADSTS50159 | Claims sent by external provider are not enough. |
 | AADSTS50160 | Different target tenant is preferred. |
 | AADSTS50161 | Failed to validate authorization url of external claims provider. |
 | AADSTS50162 | Claims transformation has timed out. This indicates too many or too complex transformations may have been configured for this application. A retry of the request may succeed. Otherwise, please contact your admin to fix the configuration. |
 | AADSTS50163 | Regular expression replacement for claims transformation has resulted in a claim which exceeds the size limit. Please contact your admin to fix the configuration.|
 | AADSTS50164 | The supplied access token was not issued for the purpose for which it is being used. Expected a token with purpose '{name}'. |
-| AADSTS50165 | The token encrypting algorithm '{algorithm}' requested by the application is not supported for this type of token. This indicates the application is misconfigured. |
+| AADSTS50165 | The token encrypting algorithm '{algorithm}' requested by the application isn't supported for this type of token. This indicates the application is misconfigured. |
 | AADSTS50166 | Request to External OIDC endpoint failed. |
 | AADSTS50167 | Invalid pop_jwk key. |
 | AADSTS50168 | The client is capable of utilizing the Windows 10 Accounts extension to perform SSO but no SSO token was found in the request or the token was expired. Request has been interrupted to attempt to pull an SSO token. |
 | AADSTS50169 | InvalidRequestBadRealm - The realm isn't a configured realm of the current service namespace. |
 | AADSTS50170 | MissingExternalClaimsProviderMapping - The external controls mapping is missing. |
 | AADSTS50171 | The given audience can only be used in Mutual-TLS token calls. |
-| AADSTS50172 | External claims provider {provider} is not approved. |
+| AADSTS50172 | External claims provider {provider} isn't approved. |
 | AADSTS50173 | The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '{authTime}' and the TokensValidFrom date (before which tokens are not valid) for this user is '{validDate}'. To learn more, see the troubleshooting article for error [AADSTS50173](/troubleshoot/entra/app-integration/error-code-aadsts50173-grant-expired-revoked). |
 | AADSTS50176 | Missing definition of external control: {controlId}. |
 | AADSTS50177 | ExternalChallengeNotSupportedForPassthroughUsers - External challenge isn't supported for passthrough users. |
