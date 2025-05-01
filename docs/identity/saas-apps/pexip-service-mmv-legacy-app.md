@@ -45,7 +45,7 @@ To configure the integration of Pexip Service into Microsoft Entra ID, you need 
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-<a name='configure-and-test-azure-ad-sso-for-pexip-service-mmv-legacy-app)'></a>
+<a name='configure-and-test-azure-ad-sso-for-pexip-service'></a>
 
 ## Configure and test Microsoft Entra SSO for Pexip Service
 
@@ -56,9 +56,9 @@ To configure and test Microsoft Entra SSO with Pexip Service, perform the follow
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Pexip Service SSO](#configure-pexip-service-mmv-legacy-app-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Pexip Service test user](#create-pexip-service-mmv-legacy-app-test-user)** - to have a counterpart of B.Simon in Pexip Service that's linked to the Microsoft Entra representation of user.
-1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
+2. **[Configure Pexip Service SSO](#configure-pexip-service-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Pexip Service test user](#create-pexip-service-test-user)** - to have a counterpart of B.Simon in Pexip Service that's linked to the Microsoft Entra representation of user.
+3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
 
@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     In the **Sign-on URL** text box, type the URL: `https://control.pexip.io`
     
-    (Optional) If you are a My Meeting Video (MMV) customer and have a branded my.domain, in the Sign-on URL text box, enter your branded https://my.domain URL.
+    (Optional) If you are a My Meeting Video (MMV) customer and have a branded my.domain, in the Sign-on URL text box, enter your branded `https://my.domain` URL.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
