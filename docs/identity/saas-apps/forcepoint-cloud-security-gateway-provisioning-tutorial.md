@@ -97,7 +97,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Forcepoint Cloud Security Gateway - User Authentication|
    |---|---|---|---|
-   |userName|String|&check;|&check|
+   |userName|String|&check;|&check;|
    |externalId|String||&check;|
    |displayName|String||&check;|
    |urn:ietf:params:scim:schemas:extension:forcepoint:2.0:User:ntlmId|String|||
