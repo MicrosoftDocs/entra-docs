@@ -18,45 +18,49 @@ In this article, you find questions to commonly asked questions about [access re
 
 ## Frequently asked questions
 
-### Can I create custom workflows for guests?
+### Can I stop a recurring access review series at any time?
 
-Yes, custom workflows can be configured for members or guests in your tenant. Workflows can run for all types of external guests, external members, internal guests, and internal members.
+While there's no direct "**Stop**" button for a series, you can edit the series to set an earlier end date. This prevents new review instances from being generated after that date.
 
-### Why do I see "Lifecycle Management" instead of "Lifecycle Workflows"?
 
-For a small portion of our customers, Lifecycle Workflows could still be listed under the former name Lifecycle Management in the audit logs and enterprise applications.
+### Do access reviews reflect real-time changes to users or access during the review period?
 
-### Do I need to map employeeHireDate in provisioning apps like WorkDay?
+No. Access reviews capture a snapshot of access at the start of each review instance. Any changes made to user assignments, group membership, or reviewer configuration after the review begins will not be reflected in that instance.
+These updates will instead be captured in the next instance of the review (if it's a recurring review). At the start of each recurrence, the system re-evaluates and retrieves the latest information about users, resources, and reviewers.
 
-Yes, key user properties like employeeHireDate are supported for user provisioning from HR apps like WorkDay. To use these properties in Lifecycle workflows, you need to map them in the provisioning process to ensure the values are set. The following screenshot is an example of the mapping: 
+### I completed an access review but don’t see any changes yet. Why?
 
-![Screenshot showing an example of how mapping is done in a Lifecycle Workflow.](./media/workflows-faqs/workflows-mapping.png)
+When a reviewer completes an access review, it means they’ve submitted their decisions. However, changes to access won’t be applied until the review reaches its scheduled end date.
 
-For more information on syncing employee attributes in Lifecycle Workflows, see: [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md)
+If the review is set to **auto-apply**, the system will apply the decisions shortly after the end date. **If auto-apply is not enabled**, an administrator must manually apply the results. You can confirm whether auto-apply is enabled in the review’s configuration settings.
 
-### How do I see more details and parameters of tasks and the attributes that are being updated? 
+> [!NOTE]
+> Even if a reviewer completes their review early (e.g., on day 1 of a 10-day review), access changes still won’t take effect until the end of the review period.
 
-Some tasks do update existing attributes; however, we don’t currently share those specific details. As these tasks are updating attributes related to other Microsoft Entra features, so you can find that info in those docs. For temporary access pass, we're writing to the appropriate attributes listed [here](/graph/api/resources/temporaryaccesspassauthenticationmethod). 
+### What happens if reviewers miss the review deadline?
 
-### Is it possible for me to create new tasks and how? For example, triggering other graph APIs/web hooks?
+If reviewers don’t take action by the review end date, system will automatically apply the admin configured default decision (e.g., approve, deny, or take recommendations) for users who weren’t reviewed.
 
-We currently don’t support the ability to create new tasks outside of the set of tasks supported in the task templates. As an alternative, you can accomplish this by setting up a logic app and then creating a logic apps task in Lifecycle Workflows with the URL. For more information, see [Trigger Logic Apps based on custom task extensions](trigger-custom-task.md).
+### How can admins view upcoming reviews in a recurring series?
 
-### Why can’t I see any custom security attributes in the Property list?
+There are several scenarios where system is unable to apply review outcomes, especially for denied users: Reviewing members of a synced on-premises Windows Server AD group: If the group is synced from on-premises Windows Server AD, the group cannot be managed in Microsoft Entra ID and therefore membership cannot be changed.
 
-Make sure you have active custom security attributes in your tenant as deactivated custom security attributes won't appear in the list. You also need the [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) roles in order for custom security attributes to be visible.
+- Reviewing a resource (role, group, or application) with nested groups assigned: For users who have membership through a nested group, we will not remove their membership to the nested group and therefore they will retain access to the resource being reviewed.
+- User not found / other errors can also result in an apply result not being supported.
+- Reviewing the members of mail enabled group: The group cannot be managed in Microsoft Entra ID, so membership cannot be changed.
+- Reviewing an Application that uses group assignment will not remove the members of those groups, so they will retain the existing access from the group relationship for the application assignment.  
 
-### What does it mean when it says “This rule contains invalid properties.” and there’s a red x icon on the rule expression for an existing workflow?
+### Why don’t new group owners appear as reviewers during an ongoing group access review?
 
-The red icon indicates that this custom security attribute is no longer active, so the rule is invalid. As the rule is invalid, the workflow won't be processed. You should remove the deactivated custom security attribute expression from the workflow's rule.
+When a group or team access review starts, only the group owners at the time the review begins are assigned as reviewers.
+If group ownership changes during the review (e.g., new owners are added or existing ones are removed), those changes do not affect the current instance — the original reviewers remain unchanged.
+However, for recurring reviews, any updates to group ownership will be reflected in the next review instance.
 
-### My user is assigned a custom security attribute that’s part of the workflow trigger, why didn’t the workflow run for this user?
+### How can I see which reviewers were notified for an access review?
 
-Lifecycle workflows checks that the user is assigned the custom security attribute that matches the specified value, including case-sensitivity. So check that the custom security attribute value matches exactly.
+Once an access review has started, you can use the [contactedReviewers](/graph/api/resources/accessreviewreviewer?view=graph-rest-1.0) API to retrieve the list of all users who were (or would have been) notified via email to perform reviews.
+This includes scenarios where notifications were turned off — the API still provides the list of reviewers along with timestamps indicating when they were notified.
 
-### How does Lifecycle workflows handle custom security attributes with multiple values?
-
-If a user is assigned a custom security attribute that has multiple values, and one of the values matches the value in the specified in rule expressions, the user matches the scope.
 
 ## Next steps
 
