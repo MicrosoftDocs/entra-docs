@@ -5,12 +5,12 @@ description: Learn about risk detections, risk levels, and how they map to risk 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 02/19/2025
+ms.date: 05/02/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
-ms.reviewer: cokoopma, jaedwards
+ms.reviewer: cokoopma
 ---
 # What are risk detections?
 
@@ -253,9 +253,6 @@ Calculated offline. This risk detection type indicates user activity that is unu
 
 [Tips for investigating Microsoft Entra threat intelligence detections.](howto-identity-protection-investigate-risk.md#microsoft-entra-threat-intelligence)
 
-## Common questions 
-
-
 ### Locations 
 
 Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/location-condition.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
@@ -264,3 +261,4 @@ Location in risk detections is determined using IP address lookup. Sign-ins from
 
 - [Learn about risk-based access policies](concept-identity-protection-policies.md)
 - [Learn how to investigate risk](howto-identity-protection-investigate-risk.md)
+- [Detections FAQs](id-protection-faq.yml#detections)
