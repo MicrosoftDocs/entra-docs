@@ -1,22 +1,21 @@
 ---
-title: "Tutorial: Sign in and sign out of a React single-page app"
+title: "Tutorial: Sign in and sign out of a React single-page app (SPA)"
 description: Learn how to test sign-in and sign-out in a React single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 ms.author: owenrichards
 ms.date: 09/25/2023
 ms.service: identity-platform
-
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a user interface and access the Microsoft Graph API
 ---
 
-# Tutorial: Sign in and sign out of a React SPA
+# Tutorial: Sign in and sign out of a React single-page app
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 This tutorial is the final part of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [part 2 of this series](tutorial-single-page-app-react-configure-authentication.md), you added functional components to a React SPA and built a responsive UI. This final step shows you how to test sign-in and sign-out functionality in your app.
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
 > * Add code to the *claimUtils.js* file to create the claims table

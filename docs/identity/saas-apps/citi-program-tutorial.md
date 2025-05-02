@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **CITI Program** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **CITI Program** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -102,7 +102,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| ---------------|  --------- |
 	| urn:oid:2.16.840.1.113730.3.1.241 | user.displayname |
 	| urn:oid:2.16.840.1.113730.3.1.3 | user.employeeid |
-	| urn:oid:1.3.6.1.4.1.22704.1.1.1.8 | [other user attribute] |
+
 	> [!NOTE]
 	> The Source Attribute is what is generally recommended but not necessarily a rule. For example, if user.mail is unique and scoped, it can also be passed as urn:oid:1.3.6.1.4.1.5923.1.1.1.6.
 

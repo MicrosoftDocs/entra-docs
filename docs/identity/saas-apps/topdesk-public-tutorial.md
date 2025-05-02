@@ -38,7 +38,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of TOPdesk - Public into Microsoft Entra ID, you need to add TOPdesk - Public from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **TOPdesk - Public** in the search box.
 1. Select **TOPdesk - Public** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -66,7 +66,7 @@ To configure and test Microsoft Entra SSO with TOPdesk - Public, perform the fol
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **TOPdesk - Public** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **TOPdesk - Public** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -178,7 +178,7 @@ In order to enable Microsoft Entra users to sign into TOPdesk - Public, they mus
 
 1. Sign on to your **TOPdesk - Public** company site as administrator.
 
-2. In the menu on the top, select **TOPdesk \> New \> Support Files \> Person**.
+2. In the menu on the top, select **TOPdesk** > **New** > **Support Files** > **Person**.
    
     ![Person](./media/topdesk-public-tutorial/files.png "Person")
 

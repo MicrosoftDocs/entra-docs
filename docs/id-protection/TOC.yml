@@ -50,6 +50,8 @@
     href: workbook-risk-based-policy-impact.md
 - name: Reference
   items:
+  - name: FAQs
+    href: id-protection-faq.yml
   - name: Microsoft Graph APIs
     items: 
     - name: riskDetection API

@@ -7,6 +7,7 @@ manager: femila
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 ---
 # How to assign users and groups to traffic forwarding profiles
 

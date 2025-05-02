@@ -4,7 +4,7 @@ description: Learn about considerations for using Xamarin Android with the Micro
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: devx-track-csharp,  devx-track-dotnet
+ms.custom:
 ms.date: 04/10/2024
 ms.reviewer: saeeda, dmwendia, negoe
 ms.service: identity-platform

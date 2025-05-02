@@ -86,7 +86,7 @@ Admins can create policies from scratch or start from a template policy in the p
 
 Administrators with the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role can manage policies.
 
-Conditional Access is found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access**.
+Conditional Access is found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access**.
 
 :::image type="content" source="media/overview/conditional-access-overview.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-overview.png":::
 

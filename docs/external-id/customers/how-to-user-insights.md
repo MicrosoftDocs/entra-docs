@@ -47,7 +47,7 @@ The Application user activity dashboards provide insights into how users interac
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage & insights**
 1. Select **Application user activity** to view the dashboards.
 
     :::image type="content" source="media/how-to-user-insights/app-user-activity-dashboard.png" alt-text="Screenshot of the Application user activity dashboards under the Usage & insights menu." lightbox="media/how-to-user-insights/app-user-activity-dashboard.png":::

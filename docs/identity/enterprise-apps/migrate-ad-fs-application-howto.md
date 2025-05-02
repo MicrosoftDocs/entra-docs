@@ -57,13 +57,13 @@ The AD FS application migration dashboard is available in the Microsoft Entra ad
 From **Enterprise applications** section:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Under **Usage & Insights**, select **AD FS application migration** to access the AD FS applications migration dashboard.
 
 From **Monitoring & health** section:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage & insights**.
 1. Under **Manage**, select **Usage & Insights**, and then select **AD FS application migration** to access the AD FS applications migration dashboard.
 
 The AD FS application migration dashboard shows the list of all your AD FS relying party applications that have actively had sign-in traffic in the last 30 days period.

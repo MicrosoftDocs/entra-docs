@@ -40,7 +40,7 @@ To manage Microsoft Entra roles using the [Microsoft Graph API](/graph/overview)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. In the applications list, find and select **Graph explorer**.
 

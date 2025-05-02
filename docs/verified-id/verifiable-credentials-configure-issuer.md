@@ -6,7 +6,7 @@ author: barclayn
 manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 
 ---

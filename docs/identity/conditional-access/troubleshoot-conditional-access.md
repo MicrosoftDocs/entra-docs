@@ -54,7 +54,7 @@ More information can be found about the problem by clicking **More Details** in 
 To find out which Conditional Access policy or policies applied and why, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Find the event for the sign-in to review. Add or remove filters and columns to filter out unnecessary information.
    1. Narrow the scope by adding filters like:
       1. **Correlation ID** when you have a specific event to investigate.

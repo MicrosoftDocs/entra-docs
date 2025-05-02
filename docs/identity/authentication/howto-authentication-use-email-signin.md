@@ -6,12 +6,12 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 03/12/2025
+ms.date: 04/17/2025
 
 ms.author: justinha
-author: calui
+author: justinha
 manager: femila
-ms.reviewer: calui
+ms.reviewer: rahulnagraj
 ---
 # Sign-in to Microsoft Entra ID with email as an alternate login ID (Preview)
 
@@ -143,7 +143,7 @@ You can use either Microsoft Entra admin center or Graph PowerShell to set up th
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**
+1. Browse to **Entra ID** > **Entra Connect** > **Connect Sync**
 1. Select Email as alternate login ID**.
 
     ![Screenshot of email as alternate login ID option in the Microsoft Entra admin center.](media/howto-authentication-use-email-signin/azure-ad-connect-screen.png)

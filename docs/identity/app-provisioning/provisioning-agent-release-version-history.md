@@ -10,6 +10,7 @@ ms.date: 03/04/2025
 ms.subservice: app-provisioning
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Microsoft Entra Connect Provisioning Agent: Version release history

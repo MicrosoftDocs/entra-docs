@@ -31,7 +31,7 @@ Account related tasks within workflows can be quickly edited to apply to users s
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. Select the workflow you want to edit the task within.
 

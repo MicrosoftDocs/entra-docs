@@ -223,7 +223,7 @@ If the security token type is **Proof of Possession (POP)** for your custom task
 
 1. Create an authorization policy based on the following table:
 
-    Policy name: `POP-Policy` 
+    Policy name: `AzureADLifecycleWorkflowsAuthPOPAuthPolicy` 
 
     Policy type: `AADPOP`
     

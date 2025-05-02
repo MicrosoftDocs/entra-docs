@@ -89,7 +89,7 @@ Before configuring Zscaler Private Access (ZPA) for automatic user provisioning 
 **To add Zscaler Private Access (ZPA) from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Zscaler Private Access (ZPA)**, select **Zscaler Private Access (ZPA)** in the search box.
 1. Select **Zscaler Private Access (ZPA)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![Zscaler Private Access (ZPA) in the results list](common/search-new-app.png)
@@ -112,7 +112,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Zscaler Private Access (ZPA) in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Private Access (ZPA)**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Private Access (ZPA)**.
 
 	![The Zscaler Private Access (ZPA) link in the Applications list](common/all-applications.png)
 
