@@ -86,7 +86,7 @@ Attribute collection submit events can be used with custom authentication extens
 
 ### One time passcode send event
  
-The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, sign-in with email and one-time passcode, or email multifactor authentication (MFA).
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, or sign-in with email and one-time passcode.
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
  
