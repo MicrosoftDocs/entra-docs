@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
@@ -50,7 +50,7 @@ The following example shows a typical Microsoft Entra application proxy CORS sce
 
 ![Screenshot that shows an on-premises same-origin request.](./media/application-proxy-understand-cors-issues/image1.png)
 
-The *CORSWebClient* app works when you host it on-premises, but either it fails to load or it displays an error when it's published through Microsoft Entra application proxy. If you published the *CORSWebClient* and *CORSWebService* apps separately as different apps through application proxy, the two apps are hosted at different domains. An AJAX request from *CORSWebClient* to *CORSWebService* is a cross-origin request, and it fails.
+The *CORSWebClient* app works on-premises but fails or shows an error when published through Microsoft Entra application proxy. If *CORSWebClient* and *CORSWebService* are published as separate apps, they're hosted on different domains. The different domains make AJAX requests from *CORSWebClient* to *CORSWebService* cross-origin, causing them to fail.
 
 ![Screenshot that shows an application proxy CORS request.](./media/application-proxy-understand-cors-issues/image2.png)
 
