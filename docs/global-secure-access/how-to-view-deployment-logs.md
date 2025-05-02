@@ -46,9 +46,6 @@ To filter the deployment logs to a specific detail, select **Add filter** and th
 
 ![Screenshot of the deployment log activity details.](media/how-to-view-deployment-logs/traffic-activity-details.png)
 
-> [!NOTE]
-> A notification shows up at the top right corner of the page when making a configuration change. Select the notification to see the progress of the deployment.
-
 ## Supported scenarios 
 
 The Global Secure Access configuration activities included in deployment logs are:
