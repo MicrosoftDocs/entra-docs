@@ -45,7 +45,7 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Resource group owner.
-1. Browse to **Identity governance** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. Select the catalog for which you want to add a custom extension and then in the left menu, select **Custom Extensions**. 
 
@@ -110,7 +110,7 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. Select the access package you want to add a custom extension (logic app) to from the list of access packages that have already been created.  
 

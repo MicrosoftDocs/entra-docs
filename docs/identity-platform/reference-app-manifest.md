@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom:
-ms.date: 09/27/2024
+ms.date: 04/15/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -27,7 +27,7 @@ You can configure an app's attributes through the Microsoft Entra admin center o
 To configure the application manifest:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the app you want to configure.
 1. From the app's **Manage** section, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** to edit the manifest locally, and then use **Upload** to reapply it to your application.
 
@@ -84,7 +84,7 @@ Example:
 
 ```json
 
-"accessTokenAcceptedVersion": 2
+"requestedAccessTokenVersion": 2
 
 ```
 

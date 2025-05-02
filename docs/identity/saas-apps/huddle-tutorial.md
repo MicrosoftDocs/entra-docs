@@ -41,7 +41,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Huddle into Microsoft Entra ID, you need to add Huddle from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Huddle** in the search box.
 1. Select **Huddle** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -69,7 +69,7 @@ To configure and test Microsoft Entra SSO with Huddle, perform the following ste
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Huddle** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Huddle** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -136,7 +136,7 @@ To enable Microsoft Entra users to log in to Huddle, they must be provisioned in
 
 2. Select **Workspace**.
 
-3. Select **People \> Invite People**.
+3. Select **People** > **Invite People**.
 
 	![People](./media/huddle-tutorial/tasks.png "People")
 

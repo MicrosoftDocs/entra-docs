@@ -38,7 +38,7 @@ If you use Microsoft Entra B2B collaboration to work with external partners, you
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All Users**.
+1. Browse to **Entra ID** > **Users**.
 4. Select **Bulk operations** > **Bulk invite**.
 
     :::image type="content" source="media/tutorial-bulk-invite/bulk-invite-button.png" alt-text="Screenshot of the bulk invite button.":::
@@ -100,7 +100,7 @@ Check to see that the guest users you added exist in the directory either in the
 ### View guest users in the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 4. Under **Show**, select **Guest users only** and verify the users you added are listed.
 
 ### View guest users with PowerShell

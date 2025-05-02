@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
+ai-usage: ai-assisted
 ---
 # How to enable and manage the Microsoft traffic forwarding profile
 

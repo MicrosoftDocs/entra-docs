@@ -63,7 +63,7 @@ SHA for this scenario supports both SP and IdP initiated flows. The following im
 | 4| User is redirected back to BIG-IP (SAML SP) and SSO is performed using issued SAML token |
 | 5| BIG-IP performs LDAP query for users Unique ID (UID) attribute |
 | 6| BIG-IP injects returned UID attribute as user_orclguid header in EBS session cookie request to Oracle AccessGate |
-| 7| Oracle AccessGate validates UID against Oracle Internet Directory (OID) service and issues EBS access cookie
+| 7| Oracle AccessGate validates UID against Oracle Internet Directory (OID) service and issues EBS access cookie |
 | 8| EBS user headers and cookie sent to application and returns the payload to the user |
 
 ## Prerequisites

@@ -43,7 +43,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Athena Systems Login Platform into Microsoft Entra ID, you need to add Athena Systems Login Platform from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Athena Systems Login Platform** in the search box.
 1. Select **Athena Systems Login Platform** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -71,7 +71,7 @@ To configure and test Microsoft Entra SSO with Athena Systems Login Platform, pe
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Athena Systems Login Platform** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Athena Systems Login Platform** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -96,8 +96,8 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In addition to above, Athena Systems Login Platform application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
-	| Name | Source Attribute|
-	| ------- | --------- |
+	|  Name  | Source Attribute |
+	| ------ | ---------------- |
 	| Client | user.companyname |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.

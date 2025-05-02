@@ -8,12 +8,12 @@ ms.date: 03/30/2025
 ---
 # Service principal-less authentication mitigation
 
-From March 2026, Microsoft Entra ID will no longer support service principal-less authentication behavior. In this article, you'll learn how to prepare for the deprecation of service principal-less authentication. As a tenant administrator you will verify access, create an enterprise application, and verify tokens.
+From March 2026, Microsoft Entra ID will no longer support service principal-less authentication behavior. In this article, you'll learn how to prepare for the deprecation of service principal-less authentication. As a tenant administrator you'll verify access, create an enterprise application, and verify tokens.
 
 ## Prerequisites
 - An account in the resource tenant with at least the **Application administrator** or **Cloud application administrator** role assigned. 
 
-## Transitioning to Service Principal-less authentication
+## Transitioning from Service Principal-less authentication
 
 Microsoft Entra ID will block authentication for multitenant applications that don't have an enterprise application registration in the resource tenant. This scenario is also known as service principal-less authentication. This behavior has already been blocked for most resources. This change will address a few remaining exceptions. Service principal-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
 
@@ -23,12 +23,14 @@ Additionally, by enforcing the requirement that applications must be registered 
 
 You must act **before March 31, 2026**, to avoid authentication failure of applications. 
 
+If you identified traffic using service principal-less authentication between **February 11th and March 11th, 2025**, it will continue to work until **March 2026**. However, any traffic that wasn't detected during this period or any new traffic starting after **March 11, 2025** will be blocked starting **April 2025**.
+
 ## Use sign-in logs to find service principal-less applications
 
 First, you'll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
 
 1. Navigate to the [Microsoft Entra admin center](https://entra.microsoft.com/#home).
-2. On the left navigation panel, go to **Identity** > **Show more...** > **Monitoring & health** > **Sign-in logs**.
+2. On the left navigation panel, go to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 3. Go to the **Service principal sign-ins** tab.
 4. Filter by **Service principal ID**, and enter `00000000-0000-0000-0000-000000000000` in the input field.
 5. Change the Date sorting to be **Custom time interval**, and set it to **Last 1 month**.

@@ -10,7 +10,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: how-to
 ms.date: 02/29/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to configure native authentication Android Kotlin sample app enable customer users to sign up, sign in, sign out and reset password by using Microsoft Entra's native authentication.
 ---
 
@@ -22,29 +22,24 @@ In this quickstart you learn how to run an Android sample application that demon
  
 ## Prerequisites  
 
-- <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
- 
-## Register an application
- 
-[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+* An external tenant. To create one, choose from the following methods:
+  * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* A user flow set up with the *Email one-time passcode* identity provider option. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
+* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
+   * **Name**: *ciam-client-app*
+   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
+* <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
  
 ## Enable public client and native authentication flows 
 
 [!INCLUDE [Enable public client and native authentication](../external-id/customers/includes/native-auth/enable-native-authentication.md)]
- 
-## Grant admin consent
- 
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-## Create a user flow
- 
-[!INCLUDE [Create user flow](../external-id/customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
- 
-## Associate the app with the user flow
-
-[!INCLUDE [associate user flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]  
- 
+  
 ## Clone sample Android mobile application
  
 1. Open Terminal and navigate to a directory where you want to keep the code.  
@@ -103,9 +98,9 @@ This sample app also supports the following authentication flows:
 
 In this section, you test email with password flow, with its variants such as, email with password sign-up with user attributes and SSPR:
 
-1. Use the steps in [create a user flow](#create-a-user-flow) to create a new user flow, but this time select **Email with password** as your authentication method. You need to configure **Country/Region** and **City** as the user attributes. Alternatively, you can modify the existing user flow to use **Email with password** (Select **External Identities** > **User flows** > **SignInSignUpSample** > **Identity providers** > **Email with password** > **Save**).  
+1. Use the steps in [create a user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) to create a new user flow, but this time select **Email with password** as your authentication method. You need to configure **Country/Region** and **City** as the user attributes. Alternatively, you can modify the existing user flow to use **Email with password** (Select **External Identities** > **User flows** > **SignInSignUpSample** > **Identity providers** > **Email with password** > **Save**).  
 
-1. Use the steps in [associate the application with the new user flow](#associate-the-app-with-the-user-flow) to add an app to your new user flow. 
+1. Use the steps in [associate the application with the new user flow](../external-id/customers/how-to-user-flow-add-application.md) to add an app to your new user flow. 
 
 1. Run the sample app, then select the ellipsis menu (**...**) to open more options. 
 

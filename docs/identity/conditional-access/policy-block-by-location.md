@@ -19,7 +19,7 @@ With the location condition in Conditional Access, you can control access to you
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
 1. Choose the type of location to create.
    - **Countries location** or **IP ranges location**.
    - Give your location a name.
@@ -33,7 +33,7 @@ More information about the location condition in Conditional Access can be found
 ## Create a Conditional Access policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.

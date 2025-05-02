@@ -4,7 +4,7 @@ description: In this quickstart, learn how a Universal Windows Platform (UWP) ap
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: scenarios:getting-started, "languages:UWP", mode-api
+ms.custom:
 ms.date: 05/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
@@ -47,7 +47,7 @@ You have two options to start your quickstart application:
 To register your application and add the app's registration information to your solution, follow these steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
+1. Browse to **Entra ID** > **App registrations**, select **New registration**.
 1. Enter a **Name** for your application, for example `UWP-App-calling-MsGraph`. Users of your app might see this name, and you can change it later.
 1. In the **Supported account types** section, select **Accounts in any organizational directory and personal Microsoft accounts (for example, Skype, Xbox, Outlook.com)**.
 1. Select **Register** to create the application, and then record the **Application (client) ID** for use in a later step.
@@ -72,7 +72,7 @@ To register your application and add the app's registration information to your 
    private const string ClientId = "Enter_the_Application_Id_here";
    ```
 
-   You can find the **Application (client) ID** on the app's **Overview** pane in the Microsoft Entra admin center (**Identity** > **Applications** > **App registrations** > *{Your app registration}*).
+   You can find the **Application (client) ID** on the app's **Overview** pane in the Microsoft Entra admin center (**Entra ID** > **App registrations** > *{Your app registration}*).
 1. Create and then select a new self-signed test certificate for the package:
     1. In the **Solution Explorer**, double-click the *Package.appxmanifest* file.
     1. Select **Packaging** > **Choose Certificate...** > **Create...**.

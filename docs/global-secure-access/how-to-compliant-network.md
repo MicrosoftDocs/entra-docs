@@ -8,6 +8,7 @@ ms.author: kenwith
 author: kenwith
 manager: femila
 ms.reviewer: smistry
+ai-usage: ai-assisted
 ---
 # Enable compliant network check with Conditional Access
 
@@ -31,7 +32,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
-   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and interact with Conditional Access policies and named locations.
+   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to enable Global Secure Access signaling for Conditional Access, as well as to create and interact with Conditional Access policies and named locations.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ### Known limitations
@@ -42,10 +43,10 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 
 To enable the required setting to allow the compliant network check, an administrator must take the following steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with an account which has the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) and [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role activated.
 1. Browse to **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**.
 1. Select the toggle to **Enable CA Signaling for Entra ID (covering all cloud apps)**. This will automatically enable CAE signaling for Office 365 (preview).
-1. Browse to **Protection** > **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
    1. Confirm you have a location called **All Compliant Network locations** with location type **Network Access**. Organizations can optionally mark this location as trusted.
 
 :::image type="content" source="media/how-to-compliant-network/toggle-enable-signaling-in-conditional-access.png" alt-text="Screenshot showing the toggle to enable signaling in Conditional Access.":::
@@ -58,7 +59,7 @@ To enable the required setting to allow the compliant network check, an administ
 The compliant network Conditional Access policy can be used to protect your Microsoft and third-party applications. A typical policy will have a 'Block' grant for all network locations except Compliant Network. The following example demonstrates the steps to configure this type of policy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
