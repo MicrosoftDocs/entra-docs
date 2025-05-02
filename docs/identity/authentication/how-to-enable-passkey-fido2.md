@@ -174,7 +174,7 @@ Administrator provisioning of security keys is in preview. See [Microsoft Graph 
 
 ### Guest users 
 
-Registration of passkey (FIDO2) credentials isn't supported for external or internal guts users, including B2B collaboration users in the resource tenant.
+Registration of passkey (FIDO2) credentials isn't supported for external or internal guest users, including B2B collaboration users in the resource tenant.
 
 ### UPN changes
 
