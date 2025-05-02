@@ -44,7 +44,7 @@ To configure the integration of Insperity ExpensAble into Microsoft Entra ID, yo
 **To add Insperity ExpensAble from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **InsperityExpensAble** in the search box.
 1. Select **Insperity ExpensAble** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -73,7 +73,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with Insperity ExpensAble, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Insperity ExpensAble** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Insperity ExpensAble** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 

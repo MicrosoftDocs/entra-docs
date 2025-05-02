@@ -22,7 +22,7 @@ Workflows that you create within lifecycle workflows follow the same schedule th
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows**.
 
 1. On the **Lifecycle workflows** overview page, select **Workflow settings**.
 

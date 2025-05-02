@@ -34,7 +34,7 @@ To access this dashboard, you need:
 You can access the dashboard by:
 
 1. Sign in to the **[Microsoft Entra admin center](https://entra.microsoft.com)** as at least a [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Protection** > **Identity Protection** > **Dashboard**.
+1. Browse to **ID Protection** > **Dashboard**.
 
 ### Metric cards
  

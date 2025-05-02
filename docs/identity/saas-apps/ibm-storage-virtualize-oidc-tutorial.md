@@ -34,7 +34,7 @@ To configure the integration of IBM Storage Virtualize into Microsoft Entra ID, 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **IBM Storage Virtualize** in the search box.
 
@@ -46,7 +46,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **IBM Storage Virtualize** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **IBM Storage Virtualize** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
@@ -86,7 +86,7 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 1. Sign in to the IBM Storage Virtualize administrator dashboard by using the following URL:
 `https://tenant.verify.ibm.com/ui/admin`.
 
-1. In the IBM Security Verify interface, select **Applications**  > **Add application**.
+1. In the IBM Security Verify interface, select **Applications **Add application**.
 
     > [!Note]
     >  Each system must be added as a separate application.

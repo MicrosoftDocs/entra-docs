@@ -49,7 +49,7 @@ Follow these steps to make a user eligible for an Azure resource role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a User Access Administrator.
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**.
 
 1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Select the Select button for the resource you want to manage to open its overview page.
 

@@ -64,7 +64,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Better Stack in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -96,15 +96,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Better Stack|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||
-   |emails[type eq "work"].value|String||
-   |name.givenName|String||
-   |name.familyName|String||
-   |phoneNumbers[type eq "work"].value|String||
-   |phoneNumbers[type eq "mobile"].value|String||
-   |externalId|String||
-   |timezone|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean|||
+   |emails[type eq "work"].value|String|||
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |phoneNumbers[type eq "work"].value|String|||
+   |phoneNumbers[type eq "mobile"].value|String|||
+   |externalId|String|||
+   |timezone|String|||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Better Stack**.
 
@@ -112,9 +112,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Better Stack|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |externalId|String||
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |externalId|String|||
+   |members|Reference|||
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

@@ -44,7 +44,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Jitbit Helpdesk into Microsoft Entra ID, you need to add Jitbit Helpdesk from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Jitbit Helpdesk** in the search box.
 1. Select **Jitbit Helpdesk** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -72,7 +72,7 @@ To configure and test Microsoft Entra SSO with Jitbit Helpdesk, perform the foll
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Jitbit Helpdesk** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Jitbit Helpdesk** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -80,12 +80,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Sign on URL** text box, type one of the URLs using the following pattern:
-	| |
-    | ----------------------------------------|
-	| `https://<hostname>/helpdesk/User/Login`|
-	| `https://<tenant-name>.Jitbit.com`|
-	| |
+	a. In the **Sign on URL** text box, type one of the URLs using the patterns:
+    - `https://<hostname>/helpdesk/User/Login`
+	- `https://<tenant-name>.Jitbit.com`
     
 	> [!NOTE] 
 	> This value isn't real. Update this value with the actual Sign-On URL. Contact [Jitbit Helpdesk Client support team](https://www.jitbit.com/support/) to get this value.
@@ -121,9 +118,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Authentication settings](./media/jitbit-helpdesk-tutorial/authentication.png "Authentication settings")
 
-	a. Select **Enable SAML 2.0 single sign on**, to sign in using Single Sign-On (SSO), with **OneLogin**.
+	a. Select **Enable SAML 2.0 single sign on**, to sign in using single sign-on (SSO), with **OneLogin**.
 
-	b. In the **EndPoint URL** textbox, paste the value of **Login URL**..
+	b. In the **EndPoint URL** textbox, paste the value of **Login URL**.
 
 	c. Open your **base-64** encoded certificate in notepad, copy the content of it into your clipboard, and then paste it to the **X.509 Certificate** textbox
 
@@ -159,7 +156,7 @@ In order to enable Microsoft Entra users to sign in to Jitbit Helpdesk, they mus
 
    c. In the **First Name** textbox, type first name of the user like **Britta**.
 
-   d. In the **Last Name** textbox, type last name of the user like **Simon**.
+   d. In the **Last Name** textbox, type the family name of the user like **Simon**.
 
    e. Select **Create**.
 
@@ -170,9 +167,9 @@ In order to enable Microsoft Entra users to sign in to Jitbit Helpdesk, they mus
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this option redirects to Jitbit Helpdesk Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Jitbit Helpdesk Sign-on URL where you can initiate the sign-in flow. 
 
-* Go to Jitbit Helpdesk Sign-on URL directly and initiate the login flow from there.
+* Go to Jitbit Helpdesk Sign-on URL directly and initiate the sign-in flow from there.
 
 * You can use Microsoft My Apps. When you select the Jitbit Helpdesk tile in the My Apps, this option redirects to Jitbit Helpdesk Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 

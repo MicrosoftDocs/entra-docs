@@ -44,7 +44,7 @@ To configure the integration of IdeaScale into Microsoft Entra ID, you need to a
 **To add IdeaScale from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, type **IdeaScale**, select **IdeaScale** from result panel then select **Add** button to add the application.
 
 	 ![IdeaScale in the results list](common/search-new-app.png)
@@ -74,7 +74,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with IdeaScale, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **IdeaScale** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **IdeaScale** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -125,7 +125,7 @@ To configure Microsoft Entra single sign-on with IdeaScale, perform the followin
 
     ![Community Settings](./media/ideascale-tutorial/ic790847.png "Community Settings")
 
-3. Go to **Security \> Single Signon Settings**.
+3. Go to **Security** > **Single Signon Settings**.
 
     ![Screenshot shows Single Signon Settings selected from the Security menu.](./media/ideascale-tutorial/ic790848.png "Single Signon Settings")
 
@@ -161,7 +161,7 @@ To enable Microsoft Entra users to log into IdeaScale, they must be provisioned 
 
     ![Community Settings](./media/ideascale-tutorial/ic790847.png "Community Settings")
 
-3. Go to **Basic Settings \> Member Management**.
+3. Go to **Basic Settings** > **Member Management**.
 
 4. Select **Add Member**.
 

@@ -106,6 +106,9 @@ When administrators select **Every time**, it requires full reauthentication whe
 
 Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing. Web applications usually provide a less disruptive experience than their desktop counterparts when require reauthentication every time is enabled. We factor for five minutes of clock skew when every time is selected in policy, so that we don’t prompt users more often than once every five minutes.
 
+> [!WARNING]
+> Using sign-in frequency to require reauthentication every time, without multifactor authentication might result in sign-in looping for your users.
+
 * For applications in the Microsoft 365 stack, we recommend using [time-based user sign-in frequency](#user-sign-in-frequency) for a better user experience.
 * For the Azure portal and the Microsoft Entra admin center, we recommend either using [time-based user sign-in frequency](#user-sign-in-frequency) or to [require reauthentication on PIM activation](../../id-governance/privileged-identity-management/pim-how-to-change-default-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context) using authentication context for a better user experience.
 

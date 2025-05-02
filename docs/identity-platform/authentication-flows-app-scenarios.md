@@ -4,7 +4,7 @@ description: Learn about application scenarios for the Microsoft identity platfo
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: scenarios:getting-started, has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform

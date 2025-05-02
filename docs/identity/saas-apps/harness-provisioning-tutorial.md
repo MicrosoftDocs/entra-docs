@@ -76,7 +76,7 @@ Before you configure and enable automatic user provisioning, decide which users 
 Before you configure Harness for automatic user provisioning with Microsoft Entra ID, you need to add Harness from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![The "All applications" link](common/enterprise-applications.png)
 
@@ -96,12 +96,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > You may also choose to enable SAML-based single sign-on for Harness by following the instructions in the [Harness single sign-on  article](./harness-tutorial.md). You can configure single sign-on independent of automatic user provisioning, although these two features complement each other.
 
 > [!NOTE]
-> To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://docs.harness.io/article/smloyragsm-api-keys) article.
+> To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://developer.harness.io/docs/platform/automation/api/add-and-manage-api-keys/) article.
 
 To configure automatic user provisioning for Harness in Microsoft Entra ID, do the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 

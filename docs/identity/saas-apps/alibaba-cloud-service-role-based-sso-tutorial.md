@@ -39,7 +39,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Alibaba Cloud Service (Role-based SSO) into Microsoft Entra ID, you need to add Alibaba Cloud Service (Role-based SSO) from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Alibaba Cloud Service (Role-based SSO)** in the search box.
 1. Select **Alibaba Cloud Service (Role-based SSO)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 5. On the **Alibaba Cloud Service (Role-based SSO)** page, select **Properties** in the left-side navigation pane, and copy the **object ID** and save it on your computer for subsequent use.
@@ -71,7 +71,7 @@ To configure and test Microsoft Entra SSO with Alibaba Cloud Service (Role-based
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Alibaba Cloud Service (Role-based SSO)** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Alibaba Cloud Service (Role-based SSO)** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
@@ -204,7 +204,7 @@ In this section, you create a user called Britta Simon in Alibaba Cloud Service 
 After the preceding configurations are completed, test Alibaba Cloud Service (Role-based SSO) by following these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Alibaba Cloud Service (Role-based SSO)**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Alibaba Cloud Service (Role-based SSO)**.
 1. Select **Single sign-on**, and select **Test**.
 
     ![Test config1](./media/alibaba-cloud-service-role-based-sso-tutorial/test03.png)

@@ -7,6 +7,7 @@ manager: femila
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 
 #Customer intent: As an IT admin, I need to learn how to use workbooks with Global Secure Access so I can better manage the solution.
 

@@ -41,7 +41,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |
-        Browse to **Identity** > **Users** > **Deleted users**.
+        Browse to **Entra ID** > **Users** > **Deleted users**.
       - |
         Review the list of users that are available to restore.
 

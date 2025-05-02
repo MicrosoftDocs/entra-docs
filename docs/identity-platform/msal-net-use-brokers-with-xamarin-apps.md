@@ -4,7 +4,7 @@ description: Learn how to setup Xamarin iOS applications that can use the Micros
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
+ms.custom: has-adal-ref
 ms.date: 06/05/2024
 ms.reviewer: jmprieur, saeeda
 ms.service: identity-platform
@@ -183,7 +183,7 @@ Add the redirect URI to the app's registration. To generate a properly formatted
 **To generate the redirect URI:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Search for and select the application.
 1. Select **Authentication** > **Add a platform** > **iOS / macOS**
 1. Enter your bundle ID, and then select **Configure**.

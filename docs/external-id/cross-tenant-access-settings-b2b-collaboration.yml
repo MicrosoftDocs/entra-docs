@@ -48,7 +48,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
       - |
-        Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select  **Cross-tenant access settings**.
+        Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**, then select  **Cross-tenant access settings**.
       - |
         Select the **Default settings** tab and review the summary page.
 
@@ -70,7 +70,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
       - |
-        Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings**.
+        Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings**.
       - |
         Select **Add organization**.
       - |
@@ -95,7 +95,7 @@ procedureSection:
 
       1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-      2. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+      2. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
       3. Navigate to the settings you want to modify:
           - **Default settings**: To modify default inbound settings, select the **Default settings** tab, and then under **Inbound access settings**, select **Edit inbound defaults**.
@@ -113,7 +113,7 @@ procedureSection:
 
       1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-      2. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings** 
+      2. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings** 
 
       3. Select the link in the **Inbound access** column and the **B2B collaboration** If you block access for all external users and groups, you also need to block access to all your internal applications.
 
@@ -245,9 +245,9 @@ procedureSection:
 
       To customize the order of identity providers that your guest users can use to sign in when they accept your invitation, follow these steps.
 
-      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Then open the **Identity** service on the left hand side.
+      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
-      2. Select **External Identities** > **Cross-tenant access settings**.
+      2. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
       3. On the **Default settings** tab, under **Inbound access settings**, select **Edit inbound defaults**.
 
@@ -311,9 +311,9 @@ procedureSection:
 
       To prevent your B2B guest users from redeeming their invite using their existing Microsoft accounts or creating a new one to accept the invitation, follow the steps below.
 
-      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Then open the **Identity** service on the left hand side.
+      1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
 
-      2. Select **External Identities** > **Cross-tenant access settings**.
+      2. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
       3. On the **Default settings** tab, under **Inbound access settings**, select **Edit inbound defaults**.
 
@@ -367,7 +367,7 @@ procedureSection:
 
       1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-      2. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+      2. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
       3. Navigate to the settings you want to modify:
 
@@ -467,7 +467,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
       - |
-        Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+        Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
       - |
         Select the **Organizational settings** tab.
       - |

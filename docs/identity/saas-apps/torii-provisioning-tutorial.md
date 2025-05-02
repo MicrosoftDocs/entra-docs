@@ -41,7 +41,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Torii to support provisioning with Microsoft Entra ID
 1. Log in to [Torii admin console](https://app.toriihq.com).
-1. Navigate to [Settings](https://app.toriihq.com/team/settings/apiAccess) page **> Security**, enable the SCIM toggle.
+1. Navigate to [Settings](https://app.toriihq.com/team/settings/apiAccess) page > **Security**, enable the SCIM toggle.
 
 	![Screenshot of SCIM Toggle.](media/torii-provisioning-tutorial/scim-enabled.png)
 1. Navigate to the **API Access** tab. From here, you can view and manage the Torii API keys and SCIM.
@@ -79,7 +79,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Torii in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 

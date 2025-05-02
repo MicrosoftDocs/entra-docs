@@ -59,7 +59,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Bustle B2B Transport Systems in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -91,15 +91,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Bustle B2B Transport Systems|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||
-   |emails[type eq "work"].value|String||&check;
-   |name.givenName|String||&check;
-   |name.familyName|String||&check;
-   |phoneNumbers[type eq "work"].value|String||&check;
-   |externalId|String||&check;
+   |userName|String|&check;|&check;|
+   |active|Boolean|||
+   |emails[type eq "work"].value|String||&check;|
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |phoneNumbers[type eq "work"].value|String||&check;|
+   |externalId|String||&check;|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Bustle B2B Transport Systems, change the **Provisioning Status** to **On** in the **Settings** section.
 

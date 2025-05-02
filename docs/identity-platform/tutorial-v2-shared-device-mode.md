@@ -19,7 +19,7 @@ ms.topic: tutorial
 
 In this tutorial, Android developers learn how to add shared device mode support in an Android application using the Microsoft Authentication Library (MSAL) for Android.
  
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -282,7 +282,7 @@ For information on how to do this, refer to [Register your application](./tutori
 
 You should select **Make this change for me** and then provide the values the quickstart asks for. When done, Microsoft Entra ID generates all the configuration files you need.
 
-For testing purposes, set up the following roles in your tenant - at least two employees and a Cloud Device Administrator. To set the Cloud Device Administrator, you need to modify Organizational Roles. From the Microsoft Entra admin center, go to your Organizational Roles by selecting **Identity** > **Roles & admins** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
+For testing purposes, set up the following roles in your tenant - at least two employees and a Cloud Device Administrator. To set the Cloud Device Administrator, you need to modify Organizational Roles. From the Microsoft Entra admin center, go to your Organizational Roles by selecting **Entra ID** > **Roles & admins** > **All roles**, and then select **Cloud Device Administrator**. Add the users that can put a device into shared mode.
 
 ## Running the sample app
 

@@ -107,7 +107,7 @@ Apart from Microsoft Entra native integration support for modern authentication 
 To configure the integration of F5 into Microsoft Entra ID, you need to add F5 from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **F5** in the search box.
 1. Select **F5** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -135,7 +135,7 @@ To configure and test Microsoft Entra SSO with F5, complete the following buildi
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **F5** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **F5** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
@@ -244,7 +244,7 @@ Follow these steps to enable Microsoft Entra SSO.
 ## Advanced Configuration
 
 >[!NOTE]
->For reference select [here](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+>For reference select [here](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
 
 ### Configuring an Active Directory AAA server
 
@@ -445,7 +445,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
     ![F5 (Kerberos) configuration](./media/kerbf5-tutorial/configure43.png)
 
-* Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html).
+* Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html).
 
 ### Create F5 test user
 
