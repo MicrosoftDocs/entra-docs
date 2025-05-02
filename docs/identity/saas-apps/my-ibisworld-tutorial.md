@@ -113,9 +113,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure My IBISWorld SSO
 
-To configure single sign-on on **My IBISWorld** side, you need to send the **App Federation Metadata Url** to your [IBISWorld Client Relationship Manager](https://www.ibisworld.com/contact-us/). We'll need this to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **My IBISWorld** side, you need to send the **App Federation Metadata Url** to your IBISWorld Client Relationship Manager. We'll need this to have the SAML SSO connection set properly on both sides.
 
-If you have any questions, please contact your [IBISWorld Client Relationship Manager](https://www.ibisworld.com/contact-us/) and they'll liaise with IBISWorld IT Department.
+If you have any questions, please contact your IBISWorld Client Relationship Manager and they'll liaise with IBISWorld IT Department.
 
 ### Create My IBISWorld test user
 

@@ -480,7 +480,7 @@ Analyzing the SSO extension logs is an excellent way to troubleshoot the authent
 - Authorization Request Types
    - Native MSAL
    - Non MSAL/Browser SSO
-- Interaction with the macOS Keychain for credential retrival/storage operations
+- Interaction with the macOS Keychain for credential retrieval/storage operations
 - Correlation IDs for Microsoft Entra sign-in events
    - PRT acquisition
    - Device Registration

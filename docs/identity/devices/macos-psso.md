@@ -4,9 +4,8 @@ description: Overview of macOS Platform Single Sign On (PSSO) for Microsoft Entr
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: overview
-ms.date: 12/08/2023
+ms.date: 05/01/2025
 ms.author: godonnell
-ms.reviewer: brianmel
 author: garrodonnell
 manager: celested
 

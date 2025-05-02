@@ -100,12 +100,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by BIC Cloud Design|
    |---|---|---|---|
-    |userName|String|&check;|&check;
-    |emails[type eq "work"].value|String|&check;|&check;
-    |active|Boolean||&check;
-    |roles[primary eq "True"].value|String||&check;
-    |displayName|String||&check;
-    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||&check;
+    |userName|String|&check;|&check;|
+    |emails[type eq "work"].value|String|&check;|&check;|
+    |active|Boolean||&check;|
+    |roles[primary eq "True"].value|String||&check;|
+    |displayName|String||&check;|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||&check;|
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to BIC Cloud Design**.
 
@@ -113,9 +113,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by BIC Cloud Design|
    |---|---|---|---|
-      |displayName|String|&check;|&check;
-      |externalId|String||&check;
-      |members|Reference|
+      |displayName|String|&check;|&check;|
+      |externalId|String||&check;|
+      |members|Reference|||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

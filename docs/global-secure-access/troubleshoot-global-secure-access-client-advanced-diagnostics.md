@@ -1,9 +1,9 @@
 ---
-title: "Troubleshoot the Global Secure Access client: diagnostics"
+title: "Troubleshoot the Global Secure Access Client for Windows: Advanced Diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 02/25/2025
+ms.date: 04/29/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
@@ -13,8 +13,8 @@ ms.reviewer: lirazbarak
 
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Advanced diagnostics utility.
 ---
-# Troubleshoot the Global Secure Access client: Advanced diagnostics
-This document provides troubleshooting guidance for the Global Secure Access client. It explores each tab of the Advanced diagnostics utility.
+# Troubleshoot the Global Secure Access client for Windows: Advanced diagnostics
+This document provides troubleshooting guidance for the Global Secure Access client for Windows. It explores each tab of the Advanced diagnostics utility.
 
 ## Introduction
 The Global Secure Access client runs in the background and routes relevant network traffic to Global Secure Access. It doesn't require user interaction. The advanced diagnostics tool makes the client's behavior visible to the administrator and helps with troubleshooting.
@@ -144,7 +144,7 @@ The following files are collected:
 |systemWideProxy.txt|Output of netsh winhttp show proxy|
 |userConfiguredProxy|Output of proxy settings in the registry|
 |userSessions.txt|User session list|
-|DNSClient.etl|DNS client logs. These logs are useful for diagnosomg DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: `Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView`|
+|DNSClient.etl|DNS client logs. These logs are useful for diagnosing DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: `Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView`|
 |InternetDebug.etl|Logs collected using "netsh trace start scenario=internetClient_dbg capture=yes persistent=yes"|
 |NetworkTrace.etl|Net capture taken with pktmon|
 |NetworkTrace.pcap|Network capture including traffic inside the tunnel|
@@ -157,3 +157,5 @@ In some instances, you need to investigate traffic within the Global Secure Acce
 ### Analyze Global Secure Access client logs on a different device than where they were collected
 In many cases, you might need to analyze the data your users collect using your own device. To accomplish this, open the Global Secure Access client on your device, open Advanced Diagnostic tool, and then select the folder icon to the far right of the menu bar. From here, you can navigate to the zip file or the GlobalSecureAccess-Trace.etl file. Loading the zip file also loads information including tenant ID, device ID, client version, health check, and forwarding profile rules as if you were troubleshooting locally on the device used for data collection.
 
+## Related content
+* Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostics

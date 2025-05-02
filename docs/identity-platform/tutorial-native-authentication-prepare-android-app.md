@@ -60,7 +60,7 @@ In this tutorial, you:
     //...
     
     dependencies { 
-        implementation 'com.microsoft.identity.client:msal:5.+'
+        implementation 'com.microsoft.identity.client:msal:6.+'
         //...
     }
     ```

@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | ---- |
     | `https://<CUSTOMER_SITE_URL>/login` |
     | `https://<CUSTOMER_SITE_URL>/login?no_auto=0` |
-    |
+
 	> [!NOTE]
 	> These values aren't real. Update these values with the actual Reply URL and Sign-on URL which is explained later in the article.
 

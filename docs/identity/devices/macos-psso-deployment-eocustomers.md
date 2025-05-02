@@ -4,9 +4,8 @@ description: How to deploy macOS Platform Single Sign On (PSSO) to meet NIST SP 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 10/29/2024
+ms.date: 05/01/2025
 ms.author: godonnell
-ms.reviewer: brianmel
 author: garrodonnell
 manager: celested
 
