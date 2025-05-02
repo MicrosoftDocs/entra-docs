@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -25,7 +25,7 @@ Resource audit gives you a view of all activity associated with your Microsoft E
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
 
 1. Select **Resource audit**.
 
@@ -39,7 +39,7 @@ My audit enables you to view your personal role activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
 
 1. Select the resource you want to view audit history for.
 

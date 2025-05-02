@@ -38,7 +38,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of TOPdesk - Secure into Microsoft Entra ID, you need to add TOPdesk - Secure from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **TOPdesk - Secure** in the search box.
 1. Select **TOPdesk - Secure** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -69,7 +69,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with TOPdesk - Secure, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **TOPdesk - Secure** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **TOPdesk - Secure** application integration page, select **Single sign-on**.
 
 1. On the **Select a Single sign-on method** dialog, select **SAML/WS-Fed** mode to enable single sign-on.
 
@@ -174,7 +174,7 @@ In the case of TOPdesk - Secure, provisioning is a manual task.
 
 1. Sign on to your **TOPdesk - Secure** company site as administrator.
 
-2. In the menu on the top, select **TOPdesk \> New \> Support Files \> Operator**.
+2. In the menu on the top, select **TOPdesk** > **New** > **Support Files** > **Operator**.
 
     ![Operator](./media/topdesk-secure-tutorial/support-files.png "Operator")
 

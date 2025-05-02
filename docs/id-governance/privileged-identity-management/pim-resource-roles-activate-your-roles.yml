@@ -41,7 +41,7 @@ procedureSection:
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
       - |
-        Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.
+        Browse to **ID Governance** > **Privileged Identity Management** > **My roles**.
 
           [ ![Screenshot of my roles page showing roles you can activate.](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png) ](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png#lightbox)
       - |

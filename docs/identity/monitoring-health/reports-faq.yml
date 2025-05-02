@@ -8,7 +8,7 @@ metadata:
   ms.service: entra-id
   ms.topic: faq
   ms.subservice: monitoring-health
-  ms.date: 12/09/2024
+  ms.date: 04/16/2025
   ms.author: sarahlipsey
   ms.reviewer: egreenberg14
 title: Frequently asked questions around Microsoft Entra monitoring and health
@@ -108,7 +108,7 @@ sections:
         answer: |
           The TimeGenerated field in Log Analytics is the time the entry was received and published by Log Analytics. Remember, in order for your logs to appear in Log Analytics, you have to configure diagnostics settings to *send* the logs to the Log Analytics workspace. That process takes time, so the TimeGenerated field might not match the actual time of the sign-in.
 
-          To confirm the date and time match the sign-in, look for the `CreatedDateTime` field a little further down in the Log Analytics results. The `AuthenticationDetails` fields can also be expanded to see the exact time of the sign-in. The time in Log Analytics appear in UTC, but the time in the sign-in logs in the Microsoft Entra admin center appear in local time, so you might need to adjust.
+          To confirm the date and time match the sign-in, look for the `CreatedDateTime` field a little further down in the Log Analytics results. The `AuthenticationDetails` fields can also be expanded to see the exact time of the sign-in. The time in Log Analytics appears in UTC, but the time in the sign-in logs in the Microsoft Entra admin center appears in local time, so you might need to adjust.
 
           Risky sign-in events also have a different TimeGenerated time than the actual sign-in time. The TimeGenerated time for risky sign-ins is the time the risk was detected, not the time of the sign-in. Check the risky sign-in event itself for the activity time, which is the actual time of the sign-in.
 
@@ -155,7 +155,7 @@ sections:
           You can also find these sign-in logs in Microsoft Entra admin center.
 
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-          - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+          - Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
           - Select **Service Principal Sign-ins**. 
           - Select an appropriate time frame in the Date field (last 24 hours, 7 days, and so on).
           - Add a filter and select **Service Principal ID** and provide the value '00000000-0000-0000-0000-000000000000' to get instances of authentication with no client Service Principal.
@@ -190,7 +190,7 @@ sections:
           To get started:
           
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-          - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+          - Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
           - Select the sign-in that you want to troubleshoot.
           - Select the **Conditional Access** tab to view all the policies that impacted the sign-in and the result for each policy. 
               
@@ -282,7 +282,4 @@ sections:
         answer: |
           We recommend being very cautious before making any changes to Microsoft-owned applications. These applications often have essential settings, like token issuance for billing applications. Disabling them could result in losing access to your account. Our internal security teams have implemented extensive security controls and access policies to keep these applications secure. We are confident in their security, and we strongly advise against making any additional changes to them.
 
-          If you choose to block or control these applications, it might lead to unexpected issues, and unfortunately, we won't be able to support or take responsibility for those problems. 
-        
-
-
+          If you choose to block or control these applications, it might lead to unexpected issues, and unfortunately, we won't be able to support or take responsibility for those problems.

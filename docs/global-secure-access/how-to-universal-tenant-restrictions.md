@@ -8,6 +8,7 @@ ms.author: kenwith
 author: kenwith
 manager: femila
 ms.reviewer: alexpav
+ai-usage: ai-assisted
 ---
 # Universal tenant restrictions
 
@@ -98,7 +99,7 @@ Tenant restrictions are not enforced when a user (or a guest user) tries to acce
 1. In the logs, look for a **Status** of `302`. This row shows universal tenant restrictions being applied to the traffic. 
    1. In the same response, check the headers for the following information identifying that universal tenant restrictions were applied:
       1. `Restrict-Access-Confirm: 1`
-      1. `x-ms-diagnostics: 2000020;reason="xms_trpid claim was not present but sec-tenant-restriction-access-policy header was in requres";error_category="insufficient_claims"`
+      1. `x-ms-diagnostics: 2000020;reason="xms_trpid claim was not present but sec-tenant-restriction-access-policy header was in requires";error_category="insufficient_claims"`
 
 ### Known limitations
 - If you enabled Universal Tenant Restrictions and you access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:

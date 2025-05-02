@@ -61,7 +61,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Egnyte in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -93,24 +93,24 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Egnyte|
    |---|---|---|---|
-   |userName|String|&check;|&check; 
-   |externalId|String|&check;|&check;
-   |active|Boolean||&check;
-   |emails[type eq "work"].value|String||&check;
-   |name.givenName|String||
-   |name.familyName|String||
-   |userType|String||
+   |userName|String|&check;|&check;|
+   |externalId|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |emails[type eq "work"].value|String||&check;|
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |userType|String|||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Egnyte**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Egnyte in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Egnyte for update operations. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by Egnyte
+   |Attribute|Type|Supported for filtering|Required by Egnyte|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |members|Reference|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Egnyte, change the **Provisioning Status** to **On** in the **Settings** section.
 

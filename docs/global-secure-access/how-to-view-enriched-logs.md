@@ -7,6 +7,7 @@ manager: femila
 ms.topic: how-to
 ms.date: 03/19/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 ---
 
 # How to use the Global Secure Access enriched Microsoft 365 logs
@@ -106,7 +107,7 @@ With your endpoint created, you can configure Diagnostic settings.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Select **Add Diagnostic setting**.
 

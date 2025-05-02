@@ -21,7 +21,7 @@ Microsoft Entra ID provides a central place to manage device identities and moni
 You can access the devices overview by completing these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user with at least [default user permissions](../../fundamentals/users-default-permissions.md).
-1. Go to **Identity** > **Devices** > **Overview**.
+1. Go to **Entra ID** > **Devices** > **Overview**.
 
 In the devices overview, you can view the number of total devices, stale devices, noncompliant devices, and unmanaged devices. It provides links to Intune, Conditional Access, BitLocker keys, and basic monitoring. Other features like Conditional Access and Microsoft Intune require additional role assignments
 

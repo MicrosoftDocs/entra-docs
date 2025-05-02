@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 04/29/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to support web fallback in my Android app's native authentication flow so that I can ensure stability of my app's authentication flow.
 ---
 
@@ -21,7 +21,7 @@ ms.custom: developer
  
 This tutorial demonstrates how `isBrowserRequired()` error happens and how you can resolve it. The utility method `isBrowserRequired()` checks the need for a fallback mechanism for various scenarios where native authentication isn't sufficient to complete the authentication flow in functional and safe manner. 
  
-In this tutorial, you learn how to:  
+In this tutorial, you:  
 
 > [!div class="checklist"]
 >

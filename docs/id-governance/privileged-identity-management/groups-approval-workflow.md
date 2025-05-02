@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim
@@ -28,7 +28,7 @@ As a delegated approver, you receive an email notification when an Azure resourc
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Approve requests** > **Groups**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Approve requests** > **Groups**.
 
 1. In the **Requests for role activations** section, you see a list of requests pending your approval.
 

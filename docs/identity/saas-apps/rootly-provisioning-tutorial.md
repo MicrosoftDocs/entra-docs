@@ -60,7 +60,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Rootly in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -76,7 +76,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your Rootly [Tenant URL](https://rootly.com/scim) and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Rootly. If the connection fails, ensure your Rootly account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Rootly [Tenant URL](https://docs.rootly.com/integrations/scim) and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to Rootly. If the connection fails, ensure your Rootly account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 

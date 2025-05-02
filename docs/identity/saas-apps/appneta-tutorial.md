@@ -43,7 +43,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of AppNeta Performance Manager into Microsoft Entra ID, you need to add AppNeta Performance Manager from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **AppNeta Performance Manager** in the search box.
 1. Select **AppNeta Performance Manager** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -71,7 +71,7 @@ To configure and test Microsoft Entra SSO with AppNeta Performance Manager, perf
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AppNeta Performance Manager** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **AppNeta Performance Manager** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
    | title     | user.jobtitle          |
    |           |                        |
 
-1. In order to properly pass along your ”groups” SAML assertions, you need to configure App roles and set the value to match the role mappings that are set within AppNeta Performance Manager. Under **Identity** > **Applications** > **App registrations**, select **Appneta Performance Manager**.
+1. In order to properly pass along your ”groups” SAML assertions, you need to configure App roles and set the value to match the role mappings that are set within AppNeta Performance Manager. Under **Entra ID** > **App registrations**, select **Appneta Performance Manager**.
 
    ![Screenshot that shows the App Registrations with Appneta Performance Manager at the bottom.](./media/appneta-tutorial/app-registrations.png)
 
@@ -123,9 +123,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Screenshot of the Create App Role dialog with the fields filled out as described.](./media/appneta-tutorial/create-app-role.png)
 
-1. After creating the roles, you need to map them to your users/groups. Browse to **Identity** > **Applications** > **Enterprise applications** > **Appneta Performance Manger** > **Users and groups**.
+1. After creating the roles, you need to map them to your users/groups. Browse to **Entra ID** > **Enterprise apps** > **Appneta Performance Manger** > **Users and groups**.
 1. Select a user/group and then assign your desired App role (created in the previous step).
-1. Once you have mapped the App roles, browse to **Identity** > **Applications** > **Enterprise applications** > **Appneta Performance Manager** > **Single sign-on**.
+1. Once you have mapped the App roles, browse to **Entra ID** > **Enterprise apps** > **Appneta Performance Manager** > **Single sign-on**.
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
    ![The Certificate download link](common/metadataxml.png)

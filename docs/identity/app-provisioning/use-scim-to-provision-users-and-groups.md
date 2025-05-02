@@ -10,6 +10,7 @@ ms.topic: tutorial
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 # Tutorial: Develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID
 
@@ -1315,7 +1316,7 @@ Applications that support the SCIM profile described in this article can be conn
 **To connect an application that supports SCIM:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select **+ New application** > **+ Create your own application**.
 1. Enter a name for your application, choose the option "*integrate any other application you don't find in the gallery*" and select **Add** to create an app object. The new app is added to the list of enterprise applications and opens to its app management screen.
@@ -1409,10 +1410,10 @@ When using the OAuth Code Grant flow, it's required that you support a model whe
 
 #### How to set up OAuth code grant flow
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application** > **Provisioning** and select **Authorize**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application** > **Provisioning** and select **Authorize**.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select your application and go to **Provisioning**.
 1. Select **Authorize**.
 

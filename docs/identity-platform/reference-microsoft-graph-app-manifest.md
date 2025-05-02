@@ -38,7 +38,7 @@ To configure the Microsoft Graph app manifest:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least an [Application Developer](/entra/identity/role-based-access-control/permissions-reference#application-developer).
 
-2. Browse to **Identity** > **Applications** > **App registrations**.
+2. Browse to **Entra ID** > **App registrations**.
 
 3. Select the app you want to configure.
 

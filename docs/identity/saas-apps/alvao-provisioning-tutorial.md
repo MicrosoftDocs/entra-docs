@@ -65,7 +65,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for ALVAO in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -97,28 +97,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by ALVAO|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |externalId|String|&check;|&check;
-   |active|Boolean||&check;
-   |displayName|String||&check;
-   |title|String||
-   |emails[type eq "work"].value|String||
-   |name.givenName|String||
-   |name.familyName|String||
-   |name.formatted|String||
-   |addresses[type eq "work"].formatted|String||
-   |addresses[type eq "work"].locality|String||
-   |addresses[type eq "work"].region|String||
-   |addresses[type eq "work"].country|String||
-   |addresses[type eq "work"].postalCode|String||
-   |addresses[type eq "work"].streetAddress|String||
-   |phoneNumbers[type eq "work"].value|String||
-   |phoneNumbers[type eq "mobile"].value|String||
-   |phoneNumbers[type eq "fax"].value|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
+   |userName|String|&check;|&check;|
+   |externalId|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |displayName|String||&check;|
+   |title|String|||
+   |emails[type eq "work"].value|String|||
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |name.formatted|String|||
+   |addresses[type eq "work"].formatted|String|||
+   |addresses[type eq "work"].locality|String|||
+   |addresses[type eq "work"].region|String|||
+   |addresses[type eq "work"].country|String|||
+   |addresses[type eq "work"].postalCode|String|||
+   |addresses[type eq "work"].streetAddress|String|||
+   |phoneNumbers[type eq "work"].value|String|||
+   |phoneNumbers[type eq "mobile"].value|String|||
+   |phoneNumbers[type eq "fax"].value|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
+
    > [!NOTE]
    >For advanced settings see:
    > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
@@ -130,9 +131,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by ALVAO|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |externalId|String||
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |externalId|String|||
+   |members|Reference|||
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
