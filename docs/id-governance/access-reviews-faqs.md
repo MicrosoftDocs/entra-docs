@@ -39,7 +39,7 @@ If the review is set to **auto-apply**, the system applies the decisions shortly
 
 ### What happens if reviewers miss the review deadline?
 
-If reviewers don’t take action by the review end date, system will automatically apply the admin configured default decision (for example, approve, deny, or take recommendations) for users who weren’t reviewed.
+If reviewers don’t take action by the review end date, the system automatically applies the admin configured default decision, for example either approve, deny, or take recommendations, for users who weren’t reviewed.
 
 ### How can admins view upcoming reviews in a recurring series?
 
