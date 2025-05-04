@@ -23,6 +23,11 @@ Watch the [Microsoft Entra Custom Authentication Extension Overview](https://you
 
 [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
 
+This video provides detailed instructions on configuring Microsoft Entra custom authentication extensions and offers best practices and valuable tips for optimal implementation.
+
+> [!VIDEO https://www.youtube.com/embed/EamkX9aFTYw?si=k0ziK2thbJ6V4BtZ]
+
+
 ## Custom authentication extensions sign-in flow
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
@@ -73,6 +78,10 @@ Within a sign-up and sign-in user flow, there are built-in authentication events
 ### Token issuance start event
 
 The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a custom claims provider. The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
+
+This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+
+> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
 
 For details, see [custom claims providers](custom-claims-provider-overview.md).
 
