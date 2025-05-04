@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 12/17/2024
+ms.date: 05/04/2025
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
@@ -18,6 +18,12 @@ titleSuffix: Microsoft identity platform
 # Custom authentication extensions overview
 
 This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
+
+Watch the [Microsoft Entra Custom Authentication Extension Overview](https://youtu.be/ZU90avf0Qyc?si=Gf77u4HS_5uw6Qjp) video. It provides a comprehensive outline of the key features and capabilities of Microsoft Entra custom authentication extensions.
+
+[!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
+
+## Custom authentication extensions sign-in flow
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
