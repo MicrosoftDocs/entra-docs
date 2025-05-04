@@ -21,7 +21,7 @@ This article provides a high-level, technical overview of [custom authentication
 
 Watch the [Microsoft Entra Custom Authentication Extension Overview](https://youtu.be/ZU90avf0Qyc?si=Gf77u4HS_5uw6Qjp) video. It provides a comprehensive outline of the key features and capabilities of Microsoft Entra custom authentication extensions.
 
-[!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
+> [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
 
 This video provides detailed instructions on configuring Microsoft Entra custom authentication extensions and offers best practices and valuable tips for optimal implementation.
 
