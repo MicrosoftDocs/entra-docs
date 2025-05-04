@@ -125,18 +125,35 @@ In the target tenant: Cross-tenant sync relies on the Microsoft Entra External I
 
 #### Clouds
 
-Which clouds can cross-tenant synchronization be used in?
+Within the same cloud, which clouds can cross-tenant synchronization be used in?
 
 - Cross-tenant synchronization is supported within the commercial cloud and Azure Government.
 - Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud.
-- Synchronization is only supported between two tenants in the same Azure cloud. For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). Synchronization between commercial and GCC is supported. 
-- Cross-cloud synchronization (such as public cloud to Azure Government) isn't supported. This capability is currently being deployed in stages. You might see cross-cloud synchronization settings in the Microsoft Entra admin center or Azure portal. These settings are not yet functional and you shouldn't try to select these settings.
 
 What cloud pairs are supported for cross-tenant synchronization?
 
 - Cross-tenant synchronization supports these cloud pairs:
 
     [!INCLUDE [cross-tenant-synchronization-cloud-pairs-include](../../includes/cross-tenant-synchronization-cloud-pairs-include.md)]
+
+#### Cross-cloud synchronization
+
+Is [cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) supported?
+
+- Cross-cloud synchronization (such as public cloud to Azure Government) is supported and is currently in preview.
+- Cross-cloud synchronization is supported in the Azure commercial cloud, Azure Government cloud, and Azure operated by 21Vianet (Azure in China) cloud.
+- For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). Synchronization between commercial and GCC is supported. 
+
+What cloud pairs are supported for cross-cloud synchronization?
+
+- Cross-cloud synchronization supports these cloud pairs:
+
+    [!INCLUDE [cross-cloud-synchronization-pairs-include](../../includes/cross-cloud-synchronization-pairs-include.md)]
+
+What are the differences between cross-tenant synchronization and cross-cloud synchronization?
+
+- Cross-tenant synchronization and cross-cloud synchronization are built using the same technologies and are fundamentally the same. The primary difference is that synchronization occurs across clouds instead of within the same cloud.
+- Synchronization of the manager attributue isn't yet supported in cross-cloud synchronization.
 
 #### Existing B2B users
 
@@ -304,32 +321,6 @@ How can I deprovision all the users that are currently in scope of cross-tenant 
 If the sync relationship is severed, are external users previously managed by cross-tenant synchronization deleted in the target tenant?
 
 - No. No changes are made to the external users previously managed by cross-tenant synchronization if the relationship is severed (for example, if the cross-tenant synchronization policy is deleted).
-
-#### Clouds
-
-Within the same cloud, which clouds can cross-tenant synchronization be used in?
-
-- Cross-tenant synchronization is supported within the Azure commercial cloud and Azure Government.
-- Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet (Azure in China) cloud.
-
-#### Cross-cloud synchronization
-
-Is [cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) supported?
-
-- Cross-cloud synchronization is supported and is currently in preview.
-- Cross-cloud synchronization is supported in the Azure commercial cloud, Azure Government cloud, and Azure operated by 21Vianet (Azure in China) cloud.
-- For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). Synchronization between commercial and GCC is supported. 
-
-What cloud pairs are supported for cross-cloud synchronization?
-
-- Cross-cloud synchronization supports these cloud pairs:
-
-    [!INCLUDE [cross-cloud-synchronization-pairs-include](../../includes/cross-cloud-synchronization-pairs-include.md)]
-
-What are the differences between cross-tenant synchronization and cross-cloud synchronization?
-
-- Cross-tenant synchronization and cross-cloud synchronization are built using the same technologies and are fundamentally the same. The primary difference is that synchronization occurs across clouds instead of within the same cloud.
-- Synchronization of the manager attributue isn't yet supported in cross-cloud synchronization.
 
 ## Next steps
 

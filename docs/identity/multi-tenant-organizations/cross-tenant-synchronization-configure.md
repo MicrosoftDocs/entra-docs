@@ -26,8 +26,6 @@ For important details on what this service does, how it works, and frequently as
 
 ::: zone-end
 
-::: zone pivot="cross-cloud-synchronization"
-
 > [!IMPORTANT]
 > Cross-cloud synchronization is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -38,12 +36,20 @@ For important details on what this service does, how it works, and frequently as
 
 :::image type="content" source="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png" alt-text="Diagram that shows cross-cloud synchronization between source tenant and target tenant." lightbox="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png":::
 
+::: zone-end
+
 ## Supported cloud pairs
 
+::: zone pivot="same-cloud-synchronization"
+Cross-tenant synchronization supports these cloud pairs:
+
+[!INCLUDE [cross-tenant-synchronization-cloud-pairs-include](../../includes/cross-tenant-synchronization-cloud-pairs-include.md)]
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
 Cross-cloud synchronization supports these cloud pairs:
 
 [!INCLUDE [cross-cloud-synchronization-pairs-include](../../includes/cross-cloud-synchronization-pairs-include.md)]
-
 ::: zone-end
 
 ## Learning objectives
@@ -218,6 +224,8 @@ In this step, you automatically redeem invitations in the source tenant.
 
 4. Provide a name for the configuration. 
 
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
+
 ::: zone pivot="same-cloud-synchronization"
 
 5. Select **Create**.
@@ -230,7 +238,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 5. Select the **Setup cross-tenant synchronization across Microsoft clouds** check box.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-tenant synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-cloud synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png":::
 
     When you select this check box, it grants an underlying service principal the following permissions:
 
