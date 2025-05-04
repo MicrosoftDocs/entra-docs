@@ -28,7 +28,7 @@ The [Microsoft Entra Custom Authentication Extension Overview](https://youtu.be/
 
 > [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
 
-## Custom authentication extensions components
+## Components
 
 There are two components you need to configure: a custom authentication extension in Microsoft Entra and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. 
 
@@ -37,7 +37,7 @@ This video provides detailed instructions on configuring Microsoft Entra custom 
 > [!VIDEO https://www.youtube.com/embed/EamkX9aFTYw?si=k0ziK2thbJ6V4BtZ]
 
 
-## Custom authentication extensions sign-in flow
+## Sign-in flow
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
@@ -51,7 +51,7 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 1. The Microsoft Entra **custom authentication extension** processes the response and customizes the authentication based on the event type and the HTTP response payload.
 1. A **token** is returned to the **app**.
 
-## Custom authentication extension REST API endpoint
+## REST API endpoints
 
 When an event fires, Microsoft Entra ID calls a REST API endpoint that you own. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information.
 
