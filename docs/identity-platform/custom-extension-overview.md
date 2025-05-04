@@ -82,7 +82,7 @@ To ensure the communications between the custom authentication extension and you
 
 ## Custom authentication event types
 
-This section lists the custom authentication events in Microsoft Entra ID. For detailed information about the events, please refer to the respective documentation.
+This section lists the custom authentication events in Microsoft Entra ID. For detailed information about the events, refer to the respective documentation.
 
 ### Token issuance start event
 
