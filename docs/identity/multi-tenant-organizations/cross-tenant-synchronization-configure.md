@@ -222,11 +222,11 @@ In this step, you automatically redeem invitations in the source tenant.
 
 3. At the top of the page, select **New configuration**.
 
+::: zone pivot="same-cloud-synchronization"
+
 4. Provide a name for the configuration. 
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
-
-::: zone pivot="same-cloud-synchronization"
 
 5. Select **Create**.
 
@@ -235,6 +235,8 @@ In this step, you automatically redeem invitations in the source tenant.
 ::: zone-end
 
 ::: zone pivot="cross-cloud-synchronization"
+
+4. Provide a name for the configuration. 
 
 5. Select the **Setup cross-tenant synchronization across Microsoft clouds** check box.
 
