@@ -24,9 +24,11 @@ Microsoft Entra custom authentication extensions allow you to extend authenticat
 For example, you could use a custom claims provider to add external user data to the security token before the token is issued. You could add an attribute collection workflow to validate the attributes a user enters during sign-up. This article provides a high-level, technical overview of Microsoft Entra ID custom authentication extensions.
 
 
-Tthe [Microsoft Entra Custom Authentication Extension Overview](https://youtu.be/ZU90avf0Qyc?si=Gf77u4HS_5uw6Qjp) video provides a comprehensive outline of the key features and capabilities of the custom authentication extensions.
+The [Microsoft Entra Custom Authentication Extension Overview](https://youtu.be/ZU90avf0Qyc?si=Gf77u4HS_5uw6Qjp) video provides a comprehensive outline of the key features and capabilities of the custom authentication extensions.
 
 > [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
+
+## Custom authentication extensions components
 
 There are two components you need to configure: a custom authentication extension in Microsoft Entra and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. 
 
