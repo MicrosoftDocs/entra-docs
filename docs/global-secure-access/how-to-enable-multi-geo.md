@@ -67,8 +67,8 @@ POST https://graph.microsoft.com/beta/onPremisesPublishingProfiles/applicationPr
 Content-type: application/json
 
 {
-  "name": "<Connector Group Name>"
-  "region: "japan"
+  "name": "<Connector Group Name>",
+  "region": "Japan"
 }
 ```
 ## Related content
