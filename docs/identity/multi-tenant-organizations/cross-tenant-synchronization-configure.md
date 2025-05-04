@@ -226,7 +226,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 4. Provide a name for the configuration. 
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name.png" alt-text="Screenshot of a new configuration that shows the name." lightbox="./media/cross-tenant-synchronization-configure/configuration-name.png":::
 
 5. Select **Create**.
 
