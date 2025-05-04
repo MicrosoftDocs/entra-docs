@@ -160,7 +160,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 **To configure SuccessFactors to Active Directory provisioning:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. Search for **SuccessFactors to Active Directory User Provisioning**, and add that app from the gallery.
 
@@ -182,7 +182,7 @@ Transfer the downloaded agent installer to the server host and follow the steps 
 In this step, we establish connectivity with SuccessFactors and Active Directory. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > SuccessFactors to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent)
+1. Browse to **Entra ID** > **Enterprise apps** > SuccessFactors to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent)
 
 1. Complete the **Admin Credentials** section as follows:
 

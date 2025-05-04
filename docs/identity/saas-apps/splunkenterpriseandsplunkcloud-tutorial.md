@@ -40,7 +40,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud into Microsoft Entra ID, you need to add Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud** in the search box.
 1. Select **Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -68,7 +68,7 @@ To configure and test Microsoft Entra SSO with Microsoft Entra SSO for Splunk En
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -143,7 +143,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Select the green **New Group** button in the upper right hand corner of the SAML Groups configuration screen in Splunk.
 
 1. In the **Create new SAML Group** configuration dialogue, Paste the Microsoft Entra Group Object ID (not the application or user Object ID) into the Group Name field. To find the Group Object ID:
-    1. Navigate to **Identity** > **Groups** in the Microsoft Entra admin center.
+    1. Navigate to **Entra ID** > **Groups** in the Microsoft Entra admin center.
     1. Select the group created for Splunk (e.g., SplunkUsers).
     1. Copy the Object ID from the group’s overview page.
 

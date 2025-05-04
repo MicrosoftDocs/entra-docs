@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 10/09/2024
+ms.date: 05/02/2025
 ms.author: rolyon
 ms.custom: it-pro
 zone_pivot_groups: same-cloud-cross-cloud-synchronization
@@ -134,7 +134,7 @@ By the end of this article, you'll be able to:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the target tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Organization settings** tab, select **Add organization**.
 
@@ -182,7 +182,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Organization settings** tab, select **Add organization**.
 
@@ -204,7 +204,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png" alt-text="Screenshot that shows the Cross-tenant synchronization navigation in the Microsoft Entra admin center." lightbox="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png":::
 
@@ -424,7 +424,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 Now that you have a configuration, you can test on-demand provisioning with one of your users.
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -462,7 +462,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 
 The provisioning job starts the initial synchronization cycle of all users defined in **Scope** of the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -504,7 +504,7 @@ Once you've started a provisioning job, you can monitor the status.
 
 Even though users are being provisioned in the target tenant, they still might be able to remove themselves. If users remove themselves and they are in scope, they'll be provisioned again during the next provisioning cycle. If you want to disallow the ability for users to remove themselves from your organization, you must configure the **External user leave settings**.
 
-1. In the target tenant, browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. In the target tenant, browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **External user leave settings**, choose whether to allow external users to leave your organization themselves.
 

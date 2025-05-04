@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.custom: pim
 ---
@@ -28,7 +28,7 @@ To open the settings for a group role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
 
 1. Select the group for which you want to configure role settings.
 

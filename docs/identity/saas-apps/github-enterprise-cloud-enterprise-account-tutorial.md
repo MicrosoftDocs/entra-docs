@@ -41,7 +41,7 @@ In this article,  you configure a SAML integration for a GitHub Enterprise Accou
 To configure the integration of GitHub Enterprise Cloud - Enterprise Account into Microsoft Entra ID, you need to add GitHub Enterprise Cloud - Enterprise Account from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **GitHub Enterprise Cloud - Enterprise Account** in the search box.
 1. Select **GitHub Enterprise Cloud - Enterprise Account** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -69,7 +69,7 @@ To configure and test Microsoft Entra SSO with GitHub Enterprise Cloud - Enterpr
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **GitHub Enterprise Cloud - Enterprise Account** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **GitHub Enterprise Cloud - Enterprise Account** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
 In this section, you create a test user in the Azure portal called `B.Simon`.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -124,7 +124,7 @@ In this section, you create a test user in the Azure portal called `B.Simon`.
 In this section, you enable `B.Simon` and your user account to use Azure single sign-on by granting access to GitHub Enterprise Cloud - Enterprise Account.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **GitHub Enterprise Cloud - Enterprise Account**.
+1. Browse to **Entra ID** > **Enterprise apps** > **GitHub Enterprise Cloud - Enterprise Account**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 1. In the **Users and groups** dialog, select **B.Simon** and your user account from the Users list, then select the **Select** button at the bottom of the screen.

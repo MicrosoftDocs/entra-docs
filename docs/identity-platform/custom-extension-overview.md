@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 12/17/2024
+ms.date: 05/04/2025
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
@@ -17,7 +17,27 @@ titleSuffix: Microsoft identity platform
 
 # Custom authentication extensions overview
 
-This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
+The Microsoft Entra ID authentication pipeline consists of several built-in authentication events, like the validation of user credentials, conditional access policies, multi-factor authentication, self-service password reset, and more.
+
+Microsoft Entra custom authentication extensions allow you to extend authentication flows with your own business logic at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. 
+
+For example, you could use a custom claims provider to add external user data to the security token before the token is issued. You could add an attribute collection workflow to validate the attributes a user enters during sign-up. This article provides a high-level, technical overview of Microsoft Entra ID custom authentication extensions.
+
+
+The [Microsoft Entra Custom Authentication Extension Overview](https://youtu.be/ZU90avf0Qyc?si=Gf77u4HS_5uw6Qjp) video provides a comprehensive outline of the key features and capabilities of the custom authentication extensions.
+
+> [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
+
+## Components
+
+There are two components you need to configure: a custom authentication extension in Microsoft Entra and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. 
+
+This video provides detailed instructions on configuring Microsoft Entra custom authentication extensions and offers best practices and valuable tips for optimal implementation.
+
+> [!VIDEO https://www.youtube.com/embed/EamkX9aFTYw?si=k0ziK2thbJ6V4BtZ]
+
+
+## Sign-in flow
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
@@ -31,7 +51,7 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 1. The Microsoft Entra **custom authentication extension** processes the response and customizes the authentication based on the event type and the HTTP response payload.
 1. A **token** is returned to the **app**.
 
-## Custom authentication extension REST API endpoint
+## REST API endpoints
 
 When an event fires, Microsoft Entra ID calls a REST API endpoint that you own. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information.
 
@@ -62,11 +82,15 @@ To ensure the communications between the custom authentication extension and you
 
 ## Custom authentication event types
 
-Within a sign-up and sign-in user flow, there are built-in authentication events. You can also add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. This section lists the custom authentication events available in Microsoft Entra ID.
+This section lists the custom authentication events in Microsoft Entra ID. For detailed information about the events, refer to the respective documentation.
 
 ### Token issuance start event
 
 The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a custom claims provider. The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
+
+This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+
+> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
 
 For details, see [custom claims providers](custom-claims-provider-overview.md).
 
@@ -86,7 +110,7 @@ Attribute collection submit events can be used with custom authentication extens
 
 ### One time passcode send event
  
-The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, sign-in with email and one-time passcode, or email multifactor authentication (MFA).
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, or sign-in with email and one-time passcode.
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
  

@@ -13,7 +13,7 @@ From March 2026, Microsoft Entra ID will no longer support service principal-les
 ## Prerequisites
 - An account in the resource tenant with at least the **Application administrator** or **Cloud application administrator** role assigned. 
 
-## Transitioning to Service Principal-less authentication
+## Transitioning from Service Principal-less authentication
 
 Microsoft Entra ID will block authentication for multitenant applications that don't have an enterprise application registration in the resource tenant. This scenario is also known as service principal-less authentication. This behavior has already been blocked for most resources. This change will address a few remaining exceptions. Service principal-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
 
@@ -30,7 +30,7 @@ If you identified traffic using service principal-less authentication between **
 First, you'll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
 
 1. Navigate to the [Microsoft Entra admin center](https://entra.microsoft.com/#home).
-2. On the left navigation panel, go to **Identity** > **Show more...** > **Monitoring & health** > **Sign-in logs**.
+2. On the left navigation panel, go to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 3. Go to the **Service principal sign-ins** tab.
 4. Filter by **Service principal ID**, and enter `00000000-0000-0000-0000-000000000000` in the input field.
 5. Change the Date sorting to be **Custom time interval**, and set it to **Last 1 month**.

@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **BrainStorm Platform** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **BrainStorm Platform** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -91,7 +91,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	| Name |  Source Attribute|
 	| ---------------|  --------- |
-    | title | user.jobtitle
+    | title | user.jobtitle |
 	| department | user.department |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.

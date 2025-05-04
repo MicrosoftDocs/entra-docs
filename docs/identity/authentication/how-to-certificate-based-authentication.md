@@ -75,7 +75,7 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
 #### Create a PKI container object
 1.	Create a PKI container object.
    1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
-   1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Public key infrastructure (Preview)**.
+   1. Browse to **Entra ID** > **Identity Secure Score** > **Public key infrastructure (Preview)**.
    1. Click **+ Create PKI**.
    1. Enter **Display Name**.
    1. Click **Create**.
@@ -270,7 +270,7 @@ To enable CBA in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users.
-1. Browse to **Protection** > **Authentication methods** > **Certificate-based Authentication**.
+1. Browse to **Entra ID** > **Authentication methods** > **Certificate-based Authentication**.
 1. Under **Enable and Target**, select **Enable**, and click **I Acknowledge**.
 1. Click **Select groups**, click **Add groups**.
 1. Choose specific groups like the one you created, and click **Select**. Use specific groups rather than **All users**.
@@ -296,7 +296,7 @@ Authentication binding rules map certificate attributes, such as Issuer, or Poli
 To modify tenant default settings and create custom rules in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. Under **Manage**, select **Authentication methods** > **Certificate-based Authentication**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy.png" alt-text="Screenshot of Authentication policy.":::
@@ -579,7 +579,7 @@ X509:<S>DC=com,DC=contoso,DC=corp,OU=UserAccounts,CN=FirstUserATCSession
 ### Test affinity binding
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. Under **Manage**, select **Authentication methods** > **Certificate-based Authentication**.
 1. Select **Configure**.
 1. Set **Required Affinity Binding** at the tenant level.

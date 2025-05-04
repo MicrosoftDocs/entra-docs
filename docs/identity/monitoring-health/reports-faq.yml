@@ -155,7 +155,7 @@ sections:
           You can also find these sign-in logs in Microsoft Entra admin center.
 
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-          - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+          - Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
           - Select **Service Principal Sign-ins**. 
           - Select an appropriate time frame in the Date field (last 24 hours, 7 days, and so on).
           - Add a filter and select **Service Principal ID** and provide the value '00000000-0000-0000-0000-000000000000' to get instances of authentication with no client Service Principal.
@@ -190,7 +190,7 @@ sections:
           To get started:
           
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-          - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+          - Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
           - Select the sign-in that you want to troubleshoot.
           - Select the **Conditional Access** tab to view all the policies that impacted the sign-in and the result for each policy. 
               
