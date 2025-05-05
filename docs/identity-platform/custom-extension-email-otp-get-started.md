@@ -28,7 +28,7 @@ This article provides a guide on configuring and setting up a custom email provi
 - A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
 - An Azure subscription. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID [external tenant](../external-id/customers/quickstart-tenant-setup.md).
-- A mail relay service providers
+- A mail relay service providers:
 
     ### [Azure Communication Services](#tab/azure-communication-services)
 
