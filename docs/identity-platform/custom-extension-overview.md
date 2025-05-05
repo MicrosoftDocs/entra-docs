@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 05/04/2025
+ms.date: 05/05/2025
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
@@ -28,7 +28,7 @@ The [Microsoft Entra Custom Authentication Extension Overview](https://youtu.be/
 
 > [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
 
-## Components
+## Components overview
 
 There are two components you need to configure: a custom authentication extension in Microsoft Entra and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. 
 
@@ -61,11 +61,18 @@ Your REST API must handle:
 
 - Token validation for securing the REST API calls.
 - Business logic
+- [Return data and action type](#return-data-and-action-type) 
 - Incoming and outgoing validation of HTTP request and response schemas.
 - Auditing and logging.
 - Availability, performance, and security controls.
 
-For developers running the REST API on Azure Functions, consider using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library, which helps with token validation implementation using Microsoft Azure's built-in authentication capabilities. It provides a data model for different event types, initiates incoming and outgoing request and response processing, so more focus can be put on the business logic.  
+### Return data and action type
+
+After your web API performs the workflow with your business logic, it must return an **action type** that directs Microsoft Entra on how to proceed with the authentication process.
+
+For example, in the case of the [attribute collection start](#attribute-collection-start) and [attribute collection submit](#attribute-collection-submit) events, the **action type** returned by your web API indicates whether the account can be created in the directory, show a validation error, or completely block the sign-up flow.
+
+The REST API response may include data. For example, the [on token issuance start](#token-issuance-start) event may provide a set of attributes that can be mapped to the security token.
 
 ### Protect your REST API
 
