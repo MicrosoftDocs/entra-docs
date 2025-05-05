@@ -40,7 +40,7 @@ This diagram shows a high-level view of the authentication flow:
 Redirect URIs for SPAs that use the auth code flow require special configuration.
 
 - **Add a redirect URI** that supports auth code flow with PKCE and cross-origin resource sharing (CORS): Follow the steps in [Redirect URI: MSAL.js 2.0 with auth code flow](scenario-spa-app-registration.md#redirect-uri-msaljs-20-with-auth-code-flow).
-- **Update a redirect URI**: Set the redirect URI's `type` to `spa` by using the [application manifest editor](reference-app-manifest.md) in the Microsoft Entra admin center.
+- **Update a redirect URI**: Set the redirect URI's `type` to `spa` by using the [application manifest editor](reference-microsoft-graph-app-manifest.md) in the Microsoft Entra admin center.
 
 The `spa` redirect type is backward-compatible with the implicit flow. Apps currently using the implicit flow to get tokens can move to the `spa` redirect URI type without issues and continue using the implicit flow. Despite this backward compatibility, we recommend that you use the auth code flow with PKCE for SPAs.
 
