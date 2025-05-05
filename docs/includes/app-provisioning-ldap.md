@@ -180,6 +180,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |Autosync timer (minutes)|120|
      |Secret Token|Enter your secret token here. It should be 12 characters minimum.|
      |Extension DLL|For the generic LDAP connector, select **Microsoft.IAM.Connector.GenericLdap.dll**.|
+
 4. On the **Connectivity** page, you'll configure how the ECMA Connector Host will communicate with the directory server, and set some of the configuration options. Fill in the boxes with the values specified in the table that follows the image and select **Next**. When you select **Next**, the connector will query the directory server for its configuration.
      [![Screenshot that shows the Connectivity page.](.\media\app-provisioning-ldap\create-2.png)](.\media\app-provisioning-ldap\create-2.png#lightbox)</br>
      
@@ -222,6 +223,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |Export|Run profile that will export data to the LDAP directory server. This run profile is required.|
      |Full import|Run profile that will import all data from LDAP sources specified earlier. This run profile is required.|
      |Delta import|Run profile that will import only changes from LDAP since the last full or delta import. Only enable this run profile if you have confirmed that the directory server meets the necessary requirements. For more information, see the [Generic LDAP Connector reference](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap). |
+
  12. On the **Export** page, leave the defaults unchanged and click **Next**. 
  13. On the **Full Import** page,  leave the defaults unchanged and click **Next**. 
  1. On the **DeltaImport** page, if present, leave the defaults unchanged and click **Next**.
