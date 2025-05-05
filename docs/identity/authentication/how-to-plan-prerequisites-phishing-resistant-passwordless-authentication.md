@@ -84,3 +84,5 @@ End-User Communications	             | Messages changes to end users in preparat
 [Deploy a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 
 [Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-persona-phishing-resistant-passwordless-authentication.md)
+
+[Considerations for Remote Desktop Connections in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-rdp-phishing-resistant-passwordless-authentication.md)

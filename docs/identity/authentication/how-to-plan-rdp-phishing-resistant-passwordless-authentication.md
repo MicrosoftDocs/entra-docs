@@ -20,24 +20,24 @@ ms.collection: M365-identity-device-management
 
 Organizations deploying phishing-resistant passwordless typically have a need for some of their personas to use remote desktop technology to facilitate productivity, security, or administration. The two basic use cases are:
 
-1. Initializing and authenticating a remote desktop connection session from a local client to a remote machine using phishing-resistant passwordless credentials
-1. Utilizing phishing-resistant passwordless credentials inside of an established remote desktop connection session
+- Initializing and authenticating a remote desktop connection session from a local client to a remote machine using phishing-resistant passwordless credentials
+- Utilizing phishing-resistant passwordless credentials inside of an established remote desktop connection session
 
 Review the specific considerations for each use case.
 
 # [Passwordless Remote Desktop Connection Session Initiation](#tab/rdp-session-auth)
 
-## Remote Desktop Connection Components
+## Remote Desktop connection components
 
 Windows remote desktop protocol involves three primary components, all of which need to properly support phishing-resistant passwordless credentials for initiating a remote desktop connection session using these credentials. If any of these components isn't able to properly function or lacks support for certain passwordless credentials, then one or both scenarios outlined won't function. This guide focuses on passkey/FIDO2 support and Cert-Based Authentication (CBA) support.
 
-:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Auth.gif" alt-text="GIF showing the user experience when using Windows Hello for Business to establish a remote desktop connection session." lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Auth.gif":::
+:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/rdp-session-auth.gif" alt-text="GIF showing the user experience when using Windows Hello for Business to establish a remote desktop connection session." lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/rdp-session-auth.gif":::
 
-:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Establishment.png" alt-text="Swimlane diagram showing how phishing-resistant passwordless credentials are used when connecting via remote desktop connection" lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Establishment.png":::
+:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/rdp-session-establishment.png" alt-text="Swimlane diagram showing how phishing-resistant passwordless credentials are used when connecting via remote desktop connection" lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/rdp-session-establishment.png":::
 
 Step through the following sections to determine if support for phishing-resistant passwordless is expected across all three components you're utilizing. Repeat this process if you have multiple scenarios that require evaluation.
 
-### Client Platform
+### Client platform
 
 There are several different commonly used operating systems for local clients that are used to instantiate remote desktop sessions. Commonly used options include:
 
@@ -61,7 +61,7 @@ Support for phishing-resistant passwordless and remote desktop connection depend
 | Android         | Yes          | Yes                 |                                                                                                                                                                                                                           |
 | Linux           | Maybe        | Yes                 | Confirm FIDO support with the Linux distro vendor                                                                                                                                                                         |
 
-### Target Platform
+### Target platform
 
 The target platform is critical for determining if phishing-resistant passwordless authentication is supported for establishing the remote desktop connection session itself.
 
@@ -80,35 +80,38 @@ The target platform is critical for determining if phishing-resistant passwordle
 <sup>1.	Only applies to Microsoft Entra joined or Hybrid Joined servers running Windows Server 2022 or later</sup><br>
 <sup>2.	Only applies to Microsoft Entra joined servers running Windows Server 2025 or later</sup><br>
 
-### Remote Desktop Connection Client
+### Remote Desktop connection client
 
 Client platform support for phishing-resistant authentication alone isn't sufficient to support phishing-resistant authentication for remote desktop connection sessions. The remote desktop connection client used must also support the necessary components for these credentials to work properly. Review many of the commonly used remote desktop connection clients and their various supported options:
 
 | Remote Desktop Connection Client             | Remote Desktop Connection Session Initialization FIDO Support | Remote Desktop Connection Session Initialization Microsoft Entra CBA |
-|----------------------------------------------|---------------------------------------------------------------|--------------------------------------------------------------------------|
-| MSTSC.exe for Windows Client                 | Yes                                                           | Yes                                                                      |
-| MSTSC.exe for Windows Server 2022+           | Yes                                                           | Yes                                                                      |
-| MSTSC.exe for Windows Server 2019 or earlier | No                                                            | No                                                                       |
-| Windows App for Windows                      | Yes                                                           | Yes                                                                      |
-| Windows App for macOS                        | Yes                                                           | Yes                                                                      |
-| Windows App for iOS                          | Yes                                                           | Yes                                                                      |
-| Windows App for Android                      | Yes                                                           | Yes                                                                      |
-| Windows 365 Web App                          | No                                                            | No                                                                       |
-| Third Party Remote Desktop Connection Client | Maybe                                                         | Maybe                                                                    |
+|----------------------------------------------|---------------------------------------------------------------|----------------------------------------------------------------------|
+| MSTSC.exe for Windows Client                 | Yes                                                           | Yes                                                                  |
+| MSTSC.exe for Windows Server 2022+           | Yes                                                           | Yes                                                                  |
+| MSTSC.exe for Windows Server 2019 or earlier | No                                                            | No                                                                   |
+| Windows App for Windows                      | Yes                                                           | Yes                                                                  |
+| Windows App for macOS                        | Yes                                                           | Yes                                                                  |
+| Windows App for iOS                          | Yes                                                           | Yes                                                                  |
+| Windows App for Android                      | Yes                                                           | Yes                                                                  |
+| Windows 365 Web App                          | No                                                            | No                                                                   |
+| Third Party Remote Desktop Connection Client | Maybe                                                         | Maybe                                                                |
 
-# [In-Session Passwordless Authentication](#tab/rdp-auth-in-session)
+> [!IMPORTANT]
+> Client and target devices must be Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered to the same tenant. Cross-tenant authentication will not work, the client device will not be able to authenticate to the target device if they are joined to different tenants.
 
-## Remote Desktop Connection Components
+# [In-session passwordless authentication](#tab/rdp-auth-in-session)
+
+## Remote Desktop connection components
 
 Windows remote desktop protocol involves three primary components, all of which need to properly support phishing-resistant passwordless credentials and redirection to the local client to support in-session usage of these credentials. If any of these components isn't able to properly function or lacks support for certain passwordless credentials, then one or both scenarios outlined won't function. This guide focuses on passkey/FIDO2 support and Cert-Based Authentication (CBA) support.
 
-:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.gif" alt-text="GIF showing the user experience when using Windows Hello for Business to authenticate inside a remote desktop connection session." lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.gif":::
+:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/rdp-in-session-auth.gif" alt-text="GIF showing the user experience when using Windows Hello for Business to authenticate inside a remote desktop connection session." lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/rdp-in-session-auth.gif":::
 
-:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.png" alt-text="Swimlane diagram showing how phishing-resistant passwordless credentials are used inside of remote desktop connection sessions" lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.png":::
+:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/rdp-in-session-auth.png" alt-text="Swimlane diagram showing how phishing-resistant passwordless credentials are used inside of remote desktop connection sessions" lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/rdp-in-session-auth.png":::
 
 Step through the following sections to determine if phishing-resistant passwordless support is expected across all three components you're utilizing. Repeat this process if you have multiple scenarios that require evaluation.
 
-### Client Platform
+### Client platform
 
 There are several different commonly used operating systems for local clients that are used to instantiate remote desktop sessions. Commonly used options include:
 
@@ -124,15 +127,15 @@ Support for phishing-resistant passwordless and remote desktop connection depend
 [Microsoft Entra certificate-based authentication (CBA)](~/identity/authentication/concept-certificate-based-authentication.md) requires configuration in Microsoft Entra ID so that users can utilize certificates from your Public Key Infrastructure (PKI) for authentication. This article does not address on-premises only certificate-based authentication implementations.
 
 | Client Platform | FIDO Support | Microsoft Entra CBA | Notes                                                                                                                                                                                                                     |
-|-----------------|--------------|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Windows 10+     | Yes          | Yes                     |                                                                                                                                                                                                                           |
-| Windows Server  | Partial      | Yes                     | Windows Server isn't recommended for client computing devices.<br><br>Windows Server jump servers may impede FIDO-based phishing-resistant passwordless. If you use jump servers, then CBA is recommended instead of FIDO |
-| macOS           | Yes          | Yes                     | Not all Apple web frameworks support FIDO                                                                                                                                                                                 |
-| iOS             | Yes          | Yes                     | Not all Apple web frameworks support FIDO                                                                                                                                                                                 |
-| Android         | Yes          | Yes                     |                                                                                                                                                                                                                           |
-| Linux           | Maybe        | Yes                     | Confirm FIDO support with the Linux distro vendor                                                                                                                                                                         |
+|-----------------|--------------|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Windows 10+     | Yes          | Yes                 |                                                                                                                                                                                                                           |
+| Windows Server  | Partial      | Yes                 | Windows Server isn't recommended for client computing devices.<br><br>Windows Server jump servers may impede FIDO-based phishing-resistant passwordless. If you use jump servers, then CBA is recommended instead of FIDO |
+| macOS           | Yes          | Yes                 | Not all Apple web frameworks support FIDO                                                                                                                                                                                 |
+| iOS             | Yes          | Yes                 | Not all Apple web frameworks support FIDO                                                                                                                                                                                 |
+| Android         | Yes          | Yes                 |                                                                                                                                                                                                                           |
+| Linux           | Maybe        | Yes                 | Confirm FIDO support with the Linux distro vendor                                                                                                                                                                         |
 
-### Target Platform
+### Target platform
 
 The target platform is critical for determining if phishing-resistant passwordless authentication is supported for in-session usage.
 
@@ -151,25 +154,25 @@ The target platform is critical for determining if phishing-resistant passwordle
 <sup>1.	Only applies to Microsoft Entra joined or Hybrid Joined servers running Windows Server 2022 or later</sup><br>
 <sup>2.	Only applies to Microsoft Entra joined servers running Windows Server 2025 or later</sup><br>
 
-### Remote Desktop Connection Client
+### Remote Desktop connection client
 
 Client platform support for phishing-resistant authentication alone isn't sufficient to support phishing-resistant authentication for remote desktop connection sessions and within remote desktop connection sessions. The remote desktop connection client used must also support the necessary components for these credentials to work properly. Review many of the commonly used remote desktop connection clients and their various supported options:
 
 | Remote Desktop Connection Client             | In-Session FIDO Support | In-Session Microsoft Entra CBA |
-|----------------------------------------------|-------------------------|------------------------------------|
-| MSTSC.exe for Windows Client                 | Yes                     | Yes                                |
-| MSTSC.exe for Windows Server 2022+           | Yes                     | Yes                                |
-| MSTSC.exe for Windows Server 2019 or earlier | No                      | No                                 |
-| Windows App for Windows                      | Yes                     | Yes                                |
-| Windows App for macOS                        | No                      | Yes                                |
-| Windows App for iOS                          | No                      | Yes                                |
-| Windows App for Android                      | No                      | Yes                                |
-| Windows 365 Web App                          | No                      | No                                 |
-| Third Party Remote Desktop Connection Client | Maybe                   | Maybe                              |
+|----------------------------------------------|-------------------------|--------------------------------|
+| MSTSC.exe for Windows Client                 | Yes                     | Yes                            |
+| MSTSC.exe for Windows Server 2022+           | Yes                     | Yes                            |
+| MSTSC.exe for Windows Server 2019 or earlier | No                      | No                             |
+| Windows App for Windows                      | Yes                     | Yes                            |
+| Windows App for macOS                        | No                      | Yes                            |
+| Windows App for iOS                          | No                      | Yes                            |
+| Windows App for Android                      | No                      | Yes                            |
+| Windows 365 Web App                          | No                      | No                             |
+| Third Party Remote Desktop Connection Client | Maybe                   | Maybe                          |
 
 ---
 
-## Evaluating Support for your Scenarios
+## Evaluate support for your scenarios
 
 If any one of the three components outlined in this document don't support your scenario, then your scenario isn't expected to work. To evaluate, consider each component for remote desktop connection session auth and in-session credential usage. Repeat this process for every scenario in your environment to understand which scenarios are expected to work and which aren't.
 
