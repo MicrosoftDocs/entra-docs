@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 05/05/2025
+ms.date: 05/04/2025
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
@@ -53,18 +53,25 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 
 ## REST API endpoints
 
-When an event fires, Microsoft Entra ID calls a REST API endpoint that you own. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information.
-
-You can use any programming language, framework, and hosting environment to create and host your custom authentication extensions REST API. For a quick way to get started, use a C# Azure Function. Azure Functions lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
+When an event is triggered, Microsoft Entra ID will invoke a REST API endpoint that you own. The REST API must be publicly accessible. It can be hosted using Azure Functions, Azure App Service, Azure Logic Apps, or another publicly available API endpoint.
+ 
+You have the flexibility to use any programming language, framework, or  low-code-no-code solution, such as Azure Logic Apps to develop and deploy your REST API. For a quick way to get started, consider employing Azure Function. It lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
 Your REST API must handle:
 
-- Token validation for securing the REST API calls.
+- [Token validation for securing the REST API calls](#protect-your-rest-api).
 - Business logic
 - [Return data and action type](#return-data-and-action-type) 
 - Incoming and outgoing validation of HTTP request and response schemas.
 - Auditing and logging.
 - Availability, performance, and security controls.
+
+### Request payload
+
+The request to the REST API includes a JSON payload containing details about the event, user profile, authentication request data, and additional context information. The attributes within the JSON payload can be used to perform logic by your API.
+
+For example, in the [Token issuance start](#token-issuance-start) event, the request payload may include the user's unique identifier, allowing you to retrieve the user profile from your own database. The request payload data must follow the schema as specified in the event  document.
+
 
 ### Return data and action type
 
