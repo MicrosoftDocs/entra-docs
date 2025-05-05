@@ -86,7 +86,7 @@ This section lists the custom authentication extensions events available in Micr
 
 |Event  |Workforce tenant|External tenant|
 |---------|---------|---------|
-| [Token issuance start](#token-issuance-start-event)  | :::image type="icon" source="./media/common/yes.png" border="false"::: | :::image type="icon" source="./media/common/yes.png" border="false"::: |
+| [Token issuance start](#token-issuance-start)  | :::image type="icon" source="./media/common/yes.png" border="false"::: | :::image type="icon" source="./media/common/yes.png" border="false"::: |
 | [Attribute collection start](#attribute-collection-start)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 | [Attribute collection submit](#attribute-collection-submit)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 | [One time passcode send](#one-time-passcode-send)||:::image type="icon" source="./media/common/yes.png" border="false":::|
