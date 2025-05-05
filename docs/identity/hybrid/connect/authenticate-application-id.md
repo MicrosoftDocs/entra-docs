@@ -249,7 +249,7 @@ $certHash = [System.Convert]::ToHexString($hashBytes)
 # Convert hash to bytes for older PowerShell:
 $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 ```
-## Microsoft Graph permissions for BYOA
+## Resource permission for BYOA
 ### ADSynchronization.ReadWrite.All
 |Category|Application|Delegated|
 |-----|-----|-----|
@@ -258,6 +258,7 @@ $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 |Description|Allows the app to read, write, and manage identity data synced with on-premises via Microsoft Entra Connect Sync|Allows the app to read, write, and manage identity data synced with on-premises via Microsoft Entra Connect Sync|
 |AdminConsentRequired|Yes|Yes|
 
+## Microsoft Graph permissions for BYOA
 ### PasswordWriteback.RefreshClient.All
 |Category|Application|Delegated|
 |-----|-----|-----|
