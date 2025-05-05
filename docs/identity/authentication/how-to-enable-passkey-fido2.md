@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/02/2025
+ms.date: 05/05/2025
 
 
 ms.author: justinha
@@ -174,7 +174,7 @@ Administrator provisioning of security keys is in preview. See [Microsoft Graph 
 
 ### Guest users 
 
-Registration of passkey (FIDO2) credentials isn't supported for external or internal guest users, including B2B collaboration users in the resource tenant.
+Registration of passkey (FIDO2) credentials isn't supported for internal or external guest users, including B2B collaboration users in the resource tenant.
 
 ### UPN changes
 
