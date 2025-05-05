@@ -543,7 +543,7 @@ You can extend your HR-driven provisioning process to further automate business 
 
 To troubleshoot any issues that might turn up during provisioning, see the following articles:
 
-- [Problem configuring user provisioning to a Microsoft Entra Gallery application](application-provisioning-config-problem.md)
+- [Problem configuring user provisioning to a Microsoft Entra Gallery application](troubleshoot.md)
 - [Sync an attribute from your on-premises Active Directory to Microsoft Entra ID for provisioning to an application](user-provisioning-sync-attributes-for-mapping.md)
 - [Problem saving administrator credentials while configuring user provisioning to a Microsoft Entra Gallery application](./user-provisioning.md)
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)
