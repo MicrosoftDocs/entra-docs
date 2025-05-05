@@ -27,7 +27,6 @@ To use the enriched logs, you need the following roles, configurations, and subs
 ### Configurations
 
 - **Microsoft Profile** - Ensure the Microsoft traffic profile is enabled. Microsoft traffic forwarding profile is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
-- **Microsoft 365 Common and Office Online Traffic Policy** - Required for log enrichment. Ensure it's enabled.
 - **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service.
 - **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace or Sentinel workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article.
 - **Export the OfficeActivity log table** - The OfficeActivity table must be exported to the same LogAnalytics or Microsoft Sentinel workspace as the GSA traffic logs, or another third-party SIEM or Log system.
