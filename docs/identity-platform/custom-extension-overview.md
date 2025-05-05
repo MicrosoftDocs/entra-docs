@@ -82,40 +82,53 @@ To ensure the communications between the custom authentication extension and you
 
 ## Custom authentication event types
 
-This section lists the custom authentication events in Microsoft Entra ID. For detailed information about the events, refer to the respective documentation.
+This section lists the custom authentication extensions events available in Microsoft Entra ID workforce and external tenants. For detailed information about the events, refer to the respective documentation.
 
-### Token issuance start event
+|Event  |Workforce tenant|External tenant|
+|---------|---------|---------|
+| [Token issuance start](#token-issuance-start-event)  | :::image type="icon" source="./media/common/yes.png" border="false"::: | :::image type="icon" source="./media/common/yes.png" border="false"::: |
+| [Attribute collection start](#attribute-collection-start)||:::image type="icon" source="./media/common/yes.png" border="false":::|
+| [Attribute collection submit](#attribute-collection-submit)||:::image type="icon" source="./media/common/yes.png" border="false":::|
+| [One time passcode send](#one-time-passcode-send)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 
-The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a custom claims provider. The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
+### Token issuance start
 
-This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a [custom claims provider](custom-claims-provider-overview.md). The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
-> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
-
-For details, see [custom claims providers](custom-claims-provider-overview.md).
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
 
 ### Attribute collection start 
 
-Attribute collection start events can be used with custom authentication extensions to add logic before attributes are collected from a user. The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. 
+[Attribute collection start](./custom-extension-attribute-collection.md) events can be used with custom authentication extensions to add logic before attributes are collected from a user. The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. 
 
-> [!NOTE]
-> The attribute collection start event is available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
 
 ### Attribute collection submit
 
-Attribute collection submit events can be used with custom authentication extensions to add logic after attributes are collected from a user. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
+[Attribute collection submit](./custom-extension-attribute-collection.md) events can be used with custom authentication extensions to add logic after attributes are collected from a user. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
 
-> [!NOTE]
-> The attribute collection submit event is available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
 
-### One time passcode send event
+### One time passcode send
  
-The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, or sign-in with email and one-time passcode.
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up, reset their password, or sign-in with email and one-time passcode.
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
- 
-> [!NOTE]
-> The one-time passcode send event is currently available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Configure a custom email provider for one time passcode send events](./custom-extension-email-otp-get-started.md)
+
+> [!TIP]
+> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmail)
+>
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
+
 
 ## Related content
 
