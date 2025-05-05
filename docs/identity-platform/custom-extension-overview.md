@@ -53,7 +53,7 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 
 ## REST API endpoints
 
-When an event is triggered, Microsoft Entra ID will invoke a REST API endpoint that you own. The REST API must be publicly accessible. It can be hosted using Azure Functions, Azure App Service, Azure Logic Apps, or another publicly available API endpoint.
+When an event is triggered, Microsoft Entra ID invokes a REST API endpoint that you own. The REST API must be publicly accessible. It can be hosted using Azure Functions, Azure App Service, Azure Logic Apps, or another publicly available API endpoint.
  
 You have the flexibility to use any programming language, framework, or  low-code-no-code solution, such as Azure Logic Apps to develop and deploy your REST API. For a quick way to get started, consider employing Azure Function. It lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
@@ -68,7 +68,7 @@ Your REST API must handle:
 
 ### Request payload
 
-The request to the REST API includes a JSON payload containing details about the event, user profile, authentication request data, and additional context information. The attributes within the JSON payload can be used to perform logic by your API.
+The request to the REST API includes a JSON payload containing details about the event, user profile, authentication request data, and other context information. The attributes within the JSON payload can be used to perform logic by your API.
 
 For example, in the [Token issuance start](#token-issuance-start) event, the request payload may include the user's unique identifier, allowing you to retrieve the user profile from your own database. The request payload data must follow the schema as specified in the event  document.
 
@@ -90,7 +90,7 @@ To ensure the communications between the custom authentication extension and you
     1. For **V1** Applications, validate the `appid` claim.
     1. For **V2** Applications, validate the `azp` claim.
 1. The bearer token `aud` audience claim contains the ID of the associated application registration. Your REST API endpoint needs to validate that the bearer token is issued for that specific audience.
-1. The bearer token `iss` issuer claim contains the Microsoft Entra issuer URL. Depending on your tenant configuration, the issuer URL will be one of the following;
+1. The bearer token `iss` issuer claim contains the Microsoft Entra issuer URL. Depending on your tenant configuration, the issuer URL is one of the following;
     - Workforce: `https://login.microsoftonline.com/{tenantId}/v2.0`.
     - Customer: `https://{domainName}.ciamlogin.com/{tenantId}/v2.0`.
 
