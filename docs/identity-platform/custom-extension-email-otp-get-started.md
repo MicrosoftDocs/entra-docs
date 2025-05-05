@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.reviewer: almars
-ms.date: 02/13/2025
+ms.date: 05/05/2025
 ms.service: identity-platform
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
@@ -28,14 +28,21 @@ This article provides a guide on configuring and setting up a custom email provi
 - A familiarity and understanding of the concepts covered in [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
 - An Azure subscription. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
 - A Microsoft Entra ID [external tenant](../external-id/customers/quickstart-tenant-setup.md).
-- For Azure Communications Services users;
+- A mail relay service providers
+
+    ### [Azure Communication Services](#tab/azure-communication-services)
+
     - An Azure Communications Services resource. If you don't have one, create one in [Quickstart: Create and manage Communication Services resources](/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp) using a new or existing resource group.
     - An Azure Email Communication Services Resource created and ready with a provisioned domain. If you don't have one, refer to [Quickstart: Create and manage Email Communication Service resources](/azure/communication-services/quickstarts/email/create-email-communication-resource?pivots=platform-azp), and use the same resource group as the Azure Communication Services.
     - An active Communication Services resource connected with an Email Domain. Refer to [Quickstart: How to connect a verified email domain](/azure/communication-services/quickstarts/email/connect-email-communication-resource?branch=main&pivots=azure-portal)
     - (Optional) [Send an email using Azure Communication Services](/azure/communication-services/quickstarts/email/send-email?tabs=windows%2Cconnection-string%2Csend-email-and-get-status-async%2Csync-client&pivots=platform-azportal) to test sending emails to the desired recipients using Azure Communication Services, while verifying the configuration for your application to send email.
-- For SendGrid users:
+        
+    ### [SendGrid](#tab/sendgrid)
+
     - A SendGrid account. If you don't already have one, start by setting up a SendGrid account. For setup instructions, see the [Create a SendGrid Account](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021#create-a-sendgrid-account) section of [How to send email using SendGrid with Azure](https://docs.sendgrid.com/for-developers/partners/microsoft-azure-2021#create-a-twilio-sendgrid-accountcreate-a-twilio-sendgrid-account).
 
+    ---
+    
 ## Step 1: Create an Azure Function app
 
 This section shows you how to set up an Azure Function app in the Azure portal. The function API is the gateway to your email provider. You create an Azure Function app to host the HTTP trigger function and configure the settings in the function.
