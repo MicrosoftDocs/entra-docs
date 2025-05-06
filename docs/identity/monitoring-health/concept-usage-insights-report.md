@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 04/29/2025
+ms.date: 05/06/2025
 ms.author: sarahlipsey
 ms.reviewer: madansr7
 
@@ -68,7 +68,7 @@ The sign-in activity graph uses interactive user sign-ins. Select a day in the a
 
 ![Screenshot of the sign-in activity details for a selected application.](./media/concept-usage-insights-report/application-activity-sign-in-detail.png)
 
-This report now includes applications that authenticate *to* or are authenticated *by* other Microsoft Cloud Services applications in your tenant. These applications might appear in this report but when you select the link for an application, the results say "Not found." This message indicates that the application was only instantiated in your tenant, meaning only an instance of it appears in this report to indicate a service-to-service authentication. The application itself doesn't have a service principal in your tenant. We realize that this message might cause confusion and are working to improve the experience.
+This report now includes applications owned by Microsoft Services that are instantiated in customer tenants. These applications can be involved in service-to-service authentications. When you select the applications from the **Usage and insights** report, the results say "Not found" because the application is not owned by your tenant, but is only instantiated in your tenant. To see the sign-in activity for these applications, select the **View sign-in activity** link. 
 
 ### Application activity using Microsoft Graph
 
