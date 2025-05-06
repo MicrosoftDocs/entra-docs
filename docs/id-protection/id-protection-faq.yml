@@ -15,7 +15,7 @@ metadata:
 title: Frequently asked questions around Microsoft Entra ID Protection
 
 summary: |
-  This article includes answers to frequently asked questions about Microsoft Entra ID Protection. FAQ sections include: Detections, emediation, B2B users, and leaked credentials.
+  This article includes answers to frequently asked questions about Microsoft Entra ID Protection. FAQ topics include: Detections, remediation, B2B users, and leaked credentials.
   
   For more information, see [Microsoft Entra ID Protection overview](overview-identity-protection.md). 
 
@@ -98,7 +98,7 @@ sections:
         answer: |
           Excluding B2B users from your organization's risk-based Conditional Access policies prevents B2B users from being affected by risk evaluation. To exclude these B2B users, create a group in Microsoft Entra ID that contains all of your organization's guest users. Then, add this group as an exclusion for your built-in ID Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
 
-  - name: Common leaked credentials questions
+  - name: Leaked credentials
     questions:
       - question: |
           Where does Microsoft find leaked credentials?

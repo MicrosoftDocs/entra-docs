@@ -5,7 +5,7 @@ description: Learn about risk detections, risk levels, and how they map to risk 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 05/05/2025
+ms.date: 05/06/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -243,7 +243,7 @@ Calculated in real-time or offline. This detection indicates that one of the pre
 
 #### Leaked credentials 
 
-Calculated offline. This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see the [FAQs](id-protection.yml.#leaked-credentials). 
+Calculated offline. This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see the [FAQs](id-protection.faq.yml#leaked-credentials). 
 
 [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections)
 
