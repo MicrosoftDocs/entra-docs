@@ -72,7 +72,7 @@ All activities performed by the provisioning service are recorded in the Microso
 
 The provisioning summary report and Provisioning logs play a key role helping admins troubleshoot various user account provisioning issues.
 
-For scenario-based guidance on how to troubleshoot automatic user provisioning, see [Problems configuring and provisioning users to an application](~/identity/app-provisioning/application-provisioning-config-problem.md).
+For scenario-based guidance on how to troubleshoot automatic user provisioning, see [Problems configuring and provisioning users to an application](troubleshoot.md).
 
 ## Related content
 

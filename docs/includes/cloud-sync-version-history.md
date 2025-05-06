@@ -242,7 +242,7 @@ November 23, 2020: released for download only
 * Fixed limitations to allow agent to be installed in non-English server
 * Added support for PHS filtering only for objects in scope (Originally, we were syncing password hashes for all objects)
 * Fixed a memory leak issue in the agent
-* Added improvents in provisioning logs
+* Added improvements in provisioning logs
 * Added support for configuring [LDAP connection timeout](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
 * Added support for configuring [referral chasing](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
 

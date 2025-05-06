@@ -214,9 +214,9 @@ Use the following table to determine what Azure-based tools you can use to repla
 | Management area | On-premises (Active Directory) feature | Equivalent Microsoft Entra feature |
 | - | - | -|
 | Security policy management| GPO, Microsoft Configuration Manager| [Microsoft 365 Defender for Cloud](https://azure.microsoft.com/services/security-center/) |
-| Update management| Microsoft Configuration Manager, Windows Server Update Services| [Azure Automation Update Management](/azure/automation/update-management/overview) |
-| Configuration management| GPO, Microsoft Configuration Manager| [Azure Automation State Configuration](/azure/automation/automation-dsc-overview) |
-| Monitoring| System Center Operations Manager| [Azure Monitor Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) |
+| Update management| Microsoft Configuration Manager, Windows Server Update Services| [Azure Update Manager](/azure/update-manager/overview) |
+| Configuration management| GPO, Microsoft Configuration Manager| [Azure Machine Configuration](/azure/governance/machine-configuration/overview) |
+| Monitoring| System Center Operations Manager| [Azure Monitor](/azure/azure-monitor/fundamentals/overview) |
 
 Here's more information that you can use for application server management:
 
