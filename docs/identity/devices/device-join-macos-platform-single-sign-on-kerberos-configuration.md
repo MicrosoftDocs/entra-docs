@@ -191,7 +191,7 @@ Save the configuration using a text editor with the *mobileconfig* file extensio
 
 ## Intune configuration steps
 
-If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#kerberos-sso-mdm-profile-configuration) about replacing **contoso.com** values with the proper values for your organization.
+If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#Kerberos SSO MDM profile configuration for on-premises Active Directory) about replacing **contoso.com** values with the proper values for your organization.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Devices** > **Configuration** > **Create** > **New policy**.
@@ -205,7 +205,7 @@ If you use Intune as your MDM, you can perform the following steps to deploy the
 6. Select **Next**.
 7. Enter a name in the **Custom configuration profile name** box.
 8. Choose a **Deployment channel**. Device channel is recommended.
-9. Click the folder icon to upload your **Configuration profile file**. Choose the *kerberos.mobileconfig* file you [saved previously](#kerberos-sso-mdm-profile-configuration) after customizing the template.
+9. Click the folder icon to upload your **Configuration profile file**. Choose the *kerberos.mobileconfig* file you [saved previously](#Kerberos SSO MDM profile configuration for on-premises Active Directory) after customizing the template.
 10. Select **Next**.
 11. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. Select **Next**.
   - For more information about scope tags, see [Use RBAC roles and scope tags for distributed IT](/mem/intune/fundamentals/scope-tags).
