@@ -22,7 +22,6 @@ In this article, you find questions to commonly asked questions about [access re
 
 While there's no direct "**Stop**" button for a series, you can edit the series to set an earlier end date. This prevents new review instances from being generated after that date.
 
-
 ### Do access reviews reflect real-time changes to users or access during the review period?
 
 No. Access reviews capture a snapshot of access at the start of each review instance. Any changes made to user assignments, group membership, or reviewer configuration after the review begins isn't reflected in that instance.
