@@ -32,15 +32,15 @@ This tutorial shows you how to configure Platform SSO to support Kerberos-based 
 
 Refer to the [Microsoft Entra ID macOS Platform SSO documentation](./macos-psso.md) to learn how to configure and deploy Platform SSO. Platform SSO should be deployed on Enterprise-managed Macs regardless of whether you choose to deploy Kerberos SSO using this guide.
 
-## Kerberos SSO MDM profile configuration
+## Kerberos SSO MDM profile configuration for on-premises Active Directory
 
-You must configure a Kerberos SSO MDM profile. Use the following settings, ensuring that you replace all references to **contoso.com** and **Contoso** with the proper values for your environment:
+You must configure at least one Kerberos SSO MDM profile. Use the following settings, ensuring that you replace all references to **contoso.com** and **Contoso** with the proper values for your environment:
 
 | Configuration Key | Recommended Value | Note |
 |-|-|-|
-| `preferredKDCs` | `<string>kkdcp://login.microsoftonline.com/contoso.com/kerberos</string>` | Replace the **contoso.com** value with the value of one of your tenant domains or your tenant's GUID |
-| `Hosts` | `<string>contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name |
-| `Hosts` | `<string>*.contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `*.` characters before your domain/forest name |
+| `Hosts` | `<string>.contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name |
+| `Hosts` | `<string>contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `.` characters before your domain/forest name |
+| `Realm` | `<string>CONTOSO.COM</string>` | Replace **CONTOSO.COM** with your on-premises realm name. The value should be all capitalized. |
 | `PayloadOrganization` | `<string>Contoso</string>` | Replace **Contoso** with the name of your organization |
 
 ```xml
@@ -65,47 +65,32 @@ You must configure a Kerberos SSO MDM profile. Use the following settings, ensur
                 <false/>
                 <key>usePlatformSSOTGT</key>
                 <true/>
-                <key>preferredKDCs</key>                         
-                <array>
-                <string>kkdcp://login.microsoftonline.com/contoso.com/kerberos</string>
-                </array>
             </dict>
             <key>ExtensionIdentifier</key>
             <string>com.apple.AppSSOKerberos.KerberosExtension</string>
             <key>Hosts</key>
             <array>
+                <string>.contoso.com</string>
                 <string>contoso.com</string>
-                <string>*.contoso.com</string>
-                <string>windows.net</string>
-                <string>*.windows.net</string>
-                <string>KERBEROS.MICROSOFTONLINE.COM</string>
-                <string>MICROSOFTONLINE.COM</string>
-                <string>*.MICROSOFTONLINE.COM</string>
             </array>
+            <key>Realm</key>
+            <string>CONTOSO.COM</string>
             <key>PayloadDisplayName</key>
-            <string>Single Sign-On Extensions Payload</string>
-            <key>PayloadIdentifier</key>
-            <string>1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5C</string>
+            <string>Single Sign-On Extensions Payload for On-Premises</string>
             <key>PayloadType</key>
             <string>com.apple.extensiblesso</string>
             <key>PayloadUUID</key>
             <string>1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>Realm</key>
-            <string>KERBEROS.MICROSOFTONLINE.COM</string>
             <key>TeamIdentifier</key>
             <string>apple</string>
             <key>Type</key>
             <string>Credential</string>
-            <key>URLs</key>
-            <array/>
         </dict>
     </array>
     <key>PayloadDescription</key>
     <string></string>
     <key>PayloadDisplayName</key>
-    <string>Kerberos SSO Extension for macOS</string>
+    <string>Kerberos SSO Extension for macOS for On-Premises</string>
     <key>PayloadEnabled</key>
     <true/>
     <key>PayloadIdentifier</key>
@@ -126,9 +111,85 @@ You must configure a Kerberos SSO MDM profile. Use the following settings, ensur
 </plist>
 ```
 
-Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *kerberos.mobileconfig*) after you have updated the configuration with the proper values for your environment.
+Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *on-prem-kerberos.mobileconfig*) after you have updated the configuration with the proper values for your environment.
 
-### Intune configuration steps
+## Kerberos SSO MDM profile configuration for Microsoft Entra ID Cloud Kerberos
+
+You must configure at least one Kerberos SSO MDM profile. Use the following settings, ensuring that you replace the recommended values with the proper values for your tenant:
+
+| Configuration Key | Recommended Value | Note |
+|-|-|-|
+| `preferredKDCs` | `<string>kkdcp://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/kerberos</string>` | Replace the **aaaabbbb-0000-cccc-1111-dddd2222eeee** value with the Tenant ID of your tenant, which can be found on the Overview page of the [Microsoft Entra Portal](https://entra.microsoft.com) |
+| `PayloadOrganization` | `<string>Contoso</string>` | Replace **Contoso** with the name of your organization |
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>ExtensionData</key>
+            <dict>
+                <key>usePlatformSSOTGT</key>
+                <true/>
+                <key>preferredKDCs</key>                         
+                <array>
+                <string>kkdcp://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/kerberos</string>
+                </array>
+            </dict>
+            <key>ExtensionIdentifier</key>
+            <string>com.apple.AppSSOKerberos.KerberosExtension</string>
+            <key>Hosts</key>
+            <array>
+                <string>windows.net</string>
+                <string>.windows.net</string>
+                <string>KERBEROS.MICROSOFTONLINE.COM</string>
+                <string>MICROSOFTONLINE.COM</string>
+                <string>.MICROSOFTONLINE.COM</string>
+            </array>
+            <key>Realm</key>
+            <string>KERBEROS.MICROSOFTONLINE.COM</string>
+            <key>PayloadDisplayName</key>
+            <string>Single Sign-On Extensions Payload for Microsoft Entra ID Cloud Kerberos</string>
+            <key>PayloadType</key>
+            <string>com.apple.extensiblesso</string>
+            <key>PayloadUUID</key>
+            <string>00aa00aa-bb11-cc22-dd33-44ee44ee44ee</string>
+            <key>TeamIdentifier</key>
+            <string>apple</string>
+            <key>Type</key>
+            <string>Credential</string>
+        </dict>
+    </array>
+    <key>PayloadDescription</key>
+    <string></string>
+    <key>PayloadDisplayName</key>
+    <string>Kerberos SSO Extension for macOS for Microsoft Entra ID Cloud Kerberos</string>
+    <key>PayloadEnabled</key>
+    <true/>
+    <key>PayloadIdentifier</key>
+    <string>11bb11bb-cc22-dd33-ee44-55ff55ff55ff</string>
+    <key>PayloadOrganization</key>
+    <string>Contoso</string>
+    <key>PayloadRemovalDisallowed</key>
+    <true/>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>11bb11bb-cc22-dd33-ee44-55ff55ff55ff</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>
+```
+
+Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *cloud-kerberos.mobileconfig*) after you have updated the configuration with the proper values for your environment.
+
+## Intune configuration steps
 
 If you use Intune as your MDM, you can perform the following steps to deploy the profile. Make sure you follow the [previous instructions](#kerberos-sso-mdm-profile-configuration) about replacing **contoso.com** values with the proper values for your organization.
 
@@ -152,10 +213,11 @@ If you use Intune as your MDM, you can perform the following steps to deploy the
     - For more information on assigning profiles, see [Assign user and device profiles](/mem/intune/configuration/device-profile-assign).
 13. Select **Next**.
 14. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
+15. Repeat this process if you need to deploy both profiles because you will use both on-premises Kerberos SSO and Microsoft Entra ID Cloud Kerberos
 
 The next time the device checks for configuration updates, the settings you configured are applied.
 
-### Testing Kerberos SSO
+## Testing Kerberos SSO
 
 Once the profile has been assigned to the device, you can check that your device has Kerberos tickets by running the following command in the Terminal app:
 
