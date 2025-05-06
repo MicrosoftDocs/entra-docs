@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "This article shows the new and updated documentation for the Microsoft Entra application management."
-ms.date: 04/02/2025
+ms.date: 05/06/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
@@ -15,6 +15,22 @@ manager: CelesteDG
 # Microsoft Entra application management: What's new
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## April 2025
+
+### New articles
+
+- [Tutorial: Enforce secret and certificate standards using application management policies](tutorial-enforce-secret-standards.md)
+
+### Updated articles
+
+Reviewed the following articles for technical accuracy and clarity:
+
+- [Migrate applications away from secret-based authentication](migrate-applications-from-secrets.md)
+- [Configure how users consent to applications](configure-user-consent.md)
+- [Review and take action on admin consent requests](review-admin-consent-requests.md)
+- [Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication](f5-big-ip-kerberos-advanced.md)
+- [Tutorial: Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md)
 
 ## March 2025
 
@@ -46,9 +62,3 @@ Reviewed the following articles for technical accuracy and clarity:
 - [Add an OpenID Connect-based single sign-on application](add-application-portal-setup-oidc-sso.md)
 - [Configure enterprise application properties](add-application-portal-configure.md)
 - [Tutorial: Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md)
-
-
-## January 2025
-
-No new or updated articles in this period.
-
