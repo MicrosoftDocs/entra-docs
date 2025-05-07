@@ -156,9 +156,6 @@ Use the following settings to configure the Microsoft Entra ID Cloud Kerberos pr
             <array>
                 <string>windows.net</string>
                 <string>.windows.net</string>
-                <string>KERBEROS.MICROSOFTONLINE.COM</string>
-                <string>MICROSOFTONLINE.COM</string>
-                <string>.MICROSOFTONLINE.COM</string>
             </array>
             <key>Realm</key>
             <string>KERBEROS.MICROSOFTONLINE.COM</string>
