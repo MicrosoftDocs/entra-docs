@@ -41,11 +41,11 @@ Add the following three Microsoft Graph application permissions to let Darwinbox
 
 Create a client secret and provide the credentials to Darwinbox as specified in their guide.
 
-## Create provisioning job and set up app connections in Darwinbox
+## Create  provisioning job and set up app connections in Darwinbox
 
 Follow the Darwinbox guidance to set up the necessary app connections in Darwinbox studio. These connections let Darwinbox authenticate with your tenant and grant the permissions needed to create a provisioning job and provision users into your tenant.
 
-## Configure attribute mapping in Entra and upload mapping to Darwinbox
+### Configure attribute mapping in Entra and upload mapping to Darwinbox
 
 To sync custom attributes from Darwinbox to Entra, update the attribute mapping for the provisioning job in the Entra portal. 
 
@@ -57,7 +57,7 @@ Then upload a CSV file with these mappings to Darwinbox.
 
 The Darwinbox connector documentation provides guidance and templates on how to update attribute mappings.
 
-## Setup Darwinbox automations for user provisioning
+### Setup Darwinbox automations for user provisioning
 
 Once you’ve configured the connector, Darwinbox has multiple recipes in place to manage the Joiner, Mover, Leaver lifecycle of your employees. 
 
@@ -65,14 +65,14 @@ Once you’ve configured the connector, Darwinbox has multiple recipes in place 
 
 Configure the recipes based on your needs to enable the creation, updating, and deletion of user accounts in your Microsoft Entra ID tenant. 
 
-## Monitoring provisioning
+### Monitoring provisioning
 
 To monitor the status of your provisioning events, go to the provisioning logs or use the provisioning workbook. For documentation on how to use each, see:
 -	[User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
 -	[How to analyze the Microsoft Entra provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md)
 -	[Quickstart for API-driven inbound provisioning with cURL](~/identity/app-provisioning/inbound-provisioning-api-curl-tutorial.md#verify-processing-of-the-bulk-request-payload)
 
-## Manage Joiner-Mover-Leaver lifecycle workflows
+### Manage Joiner-Mover-Leaver lifecycle workflows
 
 Extend your HR-driven provisioning process to automate business processes and security controls for new hires, employment changes, and termination. With [Microsoft Entra ID Governance Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md), configure Joiner-Mover-Leaver workflows such as:
 
