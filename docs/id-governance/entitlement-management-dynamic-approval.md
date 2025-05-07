@@ -24,7 +24,7 @@ In entitlement management, approvers for access package requests can either be d
 
 ## Prerequisites
 
-- At least the [Entitlement Management Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) role of the catalog where the custom extension will be created.
+- At least the [Entitlement Management Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) role of the catalog where the custom extension will be created or exists.
 - At least the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) on the Logic App itself, the resource group, subscription, or management group that the logic app is in. 
 
 ## Create the custom extension and Azure Logic App
