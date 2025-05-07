@@ -113,11 +113,6 @@ Use the following settings to configure the on-premises Active Directory profile
 </plist>
 ```
 
-> [!NOTE]
-> Make sure you pay attention to the usePlatformSSOTGT and performKerberosOnly keys.
-> If usePlatformSSOTGT is set to true, the Kerberos Extension uses the TGT from Platform SSO with the same realm. The default is false.
-> If performKerberosOnly is set to true, the Kerberos extension doesn't perform password expiration checks, external password change checks, or retrieve the user’s home directory. The default is false.
-
 Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *on-prem-kerberos.mobileconfig*) after updating the configuration with the proper values for your environment.
 
 ## Kerberos SSO MDM profile configuration for Microsoft Entra ID Cloud Kerberos
@@ -196,6 +191,12 @@ Use the following settings to configure the Microsoft Entra ID Cloud Kerberos pr
 ```
 
 Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *cloud-kerberos.mobileconfig*) after updating the configuration with the proper values for your environment.
+
+> [!NOTE]
+> Make sure you pay attention to the usePlatformSSOTGT and performKerberosOnly keys.
+> If usePlatformSSOTGT is set to true, the Kerberos Extension uses the TGT from Platform SSO with the same realm. The default is false.
+> If performKerberosOnly is set to true, the Kerberos extension doesn't perform password expiration checks, external password change checks, or retrieve the user’s home directory. The default is false.
+> This is applicable to both the on-premises and cloud configurations, these keys should be configured in both profiles.
 
 ## Intune configuration steps
 
