@@ -97,12 +97,12 @@ With the Azure Logic App given the access package assignment manager role for th
 1. On the Add an Action pane, select **HTTP**.
 
 1. On the **HTTP** pane under Parameters, enter the following parameters:
-    URI: https://graph.microsoft.com/beta@{triggerBody()?['CallbackUriPath']}
-    Method: POST
-    Body: Your own custom logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard). For an example of the body action see: [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
-    Authentication Type: Managed identity
-    Managed Identity: System-assigned managed identity
-    Audience: https://graph.microsoft.com
+    - URI: https://graph.microsoft.com/beta@{triggerBody()?['CallbackUriPath']}
+    - Method: POST
+    - Body: Your own custom logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard). For an example of the body action see: [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
+    - Authentication Type: Managed identity
+    - Managed Identity: System-assigned managed identity
+    - Audience: https://graph.microsoft.com
 1. Under HTTP Settings, disable **Asynchronous Pattern**. 
     :::image type="content" source="media/entitlement-management-dynamic-approval/disable-asynchronous-pattern.png" alt-text="Screenshot of disabling asynchronous pattern in a logic app http call.":::
 1. After you've made changes to the HTTP trigger, select **Save**. 
@@ -113,7 +113,7 @@ To verify that the custom extension works, you can request access to the access 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) of the catalog where the custom extension is located.
     > [!TIP]
-    > Other least privilege roles that can complete this task include the the Access package manager, Access package assignment manager, and Identity Governance Administrator.
+    > Other least privilege roles that can complete this task include the Access package manager, Access package assignment manager, and Identity Governance Administrator.
 1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open the access package you want to view requests of.
