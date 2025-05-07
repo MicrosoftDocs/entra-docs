@@ -227,7 +227,7 @@ The next time the device checks for configuration updates, the settings you conf
 
 ## Testing Kerberos SSO
 
-Once the profile is deployed to the device, you can check that your device has Kerberos tickets by running the `app-sso platform -s` command in the Terminal app:
+Once the user has completed Platform SSO registration, you can check that the device has Kerberos tickets by running the `app-sso platform -s` command in the Terminal app:
 
 ```console
 app-sso platform -s
