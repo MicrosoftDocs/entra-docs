@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Configure Infobric Equipment for automatic user provisioning with Microsoft Entra ID"
-description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Infobric Equipment.
+title: "Tutorial: Configure Infobric Equipment for Microsoft Entra ID user provisioning"
+# description: "Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Infobric Equipment."
 
 author: CvBlixen
 manager: fogbring
@@ -8,12 +8,12 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 01/22/2025
+ms.date: 05/07/2025
 ms.author: CvBlixen
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Infobric Equipment so that I can streamline the user management process and ensure that users have the appropriate access to Infobric Equipment.
 ---
 
-# Tutorial: Configure Infobric Equipment for automatic user provisioning
+# Tutorial: Configure Infobric Equipment for Microsoft Entra ID user provisioning
 
 This tutorial describes the steps you need to perform in both Infobric Equipment and Microsoft Entra ID to configure automatic user and group provisioning.
 
@@ -166,22 +166,4 @@ Find the field for this and fill in you email.
 
    ![Screenshot of Start provisioning.](./media/infobric-equipment-provisioning-tutorial/manage-entra-groups.png)
 
-## Step 12 (optional): Enable adding groups to Equipment using object ids of Entra groups
-
-In essence, this enables the "Add group" button in Equipment to work with Entra groups. This is not necessary for the provisioning to work, but it makes it easier to manage groups in Equipment.
-
-1.  In [Microsoft Entra admin center](https://entra.microsoft.com), browse to **App Registrations**.
-1.  Find and click into the Infobric Equipment application.
-1.  Browse to **API permissions**.
-1.  Click **Add a permission**.
-1.  Pick **Microsoft Graph**.
-1.  Pick **Application permissions** (not Delegated permissions).
-1.  Search for and select
-    - **Application.Read.All**
-    - **AppRoleAssignment.ReadWrite.All**.
-1.  Click **Add permissions**.
-1.  Go back to **Enterprise applications** and the Infobric Equipment application.
-1.  Browse to **Permissions** and click **Grant admin consent for [your tenant's name]**.
-1.  Browse back to **App Registrations** and the Infobric Equipment application.
-1.  Browse to **Certificates & secrets** and click **New client secret**.
-1.  Name the secret Infobric Equiment and make sure to save the secret's value. You will need need it later.
+   Not the subtle difference between for example "No department" and "No effect". No department forces the user to have no department, while no effect will have no effect. If all user group memberships have "No effect" for a property, then that property can be changed manually in Infobric Equipment.
