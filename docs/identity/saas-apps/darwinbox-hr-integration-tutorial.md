@@ -37,7 +37,7 @@ Go to the Entra portal, select **App Registrations**, and then select **New regi
 
 Add the following three Microsoft Graph application permissions to let Darwinbox create the provisioning job, send user data, and review the provisioning logs:
 
-:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/entra-id-darwinbox-register.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox.":::
+:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/entra-id-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox.":::
 
 Create a client secret and provide the credentials to Darwinbox as specified in their guide.
 
@@ -69,17 +69,17 @@ Configure the recipes based on your needs to enable the creation, updating, and 
 
 To monitor the status of your provisioning events, go to the provisioning logs or use the provisioning workbook. For documentation on how to use each, see:
 -	[User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
-•	[How to analyze the Microsoft Entra provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md)
-•	[Quickstart for API-driven inbound provisioning with cURL](~/identity/app-provisioning/inbound-provisioning-api-curl-tutorial.md#verify-processing-of-the-bulk-request-payload)
+-	[How to analyze the Microsoft Entra provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md)
+-	[Quickstart for API-driven inbound provisioning with cURL](~/identity/app-provisioning/inbound-provisioning-api-curl-tutorial.md#verify-processing-of-the-bulk-request-payload)
 
 ## Manage Joiner-Mover-Leaver lifecycle workflows
 
 Extend your HR-driven provisioning process to automate business processes and security controls for new hires, employment changes, and termination. With [Microsoft Entra ID Governance Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md), configure Joiner-Mover-Leaver workflows such as:
 
-•	“X” days before the new hire joins, send an email to the manager, add the user to groups, and generate a temporary access pass for first-time login.
-•	When there's a change in the user’s department, job title, or group membership, launch a custom task.
-•	On the last day of work, send an email to the manager, and remove the user from groups and license assignments.
-•	“X” days after termination, delete user from Microsoft Entra ID.
+-	“X” days before the new hire joins, send an email to the manager, add the user to groups, and generate a temporary access pass for first-time login.
+-	When there's a change in the user’s department, job title, or group membership, launch a custom task.
+-	On the last day of work, send an email to the manager, and remove the user from groups and license assignments.
+-	“X” days after termination, delete user from Microsoft Entra ID.
 
 
 ## Next steps
