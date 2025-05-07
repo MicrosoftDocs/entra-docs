@@ -24,7 +24,7 @@ In entitlement management, approvers for access package requests can either be d
 
 ## Prerequisites
 
-- At least the [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) role of the catalog where the custom extension will be created.
+- At least the [Entitlement Management Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) role of the catalog where the custom extension will be created.
 - At least the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) on the Logic App itself, the resource group, subscription, or management group that the logic app is in. 
 
 ## Create the custom extension and Azure Logic App
@@ -33,19 +33,19 @@ To create a custom extension, and its underlying Azure Logic App, you'd do the f
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) of the catalog where the custom extension will be located.
 
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 
 1. On the Catalogs overview page, select an existing catalog where your custom extension will be located, or create a new catalog.
 
 1. On the specific catalog page where you want to create your custom extension, select **Custom extensions**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extensibility-catalog-screen.png" alt-text="Screenshot of catalog page where custom extension is being added.":::
-1. Select **Add a custom extension** and add a name and description for the custom extension. When finished, select **Next**.
+1. Select **Add a custom extension** to add a name and description for the custom extension. When finished, select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-basics.png" alt-text="Screenshot of custom extension basics.":::
 1. On the **Extension Type** page, select **Request workflow (triggered when an access package is request, approved, granted, or removed)** and select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extension-type.png" alt-text="Screenshot of selecting the extension type for a custom extension.":::
 1. On the **Extension Configuration** page, for Behavior select **Launch and wait**, for Response data select **Approval Stage (Preview)**, and then select **Next**.
 
-1. On the **Details** page, choose a subscription, resource group, and name for the logic App being created. Once you've entered this information, select **Create a logic app**. Once the logic app is created, select **Next**.
+1. On the **Details** page, choose a subscription, resource group, and name for the logic app being created. Once you've entered this information, select **Create a logic app**. Once the logic app is created, select **Next**.
 
 1. On the **Review + create** page, make sure all your details are correct, then select **Create**. 
 
@@ -69,7 +69,7 @@ Once updated, you can go to the edited policy, and confirm the change by selecti
 
 ## Set logic app assigned identity and assign its role
 
-With the Azure logic app created, you must enable its system assigned identity, and give it the proper role by doing the following steps:
+With the Azure logic app created, you must enable its system-assigned identity, and give it the proper role by doing the following steps:
 
 
 1. Sign in to the Azure portal and go to the logic app with the [Azure built-in role](/azure/role-based-access-control/built-in-roles) of at least [Logic App Contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor).
@@ -80,7 +80,7 @@ With the Azure logic app created, you must enable its system assigned identity, 
     :::image type="content" source="media/entitlement-management-dynamic-approval/enable-logic-app-identity.png" alt-text="Screenshot of enabling logic app system assigned managed identity.":::
 1. Select **Save**.
 
-1. Back in the Microsoft Entra admin center, go to the catalog where you created the custom extension, and select **Roles and administrators**.   
+1. Back in the Microsoft Entra admin center as at least the role of [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles), go to the catalog where you created the custom extension, and select **Roles and administrators**.   
 
 1. On the roles and administrators page, select **Add access package assignment manager**, and select the logic app you created.
     :::image type="content" source="media/entitlement-management-dynamic-approval/add-logic-app-role.png" alt-text="Screenshot of adding logic app as access package assignment manager for a catalog.":::
@@ -111,7 +111,7 @@ With the Azure Logic App given the access package assignment manager role for th
 
 To verify that the custom extension works, you can request access to the access package, and view the request details via **Requests** on the access package page by following these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) of the catalog where the custom extension will be located.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Catalog owner](../id-governance/entitlement-management-delegate.md#entitlement-management-roles) of the catalog where the custom extension is located.
     > [!TIP]
     > Other least privilege roles that can complete this task include the the Access package manager, Access package assignment manager, and Identity Governance Administrator.
 1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
