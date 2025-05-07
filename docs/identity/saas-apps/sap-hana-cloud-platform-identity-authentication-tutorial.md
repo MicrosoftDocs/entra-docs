@@ -233,7 +233,9 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 ## Related content
 
-Once you configure single-sign on to SAP Cloud Identity Services, you can configure SAP Cloud Identity Services to [forward all SSO requests](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/forward-all-sso-requests-to-corporate-idp) to Microsoft Entra.
+To synchronize users from Microsoft Entra to SAP Cloud Identity Services, enable [automated user provisioning](sap-cloud-platform-identity-authentication-provisioning-tutorial.md).
+
+Once you configure single-sign on to SAP Cloud Identity Services, you can also configure SAP Cloud Identity Services to [forward all SSO requests](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/forward-all-sso-requests-to-corporate-idp) to Microsoft Entra. When this option is enabled in SAP Cloud Identity Services, then each time a user tries to access an application connected to SAP Cloud Identity Services for the first time, SAP Cloud Identity Services will forward an authentication request to Microsoft Entra, even when the user has an active session in SAP Cloud Identity Services.
 
 You can also enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 
