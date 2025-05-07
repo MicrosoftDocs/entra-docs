@@ -26,15 +26,15 @@ This tutorial shows you how to configure Platform SSO to support Kerberos-based 
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2408.0 or later
 - A Mac device enrolled in mobile device management (MDM).
 - A configured SSO extension MDM payload with Platform SSO settings by an administrator, already deployed to the device. Refer to the [Platform SSO documentation](./macos-psso.md) or [Intune deployment guide](/mem/intune/configuration/platform-sso-macos) if Intune is your MDM.
-- Deploy Microsoft Entra Kerberos, which is required for some Kerberos capabilities in on-premises Active Directory. Refer to the [Cloud Kerberos trust deployment guide for Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) for more details or refer directly to the [Cloud Kerberos trust configuration instructions](/entra/identity/authentication/howto-authentication-passwordless-security-key-on-premises#install-the-azureadhybridauthenticationmanagement-module) to begin the setup. If you have already deployed Windows Hello for Business with Cloud Kerberos trust or passwordless security key sign-in for Windows, then this step has already been completed.
+- Deploy Microsoft Entra Kerberos, which is required for some Kerberos capabilities in on-premises Active Directory. For more information, see the [Cloud Kerberos trust deployment guide for Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) or refer directly to the [Cloud Kerberos trust configuration instructions](/entra/identity/authentication/howto-authentication-passwordless-security-key-on-premises#install-the-azureadhybridauthenticationmanagement-module) to begin the setup. If you have already deployed Windows Hello for Business with Cloud Kerberos trust or passwordless security key sign-in for Windows, then this step has already been completed.
 
 ## Set up your macOS device
 
-Refer to the [Microsoft Entra ID macOS Platform SSO documentation](./macos-psso.md) to learn how to configure and deploy Platform SSO. Platform SSO should be deployed on Enterprise-managed Macs regardless of whether you choose to deploy Kerberos SSO using this guide.
+Refer to the [Microsoft Entra ID macOS Platform SSO documentation](./macos-psso.md) to configure and deploy Platform SSO. Platform SSO should be deployed on Enterprise-managed Macs regardless of whether you choose to deploy Kerberos SSO using this guide.
 
 ## Kerberos SSO MDM profile configuration for on-premises Active Directory
 
-You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. It is recommended to deploy on-premises Active Directory profile before the Microsoft Entra ID Cloud Kerberos profile.
+You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. It's recommended to deploy on-premises Active Directory profile before the Microsoft Entra ID Cloud Kerberos profile.
 
 Use the following settings to configure the on-premises Active Directory profile, ensuring that you replace all references to **contoso.com** and **Contoso** with the proper values for your environment:
 
@@ -116,19 +116,19 @@ Use the following settings to configure the on-premises Active Directory profile
 > [!NOTE]
 > Make sure you pay attention to the usePlatformSSOTGT and performKerberosOnly keys.
 > If usePlatformSSOTGT is set to true, the Kerberos Extension uses the TGT from Platform SSO with the same realm. The default is false.
-> If performKerberosOnly is set to true, the Kerberos extension won’t perform password expiration checks, external password change checks, or retrieve the user’s home directory. The default is false.
+> If performKerberosOnly is set to true, the Kerberos extension doesn't perform password expiration checks, external password change checks, or retrieve the user’s home directory. The default is false.
 
-Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *on-prem-kerberos.mobileconfig*) after you have updated the configuration with the proper values for your environment.
+Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *on-prem-kerberos.mobileconfig*) after updating the configuration with the proper values for your environment.
 
 ## Kerberos SSO MDM profile configuration for Microsoft Entra ID Cloud Kerberos
 
-You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. It is recommended to deploy on-premises Active Directory profile before the Microsoft Entra ID Cloud Kerberos profile.
+You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. It's recommended to deploy on-premises Active Directory profile before the Microsoft Entra ID Cloud Kerberos profile.
 
-Use the following settings to configure the Microsoft Entra ID Cloud Kerberos profile, ensuring that you replace all references below with the proper values for your tenant:
+Use the following settings to configure the Microsoft Entra ID Cloud Kerberos profile, ensuring that you replace all references with the proper values for your tenant:
 
 | Configuration Key     | Recommended Value                                                                                  | Note                                                                                                                                                                                               |
 |-----------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `preferredKDCs`       | `<string>kkdcp://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/kerberos</string>` | Replace the **aaaabbbb-0000-cccc-1111-dddd2222eeee** value with the Tenant ID of your tenant, which can be found on the Overview page of the [Microsoft Entra Portal](https://entra.microsoft.com) |
+| `preferredKDCs`       | `<string>kkdcp://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/kerberos</string>` | Replace the **aaaabbbb-0000-cccc-1111-dddd2222eeee** value with the Tenant ID of your tenant, which can be found on the Overview page of the [Microsoft Entra Admin Center](https://entra.microsoft.com) |
 | `PayloadOrganization` | `<string>Contoso</string>`                                                                         | Replace **Contoso** with the name of your organization                                                                                                                                             |
 
 ```xml
@@ -198,7 +198,7 @@ Use the following settings to configure the Microsoft Entra ID Cloud Kerberos pr
 </plist>
 ```
 
-Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *cloud-kerberos.mobileconfig*) after you have updated the configuration with the proper values for your environment.
+Save the configuration using a text editor with the *mobileconfig* file extension (for example, the file could be named *cloud-kerberos.mobileconfig*) after updating the configuration with the proper values for your environment.
 
 ## Intune configuration steps
 
@@ -224,13 +224,13 @@ If you use Intune as your MDM, you can perform the following steps to deploy the
     - For more information on assigning profiles, see [Assign user and device profiles](/mem/intune/configuration/device-profile-assign).
 13. Select **Next**.
 14. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
-15. Repeat this process if you need to deploy both profiles because you will use both on-premises Kerberos SSO and Microsoft Entra ID Cloud Kerberos. It is recommended to deploy the on-premises profile first, followed by the Cloud Kerberos profile second.
+15. Repeat this process if you need to deploy both profiles because you will use both on-premises Kerberos SSO and Microsoft Entra ID Cloud Kerberos. It's recommended to deploy the on-premises profile first, followed by the Cloud Kerberos profile second.
 
 The next time the device checks for configuration updates, the settings you configured are applied.
 
 ## Testing Kerberos SSO
 
-Once the profile has been assigned to the device, you can check that your device has Kerberos tickets by running the following command in the Terminal app:
+Once the profile is deployed to the device, you can check that your device has Kerberos tickets by running the `app-sso platform -s` command in the Terminal app:
 
 ```console
 app-sso platform -s
@@ -246,17 +246,17 @@ Validate your configuration is working by testing with appropriate Kerberos-capa
 2. Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
 
 > [!NOTE]
-> Note that Microsoft's Platform SSO implementation is responsible for issuing the Kerberos TGTs above and delivering them to macOS so that macOS can import them. If you see TGTs when running `app-sso platform -s` then the TGTs have been successfully imported. If you experience any ongoing Kerberos issues, such as issues accessing on-premises resources via Kerberos, then it is recommended to reach out to Apple for support with further configuration of your Kerberos MDM profiles. The Kerberos implementation in macOS leverages native Apple-provided Kerberos capabilities.
+> Note that Microsoft's Platform SSO implementation is responsible for issuing the Kerberos TGTs and delivering them to macOS so that macOS can import them. If you see TGTs when running `app-sso platform -s`, then the TGTs have been successfully imported. If you experience any ongoing Kerberos issues, such as issues accessing on-premises resources via Kerberos, then it's recommended to reach out to Apple for support with further configuration of your Kerberos MDM profiles. The Kerberos implementation in macOS uses native Apple-provided Kerberos capabilities.
 
 ## Known Issues
 
 ### Kerberos SSO extension menu extra
 
-When deploying support for Kerberos SSO with Platform SSO, the standard Kerberos SSO extension capabilities of macOS are still leveraged. Like with a deployment of the native [Kerberos SSO extension](https://support.apple.com/guide/deployment/kerberos-sso-extension-depe6a1cda64/web) without Platform SSO, the Kerberos SSO extension menu extra will appear in the macOS menu bar:
+When deploying support for Kerberos SSO with Platform SSO, the standard Kerberos SSO extension capabilities of macOS are still used. Like with a deployment of the native [Kerberos SSO extension](https://support.apple.com/guide/deployment/kerberos-sso-extension-depe6a1cda64/web) without Platform SSO, the Kerberos SSO extension menu extra will appear in the macOS menu bar:
 
 :::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-sso-kerberos-menu-bar-applet.png" alt-text="Screenshot of the macOS Kerberos SSO extension menu extra.":::
 
-When deploying Kerberos support with Platform SSO, users do not need to interact with the Kerberos SSO extension menu extra to have Kerberos functionality work. Kerberos SSO functionality will still operate if the user does not sign into the menu bar extra and the menu bar extra reports "Not signed in". You may instruct users to ignore the menu bar extra when deploying with Platform SSO, per this article. Instead, make sure that you validate that kerberos functionality works as expected without interaction with the menu bar extra, as outlined in the [Testing Kerberos SSO](#testing-kerberos-sso) section of this article.
+When deploying Kerberos support with Platform SSO, users don't need to interact with the Kerberos SSO extension menu extra to have Kerberos functionality work. Kerberos SSO functionality will still operate if the user doesn't sign into the menu bar extra and the menu bar extra reports "Not signed in". You may instruct users to ignore the menu bar extra when deploying with Platform SSO, per this article. Instead, make sure that you validate that kerberos functionality works as expected without interaction with the menu bar extra, as outlined in the [Testing Kerberos SSO](#testing-kerberos-sso) section of this article.
 
 ### Browser Support for Kerberos SSO
 
