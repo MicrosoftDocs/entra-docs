@@ -20,7 +20,7 @@ ms.author: jricketts
 
 As a result, applications can reject unexpired tokens based on the events signaled by Microsoft Entra ID as depicted in the following diagram.
 
-![conceptualiagram of CAE](./media/resilience-with-cae/admin-resilience-continuous-access-evaluation.png)
+![conceptual diagram of CAE](./media/resilience-with-cae/admin-resilience-continuous-access-evaluation.png)
 
 ## How does CAE help?
 

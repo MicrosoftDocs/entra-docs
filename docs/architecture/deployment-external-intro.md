@@ -25,7 +25,7 @@ Increasingly, digital identities are used on omnichannel and hybrid scenarios, s
 
 The key facets are illustrated in the following diagram: 
 
-   [ ![Diagram of CIAM features and options.](media/deployment-external/ciam-facets.png) ](media/deployment-external/ciam-facets-expanded.png#lightbox)
+   [![Diagram of CIAM features and options.](media/deployment-external/ciam-facets.png)](media/deployment-external/ciam-facets-expanded.png#lightbox)
 
 Also consider your operational details:
 
