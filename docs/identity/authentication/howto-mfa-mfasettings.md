@@ -47,6 +47,8 @@ To configure account lockout settings, complete these steps:
 
     ![Screenshot that shows the account lockout settings.](./media/howto-mfa-mfasettings/account-lockout-settings.png)
 
+   *Note: Block/Unblock users tab is deprecated,currently the tab will be visible but feature is not available.
+
 ## Report suspicious activity
 
 When an unknown and suspicious MFA prompt is received, users can report the activity by using Microsoft Authenticator or through their phone. **Report suspicious activity** is integrated with [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) for risk-driven remediation, reporting, and least-privileged administration. 
