@@ -237,11 +237,13 @@ Generate a JSON file with all applications and the corresponding service princip
     Get-MgApplication -All | ForEach-Object { 
       $app = $_ 
       $sp = Get-MgServicePrincipal -Filter "appId eq '$($app.AppId)'" 
+      $date = [datetime]::Parse($app.CreatedDateTime)
       [pscustomobject]@{ 
-        Name        = $app.DisplayName 
+        DisplayName     = $app.DisplayName
         ApplicationId   = $app.AppId 
         ServicePrincipalId = $sp.Id 
         SnapshotDate = $SnapshotDate
+        CreatedDateTime = $date.ToString("yyyy-MM-dd")
       } 
     } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
 ```
