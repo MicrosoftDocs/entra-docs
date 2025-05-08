@@ -111,11 +111,13 @@ sections:
           Why am I not seeing any leaked credentials?
         answer: |
           Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found **after** you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done.
+
+          To see how leaked credentials could appear in ID Protection for your tenant, try simulating leaked credentials in GitHub for Workload Identities. For more information, see [Simulate risk detections in Microsoft Entra ID Protection](howto-identity-protection-simulate-risk.md).
       - question: |
           I don't see any leaked credential risk events. Why?
         answer: |
           If you don't see any leaked credential risk events, it is because of the following reasons:
-          - You don't have PHS enabled for your tenant.
+          - You don't have password hash sync enabled for your tenant.
           - Microsoft didn't find any leaked credential pairs that match your users. 
       - question: |
           How often does Microsoft process new credentials?
