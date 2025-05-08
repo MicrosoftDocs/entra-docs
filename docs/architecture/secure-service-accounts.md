@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/26/2022
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 # Securing cloud-based service accounts
 
