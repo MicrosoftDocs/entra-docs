@@ -1,5 +1,5 @@
 ---
-title: What are risks detections and risk levels?
+title: Risks detections and risk levels
 description: Learn about risk detections and risk levels, including the difference between real-time and offline detections. 
 
 ms.service: entra-id-protection
@@ -14,7 +14,7 @@ ms.reviewer: cokoopma
 
 ---
 
-# What are risk detections?
+# Risk detections and risk levels
 
 Microsoft Entra ID Protection provides organizations with information to suspicious activity in their tenant and allows them to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
 
@@ -27,7 +27,7 @@ ID Protection categorizes risk into three tiers: low, medium, and high. Risk lev
 - A risk detection with risk level **High** signifies that Microsoft is highly confident that the account is compromised. 
 - A risk detection with risk level **Low** signifies that there are anomalies present in the sign-in or a user’s credential, but we're less confident that these anomalies mean the account is compromised.
 
-Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](#leaked-credentials) and [Verified Threat Actor IP](#verified-threat-actor-ip) are always delivered as high risk. 
+Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](reference-risk-event-types.md#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](reference-risk-event-types.md#leaked-credentials) and [Verified Threat Actor IP](reference-risk-event-types.md#verified-threat-actor-ip) are always delivered as high risk. 
 
 This risk level is important when deciding which detections to [prioritize, investigate, and remediate](howto-identity-protection-investigate-risk.md#investigation-and-risk-remediation-framework). They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
 
@@ -64,4 +64,4 @@ Location in risk detections is determined using IP address lookup. Sign-ins from
 
 - [Learn about risk-based access policies](concept-identity-protection-policies.md)
 - [Learn how to investigate risk](howto-identity-protection-investigate-risk.md)
-- [FAQs](id-protection.faq.yml)
+- [FAQs](id-protection-faq.yml)

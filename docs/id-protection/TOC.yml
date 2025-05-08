@@ -9,7 +9,7 @@
   items:
   - name: Microsoft Entra ID Protection dashboard
     href: id-protection-dashboard.md
-  - name: What are risk detections and risk levels?
+  - name: Risk detections and risk levels
     href: concept-identity-protection-risks.md
   - name: Risk-based access control policies
     href: concept-identity-protection-policies.md
