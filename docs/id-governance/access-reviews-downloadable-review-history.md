@@ -56,7 +56,7 @@ The reports provide details on a per-user basis showing the following informatio
 | ResourceId | ID of the resource being reviewed |
 | ReviewName |	Name of the review |
 | CreatedDateTime |	Creation datetime of the review |
-| ReviewStartDate |	Start date of the review
+| ReviewStartDate |	Start date of the review |
 | ReviewEndDate | End date of the review |
 | ReviewStatus | Status of the review. For all review statuses, see the access review status table [here](create-access-review.md) |
 | OwnerId | Reviewer owner ID |

@@ -61,9 +61,9 @@ The following table has a list of suggested attributes and their scenario recomm
 |HR Attribute|HR System|Scenario|Microsoft Entra attribute|
 |-----|-----|-----|-----|
 |StatusHireDate|Workday|Joiner|EmployeeHireDate|
-|StatusContinuousFirstDayOfWork|Workday|Joiner|EmployeeHireDate|	
-StatusDateEnteredWorkforce|Workday|Joiner|EmployeeHireDate|
-StatusOriginalHireDate|Workday|Joiner|EmployeeHireDate|
+|StatusContinuousFirstDayOfWork|Workday|Joiner|EmployeeHireDate|
+|StatusDateEnteredWorkforce|Workday|Joiner|EmployeeHireDate|
+|StatusOriginalHireDate|Workday|Joiner|EmployeeHireDate|
 |StatusEndEmploymentDate|Workday|Leaver|EmployeeLeaveDateTime|
 |StatusResignationDate|Workday|Leaver|EmployeeLeaveDateTime|
 |StatusRetirementDate|Workday|Leaver|EmployeeLeaveDateTime|
