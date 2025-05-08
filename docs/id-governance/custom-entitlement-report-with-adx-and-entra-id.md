@@ -289,12 +289,16 @@ Generate a JSON file of all app role assignments of users in the tenant:
         $createdDateTime = $_.CreatedDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
         # Convert the milliseconds timestamp to a readable date format if necessary 
         $result += [PSCustomObject]@{ 
-          AppRoleId      = $_.AppRoleId 
-          CreatedDateTime   = $createdDateTime 
-          PrincipalDisplayName = $_.PrincipalDisplayName 
-          PrincipalId     = $_.PrincipalId 
-          ResourceDisplayName = $_.ResourceDisplayName 
-          ResourceId      = $_.ResourceId 
+          Id = $_.Id
+          AppRoleId      = $_.AppRoleId
+          CreatedDateTime   = $createdDateTime
+          PrincipalDisplayName = $user.DisplayName
+          PrincipalId     = $user.Id
+          AssignmentPrincipalType = $_.PrincipalType
+          AssignmentPrincipalDisplayName = $_.PrincipalDisplayName
+          AssignmentPrincipalId     = $_.PrincipalId
+          ResourceDisplayName = $_.ResourceDisplayName
+          ResourceId      = $_.ResourceId
           SnapshotDate     = $SnapshotDate
         } 
       } 
