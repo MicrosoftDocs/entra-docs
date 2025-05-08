@@ -222,7 +222,7 @@ If you use Intune as your MDM, you can perform the following steps to deploy the
     - For more information on assigning profiles, see [Assign user and device profiles](/mem/intune/configuration/device-profile-assign).
 13. Select **Next**.
 14. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
-15. Repeat this process if you need to deploy both profiles because you will use both on-premises Kerberos SSO and Microsoft Entra ID Cloud Kerberos. It's recommended to deploy the on-premises profile first, followed by the Cloud Kerberos profile second.
+15. Repeat this process if you need to deploy both profiles because you will use both on-premises Kerberos SSO and Microsoft Entra ID Cloud Kerberos.
 
 The next time the device checks for configuration updates, the settings you configured are applied.
 
