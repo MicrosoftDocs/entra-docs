@@ -26,9 +26,7 @@ Microsoft has introduced a security setting that protects against insecure confi
 
 ### Policy behavior
 
-When this setting is enabled, the secure patterns are strictly enforced. Todo - insert error message
-
-Doesn't apply to v2 or SAML apps
+When this setting is enabled, the secure patterns are strictly enforced. 
 
 Existing identifier URIs already configured on the Entra app won't be affected, and all apps will continue to function as normal. This will only affect new updates to Entra app configurations.
 
@@ -58,8 +56,6 @@ If this policy is enabled, then when creating or updating a Microsoft Entra appl
 **The newly added URI {URI} must comply with the format 'api://{appId}' or 'api://{tenantId}/{appId}' as per the default app management policy of your organization. If the requestedAccessTokenVersion is set to 2, this restriction may not apply.  See https://aka.ms/identifier-uri-addition-error for more information on this error.**
 
 If you're a developer and you've received this error, check [this guidance](#guidance-for-developers).
-
-### Security benefit
 
 This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim.  We recommend enabling it if possible.
 
