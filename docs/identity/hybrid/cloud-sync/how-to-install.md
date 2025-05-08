@@ -69,7 +69,7 @@ To use *password writeback* and enable the self-service password reset (SSPR) se
    Set-AADCloudSyncPasswordWritebackConfiguration -Enable $true -Credential $(Get-Credential)
   ```
 
-For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment ](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
+For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
 
 ## Install an agent in the US government cloud
 

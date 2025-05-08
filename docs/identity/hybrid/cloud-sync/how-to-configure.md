@@ -14,7 +14,7 @@ ms.author: billmath
 
 # Provision Active Directory to Microsoft Entra ID - Configuration
 
-The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID. If you are looking for information on provisioning from Microsoft Entra ID to AD, see [ Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID. If you are looking for information on provisioning from Microsoft Entra ID to AD, see [Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 
 The following documentation demonstrates the new guided user experience for Microsoft Entra Cloud Sync.
 
