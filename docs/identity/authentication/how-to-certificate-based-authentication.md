@@ -346,20 +346,6 @@ To modify tenant default settings and create custom rules in the Microsoft Entra
 
    1. Authenticate with a certificate that has policy OID of 3.4.5.6 and Issued by CN=CBATestRootProd. Authentication should pass and get a multifactor claim.
 
->[!IMPORTANT]
->There's a known issue where a Microsoft Entra tenant Authentication Policy Administrator configures a CBA authentication policy rule by using both Issuer and Policy OID. The issue impacts some device registration scenarios, including:
->- Windows Hello For Business enrollment
->- FIDO2 security key registration
->- Windows passwordless phone sign-in
->  
->Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios aren't impacted. CBA authentication policy rules using either Issuer OR Policy OID aren't impacted.
->To mitigate, admins should:
->- Edit the certificate-based authentication policy rules that use both Issuer and Policy OID options. Remove either the Issuer or Policy OID requirement and **Save**. 
->  -Or-
->- Remove the authentication policy rule that uses both Issuer and Policy OID. Create rules that use only Issuer or Policy OID.
->  
->We're working to fix the issue.
-
    To create a rule by Issuer and Serial Number:
 
    1. Add an authentication binding policy. The policy requires that any certificate issued by CN=CBATestRootProd with policyOID 1.2.3.4.6 needs only high affinity binding. Issuer and serial number are used.
