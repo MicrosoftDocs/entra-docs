@@ -39,7 +39,7 @@ Create a sample app and push it to your GitHub repo.
 
 ### Create and clone a repo in GitHub
 
-[Create a new repo](https://docs.github.com/en/get-started/quickstart/create-a-repo?tool=webui) in GitHub, specify a name like "PipelinesTest".  Set it to **Private** and add a *.gitignore* file with `.getignore template: VisualStudio`.
+[Create a new repo](https://docs.github.com/en/get-started/quickstart/create-a-repo?tool=webui) in GitHub, specify a name like "PipelinesTest".  Set it to **Private** and add a *.gitignore* file with `.gitignore template: VisualStudio`.
 
 Open a terminal window and change the current working directory to the location where you want the cloned directory:
 
