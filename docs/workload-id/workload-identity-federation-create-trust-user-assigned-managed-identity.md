@@ -586,6 +586,7 @@ https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RES
 |---------|---------|
 |*Content-Type*     | Required. Set to `application/json`.        |
 |*Authorization*     | Required. Set to a valid `Bearer` access token.        |
+
 ::: zone-end
 
 ## Next steps

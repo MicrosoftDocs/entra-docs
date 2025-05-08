@@ -132,6 +132,7 @@ When you want the user to enter information themselves. This type is also called
 ```
 
 ## displayModel type
+
 | Property | Type | Description |
 | -------- | -------- | -------- |
 |`locale`| string | the locale of this display |
@@ -140,6 +141,7 @@ When you want the user to enter information themselves. This type is also called
 |`claims`| [displayClaims](#displayclaims-type) array | labels for the claims included in the verifiable credential |
 
 ### displayCredential type
+
 | Property | Type | Description |
 | -------- | -------- | -------- |
 |`title`| string | title of the credential |
@@ -193,7 +195,7 @@ When you want the user to enter information themselves. This type is also called
   },
   "consent": {
     "instructions": "Please click accept to add this credentials",
-    "title": "Do you want to accept the verified credential expert dentity?"
+    "title": "Do you want to accept the verified credential expert identity?"
   },
   "claims": [
     {
