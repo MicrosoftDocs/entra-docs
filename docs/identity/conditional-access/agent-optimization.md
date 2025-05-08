@@ -20,7 +20,7 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 ## Prerequisites
 
-- You must be assigned the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview. These roles also have [access to Security Copilot by default](/copilot/security/authentication).
+- For the initial agent enablement/setup, you will need to be either a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview. These roles also have [access to Security Copilot by default](/copilot/security/authentication). After setup, you can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well.
 - You must have at least [Microsoft Entra ID P1](overview.md#license-requirements).
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage). On average, each agent run consumes less than one SCU.
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
