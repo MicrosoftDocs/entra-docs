@@ -79,6 +79,7 @@ This table describes the ports and protocols that are required for communication
 The following tables describes the ports and protocols that are required for communication between the Microsoft Entra Connect and Microsoft Entra ID.
 
 ### Table 6a - Pass-through Authentication with SSO
+
 | Protocol | Ports | Description |
 | --- | --- | --- |
 | HTTP |80 (TCP)|Used to download CRLs (Certificate Revocation Lists) to verify TLS/SSL certificates. Also needed for the connector auto-update capability to function properly. |
@@ -90,7 +91,7 @@ In addition, Microsoft Entra Connect needs to be able to make direct IP connecti
 
 | Protocol | Ports | Description |
 | --- | --- | --- |
-| HTTPS |443 (TCP)|Used to enable SSO registration (required only for the SSO registration process).
+| HTTPS | 443 (TCP) | Used to enable SSO registration (required only for the SSO registration process). |
 
 In addition, Microsoft Entra Connect needs to be able to make direct IP connections to the [Azure data center IP ranges](https://www.microsoft.com/download/details.aspx?id=41653). Again, this is only required for the SSO registration process.
 

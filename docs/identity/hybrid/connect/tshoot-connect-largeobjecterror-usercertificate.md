@@ -109,7 +109,7 @@ The new sync rule must have the same **scoping filter** and **higher precedence*
     | --- | --- | --- |
     | Name | *Provide a name* | E.g., *“Out to Microsoft Entra ID – Custom override for userCertificate”* |
     | Description | *Provide a description* | E.g., *“If userCertificate attribute has more than 15 values, export NULL.”* |
-    | Connected System | *Select the Microsoft Entra Connector* |
+    | Connected System | *Select the Microsoft Entra Connector* | |
     | Connected System Object Type | **user** | |
     | Metaverse Object Type | **person** | |
     | Link Type | **Join** | |

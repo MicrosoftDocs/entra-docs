@@ -90,7 +90,7 @@ Connect-ADSyncToolsSqlDatabase -Server 'sqlserver01.contoso.com' -Database 'ADSy
 ```
 #### EXAMPLE 2
 ```
-Connect-ADSyncToolsSqlDatabase -Server 'sqlserver01.contoso.com' -Instance 'INTANCE01' -Database 'ADSync'
+Connect-ADSyncToolsSqlDatabase -Server 'sqlserver01.contoso.com' -Instance 'INSTANCE01' -Database 'ADSync'
 ```
 ### PARAMETERS
 #### -Server
@@ -1260,7 +1260,7 @@ Remove-ADSyncToolsExpiredCertificates [-TargetOU] <String> [[-BackupOnly] <Boole
  [<CommonParameters>]
 ```
 ### DESCRIPTION
-This script takes all the objects from a target Organizational Unit in your Active Directory domain - filtered by Object Class (User/Computer) and deletes all expired certificates present in the UserCertificate attribute. By default (BackupOnly mode) it will only backup expired certificates to a file and not do any changes in AD. If you use `-BackupOnly $false` then any Expired Certificate present in UserCertificate attribute for these objects will be removed from Active Directory after being copied to file. Each certificate will be backed up to a separated filename: `ObjectClass_ObjectGUID_CertThumprint.cer`. The script will also create a log file in CSV format showing all the users with certificates that either are valid or expired including the actual action taken (Skipped/Exported/Deleted).
+This script takes all the objects from a target Organizational Unit in your Active Directory domain - filtered by Object Class (User/Computer) and deletes all expired certificates present in the UserCertificate attribute. By default (BackupOnly mode) it will only backup expired certificates to a file and not do any changes in AD. If you use `-BackupOnly $false` then any Expired Certificate present in UserCertificate attribute for these objects will be removed from Active Directory after being copied to file. Each certificate will be backed up to a separated filename: `ObjectClass_ObjectGUID_CertThumbprint.cer`. The script will also create a log file in CSV format showing all the users with certificates that either are valid or expired including the actual action taken (Skipped/Exported/Deleted).
 
 ### EXAMPLES
 #### EXAMPLE 1

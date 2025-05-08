@@ -22,6 +22,7 @@ ms.custom: H1Hack27Feb2017
 The Connectors tab is used to manage all systems the sync engine is connected to.
 
 ## Connector actions
+
 | Action | Comment |
 | --- | --- |
 | Create |Don't use. For connecting to additional AD forests, use the installation wizard. |
