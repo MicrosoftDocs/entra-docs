@@ -217,7 +217,7 @@ If you use Intune as your MDM, you can perform the following steps to deploy the
 9. Click the folder icon to upload your **Configuration profile file**. Choose the *kerberos.mobileconfig* file you [saved previously](#Kerberos SSO MDM profile configuration for on-premises Active Directory) after customizing the template.
 10. Select **Next**.
 11. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. Select **Next**.
-  - For more information about scope tags, see [Use RBAC roles and scope tags for distributed IT](/mem/intune/fundamentals/scope-tags).
+    - For more information about scope tags, see [Use RBAC roles and scope tags for distributed IT](/mem/intune/fundamentals/scope-tags).
 12. In **Assignments**, select the users or user groups that will receive your profile. Platform SSO policies are user-based policies. Don't assign the platform SSO policy to devices.
     - For more information on assigning profiles, see [Assign user and device profiles](/mem/intune/configuration/device-profile-assign).
 13. Select **Next**.
@@ -226,7 +226,7 @@ If you use Intune as your MDM, you can perform the following steps to deploy the
 
 The next time the device checks for configuration updates, the settings you configured are applied.
 
-## Testing Kerberos SSO
+## Test Kerberos SSO
 
 Once the user has completed Platform SSO registration, you can check that the device has Kerberos tickets by running the `app-sso platform -s` command in the Terminal app:
 
@@ -240,8 +240,7 @@ You should have two Kerberos tickets, one for your on-premises AD with the ticke
 
 Validate your configuration is working by testing with appropriate Kerberos-capable resources:
 
-1. Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari. The user should be able to access the file share without being challenged for interactive credentials.
-2. Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
+- Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari. The user should be able to access the file share without being challenged for interactive credentials.- Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
 
 > [!NOTE]
 > Note that Microsoft's Platform SSO implementation is responsible for issuing the Kerberos TGTs and delivering them to macOS so that macOS can import them. If you see TGTs when running `app-sso platform -s`, then the TGTs have been successfully imported. If you experience any ongoing Kerberos issues, such as issues accessing on-premises resources via Kerberos, then it's recommended to reach out to Apple for support with further configuration of your Kerberos MDM profiles. The Kerberos implementation in macOS uses native Apple-provided Kerberos capabilities.
