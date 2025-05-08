@@ -1,5 +1,5 @@
 ---
-title: 'Configure - Provisioning Microsoft Entra ID to Active Directory using Microsoft Entra Cloud Sync'
+title: 'Configure - Provisioning Microsoft Entra ID to Active Directory using Microsoft Entra Cloud Sync for Groups'
 description: This article describes how to configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
 
 author: billmath
@@ -13,7 +13,7 @@ ms.author: billmath
 ---
 
 # Provision Microsoft Entra ID to Active Directory - Configuration
-The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you are looking for information on provisioning from AD to Microsoft Entra ID, see [ Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure.md)
+The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning groups from Microsoft Entra ID to Active Directory. If you are looking for information on provisioning from AD to Microsoft Entra ID, see [ Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure.md)
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
