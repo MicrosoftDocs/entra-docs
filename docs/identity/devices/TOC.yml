@@ -2,6 +2,9 @@
   href: index.yml
 - name: Overview
   items:
+- name: Whats new in Linux for devices
+  href: whats-new-linux.md
+  displayName: linux, devices, sso
   - name: What is a device identity?
     href: overview.md
 - name: Tutorials
