@@ -130,11 +130,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 2. Go to **Administration**.
 
-	![Screenshot that highlights Administration in the navigation panel.](./media/adaptivesuite-tutorial/administration.png "Admin")
-
 3. In the **Users and Roles** section, select **SAML SSO Settings**.
-
-	![Manage SAML SSO Settings](./media/adaptivesuite-tutorial/settings.png "Manage SAML SSO Settings")
 
 4. On the **SAML SSO Settings** page, perform the following steps:
 
