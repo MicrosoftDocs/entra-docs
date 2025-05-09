@@ -47,7 +47,7 @@ There are several authentication methods that determine the end-user experience.
 ## Requirements
 
 The Microsoft Single Sign-On for Linux is supported with the following operating systems:  
- - Ubuntu Desktop 24.04, 22.04 or 20.04 LTS (physical or Hyper-V machine with x86/64 CPUs)  
+- Ubuntu Desktop 24.04, 22.04 or 20.04 LTS (physical or Hyper-V machine with x86/64 CPUs)  
  - RedHat Enterprise Linux 8  
  - RedHat Enterprise Linux 9
 
@@ -60,6 +60,10 @@ You can find more information and instructions on how to configure in these arti
 
 To install the Linux broker without a dependency on Intune, you can install the broker with the following:
 Run the following commands in a command line to manually install the Microsoft Single Sign-On (microsoft-identity-broker) and its dependencies on your device.  
+
+# [Debian](#tab/debian)
+
+Content for Linux...
 
 1. Install Curl. 
 
@@ -88,7 +92,11 @@ sudo apt update
 sudo apt install Microsoft-identity-broker
 ```
 
-5. Reboot your device.  
+1. Reboot your device.  
+
+# [redhat](#tab/redhat)
+
+Content for Windows...
 
 For more information, see the following in Intune documentation:
 
@@ -96,47 +104,6 @@ For more information, see the following in Intune documentation:
 
 - [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
 
-
-```
-## Requirements  
-
-The Microsoft Intune app is supported with the following operating systems:  
-
- - Ubuntu Desktop 24.04, 22.04 or 20.04 LTS (physical or Hyper-V machine with x86/64 CPUs)  
- - RedHat Enterprise Linux 8  
- - RedHat Enterprise Linux 9
-
-## Install Microsoft Intune app for Ubuntu Desktop
-Run the following commands in a command line to manually install the Microsoft Intune app and its dependencies on your device.  
-
-1. Install Curl. 
-
-    ```bash
-    sudo apt install curl gpg
-    ```
-
-2. Install the Microsoft package signing key.  
-
-   ```bash
-   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-   sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/
-   rm microsoft.gpg
-   ```
-
-3. Add and update Microsoft Linux Repository to the system repository list.
-
-   ```bash
-   sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-prod.list'
-   sudo apt update
-   ```
-
-4. Install the Intune app.
-
-    ```bash
-    sudo apt install intune-portal
-    ``` 
-
-5. Reboot your device.  
 
 ### Update app for Ubuntu Desktop 
 The Microsoft Intune app automatically updates when updates become available in Software Updater. Run the following commands to update the app manually.    
@@ -208,7 +175,7 @@ Run the following commands to uninstall the Microsoft Intune app and remove loca
    ```bash
    sudo dnf remove intune-portal
    ```
-
+   
 2. Remove local registration data.  
 
    ```bash
