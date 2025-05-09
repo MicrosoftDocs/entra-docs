@@ -35,7 +35,6 @@ This feature empowers users on Linux desktop clients to register their devices w
 - Support for Bash scripts for custom compliance policies
 
  
-
 The Teams web application and a new PWA(Progressive Web App) for Linux will use the Conditional Access configuration, applied through Microsoft Intune Manager, to enable Linux users to access the Teams web application using Edge in a secure way. This helps organizations use an industry-leading, unified endpoint management solution for Teams from Linux endpoints with security and quality in mind.
 
 There are several authentication methods that determine the end-user experience.
@@ -47,26 +46,177 @@ There are several authentication methods that determine the end-user experience.
 
 ## Requirements
 
-To deploy Platform SSO for macOS, you need the meet following minimum requirements.
-
-* A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
-* [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
-
-* Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later installed. This version is required before users are targeted for PSSO.
+The Microsoft Single Sign-On for Linux is supported with the following operating systems:  
+ - Ubuntu Desktop 24.04, 22.04 or 20.04 LTS (physical or Hyper-V machine with x86/64 CPUs)  
+ - RedHat Enterprise Linux 8  
+ - RedHat Enterprise Linux 9
 
 ## Configuration
 
 You can find more information and instructions on how to configure in these articles:
-
 - [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
 
 ## Deployment
+
+To install the Linux broker without a dependency on Intune, you can install the broker with the following:
+Run the following commands in a command line to manually install the Microsoft Single Sign-On (microsoft-identity-broker) and its dependencies on your device.  
+
+1. Install Curl. 
+
+
+```bash
+sudo apt install curl gpg
+```
+
+2. Install the Microsoft package signing key.  
+
+
+```bash
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg     sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/     rm microsoft.gpg
+```
+
+3. Add and update Microsoft Linux Repository to the system repository list.
+
+```bash
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-prod.list'
+sudo apt update
+```
+
+4. Install the Microsoft Single Sign-on (microsoft-identity-broker) app.
+
+```bash
+sudo apt install Microsoft-identity-broker
+```
+
+5. Reboot your device.  
 
 For more information, see the following in Intune documentation:
 
 - [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
 
 - [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
+
+
+```
+## Requirements  
+
+The Microsoft Intune app is supported with the following operating systems:  
+
+ - Ubuntu Desktop 24.04, 22.04 or 20.04 LTS (physical or Hyper-V machine with x86/64 CPUs)  
+ - RedHat Enterprise Linux 8  
+ - RedHat Enterprise Linux 9
+
+## Install Microsoft Intune app for Ubuntu Desktop
+Run the following commands in a command line to manually install the Microsoft Intune app and its dependencies on your device.  
+
+1. Install Curl. 
+
+    ```bash
+    sudo apt install curl gpg
+    ```
+
+2. Install the Microsoft package signing key.  
+
+   ```bash
+   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+   sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/
+   rm microsoft.gpg
+   ```
+
+3. Add and update Microsoft Linux Repository to the system repository list.
+
+   ```bash
+   sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-prod.list'
+   sudo apt update
+   ```
+
+4. Install the Intune app.
+
+    ```bash
+    sudo apt install intune-portal
+    ``` 
+
+5. Reboot your device.  
+
+### Update app for Ubuntu Desktop 
+The Microsoft Intune app automatically updates when updates become available in Software Updater. Run the following commands to update the app manually.    
+
+
+1. Update the package repo and metadata, which includes `intune-portal`, `msft-broker`, and `msft edge`.   
+
+    ```bash
+    sudo apt update
+    ```
+ 
+2. Upgrade the packages and clean up dependencies.  
+
+    ```bash
+    sudo apt-get dist-upgrade
+    ```
+
+### Uninstall app for Ubuntu Desktop  
+Run the following commands to uninstall the Microsoft Intune app and remove local registration data from devices running Ubuntu Desktop.  
+
+1. Remove the Intune app from your system.  
+
+    ```bash
+    sudo apt remove intune-portal
+    ```
+
+2. Remove the local registration data. This command removes the local configuration data that contains your device registration.     
+
+    ```bash
+    sudo apt purge intune-portal
+    ```  
+## Install Microsoft Intune app for RedHat Enterprise Linux  
+
+1. Add the Microsoft repository.  
+
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel9.0-prod
+   ```
+
+2. Install the Microsoft Intune app.  
+
+   ```bash
+   sudo dnf install intune-portal
+   ```
+
+3. Reboot your device.  
+
+### Update app for RedHat Enterprise Linux  
+Run one of the following commands to update the Microsoft Intune app.  
+
+**Option 1**:  
+
+   ```bash
+   sudo dnf update
+   ```
+
+**Option 2**: 
+   ```bash
+   sudo dnf update intune-portal
+   ```
+
+### Uninstall app for RedHat Enterprise Linux  
+
+Run the following commands to uninstall the Microsoft Intune app and remove local registration data on devices running RedHat Enterprise Linux.    
+
+1. Remove the Intune portal package.  
+
+   ```bash
+   sudo dnf remove intune-portal
+   ```
+
+2. Remove local registration data.  
+
+   ```bash
+   sudo rm -rf /var/opt/microsoft/mdatp
+   sudo rm -rf /etc/opt/microsoft/mdatp
+   sudo rm -rf /opt/microsoft/mdatp
+   ```  
+```
 
 ## Troubleshooting 
 
