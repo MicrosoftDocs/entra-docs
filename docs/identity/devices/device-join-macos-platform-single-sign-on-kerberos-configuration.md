@@ -41,7 +41,7 @@ Use the following settings to configure the on-premises Active Directory profile
 | Configuration Key     | Recommended Value               | Note                                                                                                                               |
 |-----------------------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | `Hosts`               | `<string>.contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `.` character before your domain/forest name                                                                 |
-| `Hosts`               | `<string>contoso.com</string>`  | Replace **contoso.com** with your on-premises domain/forest name|
+| `Hosts`               | `<string>contoso.com</string>`  | Replace **contoso.com** with your on-premises domain/forest name |
 | `Realm`               | `<string>CONTOSO.COM</string>`  | Replace **CONTOSO.COM** with your on-premises realm name. The value should be all capitalized.                                     |
 | `PayloadOrganization` | `<string>Contoso</string>`      | Replace **Contoso** with the name of your organization                                                                             |
 
