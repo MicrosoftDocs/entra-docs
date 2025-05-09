@@ -59,19 +59,23 @@ High risk sign-in and users must be investigated and remediated. If risk-based C
 
 ## Real-time and offline detections
 
-ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. On detections that calculate risk offline, they can provide more insight as to how the threat actor gained access to the account and the effect on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in being precise on the compromise. 
+ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. Detections calculated offline can provide more insight into how the threat actor gained access to the account and the effect on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in compromise detection.
 
 Detections triggered in real-time take 5-10 minutes to surface details in the reports. Offline detections take up to 48 hours to surface in the reports, as it takes time to evaluate properties of the potential risk. 
 
 > [!NOTE]
-> Our system might detect that the risk event that contributed to the risk user risk score was either: 
+> Our system might determine that the risk event that contributed to user risk score was either: 
 > 
-> - A false positive
-> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) by either: 
->    - Completing multifactor authentication
->    - Secure password change
+> - A false positive, or
+> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) (by either completing multifactor authentication or a secure password change).
 > 
-> Our system dismisses the risk state and a risk detail of **AI confirmed sign-in safe** appears, so the risk state no longer contributes to the user’s overall risk.
+> Our system dismisses the risk state and sets the risk detail to **AI confirmed sign-in safe**, so the risk state no longer contributes to the user's overall risk.
+
+### Offline detections and risk level
+
+It's important to remember that risk levels can change, because many risk detections are calculated offline. So if an offline detection is triggered that changes the threshold from low to medium risk, the risk level can change. Or if the system identifies a false positive, the risk level can change from medium to low. 
+
+### Time detection
 
 On risk-detailed data, **Time Detection** records the exact moment a risk is identified during a user's sign-in, which allows for real-time risk assessment and immediate policy application to safeguard the user and organization. **Detection last updated** shows the latest update to a risk detection, which could be due to new information, risk level changes, or administrative actions, and ensures up-to-date risk management.
 
