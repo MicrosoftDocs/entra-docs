@@ -16,25 +16,46 @@ ms.reviewer: cokoopma
 
 # Risk detections and risk levels
 
-Microsoft Entra ID Protection provides organizations with information to suspicious activity in their tenant and allows them to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
+Microsoft Entra ID Protection provides organizations with information about suspicious activity in their tenant and allows you to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
 
-User risk detections might flag a legitimate user account as at risk, when a potential threat actor gains access to an account by compromising their credentials or when they detect some type of anomalous user activity. Sign-in risk detections represent the probability that a given authentication request isn't the authorized owner of the account. Having the ability to identify risk at the user and sign-in level is critical for customers to be empowered to secure their tenant.
+User risk detections might flag a legitimate user account as at risk, when a potential threat actor gains access to an account by compromising their credentials or when anomalous user activity is detected. Sign-in risk detections represent the probability that a given authentication request isn't the authorized owner of the account. Having the ability to identify risk at the user and sign-in level is critical for customers to be empowered to secure their tenant.
 
 ## Risk levels
 
 ID Protection categorizes risk into three tiers: low, medium, and high. Risk levels calculated by our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity.
 
-- A risk detection with risk level **High** signifies that Microsoft is highly confident that the account is compromised. 
-- A risk detection with risk level **Low** signifies that there are anomalies present in the sign-in or a user’s credential, but we're less confident that these anomalies mean the account is compromised.
+Detections can fire at more than one risk level, depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](reference-risk-event-types.md#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Other detections, like [Leaked Credentials](reference-risk-event-types.md#leaked-credentials) and [Verified Threat Actor IP](reference-risk-event-types.md#verified-threat-actor-ip) are always delivered as high risk. 
 
-Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](reference-risk-event-types.md#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](reference-risk-event-types.md#leaked-credentials) and [Verified Threat Actor IP](reference-risk-event-types.md#verified-threat-actor-ip) are always delivered as high risk. 
+This risk level is important when deciding which detections to [prioritize, investigate, and remediate](howto-identity-protection-investigate-risk.md#investigation-and-risk-remediation-framework). Risk levels also play a key role in [configuring risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels), as each policy can be set to trigger for low, medium, high, or no risk detected.
 
-This risk level is important when deciding which detections to [prioritize, investigate, and remediate](howto-identity-protection-investigate-risk.md#investigation-and-risk-remediation-framework). They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
+Based on the risk tolerance of your organization, you can create Conditional Access policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
+
+### Low risk
+
+A risk detection with risk level **Low** signifies that anomalies are present in the sign-in or a user's credential, but we're less confident that these anomalies mean the account is compromised.
+
+This type of risk detection often means a change in sign-in behavior, such as an isolated use of a VPN or suddenly signing in from a new location. Sign-in patterns before and after the risk detection are used to determine if there's a pattern or if the sign-in is an anomaly.
+
+Low risks can be considered as an "as information" risk detection. There's no immediate action required, but it's still important to know about.
 
 > [!IMPORTANT] 
-> All "low" risk level detections and users will persist in the product for six months, after which they'll be automatically aged out to provide a cleaner investigation experience. Medium and high risk levels will persist until remediated or dismissed. 
-> 
-> Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level. These policies might guide the user to self-remediate and resolve the risk or block depending on your tolerances. 
+> All "low" level risk detections and users persist in the product for six months, after which they're  automatically aged out to provide a cleaner investigation experience. Medium and high risk levels persist until remediated or dismissed.
+
+### Medium risk
+
+A risk detection with risk level **Medium** indicates that one or more moderate-severity anomalies were detected, but there's less confidence that the account is compromised.
+
+These risk detections might include a combination of low risk detections, as opposed to an isolated event. Sign-in behavior is also considered, so if the pattern before and after the risk detection is consistent, the risk detection might be classified as medium.
+
+Medium risks should be investigated, but they might not require immediate action. Monitor offline detections (covered in the next section) that might change the risk level.
+
+### High risk
+
+A risk detection with risk level **High** signifies that Microsoft is highly confident that the account is compromised. 
+
+These risk detections require immediate action, either through user self-remediation or administrative intervention. Signals such as threat intelligence and known attack patterns factor into the confidence level of the risk detection.
+
+High risk sign-in and users must be investigated and remediated. If risk-based Conditional Access policies are in place, the user might be blocked, required to perform multifactor authentication, or granted access after a secure password reset. 
 
 ## Real-time and offline detections
 

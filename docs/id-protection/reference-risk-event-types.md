@@ -185,7 +185,7 @@ This detection is discovered using information provided by [Microsoft Defender
 
 ### Token issuer anomaly 
 
-. This risk detection indicates the SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. 
+This risk detection indicates the SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. 
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
@@ -246,7 +246,7 @@ Also referred to as Adversary in the Middle, this high precision detection is tr
 
 ### Leaked credentials 
 
-This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [FAQs](id-protection-faq.yml#leaked-credentials). 
+This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [FAQs](id-protection-faqyml#leaked-credentials). 
 
 - Calculated offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
