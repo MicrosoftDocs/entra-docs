@@ -56,7 +56,7 @@ To configure and test Microsoft Entra SSO with Freshdesk, perform the following 
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
     1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 1. **[Configure Freshdesk SSO](#configure-freshdesk-sso)** - to configure the Single Sign-On settings on application side.
-    1. **[Create Freshdesk test user](#create-freshdesk-test-user)** - to have a counterpart of Britta Simon in Freshdesk that's linked to the Microsoft Entra representation of user.
+    - **[Create Freshdesk test user](#create-freshdesk-test-user)** - to have a counterpart of Britta Simon in Freshdesk that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -103,7 +103,7 @@ To configure and test Microsoft Entra SSO with Freshdesk, perform the following 
 
 ## Configure Freshdesk SSO
 
-1. In a different web browser window, log into your Freshdesk company site as an administrator.
+1. In a different web browser window, log in to your Freshdesk company site as an administrator.
 
 1. Select the **Security icon** and in the **Security** section, perform the following steps:
 
@@ -127,7 +127,7 @@ To configure and test Microsoft Entra SSO with Freshdesk, perform the following 
 
 ## Create Freshdesk test user
 
-In order to enable Microsoft Entra users to log into Freshdesk, they must be provisioned into Freshdesk.  
+In order to enable Microsoft Entra users to log in to Freshdesk, they must be provisioned into Freshdesk.  
 In the case of Freshdesk, provisioning is a manual task.
 
 **To provision a user account, perform the following steps:**
