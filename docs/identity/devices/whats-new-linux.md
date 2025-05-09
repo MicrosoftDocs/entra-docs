@@ -13,32 +13,27 @@ ms.topic:    # Add the ms.topic value
 ms.date:     05/09/2025
 ---
 
-
 # What's new in Microsoft Single Sign-on for Linux
 This article provides information about the latest updates to Microsoft Single Sign-on for Linux. 
 
 ### Package Repositories
 Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are avilable in either .deb or .rpm format, however only Ubuntu LTS & Red Hat Enterprise Linux are supported today.
 
-:::row:::
-   :::column span="2":::
-#### Ubuntu 20.04
+#### [Ubuntu20.04](#tab/ubuntu2004)
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/msft-identity-broker/)
 
-#### Ubuntu 22.04
+#### [Ubuntu22.04](#tab/ubuntu2204)
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/)
-   :::column-end:::
-   :::column span="":::
-#### Red Hat 9
+
+#### [RedHat 9](#tab/redhat9)
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
 
-#### Red Hat 8
+#### [RedHat 8](#tab/redhat8)
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
-   :::column-end:::
-:::row-end:::
+
 
 ---
 
