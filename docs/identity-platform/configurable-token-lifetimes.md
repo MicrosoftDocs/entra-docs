@@ -1,11 +1,11 @@
 ---
-title: Configurable token lifetimes
-description: Learn how to set lifetimes for access, SAML, and ID tokens issued by the Microsoft identity platform.
+title: Configurable Token Lifetimes
+description: Learn how to configure token lifetimes for access, SAML, and ID tokens in Microsoft Identity Platform to enhance security.
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 05/31/2024
+ms.date: 05/9/2025
 ms.reviewer:
 ms.service: identity-platform
 
@@ -14,13 +14,13 @@ ms.topic: concept-article
 ---
 # Configurable token lifetimes in the Microsoft identity platform (preview)
 
-You can specify the lifetime of an access, ID, or SAML token issued by the Microsoft identity platform. You can set token lifetimes for all apps in your organization, for multitenant (multi-organization) applications, or for service principals. We currently don't support configuring the token lifetimes for [managed identity service principals](~/identity/managed-identities-azure-resources/overview.md).
+You can configure the lifetime of access, ID, or SAML tokens issued by the Microsoft identity platform. Token lifetimes can be set for all apps in your organization, multitenant applications, or specific service principals. Note that configuring token lifetimes for [managed identity service principals](~/identity/managed-identities-azure-resources/overview.md) is not supported.
 
-In Microsoft Entra ID, a policy object represents a set of rules that are enforced on individual applications or on all applications in an organization. Each policy type has a unique structure, with a set of properties that are applied to objects to which they're assigned.
+In Microsoft Entra ID, policies define rules applied to individual applications or all applications in an organization. Each policy type has unique properties that determine how it is enforced on the object to which it's assigned.
 
-You can designate a policy as the default policy for your organization. The policy is applied to any application in the organization, as long as it isn't overridden by a policy with a higher priority. You also can assign a policy to specific applications. The order of priority varies by policy type.
+A policy can be designated as the default for your organization, applying to all applications unless overridden by a higher-priority policy. Policies can also be assigned to specific applications, with priority varying by policy type.
 
-For examples, read [examples of how to configure token lifetimes](configure-token-lifetimes.yml).
+For practical guidance, see [examples of how to configure token lifetimes](configure-token-lifetimes.yml).
 
 > [!NOTE]
 > Configurable token lifetime policy only applies to mobile and desktop clients that access SharePoint Online and OneDrive for Business resources, and does not apply to web browser sessions.
