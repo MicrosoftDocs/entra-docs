@@ -62,7 +62,7 @@ You can find more information and instructions on how to configure in these arti
 To install the Linux broker without a dependency on Intune, you can install the broker with the following:
 Run the following commands in a command line to manually install the Microsoft Single Sign-On (microsoft-identity-broker) and its dependencies on your device.  
 
-#### [Debian](#tab/debian-install)
+#### [ubuntu](#tab/debian-install)
 
 1. Install Curl. 
 
@@ -121,7 +121,7 @@ For more information, see the following in Intune documentation:
 
 Run the following commands to update the app manually.    
 
-#### [Debian](#tab/debian-update)
+#### [ubuntu](#tab/debian-update)
 
 1. Update the package repo and metadata, which includes `intune-portal`, `msft-broker`, and `msft edge`.   
 
@@ -156,7 +156,7 @@ Run one of the following commands to update the Microsoft Intune app.
 
 Run the following commands to uninstall the Microsoft Intune app and remove local registration data from devices running Ubuntu Desktop.  
 
-#### [Debian](#tab/debian-uninstall)
+#### [ubuntu](#tab/debian-uninstall)
 
 1. Remove the Intune app from your system.  
 
@@ -187,7 +187,6 @@ Run the following commands to uninstall the Microsoft Intune app and remove loca
    sudo rm -rf /etc/opt/microsoft/mdatp
    sudo rm -rf /opt/microsoft/mdatp
    ```  
-```
 
 ---
 
