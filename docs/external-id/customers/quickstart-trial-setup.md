@@ -19,7 +19,7 @@ ms.custom: it-pro
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!IMPORTANT]
-> Free trial registrations are currently unavailable.
+> The free trial feature described in this article is temporarily unavailable. Please check back for updates.
 
 Get started with Microsoft External ID for consumer and business customer apps, which lets you create secure, customized sign-in experiences for your apps and services. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
