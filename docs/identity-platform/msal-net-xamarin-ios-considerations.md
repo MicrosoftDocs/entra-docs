@@ -4,11 +4,10 @@ description: Learn about considerations for using Xamarin iOS with the Microsoft
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: devx-track-csharp,  has-adal-ref, devx-track-dotnet
-ms.date: 06/05/2024
+ms.custom: has-adal-ref
 ms.reviewer: saeeda, brianmel
 ms.service: identity-platform
-
+ms.date: 04/16/2025
 ms.topic: concept-article
 #Customer intent: As an application developer, I want to learn about considerations for using Xamarin iOS and MSAL.NET.
 ---
@@ -43,7 +42,7 @@ Also, perform the following tasks:
 * Define a redirect URI scheme.
 * Require permissions for your app to call another app.
 * Have a specific form for the redirect URI.
-* [Register a redirect URI](quickstart-register-app.md#add-a-redirect-uri) in the Azure portal.
+* [Add a redirect URI](how-to-add-redirect-uri.md) in the Azure portal.
 
 ### Enable keychain access
 

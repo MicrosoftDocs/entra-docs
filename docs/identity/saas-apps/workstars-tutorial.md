@@ -44,7 +44,7 @@ To configure the integration of Workstars into Microsoft Entra ID, you need to a
 **To add Workstars from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, type **Workstars**, select **Workstars** from result panel then select **Add** button to add the application.
 
 	 ![Workstars in the results list](common/search-new-app.png)
@@ -74,7 +74,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with Workstars, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Workstars** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Workstars** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 

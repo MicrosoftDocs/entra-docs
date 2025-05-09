@@ -187,7 +187,6 @@ You can use guidance on cloud HR system integration, such as Workday, SuccessFac
 |SAP SuccessFactors|[Microsoft Entra ID and SAP SuccessFactors integration](../identity/app-provisioning/sap-successfactors-integration-reference.md)|
 |Oracle HCM|[Microsoft Entra ID integration with Oracle HCM](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)|
 |Rippling|[Sync identities from Rippling to Microsoft Entra ID](https://techcommunity.microsoft.com/blog/identity/sync-identities-from-rippling-to-microsoft-entra-id/4279690)|
-
 |Other API-driven sources|[API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md)|
 
 ### API-driven provisioning
@@ -231,12 +230,12 @@ Learn how to [plan a lifecycle workflow deployment](../id-governance/lifecycle-w
 
 ### Provision and onboard apps
 
-Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), legacy apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
+Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), private/on-premises apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
 
 |Target system|Approach|Guidance|
 |---|---|---|
-|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, legacy systems </br>|- [Automated app user provisioning](../identity/app-provisioning/user-provisioning.md) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
-|Legacy apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, private/on-premises systems </br>|- [Automated app user provisioning](../identity/app-provisioning/user-provisioning.md) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|Private/on-premises apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
 |Software-as-a-Service (SaaS) apps integrated with Microsoft Entra ID |Automated app user provisioning|[Automated app user provisioning](../identity/app-provisioning/user-provisioning.md)|
 
 ### Common tasks

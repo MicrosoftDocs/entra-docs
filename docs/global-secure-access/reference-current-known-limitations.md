@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: femila
-ms.date: 12/23/2024
+ms.date: 03/12/2025
 ms.service: global-secure-access
 
 
@@ -240,9 +240,8 @@ Known limitations for access controls include:
         - If you received the "access denied" error message for the URL `https://entra.microsoft.com/`, then add the feature flag as follows:   `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
 - Only the Global Secure Access client for Windows, starting with version 1.8.239.0, is aware of Universal CAE. On other platforms, the Global Secure Access client uses regular access tokens.
 - Microsoft Entra ID issues short-lived tokens for Global Secure Access. The lifetime for a Universal CAE access token is between 60 and 90 minutes, with support for near real-time revocation.
-- It takes approximately two to five minutes for the Microsoft Entra ID revocation signal to reach the Global Secure Access client and prompt the user to reauthenticate.
-- Users have a two-minute grace period after receiving a CAE event to complete reauthentication. After two minutes, existing network flows through Global Secure Access are interrupted until the user successfully signs in to the Global Secure Access client.
-
+- It takes approximately two to five minutes for the Microsoft Entra ID signal to reach the Global Secure Access client and prompt the user to reauthenticate.
+- The Global Secure Access client will prompt the user 3 times to authenticate with a 2 minute grace period each time. This means that the entire CAE flow includes 4-5 minutes to signal the Global Secure Access client, then up to 6 minutes grace period, resulting in a disconnect after approximately 10 minutes.
 ## Traffic forwarding profile limitations
 Known limitations for traffic forwarding profiles include:
 - At this time, Private Access traffic can only be acquired with the Global Secure Access client. Private Access traffic can't be acquired from remote networks.
@@ -251,10 +250,9 @@ Known limitations for traffic forwarding profiles include:
 
 ## Private Access limitations
 Known limitations for Private Access include:   
-- Avoid overlapping app segments between Quick Access and Global Secure Access apps.
-- Avoid overlapping app segments between Quick Access and per-app access.
+- Avoid overlapping app segments between Global Secure Access apps.
 - Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.   
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   

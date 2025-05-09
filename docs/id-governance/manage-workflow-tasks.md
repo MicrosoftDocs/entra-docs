@@ -24,7 +24,7 @@ Tasks within workflows can be added, edited, reordered, and removed at will. To 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
     
 1. Select the workflow that you want to edit the tasks of and on the left side of the screen, select **Tasks**.
 

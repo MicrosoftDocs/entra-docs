@@ -73,7 +73,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for frankli in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -103,23 +103,23 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to frankli in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in frankli for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the frankli API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by frankliio
+   |Attribute|Type|Supported for filtering|Required by frankliio|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||&check;  
-   |name.givenName|String||&check; 
-   |name.familyName|String||&check; 
-   |emails[type eq "work"].value|String||&check; 
-   |addresses[type eq "work"].formatted|String||&check; 
-   |addresses[type eq "work"].streetAddress|String||&check; 
-   |addresses[type eq "work"].locality|String||&check; 
-   |addresses[type eq "work"].postalCode|String||&check; 
-   |addresses[type eq "work"].country|String||&check;    
-   |title|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|
+   |userName|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |emails[type eq "work"].value|String||&check;|
+   |addresses[type eq "work"].formatted|String||&check;|
+   |addresses[type eq "work"].streetAddress|String||&check;|
+   |addresses[type eq "work"].locality|String||&check;|
+   |addresses[type eq "work"].postalCode|String||&check;|
+   |addresses[type eq "work"].country|String||&check;|
+   |title|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for frankli, change the **Provisioning Status** to **On** in the **Settings** section.
 

@@ -4,7 +4,7 @@ description: Add API connectors for custom approval workflows in External ID sel
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/05/2024
+ms.date: 04/14/2025
 
 ms.author: mimart
 author: msmimart
@@ -28,8 +28,8 @@ This article gives an example of how to integrate with an approval system. In th
 
 > [!IMPORTANT]
 >
-> - **Starting July 12, 2021**,  if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-> - **Starting September 30, 2021**, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+> - **As of July 12, 2021**, if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+> - **On September 30, 2021**, Google [deprecated embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
 
 ## Register an application for your approval system
 
@@ -37,7 +37,7 @@ This article gives an example of how to integrate with an approval system. In th
 You need to register your approval system as an application in your Microsoft Entra tenant so it can authenticate with Microsoft Entra ID and have permission to create users. Learn more about [authentication and authorization basics for Microsoft Graph](/graph/auth/auth-concepts).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select **New registration**.
+1. Browse to **Entra ID** > **App registrations**, and then select **New registration**.
 1. Enter a **Name** for the application, for example, *Sign-up Approvals*.
 1. Select **Register**. You can leave other fields at their defaults.
 
@@ -77,7 +77,7 @@ To create these connectors, follow the steps in [create an API connector](self-s
 Now you'll add the API connectors to a self-service sign-up user flow with these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **External identities** > **User flows**, and then select the user flow you want to enable the API connector for.
+1. Browse to **Entra ID** > **External Identities** > **User flows**, and then select the user flow you want to enable the API connector for.
 1. Select **API connectors**, and then select the API endpoints you want to invoke at the following steps in the user flow:
 
    - **After federating with an identity provider during sign-up**: Select your approval status API connector, for example *Check approval status*.

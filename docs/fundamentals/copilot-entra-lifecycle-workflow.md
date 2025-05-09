@@ -18,7 +18,7 @@ Microsoft Entra ID Governance applies the capabilities of [Microsoft Security Co
 
 This article describes how to work with lifecycle workflows using Security Copilot in the Microsoft Entra admin center.  Using this feature requires [Microsoft Entra ID Governance licenses](/entra/id-governance/identity-governance-overview#license-requirements).
 
-Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator). Navigate to **Identity Governance** -> **Lifecycle workflows overview**.
+Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator). Navigate to **ID Governance** > **Lifecycle workflows overview**.
 
 Launch Security Copilot from the **Copilot** button in the Microsoft Entra admin center.  Use natural language questions or prompts to:
 

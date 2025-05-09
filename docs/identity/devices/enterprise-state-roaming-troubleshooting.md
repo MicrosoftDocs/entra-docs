@@ -7,8 +7,8 @@ ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 08/01/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: owinfrey
+author: owinfreyATL
 manager: femila
 ms.reviewer: sempofu, micrider
 ---
@@ -55,7 +55,7 @@ Enterprise State Roaming requires the device to be registered with Microsoft Ent
 
 **Potential issue**: **WamDefaultSet** and **AzureAdJoined** both have "NO" in the field value, the device was domain-joined and registered with Microsoft Entra ID, and the device doesn't sync. If it's showing this, the device might need to wait for policy to be applied or the authentication for the device failed when connecting to Microsoft Entra ID. The user might have to wait a few hours for the policy to be applied. Other troubleshooting steps might include retrying autoregistration by signing out and back in, or launching the task in Task Scheduler. In some cases, running "*dsregcmd.exe /leave*" in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
 
-**Potential issue**: The field for **SettingsUrl** is empty and the device doesn't sync. The user might have last logged in to the device before Enterprise State Roaming was enabled. Restart the device and have the user sign-in. Optionally, in the portal, try having the IT Admin navigate to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming** disable and re-enable **Users may sync settings and app data across devices**. To disable click on "None" and to re-enable click on "All" or "Selected". Once re-enabled, restart the device and have the user sign-in. If this doesn't resolve the issue, **SettingsUrl** might be empty if there's a bad device certificate. In this case, running "*dsregcmd.exe /leave*" in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
+**Potential issue**: The field for **SettingsUrl** is empty and the device doesn't sync. The user might have last logged in to the device before Enterprise State Roaming was enabled. Restart the device and have the user sign-in. Optionally, in the portal, try having the IT Admin navigate to **Entra ID** > **Devices** > **Overview** > **Enterprise State Roaming** disable and re-enable **Users may sync settings and app data across devices**. To disable click on "None" and to re-enable click on "All" or "Selected". Once re-enabled, restart the device and have the user sign-in. If this doesn't resolve the issue, **SettingsUrl** might be empty if there's a bad device certificate. In this case, running "*dsregcmd.exe /leave*" in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
 
 ## Enterprise State Roaming and multifactor authentication
 

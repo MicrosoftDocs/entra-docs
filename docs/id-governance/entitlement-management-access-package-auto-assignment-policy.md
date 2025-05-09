@@ -21,7 +21,7 @@ This article describes how to create an access package automatic assignment poli
 
 ## Before you begin
 
-You need to have attributes populated on the users who will be in scope for being assigned access. The attributes you can use in the rules criteria of an access package assignment policy are those attributes listed in [supported properties](../identity/users/groups-dynamic-membership.md#supported-properties), along with [extension attributes and custom extension properties](../identity/users/groups-dynamic-membership.md#extension-properties-and-custom-extension-properties). These attributes can be brought into Microsoft Entra ID by [patching](../identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-for-cloud-only-users-using-microsoft-graph) the [user](/graph/api/resources/user), an HR system such as [SuccessFactors](../identity/app-provisioning/sap-successfactors-integration-reference.md), [Microsoft Entra Connect cloud sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) or [Microsoft Entra Connect Sync](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). The rules can include up to 15,000 users per policy.
+You need to have attributes populated on the users who will be in scope for being assigned access. The attributes you can use in the rules criteria of an access package assignment policy are those attributes listed in [supported properties](../identity/users/groups-dynamic-membership.md#supported-properties), along with [extension attributes and custom extension properties](../identity/users/groups-dynamic-membership.md#extension-attributes-and-custom-extension-properties). These attributes can be brought into Microsoft Entra ID by [patching](../identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-for-cloud-only-users-using-microsoft-graph) the [user](/graph/api/resources/user), an HR system such as [SuccessFactors](../identity/app-provisioning/sap-successfactors-integration-reference.md), [Microsoft Entra Connect cloud sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) or [Microsoft Entra Connect Sync](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). The rules can include up to 15,000 users per policy.
 
 ## License requirements
 
@@ -34,7 +34,7 @@ To create a policy for an access package, you need to start from the access pack
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open an access package.
 
@@ -88,17 +88,17 @@ Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 $apid = "00001111-aaaa-2222-bbbb-3333cccc4444"
 
 $pparams = @{
-	DisplayName = "Sales department users"
-	Description = "All users from sales department"
-	AllowedTargetScope = "specificDirectoryUsers"
-	SpecificAllowedTargets = @( @{
+  DisplayName = "Sales department users"
+  Description = "All users from sales department"
+  AllowedTargetScope = "specificDirectoryUsers"
+  SpecificAllowedTargets = @( @{
         "@odata.type" = "#microsoft.graph.attributeRuleMembers"
         description = "All users from sales department"
         membershipRule = '(user.department -eq "Sales")'
-	} )
-	AutomaticRequestSettings = @{
+  } )
+  AutomaticRequestSettings = @{
         RequestAccessForAllowedTargets = $true
-	}
+  }
     AccessPackage = @{
       Id = $apid
     }

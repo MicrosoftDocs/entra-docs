@@ -200,7 +200,7 @@ We recommend the following production configuration:
 
 |Requirement|Recommendation|
 |:-|:-|
-|Number of Microsoft Entra Connect provisioning agents to deploy.|Two (for high availability and failover).
+|Number of Microsoft Entra Connect provisioning agents to deploy.|Two (for high availability and failover).|
 |Number of provisioning connector apps to configure.|One app per child domain.|
 |Server host for Microsoft Entra Connect provisioning agent.|Windows Server 2016 with line of sight to geolocated Active Directory domain controllers. </br>Can coexist with Microsoft Entra Connect service.|
 
@@ -468,8 +468,8 @@ After you configure the cloud HR app to Microsoft Entra user provisioning, run t
 
 |Scenarios|Expected results|
 |:-|:-|
-|New employee is hired in the cloud HR app.| - The user account is provisioned in Active Directory.</br>- The user can log into Active Directory-domain apps and perform the desired actions.</br>- If Microsoft Entra Connect Sync is configured, the user account also gets created in Microsoft Entra ID.
-|User is terminated in the cloud HR app.|- The user account is disabled in Active Directory.</br>- The user can't log into any enterprise apps protected by Active Directory.
+|New employee is hired in the cloud HR app.| - The user account is provisioned in Active Directory.</br>- The user can log into Active Directory-domain apps and perform the desired actions.</br>- If Microsoft Entra Connect Sync is configured, the user account also gets created in Microsoft Entra ID.|
+|User is terminated in the cloud HR app.|- The user account is disabled in Active Directory.</br>- The user can't log into any enterprise apps protected by Active Directory.|
 |User supervisory organization is updated in the cloud HR app.|Based on the attribute mapping, the user account moves from one OU to another in Active Directory.|
 |HR updates the user's manager in the cloud HR app.|The manager field in Active Directory is updated to reflect the new manager's name.|
 |HR rehires an employee into a new role.|Behavior depends on how the cloud HR app is configured to generate employee IDs. If the old employee ID is used for a rehired employee, the connector enables the existing Active Directory account for the user. If the rehired employee gets a new employee ID, the connector creates a new Active Directory account for the user.|
@@ -543,7 +543,7 @@ You can extend your HR-driven provisioning process to further automate business 
 
 To troubleshoot any issues that might turn up during provisioning, see the following articles:
 
-- [Problem configuring user provisioning to a Microsoft Entra Gallery application](application-provisioning-config-problem.md)
+- [Problem configuring user provisioning to a Microsoft Entra Gallery application](troubleshoot.md)
 - [Sync an attribute from your on-premises Active Directory to Microsoft Entra ID for provisioning to an application](user-provisioning-sync-attributes-for-mapping.md)
 - [Problem saving administrator credentials while configuring user provisioning to a Microsoft Entra Gallery application](./user-provisioning.md)
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)

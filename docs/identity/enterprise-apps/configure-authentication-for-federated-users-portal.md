@@ -154,7 +154,7 @@ You need the **ObjectID** of the service principals to which you want to assign 
 
 You can use the [Microsoft Entra admin center](https://entra.microsoft.com). Using this option:
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results. Copy the Object ID of the application.
 
 Because you're using Microsoft Graph PowerShell, run the following cmdlet to list the service principals and their IDs.
@@ -293,7 +293,7 @@ You need the **ObjectID** of the service principals to which you want to assign 
 
 You can use the [Microsoft Entra admin center](https://entra.microsoft.com). Using this option:
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results. Copy the Object ID of the application.
 
    Because you're using Microsoft Graph explorer, run the following request to list the service principals and their IDs.

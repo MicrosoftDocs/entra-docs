@@ -62,7 +62,7 @@ Includes SharePoint, OneDrive, Delve, Lists, Project Online, and Loop.
 > | Area | Content |
 > | --- | --- |
 > | Overview | [About the SharePoint Administrator role in Microsoft 365](/sharepoint/sharepoint-admin-role)<br/>[Delve for admins](/sharepoint/delve-for-office-365-admins)<br/>[Control settings for Microsoft Lists](/sharepoint/control-lists)<br/>[Change permission management in Project Online](/projectonline/change-permission-management-in-project-online) |
-> | Management API reference | **SharePoint-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• Roles with permissions starting with: `microsoft.office365.sharepoint`
+> | Management API reference | **SharePoint-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• Roles with permissions starting with: `microsoft.office365.sharepoint` |
 > | Audit and monitoring reference | **SharePoint-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category |
 
 ### Intune

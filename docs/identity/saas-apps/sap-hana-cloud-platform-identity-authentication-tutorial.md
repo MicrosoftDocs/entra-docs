@@ -67,7 +67,7 @@ User assignment to an SAP Cloud Identity Services application role in Microsoft 
 To configure the integration of SAP Cloud Identity Services into Microsoft Entra ID, you need to add SAP Cloud Identity Services from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **SAP Cloud Identity Services** in the search box.
 1. Select **SAP Cloud Identity Services** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -109,7 +109,7 @@ To configure and test Microsoft Entra SSO with SAP Cloud Identity Services, perf
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**. Type the name of your application, such as **SAP Cloud Identity Services**. Select the application, then select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps**. Type the name of your application, such as **SAP Cloud Identity Services**. Select the application, then select **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file** from SAP Cloud Identity Services, perform the following steps:
 
@@ -233,7 +233,9 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 ## Related content
 
-Once you configure single-sign on to SAP Cloud Identity Services, you can configure SAP Cloud Identity Services to [forward all SSO requests](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/forward-all-sso-requests-to-corporate-idp) to Microsoft Entra.
+To synchronize users from Microsoft Entra to SAP Cloud Identity Services, enable [automated user provisioning](sap-cloud-platform-identity-authentication-provisioning-tutorial.md).
+
+Once you configure single-sign on to SAP Cloud Identity Services, you can also configure SAP Cloud Identity Services to [forward all SSO requests](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/forward-all-sso-requests-to-corporate-idp) to Microsoft Entra. When this option is enabled in SAP Cloud Identity Services, then each time a user tries to access an application connected to SAP Cloud Identity Services for the first time, SAP Cloud Identity Services will forward an authentication request to Microsoft Entra, even when the user has an active session in SAP Cloud Identity Services.
 
 You can also enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 

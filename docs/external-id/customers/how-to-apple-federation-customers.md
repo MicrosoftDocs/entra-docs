@@ -81,7 +81,7 @@ To enable sign-in for customers with an Apple ID, you need to create an applicat
 After you create the Apple app, in this step you set the Apple app details in Microsoft Entra External ID. You can use the Microsoft Entra admin center to do so. To configure Apple federation in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. Under the Built-in tab, select **Apple**.
 
     :::image type="content" source="media/how-to-apple-federation-customers/configure-apple-identity-provider.png" alt-text="Screenshot that shows how to add Apple identity provider.":::
@@ -100,7 +100,7 @@ After you create the Apple app, in this step you set the Apple app details in Mi
 
 At this point, the Apple identity provider has been set up in your Microsoft Entra External ID, but it's not yet available in any of the sign-in pages. To add the Apple identity provider to a user flow:
 
-1. In your customer tenant, browse to **Identity** > **External Identities** > **User flows**.
+1. In your customer tenant, browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the Apple identity provider.
 1. Under Settings, select **Identity providers**.
 1. Under **Other Identity Providers**, select **Apple**.

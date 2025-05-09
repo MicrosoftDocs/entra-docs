@@ -103,7 +103,9 @@
     - name: Search group and member lists   
       href: groups-members-owners-search.md
     - name: Dynamic groups    
-      items: 
+      items:
+      - name: Managing dynamic membership group processing    
+        href: manage-dynamic-group.md
       - name: Create a dynamic group    
         href: groups-create-rule.md
       - name: Dynamic group rule syntax

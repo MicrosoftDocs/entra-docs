@@ -14,7 +14,7 @@ ms.topic: concept-article
 
 # Redirect URI (reply URL) outline and restrictions
 
-To sign in a user, your application must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The redirect URI is a critical security feature that ensures the Microsoft Entra authentication server only sends authorization codes and access tokens to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
+When building applications that integrate with the Microsoft identity platform, understanding how to configure redirect URIs is essential. This article provides a comprehensive guide to redirect URI best practices, supported configurations, and limitations. Whether you're developing a web, mobile, or desktop application, this article will help you correctly configure redirect URIs to meet security requirements.
 
 ## What is a redirect URI?
 
