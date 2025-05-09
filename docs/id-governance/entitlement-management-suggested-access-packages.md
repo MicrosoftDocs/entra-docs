@@ -45,7 +45,7 @@ Follow these steps to enable peer-based insights to suggested access packages in
 1. Select **My Access settings for end users**.
 
 1. Select **Show peer-based insights to suggested access packages in My Access**. When this setting is unchecked, users will only see suggestions based on past assignments.
-    :::image type="content" source="media/entitlement-management-suggested-access-packages/my-access-control-configurations.png" alt-text="Screenshot of My Access control configuration settings." lightbox="media/entitlement-management-suggested-access-packages/myaccess-control-configurations.png":::
+    :::image type="content" source="media/entitlement-management-suggested-access-packages/my-access-control-configurations.png" alt-text="screenshot of My Access control configurations." lightbox="media/entitlement-management-suggested-access-packages/my-access-control-configurations.png":::
 1. Select **Save**.
 
 1. Sign in to the My Access portal at https://myaccess.microsoft.com. Select **Access packages** to see your suggested access packages with peer-based insights.
