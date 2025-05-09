@@ -52,7 +52,7 @@ Administrators can use several options to review the potential results of polici
 - Sign-in logs
 - Policy impact (Preview)
 
-### Policy impact (Preview)
+### Policy impact
 
 The policy impact view of Conditional Access lets admins with at least the Security Reader role see a snapshot of information about the potential or existing impacts of policies on interactive sign-ins in your organization. This functionality lets you explore impact over a period of the past 24 hours, 7 days, or 1 month. Additionally, you can see and link to a sampling of sign-in events for further detail.
 
