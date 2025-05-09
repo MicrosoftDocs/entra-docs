@@ -38,10 +38,7 @@ The Teams web application and a new PWA(Progressive Web App) for Linux will use 
 
 There are several authentication methods that determine the end-user experience.
 
-* **Platform Credential for macOS**: Provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
-* **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (for example, Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
 * **Password as authentication method**: Syncs the user’s Microsoft Entra ID password with the local account and enables SSO across apps that use Microsoft Entra ID for authentication.
-
 
 ## Requirements
 
