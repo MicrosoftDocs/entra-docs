@@ -1,6 +1,6 @@
 ---
-title: Azure Services with managed identities support
-description: List of services supporting managed identities
+title: Azure Services and resources with managed identities
+description: Explore Azure services and resource types supporting managed identities for secure, credential-free authentication.
 
 author: rwike77
 ms.author: ryanwi
@@ -10,11 +10,12 @@ ms.service: entra-id
 ms.subservice: managed-identities
 manager: CelesteDG
 
+#Customer intent: As an Azure admin or developer, I want to identify which Azure services support managed identities so that I can securely configure authentication for my resources.
 ---
 
-# Azure services that can use managed identities to access other services
+# Azure services and resource types supporting managed identities
 
-Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. Using a managed identity, you can authenticate to any service that supports Microsoft Entra authentication without managing credentials. We are integrating managed identities for Azure resources and Microsoft Entra authentication across Azure. 
+Managed identities for Azure resources provide an automatically managed identity in Microsoft Entra ID, enabling secure, credential-free authentication to Azure services. This article lists Azure services and resource types that support managed identities.
 
 This page provides links to services' content that can use managed identities to access other Azure resources as well as a list of Azure resource providers and resource types that support managed identities.
 
