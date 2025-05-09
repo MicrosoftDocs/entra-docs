@@ -34,7 +34,6 @@ This feature empowers users on Linux desktop clients to register their devices w
 
 - Support for Bash scripts for custom compliance policies
 
- 
 The Teams web application and a new PWA(Progressive Web App) for Linux will use the Conditional Access configuration, applied through Microsoft Intune Manager, to enable Linux users to access the Teams web application using Edge in a secure way. This helps organizations use an industry-leading, unified endpoint management solution for Teams from Linux endpoints with security and quality in mind.
 
 There are several authentication methods that determine the end-user experience.
@@ -58,22 +57,20 @@ You can find more information and instructions on how to configure in these arti
 
 ## Deployment
 
+### Installation
+
 To install the Linux broker without a dependency on Intune, you can install the broker with the following:
 Run the following commands in a command line to manually install the Microsoft Single Sign-On (microsoft-identity-broker) and its dependencies on your device.  
 
-# [Debian](#tab/debian)
-
-Content for Linux...
+#### [Debian](#tab/debian-install)
 
 1. Install Curl. 
-
 
 ```bash
 sudo apt install curl gpg
 ```
 
 2. Install the Microsoft package signing key.  
-
 
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg     sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/     rm microsoft.gpg
@@ -92,11 +89,26 @@ sudo apt update
 sudo apt install Microsoft-identity-broker
 ```
 
-1. Reboot your device.  
+5. Reboot your device.  
 
-# [redhat](#tab/redhat)
+#### [redhat](#tab/redhat-install)
 
-Content for Windows...
+1. Add the Microsoft repository.  
+
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel9.0-prod
+   ```
+
+1. Install the Microsoft Single Sign-on (microsoft-identity-broker) app.  
+
+   ```bash
+   sudo dnf install microsoft-identity-broker
+   ```
+   
+3. Reboot your device.  
+
+---
 
 For more information, see the following in Intune documentation:
 
@@ -106,53 +118,25 @@ For more information, see the following in Intune documentation:
 
 
 ### Update app for Ubuntu Desktop 
-The Microsoft Intune app automatically updates when updates become available in Software Updater. Run the following commands to update the app manually.    
 
+Run the following commands to update the app manually.    
+
+#### [Debian](#tab/debian-update)
 
 1. Update the package repo and metadata, which includes `intune-portal`, `msft-broker`, and `msft edge`.   
 
     ```bash
     sudo apt update
     ```
- 
+
 2. Upgrade the packages and clean up dependencies.  
 
     ```bash
     sudo apt-get dist-upgrade
     ```
 
-### Uninstall app for Ubuntu Desktop  
-Run the following commands to uninstall the Microsoft Intune app and remove local registration data from devices running Ubuntu Desktop.  
+#### [redhat](#tab/redhat-update)
 
-1. Remove the Intune app from your system.  
-
-    ```bash
-    sudo apt remove intune-portal
-    ```
-
-2. Remove the local registration data. This command removes the local configuration data that contains your device registration.     
-
-    ```bash
-    sudo apt purge intune-portal
-    ```  
-## Install Microsoft Intune app for RedHat Enterprise Linux  
-
-1. Add the Microsoft repository.  
-
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel9.0-prod
-   ```
-
-2. Install the Microsoft Intune app.  
-
-   ```bash
-   sudo dnf install intune-portal
-   ```
-
-3. Reboot your device.  
-
-### Update app for RedHat Enterprise Linux  
 Run one of the following commands to update the Microsoft Intune app.  
 
 **Option 1**:  
@@ -163,10 +147,30 @@ Run one of the following commands to update the Microsoft Intune app.
 
 **Option 2**: 
    ```bash
-   sudo dnf update intune-portal
+   sudo dnf update microsoft-identity-broker
    ```
+   
+---
 
-### Uninstall app for RedHat Enterprise Linux  
+## Uninstall app for Ubuntu Desktop
+
+Run the following commands to uninstall the Microsoft Intune app and remove local registration data from devices running Ubuntu Desktop.  
+
+#### [Debian](#tab/debian-uninstall)
+
+1. Remove the Intune app from your system.  
+
+    ```bash
+   sudo apt remove microsoft-identity-broker
+    ```
+    
+2. Remove the local registration data. This command removes the local configuration data that contains your device registration.     
+
+    ```bash
+    sudo apt purge intune-portal
+    ``` 
+
+#### [redhat](#tab/redhat-uninstall)
 
 Run the following commands to uninstall the Microsoft Intune app and remove local registration data on devices running RedHat Enterprise Linux.    
 
@@ -184,6 +188,8 @@ Run the following commands to uninstall the Microsoft Intune app and remove loca
    sudo rm -rf /opt/microsoft/mdatp
    ```  
 ```
+
+---
 
 ## Troubleshooting 
 
