@@ -1787,6 +1787,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-android.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-android-prepare-app?tabs=workforce-tenant",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?tabs=external-tenant",
       "redirect_document_id": false
