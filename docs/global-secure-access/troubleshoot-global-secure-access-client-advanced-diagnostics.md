@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access Client for Windows: Advanced Diagn
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 04/29/2025
+ms.date: 05/09/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
@@ -116,7 +116,7 @@ The advanced log collection tab allows for the collection of verbose logs of the
 
 :::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-advanced-log-collection-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Advanced log collection tab.":::
 
-When you stop advanced log collection, the folder that contains the log files opens. By default, this folder is C:\Program Files\Global Secure Access Client\Logs. The folder contains a zip file and two event trace log (ETL) files. If needed, you can remove the zip files after issues are resolved, however it's best to leave the ETL files. These are circular logs and removing them can create issues with future log collection. 
+When you stop advanced log collection, the folder that contains the log files opens. By default, this folder is C:\Program Files\Global Secure Access Client\Logs. The folder contains a zip file and two event trace log (ETL) files. If needed, you can remove the zip files after resolving the issues. However, it's best to leave the ETL files, as they are circular logs and removing them can create issues with future log collection. 
 
 The following files are collected:
 
@@ -124,7 +124,7 @@ The following files are collected:
 | - | - |
 |Application-Crash.evtx|Application log filtered by event ID 1001. This log is useful when services are crashing.|
 |BindingNetworkDrivers.txt|Result of "Get-NetAdapterBinding -AllBindings -IncludeHidden" showing all the modules bound to network adapters. This output is useful to identify if non-Microsoft drivers are bound to the network stack|
-|ClientChecker.log|Results of the Global Secure Access client health checks. These results are easier to analyze if you load the zip file in the Global Secure Access client, see [Analyze Global Secure Access client logs on a different device than where they were collected](troubleshoot-global-secure-access-client-advanced-diagnostics.md#analyze-global-secure-access-client-logs-on-a-different-device-than-where-they-were-collected)|
+|ClientChecker.log|Results of the Global Secure Access client health checks. These results are easier to analyze if you load the zip file in the Global Secure Access client, see [Analyze Global Secure Access client logs on a different device than where they were collected](#analyze-global-secure-access-client-logs-on-a-different-device-than-where-they-were-collected)|
 |DeviceInformation.log|Environment variables including OS version and Global Secure Access client version.|
 |dsregcmd.txt|Output of dsregcmd /status showing device state including Microsoft Entra Joined, Hybrid Joined, PRT details, and Windows Hello for Business details|
 |filterDriver.txt|Windows Filtering Platform filters|
@@ -155,7 +155,7 @@ The following files are collected:
 In some instances, you need to investigate traffic within the Global Secure Access service tunnel. By default, a network capture only shows encrypted traffic. Instead, analyze the network capture created by Global Secure Access advanced log collection in a network traffic analyzer. 
 
 ### Analyze Global Secure Access client logs on a different device than where they were collected
-In many cases, you might need to analyze the data your users collect using your own device. To accomplish this, open the Global Secure Access client on your device, open Advanced Diagnostic tool, and then select the folder icon to the far right of the menu bar. From here, you can navigate to the zip file or the GlobalSecureAccess-Trace.etl file. Loading the zip file also loads information including tenant ID, device ID, client version, health check, and forwarding profile rules as if you were troubleshooting locally on the device used for data collection.
+In many cases, you might need to analyze the data your users collect using your own device. To analyze the user-collected data, open the Global Secure Access client on your device, open the Advanced Diagnostic tool, and then select the folder icon to the far right of the menu bar. From here, you can navigate to the zip file or the GlobalSecureAccess-Trace.etl file. Loading the zip file also loads information including tenant ID, device ID, client version, health check, and forwarding profile rules as if you were troubleshooting locally on the device used for data collection.
 
 ## Related content
-* Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostics
+- [Troubleshoot the Global Secure Access Mobile Client: Advanced Diagnostics](troubleshoot-global-secure-access-mobile-client-advanced-diagnostics.md)
