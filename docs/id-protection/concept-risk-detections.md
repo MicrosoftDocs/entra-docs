@@ -30,6 +30,9 @@ This risk level is important when deciding which detections to [prioritize, inve
 
 Based on the risk tolerance of your organization, you can create Conditional Access policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
 
+> [!IMPORTANT] 
+> **Low** level risk detections and users persist in the product for six months, after which they're automatically aged out to provide a cleaner investigation experience. **Medium** and **high** risk levels persist until remediated or dismissed.
+
 ### Low risk
 
 A risk detection with risk level **Low** signifies that anomalies are present in the sign-in or a user's credential, but we're less confident that these anomalies mean the account is compromised.
@@ -37,9 +40,6 @@ A risk detection with risk level **Low** signifies that anomalies are present in
 This type of risk detection often means a change in sign-in behavior, such as an isolated use of a VPN or suddenly signing in from a new location. Sign-in patterns before and after the risk detection are used to determine if there's a pattern or if the sign-in is an anomaly.
 
 Low risks can be considered as an "as information" risk detection. There's no immediate action required, but it's still important to know about.
-
-> [!IMPORTANT] 
-> All "low" level risk detections and users persist in the product for six months, after which they're  automatically aged out to provide a cleaner investigation experience. Medium and high risk levels persist until remediated or dismissed.
 
 ### Medium risk
 
@@ -56,6 +56,18 @@ A risk detection with risk level **High** signifies that Microsoft is highly con
 These risk detections require immediate action, either through user self-remediation or administrative intervention. Signals such as threat intelligence and known attack patterns factor into the confidence level of the risk detection.
 
 High risk sign-in and users must be investigated and remediated. If risk-based Conditional Access policies are in place, the user might be blocked, required to perform multifactor authentication, or granted access after a secure password reset. 
+
+### Risk Escalation Scenarios
+
+To better understand how risk levels can escalate, consider the following example:
+
+1. **Low Risk**: A user signs in from a new location using a VPN. This triggers a low-risk detection due to unfamiliar sign-in properties. The system notes the anomaly but does not take immediate action.
+
+2. **Medium Risk**: The same user attempts multiple sign-ins from different geographic locations within a short time frame. This behavior, combined with the earlier low-risk detection, increases the confidence level of potential compromise, escalating the risk to medium.
+
+3. **High Risk**: Threat intelligence identifies that one of the IP addresses used in the sign-ins is associated with a known malicious actor. This detection, combined with the previous anomalies, results in a high-risk classification, requiring immediate remediation.
+
+This progression demonstrates how multiple signals and detections contribute to the overall risk level, ensuring that organizations can respond appropriately based on the severity of the threat.
 
 ## Real-time and offline detections
 
