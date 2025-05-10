@@ -110,7 +110,6 @@ Feitian ePass FIDO-NFC (Enterprise Profile) (CTAP2.1, CTAP2.0, U2F)|39589099-9a7
 Feitian ePass FIDO-NFC(CTAP2.1, CTAP2.0, U2F)|78ba3993-d784-4f44-8d6e-cc0a8ad5230e|&#10060;|&#x2705;|&#x2705;|&#10060;
 Feitian FIDO Smart Card|2c0df832-92de-4be1-8412-88a8f074df4a|&#10060;|&#10060;|&#x2705;|&#10060;
 Feitian iePass FIDO Authenticator|3e22415d-7fdf-4ea4-8a0c-dd60c4249b9d|&#10060;|&#x2705;|&#10060;|&#10060;
-FIDO Alliance TruU Sample FIDO2 Authenticator|ca87cb70-4c1b-4579-a8e8-4efdd7c007e0|&#x2705;|&#x2705;|&#10060;|&#10060;
 FIDO KeyPass S3|f4c63eff-d26c-4248-801c-3736c7eaa93a|&#10060;|&#x2705;|&#10060;|&#10060;
 Foongtone FIDO Authenticator|46544d5d-8f5d-4db4-89ac-ea8977073fff|&#10060;|&#10060;|&#x2705;|&#10060;
 FT-JCOS FIDO Fingerprint Card|8c97a730-3f7b-41a6-87d6-1e9b62bda6f0|&#10060;|&#10060;|&#x2705;|&#10060;
