@@ -5,7 +5,7 @@
   - name: About managed identities for Azure resources
     href: overview.md
   - name: Secretless authentication to Azure resources
-    href: secretless-access.md
+    href: secretless-authentication.md
 - name: Quickstart guide
   items:
   - name: Use a VM managed identity to access Azure Resource Manager
