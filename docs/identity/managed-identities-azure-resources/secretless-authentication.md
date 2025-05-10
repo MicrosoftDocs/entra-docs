@@ -1,5 +1,5 @@
 ---
-title: secretles authentication in Azure
+title: Secretless authentication in Azure
 description: 
 
 author: rwike77
@@ -12,13 +12,13 @@ ms.date: 05/09/2025
 ms.author: ryanwi
 
 
-#Customer intent: As a Azure developer or IT admin, I'd like learn about secretles authentication in Azure so I can securely access Azure resources without managing or storing passwords or secrets.
+#Customer intent: As a Azure developer or IT admin, I'd like learn about secretless authentication in Azure so I can securely access Azure resources without managing or storing passwords or secrets.
 ---
 
-# Secretles authentication to Azure resources
-secretles = This is a broader term that encompasses both passwordless and keyless. You often store a password or a key outside of the source-controlled directory as a secret. Key Vault Secrets and environment variables are 2 common approaches I see customers use to store those items. Once you move away from that secrets storage practice, you’ve transitioned to secretles authN.
+# Secretless authentication to Azure resources
+secretless = This is a broader term that encompasses both passwordless and keyless. You often store a password or a key outside of the source-controlled directory as a secret. Key Vault Secrets and environment variables are 2 common approaches I see customers use to store those items. Once you move away from that secrets storage practice, you’ve transitioned to secretless authN.
 
-Sub-scenarios/implementations of secretles:
+Sub-scenarios/implementations of secretless:
     • Passwordless = Use this term when the alternative authN mechanism is a username/password combination.
     • Keyless = Use this term when the alternative authN mechanism is a key. Examples of keys are:
 - The access key authN mechanism that Azure Communication Services supports.
@@ -60,7 +60,7 @@ For scenarios where one Azure resource needs to call another (for example, an Az
 
 [Managed identities](/entra/identity/managed-identities-azure-resources/overview) and the `DefaultAzureCredential` class in the Azure Identity client library are the recommended authentication option for secure, passwordless connections between Azure resources.
 
-For more info, read [Configure secretless connections between Azure apps and services](/azure/storage/common/multiple-identity-scenarios?toc=%2Fazure%2Fdeveloper%2Fintro%2Ftoc.json&bc=%2Fazure%2Fdeveloper%2Fbreadcrumb%2Ftoc.json&tabs=csharp).
+For more info, read [Configure secretlesss connections between Azure apps and services](/azure/storage/common/multiple-identity-scenarios?toc=%2Fazure%2Fdeveloper%2Fintro%2Ftoc.json&bc=%2Fazure%2Fdeveloper%2Fbreadcrumb%2Ftoc.json&tabs=csharp).
 
 ### Accesses Microsoft Entra protected resources (across tenants)
 
