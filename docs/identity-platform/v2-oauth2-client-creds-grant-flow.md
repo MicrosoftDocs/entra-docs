@@ -26,6 +26,8 @@ This article describes how to program directly against the protocol in your appl
 
 For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared secret.  Because the application's own credentials are being used, these credentials must be kept safe. *Never* publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. 
 
+For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared secret.  Because the application's own credentials are being used, these credentials must be kept safe. *Never* publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. Authentication requests using the client credentials flow with web pages will not be allowed.
+
 ## Protocol diagram
 
 The entire client credentials flow looks similar to the following diagram. We describe each of the steps later in this article.
