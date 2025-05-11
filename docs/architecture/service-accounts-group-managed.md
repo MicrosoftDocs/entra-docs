@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/09/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Secure group managed service accounts

@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 05/02/2025
+ms.date: 05/06/2025
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -187,11 +187,11 @@ Security Key by Yubico with NFC|149a2021-8ef6-4133-96b8-81f8d5b7f1f5|&#10060;|&#
 Security Key by Yubico with NFC|6d44ba9b-f6ec-2e49-b930-0c8fe920cb73|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico|b7d3f68e-88a6-471e-9ecf-2df26d041ede|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico|a4e9fc6d-4cbe-4758-b8ba-37598bb5bbaa|&#10060;|&#x2705;|&#x2705;|&#10060;
-Security Key NFC by Yubico|e77e3c64-05e3-428b-8824-0cbeb04b829d|&#10060;|&#x2705;|&#10060;|&#10060;
-Security Key NFC by Yubico - Enterprise Edition|47ab2fb4-66ac-4184-9ae1-86be814012d5|&#10060;|&#x2705;|&#10060;|&#10060;
+Security Key NFC by Yubico|e77e3c64-05e3-428b-8824-0cbeb04b829d|&#10060;|&#x2705;|&#x2705;|&#10060;
+Security Key NFC by Yubico - Enterprise Edition|47ab2fb4-66ac-4184-9ae1-86be814012d5|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition|ed042a3a-4b22-4455-bb69-a267b652ae7e|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition|0bb43545-fd2c-4185-87dd-feb0b2916ace|&#10060;|&#x2705;|&#x2705;|&#10060;
-Security Key NFC by Yubico - Enterprise Edition (Enterprise Profile)|9ff4cc65-6154-4fff-ba09-9e2af7882ad2|&#10060;|&#x2705;|&#10060;|&#10060;
+Security Key NFC by Yubico - Enterprise Edition (Enterprise Profile)|9ff4cc65-6154-4fff-ba09-9e2af7882ad2|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition (Enterprise Profile)|72c6b72d-8512-4c66-8359-9d3d10d9222f|&#10060;|&#x2705;|&#x2705;|&#10060;
 Security Key NFC by Yubico - Enterprise Edition Preview|2772ce93-eb4b-4090-8b73-330f48477d73|&#10060;|&#x2705;|&#10060;|&#10060;
 Security Key NFC by Yubico Preview|760eda36-00aa-4d29-855b-4012a182cdeb|&#10060;|&#x2705;|&#10060;|&#10060;
@@ -263,7 +263,7 @@ YubiKey 5 Series with NFC|fa2b99dc-9e39-4257-8f92-4a30d23c4118|&#10060;|&#x2705;
 YubiKey 5 Series with NFC|2fc0579f-8113-47ea-b116-bb5a8db9202a|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC|d7781e5d-e353-46aa-afe2-3ca49f13332a|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC|a25342c0-3cdc-4414-8e46-f4807fca511c|&#10060;|&#x2705;|&#x2705;|&#10060;
-YubiKey 5 Series with NFC (Enterprise Profile)|1ac71f64-468d-4fe0-bef1-0e5f2f551f18|&#10060;|&#x2705;|&#10060;|&#10060;
+YubiKey 5 Series with NFC (Enterprise Profile)|1ac71f64-468d-4fe0-bef1-0e5f2f551f18|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC (Enterprise Profile)|6ab56fad-881f-4a43-acb2-0be065924522|&#10060;|&#x2705;|&#x2705;|&#10060;
 YubiKey 5 Series with NFC Preview|34f5766d-1536-4a24-9033-0e294e510fb0|&#x2705;|&#x2705;|&#10060;|&#10060;
 YubiKey Bio Series - FIDO Edition|d8522d9f-575b-4866-88a9-ba99fa02f35b|&#x2705;|&#x2705;|&#10060;|&#10060;
