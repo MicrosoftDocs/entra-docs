@@ -414,7 +414,7 @@ function App() {
 }
 ```
 
-```
+# [JavaScript (MSAL.js)](#tab/javascript)
 
 ```javascript
 const config = {
@@ -436,7 +436,7 @@ const logoutRequest = {
 await myMsal.logoutPopup(logoutRequest);
 ```
 
-# [Angular (MSAL.js v2)](#tab/angular2)
+# [Angular (MSAL.js v2)](#tab/angular)
 
 ```javascript
 // In app.module.ts
@@ -458,7 +458,6 @@ logout() {
     });
 }
 ```
-
 ---
 
 ## Sign out with a redirect
@@ -466,48 +465,6 @@ logout() {
 MSAL.js provides a `logoutRedirect` method in v2 that clears the cache in browser storage and redirects to the Microsoft Entra sign out page. After sign out, the redirect defaults to the sign in start page.For the after sign out experience, you can set the `postLogoutRedirectUri` to redirect the user to a specific URI. This URI should be registered as a redirect URI in your application registration.
 
 Because the Microsoft's reminder of [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) about using a private browser and lock screen isn't shown in this method, you might want to describe best practices and remind users to close all browser windows when they've signed out of their app. 
-
-# [JavaScript (MSAL.js)](#tab/javascript2)
-
-```javascript
-const config = {
-  auth: {
-    clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
-    postLogoutRedirectUri: "your_app_logout_redirect_uri",
-  },
-};
-
-const myMsal = new PublicClientApplication(config);
-
-// you can select which account application should sign out
-const logoutRequest = {
-  account: myMsal.getAccountByHomeId(homeAccountId),
-};
-
-myMsal.logoutRedirect(logoutRequest);
-```
-
-# [Angular (MSAL.js v2)](#tab/angular2)
-
-```javascript
-// In app.module.ts
-@NgModule({
-    imports: [
-        MsalModule.forRoot( new PublicClientApplication({
-            auth: {
-                clientId: 'your_app_id',
-                postLogoutRedirectUri: 'your_app_logout_redirect_uri'
-            }
-        }), null, null)
-    ]
-})
-
-// In app.component.ts
-logout() {
-    this.authService.logoutRedirect();
-}
-```
 
 # [React](#tab/react)
 
@@ -551,8 +508,50 @@ function App() {
   );
 }
 ```
+
+# [JavaScript (MSAL.js)](#tab/javascript)
+
+```javascript
+const config = {
+  auth: {
+    clientId: "your_app_id",
+    redirectUri: "your_app_redirect_uri", //defaults to application start page
+    postLogoutRedirectUri: "your_app_logout_redirect_uri",
+  },
+};
+
+const myMsal = new PublicClientApplication(config);
+
+// you can select which account application should sign out
+const logoutRequest = {
+  account: myMsal.getAccountByHomeId(homeAccountId),
+};
+
+myMsal.logoutRedirect(logoutRequest);
+```
+
+# [Angular (MSAL.js)](#tab/angular)
+
+```javascript
+// In app.module.ts
+@NgModule({
+    imports: [
+        MsalModule.forRoot( new PublicClientApplication({
+            auth: {
+                clientId: 'your_app_id',
+                postLogoutRedirectUri: 'your_app_logout_redirect_uri'
+            }
+        }), null, null)
+    ]
+})
+
+// In app.component.ts
+logout() {
+    this.authService.logoutRedirect();
+}
+```
 ---
 
 ## Next step
 
-Move on to the next article in this scenario, [Acquiring a token for the app](scenario-spa-acquire-token.md).
+- [Acquiring a token for the app](scenario-spa-acquire-token.md).
