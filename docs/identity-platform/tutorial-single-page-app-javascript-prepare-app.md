@@ -7,7 +7,7 @@ ms.author: owenrichards
 ms.service: identity-platform
 ms.custom:
 ms.topic: tutorial
-ms.date: 02/11/2024
+ms.date: 05/12/2025
 #Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
@@ -152,7 +152,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
         auth: {
             clientId: "Enter_the_Application_Id_Here",
             // WORKFORCE TENANT
-            authority: "https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee", //  Replace the placeholder with your tenant info
+            authority: 'https://login.microsoftonline.com/Enter_the_Tenant_Info_Here', //  Replace the placeholder with your tenant info
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
             navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
         },
