@@ -419,7 +419,7 @@ View events related to tenant restrictions in Event Viewer.
    
 ## Block Chrome, Firefox and .NET applications like PowerShell
 
-To block you need to set up Windows Defender Application Control (WDAC) as well as enable Windows firewall setting.
+To block you need to set up Windows Defender Application Control (WDAC) as well as enable Windows Firewall setting.
 
 ### Set up Windows Defender Application Control (WDAC) to control access to Microsoft resources
 
@@ -578,7 +578,7 @@ Fails with
 Connect-MgGraph : ClientSecretCredential authentication failed: AADSTS5000211: A tenant restrictions policy added to this request by a device or network
 administrator does not allow access to 'tenant'.
 
-- Enable client signaling using Windows GPO. You need to check 'Enable firewall protection on MIcrosoft endpoints' and WDAC enablement. See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell).     
+- Enable client signaling using Windows GPO. You need to check 'Enable firewall protection on Microsoft endpoints' and WDAC enablement. See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell).     
 
 ## Tenant Restrictions with Microsoft Enterprise SSO plug-in for Apple devices
 
@@ -674,7 +674,7 @@ Use Microsoft Graph to get policy information:
 ## Known limitation
 Tenant Restrictions v2 is supported on all clouds however TRv2 is not enforced with request going across cross clouds. 
 
-Tenant Restrictions v2 will not work with [macOS Platform signle sign-on (PSSO)](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers with TRv2 and PSSO should use Universal TRv2 with GSA client signaling. This is an Apple limitation where PSSO is not compatible with tenant restrictions when headers are injected by an intermediary network solution like proxy that uses a certificate trust chain outside of Apple system root certificates.
+Tenant Restrictions v2 will not work with [macOS Platform single sign-on (PSSO)](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers with TRv2 and PSSO should use Universal TRv2 with GSA client signaling. This is an Apple limitation where PSSO is not compatible with tenant restrictions when headers are injected by an intermediary network solution like proxy that uses a certificate trust chain outside of Apple system root certificates.
 
 ## Next steps
 
