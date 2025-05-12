@@ -7,7 +7,7 @@ ms.author: owenrichards
 ms.service: identity-platform
 ms.custom:
 ms.topic: tutorial
-ms.date: 05/12/2025
+ms.date: 02/11/2024
 #Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
@@ -298,7 +298,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
 1. Replace the following values with the values from the Microsoft Entra admin center:
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID in the Microsoft Entra admin center.
      * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
-1. Enter your thumbprint 9F8A7B6C5D4E3F2A1B0C9D8E7F6A5B4C3D2E1F0A in the `redirectUri` value. This is the thumbprint of the certificate you uploaded to the Microsoft Entra admin center when you registered your app. For more information, see [Add a certificate to your app registration](../external-id/customers/how-to-add-certificate-app-registration.md).
 1. Save the file.
 ---
 
