@@ -1,7 +1,6 @@
 ---
 title: Integrate Darwinbox HR With Microsoft Entra ID
 description: Learn how to integrate Darwinbox HR with Microsoft Entra ID to automate user provisioning, manage lifecycle workflows, and streamline HR-driven processes. 
-#customer intent: As an IT admin, I want to integrate Darwinbox HR with Microsoft Entra ID so that I can automate user provisioning and lifecycle workflows. 
 author: jenniferf-skc
 manager: femila
 ms.reviewer: rahuln3223
@@ -12,6 +11,8 @@ ms.date: 05/07/2025
 ms.author: jfields
 ms.custom: ai-gen-description
 ai-usage: ai-assisted
+
+#customer intent: As an IT admin, I want to integrate Darwinbox HR with Microsoft Entra ID so that I can automate user provisioning and lifecycle workflows.
 ---
 
 
@@ -27,7 +28,7 @@ Here are the high-level steps for configuring the app integration with Microsoft
 ## Install connectors in Darwinbox Studio
 Open Darwinbox studio and navigate to Connector Library. Search for and install the “Microsoft” and “Microsoft Entra” connectors: 
 
-:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of Darwinbox Studio.":::
+:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of the Darwinbox Studio.":::
 
 ## Create single-tenant app registration
 Next, create a single-tenant app registration and provide the credentials to Darwinbox so they can perform actions like creating the provisioning job and sending user data to your Entra tenant.
@@ -82,7 +83,8 @@ Extend your HR-driven provisioning process to automate business processes and se
 -	“X” days after termination, delete user from Microsoft Entra ID.
 
 
-## Next steps
-Monitor the status of your provisioning events: 
-
-- [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
+## Next step
+> [!TIP]
+> Monitor the status of your provisioning events: 
+> 
+> - [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
