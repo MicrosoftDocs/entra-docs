@@ -23,7 +23,7 @@ To learn more about the client application types and application configuration o
 
 ## Prerequisites
 
-Before initializing an application, you first need to [register it in the Microsoft Entra admin center](scenario-spa-app-configuration), establishing a trust relationship between your application and the Microsoft identity platform.
+Before initializing an application, you first need to [register it in the Microsoft Entra admin center](scenario-spa-app-configuration.md), establishing a trust relationship between your application and the Microsoft identity platform.
 
 After registering your app, you'll need some or all of the following values that can be found in the Microsoft Entra admin center.
 
@@ -144,12 +144,6 @@ Both MSAL.js 1.x and 2.x are designed to have a single instance and configuratio
 
 Multiple instances of `UserAgentApplication` or `PublicClientApplication` aren't recommended as they can cause conflicting cache entries and behavior in the browser.
 
-## Next steps
+## Next step
 
-The MSAL.js 2.x code sample on GitHub demonstrates instantiation of a [PublicClientApplication][msal-js-publicclientapplication] with a [Configuration][msal-js-configuration] object:
-
-- [MSAL Browser](msal-browser.md)
-- [MSAL Core](msal-core.md)
-- [MSAL.js Configuration](msal-js-configuration.md)
-- [Handle Redirect Promise in MSAL.js](msal-js-handle-redirect-promise.md)
-- [Public Client Application in MSAL.js](msal-js-public-client-application.md)
+The MSAL.js 2.x code sample on GitHub demonstrates instantiation of a [PublicClientApplication][/javascript/api/@azure/msal-browser/publicclientapplication] with a configuration object
