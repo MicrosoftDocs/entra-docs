@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 02/25/2025
+ms.date: 05/12/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -160,7 +160,9 @@ The following scenarios are important to consider when you're reviewing sign-in 
 
 - **Multifactor authentication:** When a user signs in with MFA, several separate MFA events are actually taking place. For example, if a user enters the wrong validation code or doesn't respond in time, more MFA events are sent to reflect the latest status of the sign-in attempt. These sign-in events appear as one line item in the Microsoft Entra sign-in logs. That same sign-in event in Azure Monitor, however, appears as multiple line items. These events all have the same `correlationId`.
 
-- **Authentication requirement:** Shows the highest level of authentication needed through all the sign-in steps for the sign-in to succeed.
+- **Authentication requirement:** Shows the highest level of authentication reached during the sign-in attempt, but not the highest level of authentication required.
+  - For sign-in attempts where MFA is required but primary authentication failed, value is `singleFactorAuthentication` because the attempt wasn't evaluated by Conditional Access to require MFA.
+  - A subsequent sign-in attempt after the failure where primary authentication is successful and MFA is required, the value is `multiFactorAuthentication`.
   - Graph API supports `$filter` (`eq` and `startsWith` operators only).
 
 - **Sign-in event types:** Indicates the category of the sign-in the event represents.
