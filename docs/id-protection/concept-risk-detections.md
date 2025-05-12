@@ -61,7 +61,7 @@ High risk sign-in and users must be investigated and remediated. If risk-based C
 
 To better understand how risk levels can escalate, consider the following example:
 
-1. **Low Risk**: A user signs in from a new location using a VPN. This triggers a low-risk detection due to unfamiliar sign-in properties. The system notes the anomaly but does not take immediate action.
+1. **Low Risk**: A user signs in from a new location using a VPN. This event triggers a low-risk detection due to unfamiliar sign-in properties. The system notes the anomaly but does not take immediate action.
 
 2. **Medium Risk**: The same user attempts multiple sign-ins from different geographic locations within a short time frame. This behavior, combined with the earlier low-risk detection, increases the confidence level of potential compromise, escalating the risk to medium.
 
@@ -75,6 +75,11 @@ ID Protection utilizes techniques to increase the precision of user and sign-in 
 
 Detections triggered in real-time take 5-10 minutes to surface details in the reports. Offline detections take up to 48 hours to surface in the reports, as it takes time to evaluate properties of the potential risk. 
 
+| Detection type | Sign-in risk | User risk |
+|----------------|--------------|-----------|
+| Real-time      | Suspicious sign-in is detected and remediated in real-time through a Conditional Access policy to require MFA. | User risk is detected and remediated through a Conditional Access policy to force a secure password change in real-time. |
+| Offline        | Sign-in risk is identified after sign-in. If not remediated this risk might escalate into user risk. | User is deemed risky after sign-in. A secure password change is required the next time the user authenticates. |
+
 > [!NOTE]
 > Our system might determine that the risk event that contributed to user risk score was either: 
 > 
@@ -86,6 +91,10 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 ### Offline detections and risk level
 
 It's important to remember that risk levels can change, because many risk detections are calculated offline. So if an offline detection is triggered that changes the threshold from low to medium risk, the risk level can change. Or if the system identifies a false positive, the risk level can change from medium to low. 
+
+### Risk escalation scenarios
+
+
 
 ### Time detection
 

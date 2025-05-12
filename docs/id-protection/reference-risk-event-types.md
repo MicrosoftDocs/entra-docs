@@ -54,7 +54,7 @@ Select a risk detection from the list to view the description of the risk detect
 
 | User risk detection | Detection type | Type | riskEventType |
 | --- | --- | --- | --- |
-| [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
+| [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic ^ |
 | [Anomalous Token (user)](#anomalous-token-user) | Real-time or Offline | Premium | anomalousToken | 
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium | anomalousUserActivity |
 | [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
@@ -64,6 +64,8 @@ Select a risk detection from the list to view the description of the risk detect
 | [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium | suspiciousAPITraffic |
 | [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
+
+^ The riskEventType for **Additional risk detected** detection is *generic* for tenants with Microsoft Entra ID Free or Microsoft Entra ID P1. We detected something risky, but the details aren't available without a Microsoft Entra ID P2 license.
 
 ## Sign-in risk detections 
 
