@@ -795,7 +795,7 @@
                   displayName: firstline worker, frontline worker, flw
                   href: msal-android-shared-devices.md
                 - name: Integrate with Azure AD B2C
-                  href: msal-android-b2c.md
+                  href: /azure/active-directory-b2c/configure-authentication-sample-android-app
             - name: Authentication and single sign-on (SSO)
               items:
                 - name: SSO with MSAL Android

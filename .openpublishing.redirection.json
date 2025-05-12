@@ -1810,6 +1810,11 @@
       "redirect_url": "/entra/msal/android/shared-devices",
       "redirect_document_id": false
     },
+        {
+      "source_path_from_root": "/docs/identity-platform/msal-android-b2c.md",
+      "redirect_url": "/azure/active-directory-b2c/configure-authentication-sample-android-app",
+      "redirect_document_id": false
+    },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?tabs=external-tenant",
