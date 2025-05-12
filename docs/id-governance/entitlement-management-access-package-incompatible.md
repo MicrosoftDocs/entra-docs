@@ -2,7 +2,7 @@
 title: Configure separation of duties for an access package in entitlement management
 description: Learn how to configure separation of duties enforcement for requests for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -44,7 +44,7 @@ Follow these steps to change the list of incompatible groups or other access pac
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package which users request.
 
@@ -91,7 +91,7 @@ Follow these steps to view the list of other access packages that have indicated
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open the access package.
 
@@ -108,7 +108,7 @@ Follow these steps to view the list of users who have assignments to two access 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open the access package where you've configured another access package as incompatible.
 
@@ -131,7 +131,7 @@ Follow these steps to view the list of users who have assignments to two access 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. Open the access package where you are configuring incompatible assignments.
 
@@ -141,7 +141,7 @@ Follow these steps to view the list of users who have assignments to two access 
 
 1. Select the **Download** button and save the resulting CSV file as the first file with a list of assignments.
 
-1. In the navigation bar, select **Identity Governance**.
+1. In the navigation bar, select **ID Governance**.
 
 1. In the left menu, select **Access packages** and then open the access package that you plan to indicate as incompatible.
 

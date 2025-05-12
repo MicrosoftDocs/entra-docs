@@ -43,7 +43,7 @@ No sign-in event that occurred *before* you configure Microsoft Entra ID to send
 Once you integrate your Microsoft Entra sign-in and audit logs with Azure Monitor as specified in the Azure Monitor integration, access the sign-ins workbook:
 
    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-   1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+   1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
    1. In the **Usage** section, open the **Sign-ins** workbook.
 
    :::image type="content" source="media/howto-get-list-of-all-auth-library-apps/sign-in-workbook.png" alt-text="Screenshot of the Microsoft Entra admin center workbooks interface highlighting the sign-ins workbook.":::

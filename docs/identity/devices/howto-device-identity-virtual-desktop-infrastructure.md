@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: conceptual
 ms.date: 11/25/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: sandeo
 ---
 # Device identity and desktop virtualization

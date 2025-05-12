@@ -3,10 +3,10 @@ title: 'What is Microsoft Entra Cloud Sync?'
 description: Describes Microsoft Entra Cloud Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: overview
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

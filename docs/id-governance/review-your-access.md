@@ -2,7 +2,7 @@
 title: Review your access to groups & apps in access reviews
 description: Learn how to review your own access to groups or applications in access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews

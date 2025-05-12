@@ -3,9 +3,9 @@ title: How to access Azure SQL with a service endpoint using Microsoft Entra Pri
 description: Learn how to access Azure SQL with a service endpoint using Microsoft Entra Private Access.
 author: kenwith    
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 01/13/2025
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish

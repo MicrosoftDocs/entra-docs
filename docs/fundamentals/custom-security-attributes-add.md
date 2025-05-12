@@ -2,7 +2,7 @@
 title: Add or deactivate custom security attribute definitions in Microsoft Entra ID
 description: Learn how to add new custom security attribute definitions or deactivate custom security attribute definitions in Microsoft Entra ID.
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
@@ -32,7 +32,7 @@ An attribute set is a collection of related attributes. All custom security attr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator).
 
-1. Browse to **Protection** > **Custom security attributes**.
+1. Browse to **Entra ID** > **Custom security attributes**.
 
 1. Select **Add attribute set** to add a new attribute set.
 
@@ -52,7 +52,7 @@ An attribute set is a collection of related attributes. All custom security attr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator).
 
-1. Browse to **Protection** > **Custom security attributes**.
+1. Browse to **Entra ID** > **Custom security attributes**.
 
 1. On the Custom security attributes page, find an existing attribute set or select **Add attribute set** to add a new attribute set.
 
@@ -106,7 +106,7 @@ Once you add a new custom security attribute definition, you can later edit some
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator).
 
-1. Browse to **Protection** > **Custom security attributes**.
+1. Browse to **Entra ID** > **Custom security attributes**.
 
 1. Select the attribute set that includes the custom security attribute you want to edit.
 
@@ -124,7 +124,7 @@ Once you add a custom security attribute definition, you can't delete it. Howeve
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator).
 
-1. Browse to **Protection** > **Custom security attributes**.
+1. Browse to **Entra ID** > **Custom security attributes**.
 
 1. Select the attribute set that includes the custom security attribute you want to deactivate.
 

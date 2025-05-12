@@ -6,11 +6,11 @@ description: Learn about the Microsoft Entra multifactor authentication client a
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: michmcla
 ---
 # Features and licenses for Microsoft Entra multifactor authentication
@@ -65,13 +65,13 @@ Our recommended approach to enforce MFA is using [Conditional Access](~/identity
 
 | Policy | Security defaults | Conditional Access | Per-user MFA |
 | --- |:---:|:---:|:---:|
-| **Management** | 
+| **Management** | | | |
 | Standard set of security rules to keep your company safe | ● |  |  |
 | One-click on/off | ● |  |  |
 | Included in Office 365 licensing (See [license considerations](#available-versions-of-azure-ad-multi-factor-authentication)) | ● |  | ● |
 | Pre-configured templates in Microsoft 365 Admin Center wizard | ● | ● |  |
 | Configuration flexibility | | ● |  |
-| **Functionality** | 
+| **Functionality** | | | |
 | Exempt users from the policy | | ● | ● |
 | Authenticate by phone call or text message | ● | ● | ● |
 | Authenticate by Microsoft Authenticator and Software tokens | ● | ● | ● |

@@ -56,7 +56,7 @@ Microsoft Entra workforce tenants must be linked to an Azure subscription for pr
 
 2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings | Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
 
-3. Browse to **Identity** > **External identities** > **Overview**.
+3. Browse to **Entra ID** > **External Identities** > **Overview**.
 
 5. Under **Subscriptions**, select **Linked subscriptions**.
 
@@ -113,5 +113,5 @@ You can’t change ownership of a subscription to a Microsoft Entra external ten
 ## Next steps
 
 - See [Frequently asked questions](customers/faq-customers.md) about external tenants.
-- For the latest pricing information, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- For the latest pricing information, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
 - For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](/azure/active-directory-b2c/billing).

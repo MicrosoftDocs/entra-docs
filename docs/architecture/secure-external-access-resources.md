@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 4/28/2023
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Plan a Microsoft Entra B2B collaboration deployment

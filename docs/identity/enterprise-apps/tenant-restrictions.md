@@ -86,7 +86,7 @@ The headers should include the following elements:
 To find your directory ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Identity** > **Overview** > **Overview**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 1. Copy the **Tenant ID** value.
 
 To validate that a directory ID or domain name refer to the same tenant, use that ID or domain in place of \<tenant\> in this URL: `https://login.microsoftonline.com/<tenant>/v2.0/.well-known/openid-configuration`. If the results with the domain and the ID are the same, they refer to the same tenant.
@@ -110,7 +110,7 @@ An example user is on the Contoso network, but is trying to access the Fabrikam 
 While configuration of tenant restrictions is done on the corporate proxy infrastructure, admins can access the tenant restrictions reports in the Microsoft Entra admin center directly. To view the reports:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Identity** > **Overview** > **Tenant restrictions**.
+1. Browse to **Entra ID** > **Overview** > **Tenant restrictions**.
 
 The admin for the tenant specified as the Restricted-Access-Context tenant can use this report to see sign-ins blocked because of the tenant restrictions policy, including the identity used and the target directory ID. Sign-ins are included if the tenant setting the restriction is either the user tenant or resource tenant for the sign-in.
 

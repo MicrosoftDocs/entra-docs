@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Wayleadr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wayleadr.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wayleadr so that I can control who has access to Wayleadr, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Wayleadr** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Wayleadr** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -88,9 +88,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | `https://app.wayleadr.com/users/sign_in_sso` |
 
     > [!NOTE]
-    > This value is not real. Update this value with the actual Reply URL. Contact [Wayleadr Client support team](mailto:support@wayleadr.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > This value isn't real. Update this value with the actual Reply URL. Contact [Wayleadr Client support team](mailto:support@wayleadr.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
+1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
 	![Screenshot shows the Certificate download link.](common/edit-certificate.png "Certificate")
 
@@ -112,21 +112,21 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Wayleadr Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Wayleadr Sign-on URL where you can initiate the login flow.  
 
 * Go to Wayleadr Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Wayleadr for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Wayleadr for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Wayleadr tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Wayleadr for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Wayleadr tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Wayleadr for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Wayleadr you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

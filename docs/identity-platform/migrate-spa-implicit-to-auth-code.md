@@ -4,7 +4,7 @@ description: How to update a JavaScript SPA using MSAL.js 1.x and the implicit g
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 07/17/2020
 ms.service: identity-platform
 
@@ -36,7 +36,7 @@ If you'd like to continue using your existing app registration for your applicat
 Follow these steps for app registrations that are currently configured with **Web** platform redirect URIs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** >  **Applications** > **App registrations**, select your application, and then **Authentication**.
+1. Browse to **Entra ID** > **App registrations**, select your application, and then **Authentication**.
 1. In the **Web** platform tile under **Redirect URIs**, select the warning banner indicating that you should migrate your URIs.
 
     :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-01-implicit-warning-banner.png" alt-text="Implicit flow warning banner on web app tile in Azure portal":::
@@ -84,4 +84,4 @@ When you uncheck the implicit grant settings in the app registration, the implic
 
 - To learn more about the authorization code flow, including the differences between the implicit and auth code flows, see the [Microsoft identity platform and OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md).
 
-- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).

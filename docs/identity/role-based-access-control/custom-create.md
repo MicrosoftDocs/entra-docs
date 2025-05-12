@@ -3,7 +3,7 @@ title: Create a custom role in Microsoft Entra ID
 description: Learn how to create a custom role in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API
 author: rolyon
 ms.author: rolyon
-manager: amycolannino
+manager: femila
 ms.reviewer: vincesm
 ms.date: 01/03/2025
 ms.service: entra-id
@@ -36,7 +36,7 @@ These steps describe how to create a custom role in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select **New custom role**.
 

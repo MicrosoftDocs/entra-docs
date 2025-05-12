@@ -4,16 +4,16 @@ description: Learn how to acquire a token in a single-page app and call a web AP
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: 
-ms.date: 06/27/2024
+ms.date: 04/10/2025
 ms.service: identity-platform
-
 ms.topic: how-to
-s.reviewer: negoe
+ms.reviewer: negoe
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 
 # Single-page application: Acquire a token to call an API
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 The pattern for acquiring tokens for APIs with [MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) is to first attempt a silent token request by using the `acquireTokenSilent` method. When this method is called, the library first checks the cache in browser storage to see if a non-expired access token exists and returns it. If no access token is found or the access token found has expired, it attempts to use its refresh token to get a fresh access token. If the refresh token's 24-hour lifetime has also expired, MSAL.js opens a hidden iframe to silently request a new authorization code by using the existing active session with Microsoft Entra ID (if any), which will then be exchanged for a fresh set of tokens (access *and* refresh tokens). For more information about single sign-on (SSO) session and token lifetime values in Microsoft Entra ID, see [Token lifetimes](configurable-token-lifetimes.md). For more information on MSAL.js cache lookup policy, see: [Acquiring an Access Token](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/acquire-token.md#acquiring-an-access-token).
 

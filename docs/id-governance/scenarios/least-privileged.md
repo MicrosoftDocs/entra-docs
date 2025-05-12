@@ -5,17 +5,17 @@ ms.service: entra-id-governance
 ms.subservice:
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 
 ms.topic: conceptual
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ---
 
 # The principle of least privilege with Microsoft Entra ID Governance
 
-One concept that needs to be addressed before under taking an identity governance strategy is the principle of least privilege (PLOP). Least privilege is a principle in identity governance that involves assigning users and groups only the minimum level of access and permissions necessary to perform their duties. The idea is to restrict access rights so that a user or group can complete their work, but also minimizing unnecessary privileges that could potentially be exploited by attackers or lead to security breaches.
+One concept that needs to be addressed before under taking an identity governance strategy is the principle of least privilege (POLP). Least privilege is a principle in identity governance that involves assigning users and groups only the minimum level of access and permissions necessary to perform their duties. The idea is to restrict access rights so that a user or group can complete their work, but also minimizing unnecessary privileges that could potentially be exploited by attackers or lead to security breaches.
 
 In regards to Microsoft Entra ID Governance, applying the principle of least privilege helps enhance security and mitigate risks. This approach ensures that users and groups are granted access only to the resources, data, and actions that are relevant to their roles and responsibilities, and nothing beyond that.
 

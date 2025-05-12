@@ -3,12 +3,12 @@ title: Microsoft Entra Connect Health - Alert Catalog
 description: This document shows the catalog of all alerts in Microsoft Entra Connect Health.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.author: billmath
 
 ---
@@ -41,7 +41,7 @@ Microsoft Entra Connect Health alerts get resolved on a success condition. Micro
 | High CPU Usage detected | The percentage of CPU consumption crossed the recommended threshold on this server. | <li>This could be a temporary spike in CPU consumption. Check the CPU usage trend from the Monitoring section.</li><li>Inspect the top processes consuming the highest CPU usage on the server.<ol type="a"><li>You might use the Task Manager or execute the following PowerShell Command: <br> <i>get-process \| Sort-Object -Descending CPU \| Select-Object -First 10</i></li><li>If there are unexpected processes consuming high CPU usage, stop the processes using the following PowerShell command: <br> <i>stop-process -ProcessName [name of the process]</i></li></li></ol><li>If the processes seen in the previous list are the intended processes running on the server and the CPU consumption is continuously near the threshold, consider reevaluating the deployment requirements of this server.</li><li>As a fail-safe option you might consider restarting the server. |
 | High Memory Consumption Detected | The percentage of memory consumption of the server is beyond the recommended threshold on this server. | Inspect the top processes consuming the highest memory on the server. You might use the Task Manager or execute the following PowerShell Command:<br> <i>get-process \| Sort-Object -Descending WS \| Select-Object -First 10</i> </br> If there are unexpected processes consuming high memory, stop the processes using the following PowerShell command:<br><i>stop-process -ProcessName [name of the process] </i></li><li> If the processes seen in the previous list are the intended processes running on the server, consider reevaluating the deployment requirements of this server.</li><li>As a failsafe option, you might consider restarting the server. | 
 | Password Hash Synchronization stopped working | Password Hash Synchronization is stopped. As a result passwords won't be synchronized with Microsoft Entra ID. | Restart Microsoft Entra ID Sync Services: <br /> Any synchronization operations currently running are interrupted. You can choose to perform below steps when no synchronization operation is in progress. <br /> <ol> <li>Select <b>Start</b>, select <b>Run</b>, type <b>Services.msc</b>, and then select <b>OK</b>.</li> <li>Locate the <b>Microsoft Entra ID Sync</b>, right-select it, and then select <b>Restart</b>.</li> </ol> </p>  | 
-| Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached | The export operation to Microsoft Entra ID failed. There were more objects to be deleted than the configured threshold. As a result, no objects were exported. | <li> The number of objects are marked for deletion are greater than the set threshold. Ensure this outcome is desired.</li> <li> To allow the export to continue, perform the following steps: <ol type="a"> <li>Disable Threshold by running Disable-ADSyncExportDeletionThreshold</li> <li>Start Synchronization Service Manager</li> <li>Run Export on Connector with type = Microsoft Entra ID</li> <li>After successfully exporting the objects, enable Threshold by running: Enable-ADSyncExportDeletionThreshold</li> </ol> </li> |
+| Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached |The export operation to Microsoft Entra ID failed. There were more objects to be deleted than the configured threshold. As a result, no objects were exported. | The number of objects marked for deletion is greater than the maximum threshold set. To evaluate the objects pending deletion, see [prevent accidental deletes](/entra/identity/hybrid/connect/how-to-connect-sync-feature-prevent-accidental-deletes). |
 
 ## Alerts for Active Directory Federation Services
 | Alert Name | Description | Remediation |

@@ -3,7 +3,7 @@ title: Change subdomain authentication type using PowerShell and Graph
 description: Change default subdomain authentication settings inherited from root domain settings in Microsoft Entra ID.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
@@ -37,7 +37,7 @@ Because subdomains inherit the authentication type of the root domain by default
     
     # Define the parameters for the new domain
     $domainParams = @{
-        Name = "child6.mydomain.com"
+        Id = "child6.mydomain.com"
         AuthenticationType = "Federated"
     }
     

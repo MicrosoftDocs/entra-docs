@@ -2,9 +2,9 @@
 title: Troubleshoot manager update issues with HR provisioning
 description: This article provides potential issues and resolutions that show you how to troubleshoot manager update issues with HR provisioning
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
-ms.date: 01/29/2025
+ms.date: 03/04/2025
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.author: jfields
@@ -52,6 +52,7 @@ In order for *manager reference resolution* to work successfully, the following 
 
 
 ## Provision-on-demand doesn't update manager attribute
+
 | Troubleshooting | Details |
 |--|--|
 | **Issue** | You successfully configured the inbound provisioning app. You're testing sync with provision-on-demand. It doesn't update the manager attribute and you get an error message *"Invalid value"*.  |
@@ -59,6 +60,7 @@ In order for *manager reference resolution* to work successfully, the following 
 | **Resolution** | *  If you changed the default manager attribute mapping, restore the default mapping. <br> * Ensure that the manager record is in scope and the manager API expression resolves to a valid value. <br> * Run provision-on-demand for the manager's record first and then run provision-on-demand for the user's record.  |
 
 ## Full sync doesn't update manager attribute
+
 | Troubleshooting | Details |
 |--|--|
 | **Issue** | You successfully configured the inbound provisioning app. You're using a scoping filter to process only certain HR records. You observe that the manager resolution isn't happening for some users.  |

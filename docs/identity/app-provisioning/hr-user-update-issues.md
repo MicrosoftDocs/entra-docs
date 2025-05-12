@@ -2,11 +2,11 @@
 title: Troubleshoot user update issues with HR provisioning
 description: Learn how to troubleshoot user update issues with HR provisioning
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 06/25/2024
+ms.date: 03/26/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -83,8 +83,8 @@ Switch([BusinessTitle],[BusinessTitle],"","N/A")
 | Troubleshooting | Details |
 |-- | -- |
 | **Issue** | You configured *mail* attribute provisioning from your HR system to Microsoft Entra ID. Any update to the mail attribute isn't working even though the provisioning logs display a record for the mail attribute.  |
-| **Cause** | The provisioning connector to Microsoft Entra supports setting the mail attribute only during user creation. Once the user is created, the connector doesn't support updating the email address. |
-| **Resolution** | To update the mail attribute for existing users, consider using Exchange Online portal or PowerShell. |
+| **Cause** | The provisioning connector to Microsoft Entra does not support setting the *mail* attribute during user provisioning as this attribute is managed by Microsoft Exchange online. |
+| **Resolution** | After creating the user, assigning the Exchange Online license to the user automatically sets the user principal name as the email address. To update the mail attribute, use the Exchange Online portal or PowerShell. |
 
 ## Provisioning Last Day of Work field from Workday
 **Applies to:**
@@ -111,10 +111,10 @@ Use this field in the attribute mapping logic for the accountDisabled flag.
 * Workday to Microsoft Entra user provisioning
 
 | Troubleshooting | Details |
-|-- | -- |
-| **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions.  |
-| **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently doesn't implement specialized query to process termination records specific to a time zone.  |
-| **Resolution** | There are two possible workarounds:  
+| -- | -- |
+| **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions. |
+| **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently doesn't implement specialized query to process termination records specific to a time zone. |
+| **Resolution** | There are two possible workarounds: |
 
 1. Use provisioning on demand to process termination event of a specific user.  
 
