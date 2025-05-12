@@ -104,4 +104,4 @@ For more information on the configurable options, see [Initializing application 
 
 ## Next step
 
-- [Sign-in and sign-out](scenario-spa-sign-in.md).
+- [Add Sign-in and sign-out code](scenario-spa-sign-in.md).

@@ -370,8 +370,6 @@ MSAL.js v2 and higher provides a `logoutPopup` method that clears the cache in b
 
 For the after sign out experience, you can set the `postLogoutRedirectUri` to redirect the user to a specific URI. This URI should be registered as a redirect URI in your application registration. You can also configure `logoutPopup` to redirect the main window to a different page, such as the home page or sign in page by passing `mainWindowRedirectUri` as part of the request.
 
-# [JavaScript (MSAL.js v2)](#tab/javascript)
-
 # [React](#tab/react)
 
 ```javascript
@@ -414,6 +412,8 @@ function App() {
     </>
   );
 }
+```
+
 ```
 
 ```javascript
