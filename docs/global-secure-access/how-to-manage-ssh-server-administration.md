@@ -5,7 +5,7 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 05/12/2025
 ms.author: jricketts
 ms.reviewer: mgarciafani
 ai-usage: human-only
@@ -13,15 +13,16 @@ ai-usage: human-only
 
 # Management for SSH-based server administration
 
-There's wide recognition in the IT industry that IT administrators use Secure Shell (SSH) as a critical service. Admins enable security while managing configuration, deployment, and maintenance of servers and applications in an organization's infrastructure. SSH is a secure way to access and manage devices over an unsecured network. SSH encryption protocols, ensure the integrity and confidentiality of administrative tasks and remote system interactions, pivotal for operational efficiency and risk reduction. 
-
-In this guide, learn to configure and establish an SSH connection using Microsoft Entra Private Access for enhanced security. Organizations use Private Access to modernize user access to private apps and resources.
+Secure Shell (SSH) is widely recognized across the IT industry as a critical service for system administrators. It provides a secure and encrypted method to access and manage remote systems over unsecured networks.
+IT administrators rely on SSH to perform essential tasks securely, including the configuration, deployment, and maintenance of servers and applications in an organization’s infrastructure.
+ 
+In this guide, you'll learn how to configure and establish an SSH connection using Microsoft Entra Private Access to enhance security in your remote access workflows.
 
 You can [learn more about Private Access](concept-private-access.md).
 
 ## Establish SSH connections with Private Access
 
-Microsoft Entra Private Access enhances the security and efficiency of SSH management traffic by providing a secure, identity-centric Zero Trust Network Access (ZTNA) solution by It allowing IT administrators to establish SSH connections to remote servers securely. 
+Microsoft Entra Private Access enhances the security and efficiency of SSH management traffic by providing a secure, identity-centric Zero Trust Network Access (ZTNA) solution by allowing IT administrators to establish SSH connections to remote servers securely. 
 
    ![Diagram of an SSH connection using Private Access.](./media/how-to-manage-ssh-server-administration/ssh-service.png)
 
@@ -29,12 +30,13 @@ Microsoft Entra Private Access enhances the security and efficiency of SSH manag
 
 Ensure you meet the following prerequisites.
 
-* **Licensing** - Learn about licensing and the products that make up [Microsoft Global Secure Access](overview-what-is-global-secure-access.md)
+* **Licensing** - Learn about licensing for [Microsoft Global Secure Access](overview-what-is-global-secure-access.md)
   * Learn more about [Microsoft Entra plans and pricing](https://aka.ms/azureadlicense)
+  * See, [Global Secure Acces client for Windows](how-to-install-windows-client.md)
 * **A remote server with SSH** enabled
 * **Microsoft Global Secure Access (GSA) private connector** with network connectivity to the resource
   * Learn how to [configure connectors](how-to-configure-connectors.md)
-* **A device with the GSA client** on Microsoft Entra joined, or Microsoft Entra hybrid joined
+* **A device with the GSA client**
 * **Private Access profile** enabled
   * See [GSA traffic forwarding profiles](concept-traffic-forwarding.md)
 * **[Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference)** for admins
@@ -49,12 +51,13 @@ Use the following instructions to create the application.
 3. Select **New application**. 
 4. Type a name.
 5. The **Create application segment** panel appears.
-6. Select a **Destination type**. 
-7. Add needed IPs or subnets. 
-8. For **Port**, select **22**. 
-9. For **Protocol**, select **TCP**. 
-10. (Optional) Add application segments. 
-11. Select **Save**.
+6. Add an application segment.
+7. Select a **Destination type**. 
+8. Add needed IPs or subnets. 
+9. For **Port**, select **22**. 
+10. For **Protocol**, select **TCP**. 
+11. (Optional) Add application segments. 
+12. Select **Save**.
 
 Assign users and groups to the application.
 
@@ -70,9 +73,11 @@ Create [Microsoft Entra Conditional Access](../identity/conditional-access/overv
 2. Select **Applications**, then select **Enterprise application**.
 3. Select an application.
 4. Select **Conditional Access**.
-5. Go to Protection.
-6. Select **Conditional Access**, then select **Policies**.
-7. Select **+ Create new policy**.
+5. Select **New policy**.
+6. Go to Protection.
+7. Select **Conditional Access**, then select **Policies**.
+8. In the Microsoft Entra admin center, create and apply policy in two places.
+9. Select **+ Create new policy**.
 
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md). 
 
@@ -91,7 +96,7 @@ Use the following checklist to help confirm configuration.
   * Find guidance in [OpenSSH Server configuration for Windows](/windows-server/administration/OpenSSH/openssh-server-configuration).
 * Go to the Windows taskbar. Right-click the **Global Secure Access** client.
   * Select **Advanced Diagnostics** > **Forwarding profile** > **Private Access**.
-* Validate the application appears in the access profile.
+  * Validate the application appears in the access profile.
 * Access the SSH services from the client device.  
 
 ## Connection failure
