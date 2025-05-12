@@ -9,7 +9,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 2/8/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Microsoft Entra integrations with authentication protocols

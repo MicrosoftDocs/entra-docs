@@ -123,7 +123,7 @@ If there's a connection error to the cloud service, the client falls back to eit
 #### Geolocation
 For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This scenario might affect services that rely on geolocation.
 > [!TIP]
-> For Microsoft 365 and Microsoft Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
+> For Microsoft Entra and Microsoft Graph to detect the device's true original public egress (source) IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
 
 #### Virtualization support
 You can't install the Global Secure Access client on a device that hosts virtual machines. However, you can install the Global Secure Access client on a virtual machine, as long as the client isn't installed on the host machine. For the same reason, a Windows Subsystem for Linux (WSL) doesn't acquire traffic from a client installed on the host machine.
@@ -227,16 +227,13 @@ Known limitations for remote networks include:
 Known limitations for access controls include:   
 - Applying Conditional Access policies to Private Access traffic isn't currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
 - Microsoft traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access Client.
-- Compliant network check data plane enforcement (preview) with Continuous Access Evaluation is supported for SharePoint Online and Exchange Online.
-- Enabling Global Secure Access Conditional Access signaling enables signaling for both authentication plane (Microsoft Entra ID) and data plane signaling (preview). It isn't currently possible to enable these settings separately.
 - Compliant network check is currently not supported for Private Access applications.
-- When source IP restoration is enabled, you can only see the source IP. The IP address of the Global Secure Access service isn't visible. If you want to see the Global Secure Access service IP address, disable source IP restoration.
+- When source IP restoration is enabled, you can only see the original public egress (source) IP. The IP address of the Global Secure Access service isn't visible. If you want to see the Global Secure Access service IP address, disable source IP restoration.
 - Currently only [Microsoft resources](/microsoft-365/enterprise/urls-and-ip-address-ranges) evaluate IP location-based Conditional Access policies, as the original source IP address isn't known to non-Microsoft resources protected by continuous access evaluation (CAE).
 - If you're using CAE’s [strict location enforcement](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md), users are blocked despite being in a trusted IP range. To resolve this condition, do one of the following recommendations:
     - If you have IP location-based Conditional Access policies targeting non-Microsoft resources, don't enable strict location enforcement.  
     - Ensure that Source IP Restoration supports the traffic. If not, don't send the relevant traffic through Global Secure Access.
 - At this time, connecting through the Global Secure Access client is required to acquire Private Access traffic.
-- Data plane protection capabilities are in preview (authentication plane protection is generally available).
 - If you enabled Universal Tenant Restrictions and you access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
     - `?feature.msaljs=true&exp.msaljsexp=true`
     - For example, you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
@@ -245,10 +242,8 @@ Known limitations for access controls include:
 - Microsoft Entra ID issues short-lived tokens for Global Secure Access. The lifetime for a Universal CAE access token is between 60 and 90 minutes, with support for near real-time revocation.
 - It takes approximately two to five minutes for the Microsoft Entra ID signal to reach the Global Secure Access client and prompt the user to reauthenticate.
 - The Global Secure Access client will prompt the user 3 times to authenticate with a 2 minute grace period each time. This means that the entire CAE flow includes 4-5 minutes to signal the Global Secure Access client, then up to 6 minutes grace period, resulting in a disconnect after approximately 10 minutes.
-  
 ## Traffic forwarding profile limitations
-Known limitations for traffic forwarding profiles include:   
-- Individual services are added to the Microsoft traffic profile on an ongoing basis. Currently, Microsoft Entra ID, Microsoft Graph, Exchange Online and SharePoint Online are supported as part of the Microsoft traffic profile
+Known limitations for traffic forwarding profiles include:
 - At this time, Private Access traffic can only be acquired with the Global Secure Access client. Private Access traffic can't be acquired from remote networks.
 - Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet. 
 - You must disable DNS over HTTPS (Secure DNS) to tunnel network traffic based on the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile.
@@ -269,3 +264,4 @@ Known limitations for Internet Access include:
 - Remote network connectivity for Internet Access is in development.
 - Transport Layer Security (TLS) inspection is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
+- Traffic available for acquisition in the Microsoft traffic profile is not available for acquisition in the Internet Access traffic profile.
