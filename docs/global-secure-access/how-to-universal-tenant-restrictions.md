@@ -37,7 +37,7 @@ Universal tenant restrictions help prevent data exfiltration across browsers, de
 ### Authentication Plane (Entra ID)
 Authentication plane enforcement happens at the time of Entra ID or Microsoft Account authentication. When the user is connected with the Global Secure Access client or via Remote Network connectivity, Tenant Restrictions v2 policy is checked to determine if authentication should be allowed. If the user is signing in to the tenant of their organization, tenant restrictions policy is not applied. If the user is signing in to a different tenant, policy is enforced. Any application that is integrated with Entra ID or uses Microsoft Account for authentication supports Universal Tenant Restrictions at the authentication plane.
 
-## Data Plane (Microsoft Graph)
+### Data Plane (Microsoft Graph)
 Data plane enforcement is currently supported for Microsoft Graph. Data plane protection ensures that imported authentication artifacts (for example, an access token obtained on another device, bypassing authentication plane enforcements defined in your Tenant Restrictions v2 policy) cannot be replayed from your organization's devices to exfiltrate data.
 
 ## Prerequisites
