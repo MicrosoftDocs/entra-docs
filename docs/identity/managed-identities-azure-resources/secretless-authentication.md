@@ -1,6 +1,6 @@
 ---
 title: Secretless authentication in Azure
-description: Discover secretless authentication options in Azure to reduce credential risks, improve user experience, and align with zero-trust principles.
+description: Learn about secretless authentication in Azure to reduce credential risks, enhance security, and streamline user experience with Zero Trust principles.
 
 author: rwike77
 manager: CelesteDG
@@ -15,29 +15,29 @@ ms.author: ryanwi
 #Customer intent: As a Azure developer or IT admin, I'd like learn about secretless authentication in Azure so I can securely access Azure resources without managing or storing passwords or secrets.
 ---
 
-# Secretless authentication to Azure resources
+# Secretless authentication for Azure resources
 
-Passwords and security keys were the foundation of digital security for decades, but are no longer able to keep up with modern security threats.  Secretless, or credential-free authentication, associated with the zero-trust model, is a shift in how access control and user verification are handled within digital environments. Secretless authentication involves designing secure applications in the cloud without relying on traditional, shared credentials such as passwords, certificates, secrets, or security keys.  Secretless authentication provides the following benefits:
+Passwords and security keys were the foundation of digital security for decades, but they can no longer keep up with modern threats. Secretless authentication, aligned with the Zero Trust model, shifts access control and user verification to a credential-free approach. Secretless authentication involves designing secure applications in the cloud without relying on traditional, shared credentials such as passwords, certificates, secrets, or security keys.  Secretless authentication provides the following benefits:
 
 - Reduced credential risks: By eliminating passwords, secretless authentication mitigates risks associated with credential theft, phishing attacks, and brute force attacks. This approach uses verifiable identity elements such as biometrics, digital certificates, and hardware tokens.
-- Streamlined access control: It enhances security and streamlines the user experience by relying on mechanisms that verify true identity rather than shared secrets. This aligns with the principles of zero trust by verifying every access request based on true identity.
+- Streamlined access control: It enhances security and streamlines the user experience by relying on mechanisms that verify true identity rather than shared secrets. This aligns with the principles of Zero Trust by verifying every access request based on true identity.
 - Improved end-user experience: Users benefit from a more seamless and secure authentication process, which reduces the need for password resets and improves overall user satisfaction.
 
 This article explores secretless authentication in Azure, its benefits, and how to implement it across various scenarios, including client applications, Azure service-to-service communication, and external workloads.
 
-### Security challenges with passwords and secrets
+### Security challenges of passwords and secrets
 
 Passwords and other secrets should be used with caution, and developers must never place them in an unsecure location. Many apps connect to backend database, cache, messaging, and eventing services using usernames, passwords, and access keys. If exposed, these credentials could be used to gain unauthorized access to sensitive information such as a sales catalog that you built for an upcoming campaign, or customer data that must be private.
 
 Embedding passwords in an application itself presents a huge security risk for many reasons, including discovery through a code repository. Many developers externalize such passwords using environment variables so that applications can load them from different environments. However, this only shifts the risk from the code itself to an execution environment. Anyone who gains access to the environment can steal passwords, which in turn, increases your data exfiltration risk.
 
-### Security challenges with keys
+### Security challenges of keys
 
 Using cryptographic keys in Azure application development presents several challenges that can complicate both security and operational efficiency. One major issue is key management complexities, which involve the cumbersome tasks of rotating, distributing, and securely storing keys across various services and environments. This ongoing process requires dedicated resources and can significantly increase operational costs due to the need for regular maintenance and monitoring. Additionally, there are substantial security risks associated with key exposure or misuse, as unauthorized access due to leaked keys can compromise sensitive data. Furthermore, key-based authentication methods often lack the scalability and flexibility needed for dynamic environments, making it difficult to adapt to changing requirements and scale operations effectively. These challenges highlight the importance of adopting more secure and efficient authentication methods, such as managed identities, to mitigate risks and streamline operations.
 
 ## Client application (user-facing) accesses Microsoft Entra protected resources
 
-Features like multifactor authentication (MFA) are a great way to secure your organization, but users often get frustrated with the extra security layer on top of having to remember their passwords. Passwordless authentication methods are more convenient because the password is removed and replaced with something you have or something you're or know.
+Features like multifactor authentication (MFA) are a great way to secure your organization, but users often get frustrated with the extra security layer on top of having to remember their passwords. Passwordless authentication methods are more convenient because the password is removed and replaced with something you have or something you are or know.
 
 Each organization has different needs when it comes to authentication. Microsoft Entra ID and Azure Government integrate the following passwordless authentication options:
 
