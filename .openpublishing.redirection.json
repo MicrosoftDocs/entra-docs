@@ -1800,9 +1800,14 @@
       "redirect_url": "/entra/identity-platform/tutorial-mobile-app-android-prepare-app?tabs=workforce-tenant",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity-platform/msal-configuration.md",
       "redirect_url": "/entra/msal/android/msal-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-shared-devices.md",
+      "redirect_url": "/entra/msal/android/shared-devices",
       "redirect_document_id": false
     },
     {
