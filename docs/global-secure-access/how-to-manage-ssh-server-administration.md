@@ -51,7 +51,7 @@ Use the following instructions to create the application.
 3. Select **New application**. 
 4. Type a name.
 5. The **Create application segment** panel appears.
-6. Add an application segment.
+6. (Optional) Add application segments.
 7. Select a **Destination type**. 
 8. Add needed IPs or subnets. 
 9. For **Port**, select **22**. 
@@ -76,7 +76,7 @@ Create [Microsoft Entra Conditional Access](../identity/conditional-access/overv
 5. Select **New policy**.
 6. Go to Protection.
 7. Select **Conditional Access**, then select **Policies**.
-8. In the Microsoft Entra admin center, create and apply policy in two places.
+8. In the [Microsoft Entra admin center](https://entra.microsoft.com/), create and apply policy in two places.
 9. Select **+ Create new policy**.
 
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md). 
