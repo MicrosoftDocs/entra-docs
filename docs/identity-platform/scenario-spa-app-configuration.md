@@ -18,12 +18,6 @@ ms.topic: how-to
 
 Learn how to configure the code for your single-page application (SPA).
 
-## Microsoft libraries supporting single-page apps
-
-The following Microsoft libraries support single-page apps:
-
-[!INCLUDE [active-directory-develop-libraries-spa](./includes/libraries/libraries-spa.md)]
-
 ## Prerequisites
 
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
@@ -31,6 +25,12 @@ The following Microsoft libraries support single-page apps:
   * Directory (tenant) ID
 * Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`.
+
+## Microsoft libraries supporting single-page apps
+
+The following Microsoft libraries support single-page apps:
+
+[!INCLUDE [active-directory-develop-libraries-spa](./includes/libraries/libraries-spa.md)]
 
 ## Application code configuration
 
@@ -102,6 +102,6 @@ export class AppModule { }
 
 For more information on the configurable options, see [Initializing application with MSAL.js](msal-js-initializing-client-applications.md).
 
-## Next steps
+## Next step
 
-Move on to the next article in this scenario, [Sign-in and sign-out](scenario-spa-sign-in.md).
+- [Sign-in and sign-out](scenario-spa-sign-in.md).

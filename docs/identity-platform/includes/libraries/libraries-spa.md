@@ -10,14 +10,8 @@ manager: CelesteDG
 | Language / framework | Project on<br/>GitHub  | Package | Getting<br/>started    | Sign in users | Access web APIs |
 | -------------------- | ---------------------- | ------- | :--------------------: | :-----------: | :-------------: |
 | React | [MSAL React](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react)<sup>2</sup> | [msal-react](https://www.npmjs.com/package/@azure/msal-react) | [Quickstart](../../quickstart-register-app.md) | ![Library can request ID tokens for user sign-in.][y] | ![Library can request access tokens for protected web APIs.][y] |
-| JavaScript | [MSAL.js v2](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)<sup>2</sup> | [msal-browser](https://www.npmjs.com/package/@azure/msal-browser) | [Quickstart](../../quickstart-register-app.md) | ![Library can request ID tokens for user sign-in.][y] | ![Library can request access tokens for protected web APIs.][y] |
-| Angular | [MSAL Angular v2](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)<sup>2</sup> | [msal-angular](https://www.npmjs.com/package/@azure/msal-angular) | [Quickstart](../../quickstart-register-app.md) | ![Library can request ID tokens for user sign-in.][y] | ![Library can request access tokens for protected web APIs.][y] |
-
-<sup>1</sup> [Universal License Terms for Online Services][preview-tos] apply to libraries in *Public preview*.
-
-<sup>2</sup> [Auth code flow][auth-code-flow] with PKCE only (Recommended).
-
-<sup>3</sup> [Implicit grant flow][implicit-flow] only (Not recommended).
+| JavaScript | [MSAL.js ](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)<sup>2</sup> | [msal-browser](https://www.npmjs.com/package/@azure/msal-browser) | [Quickstart](../../quickstart-register-app.md) | ![Library can request ID tokens for user sign-in.][y] | ![Library can request access tokens for protected web APIs.][y] |
+| Angular | [MSAL Angular ](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)<sup>2</sup> | [msal-angular](https://www.npmjs.com/package/@azure/msal-angular) | [Quickstart](../../quickstart-register-app.md) | ![Library can request ID tokens for user sign-in.][y] | ![Library can request access tokens for protected web APIs.][y] |
 
 <!--Image references-->
 
