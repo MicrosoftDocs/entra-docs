@@ -2310,7 +2310,11 @@
     "source_path_from_root": "/docs/identity-platform/deprecate-service-principal-less-authentication.md",
     "redirect_url": "/entra/identity-platform/retire-service-principal-less-authentication",
     "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/identity-platform/scenario-spa-app-registration.md",
+    "redirect_url": "/entra/identity-platform/scenario-spa-app-configuration",
+    "redirect_document_id": false
   }
-
   ]
 }

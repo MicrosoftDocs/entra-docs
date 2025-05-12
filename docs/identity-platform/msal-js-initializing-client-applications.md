@@ -5,8 +5,8 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 02/27/2024
-ms.reviewer: saeeda
+ms.date: 05/12/2025
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -23,12 +23,12 @@ To learn more about the client application types and application configuration o
 
 ## Prerequisites
 
-Before initializing an application, you first need to [register it in the Microsoft Entra admin center](scenario-spa-app-registration.md), establishing a trust relationship between your application and the Microsoft identity platform.
+Before initializing an application, you first need to [register it in the Microsoft Entra admin center](scenario-spa-app-configuration), establishing a trust relationship between your application and the Microsoft identity platform.
 
 After registering your app, you'll need some or all of the following values that can be found in the Microsoft Entra admin center.
 
-| Value                   | Required | Description                                                                                                                                                                |
-| :---------------------- | :------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Value | Required | Description |
+| :---- | :------: | :---- |
 | Application (client) ID | Required | A GUID that uniquely identifies your application within the Microsoft identity platform.                                                                                   |
 | Authority               | Optional | The identity provider URL (the *instance*) and the *sign-in audience* for your application. The instance and sign-in audience, when concatenated, make up the *authority*. |
 | Directory (tenant) ID   | Optional | Specify Directory (tenant) ID if you're building a line-of-business application solely for your organization, often referred to as a *single-tenant application*.          |
@@ -148,10 +148,8 @@ Multiple instances of `UserAgentApplication` or `PublicClientApplication` aren't
 
 The MSAL.js 2.x code sample on GitHub demonstrates instantiation of a [PublicClientApplication][msal-js-publicclientapplication] with a [Configuration][msal-js-configuration] object:
 
-<!-- LINKS - External -->
-
-[msal-browser]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-browser/
-[msal-core]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-core/
-[msal-js-configuration]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_browser.PublicClientApplication.html#constructor
-[msal-js-handleredirectpromise]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.PublicClientApplication.html#handleredirectpromise 
-[msal-js-publicclientapplication]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.PublicClientApplication.html
+- [MSAL Browser](msal-browser.md)
+- [MSAL Core](msal-core.md)
+- [MSAL.js Configuration](msal-js-configuration.md)
+- [Handle Redirect Promise in MSAL.js](msal-js-handle-redirect-promise.md)
+- [Public Client Application in MSAL.js](msal-js-public-client-application.md)

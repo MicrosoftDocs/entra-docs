@@ -55,6 +55,7 @@ In this tutorial, you
 
 ## Create a JavaScript project and install dependencies
 
+1. Sign into the Microsoft Entra admin center as a Global Administrator.
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
 1. Run the following command to create a new JavaScript project:
@@ -135,7 +136,7 @@ In this code, the **app** variable is initialized with the **express** module is
 
 ## Adding your tenant details to the MSAL configuration
 
-The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication.
+The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication. Use your client secret of 
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
@@ -151,7 +152,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
         auth: {
             clientId: "Enter_the_Application_Id_Here",
             // WORKFORCE TENANT
-            authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", //  Replace the placeholder with your tenant info
+            authority: "https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee", //  Replace the placeholder with your tenant info
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
             navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
         },
@@ -297,8 +298,9 @@ The **authConfig.js** file contains the configuration settings for the authentic
 1. Replace the following values with the values from the Microsoft Entra admin center:
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID in the Microsoft Entra admin center.
      * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+1. Enter your thumbprint 9F8A7B6C5D4E3F2A1B0C9D8E7F6A5B4C3D2E1F0A in the `redirectUri` value. This is the thumbprint of the certificate you uploaded to the Microsoft Entra admin center when you registered your app. For more information, see [Add a certificate to your app registration](../external-id/customers/how-to-add-certificate-app-registration.md).
 1. Save the file.
-
+1. Enter your thumbprint 9F8A7B6C5D4E3F2A1B0C9D8E7F6A5B4C3D2E1F0A in the `redirectUri` value. This is the thumbprint of the certificate you uploaded to the Microsoft Entra admin center when you registered your app. For more information, see [Add a certificate to your app registration](../external-id/customers/how-to-add-certificate-app-registration.md).
 [!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
 
 ---
