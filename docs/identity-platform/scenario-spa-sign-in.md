@@ -436,7 +436,7 @@ const logoutRequest = {
 await myMsal.logoutPopup(logoutRequest);
 ```
 
-# [Angular (MSAL.js v2)](#tab/angular)
+# [Angular (MSAL.js)](#tab/angular)
 
 ```javascript
 // In app.module.ts
