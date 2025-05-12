@@ -38,11 +38,11 @@ Follow these steps for app registrations that are currently configured with **We
 1. Browse to **Entra ID** > **App registrations**, select your application, and then **Authentication**.
 1. In the **Web** platform tile under **Redirect URIs**, select the warning banner indicating that you should migrate your URIs.
 
-    :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-01-implicit-warning-banner.png" alt-text="Implicit flow warning banner on web app tile in the Entra admin center":::
+    :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-01-implicit-warning-banner.png" alt-text="Implicit flow warning banner on web app tile in the Entra admin center.":::
 
 1. Select *only* those redirect URIs whose applications will use MSAL.js 2.x, and then select **Configure**.
 
-    :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-02-select-redirect-uri.png" alt-text="Select redirect URI pane in SPA pane in the Entra admin center":::
+    :::image type="content" source="media/migrate-spa-implicit-to-auth-code/portal-02-select-redirect-uri.png" alt-text="Select redirect URI pane in SPA pane in the Entra admin center.":::
 
 These redirect URIs should now appear in the **Single-page application** platform tile, showing that CORS support with the authorization code flow and PKCE is enabled for these URIs.
 

@@ -136,7 +136,7 @@ In this code, the **app** variable is initialized with the **express** module is
 
 ## Adding your tenant details to the MSAL configuration
 
-The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication. Use your client secret of 
+The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication.
 
 ### [Workforce tenant](#tab/workforce-tenant)
 

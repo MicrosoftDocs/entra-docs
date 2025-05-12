@@ -462,7 +462,7 @@ logout() {
 
 ## Sign out with a redirect
 
-MSAL.js provides a `logoutRedirect` method in v2 that clears the cache in browser storage and redirects to the Microsoft Entra sign out page. After sign out, the redirect defaults to the sign in start page.For the after sign out experience, you can set the `postLogoutRedirectUri` to redirect the user to a specific URI. This URI should be registered as a redirect URI in your application registration.
+MSAL.js provides a `logoutRedirect` method in v2 that clears the cache in browser storage and redirects to the Microsoft Entra sign out page. After sign out, the redirect defaults to the sign in start page. For the after sign out experience, you can set the `postLogoutRedirectUri` to redirect the user to a specific URI. This URI should be registered as a redirect URI in your application registration.
 
 Because the Microsoft's reminder of [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) about using a private browser and lock screen isn't shown in this method, you might want to describe best practices and remind users to close all browser windows when they've signed out of their app. 
 
