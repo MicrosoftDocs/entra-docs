@@ -16,7 +16,7 @@ ai-usage: human-only
 Secure Shell (SSH) is widely recognized across the IT industry as a critical service for system administrators. It provides a secure and encrypted method to access and manage remote systems over unsecured networks.
 IT administrators rely on SSH to perform essential tasks securely, including the configuration, deployment, and maintenance of servers and applications in an organization’s infrastructure.
  
-In this guide, you'll learn how to configure and establish an SSH connection using Microsoft Entra Private Access to enhance security in your remote access workflows.
+In this guide, you learn how to configure and establish an SSH connection using Microsoft Entra Private Access to enhance security in your remote access workflows.
 
 You can [learn more about Private Access](concept-private-access.md).
 
@@ -32,13 +32,13 @@ Ensure you meet the following prerequisites.
 
 * **Licensing** - Learn about licensing for [Microsoft Global Secure Access](overview-what-is-global-secure-access.md)
   * Learn more about [Microsoft Entra plans and pricing](https://aka.ms/azureadlicense)
-  * See, [Global Secure Acces client for Windows](how-to-install-windows-client.md)
+  * See, [Global Secure Access client for Windows](how-to-install-windows-client.md)
 * **A remote server with SSH** enabled
-* **Microsoft Global Secure Access (GSA) private connector** with network connectivity to the resource
+* **Microsoft Global Secure Access private connector** with network connectivity to the resource
   * Learn how to [configure connectors](how-to-configure-connectors.md)
-* **A device with the GSA client**
+* **A device with the Global Secure Access client**
 * **Private Access profile** enabled
-  * See [GSA traffic forwarding profiles](concept-traffic-forwarding.md)
+  * See [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md)
 * **[Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference)** for admins
   * Learn about [built-in roles](reference-role-based-permissions.md)
 
