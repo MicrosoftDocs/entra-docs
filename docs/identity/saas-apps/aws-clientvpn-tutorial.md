@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/09/2025
 ms.author: gideonkiratu
 
 
@@ -95,17 +95,11 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values aren't real.  Update these values with the actual Sign on URL and Reply URL.  The Sign on URL and Reply URL can have the same value (`http://127.0.0.1:35001`). Refer to [AWS Client VPN Documentation](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html#ad) for details.   You can also refer to the patterns shown in the **Basic SAML Configuration** section. Contact [AWS ClientVPN support team](https://aws.amazon.com/contact-us/) for any configuration issues. 
 
-1. In the Microsoft Entra service, navigate to **App registrations** and then select **All Applications**.
-
-1. Type **AWS ClientVPN** in the search box and select **AWS ClientVPN** from the search panel.
-
-1. Select **Manifest**. Under **replyUrlWithType**, keep the Reply URL as **http** instead of **https** to get the integration working. Select **Save**.
-
 1. AWS ClientVPN application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![image](common/default-attributes.png)
 
-1. In addition to above, AWS ClientVPN application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, AWS ClientVPN application expects few more attributes to be passed back in the SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
 	| Name |  Source Attribute|
 	| -------------- | --------- |
