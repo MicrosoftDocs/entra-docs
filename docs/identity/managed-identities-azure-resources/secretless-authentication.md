@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: concept-article
-
+ms.reviewer: hosamsh
 ms.date: 05/09/2025
 ms.author: ryanwi
 
@@ -16,28 +16,27 @@ ms.author: ryanwi
 ---
 
 # Secretless authentication to Azure resources
-secretless = This is a broader term that encompasses both passwordless and keyless. You often store a password or a key outside of the source-controlled directory as a secret. Key Vault Secrets and environment variables are 2 common approaches I see customers use to store those items. Once you move away from that secrets storage practice, you’ve transitioned to secretless authN.
 
-Sub-scenarios/implementations of secretless:
-    • Passwordless = Use this term when the alternative authN mechanism is a username/password combination.
-    • Keyless = Use this term when the alternative authN mechanism is a key. Examples of keys are:
-- The access key authN mechanism that Azure Communication Services supports.
-- The API key that Azure OpenAI supports. For example: azure-sdk-for-net/sdk/openai/Azure.AI.OpenAI at main · Azure/azure-sdk-for-net (github.com)
+Passwords and security keys have been the foundation of digital security for decades, but are no longer able to keep up with modern security threats.  Secretless, or credential-free authentication, associated with the zero-trust model, is a shift in how access control and user verification are handled within digital environments. Secretless authentication involves designing secure applications in the cloud without relying on traditional, shared credentials such as passwords, certificates, secrets, or security keys.  Secretless authentication provides the following benefits:
 
-## Security challenges with passwords and secrets
+- Reduced credential risks: By eliminating passwords, secretless authentication mitigates risks associated with credential theft, phishing attacks, and brute force attacks. This approach uses verifiable identity elements such as biometrics, digital certificates, and hardware tokens.
+- Streamlined access control: It enhances security and streamlines the user experience by relying on mechanisms that verify true identity rather than shared secrets. This aligns with the principles of zero trust by verifying every access request based on true identity.
+- Improved end-user experience: Users benefit from a more seamless and secure authentication process, which reduces the need for password resets and improves overall user satisfaction.
 
-Passwords and secret keys should be used with caution, and developers must never place them in an unsecure location. Many apps connect to backend database, cache, messaging, and eventing services using usernames, passwords, and access keys. If exposed, these credentials could be used to gain unauthorized access to sensitive information such as a sales catalog that you built for an upcoming campaign, or customer data that must be private.
+This article explains secretless authentication options for different Azure application scenarios.
+
+### Security challenges with passwords and secrets
+
+Passwords and and other secrets should be used with caution, and developers must never place them in an unsecure location. Many apps connect to backend database, cache, messaging, and eventing services using usernames, passwords, and access keys. If exposed, these credentials could be used to gain unauthorized access to sensitive information such as a sales catalog that you built for an upcoming campaign, or customer data that must be private.
 
 Embedding passwords in an application itself presents a huge security risk for many reasons, including discovery through a code repository. Many developers externalize such passwords using environment variables so that applications can load them from different environments. However, this only shifts the risk from the code itself to an execution environment. Anyone who gains access to the environment can steal passwords, which in turn, increases your data exfiltration risk.
 
 
-## Security challenges with keys
+### Security challenges with keys
 
 Using cryptographic keys in Azure application development presents several challenges that can complicate both security and operational efficiency. One major issue is key management complexities, which involve the cumbersome tasks of rotating, distributing, and securely storing keys across various services and environments. This ongoing process requires dedicated resources and can significantly increase operational costs due to the need for regular maintenance and monitoring. Additionally, there are substantial security risks associated with key exposure or misuse, as unauthorized access due to leaked keys can compromise sensitive data. Furthermore, key-based authentication methods often lack the scalability and flexibility needed for dynamic environments, making it difficult to adapt to changing requirements and scale operations effectively. These challenges highlight the importance of adopting more secure and efficient authentication methods, such as managed identities, to mitigate risks and streamline operations.
 
 ## Client application (user-facing) accesses Microsof Entra protected resources
-
-Passwordless user sign-in authentication options for Microsoft Entra ID
 
 Features like multifactor authentication (MFA) are a great way to secure your organization, but users often get frustrated with the extra security layer on top of having to remember their passwords. Passwordless authentication methods are more convenient because the password is removed and replaced with something you have or something you are or know.
 
