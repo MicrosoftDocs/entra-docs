@@ -109,22 +109,22 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |active|Boolean|
-   |title|String|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |externalId|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|
-   |urn:ietf:params:scim:schemas:extension:blink:2.0:User:company|String|
-   urn:ietf:params:scim:schemas:extension:blink:2.0:User:description|String|
-   urn:ietf:params:scim:schemas:extension:blink:2.0:User:location|String|
+   |active|Boolean||
+   |title|String||
+   |emails[type eq "work"].value|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |externalId|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
+   |urn:ietf:params:scim:schemas:extension:blink:2.0:User:company|String||
+   |urn:ietf:params:scim:schemas:extension:blink:2.0:User:description|String||
+   |urn:ietf:params:scim:schemas:extension:blink:2.0:User:location|String||
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Blink, change the **Provisioning Status** to **On** in the **Settings** section.
 

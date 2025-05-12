@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.custom: pim
 ---

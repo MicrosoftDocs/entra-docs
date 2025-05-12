@@ -20,7 +20,7 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 ## Prerequisites
 
-- You must be assigned the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview. These roles also have [access to Security Copilot by default](/copilot/security/authentication).
+- For the initial agent enablement/setup, you will need to be either a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview. These roles also have [access to Security Copilot by default](/copilot/security/authentication). After setup, you can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well.
 - You must have at least [Microsoft Entra ID P1](overview.md#license-requirements).
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage). On average, each agent run consumes less than one SCU.
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
@@ -29,7 +29,6 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 - During the preview, avoid using an account to set up the agent that requires role activation with Privileged Identity Management. Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- The agent is configured to run every 24 hours based on when it's initially configured. Toggling the trigger to off under the settings page of the agent and back on at a specific time reconfigures the agent to run at that time.
 - For policy consolidation, each agent run only looks at four similar policy pairs
 - The agent currently runs as the user who enables it.
 - In preview, you should only run the agent from the Microsoft Entra admin center.
@@ -49,7 +48,7 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot showing the Conditional Access Optimization Agent enabled in an organization." lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
 
-1. Selecting a suggestion provides you with more detail to back up the suggestion, along with the ability to review the changes in the policy viewer or in JSON format.
+1. Selecting a suggestion allows you to see the proposed change, make edits, see [potential policy impact](concept-conditional-access-report-only.md#reviewing-results).
 1. Newly created policies are created in report-only mode. As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
 
 > [!TIP]
@@ -68,6 +67,16 @@ The agent might run and:
 ### Providing feedback
 
 Use the **Give Microsoft feedback** button at the top of the agent window to provide feedback to Microsoft about the agent.
+
+## Settings
+
+The agent is configured to run every 24 hours based on when it's initially configured. Toggling **Trigger** to off under the settings page of the agent and back on at a specific time reconfigures the agent to run at that time.
+
+Use the checkboxes under **Objects** to specify what the agent should monitor when making policy recommendations. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
+
+The agent runs under the **Identity and permissions** of the user who enabled the agent in your tenant. Because of this requirement you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation.
+
+You can tailor policy to your needs using the optional **Custom Instructions** field. This allows you to provide a prompt to the agent as part of its execution. For example: "The user "Break Glass" should be excluded from policies created." When you save the custom instruction prompt Security Copilot will attempt to interpret and the results appear in the settings page.
 
 ## Remove agent
 

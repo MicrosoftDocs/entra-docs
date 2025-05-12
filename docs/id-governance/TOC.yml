@@ -253,6 +253,8 @@
         href: entitlement-management-catalog-create.md
       - name: Create a custom extension (logic apps) for catalogs
         href: entitlement-management-logic-apps-integration.md
+      - name: Determine access package approvers externally (Preview)
+        href: entitlement-management-dynamic-approval.md  
       - name: Delegate to access package managers
         href: entitlement-management-delegate-managers.md
       - name: Set up group writeback
@@ -380,7 +382,9 @@
         - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md              
         - name: Check Workflow Insights
-          href: manage-workflow-insights.md            
+          href: manage-workflow-insights.md
+        - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
+          href: ~/fundamentals/copilot-entra-lifecycle-workflow.md              
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
@@ -408,6 +412,8 @@
     href: /graph/api/resources/entitlementmanagement-overview
   - name: Custom Alerts
     href: governance-custom-alerts.md
+  - name: Access reviews - FAQs
+    href: access-reviews-faqs.md    
   - name: Lifecycle Workflows
     items:
     - name: Lifecycle Workflows - Microsoft Graph API

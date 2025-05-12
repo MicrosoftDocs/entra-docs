@@ -103,43 +103,43 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |externalId|String|&check;|
-   |userName|String|
-   |active|Boolean|
-   |displayName|String|
-   |name.formatted|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.honorificSuffix|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |phoneNumbers[type eq "home"].value|String|
-   |phoneNumbers[type eq "other"].value|String|
-   |phoneNumbers[type eq "pager"].value|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |phoneNumbers[type eq "fax"].value|String|
-   |addresses[type eq "other"].formatted|String|
-   |addresses[type eq "work"].formatted|String|
-   |addresses[type eq "work"].streetAddress|String|
-   |addresses[type eq "work"].locality|String|
-   |addresses[type eq "work"].region|String|
-   |addresses[type eq "work"].postalCode|String|
-   |addresses[type eq "work"].country|String|
-   |title|String|
-   |emails[type eq "work"].value|String|
-   |emails[type eq "home"].value|String|
-   |emails[type eq "other"].value|String|
-   |preferredLanguage|String|
-   |nickName|String|
-   |userType|String|
-   |locale|String|
-   |timezone|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|
+   |userName|String||
+   |active|Boolean||
+   |displayName|String||
+   |name.formatted|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.honorificSuffix|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "home"].value|String||
+   |phoneNumbers[type eq "other"].value|String||
+   |phoneNumbers[type eq "pager"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |phoneNumbers[type eq "fax"].value|String||
+   |addresses[type eq "other"].formatted|String||
+   |addresses[type eq "work"].formatted|String||
+   |addresses[type eq "work"].streetAddress|String||
+   |addresses[type eq "work"].locality|String||
+   |addresses[type eq "work"].region|String||
+   |addresses[type eq "work"].postalCode|String||
+   |addresses[type eq "work"].country|String||
+   |title|String||
+   |emails[type eq "work"].value|String||
+   |emails[type eq "home"].value|String||
+   |emails[type eq "other"].value|String||
+   |preferredLanguage|String||
+   |nickName|String||
+   |userType|String||
+   |locale|String||
+   |timezone|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Cofense Recipient Sync, change the **Provisioning Status** to **On** in the **Settings** section.
 

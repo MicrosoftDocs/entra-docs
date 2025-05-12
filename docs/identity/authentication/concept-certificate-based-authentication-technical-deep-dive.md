@@ -244,8 +244,11 @@ Mapping types based on user names and email addresses are considered low-affinit
 |IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
 |Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
 |SKI | `X509:<SKI>aB1cD2eF3gH4iJ5kL6-mN7oP8qR=` | certificateUserIds | high-affinity |
-|SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` | certificateUserIds | high-affinity |
+|SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` <br> The SHA1PublicKey value (SHA1 hash of the entire certificate content including the public key) is found in the Thumbprint property of certificate.| certificateUserIds | high-affinity |
 |IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+
+>[!IMPORTANT]
+> You can use the [CertificateBasedAuthentication PowerShell module](concept-certificate-based-authentication-certificateuserids.md#how-to-find-the-correct-certificateuserids-values-for-a-user-from-the-end-user-certificate-using-powershell-module) to find the correct CertificateUserIds values for a user from the end user certificate.
 
 ### Define Affinity binding at the tenant level and override with custom rules
 
@@ -424,7 +427,7 @@ The following steps are a typical flow of the CRL check:
 
 >[!NOTE]
 >Microsoft Entra ID checks the CRL of the issuing CA and other CAs in the PKI trust chain up to the root CA. We have a limit of up to 10 CAs from the leaf client certificate for CRL validation in the PKI chain. The limitation is to make sure a bad actor doesn't bring down the service by uploading a PKI chain with a huge number of CAs with a bigger CRL size.
-If the tenant's PKI chain has more than 5 CAs, andif there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration.
+If the tenant's PKI chain has more than 5 CAs, and if there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration.
  
 
 >[!IMPORTANT]

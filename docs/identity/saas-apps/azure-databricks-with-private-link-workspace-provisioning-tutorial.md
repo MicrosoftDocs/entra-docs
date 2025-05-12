@@ -18,7 +18,7 @@ ms.reviewer: owinoakelo
 
 The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010) client that can be used to automatically provision users into cloud or on-premises applications. This article outlines how you can use the Microsoft Entra provisioning service to provision users into Azure Databricks workspaces with no public access.
 
-[ ![Diagram that shows SCIM architecture.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png#lightbox)
+[![Diagram that shows SCIM architecture.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png#lightbox)
 
 ## Prerequisites
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)] with Microsoft Entra ID Governance and Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/microsoft-entra-pricing).

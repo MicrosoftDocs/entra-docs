@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: asteen
 ai-usage: ai-assisted
@@ -71,7 +71,7 @@ If your application is configured to use integrated Windows authentication (IWA)
 
 Next, open a browser and try again to access the application. You should be prompted for authentication and be able to sign in the application. If you can authenticate, the problem is with the KCD configuration that enables SSO.
 
-If you continue to see the error, go to the computer where the connector is installed, open a browser, and attempt to reach the internal URL that's used for the application. The connector acts like another client from the same computer. If you can't reach the application, investigate why that machine can't reach the application, or use a connector on a server that can access the application.
+If the error persists, use the computer where the connector is installed to open a browser and try accessing the application's internal URL. If the application can't be reached, check why that machine can't connect, or use a connector on a server that can.
 
 ## Related content
 

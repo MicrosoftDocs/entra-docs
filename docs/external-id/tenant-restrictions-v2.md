@@ -410,7 +410,64 @@ To test the tenant restrictions v2 policy on a device, follow these steps.
 
 1. Select **OK**.
 
-#### Block Chrome, Firefox and .NET applications like PowerShell
+#### View tenant restrictions v2 events
+
+View events related to tenant restrictions in Event Viewer.
+
+1. In Event Viewer, open **Applications and Services Logs**.
+1. Navigate to **Microsoft** > **Windows** > **TenantRestrictions** > **Operational** and look for events.
+   
+## Block Chrome, Firefox and .NET applications like PowerShell
+
+To block you need to set up Windows Defender Application Control (WDAC) as well as enable Windows firewall setting.
+
+### Set up Windows Defender Application Control (WDAC) to control access to Microsoft resources
+
+Windows Defender Application Control (WDAC) is a policy engine built into Windows that allows you to control which applications can be run on your user’s devices. For tenant restrictions v2, you need to use WDAC to block “unenlightened apps” (those that don’t provide TRv2 protection) from accessing Microsoft resources.  This allows you to keep using the browsers and apps of your choice, while knowing that any access to data protected by Entra can only be accessed through secure means.  
+
+“Unenlightened apps” are apps that do not use the Windows networking stack, and therefore do not benefit from the TRv2 features added to Windows. They cannot send the signal to Entra login.live.com, or Microsoft resources that indicates that TRv2 protection is required. As such, you cannot rely on them to provide data plane protections.  
+
+You can use WDAC in two different ways to protect against unenlightened apps:  
+- Prevent the use of unenlightened apps entirely (i.e. block PowerShell or Chrome entirely from being run).  This can be done using a standard WDAC policy that controls which apps can be run.  
+- Allow the use of unenlightened apps, but block them from accessing Microsoft resources using a special WDAC policy, called an “AppIdTagging policy”.   
+
+For both options, you must first create an WDAC policy. Then, optionally, convert it to an AppIdTagging policy. Finally, apply it to your devices after testing it on a test machine. 
+More info on [Creating your App Control AppId Tagging Policies](/windows/security/application-security/application-control/app-control-for-business/appidtagging/design-create-appid-tagging-policies)
+
+> [!NOTE]
+> These steps require an up to date Windows device in order to get access to the latest PowerShell commandlets needed to create the policy.  
+
+#### Step:1 Use the WDAC Wizard to create a policy 
+1. Install the [WDAC wizard](/windows/security/application-security/application-control/app-control-for-business/design/appcontrol-wizard)
+1. Choose "Create a policy" and Choose your policy format (default: Multiple policy, base policy)
+1. Choose your base template (recommended: "Default Windows" or "Allow Microsoft")
+1. When you convert the policy into an AppIdTagging policy, it will assume these rules are set. You can set them here but it's not required.
+1. Policy Rules to be enabled: Advanced Boot Options Menu, Disable Script Enforcement, Enforce Store Applications, Audit Mode, User Mode Code Integrity
+1. Choose the save location of your policy XML and create your policy.
+
+#### Step2: Convert it into an AppID Tagging Policy 
+After creating your policy in the Wizard, or creating your own using PowerShell, convert the .xml output to an AppIdTagging policy, which marks the apps you want to allow as being allowed to access Microsoft resources. The GUID output is your new Policy ID.
+
+```powershell
+   Set-CIPolicyIdInfo -ResetPolicyID .\policy.xml -AppIdTaggingPolicy -AppIdTaggingKey "M365ResourceAccessEnforced" -AppIdTaggingValue "True" 
+```
+
+#### Step3: Compiling and Deploying the policy for testing 
+
+After editing the policy and converting it to an AppID tagging policy, compile it with the policy ID matching the file name.
+```powershell
+   ConvertFrom-CIPolicy .\policy.xml ".\{PolicyID}.cip"
+```
+
+Then deploy the policy to your CiPolicies\Active directory.
+
+```powershell
+   copy ".\{Policy ID}.cip" c:\windows\system32\codeintegrity\CiPolicies\Active\ 
+```
+
+Refresh the policies on your system, by calling [RefreshPolicy.exe](https://www.microsoft.com/en-us/download/details.aspx?id=102925)
+
+### Enable Windows Firewall setting
 
 You can use the Windows Firewall feature to block unprotected apps from accessing Microsoft resources via Chrome, Firefox, and .NET applications like PowerShell. The applications that would be blocked/allowed as per the tenant restrictions v2 policy.
 
@@ -424,18 +481,20 @@ For example, if a customer adds PowerShell to their tenant restrictions v2 CIP p
 
 1. Select the **Enable firewall protection of Microsoft endpoints** checkbox, and then select **OK**.
 
-:::image type="content" source="media/tenant-restrictions-v2/cloud-policy-block.png" alt-text="Screenshot showing enabling the firewall policy.":::
+   :::image type="content" source="media/tenant-restrictions-v2/cloud-policy-block.png" alt-text="Screenshot showing enabling the firewall policy.":::
 
-After you enable the firewall setting, try signing in using a Chrome browser. Sign-in should fail with the following message:
-  
+1. Refresh group policy on your device by running gpudate
+   
+   ```powershell
+      gupdate /force
+   ```
+1. Restart the device
+   
+### Test TRv2 blocks access
+
+After you enable the firewall and WDAC setting, try signing in using a Chrome browser and access office.com. Sign-in should fail with the following message.
+
 :::image type="content" source="media/tenant-restrictions-v2/end-user-access-blocked.png" alt-text="Screenshot showing internet access is blocked.":::
-
-#### View tenant restrictions v2 events
-
-View events related to tenant restrictions in Event Viewer.
-
-1. In Event Viewer, open **Applications and Services Logs**.
-1. Navigate to **Microsoft** > **Windows** > **TenantRestrictions** > **Operational** and look for events.  
 
 ## Tenant restrictions and Data plane support (preview)
 Trv2 is enforced by the following resources which will address token infiltration scenarios where a bad actor accesses the resource directly with an infiltrated token or anonymously.
@@ -502,6 +561,32 @@ Like SharePoint, OneDrive supports tenant restrictions v2 on both the authentica
 ### Not in scope
 
 OneDrive for consumer accounts (via onedrive.live.com) doesn't support tenant restrictions v2. Some URLs (such as onedrive.live.com) are unconverged and use our legacy stack. When a user accesses the OneDrive consumer tenant through these URLs, the policy isn't enforced. As a workaround, you can block https://onedrive.live.com/ at the proxy level.
+
+## Tenant restrictions v2 and service principals
+
+Tenant restrictions v2 will also block service principal access. 
+
+- Enable client signaling using firewall or corporate proxy. Login using service principal
+
+   ```powershell
+       $client_id = "00001111-aaaa-2222-bbbb-3333cccc4444"
+       $clientSecret = Get-Credential -Username $client_id
+       Connect-MgGraph -TenantId "aaaabbbb-0000-cccc-1111-dddd2222eeee" -ClientSecretCredential $clientSecret
+   ```
+   
+Fails with 
+Connect-MgGraph : ClientSecretCredential authentication failed: AADSTS5000211: A tenant restrictions policy added to this request by a device or network
+administrator does not allow access to 'tenant'.
+
+- Enable client signaling using Windows GPO. You need to check 'Enable firewall protection on MIcrosoft endpoints' and WDAC enablement. See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell).     
+
+## Tenant Restrictions with Microsoft Enterprise SSO plug-in for Apple devices
+
+The Microsoft Enterprise SSO plug-in for Apple devices provides single sign-on (SSO) for Microsoft Entra accounts on macOS, iOS, and iPadOS across all applications that support Apple's enterprise single sign-on feature. To use the Microsoft Enterprise SSO plug-in for Apple devices certain URLs need to be excluded from network proxies, interception, and other enterprise systems.
+
+If your organization use Apple OS versions released after 2022, there is no need to exclude Microsoft login URLs from TLS interspection. Customers using Tenant Restriction feature can do TLS inspection on Microsoft login URLs and add the necessary headers on the request. More information at [Apple SSO](/entra/identity-platform/apple-sso-plugin#requirements)
+
+Customers can [validate Networking Configuration on macOS device](/entra/identity/devices/troubleshoot-mac-sso-extension-plugin?tabs=flowchart-ios#validate-networking-configuration-on-macos-device) to make sure SSO configuration is not broken due to TLS inspection.
 
 ## Sign-in logs
 
@@ -587,7 +672,9 @@ Use Microsoft Graph to get policy information:
 ```
 
 ## Known limitation
-Tenant Restrictions v2 will not be enforced with request going across cross clouds. 
+Tenant Restrictions v2 is supported on all clouds however TRv2 is not enforced with request going across cross clouds. 
+
+Tenant Restrictions v2 will not work with [macOS Platform signle sign-on (PSSO)](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers with TRv2 and PSSO should use Universal TRv2 with GSA client signaling. This is an Apple limitation where PSSO is not compatible with tenant restrictions when headers are injected by an intermediary network solution like proxy that uses a certificate trust chain outside of Apple system root certificates.
 
 ## Next steps
 
