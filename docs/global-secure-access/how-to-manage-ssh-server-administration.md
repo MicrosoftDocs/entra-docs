@@ -106,7 +106,7 @@ If the connection fails, use the following checklist.
 * Verify the server IP address and port number. 
 * Confirm the SSH port is allowed from a Private Connector server. 
 * Isolate firewall rules that might block SSH traffic. 
-* Validate the GSA client captures traffic. 
+* Validate the Global Secure Access client captures traffic. 
 * Verify users are assigned to the application. 
 
 ## Next steps
