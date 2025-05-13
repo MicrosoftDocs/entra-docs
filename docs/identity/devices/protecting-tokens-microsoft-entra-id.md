@@ -189,7 +189,7 @@ exposure of the stolen token from being replayed, thus defeating the attack. The
 
 For devices which are Entra-joined or Entra-registered, Entra ID generates a multi-application Refresh Token used for application SSO, also known as the [Primary Refresh Token (PRT)](concept-primary-refresh-token.md).
 
-Primary Refresh Tokens (PRTs) are secure by design. They're protected with a cryptographically secure tie between the PRT and the device (client secret) to which the PRT is issued. On Windows devices, the client secret is securely stored on platform-specific hardware such as Trusted Platform Modules (TPM). Today, non-Windows devices store the secret in software.
+Primary Refresh Tokens (PRTs) are protected with a cryptographically secure tie between the PRT and the device (client secret) to which the PRT is issued. On Windows devices, the client secret is securely stored on platform-specific hardware such as Trusted Platform Modules (TPM). Today, non-Windows devices store the secret in software.
 
 **Token Protection in Conditional Access**
 
