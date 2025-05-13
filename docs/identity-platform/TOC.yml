@@ -198,8 +198,6 @@
           items:
             - name: SPA that signs in users and calls web API
               items:
-                - name: App registration
-                  href: scenario-spa-app-registration.md
                 - name: Code configuration
                   href: scenario-spa-app-configuration.md
                 - name: Sign in and sign out
