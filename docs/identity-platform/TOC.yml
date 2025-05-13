@@ -807,7 +807,7 @@
             - name: Logging and error handling
               items:
                 - name: Logging in MSAL for Android
-                  href: msal-logging-android.md
+                  href: /entra/msal/android/logging
                 - name: Handle errors and exceptions in MSAL for Android
                   displayName: android, mobile, handling, catch
                   href: msal-android-handling-exceptions.md

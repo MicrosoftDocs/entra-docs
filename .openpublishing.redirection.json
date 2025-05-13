@@ -1815,6 +1815,11 @@
       "redirect_url": "/entra/msal/android/single-multi-account",
       "redirect_document_id": false
     },
+        {
+      "source_path_from_root": "/docs/identity-platform/msal-logging-android.md",
+      "redirect_url": "/entra/msal/android/logging",
+      "redirect_document_id": false
+    },
     {
       "source_path_from_root": "/docs/identity-platform/msal-android-shared-devices.md",
       "redirect_url": "/entra/msal/android/shared-devices",
