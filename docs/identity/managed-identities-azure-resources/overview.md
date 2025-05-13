@@ -98,7 +98,7 @@ Service code running on your Azure compute resource uses either the Microsoft Au
 
 For example, you can use an Azure Virtual Machine (VM) as Azure Compute. You can then create a user-assigned managed identity and assign it to the VM. The workload running on the VM interfaces with both Azure.Identity (or MSAL) and Azure Storage client SDKs to access a storage account. The user-assigned managed identity is authorized to access the storage account.
 
-As another example, you can use an Azure Automation Account and enable its system-assigned managed identity. After assigning Microsoft Graph permissions to the managed identity by referring to [Grant an appRoleAssignment for a service principal](https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignedto), any of the automation account's runbooks can query Graph using the specified permissions.
+As another example, you can use an Azure Automation Account and enable its system-assigned managed identity. After assigning Microsoft Graph permissions to the managed identity by referring to [Grant an appRoleAssignment for a service principal](/graph/api/serviceprincipal-post-approleassignedto), any of the automation account's runbooks can query Graph using the specified permissions.
 
 ### Use managed identity as a Federated Identity Credential (FIC) on an Entra ID app
 
