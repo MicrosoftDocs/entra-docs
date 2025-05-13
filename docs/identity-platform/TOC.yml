@@ -810,7 +810,7 @@
                   href: /entra/msal/android/logging
                 - name: Handle errors and exceptions in MSAL for Android
                   displayName: android, mobile, handling, catch
-                  href: msal-android-handling-exceptions.md
+                  href: /entra/msal/android/handling-exceptions
             - name: Migrate from ADAL to MSAL Android
               href: migrate-android-adal-msal.md
         - name: MSAL iOS and macOS
