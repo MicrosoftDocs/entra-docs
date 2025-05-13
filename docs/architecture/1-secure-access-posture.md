@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Determine your security posture for external access with Microsoft Entra ID

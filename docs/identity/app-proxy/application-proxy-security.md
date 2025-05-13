@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
@@ -57,7 +57,7 @@ Because Microsoft Entra application proxy is a reverse-proxy, all traffic to bac
 
 You don't need to open inbound connections to the corporate network.
 
-private network connectors only use outbound connections to the Microsoft Entra application proxy service. There's no need to open firewall ports for incoming connections. Traditional proxies require a perimeter network (also known as *DMZ*, *demilitarized zone*, or *screened subnet*) and allow access to unauthenticated connections at the network edge. With application proxy, you don't need a perimeter network because all connections are outbound and take place over a secure channel.
+Private network connectors only use outbound connections to the Microsoft Entra application proxy service. There's no need to open firewall ports for incoming connections. Traditional proxies require a perimeter network (also known as *Demilitarized Zone (DMZ)*, or *screened subnet*) and allow access to unauthenticated connections at the network edge. With application proxy, you don't need a perimeter network because all connections are outbound and take place over a secure channel.
 
 For more information about connectors, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
 
@@ -95,7 +95,7 @@ A flow between the connector and the application proxy service is established wh
 * A user accesses a published application.
 
 >[!NOTE]
->All communications occur over TLS, and they always originate at the connector to the application proxy service. The service is outbound only.
+>All communications occur using Transport Layer Security (TLS), and they always originate at the connector to the application proxy service. The service is outbound only.
 
 The connector uses a client certificate to authenticate to the application proxy service for nearly all calls. The only exception to this process is the initial setup step, where the client certificate is established.
 
