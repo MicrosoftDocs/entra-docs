@@ -67,8 +67,6 @@ To better understand how risk levels can escalate, consider the following exampl
 
 3. **High Risk**: Threat intelligence identifies that one of the IP addresses used in the sign-ins is associated with a known malicious actor. This detection, combined with the previous anomalies, results in a high-risk classification, requiring immediate remediation.
 
-This progression demonstrates how multiple signals and detections contribute to the overall risk level, ensuring that organizations can respond appropriately based on the severity of the threat.
-
 ## Real-time and offline detections
 
 ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. Detections calculated offline can provide more insight into how the threat actor gained access to the account and the effect on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in compromise detection.
@@ -77,8 +75,8 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 
 | Detection type | Sign-in risk | User risk |
 |----------------|--------------|-----------|
-| Real-time      | Suspicious sign-in is detected and remediated in real-time through a Conditional Access policy to require MFA. | User risk is detected and remediated through a Conditional Access policy to force a secure password change in real-time. |
-| Offline        | Sign-in risk is identified after sign-in. If not remediated this risk might escalate into user risk. | User is deemed risky after sign-in. A secure password change is required the next time the user authenticates. |
+| Real-time      | Suspicious sign-in is detected and can be remediated in real-time through a Conditional Access policy, such as to require MFA. | User risk is detected and can be remediated through a Conditional Access policy, such as to force a secure password change in real-time. |
+| Offline        | Sign-in risk is identified after sign-in. If not remediated this risk might escalate into user risk if more risks are detected and aggregated into user risk. | User is deemed risky after sign-in and is blocked until they perform self-service password reset the next time they authenticate. |
 
 > [!NOTE]
 > Our system might determine that the risk event that contributed to user risk score was either: 
@@ -93,6 +91,16 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 It's important to remember that risk levels can change, because many risk detections are calculated offline. So if an offline detection is triggered that changes the threshold from low to medium risk, the risk level can change. Or if the system identifies a false positive, the risk level can change from medium to low. 
 
 ### Risk escalation scenarios
+
+Risk detections and levels can change dynamically based on real-time and offline detections. Real-time detections provide immediate insights during sign-in, while offline detections analyze additional signals post-sign-in.
+
+1. A user signs in from an unfamiliar device, triggering a **low** risk detection in real-time. The system flags the anomaly.
+
+1. Offline analysis identifies that the same user attempted multiple sign-ins from different geographic locations within a short time frame. This behavior increases the confidence of potential compromise, escalating the user risk level to **medium**.
+
+1. Threat intelligence identifies that one of the IP addresses used in the sign-ins is associated with a known malicious actor. This detection, combined with the previous anomalies, results in a **high** user risk, requiring immediate remediation.
+
+1. The user completes multifactor authentication as part of a Conditional Access policy. The system confirms the sign-in as safe and dismisses the risk state entirely.
 
 
 
