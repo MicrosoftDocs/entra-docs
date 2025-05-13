@@ -1806,16 +1806,16 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/msal-android-single-sign-on.md",
-      "redirect_url": "/entra/msal/android/single-sign-on",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity-platform/single-multi-account.md",
       "redirect_url": "/entra/msal/android/single-multi-account",
       "redirect_document_id": false
     },
-        {
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-logging-android.md",
+      "redirect_url": "/entra/msal/android/logging",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/msal-logging-android.md",
       "redirect_url": "/entra/msal/android/logging",
       "redirect_document_id": false
@@ -1826,8 +1826,8 @@
       "redirect_document_id": false
     },
         {
-      "source_path_from_root": "/docs/identity-platform/msal-android-b2c.md",
-      "redirect_url": "/azure/active-directory-b2c/configure-authentication-sample-android-app",
+      "source_path_from_root": "/docs/identity-platform/msal-configuration.md",
+      "redirect_url": "/entra/msal/android/msal-configuration",
       "redirect_document_id": false
     },
     {
