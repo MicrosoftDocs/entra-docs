@@ -71,6 +71,7 @@ Because the policy is applied to the Azure management portal and API, any servic
 - Microsoft IoT Central
 - SQL Managed Instance
 - Visual Studio subscriptions administrator portal
+- Microsoft AppSource (Office Store)
 
 > [!NOTE]
 > The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It doesn't apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
