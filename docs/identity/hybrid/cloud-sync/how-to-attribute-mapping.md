@@ -17,7 +17,7 @@ You can use the cloud sync attribute mapping feature to map attributes between y
 
  :::image type="content" source="media/how-to-attribute-mapping/new-ux-mapping-1.png" alt-text="Screenshot of new UX screen attribute mapping." lightbox="media/how-to-attribute-mapping/new-ux-mapping-1.png":::
 
- The following document guides you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID.  If you're looking for information on attribute mapping from Microsoft Entra ID to AD, see [ Attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping-entra-to-active-directory.md).
+ The following document guides you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID.  If you're looking for information on attribute mapping from Microsoft Entra ID to AD, see [Attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping-entra-to-active-directory.md).
 
 You can customize (change, delete, or create) the default attribute mappings according to your business needs. For a list of attributes that are synchronized, see [Attributes synchronized to Microsoft Entra ID](../connect/reference-connect-sync-attributes-synchronized.md).
 
@@ -46,7 +46,7 @@ Cloud sync occasionally updates the schema and the list of default attributes th
 
 The list of new mappings that were added.
 
-Attribute Added | Mapping Type | Added with Agent Version
+| Attribute Added | Mapping Type | Added with Agent Version |
 | ----- | -----| -----|
 |preferredDatalocation|Direct|1.1.359.0|
 |EmployeeNumber|Direct|1.1.359.0|
