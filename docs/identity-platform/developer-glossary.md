@@ -1,10 +1,10 @@
 ---
-title: Glossary of terms in the Microsoft identity platform
-description: Definitions of terms commonly found in Microsoft identity platform documentation, Microsoft Entra admin center, and authentication SDKs like the Microsoft Authentication Library (MSAL).
+title: Microsoft Identity Platform Glossary
+description: Learn key terms used in Microsoft identity platform documentation, Microsoft Entra admin center, and authentication SDKs like the Microsoft Authentication Library (MSAL).
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.date: 03/20/2024
+ms.date: 05/12/2025
 ms.reviewer:
 ms.service: identity-platform
 
@@ -12,9 +12,9 @@ ms.topic: glossary
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand the terminology and concepts related to authentication and authorization, so that I can effectively implement secure access to protected resources in my application.
 ---
 
-# Glossary: Microsoft identity platform
+# Microsoft identity platform glossary
 
-You see these terms when you use our documentation, the Microsoft Entra admin center, our authentication libraries, and the Microsoft Graph API. Some terms are Microsoft-specific while others are related to protocols like OAuth or other technologies you use with the Microsoft identity platform.
+This glossary explains key terms in the Microsoft Identity Platform, Microsoft Entra admin center, and Microsoft Graph API. Learn about OAuth protocols and authentication concepts to build secure applications.
 
 ## Access token
 
