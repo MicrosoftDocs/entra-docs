@@ -812,7 +812,7 @@
                   displayName: android, mobile, handling, catch
                   href: /entra/msal/android/handling-exceptions
             - name: Migrate from ADAL to MSAL Android
-              href: migrate-android-adal-msal.md
+              href: /entra/msal/android/migrate-android-adal-msal
         - name: MSAL iOS and macOS
           href: /entra/msal/objc/
         - name: MSAL Java
