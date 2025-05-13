@@ -799,7 +799,7 @@
             - name: Authentication and single sign-on (SSO)
               items:
                 - name: SSO with MSAL Android
-                  href: msal-android-single-sign-on.md
+                  href: /entra/msal/android/single-sign-on
                 - name: Accounts and tenant profiles
                   href: accounts-overview.md
                 - name: Single- and multi-account public client apps
