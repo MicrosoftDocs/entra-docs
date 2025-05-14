@@ -442,7 +442,7 @@ More info on [Creating your App Control AppId Tagging Policies](/windows/securit
 #### Step:1 Use the WDAC Wizard to create a policy 
 1. Install the [WDAC wizard](/windows/security/application-security/application-control/app-control-for-business/design/appcontrol-wizard)
 1. Choose "Create a policy" and Choose your policy format (default: Multiple policy, base policy)
-1. Choose your base template (recommended: "Default Windows" or "Allow Microsoft")
+1. Choose your base template (recommended: "Default Windows" or "Allow Microsoft"). Detailed information and steps to create [Base policy creation](/windows/security/application-security/application-control/app-control-for-business/design/appcontrol-wizard-create-base-policy#template-base-policies).
 1. When you convert the policy into an AppIdTagging policy, it will assume these rules are set. You can set them here but it's not required.
 1. Policy Rules to be enabled: Advanced Boot Options Menu, Disable Script Enforcement, Enforce Store Applications, Audit Mode, User Mode Code Integrity
 1. Choose the save location of your policy XML and create your policy.
