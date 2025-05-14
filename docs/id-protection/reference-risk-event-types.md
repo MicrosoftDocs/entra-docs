@@ -74,7 +74,7 @@ Select a risk detection from the list to view the description of the risk detect
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address identified as an anonymous proxy IP address. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, EMS E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
 ### Additional risk detected (sign-in) 
 
@@ -123,7 +123,7 @@ The algorithm ignores obvious "false positives" contributing to the impossible t
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (in a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, EMS E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
 ### Malicious IP address 
 
@@ -138,7 +138,7 @@ This detection indicates sign-in from a malicious IP address. An IP address is c
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-anomaly-alerts#unusual-file-access-by-user). This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint Online or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, EMS E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
 ### Microsoft Entra threat intelligence (sign-in) 
 
@@ -153,7 +153,7 @@ This risk detection type indicates user activity that is unusual for the user or
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-infrequent-country). This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, EMS E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
 ### Password spray 
 
@@ -176,14 +176,14 @@ Suspicious browser detection indicates anomalous behavior based on suspicious si
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-forwarding). This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, EMS E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
 ### Suspicious inbox manipulation rules 
 
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-manipulation-rules). This detection looks at your environment and triggers alerts when suspicious rules that delete or move messages or folders are set on a user's inbox. This detection might indicate: a user's account is compromised, messages are being intentionally hidden, and the mailbox is being used to distribute spam or malware in your organization. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, EMS E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
 ### Token issuer anomaly 
 
