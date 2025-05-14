@@ -237,7 +237,7 @@ By setting up federation with a custom-configured identity provider that support
 
 This feature also includes domain-based federation, so a user who enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers will be redirected to authenticate with that identity provider.
 
-For more information, see: [Custom SAML/WS-Fed identity providers (preview)](../external-id/customers/concept-authentication-methods-customers.md#custom-samlws-fed-identity-providers-preview).
+For more information, see: [Custom SAML/WS-Fed identity providers](../external-id/customers/concept-authentication-methods-customers.md#custom-samlws-fed-identity-providers-preview).
 
 ---
 
