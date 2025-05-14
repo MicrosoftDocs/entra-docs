@@ -5,7 +5,7 @@ description: Automation to detect, remediate, investigate, and analyze risk data
 ms.service: entra-id-protection
 
 ms.topic: overview
-ms.date: 04/29/2025
+ms.date: 05/14/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -103,18 +103,21 @@ To view the **Risky workload identities** report and the **Workload identity det
 
 ### Microsoft Defender
 
-Microsoft Entra ID Protection receives signals from the Microsoft Defender products for several risk detections, so you also need the appropriate license for the Microsoft Defender product that owns the signal you're interested in.
+Microsoft Entra ID Protection receives signals from Microsoft Defender products for several risk detections, so you also need the appropriate license for the Microsoft Defender product that owns the signal you're interested in.
 
-| Risk detection | Microsoft Defender product | Required License |
-| --- | --- | --- |
-| Activity from anonymous IP address | Microsoft Defender for Cloud Apps | Microsoft 365 E5, EMS E5, or standalone license |
-| Impossible travel | Microsoft Defender for Cloud Apps | Microsoft 365 E5, EMS E5, or standalone license |
-| Mass access to sensitive files | Microsoft Defender for Cloud Apps | Microsoft 365 E5, EMS E5, or standalone license |
-| New country | Microsoft Defender for Cloud Apps | Microsoft 365 E5, EMS E5, or standalone license |
-| Suspicious inbox rules | Microsoft Defender for Office 365 | Microsoft 365 E5 or Office 365 E5 |
-| Attacker in the Middle | Microsoft 365 Defender Apps | Microsoft 365 E5 |
-| Possible attempt to access Primary Refresh Token | Microsoft Defender for Endpoint | Microsoft 365 E5 or standalone license |
+**Microsoft 365 E5** covers all of the following signals:
 
+- **Microsoft Defender for Cloud Apps**
+  - Activity from anonymous IP address
+  - Impossible travel
+  - Mass access to sensitive files
+  - New country
+
+- **Microsoft Defender for Office 365**
+  - Suspicious inbox rules
+
+- **Microsoft Defender for Endpoint**
+   - Possible attempt to access Primary Refresh Token
 
 ## Next steps
 
