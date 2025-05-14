@@ -16,7 +16,7 @@ ai-usage: human-only
 Secure Shell (SSH) is widely recognized across the IT industry as a critical service for system administrators. It provides a secure and encrypted method to access and manage remote systems over unsecured networks.
 IT administrators rely on SSH to perform essential tasks securely, including the configuration, deployment, and maintenance of servers and applications in an organization’s infrastructure.
  
-In this guide, you learn how to configure and establish an SSH connection using Microsoft Entra Private Access to enhance security in your remote access workflows.
+In this guide and [in this video](https://www.youtube.com/watch?v=n6gTjAK-Y0Y), you learn how to configure and establish an SSH connection using Microsoft Entra Private Access to enhance security in your remote access workflows.
 
 You can [learn more about Private Access](concept-private-access.md).
 
@@ -111,6 +111,7 @@ If the connection fails, use the following checklist.
 
 ## Next steps
 
+* View video walk-through [Management traffic for SSH based server administration using Private Access](https://www.youtube.com/watch?v=n6gTjAK-Y0Y)
 * [Learn about Private Access](concept-private-access.md)
 * [How to configure connectors for Private Access](how-to-configure-connectors.md)
 * [How to configure per-app access using GSA apps](how-to-configure-per-app-access.md)
