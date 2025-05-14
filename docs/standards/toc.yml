@@ -6,7 +6,7 @@ items:
   items:
   - name: Identity standards overview
     href: standards-overview.md
-- name: Achieving NIST AALs
+- name: Configure NIST AALs
   expanded: true
   items:
   - name: NIST overview
@@ -23,7 +23,7 @@ items:
     href: nist-authenticator-assurance-level-2.md
   - name: Achieving AAL 3
     href: nist-authenticator-assurance-level-3.md
-- name: Achieving FedRAMP High compliance
+- name: Configure FedRAMP High compliance
   expanded: true
   items:
   - name: Configure Microsoft Entra ID for FedRAMP High impact
@@ -34,7 +34,7 @@ items:
     href: fedramp-identification-and-authentication-controls.md
   - name: Configure additional controls
     href: fedramp-other-controls.md
-- name: Achieving CMMC compliance
+- name: Configure CMMC compliance
   expanded: true
   items:
   - name: Configure Microsoft Entra ID for CMMC compliance 
@@ -76,6 +76,8 @@ items:
   items:
   - name: Configure HITRUST controls
     href: hipaa-hitrust-controls.md
+- name: Microsoft Entra ID and DORA act
+  href: /../compliance/dora/dora-entra
 - name: Microsoft Entra ID and PCI-DSS compliance
   expanded: true
   items:
