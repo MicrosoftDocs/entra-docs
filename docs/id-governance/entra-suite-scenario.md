@@ -3,7 +3,6 @@ title: Microsoft Entra Suite Scenario - Use Entitlement Management and Global Se
 description: Learn how you can use Entitlement Management and Global Secure Access to restrict employee access to cloud apps.
 author: owinfreyatl
 manager: femila
-editor: HANKI
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
