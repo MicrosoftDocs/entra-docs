@@ -179,4 +179,4 @@ There are currently a few known limitations to on-demand provisioning. Post your
 
 ## Next steps
 
-* [Troubleshooting provisioning](./application-provisioning-config-problem.md)
+* [Troubleshooting provisioning](troubleshoot.md)

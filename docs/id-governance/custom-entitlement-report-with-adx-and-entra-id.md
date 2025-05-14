@@ -237,11 +237,13 @@ Generate a JSON file with all applications and the corresponding service princip
     Get-MgApplication -All | ForEach-Object { 
       $app = $_ 
       $sp = Get-MgServicePrincipal -Filter "appId eq '$($app.AppId)'" 
+      $date = [datetime]::Parse($app.CreatedDateTime)
       [pscustomobject]@{ 
-        Name        = $app.DisplayName 
+        DisplayName     = $app.DisplayName
         ApplicationId   = $app.AppId 
         ServicePrincipalId = $sp.Id 
         SnapshotDate = $SnapshotDate
+        CreatedDateTime = $date.ToString("yyyy-MM-dd")
       } 
     } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
 ```
@@ -289,12 +291,16 @@ Generate a JSON file of all app role assignments of users in the tenant:
         $createdDateTime = $_.CreatedDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
         # Convert the milliseconds timestamp to a readable date format if necessary 
         $result += [PSCustomObject]@{ 
-          AppRoleId      = $_.AppRoleId 
-          CreatedDateTime   = $createdDateTime 
-          PrincipalDisplayName = $_.PrincipalDisplayName 
-          PrincipalId     = $_.PrincipalId 
-          ResourceDisplayName = $_.ResourceDisplayName 
-          ResourceId      = $_.ResourceId 
+          Id = $_.Id
+          AppRoleId      = $_.AppRoleId
+          CreatedDateTime   = $createdDateTime
+          PrincipalDisplayName = $user.DisplayName
+          PrincipalId     = $user.Id
+          AssignmentPrincipalType = $_.PrincipalType
+          AssignmentPrincipalDisplayName = $_.PrincipalDisplayName
+          AssignmentPrincipalId     = $_.PrincipalId
+          ResourceDisplayName = $_.ResourceDisplayName
+          ResourceId      = $_.ResourceId
           SnapshotDate     = $SnapshotDate
         } 
       } 

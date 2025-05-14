@@ -56,7 +56,7 @@ The [HIPAA Security Rule (HSR)](https://www.hhs.gov/hipaa/for-professionals/secu
 
 ## HITRUST and HIPAA
 
-HITRUST developed the CSF, which includes security and privacy standards to support healthcare regulations. CSF controls and best practices simplify the task of consolidating sources to ensure compliance with federal legislation, HIPAA security, and privacy rules. HISTRUST CSF is a certifiable security and privacy framework with controls and requirements to demonstrate HIPAA compliance. Healthcare organizations widely adopted the framework. Use the following table to learn about controls.
+HITRUST developed the CSF, which includes security and privacy standards to support healthcare regulations. CSF controls and best practices simplify the task of consolidating sources to ensure compliance with federal legislation, HIPAA security, and privacy rules. HITRUST CSF is a certifiable security and privacy framework with controls and requirements to demonstrate HIPAA compliance. Healthcare organizations widely adopted the framework. Use the following table to learn about controls.
 
 | Control category | Control category name |
 | - | - |
