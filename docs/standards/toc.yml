@@ -80,7 +80,7 @@ items:
   expanded: true
   items: 
   - name: Configure Microsoft Entra ID for DORA 
-    href: ~/compliance/dora/dora-entra
+    href: ~/compliance/dora/dora-entra.md
 - name: Microsoft Entra ID and PCI-DSS compliance
   expanded: true
   items:
