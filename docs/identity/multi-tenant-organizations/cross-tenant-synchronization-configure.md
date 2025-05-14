@@ -244,8 +244,10 @@ In this step, you automatically redeem invitations in the source tenant.
 
     When you select this check box, it grants an underlying service principal the following permissions:
 
-    - TBD
-    - TBD
+    - User.ReadWrite.CrossCloud
+    - User.Invite.All
+    - Organization.Read.All
+    - Policy.Read.All
 
 6. Select **Create**.
 
@@ -661,9 +663,23 @@ Then you can use [provisionOnDemand with PowerShell](/graph/api/synchronization-
 
 ::: zone pivot="cross-cloud-synchronization"
 
-#### Symptom - Cross-cloud synchronization error
+#### Symptom - Test connection fails with AzureActiveDirectoryTokenExpired
 
-TBD
+When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
+
+```
+You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
+Error code: AzureActiveDirectoryTokenExpired
+Details: The identity of the calling application could not be established.
+```
+
+**Cause**
+
+This error indicates the cross-cloud setting for synchronization has not been enabled. 
+
+**Solution**
+
+In the target tenant, on the **Microsoft cloud settings** tab, select the cross-cloud synchronization check box for the source tenant. Follow the steps in [Step 1: Enable cross-cloud settings in both tenants](#step-1-enable-cross-cloud-settings-in-both-tenants).
 
 ::: zone-end
 

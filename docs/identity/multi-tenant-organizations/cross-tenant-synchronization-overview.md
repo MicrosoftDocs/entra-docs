@@ -121,6 +121,13 @@ In the target tenant: Cross-tenant sync relies on the Microsoft Entra External I
 
 [Cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) requires Microsoft Entra ID Governance or Microsoft Entra Suite licenses. For more information, see [Microsoft Entra ID Governance licensing fundamentals](../../id-governance/licensing-fundamentals.md).
 
+The following table lists the required licenses depending on your scenario.
+
+| Scenario | Source tenant | Target tenant |
+| --- | --- | --- |
+| Cross-tenant synchronization (same cloud) | Microsoft Entra ID P1 licenses | N/A |
+| [Cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) | Microsoft Entra ID Governance or Microsoft Entra Suite licenses | N/A |
+
 ## Frequently asked questions
 
 #### Clouds
@@ -154,6 +161,11 @@ What are the differences between cross-tenant synchronization and cross-cloud sy
 
 - Cross-tenant synchronization and cross-cloud synchronization are built using the same technologies and are fundamentally the same. The primary difference is that synchronization occurs across clouds instead of within the same cloud.
 - Synchronization of the manager attributue isn't yet supported in cross-cloud synchronization.
+
+Are there limitations for cross-cloud synchronization?
+
+- For multitenant organization limitations, see [Multitenant org FAQ](/microsoft-365/enterprise/multitenant-org-faq#can-an-mto-be-created-across-worldwide-geographies).
+- External members aren't supported. For more information, see [Collaborate with guests from other Microsoft 365 cloud environments](/microsoft-365/solutions/collaborate-guests-cross-cloud).
 
 #### Existing B2B users
 
