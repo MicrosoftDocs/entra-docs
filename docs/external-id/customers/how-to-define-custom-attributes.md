@@ -101,9 +101,12 @@ Each attribute supports the following flags:
 - `hidden`: Set to `true` to hide the attribute from the sign-up page, or `false` to display it.
 - `editable`: Set to `true` to allow users to edit the attribute, or `false` to make it read-only.
 
-For example, you could set hidden to false and editable to false to shows the attribute on the page, but prevent users from editing it.
+Examples:
 
-To configure these flags, use the [authenticationAttributeCollectionInputConfiguration](https://learn.microsoft.com/en-us/graph/api/authenticationeventsflow-update?view=graph-rest-1.0&tabs=http#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow) object.
+- Set `hidden` to `false` and `editable` to `false` to show the attribute on the page, but prevent users from editing it.
+- Set `hidden` to `true` and `editable` to `true` to hide the attribute on the page, but still allow it to be set by the API. For example, you could configure a [custom authentication extension](concept-custom-extensions.md) and use the [OnAttributeCollectionSubmit](concept-custom-extensions.md#attribute-collection-start-and-submit-events) event to modify the value of the attribute.
+
+To configure these flags with Microsoft Graph, use the [authenticationAttributeCollectionInputConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/authenticationattributecollectioninputconfiguration?view=graph-rest-1.0) resource type. See also the example for [updating the page layout of a self-service sign up user flow](https://learn.microsoft.com/en-us/graph/api/authenticationeventsflow-update?view=graph-rest-1.0&tabs=http#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
 
 ### Configure a single-select checkbox (CheckboxSingleSelect)
 
