@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 04/28/2025
+ms.date: 05/14/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -91,6 +91,19 @@ On the **Page layout** page, you can indicate which attributes are required and 
 1. Make an attribute required by selecting the checkbox in the **Required** column. All attributes can be marked as required. For multiselect checkboxes, "Required" means that the user must select at least one checkbox.
 
 1. When all your changes are complete, select **Save**.
+
+### Configure attribute visibility and editability during sign-up
+
+You can control which attributes are shown or collected from users during sign-up by configuring the hidden and editable flags for each attribute. These settings are not currently available in the admin center UI, but you can configure them using Microsoft Graph.
+
+Each attribute supports the following flags:
+
+- `hidden`: Set to `true` to hide the attribute from the sign-up page, or `false` to display it.
+- `editable`: Set to `true` to allow users to edit the attribute, or `false` to make it read-only.
+
+For example, you could set hidden to false and editable to false to shows the attribute on the page, but prevent users from editing it.
+
+To configure these flags, use the [authenticationAttributeCollectionInputConfiguration](https://learn.microsoft.com/en-us/graph/api/authenticationeventsflow-update?view=graph-rest-1.0&tabs=http#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow) object.
 
 ### Configure a single-select checkbox (CheckboxSingleSelect)
 
