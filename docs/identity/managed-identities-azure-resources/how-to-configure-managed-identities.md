@@ -17,8 +17,6 @@ zone_pivot_groups: identity-configure-mi-methods
 
 # Configure managed identities on Azure virtual machines (VMs)
 
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
 For information about Azure Policy definition and details, see [Use Azure Policy to assign managed identities (preview)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fd367bd60-64ca-4364-98ea-276775bddd94).

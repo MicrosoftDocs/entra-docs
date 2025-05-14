@@ -8,7 +8,7 @@ summary: >
 metadata:
   author: Dickson-Mwendia
   ms.author: dmwendia
-  ms.date: 02/11/2025
+  ms.date: 04/04/2025
   ms.service: identity-platform  
   ms.topic: landing-page
 
@@ -19,7 +19,7 @@ landingContent:
     linkLists:
       - linkListType: quickstart
         links:
-          - text: ASP.NET
+          - text: ASP.NET 
             url: quickstart-web-api-aspnet-protect-api.md
           - text: ASP.NET Core
             url: quickstart-web-api-aspnet-core-protect-api.md
@@ -27,12 +27,10 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: ASP.NET Core - Register your API
-            url: web-api-tutorial-01-register-app.md
-          - text: ASP.NET Core - Configure your API
-            url: web-api-tutorial-02-prepare-api.md
-          - text: ASP.NET Core - Call your web API
-            url: web-api-tutorial-03-protect-endpoint.md
+          - text: ASP.NET Core - Build and protect your web API
+            url: tutorial-web-api-dotnet-core-build-app.md
+          - text: ASP.NET Core - Call your protected web API
+            url: tutorial-web-api-dotnet-core-call-protected-api.md
         
   - title: "Scenarios in depth"
     linkLists:

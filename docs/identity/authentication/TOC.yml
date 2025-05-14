@@ -137,6 +137,8 @@
         href: how-to-deploy-phishing-resistant-passwordless-authentication.md
       - name: Persona guidance
         href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
+      - name: RDP guidance
+        href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
     - name: Passkey (FIDO2) authentication
       items:
       - name: Enable passkeys for an organization
@@ -253,6 +255,8 @@
       href: howto-mfa-userdevicesettings.yml
     - name: Verify mandatory MFA
       href: how-to-mandatory-multifactor-authentication.md
+    - name: Unlock users for mandatory MFA
+      href: how-to-unlock-users-for-mandatory-multifactor-authentication.md
     - name: Federate MFA setup
       href: how-to-mfa-expected-inbound-assertions.md
     - name: Find coverage gaps
@@ -307,6 +311,8 @@
     href: howto-password-smart-lockout.md
   - name: Reporting
     items:
+    - name: Linkable identifiers
+      href: how-to-authentication-track-linkable-identifiers.md
     - name: Authentication methods activity
       href: howto-authentication-methods-activity.md
     - name: SSPR Reports

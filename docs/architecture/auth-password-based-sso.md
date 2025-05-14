@@ -9,7 +9,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 01/10/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Password-based authentication with Microsoft Entra ID

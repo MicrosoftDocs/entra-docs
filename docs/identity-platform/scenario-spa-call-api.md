@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: 
-ms.date: 11/25/2022
+ms.date: 05/12/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -13,6 +13,8 @@ ms.topic: how-to
 ---
 
 # Single-page application: Call a web API
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 We recommend that you call the `acquireTokenSilent` method to acquire or renew an access token before calling a web API. After you have a token, you can call a protected web API.
 
@@ -46,6 +48,5 @@ The MSAL Angular wrapper takes advantage of the HTTP interceptor to automaticall
 
 ## Next steps
 
-- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
-
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
 - Explore Microsoft identity platform [single-page application code samples](sample-v2-code.md#single-page-applications) 

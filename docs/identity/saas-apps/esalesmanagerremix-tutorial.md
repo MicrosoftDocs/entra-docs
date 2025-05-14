@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 ---
 # Integrate Microsoft Entra ID with E Sales Manager Remix
@@ -36,7 +36,7 @@ To configure Microsoft Entra integration with E Sales Manager Remix, you need th
 
 To test the steps in this article,  follow these recommendations:
 
-- Do not use your production environment, unless it is necessary.
+- don't use your production environment, unless it's necessary.
 - If you don't have a Microsoft Entra trial environment, you can [get a one-month trial](https://azure.microsoft.com/pricing/free-trial/).
 
 ## Scenario description
@@ -51,7 +51,7 @@ The scenario outlined in this article consists of two main building blocks:
 To configure the integration of Microsoft Entra ID with E Sales Manager Remix, add E Sales Manager Remix from the gallery to your list of managed SaaS apps by doing the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 
 1. To add a new application, select **New application** at the top of the window.
@@ -79,7 +79,7 @@ To configure and test Microsoft Entra single sign-on with E Sales Manager Remix,
 Enable Microsoft Entra single sign-on in the Azure portal and configure single sign-on in your E Sales Manager Remix application by doing the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **E Sales Manager Remix** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **E Sales Manager Remix** application integration page, select **Single sign-on**.
 
 	![The "Single sign-on" link][4]
 
@@ -94,7 +94,7 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 	c. Note the **Identifier** value for later use in this article.
 	
 	> [!NOTE] 
-	> The preceding values are not real. Update them with the actual sign-in URL and identifier. To obtain the values, contact [E Sales Manager Remix Client support team](mailto:esupport@softbrain.co.jp).
+	> The preceding values aren't real. Update them with the actual sign-in URL and identifier. To obtain the values, contact [E Sales Manager Remix Client support team](mailto:esupport@softbrain.co.jp).
 
 1. Under **SAML Signing Certificate**, select **Certificate (Base64)**, and then save the certificate file on your computer.
 
@@ -163,7 +163,7 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 In this section, you create test user.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -192,7 +192,7 @@ In this section, you create test user.
 
 	b. Complete the remaining required fields.
 	
-	c. If you enable SAML, the administrator cannot sign in from the sign-in page. Grant administrator sign-in privileges to the user by selecting the **Admin Login** check box.
+	c. If you enable SAML, the administrator can't sign in from the sign-in page. Grant administrator sign-in privileges to the user by selecting the **Admin Login** check box.
 
 	d. Select **Registration**.
 
@@ -209,7 +209,7 @@ In this section, you enable user Britta Simon to use Azure single sign-on by gra
 ![Assign the user role][200] 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. In the **Applications** list, select **E Sales Manager Remix**.
 

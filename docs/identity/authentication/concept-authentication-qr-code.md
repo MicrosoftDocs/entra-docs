@@ -5,12 +5,13 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/20/2025
+ms.date: 05/02/2025
 
 ms.author: justinha
 author: aanjusingh
+contributors: minatoruan
 ms.reviewer: anjusingh
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -33,6 +34,7 @@ It can't be used with other user identifiers, such as a username or phone number
 QR code authentication is a single-factor method in which the PIN (something you know) is a credential.
 
 ## Benefits of QR code authentication
+
 Benefit | Description
 --------|------------
 Easier and faster sign-in | Frontline workers don't have to enter complex usernames or passwords to sign in multiple times into shared devices throughout their shift.
@@ -46,7 +48,7 @@ Policy | Values
 -------|--------
 Allowed characters | Numbers (0-9) 
 Unallowed characters | - Characters (A-Z, a-z)<br>- Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } \| \ : ' , . ? / ` ~ " ( ) ; < >)<br>- Unicode characters<br>- Blank space 
-Minimum PIN length |  8-20 digits 
+PIN length |  8-20 digits 
 PIN complexity     | Enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An **Invalid PIN** error appears if the PIN includes unallowed characters or is less than the minimum PIN length. 
 
 ## Best security practices to implement with QR code authentication 
@@ -54,9 +56,11 @@ PIN complexity     | Enforced to avoid repetition and common sequences. The foll
 We recommend the following measures when you enable QR code authentication method as it's a single-factor authentication (something you know).  
 
 - QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant authentication or MFA for IW.
+- Don't enable QR code authentication for all the users in your tenant. Enable only for target users who will be using this auth method, for example, create a group for frontline workers and enable QR code auth only for them in Microsoft Entra Authentication Methods policies.
 - Combine QR code authentication with Conditional Access policies as another security layer. We recommended policies such as compliant devices, access within network, allow for certain applications, and shared device mode. 
 - Enforce phishing-resistant authentication or MFA when users access resources from outside of the store or workplace network.
 - Replace QR codes that are lost or stolen.
+- Enforce [sign-in risk based Conditional Access policy](/entra/id-protection/concept-identity-protection-policies#sign-in-risk-based-conditional-access-policy) to block access.
 
 ## QR code configurations in the Authentication method policy
 
@@ -135,6 +139,19 @@ For more information about how to optimize the sign-in experience, see:
 - QR code scan by barcode scanners
 - QR code authentication doesn't work with desktop apps or browsers
 - Custom tenant endpoint for sign in 
+- Configurable PIN protection policies that define account lockout threshold, duration, or PIN complexity
+
+## Known issue
+
+If you enable QR code authentication for a user, they need to sign-in with an existing authentication method before they can sign in with a QR code for the first time, or they see an **Incorrect QR code** error. 
+
+For example:
+
+- You enable QR code authentication for a user.
+- The user needs to sign in with their password or another sign-in method.
+- For subsequent sign-ins, they can sign in with a QR code.
+ 
+The user needs to sign in with another method because the cached user authentication method policy isn't updated until the user is authenticated again. 
 
 ## Related content
 

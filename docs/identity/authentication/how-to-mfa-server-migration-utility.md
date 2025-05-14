@@ -6,11 +6,11 @@ description: Step-by-step guidance to migrate MFA server settings to Microsoft E
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jpettere
 ---
 # MFA Server migration 
@@ -285,7 +285,7 @@ You can use Audit logs or Log Analytics to view details of MFA Server to Microso
 To access the Audit logs in the Microsoft Entra admin center to view details of MFA Server to Microsoft Entra multifactor authentication user migrations, follow these steps: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**. To filter the logs, select **Add filters**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**. To filter the logs, select **Add filters**.
 
    :::image type="content" border="true" source="./media/how-to-mfa-server-migration-utility/add-filter.png" alt-text="Screenshot of how to add filters.":::
 

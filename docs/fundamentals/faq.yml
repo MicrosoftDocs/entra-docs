@@ -3,11 +3,11 @@ metadata:
   title: Frequently asked questions (FAQ) about Microsoft Entra, Microsoft Entra ID, and Azure
   description: Common questions and answers about Microsoft Entra, Microsoft Entra ID and Azure, such as password management and application access.
   author: barclayn
-  manager: amycolannino
+  manager: femila
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: faq
-  ms.date: 12/19/2024
+  ms.date: 03/05/2025
   ms.author: barclayn
 title: Frequently asked questions about Microsoft Entra ID
 summary: |
@@ -140,7 +140,7 @@ sections:
           For Microsoft Entra accounts, admins can reset passwords by using one of the following:
           
           - [Reset a user's password using Microsoft Entra ID](./users-reset-password-azure-portal.yml)
-          - [Reset a password using PowerShell](/powershell/module/microsoft.graph.users.actions/reset-mguserauthenticationmethodpassword)
+          - [Reset a password using PowerShell](/powershell/module/microsoft.graph.identity.signins/reset-mguserauthenticationmethodpassword)
 
   - name: Help with security
     questions:

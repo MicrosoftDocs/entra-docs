@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Druva so that I can streamline the user management process and ensure that users have the appropriate access to Druva.
@@ -26,7 +26,7 @@ The objective of this article is to demonstrate the steps to be performed in Dru
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Druva tenant](https://www.druva.com/products/pricing-plans/).
 * A user account in Druva with Admin permissions.
 
@@ -55,7 +55,7 @@ Before configuring Druva for automatic user provisioning with Microsoft Entra ID
 
     :::image type="content" source="media/druva-provisioning-tutorial/manage.png" alt-text="Screenshot of the Druva admin console. Manage is highlighted, and the Manage menu is visible. In that menu, under Deployments, Users are highlighted." border="false":::
 
-3. Navigate to **Settings**. Click **Generate Token**.
+3. Navigate to **Settings**. Select **Generate Token**.
 
     :::image type="content" source="media/druva-provisioning-tutorial/settings.png" alt-text="Screenshot of a page in the Druva admin console. Settings are highlighted, and the Settings tab is open. The Generate token button is highlighted." border="false":::
 
@@ -70,7 +70,7 @@ To configure Druva for automatic user provisioning with Microsoft Entra ID, you 
 **To add Druva from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Druva**, select **Druva** in the search box.
 1. Select **Druva** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
     ![Druva in the results list](common/search-new-app.png)
@@ -87,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Druva in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
     ![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -103,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the Admin Credentials section, input `https://apis.druva.com/insync/scim` in **Tenant URL**. Input the **Auth token** value in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Druva. If the connection fails, ensure your Druva account has Admin permissions and try again.
+5. Under the Admin Credentials section, input `https://apis.druva.com/insync/scim` in **Tenant URL**. Input the **Auth token** value in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Druva. If the connection fails, ensure your Druva account has Admin permissions and try again.
 
     ![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -111,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Druva**.
 
@@ -130,7 +130,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you're ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
     ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 

@@ -2,11 +2,11 @@
 title: Provision custom security attributes from HR sources (preview)
 description: Learn how to provision custom security attributes from HR sources.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 12/19/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -51,7 +51,7 @@ Before you begin, [follow these steps](~/fundamentals/custom-security-attributes
 
 ### Define custom security attributes in your Microsoft Entra ID tenant
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com), access the option to add custom security attributes from the **Protection** menu.  You need to have at least an **Attribute Definition Administrator** role to complete this task.
+In the [Microsoft Entra admin center](https://entra.microsoft.com), access the option to add custom security attributes from **Entra ID** > **Custom security attributes**.  You need to have at least an **Attribute Definition Administrator** role to complete this task.
 
 This example includes custom security attributes that you could add to your tenant. Use the attribute set `HRConfidentialData` and then add the following attributes to:
 

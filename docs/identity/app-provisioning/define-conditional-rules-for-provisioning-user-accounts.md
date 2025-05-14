@@ -3,14 +3,15 @@ title: Scoping users or groups to be provisioned with scoping filters in Microso
 description: Learn how to use scoping filters to define attribute-based rules that determine which users or groups are provisioned in Microsoft Entra ID.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 01/18/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
+ai-usage: ai-assisted
 ---
 
 # Scoping users or groups to be provisioned with scoping filters
@@ -71,7 +72,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 ::: zone pivot="app-provisioning"
 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 
 3. Select the application for which you have configured automatic provisioning: for example, "ServiceNow".
 
@@ -79,7 +80,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 ::: zone pivot="cross-tenant-synchronization"
 
-2. Browse to **Identity** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
+2. Browse to **Entra ID** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
 
 3. Select your configuration.
 
@@ -151,6 +152,7 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 > Saving a new scoping filter triggers a new full sync for the application, where all users in the source system are evaluated again against the new scoping filter. If a user in the application was previously in scope for provisioning, but falls out of scope, their account is disabled or deprovisioned in the application. To override this default behavior, refer to [Skip deletion for user accounts that go out of scope](~/identity/app-provisioning/skip-out-of-scope-deletions.md).
 
 ## Common scoping filters
+
 | Target Attribute| Operator | Value | Description|
 |----|----|----|----|
 |userPrincipalName|REGEX MATCH|`.*\@domain.com`|All users with `userPrincipal` that have the domain `@domain.com` are in scope for provisioning. |

@@ -3,7 +3,7 @@ title: Learn about integrations between Microsoft and Netskope.
 description: A comprehensive guide for configuring and testing the integration between Microsoft's and Netskope's Secure Access Service Edge (SASE) solutions.
 author: kenwith
 ms.author: kenwith
-manager: rkarlin
+manager: femila
 ms.topic: concept-article
 ms.date: 02/21/2025
 ms.service: global-secure-access
@@ -85,7 +85,7 @@ The TLS termination feature is a standalone feature that is also currently in Pr
 > When you sign up for the Netskope ATP preview, you are implicitly signing up for the TLS preview.
 
 ## Creating and Linking ATP Policies
-To create and link ATP policies, you must first activate the Netskope offer in the Microsoft Entra admin center. Navigate to **Global Secure Access** -> **Third-Party Solutions** and select the *Netskope* offer. During the Preview the offer is available for free.
+To create and link ATP policies, you must first activate the Netskope offer in the Microsoft Entra admin center. Navigate to **Global Secure Access** > **Third-Party Solutions** and select the *Netskope* offer. During the Preview the offer is available for free.
 
 Next you create a threat protection policy, and then you link the threat protection policy to a security profile. Finally, you assign the security profile to users with a Conditional Access policy. Each of these steps is outlined in detail once you sign up for the Preview program.
 

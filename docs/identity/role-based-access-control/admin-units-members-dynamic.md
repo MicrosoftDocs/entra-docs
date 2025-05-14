@@ -3,7 +3,7 @@ title: Manage users or devices for an administrative unit with rules for dynamic
 description: Manage users or devices for an administrative unit with rules for dynamic membership groups in Microsoft Entra ID
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
@@ -136,7 +136,7 @@ When an administrative unit has been configured for dynamic membership groups, t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit that has the rules for dynamic membership groups you want to edit.
 
@@ -190,7 +190,7 @@ Follow these steps to change an administrative unit with rules for dynamic membe
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit that you want to change to assigned.
 

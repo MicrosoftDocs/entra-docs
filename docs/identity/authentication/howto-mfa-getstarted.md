@@ -5,10 +5,10 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 02/14/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jpettere
 ---
 # Plan a Microsoft Entra multifactor authentication deployment 
@@ -73,7 +73,7 @@ Microsoft Entra multifactor authentication is enforced with Conditional Access p
 
 ![Conceptual Conditional Access process flow](media/howto-mfa-getstarted/conditional-access-overview-how-it-works.png)
 
-In the Microsoft Entra admin center, you configure Conditional Access policies under **Protection** > **Conditional Access**.
+In the Microsoft Entra admin center, you configure Conditional Access policies under **Entra ID** > **Conditional Access**.
 
 To learn more about creating Conditional Access policies, see [Conditional Access policy to prompt for Microsoft Entra multifactor authentication when a user signs in](tutorial-enable-azure-mfa.md). This helps you to:
 
@@ -154,7 +154,7 @@ As mentioned before, ensure users are registered for more than one MFA method, s
 If the user doesn't have a backup method available, you can: 
 
 - Provide them a Temporary Access Pass so that they can manage their own authentication methods. You can also provide a Temporary Access Pass to enable temporary access to resources. 
-- Update their methods as an administrator. To do so, select the user in the Microsoft Entra admin center, then select **Protection** > **Authentication methods** and update their methods.
+- Update their methods as an administrator. To do so, select the user in the Microsoft Entra admin center, then select **Entra ID** > **Authentication methods** and update their methods.
 
 
 ## Plan integration with on-premises systems

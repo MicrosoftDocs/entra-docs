@@ -2,7 +2,7 @@
 title: Conditional Access and Microsoft Entra activity logs
 description: Learn how to view Conditional Access details in Microsoft Entra activity logs so that you can assess the effect of your policies.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -80,7 +80,7 @@ You can access the sign-in logs by using the Microsoft Entra admin center, the A
 The activity details of sign-in logs contain several tabs. The **Conditional Access** tab lists the Conditional Access policies applied to that sign-in event.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Select a sign-in item from the table to view the sign-in details pane.  
 1. Select the **Conditional Access** tab.
 
@@ -173,10 +173,10 @@ The Microsoft Entra audit logs contain information about changes to Conditional 
 To see when an existing Conditional Access policy was updated:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
 1. Set **Service** filter to **Conditional Access**.
 1. Set the **Category** filter to **Policy**.
-1. Set the **Activity** filter to **Update conditional access policy**.
+1. Set the **Activity** filter to **Update Conditional Access policy**.
 
 You might need to adjust the date to see the changes you're looking for. The **Target** column shows the name of the Conditional Access policy that was updated.
 

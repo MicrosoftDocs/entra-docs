@@ -6,11 +6,11 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: no-azure-ad-ps-ref
 ms.topic: troubleshooting
-ms.date: 02/13/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
 ---
 # Troubleshooting combined security information registration

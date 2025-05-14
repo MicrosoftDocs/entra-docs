@@ -5,11 +5,11 @@ description: To protect customers, some regions require a support ticket to requ
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 author: aloom3
 ms.author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: aloom3
 ms.custom: references_regions
 ---
@@ -204,6 +204,31 @@ For SMS verification, the following region codes require an opt-in. This means t
 | 423        | Liechtenstein |
 | 965        | Kuwait |
 | 855        | Cambodia |
+| 1658   | Jamaica        |
+| 32     | Belgium        |
+| 1671   | Guam           |
+| 91     | India          |
+| 680    | Palau          |
+| 595    | Paraguay       |
+| 51     | Peru           |
+| 1670   | Northern Mariana Islands |
+| 378    | San Marino     |
+| 27     | South Africa   |
+| 688    | Tuvalu         |
+| 54     | Argentina      |
+| 1246   | Barbados       |
+| 679    | Fiji           |
+| 49     | Germany        |
+| 590    | Saint Barthelemy, Saint Martin, Guadeloupe |
+| 60     | Malaysia       |
+| 596    | Martinique     |
+| 230    | Mauritius      |
+| 31     | Netherlands    |
+| 599    | Curacao |
+| 850    | North Korea    |
+| 1787   | Puerto Rico    |
+| 1939   | Puerto Rico    |
+| 1784   | Saint Vincent and the Grenadines |
 
 
 
@@ -358,6 +383,31 @@ For voice verification, the following region codes require an opt-in.
 | 1849        |  Dominican Republic                            |
 | 1869        |  Saint Kitts and Nevis                         |
 | 1876        |  Jamaica                                       |
+| 1658   | Jamaica        |
+| 32     | Belgium        |
+| 1671   | Guam           |
+| 91     | India          |
+| 680    | Palau          |
+| 595    | Paraguay       |
+| 51     | Peru           |
+| 1670   | Northern Mariana Islands |
+| 378    | San Marino     |
+| 27     | South Africa   |
+| 688    | Tuvalu         |
+| 54     | Argentina      |
+| 1246   | Barbados       |
+| 679    | Fiji           |
+| 49     | Germany        |
+| 590    | Saint Barthelemy, Saint Martin, Guadeloupe |
+| 60     | Malaysia       |
+| 596    | Martinique     |
+| 230    | Mauritius      |
+| 31     | Netherlands    |
+| 599    | Curacao, Netherlands Antilles |
+| 850    | North Korea    |
+| 1787   | Puerto Rico    |
+| 1939   | Puerto Rico    |
+| 1784   | Saint Vincent and the Grenadines |
 
 ## Next steps
 

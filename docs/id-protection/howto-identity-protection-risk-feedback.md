@@ -7,9 +7,9 @@ ms.service: entra-id-protection
 ms.topic: how-to
 ms.date: 07/16/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: cokoopma
 ---
 # How To: Give risk feedback in Microsoft Entra ID Protection

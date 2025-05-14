@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with ThreatQ Platform
 
-In this article, you'll learn how to integrate ThreatQ Platform with Microsoft Entra ID. ThreatQ improves the efficiency and effectiveness of security operations by fusing disparate data sources, tools and teams to accelerate and automate threat detection, investigation and response. When you integrate ThreatQ Platform with Microsoft Entra ID, you can:
+In this article, you learn how to integrate ThreatQ Platform with Microsoft Entra ID. ThreatQ improves the efficiency and effectiveness of security operations by fusing disparate data sources, tools and teams to accelerate and automate threat detection, investigation and response. When you integrate ThreatQ Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ThreatQ Platform.
 * Enable your users to be automatically signed-in to ThreatQ Platform with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ThreatQ Platform** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ThreatQ Platform** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<Customer_Environment>.threatq.online/`
 
 	> [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [ThreatQ Platform support team](mailto:support@threatq.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [ThreatQ Platform support team](mailto:support@threatq.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your ThreatQ Platform application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but ThreatQ Platform expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -111,11 +111,11 @@ In this section, a user called B.Simon is created in ThreatQ Platform. ThreatQ P
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to ThreatQ Platform Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to ThreatQ Platform Sign-on URL where you can initiate the login flow. 
 
 * Go to ThreatQ Platform Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the ThreatQ Platform tile in the My Apps, this will redirect to ThreatQ Platform Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the ThreatQ Platform tile in the My Apps, this option redirects to ThreatQ Platform Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

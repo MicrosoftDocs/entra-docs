@@ -2,7 +2,7 @@
 title: Sign-ins to applications using SAML authentication
 description: Learn about the Microsoft Entra Health signals and alerts for sign-ins to applications that use SAML authentication
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -37,7 +37,7 @@ You can view the signal using the Microsoft Entra admin center and the Microsoft
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
-1. Browse to **Identity** > **Monitoring and health** > **Health**. The page opens to the Service Level Agreement (SLA) Attainment page.
+1. Browse to **Entra ID** > **Monitoring & health** > **Health**. The page opens to the Service Level Agreement (SLA) Attainment page.
 
 1. Select the **Health Monitoring** tab.
 

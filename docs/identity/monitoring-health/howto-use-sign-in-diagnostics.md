@@ -2,7 +2,7 @@
 title: How to use Microsoft Entra Sign-in diagnostics
 description: How to use the Sign-in diagnostic in tool Microsoft Entra ID to troubleshoot sign-in related scenarios.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -83,7 +83,7 @@ You can start the Sign-in diagnostic from a specific sign-in event in the Sign-i
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs** and select a sign-in event.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs** and select a sign-in event.
     - You can filter your list to make it easier to find specific sign-in events.
 
 1. From the Activity Details window that opens, select the **Launch the Sign-in diagnostic** link.

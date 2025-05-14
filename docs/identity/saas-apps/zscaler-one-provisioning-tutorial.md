@@ -26,7 +26,7 @@ This article demonstrates the steps to perform in Zscaler One and Microsoft Entr
 
 The scenario outlined in this article assumes that you have:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler One tenant.
 * A user account in Zscaler One with admin permissions.
 
@@ -40,7 +40,7 @@ Before you configure Zscaler One for automatic user provisioning with Microsoft 
 To add Zscaler One from the Marketplace, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Zscaler One** and select **Zscaler One** from the result panel. To add the application, select **Add**.
 
 	![Screenshot of Zscaler One in the results list.](common/search-new-app.png)
@@ -72,7 +72,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### Configure automatic user provisioning for Zscaler One in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler One**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler One**.
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 

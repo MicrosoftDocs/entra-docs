@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Easy Metrics Connector** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Easy Metrics Connector** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -93,11 +93,11 @@ In this section, you create a user called Britta Simon in Easy Metrics Connector
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Easy Metrics Connector Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Easy Metrics Connector Sign-on URL where you can initiate the login flow. 
 
 * Go to Easy Metrics Connector Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Easy Metrics Connector tile in the My Apps, this will redirect to Easy Metrics Connector Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Easy Metrics Connector tile in the My Apps, this option redirects to Easy Metrics Connector Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

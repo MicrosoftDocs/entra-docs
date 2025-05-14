@@ -2,7 +2,7 @@
 title: Change resource roles for an access package in entitlement management
 description: Learn how to change the resource roles for an existing access package in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -26,7 +26,7 @@ If you need to add resources to an access package, you should check whether the 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package you want to check to ensure that its catalog has the necessary resources.
 
@@ -73,10 +73,13 @@ If you want the users who had a resource role membership to also be assigned to 
 
 ## Add resource roles
 
+>[!NOTE] 
+> You need to be a Global Administrator or a Privileged Role Administrator with Catalog Owner permissions to add Entra Roles to a catalog. Once an Entra Role is added to a catalog, Identity Governance Administrators and Access Package Managers can create access packages containing that Entra Role, and other users with permissions to manage access packages can assign users to that Entra Role. Similarly, Applications with EntitlementManagement.RW.All permissions cannot add Microsoft Entra Roles to catalogs unless they also have the Global Administrator or Privileged Role Administrator role with necessary Entitlement Management permissions.
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
-    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+    > Other least privileged roles that can complete this task include the Catalog owner and the Access package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package you want to add resource roles to.
 
@@ -121,11 +124,11 @@ For more information, see [Compare groups](/office365/admin/create-groups/compar
     | Microsoft 365 | Microsoft 365 Group that isn't Teams-enabled. Used for collaboration between users, both inside and outside your company. |
     | Team | Microsoft 365 Group that is Teams-enabled. Used for collaboration between users, both inside and outside your company. |
 
-1. In the **Role** list, select **Owner** or **Member**.
+1. In the **Role** list, select the role you want to assign. If the [group is managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), eligible memberships such as **Eligible Owner** and **Eligible Member** are also options that can be selected.
 
     You typically select the Member role. If you select the Owner role, then users become an owner of the group, which allows those users to add or remove other members or owners.
 
-    ![Access package - Add resource role for a group or team](./media/entitlement-management-access-package-resources/group-role.png)
+    :::image type="content" source="media/entitlement-management-access-package-create/pim-for-groups-roles.png" alt-text="Screenshot of available roles to be assigned to PIM for groups resource in an access package.":::
 
 1. Select **Add**.
 
@@ -197,13 +200,13 @@ When users need additional permissions to access your organization's resources, 
 Assigning Microsoft Entra roles through access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle.
 
 > [!NOTE]
-> We recommend that you use Privileged Identity Management to provide just-in-time access to a user to perform a task that requires elevated permissions. These permissions are provided through the Microsoft Entra Roles, that are tagged as “privileged”, in our documentation here: Microsoft Entra built-in roles. Entitlement Management is better suited for assigning users a bundle of resources, which can include a Microsoft Entra role, necessary to do one’s job. Users assigned to access packages tend to have more longstanding access to resources. While we recommend that you manage high-privileged roles through Privileged Identity Management, you can set up eligibility for those roles through access packages in Entitlement Management.
+> We recommend that you use Privileged Identity Management to provide just-in-time access to a user to perform a task that requires elevated permissions. These permissions are provided through the Microsoft Entra Roles that are tagged as “privileged” in our documentation here: Microsoft Entra built-in roles. Entitlement Management is better suited for assigning users a bundle of resources, which can include a Microsoft Entra role, necessary to do one’s job. Users assigned to access packages tend to have more longstanding access to resources. While we recommend that you manage high-privileged roles through Privileged Identity Management, you can set up eligibility for those roles through access packages in Entitlement Management.
 
 Follow these steps to include a Microsoft Entra role as a resource in an access package: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) with Catalog Owner permissions.
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. On the Access packages page, open the access package you want to add resource roles to and select **Resource roles**. 
 
@@ -289,7 +292,7 @@ For more information, see [Create an access package in entitlement management fo
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package you want to remove resource roles for.
 

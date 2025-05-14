@@ -3,7 +3,7 @@ title: Delegate application management administrator permissions
 description: Grant permissions for application access management in Microsoft Entra ID
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
@@ -36,13 +36,13 @@ To disable the default ability to create application registrations or consent to
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Users** > **User settings**.
+1. Browse to **Entra ID** > **Users** > **User settings**.
 
 1. Set the **Users can register applications** setting to **No**.
 
     This will disable the default ability for users to create application registrations.
 
-1. Browse to **Identity** > **Enterprise applications** > **Consent and permissions**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Consent and permissions**.
 
 1. Select the **Do not allow user consent** option.
 

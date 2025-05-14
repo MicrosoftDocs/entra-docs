@@ -1,6 +1,6 @@
 ---
 title: Configure Zscaler ZSCloud for automatic user provisioning with Microsoft Entra ID
-description: In this article,  you'll learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler ZSCloud.
+description: In this article,  you learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler ZSCloud.
 
 author: thomasakelo
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: thomasakelo
 
 # Configure Zscaler ZSCloud for automatic user provisioning
 
-In this article,  you'll learn how to configure Microsoft Entra ID to automatically provision and deprovision users and/or groups to Zscaler ZSCloud.
+In this article,  you learn how to configure Microsoft Entra ID to automatically provision and deprovision users and/or groups to Zscaler ZSCloud.
 
 > [!NOTE]
 > This article describes a connector that's built on the Microsoft Entra user provisioning service. For important details on what this service does and how it works, and answers to frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
@@ -26,7 +26,7 @@ In this article,  you'll learn how to configure Microsoft Entra ID to automatica
 
 To complete the steps outlined in this article,  you need the following:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler ZSCloud tenant.
 * A user account in Zscaler ZSCloud with admin permissions.
 
@@ -38,7 +38,7 @@ To complete the steps outlined in this article,  you need the following:
 Before you configure Zscaler ZSCloud for automatic user provisioning with Microsoft Entra ID, you need to add Zscaler ZSCloud from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
    ![Enterprise applications](common/enterprise-applications.png)
 
@@ -70,7 +70,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 > When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler ZSCloud**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler ZSCloud**.
 1. Select the **Provisioning** tab:
 
 	![Zscaler ZSCloud Provisioning](./media/zscaler-zscloud-provisioning-tutorial/provisioningtab.png)

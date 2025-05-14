@@ -30,7 +30,7 @@ To specify a different setting for the account types supported by an existing ap
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false":::  in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select your application, and then select **Manifest** to use the manifest editor.
 1. Download the manifest JSON file locally.
 1. Now, specify who can use the application, sometimes referred to as the *sign-in audience*.  Find the *signInAudience* property in the manifest JSON file and set it to one of the following property values:
@@ -41,6 +41,7 @@ To specify a different setting for the account types supported by an existing ap
     | **AzureADMultipleOrgs** | Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) | All users with a work or school account from Microsoft can use your application or API. This includes schools and businesses that use Office 365. Use this option if your target audience is business or educational customers and to enable multitenancy. |
     | **AzureADandPersonalMicrosoftAccount** | Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (such as Skype, Xbox) | All users with a work or school, or personal Microsoft account can use your application or API. It includes schools and businesses that use Office 365 as well as personal accounts that are used to sign in to services like Xbox and Skype. Use this option to target the widest set of Microsoft identities and to enable multitenancy.|
     | **PersonalMicrosoftAccount** | Personal Microsoft accounts only | Personal accounts that are used to sign in to services like Xbox and Skype. Use this option to target the widest set of Microsoft identities.|
+
 1. Save your changes to the JSON file locally, then select **Upload** in the manifest editor to upload the updated manifest JSON file.
 
 ### Why changing to multi-tenant can fail

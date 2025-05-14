@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/26/2025
+ms.date: 03/12/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
@@ -15,7 +15,7 @@ ms.custom: it-pro
 #Customer intent: As a developer, devops, or it administrator, I want to learn how to configure the standard OpenID Connect claims with the claims my identity provider provides in my external tenant.
 ---
 
-# OpenID Connect claims mapping (preview)
+# OpenID Connect claims mapping
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
