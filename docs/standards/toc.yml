@@ -77,7 +77,7 @@ items:
   - name: Configure HITRUST controls
     href: hipaa-hitrust-controls.md
 - name: Microsoft Entra ID and DORA act
-  expand: true
+  expanded: true
   items: 
   - Configure Microsoft Entra ID for DORA 
     href: /../compliance/dora/dora-entra
