@@ -109,6 +109,10 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [23183](../includes/secure-recommendations/23183.md)]
 
+### Admin consent workflow is enabled
+
+[!INCLUDE [21809](../includes/secure-recommendations/21809.md)]
+
 ## External collaboration
 
 ### Guests can't invite other guests
