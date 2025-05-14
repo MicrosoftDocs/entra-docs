@@ -129,7 +129,8 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Configure Microsoft Entra ID for DORA requirements 
-            url: ../compliance/dora/dora-entra
+            url: ../compliance/dora/dora-entra.md
+
   
   # Card
   - title: Microsoft Entra ID and PCI-DSS compliance
