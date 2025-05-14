@@ -67,6 +67,8 @@ Tenant restrictions v2 can be scoped to specific users, groups, organizations, o
 - Authentication and Data plane protection for Microsoft tenant or Consumer accounts.
 - When using Universal tenant restrictions in Global Secure Access, all browsers and platforms.
 - When using Windows Group Policy, Microsoft Edge and all websites in Microsoft Edge.
+- Scenarios with device based authentication (including custom applications integrated with MS Graph)
+  
 ### Unsupported scenarios
 
 - Anonymous blocking to consumer OneDrive account. Customers can work around at proxy level by blocking https://onedrive.live.com/.
