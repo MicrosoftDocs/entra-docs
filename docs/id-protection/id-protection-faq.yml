@@ -9,13 +9,13 @@ metadata:
   author: shlipsey3
   ms.author: sarahlipsey
   manager: femila
-  ms.date: 05/08/2025
+  ms.date: 05/14/2025
   ms.reviewer: etbasser
 
 title: Frequently asked questions around Microsoft Entra ID Protection
 
 summary: |
-  This article includes answers to frequently asked questions about Microsoft Entra ID Protection. FAQ topics include: Detections, remediation, B2B users, and leaked credentials.
+  This article includes answers to frequently asked questions about Microsoft Entra ID Protection. FAQ topics include: Detections, leaked credentials, remediation, and B2B users.
   
   For more information, see [Microsoft Entra ID Protection overview](overview-identity-protection.md). 
 
