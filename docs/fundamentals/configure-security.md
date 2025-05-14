@@ -39,6 +39,10 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
 
+### Permissions to create new tenants are limited to the Tenant Creator role
+
+[!INCLUDE [21787](../includes/secure-recommendations/21787.md)]
+
 ## Credential management
 
 ### Users have strong authentication methods configured
