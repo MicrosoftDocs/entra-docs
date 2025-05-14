@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 04/03/2025
+ms.date: 05/14/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -171,6 +171,21 @@ The following table compares the features available for token customization in e
 |**Custom claims provider**| [Custom authentication extension](~/identity-platform/custom-extension-overview.md) that calls an external REST API, to fetch claims from external systems. | Same as workforce. [Learn more](../../identity-platform/custom-claims-provider-overview.md)|
 |**Security groups**| [Configure groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims). |[Configure groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID.|
 | **Token lifetimes**| You can [specify the lifetime](../../identity-platform/configurable-token-lifetimes.md) of security tokens issued by the Microsoft Entra ID.| Same as workforce.|
+| **Session and token revocation** | Administrator can [invalidate all the refresh tokens and session](/graph/api/user-revokesigninsessions) for a user. | Same as workforce.|
+
+## Single sign-on
+
+[Single sign-on (SSO)](../../identity-platform/msal-js-sso.md) provides a more seamless experience by reducing the number of times a user is asked for credentials. Users enter their credentials once, and the established session can be reused by other applications on the same device and web browser without further prompting. The following table compares the features available for SSO in each type of tenant.
+
+|Feature  |Workforce tenant  | External tenant |
+|---------|---------|---------|
+| **Types of application registration** | <ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li><li>Enterprise applications offer [more options](../../identity/enterprise-apps/plan-sso-deployment.md), like password-based, linked, and header-based.</li></ul> |<ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li></ul>|
+| **Domain name** | When a user authenticates, a session cookie is set on the Microsoft Entra domain `login.microsoftonline.com` in the web browser.| When a user authenticates, a session cookie is set on the Microsoft Entra external ID domain `<tenant-name>.ciamlogin.com` or a [custom URL domain](concept-custom-url-domain.md) in the web browser. To ensure SSO functions correctly, use a single URL domain.|
+| **Session invalidation** | Scenarios where SSO may be invalidated, which require reauthentication: <ul><li>Session expiry</li><li>Browser issues, such as clearing browser cookies or cache.</li><li>Conditional access policy, such as multifactor authentication requirement.</li><li>[Session revocation](/graph/api/user-revokesigninsessions)</li><li>Security issues, such as suspicious activity.</li><li>The application specifies in the authorization request to prompt the user for their credentials using `login=prompt` query string parameter in OpenID Connect and `ForceAuthn` attribute in SAML request. </li></ul> |Same as workforce.|
+|**Conditional access**| Check the [conditional access](#conditional-access) section. | Check the [conditional access](#conditional-access) section.| 
+|**Microsoft Entra’s native authentication**| Not available| [Native authentication](concept-native-authentication.md) doesn't support SSO.|
+| **Sign-out** | When a [SAML](../../identity-platform/single-sign-out-saml-protocol.md) or [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#send-a-sign-out-request) application directs the user to the logout endpoint, Microsoft Entra ID removes and invalidates the user's session from the browser. | Same as workforce.|
+| **Single sign-out**| Upon successful sign-out, Microsoft Entra ID sends a logout notification to all other [SAML](../../identity-platform/single-sign-out-saml-protocol.md) and [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#single-sign-out) applications that the user is signed into. | Same as workforce.|
 
 ## Microsoft Graph APIs
 
