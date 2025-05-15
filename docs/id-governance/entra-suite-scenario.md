@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra Suite Scenario - Use Entitlement Management and Global Secure Access to restrict employee access to cloud apps 
-description: Learn how you can use Entitlement Management and Global Secure Access to restrict employee access to cloud apps.
+title: Microsoft Entra Suite Scenario - Use entitlement management and Global Secure Access to restrict employee access to cloud apps 
+description: Learn how you can use entitlement management and Global Secure Access to restrict employee access to cloud apps.
 author: owinfreyatl
 manager: femila
 ms.service: entra-id-governance
@@ -12,11 +12,11 @@ ms.reviewer: jercon
 ---
 
 
-# Microsoft Entra Suite Scenario: Use Entitlement Management and Global Secure Access to restrict employee access to cloud apps 
+# Microsoft Entra Suite Scenario: Use entitlement management and Global Secure Access to restrict employee access to cloud apps 
 
-The Microsoft Entra Suite provides capabilities to govern who can access restricted websites. Microsoft Entra Internet Access protects access to SaaS apps and Entitlement management enables organizations to manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration.
+The Microsoft Entra Suite provides capabilities to govern who can access restricted websites. Microsoft Entra Internet Access protects access to SaaS apps and entitlement management enables organizations to manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration.
 
-In this scenario, you set up Global Secure Access and Conditional Access to block access to a specific unauthorized website such as an unsanctioned AI app, while using Entitlement Management to provide governed access to users who should be exempt from the policy. This scenario is useful for generative AI applications and other web applications that don't support provisioning or federation with Microsoft Entra.
+In this scenario, you set up Global Secure Access and Conditional Access to block access to a specific unauthorized website such as an unsanctioned AI app, while using entitlement management to provide governed access to users who should be exempt from the policy. This scenario is useful for generative AI applications and other web applications that don't support provisioning or federation with Microsoft Entra.
 
 :::image type="content" source="media/entra-suite-scenario/restrict-access-saas-app.png" alt-text="Screenshot of a diagram showing restricting software as a service app using conditional access and Global Secure Access.":::
 
@@ -86,7 +86,7 @@ Once Global Secure Access is set up, you need to [create a Conditional Access po
 
 1. Save the policy.
 
-## Step 6: Create an Entitlement Management access package to provide governed access to the restricted resource
+## Step 6: Create an entitlement management access package to provide governed access to the restricted resource
 
 The last step in the scenario is to create an access package that contains the security group that you specified in Step 4. Users assigned to this access package are assigned to this group, and are exempt from the web content filtering policies that you established.
 
@@ -108,3 +108,4 @@ Once you complete the previous steps, you're ready to test the scenario.
 ## Related content
 
 - [What is Global Secure Access?](../global-secure-access/overview-what-is-global-secure-access.md)
+- [What is Conditional Access?](../identity/conditional-access/overview.md)
