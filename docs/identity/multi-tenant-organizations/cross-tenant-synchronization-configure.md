@@ -130,6 +130,13 @@ By the end of this article, you'll be able to:
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-cross-cloud-sync.png" alt-text="Screenshot of Microsoft cloud settings that shows check box to enable cross-cloud synchronization." lightbox="./media/cross-tenant-synchronization-configure/access-settings-cross-cloud-sync.png":::
 
+    When you select this check box, it grants an underlying service principal the following permissions:
+
+    - User.ReadWrite.CrossCloud
+    - User.Invite.All
+    - Organization.Read.All
+    - Policy.Read.All
+
 1. Select **Save**.
 
 ::: zone-end
@@ -241,13 +248,6 @@ In this step, you automatically redeem invitations in the source tenant.
 5. Select the **Setup cross-tenant synchronization across Microsoft clouds** check box.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-cloud synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png":::
-
-    When you select this check box, it grants an underlying service principal the following permissions:
-
-    - User.ReadWrite.CrossCloud
-    - User.Invite.All
-    - Organization.Read.All
-    - Policy.Read.All
 
 6. Select **Create**.
 
