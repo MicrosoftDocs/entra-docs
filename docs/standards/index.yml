@@ -124,7 +124,7 @@ landingContent:
             url: hipaa-hitrust-controls.md
 
   # Card
-  - title: Microsoft Entra ID and DORA act
+  - title: Microsoft Entra and DORA act
     linkLists:
       - linkListType: how-to-guide
         links:
