@@ -17,7 +17,7 @@ ms.custom: references_regions
 
 This applies to Entra tenants only.
 
-For B2C tenants follow the guidelines here: [B2C service limits](https://learn.microsoft.com/en-us/azure/active-directory-b2c/service-limits)
+For B2C tenants follow the guidelines here: [B2C service limits](https://learn.microsoft.com/azure/active-directory-b2c/service-limits)
 
 For Entra External ID tenants follow the guidelines here: [How to region code opt-in](../../external-id/customers/how-to-region-code-opt-in.md)
 
