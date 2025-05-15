@@ -208,7 +208,7 @@ Remote connection to VMs that are joined to Microsoft Entra ID is allowed only f
 - Microsoft Entra registered (minimum required build is 20H1).
 - Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the virtual machine.
 
-To authenticate to Windows using Microsoft Entra credentials, users must belong to one of the two Azure les, Virtual Machine Administrator Login or Virtual Machine User Login.
+To authenticate to Windows using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login or Virtual Machine User Login.
 If you're using a Microsoft Entra registered Windows 10 or later PC, you must enter credentials in the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`). At this time, you can use Azure Bastion to sign in with Microsoft Entra authentication [via the Azure CLI and the native RDP client mstsc](/azure/bastion/native-client).
 
 To sign in to your Windows Server 2019 virtual machine by using Microsoft Entra ID:
