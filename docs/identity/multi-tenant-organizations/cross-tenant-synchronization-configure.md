@@ -114,7 +114,7 @@ By the end of this article, you'll be able to:
 
 1. On the **Microsoft cloud settings** tab, select the check box of the cloud you want to collaborate with, such as **Microsoft Azure Government**.
 
-    The list of clouds will vary based on the cloud you are in. 
+    The list of clouds will vary based on the cloud you are in. For more information, see [Microsoft cloud settings](../../external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-cloud-settings.png" alt-text="Screenshot of Microsoft cloud settings that shows check boxes for different Microsoft clouds to collaborate with." lightbox="./media/cross-tenant-synchronization-configure/access-settings-cloud-settings.png":::
 
