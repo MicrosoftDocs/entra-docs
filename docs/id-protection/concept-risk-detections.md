@@ -5,7 +5,7 @@ description: Learn about risk detections and risk levels, including the differen
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 05/08/2025
+ms.date: 05/15/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -14,7 +14,7 @@ ms.reviewer: cokoopma
 
 ---
 
-# Risk detections and risk levels
+# What are risk detections?
 
 Microsoft Entra ID Protection provides organizations with information about suspicious activity in their tenant and allows you to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
 
@@ -22,7 +22,7 @@ User risk detections might flag a legitimate user account as at risk, when a pot
 
 ## Risk levels
 
-ID Protection categorizes risk into three tiers: low, medium, and high. Risk levels calculated by our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity.
+ID Protection categorizes risk into three tiers: low, medium, and high. Risk levels are calculated by our machine learning algorithms and represent how confident Microsoft is that an unauthorized entity has obtained access.
 
 Detections can fire at more than one risk level, depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](reference-risk-event-types.md#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Other detections, like [Leaked Credentials](reference-risk-event-types.md#leaked-credentials) and [Verified Threat Actor IP](reference-risk-event-types.md#verified-threat-actor-ip) are always delivered as high risk. 
 
@@ -39,7 +39,7 @@ A risk detection with risk level **Low** signifies that anomalies are present in
 
 This type of risk detection often means a change in sign-in behavior, such as an isolated use of a VPN or suddenly signing in from a new location. Sign-in patterns before and after the risk detection are used to determine if there's a pattern or if the sign-in is an anomaly.
 
-Low risks can be considered as an "as information" risk detection. There's no immediate action required, but it's still important to know about.
+Low risks can be considered as an "as information" risk detection. There's not always immediate action required, but it's still important to know about.
 
 ### Medium risk
 
@@ -55,9 +55,9 @@ A risk detection with risk level **High** signifies that Microsoft is highly con
 
 These risk detections require immediate action, either through user self-remediation or administrative intervention. Signals such as threat intelligence and known attack patterns factor into the confidence level of the risk detection.
 
-High risk sign-in and users must be investigated and remediated. If risk-based Conditional Access policies are in place, the user might be blocked, required to perform multifactor authentication, or granted access after a secure password reset. 
+High risk sign-ins and users can be self-remediated to lower the immediate need to be investigated and remediated. If risk-based Conditional Access policies are in place, the user might be blocked, required to perform multifactor authentication, or granted access after a secure password reset. 
 
-### Risk Escalation Scenarios
+### Risk escalation scenario
 
 To better understand how risk levels can escalate, consider the following example:
 
@@ -69,7 +69,9 @@ To better understand how risk levels can escalate, consider the following exampl
 
 ## Real-time and offline detections
 
-ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. Detections calculated offline can provide more insight into how the threat actor gained access to the account and the effect on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in compromise detection.
+ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. Conditional Access policies triggered during sign-in can stop a bad actor before they gain access to the account.
+
+Detections calculated offline can provide more insight into how the threat actor gained access to the account and the effect on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in compromise detection.
 
 Detections triggered in real-time take 5-10 minutes to surface details in the reports. Offline detections take up to 48 hours to surface in the reports, as it takes time to evaluate properties of the potential risk. 
 
@@ -90,19 +92,15 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 
 It's important to remember that risk levels can change, because many risk detections are calculated offline. So if an offline detection is triggered that changes the threshold from low to medium risk, the risk level can change. Or if the system identifies a false positive, the risk level can change from medium to low. 
 
-### Risk escalation scenarios
+### Risk escalation scenario
 
-Risk detections and levels can change dynamically based on real-time and offline detections. Real-time detections provide immediate insights during sign-in, while offline detections analyze additional signals post-sign-in.
+Risk detections and levels can change dynamically based on real-time and offline detections. Real-time detections provide immediate insights during sign-in, while offline detections analyze additional signals post-sign-in. Let's revisit the previous risk escalation scenario with a focus on real-time vs offline detections:
 
-1. A user signs in from an unfamiliar device, triggering a **low** risk detection in real-time. The system flags the anomaly.
+1. **Real-time**: A user signs in from a new location using a VPN.
 
-1. Offline analysis identifies that the same user attempted multiple sign-ins from different geographic locations within a short time frame. This behavior increases the confidence of potential compromise, escalating the user risk level to **medium**.
+1. **Offline**: ID Protection identified offline that the same user attempted multiple sign-ins from different geographic locations within a short time frame.
 
-1. Threat intelligence identifies that one of the IP addresses used in the sign-ins is associated with a known malicious actor. This detection, combined with the previous anomalies, results in a **high** user risk, requiring immediate remediation.
-
-1. The user completes multifactor authentication as part of a Conditional Access policy. The system confirms the sign-in as safe and dismisses the risk state entirely.
-
-
+1. **Offline**: Threat intelligence identified offline that one of the IP addresses used in the sign-ins is associated with a known malicious actor.
 
 ### Time detection
 
