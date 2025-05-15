@@ -83,9 +83,9 @@ For example, if you configure a tenant restrictions v2 policy in the tenant `con
 | ---------- | ----------- | ------------ | ----------- | --------------- | ------- |
 |`alice@contoso.com`| Member | contoso.com | No(same tenant) | Yes | No |
 |`alice@fabrikam.com`|Member|fabrikam.com|Yes|Yes (tenant allowed by policy)|No|
-|`bob@northwinds.com`|Member|northwinds.com|Yes|No (tenant not allowed by policy)|No|
+|`bob@northwindtraders.com`|Member|northwindtraders.com|Yes|No (tenant not allowed by policy)|No|
 |`alice@contoso.com`|Member|contoso.com|No (same tenant)|Yes|No|
-|`bob_northwinds.com#EXT#@contoso.com`|Guest|contoso.com|No (guest user)|Yes|No|
+|`bob_northwindtraders.com#EXT#@contoso.com`|Guest|contoso.com|No (guest user)|Yes|No|
 
 ### Validate authentication plane protection
 
