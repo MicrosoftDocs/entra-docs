@@ -98,6 +98,7 @@ ID Protection requires users to be assigned one or more of the following roles.
 | Notifications | Users at risk detected alerts | No | No | Yes |
 | Notifications | Weekly digest | No | No | Yes | 
 | MFA registration policy | Require MFA (via Conditional Access) | No | No | Yes |
+| Microsoft Graph | All risk reports | No | No | Yes |
 
 To view the **Risky workload identities** report and the **Workload identity detections** tab in the **Risk detections** report, you need Workload Identities Premium licensing. For more information, see [Securing workload identities](concept-workload-identity-risk.md).
 
