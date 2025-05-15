@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 05/14/2025
+ms.date: 05/15/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -92,22 +92,6 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 1. When all your changes are complete, select **Save**.
 
-### Configure attribute visibility and editability during sign-up
-
-You can control which attributes are shown or collected from users during sign-up by configuring the hidden and editable flags for each attribute. These settings are not currently available in the admin center UI, but you can configure them using Microsoft Graph.
-
-Each attribute supports the following flags:
-
-- `hidden`: Set to `true` to hide the attribute from the sign-up page, or `false` to display it.
-- `editable`: Set to `true` to allow users to edit the attribute, or `false` to make it read-only.
-
-Examples:
-
-- Set `hidden` to `false` and `editable` to `false` to show the attribute on the page, but prevent users from editing it.
-- Set `hidden` to `true` and `editable` to `true` to hide the attribute on the page, but still allow it to be set by the API. For example, you could configure a [custom authentication extension](concept-custom-extensions.md) and use the [OnAttributeCollectionSubmit](concept-custom-extensions.md#attribute-collection-start-and-submit-events) event to modify the value of the attribute.
-
-To configure these flags with Microsoft Graph, use the [authenticationAttributeCollectionInputConfiguration](https://learn.microsoft.com/en-us/graph/api/resources/authenticationattributecollectioninputconfiguration?view=graph-rest-1.0) resource type. See also the example for [updating the page layout of a self-service sign up user flow](https://learn.microsoft.com/en-us/graph/api/authenticationeventsflow-update?view=graph-rest-1.0&tabs=http#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
-
 ### Configure a single-select checkbox (CheckboxSingleSelect)
 
 An attribute with a Boolean data type has a user input type of CheckboxSingleSelect. You can modify the text that displays next to the checkbox and include hyperlinks.
@@ -186,7 +170,23 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 
 1. On the **Page layouts** page, select **Save**.
 
-### Find the application ID for the extensions app
+## Configure attribute visibility and editability with Microsoft Graph
+
+You can control which attributes are shown or collected from users during sign-up by configuring the hidden and editable flags for each attribute. These settings are not currently available in the admin center UI, but you can configure them using Microsoft Graph.
+
+Each attribute supports the following flags:
+
+- `hidden`: Set this flag to `true` to hide the attribute from the sign-up page, or `false` to display the attribute.
+- `editable`: Set this flag to `true` to allow users to edit the attribute, or `false` to make the attribute read-only.
+
+Examples:
+
+- Set `hidden` to `false` and `editable` to `false` to show the attribute on the page, but prevent users from editing it.
+- Set `hidden` to `true` and `editable` to `true` to hide the attribute on the page, but still allow it to be set by the API. For example, you can configure a [custom authentication extension](concept-custom-extensions.md) and use the [OnAttributeCollectionSubmit](concept-custom-extensions.md#attribute-collection-start-and-submit-events) event to modify the value of the attribute.
+
+To configure these flags with Microsoft Graph, use the [authenticationAttributeCollectionInputConfiguration](/graph/api/resources/authenticationattributecollectioninputconfiguration) resource type. See also the example for [updating the page layout of a self-service sign up user flow](/graph/api/authenticationeventsflow-update#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
+
+## Find the application ID for the extensions app
 
 [Custom user attributes](concept-user-attributes.md#custom-user-attributes) are [stored in an app named *b2c-extensions-app*](concept-user-attributes.md#where-custom-user-attributes-are-stored). After a user enters a value for the custom attribute during sign-up, it's added to the user object and can be called via the Microsoft Graph API using the naming convention `extension_{appId-without-hyphens}_{custom-attribute-name}` where:
 
