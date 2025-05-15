@@ -74,7 +74,7 @@ items:
 - name: Configure HITRUST controls
   href: hipaa-hitrust-controls.md
 - name: Microsoft Entra and DORA act
-  href: /../compliance/dora/dora-entra
+  href: https://learn.microsoft.com/compliance/dora/dora-entra
 - name: Microsoft Entra ID and PCI-DSS compliance
   expanded: true
   items:
