@@ -88,7 +88,7 @@ Once Global Secure Access is set up, you need to [create a Conditional Access po
 
 ## Step 6: Create an Entitlement Management access package to provide governed access to the restricted resource
 
-The last step in the scenario is to create an access package that contains the security group that you specified in Step 4. Users assigned to this access package are assigned to this group and are exempt from the web content filtering policies that you have established.
+The last step in the scenario is to create an access package that contains the security group that you specified in Step 4. Users assigned to this access package are assigned to this group, and are exempt from the web content filtering policies that you established.
 
 Like other access packages, you create a policy with rules specifying who can request the package, who must approve, and its lifecycle. Learn more at [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md).
 
