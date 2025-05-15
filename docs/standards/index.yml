@@ -128,7 +128,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Configure Microsoft Entra ID for DORA requirements 
+          - text: Configure Microsoft Entra for DORA requirements 
             url: /../compliance/dora/dora-entra
 
   
