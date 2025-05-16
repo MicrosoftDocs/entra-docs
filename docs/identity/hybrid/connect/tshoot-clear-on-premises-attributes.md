@@ -92,7 +92,7 @@ Function    Set-ADSyncToolsOnPremisesAttribute       1.5.2   ADSyncTools
 
 Get all the details of a cmdlet (i.e., Syntax, Examples, etc.) with Get-Help &lt;cmdlet&gt; -Full: 
 
- ```Get-Help Get-ADSyncToolsOnPremisesAttribute -Full ``` 
+ ```Get-Help Get-ADSyncToolsOnPremisesAttribute -Full``` 
 
 ## Get-ADSyncToolsOnPremisesAttribute 
 
@@ -157,7 +157,7 @@ This operation requires Microsoft Graph PowerShell SDK, preauthenticated with `C
 Clear-ADSyncToolsOnPremisesAttribute 'User1@Contoso.com' -All 
  ```
 
-You can also use `Clear-ADSyncToolsOnPremisesAttribute ` to clear any of the following on-premises attributes individually: 
+You can also use `Clear-ADSyncToolsOnPremisesAttribute` to clear any of the following on-premises attributes individually: 
 
 - onPremisesDistinguishedName 
 - onPremisesDomainName 

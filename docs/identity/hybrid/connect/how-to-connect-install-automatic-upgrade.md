@@ -58,7 +58,7 @@ Automatic upgrade will not be eligible to proceed if any of the following condit
 
 | Result Message | Description |
 | --- | --- |
-|UpgradeNotSupportedTLSVersionIncorrect|Your TLS version is lower than 1.2. Follow [our guide](reference-connect-tls-enforcement.md) to update your TLS.
+|UpgradeNotSupportedTLSVersionIncorrect|Your TLS version is lower than 1.2. Follow [our guide](reference-connect-tls-enforcement.md) to update your TLS.|
 |UpgradeNotSupportedCustomizedSyncRules|There are custom synchronization rules configured in Microsoft Entra Connect. <br/>**Note:** After version 2.2.1.0, this condition no longer prevents auto upgrade.|
 |UpgradeNotSupportedInvalidPersistedState|The installation isn't an Express settings or a DirSync upgrade.|
 |UpgradeNotSupportedNonLocalDbInstall|You aren't using a SQL Server Express LocalDB database.|

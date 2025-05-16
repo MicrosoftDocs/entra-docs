@@ -223,7 +223,7 @@ If you use Microsoft Entra Domain Services to provide legacy authentication for 
     * Generates a random initialization vector needed for the first round of encryption.
     * Extracts Kerberos password hashes from the *supplementalCredentials* attributes.
     * Checks the Microsoft Entra Domain Services security configuration *SyncNtlmPasswords* setting.
-        * If this setting is disabled, generates a random, high-entropy NTLM hash (different from the user's password). This hash is then combined with the exacted Kerberos password hashes from the *supplementalCrendetials* attribute into one data structure.
+        * If this setting is disabled, generates a random, high-entropy NTLM hash (different from the user's password). This hash is then combined with the exacted Kerberos password hashes from the *supplementalCredentials* attribute into one data structure.
         * If enabled, combines the value of the *unicodePwd* attribute with the extracted Kerberos password hashes from the *supplementalCredentials* attribute into one data structure.
     * Encrypts the single data structure using the AES symmetric key.
     * Encrypts the AES symmetric key using the tenant's Microsoft Entra Domain Services public key.

@@ -34,6 +34,7 @@ The sync service consists of two components, the on-premises **Microsoft Entra C
 <a name='azure-ad-connect-sync-topics'></a>
 
 ## Microsoft Entra Connect Sync topics
+
 | Topic | What it covers and when to read |
 | --- | --- |
 | **Microsoft Entra Connect Sync fundamentals** | |

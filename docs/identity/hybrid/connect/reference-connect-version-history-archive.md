@@ -557,18 +557,18 @@ Lock down access to the AD DS account by implementing the following permission c
 *	Remove all ACEs on the specific object, except ACEs specific to SELF. We want to keep the default permissions intact when it comes to SELF.
 *	Assign these specific permissions:
 
-Type   | Name             | Access        | Applies To
----------|-------------------------------|----------------------|--------------|
-Allow  | SYSTEM            | Full Control     | This object |
-Allow  | Enterprise Admins       | Full Control     | This object |
-Allow  | Domain Admins         | Full Control     | This object |
-Allow  | Administrators        | Full Control     | This object |
-Allow  | Enterprise Domain Controllers | List Contents    | This object |
-Allow  | Enterprise Domain Controllers | Read All Properties | This object |
-Allow  | Enterprise Domain Controllers | Read Permissions   | This object |
-Allow  | Authenticated Users      | List Contents    | This object |
-Allow  | Authenticated Users      | Read All Properties | This object |
-Allow  | Authenticated Users      | Read Permissions   | This object |
+| Type  | Name                          | Access              | Applies To  |
+|-------|-------------------------------|---------------------|-------------|
+| Allow | SYSTEM                        | Full Control        | This object |
+| Allow | Enterprise Admins             | Full Control        | This object |
+| Allow | Domain Admins                 | Full Control        | This object |
+| Allow | Administrators                | Full Control        | This object |
+| Allow | Enterprise Domain Controllers | List Contents       | This object |
+| Allow | Enterprise Domain Controllers | Read All Properties | This object |
+| Allow | Enterprise Domain Controllers | Read Permissions    | This object |
+| Allow | Authenticated Users           | List Contents       | This object |
+| Allow | Authenticated Users           | Read All Properties | This object |
+| Allow | Authenticated Users           | Read Permissions    | This object |
 
 #### PowerShell script to tighten a pre-existing service account
 

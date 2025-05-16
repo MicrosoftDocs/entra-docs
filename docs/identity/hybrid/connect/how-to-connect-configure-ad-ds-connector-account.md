@@ -292,16 +292,16 @@ This cmdlet sets the following permissions:
 
 |Type |Name |Access |Applies To|
 |-----|-----|-----|-----| 
-|Allow |SYSTEM |Full Control |This object 
-|Allow |Enterprise Admins |Full Control |This object 
-|Allow |Domain Admins |Full Control |This object 
-|Allow |Administrators |Full Control |This object 
-|Allow |Enterprise Domain Controllers |List Contents |This object 
-|Allow |Enterprise Domain Controllers |Read All Properties |This object 
-|Allow |Enterprise Domain Controllers |Read Permissions |This object 
-|Allow |Authenticated Users |List Contents |This object 
-|Allow |Authenticated Users |Read All Properties |This object 
-|Allow |Authenticated Users |Read Permissions |This object 
+|Allow |SYSTEM |Full Control |This object |
+|Allow |Enterprise Admins |Full Control |This object |
+|Allow |Domain Admins |Full Control |This object |
+|Allow |Administrators |Full Control |This object |
+|Allow |Enterprise Domain Controllers |List Contents |This object |
+|Allow |Enterprise Domain Controllers |Read All Properties |This object |
+|Allow |Enterprise Domain Controllers |Read Permissions |This object |
+|Allow |Authenticated Users |List Contents |This object |
+|Allow |Authenticated Users |Read All Properties |This object |
+|Allow |Authenticated Users |Read Permissions |This object |
 
 ## Next Steps
 - [Microsoft Entra Connect: Accounts and permissions](reference-connect-accounts-permissions.md)

@@ -82,7 +82,7 @@ To run the Single Object Sync tool, perform the following steps:
 |-----|----|
 |DistinguishedName|This is a required string parameter. </br></br>This is the Active Directory object’s distinguished name that needs synchronization and troubleshooting.| 
 |StagingMode|This is an optional switch parameter. </br></br>This parameter can be used to prevent exporting the changes to Microsoft Entra ID.</br></br>**Note**: The cmdlet commits the sync operation. </br></br>**Note**: Microsoft Entra Connect Staging server won't export the changes to Microsoft Entra ID.|
-|NoHtmlReport|This is an optional switch parameter. </br></br>This parameter can be used to prevent generating the HTML report. 
+|NoHtmlReport|This is an optional switch parameter. </br></br>This parameter can be used to prevent generating the HTML report.|
 
 ## Single Object Sync throttling 
 

@@ -37,6 +37,7 @@ You can find the download for Microsoft Entra Connect on [Microsoft Download Cen
 <a name='next-steps-to-install-azure-ad-connect'></a>
 
 ### Next steps to Install Microsoft Entra Connect
+
 |Topic |Link|  
 | --- | --- |
 |Download Microsoft Entra Connect | [Download Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771)|
@@ -74,11 +75,12 @@ The [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-
 [Automatic upgrade](how-to-connect-install-automatic-upgrade.md) is enabled by default for express settings installations and ensures your Microsoft Entra Connect is always up to date with the latest release.
 
 ### Next steps to configure sync features
+
 |Topic |Link|  
 | --- | --- |
 |Configure filtering | [Microsoft Entra Connect Sync: Configure filtering](how-to-connect-sync-configure-filtering.md)|
 |Password hash synchronization | [Password hash synchronization](how-to-connect-password-hash-synchronization.md)|
-|Pass-through Authentication | [Pass-through authentication](how-to-connect-pta.md)
+|Pass-through Authentication | [Pass-through authentication](how-to-connect-pta.md)|
 |Password writeback | [Getting started with password management](~/identity/authentication/tutorial-enable-sspr.md)|
 |Device writeback | [Enabling device writeback in Microsoft Entra Connect](how-to-connect-device-writeback.md)|
 |Prevent accidental deletes | [Microsoft Entra Connect Sync: Prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md)|
@@ -98,6 +100,7 @@ The configuration model in sync is called [declarative provisioning](concept-azu
 <a name='next-steps-to-customize-azure-ad-connect-sync'></a>
 
 ### Next steps to customize Microsoft Entra Connect Sync
+
 |Topic |Link|  
 | --- | --- |
 |All Microsoft Entra Connect Sync articles | [Microsoft Entra Connect Sync](how-to-connect-sync-whatis.md)|
@@ -122,6 +125,7 @@ ADFS can be configured to support [multiple domains](how-to-connect-install-mult
 If your ADFS server isn't configured to update certificates from Microsoft Entra ID automatically, or if you use a non-ADFS solution, then you'll be notified when you have to [update certificates](how-to-connect-fed-o365-certs.md).
 
 ### Next steps to configure federation features
+
 |Topic |Link|  
 | --- | --- |
 |All AD FS articles | [Microsoft Entra Connect and federation](how-to-connect-fed-whatis.md)|

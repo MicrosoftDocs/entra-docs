@@ -22,6 +22,7 @@ This topic is the home for information on federation-related functionalities for
 <a name='azure-ad-connect-federation-topics'></a>
 
 ## Microsoft Entra Connect: federation topics
+
 | Topic | What it covers and when to read it |
 |:--- |:--- |
 | **Microsoft Entra Connect user sign-in options** | |
