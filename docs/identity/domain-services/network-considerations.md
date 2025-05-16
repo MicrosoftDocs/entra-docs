@@ -174,6 +174,13 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 * Without access to this port, your managed domain can't be updated, configured, backed-up, or monitored.
 * You can restrict inbound access to this port to the *AzureActiveDirectoryDomainServices* service tag.
 
+### Port 3389 - synchronization with secondary node, backup
+
+* When configuring firewall rules or network security policies, it is crucial to consider TCP port 3389.
+* If traffic restrictions are implemented for this port, it is essential not to deny traffic between the IP addresses or the addressing range used by controllers of the service.
+* **Blocking communication via port 3389 between these nodes will prevent the correct functioning of replication and data synchronization.** This causes errors in the backup process.
+* Ensure that security policies explicitly allow this internal communication to guarantee the integrity and availability of the service.
+
 ### Port 3389 - management using remote desktop
 
 * Used for remote desktop connections to domain controllers in your managed domain, this port cannot be changed or encapsulated into another port.
