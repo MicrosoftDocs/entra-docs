@@ -58,7 +58,7 @@ In your organization's [cross-tenant access settings](cross-tenant-access-overvi
 
 ### Supported scenarios
 
-You can scope tenant restrictions v2 to specific users, groups, organizations, or external apps. Apps built on the network stack for the Windows operating system are protected. The following scenarios are supported:
+You can scope tenant restrictions v2 to specific users, groups, organizations, or external apps. Apps built on the networking stack for the Windows operating system are protected. The following scenarios are supported:
 
 - All Office apps (all versions/release channels)
 - Universal Windows Platform (UWP) .NET applications
@@ -354,29 +354,29 @@ To ensure that sign-ins are restricted on all devices and apps in your corporate
    This header enforces your tenant restrictions v2 policy on all sign-ins on your network. This header doesn't block anonymous access to Teams meetings, SharePoint files, or other resources that don't require authentication.
 
 > [!IMPORTANT]
-> Tenant restrictions v1 and v2 on the proxy require decryption of requests to login URLs such as login.microsoftonline.com. Microsoft supports the decryption of traffic for those login domains for the purpose of header insertion for tenant restrictions. This decryption is a valid exception from the policies at [Use third-party network devices or solutions with Microsoft 365](/microsoft-365/troubleshoot/miscellaneous/office-365-third-party-network-devices).
+> Tenant restrictions v1 and v2 on the proxy require decryption of requests to sign-in URLs such as login.microsoftonline.com. Microsoft supports the decryption of traffic for those sign-in domains for the purpose of header insertion for tenant restrictions. This decryption is a valid exception to the policies at [Use third-party network devices or solutions with Microsoft 365](/microsoft-365/troubleshoot/miscellaneous/office-365-third-party-network-devices).
 
 #### Tenant restrictions v2 with no support for break and inspect
 
 For non-Windows platforms, you can break and inspect traffic to add the tenant restrictions v2 parameters into the header via proxy. However, some platforms don't support break and inspect, so tenant restrictions v2 doesn't work. For these platforms, the following features of Microsoft Entra ID can provide protection:
 
-- [Conditional Access: Only allow use of managed/compliant devices](/mem/intune/protect/conditional-access-intune-common-ways-use#device-based-conditional-access)
-- [Conditional Access: Manage access for guest/external users](/microsoft-365/security/office-365-security/identity-access-policies-guest-access)
+- [Conditional Access: Allow use of only managed or compliant devices](/mem/intune/protect/conditional-access-intune-common-ways-use#device-based-conditional-access)
+- [Conditional Access: Manage access for guest or external users](/microsoft-365/security/office-365-security/identity-access-policies-guest-access)
 - [B2B collaboration: Restrict outbound rules by cross-tenant access for the same tenants listed in the parameter Restrict-Access-To-Tenants](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml)
 - [B2B collaboration: Restrict invitations to B2B users to the same domains listed in the Restrict-Access-To-Tenants parameter](~/external-id/allow-deny-list.md)
 - [Application management: Restrict how users consent to applications](~/identity/enterprise-apps/configure-user-consent.md)
 - [Intune: Apply an app policy through Intune to restrict usage of managed apps to only the UPN of the account that enrolled the device](/mem/intune/apps/app-configuration-policies-use-android) (under **Allow only configured organization accounts in apps**)
 
-Although these alternatives provide protection, certain scenarios can be covered only through tenant restrictions. Examples include the use of a browser to access Microsoft 365 services through the web instead of the dedicated app.
+Although these alternatives provide protection, you can cover certain scenarios only through tenant restrictions. Examples include the use of a browser to access Microsoft 365 services through the web instead of the dedicated app.
 
 ### Option 3: Enable tenant restrictions on Windows-managed devices (preview)
 
 After you create a tenant restrictions v2 policy, you can enforce the policy on each Windows 10 or Windows 11 device by adding your tenant ID and the policy ID to the device's **Tenant restrictions** configuration.
 
-When tenant restrictions are enabled on a Windows device, corporate proxies aren't required for policy enforcement. Devices don't need to be Microsoft Entra ID managed to enforce tenant restrictions v2. Domain-joined devices that are managed with Group Policy are also supported.
+When you enable tenant restrictions on a Windows device, corporate proxies aren't required for policy enforcement. Devices don't need to be Microsoft Entra ID managed to enforce tenant restrictions v2. Domain-joined devices that are managed with Group Policy are also supported.
 
 > [!NOTE]
-> Tenant restrictions V2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices. It doesn't protect .NET stack, Chrome, or Firefox.
+> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices. It doesn't protect .NET stack, Chrome, or Firefox.
 
 #### Use Group Policy to deploy tenant restrictions
 
@@ -420,13 +420,13 @@ To block applications, you need to set up App Control for Business in Windows (f
 
 ### Set up App Control for Business to control access to Microsoft resources
 
-App Control for Business is a policy engine built into Windows that allows you to control which applications can be run on your user's devices. For tenant restrictions v2, you need to use App Control for Business to block *unenlightened apps* (apps that don't provide tenant restrictions v2 protection) from accessing Microsoft resources.  This requirement allows you to keep using the browsers and apps of your choice, while knowing that data protected by Microsoft Entra can be accessed only through secure means.  
+App Control for Business is a policy engine built into Windows that allows you to control which applications can run on your user's devices. For tenant restrictions v2, you need to use App Control for Business to block *unenlightened apps* (apps that don't provide tenant restrictions v2 protection) from accessing Microsoft resources.  This requirement allows you to keep using the browsers and apps of your choice, while knowing that data protected by Microsoft Entra can be accessed only through secure means.  
 
-Unenlightened apps don't use the Windows network stack, so they don't benefit from the tenant restrictions v2 features added to Windows. They can't send the signal to login.live.com for Microsoft Entra, or to Microsoft resources that indicate that tenant restrictions v2 protection is required. As such, you can't rely on unenlightened apps to provide data plane protection.  
+Unenlightened apps don't use the Windows networking stack, so they don't benefit from the tenant restrictions v2 features added to Windows. They can't send the signal to login.live.com for Microsoft Entra, or to Microsoft resources that indicate that tenant restrictions v2 protection is required. As such, you can't rely on unenlightened apps to provide data plane protection.  
 
 You can use App Control for Business in two ways to help protect against unenlightened apps:
 
-- Prevent the use of unenlightened apps entirely (that is, block PowerShell or Chrome entirely from being run). You can use a standard App Control for Business policy that controls which apps can be run.  
+- Prevent the use of unenlightened apps entirely (that is, block PowerShell or Chrome entirely from running). You can use a standard App Control for Business policy that controls which apps can run.  
 - Allow the use of unenlightened apps, but block them from accessing Microsoft resources. For this method, you use a special App Control for Business policy called an *app ID tagging policy* (`AppIdTaggingPolicy`).
 
 For both options, you must first create an App Control for Business policy. Then, optionally, convert it to an app ID tagging policy. Finally, apply it to your devices after testing it on a test machine.
@@ -450,7 +450,7 @@ For more information, see [Creating your App Control AppId Tagging Policies](/wi
 
 #### Step 2: Convert the policy into an app ID tagging policy
 
-After you create your policy in the wizard, or creating your own by using PowerShell, convert the .xml output to an app ID tagging policy. The tagging policy marks the apps for which you want to allow access to Microsoft resources. The GUID output is your new policy ID.
+After you create your policy in the wizard, or create your own by using PowerShell, convert the .xml output to an app ID tagging policy. The tagging policy marks the apps for which you want to allow access to Microsoft resources. The GUID output is your new policy ID.
 
 ```powershell
    Set-CIPolicyIdInfo -ResetPolicyID .\policy.xml -AppIdTaggingPolicy -AppIdTaggingKey "M365ResourceAccessEnforced" -AppIdTaggingValue "True" 
@@ -517,17 +517,17 @@ When tenant restrictions v2 is enforced, it automatically blocks all anonymous o
 
 ## Tenant restrictions and Microsoft Teams (preview)
 
-Teams, by default, has open federation. It doesn't block anyone from joining a meeting hosted by an external tenant. For greater control over access to Teams meetings, you can use [federation controls](/microsoftteams/trusted-organizations-external-meetings-chat) in Teams to allow or block specific tenants. You can also use these federation controls along with tenant restrictions v2 to block anonymous access to Teams meetings.
+Teams, by default, has open federation. It doesn't block anyone from joining a meeting that an external tenant hosts. For greater control over access to Teams meetings, you can use [federation controls](/microsoftteams/trusted-organizations-external-meetings-chat) in Teams to allow or block specific tenants. You can also use these federation controls along with tenant restrictions v2 to block anonymous access to Teams meetings.
 
-To enforce tenant restrictions for Teams, you need to configure tenant restrictions v2 in your Microsoft Entra cross-tenant access settings. You also need to set up federation controls in the Teams admin portal and restart Teams. Tenant restrictions implemented on the corporate proxy won't block anonymous access to Teams meetings, SharePoint files, and other resources that don't require authentication.
+To enforce tenant restrictions for Teams, you need to configure tenant restrictions v2 in your Microsoft Entra cross-tenant access settings. You also need to set up federation controls in the Teams admin portal and restart Teams. Tenant restrictions v2 implemented on the corporate proxy doesn't block anonymous access to Teams meetings, SharePoint files, and other resources that don't require authentication.
 
 If you're considering using tenant restrictions for Teams, keep the following points about identity in mind:
 
-- Teams currently allows users to join *any* externally hosted meeting by using their corporate-provided or home-provided identity. You can use outbound cross-tenant access settings to control users with a corporate-provided or home-provided identity to join externally hosted Teams meetings.
+- Teams currently allows users to join *any* externally hosted meeting by using their corporate-provided or home-provided identity. You can use outbound cross-tenant access settings to control which users with a corporate-provided or home-provided identity can join externally hosted Teams meetings.
 - Tenant restrictions prevent users from using an externally issued identity to join Teams meetings.
 
 > [!NOTE]
-> The Microsoft Teams app has a dependency on SharePoint Online and Exchange Online apps. We recommend setting the tenant restrictions v2 policy on the Office 365 app instead of Microsoft Teams services, SharePoint Online, or Exchange Online separately. If you allow or block one of the applications (SharePoint Online, Exchange Online, and so on) that's part of Office 365, it will also affect apps like Microsoft Teams. Similarly, if the Microsoft Teams app is allowed or blocked, SharePoint Online and Exchange Online within the Teams app will be affected.
+> The Microsoft Teams app has a dependency on SharePoint Online and Exchange Online apps. We recommend setting the tenant restrictions v2 policy on the Office 365 app instead of setting the policy on Microsoft Teams services, SharePoint Online, or Exchange Online separately. If you allow or block one of the applications (SharePoint Online, Exchange Online, and so on) that are part of Office 365, it will also affect apps like Microsoft Teams. Similarly, if the Microsoft Teams app is allowed or blocked, SharePoint Online and Exchange Online within the Teams app will be affected.
 
 ### Pure anonymous meeting join
 
@@ -541,7 +541,7 @@ You can configure the tenant restrictions v2 policy to allow specific users or g
 
 | Authentication identity | Authenticated session  | Result |
 |----------------------|---------|---------|
-|Tenant member user<br></br> Example: A user uses their home identity as a member user (such as `user@mytenant.com`). | Authenticated |  Tenant restrictions v2 allows access to the Teams meeting. Tenant restrictions v2 isn't applied to tenant member users. Cross-tenant access inbound/outbound policy applies.  |
+|Tenant member user<br></br> Example: A user uses their home identity as a member user (such as `user@<mytenant>.com`). | Authenticated |  Tenant restrictions v2 allows access to the Teams meeting. Tenant restrictions v2 isn't applied to tenant member users. The inbound/outbound policy for cross-tenant access applies.  |
 |Anonymous <br></br> Example: A user tries to use an unauthenticated session in an InPrivate browser window to access a Teams meeting. | Not authenticated |  Tenant restrictions v2 blocks access to the Teams meeting.  |
 |Externally issued identity<br></br> Example: A user uses any identity other than their home identity (such as `user@<externaltenant>.com`). | Authenticated as an externally issued identity |  The tenant restrictions v2 policy allow or blocks access to the Teams meeting. The user can join the meeting if the policy allows it. Otherwise, access is blocked. |
 
@@ -551,7 +551,7 @@ SharePoint Online supports tenant restrictions v2 on both the authentication pla
 
 ### Authenticated sessions
 
-When tenant restrictions v2 are enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a SharePoint Online resource without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource; otherwise, access is blocked.
+When tenant restrictions v2 is enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a SharePoint Online resource without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource. Otherwise, access is blocked.
 
 ### Anonymous access (preview)
 
@@ -563,7 +563,7 @@ For example, assume that a user is using a managed device configured with tenant
 
 ### Authenticated sessions
 
-When tenant restrictions v2 is enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a OneDrive without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource. Otherwise, access is blocked.
+When tenant restrictions v2 is enabled on a tenant, unauthorized access is blocked during authentication. If a user directly accesses a OneDrive resource without an authenticated session, they're prompted to sign in. If the tenant restrictions v2 policy allows access, the user can access the resource. Otherwise, access is blocked.
 
 ### Anonymous access (preview)
 
@@ -593,11 +593,11 @@ Tenant restrictions v2 blocks access from a service principal. You can enable cl
 
 ## Tenant restrictions with the Microsoft Enterprise SSO plug-in for Apple devices
 
-The Microsoft Enterprise SSO plug-in for Apple devices provides single sign-on (SSO) for Microsoft Entra accounts on macOS, iOS, and iPadOS across all applications that support Apple's enterprise SSO feature. To use the Microsoft Enterprise SSO plug-in for Apple devices, you need to exclude certain URLs from network proxies, interception, and other enterprise systems.
+The Microsoft Enterprise SSO plug-in for Apple devices provides single sign-on (SSO) for Microsoft Entra accounts on macOS, iOS, and iPadOS across all applications that support Apple's Enterprise SSO feature. To use the Microsoft Enterprise SSO plug-in for Apple devices, you need to exclude certain URLs from network proxies, interception, and other enterprise systems.
 
 If your organization use Apple OS versions released after 2022, there's no need to exclude Microsoft sign-in URLs from TLS inspection. If you're using the tenant restrictions feature, you can do TLS inspection on Microsoft sign-in URLs and add the necessary headers on the request. For more information, see [Microsoft Enterprise SSO plug-in for Apple devices](/entra/identity-platform/apple-sso-plugin#requirements).
 
-You can [validate the networking configuration on a macOS device](/entra/identity/devices/troubleshoot-mac-sso-extension-plugin?tabs=flowchart-ios#validate-networking-configuration-on-macos-device) to make sure that SSO configuration is not broken due to TLS inspection.
+You can [validate the networking configuration on a macOS device](/entra/identity/devices/troubleshoot-mac-sso-extension-plugin?tabs=flowchart-ios#validate-networking-configuration-on-macos-device) to make sure that SSO configuration isn't broken due to TLS inspection.
 
 ## Sign-in logs
 
@@ -617,7 +617,7 @@ Audit logs provide records of system and user activities, including activities t
 
 To get more details about the event, select the event in the log.
 
-:::image type="content" source="media/tenant-restrictions-v2/audit-log-details.png" alt-text="Screenshot that showing audit log details.":::
+:::image type="content" source="media/tenant-restrictions-v2/audit-log-details.png" alt-text="Screenshot that shows audit log details.":::
 
 You can also export these logs from Microsoft Entra ID and use the reporting tool of your choice to get customized reports.
 
@@ -639,7 +639,7 @@ Use Microsoft Graph to get policy information.
    POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/default/resetToSystemDefault
    ```
 
-- Get a partner configuration:
+- Get partner configurations:
 
    ``` http
    GET https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/partners
@@ -686,7 +686,7 @@ Use Microsoft Graph to get policy information.
 
 Tenant restrictions v2 is supported on all clouds. However, tenant restrictions v2 is not enforced with cross-cloud requests.
 
-Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when headers are injected by an intermediary network solution, like a proxy that uses a certificate trust chain outside Apple system root certificates.
+Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers. An example of such a solution is a proxy that uses a certificate trust chain outside Apple system root certificates.
 
 ## Related content
 
