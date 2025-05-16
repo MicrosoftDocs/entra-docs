@@ -115,18 +115,16 @@ For anyone that has used Microsoft Entra ID to [provision identities into a SaaS
 
 ## License requirements
 
-In the source tenant: Using this feature requires Microsoft Entra ID P1 licenses. Each user who is synchronized with cross-tenant synchronization must have a P1 license in their home/source tenant. To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
-
-In the target tenant: Cross-tenant sync relies on the Microsoft Entra External ID billing model. To understand the external identities licensing model, see [MAU billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md). You will also need at least one Microsoft Entra ID P1 license in the target tenant to enable auto-redemption.
-
-[Cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) requires Microsoft Entra ID Governance or Microsoft Entra Suite licenses. For more information, see [Microsoft Entra ID Governance licensing fundamentals](../../id-governance/licensing-fundamentals.md).
-
 The following table lists the required licenses depending on your scenario.
 
 | Scenario | Source tenant | Target tenant |
 | --- | --- | --- |
 | Cross-tenant synchronization (same cloud) | Microsoft Entra ID P1 licenses | N/A |
 | [Cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) | Microsoft Entra ID Governance or Microsoft Entra Suite licenses | N/A |
+
+In the source tenant: Each user who is synchronized with cross-tenant synchronization must have a Microsoft Entra ID P1 license in their home/source tenant. Each user who is synchronized with cross-cloud synchronization must have a Microsoft Entra ID Governance or Microsoft Entra Suite license in their home/source tenant. For more information, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) or [Microsoft Entra ID Governance licensing fundamentals](../../id-governance/licensing-fundamentals.md).
+
+In the target tenant: Licenses aren't required for cross-tenant synchronization or cross-cloud synchronization in the target tenant. However, depending on the features you are using in the target tenant, you might need additional licensing. For example, if you have Microsoft Entra External ID billing enabled, you might get charged for external guests. To understand the external identities licensing model, see [MAU billing model for Microsoft Entra External ID](../../external-id/external-identities-pricing.md).
 
 ## Frequently asked questions
 
@@ -160,12 +158,12 @@ What cloud pairs are supported for cross-cloud synchronization?
 What are the differences between cross-tenant synchronization and cross-cloud synchronization?
 
 - Cross-tenant synchronization and cross-cloud synchronization are built using the same technologies and are fundamentally the same. The primary difference is that synchronization occurs across clouds instead of within the same cloud.
-- Synchronization of the manager attributue isn't yet supported in cross-cloud synchronization.
 
 Are there limitations for cross-cloud synchronization?
 
+- Synchronization of the manager attributue isn't yet supported in cross-cloud synchronization.
 - For multitenant organization limitations, see [Multitenant org FAQ](/microsoft-365/enterprise/multitenant-org-faq#can-an-mto-be-created-across-worldwide-geographies).
-- External members aren't supported. For more information, see [Collaborate with guests from other Microsoft 365 cloud environments](/microsoft-365/solutions/collaborate-guests-cross-cloud).
+- For Microsoft 365 limitations with external members, see [Collaborate with guests from other Microsoft 365 cloud environments](/microsoft-365/solutions/collaborate-guests-cross-cloud).
 
 #### Existing B2B users
 
