@@ -12,7 +12,7 @@ manager: CelesteDG
 # Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
 
-# Microsoft Entra External ID: What's new?
+# What's new in External ID?
 
 Welcome to what's new in documentation for Microsoft Entra External ID. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
