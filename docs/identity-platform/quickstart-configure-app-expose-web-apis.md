@@ -4,8 +4,7 @@ description: In this how-to guide, register a web API with the Microsoft identit
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-adal-ref 
-ms.date: 06/10/2024
+ms.date: 05/14/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
 
