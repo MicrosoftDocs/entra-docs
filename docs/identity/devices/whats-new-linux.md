@@ -19,25 +19,42 @@ This article provides information about the latest updates to Microsoft Single S
 ### Package Repositories
 Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are avilable in either .deb or .rpm format, however only Ubuntu LTS & Red Hat Enterprise Linux are supported today.
 
+
 #### [Ubuntu20.04](#tab/ubuntu2004)
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/msft-identity-broker/)
+
+---
 
 #### [Ubuntu22.04](#tab/ubuntu2204)
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/)
 
+---
+
+#### [Ubuntu24.04](tab/ubuntu2404)
+- [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker)
+
+---
+
 #### [RedHat 9](#tab/redhat9)
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
+
+---
 
 #### [RedHat 8](#tab/redhat8)
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/8/prod/Packages/m/)
 
-
 ---
 
 ## Microsoft-Identity-Broker
+
+### 2.0.1 - 18-Nov-2024 
+- Releasing package support for ubuntu 24.04
+
+### 2.0.1 - 21-Mar-2024
+- Bug fixes
 
 ### 1.7.0 - 31-Jan-2024
 - Addressing the 1001 on registration failure
