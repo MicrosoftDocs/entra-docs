@@ -255,8 +255,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
    - **Allow access**: Allows users and groups specified under **Applies to** who are signed in with external accounts to access external apps (specified on the **External applications** tab).
    - **Block access**: Blocks users and groups specified under **Applies to** who are signed in with external accounts from accessing external apps (specified on the **External applications** tab).
 
-   > [!NOTE]
-   > For our Microsoft accounts example, we select **Allow access**.
+   For the Microsoft accounts example in this article, we select **Allow access**.
 
    :::image type="content" source="media/tenant-restrictions-v2/tenant-restrictions-external-users-organizational.png" alt-text="Screenshot that shows selecting the option to allow access for external users.":::
 
@@ -278,8 +277,7 @@ Suppose you use tenant restrictions to block access by default, but you want to 
    - **Allow access**: Allows your users to access the external applications specified under **Applies to** when the users are using external accounts.
    - **Block access**: Blocks your users from accessing the external applications specified under **Applies to** when the users are using external accounts.
 
-   > [!NOTE]
-   > For our Microsoft accounts example, we select **Allow access**.
+   For the Microsoft accounts example in this article, we select **Allow access**.
 
    :::image type="content" source="media/tenant-restrictions-v2/tenant-restrictions-edit-applications-access-status.png" alt-text="Screenshot that shows selections for access status.":::
 
@@ -288,17 +286,17 @@ Suppose you use tenant restrictions to block access by default, but you want to 
    - **All external applications**: Applies the action that you chose under **Access status** to all external applications.
    - **Select external applications**: Applies the action that you chose under **Access status** to all external applications.
 
+   For the Microsoft accounts example in this article, we choose **Select external applications**.
+
    > [!NOTE]
-   >
-   > - For our Microsoft accounts example, we choose **Select external applications**.
-   > - If you block access to all external applications, you also need to block access for all of your users and groups (on the **Users and groups** tab).
+   > If you block access to all external applications, you also need to block access for all of your users and groups (on the **Users and groups** tab).
 
    :::image type="content" source="media/tenant-restrictions-v2/tenant-restrictions-edit-applications-applies-to.png" alt-text="Screenshot that shows selecting options for applying restrictions to external applications.":::
 
 1. If you chose **Select external applications**, take the following steps for each application that you want to add:
 
-   1. Select **Add Microsoft applications** or **Add other applications**. For our Microsoft Learn example, we choose **Add other applications**.
-   1. In the search box, enter the application name or the application ID (either the *client app ID* or the *resource app ID*). ([See a list of IDs for commonly used Microsoft applications.](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in)) For our Microsoft Learn example, we enter the application ID `18fbca16-2224-45f6-85b0-f7bf2b39b3f3`.
+   1. Select **Add Microsoft applications** or **Add other applications**. For the Microsoft Learn example in this article, we choose **Add other applications**.
+   1. In the search box, enter the application name or the application ID (either the *client app ID* or the *resource app ID*). ([See a list of IDs for commonly used Microsoft applications.](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in)) For the Microsoft Learn example in this article, we enter the application ID `18fbca16-2224-45f6-85b0-f7bf2b39b3f3`.
    1. Select the application in the search results, and then select **Add**.
    1. Repeat the preceding steps for each application you want to add.
    1. When you finish selecting applications, select **Submit**.

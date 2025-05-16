@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 02/12/2024
 ms.author: gasinh
 ms.reviewer: jebley
@@ -55,7 +55,7 @@ Configure the cross-tenant access settings and tenant restrictions v2 policies f
 
 When you configure outbound settings for cross-tenant access, the policy takes effect within one hour and is evaluated in addition to the tenant restrictions v1 policy. Cross-tenant access settings and tenant restrictions v1 are evaluated, and the more restrictive option is applied.
 
-Because this action can affect users, mirror the tenant restrictions v1 policy as much as possible in the new policies to avoid negatively affecting users. The tenant restrictions v2 policy that you configure in cross-tenant access settings takes effect after you update your proxies with the new header.
+To avoid negatively affecting users, mirror the tenant restrictions v1 policy as much as possible in the new policies. The tenant restrictions v2 policy that you configure in cross-tenant access settings takes effect after you update your proxies with the new header.
 
 The following sections set up migration and configuration management for common scenarios. Use this guidance to help craft the policy that your organization needs.
 
@@ -65,7 +65,7 @@ Allow internal identities, such as employees, to access specific external tenant
 
 1. In **Cross-tenant access settings**, on the **Organizational settings** tab, [add each domain or tenant as an organization](cross-tenant-access-settings-b2b-collaboration.yml#add-an-organization).
 
-2. To allow all users and groups and allow all applications, for each added organization, [configure outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings).
+2. To allow all users and groups and allow all applications, for each added organization, [configure outbound access for business-to-business (B2B) collaboration](cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings).
 
    [![Screenshot of the tab for organizational settings under cross-tenant access settings.](media/tenant-restrictions-migration/organizational-settings.png)](media/tenant-restrictions-migration/organizational-settings.png#lightbox)
 

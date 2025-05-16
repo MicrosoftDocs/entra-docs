@@ -11,7 +11,7 @@ ms.reviewer: alexpav
 ai-usage: ai-assisted
 ---
 
-# Universal tenant restrictions
+# Turn on universal tenant restrictions
 
 Universal tenant restrictions enhance the functionality of [tenant restrictions v2](https://aka.ms/tenant-restrictions-enforcement). They use Global Secure Access to tag all traffic no matter the operating system, browser, or device form factor. They allow support for both client and remote network connectivity.
 
@@ -25,15 +25,15 @@ The following diagram shows the steps that an example organization takes to help
 
 | Step | Description |
 | --- | --- |
-| **1** | Contoso configures a tenant restrictions v2 policy in its cross-tenant access settings to block all external accounts and external apps. Contoso enforces the policy by using Global Secure Access universal tenant restrictions. |
-| **2** | A user with a Contoso-managed device tries to access a Microsoft Entra integrated app with an unsanctioned external identity. |
+| **1** | Contoso configures a tenant restrictions v2 policy in its cross-tenant access settings to block all external accounts and external apps. Contoso enforces the policy by using Global Secure Access and universal tenant restrictions. |
+| **2** | A user with a Contoso-managed device tries to access a Microsoft Entra-integrated app with an unsanctioned external identity. |
 | **3** | *Authentication plane protection:* With Microsoft Entra ID, Contoso's policy blocks unsanctioned external accounts from accessing external tenants. Additionally, if a Microsoft Graph token is obtained through another device and is brought into the environment within its lifetime, this token can't be replayed from the devices that have the Global Secure Access client or via remote networks. |
 | **4** | *Data plane protection:* If a Microsoft Graph token is obtained through another device and is brought into the environment within its lifetime, this token can't be replayed from the devices that have the Global Secure Access client or via remote networks. |
 
 Universal tenant restrictions help prevent data exfiltration across browsers, devices, and networks in the following ways:
 
 - They enable Microsoft Entra ID, Microsoft accounts, and Microsoft applications to look up and enforce the associated tenant restrictions v2 policy. This lookup enables consistent policy application.
-- They work with all Microsoft Entra integrated third-party apps at the authentication plane during sign-in.
+- They work with all Microsoft Entra-integrated third-party apps at the authentication plane during sign-in.
 - They help protect Microsoft Graph.
 
 ## Enforcement points for universal tenant restrictions
@@ -48,7 +48,7 @@ Any application that's integrated with Microsoft Entra ID or that uses a Microso
 
 ### Data plane (Microsoft Graph)
 
-Data plane enforcement is currently supported for Microsoft Graph. Data plane protection ensures that imported authentication artifacts can't be replayed from your organization's devices to exfiltrate data. An example of such an artifact is an access token, obtained on another device, that bypasses authentication plane enforcements defined in your tenant restrictions v2 policy.
+Data plane enforcement is currently supported for Microsoft Graph. Data plane protection ensures that imported authentication artifacts can't be replayed from your organization's devices to exfiltrate data. An example of such an artifact is an access token that's obtained on another device and bypasses authentication plane enforcements defined in your tenant restrictions v2 policy.
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ For more information about configuring these policies, see [Set up tenant restri
 
 ## Enable Global Secure Access signaling for tenant restrictions
 
-After you create the tenant restriction v2 policies, you can use Global Secure Access to apply tagging for tenant restrictions v2. An administrator with both the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) and [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) roles must take the following steps to enable enforcement with Global Secure Access:
+After you create the tenant restriction v2 policies, you can use Global Secure Access to apply tagging for tenant restrictions v2. An administrator who has both the [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference) and [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator) roles must take the following steps to enable enforcement with Global Secure Access:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
@@ -77,11 +77,11 @@ After you create the tenant restriction v2 policies, you can use Global Secure A
 
 Tenant restrictions are not enforced when a user (or a guest user) tries to access resources in the tenant where the policies are configured. Tenant restrictions v2 policies are processed only when an identity from a different tenant attempts to sign in or accesses resources.
 
-For example, if you configure a tenant restrictions v2 policy in the tenant `contoso.com` to block all organizations except `fabrikam.com`, the policy applies according to this table:
+For example, if you configure a tenant restrictions v2 policy in the tenant contoso.com to block all organizations except fabrikam.com, the policy applies according to this table:
 
 | User | Type | Tenant | Tenant restrictions v2 policy processed? |Authenticated access allowed? | Anonymous access allowed? |
 | ---------- | ----------- | ------------ | ----------- | --------------- | ------- |
-|`alice@contoso.com`| Member | contoso.com | No(same tenant) | Yes | No |
+|`alice@contoso.com`| Member | contoso.com | No (same tenant) | Yes | No |
 |`alice@fabrikam.com`|Member|fabrikam.com|Yes|Yes (tenant allowed by policy)|No|
 |`bob@northwindtraders.com`|Member|northwindtraders.com|Yes|No (tenant not allowed by policy)|No|
 |`alice@contoso.com`|Member|contoso.com|No (same tenant)|Yes|No|
@@ -91,13 +91,13 @@ For example, if you configure a tenant restrictions v2 policy in the tenant `con
 
 1. Ensure that signaling for universal tenant restrictions is turned off in Global Secure Access settings.
 
-1. In a browser, go to the [My Apps portal](https://myapps.microsoft.com/). Sign in with the identity from a tenant that's different from yours and that isn't allow-listed in a tenant restrictions v2 policy. You might need to use a private browser window and/or sign out of your primary account to perform this step.
+1. In a browser, go to the [My Apps portal](https://myapps.microsoft.com/). Sign in with the identity from a tenant that's different from yours and that isn't on the allowlist in a tenant restrictions v2 policy. You might need to use a private browser window and/or sign out of your primary account to perform this step.
 
    For example, if your tenant is Contoso, sign in as a Fabrikam user in the Fabrikam tenant. The Fabrikam user should be able to access the My Apps portal, because signaling for universal tenant restrictions is turned off in Global Secure Access.
 
 1. Turn on universal tenant restrictions in the Microsoft Entra admin center. Go to **Global Secure Access** > **Session Management** > **Universal Tenant Restrictions**, and then turn on the **Enable Tenant Restrictions for Entra ID (covering all cloud apps)** toggle.
 
-1. Sign out from the My Apps portal and restart your browser.
+1. Sign out of the My Apps portal and restart your browser.
 
 1. With the Global Secure Access client running, go to the [My Apps portal](https://myapps.microsoft.com/) by using the same identity (in the preceding example, the Fabrikam user in the Fabrikam tenant).
 
@@ -107,7 +107,7 @@ For example, if you configure a tenant restrictions v2 policy in the tenant `con
 
 1. Ensure that signaling in universal tenant restrictions is turned off in Global Secure Access settings.
 
-1. In a browser, go to [Graph Explorer](https://aka.ms/ge). Sign in with the identity from a tenant that's different from yours and that isn't allow-listed in a tenant restrictions v2 policy. To perform this step, you might need to use a private browser window and/or log out of your primary account.
+1. In a browser, go to [Graph Explorer](https://aka.ms/ge). Sign in with the identity from a tenant that's different from yours and that isn't on the allowlist in a tenant restrictions v2 policy. To perform this step, you might need to use a private browser window and/or sign out of your primary account.
 
    For example, if your tenant is Contoso, sign in as a Fabrikam user in the Fabrikam tenant. The Fabrikam user should be able to access Graph Explorer, because signaling in tenant restrictions v2 is turned off in Global Secure Access.
 
@@ -123,7 +123,7 @@ For example, if you configure a tenant restrictions v2 policy in the tenant `con
 
 1. While you're signed in as the other user (the Fabrikam user in the preceding example), new logs appear in the browser with Graph Explorer open. The process might take a few minutes. Also, the browser might refresh itself, based on the request and responses happening in the back end. If the browser doesn't refresh itself after a couple of minutes, refresh the page.
 
-   Your access is now blocked with this message: "Access is blocked, The Contoso IT department has restricted which organizations can be accessed. Contact the Contoso IT department to gain access."
+   Your access is now blocked with this message: "Access is blocked. The Contoso IT department has restricted which organizations can be accessed. Contact the Contoso IT department to gain access."
 
 1. In the logs, look for a `Status` value of `302`. This row shows universal tenant restrictions being applied to the traffic.
 
