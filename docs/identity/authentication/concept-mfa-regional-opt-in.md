@@ -33,7 +33,7 @@ The most common way to conduct IRSF is through an end-user experience that requi
 
 IRSF poses a significant threat to online businesses and can cause reputational damage. By understanding IRSF, you can be more aware of the problem and can engage in implementing preventive measures such as regional restrictions, rate limiting, and phone number verification.  
 
-## SMS and Voice Verification
+## SMS and Voice verification
  
 For SMS and Voice verification, the following region codes require an opt-in. This means that if you'd like to use telecom in these regions, you'll have to reach out to support.
 
