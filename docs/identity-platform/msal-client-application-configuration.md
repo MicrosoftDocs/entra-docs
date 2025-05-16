@@ -22,7 +22,7 @@ To authenticate and acquire tokens, you initialize a new public or confidential 
   - [Redirect URI](#redirect-uri)
   - [Client secret](#client-secret) (for confidential client applications)
   - [Certificate](#certificate) (for confidential client applications)
-  - [Federated credentials](#federated-credentials) (for confidential client applications)
+  - [Federated identity credentials](#federated-identity-credentials) (for confidential client applications)
 - [Logging options](#logging), including log level, control of personal data, and the name of the component using the library
 
 ## Authority
