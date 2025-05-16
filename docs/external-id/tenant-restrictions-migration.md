@@ -73,7 +73,7 @@ Allow internal identities, such as employees, to access specific external tenant
 
    [![Screenshot of the tab for default settings under cross-tenant access settings.](media/tenant-restrictions-migration/default-settings.png)](media/tenant-restrictions-migration/default-settings.png#lightbox)
 
-4. In the **Tenant restrictions** defaults, create the policy ID (if you didn't already create it). Then, [configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md#configure-server-side-tenant-restrictions-v2-cloud-policy). This action applies only to tenants that you didn't add in step 1.
+4. In the **Tenant restrictions** defaults, create the policy ID (if you didn't already create it). Then, [configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md#configure-a-server-side-cloud-policy-for-tenant-restrictions-v2). This action applies only to tenants that you didn't add in step 1.
 
    [![Screenshot of tenant restrictions defaults.](media/tenant-restrictions-migration/tenant-restrictions-default.png)](media/tenant-restrictions-migration/tenant-restrictions-default.png#lightbox)
 
@@ -93,7 +93,7 @@ Allow internal identities such as employees, and external identities such as con
 
    [![Screenshot of outbound access settings under default settings.](media/tenant-restrictions-migration/default-settings-outbound.png)](media/tenant-restrictions-migration/default-settings-outbound.png#lightbox)
 
-5. In the **Tenant restrictions** defaults, create the policy ID (if you didn't already create it). Then, [configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md#configure-server-side-tenant-restrictions-v2-cloud-policy). This action applies only to tenants that you didn't add in step 1.
+5. In the **Tenant restrictions** defaults, create the policy ID (if you didn't already create it). Then, [configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md#configure-a-server-side-cloud-policy-for-tenant-restrictions-v2). This action applies only to tenants that you didn't add in step 1.
 
    [![Screenshot of tenant restrictions, with external users and groups and external applications blocked.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)](media/tenant-restrictions-migration/tenant-restrictions-applies.png#lightbox)
 

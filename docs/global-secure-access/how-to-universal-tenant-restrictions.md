@@ -87,7 +87,7 @@ For example, if you configure a tenant restrictions v2 policy in the tenant `con
 |`alice@contoso.com`|Member|contoso.com|No (same tenant)|Yes|No|
 |`bob_northwindtraders.com#EXT#@contoso.com`|Guest|contoso.com|No (guest user)|Yes|No|
 
-### Validate authentication plane protection
+### Validate the authentication plane protection
 
 1. Ensure that signaling for universal tenant restrictions is turned off in Global Secure Access settings.
 
@@ -101,9 +101,9 @@ For example, if you configure a tenant restrictions v2 policy in the tenant `con
 
 1. With the Global Secure Access client running, go to the [My Apps portal](https://myapps.microsoft.com/) by using the same identity (in the preceding example, the Fabrikam user in the Fabrikam tenant).
 
-   You should be blocked from authenticating to the My Apps portal. An error message like this one should appear: "Access is blocked, The Contoso IT department has restricted which organizations can be accessed. Contact the Contoso IT department to gain access."
+   You should be blocked from authenticating to the My Apps portal. An error message like this one should appear: "Access is blocked. The Contoso IT department has restricted which organizations can be accessed. Contact the Contoso IT department to gain access."
 
-### Validate data plane protection
+### Validate the data plane protection
 
 1. Ensure that signaling in universal tenant restrictions is turned off in Global Secure Access settings.
 
@@ -134,9 +134,9 @@ For example, if you configure a tenant restrictions v2 policy in the tenant `con
 
 ## Known limitations
 
-If you enabled universal tenant restrictions and you access the Microsoft Entra admin center for a tenant on the tenant restrictions v2 allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center: `?feature.msaljs=true&exp.msaljsexp=true`.
+If you enabled universal tenant restrictions and you access the Microsoft Entra admin center for a tenant on the tenant restrictions v2 allowlist, you might get an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center: `?feature.msaljs=true&exp.msaljsexp=true`.
 
-For example, assume that you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
+For example, assume that you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might get the error message for the Fabrikam tenant's Microsoft Entra admin center.
 
 If you received the "Access denied" error message for the URL `https://entra.microsoft.com/`, add the feature flag as follows: `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`.
 

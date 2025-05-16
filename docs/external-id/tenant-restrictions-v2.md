@@ -31,7 +31,7 @@ The following diagram shows the steps that an example organization takes to prev
 
 | Step  | Description  |
 |---------|---------|
-|**1**     | Contoso configures tenant restrictions in its cross-tenant access settings to block all external accounts and external apps. Contoso adds enforcement signaling with the tenant restrictions v2 header via either [universal tenant restrictions v2](#option-1-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access) or a [corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy). Microsoft Entra ID enforces the tenant restrictions v2 policy when the header is present on the request.      |
+|**1**     | Contoso configures tenant restrictions in its cross-tenant access settings to block all external accounts and external apps. Contoso adds enforcement signaling with the tenant restrictions v2 header via either [universal tenant restrictions v2](#option-1-use-universal-tenant-restrictions-v2-as-part-of-microsoft-entra-global-secure-access) or a [corporate proxy](#option-2-set-up-tenant-restrictions-v2-on-your-corporate-proxy). Microsoft Entra ID enforces the tenant restrictions v2 policy when the header is present on the request.      |
 |**2**     |  The user of a Contoso-managed device tries to sign in to an external app by using an account from an unknown tenant. The tenant restrictions v2 HTTP header, with Contoso's tenant ID and the tenant restrictions policy ID, is added to the authentication request.        |
 |**3**     | *Authentication plane protection:* Microsoft Entra ID enforces Contoso's tenant restrictions v2 policy and blocks external accounts from accessing external tenants during the authentication.        |
 |**4**     | *Data plane protection (preview):* Microsoft Entra ID blocks any anonymous access to Microsoft Forms, SharePoint files, or Microsoft Teams meetings. Microsoft Entra ID also blocks user access to the resource with an infiltrated token.       |
@@ -333,7 +333,7 @@ Universal tenant restrictions v2 as part of [Microsoft Entra Global Secure Acces
 To ensure that sign-ins are restricted on all devices and apps in your corporate network, configure your corporate proxy to enforce tenant restrictions v2. Although configuring tenant restrictions on your corporate proxy doesn't provide data plane protection, it does provide authentication plane protection.
 
 > [!IMPORTANT]
-> If you previously set up tenant restrictions, you need to stop sending `restrict-msa` to login.live.com. Otherwise, the new settings will conflict with your existing instructions to the Microsoft account's login service.
+> If you previously set up tenant restrictions, you need to stop sending `restrict-msa` to login.live.com. Otherwise, the new settings will conflict with your existing instructions to the Microsoft account's sign-in service.
 
 1. Configure the tenant restrictions v2 header as follows:
 
@@ -344,7 +344,7 @@ To ensure that sign-ins are restricted on all devices and apps in your corporate
    - `TenantID` is your Microsoft Entra tenant ID. Find this value by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) and browsing to **Entra ID** > **Overview** > **Properties**.
    - `policyGUID` is the object ID for your cross-tenant access policy. Find this value by calling `/crosstenantaccesspolicy/default` and using the returned `id` field.
 
-1. On your corporate proxy, send the tenant restrictions v2 header to the following Microsoft login domains:
+1. On your corporate proxy, send the tenant restrictions v2 header to the following Microsoft sign-in domains:
 
    - login.live.com
    - login.microsoft.com
@@ -589,7 +589,7 @@ Tenant restrictions v2 blocks access from a service principal. You can enable cl
 
   `Connect-MgGraph : ClientSecretCredential authentication failed: AADSTS5000211: A tenant restrictions policy added to this request by a device or network administrator does not allow access to 'tenant'.`
 
-- A Windows GPO. You need to check **Enable firewall protection of Microsoft endpoints** and App Control for Business enablement. See [Block Chrome, Firefox and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell) earlier in this article.
+- A Windows GPO. You need to check **Enable firewall protection of Microsoft endpoints** and App Control for Business enablement. See [Block Chrome, Firefox, and .NET applications like PowerShell](#block-chrome-firefox-and-net-applications-like-powershell) earlier in this article.
 
 ## Tenant restrictions with the Microsoft Enterprise SSO plug-in for Apple devices
 
