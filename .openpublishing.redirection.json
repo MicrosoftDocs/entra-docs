@@ -2316,6 +2316,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/external-id/customers/whats-new-docs.md",
+      "redirect_url": "/entra/external-id/whats-new-docs",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/identity-platform/scenario-spa-app-registration.md",
       "redirect_url": "/entra/identity-platform/scenario-spa-app-configuration",
       "redirect_document_id": false
