@@ -54,7 +54,8 @@ To create the Enterprise Application:
 8. For **Protocol**, select **TCP**. 
 0. Select **Save**.
 
-Assign users and groups to the application. Only users assigned to the enterprise application will have the abilty to connect to it over the designated application segment(s).
+Assign users and groups to the application. Only users assigned to the enterprise application will have the ability to connect to it over the designated application segment(s).
+
 
 1. In the Microsoft Entra admin center, browse to **Global Secure Access**.
 2. Select **Applications**, then select **Enterprise application**.
