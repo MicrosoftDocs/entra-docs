@@ -23,24 +23,16 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 #### [Ubuntu20.04](#tab/ubuntu2004)
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/msft-identity-broker/)
 
----
-
 #### [Ubuntu22.04](#tab/ubuntu2204)
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/)
 
----
-
 #### [Ubuntu24.04](tab/ubuntu2404)
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker)
-
----
 
 #### [RedHat 9](#tab/redhat9)
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
-
----
 
 #### [RedHat 8](#tab/redhat8)
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/8/prod/Packages/m/)

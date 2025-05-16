@@ -52,28 +52,28 @@ Run the following commands in a command line to manually install the Microsoft s
 
 1. Install Curl. 
 
-```bash
-sudo apt install curl gpg
-```
+    ```bash
+    sudo apt install curl gpg
+    ```
 
 2. Install the Microsoft package signing key.  
 
-```bash
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg     sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/     rm microsoft.gpg
-```
+    ```bash
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg     sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/     rm microsoft.gpg
+    ```
 
 3. Add and update Microsoft Linux Repository to the system repository list.
 
-```bash
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-prod.list'
-sudo apt update
-```
+    ```bash
+    sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-prod.list'
+    sudo apt update
+    ```
 
 4. Install the Microsoft Single Sign-on (microsoft-identity-broker) app.
 
-```bash
-sudo apt install Microsoft-identity-broker
-```
+    ```bash
+    sudo apt install Microsoft-identity-broker
+    ```
 
 5. Reboot your device.  
 
@@ -138,7 +138,7 @@ Run one of the following commands to update the Microsoft Intune app.
    
 ---
 
-## Uninstall app for Ubuntu Desktop
+### Uninstall app for Ubuntu Desktop
 
 Run the following commands to uninstall the Microsoft Intune app and remove local registration data from devices running Ubuntu Desktop.  
 
@@ -155,8 +155,6 @@ Run the following commands to uninstall the Microsoft Intune app and remove loca
     ```bash
     sudo apt purge intune-portal
     ``` 
-
----
 
 #### [Red Hat Enterprise Linux](#tab/redhat-uninstall)
 
