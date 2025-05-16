@@ -378,7 +378,6 @@ The table below shows the mapping between linkable identifier claims and Microso
 7. Export the audit log and investigate for a specific `AADSessionId` or `UniqueTokenId` for all the activities for Microsoft Teams.
 
 ## List of Audit Events covered in Teams
-<br/>
 
 | **Category** | **Audit Events**                              |
 |-----------|---------------------------------------------------------------|
