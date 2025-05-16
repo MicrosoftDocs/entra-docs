@@ -58,13 +58,13 @@ In this step, you create a Global Secure Access web content filtering policy to 
 
 1. Choose a profile name, leave “*enabled*” for State, and select a Priority.
 
-1. Under the Link policies tab, choose “Link a policy” and select the web content filtering policy.
+1. Under the Link policies tab, choose “*Link a policy*” and select the web content filtering policy.
 
 ## Step 4: Create a security group for exempted users
 
 1. Go to Groups and select **New group**.
 
-1. Choose Group type **Security**, enter a group name, and leave membership “Assigned.”
+1. Choose Group type **Security**, enter a group name, and leave membership as **Assigned**.
 
 1. Create the group.
 
