@@ -109,9 +109,6 @@ He uses the following prompts to get the information he needs:
 
 Jason would also like to look into the risk factor of external apps or multitenant apps with a presence in his tenant that are registered in another organization’s tenant. Since the security posture of these apps is impacted by the posture of the owning tenant, it’s especially important to review these to identify risks and opportunities for surface area reduction. Copilot can return a list of service principals within the current tenant with a multitenant app registration outside of the user’s tenant or details on if a particular service principal is registered outside the tenant.  
 
->[!NOTE]
->Jason can get a partial app list in Security Copilot and full list via a link to the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) query at the bottom of the response.  
-
 He uses the following prompts to get the information he needs: 
 
 - *Show me apps outside my tenant* 
