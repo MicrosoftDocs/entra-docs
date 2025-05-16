@@ -4,7 +4,6 @@ description: Learn about configuration options for public client and confidentia
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-adal-ref
 ms.date: 06/06/2024
 ms.reviewer: saeeda
 ms.service: identity-platform

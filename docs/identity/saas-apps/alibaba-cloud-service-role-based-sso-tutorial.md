@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Alibaba Cloud Service (Role-based S
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Alibaba Cloud Service (Role-based SSO) single sign-on (SSO) enabled subscription.
@@ -46,7 +47,7 @@ To configure the integration of Alibaba Cloud Service (Role-based SSO) into Micr
 
     ![Properties config](./media/alibaba-cloud-service-role-based-sso-tutorial/Properties.png)
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-alibaba-cloud-service-role-based-sso'></a>
 
