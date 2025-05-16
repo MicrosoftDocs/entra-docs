@@ -611,6 +611,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/msal-net-use-brokers-with-xamarin-apps.md",
+      "redirect_url": "/entra/msal/objc/single-sign-on-macos-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-net-xamarin-ios-considerations.md",
+      "redirect_url": "/entra/msal/objc/single-sign-on-macos-ios",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/tutorial-v2-angular-auth-code.md",
       "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-register-app",
       "redirect_document_id": false
@@ -2303,6 +2313,11 @@
     {
       "source_path": "docs/identity/saas-apps/adobe-creative-cloud-tutorial.md",
       "redirect_url": "../../../entra/identity/saas-apps/adobe-identity-management-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/whats-new-docs.md",
+      "redirect_url": "/entra/external-id/whats-new-docs",
       "redirect_document_id": false
     },
     {
