@@ -6,7 +6,7 @@ ms.date: 03/28/2025
 ms.author: justinha
 author: vimrang
 manager: femila
-ms.reviewer: vraganathan
+ms.reviewer: vranganathan
 ---
 
 # Track and investigate identity activities with linkable identifiers in Microsoft Entra (preview)
@@ -119,7 +119,7 @@ The table below shows the mapping between linkable identifier claims and Exchang
 1. Go to [Microsoft Purview portal](https://purview.microsoft.com/).
 2. Search for logs with a specific timeframe and record types starting with Exchange.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs with Exchange workload.":::
 
 3. You can further filter for a specific user, or a UTI value from Microsoft Entra sign-in logs. You can filter all the activity logs within a session with `SessionId`.
 4. The results show all the linkable identifiers.
@@ -282,7 +282,7 @@ By using the SID, analysts can trace all activities across services that origina
 
 ## Linkable identifiers in Microsoft SharePoint Online audit logs
 
-Microsoft SharePoint Online audit logs provide a comprehensive audit trail of all requests processed by the SharePoint Online service for a tenant. These logs capture a wide range of user activities, including operations such as file and folder creation, updates, deletions, and list modifications. For a detailed overview of SharePoint Online audit logging, see [SharePoint Online Audit Logs](/purview/audit-log-sharing.md#tabs=microsoft-purview-portal). 
+Microsoft SharePoint Online audit logs provide a comprehensive audit trail of all requests processed by the SharePoint Online service for a tenant. These logs capture a wide range of user activities, including operations such as file and folder creation, updates, deletions, and list modifications. For a detailed overview of SharePoint Online audit logging, see [SharePoint Online Audit Logs](/purview/audit-log-sharing?tabs=microsoft-purview-portal). 
 
 **Investigation Scenarios Using Linkable Identifiers**
 
@@ -333,8 +333,8 @@ The table below shows the mapping between linkable identifier claims and Microso
 
 Microsoft Teams audit logs capture a detailed record of all requests processed by the Teams service for a tenant. Audited activities include team creation and deletion, channel additions and removals, and changes to channel settings.
 
-For a full list of audited Teams activities, see [Teams activities in the audit log](/purview/audit-log-activities.md).
-For more information on Teams audit logs visit [Teams Audit Logs](/purview/audit-teams-audit-log-events.md). and on how to search Microsoft Teams audit logs, see [Search the audit log | Microsoft Learn](/purview/audit-search).
+For a full list of audited Teams activities, see [Teams activities in the audit log](/purview/audit-log-activities).
+For more information on Teams audit logs visit [Teams Audit Logs](/purview/audit-teams-audit-log-events). and on how to search Microsoft Teams audit logs, see [Search the audit log | Microsoft Learn](/purview/audit-search).
 
 **Investigation Scenarios Using Linkable Identifiers**
 
@@ -401,37 +401,37 @@ SharePoint Online operations including file access, creation, modification, or d
 
 1. Admin starts with Entra Sign-in logs to find the session id of this access token by filtering around the time the token was phished and the user objectId
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/linkable-signinlog-entries.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers for Teams.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/linkable-signinlog-entries.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers for Teams scenario.":::
 
 1. Admin will note the linkable identifiers—such as Session ID (SID) or Unique Token Identifier (UTI)—from Microsoft Entra sign-in logs to use it as a filter on Teams and SharePoint audit logs
 
 1. On Purview portal search for logs with a specific timeframe and workloads as Teams and SharePoint and for the specific user.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs for SharePoint and Teams workload.":::
 
-1. The search will bring back all audit log entries within that timeframe filtered by the user and workloads as Teams and SHarePoint Online.
+1. The search will bring back all audit log entries within that timeframe filtered by the user and workloads as Teams and SharePoint Online.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-results.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-results.png" alt-text="Screenshot of Microsoft Purview portal showing results for SPO and Teams logs.":::
 
 1. Admin can see all the audit log trail from user logging into team and see that the bad actor has done several activities like removing members from Teams channel, added specific users, posted a phishing message requiring all the members to click on a link and login using corporate credentials, deleted files from sharepoint and added files etc.
 
 1. Each log item can be opened to get detailed information on linkable identifiers. Below is an example of user posting a message.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-logitem.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-logitem.png" alt-text="Screenshot of Microsoft Purview portal showing log item for Teams and SPO.":::
 
 1. Below is an example of user downloading a file from SharePoint Online.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-sharepoint-logitem.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-sharepoint-logitem.png" alt-text="Screenshot of Microsoft Purview portal showing search for log item for Teams and SPO.":::
 
 1. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for specific activities. The image below shows all different operations that has been performed by the attacker.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-exported-file.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-exported-file.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs exported.":::
 
 By analyzing the log files with linkable identifiers, tenant admin and security professionals can effectively trace, analyze, and respond to malicious activity across sessions and tokens.
 
 ## Related content
 
-[Microsoft Entra Sign in logs](/monitoring-health/concept-sign-ins.md)<br/>
+[Microsoft Entra Sign in logs](/monitoring-health/concept-sign-ins)<br/>
 [SharePoint Online Audit Logs](/purview/audit-log-sharing.md#tabs=microsoft-purview-portal)<br/>
-[Teams Audit Logs](/purview/audit-teams-audit-log-events.md)<br/>
+[Teams Audit Logs](/purview/audit-teams-audit-log-events)<br/>
 [Microsoft Graph Activity Logs](/graph/microsoft-graph-activity-logs-overview)
