@@ -22,6 +22,7 @@ In this article,  you learn how to setup a Microsoft Entra SAML integration with
 * Control in Microsoft Entra ID who has access to a GitHub Enterprise Account and any organizations within the Enterprise Account.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A [GitHub Enterprise Account](https://docs.github.com/en/enterprise-cloud@latest/admin/overview/about-enterprise-accounts).
@@ -45,7 +46,7 @@ To configure the integration of GitHub Enterprise Cloud - Enterprise Account int
 1. In the **Add from the gallery** section, type **GitHub Enterprise Cloud - Enterprise Account** in the search box.
 1. Select **GitHub Enterprise Cloud - Enterprise Account** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 
 <a name='configure-and-test-azure-ad-sso-for-github-enterprise-cloud---enterprise-account'></a>

@@ -27,6 +27,7 @@ In this article,  you learn how to integrate AWS IAM Identity Center (successor 
 **Note:** When using AWS Organizations, it's important to delegate another account as the Identity Center Administration account, enable the IAM Identity Center on it, and set up the Entra ID SSO with that account, not the root management account. This ensures a more secure and manageable setup.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An AWS Organizations setup with another account delegated as the Identity Center Administration account.
