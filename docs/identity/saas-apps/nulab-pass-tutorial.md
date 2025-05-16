@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Nulab Pass (Backlog, Cacoo, and Typ
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Nulab Pass SSO-enabled subscription.
@@ -42,7 +43,7 @@ To configure the integration of Nulab Pass into Microsoft Entra ID, add Nulab Pa
 1. Select **Nulab Pass** from results panel and add the app.
 1. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-nulab-pass-backlogcacootypetalk'></a>
 
