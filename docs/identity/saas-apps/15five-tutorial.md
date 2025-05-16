@@ -28,12 +28,6 @@ The scenario outlined in this article assumes that you already have the followin
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * 15Five single sign-on (SSO) enabled subscription.
 
-
-## Prerequisites
-
-The scenario outlined in this article assumes that you already have the following prerequisites:
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-
 ## Scenario description
 
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
