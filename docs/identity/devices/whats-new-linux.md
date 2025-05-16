@@ -3,21 +3,21 @@
 # For more information, see https://learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata
 # For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/en-us/help/platform/metadata-taxonomies
 
-title:       # Add a title for the browser tab
-description: # Add a meaningful description for search results
+title:       What's new in Microsoft Single Sign-on for Linux
+description: Discusses new feature releases of Microsoft Single Sign-on for Linux
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
-ms.service:  # Add the ms.service or ms.prod value
-# ms.prod:   # To use ms.prod, uncomment it and delete ms.service
-ms.topic:    # Add the ms.topic value
-ms.date:     05/09/2025
+ms.service: entra-id
+ms.topic: whats-new
+ms.date:     05/16/2025
+ms.subservice: devices
 ---
 
 # What's new in Microsoft Single Sign-on for Linux
 This article provides information about the latest updates to Microsoft Single Sign-on for Linux. 
 
 ### Package Repositories
-Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are avilable in either .deb or .rpm format, however only Ubuntu LTS & Red Hat Enterprise Linux are supported today.
+Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported today.
 
 
 #### [Ubuntu20.04](#tab/ubuntu2004)
@@ -58,7 +58,7 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ### 1.7.0 - 31-Jan-2024
 - Addressing the 1001 on registration failure
-- Updating the install scripts for RHEL Linux Broker
+- Updating the install scripts for Red Hat Enterprise Linux Broker
 - Adding license to Linux Broker Package
 
 
@@ -72,7 +72,7 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 ---
 
 ### 1.6.0 - 29-Jun-2023
-- RHEL 8 and RHEL 9 release
+- Added support for Red Hat Enterprise Linux 8 and 9.
 
 #### Assets
 - Ubuntu-20.04 - [microsoft-identity-broker_1.6.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.6.0_amd64.deb)
@@ -94,8 +94,8 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 ---
 
 ### 1.4.1 - 27-Oct-2022
-- ROPC test hook
-- Keyring 1001 telemetry
+- Resource Owner Password Credential (ROPC) test hook.
+- added logging for keyring "1001" errors.
 
 #### Assets
 - Ubuntu-20.04 - [microsoft-identity-broker_1.4.1_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.4.1_amd64.deb)

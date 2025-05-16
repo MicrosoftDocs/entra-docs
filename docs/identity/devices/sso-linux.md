@@ -3,47 +3,37 @@
 # For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
 # For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
 
-title: Microsoft Single Sign-on for Linux
+title: Microsoft single sign-on For Linux
 description: Overview of Single Sign-on for Linux for Microsoft Entra ID registered devices.
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
 ms.service: entra-id
 ms.topic: overview
-ms.date:     03/18/2025
+ms.date:     05/16/2025
 ms.subservice: devices
 ---
 
-# Microsoft Single Sign-on to Linux
+# What is Microsoft Single Sign-on to Linux?
 
-
-Microsoft Single Sign-on for Linux is powered by a component that can be installed onto a Linux device that integrates with Microsoft Entra Id to enable users to use their Microsoft Entra ID credentials to login to other apps without being prompted for credentials each time a resource is accessed. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. 
+Microsoft Single Sign-on (SSO) for Linux is powered by a software component that can be installed onto a Linux device that integrates with Microsoft Entra ID. Microsoft SSO for Linux enable users to use their Microsoft Entra ID credentials to sign-in to other apps without being prompted for credentials each time a resource is accessed. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. 
 
 ## Features
 
-This feature empowers users on Linux desktop clients to register their devices with Entra Id, enroll into Intune management, and satisfy device-based conditional access policies when accessing their corporate resources.
+This feature empowers users on Linux desktop clients to register their devices with Microsoft Entra ID, enroll into Intune management, and satisfy device-based conditional access policies when accessing their corporate resources.
 
-- Azure AD registration & enrollment of Linux desktops
+- Provides Microsoft Entra ID registration & enrollment of Linux desktops
+- Provides SSO capabilities for native & web applications (ex: Azure CLI, Microsoft Edge Browser, Teams PWA, etc.) to access M365/Azure protected resources
+- Provides SSO for Microsoft Entra accounts across all applications that utilize MSAL.NET or MSAL.python - enabling customers to use Microsoft Authentication Library (MSAL) to integrate SSO into custom apps.
+- Enables Conditional Access policies protecting web applications via Microsoft Edge
+- Enables Standard compliance policies
+- Enables support for Bash scripts for custom compliance policies
 
-- Provide SSO capabilities for native & web applications (ex: Azure CLI, Edge Browser, Teams PWA, etc) to access M365/Azure protected resources
-
-- It provides SSO for Microsoft Entra accounts across all applications that utilize MSAL.net or MSAL.python - enabling customers to leverage MSAL to integrate SSO into custom apps.
-
-- Conditional Access policies protecting web applications via Microsoft Edge
-
-- Standard compliance policies
-
-- Support for Bash scripts for custom compliance policies
-
-The Teams web application and a new PWA(Progressive Web App) for Linux will use the Conditional Access configuration, applied through Microsoft Intune Manager, to enable Linux users to access the Teams web application using Edge in a secure way. This helps organizations use an industry-leading, unified endpoint management solution for Teams from Linux endpoints with security and quality in mind.
-
-There are several authentication methods that determine the end-user experience.
-
-* **Password as authentication method**: Syncs the user’s Microsoft Entra ID password with the local account and enables SSO across apps that use Microsoft Entra ID for authentication.
+The Teams web application and a new PWA (Progressive Web App) for Linux uses the Conditional Access configuration, applied through Microsoft Intune Manager, to enable Linux users to access the Teams web application using Microsoft Edge in a secure way. This capability helps organizations use an industry-leading, unified endpoint management solution for Teams from Linux endpoints with security and quality in mind.
 
 ## Requirements
 
-The Microsoft Single Sign-On for Linux is supported with the following operating systems:  
-- Ubuntu Desktop 24.04, 22.04 or 20.04 LTS (physical or Hyper-V machine with x86/64 CPUs)  
+The Microsoft single sign-on for Linux is supported with the following operating systems (physical or Hyper-V machine with x86/64 CPUs):  
+ - Ubuntu Desktop 24.04, 22.04 or 20.04 LTS  
  - RedHat Enterprise Linux 8  
  - RedHat Enterprise Linux 9
 
@@ -56,10 +46,9 @@ You can find more information and instructions on how to configure in these arti
 
 ### Installation
 
-To install the Linux broker without a dependency on Intune, you can install the broker with the following:
-Run the following commands in a command line to manually install the Microsoft Single Sign-On (microsoft-identity-broker) and its dependencies on your device.  
+Run the following commands in a command line to manually install the Microsoft single sign-on (microsoft-identity-broker) and its dependencies on your device.  
 
-#### [ubuntu](#tab/debian-install)
+#### [Ubuntu](#tab/debian-install)
 
 1. Install Curl. 
 
@@ -88,7 +77,7 @@ sudo apt install Microsoft-identity-broker
 
 5. Reboot your device.  
 
-#### [redhat](#tab/redhat-install)
+#### [Red Hat Enterprise Linux](#tab/redhat-install)
 
 1. Add the Microsoft repository.  
 
@@ -107,7 +96,7 @@ sudo apt install Microsoft-identity-broker
 
 ---
 
-For more information, see the following in Intune documentation:
+For more information, see the following Intune documentation:
 
 - [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
 
@@ -118,7 +107,7 @@ For more information, see the following in Intune documentation:
 
 Run the following commands to update the app manually.    
 
-#### [ubuntu](#tab/debian-update)
+#### [Ubuntu](#tab/debian-update)
 
 1. Update the package repo and metadata, which includes `intune-portal`, `msft-broker`, and `msft edge`.   
 
@@ -132,7 +121,7 @@ Run the following commands to update the app manually.
     sudo apt-get dist-upgrade
     ```
 
-#### [redhat](#tab/redhat-update)
+#### [Red Hat Enterprise Linux](#tab/redhat-update)
 
 Run one of the following commands to update the Microsoft Intune app.  
 
@@ -153,7 +142,7 @@ Run one of the following commands to update the Microsoft Intune app.
 
 Run the following commands to uninstall the Microsoft Intune app and remove local registration data from devices running Ubuntu Desktop.  
 
-#### [ubuntu](#tab/debian-uninstall)
+#### [Ubuntu](#tab/debian-uninstall)
 
 1. Remove the Intune app from your system.  
 
@@ -167,7 +156,9 @@ Run the following commands to uninstall the Microsoft Intune app and remove loca
     sudo apt purge intune-portal
     ``` 
 
-#### [redhat](#tab/redhat-uninstall)
+---
+
+#### [Red Hat Enterprise Linux](#tab/redhat-uninstall)
 
 Run the following commands to uninstall the Microsoft Intune app and remove local registration data on devices running RedHat Enterprise Linux.    
 
