@@ -174,13 +174,6 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 * Without access to this port, your managed domain can't be updated, configured, backed-up, or monitored.
 * You can restrict inbound access to this port to the *AzureActiveDirectoryDomainServices* service tag.
 
-### Port 3389 - synchronization with secondary node, backup
-
-* When configuring firewall rules or network security policies, it is crucial to consider TCP port 3389.
-* If traffic restrictions are implemented for this port, it is essential not to deny traffic between the IP addresses or the addressing range used by controllers of the service.
-* **Blocking communication via port 3389 between these nodes will prevent the correct functioning of replication and data synchronization.** This causes errors in the backup process.
-* Ensure that security policies explicitly allow this internal communication to guarantee the integrity and availability of the service.
-
 ### Port 3389 - management using remote desktop
 
 * Used for remote desktop connections to domain controllers in your managed domain, this port cannot be changed or encapsulated into another port.
@@ -197,6 +190,28 @@ For example, you can use the following script to create a rule allowing RDP:
 ```powershell
 Get-AzNetworkSecurityGroup -Name "nsg-name" -ResourceGroupName "resource-group-name" | Add-AzNetworkSecurityRuleConfig -Name "new-rule-name" -Access "Allow" -Protocol "TCP" -Direction "Inbound" -Priority "priority-number" -SourceAddressPrefix "CorpNetSaw" -SourcePortRange "*" -DestinationPortRange "3389" -DestinationAddressPrefix "*" | Set-AzNetworkSecurityGroup
 ```
+
+### Othert ports - synchronization with secondary controller, backup
+
+|Client Port(s)|Server Port|Service|
+|---|---|---|
+|1024-65535/TCP|135/TCP|RPC Endpoint Mapper|
+|1024-65535/TCP|1024-65535/TCP|RPC for LSA, SAM, NetLogon |
+|1024-65535/TCP/UDP|389/TCP/UDP|LDAP|
+|1024-65535/TCP|636/TCP|LDAP SSL|
+|1024-65535/TCP|3268/TCP|LDAP GC|
+|1024-65535/TCP|3269/TCP|LDAP GC SSL|
+|53,1024-65535/TCP/UDP|53/TCP/UDP|DNS|
+|1024-65535/TCP/UDP|88/TCP/UDP|Kerberos|
+|1024-65535/TCP|445/TCP|SMB|
+|1024-65535/TCP|1024-65535/TCP|FRS RPC |
+
+* When configuring firewall rules or network security policies, it is crucial to consider other ports for syncrhonizacion with secondary controller.
+* If traffic restrictions are implemented for this ports, it is essential not to deny traffic between the IP addresses or the addressing range used by controllers of the service.
+* **Blocking communication via these ports between controllers will prevent the correct functioning of replication and data synchronization.** This causes errors in the backup process.
+* Ensure that security policies explicitly allow this internal communication to guarantee the integrity and availability of the service.
+
+For more information: [How to configure a firewall for Active Directory domains and trusts](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts)
 
 ## User-defined routes
 
