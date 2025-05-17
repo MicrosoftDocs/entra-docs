@@ -245,15 +245,37 @@ You can delete old terms of use policies using the following procedure.
 1. In the message that appears asking if you want to continue, select **Yes**.
    1. You should no longer see your terms of use policy.
 
+## Platform and browser support
+
+Microsoft Entra terms of use is designed to function optimally on the following platforms and browsers.
+
+Supported desktop and mobile operating systems (latest stable versions):  
+1. Windows
+1. macOS
+1. Linux
+1. Android
+1. iOS
+   
+Supported modern web browsers (latest stable versions):  
+1. Microsoft Edge 
+1. Mozilla Firefox 
+1. Google Chrome 
+1. Safari
+
+### Functionality on other configurations
+Users on operating systems or browsers not listed above, or those using older versions of supported operating systems or browsers, may still be able to accept terms of use during the sign-in process. However, please be aware that some features, visual rendering, or performance may be degraded. We do not actively test or provide support for operating systems and browsers not explicitly listed as supported. This includes, but is not limited to, browsers based on legacy engines such as EdgeHTML (found in Legacy Edge) and Trident/MSHTML (found in Internet Explorer). 
+
+### Desktop and mobile applications with web views
+Applications that utilize web views based on the latest stable versions of modern browser engines (such as Blink, Gecko, or WebKit) should generally allow users to accept terms of use during sign-in. Nevertheless, some features, visual rendering, or performance degradation may occur. We do not actively test or offer support for all specific web view implementations.
+
+### Experiencing Issues? 
+If you encounter issues accepting terms of use on a specific operating system, browser, browser engine, or web view implementation within an application, please open a support case. We will evaluate supportability on a case-by-case basis. 
+
 ## B2B guests
 
 Using Conditional Access and terms of use policies, you can enforce a policy directly towards B2B guest users. During the invitation redemption flow, the user is presented with the terms of use policy.
 
 Terms of use policies are only displayed when the user has a guest account in Microsoft Entra ID. SharePoint Online currently has an [external sharing recipient experience](/sharepoint/what-s-new-in-sharing-in-targeted-release) to share a document or a folder that doesn't require the user to have a guest account. In this case, a terms of use policy isn't displayed.
-
-## Support for cloud apps
-
-Terms of use policies can be used for different cloud apps, such as Azure Information Protection and Microsoft Intune. This support is currently in preview.
 
 ### Azure Information Protection
 
