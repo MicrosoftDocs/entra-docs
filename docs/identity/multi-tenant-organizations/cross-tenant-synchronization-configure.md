@@ -253,7 +253,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
     It can take up to 15 seconds for the configuration that you just created to appear in the list.
 
-    On the Configurations page for cross-cloud synchronization, the tenant ID and name will be empty.
+    On the Configurations page for cross-cloud synchronization, the **Tenant Name** and **Tenant ID** columns will be empty.
 
 ::: zone-end
 
@@ -544,6 +544,48 @@ This error indicates the policy to automatically redeem invitations in both the 
 
 Follow the steps in [Step 3: Automatically redeem invitations in the target tenant](#step-3-automatically-redeem-invitations-in-the-target-tenant) and [Step 4: Automatically redeem invitations in the source tenant](#step-4-automatically-redeem-invitations-in-the-source-tenant).
 
+::: zone pivot="cross-cloud-synchronization"
+
+#### Symptom - Test connection fails with ExternalTenantNotFound
+
+When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
+
+```
+You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
+Error code: ExternalTenantNotFound
+Details: This tenant was not found by the authentication authority of the current cloud: <targetTenantId>. The authentication authority is https://login.microsoftonline.com/<targetTenantId>.
+```
+
+**Cause**
+
+This error indicates the **Setup cross-tenant synchronization across Microsoft clouds** check box is not checked. 
+
+**Solution**
+
+1. In the source tenant, delete the configuration you created that fails to connect.
+
+1. In the target tenant, create a new configuration and be sure to check the **Setup cross-tenant synchronization across Microsoft clouds** check box as described in [Step 5: Create a configuration in the source tenant](#step-5-create-a-configuration-in-the-source-tenant).
+
+#### Symptom - Test connection fails with AzureActiveDirectoryTokenExpired
+
+When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
+
+```
+You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
+Error code: AzureActiveDirectoryTokenExpired
+Details: The identity of the calling application could not be established.
+```
+
+**Cause**
+
+This error indicates the cross-cloud setting for synchronization has not been enabled. 
+
+**Solution**
+
+In the target tenant, on the **Microsoft cloud settings** tab, select the cross-cloud synchronization check box for the source tenant. Follow the steps in [Step 1: Enable cross-cloud settings in both tenants](#step-1-enable-cross-cloud-settings-in-both-tenants).
+
+::: zone-end
+
 #### Symptom - Automatic redemption checkbox is disabled
 
 When configuring cross-tenant synchronization, the **Automatic redemption** checkbox is disabled.
@@ -660,28 +702,6 @@ $users | Select-Object DisplayName, UserPrincipalName | Export-Csv "C:\Temp\Gues
 ```
 
 Then you can use [provisionOnDemand with PowerShell](/graph/api/synchronization-synchronizationjob-provisionondemand?tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. For more information, see [Known limitations for on-demand provisioning](/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations).
-
-::: zone pivot="cross-cloud-synchronization"
-
-#### Symptom - Test connection fails with AzureActiveDirectoryTokenExpired
-
-When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
-
-```
-You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
-Error code: AzureActiveDirectoryTokenExpired
-Details: The identity of the calling application could not be established.
-```
-
-**Cause**
-
-This error indicates the cross-cloud setting for synchronization has not been enabled. 
-
-**Solution**
-
-In the target tenant, on the **Microsoft cloud settings** tab, select the cross-cloud synchronization check box for the source tenant. Follow the steps in [Step 1: Enable cross-cloud settings in both tenants](#step-1-enable-cross-cloud-settings-in-both-tenants).
-
-::: zone-end
 
 ## Next steps
 
