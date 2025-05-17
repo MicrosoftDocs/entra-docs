@@ -266,7 +266,7 @@ Supported modern web browsers (latest stable versions):
 Users on operating systems or browsers not listed above, or those using older versions of supported operating systems or browsers, may still be able to accept terms of use during the sign-in process. However, please be aware that some features, visual rendering, or performance may be degraded. We do not actively test or provide support for operating systems and browsers not explicitly listed as supported. This includes, but is not limited to, browsers based on legacy engines such as EdgeHTML (found in Legacy Edge) and Trident/MSHTML (found in Internet Explorer). 
 
 ### Desktop and mobile applications with web views
-Applications that utilize web views based on the latest stable versions of modern browser engines (such as Blink, Gecko, or WebKit) should generally allow users to accept terms of use during sign-in. Nevertheless, some features, visual rendering, or performance degradation may occur. We do not actively test or offer support for all specific web view implementations.
+Applications that utilize web views based on the latest stable versions of modern HTML5 compliant browser engines (such as Blink, Gecko, or WebKit) should generally allow users to accept terms of use during sign-in. Nevertheless, some features, visual rendering, or performance degradation may occur. We do not actively test or offer support for all specific web view implementations.
 
 ### Experiencing Issues? 
 If you encounter issues accepting terms of use on a specific operating system, browser, browser engine, or web view implementation within an application, please open a support case. We will evaluate supportability on a case-by-case basis. 
