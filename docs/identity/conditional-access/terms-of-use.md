@@ -250,17 +250,17 @@ You can delete old terms of use policies using the following procedure.
 Microsoft Entra terms of use is designed to function optimally on the following platforms and browsers.
 
 Supported desktop and mobile operating systems (latest stable versions):  
-1. Windows
-1. macOS
-1. Linux
-1. Android
-1. iOS
+* Windows
+* macOS
+* Linux
+* Android
+* iOS
    
 Supported modern web browsers (latest stable versions):  
-1. Microsoft Edge 
-1. Mozilla Firefox 
-1. Google Chrome 
-1. Safari
+* Microsoft Edge 
+* Mozilla Firefox 
+* Google Chrome 
+* Safari
 
 ### Functionality on other configurations
 Users on operating systems or browsers not listed above, or those using older versions of supported operating systems or browsers, may still be able to accept terms of use during the sign-in process. However, please be aware that some features, visual rendering, or performance may be degraded. We do not actively test or provide support for operating systems and browsers not explicitly listed as supported. This includes, but is not limited to, browsers based on legacy engines such as EdgeHTML (found in Legacy Edge) and Trident/MSHTML (found in Internet Explorer). 
