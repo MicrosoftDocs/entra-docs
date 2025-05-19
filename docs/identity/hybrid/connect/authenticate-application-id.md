@@ -27,14 +27,16 @@ Microsoft Entra Connect manages the application and certificate including creati
 
  :::image type="content" source="media/authenticate-application-id/auth-1.png" alt-text="Diagram of authentication with application ID." lightbox="media/authenticate-application-id/auth-1.png":::
 
-Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This behavior is the default option in Entra Connect Sync versions equal to or higher than 2.4.252.0. 
+Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This behavior is the default option in Entra Connect Sync versions equal to or higher than 2.5.2.0. 
 
 > [!NOTE]
 > We use the maintenance task to check if the certificate is due for rotation and automatically rotate the certificate, so if the scheduler is suspended or maintenance task is disabled, auto rotation won't happen even though the certificate is managed by Entra Connect Sync.
 
  ## Bring Your Own Application (BYOA) 
 
-In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa)
+In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa).
+
+The administrator is responsible for creating the certificate, rotation, and deletion of unused/expired certificates. The certificate must be stored in the Local Machine store. The administrator is responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing
 
 ## Bring Your Own Certificate (BYOC) 
 
@@ -53,7 +55,7 @@ The following prerequisites are required to implement authentication using appli
 >
 > Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra Admin Center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
-- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.4.252.0](reference-connect-version-history.md) or greater.
+- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.2.0](reference-connect-version-history.md) or greater.
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
 - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later.
 - Optional: TPM 2.0 present and ready to use (recommended for security)
@@ -94,7 +96,7 @@ In tasks, select **Configure application based authentication to Microsoft Entra
 
 ### Onboarding to Application Based Authentication using PowerShell
 This section is only relevant if using the BYOC or BYOA option. 
-Microsoft Entra Connect versions lower than 2.4.252.0 use username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps on Microsoft Connect Sync version equal to or higher than 2.4.252.0.
+Microsoft Entra Connect versions lower than 2.5.2.0 use username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps on Microsoft Connect Sync version equal to or higher than 2.5.2.0.
 
 > [!NOTE]
 > Ensure that you're on the Microsoft Entra Connect server and the ADSync PowerShell module is installed.
@@ -188,7 +190,7 @@ If the certificate is managed by Microsoft Entra Connect, **no action** is requi
 Remove-EntraApplicationKey -CertificateId <certificateId>
  ```
 ### Using the wizard
- Once you have application authentication enabled you'll see an additional option in tasks. The **Rotate application certificate** option is now available. From here, you can rotate the certificate manually. However, Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.4.252.0. 
+ Once you have application authentication enabled you'll see an additional option in tasks. The **Rotate application certificate** option is now available. From here, you can rotate the certificate manually. However, Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.5.2.0. 
 
  :::image type="content" source="media/authenticate-application-id/auth-6.png" alt-text="Screenshot of rotate application certificate under tasks." lightbox="media/authenticate-application-id/auth-6.png":::
 
@@ -230,7 +232,7 @@ Replace &lt;CertificateSHA256Hash&gt; with the CertificateSHA256Hash
  Set-ADSyncScheduler -SyncCycleEnabled $true
  ```
 5. Verify synchronization cycle is successful.
-6. Remove the old certificate from Current User store for BYOC and BYOA options.
+6. Remove the old certificate from LocalMachine store for BYOC and BYOA options.
 
 You may rotate the certificate at any point in time, even if the current certificate is still not due for rotation or the current certificate has expired.
 
@@ -249,7 +251,7 @@ $certHash = [System.Convert]::ToHexString($hashBytes)
 # Convert hash to bytes for older PowerShell:
 $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 ```
-## Microsoft Graph permissions for BYOA
+## Resource permission
 ### ADSynchronization.ReadWrite.All
 |Category|Application|Delegated|
 |-----|-----|-----|
@@ -258,11 +260,12 @@ $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 |Description|Allows the app to read, write, and manage identity data synced with on-premises via Microsoft Entra Connect Sync|Allows the app to read, write, and manage identity data synced with on-premises via Microsoft Entra Connect Sync|
 |AdminConsentRequired|Yes|Yes|
 
+## Microsoft Graph permissions for BYOA
 ### PasswordWriteback.RefreshClient.All
 |Category|Application|Delegated|
 |-----|-----|-----|
 |Identifier|fc7e8088-95b5-453e-8bef-b17ecfec5ba3|-|
-|DisplayText|Read, write and manage self-service password reset writeback configuration|-|
+|DisplayText|Read, write and manage self-service password reset writeback for Microsoft Entra Connect Sync Agent|-|
 |Description|Allows the app to refresh and recreate on-premises configuration for Microsoft self-service password reset.|-|
 |AdminConsentRequired|Yes|-|
 
@@ -270,13 +273,21 @@ $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 |Category|Application|Delegated|
 |-----|-----|-----|
 |Identifier|e006e431-a65b-4f3e-8808-77d29d4c5f1a|-|
-|DisplayText|Read, write and manage Microsoft Entra Connect Sync Agent|-|
+|DisplayText|Read, write and manage self-service password reset client version configuration for Microsoft Entra Connect Sync Agent|-|
 |Description|Allows the app to register a newer version of on-premises Microsoft Entra Connect Sync Agent.|-|
+|AdminConsentRequired|Yes|-|
+
+### PasswordWriteback.OffboardClient.All
+|Category|Application|Delegated|
+|-----|-----|-----|
+|Identifier|69201c67-737b-4a20-8f16-e0c8c64e0b0e|-|
+|DisplayText|Read, write and manage self-service password reset uninstall/offboard configuration for Microsoft Entra Connect Sync Agent|-|
+|Description|Allows the app to offboard a version of on-premises Microsoft Entra Connect Sync Agent.|-|
 |AdminConsentRequired|Yes|-|
 
 ## Certificate revocation process
 
-For self-signed certificates, either Entra Managed and BYOC, the customer must perform manual revocation by removing the keyCredential from the Entra third party application in the Microsoft Entra admin center or deleting the application entirely.
+For self-signed certificates, either Entra Managed and BYOC, an administrator must perform manual revocation by removing the keyCredential from the Entra. An on demand rotation of the certificate is also an option.
 
 For BYOC certificates issued by a certificate authority (CA) registered with Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)
 
