@@ -224,7 +224,7 @@ items:
            - name: Coexistence with Cisco
              href: concept-cisco-coexistence.md
            - name: Coexistence with Palo Alto Networks
-             href: concept-palo-alto-coexistence.md
+             href: how-to-palo-alto-coexistence.md
            - name: Coexistence with Zscaler
              href: how-to-zscaler-coexistence.md
            - name: Coexistence with Netskope
