@@ -44,7 +44,7 @@ For the latest information about usage billing and pricing, see [External ID pri
 
 > [!NOTE]
 >
->- Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available.
+>- Existing subscriptions to B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available.
 
 <a name='link-your-azure-ad-tenant-to-a-subscription'></a>
 
