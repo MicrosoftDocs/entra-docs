@@ -664,7 +664,7 @@
                   href: custom-extension-OnAttributeCollectionStart-retrieve-return-data.md
                 - name: Retrieve data from attribute collection submit event
                   href: custom-extension-OnAttributeCollectionSubmit-retrieve-return-data.md
-            - name: custom email provider
+            - name: Custom email provider
               items: 
                 - name: Configure a custom email provider for one time code send events
                   href: custom-extension-email-otp-get-started.md
