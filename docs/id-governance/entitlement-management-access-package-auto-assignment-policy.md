@@ -15,7 +15,8 @@ ms.reviewer: mwahl
 
 You can use rules to determine access package assignment based on user properties in Microsoft Entra ID, part of Microsoft Entra. In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long. As an administrator, you can establish a policy for automatic assignments by supplying a membership rule, that Entitlement Management follows to create and remove assignments automatically. Similar to a [dynamic group](../identity/users/groups-create-rule.md), when an automatic assignment policy is created, user attributes are evaluated for matches with the policy's membership rule. When an attribute changes for a user, these automatic assignment policy rules in the access packages are processed for membership changes. Assignments to users are then added or removed depending on whether they meet the rule criteria.
 
-You can have at most one automatic assignment policy in an access package, and the policy can only be created by an administrator. (Catalog owners and access package managers can't create automatic assignment policies.)
+   > [!NOTE]
+   > You can only have one automatic assignment policy in an access package, and the policy can only be created by an administrator. (Catalog owners and access package managers can't create automatic assignment policies.). Defining multiple automatic assignment policies will result in processing conflicts, causing errors in policy execution and preventing users from receiving their intended entitlements. 
 
 This article describes how to create an access package automatic assignment policy for an existing access package.
 
