@@ -1,11 +1,11 @@
 ---
 title: Create a custom role in Microsoft Entra ID
-description: Learn how to create a custom role in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API
+description: Learn how to create a custom role to manage access to Microsoft Entra resources using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API
 author: rolyon
 ms.author: rolyon
 manager: femila
 ms.reviewer: vincesm
-ms.date: 01/03/2025
+ms.date: 05/19/2025
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
@@ -14,7 +14,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Create a custom role in Microsoft Entra ID
 
-This article describes how to create a custom role in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
+This article describes how to create a custom role to manage access to Microsoft Entra resources using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API. If you want to instead create a custom role to manage access to Azure resources, see [Create or update Azure custom roles using the Azure portal](/azure/role-based-access-control/custom-roles-portal).
 
 For the basics of custom roles, see the [custom roles overview](custom-overview.md). The role can be assigned either at the directory-level scope or an app registration resource scope only. For information about the maximum number of custom roles that can be created in a Microsoft Entra organization, see [Microsoft Entra service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
 
