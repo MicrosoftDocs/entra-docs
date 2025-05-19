@@ -124,11 +124,11 @@ For more information, see [Compare groups](/office365/admin/create-groups/compar
     | Microsoft 365 | Microsoft 365 Group that isn't Teams-enabled. Used for collaboration between users, both inside and outside your company. |
     | Team | Microsoft 365 Group that is Teams-enabled. Used for collaboration between users, both inside and outside your company. |
 
-1. In the **Role** list, select **Owner** or **Member**.
+1. In the **Role** list, select the role you want to assign. If the [group is managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), eligible memberships such as **Eligible Owner** and **Eligible Member** are also options that can be selected.
 
     You typically select the Member role. If you select the Owner role, then users become an owner of the group, which allows those users to add or remove other members or owners.
 
-    ![Access package - Add resource role for a group or team](./media/entitlement-management-access-package-resources/group-role.png)
+    :::image type="content" source="media/entitlement-management-access-package-create/pim-for-groups-roles.png" alt-text="Screenshot of available roles to be assigned to PIM for groups resource in an access package.":::
 
 1. Select **Add**.
 
@@ -200,7 +200,7 @@ When users need additional permissions to access your organization's resources, 
 Assigning Microsoft Entra roles through access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle.
 
 > [!NOTE]
-> We recommend that you use Privileged Identity Management to provide just-in-time access to a user to perform a task that requires elevated permissions. These permissions are provided through the Microsoft Entra Roles, that are tagged as “privileged”, in our documentation here: Microsoft Entra built-in roles. Entitlement Management is better suited for assigning users a bundle of resources, which can include a Microsoft Entra role, necessary to do one’s job. Users assigned to access packages tend to have more longstanding access to resources. While we recommend that you manage high-privileged roles through Privileged Identity Management, you can set up eligibility for those roles through access packages in Entitlement Management.
+> We recommend that you use Privileged Identity Management to provide just-in-time access to a user to perform a task that requires elevated permissions. These permissions are provided through the Microsoft Entra Roles that are tagged as “privileged” in our documentation here: Microsoft Entra built-in roles. Entitlement Management is better suited for assigning users a bundle of resources, which can include a Microsoft Entra role, necessary to do one’s job. Users assigned to access packages tend to have more longstanding access to resources. While we recommend that you manage high-privileged roles through Privileged Identity Management, you can set up eligibility for those roles through access packages in Entitlement Management.
 
 Follow these steps to include a Microsoft Entra role as a resource in an access package: 
 

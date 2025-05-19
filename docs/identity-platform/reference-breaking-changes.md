@@ -4,7 +4,6 @@ description: Learn about changes to the Microsoft identity platform that can imp
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom: has-adal-ref
 ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
@@ -412,7 +411,7 @@ Starting on November 15, 2018, Microsoft Entra ID will stop accepting previously
 
 If your app reuses authorization codes to get tokens for multiple resources, we recommend that you use the code to get a refresh token, and then use that refresh token to acquire additional tokens for other resources. Authorization codes can only be used once, but refresh tokens can be used multiple times across multiple resources. Any new app that attempts to reuse an authentication code during the OAuth code flow will get an invalid_grant error.
 
-For more information about refresh tokens, see [Refreshing the access tokens](v2-oauth2-auth-code-flow.md#refresh-the-access-token). If using ADAL or MSAL, this is handled for you by the library - replace the second instance of `AcquireTokenByAuthorizationCodeAsync` with `AcquireTokenSilentAsync`.
+For more information about refresh tokens, see [Refreshing the access tokens](v2-oauth2-auth-code-flow.md#refresh-the-access-token). If using MSAL, this is handled for you by the library - replace the second instance of `AcquireTokenByAuthorizationCodeAsync` with `AcquireTokenSilentAsync`.
 
 ## May 2018
 
