@@ -93,14 +93,14 @@ In the HTTP response, provide the following JSON document:
 
 ```json
 {
-  "data": {
-    "actions": [
-      {
-        "@odata.type": "microsoft.graph.OtpSend.continueWithDefaultBehavior"
-      }
-    ],
-    "@odata.type": "microsoft.graph.OnOtpSendResponseData"
-  }
+    "data": {
+        "@odata.type": "microsoft.graph.OnOtpSendResponseData",
+        "actions": [
+            {
+                "@odata.type": "microsoft.graph.OtpSend.continueWithDefaultBehavior"
+            }
+        ]
+    }
 }
 ```
 
