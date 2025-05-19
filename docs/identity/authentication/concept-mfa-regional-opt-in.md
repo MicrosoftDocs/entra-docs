@@ -15,6 +15,12 @@ ms.custom: references_regions
 ---
 # Regions that need to opt in for MFA telephony verification  
 
+This applies to Entra tenants only.
+
+For B2C tenants follow the guidelines here: [B2C service limits](https://learn.microsoft.com/azure/active-directory-b2c/service-limits)
+
+For Entra External ID tenants follow the guidelines here: [How to region code opt-in](../../external-id/customers/how-to-region-code-opt-in.md)
+
 As a protection for our customers, Microsoft doesn't automatically support telephony verification for certain region codes. If you want to receive traffic from phone numbers with these region codes, your administrator must submit a support ticket and request to opt in.  
 
 ## Why this protection is needed  
