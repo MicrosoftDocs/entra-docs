@@ -2,10 +2,10 @@
 title: External ID pricing
 description: Learn about the pricing structure for Microsoft Entra External ID. Understand the monthly active users (MAU) billing model, core offering, and premium add-ons. Link your tenant to an Azure subscription for proper billing and feature access.
 
- 
+
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 12/09/2024
+ms.date: 05/19/2025
 
 ms.author: mimart
 author: msmimart
@@ -114,4 +114,4 @@ You can’t change ownership of a subscription to a Microsoft Entra external ten
 
 - See [Frequently asked questions](customers/faq-customers.md) about external tenants.
 - For the latest pricing information, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
-- For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](/azure/active-directory-b2c/billing).
+

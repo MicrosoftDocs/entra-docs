@@ -24,7 +24,7 @@ To protect user accounts in your organization, multifactor authentication should
 
 ## Available versions of Microsoft Entra multifactor authentication
 
-Microsoft Entra multifactor authentication can be used, and licensed, in a few different ways depending on your organization's needs. All tenants are entitled to basic multifactor authentication features by using security defaults. You may already be entitled to use advanced Microsoft Entra multifactor authentication depending on the license you currently have. For example, the first 50,000 monthly active users in Microsoft Entra External ID can use MFA and other Premium P1 or P2 features for free. For more information, see [Azure Active Directory B2C pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/).
+Microsoft Entra multifactor authentication can be used, and licensed, in a few different ways depending on your organization's needs. All tenants are entitled to basic multifactor authentication features by using security defaults. You may already be entitled to use advanced Microsoft Entra multifactor authentication depending on the license you currently have. For example, the first 50,000 monthly active users in Microsoft Entra External ID can use MFA and other Premium P1 or P2 features for free.
 
 The following table details the different ways to get Microsoft Entra multifactor authentication and some of the features and use cases for each.
 
