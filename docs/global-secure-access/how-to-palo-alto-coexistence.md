@@ -16,41 +16,11 @@ ai-usage: ai-assisted
 
 # GSA + Palo Alto GlobalProtect Co-Existence Solutions Guide 
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>S1</th>
-<th>S2</th>
-<th>S3</th>
-<th>S4</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>GlobalProtect</td>
-<td>Internet</td>
-<td>Internet and Private</td>
-<td>Internet and Private</td>
-<td>Private</td>
-</tr>
-<tr class="even">
-<td>GSA</td>
-<td>Private</td>
-<td>Private (Split)</td>
-<td>M365</td>
-<td><p>Internet/M365</p>
-<p>(Custom bypass needed)</p></td>
-</tr>
-</tbody>
-</table>
+|            | S1                | S2                    | S3                    | S4                      |
+|------------|-------------------|-----------------------|-----------------------|-------------------------|
+| GlobalProtect | Internet          | Internet and Private   | Internet and Private   | Private                 |
+| GSA        | Private           | Private (Split)        | M365                  | Internet/M365 <br> (Custom bypass needed) |
+
 
 ## Learn about Security Service Edge (SSE) coexistence with Microsoft and Palo Alto Networks
 
