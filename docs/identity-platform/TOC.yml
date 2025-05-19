@@ -664,8 +664,12 @@
                   href: custom-extension-OnAttributeCollectionStart-retrieve-return-data.md
                 - name: Retrieve data from attribute collection submit event
                   href: custom-extension-OnAttributeCollectionSubmit-retrieve-return-data.md
-            - name: Configure a custom email provider for one time code send events
-              href: custom-extension-email-otp-get-started.md
+            - name: custom email provider
+              items: 
+                - name: Configure a custom email provider for one time code send events
+                  href: custom-extension-email-otp-get-started.md
+                - name: On email OTP send event reference
+                  href: custom-extension-email-otp-send-data.md
             - name: Troubleshoot your custom authentication extension
               href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
