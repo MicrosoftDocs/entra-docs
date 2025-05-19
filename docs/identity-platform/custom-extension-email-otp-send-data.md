@@ -12,13 +12,13 @@ titleSuffix: Microsoft identity platform
 #customer intent: As developer creating a custom authentication extension for user sign-up and password rest flows, I want to understand the REST API schema for the emailOtpSend event in order to design and implement a REST API to customize the verification email.
 ---
 
-# On email one time passcode event reference
+# Email OTP send event reference
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 To configure a custom email provider for [email one time passcode (OTP) send](custom-extension-email-otp-get-started.md) events, you  create a custom authentication extension and invoke it at specific points in the user flow. When the **emailOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. 
 
-The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization. This article describes the REST API schema for the emailOtpSend event.
+The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid to send the one-time passcode with your custom email template, from address, email subject and more. This article describes the REST API schema for the emailOtpSend event.
 
 ## Request to the external REST API
 
