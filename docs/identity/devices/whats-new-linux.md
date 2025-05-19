@@ -17,7 +17,7 @@ ms.subservice: devices
 This article provides information about the latest updates to Microsoft Single Sign-on for Linux. 
 
 ### Package Repositories
-Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported today.
+Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported.
 
 
 #### [Ubuntu20.04](#tab/ubuntu2004)
@@ -27,8 +27,8 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 - [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/)
 - [microsoft-identity-diagnostics](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/)
 
-#### [Ubuntu24.04](tab/ubuntu2404)
-- [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker)
+#### [Ubuntu24.04](#tab/ubuntu2404)
+- [microsoft-identity-broker](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/)
 
 #### [RedHat 9](#tab/redhat9)
 - [microsoft-identity-broker](https://packages.microsoft.com/rhel/9/prod/Packages/m/)
@@ -42,19 +42,19 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ## Microsoft-Identity-Broker
 
-### 2.0.1 - 18-Nov-2024 
+### 2.0.1 - Nov 18, 2024 
 - Releasing package support for ubuntu 24.04
 
-### 2.0.1 - 21-Mar-2024
+### 2.0.1 - Mar 21, 2024
 - Bug fixes
 
-### 1.7.0 - 31-Jan-2024
+### 1.7.0 - Jan 31, 2024
 - Addressing the 1001 on registration failure
 - Updating the install scripts for Red Hat Enterprise Linux Broker
 - Adding license to Linux Broker Package
 
 
-### 1.6.1 - 17-Aug-2023
+### 1.6.1 - Aug 17, 2023
 - [PATCH] Perform safe deserialization for X509 Certificate in Linux Broker (#2483) 
 
 #### Assets
@@ -63,7 +63,7 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ---
 
-### 1.6.0 - 29-Jun-2023
+### 1.6.0 - Jun 29, 2023
 - Added support for Red Hat Enterprise Linux 8 and 9.
 
 #### Assets
@@ -74,7 +74,7 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ---
 
-### 1.5.1 - 09-May-2023
+### 1.5.1 - May 09, 2023
 - update serialization library
 - Excluded the memory consumption change
 - Secret service version upgrade - kubuntu
@@ -85,7 +85,7 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ---
 
-### 1.4.1 - 27-Oct-2022
+### 1.4.1 - Oct 22, 2022
 - Resource Owner Password Credential (ROPC) test hook.
 - added logging for keyring "1001" errors.
 
@@ -95,7 +95,7 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ---
 
-### 1.4.0 - 26-Oct-2022
+### 1.4.0 - Oct 26, 2022
 - Java 17 support
 - Ubuntu 22 support
 
@@ -105,14 +105,14 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ---
 
-### 1.3.0 - 26-Oct-2022
+### 1.3.0 - Oct 26, 2022
 
 #### Assets
 - Ubuntu-20.04 -[microsoft-identity-broker_1.3.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.3.0_amd64.deb)
 
 ---
 
-### 1.2.0 - 26-Oct-2022
+### 1.2.0 - Oct 26, 2022
 
 #### Assets
 - Ubuntu-20.04 - [microsoft-identity-broker_1.2.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.2.0_amd64.deb)
@@ -121,14 +121,14 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ## Microsoft-Identity-Diagnostics
 
-#### 1.01 - 29-Nov-2022
+#### 1.01 - Nov 29, 2022
 
 #### Assets
 - Ubuntu 22.04 - [microsoft-identity-diagnostics_1.1.0_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_1.1.0_amd64.deb)
 
 ---
 
-#### 1.0.1 - 07-Aug-2023
+#### 1.0.1 - Aug 07, 2022
 
 #### Assets
 - Red Hat Enterprise Linux 9.0 - [microsoft-identity-diagnostics-1.0.1-1.x86_64.rpm](https://packages.microsoft.com/rhel/9/prod/Packages/m/microsoft-identity-diagnostics-1.0.1-1.x86_64.rpm)

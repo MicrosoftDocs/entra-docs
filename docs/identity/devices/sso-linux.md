@@ -96,13 +96,6 @@ Run the following commands in a command line to manually install the Microsoft s
 
 ---
 
-For more information, see the following Intune documentation:
-
-- [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
-
-- [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
-
-
 ### Update app for Ubuntu Desktop 
 
 Run the following commands to update the app manually.    
@@ -179,3 +172,11 @@ Run the following commands to uninstall the Microsoft Intune app and remove loca
 ## Troubleshooting 
 
 If you experience issues when implementing macOS Platform SSO, refer to our documentation on [macOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
+
+## Related Content
+
+For more information, see the following Intune documentation:
+
+- [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
+
+- [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
