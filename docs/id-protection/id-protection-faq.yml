@@ -9,13 +9,13 @@ metadata:
   author: shlipsey3
   ms.author: sarahlipsey
   manager: femila
-  ms.date: 05/14/2025
+  ms.date: 05/19/2025
   ms.reviewer: etbasser
 
 title: Frequently asked questions around Microsoft Entra ID Protection
 
 summary: |
-  This article includes answers to frequently asked questions about Microsoft Entra ID Protection. FAQ topics include: Detections, leaked credentials, remediation, and B2B users.
+  This article includes answers to frequently asked questions about Microsoft Entra ID Protection. FAQ sections include: detections, leaked credentials, remediation, and B2B users.
   
   For more information, see [Microsoft Entra ID Protection overview](overview-identity-protection.md). 
 
@@ -47,7 +47,7 @@ sections:
       - question: |
           I tried to sort the Risk detections report using the "Detection time" column, but it's not working.
         answer: |
-          Sorting by *Detection time* in the Risk detections report might not always give the correct result because of a known technical constraint. To sort by *Detection time*, select **Download** to export the data as a CSV file and sort accordingly.
+          Sorting by *Detection time* in the Risk detections report might not always give the correct result because of a known technical constraint. To sort by *Detection time*, open the report in the Microsoft Entra admin center and select **Download** to export the data as a CSV file and sort accordingly.
 
   - name: Leaked credentials
     questions:
@@ -71,9 +71,9 @@ sections:
           - You don't have password hash sync enabled for your tenant.
           - Microsoft didn't find any leaked credential pairs that match your users. 
       - question: |
-          How often does Microsoft process new credentials?
+          How often does Microsoft process new leaked credentials?
         answer: |
-          Credentials are processed immediately after they're found, normally in multiple batches per day. 
+          Leaked credentials are processed immediately after they're found, normally in multiple batches per day. 
 
   - name: Remediation
     questions:
