@@ -12,7 +12,7 @@ titleSuffix: Microsoft identity platform
 #customer intent: As developer creating a custom authentication extension for user sign-up and password rest flows, I want to understand the REST API schema for the emailOtpSend event in order to design and implement a REST API to customize the verification email.
 ---
 
-# Retrieve and return data from an emailOtpSend event
+# On email one time passcode event reference
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
