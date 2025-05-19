@@ -94,7 +94,7 @@ Exchange Online audit logs provide visibility into critical user activity and su
 
 For scenarios such as mailbox updates, item moves, or deletions, you can:
 
-- Start with linkable identifiers, such as session ID (SID) or unique token identifier (UTI), from Microsoft Entra sign-in logs.
+- Start with linkable identifiers from Microsoft Entra sign-in logs, such as session ID (SID) or unique token identifier (UTI).
 - Use these identifiers to search Microsoft Purview Audit (Standard) or Audit (Premium) logs.
 - Track all user actions performed on mailbox items during a specific session or by a specific token.
 
@@ -181,7 +181,7 @@ If you configure Microsoft Graph activity logs to be sent to a Log Analytics wor
 
 For scenarios involving Microsoft Graph activity, you can:
 
-- Start with linkable identifiers, such as SID or UTI, from Microsoft Entra sign-in logs.
+- Start with linkable identifiers from Microsoft Entra sign-in logs, such as SID or UTI.
 - Use these identifiers to correlate and trace user actions across Microsoft Graph activity logs.
 - Track all operations performed on mailbox items or other resources by a specific token or session see [Microsoft Graph Activity Logs](/graph/microsoft-graph-activity-logs-overview).
 
@@ -287,7 +287,7 @@ Microsoft SharePoint Online audit logs provide a comprehensive audit trail of al
 
 For scenarios involving SharePoint Online activity, you can:
 
-- Start with linkable identifiers—such as Session ID (SID) or Unique Token Identifier (UTI)—from Microsoft Entra sign-in logs.
+- Start with linkable identifiers from Microsoft Entra sign-in logs, such as SID or UTI.
 - Use these identifiers to search Microsoft Purview Audit (Standard) or Audit (Premium) logs.
 - Track all user actions performed within SharePoint Online during a specific session or by a specific token.
 
@@ -339,7 +339,7 @@ For more information on Teams audit logs visit [Teams Audit Logs](/purview/audit
 
 To investigate Microsoft Teams activity:
 
-- Start with linkable identifiers—such as Session ID (SID) or Unique Token Identifier (UTI)—from Microsoft Entra sign-in logs.
+- Start with linkable identifiers from Microsoft Entra sign-in logs, such as SID or UTI.
 - Use these identifiers to search Microsoft Purview Audit (Standard) or Audit (Premium) logs.
 - Track user actions across Teams sessions, including team and channel operations.
 
@@ -397,17 +397,17 @@ Using linkable identifiers such as the Session ID (SID) and Unique Token Identif
 Teams-related actions such as team or channel creation, deletion, or configuration changes.
 SharePoint Online operations including file access, creation, modification, or deletion.
 
-1. Admin starts with Entra Sign-in logs to find the session id of this access token by filtering around the time the token was phished and the user objectId
+1. Start with Microsoft Entra sign-in logs to find the session id of this access token by filtering around the time the token was phished and the user objectId.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/linkable-signinlog-entries.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers for Teams scenario.":::
 
-1. Admin will note the linkable identifiers—such as Session ID (SID) or Unique Token Identifier (UTI)—from Microsoft Entra sign-in logs to use it as a filter on Teams and SharePoint audit logs
+1. Determine the linkable identifiers from Microsoft Entra sign-in logs, such as SID or UTI, to use as a filter on Teams and SharePoint Online audit logs.
 
-1. On Purview portal search for logs with a specific timeframe and workloads as Teams and SharePoint and for the specific user.
+1. In the Purview portal, search for logs with a specific timeframe for workloads such as Teams and SharePoint Online, and for the specific user.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs for SharePoint and Teams workload.":::
 
-1. The search will bring back all audit log entries within that timeframe filtered by the user and workloads as Teams and SharePoint Online.
+1. The search returns all audit log entries within that timeframe, filtered by the user and workloads as Teams and SharePoint Online.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-results.png" alt-text="Screenshot of Microsoft Purview portal showing results for SPO and Teams logs.":::
 
