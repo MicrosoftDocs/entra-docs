@@ -216,7 +216,8 @@ For this scenario you will need to perform the following in the Palo Alto Strata
 - Configure the GlobalProtect tunnel settings and app settings to work with Global Secure Access. Follow the instructions listed in the Tunnel Settings above.
 - Install the Palo Alto Networks GlobalProtect client for Windows, [GlobalProtect App for Windows](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows) or macOS, [GlobalProtect App for macOS](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-mac).
 
-Note: For this configuration Enable “**Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)”** in the App Settings.
+> [!NOTE]
+> For this configuration, enable **Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)** in the App Settings.
 
 After both clients are installed and running side by side and configurations from admin portals are complete, go to the system tray to check that Global Secure Access and GlobalProtect clients are enabled.
 
@@ -225,7 +226,8 @@ Verify configuration for Global Secure Access client.
 1. Right click on the **Global Secure Access client \> Advanced Diagnostics \> Forwarding Profile** and verify that Private Access and Private DNS rules are applied to this client.
 2. Navigate to **Advanced Diagnostics \> Health Check** and ensure no checks are failing.
 
-NOTE: For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+> [!NOTE]
+> For information about troubleshooting health check failures, see [Troubleshoot the Global Secure Access client: Health check - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 **Test traffic flow**
 
@@ -273,7 +275,8 @@ For this scenario you will need to perform the following in the Palo Alto Strata
 - Configure the GlobalProtect tunnel settings and app settings to work with Global Secure Access. Follow the instructions listed in the Tunnel Settings above.
 - Install the Palo Alto Networks GlobalProtect client for Windows, [GlobalProtect App for Windows](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows) or macOS, [GlobalProtect App for macOS](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-mac).
 
-Note: For this configuration Enable “**Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)”** in the App Settings.
+> [!NOTE]
+> For this configuration, enable **Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)** in the App Settings.
 
 After both clients are installed and running side by side and configurations from admin portals are complete, go to the system tray to check that Global Secure Access and GlobalProtect clients are enabled.
 
