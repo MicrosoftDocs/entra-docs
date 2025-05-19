@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Check Point Infinity Portal with Mi
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Check Point Infinity Portal single sign-on (SSO) enabled subscription.
@@ -49,7 +50,7 @@ To configure the integration of Check Point Infinity Portal into Microsoft Entra
 1. In the **Add from the gallery** section, type **Check Point Infinity Portal** in the search box.
 1. Select **Check Point Infinity Portal** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-check-point-infinity-portal'></a>
 
@@ -87,7 +88,6 @@ Follow these steps to enable Microsoft Entra SSO.
     |-------------| -------------|
     | EU/US | `cloudinfra.checkpoint.com` |
     | AP | `ap.portal.checkpoint.com` |
-    |
 
     b. In the **Reply URL** text box, type one of the following URLs:
 
@@ -95,7 +95,6 @@ Follow these steps to enable Microsoft Entra SSO.
     |-------------| -------------|
     | EU/US | `https://portal.checkpoint.com/` |
     | AP | `https://ap.portal.checkpoint.com/` |
-    |
 
     c. In the **Sign on URL** text box, type one of the following URLs:
 
@@ -103,7 +102,6 @@ Follow these steps to enable Microsoft Entra SSO.
     |-------------| -------------|
     | EU/US | `https://portal.checkpoint.com/` |
     | AP | `https://ap.portal.checkpoint.com/` |
-    |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

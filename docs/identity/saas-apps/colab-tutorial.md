@@ -25,6 +25,7 @@ In this article,  you learn how to integrate CoLab with Microsoft Entra ID. When
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * CoLab single sign-on (SSO) enabled subscription.
@@ -45,7 +46,7 @@ To configure the integration of CoLab into Microsoft Entra ID, you need to add C
 1. In the **Add from the gallery** section, type **CoLab** in the search box.
 1. Select **CoLab** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 ## Configure and test Microsoft Entra SSO for CoLab
 
@@ -77,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `urn:auth0:colab-production:<customer>`
 
     b. In the **Reply URL** textbox, type a URL using the following pattern:
-    ` https://login.colabsoftware.com/login/callback?connection=<Customer>`
+    `https://login.colabsoftware.com/login/callback?connection=<Customer>`
 
 1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
 

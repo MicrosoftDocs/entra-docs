@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Athena Systems Login Platform with 
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Athena Systems Login Platform single sign-on (SSO) enabled subscription.
@@ -47,7 +48,7 @@ To configure the integration of Athena Systems Login Platform into Microsoft Ent
 1. In the **Add from the gallery** section, type **Athena Systems Login Platform** in the search box.
 1. Select **Athena Systems Login Platform** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-athena-systems-login-platform'></a>
 
@@ -96,8 +97,8 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In addition to above, Athena Systems Login Platform application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
-	| Name | Source Attribute|
-	| ------- | --------- |
+	|  Name  | Source Attribute |
+	| ------ | ---------------- |
 	| Client | user.companyname |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.

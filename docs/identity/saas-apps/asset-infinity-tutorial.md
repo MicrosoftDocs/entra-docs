@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Asset Infinity with Microsoft Entra
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Asset Infinity single sign-on (SSO) enabled subscription.
@@ -43,7 +44,7 @@ To configure the integration of Asset Infinity into Microsoft Entra ID, you need
 1. In the **Add from the gallery** section, type **Asset Infinity** in the search box.
 1. Select **Asset Infinity** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 ## Configure and test Microsoft Entra SSO for Asset Infinity
 
@@ -72,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    ` https://api.assetinfinity.io/api/auth/signinSaml/<CustomerName>`
+    `https://api.assetinfinity.io/api/auth/signinSaml/<CustomerName>`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
     ` https://api.assetinfinity.io/api/auth/signinSamlAcs/<CustomerName> `

@@ -181,7 +181,7 @@ items:
       href: b2c-deployment-plans.md
     - name: Microsoft Entra External ID deployment architectures
       href: external-identity-deployment-architectures.md
-    - name: Microsoft Entra deployment scenarios
+    - name: Microsoft Entra Suite deployment scenarios
       items:
       - name: Introduction
         href: deployment-scenario-intro.md

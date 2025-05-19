@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/24/2025
+ms.date: 05/14/2025
 
 ms.author: justinha
 author: justinha
@@ -76,7 +76,7 @@ When a user reports an MFA prompt as suspicious, the event shows up in the sign-
 |--------------|--------|---------|
 | Risk detections report | **ID Protection** > **Dashboard** > **Risk detection** | Detection type: **User Reported Suspicious Activity**<br>Risk level: **High**<br>Source **End user reported** |
 | Sign-in logs | **Entra ID** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied** |
-| Audit logs   | **Entra ID** > **Monitoring & health** > **Audit logs** | The suspecious activity appears under **Activity type** |
+| Audit logs   | **Entra ID** > **Monitoring & health** > **Audit logs** | The suspicious activity appears under **Activity type** |
 
 >[!NOTE]
 >A user isn't reported as High Risk if they perform passwordless authentication.
@@ -141,7 +141,7 @@ If users receive phone calls for MFA prompts, you can configure their experience
 
 In the United States, if you haven't configured MFA caller ID, voice calls from Microsoft come from the following numbers. Users with spam filters should exclude these numbers.
 
-Default number: *+1 (855) 330-8653*
+Default numbers: *+1 (855) 330-8653*, *+1 (855) 336-2194*, *+1 (855) 341-5605*
 
 The following table lists more numbers for different countries/regions.
 

@@ -4,8 +4,7 @@ description: "New and updated articles in the Microsoft identity platform docume
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-adal-ref
-ms.date: 04/01/2025
+ms.date: 05/02/2025
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -15,6 +14,26 @@ ms.topic: whats-new
 # Microsoft identity platform docs: What's new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
+
+## April 2025
+
+### New articles
+
+* [Add and manage application credentials in Microsoft Entra ID](how-to-add-credentials.md) - Register app refactor
+* [How to add a redirect URI to your application](how-to-add-redirect-uri.md) - Register app refactor
+
+### Updated articles
+
+* [Quickstart: Call a web API that is protected by the Microsoft identity platform](quickstart-web-api-dotnet-protect-app.md) - Update ASP.NET Core web API tutorial (from minimal weather forecast API to controller-based Todo list API)
+* [Quickstart: Sign in users in a sample Desktop app](quickstart-desktop-app-sign-in.md) - Register app refactor
+* [Quickstart: Sign in users in a sample mobile app](quickstart-mobile-app-sign-in.md) - Register app refactor
+* [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md) - Register app refactor
+* [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API](quickstart-single-page-app-sign-in.md) - Register app refactor
+* [Tutorial: Build and secure an ASP.NET Core web API with the Microsoft identity platform](tutorial-web-api-dotnet-core-build-app.md) - Update ASP.NET Core web API tutorial (from minimal weather forecast API to controller-based Todo list API)
+* [Tutorial: Create an Angular application and prepare it for authentication](tutorial-single-page-apps-angular-prepare-app.md) - Register app refactor
+* [Tutorial: Prepare your iOS (Swift) app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md) - Register app refactor
+* [Tutorial: Set up a Node.js web app to sign in users by using Microsoft identity platform](tutorial-web-app-node-sign-in-prepare-app.md) - Register app refactor
+* [Tutorial: Set up an Android app to sign in users by using Microsoft identity platform](tutorial-mobile-app-android-prepare-app.md) - Register app refactor
 
 ## March 2025
 
@@ -41,10 +60,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 ### Updated articles
 
 - [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](v2-oauth-ropc.md) - Added clarity to the content
-
-## January 2025
-
-### Updated articles
-
-- [Set up your application's Microsoft Entra test environment](test-setup-environment.md) - Added clarity to the content
-

@@ -54,3 +54,4 @@ For more information see [Govern on-premises Active Directory based apps (Kerber
 - [Provision groups to Active Directory using Microsoft Entra Cloud Sync](cloud-sync/how-to-configure-entra-to-active-directory.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](cloud-sync/govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](cloud-sync/migrate-group-writeback.md)
+- [Scoping filter and attribute mapping - Microsoft Entra ID to Active Directory](cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md)

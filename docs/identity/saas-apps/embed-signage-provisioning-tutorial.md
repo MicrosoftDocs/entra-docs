@@ -103,11 +103,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     |Attribute|Type|Supported for filtering|Required by embed signage|
     |---|---|---|---|
-    |userName|String|&check;|&check;
-    |displayName|String||&check;
-    |name.givenName|String||
-    |name.familyName|String||
-    |active|Boolean||
+    |userName|String|&check;|&check;|
+    |displayName|String||&check;|
+    |name.givenName|String|||
+    |name.familyName|String|||
+    |active|Boolean|||
           
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to embed signage**.
 
@@ -115,10 +115,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     |Attribute|Type|Supported for filtering|Required by embed signage|
     |---|---|---|---|
-    |displayName|String|&check;|&check;
-    |members|Reference||
+    |displayName|String|&check;|&check;|
+    |members|Reference|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for embed signage, change the **Provisioning Status** to **On** in the **Settings** section.
 

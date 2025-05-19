@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 10/04/2024
+ms.date: 05/07/2025
 ms.author: celested
 ms.reviewer: nicholepet
 
@@ -98,7 +98,7 @@ The Microsoft Entra product family helps you protect all identities and secure n
 | Identity and access management | New identity categories | Network access |
 |---------|---------|---------|
 | [Microsoft Entra ID (previously known as Azure AD)](../index.yml) | [Microsoft Entra Verified ID](~/verified-id/index.yml) | [Microsoft Entra Internet Access](https://aka.ms/GlobalSecureAccessDocs) |
-| [Microsoft Entra ID Governance](~/id-governance/index.yml) | [Microsoft Entra Permissions Management](~/permissions-management/index.yml) | [Microsoft Entra Private Access](https://aka.ms/GlobalSecureAccessDocs) |
+| [Microsoft Entra ID Governance](~/id-governance/index.yml) |  | [Microsoft Entra Private Access](https://aka.ms/GlobalSecureAccessDocs) |
 | [Microsoft Entra External ID](~/external-id/index.yml) | [Microsoft Entra Workload ID](~/workload-id/index.yml) |  |
 
 ### Where can I manage Microsoft Entra ID?
@@ -209,7 +209,6 @@ Only official product names are capitalized, plus Conditional Access and My * ap
 |       | Azure Active Directory External Identities<br/> Azure AD External Identities | Microsoft Entra External ID<br/> (Second use: External ID) |
 |       | Azure Active Directory Identity Governance<br/> Azure AD Identity Governance<br/> Microsoft Entra Identity Governance | Microsoft Entra ID Governance<br/> (Second use: ID Governance) |
 |       | *New* | Microsoft Entra Internet Access<br/> (Second use: Internet Access) |
-|       | Cloud Knox | Microsoft Entra Permissions Management<br/> (Second use: Permissions Management) |
 |       | *New* | Microsoft Entra Private Access<br/> (Second use: Private Access) |
 |       | Azure Active Directory Verifiable Credentials<br/> Azure AD Verifiable Credentials | Microsoft Entra Verified ID<br/> (Second use: Verified ID) |
 |       | Azure Active Directory Workload Identities<br/> Azure AD Workload Identities | Microsoft Entra Workload ID<br/> (Second use: Workload ID) |

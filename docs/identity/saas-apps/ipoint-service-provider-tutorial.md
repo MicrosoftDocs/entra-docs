@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | **Sign-on URL** |
     |-----------|
     | `https://<CUSTOMERNAME>.ipoint-systems.com/dashboard/` |
-    | `https://<CUSTOMERNAME>.ipoint-systems.com/ipca-web/ ` |
+    | `https://<CUSTOMERNAME>.ipoint-systems.com/ipca-web/` |
     | `https://<CUSTOMERNAME>.ipoint-systems.com/authserver/saml/ssoLogin` |
    
 1. Select **Save**.
