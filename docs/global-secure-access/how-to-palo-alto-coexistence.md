@@ -123,12 +123,12 @@ documentation you will need to perform the following.
   forwarding profiles for your Microsoft Entra tenant. For more
   information about enabling and disabling profiles, see [Global Secure
   Access traffic forwarding
-  profiles](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-traffic-forwarding).
+  profiles](/entra/global-secure-access/concept-traffic-forwarding).
 
 - Install and configure the Microsoft Entra private network connector.
   To learn how to install and configure the connector, see [How to
   configure
-  connectors](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-connectors).
+  connectors](/entra/global-secure-access/how-to-configure-connectors).
 
 NOTE: Private Network Connectors are required for Entra Private Access
 applications.
@@ -136,16 +136,16 @@ applications.
 - Configure Quick Access to your private resources and set up Private
   Domain Name System (DNS) and DNS suffixes. To learn how to configure
   Quick Access, see [How to configure Quick
-  Access](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-quick-access).
+  Access](/entra/global-secure-access/how-to-configure-quick-access).
 
 - Install and configure the Global Secure Access client on end-user
   devices. For more information about clients, see [Global Secure Access
-  clients](https://learn.microsoft.com/en-us/entra/global-secure-access/concept-clients).
+  clients](/entra/global-secure-access/concept-clients).
   To learn how to install the Windows client, see [Global Secure Access
   client for
-  Windows](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client).
+  Windows](/entra/global-secure-access/how-to-install-windows-client).
   For macOS, see [Global Secure Access Client for
-  macOS](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-macos-client).
+  macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 **Palo Alto Prisma Access**
 
@@ -249,14 +249,14 @@ For this scenario you will need to do the following.
   profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-private-access-profile.md#enable-the-private-access-traffic-forwarding-profile).
 
 - Install a [Private Network
-  Connector](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-connectors) for
+  Connector](/entra/global-secure-access/how-to-configure-connectors) for
   Microsoft Entra Private Access.
 
 - Configure [Quick Access and set up Private
-  DNS](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-quick-access).
+  DNS](/entra/global-secure-access/how-to-configure-quick-access).
 
 - Install and configure the [Global Secure Access client for
-  Windows](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client) or [macOS](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-macos-client).
+  Windows](/entra/global-secure-access/how-to-install-windows-client) or [macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 **Palo Alto Prisma Access configuration**
 
@@ -292,7 +292,7 @@ Verify configuration for Global Secure Access client.
 NOTE: For information troubleshooting health check failures:
 [Troubleshoot the Global Secure Access client: Health check - Global
 Secure Access \| Microsoft
-Learn](https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check)
+Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check)
 
 **Test traffic flow**
 
@@ -358,14 +358,14 @@ For this scenario you will need to:
   profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-private-access-profile.md#enable-the-private-access-traffic-forwarding-profile).
 
 - Install a [Private Network
-  Connector](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-connectors) for
+  Connector](/entra/global-secure-access/how-to-configure-connectors) for
   Microsoft Entra Private Access.
 
 - Configure [Quick Access and set up Private
-  DNS](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-quick-access).
+  DNS](/entra/global-secure-access/how-to-configure-quick-access).
 
 - Install and configure the [Global Secure Access client for
-  Windows](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client) or [macOS](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-macos-client).
+  Windows](/entra/global-secure-access/how-to-install-windows-client) or [macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 **Palo Alto Networks configuration**
 
@@ -401,7 +401,7 @@ Verify configuration for Global Secure Access client.
 NOTE: For information troubleshooting health check failures:
 [Troubleshoot the Global Secure Access client: Health check - Global
 Secure Access \| Microsoft
-Learn](https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 **Test traffic flow**
 
@@ -472,7 +472,7 @@ For this scenario you will need to:
   profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-microsoft-profile.md#enable-the-microsoft-traffic-profile).
 
 - Install and configure the [Global Secure Access client for
-  Windows](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client) or [macOS](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-macos-client).
+  Windows](/entra/global-secure-access/how-to-install-windows-client) or [macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 **Palo Alto Networks configuration**
 
@@ -511,7 +511,7 @@ Verify configuration for Global Secure Access client.
 NOTE: For information troubleshooting health check failures:
 [Troubleshoot the Global Secure Access client: Health check - Global
 Secure Access \| Microsoft
-Learn](https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 **Test traffic flow**
 
@@ -590,7 +590,7 @@ For this scenario you will need to do the following.
   profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-internet-access-profile.md#prerequisites).
 
 - Install and configure the [Global Secure Access client for
-  Windows](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client) or [macOS](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-macos-client).
+  Windows](/entra/global-secure-access/how-to-install-windows-client) or [macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 - Add an Entra Internet Access traffic forwarding profile custom bypass
   to exclude Prisma Access service FQDN.
@@ -646,7 +646,7 @@ Verify configuration for Global Secure Access client.
 NOTE: For information troubleshooting health check failures:
 [Troubleshoot the Global Secure Access client: Health check - Global
 Secure Access \| Microsoft
-Learn](https://learn.microsoft.com/en-us/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 **Test traffic flow**
 
