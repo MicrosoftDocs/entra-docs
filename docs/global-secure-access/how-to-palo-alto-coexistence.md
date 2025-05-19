@@ -136,7 +136,7 @@ Verify configuration for Global Secure Access client.
 **Test traffic flow**
 
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
-2. Access these websites from the browsers: salesforce.com, Instagram.com, yelp.com.
+2. Access these websites from the browsers: `salesforce.com`, `Instagram.com`, `yelp.com`.
 3. In the system tray, right-click **Global Secure Access Client** and select **Advanced Diagnostics** \> **Traffic tab**.
 4. Scroll to observe that the Global Secure Access client **isn't** capturing traffic from these websites
 5. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** \> **Monitor** \> **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs.
@@ -177,12 +177,13 @@ Verify configuration for Global Secure Access client.
 1. Right click on the **Global Secure Access client \> Advanced Diagnostics \> Forwarding Profile** and verify that Private Access and Private DNS rules are applied to this client.
 2. Navigate to **Advanced Diagnostics \> Health Check** and ensure no checks are failing.
 
-NOTE: For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+> [!NOTE]
+> For information about troubleshooting health check failures, see [Troubleshoot the Global Secure Access client: Health check - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 **Test traffic flow**
 
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
-2. Access these websites from the browsers: salesforce.com, Instagram.com, yelp.com.
+2. Access these websites from the browsers: `salesforce.com`, `Instagram.com`, `yelp.com`.
 3. In the system tray, right-click **Global Secure Access Client** and select **Advanced Diagnostics** \> **Traffic tab**.
 4. Scroll to observe that the Global Secure Access client **isn't** capturing traffic from these websites.
 5. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** \> **Monitor** \> **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs.
@@ -229,7 +230,7 @@ NOTE: For information troubleshooting health check failures: [Troubleshoot the G
 **Test traffic flow**
 
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
-2. Access these websites from the browsers: salesforce.com, Instagram.com, yelp.com.
+2. Access these websites from the browsers: `salesforce.com`, `Instagram.com`, `yelp.com`.
 3. In the system tray, right-click **Global Secure Access Client** and select **Advanced Diagnostics** \> **Traffic tab**.
 4. Scroll to observe that the Global Secure Access client **isn't** capturing traffic from these websites.
 5. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** \> **Monitor** \> **Traffic logs**. Validate traffic related to these sites is missing from the Global Secure Access traffic logs.
@@ -239,7 +240,7 @@ NOTE: For information troubleshooting health check failures: [Troubleshoot the G
 9. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** \> **Monitor** \> **Traffic logs**.
 10. Validate traffic related to the RDP session **isn’t** in the Global Secure Access traffic logs
 11. Sign in to Palo Alto Networks’ Strata Cloud Manager and browse to **Incidents & Alerts** \> **Log Viewer**. Validate traffic related to the RDP session is present in the Prisma Access logs.
-12. Access Outlook Online (outlook.com, outlook.office.com, outlook.office365.com), SharePoint Online (\<yourtenantdomain\>.sharepoint.com).
+12. Access Outlook Online (`outlook.com`, `outlook.office.com`, `outlook.office365.com`), SharePoint Online (`<yourtenantdomain>.sharepoint.com`).
 13. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
 14. Scroll to confirm the Global Secure Access client handled only Microsoft 365 traffic.
 15. You can also validate that the traffic is captured in the Global Secure Access traffic logs. In the Microsoft Entra admin center, navigate to **Global Secure Access** \> **Monitor** \> **Traffic logs**.
@@ -261,7 +262,7 @@ Add a custom bypass for Prisma Access in Global Secure Access:
 
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** \> **Connect** \> **Traffic forwarding** \> **Internet access profile** \> Under **Internet access policies** \> Select “**View**”.
 2. Expand **Custom Bypass** \> Select **Add rule**.
-3. Leave destination type **FQDN** and in **Destination** enter **\*.gpcloudservice.com**.
+3. Leave destination type **FQDN** and in **Destination** enter `*.gpcloudservice.com`.
 4. Select **Save.**
 
 **Palo Alto Networks configuration**
@@ -287,10 +288,10 @@ Verify configuration for Global Secure Access client.
 **Test traffic flow**
 
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. Select the **Traffic** tab and select **Start collecting**.
-2. Access these websites from the browser: bing.com, salesforce.com, Instagram.com, Outlook Online (outlook.com, outlook.office.com, outlook.office365.com), SharePoint Online (\<yourtenantdomain\>.sharepoint.com).
+2. Access these websites from the browser: `bing.com`, `salesforce.com`, `Instagram.com`, Outlook Online (`outlook.com`, `outlook.office.com`, `outlook.office365.com`), SharePoint Online (`<yourtenantdomain>.sharepoint.com`).
 3. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** \> **Monitor** \> **Traffic logs**. Validate traffic related to these sites is captured in the Global Secure Access traffic logs.
 4. Access your private application set up in Prisma Access through a service connection or ZTNA connector. For example, open an RDP session to a private server.
-5. Sign in to Palo Alto Networks’ Strata Cloud Manager and browse to **Incidents & Alerts** \> **Log Viewer**. Validate traffic related to the RDP session is present and that traffic related to Microsoft 365 and Internet Traffic such as Instagram.com, Outlook Online, and SharePoint Online is missing from the Prisma Access logs.
+5. Sign in to Palo Alto Networks’ Strata Cloud Manager and browse to **Incidents & Alerts** \> **Log Viewer**. Validate traffic related to the RDP session is present and that traffic related to Microsoft 365 and Internet Traffic such as `Instagram.com`, Outlook Online, and SharePoint Online is missing from the Prisma Access logs.
 6. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the network traffic dialog box, select **Stop collecting**.
 7. Scroll to observe that the Global Secure Access client **isn't** capturing traffic from the private application. Also, observe that the Global Secure Access client **is** capturing traffic for Microsoft 365 and other internet traffic.
 
