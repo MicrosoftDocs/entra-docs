@@ -14,10 +14,10 @@ ai-usage: ai-assisted
 
 # Learn about Security Service Edge (SSE) coexistence with Microsoft and Palo Alto Networks
 
-|            | S1                | S2                    | S3                    | S4                      |
+| Name      |  Configuration 1  | Configuration 2| Configuration 3 | Configuration 4 |
 |------------|-------------------|-----------------------|-----------------------|-------------------------|
 | GlobalProtect | Internet          | Internet and Private   | Internet and Private   | Private                 |
-| GSA        | Private           | Private (Split)        | M365                  | Internet/M365 <br> (Custom bypass needed) |
+| Global Secure Access| Private           | Private (Split)        | M365                  | Internet/M365 <br> (Custom bypass needed) |
 
 
 ## Learn about Security Service Edge (SSE) coexistence with Microsoft and Palo Alto Networks
