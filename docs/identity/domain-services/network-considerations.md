@@ -211,7 +211,7 @@ Get-AzNetworkSecurityGroup -Name "nsg-name" -ResourceGroupName "resource-group-n
 * **Blocking communication via these ports between controllers will prevent the correct functioning of replication and data synchronization.** This causes errors in the backup process.
 * Ensure that security policies explicitly allow this internal communication to guarantee the integrity and availability of the service.
 
-For more information: [How to configure a firewall for Active Directory domains and trusts](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts)
+For more information: [How to configure a firewall for Active Directory domains and trusts](https://learn.microsoft.com/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts)
 
 ## User-defined routes
 
