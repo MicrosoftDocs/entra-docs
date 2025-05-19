@@ -23,7 +23,7 @@ For information on workload identity risk detections, see [Securing workload ide
 
 ## Sign-in risk detections mapped to riskEventType 
 
-Select a risk detection from the list to view the description of the risk detection, how it works, and the license requirements.
+Select a risk detection from the list to view the description of the risk detection, how it works, and the license requirements. In the table, *Premium* indicates the detection requires at least a Microsoft Entra ID P2 license. *Nonpremium* indicates the detection is available with Microsoft Entra ID Free. The `riskEventType` column indicates the value that appears in Microsoft Graph API queries.
 
 | Sign-in risk detection | Detection type | Type | riskEventType |
 | --- | --- | --- | --- |
@@ -241,7 +241,7 @@ This risk detection baselines normal administrative user behavior in Microsoft E
 
 ### Attacker in the Middle 
 
-Also referred to as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft 365 Defender to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
+Also referred to as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft 365 Defender for Office to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
