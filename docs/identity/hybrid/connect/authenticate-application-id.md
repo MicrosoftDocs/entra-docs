@@ -34,7 +34,8 @@ Microsoft recommends the Entra Connect certificate management option as we manag
 
  ## Bring Your Own Application (BYOA) 
 
-In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa)
+In this set up, the customer administrator manages the application that is used by Entra Connect Sync to authenticate to Entra, the application permissions and certificate credential used by the application. The administrator [registers a Microsoft Entra app and creates a service principal.](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application should be assigned the required [permissions](#microsoft-graph-permissions-for-byoa).
+
 The administrator is responsible for creating the certificate, rotation, and deletion of unused/expired certificates. The certificate must be stored in the Local Machine store. The administrator is responsible for securing the private key of the certificate and ensuring only Microsoft Azure AD Sync service can access the private key for signing
 
 ## Bring Your Own Certificate (BYOC) 
@@ -264,7 +265,7 @@ $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 |Category|Application|Delegated|
 |-----|-----|-----|
 |Identifier|fc7e8088-95b5-453e-8bef-b17ecfec5ba3|-|
-|DisplayText|Read, write and manage self-service password reset writeback cl for Microsoft Entra Connect Sync Agent|-|
+|DisplayText|Read, write and manage self-service password reset writeback for Microsoft Entra Connect Sync Agent|-|
 |Description|Allows the app to refresh and recreate on-premises configuration for Microsoft self-service password reset.|-|
 |AdminConsentRequired|Yes|-|
 
