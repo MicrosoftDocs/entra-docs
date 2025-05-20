@@ -12,7 +12,7 @@ ms.reviewer: cammart
 #CustomerIntent: I want to get help from partner with expertise in planning and deploying Microsoft Entra scenarios. 
 ---
 
-# Microsoft Entra Suite services and integration partners
+# Microsoft Entra Suite services and integration partners 
 
 Partners can help your organization with planning and deployment of [Microsoft Entra](../fundamentals/what-is-entra.md) scenarios in the Microsoft Entra Suite, including: 
 
