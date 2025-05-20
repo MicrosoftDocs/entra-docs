@@ -5,7 +5,7 @@ description: Automation to detect, remediate, investigate, and analyze risk data
 ms.service: entra-id-protection
 
 ms.topic: overview
-ms.date: 05/14/2025
+ms.date: 05/20/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -45,15 +45,15 @@ For more information about how to use the reports, see the article [How To: Inve
 
 ## Remediate risks 
 
-Why is automation critical in security?
+Automation is critical in security because the scale of signals and attacks requires automation to keep up.
 
-In the blog post *[Cyber Signals: Defending against cyber threats with the latest research, insights, and trends](https://www.microsoft.com/security/blog/2022/02/03/cyber-signals-defending-against-cyber-threats-with-the-latest-research-insights-and-trends/)* dated February 3, 2022, Microsoft shared a threat intelligence brief including the following statistics: 
+The [Microsoft Digital Defense Report 2024](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft%20Digital%20Defense%20Report%202024%20%281%29.pdf) provides the following statistics:
 
-> Analyzed ...24 trillion security signals combined with intelligence we track by monitoring more than 40 nation-state groups and over 140 threat groups... 
-> 
-> ...From January 2021 through December 2021, we’ve blocked more than 25.6 billion Microsoft Entra brute force authentication attacks... 
+> 78 trillion security signals analyzed per day, an increase of 13 trillion from the previous year
+> 600 million attacks on Microsoft customers per day
+> 2.75x increase year over year in human-operated ransomware attacks
 
-The scale of signals and attacks requires automation to keep up.
+These statistics continue to trend upwards, with no sign of slowing down. In this environment, automation is the key to identifying and remediating risk so IT organizations can focus on the right priorities.
 
 ### Automatic remediation
 
