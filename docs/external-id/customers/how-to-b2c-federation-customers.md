@@ -19,6 +19,8 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](../includes/active-directory-b2c-end-of-sale-notice.md)]
+
 To configure your Azure AD B2C tenant as an identity provider, you need to create an Azure AD B2C custom policy, and then an application.
 
 ## Prerequisites
