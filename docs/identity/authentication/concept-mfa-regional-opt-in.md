@@ -80,7 +80,7 @@ For SMS and Voice verification, the following region codes require an opt-in. Th
 | 82 | South Korea |
 | 84 | Vietnam |
 | 86 | China |
-| 90 | Turkey |
+| 90 | Türkiye |
 | 91 | India |
 | 92 | Pakistan |
 | 93 | Afghanistan |
@@ -220,8 +220,8 @@ For SMS and Voice verification, the following region codes require an opt-in. Th
 | 691 | Federated States of Micronesia |
 | 692 | Marshall Islands |
 | 850 | North Korea |
-| 852 | Hong Kong |
-| 853 | Macau |
+| 852 | Hong Kong SAR|
+| 853 | Macao SAR |
 | 855 | Cambodia |
 | 856 | Laos |
 | 880 | Bangladesh |
