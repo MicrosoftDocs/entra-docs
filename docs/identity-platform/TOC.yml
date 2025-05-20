@@ -803,7 +803,7 @@
                 - name: Accounts and tenant profiles
                   href: accounts-overview.md
                 - name: Single- and multi-account public client apps
-                  href: single-multi-account.md
+                  href: /entra/msal/android/single-multi-account
             - name: Logging and error handling
               items:
                 - name: Logging in MSAL for Android
