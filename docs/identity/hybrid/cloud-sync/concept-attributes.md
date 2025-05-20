@@ -53,11 +53,11 @@ The following table lists common attributes and how they're synchronized to Micr
 
 |On-premises Active Directory|Mapping type|Microsoft Entra ID|
 |-----|-----|-----|
-|cn|Direct|commonName
+|cn|Direct|commonName|
 |countryCode|Direct|countryCode|
 |displayName|Direct|displayName|
 |givenName|Expression|givenName|
-|objectGUID|Direct|sourceAnchorBinary|	
+|objectGUID|Direct|sourceAnchorBinary|
 |userPrincipalName|Direct|userPrincipalName|
 |proxyAddress|Direct|ProxyAddress|
 

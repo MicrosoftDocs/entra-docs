@@ -31,6 +31,6 @@ For a great overview of cloud sync group provisioning to Active directory and wh
 
 
 ## Next Steps
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Group provisioning to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync migration](migrate-group-writeback.md)
