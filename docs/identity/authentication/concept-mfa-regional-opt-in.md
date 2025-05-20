@@ -20,7 +20,7 @@ ms.custom: references_regions
 As a protection for our customers, Microsoft doesn't automatically support telephony verification for certain region codes. If you want to receive traffic from phone numbers with these region codes, a Microsoft Entra administrator must submit a support ticket and request to opt in.  
 
 B2C tenants can follow the guidelines in [B2C service limits](/azure/active-directory-b2c/service-limits).
-Microsoft Entra External ID tenants acn follow the guidelines in [How to region code opt-in](/azure/external-id/customers/how-to-region-code-opt-in).
+Microsoft Entra External ID tenants acn follow the guidelines in [How to region code opt-in](/entra/external-id/customers/how-to-region-code-opt-in).
 
 ## Why this protection is needed  
 
