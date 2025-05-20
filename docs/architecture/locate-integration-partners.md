@@ -6,7 +6,7 @@ ms.author: gasinh
 manager: martinco
 ms.service: entra
 ms.topic: conceptual
-ms.date: 05/13/2025
+ms.date: 05/20/2025
 ms.reviewer: cammart
 
 #CustomerIntent: I want to get help from partner with expertise in planning and deploying Microsoft Entra scenarios. 
@@ -21,7 +21,7 @@ Partners can help your organization with planning and deployment of [Microsoft E
 * [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 * [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md)
 
-Customers can engage partners in the [Microsoft Solution Partner finder](https://partner.microsoft.com/partnership/find-a-partner), or select from the services partners in the following table. Identify partners to contact and learn more about. Descriptions and links are partner provided. 
+Customers can engage partners in the [Microsoft Solution Partner finder](https://partner.microsoft.com/partnership/find-a-partner), or select from the services partners in the following table. Identify partners to contact and learn more about their services. Descriptions and links are partner provided. 
 
 |Partner|Description|
 |---|---|
@@ -45,6 +45,7 @@ Customers can engage partners in the [Microsoft Solution Partner finder](https:/
 |[Japan Business System, Inc.](https://blog.jbs.co.jp/archive/category/Microsoft%20Entra%20ID)|JBS has extensive integration experience and expertise in Microsoft Entra and Microsoft 365, and provides one-stop services across all phases, from initial planning and validation to implementation, deployment, and operational support. Their strong partnership with Microsoft further strengthens their ability to deliver comprehensive solutions. |
 |[Kloudynet](https://www.kloudynet.com/services/identity-security/)|Kloudynet delivers Zero Trust-aligned Converged Identity solutions on the Microsoft Entra Suite. Our KloudIdentity platform accelerates app onboarding, enables user reconciliation, and supports Linux, SQL, and AS400, with enterprise resource planning (ERP) integrations on the roadmap. As a Microsoft Intelligent Security Association (MISA) member, we bring deep identity expertise, and faster time-to-value than traditional identity governance and administration (IGA) implementations. |
 |[Kocho Group](https://kocho.co.uk/solutions/identity-governance/)|Kocho uses the Microsoft Entra Suite, including Microsoft Entra ID Governance, Microsoft Entra Verified ID, and Microsoft Entra Private Access, to provide tailored assessments and services. We helped UK organizations, across many industries modernize identity management, secure access, and reduce operational complexity through automated user lifecycle processes and privileged account management. We can start you on your journey with a free-of-charge Vision Call, led by one of our Identity Architects. |
+|[KPMG](https://kpmg.com/us/en/capabilities-services/advisory-services/cyber-security-services.html)|KPMG's offering with the Microsoft Entra Suite is built on our award winning, proprietary Powered Enterprise methodology and accelerators. With this approach, our clients supercharge their transformation initiatives and enable seamless, standards-based, and scalable deployments with Zero Trust architecture at its core.|
 |[MajorKey Technologies](https://www.majorkeytech.com/microsoft-entra-id-partner)|MajorKey, a Microsoft Elite Partner, accelerates identity and access management transformation with the Microsoft Entra AI-driven, cloud-native platform. We help clients move beyond stalled, partially deployed systems by rapidly implementing unified identity and access management (IAM) strategies. We seamlessly integrate advanced security features, and eliminate costly legacy inefficiencies, while future-proofing identity security programs with Zero Trust principles. |
 |[MSP Corp](https://mspcorp.ca/technologies/microsoft-entra-consulting-services/)|MSP Corp offers Microsoft Entra Suite solutions that enhance security, streamline identity management, and ensure integration. Our expert team can help deploy Microsoft Entra Private Access, replacing virtual private networks (VPNs), and Face Check with Microsoft Entra Verified ID, enabling users to verify identity through facial recognition against a digital credential, ensuring secure access. |
 |[Objektkultur Software GmbH](https://objektkultur.de/technologie/microsoft-entra/)|As a long-standing Microsoft partner, Objektkultur digitizes business processes through consulting, development, and operations of innovative IT solutions. With deep knowledge of identity and access management (IAM) and application integration in Microsoft technologies, we help organizations manage digital identities securely and access across hybrid and multicloud environments. By using the Microsoft Entra Suite, we enable enterprises to strengthen Zero Trust strategies, ensure least-privilege access, and implement scalable identity governance. |
