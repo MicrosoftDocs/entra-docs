@@ -26,6 +26,7 @@ Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides y
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Palo Alto Networks Captive Portal single sign-on (SSO)-enabled subscription.
 

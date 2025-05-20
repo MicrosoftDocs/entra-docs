@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Mind Tools Toolkit with Microsoft E
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Mind Tools Toolkit subscription with single sign-on (SSO) enabled.
 

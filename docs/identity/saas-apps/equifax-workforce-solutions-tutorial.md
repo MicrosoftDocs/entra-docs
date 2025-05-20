@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Equifax Workforce Solutions with Mi
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Equifax Workforce Solutions single sign-on (SSO) enabled subscription.
 

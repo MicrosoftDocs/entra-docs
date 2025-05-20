@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Sauce Labs - Mobile and Web Testing
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Sauce Labs - Mobile and Web Testing single sign-on enabled subscription.
 

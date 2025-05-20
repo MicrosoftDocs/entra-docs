@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Palo Alto Networks Cloud Identity E
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service single sign-on (SSO) enabled subscription.
 

@@ -24,6 +24,7 @@ In this article,  you learn how to setup a Microsoft Entra SAML integration with
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A [GitHub Enterprise Account](https://docs.github.com/en/enterprise-cloud@latest/admin/overview/about-enterprise-accounts).
 * A GitHub user account that's an Enterprise Account owner. 

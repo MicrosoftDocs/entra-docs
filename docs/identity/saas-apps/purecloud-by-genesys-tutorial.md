@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Genesys Cloud for Azure with Micros
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Genesys Cloud for Azure single sign-on (SSO)–enabled subscription.
 

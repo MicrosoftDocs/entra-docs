@@ -25,6 +25,7 @@ In this article,  you learn how to integrate TeamViewer with Microsoft Entra ID.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * TeamViewer single sign-on (SSO) enabled subscription.
 

@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Wandera RADAR Admin with Microsoft 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Wandera RADAR Admin single sign-on (SSO) enabled subscription.
 

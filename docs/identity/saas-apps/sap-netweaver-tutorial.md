@@ -26,6 +26,7 @@ In this article,  you learn how to integrate SAP NetWeaver with Microsoft Entra 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAP NetWeaver single sign-on (SSO) enabled subscription.
 * SAP NetWeaver V7.20 or later

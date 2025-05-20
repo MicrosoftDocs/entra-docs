@@ -28,6 +28,7 @@ In this article,  you learn how to integrate Cirrus Identity Bridge for Microsof
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Cirrus Identity Bridge for Microsoft Entra single sign-on (SSO) enabled subscription. If you aren't already a subscriber, please visit the [Cirrus Identity Microsoft Entra ID Bridge Registration Page](https://info.cirrusidentity.com/cirrus-identity-azure-ad-app-gallery-registration).
 

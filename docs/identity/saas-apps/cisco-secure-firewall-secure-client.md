@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Cisco Secure Firewall - Secure Clie
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Cisco Secure Firewall - Secure Client single sign-on (SSO) enabled subscription.
 

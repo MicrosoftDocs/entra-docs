@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Palo Alto Networks - GlobalProtect 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Palo Alto Networks - GlobalProtect single sign-on (SSO) enabled subscription.
 
