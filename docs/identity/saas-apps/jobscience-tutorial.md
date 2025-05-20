@@ -27,6 +27,7 @@ If you want to know more details about SaaS app integration with Microsoft Entra
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A Jobscience single sign-on enabled subscription
 

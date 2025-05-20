@@ -26,6 +26,7 @@ In this article,  you learn how to integrate MiHCM with Microsoft Entra ID. When
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * MiHCM single sign-on (SSO) enabled subscription.
 

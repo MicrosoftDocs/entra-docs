@@ -25,6 +25,7 @@ In this article,  you learn how to integrate SecureW2 JoinNow Connector with Mic
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SecureW2 JoinNow Connector single sign-on (SSO) enabled subscription.
 

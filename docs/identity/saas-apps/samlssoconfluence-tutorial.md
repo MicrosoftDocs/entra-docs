@@ -24,6 +24,7 @@ In this article,  you learn how to integrate SAML SSO for Confluence by resoluti
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAML SSO for Confluence by resolution GmbH single sign-on (SSO) enabled subscription.
 

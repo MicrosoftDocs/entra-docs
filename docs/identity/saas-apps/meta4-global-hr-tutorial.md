@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Meta4 Global HR with Microsoft Entr
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Meta4 Global HR single sign-on enabled subscription.
 

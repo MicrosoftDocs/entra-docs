@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Papirfly SSO with Microsoft Entra I
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Papirfly SSO single sign-on (SSO) enabled subscription.
 

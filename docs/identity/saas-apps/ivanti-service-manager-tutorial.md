@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Ivanti Service Manager (ISM) with M
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Ivanti Service Manager (ISM) single sign-on (SSO) enabled subscription.
 

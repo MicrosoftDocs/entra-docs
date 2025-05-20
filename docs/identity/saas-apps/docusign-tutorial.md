@@ -25,6 +25,7 @@ In this article,  you learn how to integrate DocuSign with Microsoft Entra ID. W
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A DocuSign subscription that's single sign-on (SSO) enabled.
 * Control over your domain DNS. This is needed to claim domain on DocuSign. 

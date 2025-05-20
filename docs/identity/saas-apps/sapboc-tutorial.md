@@ -24,6 +24,7 @@ In this article,  you learn how to integrate SAP Analytics Cloud with Microsoft 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAP Analytics Cloud single sign-on (SSO) enabled subscription.
 

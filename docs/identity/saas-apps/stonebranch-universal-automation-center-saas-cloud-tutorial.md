@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Stonebranch Universal Automation Ce
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Stonebranch Universal Automation Center (SaaS Cloud) single sign-on (SSO) enabled subscription.
 

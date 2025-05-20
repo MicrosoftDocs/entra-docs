@@ -26,6 +26,7 @@ In this article,  you learn how to integrate HPE Aruba Networking EdgeConnect Gl
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HPE Aruba Networking EdgeConnect Global Enterprise version:
     -	9.0.6 or newer.

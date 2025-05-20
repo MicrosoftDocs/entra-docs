@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Perforce Helix Core - Helix Authent
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Perforce Helix Core - Helix Authentication Service single sign-on (SSO) enabled subscription.
 

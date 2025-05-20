@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Workteam with Microsoft Entra ID. W
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Workteam single sign-on (SSO) enabled subscription.
 

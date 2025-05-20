@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Steeple SAML with Microsoft Entra I
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Steeple SAML single sign-on (SSO) enabled subscription.
 
