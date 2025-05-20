@@ -7,8 +7,8 @@ description: Microsoft Entra External ID allows you to collaborate with or publi
 ms.service: entra-external-id
 ms.topic: overview
 ms.date: 09/06/2024
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management

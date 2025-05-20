@@ -6,9 +6,8 @@ description: Learn about the pricing structure for Microsoft Entra External ID. 
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 05/19/2025
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
  
 ms.collection: M365-identity-device-management
