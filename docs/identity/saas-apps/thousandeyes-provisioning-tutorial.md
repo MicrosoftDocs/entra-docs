@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: User provisioning for ThousandEyes'
+title: User provisioning for ThousandEyes
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to ThousandEyes.
 
 author: thomasakelo
@@ -7,22 +7,22 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 05/20/2025
 ms.author: arvinh
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ThousandEyes so that I can streamline the user management process and ensure that users have the appropriate access to ThousandEyes.
 ---
 
-# Tutorial: Configure ThousandEyes for automatic user provisioning
+# Configure ThousandEyes for automatic user provisioning
 
-The objective of this tutorial is to show you the steps you need to perform in ThousandEyes and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to ThousandEyes. 
+The objective of this article is to show you the steps you need to perform in ThousandEyes and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to ThousandEyes. 
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A ThousandEyes tenant with the [Standard plan](https://www.thousandeyes.com/pricing) or better enabled 
 * A user account in ThousandEyes with Admin permissions 
 
@@ -55,7 +55,7 @@ This section guides you through connecting your Microsoft Entra ID to ThousandEy
 ### Configure automatic user account provisioning to ThousandEyes in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -82,7 +82,7 @@ This section guides you through connecting your Microsoft Entra ID to ThousandEy
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-8. Click **Save**.
+8. Select **Save**.
 
 9. Under the Mappings section, select **Synchronize Microsoft Entra users to ThousandEyes**.
 
@@ -98,7 +98,7 @@ This section guides you through connecting your Microsoft Entra ID to ThousandEy
   	 |name.formatted|String|
 
 
-11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 12. To enable the Microsoft Entra provisioning service for ThousandEyes, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -108,7 +108,7 @@ This section guides you through connecting your Microsoft Entra ID to ThousandEy
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you're ready to provision, click **Save**.
+14. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -118,7 +118,7 @@ This operation starts the initial synchronization cycle of all users and groups 
 Once you've configured provisioning, use the following resources to monitor your deployment:
 
 1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
+2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
 3. If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## Additional resources
@@ -126,6 +126,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

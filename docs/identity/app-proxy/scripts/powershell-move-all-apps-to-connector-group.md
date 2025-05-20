@@ -2,12 +2,12 @@
 title: PowerShell sample - Move Microsoft Entra application proxy apps to another group
 description: Microsoft Entra application proxy PowerShell example used to move all applications currently assigned to a connector group to a different connector group.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom:
 ms.topic: sample
-ms.date: 02/27/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---

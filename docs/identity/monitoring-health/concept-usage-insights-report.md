@@ -2,11 +2,11 @@
 title: Usage and insights report
 description: Learn about the information you can explore using the Usage and insights report in Microsoft Entra ID.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 05/06/2025
 ms.author: sarahlipsey
 ms.reviewer: madansr7
 
@@ -37,7 +37,7 @@ You can access the Usage and insights reports from the Azure portal and using Mi
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage & insights**.
 
 The **Usage & insights** reports are also available from the **Enterprise applications** area of Microsoft Entra ID. All users can access their own sign-ins at the [My Sign-Ins portal](https://mysignins.microsoft.com/security-info).
 
@@ -67,6 +67,8 @@ To view the details of the sign-in activity for an application, select the **Vie
 The sign-in activity graph uses interactive user sign-ins. Select a day in the application usage graph to see a detailed list of the sign-in activities for the application. This detailed list is actually the sign-in log with the filter set to the selected application and date. The details of any sign-in failures appear below the table.
 
 ![Screenshot of the sign-in activity details for a selected application.](./media/concept-usage-insights-report/application-activity-sign-in-detail.png)
+
+This report now includes applications owned by Microsoft Services that are instantiated in customer tenants. These applications can be involved in service-to-service authentications. When you select the applications from the **Usage and insights** report, the results say "Not found" because the application is not owned by your tenant, but is only instantiated in your tenant. To see the sign-in activity for these applications, select the **View sign-in activity** link. 
 
 ### Application activity using Microsoft Graph
 

@@ -24,7 +24,9 @@ items:
     - name: Govern and monitor
       href: tutorial-govern-monitor.md
     - name: Manage certificates
-      href: tutorial-manage-certificates-for-federated-single-sign-on.md 
+      href: tutorial-manage-certificates-for-federated-single-sign-on.md
+    - name: Enforce app secrets standards
+      href: tutorial-enforce-secret-standards.md
   - name: Samples
     items: 
     - name: Overview of App Management samples
@@ -129,6 +131,8 @@ items:
       items:
       - name: Enable Single sign-on with SAML
         href: add-application-portal-setup-sso.md
+      - name: Enable Single sign-on with a relying party STS
+        href: add-application-portal-setup-sso-rpsts.md
       - name: Enable Linked single sign-on
         href: configure-linked-sign-on.md
       - name: Enable OpenID Connect based single sign-on

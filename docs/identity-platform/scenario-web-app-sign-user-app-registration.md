@@ -1,19 +1,19 @@
 ---
 title: Register a web app that signs in users
-description: Learn how to register a web app that signs in users
+description: Learn how to register a web app that signs in users using the Microsoft identity platform with step-by-step guidance for various frameworks.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
-ms.date: 03/25/2024
+ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 
 # Web app that signs in users: App registration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 This article explains the app registration steps for a web app that signs in users.
 
@@ -37,7 +37,7 @@ You can use the following link to bootstrap the creation of your web application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
+1. Browse to **Entra ID** > **App registrations**, select **New registration**.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
@@ -174,7 +174,7 @@ $webAppServicePrincipal = New-MgServicePrincipal -AppId $currentAppId -Tags {Win
 $owner = Get-MgApplicationOwner -ApplicationId $currentAppObjectId
 if ($owner -eq $null)
 {
-   New-MgApplicationOwnerByRef -ApplicationId $currentAppObjectId  -BodyParameter = @{"@odata.id" = "htps://graph.microsoft.com/v1.0/directoryObjects/$user.ObjectId"}
+   New-MgApplicationOwnerByRef -ApplicationId $currentAppObjectId  -BodyParameter = @{"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/$user.ObjectId"}
    Write-Host "'$($user.UserPrincipalName)' added as an application owner to app '$($webAppServicePrincipal.DisplayName)'"
 }
 Write-Host "Done creating the webApp application (WebApp)"

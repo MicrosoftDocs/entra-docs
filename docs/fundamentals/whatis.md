@@ -1,17 +1,16 @@
 ---
 title: What is Microsoft Entra ID?
-description: Learn about Microsoft Entra ID, including terminology, available licenses, and a list of associated features.
+description: Learn about Microsoft Entra ID, including terminology, available licenses,
+  and a list of associated features.
 author: barclayn
-manager: amycolannino
-
+manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 12/19/2024
+ms.date: 03/05/2025
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-# Customer intent: As a new administrator, I want to understand what Microsoft Entra ID is, which license is right for me, and what features are available.
 ---
 
 # What is Microsoft Entra ID?
@@ -88,7 +87,7 @@ After you choose your Microsoft Entra ID license, you'll get access to some or a
 |Managed identities for Azure resources|Provide your Azure services with an automatically managed identity in Microsoft Entra ID that can authenticate any Microsoft Entra-supported authentication service, including Key Vault. For more information, see [What is managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).|
 |Privileged identity management (PIM)|Manage, control, and monitor access within your organization. This feature includes access to resources in Microsoft Entra ID and Azure, and other Microsoft Online Services, like Microsoft 365 or Intune. For more information, see [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).|
 |Monitoring and health|Gain insights into the security and usage patterns in your environment. For more information, see [Microsoft Entra monitoring and health](~/identity/monitoring-health/index.yml).|
-| Workload identities| Give an identity to your software workload (such as an application, service, script, or container) to authenticate and access other services and resources. For more information, see [workload identities faqs](~/workload-id/workload-identities-faqs.md).
+|Workload identities| Give an identity to your software workload (such as an application, service, script, or container) to authenticate and access other services and resources. For more information, see [workload identities faqs](~/workload-id/workload-identities-faqs.md).|
 
 ## Terminology
 

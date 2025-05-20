@@ -3,11 +3,11 @@ title: 'Get started integrating with Microsoft Entra ID'
 description: This article describes the steps required to integrate with Active Directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid
 ms.author: billmath
 

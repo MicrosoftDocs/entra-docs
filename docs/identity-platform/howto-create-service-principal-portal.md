@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: subject-rbac-steps, devx-track-arm-template
-ms.date: 05/28/2024
+ms.date: 05/14/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -32,10 +32,9 @@ To register an application in your Microsoft Entra tenant, you need:
 
 ## Register an application with Microsoft Entra ID and create a service principal
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **App registrations** then select **New registration**.
-1. Name the application, for example *example-app*. 
+1. Browse to **Entra ID** > **App registrations** then select **New registration**.
+1. Give the application a name, such as *example-app*. 
 1. Under **Supported account types**, select _Accounts in this organizational directory only_. 
 1. Under **Redirect URI**, select **Web** for the type of application you want to create. Enter the URI where the access token is sent to.
 1. Select **Register**.
@@ -52,8 +51,7 @@ You can set the scope at the level of the subscription, resource group, or resou
 1. Select the level of scope you wish to assign the application to. For example, to assign a role at the subscription scope, search for and select **Subscriptions**. If you don't see the subscription you're looking for, select **global subscriptions filter**. Make sure the subscription you want is selected for the tenant.
 1. Select **Access control (IAM)**.
 1. Select **Add**, then select **Add role assignment**.
-1. In the **Role** tab, select the role you wish to assign to the application in the list.
-1. Select **Next**.
+1. In the **Role** tab, select the role you wish to assign to the application in the list, then select **Next**.
 1. On the **Members** tab, for **Assign access to**, select **User, group, or service principal**.
 1. Select **Select members**. By default, Microsoft Entra applications aren't displayed in the available options. To find your application, search for it by name. 
 1. Select the **Select** button, then select **Review + assign**.
@@ -69,7 +67,7 @@ The next section shows how to get values that are needed when signing in program
 When programmatically signing in, you pass the directory (tenant) ID and the application (client) ID in your authentication request. You also need a certificate or an authentication key. To obtain the directory ID and application ID:
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) **Home** page.
-1. Browse to **Identity** > **Applications** > **App registrations**, then select your application.
+1. Browse to **Entra ID** > **App registrations**, then select your application.
 1. On the app's overview page, copy the Directory (tenant) ID value and store it in your application code.
 1. Copy the Application (client) ID value and store it in your application code.
 
@@ -81,7 +79,7 @@ There are two types of authentication available for service principals: password
 
 To upload the certificate file:
 
-1. Browse to **Identity** > **Applications** > **App registrations**, then select your application.
+1. Browse to **Entra ID** > **App registrations**, then select your application.
 1. Select **Certificates & secrets**.
 1. Select **Certificates**, then select **Upload certificate** and then select the certificate file to upload.
 1. Select **Add**. Once the certificate is uploaded, the thumbprint, start date, and expiration values are displayed.
@@ -105,7 +103,7 @@ Export this certificate to a file using the [Manage User Certificate](/dotnet/fr
 
 To upload the certificate:
 
-1. Browse to **Identity** > **Applications** > **App registrations**, then select your application.
+1. Browse to **Entra ID** > **App registrations**, then select your application.
 1. Select **Certificates & secrets**.
 1. Select **Certificates**, then select **Upload certificate** and then select the certificate (an existing certificate or the self-signed certificate you exported).
 1. Select **Add**.
@@ -116,7 +114,7 @@ After registering the certificate with your application in the application regis
 
 If you choose not to use a certificate, you can create a new client secret.
 
-1. Browse to **Identity** > **Applications** > **App registrations**, then select your application.
+1. Browse to **Entra ID** > **App registrations**, then select your application.
 1. Select **Certificates & secrets**.
 1. Select **Client secrets**, and then select **New client secret**.
 1. Provide a description of the secret, and a duration.

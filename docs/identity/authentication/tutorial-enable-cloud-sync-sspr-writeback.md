@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra self-serv
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/16/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
@@ -45,7 +45,7 @@ With password writeback enabled in Microsoft Entra Connect cloud sync, now verif
 
 To verify and enable password writeback in SSPR, complete the following steps: 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Protection** > **Password reset**, then choose **On-premises integration**.
+1. Browse to **Entra ID** > **Password reset**, then choose **On-premises integration**.
 1. Check the option for **Enable password write back for synced users**.
 1. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Connect cloud sync**.   
 3. Check the option for **Allow users to unlock accounts without resetting their password** to *Yes*.
@@ -67,7 +67,7 @@ Set-AADCloudSyncPasswordWritebackConfiguration -Enable $true -Credential $(Get-C
 If you no longer want to use the SSPR writeback functionality you configured as part of this tutorial, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Protection** > **Password reset**, then choose **On-premises integration**.
+1. Browse to **Entra ID** > **Password reset**, then choose **On-premises integration**.
 1. Uncheck the option for **Enable password write back for synced users**.
 1. Uncheck the option for **Write back passwords with Microsoft Entra Connect cloud sync**.
 1. Uncheck the option for **Allow users to unlock accounts without resetting their password**.
@@ -76,7 +76,7 @@ If you no longer want to use the SSPR writeback functionality you configured as 
 If you no longer want to use the Microsoft Entra Connect cloud sync for SSPR writeback functionality but want to continue using Microsoft Entra Connect Sync agent for writebacks complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Protection** > **Password reset**, then choose **On-premises integration**.
+1. Browse to **Entra ID** > **Password reset**, then choose **On-premises integration**.
 1. Uncheck the option for **Write back passwords with Microsoft Entra Connect cloud sync**.
 1. When ready, select **Save**.
 

@@ -5,11 +5,11 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 02/07/2025
+ms.date: 03/13/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: 
 ---
 # Configure Microsoft Entra for increased security (Preview)
@@ -35,6 +35,14 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21781](../includes/secure-recommendations/21781.md)]
 
+### All privileged role assignments are activated just in time and not permanently active
+
+[!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
+
+### Permissions to create new tenants are limited to the Tenant Creator role
+
+[!INCLUDE [21787](../includes/secure-recommendations/21787.md)]
+
 ## Credential management
 
 ### Users have strong authentication methods configured
@@ -50,6 +58,22 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods 
 
 [!INCLUDE [21783](../includes/secure-recommendations/21783.md)]
+
+### Restrict access to high risk users
+
+[!INCLUDE [21797](../includes/secure-recommendations/21797.md)]
+
+### Restrict device code flow
+
+[!INCLUDE [21808](../includes/secure-recommendations/21808.md)]
+
+### Require multifactor authentication for device join and device registration using user action
+
+[!INCLUDE [21872](../includes/secure-recommendations/21872.md)]
+
+### Use cloud authentication
+
+[!INCLUDE [21829](../includes/secure-recommendations/21829.md)]
 
 ## Application management
 
@@ -69,9 +93,25 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21773](../includes/secure-recommendations/21773.md)]
 
+### Application Certificates need to be rotated on a regular basis
+
+[!INCLUDE [21992](../includes/secure-recommendations/21992.md)]
+
 ### Creating new applications and service principles is restricted to privileged users 
 
 [!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
+
+### App registrations use safe redirect URIs
+
+[!INCLUDE [21885](../includes/secure-recommendations/21885.md)]
+
+### Service principals use safe redirect URIs
+
+[!INCLUDE [23183](../includes/secure-recommendations/23183.md)]
+
+### Admin consent workflow is enabled
+
+[!INCLUDE [21809](../includes/secure-recommendations/21809.md)]
 
 ## External collaboration
 
@@ -100,6 +140,28 @@ We recommend that all of the following controls be implemented where licenses ar
 ### All user sign-in activity uses strong authentication methods 
 
 [!INCLUDE [21800](../includes/secure-recommendations/21800.md)]
+
+### All high-risk users are triaged
+
+[!INCLUDE [21861](../includes/secure-recommendations/21861.md)]
+
+### All high-risk sign-ins are triaged
+
+[!INCLUDE [21863](../includes/secure-recommendations/21863.md)]
+
+### High priority Entra recommendations are addressed
+
+[!INCLUDE [22124](../includes/secure-recommendations/22124.md)]
+
+### All Microsoft Entra recommendations are addressed
+
+[!INCLUDE [21866](../includes/secure-recommendations/21866.md)]
+
+## Free security features
+
+### Enable Microsoft Entra ID security defaults
+
+[!INCLUDE [21871](../includes/secure-recommendations/21871.md)]
 
 ## Related content
 

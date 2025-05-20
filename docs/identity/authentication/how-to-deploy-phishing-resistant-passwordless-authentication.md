@@ -5,11 +5,11 @@ description: Detailed guidance to deploy passwordless and phishing-resistant aut
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: mepples21
-manager: amycolannino
+manager: femila
 ms.reviewer: miepping
 
 ms.collection: M365-identity-device-management
@@ -230,7 +230,7 @@ Similarly, use the enrollment readiness report to assist you in building out lis
 
 #### Enforcement readiness phase
 
-The first step of the enforcement readiness phase is creating a conditional access policy in Report-Only mode. This policy will populate your sign-in logs with data regarding whether or not access would have been blocked if you were to put users/devices in scope for phishing-resistant enforcement. Create a new conditional access policy in your tenant with these settings:
+The first step of the enforcement readiness phase is creating a Conditional Access policy in Report-Only mode. This policy will populate your sign-in logs with data regarding whether or not access would have been blocked if you were to put users/devices in scope for phishing-resistant enforcement. Create a new Conditional Access policy in your tenant with these settings:
 
 Setting | Value
 ------- | -----
@@ -241,19 +241,19 @@ Enable policy | Report-only
 
 Create this policy as early as possible in your rollout, preferably before even beginning your enrollment campaigns. This will ensure that you have a good historical dataset of which users and sign-ins would have been blocked by the policy if it was enforced.
 
-Next, use the workbook to analyze where user/device pairs are ready for enforcement. Download lists of users who are ready for enforcement and add them to groups created in alignment with your [enforcement policies](#recommended-enforcement-conditional-access-policies). Begin by selecting the read-only conditional access policy in the policy filter:
+Next, use the workbook to analyze where user/device pairs are ready for enforcement. Download lists of users who are ready for enforcement and add them to groups created in alignment with your [enforcement policies](#recommended-enforcement-conditional-access-policies). Begin by selecting the read-only Conditional Access policy in the policy filter:
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook with a report-only conditional access policy selected." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook with a report-only Conditional Access policy selected." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png":::
 
 The report will provide you with a list of users who would have been able to successfully pass the phishing-resistant passwordless requirement on each device platform. Download each list and put the appropriate users in enforcement group that aligns to the device platform.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-user-lists-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's list of users ready for enforcement." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-user-lists-1.png":::
 
-Repeat this process over time, until you reach the point where each enforcement group contains most or all users. Eventually, you should be able to enable the report-only policy to provide enforcement for all users and device platforms in the tenant. Once you have reached this completed state you can remove the individual enforcement policies for each device OS, reducing the number of conditional access policies needed.
+Repeat this process over time, until you reach the point where each enforcement group contains most or all users. Eventually, you should be able to enable the report-only policy to provide enforcement for all users and device platforms in the tenant. Once you have reached this completed state you can remove the individual enforcement policies for each device OS, reducing the number of Conditional Access policies needed.
 
 ##### Investigating users not ready for enforcement
 
-Use the ***Further Data Analysis*** tab to investigate why certain users are not ready for enforcement on various platforms. Select the ***Policy Not Satisfied*** box to filter the data down to user sign-ins that would have been blocked by the report-only conditional access policy.
+Use the ***Further Data Analysis*** tab to investigate why certain users are not ready for enforcement on various platforms. Select the ***Policy Not Satisfied*** box to filter the data down to user sign-ins that would have been blocked by the report-only Conditional Access policy.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's further data analysis tab." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png":::
 
@@ -365,7 +365,7 @@ Then move on to other scenarios where the user/device pairs require readiness ef
 
 Create a set of Microsoft Entra ID groups to roll out enforcement gradually. Reuse the groups from the [previous step](#monitor-help-desk-ticket-volume) if you used the wave-based rollout approach.
 
-### Recommended enforcement conditional access policies
+### Recommended enforcement Conditional Access policies
 
 Target each group with a specific Conditional Access policy. This approach helps you roll out your enforcement controls gradually by user/device pair.
 
@@ -398,7 +398,7 @@ Microsoft recommends that Microsoft Entra ID Protection customers take the follo
 1. Review the Microsoft Entra ID Protection deployment guidance: [Plan an ID Protection deployment](~/id-protection/how-to-deploy-identity-protection.md)
 1. Configure your risk logs to export to a SIEM
 1. Investigate and act on any medium **user** risk
-1. Configure a conditional access policy to block high risk **users**
+1. Configure a Conditional Access policy to block high risk **users**
 
 After you deploy Microsoft Entra ID Protection, consider using [Conditional Access token protection](~/identity/conditional-access/concept-token-protection.md). As users sign in with phishing-resistant passwordless credentials, attacks and detections continue to evolve. For example, when user credentials can no longer be easily phished, attackers may move on to try to exfiltrate tokens from user devices. Token protection helps mitigate this risk by binding tokens to the hardware of the device they were issued to.
 
@@ -406,3 +406,4 @@ After you deploy Microsoft Entra ID Protection, consider using [Conditional Acce
 
 [Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-persona-phishing-resistant-passwordless-authentication.md)
 
+[Considerations for Remote Desktop Connections in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-rdp-phishing-resistant-passwordless-authentication.md)

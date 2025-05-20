@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Determine your security posture for external access with Microsoft Entra ID
@@ -30,7 +30,7 @@ IT teams can delegate partner access to empower employees to collaborate with pa
 
 Compile and assess your organizations scenarios to help assess employee versus business partner access to resources. Financial institutions might have compliance standards that restrict employee access to resources such as account information. Conversely, the same institutions can enable delegated partner access for projects such as marketing campaigns.
 
-   ![Diagram of a balance of IT team goverened access to partner self-service.](media/secure-external-access/1-scenarios.png)
+   ![Diagram of a balance of IT team governed access to partner self-service.](media/secure-external-access/1-scenarios.png)
 
 ### Scenario considerations
 

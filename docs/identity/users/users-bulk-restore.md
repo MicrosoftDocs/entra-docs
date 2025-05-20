@@ -4,7 +4,7 @@ description: Restore deleted users in bulk in the Azure portal in Microsoft Entr
 
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
+manager: femila
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
@@ -43,7 +43,7 @@ The rows in a downloaded CSV template are as follows:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
-1. Select **All users**  > **Users** > **Deleted**.
+1. Select **All users **Users** > **Deleted**.
 1. On the **Deleted users** page, select **Bulk restore** to upload a valid CSV file of properties of the users to restore.
 
    :::image type="content" source="./media/users-bulk-restore/bulk-restore.png" alt-text="Screenshot of selecting the bulk restore command on the Deleted users page.":::

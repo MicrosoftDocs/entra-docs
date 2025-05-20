@@ -2,15 +2,18 @@
 title: View and configure settings for data collection
 description: How to view and configure settings for collecting data from your authorization system.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # View and configure settings for data collection
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 You can use the **Data Collectors** dashboard in Permissions Management to view and configure settings for collecting data from your authorization systems. It also provides information about the status of the data collection.
 

@@ -1,19 +1,17 @@
 ### YamlMime:HowTo
----
 metadata:
   title: How to manage user profile information in the Microsoft Entra admin center
   description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
   author: barclayn
   ms.author: barclayn
-  manager: amycolannino
+  manager: femila
   ms.reviewer: jeffsta
-  ms.date: 01/29/2025
+  ms.date: 03/25/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
-
 # Customer intent: As an IT admin, I need to understand the information contained in the user profile and settings so that I can properly create and manage users in my organization.
 
 title: |
@@ -44,9 +42,9 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |
-        Browse to **Identity** > **Users** > **All users**.
+        Browse to **Entra ID** > **Users**.
 
-        :::image type="content" source="media/how-to-manage-user-profile-info/all-users-page.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
+        :::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
       - |
         Select a user.
       - |
@@ -152,7 +150,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
       - |
-        Browse to **Identity** > **Users** > **User settings**.
+        Browse to **Entra ID** > **Users** > **User settings**.
 
         :::image type="content" source="media/how-to-manage-user-profile-info/user-settings.png" alt-text="Screenshot of the Microsoft Entra user settings options." lightbox="media/how-to-manage-user-profile-info/user-settings.png":::
  
@@ -181,21 +179,32 @@ procedureSection:
   - title: |
       Edit multiple users at once (preview)
     summary: |
-         This new Microsoft Entra admin center update allows editing certain user attributes in bulk. On the All Users page, you can select up to 60 users at a time and update their attributes at once.
+         This new Microsoft Entra admin center update allows editing certain user attributes in bulk. On the All Users page, you can select up to 60 users at a time and update their attributes at once. For information about how to add users in bulk, see [Bulk create users in Microsoft Entra ID](../identity/users/users-bulk-add.md).
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |
-        Browse to **Identity** > **Users** > **User settings**.
+        Browse to **Entra ID** > **Users**.
     
-        :::image type="content" source="media/how-to-manage-user-profile-info/multiple-user-settings.png" alt-text="Screenshot of the Microsoft Entra multiple user settings options." lightbox="media/how-to-manage-user-profile-info/multiple-user-settings.png":::
+        :::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the Microsoft Entra all users settings options." lightbox="media/how-to-manage-user-profile-info/all-users.png":::
      
       - |
         Select the users you want to edit (note: you can edit up to 60 users at a time)
+
+        Select **Edit** from the top of the page.
+
+        :::image type="content" source="media/how-to-manage-user-profile-info/multiple-user-settings.png" alt-text="Screenshot of the multiple user settings options in Microsoft Entra admin center.":::
+        
+      
       - |
         There are two ways to update the users. Either select “Edit” from the top of the page or right click on the selected users. 
+
+
+        :::image type="content" source="media/how-to-manage-user-profile-info/multiple-user-settings-edit.png" alt-text="Screenshot of the multiple user settings edit options in Microsoft Entra admin center.":::
       - |
         Select one of the available user management actions in the drop down to perform on your selected users. 
+
+      
       - |
         If you select the **Edit properties** action, the following properties will be available to edit: 
           - City

@@ -3,11 +3,11 @@ title: What are protected actions in Microsoft Entra ID?
 description: Learn about protected actions in Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: conceptual
 ms.date: 01/31/2025
 ---
@@ -48,14 +48,14 @@ Here's the initial set of permissions:
 > | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
 > | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
 > | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for conditional access policies |
-> | microsoft.directory/conditionalAccessPolicies/create | Create conditional access policies |
-> | microsoft.directory/conditionalAccessPolicies/delete | Delete conditional access policies |
+> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
 > | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update | Update allowed cloud endpoints of the cross-tenant access policy|
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of the default cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy.
-> | microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update | Update tenant restrictions of the default cross-tenant access policy.
+> | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy. |
+> | microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update | Update tenant restrictions of the default cross-tenant access policy. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policy for partners. |
@@ -112,7 +112,6 @@ If an application or service attempts to perform a protection action, it must be
 There are some known and expected limitations. The following applications will fail if they attempt to perform a protected action.
  
 - [Azure PowerShell](/powershell/azure/what-is-azure-powershell?branch=main) 
-- [Azure AD PowerShell](/powershell/azure/active-directory/overview?branch=main)
 - Creating a new [terms of use](~/identity/conditional-access/terms-of-use.md) page or [custom control](~/identity/conditional-access/controls.md) in the Microsoft Entra admin center. New terms of use pages or custom controls are registered with Conditional Access so are subject to Conditional Access create, update, and delete protected actions. Temporarily removing the policy requirement from the Conditional Access create, update, and delete actions will allow the creation of a new terms of use page or custom control.
 
 If your organization has developed an application that calls the Microsoft Graph API to perform a protected action, you should review the code sample for how to handle a claims challenge using step-up authentication. For more information, see [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md).
@@ -139,7 +138,7 @@ Here are some best practices for using protected actions.
 
 ## License requirements
 
-[!INCLUDE [Azure AD Premium P1 license](~/includes/entra-p1-license.md)]
+[!INCLUDE [Microsoft Entra ID Premium P1 license](~/includes/entra-p1-license.md)]
 
 ## Next steps
 
