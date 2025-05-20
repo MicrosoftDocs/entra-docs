@@ -20,6 +20,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| June 2025 | Roles | Added [Organizational Data Source Administrator](permissions-reference.md#organizational-data-source-administrator) role. |
 | May 2025 | Roles | Added [Microsoft Graph Data Connect Administrator](permissions-reference.md#microsoft-graph-data-connect-administrator) role. |
 | March 2025 | Roles | Added [Viva Glint Tenant Administrator](permissions-reference.md#viva-glint-tenant-administrator) role. |
 | March 2025 | Roles | Added [IoT Device Administrator](permissions-reference.md#iot-device-administrator) role. |
