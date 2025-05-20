@@ -8,8 +8,8 @@ ms.custom: no-azure-ad-ps-ref
 ms.topic: concept-article
 ms.date: 05/15/2024
 
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management
