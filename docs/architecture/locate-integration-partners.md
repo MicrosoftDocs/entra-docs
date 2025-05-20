@@ -21,7 +21,7 @@ Partners can help your organization with planning and deployment of [Microsoft E
 * [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 * [Microsoft Entra Verified ID](../verified-id/decentralized-identifier-overview.md)
 
-Customers can engage partners in the [Microsoft Solution Partner finder](https://partner.microsoft.com/partnership/find-a-partner), or select from the services partners in the following table. Identify partners to contact and learn more about their services. Descriptions and links are partner provided. 
+Customers can engage partners in the [Microsoft Solution Partner finder](https://partner.microsoft.com/partnership/find-a-partner), or select from the service partners in the following table. Identify partners to contact and learn more about their services. Descriptions and links are partner provided. 
 
 |Partner|Description|
 |---|---|
