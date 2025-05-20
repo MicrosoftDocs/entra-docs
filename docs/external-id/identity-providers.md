@@ -5,9 +5,8 @@ description: Learn how to use Microsoft Entra ID as your default identity provid
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 04/16/2025
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management

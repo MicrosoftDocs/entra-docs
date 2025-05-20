@@ -5,9 +5,8 @@ description: Add API connectors for custom approval workflows in External ID sel
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/20/2025
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management

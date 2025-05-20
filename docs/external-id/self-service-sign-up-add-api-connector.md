@@ -5,9 +5,8 @@ description: Configure a web API to be used in a user flow.
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/15/2025
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
