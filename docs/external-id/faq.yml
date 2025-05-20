@@ -5,8 +5,8 @@ metadata:
   ms.service: entra-external-id
   ms.topic: faq
   ms.date: 04/24/2024
-  ms.author: cmulligan
-  author: csmulligan
+  ms.author: mimart
+  author: msmimart
   manager: celestedg
   ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
