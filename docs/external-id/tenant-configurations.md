@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: conceptual
-ms.date: 10/21/2024
+ms.date: 05/20/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -49,10 +49,9 @@ You can create external tenants in a couple of ways:
 
 - If you don't already have a Microsoft Entra tenant and want to try out External ID features in an external tenant, we recommend using the get started experience to start a free trial.
 
-When you create a tenant, you can set your correct geographic location and your domain name.
+When you create a tenant,  you can set your correct geographic location and domain name. If you currently use Azure AD B2C, the new workforce and customer tenant model doesn't affect your existing Azure AD B2C tenants.
 
-> [!NOTE]
-> If you currently use Azure AD B2C, the new workforce and customer tenant model doesn't affect your existing Azure AD B2C tenants.
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](./includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ## How workforce and external tenants compare
 
