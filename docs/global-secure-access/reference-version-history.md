@@ -35,7 +35,7 @@ May 20, 2025: Released for download. This version is only available for install 
 
 ### New features and improvements
 
-- The connector now supports routing outbound traffic through a forward proxy, enhancing network control.
+- The connector now supports routing outbound traffic to destination in GSA Private Access through a forward proxy, enhancing network control.
 - A new diagnostics tool to assist with troubleshooting setup issues. 
 - Bug fixes and minor improvements.
 
