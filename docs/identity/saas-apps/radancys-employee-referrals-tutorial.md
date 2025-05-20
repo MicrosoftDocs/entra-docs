@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Radancy's Employee Referrals with M
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Radancy's Employee Referrals single sign-on (SSO) enabled subscription.
 

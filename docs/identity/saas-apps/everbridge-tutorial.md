@@ -26,6 +26,7 @@ When you integrate EverBridge with Microsoft Entra ID, you can:
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An EverBridge subscription that uses single sign-on.
 

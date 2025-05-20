@@ -34,6 +34,7 @@ The solution supports these important components of cloud security:
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Lookout SSE subscription.
 

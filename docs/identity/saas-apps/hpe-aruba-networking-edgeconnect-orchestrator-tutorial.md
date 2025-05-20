@@ -25,6 +25,7 @@ In this article,  you learn how to integrate HPE Aruba Networking EdgeConnect Or
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HPE Aruba Networking EdgeConnect Orchestrator version 9.4.1 or newer.
 

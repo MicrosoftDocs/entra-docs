@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Equinix Federation App with Microso
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Equinix Federation App single sign-on (SSO) enabled subscription.
 

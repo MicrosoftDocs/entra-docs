@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Brocade SANnav Global View with Mic
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SANnav Global View application installed with a valid subscription license.
 

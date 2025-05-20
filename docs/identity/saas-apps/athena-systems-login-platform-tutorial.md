@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Athena Systems Login Platform with 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Athena Systems Login Platform single sign-on (SSO) enabled subscription.
 
