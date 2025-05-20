@@ -79,7 +79,7 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 ### Authentication methods available in Microsoft Entra external ID
 
-Some authentication methods can be used as the primary factor when users sign in to an application, such username and password. Other authentication methods are only available as a secondary factor. The following table outlines when an authentication method can be used during sign-in, self-service sign-up, self-service password reset and  multifactor authentication (MFA) in Microsoft Entra external ID:
+Some authentication methods can be used as the primary factor when users sign in to an application, such username and password. Other authentication methods are only available as a secondary factor. The following table outlines when an authentication method can be used during sign-in, self-service sign-up, self-service password reset, and  multifactor authentication (MFA) in Microsoft Entra external ID.
 
 |Method  |Sign-in  |Sign-up  |Password reset  |MFA  |
 |---------|---------|---------|---------|---------|
