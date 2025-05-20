@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 03/12/2025
+ms.date: 05/20/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
