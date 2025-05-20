@@ -4,7 +4,7 @@ description: Azure Active Directory B2C deployment guide for planning, implement
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 05/19/2025
+ms.date: 05/20/2025
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
