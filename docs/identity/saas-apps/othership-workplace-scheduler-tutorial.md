@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Othership Workplace Scheduler with 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Othership Workplace Scheduler single sign-on (SSO) enabled subscription.
 

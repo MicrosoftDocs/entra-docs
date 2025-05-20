@@ -29,6 +29,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Explanation-Based Auditing System single sign-on enabled subscription
 

@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Prisma Cloud SSO with Microsoft Ent
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Prisma Cloud SSO single sign-on (SSO) enabled subscription.
 

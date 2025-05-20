@@ -24,6 +24,7 @@ In this article,  you learn how to integrate MOVEit Transfer - Microsoft Entra i
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * MOVEit Transfer - Microsoft Entra integration single sign-on (SSO) enabled subscription.
 

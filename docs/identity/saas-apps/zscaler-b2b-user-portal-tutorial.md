@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Zscaler B2B User Portal with Micros
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Zscaler B2B User Portal single sign-on (SSO) enabled subscription.
 

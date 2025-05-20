@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Palo Alto Networks - Admin UI with 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Palo Alto Networks - Admin UI single sign-on (SSO) enabled subscription.
 * It's a requirement that the service should be public available. Please refer [this](~/identity-platform/single-sign-on-saml-protocol.md) page for more information.

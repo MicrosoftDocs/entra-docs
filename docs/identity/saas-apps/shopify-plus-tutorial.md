@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Shopify Plus with Microsoft Entra I
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Shopify Plus single sign-on (SSO) enabled subscription.
 

@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Brightspace by Desire2Learn with Mi
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Brightspace by Desire2Learn single sign-on enabled subscription.
 

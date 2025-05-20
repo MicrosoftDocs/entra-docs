@@ -24,6 +24,7 @@ In this article,  you learn how to integrate RStudio Connect SAML Authentication
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * RStudio Connect SAML Authentication. There's a [45 day free evaluation](https://www.rstudio.com/products/connect/).
 

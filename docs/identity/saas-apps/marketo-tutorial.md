@@ -25,6 +25,7 @@ Integrating Marketo with Microsoft Entra ID provides you with the following bene
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Marketo single sign-on enabled subscription.
 

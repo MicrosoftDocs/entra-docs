@@ -25,6 +25,7 @@ In this article,  you learn how to integrate ClearCompany with Microsoft Entra I
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * ClearCompany single sign-on (SSO) enabled subscription.
 

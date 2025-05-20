@@ -25,6 +25,7 @@ In this article,  you learn how to integrate VMware Horizon - Unified Access Gat
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * VMware Horizon - Unified Access Gateway single sign-on (SSO) enabled subscription.
 

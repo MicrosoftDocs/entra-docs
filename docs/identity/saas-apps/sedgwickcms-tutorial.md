@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Sedgwick CMS with Microsoft Entra I
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Sedgwick CMS single sign-on enabled subscription.
 

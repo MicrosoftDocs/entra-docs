@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Way We Do with Microsoft Entra ID. 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Way We Do single sign-on enabled subscription.
 

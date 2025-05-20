@@ -25,6 +25,7 @@ In this article,  you learn how to integrate SSOGEN - Microsoft Entra SSO Gatewa
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suite - EBS, PeopleSoft, and JDE single sign-on (SSO) enabled subscription.
 

@@ -26,6 +26,7 @@ In this article,  you learn how to integrate SailPoint Identity Security Cloud w
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SailPoint Identity Security Cloud active subscription. If you don't have Identity Security Cloud, please contact [SailPoint Identity Security Cloud support team](mailto:support@sailpoint.com).
 
