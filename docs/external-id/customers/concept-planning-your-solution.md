@@ -1,15 +1,16 @@
 ---
 title: Plan a CIAM Deployment
 description: Discover the steps for setting up a customer identity and access management (CIAM) solution in an external tenant, including creating a tenant, registering apps, and setting up user flows for sign-in.
- 
-author: msmimart
+
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
+
 ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/03/2025
-ms.author: mimart
+
 ms.custom: it-pro, seo-july-2024
 
 ---
