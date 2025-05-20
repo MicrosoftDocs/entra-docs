@@ -6,9 +6,8 @@ ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 02/18/2025
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management
