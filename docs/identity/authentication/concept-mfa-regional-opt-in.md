@@ -15,6 +15,12 @@ ms.custom: references_regions
 ---
 # Regions that need to opt in for MFA telephony verification  
 
+This applies to Entra tenants only.
+
+For B2C tenants follow the guidelines here: [B2C service limits](https://learn.microsoft.com/azure/active-directory-b2c/service-limits)
+
+For Entra External ID tenants follow the guidelines here: [How to region code opt-in](../../external-id/customers/how-to-region-code-opt-in.md)
+
 As a protection for our customers, Microsoft doesn't automatically support telephony verification for certain region codes. If you want to receive traffic from phone numbers with these region codes, your administrator must submit a support ticket and request to opt in.  
 
 ## Why this protection is needed  
@@ -74,7 +80,7 @@ For SMS and Voice verification, the following region codes require an opt-in. Th
 | 82 | South Korea |
 | 84 | Vietnam |
 | 86 | China |
-| 90 | Turkey |
+| 90 | Türkiye |
 | 91 | India |
 | 92 | Pakistan |
 | 93 | Afghanistan |
@@ -214,8 +220,8 @@ For SMS and Voice verification, the following region codes require an opt-in. Th
 | 691 | Federated States of Micronesia |
 | 692 | Marshall Islands |
 | 850 | North Korea |
-| 852 | Hong Kong |
-| 853 | Macau |
+| 852 | Hong Kong SAR|
+| 853 | Macao SAR |
 | 855 | Cambodia |
 | 856 | Laos |
 | 880 | Bangladesh |
