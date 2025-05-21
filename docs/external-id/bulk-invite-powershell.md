@@ -99,7 +99,7 @@ $messageInfo = New-Object Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvite
 $messageInfo.customizedMessageBody = "Hello. You are invited to the Contoso organization."
 
 foreach ($email in $invitations) {
-	New-MgInvitation 
+	New-MgInvitation ` 
       -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
 		-InvitedUserDisplayName $email.Name `
 		-InviteRedirectUrl https://myapplications.microsoft.com/?tenantid=aaaabbbb-0000-cccc-1111-dddd2222eeee `
