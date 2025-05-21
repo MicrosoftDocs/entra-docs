@@ -2,8 +2,8 @@
 title: Azure Services and resources with managed identities
 description: Explore Azure services and resource types supporting managed identities for secure, credential-free authentication.
 
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 05/09/2025
 ms.topic: conceptual
 ms.service: entra-id
