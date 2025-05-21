@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Soloinsight-CloudGate SSO with Micr
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Soloinsight-CloudGate SSO single sign-on (SSO) enabled subscription.
 

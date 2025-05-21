@@ -5,14 +5,14 @@ ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
 ms.topic: reference
-ms.date: 05/14/2025
+ms.date: 05/20/2025
 ms.service: global-secure-access
 ms.reviewer: sumeetmittal
 
 # Customer intent: As an IT admin, I want to evaluate the regulatory constraints of using Global Secure Access in China so that I can ensure compliance and plan connectivity strategies effectively.   
 ---
 
-# Global Secure Access Support in China (Preview)
+# Global Secure Access support in China (Preview)
 Microsoft supports Global Secure Access capabilities in China, offering secure and compliant connectivity solutions tailored to the needs of organizations operating in China. 
 
 > [!IMPORTANT]

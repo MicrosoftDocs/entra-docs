@@ -25,6 +25,7 @@ In this article,  you learn how to integrate RStudio Server Pro (RSP) with Micro
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * RSP (version >= 1.4) installation.
 

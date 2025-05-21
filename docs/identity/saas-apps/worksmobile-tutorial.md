@@ -25,6 +25,7 @@ Integrating LINE WORKS with Microsoft Entra ID provides you with the following b
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * LINE WORKS single sign-on enabled subscription
 

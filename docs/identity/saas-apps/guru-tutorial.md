@@ -27,6 +27,7 @@ In this article,  you learn how to integrate [Guru](https://www.getguru.com/) wi
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Guru single sign-on (SSO) enabled subscription - [create an account here](https://app.getguru.com/signin/new-user).
 

@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Trakstar with Microsoft Entra ID. W
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Trakstar single sign-on enabled subscription.
 * SSO is a paid feature in Trakstar. To enable it for your organization, reach out to [Trakstar Client support team](mailto:support@trakstar.com).

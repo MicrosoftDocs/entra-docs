@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Bizagi for Digital Process Automati
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Bizagi project using Automation Services or Server. 
 * Have your own certificates for SAML assertion signatures. This certificates must be generate in p12 or pfx format.

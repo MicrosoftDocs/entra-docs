@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Blackboard Learn - Shibboleth with 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Blackboard Learn - Shibboleth single sign-on (SSO)-enabled subscription.
 

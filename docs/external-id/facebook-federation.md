@@ -7,9 +7,8 @@ description: Federate with Facebook to enable external users (guests) to sign in
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 06/19/2024
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management

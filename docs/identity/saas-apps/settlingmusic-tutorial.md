@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Settling music with Microsoft Entra
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Settling music single sign-on enabled subscription.
 

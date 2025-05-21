@@ -26,6 +26,7 @@ In this article,  you learn how to integrate SDS & Chemical Information Manageme
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SDS & Chemical Information Management single sign-on (SSO) enabled subscription.
 

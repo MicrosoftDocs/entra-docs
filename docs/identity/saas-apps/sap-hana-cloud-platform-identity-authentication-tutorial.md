@@ -28,6 +28,7 @@ In this article,  you learn how to integrate SAP Cloud Identity Services with Mi
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [An SAP Cloud Identity Services tenant](https://www.sap.com/products/cloud-platform.html)
 * A user account in SAP Cloud Identity Services with Admin permissions.

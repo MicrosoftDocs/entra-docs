@@ -2,14 +2,14 @@
 title: Create a User Flow
 description: Add sign-up and sign-in user flows for your consumer and business customers. Create a branded, customized user experience for apps in your external tenant.
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
 ms.date: 04/23/2025
-ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro, seo-july-2024
 
