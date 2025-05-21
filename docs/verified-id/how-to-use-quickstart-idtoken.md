@@ -162,6 +162,8 @@ In the code, replace \<your-tenantId> with your tenant ID. To get the extra clai
 
 **For Azure Active Directory B2C**: The app registration process is the same, but B2C has built-in support in the Azure portal for testing your B2C policies via the **Run user flow** functionality.
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 ## Claims in the ID token from the identity provider
 
 Claims must exist in the returned identity provider so that they can successfully populate your verifiable credential.
