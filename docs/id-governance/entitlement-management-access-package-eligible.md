@@ -129,15 +129,10 @@ Once the resource is managed by PIM, eligible roles can be added as its role ass
 
 1. On the resource roles page select **Groups and Teams**.
 
+1. Select the group you want to add, and under roles verify that you can assign both active and eligible roles.
+    :::image type="content" source="media/entitlement-management-access-package-eligible/eligible-roles-list.png" alt-text="Screenshot of eligible roles list for a group.":::
 
 
-<!-- 5. Next step/Related content------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
 
 ## Next steps
 
