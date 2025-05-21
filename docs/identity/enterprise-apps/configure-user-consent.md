@@ -16,7 +16,7 @@ ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 
 
-#customer intent: As an IT admin, I want to configure user consent settings for applications, so that I can control the level of access users have to my organization's data and reduce the risk of malicious applications.
+#customer intent: As an IT admin, I want to configure user consent settings for applications, so that I can control the level of access users have to my organization's data and reduce the risk of malicious applications. I also want documentation written for users, not the developers.
 ---
 
 # Configure how users consent to applications
@@ -69,9 +69,15 @@ Connect to Microsoft Graph PowerShell using the least-privilege permission neede
 Connect-MgGraph -Scopes "Policy.ReadWrite.Authorization"
 ```
 
+### List the current permission grant policies
+```powershell
+Get-MgPolicyPermissionGrantPolicy | fl
+```
+Will list your current permission grant policies. These policies determine what permissions can be granted to applications and under what circumstances. Each policy 'includes' certain conditions, but 'excludes' others. When a user tries to consent to an application, the system checks the permission grant policies to see if any of them apply to the user's request. For example, the low-risk policy would allow users to consent to those permissions configured as 'low risk' - it includes these low-risk policies (as a GUID). In another scenario, a user tries to consent in a context that matches the 'AdminOnly' policy - they are unable to consent.
+
 ### Disable user consent using Microsoft Graph PowerShell
 
-To disable user consent, ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
+To disable user consent, you need to update the consent policies - without losing any configuration. *`PermissionGrantPoliciesAssigned`- include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.*
 
 ```powershell
 # only exclude user consent policy
