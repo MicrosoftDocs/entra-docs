@@ -19,7 +19,7 @@ macOS Platform Single Sign-on (PSSO) is a new feature powered by Microsoft’s E
 
 There are three different authentication methods that determine the end-user experience;
 
-* **Platform Credential for macOS**: Provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password is not affected and is required to log on to the Mac.
+* **Platform Credential for macOS**: Provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password isn't affected and is required to sign in to the Mac.
 * **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (for example, Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
 * **Password as authentication method**: Syncs the user’s Microsoft Entra ID password with the local account and enables SSO across apps that use Microsoft Entra ID for authentication.
 
@@ -30,7 +30,7 @@ Powered by the [Microsoft Enterprise SSO plug in Apple devices](../../identity-p
 * Saves customer organizations money by removing the need for security keys.
 * Advances Zero Trust objectives using integration with the Secure Enclave.
 
-To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on the how the device is configured, the end-user can set up their device with PSSO via secure enclave, smart card or password based authentication method.
+To enable it, an administrator needs to configure PSSO through Microsoft Intune or other supported MDM. Depending on how the device is configured, the end-user can set up their device with PSSO via secure enclave, smart card, or password based authentication method.
 
 ## Requirements
 
@@ -63,17 +63,17 @@ Learn how you can use Platform SSO for macOS to enable passwordless authenticati
 * [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md)
 * [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment.md)
 
-Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-auth scenarios). Admins will need to enable the FIDO2 security key authentication method for this capability. If you leverage Key Restriction Policies in your FIDO policy then you will need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
+Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-authentication scenarios). Admins need to enable the FIDO2 security key authentication method for this capability. If you use key restrictions in your FIDO policy then you'll need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
 
 ### Microsoft Platform SSO: UserSecureEnclaveKeyBiometricPolicy
 
-Microsoft Platform SSO has introduced support for the [UserSecureEnclaveKeyBiometricPolicy](https://developer.apple.com/documentation/authenticationservices/asauthorizationproviderextensionloginconfiguration/usersecureenclavekeybiometricpolicy) when using Platform SSO with the UserSecureEnclaveKey authentication method. This policy enhances security by requiring users to authenticate with Touch ID whenever the User Secure Enclave Key needs to be accessed.
+Microsoft Platform SSO supports the [UserSecureEnclaveKeyBiometricPolicy](https://developer.apple.com/documentation/authenticationservices/asauthorizationproviderextensionloginconfiguration/usersecureenclavekeybiometricpolicy) option when using Platform SSO with the UserSecureEnclaveKey authentication method. This policy enhances security by requiring users to authenticate with Touch ID whenever the User Secure Enclave Key needs to be accessed.
 
-- When this policy is enabled, users are prompted for Touch ID authentication whenever the User Secure Enclave Key is accessed. Prompting will occur during PSSO registration, browser re-authentication scenarios using the user key as a passkey, and authentication during login to obtain the PSSO token.
+- When this policy is enabled, users are prompted for Touch ID authentication whenever the User Secure Enclave Key is accessed. Prompting will occur during PSSO registration, browser re-authentication scenarios using the user key as a passkey, and authentication during sign in to obtain the PSSO token.
 - Enabling this policy requires that the device supports Touch ID biometric authentication. Users need to configure Touch ID to proceed with PSSO registration. Administrators should ensure that users have a biometric-supported device or an external keyboard supporting Touch ID before enabling this policy.
 
 > [!NOTE]
-> There is no option for password fallback while authenticating with User Secure Enclave Key when UserSecureEnclaveKeyBiometricPolicy is enabled. Therefore, users will not be able to authenticate to Microsoft Entra ID if they do not have Touch ID biometrics available.
+> There is no option for password fallback while authenticating with User Secure Enclave Key when UserSecureEnclaveKeyBiometricPolicy is enabled. Therefore, users won't be able to authenticate to Microsoft Entra ID if they don't have Touch ID biometrics available.
 
 #### Requirements for UserSecureEnclaveKeyBiometricPolicy
 
@@ -81,16 +81,16 @@ Microsoft Platform SSO has introduced support for the [UserSecureEnclaveKeyBiome
 - Company Portal version: 2504 and later
 
    > [!IMPORTANT]
-   > If this feature is enabled after PSSO registration is completed, all users will need to undergo a full PSSO re-registration process for the policy to take effect. This re-registration process must be admin-driven, as users will not see a re-registration prompt. Administrators should carefully consider whether to enable this policy and plan the deployment of PSSO accordingly. 
+   > If this feature is enabled after PSSO registration is completed, all users will need to undergo a full PSSO re-registration process for the policy to take effect. This re-registration process must be admin-driven, as users won't see a re-registration prompt. Administrators should carefully consider whether to enable this policy and plan the deployment of PSSO accordingly. 
 
 #### How to Enable UserSecureEnclaveKeyBiometricPolicy
 
-High-security customers can opt-in to enable this feature by setting a flag in the SSO extension's data dictionary.
+High-security customers can opt in to enable this feature by setting a flag in the SSO extension's data dictionary.
 
 - Key Name: enable_se_key_biometric_policy
 - Value: true
 
-:::image type="content" source="media/macos-psso/enable_se_key_biometric_policy.png" alt-text="Screenshot of the UserSecureEnclaveKeyBiometricPolicy configuration in Microsoft Intune.":::
+:::image type="content" source="media/macos-psso/enable-secure-enclave-key-biometric-policy.png" alt-text="Screenshot of the UserSecureEnclaveKeyBiometricPolicy configuration in Microsoft Intune.":::
 
 #### Benefits of UserSecureEnclaveKeyBiometricPolicy
 
@@ -99,7 +99,7 @@ High-security customers can opt-in to enable this feature by setting a flag in t
 #### Drawbacks of UserSecureEnclaveKeyBiometricPolicy
 
 - More Prompts: Users will encounter extra prompts during PSSO registration as the key is accessed multiple times during the process.
-- Biometric-Only Access: The PSSO passkey can only be accessed with biometric authentication. There is no password fallback. If the device is unlocked with a password, users will still be prompted for biometric authentication to obtain the PSSO token.
+- Biometric-Only Access: The PSSO passkey can only be accessed with biometric authentication. There's no password fallback. If the device is unlocked with a password, users will still be prompted for biometric authentication to obtain the PSSO token.
 
 ## National Institute of Standards and Technology (NIST)
 
