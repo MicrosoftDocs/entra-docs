@@ -37,7 +37,7 @@ For example: "Migrate data from regular tables to ledger tables" or "Create a ne
 
 # Assign eligible group membership and ownership in access packages via PIM for Groups
 
-As an access package manager, you can assign which role you want to provide a user for a group included in an access package. By enabling [PIM for Groups management](../id-governance/privileged-identity-management/groups-discover-groups.md), you're able to enhance security to these resources by designating that active membership into a group happens just in time through PIM. This article describes how to enable pim for a group, adding the group to an access package, and verifying eligible assignments are available.
+As an access package manager, you can assign which role you want to provide a user for a group within an access package. By enabling [PIM for Groups management](../id-governance/privileged-identity-management/groups-discover-groups.md), you're able to enhance security by designating that group access happens just-in-time. This article describes how to enable pim for a group, adding the group to an access package, and verifying eligible assignments are available.
 
 <!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
 
