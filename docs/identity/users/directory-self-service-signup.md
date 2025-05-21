@@ -9,7 +9,7 @@ ms.topic: overview
 ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: elkuzmen
-
+ms.custom: sfi-ga-nochange
 ---
 # What is self-service sign-up for Microsoft Entra ID?
 

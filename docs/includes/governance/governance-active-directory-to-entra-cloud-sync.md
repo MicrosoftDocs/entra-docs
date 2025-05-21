@@ -4,6 +4,7 @@ ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
+ms.custom: sfi-ga-nochange
 # Used by articles entra governance
 ---
 
