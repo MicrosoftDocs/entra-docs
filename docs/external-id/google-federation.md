@@ -6,9 +6,8 @@ description: Learn how to add Google as an identity provider in Microsoft Entra 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
