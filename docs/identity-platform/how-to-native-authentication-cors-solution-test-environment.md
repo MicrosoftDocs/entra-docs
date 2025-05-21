@@ -24,8 +24,8 @@ This solution is for testing purposes and should **NOT be used in a production e
 ## Prerequisites
 
 - An Azure subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-- Register `Microsoft.App` resource provider, see [How to register resource provider](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider-1). This step only needs to be done once with newly created subscription.
-- Install [Azure Developer CLI (azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows).
+- Register `Microsoft.App` resource provider, see [How to register resource provider](/azure/azure-resource-manager/management/resource-providers-and-types). This step only needs to be done once with newly created subscription.
+- Install [Azure Developer CLI (azd)](/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows).
 - A sample SPA that you can access via a URL such as `http://www.contoso.com`:
     - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that set up.
     - Once you run the app, record the app URL for later use in this guide.
