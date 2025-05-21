@@ -78,11 +78,39 @@ For portal-based procedures, minimize bullets and numbering.
 
 ## Create a group
 
+These steps walk you through creating the group that you will enable to be managed by PIM. 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+
+1. Browse to **Entra ID** > **Groups** > **All groups**.
+
+1. Select **New group**.
+
+1. Give the group a name and description and then complete the other required options:
+   - **Group Type:** Security
+   - **Membership type:** Select *Assigned*.
+   :::image type="content" source="media/entitlement-management-access-package-eligible/create-group-eligible.png" alt-text="Picture of creating the group for the access package.":::
+1. Select **Create**.
 
 
 
 ## Enable management of group with PIM
 
+With the group created, the next step is to enable it to be managed by PIM. To enable PIM management, you'd do the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
+
+1. Select **Discover groups** and select a group that you want to bring under management with PIM.
+
+1. Select **Manage groups** and **OK**.
+
+1. Select **Groups** to return to the list of groups enabled in PIM for Groups, and notice the group you added is now on the list.
+    :::image type="content" source="media/entitlement-management-access-package-eligible/groups-managed-pim-list.png" alt-text="Screenshot of groups managed by PIM list.":::
+
+> [!IMPORTANT]
+> Once a group is managed, it can't be taken out of management. This prevents another resource administrator from removing PIM settings. If a group is deleted from Microsoft Entra ID, it may take up to 24 hours for the group to be removed from the **PIM for Groups** option.
 
 ## Add the resource to an access package
 TODO: Add introduction sentence(s)
