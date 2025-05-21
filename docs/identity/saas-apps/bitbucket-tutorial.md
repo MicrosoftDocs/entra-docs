@@ -26,6 +26,7 @@ In this article,  you learn how to integrate SAML SSO for Bitbucket by resolutio
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAML SSO for Bitbucket by resolution GmbH single sign-on enabled subscription
 

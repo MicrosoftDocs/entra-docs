@@ -25,6 +25,7 @@ In this article,  you learn how to integrate FileCloud with Microsoft Entra ID. 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * FileCloud single sign-on (SSO) enabled subscription.
 

@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Citrix Cloud SAML SSO with Microsof
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Citrix Cloud subscription. If you don’t have a subscription, sign up for one. 
 

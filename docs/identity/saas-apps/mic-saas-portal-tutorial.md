@@ -26,6 +26,7 @@ In this article,  you learn how to integrate MIC SAAS Portal with Microsoft Entr
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * MIC SAAS Portal single sign-on (SSO) enabled subscription.
 

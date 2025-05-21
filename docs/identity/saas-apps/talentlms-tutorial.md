@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TalentLMS so that I can control who has access to TalentLMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate TalentLMS with Microsoft Entra ID. 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * TalentLMS single sign-on enabled subscription.
 

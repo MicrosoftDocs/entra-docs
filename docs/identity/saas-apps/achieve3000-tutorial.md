@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Achieve3000 with Microsoft Entra ID
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Achieve3000 single sign-on (SSO) enabled subscription.
 

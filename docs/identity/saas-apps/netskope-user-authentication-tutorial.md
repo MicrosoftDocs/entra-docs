@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Netskope User Authentication with M
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Netskope User Authentication single sign-on (SSO) enabled subscription.
 

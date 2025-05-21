@@ -25,6 +25,7 @@ In this article,  you learn how to integrate DLG Learning Center with Microsoft 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * DLG Learning Center single sign-on (SSO) enabled subscription.
 

@@ -31,6 +31,7 @@ Use your Microsoft Entra account with Atlassian Confluence server to enable sing
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - Confluence server application installed on a Windows 64-bit server (on-premises or on the cloud IaaS infrastructure).
 - Confluence server is HTTPS enabled.

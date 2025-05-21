@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Docker Business with Microsoft Entr
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Docker [Business](https://docs.docker.com/subscription/core-subscription/details/#docker-business) subscription. 
 

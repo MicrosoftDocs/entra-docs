@@ -5,9 +5,8 @@ description: Learn about federation with an external organization's SAML/WS-Fed 
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 05/07/2025
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management

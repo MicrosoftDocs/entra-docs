@@ -29,6 +29,7 @@ Use your Microsoft Entra account with Atlassian JIRA server to enable single sig
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - JIRA Core and Software 7.0 to 10.5.1 or JIRA Service Desk 3.0 to 5.12.22 should be installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
