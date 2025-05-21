@@ -381,7 +381,7 @@ The table below shows the mapping between linkable identifier claims and Microso
 | **Category** | **Audit Events**                              |
 |-----------|---------------------------------------------------------------|
 | Chat/Message        | ChatCreated, ChatRetrieved, ChatUpdated MessageSent, MessageDeleted, MessageCreatedHasLink, MessageEditedHasLink, MessageHostedContentRead, MessagesExported, DownloadedFile                                            |
-| Calling/Meeting        | GraphMeetingRecordingRead, GraphMeetingRecordingContentRead, GraphMeetingTranscriptRead, GraphMeetingTranscriptContentRead, InviteSent, MeetingCreated, MeetingDeleted, MeetingUpdated, SensitivityLabelRemoved, TranscriptExported                                                 |
+| Calling/Meeting        | GraphMeetingRecordingRead, GraphMeetingRecordingContentRead, GraphMeetingTranscriptRead, GraphMeetingTranscriptContentRead, InviteSent, SensitivityLabelRemoved, TranscriptsExported                                                 |
 | App/Bot        | AppInstalled, BotAddedToTeam, ConnectorAdded     |
 | Admin  | TeamsAdminAction, TeamsTenantSettingChanged  |
 | Team/User       | TeamDeleted, TeamSettingChanged, MemberAdded, MemberRoleChanged, TeamsSessionStarted                |
@@ -411,7 +411,7 @@ SharePoint Online operations including file access, creation, modification, or d
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-results.png" alt-text="Screenshot of Microsoft Purview portal showing results for SPO and Teams logs.":::
 
-1. Admin can see all the audit log trail from user logging into team and see that the bad actor has done several activities like removing members from Teams channel, added specific users, posted a phishing message requiring all the members to click on a link and login using corporate credentials, deleted files from sharepoint and added files etc.
+1. Admin can see all the audit log trail from user logging into team and see that the bad actor has done several activities like added specific users, posted a phishing message, deleted files from sharepoint and added files etc.
 
 1. Each log item can be opened to get detailed information on linkable identifiers. Below is an example of user posting a message.
 
