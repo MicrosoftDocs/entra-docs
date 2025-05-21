@@ -113,12 +113,23 @@ With the group created, the next step is to enable it to be managed by PIM. To e
 > Once a group is managed, it can't be taken out of management. This prevents another resource administrator from removing PIM settings. If a group is deleted from Microsoft Entra ID, it may take up to 24 hours for the group to be removed from the **PIM for Groups** option.
 
 ## Add the resource to an access package
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+
+Once the resource is managed by PIM, eligible roles can be added as its role assignment in an access package. To verify this, do the following:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privileged roles that can complete this task include the Catalog owner and the Access package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
+
+1. On the **Access packages** page, open the access package you want to add resource roles to.
+
+1. In the left menu, select **Resource roles**.
+
+1. Select **Add resource roles** to open the Add resource roles to access package page.
+
+1. On the resource roles page select **Groups and Teams**.
+
+
 
 <!-- 5. Next step/Related content------------------------------------------------------------------------
 
