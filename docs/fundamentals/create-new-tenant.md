@@ -32,6 +32,8 @@ After you sign in to the [Azure portal](https://portal.azure.com), you can creat
 > - If you're unable to create a Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If it is not enabled you must be assigned at least the [Tenant Creator](../identity/role-based-access-control/permissions-reference.md#tenant-creator) role.
 > - This article doesn't cover creating an *external* tenant configuration for consumer-facing apps; learn more about using [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) for your customer identity and access management (CIAM) scenarios.
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 ### To create a new tenant
 
 [!INCLUDE [Create](../includes/definitions/create-new-tenant.md)]
