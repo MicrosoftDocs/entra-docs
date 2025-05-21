@@ -201,6 +201,5 @@ To confirm Oracle Hyperion application access, a prompt appears to use a Microso
 ## Next steps
 
 * [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-* [Tutorial: Configure Azure AD B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 * Go to Datawiza for [Add SSO and MFA to Oracle Hyperion EPM in minutes](https://www.datawiza.com/sso-and-mfa-for-oracle-hyperion-epm/)
 * Go to docs.datawiza.com for Datawiza [User Guides](https://docs.datawiza.com/)

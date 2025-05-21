@@ -57,7 +57,7 @@ Microsoft Entra ID lets you enable SSPR for *None*, *Selected*, or *All* users. 
 In this tutorial, set up SSPR for a set of users in a test group. Use the *SSPR-Test-Group* and provide your own Microsoft Entra group as needed:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Entra ID** > **Password reset** from the menu on the left side.
+1. Browse to **Protection** > **Password reset** from the menu on the left side.
 1. From the **Properties** page, under the option *Self service password reset enabled*, choose **Selected**.
 1. If your group isn't visible, choose **No groups selected**, browse for and select your Microsoft Entra group, like *SSPR-Test-Group*, and then choose *Select*.
 
@@ -109,7 +109,7 @@ To keep users informed about account activity, you can set up Microsoft Entra ID
 
 1. To apply the notification preferences, select **Save**.
 
-If users need more help with the SSPR process, you can customize the "Contact your administrator" link. The user can select this link in the SSPR registration process and when they unlock their account or resets their password. To make sure your users get the support needed, we recommend you provide a custom helpdesk email or URL.
+If users need more help with the SSPR process, you can customize the **"Contact your administrator"** link. The user can select this link in the SSPR registration process and when they unlock their account or resets their password. To make sure your users get the support needed, we recommend you provide a custom helpdesk email or URL.
 
 1. From the menu on the left side of the **Customization** page, set **Customize helpdesk link** to *Yes*.
 1. In the **Custom helpdesk email or URL** field, provide an email address or web page URL where your users can get more help from your organization, like *https:\//support.contoso.com/*
