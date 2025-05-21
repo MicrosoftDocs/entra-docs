@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 10/17/2024
 ms.author: owinfrey
 ms.reviewer: hanki
+ms.custom: sfi-ga-nochange
 ---
 
 # Configure Verified ID settings for an access package in entitlement management

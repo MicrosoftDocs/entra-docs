@@ -7,7 +7,7 @@ ms.author: godonnell
 ms.date: 07/19/2024
 ms.service: identity-platform
 ms.topic: troubleshooting
-
+ms.custom: sfi-ga-nochange
 #Customer intent: As a developer troubleshooting publisher verification, I want to understand the common issues and potential error codes related to the process, so that I can resolve any issues and successfully complete the verification for my application.
 ---
 
