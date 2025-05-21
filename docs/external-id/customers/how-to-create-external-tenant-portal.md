@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 11/06/2024
+ms.date: 05/21/2025
 ms.author: cmulligan
 ms.custom: it-pro, seo-july-2024
 
@@ -42,7 +42,7 @@ In this article, you learn how to:
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/create-tenant.png" alt-text="Screenshot of the create tenant option.":::
 
-1. Select **Customer**, and then **Continue**. 
+1. Select **External**, and then **Continue**. 
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/select-tenant-type.png" alt-text="Screenshot of the select tenant type screen.":::
 
