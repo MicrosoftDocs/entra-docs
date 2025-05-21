@@ -172,19 +172,19 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 
 ## Configure attribute visibility and editability with Microsoft Graph
 
-You can control which attributes are shown or collected from users during sign-up by configuring the hidden and editable flags for each attribute. These settings are not currently available in the admin center UI, but you can configure them using Microsoft Graph.
+You can control which attributes are shown or collected from users during sign-up by configuring the hidden and editable flags for each attribute. These settings aren't currently available in the admin center UI, but you can configure them using Microsoft Graph.
 
 Each attribute supports the following flags:
 
-- `hidden`: Set this flag to `true` to hide the attribute from the sign-up page, or `false` to display the attribute.
-- `editable`: Set this flag to `true` to allow users to edit the attribute, or `false` to make the attribute read-only.
+- `hidden`: This flag is `false` by default so the attribute displays on the sign-up page, but you can set it to `true` to hide the attribute.
+- `editable`: This flag is `true` by default to allow users to edit the attribute, but you can set it to `false` to make the attribute read-only.
 
 Examples:
 
-- Set `hidden` to `false` and `editable` to `false` to show the attribute on the page, but prevent users from editing it.
-- Set `hidden` to `true` and `editable` to `true` to hide the attribute on the page, but still allow it to be set by the API. For example, you can configure a [custom authentication extension](concept-custom-extensions.md) and use the [OnAttributeCollectionSubmit](concept-custom-extensions.md#attribute-collection-start-and-submit-events) event to modify the value of the attribute.
+- To show the attribute on the page but prevent users from editing it, set `hidden` to `false` and `editable` to `false` .
+- To hide the attribute from the page while still allowing it to be set programmatically, set `hidden` to `true` and `editable` to `true`. For example, you can assign a value to the attribute by [creating a custom authentication extension for an attribute collection submit event](~/identity-platform/custom-extension-attribute-collection?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
 
-To configure these flags with Microsoft Graph, use the [authenticationAttributeCollectionInputConfiguration](/graph/api/resources/authenticationattributecollectioninputconfiguration) resource type. See also the example for [updating the page layout of a self-service sign up user flow](/graph/api/authenticationeventsflow-update#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
+To set the hidden and editable flags using Microsoft Graph, use the [authenticationAttributeCollectionInputConfiguration](/graph/api/resources/authenticationattributecollectioninputconfiguration) resource type. For reference, see the example on [updating the page layout of a self-service sign up user flow](/graph/api/authenticationeventsflow-update#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
 
 ## Find the application ID for the extensions app
 
