@@ -36,7 +36,7 @@ Allowing an application to request permissions dynamically through the `scope` p
 
 > [!IMPORTANT]
 > Dynamic consent can be convenient, but presents a significant challenge for permissions that require admin consent. The admin consent experience in the **App registrations** and **Enterprise applications** blades in the portal doesn't know about those dynamic permissions at consent time. We recommend that a developer list all the admin privileged permissions that the application needs in the portal. 
-
+> 
 > This enables tenant admins to consent on behalf of all their users in the portal once. Users don't need to go through the consent experience for those permissions on sign in. The alternative is to use dynamic consent for those permissions. To grant admin consent, an individual admin signs in to the app, triggers a consent prompt for the appropriate permissions, and selects **consent for my entire org** in the consent dialogue.
 
 ## Requesting individual user consent
