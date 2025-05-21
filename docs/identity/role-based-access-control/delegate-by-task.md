@@ -8,8 +8,7 @@ ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 03/12/2025
 ms.author: rolyon
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
 

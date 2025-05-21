@@ -8,6 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 05/20/2025
 ms.author: jricketts
+ms.custom: sfi-ropc-nochange
 ---
 
 # Microsoft Entra security operations for consumer accounts

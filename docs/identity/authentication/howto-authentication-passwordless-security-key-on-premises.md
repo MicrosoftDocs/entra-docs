@@ -1,16 +1,15 @@
 ---
 title: Passwordless security key sign-in to on-premises resources
 description: Learn how to enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 04/16/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: calui
+ms.custom: sfi-ga-nochange
 ---
 # Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID 
 
