@@ -17,14 +17,14 @@ ms.date: 02/07/2025
 
 In this article, you learn how to Use Azure Front Door as a reverse proxy for a single-page app (SPA) that uses [native authentication API](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
 
-The native authentication API doesn't support Cross-Origin Resource Sharing (CORS). Therefore, a single-page app (SPA) that uses this API for user authentication can't make successful requests from front-end JavaScript code. To resolve this, you need to add a proxy server between the SPA and the native authentication API. This proxy server injects the appropriate CORS headers into the response.
+The native authentication API doesn't support Cross-Origin Resource Sharing (CORS). Therefore, a single-page app (SPA) that uses this API for user authentication can't make successful requests from front-end JavaScript code. To resolve this issue, you need to add a proxy server between the SPA and the native authentication API. This proxy server injects the appropriate CORS headers into the response.
 
 In a production environment, we recommended using [Azure Front Door with a Standard/Premium subscription](/azure/frontdoor/standard-premium/troubleshoot-cross-origin-resources) as a reverse proxy.
 
 ## Prerequisites
 - An Azure subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - A sample SPA that you can access via a URL such as `http://www.contoso.com`:
-    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that setup.
+    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that set up.
     - Once you run the app, record the app URL for later use in this guide. In production, this URL contains the domain that you want to use as a custom domain URL, such as `http://www.contoso.com`
 - Install [Azure Developer CLI (azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows).
 
@@ -46,7 +46,7 @@ In a production environment, we recommended using [Azure Front Door with a Stand
     azd init --template https://github.com/azure-samples/ms-identity-extid-cors-proxy-frontdoor
     ```
 
-    When prompted, enter a name for the azd environment. This name will be used as a prefix for the resource group so it should be unique within your Azure subscription.
+    When prompted, enter a name for the azd environment. This name is used as a prefix for the resource group so it should be unique within your Azure subscription.
 
 1. Sign in to Azure
 
@@ -54,7 +54,7 @@ In a production environment, we recommended using [Azure Front Door with a Stand
     azd auth login
     ```
 
-1. Build, provision and deploy the app resources
+1. Build, provision, and deploy the app resources
 
     ```console
     azd up
@@ -62,11 +62,11 @@ In a production environment, we recommended using [Azure Front Door with a Stand
 
     When prompted, enter following information to complete resources creation:
 
-    - `Azure Location`: The Azure location where your resources will be deployed.
-    - `Azure Subscription`: The Azure Subscription where your resources will be deployed.
-    - `corsAllowedOrigin`: The origin domain to allow CORS requests from in the format of SCHEME://DOMAIN:PORT, e.g. http://localhost:3000.
-    - `tenantSubdomain`: The subdomain of the External ID tenant that we will proxy (This is the portion of the primary domain before the .onmicrosoft.com part, e.g. mytenant).
-    - `customDomain`: The full URL of the custom domain configured within External ID ,e.g. login.example.com
+    - `Azure Location`: The Azure location where your resources are deployed.
+    - `Azure Subscription`: The Azure Subscription where your resources are deployed.
+    - `corsAllowedOrigin`: The origin domain to allow CORS requests from in the format of SCHEME://DOMAIN:PORT, for example, http://localhost:3000.
+    - `tenantSubdomain`: The subdomain of the External ID tenant that we'll proxy (This value is the portion of the primary domain before the .onmicrosoft.com part, for example, `mytenant`).
+    - `customDomain`: The full URL of the custom domain configured within External ID, for example, login.example.com
 
 ## Guidelines for using Azure Front Door as a reverse proxy 
 
