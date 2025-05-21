@@ -164,7 +164,7 @@ The following table compares the features available for terms of use policies in
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | Conditional Access policies | [Microsoft Entra terms of use](~/identity/conditional-access/terms-of-use.md) |Not available|
-| Self-service sign-up|| Add a [required attribute](how-to-define-custom-attributes.md#configure-a-single-select-checkbox-checkboxsingleselect) linked to your terms of use policies on the sign-up page. The hyperlink can be customized to support various languages. |
+| Self-service sign-up| Not available | Add a [required attribute](how-to-define-custom-attributes.md#configure-a-single-select-checkbox-checkboxsingleselect) linked to your terms of use policies on the sign-up page. The hyperlink can be customized to support various languages. |
 | Sign-in page | Links you can add to the lower-right corner for privacy information using [Company branding](~/fundamentals/how-to-customize-branding.md). | [Same as workforce](how-to-customize-branding-customers.md#to-customize-the-logo-privacy-link-and-terms-of-use).|
 
 ## Account management
