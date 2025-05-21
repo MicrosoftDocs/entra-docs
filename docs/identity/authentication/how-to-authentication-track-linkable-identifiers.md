@@ -429,7 +429,7 @@ By analyzing the log files with linkable identifiers, tenant admin and security 
 
 ## Related content
 
-[Microsoft Entra Sign in logs](/monitoring-health/concept-sign-ins)<br/>
-[SharePoint Online Audit Logs](/purview/audit-log-sharing.md#tabs=microsoft-purview-portal)<br/>
+[Microsoft Entra Sign in logs](~/identity/monitoring-health/concept-sign-ins~)<br/>
+[SharePoint Online Audit Logs](/purview/audit-log-sharing#tabs=microsoft-purview-portal)<br/>
 [Teams Audit Logs](/purview/audit-teams-audit-log-events)<br/>
 [Microsoft Graph Activity Logs](/graph/microsoft-graph-activity-logs-overview)
