@@ -116,7 +116,6 @@ To get started, you need:
 
 ## Next steps
 
-* [Tutorial: Configure Azure Active Directory B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 * [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and SSO to Oracle JD Edwards](datawiza-sso-oracle-jde.md)
 * [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and SSO to Oracle PeopleSoft](./datawiza-sso-oracle-peoplesoft.md)
 * [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and SSO to Oracle Hyperion EPM](./datawiza-mfa-sso-oracle-hyperion-epm.md)
