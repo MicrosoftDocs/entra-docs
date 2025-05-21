@@ -24,6 +24,7 @@ In this article,  you learn how to integrate MetLife Legal Plans Member App with
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * MetLife Legal Plans Member App single sign-on (SSO) enabled subscription.
 

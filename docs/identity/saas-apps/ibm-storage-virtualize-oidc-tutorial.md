@@ -24,7 +24,9 @@ Enable your users to be automatically signed in to IBM Storage Virtualize with t
 Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * IBM Storage Virtualize single sign-on (SSO) enabled subscription.
 

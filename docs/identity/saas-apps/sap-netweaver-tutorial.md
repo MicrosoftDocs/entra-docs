@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP NetWeaver so that I can control who has access to SAP NetWeaver, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate SAP NetWeaver with Microsoft Entra 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAP NetWeaver single sign-on (SSO) enabled subscription.
 * SAP NetWeaver V7.20 or later

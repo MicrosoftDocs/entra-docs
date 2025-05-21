@@ -25,7 +25,9 @@ In this article,  you learn how to integrate Brocade SANnav Global View with Mic
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SANnav Global View application installed with a valid subscription license.
 
@@ -44,7 +46,7 @@ To configure the integration of Brocade SANnav Global View into Microsoft Entra 
 1. In the **Add from the gallery** section, type **Brocade SANnav Global View** in the search box.
 1. Select **Brocade SANnav Global View** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 ## Configure and test Microsoft Entra SSO for Brocade SANnav Global View
 

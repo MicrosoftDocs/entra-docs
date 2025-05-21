@@ -9,6 +9,7 @@ metadata:
   ms.subservice: hybrid-connect
   ms.tgt_pltfrm: na
   ms.custom: no-azure-ad-ps-ref
+    - sfi-ga-nochange
   ms.topic: faq
   ms.date: 12/27/2024
   ms.author: billmath

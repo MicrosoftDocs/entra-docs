@@ -25,6 +25,7 @@ In this article,  you learn how to integrate DocuSign with Microsoft Entra ID. W
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A DocuSign subscription that's single sign-on (SSO) enabled.
 * Control over your domain DNS. This is needed to claim domain on DocuSign. 
@@ -51,7 +52,7 @@ To configure the integration of DocuSign into Microsoft Entra ID, you must add D
 1. In the **Add from the gallery** section, type **DocuSign** in the search box.
 1. Select **DocuSign** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. You can learn more about O365 wizards [here](/microsoft-365/admin/misc/azure-ad-setup-guides?view=o365-worldwide&preserve-view=true).
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-docusign'></a>
 

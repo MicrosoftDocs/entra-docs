@@ -9,7 +9,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 11/12/2024
 ms.reviewer: joflore
-
+ms.custom: sfi-ga-nochange
 #CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses, so that I can ensure organizational security with Microsoft Entra.
 ---
 # Secure Generative AI with Microsoft Entra

@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
-
+ms.custom: sfi-ga-nochange
 ---
 
 # Best practices for all isolation architectures

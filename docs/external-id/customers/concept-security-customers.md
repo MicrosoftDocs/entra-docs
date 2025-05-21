@@ -2,14 +2,14 @@
 title: Security and governance
 description: Learn about security and governance in Microsoft Entra External ID. Use features like multifactor authentication (MFA), and Conditional Access to secure your applications and mitigate risks.
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/03/2025
-ms.author: mimart
 ms.custom: it-pro
 ---
 

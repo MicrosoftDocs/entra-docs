@@ -2,13 +2,13 @@
 title: Regions requiring opt-in for SMS verification
 description: To protect customers, some regions require you to enable the country codes to receive SMS telephony verification for Microsoft Entra External ID external tenants.
 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/12/2024
-ms.author: mimart
 ms.reviewer: aloom3
 ms.custom: it-pro, references_regions
 
