@@ -3,9 +3,9 @@ title: Create a remote network with a custom IKE policy
 description: Learn how to set up the bidirectional communication tunnel between Global Secure Access and your router.
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 02/25/2025
 ms.service: global-secure-access
 ms.reviewer: absinh
 

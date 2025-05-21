@@ -4,7 +4,6 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: has-adal-ref
 ms.date: 01/15/2024
 ms.service: identity-platform
 
@@ -13,6 +12,8 @@ ms.topic: how-to
 ---
 
 # Desktop app that calls web APIs: Acquire a token interactively
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 The following example shows minimal code to get a token interactively for reading the user's profile with Microsoft Graph.
 
@@ -342,6 +343,6 @@ if not result:
 ---
 ## Next steps
 
-- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
 
 - Explore Microsoft identity platform [desktop  code samples](sample-v2-code.md) 

@@ -3,13 +3,13 @@ title: Learn about Microsoft Entra Internet Access
 description: Learn about how Microsoft Entra Internet Access secures access to the Internet.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: conceptual
-ms.date: 12/23/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
-
+ai-usage: ai-assisted
 ---
 
 # Learn about Microsoft Entra Internet Access for all apps
@@ -40,7 +40,7 @@ Security profiles are objects you use to group filtering policies and deliver th
 ## Policy processing logic
 Within a security profile, policies are enforced according to logical ordering of unique priority numbers, with 100 being the highest priority and 65,000 being the lowest priority (similar to traditional firewall logic). As a best practice, add spacing of about 100 between priorities to allow for policy flexibility in the future.
 
-Once you link a security profile to a Conditional Access (CA) policy, if multiple CA policies match, both security profiles are processed in priority ordering of the matching security profiles.
+Once you link a security profile to a Conditional Access policy, if multiple Conditional Access policies match, both security profiles are processed in priority ordering of the matching security profiles.
 
 > [!IMPORTANT]
 > The baseline security profile applies to all traffic even without linking it to a Conditional Access policy. It enforces policy at the lowest priority in the policy stack, applying to all Internet Access traffic routed through the service as a 'catch-all' policy. The baseline security profile executes even if a Conditional Access policy matches another security profile.

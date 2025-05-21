@@ -4,10 +4,9 @@ description: Learn how to set up SAML/WS-Fed IdP federation with AD FS for B2B c
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 10/21/2024
-
-ms.author: mimart
-author: msmimart
+ms.date: 04/09/2025
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
@@ -40,11 +39,10 @@ To set up federation, the following attributes must be received in the SAML 2.0 
 
 The following claims need to be configured in the SAML 2.0 token issued by the IdP:
 
-
-|Attribute  |Value  |
-|---------|---------|
-|NameID Format     |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`         |
-|emailaddress     |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`         |
+|Attribute                                                            |Value                                                 |
+|---------------------------------------------------------------------|------------------------------------------------------|
+|NameID Format                                                        |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`|
+|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | The user's email address                             |
 
 
 The next section illustrates how to configure the required attributes and claims using AD FS as an example of a SAML 2.0 IdP.

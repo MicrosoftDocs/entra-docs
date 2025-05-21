@@ -5,11 +5,11 @@ description: Protecting Gen AI services like Microsoft Security Copilot and Micr
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 11/08/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Protect AI with Conditional Access policy
@@ -54,10 +54,10 @@ As an organization adopting services like Microsoft 365 Copilot and Microsoft Se
 The following steps help create a Conditional Access policy to require all users do multifactor authentication using the authentication strength policy.
 
 > [!WARNING]
-> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatable with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
+> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatible with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -67,12 +67,12 @@ The following steps help create a Conditional Access policy to require all users
    1. **Enterprise Copilot Platform** fb8d773d-7ef8-4ec0-a117-179f88add510 (Microsoft 365 Copilot)
    1. **Security Copilot** bb5ffd56-39eb-458c-a53a-775ba21277da (Microsoft Security Copilot)
 1. Under **Access controls** > **Grant**, select **Grant access**.
-   1. Select **Require authentication strength**, then select the built-in **Phising-resistant MFA** authentication strength from the list.
+   1. Select **Require authentication strength**, then select the built-in **Phishing-resistant MFA** authentication strength from the list.
    1. Select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ### All users of Generative AI services must access from a compliant device when insider risk is moderate
 
@@ -82,7 +82,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 > Without a [compliance policy created in Microsoft Intune](/mem/intune/protect/create-compliance-policy) this Conditional Access policy will not function as intended. Create a compliance policy first and ensure you have at least one compliant device before proceeding.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -106,7 +106,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ### All users of Generative AI services are blocked when insider risk is elevated 
 
@@ -114,7 +114,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 > Configure [adaptive protection](/purview/insider-risk-management-adaptive-protection) before you create the following policy.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -136,7 +136,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ## Related content
 

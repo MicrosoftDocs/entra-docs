@@ -33,7 +33,7 @@ Jason, an IT admin at Woodgrove Bank, is proactively trying to identify and unde
 
 Jason starts his assessment and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the Microsoft Entra admin center. In order to view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and needs an [Microsoft Entra role assignment](../identity/role-based-access-control/permissions-reference.md) of Application Administrator, Cloud Application Administrator, or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. 
 
-Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](copilot-security-entra.md#create-security-copilot-prompts-in-the-microsoft-entra-admin-center-preview) can choose from a set of app risk starter prompts that appear at the top of the Security Copilot window. Select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: **Enterprise applications**, **App Registrations**, and **Identity Protection Risky workload identities**.
+Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](copilot-security-entra.md#create-security-copilot-prompts-in-the-microsoft-entra-admin-center-preview) can choose from a set of app risk starter prompts that appear at the top of the Security Copilot window. Select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: **Enterprise apps**, **App Registrations**, and **Identity Protection Risky workload identities**.
 
 :::image type="content" source="./media/copilot-security-entra-investigate-risky-apps/starter-prompts.png" alt-text="Screenshot that shows starter prompts in Security Copilot.":::
 
@@ -108,9 +108,6 @@ He uses the following prompts to get the information he needs:
 ### Explore Microsoft Entra Applications outside my tenant 
 
 Jason would also like to look into the risk factor of external apps or multitenant apps with a presence in his tenant that are registered in another organization’s tenant. Since the security posture of these apps is impacted by the posture of the owning tenant, it’s especially important to review these to identify risks and opportunities for surface area reduction. Copilot can return a list of service principals within the current tenant with a multitenant app registration outside of the user’s tenant or details on if a particular service principal is registered outside the tenant.  
-
->[!NOTE]
->Jason can get a partial app list in Security Copilot and full list via a link to the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) query at the bottom of the response.  
 
 He uses the following prompts to get the information he needs: 
 

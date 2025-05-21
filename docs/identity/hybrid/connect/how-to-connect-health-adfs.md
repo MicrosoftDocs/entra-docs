@@ -4,13 +4,13 @@ description: This is the Microsoft Entra Connect Health page how to monitor your
 
 ms.reviewer: zhiweiwangmsft
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: dc0e53d8-403e-462a-9543-164eaa7dd8b3
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 

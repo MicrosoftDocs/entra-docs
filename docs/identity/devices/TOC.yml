@@ -15,6 +15,8 @@
     href: device-join-microsoft-entra-company-portal.md
   - name: Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios
     href: device-join-macos-platform-single-sign-on-multi-user-device.md
+  - name: Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources in Platform SSO
+    href: device-join-macos-platform-single-sign-on-kerberos-configuration.md
 - name: Concepts
   expanded: true
   items:
@@ -30,6 +32,10 @@
     href: device-sso-to-on-premises-resources.md
   - name: Primary Refresh Tokens
     href: concept-primary-refresh-token.md
+  - name: Understanding tokens in Microsoft Entra ID 
+    href: concept-tokens-microsoft-entra-id.md
+  - name: Protecting tokens in Microsoft Entra ID
+    href: protecting-tokens-microsoft-entra-id.md 
   - name: macOS Platform Single Sign-on overview 
     href: macos-psso.md
 - name: How-to guides

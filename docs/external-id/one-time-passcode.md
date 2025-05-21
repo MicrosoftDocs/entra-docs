@@ -5,8 +5,8 @@ description: Learn how to enable and use email one-time passcode authentication 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: CelesteDG
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -95,7 +95,7 @@ The email one-time passcode feature is now turned on by default for all new tena
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 
 1. On the **Built-in** tab, next to Email one-time passcode, select **Configured**.
 

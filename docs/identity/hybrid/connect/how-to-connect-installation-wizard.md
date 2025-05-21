@@ -4,12 +4,12 @@ description: Explains how the installation wizard works the second time you run 
 keywords: The Azure AD Connect installation wizard lets you configure maintenance settings the second time you run it
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: d800214e-e591-4297-b9b5-d0b1581cc36a
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

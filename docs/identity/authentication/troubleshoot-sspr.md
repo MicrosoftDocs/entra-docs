@@ -5,11 +5,11 @@ description: Learn how to troubleshoot common problems and resolution steps for 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 01/16/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
 ---
 # Troubleshoot self-service password reset in Microsoft Entra ID
@@ -85,10 +85,6 @@ In the Microsoft Entra admin center, change the **Self-service password reset en
 Only one Microsoft Entra group can currently be enabled for SSPR using the Microsoft Entra admin center. As part of a wider deployment of SSPR, nested groups are supported. Make sure that the users in the groups you choose are assigned the appropriate licenses. Review the previous troubleshooting step to enable SSPR as required.
 
 Also review troubleshooting steps to make sure that the administrator performing the configuration options has a license assigned. To assign a license to the administrator account in question, follow the steps to [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-groups-assign.md#step-1-assign-the-required-licenses).
-
-### There's an error processing the request
-
-Generic SSPR registration errors can be caused by many issues, but generally this error is caused by either a service outage or a configuration issue. If you continue to see this generic error when you retry the SSPR registration process, [contact Microsoft support](#contact-microsoft-support) for help.
 
 ## SSPR usage
 

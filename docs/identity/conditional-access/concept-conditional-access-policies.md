@@ -9,7 +9,7 @@ ms.date: 03/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Building a Conditional Access policy
@@ -103,6 +103,7 @@ Block access does just that, it blocks access under the specified assignments. T
 The grant control can trigger enforcement of one or more controls. 
 
 - Require multifactor authentication
+- Require authentication strength
 - Require device to be marked as compliant (Intune)
 - Require Microsoft Entra hybrid joined device
 - Require approved client app

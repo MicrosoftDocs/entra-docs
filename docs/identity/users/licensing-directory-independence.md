@@ -3,7 +3,7 @@ title: Characteristics of multitenant interaction
 description: Understanding the data independence of your Microsoft Entra organizations
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
@@ -39,7 +39,7 @@ You can configure each Microsoft Entra organization independently to get data sy
 ## Add a Microsoft Entra organization
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Tenant Creator](~/identity/role-based-access-control/permissions-reference.md#tenant-creator).
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 1. Select **Manage tenants**.
 1. Choose **Create**.
 1. Select **Workforce** and provide the requested information. Microsoft Entra ID creates a new organization and appears in the list of organizations.

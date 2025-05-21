@@ -6,12 +6,12 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
 ms.reviewer: lvandenende
-manager: amycolannino
+manager: femila
 
 ms.collection: M365-identity-device-management
 
@@ -85,10 +85,10 @@ For more information about how to enable hardware OATH tokens and Microsoft Grap
 
 Users can add and manage OATH tokens at [Security info](https://aka.ms/mysecurityinfo), or they can select **Security info** from **My account**. Software and hardware OATH tokens have different icons.  
 
-Token registration type | Icon |
------- | ------ |
-OATH software token   | <img width="63" alt="Software OATH token" src="media/concept-authentication-methods/software-oath-token-icon.png">  |
-OATH hardware token | <img width="63" alt="Hardware OATH token" src="media/concept-authentication-methods/hardware-oath-token-icon.png"> |
+| Token registration type | Icon |
+| ------ | ------ |
+| OATH software token   | <img width="63" alt="Software OATH token" src="media/concept-authentication-methods/software-oath-token-icon.png"> |
+| OATH hardware token | <img width="63" alt="Hardware OATH token" src="media/concept-authentication-methods/hardware-oath-token-icon.png"> |
 
 
 ## Related content

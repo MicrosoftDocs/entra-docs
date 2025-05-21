@@ -1,18 +1,19 @@
 ### YamlMime:Landing
 
 title: Application and HR provisioning documentation
-summary: Microsoft Entra app provisioning lets you automatically create and manage user identities in your cloud (SaaS) apps. Microsoft Entra ID also offers provisioning with cloud-based human resources (HR) applications. Learn how to manage and deploy cloud app and HR provisioning with our quickstarts, tutorials, and guidance.
+summary: Microsoft Entra app provisioning lets you automatically create and manage user identities in your cloud (SaaS) apps. Microsoft Entra ID also provides provisioning with cloud-based human resources (HR) applications. Learn how to manage and deploy cloud app and HR provisioning with our quickstarts, tutorials, and guidance.
 
 metadata:
   title: Application provisioning documentation
-  description: Microsoft Entra app provisioning lets you automatically create and manage user identities in your cloud (SaaS) apps. Microsoft Entra ID also offers provisioning with cloud-based human resources (HR) applications. Learn how to manage and deploy cloud app and HR provisioning with our quickstarts, tutorials, and guidance.
+  description: Microsoft Entra app provisioning lets you automatically create and manage user identities in your cloud (SaaS) apps. Microsoft Entra ID also provides provisioning with cloud-based human resources (HR) applications. Learn how to manage and deploy cloud app and HR provisioning with our quickstarts, tutorials, and guidance.
   ms.service: entra-id
   ms.subservice: app-provisioning
   ms.topic: landing-page
-  ms.date: 10/20/2022
+  ms.date: 02/28/2025
   author: kenwith
   ms.author: kenwith
-  manager: amycolannino
+  manager: femila
+  ai-usage: ai-assisted
 landingContent:
   - title: Provision users and groups to a cloud app
     linkLists:
@@ -28,7 +29,7 @@ landingContent:
         links:
           - text: SAP Cloud Platform Identity Authentication provisioning
             url: ~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
-          - text: Oracle Fusion ERP provisioning
+          - text: Oracle Fusion Enterprise Resource Planning (ERP) provisioning
             url: ~/identity/saas-apps/oracle-fusion-erp-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
           - text: Atlassian Cloud provisioning
             url: ~/identity/saas-apps/atlassian-cloud-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
@@ -40,7 +41,7 @@ landingContent:
             url: customize-application-attributes.md
           - text: Use scoping filters
             url: define-conditional-rules-for-provisioning-user-accounts.md
-  - title: Develop an app using SCIM for provisioning
+  - title: Develop an app using System for Cross-domain Identity Management (SCIM) for provisioning
     linkLists:
       - linkListType: overview
         links:

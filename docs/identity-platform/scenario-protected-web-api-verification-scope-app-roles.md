@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Protected web API: Verify scopes and app roles
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 This article describes how you can add authorization to your web API. This protection ensures that the API is called only by:
 
 - Applications on behalf of users who have the right scopes and roles.
@@ -373,6 +375,6 @@ If you set `AllowWebApiToBeAuthorizedByACL` to `true`, this is **your responsibi
 
 ## Next steps
 
-- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-prepare-app.md)
 
 - Explore Microsoft identity platform [web API samples](sample-v2-code.md#web-api) 

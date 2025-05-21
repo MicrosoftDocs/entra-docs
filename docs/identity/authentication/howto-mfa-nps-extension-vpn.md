@@ -6,11 +6,11 @@ description: Integrate your VPN infrastructure with Microsoft Entra multifactor 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/08/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: michmcla
 ---
 # Integrate your VPN infrastructure with Microsoft Entra multifactor authentication by using the Network Policy Server extension for Azure
@@ -342,7 +342,7 @@ If the value is set to *TRUE* or is blank, all authentication requests are subje
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Settings**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
 

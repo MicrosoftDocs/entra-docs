@@ -5,16 +5,16 @@ description: Automation to detect, remediate, investigate, and analyze risk data
 ms.service: entra-id-protection
 
 ms.topic: overview
-ms.date: 02/06/2024
+ms.date: 02/28/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: chuqiaoshi
 ---
 # What is Microsoft Entra ID Protection?
 
-Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. 
+Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These risks can be fed into tools like Conditional Access to make access decisions or sent to a security information and event management (SIEM) tool for further investigation and correlation.
 
 :::image type="content" source="media/overview-identity-protection/identity-protection-overview.png" alt-text="Diagram showing how ID Protection works at a high level.":::
 
@@ -27,7 +27,7 @@ Microsoft continually adds and updates detections in our catalog to protect orga
 - Leaked credentials 
 - and more... 
 
-During each sign-in, ID Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in is compromised. Based on this risk level, policies are then applied to protect the user and the organization.
+During each sign-in, ID Protection runs all real-time sign-in detections, generating a sign-in session risk level that indicates how likely the sign-in is compromised. Based on this risk level, policies are applied to protect the user and the organization.
 
 For a full listing of risks and how they're detected, see the article [What is risk](concept-identity-protection-risks.md).
 
@@ -45,15 +45,15 @@ For more information about how to use the reports, see the article [How To: Inve
 
 ## Remediate risks 
 
-Why automation is critical in security? 
+Why is automation critical in security?
 
-In the blog post *[Cyber Signals: Defending against cyber threats with the latest research, insights, and trends](https://www.microsoft.com/security/blog/2022/02/03/cyber-signals-defending-against-cyber-threats-with-the-latest-research-insights-and-trends/)* dated February 3, 2022 Microsoft shared a threat intelligence brief including the following statistics: 
+In the blog post *[Cyber Signals: Defending against cyber threats with the latest research, insights, and trends](https://www.microsoft.com/security/blog/2022/02/03/cyber-signals-defending-against-cyber-threats-with-the-latest-research-insights-and-trends/)* dated February 3, 2022, Microsoft shared a threat intelligence brief including the following statistics: 
 
 > Analyzed ...24 trillion security signals combined with intelligence we track by monitoring more than 40 nation-state groups and over 140 threat groups... 
 > 
 > ...From January 2021 through December 2021, we’ve blocked more than 25.6 billion Microsoft Entra brute force authentication attacks... 
 
-The sheer scale of signals and attacks requires some level of automation just to keep up. 
+The scale of signals and attacks requires automation to keep up.
 
 ### Automatic remediation
 
@@ -61,7 +61,7 @@ The sheer scale of signals and attacks requires some level of automation just to
 
 ### Manual remediation 
 
-When user remediation isn't enabled, an administrator must manually review them in the reports in the portal, through the API, or in Microsoft 365 Defender. Administrators can perform manual actions to dismiss, confirm safe, or confirm compromise on the risks.
+When user remediation isn't enabled, an admin must manually review them in the reports in the portal, through the API, or in Microsoft 365 Defender. Admins can perform manual actions to dismiss, confirm safe, or confirm compromise on the risks.
 
 ## Making use of the data
 
@@ -73,7 +73,7 @@ Organizations might store data for longer periods by changing the diagnostic set
 
 ## Required roles
 
-ID Protection requires users be assigned one or more of the following roles in order to access.
+ID Protection requires users to be assigned one or more of the following roles.
 
 | Role | Can do | Can't do |
 | --- | --- | --- |
@@ -85,7 +85,7 @@ ID Protection requires users be assigned one or more of the following roles in o
 
 Currently, the Security Operator role can't access the Risky sign-ins report.
 
-Conditional Access administrators can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
+Conditional Access Administrators can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
 
 ## License requirements
 
@@ -104,7 +104,7 @@ Conditional Access administrators can create policies that factor in user or sig
 
 More information on these rich reports can be found in the article, [How To: Investigate risk](howto-identity-protection-investigate-risk.md#navigating-the-reports).
 
-To make use of workload identity risk, including the **Risky workload identities** and **Workload identity detections** tab in the **Risk detections** panes in the admin center, you must have Workload Identities Premium licensing. For more information, see the article [Securing workload identities](concept-workload-identity-risk.md).
+To use workload identity risk, including the **Risky workload identities** and **Workload identity detections** tab in the **Risk detections** panes in the admin center, you need Workload Identities Premium licensing. For more information, see the article [Securing workload identities](concept-workload-identity-risk.md).
 
 ## Next steps
 

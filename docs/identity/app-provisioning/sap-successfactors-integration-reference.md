@@ -3,13 +3,14 @@ title: Microsoft Entra ID and SAP SuccessFactors integration reference
 description: Technical deep dive into SAP SuccessFactors-HR driven provisioning for Microsoft Entra ID.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/18/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: chmutali
+ai-usage: ai-assisted
 ---
 
 # How Microsoft Entra provisioning integrates with SAP SuccessFactors 
@@ -149,7 +150,7 @@ When Microsoft Entra provisioning service queries SuccessFactors, it retrieves a
 
 To retrieve more attributes, follow the steps listed:
     
-1. Browse to **Enterprise Applications** -> **SuccessFactors App** -> **Provisioning** -> **Edit Provisioning** -> **attribute-mapping page**.
+1. Browse to **Enterprise Applications** > **SuccessFactors App** > **Provisioning** > **Edit Provisioning** > **attribute-mapping page**.
 1. Scroll down and click **Show advanced options**.
 1. Click on **Edit attribute list for SuccessFactors**. 
 
@@ -416,7 +417,8 @@ The Microsoft Entra SuccessFactors connector uses SuccessFactors OData API to re
 ## Writeback scenarios
 This section covers different write-back scenarios. It recommends configuration approaches based on how email and phone number is set up in SuccessFactors.
 
-### Supported scenarios for phone and email write-back 
+### Supported scenarios for phone and email write-back
+
 | \# | Scenario requirement | Email primary <br> flag value | Business phone <br> primary flag value | Cell phone <br> primary flag value | Business phone <br> mapping | Cell phone <br> mapping |
 |--|--|--|--|--|--|--|
 | 1 | * Only set business email as primary. <br> * Don't set phone numbers. | true | true | false | \[Not Set\] | \[Not Set\] | 

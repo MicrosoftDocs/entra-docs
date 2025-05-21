@@ -2,10 +2,10 @@
 title: 'Govern cloud users that are provisioned from on-premises to Microsoft Entra ID with Microsoft Identity Manager'
 description: This article a tutorial on how to provision users and groups from on-premises to cloud using MIM.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 ms.subservice:
 ms.author: billmath
 ---

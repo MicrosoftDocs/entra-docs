@@ -3,7 +3,7 @@ title: Username lookup during sign-in
 description: How on-screen messaging reflects username lookup during sign-in in Microsoft Entra ID
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual

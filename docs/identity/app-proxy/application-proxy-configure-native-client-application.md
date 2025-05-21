@@ -2,14 +2,15 @@
 title: Publish native client apps
 description: Covers how to enable native client apps to communicate with the Microsoft Entra private network connector to provide secure remote access to your on-premises apps.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: devx-track-dotnet
 ms.topic: how-to
-ms.date: 02/26/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # How to enable native client applications to interact with proxy applications
@@ -33,7 +34,7 @@ Publish your proxy application as you would any other application and assign use
 You now need to register your application in Microsoft Entra ID.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
-1. Browse to **Identity** > **Applications** > **App registrations**. The list of all app registrations appears.
+1. Browse to **Entra ID** > **App registrations**. The list of all app registrations appears.
 1. Select **New registration**. The **Register an application** page appears.
 
    ![Create a new app registration in the Microsoft Entra admin center](./media/application-proxy-configure-native-client-application/create.png)
@@ -101,10 +102,10 @@ The required info in the sample code can be found in the Microsoft Entra admin c
 
 | Info required | How to find it in the Microsoft Entra admin center |
 | --- | --- |
-| \<Tenant ID> | **Identity** > **Overview** > **Properties** |
+| \<Tenant ID> | **Entra ID** > **Overview** > **Properties** |
 | \<App ID of the Native app> | **Application registration** > *your native application* > **Overview** > **Application ID** |
-| \<Scope> | **Application registration** > *your native application* > **API permissions** > select on the Permission API (user_impersonation) > A panel with the caption **user_impersonation** appears on the right hand side. > The scope is the URL in the edit box.
-| \<Proxy App URL> | the External URL and path to the API
+| \<Scope> | **Application registration** > *your native application* > **API permissions** > select on the Permission API (user_impersonation) > A panel with the caption **user_impersonation** appears on the right hand side. > The scope is the URL in the edit box. |
+| \<Proxy App URL> | the External URL and path to the API |
 
 After you edit the MSAL code with these parameters, your users can authenticate to native client applications even when they're outside of the corporate network.
 

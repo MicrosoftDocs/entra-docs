@@ -57,7 +57,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **External Identities** > **External collaboration settings**.
+        Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
       - |  
         Set the **Enable guest self-service sign up via user flows** toggle to **Yes**.
 
@@ -72,7 +72,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **External Identities** > **User flows**, and then select **New user flow**.
+        Browse to **Entra ID** > **External Identities** > **User flows**, and then select **New user flow**.
 
           :::image type="content" source="media/self-service-sign-up-user-flow/new-user-flow.png" alt-text="Screenshot of the new user flow button.":::
       - |  
@@ -98,7 +98,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **External Identities** > **User flows**.
+        Browse to **Entra ID** > **External Identities** > **User flows**.
       - |  
         Select the self-service sign-up user flow from the list.
       - |  
@@ -115,7 +115,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **External Identities** > **User flows**
+        Browse to **Entra ID** > **External Identities** > **User flows**
       - |  
         Select the self-service sign-up user flow from the list.
       - |  
