@@ -4,10 +4,10 @@ description: How to view current privileged role assignments in the Microsoft En
 author: jenniferf-skc
 manager: femila
 ms.service: entra-permissions-management
-
 ms.topic: how-to
 ms.date: 04/01/2025
 ms.author: jfields
+ms.custom: sfi-ga-nochange
 ---
 
 # View privileged role assignments in your organization

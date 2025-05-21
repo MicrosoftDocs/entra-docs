@@ -10,6 +10,7 @@ ms.topic: conceptual
 ms.date: 12/10/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 # Manage user access with Microsoft Entra access reviews

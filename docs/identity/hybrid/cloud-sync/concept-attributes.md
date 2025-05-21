@@ -1,7 +1,6 @@
 ---
 title: 'Understand the Microsoft Entra schema and custom expressions'
 description: This article describes the Microsoft Entra schema, the attributes that the provisioning agent flows, and custom expressions.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -10,8 +9,7 @@ ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
-
+ms.custom: sfi-ga-nochange
 ---
 
 

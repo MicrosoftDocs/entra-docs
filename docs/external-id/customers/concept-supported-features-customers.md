@@ -1,17 +1,14 @@
 ---
 title: External Tenant Features
 description: Compare features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
-
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: concept-article
 ms.date: 05/20/2025
-ms.custom: it-pro, seo-july-2024
-
+ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
 ---
 
