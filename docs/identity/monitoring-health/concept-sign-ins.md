@@ -67,6 +67,18 @@ The classic sign-in logs only include interactive user sign-ins.
 
 Sign-in data is used by several services in Azure and Microsoft Entra to monitor risky sign-ins, provide insight into application usage, and more. 
 
+### Microsoft Entra Agent ID
+
+The Microsoft Entra Agent ID was launched at Microsoft Build 2025 and provides a unified directory of all agent identities created across Microsoft Copilot Studio and Azure AI Foundry. With this initial release, IT administrators can view and manage agent identities directly in the Microsoft Entra admin center, including updated sign-in logs. For more information, see the [Microsoft Entra Blog](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/announcing-microsoft-entra-agent-id-secure-and-manage-your-ai-agents/3827392) announcement.
+
+A new complex sign-in log detail, `agentSignIn`, has been added to the Entra sign-in logs and provides the following information:
+
+- `agentType`: Possible values include `notAgentic`, `agenticAppBuilder`, `agenticApp`, `agenticAppInstance`, `unknownFutureValue`
+- If the agent type is `agenticAppInstance`, the `parentID` property is included to provide traceability to the provisioning agent.
+- Use the `isAgent` filter in the Microsoft Entra admin center to filter on only agentic sign-in events.
+
+Because agents can operate with user-delegated or app-only permissions, their sign-ins may appear across different event types, including interactive, non-interactive, service principal, and managed identity sign-ins.
+
 ### Microsoft Entra ID Protection
 <a name='azure-ad-identity-protection'></a>
 
