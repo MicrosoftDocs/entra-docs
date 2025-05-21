@@ -2,13 +2,13 @@
 title: Manage user-assigned managed identities
 description: Create user-assigned managed identities.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 01/15/2025
-ms.author: ryanwi
+ms.author: shermanouko
 ms.custom: devx-track-azurecli, devx-track-linux
 zone_pivot_groups: identity-mi-methods
 ---

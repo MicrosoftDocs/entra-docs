@@ -2,7 +2,7 @@
 title: Developer introduction and guidelines
 description: An overview how developers can use managed identities for Azure resources.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: managed-identities
 ms.topic: overview
 
 ms.date: 09/26/2024
-ms.author: ryanwi
+ms.author: shermanouko
 ai-usage: ai-assisted
 
 
