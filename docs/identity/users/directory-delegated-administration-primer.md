@@ -11,7 +11,7 @@ ms.topic: overview
 ms.service: entra-id
 ms.subservice: users
 ms.collection: M365-identity-device-management
-ms.custom: "it-pro", sfi-ga-nochange
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, access management requires me to understand the permissions of partners who have access to our resources.
 ---
 # What is delegated administration?
