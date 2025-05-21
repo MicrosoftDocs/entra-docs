@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 05/06/2025
+ms.date: 05/21/2025
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -29,7 +29,7 @@ The specific requirements vary based on how an administrator configures the FIDO
 
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
-|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide a valid *packed* attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn’t need to be associated with a particular certificate chain). |
+|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide a valid *packed* attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn't need to be associated with a particular certificate chain). |
 
 >[!NOTE]
 >Vendors are responsible to publish all root attestation certificates to the FIDO Alliance MDS; otherwise, attestation verification can fail.
