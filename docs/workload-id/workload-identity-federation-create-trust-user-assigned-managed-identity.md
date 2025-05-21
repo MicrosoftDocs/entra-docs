@@ -2,14 +2,14 @@
 title: Create Trust Between User-Assigned Managed Identity and External Identity Provider
 description: Set up trust between a user-assigned managed identity and an external identity provider to access Microsoft Entra resources without secrets or certificates.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: entra-workload-id
 
 ms.topic: how-to
 ms.date: 05/12/2025
-ms.author: ryanwi
+ms.author: shermanouko
 ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell
 ms.reviewer: hosamsh
 zone_pivot_groups: identity-wif-mi-methods
