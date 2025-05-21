@@ -139,7 +139,7 @@ The actions that entitlement management checks when a user adds a resource to a 
 
 * To add a security group or Microsoft 365 group: the user must be permitted to perform the `microsoft.directory/groups/members/update` and `microsoft.directory/groups/owners/update` actions
 * To add an application: the user must be permitted to perform the `microsoft.directory/servicePrincipals/appRoleAssignedTo/update` action
-* To add a SharePoint Online site: the user must be a SharePoint Administrator or be in a SharePoint Online site role allowing them to manage permissions in the site
+* To add a SharePoint Online site: the user must be a SharePoint Administrator or the user must be SharePoint site administrator of the site.
 
 The following table lists some of the role combinations that include the actions that allow users in those role combinations to add resources to a catalog. To remove resources from a catalog, you must also have a role or ownership with those same actions.
 
