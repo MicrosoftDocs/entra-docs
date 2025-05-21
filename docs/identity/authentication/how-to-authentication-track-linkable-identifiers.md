@@ -362,7 +362,7 @@ The table below shows the mapping between linkable identifier claims and Microso
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/teams-purview-workload-search.png" alt-text="Screenshot of Microsoft Purview portal showing search for Teams logs.":::
 
-3. To filter by Record Types, the supported record types are MicrosoftTeams, MicrosoftTeams, MicrosoftTeamsAdmin, MicrosoftTeamsAnalytics, MicrosoftTeamsDevices, MicrosoftTeamsSensitivityLabelAction, MicrosoftTeamsShifts.
+3. To filter by Record Types, the supported record types are MicrosoftTeams, MicrosoftTeamsAdmin, MicrosoftTeamsAnalytics, MicrosoftTeamsDevices, MicrosoftTeamsSensitivityLabelAction, MicrosoftTeamsShifts.
  
  :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/teams-purview-recordtypes-search.png" alt-text="Screenshot of Microsoft Purview portal showing supported Record Types for Teams.":::
 
