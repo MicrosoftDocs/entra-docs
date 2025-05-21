@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Check Point Identity Awareness with
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Check Point Identity Awareness single sign-on (SSO) enabled subscription.
 

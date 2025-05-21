@@ -42,6 +42,8 @@ The **Organizational Branding Administrator** role is the minimum role required 
 
 **The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding.md) in the Azure AD B2C documentation.
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 **Use Microsoft Graph with Microsoft Entra company branding.** Company branding can be viewed and managed using Microsoft Graph on the `/beta` endpoint and the `organizationalBranding` resource type. For more information, see the [organizational branding API documentation](/graph/api/resources/organizationalbranding?view=graph-rest-beta&preserve-view=true).
 
 The branding elements are called out in the following example. Text descriptions are provided following the image.

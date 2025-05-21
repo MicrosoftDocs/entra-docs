@@ -6,7 +6,7 @@ manager: beatrizd
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Sign In Enterprise Host Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Sign In Enterprise Host Provisioning.

@@ -27,6 +27,7 @@ In this article,  you learn how to integrate directprint.io Cloud Print Administ
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * directprint.io Cloud Print Administration single sign-on (SSO) enabled subscription.
 

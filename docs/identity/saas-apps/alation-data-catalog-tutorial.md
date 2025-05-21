@@ -28,6 +28,7 @@ In this article,  you learn how to integrate Alation Data Catalog with Microsoft
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Alation Data Catalog single sign-on (SSO) enabled subscription.
 

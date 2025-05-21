@@ -29,6 +29,7 @@ In this article,  you learn how to integrate AWS IAM Identity Center (successor 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An AWS Organizations setup with another account delegated as the Identity Center Administration account.
 * AWS IAM Identity Center enabled on the delegated Identity Center Administration account.

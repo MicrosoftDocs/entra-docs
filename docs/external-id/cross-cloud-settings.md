@@ -6,8 +6,8 @@ ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/14/2025
 
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: it-pro, seo-july-2024
 ms.collection: M365-identity-device-management
@@ -59,6 +59,7 @@ In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to c
 
    :::image type="content" source="media/cross-cloud-settings/cross-cloud-settings.png" alt-text="Screenshot showing Microsoft cloud settings." border="true":::
 
+    You might see a **Cross-cloud synchronization settings** check box for cross-cloud synchronization. This capability is currently being deployed in stages. This setting is not yet functional and you shouldn't try to select this check box.
 
 > [!NOTE]
 > Selecting a cloud doesn't automatically enable B2B collaboration with organizations in that cloud. You'll need to add the organization you want to collaborate with, as described in the next section.

@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/25/2024
 ms.author: gasinh
-
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Entra fundamentals

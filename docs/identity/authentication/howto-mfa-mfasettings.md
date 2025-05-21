@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/14/2025
+ms.date: 05/19/2025
 
 ms.author: justinha
 author: justinha
@@ -16,6 +16,9 @@ ms.reviewer: jupetter
 # Configure Microsoft Entra multifactor authentication settings
 
 To customize the end-user experience for Microsoft Entra multifactor authentication (MFA), you can configure options for reporting suspicious activities. The following table describes Microsoft Entra MFA settings, and subsections cover each setting in more detail.
+
+>[!NOTE]
+>[Report suspicious activity](#report-suspicious-activity) replaces the Block/unblock users, Fraud alert, and Notifications legacy features. On March 1, 2025, the legacy features were removed. 
 
 | Feature | Description |
 | ------- | ----------- |

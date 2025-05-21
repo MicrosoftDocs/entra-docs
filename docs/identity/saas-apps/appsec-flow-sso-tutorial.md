@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Conviso Platform SSO with Microsoft
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Conviso Platform SSO single sign-on (SSO) enabled subscription.
 

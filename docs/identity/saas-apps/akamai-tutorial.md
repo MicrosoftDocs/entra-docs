@@ -82,6 +82,7 @@ Akamai EAA Application is set up individually on the Azure portal. Admin can con
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Akamai single sign-on (SSO) enabled subscription.
 

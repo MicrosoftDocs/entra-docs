@@ -2,14 +2,14 @@
 title: Define custom attributes
 description: Learn how to create and define new custom attributes to be collected from users during sign-up and sign-in.
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
 ms.date: 04/28/2025
-ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a developer, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.

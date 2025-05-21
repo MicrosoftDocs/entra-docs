@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Infor Retail – Information Manage
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Infor Retail – Information Management single sign-on enabled subscription.
 
