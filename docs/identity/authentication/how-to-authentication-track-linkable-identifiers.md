@@ -411,7 +411,7 @@ SharePoint Online operations including file access, creation, modification, or d
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-results.png" alt-text="Screenshot of Microsoft Purview portal showing results for SPO and Teams logs.":::
 
-1. Admin can see all the audit log trail from user logging into team and see that the bad actor has done several activities like added specific users, posted a phishing message, deleted files from sharepoint and added files etc.
+1. Admin can see all the audit log trail from user logging into team and see that the bad actor has done several activities like added specific users into a Teams channel, posted a phishing message, deleted files from sharepoint and added files etc.
 
 1. Each log item can be opened to get detailed information on linkable identifiers. Below is an example of user posting a message.
 
@@ -429,7 +429,7 @@ By analyzing the log files with linkable identifiers, tenant admin and security 
 
 ## Related content
 
-[Microsoft Entra Sign in logs](~/identity/monitoring-health/concept-sign-ins~)<br/>
+[Microsoft Entra Sign in logs](~/identity/monitoring-health/concept-sign-ins.md)<br/>
 [SharePoint Online Audit Logs](/purview/audit-log-sharing#tabs=microsoft-purview-portal)<br/>
 [Teams Audit Logs](/purview/audit-teams-audit-log-events)<br/>
 [Microsoft Graph Activity Logs](/graph/microsoft-graph-activity-logs-overview)
