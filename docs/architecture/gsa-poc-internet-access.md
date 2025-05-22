@@ -101,6 +101,24 @@ The ability to help secure Microsoft traffic is a key feature of Microsoft Entra
 
 1. View activity in the [traffic log](../global-secure-access/how-to-view-traffic-logs.md) to confirm that Global Secure Access enabled access. Verify in the sign-in logs that **Through Global Secure Access** shows as **Yes**.
 
+### Implement universal tenant restrictions
+
+[Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) enable you to control access to external tenants by unmanaged identities on company-managed devices and networks. You can enforce this restriction at the authentication plane with tenant restrictions v1, by either blocking or allowing all traffic to an external tenant.
+
+This scenario usually requires hair-pinning traffic to a corporate network proxy. With universal tenant restrictions, organizations can restrict access on a per-application level, extend protection to the data plane (in addition to the authentication plane), and eliminate the need to hair-pin traffic to reduce network latency.
+
+After you enable the Microsoft traffic profile, follow these steps to implement universal tenant restrictions:
+
+1. [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2). If your organization currently uses tenant restrictions v1, review the [guide for migrating to tenant restrictions v2](https://aka.ms/trv2migration).
+
+1. [Enable Global Secure Access signaling for tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#enable-global-secure-access-signaling-for-tenant-restrictions).
+
+1. Sign in to your test device and try to access a different tenant's SharePoint Online or Exchange Online resource for which you have valid credentials.
+
+1. [Validate authentication plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-authentication-plane-protection).
+
+1. [Validate data plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-data-plane-protection).
+
 ## Troubleshoot
 
 If you have problems with your PoC, these articles can help you with troubleshooting, logging, and monitoring:
