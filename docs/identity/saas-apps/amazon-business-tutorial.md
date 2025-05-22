@@ -26,7 +26,9 @@ In this article,  you learn how to integrate Amazon Business with Microsoft Entr
 > [!VIDEO ab3feca1-0ca8-46e6-90a1-76704fdbd844]
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An Amazon Business single sign-on (SSO) enabled subscription. Go to the [Amazon Business](https://www.amazon.com/business/register/org/landing?ref_=ab_reg_mlp) page to create an Amazon Business account.
 
@@ -50,7 +52,7 @@ To configure the integration of Amazon Business into Microsoft Entra ID, you nee
 1. In the **Add from the gallery** section, type **Amazon Business** in the search box.
 1. Select **Amazon Business** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-amazon-business'></a>
 

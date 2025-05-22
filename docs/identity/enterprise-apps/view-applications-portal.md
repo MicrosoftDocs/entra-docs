@@ -57,15 +57,19 @@ Select options according to what you're looking for:
     - **Enterprise Applications** shows non-Microsoft applications.
     - **Microsoft Applications** shows Microsoft applications.
     - **Managed Identities** shows applications that are used to authenticate to services that support Microsoft Entra authentication.
+    - **Agent ID (Preview)** shows AI agent identities that are used by AI agents to to authenticate to services that support Microsoft Entra authentication.
     - **All Applications** shows both non-Microsoft and Microsoft applications.
 1. Under **Application ID starts with**, enter the first few digits of the application ID if you know the application ID.
 1. After choosing the options you want, select **Apply**.
 1. Select **Add filters** to add more options for filtering the search results. The other options include:
+   - **Application Status**
    - **Application Visibility**
    - **Created on**
    - **Assignment required**
-   - **Is app Proxy**
+   - **Is App Proxy**
    - **Owner**
+   - **Identifier URI (Entity ID)**
+   - **Homepage URL** 
 1. To remove any of the filter options already added, select the **X** icon next to the filter option.
 
 

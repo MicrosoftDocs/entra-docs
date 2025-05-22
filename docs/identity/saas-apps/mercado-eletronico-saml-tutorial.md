@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Mercado Eletronico SAML with Micros
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Mercado Eletronico SAML single sign-on (SSO) enabled subscription.
 

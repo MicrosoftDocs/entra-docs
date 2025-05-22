@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and RStudio Connect SAML Authentication so that I can control who has access to RStudio Connect SAML Authentication, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate RStudio Connect SAML Authentication
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * RStudio Connect SAML Authentication. There's a [45 day free evaluation](https://www.rstudio.com/products/connect/).
 

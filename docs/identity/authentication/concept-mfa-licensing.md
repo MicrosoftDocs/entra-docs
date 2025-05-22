@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra multifactor authentication versions and consumption plans
-description: Learn about the Microsoft Entra multifactor authentication client and different methods and versions available. 
-
-
+description: Learn about the Microsoft Entra multifactor authentication client and different methods and versions available.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: michmcla
+ms.custom: sfi-ga-nochange
 ---
 # Features and licenses for Microsoft Entra multifactor authentication
 
@@ -24,7 +22,7 @@ To protect user accounts in your organization, multifactor authentication should
 
 ## Available versions of Microsoft Entra multifactor authentication
 
-Microsoft Entra multifactor authentication can be used, and licensed, in a few different ways depending on your organization's needs. All tenants are entitled to basic multifactor authentication features by using security defaults. You may already be entitled to use advanced Microsoft Entra multifactor authentication depending on the license you currently have. For example, the first 50,000 monthly active users in Microsoft Entra External ID can use MFA and other Premium P1 or P2 features for free. For more information, see [Azure Active Directory B2C pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/).
+Microsoft Entra multifactor authentication can be used, and licensed, in a few different ways depending on your organization's needs. All tenants are entitled to basic multifactor authentication features by using security defaults. You may already be entitled to use advanced Microsoft Entra multifactor authentication depending on the license you currently have. For example, the first 50,000 monthly active users in Microsoft Entra External ID can use MFA and other Premium P1 or P2 features for free.
 
 The following table details the different ways to get Microsoft Entra multifactor authentication and some of the features and use cases for each.
 

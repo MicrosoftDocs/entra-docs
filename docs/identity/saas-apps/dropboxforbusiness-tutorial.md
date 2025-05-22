@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Dropbox Business with Microsoft Ent
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Dropbox Business single sign-on (SSO) enabled subscription.
 

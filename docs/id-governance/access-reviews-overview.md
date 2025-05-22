@@ -10,6 +10,7 @@ ms.topic: reference
 ms.date: 11/25/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 # What are access reviews?

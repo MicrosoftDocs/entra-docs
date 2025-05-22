@@ -17,7 +17,7 @@ When building confidential client applications, managing credentials effectively
 
 ## Prerequisites
 
-* [Quickstart: Register an app in Microsoft Entra ID](quickstart-register-app.md).
+[Quickstart: Register an app in Microsoft Entra ID](quickstart-register-app.md).
 
 ## Add a credential to your application
 

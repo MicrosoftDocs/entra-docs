@@ -4,12 +4,11 @@ description: Conceptual documentation about audiences and supported account type
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:
 ms.date: 04/24/2024
 ms.reviewer: saeeda, jmprieur
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer building a multi-tenant web application, I want to understand the supported account types in the Microsoft identity platform, so that I can ensure my application can sign in users from any organization and with their work, school, or personal Microsoft accounts.
 ---
 

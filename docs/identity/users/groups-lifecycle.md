@@ -83,7 +83,7 @@ For more information on permissions to restore a deleted group, see [Restore a d
 ## Set group expiration
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select **Microsoft Entra ID**.
+1. Select **Identity**.
 1. Select **Groups** > **All groups**, and then select **Expiration** to open the expiration settings.
   
    :::image type="content" source="./media/groups-lifecycle/expiration-settings.png" alt-text="Screenshot that shows expiration settings for groups.":::

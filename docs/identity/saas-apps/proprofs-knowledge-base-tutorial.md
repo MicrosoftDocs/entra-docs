@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate ProProfs Knowledge Base with Micros
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * ProProfs Knowledge Base single sign-on (SSO) enabled subscription.
 

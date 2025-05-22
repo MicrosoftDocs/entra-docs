@@ -23,7 +23,9 @@ In this article,  you learn how to integrate GitHub Enterprise Managed User with
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * GitHub Enterprise Managed User single sign-on (SSO) enabled subscription.
 
@@ -42,7 +44,7 @@ To configure the integration of GitHub Enterprise Managed User into Microsoft En
 1. Type **GitHub Enterprise Managed User** in the search box.
 1. Select **GitHub Enterprise Managed User** from results panel and then select the **Create** button. Wait a few seconds while the app is added to your tenant.
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 ## Configure and test Microsoft Entra SSO for GitHub Enterprise Managed User
 

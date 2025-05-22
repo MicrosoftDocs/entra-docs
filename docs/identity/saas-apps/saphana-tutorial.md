@@ -24,6 +24,7 @@ In this article,  you learn how to integrate SAP HANA with Microsoft Entra ID. W
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A SAP HANA subscription that's single sign-on (SSO) enabled
 - A HANA instance that's running on any public IaaS, on-premises, Azure VM, or SAP large instances in Azure

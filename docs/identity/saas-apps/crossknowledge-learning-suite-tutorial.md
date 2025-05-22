@@ -26,7 +26,9 @@ In this article,  you learn how to integrate CrossKnowledge Learning Suite with 
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * CrossKnowledge Learning Suite single sign-on (SSO) enabled subscription.
 
@@ -46,7 +48,7 @@ To configure the integration of CrossKnowledge Learning Suite into Microsoft Ent
 1. In the **Add from the gallery** section, type **CrossKnowledge Learning Suite** in the search box.
 1. Select **CrossKnowledge Learning Suite** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-crossknowledge-learning-suite'></a>
 
