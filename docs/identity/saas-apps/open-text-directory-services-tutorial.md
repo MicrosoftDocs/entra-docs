@@ -76,14 +76,16 @@ Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps** > **OpenText Directory Services** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-![Screenshot shows single sign-op possabilities.](./media/open-text-directory-services-tutorial/otds-azure-sso-method-saml.png "Select SAML single sign-on method")
+
+   ![Screenshot shows single sign-op possabilities.](./media/open-text-directory-services-tutorial/otds-azure-sso-method-saml.png "Select SAML single sign-on method")
+
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-![Screenshot shows SAML configuration.](./media/open-text-directory-services-tutorial/otds-azure-saml-basic-config.png "Edit Basic SAML Configuration")
+   ![Screenshot shows SAML configuration.](./media/open-text-directory-services-tutorial/otds-azure-saml-basic-config.png "Edit Basic SAML Configuration")
 
     a. In the **Identifier** text box, type a URL using one of the following patterns:
 
