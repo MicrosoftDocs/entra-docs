@@ -17,10 +17,10 @@ This document outlines security operations considerations to deploy [Microsoft E
 
 Key topics covered include:  
 
-* [Tenant protection](#tenant-security-with-edge-protection-from-DDoS-and-bot-attacks)
+* [Tenant protection](#tenant-security-with-edge-protection-from-ddos-and-bot-attacks)
 * [Web application firewall (WAF) integration](#waf-configuration-considerations)
-* [Bot mitigation](#user-security-with-sign-up-protection)
-* [Credential](#application-security-with-credential-and-secret-management) and [token](#risk-reduction-with-token-lifetime-management) hygiene
+* [Bot mitigation](#user-security-sign-up-protection)
+* [Credential](#application-security-credential-and-secret-management) and [token](#risk-reduction-with-token-lifetime-management) hygiene
 * [Geography-based access control](#waf-configuration-considerations)
 
 Special attention goes to processes to safeguard the sign-up and sign-in journeys from automated fraud, such as credential stuffing and International Revenue Share Fraud (IRSF). Find information on the importance of monitoring and alerting, continuous validation, usage tracking, and anomaly detection. These are actions essential for early threat detection and response. See the following diagram of a security operations flow.
