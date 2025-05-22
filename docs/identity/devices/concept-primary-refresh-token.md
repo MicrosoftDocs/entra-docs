@@ -170,6 +170,8 @@ By securing these keys with the TPM, we enhance the security for PRT from malici
 
 ## How are App Tokens protected?
 
+For an overview of how tokens are protected in general, refer to [Protecting tokens in Microsoft Entra Id](../protecting-tokens-microsoft-entra-id.md)
+
 ### [Windows](#tab/windows-apptokens)
 
 - When an app requests token through WAM, Microsoft Entra ID issues a refresh token and an access token. However, WAM only returns the access token to the app and secures the refresh token in its cache by encrypting it with the user's data protection application programming interface (DPAPI) key. 
