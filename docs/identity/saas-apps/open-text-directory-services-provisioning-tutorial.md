@@ -151,6 +151,37 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference| 
 
+> [!NOTE]
+> The user attributes supported for a given application are preconfigured. Most application's user management APIs don't support schema discovery. So, the Microsoft Entra provisioning service isn't able to dynamically generate the list of supported attributes by making calls to the application. However, OTDS does support custom attributes, and the Microsoft Entra provisioning service can read and write to custom attributes. To enter their definitions into the Microsoft Entra admin center, select the **Show advance**d options check box at the bottom of the Attribute Mapping screen, and then select **Edit attribute list for your app**. See [Editing the list of supported attributes](~/identity/app-provisioning/customize-application-attributes#editing-the-list-of-supported-attributes) for further information.
+
+> [!NOTE]
+> Editing the list of supported attributes is only recommended for administrators who have customized the schema of their applications and systems, and have first-hand knowledge of how their custom attributes have been defined or if a source attribute isn't automatically displayed in the Microsoft Entra admin center UI. This sometimes requires familiarity with the APIs and developer tools provided by an application or system. The ability to edit the list of supported attributes is locked down by default, but customers can enable the capability by navigating to the following URL: https://portal.azure.com/?Microsoft_AAD_Connect_Provisioning_forceSchemaEditorEnabled=true . You can then navigate to your application to view the [attribute list](~/identity/app-provisioning/customize-application-attributes#editing-the-list-of-supported-attributes). 
+
+The table below provides an overview on which attributes can be used in OTDS for the mapping.
+
+| OTDS Attribute | Meaning | SCIM Attribute |
+| oTExtraAttr0 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr0 (multivalued string) |
+| oTExtraAttr1 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr1 (multivalued string) |
+| oTExtraAttr2 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr2 (multivalued string) |
+| oTExtraAttr3 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr3 (multivalued string) |
+| oTExtraAttr4 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr4 (multivalued string) |
+| oTExtraAttr5 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr5 (multivalued string) |
+| oTExtraAttr6 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr6 (multivalued string) |
+| oTExtraAttr7 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr7 (multivalued string) |
+| oTExtraAttr8 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr8 (multivalued string) |
+| oTExtraAttr9 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr9 (multivalued string) |
+| oTUserID1 | Additional user identifier 1 | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:userID1 |
+| oTUserID2 | Additional user identifier 2 | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:userID2 |
+| oTUserID3 | Additional user identifier 3 | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:userID3 |
+| oTUserID4 | Additional user identifier 4 | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:userID4 |
+| oTDomainName | User's network domain | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:domain |
+| oTSecurityClearanceLevel | User's security clearance level | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:secClrLevel (integer) |
+| oTSupplementalMarking | User's supplemental markings | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:suppMarks (multivalued string) |
+
+For example:
+
+![Mapping](media/open-text-directory-services-provisioning-tutorial/azure-mapping.png)
+
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to OpenText Directory Services**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to OpenText Directory Services in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in OpenText Directory Services for update operations. Select the **Save** button to commit any changes.
