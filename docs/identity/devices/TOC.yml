@@ -4,6 +4,8 @@
   items:
   - name: What is a device identity?
     href: overview.md
+  - name: Whats new in Linux for devices
+    href: whats-new-linux.md
 - name: Tutorials
   expanded: false
   items:
@@ -38,6 +40,8 @@
     href: protecting-tokens-microsoft-entra-id.md 
   - name: macOS Platform Single Sign-on overview 
     href: macos-psso.md
+  - name: Microsoft Single Sign-on to Linux
+    href: sso-linux.md
 - name: How-to guides
   expanded: false
   items:
