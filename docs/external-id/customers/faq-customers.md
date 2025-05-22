@@ -155,6 +155,6 @@ You can see example code for each of these steps in our [sample applications](sa
 
 External ID supports server-side integrations with external systems via [custom authentication extensions](~/identity-platform/custom-extension-overview.md). This capability allows developers to implement their own logic and invoke it via real-time API calls during sign-in/up flows.
 
-## Next steps
+## Related content
 
 [Learn more about Microsoft Entra External ID](../index.yml).
