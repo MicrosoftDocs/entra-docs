@@ -32,7 +32,7 @@ In this scenario both clients will handle traffic for separate private applicati
 
 3.  [**Configuration 3: Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application and Internet Access**](#configuration-3-microsoft-entra-microsoft-access-with-palo-alto-prisma-access-for-private-application-and-internet-access)
 
-In this scenario Global Secure Access will handle all Microsoft 365 traffic. Prisma Access will handle Private applications via service connection or ZTNA connectors and Internet traffic.
+In this scenario Global Secure Access will handle all Microsoft 365 traffic. Prisma Access will handle Private applications via service connection or ZTNA connectors. Internet traffic will be handled by Prisma Access.
 
 4.  [**Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application Access**](#configuration-4-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-palo-alto-prisma-access-for-private-application-access)
 
