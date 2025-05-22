@@ -15,7 +15,7 @@ ms.custom: it-pro, references_regions
 #Customer intent: As a dev, devops, or it admin, I want to prevent telephony fraud by choosing which countries and regions to accept telecom traffic from.
 ---
 
-# Regions that need opt in for Entra External Id MFA telephony verification (preview)
+# Regional opt-in for MFA telephony verification with external tenants (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
