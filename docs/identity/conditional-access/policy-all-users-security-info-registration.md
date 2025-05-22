@@ -25,7 +25,7 @@ Some organizations in the past might have used trusted network location or devic
 
 ## Create a policy to secure registration
 
-The following policy applies to the selected users, who attempt to register using the combined registration experience. The policy requires users to be in a trusted network location and do multifactor authentication, or use Temporary Access Pass credentials.
+The following policy applies to the selected users, who attempt to register using the combined registration experience. The policy requires users who are not on a trusted network to do multifactor authentication. Users from trusted networks are excluded from this policy.
 
 > [!WARNING]
 > If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatible with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
