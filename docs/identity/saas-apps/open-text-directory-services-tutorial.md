@@ -101,10 +101,10 @@ Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
 
     | Reply URL |
     |------------|
-    | `https://<HOSTNAME.DOMAIN.com>/otdsws/login` |
-    | `https://<HOSTNAME.DOMAIN.com>/<OTDS_TENANT>/<TENANTID>/otdsws/login` |
-    | `https://<HOSTNAME.DOMAIN.com>/otdsws/<OTDS_TENANT>/<TENANTID>/login` |
-    | `https://<HOSTNAME.DOMAIN.com>/<OTDS_TENANT>/<TENANTID>/login` |
+    | `https://<HOSTNAME.DOMAIN.com>/otdsws/login?authhandler=<AUTH-HANDLER-NAME>` |
+    | `https://<HOSTNAME.DOMAIN.com>/<OTDS_TENANT>/<TENANTID>/otdsws/login?authhandler=<AUTH-HANDLER-NAME>` |
+    | `https://<HOSTNAME.DOMAIN.com>/otdsws/<OTDS_TENANT>/<TENANTID>/login?authhandler=<AUTH-HANDLER-NAME>` |
+    | `https://<HOSTNAME.DOMAIN.com>/<OTDS_TENANT>/<TENANTID>/login?authhandler=<AUTH-HANDLER-NAME>` |
     |
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
@@ -120,7 +120,7 @@ Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
     |
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Directory Services support team](mailto:support@opentext.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are examples. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Directory Services support team](mailto:support@opentext.com) to get these values. You can also refer to the patterns shown above in the **Basic SAML Configuration** section. Alternatively, if you have already setup the Authentication Handler in OTDS, you can get the configuration xml from `https://<HOSTNAME.DOMAIN.com>/otdsws/login?SAMLMetadata=<AUTH-HANDLER-NAME>`.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -130,14 +130,31 @@ Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
 
 [!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
-## Configure Directory Services SSO
+## Configure OpenText Directory Services SSO
 
 ### SAML Authentication
 To configure single sign-on on **OTDS** side, you need to send the **App Federation Metadata Url** or **App Federation Metadata XML** to [Directory Services support team](mailto:support@opentext.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create OTDS test user
+If you have access to your own OTDS installation, you can perform the following steps
 
-In this section, a user called B.Simon is created in OTDS. OTDS supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in OTDS, a new one is created after authentication.
+In OTDS, create a SAML 2.0 Authentication Handler.
+* Select Browse to select the metadata file downloaded above
+* Configure the OTDS SP Endpoint to be the exact same URL entered into Azure AD above
+
+   ![Screenshot shows OTDS SAML configuration.](./media/open-text-directory-services-tutorial/otds-saml-handler.png "Edit OTDS SAML Configuration")
+
+* If you used the default settings in the attribute mappings on Azure AD, set the authentication principal attribute to cn.
+
+   ![Screenshot shows OTDS SAML configuration.](./media/open-text-directory-services-tutorial/otds-saml-handler-config.png "Edit OTDS SAML Configuration")
+
+* Save the authentication handler and attempt to access the application. You should now be automatically redirected to Azure and be able to sign in.
+
+> [!NOTE]
+> There is no need to configure certificates on the OTDS side since Azure AD does not expect or require applications to sign their SAML authentication requests. However, should you require Single Logout (SLO) out to be initiated from OTDS, you must configure signing on the authentication handler. See the latest OpenText Directory Services Installation and Administration Guide for details.
+> Enabling Single Logout (SLO) out may in turn require that the **XML Signature Algorithm** is changed from `http://www.w3.org/2000/09/xmldsig#rsa-sha1` to `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`
+
+> [!NOTE]
+> Once the Authentication handler has been created, the configuration is available for download via the following URL: `https://<HOSTNAME.DOMAIN.com>/otdsws/login?SAMLMetadata=<AUTH-HANDLER-NAME>`. You can download this XML for comparison / import in Entra if required.
 
 > [!NOTE]
 > OTDS also supports automatic user provisioning, you can find more details [here](./open-text-directory-services-provisioning-tutorial.md) on how to configure automatic user provisioning.
@@ -146,18 +163,6 @@ In this section, a user called B.Simon is created in OTDS. OTDS supports just-in
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-#### SP initiated:
-
 * Select **Test this application**, this option redirects to Directory Services Sign-on URL where you can initiate the login flow.  
 
 * Go to Directory Services Sign-on URL directly and initiate the login flow from there.
-
-#### IDP initiated:
-
-* Select **Test this application**, and you should be automatically signed in to the Directory Services for which you set up the SSO. 
-
-You can also use Microsoft My Apps to test the application in any mode. When you select the Directory Services tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Directory Services for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
-
-## Related content
-
-Once you configure Directory Services you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
