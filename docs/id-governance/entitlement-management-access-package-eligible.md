@@ -35,7 +35,9 @@ Required: Make Prerequisites the first H2 after the H1.
 
 ## Create a group
 
-The following steps walk you through creating the group that you will enable to be managed by PIM. If you have already created the group you want to manage with PIM, skip to [Enable management of group with PIM](entitlement-management-access-package-eligible.md#enable-management-of-group-with-pim).
+The following steps walk you through creating the group that you'll enable to be managed by PIM. If you have already created the group you want to manage with PIM, skip to [Enable management of group with PIM](entitlement-management-access-package-eligible.md#enable-management-of-group-with-pim).
+
+To create a group, you'll do the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
