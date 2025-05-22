@@ -63,7 +63,7 @@ These statistics continue to trend upwards, with no sign of slowing down. In thi
 
 ### Manual remediation 
 
-When user remediation isn't enabled, an admin must manually review them in the reports in the portal, through the API, or in Microsoft 365 Defender. Admins can perform manual actions to dismiss, confirm safe, or confirm compromise on the risks.
+When user remediation isn't enabled, an admin must manually review them in the reports in the portal, through the API, or in Microsoft 365 Defender XDR. Admins can perform manual actions to dismiss, confirm safe, or confirm compromise on the risks.
 
 ## Making use of the data
 
