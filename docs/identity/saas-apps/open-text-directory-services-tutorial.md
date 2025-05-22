@@ -116,12 +116,12 @@ Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
     | `https://<HOSTNAME.DOMAIN.com>/otdsws/<OTDS_TENANT>/<TENANTID>/login` |
     | `https://<HOSTNAME.DOMAIN.com>/<OTDS_TENANT>/<TENANTID>/login` |
 
-> [!NOTE]
-> These values are examples. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Directory Services support team](mailto:support@opentext.com) to get these values. You can also refer to the patterns shown above in the **Basic SAML Configuration** section. Alternatively, if you have already setup the Authentication Handler in OTDS, you can get the configuration xml from `https://<HOSTNAME.DOMAIN.com>/otdsws/login?SAMLMetadata=<AUTH-HANDLER-NAME>`.
-
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
+
+> [!NOTE]
+> These values are examples. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Directory Services support team](mailto:support@opentext.com) to get these values. You can also refer to the patterns shown above in the **Basic SAML Configuration** section. Alternatively, if you have already setup the Authentication Handler in OTDS, you can get the configuration xml from `https://<HOSTNAME.DOMAIN.com>/otdsws/login?SAMLMetadata=<AUTH-HANDLER-NAME>`.
 
 <a name='create-an-azure-ad-test-user'></a>
 
