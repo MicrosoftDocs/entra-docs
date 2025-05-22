@@ -22,7 +22,6 @@ Domain Services will use the following retirement path for TLS versions 1.0 and 
 
 1. Domain Services will remove the ability to disable the TLS 1.2 only mode. Customers who disable TLS 1.2 only mode can enable it. 
 1. After Domain Services removes the ability to disable the TLS 1.2 only mode, customers can't enable or disable TLS 1.2 only mode. 
-1. The Domain Services team will work with customers who need TLS versions 1.0 and 1.1.
 
 ## How to migrate to TLS 1.2 only mode in Domain Services
 
