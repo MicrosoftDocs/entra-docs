@@ -49,7 +49,7 @@ Learn more about [custom URL domains in external tenants]().
 
 In the following diagram, see the custom domain example. 
 
-   [ ![Diagram of a custom domain.](media/security-operations-external/custom-domain.png)](media/security-operations-external/custom-domain-expanded.png#lightbox)
+   [ ![Diagram of a custom domain.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
 
 WAF configuration considerations
 
@@ -145,7 +145,7 @@ Microsoft Entra External ID stores sign-in and audit logs for 30 days. For reten
 
 Configure [Azure Monitor](/azure/azure-monitor/fundamentals/overview) as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor. 
 
-   [ ![Diagram of log exports with Azure Monitor.](media/security-operations-external/log-export.png)](media/security-operations-external/log-export-expanded.png#lightbox)
+   [ ![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-expanded.png#lightbox)
 
 This configuration requires projecting a [Microsoft Azure resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) with the resources from the enterprise tenant to the Microsoft Entra tenant.  
 
