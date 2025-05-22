@@ -17,17 +17,17 @@ This document outlines security operations considerations to deploy [Microsoft E
 
 Key topics covered include:  
 
-* Tenant protection
-* Web application firewall (WAF) integration
-* Bot mitigation
-* Credential and token hygiene
-* Geography-based access control
+* [Tenant protection](#tenant-security-with-edge-protection-from-DDoS-and-bot-attacks)
+* [Web application firewall (WAF) integration](#waf-configuration-considerations)
+* [Bot mitigation](#user-security-with-sign-up-protection)
+* [Credential](#application-security-with-credential-and-secret-management) and [token](#risk-reduction-with-token-lifetime-management) hygiene
+* [Geography-based access control](#waf-configuration-considerations)
 
 Special attention goes to processes to safeguard the sign-up and sign-in journeys from automated fraud, such as credential stuffing and International Revenue Share Fraud (IRSF). Find information on the importance of monitoring and alerting, continuous validation, usage tracking, and anomaly detection. These are actions essential for early threat detection and response. See the following diagram of a security operations flow.
 
    [ ![Diagram of a security operations flow.](media/deployment-external/security-operations.png)](media/deployment-external/security-operations-expanded.png#lightbox)
 
-## Tenant security: Edge protection from DDoS and bot attacks
+## Tenant security with edge protection from DDoS and bot attacks
 
 [Microsoft Entra tenants](/azure/cloud-adoption-framework/ready/landing-zone/design-area/azure-ad-define) expose publicly accessible endpoints over the internet to enable user authentication and service access. These areas include authentication and metadata endpoints. The endpoints are accessible anonymously; therefore potential targets for distributed denial-of-service (DDoS) attacks and malicious automated activity, such as fraudulent account creation. An edge-based protection strategy helps ensure service availability and user security. 
 
@@ -51,7 +51,7 @@ In the following diagram, see the custom domain example.
 
    [ ![Diagram of a custom domain.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
 
-WAF configuration considerations
+## WAF configuration considerations
 
 Use the following table to learn about security controls and their descriptions.
 
