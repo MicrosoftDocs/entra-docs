@@ -44,6 +44,8 @@ An external tenant is the first resource you need to create to get started with 
 
 When you create an external tenant, you can set your correct geographic location and your domain name. If you currently use Azure AD B2C, the new workforce and external tenant model doesn't affect your existing Azure AD B2C tenants.
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 ### User accounts in an external tenant
 
 The directory in an external tenant contains admin and customer user accounts. You can [create and manage admin accounts](how-to-manage-admin-accounts.md) for your external tenant. Customer accounts are typically created through self-service sign-up, but you can [create and manage customer local accounts](how-to-manage-customer-accounts.md).
