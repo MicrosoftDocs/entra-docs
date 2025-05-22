@@ -170,6 +170,7 @@ In OTDS, create a OAuth 2.0 / OpenID Connect Authentication Handler
 | Client ID | <client_id> value form Entra configuration |
 | Client Secret | <client_secret> value form Entra configuration |
 | Scope String | **openid profile email User.Read** |
+| Use PKCE | **true** *(optional)* |
 | OIDC Metadata Endpoint | openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0/.well-known/openid-configuration` |
 | OIDC JWKS Endpoint | **jwks_uri** value from openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0/discovery/v2.0/keys` |
 | Authorization Endpoint | **authorization_endpoint** value from openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0/discovery/v2.0/authorize` |
