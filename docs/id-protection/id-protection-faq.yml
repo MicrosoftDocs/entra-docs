@@ -9,7 +9,7 @@ metadata:
   author: shlipsey3
   ms.author: sarahlipsey
   manager: femila
-  ms.date: 05/19/2025
+  ms.date: 05/22/2025
   ms.reviewer: etbasser
 
 title: Frequently asked questions around Microsoft Entra ID Protection
@@ -49,31 +49,26 @@ sections:
         answer: |
           Sorting by *Detection time* in the Risk detections report might not always give the correct result because of a known technical constraint. To sort by *Detection time*, open the report in the Microsoft Entra admin center and select **Download** to export the data as a CSV file and sort accordingly.
 
-  - name: Leaked credentials
-    questions:
       - question: |
-          Where does Microsoft find leaked credentials?
+          Where does Microsoft find leaked credentials? How often are they processed?
         answer: |
           Microsoft finds leaked credentials in various places, including: 
           - Public paste sites where bad actors typically post such material.
           - Law enforcement agencies. 
           - Other groups at Microsoft doing dark web research.
+
+          Leaked credentials are processed immediately after they're found, normally in multiple batches per day. 
+
       - question: |
           Why am I not seeing any leaked credentials?
         answer: |
           Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found **after** you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done.
 
           To see how leaked credentials could appear in ID Protection for your tenant, try simulating leaked credentials in GitHub for Workload Identities. For more information, see [Simulate risk detections in Microsoft Entra ID Protection](howto-identity-protection-simulate-risk.md).
-      - question: |
-          I don't see any leaked credential risk events. Why?
-        answer: |
+
           If you don't see any leaked credential risk events, it is because of the following reasons:
           - You don't have password hash sync enabled for your tenant.
           - Microsoft didn't find any leaked credential pairs that match your users. 
-      - question: |
-          How often does Microsoft process new leaked credentials?
-        answer: |
-          Leaked credentials are processed immediately after they're found, normally in multiple batches per day. 
 
   - name: Remediation
     questions:
