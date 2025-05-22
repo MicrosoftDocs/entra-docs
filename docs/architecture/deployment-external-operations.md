@@ -151,7 +151,10 @@ This configuration requires projecting a [Microsoft Azure resource group](/azure
 
 ### Monitor and alert
 
-Monitoring helps ensure the efficient operation of identity and associated systems. These actions include establishing monitoring infrastructure, defining monitoring procedures, setting up dashboards or alerts, and creating a response protocol to handle alerts. See the following list of what to monitor. 
+Monitoring helps ensure the efficient operation of identity and associated systems. These actions include establishing monitoring infrastructure, defining monitoring procedures, setting up dashboards or alerts, and creating a response protocol to handle alerts. See the following note, and a list of what to monitor. 
+
+   > [!NOTE] 
+   > Monitor logs for exceptions and errors from the identity service. Also monitor dependent services such as WAFs and APIs that call in custom extensions.
 
 * **Availability** - Discover if the service is operational. Sometimes referred to as a heartbeat or health endpoint. Set it up on the monitoring system for it to execute frequently on in-use components. For custom extension APIs, we recommend you implement health endpoint monitoring. If you develop API using .NET, use health checks in ASP.NET Core to expose health endpoints. Monitoring availability is essential, but it might solely indicate service failures.
 * **Functionality** - Track functionality with synthetic transactions that mimic end-to-end user or system interactions involving dependencies: UI, API calls, logging. Many monitoring tools have features to automate multistep web experiences, like sign-up, profile edit, and MFA. 
@@ -160,10 +163,7 @@ Monitoring helps ensure the efficient operation of identity and associated syste
 Requests for authentication and identity come with a session correlation ID. When the identity system calls external custom extensions, this identifier is in the authentication context. To diagnose issues, log the identifier in the custom extension. 
 
    > [!NOTE] 
-   > Microsoft has a goal to enable client-side telemetry using analytics tools such as Google Analytics and Adobe Analytics. 
-   
-   > [!NOTE] 
-   > Monitor logs for exceptions and errors from the identity service. Also monitor dependent services such as WAFs and APIs that call in custom extensions. 
+   > Microsoft has a goal to enable client-side telemetry using analytics tools such as Google Analytics and Adobe Analytics.  
 
 The following diagram illustrates monitoring and alerting setup.
 
