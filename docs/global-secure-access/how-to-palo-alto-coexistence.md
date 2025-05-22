@@ -39,7 +39,7 @@ In this scenario Global Secure Access will handle all Microsoft 365 traffic. Pri
 In this scenario Global Secure Access will handle Internet and Microsoft 365 traffic. Prisma Access will only capture private application traffic via service connection or ZTNA connectors.
 
 > [!NOTE]
-> The following configurations were tested for Palo Alto Prisma Access, set up and managed with Strata Cloud Manager. Private applications access was tested with Service Connections and ZTNA connectors. Connectivity to Prisma Access service was provided by GlobalProtect and tested with SSL and IPsec VPN configurations.
+> The following configurations were tested for Palo Alto Prisma Access and managed with Strata Cloud Manager. Private application access was tested through Service Connections and ZTNA connectors. Connectivity to Prisma Access service was provided by GlobalProtect and tested with SSL and IPsec VPN configurations.
 
 **Prerequisites**
 
