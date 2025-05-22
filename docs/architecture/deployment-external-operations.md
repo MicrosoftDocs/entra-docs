@@ -238,6 +238,6 @@ In the [Microsoft Entra admin center](https://entra.microsoft.com), under Monito
 * [Introduction to Microsoft Entra External ID deployment guide](deployment-external-intro.md)
 * [Tenant design](deployment-external-tenant-design.md)
 * [Customer authentication experience](deployment-external-customer-authentication.md)
-* Operations
+* Security operations
 * [Authentication and access control architecture](deployment-external-authentication-access-control.md)
 
