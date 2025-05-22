@@ -160,6 +160,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 The table below provides an overview on which attributes can be used in OTDS for the mapping.
 
 | OTDS Attribute | Meaning | SCIM Attribute |
+|---|---|---|
 | oTExtraAttr0 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr0 (multivalued string) |
 | oTExtraAttr1 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr1 (multivalued string) |
 | oTExtraAttr2 | Extra attribute for any purpose | urn:ietf:params:scim:schemas:extension:opentextds:2.0:User:extraAttr2 (multivalued string) |
