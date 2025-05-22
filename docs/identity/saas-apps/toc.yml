@@ -2003,8 +2003,8 @@
         href: openidoauth-tutorial.md
       - name: OpenLearning
         href: openlearning-tutorial.md
-      - name: Directory Services
-        href: directory-services-tutorial.md
+      - name: OpenText Directory Services (OTDS)
+        href: open-text-directory-services-tutorial.md
       - name: XM Fax and XM SendSecure
         href: xm-fax-and-xm-send-secure-tutorial.md
       - name: Ocurus
