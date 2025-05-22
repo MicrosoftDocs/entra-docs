@@ -26,6 +26,11 @@ By setting up federation with Google, you can allow invited users to sign in to 
 > [!NOTE]
 > Google federation is designed specifically for Gmail users. To federate with Google Workspace domains, use [SAML/WS-Fed identity provider federation](direct-federation.md).
 
+> [!IMPORTANT]
+>
+> - **Starting July 12, 2021**, if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up or for inviting external users for their custom or line-of-business applications, authentication could be blocked for Gmail users (with the error screen shown in [What to expect](#what-to-expect)). This issue occurs only if you create Google integration for self-service sign-up user flows or invitations after July 12, 2021 and Gmail authentications in your custom or line-of-business applications haven’t been moved to system web-views. Because system web-views are enabled by default, most apps will not be affected. To avoid the issue, we strongly advise you to move Gmail authentications to system browsers before creating any new Google integrations for self-service sign-up. Please refer to [Action needed for embedded web-views](#action-needed-for-embedded-frameworks).
+> - **Starting September 30, 2021**, Google is [deprecating web-view sign-in support](https://developers.googleblog.com/2021/06/upcoming-security-changes-to-googles-oauth-2.0-authorization-endpoint.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for external user invitations or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](#deprecation-of-web-view-sign-in-support).
+
 ## What is the experience for the Google user?
 
 You can invite a Google user to B2B collaboration in various ways. For example, you can [add them to your directory via the Microsoft Entra admin center](b2b-quickstart-add-guest-users-portal.md). When they redeem your invitation, their experience varies depending on whether they're already signed in to Google:
