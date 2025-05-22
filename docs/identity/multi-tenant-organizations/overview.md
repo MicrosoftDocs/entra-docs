@@ -1,13 +1,13 @@
 ---
 title: Multitenant organization capabilities in Microsoft Entra ID
 description: Learn about the multitenant organization scenario and capabilities in Microsoft Entra ID.
-author: rolyon
+author: kenwith
 manager: femila
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
 ms.date: 05/16/2024
-ms.author: rolyon
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
