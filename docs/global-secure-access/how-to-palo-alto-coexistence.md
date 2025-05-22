@@ -209,7 +209,7 @@ For this scenario you will need to:
 For this scenario you will need to perform the following in the Palo Alto Strata Cloud Manager portal.
 
 - Set up and configure [GlobalProtect for mobile users](https://docs.paloaltonetworks.com/prisma-access/administration/prisma-access-mobile-users/mobile-users-globalprotect/set-up-globalprotect-mobile-users).
-- Configure the GlobalProtect tunnel settings and app settings to work with Global Secure Access. Follow the instructions listed in the Tunnel Settings above.
+- Configure the GlobalProtect tunnel settings and app settings to work with Global Secure Access. Follow the instructions listed in the Tunnel Settings and App Settings above.
 - Install the Palo Alto Networks GlobalProtect client for Windows, [GlobalProtect App for Windows](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows) or macOS, [GlobalProtect App for macOS](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-mac).
 
 > [!NOTE]
