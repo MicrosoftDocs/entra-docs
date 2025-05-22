@@ -160,44 +160,76 @@ Windows transport endpoints are required for password authentication only when a
 
 ## How is the PRT protected?
 
-A PRT is protected by binding it to the device the user has signed in to. Microsoft Entra ID and Windows 10 or newer enable PRT protection through the following methods:
+A PRT is protected by binding it to the device the user has signed in to. 
+
+### [Windows](#tab/windows-prt-protection)
+
+Microsoft Entra ID and Windows 10 or newer enable PRT protection through the following methods:
 
 - **During first sign in:** During first sign in, a PRT is issued by signing requests using the device key cryptographically generated during device registration. On a device with a valid and functioning TPM, the device key is secured by the TPM preventing any malicious access. A PRT isn't issued if the corresponding device key signature can't be validated.
 - **During token requests and renewal:** When a PRT is issued, Microsoft Entra ID also issues an encrypted session key to the device. It's encrypted with the public transport key (tkpub) generated and sent to Microsoft Entra ID as part of device registration. This session key can only be decrypted by the private transport key (tkpriv) secured by the TPM. The session key is the Proof-of-Possession (POP) key for any requests sent to Microsoft Entra ID. The session key is also protected by the TPM and no other OS component can access it. Token requests or PRT renewal requests are securely signed by this session key through the TPM and hence, can't be tampered with. Microsoft Entra invalidates any requests from the device that aren't signed by the corresponding session key.
 
 By securing these keys with the TPM, we enhance the security for PRT from malicious actors trying to steal the keys or replay the PRT. So, using a TPM greatly enhances the security of Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered devices against credential theft. For performance and reliability, TPM 2.0 is the recommended version for all Microsoft Entra device registration scenarios on Windows 10 or newer. After the Windows 10, 1903 update, Microsoft Entra ID doesn't use TPM 1.2 for any of the above keys due to reliability issues.
 
-### How are app tokens and browser cookies protected?
+---
 
-#### App Tokens
+## How are app tokens and browser cookies protected?
 
-- **Windows**: 
-  - When an app requests token through WAM, Microsoft Entra ID issues a refresh token and an access token. However, WAM only returns the access token to the app and secures the refresh token in its cache by encrypting it with the user's data protection application programming interface (DPAPI) key. 
+## How are App Tokens protected?
+
+### [Windows](#tab/windows-apptokens)
+
+- When an app requests token through WAM, Microsoft Entra ID issues a refresh token and an access token. However, WAM only returns the access token to the app and secures the refresh token in its cache by encrypting it with the user's data protection application programming interface (DPAPI) key. 
   - WAM securely uses the refresh token by signing requests with the session key to issue further access tokens. The DPAPI key is secured by a Microsoft Entra ID based symmetric key in Microsoft Entra itself. 
   - When the device needs to decrypt the user profile with the DPAPI key, Microsoft Entra ID provides the DPAPI key encrypted by the session key, which CloudAP plugin requests TPM to decrypt. This functionality ensures consistency in securing refresh tokens and avoids applications implementing their own protection mechanisms.
+
+### [iOS](#tab/iOS-prt-apptokens)
+
 - iOS:
   - **iOS unmanaged**: On devices without MDM SSO extension profile, broker returns both the access token and the refresh token to the calling app. Calling app will use refresh token for subsequent refreshes and that refresh token won’t be protected. 
   - **iOS managed**: On devices with MDM SSO extension profile, broker returns only the access token to the calling app. Broker uses PRT for any subsequent token refresh and doesn't use unprotected refresh token. We recommend customers to use this configuration over the unmanaged one due to the additional protection it provides. 
+
+### [Android](#tab/android-apptokens)
+
 - **Android**: 
   - Broker only returns the access token to the calling app and stores the app refresh token locally for both managed and unmanaged devices. 
+
+### [Linux](#tab/linux-apptokens)
+
 - **Linux**: 
   - On Linux, Broker only returns the access token to the calling app and stores refresh tokens locally for both managed and unmanaged devices. 
   - The locally stored refresh tokens are encrypted with an encryption key stored in UNIX User’s logon keyring. 
 
-#### Browser cookies
+## How are browser cookies protected
+
+### [Windows](#tab/windows-browsercookies)
+
 - **Windows**: 
   - In Windows 10 or newer, Microsoft Entra ID supports browser SSO in Internet Explorer and Microsoft Edge natively, in Google Chrome via the Windows 10 accounts extension and in Mozilla Firefox v91+ via a browser setting. The security is built not only to protect the cookies but also the endpoints to which the cookies are sent. Browser cookies are protected the same way a PRT is, by utilizing the session key to sign and protect the cookies.
   - When a user initiates a browser interaction, the browser (or extension) invokes a COM native client host. The native client host ensures that the page is from one of the allowed domains. The browser could send other parameters to the native client host, including a nonce, however the native client host guarantees validation of the hostname. The native client host requests a PRT-cookie from CloudAP plugin, which creates and signs it with the TPM-protected session key. As the PRT-cookie is signed by the session key, it's difficult to tamper with. This PRT-cookie is included in the request header for Microsoft Entra ID to validate the device it's originating from. If using the Chrome browser, only the extension explicitly defined in the native client host's manifest can invoke it preventing arbitrary extensions from making these requests. Once Microsoft Entra ID validates the PRT cookie, it issues a session cookie to the browser. This session cookie also contains the same session key issued with a PRT. During subsequent requests, the session key is validated effectively binding the cookie to the device and preventing replays from elsewhere.
+
+### [iOS and Mac](#tab/iOS-browsercookies)
+
 - **iOS and Mac**: 
   - Safari and Edge with the SSO extension profile will have cookies protected by the PRT session key. Edge requires user to be logged into the Edge profile. Cookies are not protected without the SSO extension profile. 
+
+### [Android](#tab/android-browsercookies)
+
 - **Android**: 
   - During interactive sign-ins, browser sso cookie is generated (using the PRT and session key that is in Android account managed storage). Only applicable to Microsoft Edge browser and user must be signed in.
+
+### [Linux](#tab/linux-browsercookies)
+
 - **Linux**: 
   - Microsoft Edge on Linux can request the broker for a browser SSO cookie to enable SSO in Microsoft Edge. The broker generates the SSO cookie using PRT and Session Key that is stored in the user and device broker context respectively to return the generated cookie to Microsoft Edge. Microsoft Edge requires user to be logged in to the profile. Theoretically, apps other than Microsoft Edge can also request this cookie from Broker since there is no app identity on the Linux platform. The OS security boundary is around the UNIX user and only apps in the same user context are able acquire SSO cookie for a user in that context.
+
+---
 
 ## When does a PRT get an MFA claim?
 
 A PRT can get a multifactor authentication claim in specific scenarios. When an MFA-based PRT is used to request tokens for applications, the MFA claim is transferred to those app tokens. This functionality provides a seamless experience to users by preventing MFA challenge for every app that requires it. A PRT can get an MFA claim in the following ways:
+
+### [Windows](#tab/windows-mfa)
 
 **Windows Platform**
 - **Sign in with Windows Hello for Business:** Windows Hello for Business replaces passwords and uses cryptographic keys to provide strong two-factor authentication. Windows Hello for Business is specific to a user on a device, and itself requires MFA to provision. When a user logs in with Windows Hello for Business, the user's PRT gets an MFA claim. This scenario also applies to users logging in with smart cards if Smartcard authentication produces an MFA claim from ADFS.
@@ -207,11 +239,15 @@ A PRT can get a multifactor authentication claim in specific scenarios. When an 
    - When a previous existing PRT and RT are used for access to an app, the PRT and RT are regarded as the first proof of authentication. A new RT is required with a second proof and an imprinted MFA claim. This process also issues a new PRT and RT.
 - Windows 10 or newer maintain a partitioned list of PRTs for each credential. So, there's a PRT for each of Windows Hello for Business, password, or smart card. This partitioning ensures that MFA claims are isolated based on the credential used, and not mixed up during token requests.
 
+> [!NOTE]
+> When using password to sign into Windows 10 or newer Microsoft Entra joined or Microsoft Entra hybrid joined device, MFA during WAM interactive sign in might be required after session key associated with PRT is rolled.
+
+### [iOS/Mac/Android/Linux](#tab/other-mfa)
+
 **iOS/Mac/Android/Linux**:
 - If the CA policies have been set by the admin, user is required to do MFA. In those cases, the PRT would be upgraded and will get an MFA claim. The claim duration is based on the lifetime set on the directory.
 
-> [!NOTE]
-> When using password to sign into Windows 10 or newer Microsoft Entra joined or Microsoft Entra hybrid joined device, MFA during WAM interactive sign in might be required after session key associated with PRT is rolled.
+---
 
 ## How is a PRT invalidated?
 
@@ -223,6 +259,67 @@ A PRT is invalidated in the following scenarios:
    - If user signs in to Windows with their new password, CloudAP discards the old PRT and requests Microsoft Entra ID to issue a new PRT with their new password. If user doesn't have an internet connection, the new password can't be validated, Windows might require the user to enter their old password.
    - If a user has logged in with their old password or changed their password after signing in to Windows, the old PRT is used for any WAM-based token requests. In this scenario, the user is prompted to reauthenticate during the WAM token request and a new PRT is issued.
 - **TPM issues:** Sometimes, a device's TPM can falter or fail, leading to inaccessibility of keys secured by the TPM. In this case, the device is incapable of getting a PRT or requesting tokens using an existing PRT as it can't prove possession of the cryptographic keys. As a result, any existing PRT is invalidated by Microsoft Entra ID. When Windows 10 detects a failure, it initiates a recovery flow to reregister the device with new cryptographic keys. With Microsoft Entra hybrid join, just like the initial registration, the recovery happens silently without user input. For Microsoft Entra joined or Microsoft Entra registered devices, the recovery needs to be performed by a user who has administrator privileges on the device. In this scenario, the recovery flow is initiated by a Windows prompt that guides the user to successfully recover the device.
+
+
+## Browser SSO for Windows using PRT
+
+```mermaid
+%%{init: {
+    'theme': 'neutral',
+	'title': 'Browser SSO using PRT',
+    'sequence': { 'messageAlign': 'left','noteAlign':'left','showSequenceNumbers': 'true'}
+}}%%
+
+sequenceDiagram
+    actor User
+
+    participant CAP as CloudAP Plugin
+    participant Browser as Browser
+    participant Native as Native Client Host
+    participant AAD as Microsoft Entra Id
+
+    autonumber
+
+        rect rgb(50, 200, 200)
+            User->>CAP: Login
+        
+            note over CAP: A - User Login Steps <br/>1. Get (PRT,Session Key) <br/> 2. Import Session Key <br/> 3. Cloud AP framework saves the blob in the cache
+
+            CAP->>CAP: User Login Steps
+        end
+
+        rect rgb(50, 200, 200)
+           activate User
+            Browser->>Browser: Load URL(s) from the registry<br/> when browser is started
+
+            User->>+Browser: Open Microsoft Entra Login URL
+
+                note over Browser: B
+                Browser->>Browser: Validate URL matches the ones obtained from the registry
+                Browser->>+Native: Get Token(URI)
+                    
+                    note over Native: C- <br/>1. Check if URI belongs to MSA vs Microsoft Entra Id <br/> 2. Route the call to Microsoft Entra IdCOM\WinRT api to retrieve the cookies <br/> 3. extract nonce from the URI (if present)<br/> 4. Make a call package call to the Cloud AP plugin to get the cookie
+                    Native->>Native: 
+                    
+                    note over CAP: D
+                    Native->>+CAP: Get PRT_cookie(Nonce)
+                    CAP->>CAP: 1. Create and sign PRT cookie for the user.<br/> 2. Use nonce if it was sent by the calling code.
+                    CAP-->>-Native: return PRT_cookie
+
+                    note left of Browser: E
+                    Native->>-Browser: Pass PRT_cookie
+                Browser->>Browser: Add PRT_cookie to the request header
+
+                Browser->>+AAD: Token request for web app
+                note right of Browser: F - return ID Token, session cookie
+                AAD-->>-Browser: return ID Token, <br/> session cookie
+
+            Browser->>-User: Return ID Token
+            deactivate User
+
+        end
+
+```
 
 ## Detailed flows
 
