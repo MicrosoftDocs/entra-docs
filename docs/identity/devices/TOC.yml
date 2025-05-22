@@ -36,7 +36,6 @@
     href: macos-psso.md
   - name: Microsoft Single Sign-on to Linux
     href: sso-linux.md
-  displayName: Linux, sso, Single sign-on
 - name: How-to guides
   expanded: false
   items:

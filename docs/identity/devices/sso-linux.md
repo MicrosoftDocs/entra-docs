@@ -1,8 +1,4 @@
 ---
-# Required metadata
-# For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
-# For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
-
 title: Microsoft single sign-on For Linux
 description: Overview of Single Sign-on for Linux for Microsoft Entra ID registered devices.
 author:      ploegert # GitHub alias
@@ -41,6 +37,12 @@ The Microsoft single sign-on for Linux is supported with the following operating
 
 You can find more information and instructions on how to configure in these articles:
 - [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
+
+## SSO experience
+
+This video demonstrates the sign-in experience on brokered flows on Linux
+
+![Demo of the Linux Login component component](./media/sso-linux/linux-entra-login.gif)
 
 ## Deployment
 

@@ -1,8 +1,4 @@
 ---
-# Required metadata
-# For more information, see https://learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata
-# For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/en-us/help/platform/metadata-taxonomies
-
 title:       What's new in Microsoft Single Sign-on for Linux
 description: Discusses new feature releases of Microsoft Single Sign-on for Linux
 author:      ploegert # GitHub alias
