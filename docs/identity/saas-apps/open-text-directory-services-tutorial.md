@@ -73,6 +73,26 @@ To configure and test Microsoft Entra SSO with Directory Services, perform the f
 ### OIDC Authentication
 Follow these steps to enable Microsoft Entra SSO using OIDC Authentication. See [OpenID Connect on the Microsoft identity platform](~/identity-platform/v2-protocols-oidc) for background information.
 
+The *ID token* introduced by OpenID Connect is issued by the authorization server, the Microsoft identity platform, when the client application requests one during user authentication. The ID token enables a client application to verify the identity of the user and to get other information (claims) about them.
+
+ID tokens aren't issued by default for an application registered with the Microsoft identity platform. ID tokens for an application are enabled by using one of the following methods:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Entra ID** > **App registrations** > **OpenText Directory Services** > **Authentication**.
+1. Under **Platform configurations**, select **Add a platform**. 
+1. In the pane that opens, select the appropriate platform for your application. For example, select **Web** for a web application.
+1. Under Redirect URIs, add the redirect URI of your application. For example, `https://localhost:8080/`.
+1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
+
+Or:
+
+1. Select **Entra ID** > **App registrations** > **OpenText Directory Services** > **Manifest**.
+1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](reference-app-manifest.md).
+
+If ID tokens aren't enabled for your app and one is requested, the Microsoft identity platform returns an `unsupported_response` error similar to:
+
+> *The provided value for the input parameter 'response_type' isn't allowed for this client. Expected value is 'code'*.
+
 ### SAML Authentication
 Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
 
@@ -142,8 +162,10 @@ In OTDS, create a OAuth 2.0 / OpenID Connect Authentication Handler
 ![Screenshot shows OIDC General configuration.](./media/open-text-directory-services-tutorial/otds-oidc-general.png "OIDC General tab")
 
 * In the **Parameters** tab, update the following:
+
 | Parameter | Value |
-| Provider Name | EntraID (for example) |
+| --- | --- |
+| Provider Name | EntraID *(for example)* |
 | OIDC Issuer | **issuer** value from openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0` |
 | Client ID | <client_id> value form Entra configuration |
 | Client Secret | <client_secret> value form Entra configuration |
