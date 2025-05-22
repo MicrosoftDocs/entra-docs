@@ -35,7 +35,7 @@ Required: Make Prerequisites the first H2 after the H1.
 
 ## Create a group
 
-The following steps walk you through creating the group that you'll enable to be managed by PIM:
+This section walk you through creating the group that you'll enable to be managed by PIM. If you have already created the group you want to be managed by PIM, skip to [Enable management of group with PIM](entitlement-management-access-package-eligible.md#enable-management-of-group-with-pim).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
@@ -89,6 +89,8 @@ Once the resource is managed by PIM, eligible roles can be added as its role ass
 1. Select the group you want to add, and under roles verify that you can assign both active and eligible roles.
     :::image type="content" source="media/entitlement-management-access-package-eligible/eligible-roles-list.png" alt-text="Screenshot of eligible roles list for a group.":::
 
+> [!NOTE]
+> If an Access Package expiration period exceeds the "*Expire eligible assignments after*" policy setting in the PIM managed group, it can cause discrepancies between Entitlement Management and Privileged Identity Management, leading to users losing access while EM shows they are still assigned.
 
 
 ## Next steps
