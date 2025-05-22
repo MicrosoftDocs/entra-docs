@@ -77,7 +77,7 @@ The *ID token* introduced by OpenID Connect is issued by the authorization serve
 
 ID tokens aren't issued by default for an application registered with the Microsoft identity platform. ID tokens for an application are enabled by using one of the following methods:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **App registrations** > **OpenText Directory Services** > **Authentication**.
 1. Under **Platform configurations**, select **Add a platform**. 
 1. In the pane that opens, select the appropriate platform for your application. For example, select **Web** for a web application.
