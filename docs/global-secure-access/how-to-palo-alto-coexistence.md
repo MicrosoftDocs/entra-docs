@@ -278,7 +278,7 @@ After both clients are installed and running side by side and configurations fro
 
 Verify configuration for Global Secure Access client.
 
-1. Right click on the **Global Secure Access client \> Advanced Diagnostics \> Forwarding Profile** and verify that Private Access and Private DNS rules are applied to this client.
+1. Right click on the **Global Secure Access client \> Advanced Diagnostics \> Forwarding Profile** and verify that Microsoft 365 and Internet Access rules are applied to this client.
 2. Navigate to **Advanced Diagnostics \> Health Check** and ensure no checks are failing.
 
 > [!NOTE]
