@@ -70,6 +70,9 @@ To configure and test Microsoft Entra SSO with Directory Services, perform the f
 
 ## Configure Microsoft Entra SSO
 
+### OIDC Authentication
+Follow these steps to enable Microsoft Entra SSO using OIDC Authentication. See [OpenID Connect on the Microsoft identity platform](~/identity-platform/v2-protocols-oidc) for background information.
+
 ### SAML Authentication
 Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
 
@@ -127,7 +130,44 @@ Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
 
 [!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
-## Configure OpenText Directory Services SSO
+## Configure OpenText Directory Services (OTDS) Authentication Handlers
+
+OTDS can be configured to use OIDC or SAML as required for Single Sign-On.
+
+### OIDC Authentication
+To configure single sign-on on **OTDS** side, you need the **OpenID Configuration URL**: `https://login.microsoftonline.com/{tenant-id}/v2.0/.well-known/openid-configuration`
+
+In OTDS, create a OAuth 2.0 / OpenID Connect Authentication Handler
+
+![Screenshot shows OIDC General configuration.](./media/open-text-directory-services-tutorial/otds-oidc-general.png "OIDC General tab")
+
+* In the **Parameters** tab, update the following:
+| Parameter | Value |
+| Provider Name | EntraID (for example) |
+| OIDC Issuer | **issuer** value from openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0` |
+| Client ID | <client_id> value form Entra configuration |
+| Client Secret | <client_secret> value form Entra configuration |
+| Scope String | **openid profile email User.Read** |
+| OIDC Metadata Endpoint | openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0/.well-known/openid-configuration` |
+| OIDC JWKS Endpoint | **jwks_uri** value from openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0/discovery/v2.0/keys` |
+| Authorization Endpoint | **authorization_endpoint** value from openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0/discovery/v2.0/authorize` |
+| Token Endpoint | **token_endpoint** value from openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0/token` |
+| Logout Endpoint | **end_session_endpoint** value from openid-configuration URL, for example: `https://login.microsoftonline.com/{tenant-id}/v2.0/logout` |
+| Logout Method | GET |
+| User Info Endpoint | **userinfo_endpoint** value from openid-configuration URL, for example: `https://graph.microsoft.com/oidc/userinfo` |
+| User Identifier Field | **userPrincipalName** | 
+
+![Screenshot shows OIDC Parameters configuration.](./media/open-text-directory-services-tutorial/otds-oidc-parameters.png "OIDC Parameters tab")
+
+> [!NOTE]
+> If you set the OIDC Metadata Endpoint, there is no need to configure the other URL's as they will be automatically populated.
+> Set the **Enable cred validation** and **Enable token validation** as required.
+
+* In the **Configuration** tab, update the Authentication principall attribute to **mail**
+
+![Screenshot shows OIDC Configuration configuration.](./media/open-text-directory-services-tutorial/otds-oidc-config.png "OIDC Configuration tab")
+
+* Save the authentication handler and attempt to access the application. You should now be automatically redirected to Entra and be able to sign in.
 
 ### SAML Authentication
 To configure single sign-on on **OTDS** side, you need to send the **App Federation Metadata Url** or **App Federation Metadata XML** to [Directory Services support team](mailto:support@opentext.com). They set this setting to have the SAML SSO connection set properly on both sides.
@@ -135,16 +175,18 @@ To configure single sign-on on **OTDS** side, you need to send the **App Federat
 If you have access to your own OTDS installation, you can perform the following steps
 
 In OTDS, create a SAML 2.0 Authentication Handler.
-* Select Browse to select the metadata file downloaded above
-* Configure the OTDS SP Endpoint to be the exact same URL entered into Azure AD above
+* In the **Parameters** tab:
+    * Select Browse to select the metadata file downloaded above
+    * Configure the OTDS SP Endpoint to be the exact same URL entered into Azure AD above
 
    ![Screenshot shows OTDS SAML configuration.](./media/open-text-directory-services-tutorial/otds-saml-handler.png "Edit OTDS SAML Configuration")
 
-* If you used the default settings in the attribute mappings on Azure AD, set the authentication principal attribute to cn.
+* In the **Configuration** tab:
+    * If you used the default settings in the attribute mappings on Azure AD, set the authentication principal attribute to cn.
 
    ![Screenshot shows OTDS SAML configuration.](./media/open-text-directory-services-tutorial/otds-saml-handler-config.png "Edit OTDS SAML Configuration")
 
-* Save the authentication handler and attempt to access the application. You should now be automatically redirected to Azure and be able to sign in.
+* Save the authentication handler and attempt to access the application. You should now be automatically redirected to Entra and be able to sign in.
 
 > [!NOTE]
 > There is no need to configure certificates on the OTDS side since Azure AD does not expect or require applications to sign their SAML authentication requests. However, should you require Single Logout (SLO) out to be initiated from OTDS, you must configure signing on the authentication handler. See the latest OpenText Directory Services Installation and Administration Guide for details.
