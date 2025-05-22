@@ -50,7 +50,9 @@ Automation is critical in security because the scale of signals and attacks requ
 The [Microsoft Digital Defense Report 2024](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft%20Digital%20Defense%20Report%202024%20%281%29.pdf) provides the following statistics:
 
 > 78 trillion security signals analyzed per day, an increase of 13 trillion from the previous year
+>
 > 600 million attacks on Microsoft customers per day
+>
 > 2.75x increase year over year in human-operated ransomware attacks
 
 These statistics continue to trend upwards, with no sign of slowing down. In this environment, automation is the key to identifying and remediating risk so IT organizations can focus on the right priorities.

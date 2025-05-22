@@ -5,7 +5,7 @@ description: Learn how the Microsoft Entra ID Protection overview dashboard prov
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 05/15/2025
+ms.date: 05/22/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
