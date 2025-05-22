@@ -73,7 +73,7 @@ To integrate Palo Alto Prisma Access with Microsoft Global Secure Access, make s
 
 > Tunnel Settings:
 
-1. In the Strata Cloud Manager portal, go to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App** \> **Tunnel Settings**.
+1. In the **Strata Cloud Manager portal**, go to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App** \> **Tunnel Settings**.
 2. In the **Split Tunneling** section, exclude traffic by adding the domain and routes: `*.globalsecureaccess.microsoft.com`, `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`.
 
 > App Settings:
