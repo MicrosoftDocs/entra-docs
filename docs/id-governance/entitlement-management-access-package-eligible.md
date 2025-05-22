@@ -8,36 +8,12 @@ ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 05/21/2025
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+#CustomerIntent: As an IT Administrator I want to assign eligible roles for a group within an access package.
 ---
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
-
-This template provides the basic structure of a How-to article pattern. See the
-[instructions - How-to](../level4/article-how-to-guide.md) in the pattern library.
-
-You can provide feedback about this template at: https://aka.ms/patterns-feedback
-
-How-to is a procedure-based article pattern that show the user how to complete a task in their own environment. A task is a work activity that has a definite beginning and ending, is observable, consist of two or more definite steps, and leads to a product, service, or decision.
-
--->
-
-<!-- 1. H1 -----------------------------------------------------------------------------
-
-Required: Use a "<verb> * <noun>" format for your H1. Pick an H1 that clearly conveys the task the user will complete.
-
-For example: "Migrate data from regular tables to ledger tables" or "Create a new Azure SQL Database".
-
-* Include only a single H1 in the article.
-* Don't start with a gerund.
-* Don't include "Tutorial" in the H1.
-
--->
 
 # Assign eligible group membership and ownership in access packages via PIM for Groups
 
-As an access package manager, you can assign which role you want to provide a user for a group within an access package. By enabling [PIM for Groups management](../id-governance/privileged-identity-management/groups-discover-groups.md), you're able to enhance security by designating that group access happens just-in-time. This article describes how to enable pim for a group, adding the group to an access package, and verifying eligible assignments are available.
+As an access package manager, you can assign which role you want to provide a user for a group within an access package. By [managing groups with Privileged Identity Management](../id-governance/privileged-identity-management/groups-discover-groups.md), you're able to enhance security by designating that group access happens just-in-time. This article describes how to enable pim for a group, adding the group to an access package, and verifying eligible assignments are available.
 
 <!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
 
@@ -57,28 +33,9 @@ Required: Make Prerequisites the first H2 after the H1.
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
-<!-- 4. Task H2s ------------------------------------------------------------------------------
-
-Required: Multiple procedures should be organized in H2 level sections. A section contains a major grouping of steps that help users complete a task. Each section is represented as an H2 in the article.
-
-For portal-based procedures, minimize bullets and numbering.
-
-* Each H2 should be a major step in the task.
-* Phrase each H2 title as "<verb> * <noun>" to describe what they'll do in the step.
-* Don't start with a gerund.
-* Don't number the H2s.
-* Begin each H2 with a brief explanation for context.
-* Provide a ordered list of procedural steps.
-* Provide a code block, diagram, or screenshot if appropriate
-* An image, code block, or other graphical element comes after numbered step it illustrates.
-* If necessary, optional groups of steps can be added into a section.
-* If necessary, alternative groups of steps can be added into a section.
-
--->
-
 ## Create a group
 
-These steps walk you through creating the group that you will enable to be managed by PIM. 
+The following steps walk you through creating the group that you will enable to be managed by PIM. If you have already created the group you want to manage with PIM, skip to [Enable management of group with PIM](entitlement-management-access-package-eligible.md#enable-management-of-group-with-pim).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
@@ -96,7 +53,7 @@ These steps walk you through creating the group that you will enable to be manag
 
 ## Enable management of group with PIM
 
-With the group created, the next step is to enable it to be managed by PIM. To enable PIM management, you'd do the following steps:
+To enable PIM management for the group, you'd do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
