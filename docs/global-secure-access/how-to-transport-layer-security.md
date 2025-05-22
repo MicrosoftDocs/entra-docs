@@ -7,14 +7,14 @@ manager: femila
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 05/21/2025
+ms.date: 05/22/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
 ---
 
 # Configure Transport Layer Security inspection (Preview)
-Transport Layer Security (TLS) inspection allows Global Secure Access to decrypt and inspect traffic at edge locations. This inspection enables Global Secure Access to enforce security policies such as threat detection, content filtering, and fine-grained access controls, which enhances protection against threats concealed within encrypted communications.
+Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access enables decryption and inspection of encrypted traffic at service edge locations. This capability lets Global Secure Access apply advanced security controls like threat detection, content filtering, and granular access policies. Organizations use these access policies to protect against threats that might be hidden in encrypted communications.
 
 > [!IMPORTANT]
 > The Transport Layer Security inspection feature is currently in PREVIEW.   
@@ -25,12 +25,12 @@ This article explains how to create a context-aware Transport Layer Security ins
 ## Prerequisites   
 To complete the steps in this process, you must have the following prerequisites in place:      
 - A Public Key Infrastructure (PKI) service to sign the Certificate Signing Request (CSR) and generate an intermediate certificate for TLS inspection. For testing scenarios, you can also use a self-signed root certificate created with OpenSSL.   
-- Test devices or virtual machines, running Windows, that are either Microsoft Entra joined or hybrid joined to your organization's Microsoft Entra ID.  
+- Test devices or virtual machines running Windows that are either Microsoft Entra joined or hybrid joined to your organization's Microsoft Entra ID.  
 - A trial license for Microsoft Entra Internet Access.  
-- [Global Secure Access prerequisites](how-to-configure-web-content-filtering.md). 
+- [Global Secure Access prerequisites](how-to-configure-web-content-filtering.md) 
 
 ## Create a context-aware TLS inspection policy
-To create a context-aware Transport Layer Security inspection policy and assign the policy to users in your organization, complete the following steps:
+To create a context-aware Transport Layer Security inspection policy and assign it to users in your organization, complete the following steps:
 1. [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination)
 1. [Create a TLS inspection policy](#step-2-global-secure-access-admin-create-a-tls-inspection-policy)
 1. [Link the TLS inspection policy to a security profile](#step-3-global-secure-access-admin-link-the-tls-inspection-policy-to-a-security-profile)
@@ -38,25 +38,25 @@ To create a context-aware Transport Layer Security inspection policy and assign 
 
 ### Step 1: Global Secure Access admin: create a CSR and upload the signed certificate for TLS termination
 To create a CSR and upload the signed certificate for TLS termination:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a [Global Secure Access Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **TLS inspection policies**.
 1. Switch to the **TLS inspection settings** tab.
 1. Select **+ Create certificate**.
 1. In the **Create certificate** pane, fill in the following fields:
-   - **Certificate name**: Up to 12 characters, no spaces.
+   - **Certificate name**: Up to 12 characters, no spaces. You can't reuse the name of an existing certificate.
    - **Common name** (CN): Common name, for example, Contoso TLS ICA, that identifies the intermediate certificate.
    - **Organizational Unit** (OU): Organization name, for example, Contoso IT.
 1. Select **Create CSR**.
 :::image type="content" source="media/how-to-transport-layer-security/create-certificate.png" alt-text="Screenshot of the Create certificate pane with fields filled and the Create CSR button highlighted.":::   
 
-7. After the certificate uploads, the status changes to **Active**.   
-:::image type="content" source="media/how-to-transport-layer-security/status-active.png" alt-text="Screenshot of the TLS inspection settings tab with the certificate status set to Active.":::   
-
-8. Sign the CSR using your PKI service. Ensure Server Auth is in Extended Key Usage and certificate authority (CA)=true in Basic Extension.
+1. Sign the CSR using your PKI service. Make sure Server Auth is in Extended Key Usage and certificate authority (CA)=true in Basic Extension.
 1. Select **+Upload certificate**.
 1. In the Upload certificate form, upload the certificate.pem and chain.pem files.
 1. Select **Upload signed certificate**.
 :::image type="content" source="media/how-to-transport-layer-security/upload-certificate.png" alt-text="Screenshot of Upload certificate form with example certificate and chain certificate files in the upload fields."::: 
+
+1. After the certificate uploads, the status changes to **Active**.   
+:::image type="content" source="media/how-to-transport-layer-security/status-active.png" alt-text="Screenshot of the TLS inspection settings tab with the certificate status set to Active.":::   
 
 For a test configuration, see [Test with a self-signed root certificate authority using OpenSSL](#test-with-a-self-signed-root-certificate-authority-using-openssl).  
 
@@ -68,7 +68,7 @@ To create a TLS inspection policy:
 :::image type="content" source="media/how-to-transport-layer-security/inspection-policy.png" alt-text="Screenshot of the Create a TLS inspection policy screen open to the Review tab.":::   
 
 ### Step 3: Global Secure Access admin: link the TLS inspection policy to a security profile
-Next, link the TLS inspection policy to a security profile. You can link the TLS policy to a security profile in two ways:
+Link the TLS inspection policy to a security profile. You can link the TLS policy to a security profile in two ways:
 #### Option 1: Link the TLS policy to the baseline profile for all users   
 With this method, the baseline profile policy is evaluated last and applies to all user traffic.   
 1. In the Microsoft Entra admin center, navigate to **Secure** > **Security profiles**.   
@@ -85,12 +85,12 @@ Alternatively, you can add a TLS policy to a security profile and link it to a [
 
 ### Step 4: Test the configuration
 To test the configuration:
-1. Ensure the end user device has the root certificate installed in the Trusted Root Certification Authorities folder.   
+1. Make sure the end user device has the root certificate installed in the Trusted Root Certification Authorities folder.
 :::image type="content" source="media/how-to-transport-layer-security/trusted-store.png" alt-text="Screenshot of the Trusted Root Certification Authorities folder.":::   
 
 1. Set up the Global Secure Access client:
     - Disable secure DNS and built-in DNS.  
-    - Block QUIC traffic from your device. QUIC isn't supported in Microsoft Entra Internet Access. Most websites support fallback to TCP when QUIC can't be established. For improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: @New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443.   
+    - Block QUIC traffic from your device. QUIC isn't supported in Microsoft Entra Internet Access. Most websites support fallback to TCP when QUIC can't be established. For an improved user experience, deploy a Windows Firewall rule that blocks outbound UDP 443: @New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443.   
     - Ensure Internet Access Traffic Forwarding is enabled.   
 1. Open a browser on a client device and test various websites. Inspect the certificate information and confirm the Global Secure Access certificate.
 :::image type="content" source="media/how-to-transport-layer-security/certificate-viewer.png" alt-text="Screenshot of the Certificate Viewer with the Global Secure Access certificate highlighted.":::    
@@ -114,8 +114,8 @@ To disable TLS inspection:
     1. Select **Delete**.      
 
 ## Test with a self-signed root certificate authority using OpenSSL
-You can use a self-signed root certificate authority (CA) created by openSSL to sign the CSR. After you upload the certificate and chain, the policy status changes to **Active** and it's ready to use for TLS inspection. To test using OpenSSL:
-1. If you don't already have one, create an `openssl.cnf` file with the following configuration: 
+For **testing purposes only**, use a self-signed root certificate authority (CA) created by OpenSSL to sign the CSR. To test with OpenSSL:
+1. If you don't already have one, create an *openssl.cnf* file with the following configuration:
 ```ini
 [ rootCA_ext ]
 subjectKeyIdentifier = hash
@@ -142,11 +142,11 @@ keyUsage = critical, digitalSignature
 extendedKeyUsage = serverAuth
 ```
 
-2. Create a new root certificate authority and private key using the following `openssl.cnf` config file:   
-`openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCA.key -sha256 -days 3650 -out rootCA.crt -subj “/C=US/ST=US/O=Self Signed/CN=Self Signed Root CA” -config openssl.cnf -extensions rootCA_ext`   
-1. Use the following command to sign csr.txt:   
-`openssl x509 -req -in csr.txt -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out signedcertificate.crt -days 3650 -sha256 -extfile openssl.cnf -extensions signedCA_ext`   
-1. Rename `signedcertificate.crt` to `signedcertificate.pem` and `rootCA.crt` to `rootCA.pem` and upload the signed certificates according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-certificate-signing-request-csr-and-upload-the-signed-certificate-for-tls-termination).   
+2. Create a new root certificate authority and private key using the following *openssl.cnf* config file:   
+```openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCA.key -sha256 -days 365 -out rootCA.crt -subj “/C=US/ST=US/O=Self Signed/CN=Self Signed Root CA” -config openssl.cnf -extensions rootCA_ext```   
+1. Sign *csr.txt* with the following command:   
+```openssl x509 -req -in csr.txt -CA _rootCA.crt_ -CAkey rootCA.key -CAcreateserial -out signedcertificate.crt -days 365 -sha256 -extfile openssl.cnf -extensions signedCA_ext```   
+1. Rename *signedcertificate.crt* to *signedcertificate.pem* and *rootCA.crt* to *rootCA.pem*. Upload the signed certificates according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
 
 ## Related content
 
