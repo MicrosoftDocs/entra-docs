@@ -78,7 +78,7 @@ To integrate Palo Alto Prisma Access with Microsoft Global Secure Access, make s
 
 > App Settings:
 
-1. In the Strata Cloud Manager portal, go to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App** \> **App Settings**
+1. In the **Strata Cloud Manager portal**, go to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App** \> **App Settings**
 2. Scroll to **App Configuration** \> **Show Advanced Options** \> **DNS** and **uncheck** the box for **Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)**
 
 > [!NOTE]
