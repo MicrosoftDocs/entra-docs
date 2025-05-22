@@ -37,7 +37,7 @@ This defense-in-depth model helps safeguard against credential stuffing, account
 
 To enhance protection, we recommend implementing a  WAF. Use this configuration to place security controls in front of your CIAM endpoints. Improve  resiliency and reduce the risk of service disruption from automated threats. 
 
-How does this works? When you use a web-based redirect for user flows, consumers see the domain name of the authentication endpoint. By default, this endpoint uses the format **\<tenantprefix>.ciamlogin.com**, where **\<tenantprefix>** is the tenant-name prefix. For example, for **contoso.onmicrosoft.com**, the tenant prefix is **contoso**. 
+When you use a web-based redirect for user flows, consumers see the domain name of the authentication endpoint. By default, this endpoint uses the format **\<tenantprefix>.ciamlogin.com**, where **\<tenantprefix>** is the tenant-name prefix. For example, for **contoso.onmicrosoft.com**, the tenant prefix is **contoso**. 
 
 ### Domain details
 
@@ -45,7 +45,7 @@ In Microsoft Entra External ID, you can change the domain name to one that you o
 
 With branding capabilities, use a custom domain name to enable integration of a WAF solution, which has more protection from bots and malicious actors. 
 
-Learn more about [custom URL domains in external tenants](). 
+Learn more about [custom URL domains in external tenants](../external-id/customers/concept-custom-url-domain.md). 
 
 In the following diagram, see the custom domain example. 
 
@@ -110,7 +110,7 @@ To strengthen defenses, Microsoft Entra External ID has a premium fraud preventi
 
 ### International Revenue Share Fraud
 
-An International Revenue Share Fraud (IRSF) is a financially driven attack possible when you expose short message service (SMS) verification on a publicly accessible endpoint. When you enable [Microsoft Entra multifactor authentication (MFA)](/entra/identity/authentication/concept-mfa-howitworks) on Microsoft Entra External ID, IRSF attacks are possible. With SMS verification is enabled, Microsoft Entra has two built-in protections: 
+An International Revenue Share Fraud (IRSF) is a financially driven attack possible when you expose short message service (SMS) verification on a publicly accessible endpoint. When you enable [Microsoft Entra multifactor authentication (MFA)](/entra/identity/authentication/concept-mfa-howitworks) on Microsoft Entra External ID, IRSF attacks are possible. With SMS verification enabled, Microsoft Entra has two built-in protections: 
 
 * **Telephony throttling** helps mitigate the risk of service outages and performance degradation
 * **CAPTCHA for SMS-based MFA** helps defend against automated attacks by distinguishing human users from bots. If a user is deemed high-risk, access is blocked, or a CAPTCHA challenge appears before an SMS verification code is sent. 
@@ -120,8 +120,8 @@ As another layer of defense, we recommend you review the following table to cons
 |Security control|Description|
 |---|---|
 |WAF: Bot protection| To trigger OTP messages during sign-up, enable the frontline of defense against IRSF attacks, typically driven by bots that generate high-volume traffic. |
-|Regions that require MFA telephony verification opt-in |Help prevent telephony-based fraud: Microsoft doesn't automatically enable phone-based MFA verification for some country or region codes. To support sign-in from these regions, an administrator submits a support request to opt in and enable telephony verification for those codes.  To allow traffic from deactivated regions, activate them with the [Microsoft Graph API](/graph/use-the-api). |
-|Excessive SMS OTPs from one IP address or ASN. |Implement monitoring and alerting for a high volume of SMS one-time password (OTP) requests originating from the same IP address, ASN, or geographic location. For example, trigger an alert for excessive SMS OTPs from a single IP or geo-coordinates in a short time. This scenario can indicate an IRSF attack. </br> To improve accuracy and reduce noise, refine the alert criteria. Focus on unsuccessful OTP requests by users. In IRSF scenarios, attackers typically don't complete authentication. Then want to generate SMS traffic to phone numbers for financial gain. Use this approach to see potentially malicious activity while and minimize false positives. |
+|Regions that require MFA telephony verification opt-in |Help prevent telephony-based fraud: Microsoft doesn't automatically enable phone-based MFA verification for some country or region codes. To support sign-in from these regions, an administrator submits a support request to opt in and enable telephony verification for those codes. To allow traffic from deactivated regions, activate them with the [Microsoft Graph API](/graph/use-the-api). |
+|Excessive SMS OTPs from one IP address or ASN. |Implement monitoring and alerting for a high volume of SMS one-time password (OTP) requests originating from the same IP address, ASN, or geographic location. For example, trigger an alert for excessive SMS OTPs from a single IP or geo-coordinates in a short time. This scenario can indicate an IRSF attack. </br> To improve accuracy and reduce noise, refine the alert criteria. Focus on unsuccessful OTP requests by users. In IRSF scenarios, attackers typically don't complete authentication. Then want to generate SMS traffic to phone numbers for financial gain. Use this approach to see potentially malicious activity while minimizing false positives. |
 
 ## Sign-in protection: Account takeover
 
@@ -135,9 +135,9 @@ Use multiple layers of defense to reduce the account compromise rate. Employ a c
 |Conditional Access policy: Access control by location|You can restrict user sign-ins based on geographic location. Configure Conditional Access policies using country or region filters, or IP address ranges. You can block access from regions in which your organization doesn't anticipate legitimate user activity. We recommend you use this control with WAF geo-fencing. WAF blocks traffic at the edge before user sign-in. Conditional Access is an enforcement layer at the identity level. |
 |Monitoring: Excessive authentication failures|Monitor and generate alerts for excessive failed authentication attempts from a user account.  </br> For example, trigger an alert if the user authentication failure rate exceeds a threshold, like 10% an hour. This measure increases visibility into, and awareness of, potential account compromise or automated attack activity. |
 
-## Auditing and monitoring
+## Audit and monitor
 
-Auditing is actions taken to understand a system, its user activities, and related processes. Monitoring is an ongoing activity that informs you about what's occurring. Monitoring usually involves alerting and automation. 
+An audit is actions taken to understand a system, its user activities, and related processes. Monitoring is an ongoing activity that informs you about what's occurring. Monitoring usually involves alerting and automation. 
 
 ### Auditing and logs
 
