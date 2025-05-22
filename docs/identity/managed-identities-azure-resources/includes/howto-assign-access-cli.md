@@ -1,6 +1,6 @@
 --- 
-author: rwike77 
-ms.author: ryanwi
+author: SHERMANOUKO 
+ms.author: shermanouko
 ms.date: 06/03/2024 
 ms.topic: include
 ms.service: entra-id
