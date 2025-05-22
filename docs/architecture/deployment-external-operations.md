@@ -171,7 +171,7 @@ The following diagram illustrates monitoring and alerting setup.
 
 ### Service degradation and failure alerting setup
 
-In large systems, some transactions will fail. Incomplete identity experiences, sometimes called incomplete conversions, can occur due to distracted users, telco failures, browser crashes, etc. On a large scale, addressing every failure is impractical. Set up a baseline for typical failure events. Also set up monitoring and alerting to detect deviations, like performance monitoring. Use the following job aid to record failure metrics.
+In large systems, some transactions will fail. Incomplete identity experiences, sometimes called incomplete conversions, can occur due to distracted users, telco failures, and browser crashes. On a large scale, addressing every failure is impractical. Set up a baseline for typical failure events. Also set up monitoring and alerting to detect deviations, like performance monitoring. Use the following job aid to record failure metrics.
 
 |Failure|Baseline|
 |---|---|
