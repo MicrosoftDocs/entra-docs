@@ -52,8 +52,7 @@ The scenario outlined in this article assumes that you already have the followin
       * The access token lifetime can be any value that meets your security policies, but no shorter than 15 minutes (900 seconds).
       ![Access Token Life](media/open-text-directory-services-provisioning-tutorial/token-life.png)
 
-> [!NOTE]
-> Do not specify any redirect URLs. They are not required in this scenario.
+1. Do not specify any redirect URLs. They are not required in this scenario.
 
 1. OTDS will generate and display the **client secret**. Save the **client id** and **client secret** in a secure location.
 
