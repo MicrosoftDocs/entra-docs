@@ -51,8 +51,6 @@ PRT is only used on those platforms when broker is present. Broker is a componen
 
 ### [Windows](#tab/windows-prt-issued)
 
-#### Windows 
-
 The PRT is issued during user authentication on a Windows 10 or newer device in two scenarios:
 
 * **Microsoft Entra joined** or **Microsoft Entra hybrid joined**: A PRT is issued during Windows sign-in when a user signs in with their organization credentials. A PRT is issued with all Windows 10 or newer supported credentials, for example, password and Windows Hello for Business. In this scenario, Microsoft Entra CloudAP plugin is the primary authority for the PRT
@@ -63,8 +61,6 @@ The PRT is issued during user authentication on a Windows 10 or newer device in 
 In Microsoft Entra registered device scenarios, the Microsoft Entra WAM plugin is the primary authority for the PRT since Windows sign in isn't happening with this Microsoft Entra account.
 
 ### [iOS, macOS and Android](#tab/other-prt-issued)
-
-#### iOS, macOS, and Android
 
 - **iOS, macOS, and Android** support two types of PRT artifacts.
   - First type is a `device-bound PRT`, which is similar to Windows associated with the Microsoft Entra device registration
@@ -99,8 +95,6 @@ Once issued, a PRT is valid for 14 days and is continuously renewed as long as t
 
 ### [Windows](#tab/windows-prt-used)
 
-#### Windows
-
 A PRT is used by two key components in Windows:
 
 - **Microsoft Entra CloudAP plugin:** During Windows sign in, the Microsoft Entra CloudAP plugin requests a PRT from Microsoft Entra ID using the credentials provided by the user. It also caches the PRT to enable cached sign in when the user doesn't have access to an internet connection.
@@ -110,13 +104,9 @@ A PRT is used by two key components in Windows:
 
 ### [iOS, macOS, and Android](#tab/other-prt-used)
 
-#### iOS, macOS and Android
-
 PRT is used in a similar manner to the description of the “Microsoft Entra WAM plugin” for native apps. The only browsers that support Browser SSO are Safari and Microsoft Edge.
 
 ### [Linux](#tab/linux-prt-used)
-
-#### Linux
 
 The only native apps integrated today are Intune & Microsoft Edge Browser. For Browser support - only Microsoft Edge Browser is protected for device-bound tokens & CA enforcement.
 
@@ -158,13 +148,6 @@ A PRT is valid for 90 days and is renewed every 4 hours if the device is in use.
 - It's possible to obtain a PRT without the need for device registration ([Workplace Join](/windows-server/identity/ad-fs/operations/walkthrough--workplace-join-to-an-android-device)) and enable SSO.
 - PRTs obtained without device registration can't satisfy the authorization criteria for Conditional Access that relies on the device's status or compliance.
 
-#### Android Platform:
-
-- A PRT is valid for 90 days and is continuously renewed as long as the device is in use. However, it's only valid for 14 days if the device isn't in use.
-- A PRT is only issued and renewed during native app authentication. A PRT isn't renewed or issued during a browser session.
-- It's possible to obtain a PRT without the need for device registration ([Workplace Join](/windows-server/identity/ad-fs/operations/walkthrough--workplace-join-to-an-android-device)) and enable SSO.
-- PRTs obtained without device registration can't satisfy the authorization criteria for Conditional Access that relies on the device's status or compliance.
-
 ---
 
 > [!NOTE]
@@ -195,20 +178,17 @@ By securing these keys with the TPM, we enhance the security for PRT from malici
 
 ### [iOS](#tab/iOS-prt-apptokens)
 
-- iOS:
-  - **iOS unmanaged**: On devices without MDM SSO extension profile, broker returns both the access token and the refresh token to the calling app. Calling app will use refresh token for subsequent refreshes and that refresh token won’t be protected. 
-  - **iOS managed**: On devices with MDM SSO extension profile, broker returns only the access token to the calling app. Broker uses PRT for any subsequent token refresh and doesn't use unprotected refresh token. We recommend customers to use this configuration over the unmanaged one due to the additional protection it provides. 
+- **iOS unmanaged**: On devices without MDM SSO extension profile, broker returns both the access token and the refresh token to the calling app. Calling app will use refresh token for subsequent refreshes and that refresh token won’t be protected. 
+- **iOS managed**: On devices with MDM SSO extension profile, broker returns only the access token to the calling app. Broker uses PRT for any subsequent token refresh and doesn't use unprotected refresh token. We recommend customers to use this configuration over the unmanaged one due to the additional protection it provides. 
 
 ### [Android](#tab/android-apptokens)
 
-- **Android**: 
-  - Broker only returns the access token to the calling app and stores the app refresh token locally for both managed and unmanaged devices. 
+- Broker only returns the access token to the calling app and stores the app refresh token locally for both managed and unmanaged devices. 
 
 ### [Linux](#tab/linux-apptokens)
 
-- **Linux**: 
-  - On Linux, Broker only returns the access token to the calling app and stores refresh tokens locally for both managed and unmanaged devices. 
-  - The locally stored refresh tokens are encrypted with an encryption key stored in UNIX User’s sign in keyring. 
+- On Linux, Broker only returns the access token to the calling app and stores refresh tokens locally for both managed and unmanaged devices. 
+- The locally stored refresh tokens are encrypted with an encryption key stored in UNIX User’s sign in keyring. 
 
 ---
 
@@ -216,24 +196,20 @@ By securing these keys with the TPM, we enhance the security for PRT from malici
 
 ### [Windows](#tab/windows-browsercookies)
 
-- **Windows**: 
-  - In Windows 10 or newer, Microsoft Entra ID supports browser SSO in Internet Explorer and Microsoft Edge natively, in Google Chrome via the Windows 10 accounts extension and in Mozilla Firefox v91+ via a browser setting. The security is built not only to protect the cookies but also the endpoints to which the cookies are sent. Browser cookies are protected the same way a PRT is, by utilizing the session key to sign and protect the cookies.
-  - When a user initiates a browser interaction, the browser (or extension) invokes a COM native client host. The native client host ensures that the page is from one of the allowed domains. The browser could send other parameters to the native client host, including a nonce, however the native client host guarantees validation of the hostname. The native client host requests a PRT-cookie from CloudAP plugin, which creates and signs it with the TPM-protected session key. As the PRT-cookie is signed by the session key, it's difficult to tamper with. This PRT-cookie is included in the request header for Microsoft Entra ID to validate the device it's originating from. If using the Chrome browser, only the extension explicitly defined in the native client host's manifest can invoke it preventing arbitrary extensions from making these requests. Once Microsoft Entra ID validates the PRT cookie, it issues a session cookie to the browser. This session cookie also contains the same session key issued with a PRT. During subsequent requests, the session key is validated effectively binding the cookie to the device and preventing replays from elsewhere.
+- In Windows 10 or newer, Microsoft Entra ID supports browser SSO in Internet Explorer and Microsoft Edge natively, in Google Chrome via the Windows 10 accounts extension and in Mozilla Firefox v91+ via a browser setting. The security is built not only to protect the cookies but also the endpoints to which the cookies are sent. Browser cookies are protected the same way a PRT is, by utilizing the session key to sign and protect the cookies.
+- When a user initiates a browser interaction, the browser (or extension) invokes a COM native client host. The native client host ensures that the page is from one of the allowed domains. The browser could send other parameters to the native client host, including a nonce, however the native client host guarantees validation of the hostname. The native client host requests a PRT-cookie from CloudAP plugin, which creates and signs it with the TPM-protected session key. As the PRT-cookie is signed by the session key, it's difficult to tamper with. This PRT-cookie is included in the request header for Microsoft Entra ID to validate the device it's originating from. If using the Chrome browser, only the extension explicitly defined in the native client host's manifest can invoke it preventing arbitrary extensions from making these requests. Once Microsoft Entra ID validates the PRT cookie, it issues a session cookie to the browser. This session cookie also contains the same session key issued with a PRT. During subsequent requests, the session key is validated effectively binding the cookie to the device and preventing replays from elsewhere.
 
 ### [iOS and Mac](#tab/iOS-browsercookies)
 
-- **iOS and Mac**: 
-  - Safari and Microsoft Edge with the SSO extension profile will have cookies protected by the PRT session key. Microsoft Edge requires user to be logged into the Microsoft Edge profile. Cookies aren't protected without the SSO extension profile. 
+Safari and Microsoft Edge with the SSO extension profile will have cookies protected by the PRT session key. Microsoft Edge requires user to be logged into the Microsoft Edge profile. Cookies aren't protected without the SSO extension profile. 
 
 ### [Android](#tab/android-browsercookies)
 
-- **Android**: 
-  - During interactive sign-ins, browser SSO cookie is generated (using the PRT and session key that is in Android account managed storage). Only applicable to Microsoft Edge browser and user must be signed in.
+During interactive sign-ins, browser SSO cookie is generated (using the PRT and session key that is in Android account managed storage). Only applicable to Microsoft Edge browser and user must be signed in.
 
 ### [Linux](#tab/linux-browsercookies)
 
-- **Linux**: 
-  - Microsoft Edge on Linux can request the broker for a browser SSO cookie to enable SSO in Microsoft Edge. The broker generates the SSO cookie using PRT and Session Key that is stored in the user and device broker context respectively to return the generated cookie to Microsoft Edge. Microsoft Edge requires user to be logged in to the profile. Theoretically, apps other than Microsoft Edge can also request this cookie from Broker since there's no app identity on the Linux platform. The OS security boundary is around the UNIX user and only apps in the same user context are able acquire SSO cookie for a user in that context.
+Microsoft Edge on Linux can request the broker for a browser SSO cookie to enable SSO in Microsoft Edge. The broker generates the SSO cookie using PRT and Session Key that is stored in the user and device broker context respectively to return the generated cookie to Microsoft Edge. Microsoft Edge requires user to be logged in to the profile. Theoretically, apps other than Microsoft Edge can also request this cookie from Broker since there's no app identity on the Linux platform. The OS security boundary is around the UNIX user and only apps in the same user context are able acquire SSO cookie for a user in that context.
 
 ---
 
@@ -243,7 +219,6 @@ A PRT can get a multifactor authentication claim in specific scenarios. When an 
 
 ### [Windows](#tab/windows-mfa)
 
-**Windows Platform**
 - **Sign in with Windows Hello for Business:** Windows Hello for Business replaces passwords and uses cryptographic keys to provide strong two-factor authentication. Windows Hello for Business is specific to a user on a device, and itself requires MFA to provision. When a user logs in with Windows Hello for Business, the user's PRT gets an MFA claim. This scenario also applies to users logging in with smart cards if Smartcard authentication produces an MFA claim from ADFS.
    - As Windows Hello for Business is considered multifactor authentication, the MFA claim is updated when the PRT itself is refreshed, so the MFA duration will continually extend when users sign in with Windows Hello for Business.
 - **MFA during WAM interactive sign in:** During a token request through WAM, if a user is required to do MFA to access the app, the PRT that is renewed during this interaction is imprinted with an MFA claim.
@@ -256,8 +231,7 @@ A PRT can get a multifactor authentication claim in specific scenarios. When an 
 
 ### [iOS/Mac/Android/Linux](#tab/other-mfa)
 
-**iOS/Mac/Android/Linux**:
-- If the CA policies have been set by the admin, user is required to do MFA. In those cases, the PRT would be upgraded and will get an MFA claim. The claim duration is based on the lifetime set on the directory.
+If the CA policies have been set by the admin, user is required to do MFA. In those cases, the PRT would be upgraded and will get an MFA claim. The claim duration is based on the lifetime set on the directory.
 
 ---
 
