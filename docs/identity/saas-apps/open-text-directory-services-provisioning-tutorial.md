@@ -44,14 +44,16 @@ The scenario outlined in this article assumes that you already have the followin
 ## Step 2: Configure OpenText Directory Services to support provisioning with Microsoft Entra ID
 
 > [!NOTE]
-> The below steps  apply to an OpenText Directory Services installation. They don't apply for OpenText CoreShare or OpenText OT2 tenants.
+> The below steps  apply to an OpenText Directory Services (OTDS) installation. They don't apply for OpenText CoreShare or OpenText OT2 tenants.
 
 1. Create a dedicated confidential **OAuth client**.
       ![OAuth Client](media/open-text-directory-services-provisioning-tutorial/oauth-client.png)
 1. Set an **Access token lifetime**.
       * The access token lifetime can be any value that meets your security policies, but no shorter than 15 minutes (900 seconds).
-      * Do not specify any redirect URLs. They are not required.
       ![Access Token Life](media/open-text-directory-services-provisioning-tutorial/token-life.png)
+
+> [!NOTE]
+> Do not specify any redirect URLs. They are not required in this scenario.
 
 1. OTDS will generate and display the **client secret**. Save the **client id** and **client secret** in a secure location.
 
