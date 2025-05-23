@@ -264,6 +264,8 @@ Consider building automation to execute the entire certificate rollover process.
 
 ## Using Azure AD B2C as the Identity Provider
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 [Azure Active Directory B2C](/azure/active-directory-b2c/overview) provides business-to-customer identity as a service. Given that the integration with Azure AD B2C is similar to how you would allow enterprise users to sign in with Microsoft Entra ID, the recommendations above still mostly apply when you want to use Azure AD B2C for your customers, consumers or citizens and allow them to use their preferred social, enterprise, or local account identities. 
 
 There are a few important differences, however. Setting up Azure AD B2C as a corporate identity provider in IAS and configuring federation between both tenants is described in more detail in [this blog post](https://blogs.sap.com/2023/02/08/identity-federation-between-azure-ad-b2c-and-sap-cloud-identity-services-using-custom-policies/).
