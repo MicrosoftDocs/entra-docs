@@ -62,8 +62,7 @@ To configure and test Microsoft Entra SSO with Directory Services, perform the f
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure OTDS SSO](#configure-directory-services-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create OTDS test user](#create-directory-services-test-user)** - to have a counterpart of B.Simon in Directory Services that's linked to the Microsoft Entra representation of user.
+1. **[Configure OTDS SSO](#configure-otds-sso)** - to configure the single sign-on settings on application side.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -87,7 +86,7 @@ ID tokens aren't issued by default for an application registered with the Micros
 Or:
 
 1. Select **Entra ID** > **App registrations** > **OpenText Directory Services** > **Manifest**.
-1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](reference-app-manifest.md).
+1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](~/identity-platform/reference-app-manifest).
 
 If ID tokens aren't enabled for your app and one is requested, the Microsoft identity platform returns an `unsupported_response` error similar to:
 
@@ -150,6 +149,8 @@ Follow these steps to enable Microsoft Entra SSO using SAML Authentication.
 
 [!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
+<a name='configure-otds-sso'></a>
+
 ## Configure OpenText Directory Services (OTDS) Authentication Handlers
 
 OTDS can be configured to use OIDC or SAML as required for Single Sign-On.
@@ -202,12 +203,12 @@ In OTDS, create a SAML 2.0 Authentication Handler.
     * Select Browse to select the metadata file downloaded above
     * Configure the OTDS SP Endpoint to be the exact same URL entered into Azure AD above
 
-   ![Screenshot shows OTDS SAML configuration.](./media/open-text-directory-services-tutorial/otds-saml-handler.png "Edit OTDS SAML Configuration")
+   ![Screenshot shows OTDS SAML Parameters.](./media/open-text-directory-services-tutorial/otds-saml-handler.png "Edit OTDS SAML Configuration")
 
 * In the **Configuration** tab:
     * If you used the default settings in the attribute mappings on Azure AD, set the authentication principal attribute to cn.
 
-   ![Screenshot shows OTDS SAML configuration.](./media/open-text-directory-services-tutorial/otds-saml-handler-config.png "Edit OTDS SAML Configuration")
+   ![Screenshot shows OTDS SAML Configuration.](./media/open-text-directory-services-tutorial/otds-saml-handler-config.png "Edit OTDS SAML Configuration")
 
 * Save the authentication handler and attempt to access the application. You should now be automatically redirected to Entra and be able to sign in.
 
