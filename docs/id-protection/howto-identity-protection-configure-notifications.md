@@ -1,16 +1,14 @@
 ---
 title: Microsoft Entra ID Protection notifications
 description: Learn how notifications support your investigation activities.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 02/28/2025
-
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-ga-nochange
 ---
 # Microsoft Entra ID Protection notifications
 

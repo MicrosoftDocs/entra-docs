@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Autotask Endpoint Backup with Micro
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Autotask Endpoint Backup single sign-on (SSO) enabled subscription.
 

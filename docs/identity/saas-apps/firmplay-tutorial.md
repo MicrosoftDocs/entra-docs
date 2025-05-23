@@ -25,6 +25,7 @@ In this article,  you learn how to integrate FirmPlay - Employee Advocacy for Re
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * FirmPlay - Employee Advocacy for Recruiting single sign-on enabled subscription
 

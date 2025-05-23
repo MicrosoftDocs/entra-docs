@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Pexip Service
@@ -22,6 +22,7 @@ In this article,  you learn how to integrate Pexip Service with Microsoft Entra 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Pexip Service single sign-on (SSO) enabled subscription.
 

@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 12/10/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
  
 # Complete an access review of groups and applications in access reviews

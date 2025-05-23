@@ -27,6 +27,7 @@ In this article,  you learn how to integrate InfinityQS ProFicient on Demand wit
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * InfinityQS ProFicient on Demand single sign-on (SSO) enabled subscription.
 

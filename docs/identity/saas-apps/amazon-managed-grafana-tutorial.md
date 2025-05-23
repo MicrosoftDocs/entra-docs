@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Amazon Managed Grafana with Microso
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Amazon Web Services (AWS) [free account](https://aws.amazon.com/free/).
 * Amazon Managed Grafana single sign-on (SSO) enabled subscription.

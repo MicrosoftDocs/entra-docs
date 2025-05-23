@@ -31,6 +31,8 @@ This error is unrecoverable. To resolve the alert, [delete your existing managed
 
 ## AADDS101: Azure AD B2C is running in this directory
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 ### Alert message
 
 *Microsoft Entra Domain Services cannot be enabled in an Azure AD B2C Directory.*

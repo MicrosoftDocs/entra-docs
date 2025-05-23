@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Alcumus Info Exchange with Microsof
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Alcumus Info Exchange single sign-on (SSO) enabled subscription.
 

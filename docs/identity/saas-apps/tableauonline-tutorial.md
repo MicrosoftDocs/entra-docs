@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Tableau Cloud with Microsoft Entra 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Tableau Cloud single sign-on (SSO) enabled subscription.
 

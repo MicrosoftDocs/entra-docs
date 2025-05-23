@@ -1,13 +1,13 @@
 ---
 title: Configure cross-tenant synchronization
 description: Learn how to configure cross-tenant synchronization in Microsoft Entra ID using the Microsoft Entra admin center.
-author: rolyon
+author: kenwith
 manager: femila
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
 ms.date: 05/02/2025
-ms.author: rolyon
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---

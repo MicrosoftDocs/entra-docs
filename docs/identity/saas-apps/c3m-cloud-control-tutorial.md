@@ -26,6 +26,7 @@ In this article,  you learn how to integrate C3M Cloud Control with Microsoft En
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * C3M Cloud Control single sign-on (SSO) enabled subscription.
 
