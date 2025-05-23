@@ -15,13 +15,15 @@ ms.topic: how-to
 
 The Microsoft identity platform supports authentication for modern application types such as web applications, single-page applications (SPA) and mobile and desktop apps. Once you register your app in the Microsoft Entra admin center, you need to specify the app type by configuring an app platform along with other authentication settings specific to each platform.
 
+When you add a platform to your app registration, you must specify a redirect URI. The redirect URI is the endpoint where the Microsoft identity platform sends security tokens after a user successfully authenticates. This URI is a key security measure, which ensures that security tokens are only sent to to the intended recipient.
+
 ## Prerequisites
 
 * [Quickstart: Register an app in Microsoft Entra ID](quickstart-register-app.md).
 
 ## Add a platform to your app
 
-Follow these steps to specify your app type to your app registration:
+Follow these steps to configure settings based on your target platform or device:
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Under **Manage**, select **Authentication**.
@@ -30,15 +32,15 @@ Follow these steps to specify your app type to your app registration:
 
    :::image type="content" source="./media/quickstart-register-app/portal-04-app-reg-03-platform-config.png" alt-text="Screenshot of the platform configuration pane in the Azure portal." border="false":::
 
-1. Enter the configuration settings as shown in the following table:
 
    | Platform  | Configuration settings | Example |
    | --------- |------------------------|---------|
-   | **Web**   | A **Redirect URI**, which is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. <br> <br> If you configure **Web** app platform for a *native authentication* app registration, you require a redirect URI, but isn't used. Use any redirect URI value, but ensure that the URI meets the required format. |`https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.   |
+   | **Web**   | A **Redirect URI**, which is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. |`https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.   |
    | **Single-page application** | A **Redirect URI**, which is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.|
-   | **iOS / macOS** | **Bundle ID**, which is your app's bundle ID. Microsoft Entra admin center then generates the **Redirect URI** for your app registration.| `com.microsoft.identityapp.ciam.MSALiOS`. |
-   | **Android** | **Package name**, which's your app's  Package Name and **Signature hash**, which you generate via command line by following the portal instructions. One you enter the two values, Microsoft Entra admin center generates a redirect URI for you. | Package name: <br>&#8226; `com.azuresamples.msalandroidapp` <br> Signature has: <br>&#8226; `aB1cD2eF-3gH4iJ5kL6-mN7oP8qR=`. |
-   | **Mobile and desktop applications** | Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | `https://login.microsoftonline.com/common/oauth2/nativeclient` |
+   | **iOS / macOS** | **Bundle ID**. The Microsoft Entra admin center then generates the **Redirect URI** for your app registration.| `com.microsoft.identityapp.ciam.MSALiOS`. |
+   | **Android** | **Package name** and **Signature hash**, which you generate via command line by following the portal instructions. One you enter the two values, the Microsoft Entra admin center generates a redirect URI for you. | Package name: <br>&#8226; `com.azuresamples.msalandroidapp` <br> Signature has: <br>&#8226; `aB1cD2eF-3gH4iJ5kL6-mN7oP8qR=`. |
+| **Mobile and desktop applications** | Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | `https://login.microsoftonline.com/common/oauth2/nativeclient` |
+
 
 1. Select **Configure** to complete the platform configuration.
 
