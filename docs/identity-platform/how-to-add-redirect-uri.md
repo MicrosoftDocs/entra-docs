@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-other
-ms.date: 04/28/2025
+ms.date: 05/23/2025
 ms.service: identity-platform
 ms.topic: how-to
 #Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
@@ -13,9 +13,9 @@ ms.topic: how-to
 
 # Add a platform to your app registration
 
-The Microsoft identity platform supports authentication for modern application types such as web applications, single-page applications (SPA) and mobile and desktop apps. Once you register your app in the Microsoft Entra admin center, you need to specify the app type by configuring an app platform along with other authentication settings specific to each platform.
+The Microsoft identity platform supports authentication for modern application types such as web applications, single-page applications (SPA) and mobile and desktop apps. After you register your app in the Microsoft Entra admin center, specify the app type by setting up an app platform and other authentication settings for your platform.
 
-When you add a platform to your app registration, you must specify a redirect URI. The redirect URI is the endpoint where the Microsoft identity platform sends security tokens after a user successfully authenticates. This URI is a key security measure, which ensures that security tokens are only sent to to the intended recipient.
+When you add a platform to your app registration, specify a redirect URI. The redirect URI is the endpoint where the Microsoft identity platform sends security tokens after a user authenticates. This URI is a key security measure that makes sure security tokens go only to the intended recipient.
 
 ## Prerequisites
 
@@ -37,10 +37,9 @@ Follow these steps to configure settings based on your target platform or device
    | --------- |------------------------|---------|
    | **Web**   | A **Redirect URI**, which is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. |`https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.   |
    | **Single-page application** | A **Redirect URI**, which is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.|
-   | **iOS / macOS** | **Bundle ID**. The Microsoft Entra admin center then generates the **Redirect URI** for your app registration.| `com.microsoft.identityapp.ciam.MSALiOS`. |
+   | **iOS / macOS** | **Bundle ID**, then the Microsoft Entra admin center generates the **Redirect URI** for your app registration.| `com.microsoft.identityapp.ciam.MSALiOS`. |
    | **Android** | **Package name** and **Signature hash**, which you generate via command line by following the portal instructions. One you enter the two values, the Microsoft Entra admin center generates a redirect URI for you. | Package name: <br>&#8226; `com.azuresamples.msalandroidapp` <br> Signature has: <br>&#8226; `aB1cD2eF-3gH4iJ5kL6-mN7oP8qR=`. |
 | **Mobile and desktop applications** | Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | `https://login.microsoftonline.com/common/oauth2/nativeclient` |
-
 
 1. Select **Configure** to complete the platform configuration.
 
