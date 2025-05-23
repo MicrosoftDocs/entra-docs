@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://hootsuite.com/login`
+    `https://hootsuite.com/login?method=sso`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
