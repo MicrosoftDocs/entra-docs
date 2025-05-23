@@ -7,7 +7,7 @@ manager: femila
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 05/22/2025
+ms.date: 05/23/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -43,7 +43,7 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Switch to the **TLS inspection settings** tab.
 1. Select **+ Create certificate**.
 1. In the **Create certificate** pane, fill in the following fields:
-   - **Certificate name**: Up to 12 characters, no spaces. You can't reuse the name of an existing certificate.
+   - **Certificate name**: This name appears in the certificate hierarchy when viewed in a browser. It must be unique, contain no spaces, and be no more than 12 characters long. You can't reuse previous names.
    - **Common name** (CN): Common name, for example, Contoso TLS ICA, that identifies the intermediate certificate.
    - **Organizational Unit** (OU): Organization name, for example, Contoso IT.
 1. Select **Create CSR**.
@@ -150,5 +150,5 @@ extendedKeyUsage = serverAuth
 
 ## Related content
 
-* [Transport Layer Security Inspection Overview](concept-transport-layer-security.md)
-* [Transport Layer Security Inspection Frequently Asked Questions](<resource-faq.yml>)
+* [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
+* [Frequently asked questions for Transport Layer Security inspection](<resource-faq.yml>)

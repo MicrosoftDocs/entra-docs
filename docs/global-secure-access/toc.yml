@@ -157,7 +157,7 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
-      - name: Understand Transport Layer Security inspection 
+      - name: What is Transport Layer Security inspection? 
         href: concept-transport-layer-security.md 
       - name: Configure Transport Layer Security inspection 
         href: how-to-transport-layer-security.md 

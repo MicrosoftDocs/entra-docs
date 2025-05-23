@@ -6,7 +6,7 @@ metadata:
   ms.author: jayrusso
   ms.service: global-secure-access
   ms.topic: faq   
-  ms.date: 04/18/2025
+  ms.date: 05/23/2025
 
 title: Frequently asked questions for Transport Layer Security inspection (preview)   
 summary: |
@@ -22,7 +22,7 @@ sections:
         answer: TLS inspection intercepts encrypted network traffic, decrypts it for security analysis, and re-encrypts it before sending it to its destination. To implement this process securely, define a TLS inspection policy, choose a trusted certificate authority for decryption, and deploy a trusted certificate to endpoints. These steps ensure smooth operation and avoid security warnings.   
 
       - question: What is certificate pinning, and how does it affect TLS inspection? 
-        answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception but also blocks security solutions that rely on TLS inspection.   
+        answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection.   
 
       - question: How should I handle applications that use certificate pinning? 
         answer: The connection fails if MitM TLS inspection terminates traffic from applications that use certificate pinning. To ensure your applications work as expected, create a custom bypass rule in the traffic forwarding profile to exclude traffic from these applications from Global Secure Access. We're working on TLS bypass to let you acquire traffic and apply security controls that don't rely on TLS inspection. For example, Windows Update TLS connections are certificate-pinned. We recommend bypassing [Network endpoints for Microsoft Intune](/mem/intune/fundamentals/intune-endpoints) and any other destinations accessed in [Custom compliance discovery scripts for Microsoft Intune](/mem/intune/protect/compliance-custom-script). You can perform this operation as part of custom bypass in the [Internet access forwarding profile](/mem/intune/protect/compliance-custom-script).      
@@ -31,7 +31,7 @@ sections:
         answer: Microsoft Entra TLS inspection enables TLS 1.2 and TLS 1.3 by default. The highest mutually supported version is selected for the session, from the client to Global Secure Access and from Global Secure Access to the destinations. Microsoft Entra doesn't support TLS 1.3 with Encrypted Client Hello (ECH) because the Server Name Indication (SNI) is encrypted, which prevents Global Secure Access from creating the corresponding leaf certificates for TLS termination.
 
       - question: What happens if I have legacy applications using less secure TLS versions, such as TLS 1.1?
-        answer: We recommend bypassing TLS inspection for these destinations. TLS 1.2 is the minimum recommended version because older versions, like TLS 1.1 and TLS 1.0, are insecure and vulnerable to attacks. Whenever possible, migrate these applications to support TLS 1.2 or higher.
+        answer: We recommend bypassing TLS inspection for these destinations. TLS 1.2 is the minimum recommended version because older versions, like TLS 1.1 and TLS 1.0, aren't secure and are vulnerable to attacks. When possible, move these applications to support TLS 1.2 or higher.
 
       - question: Do you use hardware security modules (HSM) to protect keys?
         answer: Keys aren't stored using hardware protection. Instead, keys are stored in memory to dynamically generate leaf certificates for websites. While not protected by an HSM, access to our servers is highly restricted, and we implement strict security controls to safeguard key access and system integrity.
@@ -42,5 +42,5 @@ sections:
 additionalContent: |
     ## Related content
 
-    * [Transport Layer Security Inspection Overview](concept-transport-layer-security.md)
+    * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
     * [Configure Transport Layer Security](how-to-transport-layer-security.md)
