@@ -254,7 +254,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [DigiCert](../identity/saas-apps/digicert-tutorial.md) | | ● |
 | [Digital Pigeon](../identity/saas-apps/digital-pigeon-tutorial.md) |  | ● |
 | [Directory Services Protector](../identity/saas-apps/directory-services-protector-tutorial.md) |  | ● |
-| [Directory Services](../identity/saas-apps/directory-services-tutorial.md) |  | ● |
+| [OpenText Directory Services (OTDS)](../identity/saas-apps/open-text-directory-services-tutorial.md) | ● | ● |
 | [directprint.io Cloud Print Administration](../identity/saas-apps/directprint-io-cloud-print-administration-tutorial.md) |  | ● |
 | [Directprint.io](../identity/saas-apps/directprint-io-provisioning-tutorial.md) | ● | ● |
 | [Docker Business](../identity/saas-apps/docker-tutorial.md) |  | ● |
