@@ -16,7 +16,6 @@ ai-usage: ai-assisted
 
 
 
-## Learn about Security Service Edge (SSE) coexistence with Microsoft and Palo Alto Networks
 
 Microsoft and Palo Alto Networks SSE solutions can be used together in a unified environment. When used together, you harness a robust set of capabilities from both platforms to elevate your SASE journey. The synergy between these platforms enhances security and provides seamless connectivity.
 
@@ -71,11 +70,11 @@ To integrate Palo Alto Prisma Access with Microsoft Global Secure Access, make s
 - Set up GlobalProtect for mobile users to allow remote access to private applications. For more information see the documentation for [GlobalProtect setup](https://docs.paloaltonetworks.com/prisma-access/administration/prisma-access-mobile-users/mobile-users-globalprotect/set-up-globalprotect-mobile-users).
 - Configure the GlobalProtect tunnel settings and app settings to work with Microsoft Entra Private DNS and bypass Microsoft Entra service Fully Qualified Domain Name (FQDN) and Internet Protocol (IP) addresses.
 
-> Tunnel Settings:
+Tunnel Settings:
 1. In the **Strata Cloud Manager portal**, go to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App** \> **Tunnel Settings**.
 1. In the **Split Tunneling** section, exclude traffic by adding the domain and routes: `*.globalsecureaccess.microsoft.com`, `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`.
 
-> App Settings:
+App Settings:
 1. In the **Strata Cloud Manager portal**, go to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App** \> **App Settings**
 1. Scroll to **App Configuration** \> **Show Advanced Options** \> **DNS** and **uncheck** the box for **Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)**
     > [!NOTE]
