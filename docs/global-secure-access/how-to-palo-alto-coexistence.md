@@ -79,21 +79,21 @@ To integrate Palo Alto Prisma Access with Microsoft Global Secure Access, make s
 > App Settings:
 
 1. In the **Strata Cloud Manager portal**, go to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App** \> **App Settings**
-2. Scroll to **App Configuration** \> **Show Advanced Options** \> **DNS** and **uncheck** the box for **Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)**
+1. Scroll to **App Configuration** \> **Show Advanced Options** \> **DNS** and **uncheck** the box for **Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)**
 
 > [!NOTE]
 > The setting **"Resolve All FQDNs Using DNS Servers Assigned by the Tunnel (Windows Only)"** should be **disabled** when using Microsoft Entra Private DNS (Configurations 1 and 2). During testing, this setting was **enabled** (checked) for Configurations 3 and 4.
 
-3. Navigate to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App**. Select **Push Config** and select **Push** on the top right side of your screen.
-4. Verify that the configuration pushed to the GlobalProtect client. Navigate to **Manage** \> **Operations** \> **Push Status**.
+1. Navigate to **Workflows** \> **Prisma Access Setup** \> **GlobalProtect** \> **GlobalProtect App**. Select **Push Config** and select **Push** on the top right side of your screen.
+1. Verify that the configuration pushed to the GlobalProtect client. Navigate to **Manage** \> **Operations** \> **Push Status**.
 
-- Install the Palo Alto Networks GlobalProtect client. For more information on installing the Palo Alto Networks GlobalProtect client, for Windows see [GlobalProtect App for Windows](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows). For macOS see, [GlobalProtect App for macOS](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-mac).
-- To set up the GlobalProtect client there are a lot of options like tying in Microsoft Entra ID to create your accounts. To learn more about the options, see [Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks - GlobalProtect](/entra/identity/saas-apps/palo-alto-networks-globalprotect-tutorial). For the most basic setup, add a local user to the GlobalProtect from Palo Alto Networks’ Strata Cloud Manager.
+  - Install the Palo Alto Networks GlobalProtect client. For more information on installing the Palo Alto Networks GlobalProtect client, for Windows see [GlobalProtect App for Windows](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-windows). For macOS see, [GlobalProtect App for macOS](https://docs.paloaltonetworks.com/globalprotect/6-2/globalprotect-app-user-guide/globalprotect-app-for-mac).
+  - To set up the GlobalProtect client there are a lot of options like tying in Microsoft Entra ID to create your accounts. To learn more about the options, see [Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks - GlobalProtect](/entra/identity/saas-apps/palo-alto-networks-globalprotect-tutorial). For the most basic setup, add a local user to the GlobalProtect from Palo Alto Networks’ Strata Cloud Manager.
 
 1. Browse to **Manage** \> **Configuration** \> **NGFW and Prisma Access**.
-2. Select **Configuration Scope** \> **GlobalProtect** and then select **Identity Services** \> **Local Users & Groups** \> **Local Users**. Add a user and password for testing.
-3. After the client is installed, users enter the portal address and their credentials.
-4. After users sign in, the connection icon turns blue, and clicking on shows it in a connected state.
+1. Select **Configuration Scope** \> **GlobalProtect** and then select **Identity Services** \> **Local Users & Groups** \> **Local Users**. Add a user and password for testing.
+1. After the client is installed, users enter the portal address and their credentials.
+1. After users sign in, the connection icon turns blue, and clicking on shows it in a connected state.
 
 > [!NOTE]
 > In Configuration 4, if you face issues connecting with GlobalProtect using local users, try setting up Microsoft Entra SSO.
