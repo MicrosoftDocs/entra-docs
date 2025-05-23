@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: 
 ms.date: 11/14/2024
-ms.reviewer: brianmel, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: how-to
