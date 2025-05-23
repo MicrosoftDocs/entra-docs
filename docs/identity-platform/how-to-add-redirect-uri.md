@@ -13,7 +13,7 @@ ms.topic: how-to
 
 # Add a platform to your app registration
 
-Microsoft identity platform supports authentication for various modern application types such as web applications, Single-page applications (SPA) and mobile and desktop apps. Once you register your app on the Microsoft Entra admin center, you need to specify the app type by configuring the app platform along with other authentication settings specific to each platform.
+The Microsoft identity platform supports authentication for modern application types such as web applications, single-page applications (SPA) and mobile and desktop apps. Once you register your app in the Microsoft Entra admin center, you need to specify the app type by configuring an app platform along with other authentication settings specific to each platform.
 
 ## Prerequisites
 
