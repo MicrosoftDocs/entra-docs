@@ -70,7 +70,7 @@ To configure and test Microsoft Entra SSO with Directory Services, perform the f
 ## Configure Microsoft Entra SSO
 
 ### OIDC Authentication
-Follow these steps to enable Microsoft Entra SSO using OIDC Authentication. See [OpenID Connect on the Microsoft identity platform](~/identity-platform/v2-protocols-oidc) for background information.
+Follow these steps to enable Microsoft Entra SSO using OIDC Authentication. See [OpenID Connect on the Microsoft identity platform](/docs/identity-platform/v2-protocols-oidc.md) for background information.
 
 The *ID token* introduced by OpenID Connect is issued by the authorization server, the Microsoft identity platform, when the client application requests one during user authentication. The ID token enables a client application to verify the identity of the user and to get other information (claims) about them.
 
@@ -86,7 +86,7 @@ ID tokens aren't issued by default for an application registered with the Micros
 Or:
 
 1. Select **Entra ID** > **App registrations** > **OpenText Directory Services** > **Manifest**.
-1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](~/identity-platform/reference-app-manifest).
+1. Set `oauth2AllowIdTokenImplicitFlow` to `true` in the app registration's [application manifest](/docs/identity-platform/reference-app-manifest.md).
 
 If ID tokens aren't enabled for your app and one is requested, the Microsoft identity platform returns an `unsupported_response` error similar to:
 
