@@ -96,7 +96,7 @@ To integrate Palo Alto Prisma Access with Microsoft Global Secure Access, make s
 4. After users sign in, the connection icon turns blue, and clicking on shows it in a connected state.
 
 > [!NOTE]
-> During testing of Configuration 4, an authentication issue was observed when using local users and groups. The resolution is to use Microsoft Entra SSO.
+> In Configuration 4, if you face issues connecting with GlobalProtect using local users, try setting up Microsoft Entra SSO.
 
 ## Configuration 1: Microsoft Entra Private Access with Palo Alto Prisma Access for secure Internet Access
 
