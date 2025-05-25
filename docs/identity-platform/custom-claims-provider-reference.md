@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 04/01/2025
+ms.date: 25/05/2025
 ms.reviewer: jassuri
 ms.service: identity-platform
 
@@ -45,11 +45,20 @@ The REST API returns an HTTP response to Microsoft Entra ID containing the attri
 
 To develop your own REST API for the token issuance start event, use the following REST API data contract. The schema describes the contract to design the request and response handler.
 
-Your custom extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign-in. The `id` value in the following JSON is a Microsoft application that represents the Microsoft Entra authentication events service. The JSON attributes can be used to perform extra logic by your API. The request to your API is in the following format:
+Your custom extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign-in. The `id` value in the following JSON is a Microsoft application that represents the Microsoft Entra authentication events service. The JSON attributes can be used to perform extra logic by your API. 
+
+The following HTTP request demonstrates how Microsoft Entra invokes your REST API. This HTTP request can be used to debug your REST API by simulating a request from Microsoft Entra.
 
 ```http
 POST https://your-api.com/endpoint
 
+Content-Type: application/json
+
+[Request payload]
+```
+The following JSON document provides an example of a request payload:
+
+```json
 {
     "type": "microsoft.graph.authenticationEvent.tokenIssuanceStart",
     "source": "/tenants/<Your tenant GUID>/applications/<Your Test Application App Id>",
@@ -83,7 +92,7 @@ POST https://your-api.com/endpoint
                 "createdDateTime": "2016-03-01T15:23:40Z",
                 "displayName": "Casey Jensen",
                 "givenName": "Casey",
-                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // The unique identifier for the user. See https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-1.0#properties
+                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", 
                 "mail": "casey@contoso.com",
                 "onPremisesSamAccountName": "caseyjensen",
                 "onPremisesSecurityIdentifier": "<Enter Security Identifier>",
@@ -98,7 +107,17 @@ POST https://your-api.com/endpoint
 }
 ```
 
-The REST API response format which Azure expects is in the following format, where the claims `DateOfBirth` and `CustomRoles` are returned to Azure:
+Microsoft Entra ID expects a REST API response in the following HTTP.
+
+```http
+HTTP/1.1 200 OK
+
+Content-Type: application/json
+
+[JSON document]
+```
+ 
+In the HTTP response, provide the following JSON document, where the claims `DateOfBirth` and `CustomRoles` are returned to Microsoft Entra:
 
 ```json
 {
