@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 25/05/2025
+ms.date: 05/25/2025
 ms.reviewer: jassuri
 ms.service: identity-platform
 
@@ -41,7 +41,7 @@ Your REST API endpoint is responsible for interfacing with downstream services. 
 
 The REST API returns an HTTP response to Microsoft Entra ID containing the attributes. Attributes that return by your REST API aren't automatically added into a token. Instead, an application's claims mapping policy must be configured for any attribute to be included in the token. In Microsoft Entra ID, a claims mapping policy modifies the claims emitted in tokens issued for specific applications.
 
-### REST API schema
+### Request to the REST API
 
 To develop your own REST API for the token issuance start event, use the following REST API data contract. The schema describes the contract to design the request and response handler.
 
@@ -107,6 +107,23 @@ The following JSON document provides an example of a request payload:
 }
 ```
 
+When a B2B user from Fabrikam organization authenticates to Contoso's organization, the request payload sent to the REST API has the `user` element in the following format:
+
+```json
+"user": {
+    "companyName": "Fabrikam",
+    "createdDateTime": "2022-07-15T00:00:00Z",
+    "displayName": "John Wright",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+    "mail": "johnwright@fabrikam.com",
+    "preferredDataLocation": "EUR",
+    "userPrincipalName": "johnwright_fabrikam.com#EXT#@contoso.onmicrosoft.com",
+    "userType": "Guest"
+}
+```
+
+### Response from the REST API
+
 Microsoft Entra ID expects a REST API response in the following HTTP.
 
 ```http
@@ -136,21 +153,6 @@ In the HTTP response, provide the following JSON document, where the claims `Dat
             }
         ]
     }
-}
-```
-
-When a B2B user from Fabrikam organization authenticates to Contoso's organization, the request payload sent to the REST API has the `user` element in the following format:
-
-```json
-"user": {
-    "companyName": "Fabrikam",
-    "createdDateTime": "2022-07-15T00:00:00Z",
-    "displayName": "John Wright",
-    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
-    "mail": "johnwright@fabrikam.com",
-    "preferredDataLocation": "EUR",
-    "userPrincipalName": "johnwright_fabrikam.com#EXT#@contoso.onmicrosoft.com",
-    "userType": "Guest"
 }
 ```
 
