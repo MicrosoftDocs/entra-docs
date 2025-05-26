@@ -170,7 +170,7 @@ they put in place to control these capabilities.
 
 **Azure AD B2C**. [Azure AD B2C](/azure/active-directory-b2c/overview) is Microsoft's legacy solution for customer identity and access management. Effective May 1, 2025, Azure AD B2C will no longer be available to purchase for new customers. To learn more, please see [Is Azure AD B2C still available to purchase?](/azure/active-directory-b2c/faq?tabs=app-reg-ga#azure-ad-b2c-end-of-sale) in our FAQ.
 
-**Microsoft Entra External ID** is our next generation product which combines powerful solutions for working with people outside of your organization. With External ID capabilities, you can allow external identities to securely access your apps and resources. Whether you’re working with external partners, consumers, or business customers, users can bring their own identities. These identities can range from corporate or government-issued accounts to social identity providers like Google or Facebook. For more information, see [Introduction to Microsoft Entra External ID](/entra/external-id/external-identities-overview)
+**Microsoft Entra External ID** is our next generation product, combining powerful solutions for collaborating with people outside your organization. With External ID capabilities, you can allow external identities to securely access your apps and resources. Whether you’re working with external partners, consumers, or business customers, users can bring their own identities—ranging from corporate or government-issued accounts to social identity providers like Google or Facebook. For more information, see [Introduction to Microsoft Entra External ID](/entra/external-id/external-identities-overview).
 
 ## Next steps
 
