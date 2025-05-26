@@ -4,7 +4,7 @@ description: Learn how to configure and set up a custom email provider with the 
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.reviewer: almars
+ms.reviewer: 
 ms.date: 05/05/2025
 ms.service: identity-platform
 ms.topic: how-to

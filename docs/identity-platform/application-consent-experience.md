@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: jomondi
 ms.custom: 
 ms.date: 02/27/2025
-ms.reviewer: jesakowi, jawoods
+ms.reviewer: jawoods
 ms.service: identity-platform
 
 ms.topic: concept-article

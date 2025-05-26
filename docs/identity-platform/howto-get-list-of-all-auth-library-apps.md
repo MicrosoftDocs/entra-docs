@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: shermanouko
 ms.custom: has-adal-ref
 ms.date: 05/01/2024
-ms.reviewer: dmwendia
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to 

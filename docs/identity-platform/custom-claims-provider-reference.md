@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 05/25/2025
-ms.reviewer: jassuri
+ms.reviewer: jasuri
 ms.service: identity-platform
 
 ms.topic: how-to

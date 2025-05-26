@@ -5,7 +5,7 @@ manager: CelesteDG
 author: henrymbuguakiarie
 ms.author: henrymbugua
 ms.date: 08/19/2024
-ms.reviewer: amgusain, dmwendia, akgoel
+ms.reviewer: akgoel
 ms.service: msal
 ms.subservice: msal-android
 ms.topic: tutorial
