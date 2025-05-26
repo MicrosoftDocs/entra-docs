@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: subject-rbac-steps, devx-track-arm-template
-ms.date: 05/14/2025
+ms.date: 05/26/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -48,8 +48,9 @@ To access resources in your subscription, you must assign a role to the applicat
 You can set the scope at the level of the subscription, resource group, or resource. Permissions are inherited to lower levels of scope.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Select the level of scope you wish to assign the application to. For example, to assign a role at the subscription scope, search for and select **Subscriptions**. If you don't see the subscription you're looking for, select **global subscriptions filter**. Make sure the subscription you want is selected for the tenant.
-1. Select **Access control (IAM)**.
+1. In the search bar at the top of the screen, search for and select **Subscriptions**.
+1. In the new window, select the subscription to want to modify. If you don't see the subscription you're looking for, select **global subscriptions filter**. Make sure the subscription you want is selected for the tenant.
+1. In the left pane, select **Access control (IAM)**.
 1. Select **Add**, then select **Add role assignment**.
 1. In the **Role** tab, select the role you wish to assign to the application in the list, then select **Next**.
 1. On the **Members** tab, for **Assign access to**, select **User, group, or service principal**.
