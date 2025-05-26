@@ -1,7 +1,6 @@
 ---
 title: API-driven inbound provisioning with PowerShell script
 description: Learn how to implement API-driven inbound provisioning with a PowerShell script.
-
 author: jenniferf-skc
 manager: femila
 ms.service: entra-id
@@ -10,6 +9,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # API-driven inbound provisioning with PowerShell script

@@ -9,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is available in the sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
 ---
 # What are Microsoft Entra sign-in logs?

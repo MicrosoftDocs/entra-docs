@@ -9,9 +9,8 @@ ms.subservice: monitoring-health
 ms.date: 11/11/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to troubleshoot sign-in errors for various scenarios and using different tools so that I can resolve sign-in issues quickly.
-
 ---
 
 # How to troubleshoot Microsoft Entra sign-in errors

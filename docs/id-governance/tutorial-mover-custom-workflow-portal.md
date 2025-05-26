@@ -8,8 +8,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/13/2024
 ms.author: owinfrey
-ms.custom: template-tutorial
-
+ms.custom: template-tutorial, sfi-image-nochange
 #CustomerIntent: As an administrator, I want to automate group and team memberships when an employee changes jobs so that their access to resources are always valid for them .
 ---
 

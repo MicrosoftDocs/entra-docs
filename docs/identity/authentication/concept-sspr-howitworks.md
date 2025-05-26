@@ -9,7 +9,7 @@ ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: tilarso
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # How it works: Microsoft Entra self-service password reset
 

@@ -4,14 +4,13 @@ description: Learn how to create a one-way outbound forest to an on-premises AD 
 services: active-directory-ds
 author: justinha
 manager: femila
-
 ms.service: entra-id
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/19/2025
 ms.author: justinha
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create a one-way outbound forest from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest to provide authentication and resource access between forests.
 ---
 

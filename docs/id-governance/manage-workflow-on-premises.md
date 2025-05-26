@@ -6,13 +6,11 @@ ms.author: owinfrey
 manager: femila
 ms.service: entra-id-governance
 ms.workload: identity
-ms.topic: how-to 
+ms.topic: how-to
 ms.date: 08/27/2024
 ms.subservice: lifecycle-workflows
-ms.custom: template-how-to 
-
+ms.custom: template-how-to, sfi-image-nochange
 #CustomerIntent: As an administrator, I want to be able to edit user account tasks in workflows so that they will run for users synchronized from Active Directory Domain Services.
-
 ---
 
 # Manage users synchronized from Active Directory Domain Services with workflows

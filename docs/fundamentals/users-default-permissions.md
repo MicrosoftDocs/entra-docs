@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 03/05/2025
 ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # What are the default user permissions in Microsoft Entra ID?
 

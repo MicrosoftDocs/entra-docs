@@ -9,7 +9,7 @@ ms.author: justinha
 author: inbarckMS
 manager: femila
 ms.reviewer: inbarc
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Find and address gaps in strong authentication coverage for your administrators
 

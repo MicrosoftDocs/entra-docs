@@ -9,7 +9,7 @@ ms.subservice: privileged-identity-management
 ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim, sfi-ga-nochange
+ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
 # Configure security alerts for Microsoft Entra roles in Privileged Identity Management
 

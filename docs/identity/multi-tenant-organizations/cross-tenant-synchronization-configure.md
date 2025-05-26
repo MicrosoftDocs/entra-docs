@@ -8,7 +8,7 @@ ms.subservice: multitenant-organizations
 ms.topic: how-to
 ms.date: 05/02/2025
 ms.author: kenwith
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 

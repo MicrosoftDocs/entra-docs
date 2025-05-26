@@ -9,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 05/06/2025
 ms.author: sarahlipsey
 ms.reviewer: madansr7
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand how my users are using Microsoft Entra ID so that I can make informed decisions about my organization's security posture.
 ---
 

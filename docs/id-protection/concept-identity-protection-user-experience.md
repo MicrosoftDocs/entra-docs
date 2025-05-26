@@ -1,16 +1,14 @@
 ---
 title: User self-remediation with Microsoft Entra ID Protection
 description: How can users self-remediate risk when administrators allow it? What is the experience when they don't?
-
 ms.service: entra-id-protection
-
 ms.topic: conceptual
 ms.date: 04/11/2025
-
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-image-nochange
 ---
 # Self-remediation experience with Microsoft Entra ID Protection and Conditional Access
 

@@ -3,12 +3,12 @@ title: Tutorial - Configure virtual networking for Microsoft Entra Domain Servic
 description: In this tutorial, you learn how to create and configure an Azure virtual network subnet or network peering for a Microsoft Entra Domain Services managed domain using the Microsoft Entra admin center.
 author: justinha
 manager: femila
-
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
 ms.date: 02/19/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create and configure a virtual network subnet or network peering for application workloads in a Microsoft Entra Domain Services managed domain
 ---
 

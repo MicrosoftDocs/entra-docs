@@ -1,16 +1,14 @@
 ---
 title: Auditing and reporting a B2B collaboration user
 description: Guest user properties are configurable in Microsoft Entra B2B collaboration
-
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
-
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: it-pro
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing B2B collaboration users, I want to audit and report on guest user activities, so that I can ensure the security and compliance of my organization's resources.
 ---
 

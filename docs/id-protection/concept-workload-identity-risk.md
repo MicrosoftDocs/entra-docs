@@ -8,6 +8,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: etbasser
+ms.custom: sfi-image-nochange
 ---
 # Securing workload identities
 

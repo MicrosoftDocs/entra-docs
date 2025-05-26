@@ -9,7 +9,7 @@ ms.topic: overview
 ms.date: 01/07/2025
 ms.author: barclayn
 ms.reviewer: ilyal
-ms.custom: pim, azuread-video-2020, content-engagement, sfi-ga-nochange
+ms.custom: pim, azuread-video-2020, content-engagement, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # What is Microsoft Entra Privileged Identity Management?

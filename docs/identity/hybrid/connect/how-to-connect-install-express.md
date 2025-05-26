@@ -1,7 +1,6 @@
 ---
 title: 'Microsoft Entra Connect Sync: Get started by using express settings'
 description: Learn how to download, install, and run the setup wizard for Microsoft Entra Connect Sync.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -10,8 +9,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Get started with Microsoft Entra Connect Sync by using express settings
 
