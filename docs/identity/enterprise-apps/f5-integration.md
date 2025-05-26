@@ -136,7 +136,6 @@ Advanced configuration tutorials:
 
 - [F5 BIG-IP in Azure deployment walk-through](f5-bigip-deployment-guide.md)
 - [F5 BIG-IP SSL-VPN with Microsoft Entra SHA](f5-passwordless-vpn.md)
-- [Azure AD B2C protects applications using F5 BIG-IP](/azure/active-directory-b2c/partner-f5)
 - [F5 BIG-IP APM and Microsoft Entra SSO to Kerberos applications](f5-big-ip-kerberos-advanced.md)
 - [F5 BIG-IP APM and Microsoft Entra SSO to header-based applications](f5-big-ip-header-advanced.md)
 - [F5 BIG-IP APM and Microsoft Entra SSO to forms-based applications](f5-big-ip-forms-advanced.md)
