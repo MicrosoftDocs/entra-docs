@@ -8,7 +8,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.collection: M365-identity-device-management
-ms.custom: "it-pro", sfi-image-nochange
+ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing cross-tenant access settings, I want to configure B2B collaboration and B2B direct connect with external organizations, so that I can control inbound and outbound access and manage trust settings for multifactor authentication and device claims.
 ---
 

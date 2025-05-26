@@ -8,7 +8,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.collection: M365-identity-device-management
-ms.custom: "it-pro", sfi-image-nochange
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As an IT admin managing guest user accounts in my Microsoft Entra tenant, I want to add a custom approval workflow to the self-service sign-up process, so that I can control which guest user accounts are created and manage the approval process.
 ---
 
