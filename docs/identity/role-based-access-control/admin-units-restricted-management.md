@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: role-based-access-control
-ms.date: 05/19/2025
+ms.date: 05/24/2025
 ms.author: rolyon
 ms.custom: oldportal, it-pro;, sfi-ga-nochange
 ---
@@ -58,6 +58,7 @@ For administrators not explicitly assigned at the restricted management administ
 | Modify email and mailbox settings in Exchange for the user in the restricted management administrative unit |  | :white_check_mark: |
 | Apply policies to a device in a restricted management administrative unit using Intune |  | :white_check_mark: |
 | Add or remove a group as a site owner in SharePoint |  | :white_check_mark: |
+| Assign licenses and update the usage location of users in a restricted management administrative unit |  | :white_check_mark: |
 
 ## Who can modify objects?
 
