@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
 ms.date: 05/18/2020
-ms.reviewer: jmprieur, saeeda
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article

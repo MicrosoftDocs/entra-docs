@@ -11,7 +11,6 @@ ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
-services: storage, app-service-web
 #Customer intent: As an application developer, I want to learn how to access Azure Storage for an app by using managed identities.
 ---
 
