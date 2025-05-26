@@ -7,7 +7,7 @@ ms.service: identity-platform
 ms.topic: how-to
 ms.date: 06/11/2024
 ms.author: cwerner
-ms.reviewer: rahulnagraj
+ms.reviewer: 
 ms.custom: 
 #Customer intent: As an identity admin, I want to customize the claims emitted in tokens.
 ---
