@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.date: 03/20/2024
-ms.reviewer: dmwendia
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: overview

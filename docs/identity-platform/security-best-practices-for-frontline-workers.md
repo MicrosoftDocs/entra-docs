@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: template-concept
 ms.date: 02/14/2025
-ms.reviewer: akgoel, henrymbugua
+ms.reviewer: akgoel
 ms.service: identity-platform
 ms.topic: concept-article
 

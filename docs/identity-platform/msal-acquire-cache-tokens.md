@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 05/14/2025
-ms.reviewer: ddelimarsky
+ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
 

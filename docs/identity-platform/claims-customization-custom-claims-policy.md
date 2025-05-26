@@ -1,7 +1,6 @@
 ---
 title: Customize claims using Microsoft Graph Custom Claims Policy (preview)
 description: This article demonstrates how to customize claims in Microsoft Entra ID using the Custom Claims Policy.
-services: entra-id
 documentationcenter: .net
 author: cilwerner
 ms.service: identity-platform
