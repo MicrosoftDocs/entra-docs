@@ -8,26 +8,27 @@ ms.date: 05/27/2025
 ms.author: justinha
 ms.reviewer: justinha
 ---
-
+<!--
 This article helps IT Architects understand the dependencies and tasks involved in prepping their current environment before you apply Source of Authority (SOA). You learn what happens when you switch SOA of users, groups, and contacts from Active Directory to the cloud. You can get answers to address these concerns:
 
 - Is SOA the right solution for you and are you in the right place to use SOA? For example, do you have all the necessary prerequisites in place before you apply SOA?
 
-<!-- -->
+
 
 - Should you switch the SOA of groups first or can you do it in any sequence? What does Microsoft recommend?
 
-<!-- -->
+
 
 - Are there any applications tied to AD to which you can migrate? If so, how does that affect your SOA switch?
 
-<!-- -->
+
 
 - After you switch the SOA, how can you decrease end user impact?
 
 *For this article, Dhanyah has suggested that we use the Best Practices article template. The following template guidance is pasted from the* **<u>Content pattern template: Best practices article</u>** *section of the* **<u>Appendices</u>***.
 
-## What is SOA?
+-->
+# Source of Authority (SOA) Overview
 
 The Source of Authority (SOA) (at an object level) is a feature that enables IT Administrators to transition the management of a specific object from Active Directory Domain Services (AD DS) to Microsoft Entra ID, thereby converting it into a cloud object that can be edited and deleted in Microsoft Entra ID.
 
