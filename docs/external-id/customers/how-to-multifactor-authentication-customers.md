@@ -1,17 +1,14 @@
 ---
 title: Add multifactor authentication (MFA) to a customer app
 description: Learn how to add multifactor authentication (MFA) to your consumer and business customer (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
- 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/20/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
 ---
 

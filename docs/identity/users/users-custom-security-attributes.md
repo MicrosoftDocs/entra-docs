@@ -1,7 +1,6 @@
 ---
 title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
-
 author: rolyon
 manager: femila
 ms.author: rolyon
@@ -9,7 +8,7 @@ ms.date: 08/25/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro, no-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign, update, list, or remove custom security attributes for a user

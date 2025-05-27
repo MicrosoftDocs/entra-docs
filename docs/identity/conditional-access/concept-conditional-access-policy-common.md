@@ -1,16 +1,15 @@
 ---
 title: Simplify Conditional Access policy deployment with templates
 description: Deploy recommended Conditional Access policies from easy to use templates.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 08/28/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: lhuangnorth
+ms.custom: sfi-image-nochange
 ---
 # Conditional Access policy templates
 

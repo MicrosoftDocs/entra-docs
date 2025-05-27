@@ -1,7 +1,6 @@
 ---
 title: Username lookup during sign-in
 description: How on-screen messaging reflects username lookup during sign-in in Microsoft Entra ID
-
 author: barclayn
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.topic: conceptual
 ms.date: 12/17/2024
 ms.author: barclayn
 ms.reviewer: kexia
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ---
 
 # Home realm discovery for Microsoft Entra sign-in pages

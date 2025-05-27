@@ -1,16 +1,15 @@
 ---
 title: Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 description: Learn how to configure and enable users to register passwordless authentication methods by using a Temporary Access Pass (TAP).
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
-author: tilarso 
+author: tilarso
 manager: femila
 ms.reviewer: tilarso
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Configure Temporary Access Pass to register passwordless authentication methods
 

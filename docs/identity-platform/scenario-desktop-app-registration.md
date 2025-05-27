@@ -4,12 +4,11 @@ description: Learn how to build a desktop app that calls web APIs (app registrat
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: 
 ms.date: 09/09/2019
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 

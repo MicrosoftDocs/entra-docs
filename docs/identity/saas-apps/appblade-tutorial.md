@@ -27,7 +27,9 @@ If you want to know more details about SaaS app integration with Microsoft Entra
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * AppBlade single sign-on enabled subscription
 

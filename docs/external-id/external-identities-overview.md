@@ -7,8 +7,8 @@ description: Microsoft Entra External ID allows you to collaborate with or publi
 ms.service: entra-external-id
 ms.topic: overview
 ms.date: 09/06/2024
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management
@@ -110,6 +110,8 @@ Licensing and billing are based on monthly active users (MAU). Learn more about 
 
 ### Azure Active Directory B2C
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 Azure Active Directory B2C (Azure AD B2C) is Microsoft's legacy solution for customer identity and access management. Azure AD B2C includes a separate consumer-based directory that you manage in the Azure portal through the Azure AD B2C service. Each Azure AD B2C tenant is separate and distinct from other Microsoft Entra ID and Azure AD B2C tenants. The Azure AD B2C portal experience is similar to Microsoft Entra ID, but there are key differences, such as the ability to customize your user journeys using the Identity Experience Framework.
 
 For more information about how an Azure AD B2C tenant differs from a Microsoft Entra tenant, see [Supported Microsoft Entra features in Azure AD B2C](/azure/active-directory-b2c/supported-azure-ad-features). For details about configuring and managing Azure AD B2C, see the [Azure AD B2C documentation](/azure/active-directory-b2c/).
@@ -173,5 +175,4 @@ All External ID features are also supported for automation through Microsoft Gra
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
 - [What is Microsoft Entra B2B direct connect?](b2b-direct-connect-overview.md)
-- [About Azure AD B2C](/azure/active-directory-b2c/overview)
 - [About Microsoft Entra multitenant organizations](../identity/multi-tenant-organizations/overview.md)

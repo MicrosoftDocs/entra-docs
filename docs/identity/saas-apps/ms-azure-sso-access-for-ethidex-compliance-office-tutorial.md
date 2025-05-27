@@ -26,6 +26,7 @@ In this article,  you learn how to integrate MS Azure SSO Access for Ethidex Com
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * MS Azure SSO Access for Ethidex Compliance Office™ single sign-on (SSO) enabled subscription.
 

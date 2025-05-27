@@ -1,16 +1,15 @@
 ---
 title: Network in Conditional Access policy
 description: Using network locations as assignments in a Microsoft Entra Conditional Access policy
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 04/28/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: lhuangnorth, inbarc
+ms.custom: sfi-image-nochange
 ---
 # Conditional Access: Network assignment
 

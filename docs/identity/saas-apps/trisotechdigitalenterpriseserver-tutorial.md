@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra integration with Trisotech Digital Enterprise Server
 description: Learn how to configure single sign-on between Microsoft Entra ID and Trisotech Digital Enterprise Server.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Trisotech Digital Enterprise Server so that I can control who has access to Trisotech Digital Enterprise Server, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra integration with Trisotech Digital Enterprise Server
@@ -28,6 +26,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Trisotech Digital Enterprise Server single sign-on enabled subscription
 

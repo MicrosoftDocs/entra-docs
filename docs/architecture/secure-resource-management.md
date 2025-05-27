@@ -165,6 +165,8 @@ Microsoft Entra Domain Services provides a managed domain to facilitate authenti
 
 ## Azure AD B2C directories and Azure
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 An Azure AD B2C tenant is linked to an Azure subscription for billing and communication purposes. Azure AD B2C tenants have a self-contained role structure in the directory, which is independent from the Azure RBAC privileged roles of the Azure subscription.
 
 When the Azure AD B2C tenant is initially provisioned, the user creating the B2C tenant must have contributor or owner permissions in the subscription. They can later create other accounts and assign them to directory roles. For more information, see [Overview of role-based access control in Microsoft Entra ID](~/identity/role-based-access-control/custom-overview.md).

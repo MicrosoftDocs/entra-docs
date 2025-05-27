@@ -9,6 +9,7 @@ ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 03/30/2025
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 ---
 
 # Manage access to custom security attributes in Microsoft Entra ID

@@ -26,6 +26,7 @@ Read more on the official [Kantega SSO documentation](https://kantega-sso.atlass
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Jira Data Center instance. You can [try it for free](https://www.atlassian.com/software/jira/download/data-center).
 * Kantega SSO app for Jira from Atlassian Marketplace. You can [try it for free](https://marketplace.atlassian.com/apps/1211923/k-sso-saml-kerberos-openid-oidc-oauth-for-jira?tab=overview&hosting=datacenter).

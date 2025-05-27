@@ -2,14 +2,14 @@
 title: Training, demos, and videos
 description: Explore Microsoft Entra External ID training, live demos, and videos. Learn to create secure sign-up experiences and protect access with multifactor authentication.
 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/02/2025
-ms.author: mimart
+ms.date: 05/14/2025
 ms.custom: it-pro
 
 
@@ -73,6 +73,13 @@ This tutorial guides you through creating a new Microsoft Entra External ID tena
 The video covers how to integrate social identity providers like Facebook, Google and Apple into application sign-up and sign-in flows. It focuses on how you can enhance and personalize the registration experience. It also describes ways to ensure robust security and manage users efficiently using Microsoft Entra External ID.
 
 > [!VIDEO https://www.youtube.com/embed/lIdGt9rDM-E?si=8n1_G_AqFbYDP22y]
+
+## Protect access to applications
+
+The following video provides instructions on how to protect access to applications using Microsoft Entra external ID. It outlines the steps for securing application access and implementing enhanced protection with Microsoft Entra external ID to ensure only authorized users and software components can access your application.
+
+> [!VIDEO https://www.youtube.com/embed/H76KFHocM0M?si=1CrSLVOgks79B-XL]
+
 ### Authorize access to your application
 
 This video explores the intricacies of role-based control and claims-based authorization for applications using Microsoft Entra ID and Microsoft Entra External ID.

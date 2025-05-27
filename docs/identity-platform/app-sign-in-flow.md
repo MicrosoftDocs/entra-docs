@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: scenarios:getting-started
 ms.date: 08/11/2023
-ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
+ms.reviewer: jmprieur, sureshja, ludwignick
 ms.service: identity-platform
 
 ms.topic: concept-article

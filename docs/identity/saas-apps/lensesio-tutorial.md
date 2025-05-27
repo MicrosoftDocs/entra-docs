@@ -25,6 +25,7 @@ In this article,  you learn how to integrate the [Lenses.io](https://lenses.io/)
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An instance of a Lenses portal. You can choose from a number of [deployment options](https://lenses.io/product/deployment/).
 * A Lenses.io [license](https://lenses.io/product/pricing/) that supports single sign-on (SSO).

@@ -9,9 +9,8 @@ ms.subservice: monitoring-health
 ms.date: 02/25/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand the parts of a sign-in log so I can troubleshoot sign-in issues.
-
 ---
 
 # Learn about the sign-in log activity details

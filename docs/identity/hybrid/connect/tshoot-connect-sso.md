@@ -1,7 +1,6 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Seamless Single Sign-On'
 description: This topic describes how to troubleshoot Microsoft Entra seamless single sign-on
-
 author: billmath
 ms.reviewer: swkrish
 manager: femila
@@ -11,7 +10,7 @@ ms.topic: troubleshooting
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot Microsoft Entra seamless single sign-on

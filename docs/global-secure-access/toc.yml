@@ -140,6 +140,8 @@ items:
         href: how-to-application-discovery.md
       - name: Configure Private Access with Privileged Identity Management (PIM)
         href: how-to-configure-global-access-with-pim.md
+      - name: Configure Private Access to enable SSH-based server administration
+        href: how-to-manage-ssh-server-administration.md
       - name: Kerberos single sign-on (SSO)
         href: how-to-configure-kerberos-sso.md
       - name: Source IP anchoring
@@ -222,7 +224,7 @@ items:
            - name: Coexistence with Cisco
              href: concept-cisco-coexistence.md
            - name: Coexistence with Palo Alto Networks
-             href: concept-palo-alto-coexistence.md
+             href: how-to-palo-alto-coexistence.md
            - name: Coexistence with Zscaler
              href: how-to-zscaler-coexistence.md
            - name: Coexistence with Netskope
@@ -256,3 +258,5 @@ items:
     href: reference-macos-client-release-history.md
   - name: Global Secure Access Certifications
     href: reference-global-secure-access-certifications.md
+  - name: Global Secure Access in China
+    href: reference-china-user-support.md

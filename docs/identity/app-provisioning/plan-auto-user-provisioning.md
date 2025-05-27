@@ -292,7 +292,7 @@ We recommend that you assume ownership of and consume these reports on a cadence
 
 Refer to the following links to troubleshoot any issues that may turn up during provisioning:
 
-* [Problem configuring user provisioning to a Microsoft Entra Gallery application](~/identity/app-provisioning/application-provisioning-config-problem.md)
+* [Problem configuring user provisioning to a Microsoft Entra Gallery application](troubleshoot.md)
 
 * [Sync an attribute from your on-premises Active Directory to Microsoft Entra ID for provisioning to an application](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md)
 

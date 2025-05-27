@@ -4,8 +4,7 @@ description: Learn about common token exchange scenarios when working with SAML 
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref
-ms.date: 12/08/2020
+ms.date: 05/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 

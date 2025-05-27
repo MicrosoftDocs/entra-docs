@@ -1,14 +1,13 @@
 ---
 title: include file
 description: include file
-
 author: owinfreyATL
 manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 02/27/2023
 ms.author: owinfrey
-ms.custom: include file
+ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 ---
 
 ## Allow users in your directory to request the access package

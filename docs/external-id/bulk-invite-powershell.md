@@ -4,13 +4,11 @@ description: In this tutorial, you learn how to use PowerShell and a CSV file to
 ms.service: entra-external-id
 ms.topic: tutorial
 ms.date: 03/13/2025
-
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
 ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing external partners in Microsoft Entra B2B collaboration, I want to use PowerShell to send bulk invitations to guest users, so that I can efficiently add multiple users to my organization and streamline the onboarding process.
 ---
 
@@ -99,7 +97,7 @@ $messageInfo = New-Object Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvite
 $messageInfo.customizedMessageBody = "Hello. You are invited to the Contoso organization."
 
 foreach ($email in $invitations) {
-	New-MgInvitation 
+	New-MgInvitation ` 
       -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
 		-InvitedUserDisplayName $email.Name `
 		-InviteRedirectUrl https://myapplications.microsoft.com/?tenantid=aaaabbbb-0000-cccc-1111-dddd2222eeee `

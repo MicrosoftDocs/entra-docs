@@ -1,18 +1,15 @@
 ---
 title: Microsoft Entra certificate-based authentication technical deep dive
 description: Learn how Microsoft Entra certificate-based authentication works
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-
 ms.author: justinha
 author: vimrang
 manager: femila
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
 ---
 
@@ -244,8 +241,11 @@ Mapping types based on user names and email addresses are considered low-affinit
 |IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
 |Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
 |SKI | `X509:<SKI>aB1cD2eF3gH4iJ5kL6-mN7oP8qR=` | certificateUserIds | high-affinity |
-|SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` | certificateUserIds | high-affinity |
+|SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` <br> The SHA1PublicKey value (SHA1 hash of the entire certificate content including the public key) is found in the Thumbprint property of certificate.| certificateUserIds | high-affinity |
 |IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+
+>[!IMPORTANT]
+> You can use the [CertificateBasedAuthentication PowerShell module](concept-certificate-based-authentication-certificateuserids.md#how-to-find-the-correct-certificateuserids-values-for-a-user-from-the-end-user-certificate-using-powershell-module) to find the correct CertificateUserIds values for a user from the end user certificate.
 
 ### Define Affinity binding at the tenant level and override with custom rules
 

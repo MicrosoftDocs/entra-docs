@@ -1,19 +1,16 @@
 ---
 title: Configure Microsoft Entra SAML token encryption
 description: Learn how to configure Microsoft Entra SAML token encryption.
-
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/06/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps, no-azure-ad-ps-ref
-
+ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: As an IT admin configuring SAML token encryption for Microsoft Entra ID, I want step-by-step instructions on how to upload an X.509 certificate file and activate token encryption, so that I can ensure the SAML assertions emitted for the application are encrypted and secure.
 ---
 

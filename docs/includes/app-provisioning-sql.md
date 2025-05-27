@@ -276,6 +276,7 @@ After having provided credentials, the ECMA Connector Host will be ready to retr
      |Delta Strategy|For IBM DB2, select `None` |
      | Water Mark Query |For IBM DB2, type `SELECT CURRENT TIMESTAMP FROM SYSIBM.SYSDUMMY1;` |
      |Data Source Date Time Format|For SQL Server, `yyyy-MM-dd HH:mm:ss` and for IBM DB2, `YYYY-MM-DD`|
+
 10. On the **Partitions** page, select **Next**.
 
      [![Screenshot that shows the Partitions page.](.\media\app-provisioning-sql\conn-8.png)](.\media\app-provisioning-sql\conn-8.png#lightbox)

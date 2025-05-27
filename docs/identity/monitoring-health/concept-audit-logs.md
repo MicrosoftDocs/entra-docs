@@ -9,9 +9,8 @@ ms.subservice: monitoring-health
 ms.date: 01/28/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra audit logs so I know what to look for when I need to troubleshoot an issue.
-
 ---
 
 # What are Microsoft Entra audit logs?

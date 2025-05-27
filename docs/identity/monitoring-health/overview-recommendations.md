@@ -8,10 +8,9 @@ ms.topic: overview
 ms.subservice: monitoring-health
 ms.date: 04/15/2025
 ms.author: sarahlipsey
-ms.reviewer: deawari  
-
+ms.reviewer: deawari
+ms.custom: sfi-ga-nochange
 # Customer intent: As a Microsoft Entra administrator, I want guidance to so that I can keep my Microsoft Entra tenant in a healthy state.
-
 ---
 # What are Microsoft Entra recommendations?
 

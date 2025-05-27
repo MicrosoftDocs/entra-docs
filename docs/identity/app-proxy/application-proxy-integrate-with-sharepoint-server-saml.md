@@ -10,6 +10,7 @@ ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Integrate Microsoft Entra application proxy with SharePoint using Security Assertion Markup Language (SAML)

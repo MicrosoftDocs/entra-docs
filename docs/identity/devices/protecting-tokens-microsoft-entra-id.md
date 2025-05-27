@@ -178,7 +178,7 @@ Microsoft Defender XDR when using Defender for Cloud Apps connectors and Defende
 ## Token Theft – protect against replay
 
 If an adversary is able to successfully steal a token, organizations can enable certain capabilities to automatically reduce the
-exposure of, or completely prevent, the stolen token from being replayed, thus defeating the attack. These capabilities include:
+exposure of the stolen token from being replayed, thus defeating the attack. These capabilities include:
 
 - Enforcing Token Protection in Conditional Access to secure sign-in sessions
 - Enforcing access is only allowed via secure networks
@@ -189,7 +189,7 @@ exposure of, or completely prevent, the stolen token from being replayed, thus d
 
 For devices which are Entra-joined or Entra-registered, Entra ID generates a multi-application Refresh Token used for application SSO, also known as the [Primary Refresh Token (PRT)](concept-primary-refresh-token.md).
 
-Primary Refresh Tokens (PRTs) are secure by design. They're protected with a cryptographically secure tie between the PRT and the device (client secret) to which the PRT is issued. The client secret is securely stored on platform-specific hardware such as Trusted Platform Modules (TPM) for Windows, Keystore System for Android, and Secure Enclave for iOS and macOS. Without the client secret, the PRT token is rendered ineffective and cannot be replayed if stolen.
+Primary Refresh Tokens (PRTs) are protected with a cryptographically secure tie between the PRT and the device (client secret) to which the PRT is issued. On Windows devices, the client secret is securely stored on platform-specific hardware such as Trusted Platform Modules (TPM). Today, non-Windows devices store the secret in software.
 
 **Token Protection in Conditional Access**
 

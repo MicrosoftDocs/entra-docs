@@ -1,7 +1,6 @@
 ---
 title: 'Quickstart: Microsoft Entra seamless single sign-on'
 description: Learn how to get started with Microsoft Entra seamless single sign-on by using Microsoft Entra Connect.
-
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
 author: billmath
 manager: femila
@@ -11,7 +10,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Quickstart: Microsoft Entra seamless single sign-on

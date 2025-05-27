@@ -89,6 +89,7 @@ The **Remediation** dashboard has two privilege-on-demand (POD) workflows you ca
 
 
 ## Following are the time limits per frequency type while creating the request.
+
 | Frequency Type                | Time Limit (in hours)                |
 |----------------------------|-----------------------------------|
 |ASAP                        |    24                  |

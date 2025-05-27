@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 12/3/2024
 ms.author: cwerner
 ms.reviewer: hosamsh
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to configure my application to trust a managed identity so that I can access Microsoft Entra protected resources without needing to use or manage application secrets or certificates.
 ---
 
@@ -177,7 +178,7 @@ using Azure.Storage.Blobs;
 
 internal class Program
 {
-  // This example demonstrates how to access an Azure blob storage account by utilizing the manage identity credential.
+  // This example demonstrates how to access an Azure blob storage account by utilizing the managed identity credential.
   static void Main(string[] args)
   {
     string storageAccountName = "YOUR_STORAGE_ACCOUNT_NAME";
@@ -253,8 +254,10 @@ In **MSAL**, you can use the [ManagedClientApplication](/entra/msal/dotnet/advan
 
 ``` csharp
 using Microsoft.Identity.Client;
+using Microsoft.Identity.Client.AppConfig;
 using Azure.Storage.Blobs;
 using Azure.Core;
+using Azure.Storage.Blobs.Models;
 
 internal class Program
 {
@@ -294,7 +297,7 @@ internal class Program
         AuthenticationResult result = await app.AcquireTokenForClient(scopes).ExecuteAsync().ConfigureAwait(false);
 
         TokenCredential tokenCredential = new AccessTokenCredential(result.AccessToken);
-        var client = new BlobContainerClient(
+        var containerClient = new BlobContainerClient(
             new Uri($"https://{storageAccountName}.blob.core.windows.net/{containerName}"),
             tokenCredential);
 

@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref
 ms.date: 11/13/2024
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article

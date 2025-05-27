@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 10/08/2024
 ms.author: gasinh
-ms.reviewer: ajburnle
+ms.custom: sfi-image-nochange
 ---
 
 # Introduction to delegated administration and isolated environments

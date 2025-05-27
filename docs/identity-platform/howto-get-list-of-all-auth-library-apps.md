@@ -4,12 +4,11 @@ description: In this how-to guide, you get a complete list of all apps that are 
 author: SHERMANOUKO
 manager: CelesteDG
 ms.author: shermanouko
-ms.custom: has-adal-ref
 ms.date: 05/01/2024
-ms.reviewer: dmwendia
+ms.reviewer: 
 ms.service: identity-platform
-
-ms.topic: how-to 
+ms.topic: how-to
+ms.custom: has-adal-ref, sfi-image-nochange
 #Customer intent: As an application developer / IT admin, I need to know / identify which of my apps are using ADAL.
 ---
 

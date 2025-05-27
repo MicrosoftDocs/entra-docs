@@ -1,7 +1,6 @@
 ---
 title: Configure group claims for applications by using Microsoft Entra ID
 description: Get information on how to configure group claims for use with Microsoft Entra ID.
-
 ms.reviewer: paulgarn
 manager: femila
 ms.subservice: hybrid-connect
@@ -10,6 +9,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
 author: billmath
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 ---
 
 # Configure group claims for applications by using Microsoft Entra ID

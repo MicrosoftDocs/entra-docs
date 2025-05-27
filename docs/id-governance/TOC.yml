@@ -101,7 +101,9 @@
       - name: Manage access to SAP applications
         href: sap.md
       - name: Using Entra Private Access with Entitlement Management  
-        href: scenarios/entitlement-management-private-access.md    
+        href: scenarios/entitlement-management-private-access.md
+      - name: Restrict employee access to cloud apps using Microsoft Entra Suite
+        href: entra-suite-scenario.md      
   - name: Migrations
     items:
     - name: Transform your cloud posture
@@ -253,6 +255,8 @@
         href: entitlement-management-catalog-create.md
       - name: Create a custom extension (logic apps) for catalogs
         href: entitlement-management-logic-apps-integration.md
+      - name: Determine access package approvers externally (Preview)
+        href: entitlement-management-dynamic-approval.md  
       - name: Delegate to access package managers
         href: entitlement-management-delegate-managers.md
       - name: Set up group writeback
@@ -410,6 +414,8 @@
     href: /graph/api/resources/entitlementmanagement-overview
   - name: Custom Alerts
     href: governance-custom-alerts.md
+  - name: Access reviews - FAQs
+    href: access-reviews-faqs.md    
   - name: Lifecycle Workflows
     items:
     - name: Lifecycle Workflows - Microsoft Graph API
