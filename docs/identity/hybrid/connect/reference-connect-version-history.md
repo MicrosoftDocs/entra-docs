@@ -21,7 +21,7 @@ This article helps you keep track of the versions that have released and the cha
 ### Breaking Change on Entra Connect Sync
 
 >[!IMPORTANT]
-> New Micrsoft Entra Connect Sync Versions are only available via the Microsoft Entra admin center 
+> New Microsoft Entra Connect Sync Versions are only available via the Microsoft Entra admin center 
 >
 > Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
@@ -105,11 +105,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 05/27/2025: Released for download via the Microsoft Entra admin center.
 
 ### Added Features
-- Modern Authentication enabled allowing customers to configure application-based authentication for enhanced securit (Public Preview).
+- Modern Authentication enabled allowing customers to configure application-based authentication for enhanced security (Public Preview).
 
 ### Updated Features
 - Upgraded the bundled health agent to version 4.5.2520.0
-- Moved from download center to azure portal for downloads
+- Moved from download center to Azure portal for downloads
 - Administrator credentials now required when toggling staging mode via PowerShell with SSPR enabled.
 - Administrator credentials now required when enabling, disabling, or removing SSPR configuration via PowerShell.
 
