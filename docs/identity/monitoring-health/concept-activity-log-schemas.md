@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/30/2024
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -35,7 +35,7 @@ Microsoft Graph is the primary way to access Microsoft Entra logs programmatical
 
 There are two endpoints for the Microsoft Graph API. The V1.0 endpoint is the most stable and is commonly used for production environments. The beta version often contains more properties, but they're subject to change. For this reason, we don't recommend using the beta version of the schema in production environments.
 
-Microsoft Entra customer can configure activity log streams to be sent to Azure Monitor storage accounts. This integration enables Security Information and Event Management (SIEM) connectivity, long-term storage, and improved querying capabilities with Log Analytics. The log schemas for Azure Monitor might differ from the Microsoft Graph schemas.
+Microsoft Entra customers can configure activity log streams to be sent to a Log Analytics workspace. This integration enables Security Information and Event Management (SIEM) connectivity, long-term storage, and improved querying capabilities with Log Analytics. The log schemas for Azure Monitor might differ from the Microsoft Graph schemas.
 
 For full details on these schemas, see the following articles:
 

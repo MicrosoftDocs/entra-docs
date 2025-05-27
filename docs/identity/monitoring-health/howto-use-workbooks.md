@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/02/2024
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
