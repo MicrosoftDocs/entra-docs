@@ -79,8 +79,6 @@ You can test several Microsoft Entra Internet Access and Microsoft Entra Interne
 
 - **Do you need to manage or control access to your Microsoft data?** You can use the Microsoft traffic profile to enable Global Secure Access to acquire and route SharePoint Online, Exchange Online, and other Microsoft traffic through the Global Secure Access cloud services. Test this scenario with the [Enable and manage the Microsoft traffic forwarding profile](../global-secure-access/how-to-manage-microsoft-profile.md) use case.
 
-- **Do you need to control whether your users can use your managed devices to access Microsoft data in other tenants?** If you need to prevent users from accessing Microsoft data in other tenants (to which they have valid credentials) when they're using your managed devices, consider testing the [Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) use case.
-
 ## Scope and define success criteria
 
 Use the [PoC kickoff deck](https://download.microsoft.com/download/4/7/9/4793b9f2-35fe-4513-9c7e-31482a003bbc/GSA_POC_kickoff.pptx) to plan your PoC. Walk through the high-level requirements to identify key stakeholders to include in the project. Then decide on in-scope scenarios and agree on a timeline.

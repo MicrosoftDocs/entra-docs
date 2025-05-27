@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 11/17/2021
+ms.date: 05/21/2025
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.custom: enterprise-apps, no-azure-ad-ps-ref, 
@@ -16,13 +16,13 @@ ms.custom: enterprise-apps, no-azure-ad-ps-ref,
 ---
 # Configure risk-based step-up consent using PowerShell
 
-In this article, you'll learn how to configure risk-based step-up consent in Microsoft Entra ID. Risk-based step-up consent helps reduce user exposure to malicious apps that make [illicit consent requests](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants). 
+In this article, you learn how to configure risk-based step-up consent in Microsoft Entra ID. Risk-based step-up consent helps reduce user exposure to malicious apps that make [illicit consent requests](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants). 
 
-For example, consent requests for newly registered multitenant apps that are not [publisher verified](~/identity-platform/publisher-verification-overview.md) and require non-basic permissions are considered risky. If a risky user consent request is detected, the request requires a "step-up" to admin consent instead. This step-up capability is enabled by default, but it results in a behavior change only when user consent is enabled.
+For example, consent requests for newly registered multitenant apps that aren't [publisher verified](~/identity-platform/publisher-verification-overview.md) and require nonbasic permissions are considered risky. If a risky user consent request is detected, the request requires a "step-up" to admin consent instead. This step-up capability is enabled by default, but it results in a behavior change only when user consent is enabled.
 
 When a risky consent request is detected, the consent prompt displays a message that indicates that admin approval is needed. If the [admin consent request workflow](configure-admin-consent-workflow.md) is enabled, the user can send the request to an admin for further review directly from the consent prompt. If the admin consent request workflow isn't enabled, the following message is displayed:
 
-> **AADSTS90094**: \<clientAppDisplayName> needs permission to access resources in your organization that only an admin can grant. Request an admin to grant permission to this app before you can use it.
+**AADSTS90094**: \<clientAppDisplayName> needs permission to access resources in your organization that only an admin can grant. Request an admin to grant permission to this app before you can use it.
 
 In this case, an audit event is also logged with a category of "ApplicationManagement," an activity type of "Consent to application,"  and a status reason of "Risky application detected."
 
@@ -35,7 +35,7 @@ To configure risk-based step-up consent, you need:
 
 ## Disable or re-enable risk-based step-up consent
 
-You can use the [Microsoft Graph PowerShell beta module](/powershell/microsoftgraph/installation) to disable the step-up to admin consent that's required in cases where a risk is detected, or to enable it if it was previously disabled.
+Use the [Microsoft Graph PowerShell beta module](/powershell/microsoftgraph/installation) to disable or enable the admin step-up when a risk is detected.
 
 > [!IMPORTANT]
 > Make sure you're using the Microsoft Graph PowerShell Beta cmdlets module.
@@ -52,7 +52,7 @@ You can use the [Microsoft Graph PowerShell beta module](/powershell/microsoftgr
    Connect-MgGraph -Scopes "Directory.ReadWrite.All"
    ```
 
-1. Retrieve the current value for the **Consent Policy Settings** directory settings in your tenant. Doing so requires checking to see whether the directory settings for this feature have been created. If they haven't been created, use the values from the corresponding directory settings template.
+1. Retrieve the current value for the **Consent Policy Settings** directory settings in your tenant. Doing so requires checking to see whether the directory settings for this feature are created. If they aren't created, use the values from the corresponding directory settings template.
 
     ```powershell
     $consentSettingsTemplateId = "dffd5d46-495d-40a9-8e21-954ff55e198a" # Consent Policy Settings
@@ -94,7 +94,7 @@ You can use the [Microsoft Graph PowerShell beta module](/powershell/microsoftgr
 
     | Setting       | Type         | Description  |
     | ------------- | ------------ | ------------ |
-    | BlockUserConsentForRiskyApps   | Boolean |  A flag indicating whether user consent will be blocked when a risky request is detected. |
+    | BlockUserConsentForRiskyApps   | Boolean |  A flag indicating whether user consent is blocked when a risky request is detected. |
 
 1. To change the value of `BlockUserConsentForRiskyApps`, use the [Update-MgBetaDirectorySetting](/powershell/module/microsoft.graph.beta.identity.directorymanagement/update-mgbetadirectorysetting) cmdlet.
 

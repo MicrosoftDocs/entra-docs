@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Coverity Static Application Securit
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Coverity Static Application Security Testing single sign-on (SSO) enabled subscription.
 

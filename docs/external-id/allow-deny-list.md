@@ -7,8 +7,8 @@ ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/16/2025
 
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: it-pro, seo-july-2024
 ms.collection: M365-identity-device-management

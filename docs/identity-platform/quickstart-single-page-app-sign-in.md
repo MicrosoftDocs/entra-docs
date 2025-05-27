@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
 ms.date: 01/27/2025
-ms.reviewer: OwenRichards1
+ms.reviewer: 
 ms.service: identity-platform
 zone_pivot_groups: entra-tenants
 ms.topic: quickstart

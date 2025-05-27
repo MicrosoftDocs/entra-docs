@@ -1,14 +1,14 @@
 ---
 title: Tutorial - Advanced Microsoft Entra Verified ID setup
-description: In this tutorial, you learn how to manually configure your tenant to support the Verified ID service. 
+description: In this tutorial, you learn how to manually configure your tenant to support the Verified ID service.
 ms.service: entra-verified-id
 author: barclayn
 manager: femila
 ms.author: barclayn
 ms.topic: tutorial
 ms.date: 04/30/2025
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Advanced Microsoft Entra Verified ID setup

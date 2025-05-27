@@ -9,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is captured in the non-interactive sign-in logs so I can better monitor the health of my tenant.
 ---
 # What are non-interactive user sign-ins in Microsoft Entra?

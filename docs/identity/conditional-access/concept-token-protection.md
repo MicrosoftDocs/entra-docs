@@ -5,11 +5,11 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 04/29/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: sgrandhi
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra Conditional Access: Token protection (Preview)
 

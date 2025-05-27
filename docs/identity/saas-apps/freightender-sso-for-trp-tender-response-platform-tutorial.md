@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Freightender SSO for TRP (Tender Re
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Freightender SSO for TRP (Tender Response Platform) single sign-on (SSO) enabled subscription.
 

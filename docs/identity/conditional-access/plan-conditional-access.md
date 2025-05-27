@@ -1,16 +1,15 @@
 ---
 title: Plan a Microsoft Entra Conditional Access deployment
 description: Learn how to design Conditional Access policies and effectively deploy in your organization.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 09/18/2024
-
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
 ms.reviewer: joflore
+ms.custom: sfi-image-nochange
 ---
 # Plan a Conditional Access deployment
 
@@ -145,7 +144,7 @@ Taking into account our learnings in the use of Conditional Access and supportin
 
 ### Apply Conditional Access policies to every app
 
-**Ensure that every app has at least one Conditional Access policy applied**. From a security perspective it's better to create a policy that encompasses **All resources (formerly 'All cloud apps')**. This practice ensures you don't need to update Conditional Access policies every time you onboard a new application.
+**Ensure that every app has at least one Conditional Access policy applied**. From a security perspective it's better to [create a policy that encompasses **All resources (formerly 'All cloud apps')**](policy-all-users-mfa-strength.md). This practice ensures you don't need to update Conditional Access policies every time you onboard a new application.
 
 > [!TIP]
 > Be very careful in using block and all apps in a single policy. This could lock admins out, and exclusions cannot be configured for important endpoints such as Microsoft Graph.

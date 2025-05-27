@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an app developer, I want to learn about authentication flows and application scenarios so I can create applications protected by the Microsoft identity platform.
 ---
 

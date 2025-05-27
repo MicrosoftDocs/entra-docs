@@ -9,6 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 09/27/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
+ms.custom: sfi-image-nochange
 ---
 
 # Log latency in Microsoft Entra ID

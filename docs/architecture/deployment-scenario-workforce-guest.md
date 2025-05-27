@@ -8,7 +8,7 @@ ms.service: entra
 ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want to provide remote employees with secure access to apps and resources so that we prevent unauthorized access.
 ---
 # Microsoft Entra Suite deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps

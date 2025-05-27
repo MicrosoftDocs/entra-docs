@@ -1,16 +1,14 @@
 ---
 title: Add Facebook for customer sign-in
 description: Learn how to add Facebook as an identity provider for your external tenant, enabling customers to sign in to your applications using their Facebook accounts.
- 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 03/06/2025
-ms.author: mimart
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 #Customer intent: As a developer or IT admin, I want to add Facebook as an identity provider for my external tenant so that customers can sign in to my applications using their Facebook accounts.
 ---
 

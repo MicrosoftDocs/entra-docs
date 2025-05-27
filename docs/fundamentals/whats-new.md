@@ -12,7 +12,7 @@ ms.topic: reference
 ms.date: 03/21/2025
 ms.author: owinfrey
 ms.reviewer: dhanyahk
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.collection: M365-identity-device-management
 ---
 

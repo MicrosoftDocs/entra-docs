@@ -1,7 +1,6 @@
 ---
 title: Create a custom role with permissions to create unlimited app registrations
 description: Assign a custom role to grant unrestricted app registrations in Microsoft Entra ID.
-
 author: rolyon
 manager: femila
 ms.service: entra-id
@@ -10,8 +9,7 @@ ms.topic: how-to
 ms.date: 01/03/2025
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 # Create a custom role with permissions to create unlimited app registrations
 

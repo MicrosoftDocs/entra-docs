@@ -1,7 +1,6 @@
 ---
 title: 'Microsoft Entra Connect Sync:  Changing the ADSync service account'
 description: This topic document describes the encryption key and how to abandon it after the password is changed.
-
 keywords: Azure AD sync service account, password
 author: billmath
 manager: femila
@@ -12,8 +11,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Changing the ADSync service account password
 If you change the ADSync service account password, the Synchronization Service doesn't start correctly until you abandon the encryption key and reinitialized the ADSync service account password. 

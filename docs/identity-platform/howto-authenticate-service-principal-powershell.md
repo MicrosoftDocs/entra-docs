@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom:
 ms.date: 04/16/2025
-ms.reviewer: tomfitz
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.tgt_pltfrm: multiple

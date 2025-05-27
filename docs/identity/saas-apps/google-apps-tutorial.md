@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Google Cloud / G Suite Connector by Microsoft
 description: Learn how to configure single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector by Microsoft.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 08/20/2024
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector so that I can control who has access to Google Cloud / G Suite Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -26,6 +24,7 @@ In this article,  you learn how to integrate Google Cloud / G Suite Connector by
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Google Cloud / G Suite Connector by Microsoft single sign-on (SSO) enabled subscription.
 * A Google Apps subscription or Google Cloud Platform subscription.

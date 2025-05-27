@@ -561,6 +561,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/global-secure-access/concept-palo-alto-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-palo-alto-coexistence",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-provisioning/inbound-provisioning-api-postman.md",
       "redirect_url": "/entra/identity/app-provisioning/inbound-provisioning-api-curl-tutorial",
       "redirect_document_id": false
@@ -1801,6 +1806,46 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/msal-android-single-sign-on.md",
+      "redirect_url": "/entra/msal/android/single-sign-on",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/single-multi-account.md",
+      "redirect_url": "/entra/msal/android/single-multi-account",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-logging-android.md",
+      "redirect_url": "/entra/msal/android/logging",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity-platform/migrate-android-adal-msal.md",
+      "redirect_url": "/entra/msal/android/migrate-android-adal-msal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-shared-devices.md",
+      "redirect_url": "/entra/msal/android/shared-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-b2c.md",
+      "redirect_url": "/azure/active-directory-b2c/configure-authentication-sample-android-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-configuration.md",
+      "redirect_url": "/entra/msal/android/msal-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-handling-exceptions.md",
+      "redirect_url": "/entra/msal/android/handling-exceptions",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?tabs=external-tenant",
       "redirect_document_id": false
@@ -2319,6 +2364,11 @@
       "source_path": "docs/external-id/customers/whats-new-docs.md",
       "redirect_url": "/entra/external-id/whats-new-docs",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/architecture/deployment-external-audit-monitor.md",
+      "redirect_url": "/entra/architecture/deployment-external-operations",
+      "redirect_document_id": true
     },
     {
       "source_path": "docs/identity-platform/scenario-spa-app-registration.md",

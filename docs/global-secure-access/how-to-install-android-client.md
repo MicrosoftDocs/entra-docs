@@ -8,8 +8,7 @@ ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
 ms.reviewer: dhruvinrshah
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
 ---
 # Global Secure Access client for Android

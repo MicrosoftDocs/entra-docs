@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
 description: Learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft.
-
 author: dhivyagana
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: dhivyag
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft so that I can control who has access to Confluence SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -31,6 +29,7 @@ Use your Microsoft Entra account with Atlassian Confluence server to enable sing
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - Confluence server application installed on a Windows 64-bit server (on-premises or on the cloud IaaS infrastructure).
 - Confluence server is HTTPS enabled.

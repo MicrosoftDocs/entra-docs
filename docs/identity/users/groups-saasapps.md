@@ -1,7 +1,6 @@
 ---
 title: Use a group to manage access to SaaS apps
 description: Learn how to use groups in Microsoft Entra ID to assign access to SaaS applications that are integrated with Microsoft Entra ID.
-
 author: barclayn
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.topic: how-to
 ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ---
 # Use a group to manage access to SaaS applications
 

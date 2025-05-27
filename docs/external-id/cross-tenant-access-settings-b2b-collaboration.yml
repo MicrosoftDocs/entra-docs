@@ -3,8 +3,8 @@
 metadata:
   title: Cross-tenant access settings
   description: Learn how to manage cross-tenant access settings for B2B collaboration and direct connect in Microsoft Entra External ID. Control inbound and outbound access, trust MFA, and device claims from other organizations.
-  author: msmimart
-  ms.author: mimart
+  ms.author: cmulligan
+  author: csmulligan
   manager: celestedg
   ms.date: 10/21/2024
   ms.service: entra-external-id
@@ -13,6 +13,7 @@ metadata:
   ms.custom:
     - it-pro
     - ge-structured-content-pilot
+    - sfi-image-nochange
 
 title: |
   Manage cross-tenant access settings for B2B collaboration

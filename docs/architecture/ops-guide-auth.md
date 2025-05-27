@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.subservice: architecture
 ms.date: 08/25/2024
 ms.author: martinco
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra authentication management operations reference guide

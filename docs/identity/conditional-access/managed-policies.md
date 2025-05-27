@@ -1,16 +1,15 @@
 ---
 title: Microsoft-Managed Conditional Access Policies for Enhanced Security
 description: Secure your resources with Microsoft-managed Conditional Access policies. Require multifactor authentication to reduce compromise risks.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 04/21/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: swethar
+ms.custom: sfi-image-nochange
 ---
 # Microsoft-managed Conditional Access policies
 
@@ -27,7 +26,7 @@ As part of this work, we're making Microsoft-managed policies available in Micro
 
 ## How Microsoft-managed policies work
 
-Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access** > **Policies**.
+Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
 
 You can edit the state of a policy and what identities the policy should exclude. Exclude your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
 

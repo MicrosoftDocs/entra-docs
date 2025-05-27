@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra Connect Health agents for AD FS
 description: This is the Microsoft Entra Connect Health page how to monitor your on-premises AD FS infrastructure.
-
 ms.reviewer: zhiweiwangmsft
 author: billmath
 manager: femila
@@ -12,8 +11,7 @@ ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
-ms.custom: H1Hack27Feb2017
-
+ms.custom: H1Hack27Feb2017, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Microsoft Entra Connect Health agents for AD FS

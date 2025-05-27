@@ -1,13 +1,12 @@
 ---
 title: Include file
 description: Include file
-
 author: billmath
 ms.service: entra-id
 ms.topic: include
 ms.date: 11/11/2022
 ms.author: billmath
-ms.custom: include file
+ms.custom: include file, sfi-image-nochange
 ---
 
  1. In the Azure portal, select **Microsoft Entra ID**.

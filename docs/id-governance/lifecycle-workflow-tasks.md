@@ -8,6 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
 ms.date: 04/14/2025
+ms.custom: sfi-image-nochange
 ---
 
 # Lifecycle Workflow built-in tasks

@@ -1,7 +1,6 @@
 ---
 title: How to import and export Microsoft Entra Connect configuration settings
 description: This article describes frequently asked questions for cloud provisioning.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -9,7 +8,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-ga-nochange
 ---
 
 # Import and export Microsoft Entra Connect configuration settings 

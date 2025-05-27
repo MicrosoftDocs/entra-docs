@@ -5,9 +5,8 @@ description: Learn how to enable self-service sign-up for Microsoft Entra Extern
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 10/21/2024
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.collection: M365-identity-device-management

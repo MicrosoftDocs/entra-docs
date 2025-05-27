@@ -5,10 +5,10 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.date: 05/14/2025
-ms.reviewer: iambmelt
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ga-nochange, sfi-ropc-nochange
 #Customer intent: As an application developer, I want to learn about the types of client apps so I can decide if this platform meets my app development requirements.
 ---
 

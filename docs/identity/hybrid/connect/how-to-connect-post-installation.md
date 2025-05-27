@@ -1,10 +1,8 @@
 ---
 title: 'Microsoft Entra Connect: Next steps and how to manage Microsoft Entra Connect'
 description: Learn how to extend the default configuration and operational tasks for Microsoft Entra Connect.
-
 author: billmath
 manager: femila
-
 ms.assetid: c18bee36-aebf-4281-b8fc-3fe14116f1a5
 ms.service: entra-id
 ms.tgt_pltfrm: na
@@ -12,8 +10,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Next steps and how to manage Microsoft Entra Connect
 Use the operational procedures in this article to customize Microsoft Entra Connect to meet your organization's needs and requirements.  

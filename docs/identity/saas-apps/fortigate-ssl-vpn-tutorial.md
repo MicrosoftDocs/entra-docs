@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with FortiGate SSL VPN
 description: Learn the steps you need to perform to integrate FortiGate SSL VPN with Microsoft Entra ID.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FortiGate SSL VPN so that I can control who has access to FortiGate SSL VPN, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 

@@ -83,7 +83,7 @@ She uses the following prompts to get the information she needs:
 
 ### Get diagnostic logs details
 
-Finally, Natasha reviews the diagnostic logs to get more detailed information about the system’s operations during the times of the suspicious activities. He filters the logs by John’s user ID and the times of the unusual sign-ins.
+Finally, Natasha reviews the diagnostic logs to get more detailed information about the system’s operations during the times of the suspicious activities. She filters the logs by Karita’s user ID and the times of the unusual sign-ins.
 
 She uses the following prompts to get the information she needs:
 

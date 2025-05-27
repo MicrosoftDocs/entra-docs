@@ -6,10 +6,9 @@ manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 03/12/2025
+ms.date: 05/25/2025
 ms.author: rolyon
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
 
@@ -529,7 +528,7 @@ Here are the least privileged roles you should use when performing tasks for [su
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Submit support ticket | [Service Support Administrator](permissions-reference.md#service-support-administrator) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Azure Information Protection Administrator](permissions-reference.md#azure-information-protection-administrator)<br/>[Billing Administrator](permissions-reference.md#billing-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Compliance Administrator](permissions-reference.md#compliance-administrator)<br/>[Dynamics 365 Administrator](permissions-reference.md#dynamics-365-administrator)<br/>[Desktop Analytics Administrator](permissions-reference.md#desktop-analytics-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Password Administrator](permissions-reference.md#password-administrator)<br/>[Fabric Administrator](permissions-reference.md#fabric-administrator)<br/>[Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator)<br/>[Skype for Business Administrator](permissions-reference.md#skype-for-business-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator)<br/>[Teams Communications Administrator](permissions-reference.md#teams-communications-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
+> | Submit support ticket | [Service Support Administrator](permissions-reference.md#service-support-administrator) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Azure Information Protection Administrator](permissions-reference.md#azure-information-protection-administrator)<br/>[Billing Administrator](permissions-reference.md#billing-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Compliance Administrator](permissions-reference.md#compliance-administrator)<br/>[Dynamics 365 Administrator](permissions-reference.md#dynamics-365-administrator)<br/>[Desktop Analytics Administrator](permissions-reference.md#desktop-analytics-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Password Administrator](permissions-reference.md#password-administrator)<br/>[Fabric Administrator](permissions-reference.md#fabric-administrator)<br/>[Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator)<br/>[Skype for Business Administrator](permissions-reference.md#skype-for-business-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator)<br/>[Teams Communications Administrator](permissions-reference.md#teams-communications-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 
 ## Next steps
 

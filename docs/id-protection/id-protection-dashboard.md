@@ -1,16 +1,14 @@
 ---
 title: Microsoft Entra ID Protection overview
 description: Learn how the Microsoft Entra ID Protection overview dashboard provides a view into security posture.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
-ms.date: 04/11/2025
-
+ms.date: 05/22/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra ID Protection dashboard
 
@@ -28,6 +26,7 @@ To access this dashboard, you need:
 
 - Microsoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
 - Microsoft Entra ID P2 licenses to view a comprehensive list of recommendations and select the recommended action links.
+- Microsoft 365 E5 or Microsoft Enterprise Mobility + Security E5 licenses for some risk detections. For more information, see [What is Microsoft Entra ID Protection?](overview-identity-protection.md#microsoft-defender).
 
 ## Access the dashboard
 

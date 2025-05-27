@@ -11,8 +11,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 04/19/2024
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OneStream so that I can control who has access to OneStream, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -27,6 +26,7 @@ In this article,  you learn how to integrate OneStream with Microsoft Entra ID. 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * OneStream single sign-on (SSO) enabled subscription.
 

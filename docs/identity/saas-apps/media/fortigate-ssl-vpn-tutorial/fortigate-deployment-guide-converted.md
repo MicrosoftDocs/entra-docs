@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 11/21/2022
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
 # FortiGate Azure Virtual Machine Deployment Guide

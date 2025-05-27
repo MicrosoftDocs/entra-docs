@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
 ms.date: 08/12/2024
-ms.custom: template-concept
+ms.custom: template-concept, sfi-image-nochange
 ---
 
 

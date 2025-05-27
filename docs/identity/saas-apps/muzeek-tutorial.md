@@ -11,6 +11,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 06/19/2024
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra single sign-on (SSO) integration with Muzeek
@@ -23,6 +24,7 @@ Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Muzeek single sign-on (SSO) enabled subscription.
 
