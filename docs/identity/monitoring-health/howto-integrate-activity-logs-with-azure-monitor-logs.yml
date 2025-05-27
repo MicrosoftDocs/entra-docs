@@ -82,7 +82,7 @@ procedureSection:
 
         ![Screenshot of the diagnostics settings with some destination details shown.](./media/howto-integrate-activity-logs-with-azure-monitor-logs/diagnostic-settings-log-analytics-workspace.png)
 
-        For more information about when logs start appearing in your Log Analytics workspace, see [Diagnostic settings in Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings.md#time-before-telemetry-gets-to-destination).
+        For more information about when logs start appearing in your Log Analytics workspace, see [Diagnostic settings in Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings#time-before-telemetry-gets-to-destination).
 
 relatedContent:
   - text: Analyze Microsoft Entra activity logs with Azure Monitor logs
