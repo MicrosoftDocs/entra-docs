@@ -1,15 +1,15 @@
 ---
-title: Track and investigate identity activities with linkable identifiers in Microsoft Entra (preview)
+title: Track and investigate identity activities with linkable identifiers in Microsoft Entra
 description: Discover how linkable identifiers like session IDs and unique token identifiers in Microsoft Entra help track and investigate identity-related activities, enhancing security and transparency.
 ms.topic: conceptual
-ms.date: 05/17/2025
+ms.date: 05/27/2025
 ms.author: justinha
 author: vimrang
 manager: femila
 ms.reviewer: vranganathan
 ---
 
-# Track and investigate identity activities with linkable identifiers in Microsoft Entra (preview)
+# Track and investigate identity activities with linkable identifiers in Microsoft Entra 
 
 Microsoft embeds specific identifiers in all access tokens that enable the correlation of activities back to a single root authentication event. These linkable identifiers are surfaced in customer-facing logs to support threat hunters and security analysts in investigating and mitigating identity-based attacks. By using these identifiers, security professionals can more effectively trace, analyze, and respond to malicious activity across sessions and tokens, enhancing both the transparency and security of the environment.
 
