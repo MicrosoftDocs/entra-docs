@@ -12,6 +12,10 @@ ms.custom: it-pro, sfi-image-nochange
 #customer intent: As an IT admin, I want to configure tenant restrictions v2 so that I can control access to external apps and enhance security for users who sign in from my organization's networks or devices.
 ---
 
+# Set up tenant restrictions v2
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 > [!NOTE]
 > Certain features described in this article are preview features. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
