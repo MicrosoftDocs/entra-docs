@@ -38,7 +38,7 @@ In a production environment, we recommended using [Azure Front Door with a Stand
     1. `Enter_the_Tenant_ID_Here` with your Directory (tenant) ID. If you don't have your tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 1. If necessary, rerun your sample SPA. 
 
-## Create Azure Front Door as a Reverse Proxy using an Azure Developer CLI (azd) template
+## Create Azure Front Door as a reverse proxy by using an Azure Developer CLI (azd) template
 
 1. To initialize the azd template, run the following command:
 
