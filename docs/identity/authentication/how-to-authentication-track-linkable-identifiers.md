@@ -347,7 +347,7 @@ Using linkable identifiers such as the Session ID (SID) and Unique Token Identif
 
 Teams-related actions such as team or channel creation, deletion, or configuration changes.
 
-1. Start with Microsoft Entra sign-in logs to find the session id of this access token by filtering around the time the token was phished and the user objectId.
+1. Start with Microsoft Entra sign-in logs to find the session ID of this access token by filtering around the time the token was phished and the user objectId.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/linkable-signinlog-entries.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers for Teams scenario.":::
 
