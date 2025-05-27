@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 03/11/2024
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an IT admin, I want to ensure access to specific applications is governed, by setting up access reviews for those applications.
 ---
 

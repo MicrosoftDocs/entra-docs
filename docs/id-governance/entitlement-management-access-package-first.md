@@ -10,6 +10,7 @@ ms.topic: tutorial
 ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
 ---
 # Tutorial: Manage access to resources in entitlement management

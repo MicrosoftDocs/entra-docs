@@ -2,14 +2,14 @@
 title: Training, demos, and videos
 description: Explore Microsoft Entra External ID training, live demos, and videos. Learn to create secure sign-up experiences and protect access with multifactor authentication.
 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
 ms.date: 05/14/2025
-ms.author: mimart
 ms.custom: it-pro
 
 

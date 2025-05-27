@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Five9 Plus Adapter (CTI, Contact Ce
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Five9 Plus Adapter (CTI, Contact Center Agents) single sign-on enabled subscription.
 

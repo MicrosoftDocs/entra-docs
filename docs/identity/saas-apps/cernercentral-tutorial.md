@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Cerner Central with Microsoft Entra
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Cerner Central single sign-on enabled subscription.
 

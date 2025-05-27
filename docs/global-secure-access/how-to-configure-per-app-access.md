@@ -10,6 +10,7 @@ ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # How to configure per-app access using Global Secure Access applications
 

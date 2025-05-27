@@ -26,6 +26,7 @@ In this article,  you learn how to integrate SAP Concur Travel and Expense with 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAP Concur Travel and Expense subscription.
 * A "Company Administrator" role under your Concur user account. You can test if you have the right access by going to [Concur SSO Self-Service Tool](https://www.concursolutions.com/nui/authadmin/ssoadmin). If you don't have the access, please contact Concur support or implementation project manager. 

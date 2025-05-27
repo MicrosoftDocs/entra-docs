@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Active Directory SSO for DoubleYou 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Active Directory SSO for DoubleYou single sign-on (SSO) enabled subscription.
 

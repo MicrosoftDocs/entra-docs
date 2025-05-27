@@ -8,7 +8,7 @@ ms.service: entra
 ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want replace existing VPN with a cloud-based solution so that we can move towards Secure Access Service Edge (SASE).
 ---
 # Microsoft Entra Suite deployment scenario - Modernize remote access to on-premises apps with MFA per app

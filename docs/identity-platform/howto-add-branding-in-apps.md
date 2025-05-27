@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: signin_art
 ms.date: 12/15/2023
-ms.reviewer: arielgo
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to

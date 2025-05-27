@@ -7,6 +7,7 @@ ms.service: entra
 ms.topic: conceptual
 ms.date: 10/23/2023
 ms.author: jricketts
+ms.custom: sfi-image-nochange
 ---
 
 # Phase 3: Configure Microsoft Entra Permissions Management monitoring and alerting

@@ -1,19 +1,15 @@
 ---
 title: Prepopulate Contact Information for Self-Service Password Reset
 description: Learn how to prepopulate contact information for users of Microsoft Entra self-service password reset (SSPR) so that they can use the feature without completing a registration process.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: tilarso
-
-
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ---
 # Prepopulate user authentication contact information for Microsoft Entra self-service password reset (SSPR)
 

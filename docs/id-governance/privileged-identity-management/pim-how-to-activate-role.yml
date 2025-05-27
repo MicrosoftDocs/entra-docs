@@ -12,6 +12,8 @@ metadata:
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-ga-nochange
+    - sfi-image-nochange
 title: |
   Activate a Microsoft Entra role in PIM
 introduction: |
@@ -250,7 +252,11 @@ procedureSection:
       
       ## Activate PIM roles using the Azure mobile app
 
-      PIM is now available in the Microsoft Entra ID and Azure resource roles mobile apps in both iOS and Android.
+      PIM is now available in the Microsoft Entra ID and Azure resource roles mobile apps in both iOS and Android. 
+
+      >[!NOTE]
+      > An active Premium P2 or EMS E5 license is required for the signed-in user to use this inside the app. 
+      
     steps:
       - |
         To activate an eligible Microsoft Entra role assignment, start by downloading the Azure mobile app ([iOS](https://apps.apple.com/us/app/microsoft-azure/id1219013620) | [Android](https://play.google.com/store/apps/details?id=com.microsoft.azure)). You can also download the app by selecting ‘Open in mobile’  from Privileged Identity Management > My roles > Microsoft Entra roles.

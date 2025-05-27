@@ -5,12 +5,11 @@ author: HULKsmashGithub
 manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jayrusso
 ms.reviewer: KaTabish
-
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: As an IT admin, I want to set a custom home page for published apps using Microsoft Entra application proxy so that users are directed to the correct page when accessing the app.
 ---
 # Set a custom home page for published apps by using Microsoft Entra application proxy

@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 11/30/2021
-ms.reviewer: arcrowe
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -82,7 +82,8 @@ If you plan on testing your app in the same tenant you registered it in and you 
 #### App and app registration are in different tenants, or you're not an admin
 If you do not plan on testing your app in the same tenant you registered it in, or you are not an administrator in your tenant, you cannot consent to the permissions from the [Microsoft Entra admin center](https://entra.microsoft.com).  You can still consent to some permissions, however, by triggering a sign-in prompt in a web browser.
 
-In your app registration in the [Microsoft Entra admin center](https://entra.microsoft.com), go to **Authentication** > **Platform configurations** > **Add a platform** > **Web**.  Add the redirect URI "https://localhost" and select **Configure**.
+Go to  [Microsoft Entra admin center](https://entra.microsoft.com), Navigate to **Identity** > **Applications** > **App registrations**> Select your application from the list. > go to  **Authentication** > **Platform configurations** > **Add a platform** > **Web**.  Add the redirect URI "https://localhost" and select **Configure**.
+
 
 There is no way for non-admin users to pre-consent through the Azure portal, so send the following request in a browser.  When you are prompted with the login screen, sign in with a test account you created in a previous step.  Consent to the permissions you are prompted with.  You may need to repeat this step for each API you want to call and test user you want to use.
 
@@ -106,7 +107,7 @@ Your tenant likely has a Conditional Access policy that [requires multifactor au
 
 To exclude user accounts:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).   
-1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Browse to **Protection** > **Conditional Access** > **Policies**.
 1. Select the Conditional Access policy that requires MFA.
 1. Select **Users or workload identities**.
 1. Select the **Exclude** tab and then the **Users and groups** checkbox.

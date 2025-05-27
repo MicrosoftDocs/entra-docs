@@ -1,16 +1,15 @@
 ---
 title: Providing a default level of security in Microsoft Entra ID
 description: Get protected from common identity threats using Microsoft Entra security defaults.
-
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 04/15/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: sama
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Security defaults in Microsoft Entra ID
 

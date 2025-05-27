@@ -2,7 +2,6 @@
 title: 'Re-running the Microsoft Entra Connect install wizard'
 description: Explains how the installation wizard works the second time you run it.
 keywords: The Azure AD Connect installation wizard lets you configure maintenance settings the second time you run it
-
 author: billmath
 manager: femila
 ms.assetid: d800214e-e591-4297-b9b5-d0b1581cc36a
@@ -12,8 +11,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra Connect Sync: Running the installation wizard a second time
 The first time you run the Microsoft Entra Connect installation wizard, it walks you through how to configure your installation. If you run the installation wizard again, it offers options for maintenance.

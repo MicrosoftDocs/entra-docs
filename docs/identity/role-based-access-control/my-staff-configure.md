@@ -1,7 +1,6 @@
 ---
 title: Use My Staff to delegate user management
-description:  Delegate user management using My Staff and administrative units
-
+description: Delegate user management using My Staff and administrative units
 author: rolyon
 manager: femila
 ms.topic: how-to
@@ -10,7 +9,7 @@ ms.subservice: role-based-access-control
 ms.date: 02/12/2025
 ms.author: rolyon
 ms.reviewer: lenalepa
-ms.custom: oldportal;it-pro;
+ms.custom: oldportal;it-pro;, sfi-image-nochange
 ---
 # Manage your users with My Staff
 

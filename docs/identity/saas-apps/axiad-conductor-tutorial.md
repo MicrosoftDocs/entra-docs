@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Axiad Conductor for Entra ID with M
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Axiad Conductor for Entra ID single sign-on (SSO) enabled subscription.
 

@@ -1,13 +1,13 @@
 ---
 title: Configure managed identities on Azure virtual machines (VMs)
 description: Step-by-step instructions for configuring system and user-assigned managed identities on an Azure VMs.
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: quickstart
 ms.date: 01/16/2025
-ms.author: ryanwi
+ms.author: shermanouko
 ms.custom: mode-api, devx-track-azurecli, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
 

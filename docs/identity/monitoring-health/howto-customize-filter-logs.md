@@ -9,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to customize my view of the logs so I can more effectively filter the results.
 ---
 

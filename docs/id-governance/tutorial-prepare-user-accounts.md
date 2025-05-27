@@ -9,7 +9,7 @@ ms.topic: tutorial
 ms.date: 08/13/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial, no-azure-ad-ps-ref
+ms.custom: template-tutorial, no-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
 # Preparing user accounts for Lifecycle workflows tutorials
 

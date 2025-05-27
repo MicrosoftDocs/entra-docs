@@ -1,17 +1,14 @@
 ---
 title: External ID pricing
 description: Learn about the pricing structure for Microsoft Entra External ID. Understand the monthly active users (MAU) billing model, core offering, and premium add-ons. Link your tenant to an Azure subscription for proper billing and feature access.
-
- 
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 12/09/2024
-
-ms.author: mimart
-author: msmimart
+ms.date: 05/19/2025
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
- 
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra tenant administrator, I want to link my tenant to an Azure subscription, so that I can take advantage of the monthly active users (MAU) billing model and activate MAU billing for guest user collaboration.
 ---
 
@@ -44,7 +41,7 @@ For the latest information about usage billing and pricing, see [External ID pri
 
 > [!NOTE]
 >
->- Existing subscriptions to Azure Active Directory B2C (Azure AD B2C) B2C or B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available.
+>- Existing subscriptions to B2B collaboration under an Azure AD External Identities P1/P2 SKU remain valid and no migration is necessary. We'll communicate upgrade options once they're available.
 
 <a name='link-your-azure-ad-tenant-to-a-subscription'></a>
 
@@ -114,4 +111,4 @@ You can’t change ownership of a subscription to a Microsoft Entra external ten
 
 - See [Frequently asked questions](customers/faq-customers.md) about external tenants.
 - For the latest pricing information, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
-- For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](/azure/active-directory-b2c/billing).
+

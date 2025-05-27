@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Igloo Software
 description: Learn how to configure single sign-on between Microsoft Entra ID and Igloo Software.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Igloo Software so that I can control who has access to Igloo Software, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra SSO integration with Igloo Software
@@ -25,6 +23,7 @@ In this article,  you learn how to integrate Igloo Software with Microsoft Entra
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Igloo Software single sign-on (SSO) enabled subscription.
 

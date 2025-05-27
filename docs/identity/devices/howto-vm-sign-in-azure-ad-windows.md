@@ -1,17 +1,15 @@
 ---
 title: Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID
 description: Learn how to sign in to an Azure VM that's running Windows by using Microsoft Entra authentication.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 10/21/2024
-
 ms.author: owinfrey
 author: owinfreyATL
 manager: femila
 ms.reviewer: sandeo
-ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref
+ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID including passwordless

@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with Tableau Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tableau Cloud.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 08/20/2024
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tableau Cloud so that I can control who has access to Tableau Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra SSO integration with Tableau Cloud
@@ -24,6 +22,7 @@ In this article,  you learn how to integrate Tableau Cloud with Microsoft Entra 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Tableau Cloud single sign-on (SSO) enabled subscription.
 
