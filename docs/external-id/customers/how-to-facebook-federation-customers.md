@@ -51,7 +51,7 @@ If you don't already have a Facebook account, sign up at [https://www.facebook.c
 1. Select **Save changes**. 
 1. Select **Use cases** on the left and select **Customize** next to **Authentication and account creation**.
 1. Select **Go to settings** under **Facebook Login**.
-1.  In **Valid OAuth Redirect URIs**, enter the following URIs, replacing `<tenant-ID>` with your Microsoft Entra External ID tenant ID and `<tenant-name>` with your Microsoft Entra External ID tenant name:
+1.  In **Valid OAuth Redirect URIs**, enter the following URIs, replacing `<tenant-ID>` with your **external tenant ID** and `<tenant-name>` with your **external tenant name**:
 
 - `https://login.microsoftonline.com/te/<tenant-ID>/oauth2/authresp`
 - `https://login.microsoftonline.com/te/<tenant-name>.onmicrosoft.com/oauth2/authresp`
