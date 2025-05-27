@@ -359,13 +359,13 @@ Teams-related actions such as team or channel creation, deletion, or configurati
 
 1. The search returns all audit log entries within that timeframe, filtered by the user and workloads as Teams.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-results.png" alt-text="Screenshot of Microsoft Purview portal showing results for SPO and Teams logs.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-results.png" alt-text="Screenshot of Microsoft Purview portal showing results for SharePoint Online and Teams logs.":::
 
 1. You can see the audit log trail from the user logging into Teams, and see that the bad actor has done several activities, like added specific users into a Teams channel, posted a phishing message, and so on.
 
 1. Each log item can be opened to get detailed information on linkable identifiers. In this example, a user posts a message.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-logitem.png" alt-text="Screenshot of Microsoft Purview portal showing log item for Teams and SPO.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-log-item.png" alt-text="Screenshot of Microsoft Purview portal showing log item for Teams and SharePoint Online.":::
 
 1. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for specific activities. This image shows different operations that the attacker performed.
 
