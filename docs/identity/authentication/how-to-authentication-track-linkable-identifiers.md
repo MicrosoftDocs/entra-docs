@@ -177,7 +177,7 @@ Microsoft Graph activity logs provide an audit trail of all HTTP requests receiv
 
 If you configure Microsoft Graph activity logs to be sent to a Log Analytics workspace, you can query them using [Kusto Query Language](/azure/data-explorer/kusto/query/). This allows you to perform detailed investigations into user and application behavior across Microsoft 365 services.
 
-**Investigation Scenarios Using Linkable Identifiers**
+### Investigation scenarios using linkable identifiers
 
 For scenarios involving Microsoft Graph activity, you can:
 
@@ -185,7 +185,7 @@ For scenarios involving Microsoft Graph activity, you can:
 - Use these identifiers to correlate and trace user actions across Microsoft Graph activity logs.
 - Track all operations performed on mailbox items or other resources by a specific token or session see [Microsoft Graph Activity Logs](/graph/microsoft-graph-activity-logs-overview).
 
-The table below shows the mapping between linkable identifier claims and Microsoft Graph activity log attribute.
+This table shows the mapping between linkable identifier claims and Microsoft Graph activity log attribute.
 
 | **Claim** | **Attribute name in the Microsoft Graph Activity log**                |
 |-----------|--------------------------------------------------------------------|
@@ -200,7 +200,7 @@ The table below shows the mapping between linkable identifier claims and Microso
 
 You can use Kusto Query Language (KQL) to join Microsoft Entra sign-in logs and Microsoft Graph Activity logs for advanced investigation scenarios. 
 
-**Filtering by Linkable Identifiers**
+**Filtering by linkable identifiers**
 
 - Filter by uti :
 Use the uti attribute to analyze all activities associated with a specific access token. This is useful for tracing the behavior of a single token across services.
@@ -339,7 +339,7 @@ The table below shows the mapping between linkable identifier claims and Teams a
 
 ### Investigate token misuse in Teams
 
-In the event of a security incident where an access token is compromised—such as through phishing—and subsequently used by a malicious actor, tenant administrators should take immediate action to contain the threat and investigate its impact.
+If an access token is compromised—such as through phishing—and subsequently used by a malicious actor, tenant administrators should take immediate action to contain the threat and investigate its impact.
 
 After revoking all active user sessions and tokens, administrators can begin a forensic investigation to determine the scope of unauthorized activity. Specifically, they may need to identify actions performed by the attacker across Teams and SharePoint Online during the affected timeframe.
 
@@ -353,7 +353,7 @@ Teams-related actions such as team or channel creation, deletion, or configurati
 
 1. Determine the linkable identifiers from Microsoft Entra sign-in logs, such as SID or UTI, to use as a filter on Teams audit logs.
 
-1. In the Purview portal, search for logs with a specific timeframe for workloads such as Teams and SharePoint Online, and for the specific user.
+1. In the Microsoft Purview portal, search for logs with a specific timeframe for workloads such as Teams and SharePoint Online, and for the specific user.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs for SharePoint and Teams workload.":::
 
@@ -361,13 +361,13 @@ Teams-related actions such as team or channel creation, deletion, or configurati
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-results.png" alt-text="Screenshot of Microsoft Purview portal showing results for SPO and Teams logs.":::
 
-1. Admin can see all the audit log trail from user logging into team and see that the bad actor has done several activities like added specific users into a Teams channel, posted a phishing message etc.
+1. You can see the audit log trail from the user logging into Teams, and see that the bad actor has done several activities, like added specific users into a Teams channel, posted a phishing message, and so on.
 
-1. Each log item can be opened to get detailed information on linkable identifiers. Below is an example of user posting a message.
+1. Each log item can be opened to get detailed information on linkable identifiers. In this example, a user posts a message.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-logitem.png" alt-text="Screenshot of Microsoft Purview portal showing log item for Teams and SPO.":::
 
-1. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for specific activities. The image below shows all different operations that has been performed by the attacker.
+1. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for specific activities. This image shows different operations that the attacker performed.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-exported-file.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs exported.":::
 
