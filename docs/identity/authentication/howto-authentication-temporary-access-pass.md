@@ -9,7 +9,7 @@ ms.author: justinha
 author: tilarso
 manager: femila
 ms.reviewer: tilarso
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Configure Temporary Access Pass to register passwordless authentication methods
 

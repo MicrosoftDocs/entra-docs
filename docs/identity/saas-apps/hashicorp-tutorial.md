@@ -11,7 +11,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HashiCorp Boundary (OIDC) so that I can control who has access to HashiCorp Boundary (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 

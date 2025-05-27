@@ -1,18 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with valid8Me
 description: Learn how to configure single sign-on between Microsoft Entra ID and valid8Me.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and valid8Me so that I can control who has access to valid8Me, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 

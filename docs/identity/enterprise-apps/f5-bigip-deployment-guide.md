@@ -10,7 +10,7 @@ ms.date: 11/07/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.reviewer: miccohen
-ms.custom: not-enterprise-apps, sfi-ropc-nochange
+ms.custom: not-enterprise-apps, sfi-ropc-nochange, sfi-image-nochange
 #customer intent: As an IT admin deploying F5 BIG-IP Virtual Edition (VE) in Azure, I want to follow a step-by-step tutorial to ensure a successful deployment, so that I can model a secure hybrid access (SHA) proof-of-concept and test new system updates and hotfixes.
 ---
 

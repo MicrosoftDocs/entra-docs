@@ -1,18 +1,15 @@
 ---
 title: 'Quickstart: View enterprise applications'
-description:  Access Microsoft Entra admin center to effortlessly view and filter enterprise apps. Streamline tenant oversight and take charge now.
-
+description: Access Microsoft Entra admin center to effortlessly view and filter enterprise apps. Streamline tenant oversight and take charge now.
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: quickstart
 ms.date: 03/31/2025
 ms.author: jomondi
 ms.reviewer: alamaral
-ms.custom: mode-other, enterprise-apps
-
+ms.custom: mode-other, enterprise-apps, sfi-image-nochange
 #Customer intent: As an enterprise administrator, I want to view and search for enterprise applications in the Microsoft Entra admin center, so that I can manage and configure the applications in my tenant effectively.
 ---
 

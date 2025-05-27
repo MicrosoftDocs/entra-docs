@@ -3,6 +3,7 @@ author: SHERMANOUKO
 ms.author: shermanouko
 ms.date: 01/16/2025
 ms.topic: include
+ms.custom: sfi-image-nochange
 ---
 
 In this article, using the Azure portal, you learn how to perform the following managed identities for Azure resources operations on a virtual machine scale set:

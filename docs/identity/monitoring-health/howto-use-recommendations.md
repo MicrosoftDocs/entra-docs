@@ -9,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: deawari
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra recommendations to monitor and improve the health of my tenant.
 ---
 

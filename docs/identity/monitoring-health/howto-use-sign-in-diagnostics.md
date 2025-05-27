@@ -9,9 +9,8 @@ ms.subservice: monitoring-health
 ms.date: 02/26/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
-
 ---
 
 # What is the Sign-in diagnostic in Microsoft Entra ID?

@@ -1,7 +1,6 @@
 ---
 title: Assign sensitivity labels to groups
 description: Learn how to assign sensitivity labels to groups. See troubleshooting information and view more resources.
-
 author: barclayn
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, no-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID

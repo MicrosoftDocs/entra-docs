@@ -1,7 +1,6 @@
 ---
 title: Provision a user or group on demand using the Microsoft Entra provisioning service
 description: Learn how to provision users on demand in Microsoft Entra ID.
-
 author: kenwith
 manager: femila
 ms.service: entra-id
@@ -12,6 +11,7 @@ ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # On-demand provisioning in Microsoft Entra ID

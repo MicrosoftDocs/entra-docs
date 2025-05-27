@@ -9,7 +9,7 @@ ms.subservice: privileged-identity-management
 ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim, H1Hack27Feb2017, sfi-ga-nochange
+ms.custom: pim, H1Hack27Feb2017, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Discovery and Insights (preview) for Microsoft Entra roles (formerly Security Wizard)

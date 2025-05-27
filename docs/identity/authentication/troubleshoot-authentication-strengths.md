@@ -1,17 +1,15 @@
 ---
-title: Troubleshoot Conditional Access authentication strength 
+title: Troubleshoot Conditional Access authentication strength
 description: Learn how to resolve errors when using Microsoft Entra Conditional Access authentication strength.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: inbarckms
 manager: femila
 ms.reviewer: inbarc
+ms.custom: sfi-image-nochange
 ---
 # Troubleshoot Conditional Access authentication strength
 

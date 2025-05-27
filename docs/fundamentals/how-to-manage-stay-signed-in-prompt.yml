@@ -14,6 +14,7 @@ metadata:
   ms.custom:
     - ge-structured-content-pilot
     - sfi-ga-nochange
+    - sfi-image-nochange
 
   # Customer intent: As an IT admin, I want to know how to configure the 'Stay signed in' prompt for Microsoft Entra users, so their sign-in experience is not interrupted unnecessarily.
 
