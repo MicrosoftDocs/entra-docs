@@ -7,8 +7,8 @@ ms.author: henrymbugua
 ms.date: 05/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent:As a developer registering an application with the Microsoft identity platform, I want to understand the restrictions and limitations of redirect URIs, so that I can correctly configure the redirect URI for successful authorization and token retrieval.
 ---
 

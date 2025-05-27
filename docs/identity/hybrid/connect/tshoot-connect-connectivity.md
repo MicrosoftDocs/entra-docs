@@ -1,19 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Microsoft Entra connectivity issues'
 description: Learn how to troubleshoot connectivity issues with Microsoft Entra Connect.
-
 author: billmath
 manager: femila
-
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ---
 # Troubleshoot Microsoft Entra Connect connectivity issues
 

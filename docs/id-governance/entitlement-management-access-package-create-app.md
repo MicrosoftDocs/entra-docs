@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 08/25/2024
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 # Create an access package in entitlement management for an application with a single role using PowerShell

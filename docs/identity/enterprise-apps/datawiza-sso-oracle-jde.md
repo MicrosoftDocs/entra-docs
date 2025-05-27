@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 01/30/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure Datawiza to enable Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) to Oracle JD Edwards. My goal is to enhance security and access control for the application.
 ---
 
@@ -189,5 +188,4 @@ To confirm Oracle JDE application access occurs, a prompt appears to use a Micro
 
 * Video [Enable SSO and MFA for Oracle JDE) with Microsoft Entra ID via Datawiza](https://www.youtube.com/watch?v=_gUGWHT5m90)
 * [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-* [Tutorial: Configure Azure AD B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 * Go to docs.datawiza.com for Datawiza [User Guides](https://docs.datawiza.com/)

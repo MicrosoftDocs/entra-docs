@@ -9,8 +9,7 @@ ms.topic: overview
 ms.date: 12/06/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: enterprise-apps
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to easily find and deploy pre-integrated SaaS applications from the Microsoft Entra application gallery, so that I can provide users with a seamless single sign-on experience and automate user provisioning.
 ---
 

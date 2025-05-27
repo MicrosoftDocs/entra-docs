@@ -1,18 +1,15 @@
 ---
 title: Create a trust relationship between an app and an external identity provider
 description: Set up a trust relationship between an app in Microsoft Entra ID and an external identity provider. This allows a software workload outside of Azure to access Microsoft Entra protected resources without using secrets or certificates.
-
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
-
 ms.service: entra-workload-id
-
 ms.topic: how-to
 ms.date: 12/13/2024
-ms.author: ryanwi
-ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell
+ms.author: shermanouko
 ms.reviewer: shkhalid, udayh, vakarand
 zone_pivot_groups: identity-wif-apps-methods
+ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell, sfi-image-nochange
 #Customer intent: As an application developer, I want to configure a federated credential on an app registration so I can create a trust relationship with an external identity provider and use workload identity federation to access Microsoft Entra protected resources without managing secrets.
 ---
 

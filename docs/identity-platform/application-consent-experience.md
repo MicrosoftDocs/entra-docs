@@ -4,13 +4,11 @@ description: Learn more about the Microsoft Entra consent experiences to see how
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.custom: 
 ms.date: 02/27/2025
-ms.reviewer: jesakowi, jawoods
+ms.reviewer: jawoods
 ms.service: identity-platform
-
 ms.topic: concept-article
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to understand the consent experience in Microsoft Entra ID, so that I can intelligently manage applications for my organization and develop applications with a more seamless consent experience.
 ---
 

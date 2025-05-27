@@ -5,10 +5,10 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.date: 05/12/2025
-ms.reviewer:
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: glossary
+ms.custom: sfi-ga-nochange
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand the terminology and concepts related to authentication and authorization, so that I can effectively implement secure access to protected resources in my application.
 ---
 

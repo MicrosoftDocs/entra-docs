@@ -561,6 +561,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/global-secure-access/concept-palo-alto-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-palo-alto-coexistence",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-provisioning/inbound-provisioning-api-postman.md",
       "redirect_url": "/entra/identity/app-provisioning/inbound-provisioning-api-curl-tutorial",
       "redirect_document_id": false
@@ -2359,6 +2364,11 @@
       "source_path": "docs/external-id/customers/whats-new-docs.md",
       "redirect_url": "/entra/external-id/whats-new-docs",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/architecture/deployment-external-audit-monitor.md",
+      "redirect_url": "/entra/architecture/deployment-external-operations",
+      "redirect_document_id": true
     },
     {
       "source_path": "docs/identity-platform/scenario-spa-app-registration.md",

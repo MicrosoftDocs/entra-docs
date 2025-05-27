@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra SSO integration with ScreenSteps
 description: Learn how to configure single sign-on between Microsoft Entra ID and ScreenSteps.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/08/2024
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ScreenSteps so that I can control who has access to ScreenSteps, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra SSO integration with ScreenSteps

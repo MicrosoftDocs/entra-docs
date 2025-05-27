@@ -1,15 +1,14 @@
 ---
 title: Microsoft identity platform and OAuth 2.0 authorization code flow
-description: Protocol reference for the Microsoft identity platform's implementation of the OAuth 2.0 authorization code grant 
+description: Protocol reference for the Microsoft identity platform's implementation of the OAuth 2.0 authorization code grant
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
 ms.date: 05/12/2025
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
-
 ms.topic: reference
+ms.custom: sfi-ga-nochange, sfi-ropc-nochange
 #Customer intent: As a developer building a web application, I want to implement the OAuth 2.0 authorization code flow with PKCE and OpenID Connect, so that I can obtain authorized access to protected resources like web APIs and authenticate users in my application.
 ---
 

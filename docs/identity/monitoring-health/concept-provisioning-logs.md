@@ -9,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra user provisioning logs so I know what to look for when I need to troubleshoot an issue.
 ---
 

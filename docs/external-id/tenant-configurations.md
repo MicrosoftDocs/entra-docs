@@ -2,14 +2,14 @@
 title: Tenant configurations
 description: Learn about tenant configurations in Microsoft Entra External ID. Understand the differences between workforce and external tenants, and how to configure them for your organization's needs.
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: conceptual
 ms.date: 05/20/2025
-ms.author: mimart
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 

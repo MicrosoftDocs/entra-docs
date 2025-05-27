@@ -1,7 +1,6 @@
 ---
 title: Best practices for Microsoft Entra roles
 description: Best practices for using Microsoft Entra roles.
-
 author: rolyon
 manager: femila
 ms.service: entra-id
@@ -10,8 +9,7 @@ ms.topic: conceptual
 ms.date: 03/30/2025
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Best practices for Microsoft Entra roles

@@ -4,14 +4,12 @@ description: Troubleshoot and monitor your custom claims provider API.  Learn ho
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
 ms.date: 04/10/2024
-ms.reviewer: JasSuri
+ms.reviewer: jasuri
 ms.service: identity-platform
-
 ms.topic: troubleshooting
 titleSuffix: Microsoft identity platform
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom authentication extension, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
 ---
 

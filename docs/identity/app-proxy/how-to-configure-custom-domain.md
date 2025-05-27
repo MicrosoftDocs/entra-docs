@@ -1,7 +1,6 @@
 ---
 title: Custom domains in Microsoft Entra application proxy
 description: Configure and manage custom domains in Microsoft Entra application proxy.
-
 author: kenwith
 manager: femila
 ms.service: entra-id
@@ -11,6 +10,7 @@ ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Configure custom domains with Microsoft Entra application proxy

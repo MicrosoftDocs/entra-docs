@@ -1,16 +1,15 @@
 ---
 title: Require MFA for device registration
 description: Improve visibility and enforce more granular control over the device registration process though Conditional Access.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 04/01/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: lhuangnorth
+ms.custom: sfi-image-nochange
 ---
 # Require multifactor authentication for device registration
 
