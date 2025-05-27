@@ -6,7 +6,7 @@ ms.author: jayrusso
 manager: femila
 ms.service: global-secure-access
 ms.topic: concept-article
-ms.date: 05/23/2025
+ms.date: 05/27/2025
 
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 
@@ -27,7 +27,7 @@ When you create a TLS inspection policy to inspect traffic, the Global Secure Ac
 
 The Global Secure Access service creates an intermediate certificate signed by a customer certificate authority. Global Secure Access uses this intermediate certificate to generate short-lived leaf certificates. TLS uses these leaf certificates in handshakes between client devices and Global Secure Access. Client devices need to install the customer's root certificate authority in their trusted certificate store. The browser validates the certificate chain in the browser's certificate store.
 <!-- Art Library Source# ConceptArt-0-000-047 -->
-:::image type="content" source="media/concept-transport-layer-security/inspection-process-diagram.svg" alt-text="Diagram that shows the Transport Layer Security (TLS) inspection process.":::
+:::image type="content" source="media/concept-transport-layer-security/inspection-process-diagram.png" alt-text="Diagram that shows the Transport Layer Security (TLS) inspection process." lightbox="media/concept-transport-layer-security/inspection-process-diagram-expanded.png":::
 
 To get started with TLS inspection, see [Configure Transport Layer Security](how-to-transport-layer-security.md). 
 
