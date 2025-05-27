@@ -10,7 +10,7 @@ ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Microsoft Entra Connect Health operations
 This topic describes the various operations you can perform by using Microsoft Entra Connect Health.

@@ -9,6 +9,7 @@ ms.subservice: privileged-identity-management
 ms.date: 01/06/2025
 ms.author: barclayn
 ms.reviewer: ilyal
+ms.custom: sfi-image-nochange
 ---
 
 # Bring groups into Privileged Identity Management

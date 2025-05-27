@@ -3,13 +3,13 @@ title: Check fleet metrics of Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to check fleet metrics of a Microsoft Entra Domain Services managed domain.
 author: justinha
 manager: femila
-
 ms.assetid: 8999eec3-f9da-40b3-997a-7a2587911e96
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 02/05/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 ---
 # Check fleet metrics of Microsoft Entra Domain Services
 

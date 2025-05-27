@@ -7,11 +7,9 @@ ms.author: jomondi
 ms.date: 10/01/2024
 ms.reviewer: yuhko, ergreenl
 ms.service: identity-platform
-
 ms.topic: how-to
-services: active-directory
 zone_pivot_groups: enterprise-apps-with-ms-graph
-
+ms.custom: sfi-image-nochange
 #customer-intent: As a developer, I want to update an app's requested permissions in Microsoft Entra ID so that I can enhance security, improve user experience, and ensure compliance with privacy standards.
 ---
 # Update an app's requested permissions in Microsoft Entra ID

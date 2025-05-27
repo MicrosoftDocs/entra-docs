@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/09/2023
-ms.reviewer: rahulnagraj, alamaral, jeedes
+ms.reviewer: alamaral
 ms.service: identity-platform
 
 ms.topic: how-to

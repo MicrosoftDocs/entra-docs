@@ -8,8 +8,7 @@ ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
 ms.reviewer: absinh
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to simulate a virtual wide area network to connect resources in Azure so I can better understand how Global Secure Access can be implemented in my organization.
 ---
 # Simulate remote network connectivity using Azure vWAN

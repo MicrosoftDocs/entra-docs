@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
 ms.date: 03/04/2025
-ms.custom: template-tutorial
+ms.custom: template-tutorial, sfi-image-nochange
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---

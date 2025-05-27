@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 05/30/2024
-ms.reviewer: rahulnagraj, alamaral
+ms.reviewer: alamaral
 ms.service: identity-platform
 ms.topic: how-to
 ms.custom: curation-claims, sfi-ropc-nochange

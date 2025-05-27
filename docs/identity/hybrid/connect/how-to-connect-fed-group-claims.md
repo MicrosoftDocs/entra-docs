@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
 author: billmath
-ms.custom: sfi-ropc-nochange
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 ---
 
 # Configure group claims for applications by using Microsoft Entra ID

@@ -1,16 +1,15 @@
 ---
 title: Self-Service Password Reset for Windows Devices
 description: Learn how to enable Microsoft Entra self-service password reset on the Windows sign-in screen.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: tilarso
+ms.custom: sfi-image-nochange
 ---
 # Enable Microsoft Entra self-service password reset on the Windows sign-in screen
 

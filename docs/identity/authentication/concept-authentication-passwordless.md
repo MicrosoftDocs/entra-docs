@@ -1,16 +1,15 @@
 ---
 title: Microsoft Entra passwordless sign-in
 description: Learn about options for passwordless sign-in to Microsoft Entra ID using FIDO2 security keys or Microsoft Authenticator.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: calui
+ms.custom: sfi-image-nochange
 ---
 
 # Passwordless authentication options for Microsoft Entra ID

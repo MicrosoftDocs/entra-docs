@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with Cognism
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cognism.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
@@ -10,7 +9,7 @@ ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cognism so that I can control who has access to Cognism, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 

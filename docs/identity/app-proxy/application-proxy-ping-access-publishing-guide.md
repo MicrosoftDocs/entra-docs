@@ -10,6 +10,7 @@ ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Header based authentication for single sign-on with application proxy and PingAccess

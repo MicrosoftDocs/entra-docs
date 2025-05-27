@@ -4,12 +4,11 @@ description: Learn how to add app roles to an application registered in Microsof
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:
 ms.date: 11/13/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I want to add app roles to my application using RBAC, so I can assign users and groups to those roles.
 ---
 

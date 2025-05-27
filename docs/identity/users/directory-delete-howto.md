@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: addimitu
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 ---
 # Delete a tenant in Microsoft Entra ID
 
