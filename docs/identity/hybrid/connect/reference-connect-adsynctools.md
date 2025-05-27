@@ -8,9 +8,7 @@ ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.topic: reference
-
-
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ---
 
 # Microsoft Entra Connect:  ADSyncTools PowerShell Reference

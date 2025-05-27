@@ -8,6 +8,7 @@ ms.date: 04/09/2025
 ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
+ms.custom: sfi-ga-nochange
 ---
 
 # Cloud sync troubleshooting
