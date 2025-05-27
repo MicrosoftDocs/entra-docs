@@ -404,6 +404,8 @@
     href: best-practices-secure-id-governance.md 
   - name: Securing custom extension extensibility to Azure Logic Apps
     href: custom-extension-security.md  
+  - name: Using groups managed by Privileged Identity Management with access packages reference
+    href: entitlement-management-access-package-pim-reference.md
   - name: Identity Governance - PowerShell
     href: /powershell/module/microsoft.graph.identity.governance/?viewFallbackFrom=graph-powershell-beta&preserve-view=true&view=graph-powershell-1.0
   - name: Access reviews - Microsoft Graph API
