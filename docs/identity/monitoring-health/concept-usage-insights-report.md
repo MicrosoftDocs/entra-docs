@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 05/06/2025
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: madansr7
 ms.custom: sfi-image-nochange
@@ -26,9 +26,10 @@ With the Microsoft Entra **Usage and insights** reports, you can get an applicat
 
 To access the data from Usage and insights you must have:
 
-* A Microsoft Entra tenant
-* A Microsoft Entra ID P1 or P2 license to view the sign-in data
-* A user in the Reports Reader, Security Reader, or Security Administrator role.
+- A Microsoft Entra tenant
+- A Microsoft Entra ID P1 or P2 license to view the sign-in data
+- The least privileged role is [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+    - [Security Reader](../role-based-access-control/permissions-reference.md#security-reader) and [Security Administrator](../role-based-access-control/permissions-reference.md#security-reader) can also view the report.
 
 ## Access Usage and insights
 
@@ -94,11 +95,11 @@ The **AD FS application activity** report in Usage & insights lists all Active D
 
 Viewing the AD FS application activity using Microsoft Graph retrieves a list of the `relyingPartyDetailedSummary` objects, which identifies the relying party to a particular Federation Service.
 
-Add the following query, then select the **Run query** button.
+Add the following query, then select the **Run query** button:
 
-   ```http
-   GET https://graph.microsoft.com/beta/reports/getRelyingPartyDetailedSummary(period='{period}')
-   ```
+```http
+GET https://graph.microsoft.com/beta/reports/getRelyingPartyDetailedSummary(period='{period}')
+```
 
 For more information, see [AD FS application activity in Microsoft Graph](/graph/api/resources/relyingpartydetailedsummary?view=graph-rest-beta&preserve-view=true).
 
@@ -128,7 +129,7 @@ Select the **View more details** link to locate the client and object IDs for th
 
 The `servicePrincipalSignInActivity` reports can be viewed using Microsoft Graph.
 
-Add the following query in Graph Explorer to retrieve the service principal sign-in activity, then select the **Run query** button.
+Add the following query in Graph Explorer to retrieve the service principal sign-in activity, then select the **Run query** button:
 
 ```http
 GET https://graph.microsoft.com/beta/reports/servicePrincipalSignInActivities/{id}
@@ -187,7 +188,7 @@ To get started, follow these instructions to work with `appCredentialSignInActiv
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **GET** as the HTTP method from the dropdown.
 1. Set the API version to **beta**.
-1. Add the following query to retrieve recommendations, then select the **Run query** button.
+1. Add the following query to retrieve recommendations, then select the **Run query** button:
 
     ```http
     GET https://graph.microsoft.com/beta/reports/appCredentialSignInActivities/{id}
