@@ -399,7 +399,7 @@ SharePoint Online operations including file access, creation, modification, or d
 
 1. Start with Microsoft Entra sign-in logs to find the session id of this access token by filtering around the time the token was phished and the user objectId.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/linkable-signinlog-entries.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers for Teams scenario.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/linkable-sign-in-log-entries.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers for Teams scenario.":::
 
 1. Determine the linkable identifiers from Microsoft Entra sign-in logs, such as SID or UTI, to use as a filter on Teams and SharePoint Online audit logs.
 
