@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 05/07/2025
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: deawari
 
@@ -27,7 +27,7 @@ To update the Microsoft Entra recommendation email notification settings for you
 
 ## What do the recommendation emails contain?
 
-The email notifications provide a basic summary of the specific recommendation with a link to the related area of the Microsoft Entra admin center. The email also includes a link to related documentation so you can learn more about the recommendation and how to resolve it. These emails are enabled by default, are not promotional or marketing emails, and do not contain any upsell content. They are purely informational and designed to help you act quickly when a new recommendation is available.
+The email notifications provide a basic summary of the specific recommendation with a link to the related area of the Microsoft Entra admin center. The email also includes a link to related documentation so you can learn more about the recommendation and how to resolve it. These emails are enabled by default, aren't promotional or marketing emails, and don't contain any upselling content. These emails are purely informational and designed to help you act quickly when a new recommendation is available.
 
 ## How to update your email notification settings
 
@@ -36,6 +36,9 @@ Tenants are opted in to receive Microsoft Entra recommendation emails by default
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **Overview** > **Recommendations**.
 1. Select **Email settings**.
+
+    :::image type="content" source="media/howto-configure-recommendation-email-notification/recommendation-email-settings.png" alt-text="Screenshot of the recommendations page with the email settings button highlighted.":::
+
 1. In the **Recommendation email settings** panel that opens, uncheck the **Send email notifications for new recommendations** box.
 
-All email notifications for all Microsoft Entra recommendations are now blocked and are no longer sent to the tenant's administrative roles.
+All email notifications for all Microsoft Entra recommendations are now blocked for the entire tenant and are no longer sent to the tenant's administrative roles.
