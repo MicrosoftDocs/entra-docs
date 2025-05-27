@@ -1,6 +1,6 @@
 ---
-title: Add a platform to your app registration
-description: Learn how to add a platform to your app in Microsoft Entra to securely handle authentication tokens and enhance your application's security.
+title: "How to add a redirect URI to your application"
+description: Learn how to add a redirect URI to your application in Microsoft Entra to securely handle authentication tokens and enhance app security.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
@@ -11,17 +11,17 @@ ms.topic: how-to
 #Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
 ---
 
-# Add a platform to your app registration
+# How to add a redirect URI to your application
 
-The Microsoft identity platform supports authentication for modern application types such as web applications, single-page applications (SPA) and mobile and desktop apps. After you register your app in the Microsoft Entra admin center, specify the app type by setting up an app platform and other authentication settings for your platform.
-
-When you add a platform to your app registration, specify a redirect URI. The redirect URI is the endpoint where the Microsoft identity platform sends security tokens after a user authenticates. This URI is a key security measure that makes sure security tokens go only to the intended recipient.
+To sign in a user, your application must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The redirect URI is a critical security feature that ensures the Microsoft Entra authentication server only sends authorization codes and access tokens to the intended recipient.
 
 ## Prerequisites
 
 * [Quickstart: Register an app in Microsoft Entra ID](quickstart-register-app.md).
 
-## Add a platform to your app
+## Add a redirect URI
+
+A *redirect URI* is where the Microsoft identity platform sends security tokens after authentication. Redirect URIs are configured in **Platform configurations** in the Microsoft Entra admin center. For **Web** and **Single-page applications**, you need to specify a redirect URI manually. For **Mobile and desktop** platforms, you select from generated redirect URIs. 
 
 Follow these steps to configure settings based on your target platform or device:
 
@@ -32,14 +32,13 @@ Follow these steps to configure settings based on your target platform or device
 
    :::image type="content" source="./media/quickstart-register-app/portal-04-app-reg-03-platform-config.png" alt-text="Screenshot of the platform configuration pane in the Azure portal." border="false":::
 
-
    | Platform  | Configuration settings | Example |
    | --------- |------------------------|---------|
-   | **Web**   | A **Redirect URI**, which is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. |`https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.   |
-   | **Single-page application** | A **Redirect URI**, which is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.|
-   | **iOS / macOS** | **Bundle ID**, then the Microsoft Entra admin center generates the **Redirect URI** for your app registration.| `com.microsoft.identityapp.ciam.MSALiOS`. |
-   | **Android** | **Package name** and **Signature hash**, which you generate via command line by following the portal instructions. One you enter the two values, the Microsoft Entra admin center generates a redirect URI for you. | Package name: <br>&#8226; `com.azuresamples.msalandroidapp` <br> Signature has: <br>&#8226; `aB1cD2eF-3gH4iJ5kL6-mN7oP8qR=`. |
-| **Mobile and desktop applications** | Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | `https://login.microsoftonline.com/common/oauth2/nativeclient` |
+   | **Web**   | Enter the **Redirect URI** for a web app that runs on a server. Front channel logout URLs can also be added | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally. |
+   | **Single-page application** | Enter a **Redirect URI** for client-side apps using JavaScript, Angular, React.js, or Blazor WebAssembly. Front channel logout URLs can also be added | `https://contoso.com/auth-response`  or <br> `http://localhost:3000/auth-response` if you run your app locally.|
+   | **iOS / macOS** | Enter the app **Bundle ID**, which generates a redirect URI for you. Find it in **Build Settings** or in Xcode in *Info.plist*. | `com.microsoft.identityapp.ciam.MSALiOS`. |
+   | **Android** | Enter the app **Package name**, which generates a redirect URI for you. Find it in the *AndroidManifest.xml* file. Also generate and enter the **Signature hash**. | Package name: <br>&#8226; `com.azuresamples.msalandroidapp` <br> Signature has: <br>&#8226; `aB1cD2eF-3gH4iJ5kL6-mN7oP8qR=`. |
+   | **Mobile and desktop applications** | Select this platform for desktop apps or mobile apps not using MSAL or a broker. Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | `https://login.microsoftonline.com/common/oauth2/nativeclient` |
 
 1. Select **Configure** to complete the platform configuration.
 
