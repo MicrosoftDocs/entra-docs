@@ -1,7 +1,6 @@
 ---
-title: Analyze a sign-in with the Microsoft Graph API 
+title: Analyze a sign-in with the Microsoft Graph API
 description: Learn how to access the sign-in log and analyze a single sign-in attempt using the Microsoft Graph API.
-
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: quickstart
@@ -10,7 +9,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 manager: femila
 ms.reviewer: besiler
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I want to be able to find a failed sign-in attempt with the Microsoft Graph API.
 ---
 # Quickstart: Analyze a sign-in with the Microsoft Graph API 

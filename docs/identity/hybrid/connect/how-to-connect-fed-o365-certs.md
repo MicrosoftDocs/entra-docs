@@ -1,19 +1,16 @@
 ---
 title: Certificate renewal for Microsoft 365 and Microsoft Entra users
 description: This article explains to Microsoft 365 users how to resolve issues with emails that notify them about renewing a certificate.
-
 author: billmath
 manager: femila
 ms.assetid: 543b7dc1-ccc9-407f-85a1-a9944c0ba1be
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
 ---
 # Renew federation certificates for Microsoft 365 and Microsoft Entra ID
 ## Overview

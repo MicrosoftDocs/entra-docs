@@ -1,17 +1,14 @@
 ---
 title: Migrate Okta federation to Microsoft Entra authentication
 description: Migrate Okta-federated applications to managed authentication under Microsoft Entra ID. See how to migrate federation in a staged manner.
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: gasinh
-ms.custom: kr2b-contr-experiment, not-enterprise-apps
-
+ms.custom: kr2b-contr-experiment, not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using Okta for single sign-on (SSO) with Office 365, I want to migrate to Microsoft Entra ID-managed authentication in a staged manner, so that I can ensure a good authentication experience for users and test reverse federation access to remaining Okta SSO applications.
 ---
 

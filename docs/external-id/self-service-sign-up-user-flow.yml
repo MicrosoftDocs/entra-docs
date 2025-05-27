@@ -13,6 +13,7 @@ metadata:
     - it-pro
     - ge-structured-content-pilot
     - seo-july-2024
+    - sfi-image-nochange
 
 #customer intent: As a developer building an application with B2B collaboration user flows, I want to add a self-service sign-up user flow to my app, so that users can sign up for the app and create a new guest account.
 

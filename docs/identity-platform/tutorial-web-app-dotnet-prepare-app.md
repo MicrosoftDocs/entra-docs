@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 04/15/2025
 ms.service: identity-platform
-
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Microsoft Entra admin center and configure the application for authentication.
 ---
 

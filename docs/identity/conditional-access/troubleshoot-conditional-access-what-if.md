@@ -1,16 +1,15 @@
 ---
 title: Troubleshoot Conditional Access using the What If tool
 description: Where to find what Conditional Access policies were applied and why
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 08/13/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: calebb
+ms.custom: sfi-image-nochange
 ---
 # Troubleshooting Conditional Access using the What If tool
 

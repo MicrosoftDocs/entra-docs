@@ -9,7 +9,7 @@ ms.subservice: privileged-identity-management
 ms.date: 01/07/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim, sfi-ga-nochange
+ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Email notifications in PIM

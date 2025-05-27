@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra Connect Health - Health service data isn't up to date alert
 description: This document describes the cause of "Health service data isn't up to date" alert and how to troubleshoot it.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Health service data isn't up to date alert

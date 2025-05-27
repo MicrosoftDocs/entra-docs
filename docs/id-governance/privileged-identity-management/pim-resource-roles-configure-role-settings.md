@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 12/19/2024
 ms.subservice: privileged-identity-management
 ms.author: barclayn
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Configure Azure resource role settings in Privileged Identity Management

@@ -8,8 +8,8 @@ ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/26/2021
 ms.author: christoc
-ms.custom:
-ms.collection:
+ms.custom: sfi-image-nochange
+ms.collection: 
 ---
 
 # Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications

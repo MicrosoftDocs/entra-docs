@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 04/26/2024
-ms.custom: template-how-to
+ms.custom: template-how-to, sfi-image-nochange
 ---
 
 # Manage workflow versions

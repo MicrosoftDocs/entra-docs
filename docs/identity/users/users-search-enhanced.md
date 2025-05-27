@@ -1,7 +1,6 @@
 ---
 title: User management enhancements
 description: Describes how Microsoft Entra ID enables user search, filtering, and more information about your users.
-
 author: barclayn
 manager: femila
 ms.service: entra-id
@@ -10,8 +9,7 @@ ms.topic: how-to
 ms.date: 01/06/2025
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 ---
 
 # User management enhancements in Microsoft Entra ID

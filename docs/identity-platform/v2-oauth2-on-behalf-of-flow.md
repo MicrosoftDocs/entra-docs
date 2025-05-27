@@ -8,7 +8,7 @@ ms.date: 01/04/2025
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
 ms.topic: reference
-ms.custom: sfi-ropc-nochange
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As a developer building a web API, I want to understand how to implement the OAuth 2.0 On-Behalf-Of flow, so that I can securely pass a user's identity and permissions to another web API.
 ---
 

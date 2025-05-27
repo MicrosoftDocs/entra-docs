@@ -8,7 +8,7 @@ ms.subservice: external
 ms.topic: how-to
 ms.date: 02/06/2025
 ms.author: cmulligan
-ms.custom: it-pro, sfi-ga-nochange
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to delete an external tenant in the  Microsoft Entra admin center. 
 ---
 # Delete an external tenant

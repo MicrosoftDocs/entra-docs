@@ -11,6 +11,7 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 06/19/2024
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra single sign-on (SSO) integration with Muzeek

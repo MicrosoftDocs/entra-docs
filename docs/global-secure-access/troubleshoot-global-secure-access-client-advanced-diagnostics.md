@@ -8,9 +8,7 @@ ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
 ms.reviewer: lirazbarak
-
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Advanced diagnostics utility.
 ---
 # Troubleshoot the Global Secure Access client for Windows: Advanced diagnostics

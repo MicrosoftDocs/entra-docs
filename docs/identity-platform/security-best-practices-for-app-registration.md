@@ -8,7 +8,7 @@ ms.date: 01/06/2023
 ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
-ms.custom: template-concept, sfi-ropc-nochange
+ms.custom: template-concept, sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an application developer, I want to follow security best practices for application properties in Microsoft Entra ID, so that I can ensure the security and health of my applications and protect them from compromise or downtime.
 ---
 

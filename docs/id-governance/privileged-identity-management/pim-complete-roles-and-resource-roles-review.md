@@ -1,7 +1,6 @@
 ---
 title: Complete an access review of Azure resource and Microsoft Entra roles in PIM
-description: Learn how to complete an access review of Azure resource and Microsoft
-  Entra roles Privileged Identity Management.
+description: Learn how to complete an access review of Azure resource and Microsoft Entra roles Privileged Identity Management.
 author: barclayn
 manager: femila
 ms.service: entra-id-governance
@@ -10,7 +9,7 @@ ms.subservice: privileged-identity-management
 ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim
+ms.custom: pim, sfi-image-nochange
 ---
 
 # Complete an access review of Azure resource and Microsoft Entra roles in PIM

@@ -1,15 +1,14 @@
 ---
-title: B2B guest user properties 
+title: B2B guest user properties
 description: Learn about the properties of a B2B guest user in Microsoft Entra External ID. Understand user types, authentication methods, and how to manage guest user access and permissions.
-
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done 
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing external collaboration in Microsoft Entra, I want to understand the properties and management options for B2B collaboration users, so that I can effectively invite and manage external users accessing apps and resources in my organization.
 ---
 

@@ -9,7 +9,7 @@ ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: anjusingh
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
