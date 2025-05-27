@@ -314,7 +314,7 @@ The table below shows the mapping between linkable identifier claims and Teams a
 
 1. To filter by Record Types, the supported record types are MicrosoftTeams, MicrosoftTeamsAdmin, MicrosoftTeamsAnalytics, MicrosoftTeamsDevices, MicrosoftTeamsSensitivityLabelAction, MicrosoftTeamsShifts.
  
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/teams-purview-recordtypes-search.png" alt-text="Screenshot of Microsoft Purview portal showing supported Record Types for Teams.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/teams-purview-record-types-search.png" alt-text="Screenshot of Microsoft Purview portal showing supported Record Types for Teams.":::
 
 1. You can further filter for a specific user, or a UTI value from Microsoft Entra sign-in logs. You can filter all the activity logs within a session with `SessionId`.
 1. The audit search results will show all the log lines from the Teams activities.
