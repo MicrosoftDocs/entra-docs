@@ -2366,6 +2366,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/architecture/deployment-external-audit-monitor.md",
+      "redirect_url": "/entra/architecture/deployment-external-operations",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/identity-platform/scenario-spa-app-registration.md",
       "redirect_url": "/entra/identity-platform/scenario-spa-app-configuration",
       "redirect_document_id": false
