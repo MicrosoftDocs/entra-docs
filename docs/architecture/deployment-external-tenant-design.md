@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/10/2025
+ms.date: 05/22/2025
 ms.author: gasinh
 
 #customer intent: I need to design a tenant, manage data residency, and know compliance requirements in Microsoft Entra External ID.
@@ -69,7 +69,7 @@ The supported data formats include:
 * Boolean 
 * Integer (32-bit value) 
 
-Manage directory extensions through the [Microsoft Entra admin portal](https://entra.microsoft.com), or with the Microsoft Graph API. 
+Manage directory extensions through the [Microsoft Entra admin center](https://entra.microsoft.com), or with the Microsoft Graph API. 
 
 ## User data migration
 
@@ -192,6 +192,5 @@ Use the following articles to help you get started with a Microsoft Entra Extern
 * [Introduction to Microsoft Entra External ID deployment guide](deployment-external-intro.md)
 * Tenant design
 * [Customer authentication experience](deployment-external-customer-authentication.md)
-* [Operations](deployment-external-operations.md)
+* [Security operations](deployment-external-operations.md)
 * [Authentication and access control architecture](deployment-external-authentication-access-control.md)
-* [Auditing and monitoring](deployment-external-audit-monitor.md)
