@@ -32,7 +32,7 @@ In a production environment, we recommended using [Azure Front Door with a Stand
 
 1. Familiarize yourself with how to use Azure Front Door with CORS by reading the article at [Using Azure Front Door Standard/Premium with CORS](/azure/frontdoor/standard-premium/troubleshoot-cross-origin-resources).
 1. Use the instructions in [Enable custom URL domains for apps in external tenants](../external-id/customers/how-to-custom-url-domain.md) to add a custom domain name to your external tenant.
-    - For creating an Azure Front Door, [use azd template](#create-azure-front-door-as-a-reverse-proxy-using-an-azure-developer-cli-azd-template).
+    - For creating an Azure Front Door, [use azd template](#create-azure-front-door-as-a-reverse-proxy-by-using-an-azure-developer-cli-azd-template).
 1. In your sample SPA, open the *API\React\ReactAuthSimple\src\config.ts* file, then replace the value of `BASE_API_URL`, *http://localhost:3001/api*, with `https://Enter_Custom_Domain_URL/Enter_the_Tenant_ID_Here`. Replace the placeholder:
     1. `Enter_Custom_Domain_URL` with your custom domain url, such as `contoso.com`.
     1. `Enter_the_Tenant_ID_Here` with your Directory (tenant) ID. If you don't have your tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
