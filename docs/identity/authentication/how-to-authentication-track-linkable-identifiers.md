@@ -11,18 +11,18 @@ ms.reviewer: vranganathan
 
 # Track and investigate identity activities with linkable identifiers in Microsoft Entra (preview)
 
-Microsoft embeds specific identifiers in all access tokens that enable the correlation of activities back to a single root authentication event. These linkable identifiers are surfaced in customer-facing logs to support threat hunters and security analysts in investigating and mitigating identity-based attacks. By leveraging these identifiers, security professionals can more effectively trace, analyze, and respond to malicious activity across sessions and tokens, enhancing both the transparency and security of the environment.
+Microsoft embeds specific identifiers in all access tokens that enable the correlation of activities back to a single root authentication event. These linkable identifiers are surfaced in customer-facing logs to support threat hunters and security analysts in investigating and mitigating identity-based attacks. By using these identifiers, security professionals can more effectively trace, analyze, and respond to malicious activity across sessions and tokens, enhancing both the transparency and security of the environment.
 
 ## Types of linkable identifiers
 
-There are two types of linkable identifiers used to to support advanced identity investigation and threat hunting scenarios: session ID-based identifiers and unique token identifiers.
+There are two types of linkable identifiers used to support advanced identity investigation and threat hunting scenarios: session ID-based identifiers and unique token identifiers.
 
 ### Session ID-based identifiers
 An identifier based on session ID (SID-based identifier) enables correlation of all authentication artifacts such as [access token (AT)](/entra/identity-platform/access-tokens), [refresh token (RT)](/entra/identity-platform/refresh-tokens), and session cookies issued from a single root authentication event. This identifier is especially useful for tracking activity across a session.
 
 Common SID-based investigation scenarios include:
 
-- **Correlate activity across services**: Start with a session ID from Microsoft Entra sign-in logs, and join it with workload logs, such as the Exchange Online audit logs or Microsoft Graph activity logs, to identify all actions performed by access tokens that share the same session ID.
+- **Correlate activity across services**: Start with a session ID from Microsoft Entra sign-in logs. Join it with workload logs, such as the Exchange Online audit logs or Microsoft Graph activity logs. Then you can identify all actions performed by access tokens that share the same session ID.
 - **Filter by user or device**: Narrow results by using UserId or DeviceId, or filter tokens issued within a specific session timeframe.
 - **Enumerate sessions**: Determine how many active sessions exist for a specific user (UserId) or device (DeviceId).
 - **Link across authentication artifacts**: The SID claim is generated during interactive authentication and included in the primary refresh token (PRT), refresh token, or session cookie. All access tokens issued from these sources inherit the same SID, enabling consistent linkage across authentication artifacts.
@@ -36,7 +36,7 @@ The UTI is unique for every access token and session, which makes it ideal for p
 
 ## Linkable identifier claims
 
-The table below describes all the linkable identifier claims in the Entra tokens.
+This table describes all the linkable identifier claims in the Entra tokens.
 
 | **Claim** | **Format**            | **Description**                                                                                                                                                                                              |
 |-----------|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,7 +47,7 @@ The table below describes all the linkable identifier claims in the Entra tokens
 | uti       | String                | Represents the token identifier claim This ID is a unique, per-token identifier that is case-sensitive.                                                                                                                      |
 | iat       | int, a Unix timestamp | Specifies when the authentication for this token occurred.                                                                                                                                                   |
 
-**Log Availability for Linkable Identifiers**
+## Log availability for linkable identifiers
 
 Currently, linkable identifiers are recorded in the following log sources:
 
@@ -61,7 +61,7 @@ These logs enable security analysts to correlate authentication events and token
 
 ## Linkable identifiers in Microsoft Entra sign in logs
 
-All sign-in logs entries will have the linkable identifier claims and the table below shows the mapping between linkable identifier claim with Entra sign-in log attribute.
+All sign-in logs entries will have the linkable identifier claims and this table shows the mapping between linkable identifier claim with Entra sign-in log attribute.
 
 | **Claim** | **Entra Sign in log attribute name** |
 |-----------|--------------------------------|
@@ -75,7 +75,7 @@ All sign-in logs entries will have the linkable identifier claims and the table 
 To view the sign-in logs from the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader).
-2. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
+2. Browse to **Microsoft Entra ID** > **Monitoring & health** > **Sign-in logs**.
 3. Filter by time, or by specific user to look at the specific log entries.
 4. Click any sign-in log entry.
 5. **Basic Info** shows the User ID, Resource Tenant ID, Session ID, Unique Token Identifier, and Date. **Devices** shows the Device ID for registered and domain-joined devices.
@@ -90,7 +90,7 @@ You should start with Microsoft Entra sign-in logs User ID attribute and manuall
 
 Exchange Online audit logs provide visibility into critical user activity and support in-depth investigations by capturing detailed audit events. These logs include linkable identifiers carried forward from Microsoft Entra tokens, enabling correlation across authentication artifacts and workloads.
 
-**Supported Investigation Scenarios**
+### Supported investigation scenarios
 
 For scenarios such as mailbox updates, item moves, or deletions, you can:
 
@@ -100,9 +100,9 @@ For scenarios such as mailbox updates, item moves, or deletions, you can:
 
 This approach enables security analysts to trace activity across services and identify potential misuse or compromise.
 
-For detailed guidance on searching Exchange Online audit logs, see [Search the audit log | Microsoft Learn](/purview/audit-search).
+For detailed guidance about searching Exchange Online audit logs, see [Search the audit log](/purview/audit-search).
 
-The table below shows the mapping between linkable identifier claims and Exchange Online audit log attribute.
+This table shows the mapping between linkable identifier claims and Exchange Online audit log attribute.
 
 | **Claim** | **Exchange Online audit log attribute name**                              |
 |-----------|---------------------------------------------------------------|
@@ -284,19 +284,19 @@ By using the SID, analysts can trace all activities across services that origina
 Microsoft Teams audit logs capture a detailed record of all requests processed by the Teams service for a tenant. Audited activities include team creation and deletion, channel additions and removals, and changes to channel settings.
 
 For a full list of audited Teams activities, see [Teams activities in the audit log](/purview/audit-log-activities).
-For more information on Teams audit logs visit [Teams Audit Logs](/purview/audit-teams-audit-log-events). and on how to search Microsoft Teams audit logs, see [Search the audit log | Microsoft Learn](/purview/audit-search).
+For more information about Teams audit logs, see [Teams Audit Logs](/purview/audit-teams-audit-log-events). For more information about how to search the Teams audit logs, see [Search the audit log](/purview/audit-search).
 
-**Investigation Scenarios Using Linkable Identifiers**
+### Investigation scenarios using linkable identifiers
 
-To investigate Microsoft Teams activity:
+To investigate Teams activity:
 
 - Start with linkable identifiers from Microsoft Entra sign-in logs, such as SID or UTI.
 - Use these identifiers to search Microsoft Purview Audit (Standard) or Audit (Premium) logs.
 - Track user actions across Teams sessions, including team and channel operations.
 
-The table below shows the mapping between linkable identifier claims and Microsoft Teams audit log attribute.
+The table below shows the mapping between linkable identifier claims and Teams audit log attribute.
 
-| **Claim** | **Microsoft Teams audit log attribute name**                              |
+| **Claim** | **Teams audit log attribute name**                              |
 |-----------|---------------------------------------------------------------|
 | oid       | UserKey                                                 |
 | tid       | OrganizationId                                                 |
@@ -305,7 +305,7 @@ The table below shows the mapping between linkable identifier claims and Microso
 | uti       | UniqueTokenId within App Access Context object                |
 | iat       | IssuedAtTime within App Access Context object                 |
 
-### View Microsoft Teams audit logs using Microsoft Purview portal
+### View Teams audit logs using Microsoft Purview portal
 
 1. Go to [Microsoft Purview portal](https://purview.microsoft.com/).
 1. Search for logs with a specific timeframe and workload as MicrosoftTeams.
@@ -327,9 +327,9 @@ The table below shows the mapping between linkable identifier claims and Microso
 
 1. Export the audit log and investigate for a specific `AADSessionId` or `UniqueTokenId` for all the activities for Microsoft Teams.
 
-## List of Audit Events covered in Teams
+### List of audit events covered in Teams
 
-| **Category** | **Audit Events**                              |
+| **Category** | **Audit events**                              |
 |-----------|---------------------------------------------------------------|
 | Chat/Message        | ChatCreated, ChatRetrieved, ChatUpdated MessageSent, MessageDeleted, MessageCreatedHasLink, MessageEditedHasLink, MessageHostedContentRead, MessagesExported, DownloadedFile                                            |
 | Calling/Meeting        | GraphMeetingRecordingRead, GraphMeetingRecordingContentRead, GraphMeetingTranscriptRead, GraphMeetingTranscriptContentRead, InviteSent, SensitivityLabelRemoved, TranscriptsExported                                                 |
@@ -337,11 +337,11 @@ The table below shows the mapping between linkable identifier claims and Microso
 | Admin  | TeamsAdminAction, TeamsTenantSettingChanged  |
 | Team/User       | TeamDeleted, TeamSettingChanged, MemberAdded, MemberRoleChanged, TeamsSessionStarted                |
 
-## Investigating Token Misuse in Microsoft Teams
+### Investigate token misuse in Teams
 
 In the event of a security incident where an access token is compromised—such as through phishing—and subsequently used by a malicious actor, tenant administrators should take immediate action to contain the threat and investigate its impact.
 
-After revoking all active user sessions and tokens, administrators can begin a forensic investigation to determine the scope of unauthorized activity. Specifically, they may need to identify actions performed by the attacker across Microsoft Teams and SharePoint Online during the affected timeframe.
+After revoking all active user sessions and tokens, administrators can begin a forensic investigation to determine the scope of unauthorized activity. Specifically, they may need to identify actions performed by the attacker across Teams and SharePoint Online during the affected timeframe.
 
 Using linkable identifiers such as the Session ID (SID) and Unique Token Identifier (UTI) from Microsoft Entra sign-in logs, administrators can correlate and trace activity across Microsoft Purview Audit (Standard) and Audit (Premium) logs. This enables visibility into:
 
