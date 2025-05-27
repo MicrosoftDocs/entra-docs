@@ -99,7 +99,7 @@ No, score doesn't express an absolute measure of how likely you're to get breach
 
 ### Is there a minimum score I should aim for?
 
-Instead of focusing on a specific score, you should focus on the high importance recommendations that are relevant to your organization. It's more beneficial to have a high core on high score on the high importance recommendations than a high score on low importance recommendations. 
+Instead of focusing on a specific score, you should focus on the high importance recommendations that are relevant to your organization. It's more beneficial to have a high score on the high importance recommendations than a high score on low importance recommendations. 
 
 ### How should I interpret my score?
 
