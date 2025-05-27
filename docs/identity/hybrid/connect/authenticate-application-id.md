@@ -27,7 +27,7 @@ Microsoft Entra Connect manages the application and certificate including creati
 
  :::image type="content" source="media/authenticate-application-id/auth-1.png" alt-text="Diagram of authentication with application ID." lightbox="media/authenticate-application-id/auth-1.png":::
 
-Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This behavior is the default option in Entra Connect Sync versions equal to or higher than 2.5.2.0. 
+Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This behavior is the default option in Entra Connect Sync versions equal to or higher than 2.5.3.0. 
 
 > [!NOTE]
 > We use the maintenance task to check if the certificate is due for rotation and automatically rotate the certificate, so if the scheduler is suspended or maintenance task is disabled, auto rotation won't happen even though the certificate is managed by Entra Connect Sync.
@@ -55,7 +55,7 @@ The following prerequisites are required to implement authentication using appli
 >
 > Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra Admin Center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
-- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.2.0](reference-connect-version-history.md) or greater.
+- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.3.0](reference-connect-version-history.md) or greater.
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
 - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later.
 - Optional: TPM 2.0 present and ready to use (recommended for security)
@@ -96,7 +96,7 @@ In tasks, select **Configure application based authentication to Microsoft Entra
 
 ### Onboarding to Application Based Authentication using PowerShell
 This section is only relevant if using the BYOC or BYOA option. 
-Microsoft Entra Connect versions lower than 2.5.2.0 use username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps on Microsoft Connect Sync version equal to or higher than 2.5.2.0.
+Microsoft Entra Connect versions lower than 2.5.3.0 use username and password by default for authenticating to Microsoft Entra ID. To onboard to Application Based Authentication, an administrator needs to perform the following steps on Microsoft Connect Sync version equal to or higher than 2.5.3.0.
 
 > [!NOTE]
 > Ensure that you're on the Microsoft Entra Connect server and the ADSync PowerShell module is installed.
@@ -190,7 +190,7 @@ If the certificate is managed by Microsoft Entra Connect, **no action** is requi
 Remove-EntraApplicationKey -CertificateId <certificateId>
  ```
 ### Using the wizard
- Once you have application authentication enabled you'll see an additional option in tasks. The **Rotate application certificate** option is now available. From here, you can rotate the certificate manually. However, Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.5.2.0. 
+ Once you have application authentication enabled you'll see an additional option in tasks. The **Rotate application certificate** option is now available. From here, you can rotate the certificate manually. However, Microsoft recommends the Entra Connect certificate management option as we manage the keys and automatically rotate the certificate on expiry. This is the default option in Entra Connect Sync versions equal to or higher than 2.5.3.0. 
 
  :::image type="content" source="media/authenticate-application-id/auth-6.png" alt-text="Screenshot of rotate application certificate under tasks." lightbox="media/authenticate-application-id/auth-6.png":::
 
