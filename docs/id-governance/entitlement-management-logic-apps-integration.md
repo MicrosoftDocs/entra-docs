@@ -206,7 +206,7 @@ With Launch and wait, admins also have the ability to deny a request if the exte
 As mentioned, custom extensions created with the request workflow type, which includes four associated policy stages, can be enabled with “*Launch and wait*” if desired. 
 
 
-The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can't be denied at the **assignmentRequestCreated** stage of the callout.
+The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can only be denied at the **assignmentRequestCreated**  or **assignmentRequestApproved** stages of the callout.
 
 > [!TIP]
 > If you resume the access package assignment request via Azure Logic Apps, disable the [asynchronous pattern](/azure/connectors/connectors-native-http?tabs=standard#asynchronous-request-response-behavior).
