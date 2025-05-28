@@ -327,7 +327,7 @@ A: Yes. An administrator can upload multiple PDF documents and tag those documen
 A: A terms of use policy triggers during the sign-in experience.
 
 **Q: What applications can I target a terms of use policy to?**<br />
-A: You can create a Conditional Access policy on the enterprise applications using modern authentication. For more information, see [enterprise applications](~/identity/enterprise-apps/view-applications-portal.md).
+A: You can create a Conditional Access policy on the enterprise applications using modern authentication. For more information, see [enterprise applications](../identity/enterprise-apps/view-applications-portal.md).
 
 **Q: Can I add multiple terms of use policies to a given user or app?**<br />
 A: Yes, by creating multiple Conditional Access policies targeting those groups or applications. If a user falls in scope of multiple terms of use policies, they must accept one policy at a time.
