@@ -562,6 +562,9 @@ Certificate-based authentication can fail for reasons such as the certificate be
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." :::  
 
 If CBA fails on a browser, even if the failure is because you cancel the certificate picker, you need to close the browser session and open a new session to try CBA again. A new session is required because browsers cache the certificate. When CBA is retried, the browser sends the cached certificate during the TLS challenge, which causes sign-in failure and the validation error.
+
+>[!NOTE]
+>However, Edge browser has added a new feature to [reset the certificate selection without restarting the browser](concept-certificate-based-authentication-technical-deep-dive.md#reset-the-certificate-choice-on-edge-browser).
  
 Select **More details** to get logging information that can be sent to an Authentication Policy Administrator, who in turn can get more information from the Sign-in logs.
 
@@ -569,16 +572,41 @@ Select **More details** to get logging information that can be sent to an Authen
 
 Select **Other ways to sign in** to try other methods available to the user to sign in. 
  
->[!NOTE]
->If you retry CBA in a browser, it'll keep failing due to the browser caching issue. Users need to open a new browser session and sign in again.
-
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/new-sign-in.png" alt-text="Screenshot of a new sign-in attempt." :::  
+
+## Reset the certificate choice on edge browser
+
+If CBA fails on a browser, even if the failure is because you cancel the certificate picker, you need to close the browser session and open a new session to try CBA again as the browsers cache the certificate. However, Edge browser had added a new enhancement to reset the certificate choice on the browser.
+
+1. When CBA fails, the user will be sent to error page
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." :::  
+
+1. Select the lock icon to the left of the address URL and select **Your certificate choices**.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice.png" alt-text="Screenshot of edge browser certificate choice." :::  
+
+1. Select **Reset certificate choices**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice.png" alt-text="Screenshot of edge browser certificate choice reset." :::
+
+1. Select **Reset choices** in the dialog
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice-reset-accept.png" alt-text="Screenshot of edge browser certificate choice reset acceptance." :::
+
+1. Click on **Other ways to sign in** in the error page
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." ::: 
+
+1. Select **Use a certificate or smart card** in the picker and continue with CBA authentication. 
 
 ## Certificate-based authentication in MostRecentlyUsed (MRU) methods
  
 Once a user authenticates successfully using CBA, the user's MostRecentlyUsed (MRU) authentication method is set to CBA. Next time, when the user enters their UPN and selects **Next**, the user is taken to the CBA method directly, and need not select **Use the certificate or smart card**.
 
 To reset the MRU method, the user needs to cancel the certificate picker, select **Other ways to sign in**, and select another method available to the user and authenticate successfully.
+
+The MRU auth method is set at user level so if a user successfully signins on a different device using a different auth method the MRU will be reset on the user to the currently logged in method.
 
 ## External identity support
 
