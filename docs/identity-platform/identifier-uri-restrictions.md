@@ -14,7 +14,7 @@ ms.topic: concept-article
 
 # Restrictions on identifier URIs of Microsoft Entra applications
 
-The [`identifierUri`](#what-are-identifier-uris) - also referred to as `Application ID URI` - property of an Entra application is a property typically configured on resource (API) applications.  Ensuring the property is configured securely is critical to the resource's security.
+The [`identifierUri`](#what-are-identifier-uris) - also referred to as `Application ID URI` - property of a Microsoft Microsoft Entra application is a property typically configured on resource (API) applications. Configuring this property securely is critical to the resource's security.
 
 ## Secure patterns
 
@@ -26,21 +26,21 @@ Microsoft has introduced a security setting that protects against insecure confi
 
 ### Policy behavior
 
-When this setting is enabled, the secure patterns are strictly enforced.   If it's enabled, and you try to add an identifier URI that doesn't comply with the [secure patterns](#secure-patterns), you'll receive an error like:
+When this setting is enabled, the secure patterns are strictly enforced.   When enabled, if anyone in your organization tries to add an identifier URI that doesn't comply with the [secure patterns](#secure-patterns), they'll receive an error like:
 
 ```Failed to add identifier URI {uri}. All newly added URIs must contain a tenant verified domain, tenant ID, or app ID, as per the default tenant policy of your organization. See https://aka.ms/identifier-uri-addition-error for more information on this error.```
 
-Existing identifier URIs already configured on the Entra app won't be affected, and all apps will continue to function as normal. This will only affect new updates to Entra app configurations.
+Existing identifier URIs already configured on the app won't be affected, and all apps will continue to function as normal. This will only affect new updates to Microsoft Entra app configurations.
 
-When it is not enabled, some insecure patterns can still be used.  For example, URIs of the format `api://{string}` can still be added.
+When it isn't enabled, some insecure patterns can still be used. For example, URIs of the format `api://{string}` can still be added.
 
 ### Enabling and managing the policy
 
-Microsoft may have already enabled this policy in your organization to improve its security.  You can check by running [this script](https://aka.ms/check-identifier-uri-protection-state).  
+Microsoft may have already enabled this policy in your organization to improve its security. You can check by running [this script](https://aka.ms/check-identifier-uri-protection-state).  
 
-Even if Microsoft enabled the policy in your organization, a tenant administrator still has full control over it.  They can [grant exemptions](https://aka.ms/identifier-uri-protection-grant-exemptions) to a specific Microsoft Entra application, to themselves, to another user in the organization, or to any service or process the organization uses.   Or, an administrator can [disable the policy](https://aka.ms/disable-identifier-uri-protection) (**not recommended**).
+Even if Microsoft enabled the policy in your organization, a tenant administrator still has full control over it. They can [grant exemptions](https://aka.ms/identifier-uri-protection-grant-exemptions) to a specific Microsoft Entra application, to themselves, to another user in the organization, or to any service or process the organization uses.   Or, an administrator can [disable the policy](https://aka.ms/disable-identifier-uri-protection) (**not recommended**).
 
-Microsoft won't enable the policy in your organization if it detects your organization has processes that might be disrupted by the change.  Instead, an administrator in your organization can [enable it themselves](https://aka.ms/enable-identifier-uri-protection) (**recommended**).
+Microsoft won't enable the policy in your organization if it detects your organization has processes that might be disrupted by the change. Instead, an administrator in your organization can [enable it themselves](https://aka.ms/enable-identifier-uri-protection) (**recommended**).
 
 ### Guidance for developers
 
@@ -67,7 +67,7 @@ When this protection is enabled, new custom identifier URIs can't be added to an
 - The app uses the SAML protocol for single sign-on (SSO). This is true if the service principal for the app has its `preferredSingleSignOnMode` property set to `SAML`.
 - An [exemption](#guidance-for-administrators) has been granted to the app the URI is being added to, or to the user or service performing the addition.
 
-This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim.  We recommend enabling it if possible.
+This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim. We recommend enabling it if possible.
 
 ### Enabling and managing the policy
 
@@ -81,7 +81,7 @@ Like the other policy, administrators can also [grant exemptions](https://aka.ms
 
 Identifier URIs (also called 'App ID URIs') allow a resource (API) developer to specify a string value for their application as its identifier. Clients who acquire a token for the API can use this string value during an OAuth request. For example, if an API had configured an identifier URI of `https://api.contoso.com`, then clients of the API could specify that value in OAuth requests to Microsoft Entra. This identifier URI is used as the audience claim in v1.0 access tokens.
 
-Identifier URIs are configured using the 'Expose an API' page in [App registrations](https://aka.ms/ra/prod).  In App registrations, the identifier URI is referred to as an application ID URI; this is synonymous with identifier URI.
+Identifier URIs are configured using the 'Expose an API' page in [App registrations](https://aka.ms/ra/prod). In App registrations, the identifier URI is referred to as an application ID URI; this is synonymous with identifier URI.
 
 :::image type="content" source="media/identifier-uri-restrictions/screenshot-of-app-id-uri-configuration-experience-cropped.png" alt-text="Screenshot of identifier URI configuration experience." lightbox="media/identifier-uri-restrictions/screenshot-of-app-id-uri-configuration-experience.png":::
 
