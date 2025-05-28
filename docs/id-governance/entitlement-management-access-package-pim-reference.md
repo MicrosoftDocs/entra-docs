@@ -6,7 +6,7 @@ ms.author: owinfrey
 manager: femila
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 1052/27/2025
+ms.date: 05/27/2025
 
 #CustomerIntent: As a customer, I want to become informed on service limits for offerings within Microsoft Entra ID Governance so that restraints are understood and can be accounted for.
 ---
@@ -15,8 +15,6 @@ ms.date: 1052/27/2025
 
 This article contains Microsoft Entra ID behavior in different scenarios if the group managed by PIM and the access package expiration periods differ. By assigning a group managed by PIM to an access package, you're able to assign eligible roles to a group when an access package is requested. If you’re looking for a guide on setting up a group to assign eligible roles via access packages, see: [Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)](entitlement-management-access-package-eligible.md).
 
-> [!NOTE]
-> Limits can be increased if your usage will exceed these listed default constraints. To go beyond the default quota, you must contact Microsoft Support.
 
 ## Entitlement Management
 
