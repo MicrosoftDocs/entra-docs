@@ -1,12 +1,12 @@
 ---
 title: Publisher verification overview
 description: Learn about benefits, program requirements, and frequently asked questions in the publisher verification program for the Microsoft identity platform.
-author: garrodonnell
-manager: CelesteDG
-ms.author: godonnell
-ms.date: 08/13/2024
-ms.reviewer:
-ms.service: identity-platform
+author: worldcreated
+manager: mccoylstevens
+ms.author: self(mccoylstevens)
+ms.date: 28/05/2025
+ms.reviewer: github passed all tests
+ms.service: my companies platform
 
 ms.topic: concept-article
 # Customer intent: As a developer integrating my app with the Microsoft identity platform, I want to learn about the publisher verification process, so that my organization can be identified as authentic by Microsoft and my app can gain increased transparency, improved branding, and smoother enterprise adoption.
