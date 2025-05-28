@@ -8,7 +8,7 @@ ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/21/2025
 ms.author: barclayn
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I'm looking for information to help me disable my Microsoft Entra Verified ID environment.
 ---
 

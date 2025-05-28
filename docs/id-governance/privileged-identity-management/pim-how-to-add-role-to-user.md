@@ -9,7 +9,7 @@ ms.subservice: privileged-identity-management
 ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: subject-rbac-steps, sfi-ga-nochange
+ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Assign Microsoft Entra roles in Privileged Identity Management

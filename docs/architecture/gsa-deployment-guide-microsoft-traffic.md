@@ -28,6 +28,7 @@ Before you enable Microsoft Entra Secure Access Essentials, determine what you w
 
 |Use case|Recommended configuration|
 |---|---|
+|Prevent users and groups from using your organization's devices to sign in to unauthorized Entra ID tenants.|Configure universal tenant restrictions.|
 |Ensure users connect and authenticate only with the Global Secure Access secure network tunnel to reduce risk of token theft/replay for Microsoft 365 and all Enterprise applications.|Configure compliant network check in Conditional Access policies.|
 |Maximize threat hunting success and efficiencies.|Configure Source IP restoration (Preview) and [Use enriched Microsoft 365 logs](../global-secure-access/how-to-view-enriched-logs.md).|
 
@@ -44,6 +45,7 @@ At this point, you completed the initiate and plan stages of your Global Secure 
 1. Enable the [Microsoft traffic forwarding profile](../global-secure-access/how-to-manage-microsoft-profile.md) and assign your pilot group to it.
 1. If you plan to maximize your threat hunting success and efficiency, configure [Source IP restoration](../global-secure-access/how-to-source-ip-restoration.md).
 1. Create Conditional Access policies that require [compliant network](../global-secure-access/how-to-compliant-network.md) checks to your pilot group if it's a planned use case.
+1. Configure [universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) if it's a planned use case.
 1. Deploy the [Global Secure Access client for Windows](../global-secure-access/how-to-install-windows-client.md) on devices for your pilot group to test.
 1. Have your pilot users test your configuration.
 1. View sign-in logs to ensure that pilot users are connecting to Microsoft endpoints using Global Secure Access.

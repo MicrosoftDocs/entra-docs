@@ -7,6 +7,7 @@ ms.service: entra
 ms.topic: conceptual
 ms.date: 07/24/2024
 ms.author: jricketts
+ms.custom: sfi-image-nochange
 ---
 
 # Phase 2: Right-size permissions and automate the principle of least privilege

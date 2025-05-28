@@ -1,7 +1,6 @@
 ---
 title: Report automatic user account provisioning from Microsoft Entra ID to Software as a Service (SaaS) applications
 description: 'Learn how to check the status of automatic user account provisioning jobs, and how to troubleshoot the provisioning of individual users.'
-
 author: jenniferf-skc
 manager: femila
 ms.service: entra-id
@@ -10,6 +9,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Tutorial: Reporting on automatic user account provisioning

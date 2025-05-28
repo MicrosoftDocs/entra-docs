@@ -3,14 +3,13 @@ title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
 author: shlipsey3
 manager: femila
-
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: almars
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
 ---
 
@@ -175,7 +174,7 @@ All of the available options appear in one list so you can review everything you
 
 Once your default sign-in experience is created, select the **Edit** button to make any changes. You can't delete a default sign-in experience after it's created, but you can remove all custom settings.
 
-The time it takes for changes to appear in the sign-in experience can vary based on the tenant's geographical location. Updates can take a few minutes or up to 2 hours. This time range is a target, not a guarantee. 
+The time it takes for changes to appear in the sign-in experience vary based on the tenant's geographical location.
 
 ## Customize the sign-in experience by browser language
 

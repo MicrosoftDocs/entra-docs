@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/10/2025
+ms.date: 05/22/2025
 ms.author: gasinh
 
 #customer intent: I need to understand self-service user flows, and other customer authentication experiences in Microsoft Entra External ID.
@@ -70,6 +70,5 @@ Use the following articles to help you get started with a Microsoft Entra Extern
 * [Introduction to Microsoft Entra External ID deployment guide](deployment-external-intro.md)
 * [Tenant design](deployment-external-tenant-design.md)
 * Customer authentication experience
-* [Operations](deployment-external-operations.md)
+* [Security operations](deployment-external-operations.md)
 * [Authentication and access control architecture](deployment-external-authentication-access-control.md)
-* [Auditing and monitoring](deployment-external-audit-monitor.md)

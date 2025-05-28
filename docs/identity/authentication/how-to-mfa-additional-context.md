@@ -7,6 +7,7 @@ ms.topic: conceptual
 ms.date: 03/04/2025
 ms.author: justinha
 author: mjsantani
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to encourage users to use the Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 # Use additional context in Authenticator notifications - Authentication methods policy

@@ -1,16 +1,15 @@
 ---
 title: Terms of use in Microsoft Entra
 description: Get started using Microsoft Entra terms of use to present information to employees or guests before getting access.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 03/11/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: siz
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra terms of use
 

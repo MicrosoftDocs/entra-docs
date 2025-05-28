@@ -8,6 +8,7 @@ ms.date: 03/21/2025
 ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn about the authentication flows supported by MSAL.
 ---
 

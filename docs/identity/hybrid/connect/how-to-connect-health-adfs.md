@@ -11,7 +11,7 @@ ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
-ms.custom: H1Hack27Feb2017, sfi-ga-nochange
+ms.custom: H1Hack27Feb2017, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Microsoft Entra Connect Health agents for AD FS

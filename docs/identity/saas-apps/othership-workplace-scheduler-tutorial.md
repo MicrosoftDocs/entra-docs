@@ -1,7 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with Othership Workplace Scheduler
 description: Learn how to configure single sign-on between Microsoft Entra ID and Othership Workplace Scheduler.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
@@ -10,7 +9,7 @@ ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Othership Workplace Scheduler so that I can control who has access to Othership Workplace Scheduler, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 

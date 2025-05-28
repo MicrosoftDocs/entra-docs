@@ -1,17 +1,14 @@
 ---
 title: Overview of custom URL domains for External ID
 description: Learn about setting up custom URL domains to personalize the authentication sign-in endpoints for the external customers and consumers of your app.
- 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: concept-article
 ms.date: 03/12/2025
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about personalizing my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 

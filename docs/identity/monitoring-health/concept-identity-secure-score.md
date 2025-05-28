@@ -5,7 +5,7 @@ description: Learn how to use the Identity Secure Score to improve the security 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: conceptual
-ms.date: 01/24/2025
+ms.date: 05/27/2025
 
 ms.author: sarahlipsey
 author: shlipsey3
@@ -96,6 +96,10 @@ The [Microsoft 365 Defender portal](https://security.microsoft.com/) shows your 
 ### Does the score measure my risk of getting breached?
 
 No, score doesn't express an absolute measure of how likely you're to get breached. It expresses the extent to which you adopted features that can *offset* risk. No service can guarantee protection, and the score shouldn't be interpreted as a guarantee in any way.
+
+### Is there a minimum score I should aim for?
+
+Instead of focusing on a specific score, you should focus on the high importance recommendations that are relevant to your organization. It's more beneficial to have a high score on the high importance recommendations than a high score on low importance recommendations. 
 
 ### How should I interpret my score?
 

@@ -81,15 +81,6 @@ She uses the following prompts to get the information she needs:
 - *Who are the owners of the Finance Department group?*
 - *What roles does this group have?*
 
-### Get diagnostic logs details
-
-Finally, Natasha reviews the diagnostic logs to get more detailed information about the system’s operations during the times of the suspicious activities. He filters the logs by John’s user ID and the times of the unusual sign-ins.
-
-She uses the following prompts to get the information she needs:
-
-- *What are the diagnostics log configuration for the tenant that is karita@woodgrovebank.com registered in?*
-- *Which logs are being collected in this tenant?*
-
 ## Remediate
 
 By using Security Copilot, Natasha is able to gather comprehensive information about the user, sign-in activities, audit logs, risky user detections, group memberships, and system diagnostics. After completing her investigation, Natasha needs to take action to remediate the risky user or unblock them.

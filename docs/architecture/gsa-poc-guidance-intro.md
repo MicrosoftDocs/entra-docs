@@ -78,6 +78,7 @@ You can test several Microsoft Entra Internet Access and Microsoft Entra Interne
 - **Do you need to override broad block or allow policies for certain users or specific circumstances?** If you want to allow specific users or groups to access a blocked website, consider testing the [Allow a user to access a blocked website](gsa-poc-internet-access.md#allow-a-user-to-access-a-blocked-website) use case.
 
 - **Do you need to manage or control access to your Microsoft data?** You can use the Microsoft traffic profile to enable Global Secure Access to acquire and route SharePoint Online, Exchange Online, and other Microsoft traffic through the Global Secure Access cloud services. Test this scenario with the [Enable and manage the Microsoft traffic forwarding profile](../global-secure-access/how-to-manage-microsoft-profile.md) use case.
+- **Do you need to control whether your users can use your organization's managed devices to sign in to other Entra ID tenants?** Consider testing [Universal Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md).
 
 ## Scope and define success criteria
 

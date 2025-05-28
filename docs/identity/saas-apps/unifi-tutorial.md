@@ -1,17 +1,15 @@
 ---
 title: Microsoft Entra integration with UNIFI
 description: Learn how to configure single sign-on between Microsoft Entra ID and UNIFI.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and UNIFI so that I can control who has access to UNIFI, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Microsoft Entra integration with UNIFI
