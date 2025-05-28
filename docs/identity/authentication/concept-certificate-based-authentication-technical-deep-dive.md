@@ -221,7 +221,7 @@ Because multiple custom authentication binding policy rules can be created with 
 >- Windows Passwordless Phone Sign-in
 >  
 >Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios aren't impacted. CBA authentication policy rules using either Issuer OR Policy OID aren't impacted.
->To mitigate, Authentication Policy Administrators should :
+>To mitigate, Authentication Policy Administrators should:
 >- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
 >- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
 >  
@@ -610,7 +610,7 @@ The MRU auth method is set at user level so if a user successfully signins on a 
 
 ## External identity support
 
-An external identity B2B guest user can use CBA on the home tenant and if the cross tenant settings for the resource tenant is set up to trust MFA from the home tenant, user's CBA auth on home tenant is honored. For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
+An external identity B2B guest user can use CBA on the home tenant and if the cross tenant settings for the resource tenant are set up to trust MFA from the home tenant, user's CBA auth on home tenant is honored. For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
 CBA on resource tenant isn't supported yet. 
 
 
