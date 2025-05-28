@@ -69,8 +69,6 @@ When this protection is enabled, new custom identifier URIs can't be added to an
 
 This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim. We recommend enabling it if possible.
 
-### Enabling and managing the policy
-
 To enable this more restrictive policy in your organization, you can run [this script](https://aka.ms/enable-identifier-uri-additional-restriction).
 
 Like the other policy, administrators can also [grant exemptions](https://aka.ms/exempt-identifier-uri-additional-restriction) to this policy, or [disable it](https://aka.ms/disable-identifier-uri-additional-restriction) after it's been enabled.
