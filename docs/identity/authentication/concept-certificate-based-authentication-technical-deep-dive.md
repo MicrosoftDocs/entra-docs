@@ -578,27 +578,27 @@ Select **Other ways to sign in** to try other methods available to the user to s
 
 If CBA fails on a browser, even if the failure is because you cancel the certificate picker, you need to close the browser session and open a new session to try CBA again as the browsers cache the certificate. However, Edge browser had added a new enhancement to reset the certificate choice on the browser.
 
-1. When CBA fails, the user will be sent to error page
+- When CBA fails, the user will be sent to error page
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." :::  
 
-1. Select the lock icon to the left of the address URL and select **Your certificate choices**.
+- Select the lock icon to the left of the address URL and select **Your certificate choices**.
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice.png" alt-text="Screenshot of edge browser certificate choice." :::  
 
-1. Select **Reset certificate choices**
+- Select **Reset certificate choices**
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice.png" alt-text="Screenshot of edge browser certificate choice reset." :::
 
-1. Select **Reset choices** in the dialog
+- Select **Reset choices** in the dialog
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice-reset-accept.png" alt-text="Screenshot of edge browser certificate choice reset acceptance." :::
 
-1. Click on **Other ways to sign in** in the error page
+- Click on **Other ways to sign in** in the error page
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." ::: 
 
-1. Select **Use a certificate or smart card** in the picker and continue with CBA authentication. 
+- Select **Use a certificate or smart card** in the picker and continue with CBA authentication. 
 
 ## Certificate-based authentication in MostRecentlyUsed (MRU) methods
  
