@@ -19,6 +19,7 @@ The following API and HTTP scheme-based application ID URI formats are supported
 | *https://\<verifiedCustomDomain\>/\<string\>* |  *`https://contoso.com/productsapi`* |
 | *https://\<string\>.\<verifiedCustomDomain\>* |  *`https://product.contoso.com`* |
 | *https://\<string\>.\<verifiedCustomDomain\>/\<string\>* | *`https://product.contoso.com/productsapi`*   |
+| *api://<string\>.\<verifiedCustomDomainOrInitialDomain\>/\<string\>* | *`api://contoso.com/productsapi`* |
 
 - *\<appId\>* - The application identifier (appId) property of the application object.
 - *\<string\>* - The string value for the host or the api path segment.
