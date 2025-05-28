@@ -321,13 +321,13 @@ A: The terms of use details overview reflect aggregated acceptances of the curre
 A: Yes, end users are able to select hyperlinks to other pages but links to sections within the document aren't supported. Also, hyperlinks in terms of use policy PDFs don't work when accessed from the Microsoft Entra My Apps/MyAccount portal.
 
 **Q: Can a terms of use policy support multiple languages?**<br />
-A: Yes. An administrator can upload multiple PDF documents and tag those documents with a corresponding language. When end users sign in, we look at their browser language preference and display the matching document. If there's no match, we display the default document, which is the first document that is uploaded. Windows desktop applications using [Web Account Manager](~/windows/uwp/security/web-account-manager), such as Microsoft Teams, will use the operating system language for the terms, not application-specific language settings.
+A: Yes. An administrator can upload multiple PDF documents and tag those documents with a corresponding language. When end users sign in, we look at their browser language preference and display the matching document. If there's no match, we display the default document, which is the first document that is uploaded. Windows desktop applications using [Web Account Manager](../windows/uwp/security/web-account-manager), such as Microsoft Teams, will use the operating system language for the terms, not application-specific language settings.
 
 **Q: When is the terms of use policy triggered?**<br />
 A: A terms of use policy triggers during the sign-in experience.
 
 **Q: What applications can I target a terms of use policy to?**<br />
-A: You can create a Conditional Access policy on the enterprise applications using modern authentication. For more information, see [enterprise applications](../identity/enterprise-apps/view-applications-portal.md).
+A: You can create a Conditional Access policy on the enterprise applications using modern authentication. For more information, see [enterprise applications](~/identity/enterprise-apps/view-applications-portal.md).
 
 **Q: Can I add multiple terms of use policies to a given user or app?**<br />
 A: Yes, by creating multiple Conditional Access policies targeting those groups or applications. If a user falls in scope of multiple terms of use policies, they must accept one policy at a time.
