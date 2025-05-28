@@ -65,7 +65,7 @@ When this protection is enabled, new custom identifier URIs can't be added to an
 - The identifier URI being added to the app is one of the 'default' URIs, meaning it is in the format of `api://{appId}` or `api://{tenantId}/{appId}`
 - The app accepts `v2.0` Entra tokens. This is true if the app's `api.requestedAccessTokenVersion` property is set to `2`.
 - The app uses the SAML protocol for single sign-on (SSO). This is true if the service principal for the app has its `preferredSingleSignOnMode` property set to `SAML`.
-- An [exemption](#guidance-for-administrators) has been granted to the app the URI is being added to, or to the user or service performing the addition.
+- An [exemption](https://aka.ms/identifier-uri-protection-grant-exemptions) has been granted by an administrator to the app the URI is being added to, or to the user or service performing the addition.
 
 This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim. We recommend enabling it if possible.
 
