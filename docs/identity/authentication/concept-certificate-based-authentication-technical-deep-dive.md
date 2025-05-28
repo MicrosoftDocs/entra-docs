@@ -588,7 +588,7 @@ If CBA fails on a browser, even if the failure is because you cancel the certifi
 
 - Select **Reset certificate choices**
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice.png" alt-text="Screenshot of edge browser certificate choice reset." :::
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice-reset.png" alt-text="Screenshot of edge browser certificate choice reset." :::
 
 - Select **Reset choices** in the dialog
 
