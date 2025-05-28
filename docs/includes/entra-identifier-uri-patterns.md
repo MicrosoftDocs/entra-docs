@@ -27,8 +27,11 @@ The following API and HTTP scheme-based application ID URI formats are supported
 - *\<verifiedCustomDomain\>* - A [verified custom domain](~/fundamentals/add-custom-domain.yml) configured for your Microsoft Entra tenant.
 
 > [!NOTE]
-> If you use the *api://* scheme, you add a string value directly after the "api://". For example, *api://\<string\>*.  That string value can be a GUID or an arbitrary string.  If you add a GUID value, it must match either the app ID or the tenant ID. The application ID URI value must be unique for your tenant.
-> If you add *api://\<tenantId\>* as the application ID URI, no one else will be able to use that URI in any other app. The recommendation is to use *api://\<appId\>*, instead, or the HTTP scheme.
+> If you use the *api://* scheme, you add a string value directly after the "api://". For example, *api://\<string\>*.  That string value can be a GUID or an arbitrary string.  If you add a GUID value, it must match either the app ID or the tenant ID. If you use a string value, it must use either a verified custom domain or initial domain of your tenant.
+> The recommendation is to use *api://\<appId\>*.
 
 > [!IMPORTANT]
 > The application ID URI value must not end with a slash "/" character.
+
+> [!IMPORTANT]
+> The application ID URI value must be unique within your tenant.

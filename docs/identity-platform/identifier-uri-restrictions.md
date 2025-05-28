@@ -14,7 +14,7 @@ ms.topic: concept-article
 
 # Restrictions on identifier URIs of Microsoft Entra applications
 
-The [`identifierUri`](#what-are-identifier-uris) - also referred to as `Application ID URI` - property of a Microsoft Microsoft Entra application is a property typically configured on resource (API) applications. Configuring this property securely is critical to the resource's security.
+The [`identifierUri`](#what-are-identifier-uris) - also referred to as `Application ID URI` - property of a Microsoft Entra application is a property typically configured on resource (API) applications. Configuring this property securely is critical to the resource's security.
 
 ## Secure patterns
 
