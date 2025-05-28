@@ -239,7 +239,7 @@ To configure the client to prefer IPv4 over IPv6, set the following registry key
 Name: DisabledComponents
 Type: REG_DWORD
 Value: 0x20 (Hex)`
-
+:::image type="content" source="media/troubleshoot-global-secure-access-client-diagnostics-health-check/troubleshoot-health-check-ipv4-registry-key.png" alt-text="Screenshot of the registry configuration for gsa client to prefer IPv4 over IPv6.":::
 > [!IMPORTANT]
 > Changes to this registry value require a computer restart. 
 For more information, see [Guidance for configuring IPv6 in Windows for advanced users](/troubleshoot/windows-server/networking/configure-ipv6-in-windows).
