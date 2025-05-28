@@ -43,7 +43,7 @@ To register an application in your Microsoft Entra tenant, you need:
 
 ## Assign a role to the application
 
-To access resources in your subscription, you must assign a role to the application. Decide which role offers the right permissions for the application. To learn about the available roles, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
+To access resources in your subscription, you must assign a role to the application. This needs to be done through the Azure portal. Decide which role offers the right permissions for the application. To learn about the available roles, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
 You can set the scope at the level of the subscription, resource group, or resource. Permissions are inherited to lower levels of scope.
 
