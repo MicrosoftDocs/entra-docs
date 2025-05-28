@@ -30,7 +30,7 @@ To compute the assertion, you can use one of the many JWT libraries in the langu
 | --- | --- |
 | `alg` | Should be **PS256** |
 | `typ` | Should be **JWT** |
-| `x5t` | Base64url-encoded SHA-256 thumbprint of the X.509 certificate's DER encoding. |
+| `x5t#S256` | Base64url-encoded SHA-256 thumbprint of the X.509 certificate's DER encoding. |
 
 ### Claims (payload)
 
@@ -54,7 +54,7 @@ The signature is computed by applying the certificate as described in the [JSON 
 {
   "alg": "PS256",
   "typ": "JWT",
-  "x5t": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
+  "x5t#S256": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
 }
 .
 {
@@ -78,7 +78,7 @@ The following string is an example of encoded assertion. If you look carefully, 
 * The last section is the *signature* computed with the certificates from the content of the first two sections
 
 ```
-"eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJhdWQiOiJodHRwczpcL1wvbG9naW4ubWljcm9zb2Z0b25saW5lLmNvbVwvam1wcmlldXJob3RtYWlsLm9ubWljcm9zb2Z0LmNvbVwvb2F1dGgyXC90b2tlbiIsImV4cCI6MTQ4NDU5MzM0MSwiaXNzIjoiOTdlMGE1YjctZDc0NS00MGI2LTk0ZmUtNWY3N2QzNWM2ZTA1IiwianRpIjoiMjJiM2JiMjYtZTA0Ni00MmRmLTljOTYtNjVkYmQ3MmMxYzgxIiwibmJmIjoxNDg0NTkyNzQxLCJzdWIiOiI5N2UwYTViNy1kNzQ1LTQwYjYtOTRmZS01Zjc3ZDM1YzZlMDUifQ.
+"eyJhbGciOiJQUzI1NiIsIng1dCNTMjU2IjoiZ3g4dEd5c3lqY1JxS2pGUG5kN1JGd3Z3WkkwIn0.eyJhdWQiOiJodHRwczpcL1wvbG9naW4ubWljcm9zb2Z0b25saW5lLmNvbVwvam1wcmlldXJob3RtYWlsLm9ubWljcm9zb2Z0LmNvbVwvb2F1dGgyXC90b2tlbiIsImV4cCI6MTQ4NDU5MzM0MSwiaXNzIjoiOTdlMGE1YjctZDc0NS00MGI2LTk0ZmUtNWY3N2QzNWM2ZTA1IiwianRpIjoiMjJiM2JiMjYtZTA0Ni00MmRmLTljOTYtNjVkYmQ3MmMxYzgxIiwibmJmIjoxNDg0NTkyNzQxLCJzdWIiOiI5N2UwYTViNy1kNzQ1LTQwYjYtOTRmZS01Zjc3ZDM1YzZlMDUifQ.
 Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 ```
 
