@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with MINT TMS
+title: Configure MINT TMS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and MINT TMS.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and MINT TMS so that I can control who has access to MINT TMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with MINT TMS
+# Configure MINT TMS for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate MINT TMS with Microsoft Entra ID. MINT TMS is a Training, Resource and Qualification Management System used as a reliable tool to plan, optimize and measure training and career progress and the actual records of their employees. When you integrate MINT TMS with Microsoft Entra ID, you can:
 

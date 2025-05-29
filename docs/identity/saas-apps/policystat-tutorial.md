@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with PolicyStat
+title: Configure PolicyStat for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and PolicyStat.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PolicyStat so that I can control who has access to PolicyStat, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with PolicyStat
+# Configure PolicyStat for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate PolicyStat with Microsoft Entra ID. When you integrate PolicyStat with Microsoft Entra ID, you can:
 

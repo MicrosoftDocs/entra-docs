@@ -1,5 +1,5 @@
 ---
-title: Configure Workday for automatic user provisioning with on-premises Active Directory
+title: Configure Configure Workday for for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Workday.
 author: cmmdesai
 manager: femila
@@ -11,7 +11,7 @@ ms.author: chmutali
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Active Directory.
 ---
-# Configure Workday for automatic user provisioning
+# Configure Configure Workday for for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to show the steps you need to perform to provision worker profiles from Workday into on-premises Active Directory (AD).
 

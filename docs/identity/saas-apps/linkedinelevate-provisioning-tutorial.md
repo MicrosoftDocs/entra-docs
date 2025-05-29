@@ -1,5 +1,5 @@
 ---
-title: User provisioning for LinkedIn Elevate
+title: Configure LinkedIn Elevate for automatic user provisioning in Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to LinkedIn Elevate.
 
 author: ArvindHarinder1
@@ -14,7 +14,7 @@ ms.author: arvinh
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LinkedIn Elevate so that I can streamline the user management process and ensure that users have the appropriate access to LinkedIn Elevate.
 ---
 
-# Configure LinkedIn Elevate for automatic user provisioning
+# Configure LinkedIn Elevate for automatic user provisioning in Microsoft Entra ID
 
 The objective of this article is to show you the steps you need to perform in LinkedIn Elevate and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to LinkedIn Elevate.
 

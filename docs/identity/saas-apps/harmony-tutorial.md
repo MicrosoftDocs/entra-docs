@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Harmony
+title: Configure Harmony for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Harmony.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Harmony so that I can control who has access to Harmony, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Harmony
+# Configure Harmony for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Harmony with Microsoft Entra ID. When you integrate Harmony with Microsoft Entra ID, you can:
 

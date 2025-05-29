@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Netskope Cloud Exchange Administration Console
+title: Configure Netskope Cloud Exchange Administration Console for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Netskope Cloud Exchange Administration Console.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Netskope Cloud Exchange Administration Console so that I can control who has access to Netskope Cloud Exchange Administration Console, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Netskope Cloud Exchange Administration Console
+# Configure Netskope Cloud Exchange Administration Console for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Netskope Cloud Exchange Administration Console with Microsoft Entra ID. The Netskope Cloud Exchange (CE) gives customers powerful integration capabilities to leverage investments across their security and IT stacks. When you integrate Netskope Cloud Exchange Administration Console with Microsoft Entra ID, you can:
 

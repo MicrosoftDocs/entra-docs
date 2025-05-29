@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Island
+title: Configure Island for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Island.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Island so that I can control who has access to Island, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Island
+# Configure Island for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Island with Microsoft Entra ID. Microsoft Entra single sign-on enables end-users to directly access Island, The Enterprise Browser, via Microsoft Entra authentication. Admins can add or remove users and update attributes from Microsoft Entra ID as well. When you integrate Island with Microsoft Entra ID, you can:
 

@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 15Five so that I can streamline the user management process and ensure that users have the appropriate access to 15Five.
 ---
 
-# Configure 15Five for automatic user provisioning
+# Configure 15Five for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in 15Five and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to [15Five](https://www.15five.com/pricing/). For important details on what this service does, how it works, and frequently asked questions, see Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID.
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Fountain
+title: Configure Fountain for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fountain.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fountain so that I can control who has access to Fountain, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Fountain
+# Configure Fountain for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Fountain with Microsoft Entra ID. Fountain’s all-in-one high volume hiring platform empowers the world’s leading enterprises to find the right people through smart, fast, and seamless recruiting. When you integrate Fountain with Microsoft Entra ID, you can:
 

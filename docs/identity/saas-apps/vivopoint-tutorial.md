@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with VivoPoint
+title: Configure VivoPoint for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and VivoPoint.
 services: active-directory
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Microsoft Entra SSO integration with VivoPoint
+# Configure VivoPoint for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate VivoPoint with Microsoft Entra ID. When you integrate VivoPoint with Microsoft Entra ID, you can:
 

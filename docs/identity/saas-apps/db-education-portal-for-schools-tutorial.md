@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with DB Education Portal for Schools
+title: Configure DB Education Portal for Schools for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DB Education Portal for Schools.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DB Education Portal for Schools so that I can control who has access to DB Education Portal for Schools, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with DB Education Portal for Schools
+# Configure DB Education Portal for Schools for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate DB Education Portal for Schools with Microsoft Entra ID. Providing single sign-on access through Microsoft Entra ID, for the DB Education Portal, available for Schools and Multi Academy Trusts across the United Kingdom. When you integrate DB Education Portal for Schools with Microsoft Entra ID, you can:
 

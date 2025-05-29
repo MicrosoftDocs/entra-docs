@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Cosgrid Networks
+title: Configure Cosgrid Networks for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cosgrid Networks.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cosgrid Networks so that I can control who has access to Cosgrid Networks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Cosgrid Networks
+# Configure Cosgrid Networks for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Cosgrid Networks with Microsoft Entra ID. Cosgrid Networks offers secure and efficient enterprise connections through SD-WAN and SASE solutions. Our flexible architecture transforms your network infrastructure for seamless operations. When you integrate Cosgrid Networks with Microsoft Entra ID, you can:
 

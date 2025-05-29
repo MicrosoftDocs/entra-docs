@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Continuity Software Platform
+title: Configure Continuity Software Platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Continuity Software Platform.
 services: active-directory
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Continuity Software Platform
+# Configure Continuity Software Platform for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Continuity Software Platform with Microsoft Entra ID. When you integrate Continuity Software Platform with Microsoft Entra ID, you can:
 

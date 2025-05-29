@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with BlueConic
+title: Configure BlueConic for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and BlueConic.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BlueConic so that I can control who has access to BlueConic, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with BlueConic
+# Configure BlueConic for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate BlueConic with Microsoft Entra ID. BlueConic is the customer data platform (CDP) that puts unified, privacy-compliant first-party data into the hands of business teams that want to transform customer relationships and unleash growth. When you integrate BlueConic with Microsoft Entra ID, you can:
 

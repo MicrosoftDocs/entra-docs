@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with SecureW2 JoinNow Connector
+title: Configure SecureW2 JoinNow Connector for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SecureW2 JoinNow Connector.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SecureW2 JoinNow Connector so that I can control who has access to SecureW2 JoinNow Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate SecureW2 JoinNow Connector with Microsoft Entra ID
+# Configure SecureW2 JoinNow Connector for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SecureW2 JoinNow Connector with Microsoft Entra ID. When you integrate SecureW2 JoinNow Connector with Microsoft Entra ID, you can:
 

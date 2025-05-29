@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Andromeda
+title: Configure Andromeda for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Andromeda.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Andromeda so that I can control who has access to Andromeda, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra integration with Andromeda
+# Configure Andromeda for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Andromeda with Microsoft Entra ID. When you integrate Andromeda with Microsoft Entra ID, you can:
 

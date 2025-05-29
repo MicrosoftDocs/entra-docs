@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Redocly
+title: Configure Redocly for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Redocly.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Redocly so that I can control who has access to Redocly, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Redocly
+# Configure Redocly for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Redocly with Microsoft Entra ID. Redocly is the first developer documentation tool that allows us to keep the docs in GitHub, keeping developer docs close to the developers. When you integrate Redocly with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Respondent
+title: Configure Respondent for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Respondent.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Respondent so that I can control who has access to Respondent, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Respondent
+# Configure Respondent for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Respondent with Microsoft Entra ID. Respondent is a global marketplace that connects business professionals and consumers with researchers. Manage recruitment, scheduling, and the payment of your research participants on Respondent. When you integrate Respondent with Microsoft Entra ID, you can:
 

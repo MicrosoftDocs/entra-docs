@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Hive Learning
+title: Configure Hive Learning for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hive Learning.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hive Learning so that I can control who has access to Hive Learning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Hive Learning
+# Configure Hive Learning for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Hive Learning with Microsoft Entra ID. When you integrate Hive Learning with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Yardi eLearning
+title: Configure Yardi eLearning for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Yardi eLearning.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Yardi eLearning so that I can control who has access to Yardi eLearning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Yardi eLearning
+# Configure Yardi eLearning for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Yardi eLearning with Microsoft Entra ID. When you integrate Yardi eLearning with Microsoft Entra ID, you can:
 

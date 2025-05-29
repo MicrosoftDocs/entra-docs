@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with LegalForce
+title: Configure LegalForce for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and LegalForce.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LegalForce so that I can control who has access to LegalForce, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with LegalForce
+# Configure LegalForce for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate LegalForce with Microsoft Entra ID. LegalForce automatically checks checklists and contracts for each contract type using technologies such as natural language processing, instantly presents omissions in terms and excesses in clauses, and prevents omissions and omissions. It's equipped with functions that simultaneously improve the quality and efficiency of contract work. When you integrate LegalForce with Microsoft Entra ID, you can:
 

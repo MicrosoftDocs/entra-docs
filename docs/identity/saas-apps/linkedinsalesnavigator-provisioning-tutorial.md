@@ -1,5 +1,5 @@
 ---
-title: User provisioning - LinkedIn Sales Navigator, Microsoft Entra ID
+title: Configure LinkedIn Sales Navigator for automatic user provisioning
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to LinkedIn Sales Navigator.
 
 author: ArvindHarinder1

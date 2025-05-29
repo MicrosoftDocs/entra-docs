@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Korn Ferry ALP
+title: Configure Korn Ferry ALP for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Korn Ferry ALP.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Korn Ferry ALP so that I can control who has access to Korn Ferry ALP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Korn Ferry ALP
+# Configure Korn Ferry ALP for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Korn Ferry ALP with Microsoft Entra ID. When you integrate Korn Ferry ALP with Microsoft Entra ID, you can:
 

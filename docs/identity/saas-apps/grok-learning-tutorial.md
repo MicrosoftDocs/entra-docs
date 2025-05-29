@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Grok Learning
+title: Configure Grok Learning for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Grok Learning.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Grok Learning so that I can control who has access to Grok Learning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Grok Learning
+# Configure Grok Learning for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Grok Learning with Microsoft Entra ID. When you integrate Grok Learning with Microsoft Entra ID, you can:
 
