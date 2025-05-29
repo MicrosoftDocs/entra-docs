@@ -13,7 +13,20 @@ ms.author: barclayn
 
 # Verified helpdesk with Microsoft Entra Verified ID
 
-An ongoing challenge for helpdesk is verifying the identity of callers seeking help, especially in remote interactions via phone, chat, or email. Microsoft Entra Verified ID could help such enterprises add verification processes seamlessly into their existing helpdesk and service desk operations. Upon successful verification, service desk could offer tasks such as password resets, Temporary Access Pass (TAP) provision, MFA (multifactor authentication) onboarding, and account updates, potentially enabling self-service automation.
+An ongoing challenge for helpdesk is verifying the identity of callers seeking help, especially in remote interactions via phone, chat, or email. Traditional methods such as personally identifiable information (PII) and knowledge-based authentication are no match for today’s sophisticated attackers, who leverage phishing, social engineering, and even AI-powered voice cloning to bypass defences. The consequences are serious: under pressure, helpdesk agents may unintentionally expose sensitive data or authorize fraudulent actions.
+
+**The Way Forward: Stronger and Phish resistant Authentication**
+To defend against these evolving threats without compromising user experience, organizations must adopt modern verification strategies built for today’s threat landscape. This includes:
+*	Phish resistant authentication (e.g., passkeys)
+*	AI-driven fraud detection to flag anomalous behaviour
+*	Zero Trust principles enforcing strict identity checks
+*	Enterprise-grade identity validation—without relying on PII.
+
+Microsoft offers solutions that enable Admins to enhance security without sacrificing user experience. Organizations can adopt two key patterns:
+
+1.	Strong Authentication: Users authenticate with their existing corporate credentials before requesting helpdesk support. User is prompted to present strong phish resistant credentials before they are granted access to resources. Microsoft platform offers solutions like Azure Communication Services that supports multichannel communication APIs for adding voice, video, chat, text messaging/SMS, email, and more to all your applications.  [Azure Communication Services (ACS)](https://azure.microsoft.com/products/communication-services/?msockid=27ae7d5196f463891a416cf192f46589#Features-3) supports a security pattern where users visit a URL to initiate a direct, encrypted voice/video/chat session with a helpdesk via an ACS-integrated app. Authentication is managed using Microsoft Entra ID, and secure ACS tokens ensure controlled access, preventing unauthorized connections. 
+2.	Total Loss Recovery: In cases where a user has lost all authentication credentials, a secure, policy-driven recovery process is implemented to re-establish access without compromising security. Microsoft Entra Verified ID could help such enterprises add verification processes seamlessly into their existing helpdesk and service desk operations. Upon successful verification, service desk could offer tasks such as password resets, Temporary Access Pass (TAP) provision, MFA (multifactor authentication) onboarding, and account updates, potentially enabling self-service automation.
+This document explains how to use Microsoft Entra Verified ID for the total loss recovery scenario.
 
 ## When to use this pattern
 
