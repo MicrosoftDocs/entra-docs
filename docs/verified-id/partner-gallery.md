@@ -56,13 +56,15 @@ These are Identity Verification (IDV) ISVs who can use Verified ID Request Servi
 
 6.	Upon successful completion, IDV kicks off Verified ID issuance flow and issues a Verified ID. At this point, user is presented with a deep link or QR code to **Add Card** in Microsoft Authenticator application. The IDV website receives a successful issuance callback from Verified ID service.
     >[!Note]
-    IDV partner must provide or build the required web experience where the identity of the user can be proofed in any way necessary as agreed between the relying party application and IDV partner. When the process is completed a list of values are collected according to the Verified ID Credential Type. These values (as “claims” parameter) are passed as part of the Verified ID issuance request API call. If the IDV is building this journey on a webapp, IDV needs to render it as a QR code or deep link.  For further details, refer [Specify the Request Service REST API issuance request](issuance-request-api.md)
+    
+    >IDV partner must provide or build the required web experience where the identity of the user can be proofed in any way necessary as agreed between the relying party application and IDV partner. When the process is completed a list of values are collected according to the Verified ID Credential Type. These values (as “claims” parameter) are passed as part of the Verified ID issuance request API call. If the IDV is building this journey on a webapp, IDV needs to render it as a QR code or deep link.  For further details, refer [Specify the Request Service REST API issuance request](issuance-request-api.md)
 
 7.	IDV redirects the user back to the customer’s relying party application. 
 
 8.	For the remainder of the steps in the diagram above (i.e. from steps 14 till 16), user is asked to present  Verified ID with FaceCheck. On successful presentation, user is onboarded to the system.
 
->[!Note] Steps mentioned above are just technical integrations steps. Customer must work with IDV partner to setup the required IDV onboarding steps that include organization onboarding, billing contracts and other required pre-requisites.  
+>[!Note]
+>Steps mentioned above are just technical integrations steps. Customer must work with IDV partner to setup the required IDV onboarding steps that include organization onboarding, billing contracts and other required pre-requisites.  
 
 ## Verifier flow
 
@@ -85,7 +87,7 @@ Application developers can use Verified ID issued by IDVs for the verification f
     >Refer Microsoft Entra Verified ID GitHub repository for sample applications [https://aka.ms/vcsample](https://aka.ms/vcsample)
 
     9.	Be sure to replace the values for the URL, state, and api-key with your respective values.
-    10.	[Grant permissions](https://learn.microsoft.com/en-us/entra/verified-id/verifiable-credentials-configure-tenant#grant-permissions-to-get-access-tokens) to your app to obtain access token for the Verified ID service request service principal.
+    10.	[Grant permissions](verifiable-credentials-configure-tenant.md#grant-permissions-to-get-access-tokens) to your app to obtain access token for the Verified ID service request service principal.
 
 To test the user flow, you could always deploy one of the sample application in your Azure App service environment, using [sample apps](https://aka.ms/vcsample) documentation.
 
