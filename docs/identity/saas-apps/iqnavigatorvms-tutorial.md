@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with IQNavigator VMS
+title: Configure IQNavigator VMS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and IQNavigator VMS.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IQNavigator VMS so that I can control who has access to IQNavigator VMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with IQNavigator VMS
+# Configure IQNavigator VMS for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate IQNavigator VMS with Microsoft Entra ID. When you integrate IQNavigator VMS with Microsoft Entra ID, you can:
 

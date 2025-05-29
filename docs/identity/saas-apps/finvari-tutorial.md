@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Finvari
+title: Configure Finvari for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Finvari.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Finvari so that I can control who has access to Finvari, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Finvari
+# Configure Finvari for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Finvari with Microsoft Entra ID. When you integrate Finvari with Microsoft Entra ID, you can:
 

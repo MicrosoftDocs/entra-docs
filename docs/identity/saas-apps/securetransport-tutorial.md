@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with SecureTransport
+title: Configure SecureTransport for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SecureTransport.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SecureTransport so that I can control who has access to SecureTransport, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SecureTransport
+# Configure SecureTransport for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate SecureTransport with Microsoft Entra ID. SecureTransport is a high scalable and resilient multi-protocol MFT gateway, with fault-tolerance and high availability to meet all critical file transfer needs of any small or large organization. When you integrate SecureTransport with Microsoft Entra ID, you can:
 

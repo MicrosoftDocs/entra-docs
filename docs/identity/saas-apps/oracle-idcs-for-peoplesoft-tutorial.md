@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Oracle IDCS for PeopleSoft
+title: Configure Oracle IDCS for PeopleSoft for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oracle IDCS for PeopleSoft.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Oracle IDCS for PeopleSoft so that I can control who has access to Oracle IDCS for PeopleSoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Oracle IDCS for PeopleSoft
+# Configure Oracle IDCS for PeopleSoft for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Oracle IDCS for PeopleSoft with Microsoft Entra ID. When you integrate Oracle IDCS for PeopleSoft with Microsoft Entra ID, you can:
 

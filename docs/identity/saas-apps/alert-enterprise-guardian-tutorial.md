@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with AlertEnterprise-Guardian
+title: Configure AlertEnterprise-Guardian for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AlertEnterprise-Guardian.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AlertEnterprise-Guardian so that I can control who has access to AlertEnterprise-Guardian, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with AlertEnterprise-Guardian
+# Configure AlertEnterprise-Guardian for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate AlertEnterprise-Guardian with Microsoft Entra ID. Application automates the identity management lifecycle. Built-in Regulatory Compliance ensures controls are in place before granting access to identities. When you integrate AlertEnterprise-Guardian with Microsoft Entra ID, you can:
 

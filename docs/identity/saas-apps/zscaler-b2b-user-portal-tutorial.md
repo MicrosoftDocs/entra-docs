@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Zscaler B2B User Portal
+title: Configure Zscaler B2B User Portal for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler B2B User Portal.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler B2B User Portal so that I can control who has access to Zscaler B2B User Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Zscaler B2B User Portal
+# Configure Zscaler B2B User Portal for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Zscaler B2B User Portal with Microsoft Entra ID. When you integrate Zscaler B2B User Portal with Microsoft Entra ID, you can:
 

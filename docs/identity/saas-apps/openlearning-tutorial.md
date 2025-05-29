@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with OpenLearning
+title: Configure OpenLearning for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and OpenLearning.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenLearning so that I can control who has access to OpenLearning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with OpenLearning
+# Configure OpenLearning for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate OpenLearning with Microsoft Entra ID. When you integrate OpenLearning with Microsoft Entra ID, you can:
 

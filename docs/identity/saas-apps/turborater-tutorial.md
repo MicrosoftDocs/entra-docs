@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with TurboRater
+title: Configure TurboRater for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and TurboRater.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TurboRater so that I can control who has access to TurboRater, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with TurboRater
+# Configure TurboRater for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate TurboRater with Microsoft Entra ID.
 

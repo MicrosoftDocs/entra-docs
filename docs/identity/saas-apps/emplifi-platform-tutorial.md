@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Emplifi platform
+title: Configure Emplifi platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Emplifi platform.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Emplifi platform so that I can control who has access to Emplifi platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Emplifi platform
+# Configure Emplifi platform for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Emplifi platform with Microsoft Entra ID. When you integrate Emplifi platform with Microsoft Entra ID, you can:
 

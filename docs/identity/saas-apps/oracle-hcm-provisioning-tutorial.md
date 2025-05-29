@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID integration with Oracle Human Capital Management (HCM)
+title: Configure Oracle Human Capital Management (HCM) for automatic user provisioning
 description: Integrating Oracle Human Capital Management (HCM) with Microsoft Entra ID and on-premises Active Directory using the Inbound Provisioning API.
 author: jenniferf-skc
 manager: femila
@@ -12,7 +12,7 @@ ms.date: 09/13/2024
 ms.author: jfields
 ---
 
-# Microsoft Entra ID integration with Oracle HCM
+# Configure Oracle Human Capital Management (HCM) for automatic user provisioning
 
 The Inbound Provisioning API is a capability that allows you to create, update, and delete users in Microsoft Entra ID and on-premises Active Directory from an external source, such as Oracle Human Capital Management (HCM). This capability enables organizations to improve productivity, strengthen security and more easily meet compliance and regulatory requirements.
 

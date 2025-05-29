@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Zuddl
+title: Configure Zuddl for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zuddl.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zuddl so that I can control who has access to Zuddl, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Zuddl
+# Configure Zuddl for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Zuddl with Microsoft Entra ID. When you integrate Zuddl with Microsoft Entra ID, you can:
 

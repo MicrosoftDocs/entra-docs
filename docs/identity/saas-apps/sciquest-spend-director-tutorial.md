@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with SciQuest Spend Director
+title: Configure SciQuest Spend Director for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SciQuest Spend Director.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SciQuest Spend Director so that I can control who has access to SciQuest Spend Director, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with SciQuest Spend Director
+# Configure SciQuest Spend Director for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SciQuest Spend Director with Microsoft Entra ID. When you integrate SciQuest Spend Director with Microsoft Entra ID, you can:
 

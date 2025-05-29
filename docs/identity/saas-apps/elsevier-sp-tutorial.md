@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Elsevier SP
+title: Configure Elsevier SP for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Elsevier SP.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Elsevier SP so that I can control who has access to Elsevier SP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Elsevier SP
+# Configure Elsevier SP for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Elsevier SP with Microsoft Entra ID. Elsevier SP provides access to your organization's Elsevier subscriptions using your Microsoft Entra credentials. When you integrate Elsevier SP with Microsoft Entra ID, you can:
 

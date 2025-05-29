@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with MyWorkDrive
+title: Configure MyWorkDrive for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and MyWorkDrive.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and MyWorkDrive so that I can control who has access to MyWorkDrive, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Integrate MyWorkDrive with Microsoft Entra ID
+# Configure MyWorkDrive for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate MyWorkDrive with Microsoft Entra ID. When you integrate MyWorkDrive with Microsoft Entra ID, you can:
 

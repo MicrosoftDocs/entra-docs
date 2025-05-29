@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Easy Metrics Connector
+title: Configure Easy Metrics Connector for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Easy Metrics Connector.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Easy Metrics Connector so that I can control who has access to Easy Metrics Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Easy Metrics Connector
+# Configure Easy Metrics Connector for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Easy Metrics Connector with Microsoft Entra ID. This application is a bridge between Microsoft Entra ID and Auth0, federating Authentication to Microsoft Entra ID for our customers. When you integrate Easy Metrics Connector with Microsoft Entra ID, you can:
 

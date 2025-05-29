@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Evovia
+title: Configure Evovia for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Evovia.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Evovia so that I can control who has access to Evovia, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Evovia
+# Configure Evovia for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Evovia with Microsoft Entra ID. When you integrate Evovia with Microsoft Entra ID, you can:
 
