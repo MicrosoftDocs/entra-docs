@@ -26,6 +26,26 @@ When the installation of a connector fails, the root cause is usually one of the
 > [!NOTE]
 > The connector installation logs can be found in the `%TEMP%` folder and can help provide additional information on what is causing an installation failure.
 
+## Use Connector Diagnostics tool to identity connector installation and network problems
+The connector diagnostics tool is an exe command-line application that is included in connector package. This tool is designed to diagnose common connector setup and runtime errors to identify installation or network problems. Currently, the tool supports the following checks:
+  1.	Certificate validity
+  2.	Ports 80/443 accessibility
+  3.	Outbound proxy configuration
+  4.	CRL accessibility
+  5.	Connector service running
+  6.	Backend service endpoint accessibility
+
+The tool also provides additional information, such as certificate details (if the cert is valid), tenant and connector ID, and TLS versions. To ensure that no checks are missed due to network / intermittent issues, the tool contains retries and prints out exception messages for any connectivity failures.
+
+**How to Get the tool:** Connector diagnostics tool is available in connector installation package starting version 1.5.4287.0. Previous versions don't contain the tool. A new connector installation is needed to get the tool if you are using previous version. 
+
+**How to Use the tool:** After verifying successful installation, the tool can be found in the connector installation folder, located by default in C:/Program Files/Microsoft Entra Private Network Connector. Double click the application "ConnectorDiagnosticsTool" to launch the tool. 
+
+![image](https://github.com/user-attachments/assets/76feaf98-9f2c-492c-bb66-7d65fa4dc576)
+
+Sample Output looks like below: 
+![5mzb3w5d](https://github.com/user-attachments/assets/93cec4e8-58bd-4656-8ff6-c4299e7d5b82)
+
 ## Verify connectivity to the cloud application proxy service and Microsoft sign in page
 
 **Objective:** Verify that the connector machine can connect to the application proxy registration endpoint and the Microsoft sign-in page.
