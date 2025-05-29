@@ -1,5 +1,5 @@
 ---
-title: Configure F5 for Single sign-on with Microsoft Entra ID
+title: Configure F5 Kerberos Constrained Delegation for a Single-Tier SaaS App
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and F5.
 author: nguhiu
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 
-# Configure F5 for Single sign-on with Microsoft Entra ID
+# Configure F5 Kerberos Constrained Delegation for a Single-Tier SaaS App
 
 In this article,  you learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
