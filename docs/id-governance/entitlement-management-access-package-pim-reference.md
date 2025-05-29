@@ -68,4 +68,5 @@ If both the access package and PIM "*Expire eligible assignments after*" assignm
 
 ## Related content
 
-- [Microsoft Entra ID Governance](identity-governance-overview.md)
+- [Change resource roles for an access package in entitlement management](entitlement-management-access-package-resources.md)
+- [Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)](entitlement-management-access-package-eligible.md)
