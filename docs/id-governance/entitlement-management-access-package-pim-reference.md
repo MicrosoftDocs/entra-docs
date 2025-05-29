@@ -56,7 +56,7 @@ When the PIM "*Expire eligible assignments after*" assignment is permanent, it's
 |------------------------------------|------------------------------------|-----------------------------|
 | 60 days                            | None (permanent allowed)           | When entitlement management creates the PIM assignment, it's set to permanent on the access package policy assignment. Access is revoked on day 61 after the access package policy assignment expires. |
 
-## Permanent AP and PIM Assignment
+## Permanent access package and PIM Assignment
 
 If both the access package and PIM "*Expire eligible assignments after*" assignments are permanent, the PIM assignment remains as long as the access package assignment.
 
@@ -64,7 +64,7 @@ If both the access package and PIM "*Expire eligible assignments after*" assignm
 
 | Access package policy assignment expiration | PIM Policy Max Assignment Duration | Microsoft Entra ID behavior |
 |------------------------------------|------------------------------------|-----------------------------|
-| None (permanent allowed)           | None (permanent allowed)           | When Entitlement management creates the PIM assignment, it sets the PIM assignment to permanent. The PIM assignment is only removed if the AP assignment is removed by other ways such as a removal request. |
+| None (permanent allowed)           | None (permanent allowed)           | When Entitlement management creates the PIM assignment, it sets the PIM assignment to permanent. The PIM assignment is only removed if the access package assignment is removed by other ways such as a removal request. |
 
 ## Related content
 
