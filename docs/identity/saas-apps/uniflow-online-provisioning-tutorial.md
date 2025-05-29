@@ -12,7 +12,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to uniFLOW Online so that I can streamline the user management process and ensure that users have the appropriate access to uniFLOW Online.
 ---
 
-# Configure uniFLOW Online for automatic user provisioning
+# Configure uniFLOW Online for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both uniFLOW Online and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [uniFLOW Online](https://www.uniflowonline.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 

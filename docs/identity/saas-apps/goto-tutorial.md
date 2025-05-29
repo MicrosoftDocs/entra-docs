@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with GoTo
+title: Configure GoTo for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GoTo.
 author: nguhiu
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GoTo so that I can control who has access to GoTo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra single sign-on (SSO) integration with GoTo
+# Configure GoTo for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate GoTo with Microsoft Entra ID. When you integrate GoTo with Microsoft Entra ID, you can:
 

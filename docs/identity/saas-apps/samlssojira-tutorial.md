@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with SAML SSO for Jira by Resolution GmbH
+title: Configure SAML SSO for Jira by Resolution GmbH for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Jira by resolution GmbH.
 author: nguhiu
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Jira by resolution GmbH so that I can control who has access to SAML SSO for Jira by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with SAML SSO for Jira by resolution GmbH
+# Configure SAML SSO for Jira by Resolution GmbH for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SAML SSO for Jira by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Jira by resolution GmbH with Microsoft Entra ID, you can:
 

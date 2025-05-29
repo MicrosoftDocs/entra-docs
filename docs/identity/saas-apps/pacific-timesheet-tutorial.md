@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Pacific Timesheet
+title: Configure Pacific Timesheet for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Pacific Timesheet.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Pacific Timesheet so that I can control who has access to Pacific Timesheet, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Pacific Timesheet
+# Configure Pacific Timesheet for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Pacific Timesheet with Microsoft Entra ID.
 Integrating Pacific Timesheet with Microsoft Entra ID provides you with the following benefits:

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Kronos Workforce Dimensions
+title: Configure Kronos Workforce Dimensions for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kronos Workforce Dimensions.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kronos Workforce Dimensions so that I can control who has access to Kronos Workforce Dimensions, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Kronos Workforce Dimensions
+# Configure Kronos Workforce Dimensions for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Kronos Workforce Dimensions with Microsoft Entra ID. When you integrate Kronos Workforce Dimensions with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with my.sdworx.com
+title: Configure my.sdworx.com for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and my.sdworx.com.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and my.sdworx.com so that I can control who has access to my.sdworx.com, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with my.sdworx.com
+# Configure my.sdworx.com for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate my.sdworx.com with Microsoft Entra ID. my.sdworx.com is an SD Worx portal. When you integrate my.sdworx.com with Microsoft Entra ID, you can:
 

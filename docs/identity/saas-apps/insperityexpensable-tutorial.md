@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Insperity ExpensAble
+title: Configure Insperity ExpensAble for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Insperity ExpensAble.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Insperity ExpensAble so that I can control who has access to Insperity ExpensAble, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Insperity ExpensAble
+# Configure Insperity ExpensAble for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Insperity ExpensAble with Microsoft Entra ID.
 Integrating Insperity ExpensAble with Microsoft Entra ID provides you with the following benefits:

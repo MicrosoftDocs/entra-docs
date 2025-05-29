@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Windchill
+title: Configure Windchill for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Windchill.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Windchill so that I can control who has access to Windchill, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Windchill
+# Configure Windchill for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Windchill with Microsoft Entra ID. Windchill PLM Software - Realize value quickly with out-of-the-box functionality across a comprehensive portfolio of core Product Data Management and advanced Product Lifecycle Management applications. When you integrate Windchill with Microsoft Entra ID, you can:
 

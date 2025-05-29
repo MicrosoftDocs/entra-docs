@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Arc Publishing - SSO
+title: Configure Arc Publishing - SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Arc Publishing - SSO.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Arc Publishing - SSO so that I can control who has access to Arc Publishing - SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Arc Publishing - SSO
+# Configure Arc Publishing - SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Arc Publishing - SSO with Microsoft Entra ID. When you integrate Arc Publishing - SSO with Microsoft Entra ID, you can:
 

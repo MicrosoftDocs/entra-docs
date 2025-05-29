@@ -17,7 +17,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Clarizen One so that I can streamline the user management process and ensure that users have the appropriate access to Clarizen One.
 ---
 
-# Configure Clarizen One for automatic user provisioning
+# Configure Clarizen One for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Clarizen One and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Clarizen One](https://www.clarizen.com/) by using the Microsoft Entra provisioning service. For information on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software as a service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with SAP Concur Travel and Expense
+title: Configure SAP Concur Travel and Expense for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Concur Travel and Expense.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Concur Travel and Expense so that I can control who has access to SAP Concur Travel and Expense, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with SAP Concur Travel and Expense
+# Configure SAP Concur Travel and Expense for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SAP Concur Travel and Expense with Microsoft Entra ID. When you integrate SAP Concur Travel and Expense with Microsoft Entra ID, you can:
 

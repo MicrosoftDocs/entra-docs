@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with DojoNavi
+title: Configure DojoNavi for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DojoNavi.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DojoNavi so that I can control who has access to DojoNavi, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with DojoNavi
+# Configure DojoNavi for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate DojoNavi with Microsoft Entra ID. "Dojo Navi" is a next-generation manual solution that greatly contributes to various system operations in a company by providing "navigation functions" and "blocking functions" in system operation that have never existed before, in order to significantly improve system operation efficiency and significantly reduce system operation costs. When you integrate DojoNavi with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Fleet Management System
+title: Configure Fleet Management System for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fleet Management System.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fleet Management System so that I can control who has access to Fleet Management System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Fleet Management System
+# Configure Fleet Management System for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Fleet Management System with Microsoft Entra ID. Manages and monitors a fleet of surface level vehicles and subterranean tugs and carts that Microsoft utilizes. When you integrate Fleet Management System with Microsoft Entra ID, you can:
 

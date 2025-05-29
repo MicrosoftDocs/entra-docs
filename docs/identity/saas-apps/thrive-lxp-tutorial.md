@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Thrive LXP
+title: Configure Thrive LXP for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Thrive LXP.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Thrive LXP so that I can control who has access to Thrive LXP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Thrive LXP
+# Configure Thrive LXP for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Thrive LXP with Microsoft Entra ID. When you integrate Thrive LXP with Microsoft Entra ID, you can:
 

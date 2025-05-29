@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Mind Tools Toolkit
+title: Configure Mind Tools Toolkit for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mind Tools Toolkit.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mind Tools Toolkit so that I can control who has access to Mind Tools Toolkit, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Mind Tools Toolkit
+# Configure Mind Tools Toolkit for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Mind Tools Toolkit with Microsoft Entra ID. When you integrate Mind Tools Toolkit with Microsoft Entra ID, you can:
 

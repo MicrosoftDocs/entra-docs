@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with TalentLMS
+title: Configure TalentLMS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and TalentLMS.
 author: nguhiu
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TalentLMS so that I can control who has access to TalentLMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with TalentLMS
+# Configure TalentLMS for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate TalentLMS with Microsoft Entra ID. When you integrate TalentLMS with Microsoft Entra ID, you can:
 

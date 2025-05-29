@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Datto Workplace Single Sign On
+title: Configure Datto Workplace Single Sign On for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Datto Workplace Single Sign On.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Datto Workplace Single Sign On so that I can control who has access to Datto Workplace Single Sign On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Datto Workplace Single Sign On
+# Configure Datto Workplace Single Sign On for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Datto Workplace Single Sign On with Microsoft Entra ID. When you integrate Datto Workplace Single Sign On with Microsoft Entra ID, you can:
 

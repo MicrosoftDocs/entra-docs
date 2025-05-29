@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with HashiCorp Cloud Platform (HCP)
+title: Configure HashiCorp Cloud Platform (HCP) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HashiCorp Cloud Platform (HCP).
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HashiCorp Cloud Platform (HCP) so that I can control who has access to HashiCorp Cloud Platform (HCP), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with HashiCorp Cloud Platform (HCP)
+# Configure HashiCorp Cloud Platform (HCP) for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate HashiCorp Cloud Platform (HCP) with Microsoft Entra ID. HashiCorp Cloud Platform hosting managed services of the developer tools created by HashiCorp, such Terraform, Vault, Boundary, and Consul. When you integrate HashiCorp Cloud Platform (HCP) with Microsoft Entra ID, you can:
 

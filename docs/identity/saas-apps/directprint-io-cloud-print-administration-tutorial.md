@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with directprint.io Cloud Print Administration
+title: Configure directprint.io Cloud Print Administration for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and directprint.io Cloud Print Administration.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and directprint.io Cloud Print Administration so that I can control who has access to directprint.io Cloud Print Administration, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with directprint.io Cloud Print Administration
+# Configure directprint.io Cloud Print Administration for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate directprint.io Cloud Print Administration with Microsoft Entra ID. When you integrate directprint.io Cloud Print Administration with Microsoft Entra ID, you can:
 

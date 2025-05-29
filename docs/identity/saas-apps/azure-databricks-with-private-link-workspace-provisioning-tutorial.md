@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
+title: Configure Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
 description: This article describes how to use the Microsoft Entra provisioning service to provision users into Azure Databricks with Private Link Workspace.
 author: billmath
 manager: femila
@@ -14,7 +14,7 @@ ms.reviewer: owinoakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Azure Databricks with Private Link Workspace so that I can streamline the user management process and ensure that users have the appropriate access to Azure Databricks with Private Link Workspace.
 ---
 
-# Microsoft Entra Application Provisioning to Azure Databricks with Private Link Workspace
+# Configure Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
 
 The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010) client that can be used to automatically provision users into cloud or on-premises applications. This article outlines how you can use the Microsoft Entra provisioning service to provision users into Azure Databricks workspaces with no public access.
 

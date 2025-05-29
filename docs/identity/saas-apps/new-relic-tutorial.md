@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with New Relic by Account
+title: Configure New Relic by Account for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and New Relic by Account.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and New Relic by Account so that I can control who has access to New Relic by Account, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with New Relic by Account
+# Configure New Relic by Account for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate New Relic by Account with Microsoft Entra ID. When you integrate New Relic by Account with Microsoft Entra ID, you can:
 

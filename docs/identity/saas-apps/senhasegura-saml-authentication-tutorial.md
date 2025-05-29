@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with senhasegura SAML Authentication
+title: Configure senhasegura SAML Authentication for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and senhasegura SAML Authentication.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and senhasegura SAML Authentication so that I can control who has access to senhasegura SAML Authentication, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with senhasegura SAML Authentication
+# Configure senhasegura SAML Authentication for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate senhasegura SAML Authentication with Microsoft Entra ID. When you integrate senhasegura SAML Authentication with Microsoft Entra ID, you can:
 

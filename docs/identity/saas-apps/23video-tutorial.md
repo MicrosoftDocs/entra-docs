@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with 23 Video
+title: Configure 23 Video for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and 23 Video.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and 23 Video so that I can control who has access to 23 Video, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with 23 Video
+# Configure 23 Video for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate 23 Video with Microsoft Entra ID. When you integrate 23 Video with Microsoft Entra ID, you can:
 

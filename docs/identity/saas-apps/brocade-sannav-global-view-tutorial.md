@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Brocade SANnav Global View
+title: Configure Brocade SANnav Global View for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Global View.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brocade SANnav Global View so that I can control who has access to Brocade SANnav Global View, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Brocade SANnav Global View
+# Configure Brocade SANnav Global View for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Brocade SANnav Global View with Microsoft Entra ID. When you integrate Brocade SANnav Global View with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Teamgo
+title: Configure Teamgo for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Teamgo.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Teamgo so that I can control who has access to Teamgo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Teamgo
+# Configure Teamgo for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Teamgo with Microsoft Entra ID. When you integrate Teamgo with Microsoft Entra ID, you can:
 

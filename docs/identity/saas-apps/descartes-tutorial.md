@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Descartes
+title: Configure Descartes for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Descartes.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Descartes so that I can control who has access to Descartes, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Descartes
+# Configure Descartes for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Descartes with Microsoft Entra ID. The Descartes application provides logistics information services to delivery sensitive companies around the world. As an integrated suite it provides modules for various logistics business roles. When you integrate Descartes with Microsoft Entra ID, you can:
 

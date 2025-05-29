@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Carbonite Endpoint Backup
+title: Configure Carbonite Endpoint Backup for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Carbonite Endpoint Backup.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Carbonite Endpoint Backup so that I can control who has access to Carbonite Endpoint Backup, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Carbonite Endpoint Backup with Microsoft Entra ID
+# Configure Carbonite Endpoint Backup for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Carbonite Endpoint Backup with Microsoft Entra ID. When you integrate Carbonite Endpoint Backup with Microsoft Entra ID, you can:
 

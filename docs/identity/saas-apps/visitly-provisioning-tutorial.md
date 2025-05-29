@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Visitly so that I can streamline the user management process and ensure that users have the appropriate access to Visitly.
 ---
 
-# Configure Visitly for automatic user provisioning
+# Configure Visitly for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps you perform in Visitly and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Visitly.
 
