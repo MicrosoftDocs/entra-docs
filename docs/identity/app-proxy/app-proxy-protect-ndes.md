@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 05/01/2025
 ms.author: kenwith
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Integrate with Microsoft Entra application proxy on a Network Device Enrollment Service (NDES) server

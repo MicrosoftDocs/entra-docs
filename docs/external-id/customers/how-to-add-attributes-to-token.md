@@ -1,17 +1,14 @@
 ---
 title: Add attributes to token claims
 description: Learn how to add built-in user attributes and custom attributes as claims to the application token. Use directory extension attributes for sending user data to applications in token claims.
- 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 04/14/2025
-ms.author: mimart
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 ---
 
 # Add user attributes to token claims  
@@ -74,14 +71,14 @@ You can specify which built-in or custom attributes you want to include as claim
 1. Select **Add**.
 1. Select **Save**. Repeat for each custom attribute you want to add.
 
-### Update the application manifest to accept mapped claims
+### Update the application manifest to accept mapped claims in Microsoft Graph App Manifest(New)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Entra ID** > **App registrations**.
 1. Select your application in the list to open the application's **Overview** page.
 1. In the left menu, under **Manage**, select **Manifest** to open the application manifest.
 1. Find the **acceptMappedClaims** key and set its value to **true**.
-1. Find the **allowPublicClient** key and set its value to **true**.
+1. Find the **isFallbackPublicClient** key and set its value to **true**.
 1. Select **Save**.
 
 ## See also

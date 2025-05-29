@@ -5,10 +5,10 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 10/26/2023
-ms.reviewer:
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to protect properties of my application instance of being modified.
 ---
 

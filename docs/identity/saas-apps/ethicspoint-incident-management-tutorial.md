@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with EthicsPoint Incident Management (EPIM)
+title: Configure EthicsPoint Incident Management (EPIM) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and EthicsPoint Incident Management (EPIM).
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EthicsPoint Incident Management (EPIM) so that I can control who has access to EthicsPoint Incident Management (EPIM), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with EthicsPoint Incident Management (EPIM)
+# Configure EthicsPoint Incident Management (EPIM) for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EthicsPoint Incident Management (EPIM) with Microsoft Entra ID. When you integrate EthicsPoint Incident Management (EPIM) with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate EthicsPoint Incident Management (EP
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * EthicsPoint Incident Management (EPIM) single sign-on (SSO) enabled subscription.
 

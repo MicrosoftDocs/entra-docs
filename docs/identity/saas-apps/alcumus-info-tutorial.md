@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Alcumus Info Exchange
+title: Configure Alcumus Info Exchange for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Alcumus Info Exchange.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alcumus Info Exchange so that I can control who has access to Alcumus Info Exchange, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Alcumus Info Exchange
+# Configure Alcumus Info Exchange for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Alcumus Info Exchange with Microsoft Entra ID. When you integrate Alcumus Info Exchange with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Alcumus Info Exchange with Microsof
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Alcumus Info Exchange single sign-on (SSO) enabled subscription.
 

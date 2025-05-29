@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Betterworks
+title: Configure Betterworks for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Betterworks.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BetterWorks so that I can control who has access to BetterWorks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Betterworks
+# Configure Betterworks for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Betterworks with Microsoft Entra ID. When you integrate Betterworks with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Betterworks with Microsoft Entra ID
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Betterworks single sign-on (SSO) enabled subscription.
 

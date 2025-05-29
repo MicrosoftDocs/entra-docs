@@ -9,7 +9,7 @@ ms.topic: tutorial
 ms.date: 11/25/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial
+ms.custom: template-tutorial, sfi-image-nochange
 ---
 # Automate employee offboarding tasks after their last day of work with the Microsoft Entra admin center
 

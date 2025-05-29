@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Cirrus Identity Bridge for Microsoft Entra ID
+title: Configure Cirrus Identity Bridge for Microsoft Entra ID for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cirrus Identity Bridge for Microsoft Entra ID.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cirrus Identity Bridge for Microsoft Entra ID so that I can control who has access to Cirrus Identity Bridge for Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Cirrus Identity Bridge for Microsoft Entra ID
+# Configure Cirrus Identity Bridge for Microsoft Entra ID for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Cirrus Identity Bridge for Microsoft Entra ID with Microsoft Entra ID using the Microsoft Graph API based integration pattern. When you integrate Cirrus Identity Bridge for Microsoft Entra ID with Microsoft Entra ID in this way, you can:
 
@@ -28,6 +28,7 @@ In this article,  you learn how to integrate Cirrus Identity Bridge for Microsof
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Cirrus Identity Bridge for Microsoft Entra single sign-on (SSO) enabled subscription. If you aren't already a subscriber, please visit the [Cirrus Identity Microsoft Entra ID Bridge Registration Page](https://info.cirrusidentity.com/cirrus-identity-azure-ad-app-gallery-registration).
 

@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 12/10/2024
 ms.author: owinfrey
 ms.reviewer: krbain
+ms.custom: sfi-image-nochange
 ---
 
 # Check execution user scope of a workflow

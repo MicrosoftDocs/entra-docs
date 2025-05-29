@@ -1,16 +1,14 @@
 ---
 title: Investigate risk Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 08/09/2024
-
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: cokoopma
+ms.custom: sfi-image-nochange
 ---
 # How To: Investigate risk
 

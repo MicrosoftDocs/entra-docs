@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom:
 ms.date: 12/19/2023
-ms.reviewer: saeeda, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article

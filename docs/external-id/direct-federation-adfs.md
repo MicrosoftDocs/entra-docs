@@ -5,9 +5,8 @@ description: Learn how to set up SAML/WS-Fed IdP federation with AD FS for B2B c
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/09/2025
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management

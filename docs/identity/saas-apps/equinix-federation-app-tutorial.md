@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Equinix Federation App
+title: Configure Equinix Federation App for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Equinix Federation App.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Equinix Federation App so that I can control who has access to Equinix Federation App, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Equinix Federation App
+# Configure Equinix Federation App for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Equinix Federation App with Microsoft Entra ID. When you integrate Equinix Federation App with Microsoft Entra ID, you can do the following:
 
@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Equinix Federation App with Microso
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Equinix Federation App single sign-on (SSO) enabled subscription.
 

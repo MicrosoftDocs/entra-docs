@@ -9,7 +9,7 @@ ms.topic: tutorial
 ms.date: 04/08/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial
+ms.custom: template-tutorial, sfi-image-nochange
 ---
 
 # Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center

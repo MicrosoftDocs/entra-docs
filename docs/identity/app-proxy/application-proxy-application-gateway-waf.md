@@ -9,6 +9,7 @@ ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj, besilvei
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Using Application Gateway WAF to protect your applications

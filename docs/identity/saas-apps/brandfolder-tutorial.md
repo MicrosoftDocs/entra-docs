@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Brandfolder
+title: Configure Brandfolder for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Brandfolder.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brandfolder so that I can control who has access to Brandfolder, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Brandfolder
+# Configure Brandfolder for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Brandfolder with Microsoft Entra ID.
 Integrating Brandfolder with Microsoft Entra ID provides you with the following benefits:
@@ -29,6 +29,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Brandfolder single sign-on enabled subscription
 

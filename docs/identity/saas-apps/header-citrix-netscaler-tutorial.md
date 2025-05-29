@@ -1,19 +1,18 @@
 ---
-title: Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)
+title: Configure Citrix ADC (header-based authentication) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and Citrix ADC by using header-based authentication.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)
+# Configure Citrix ADC (header-based authentication) for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Citrix ADC with Microsoft Entra ID. When you integrate Citrix ADC with Microsoft Entra ID, you can:
 
@@ -24,6 +23,7 @@ In this article,  you learn how to integrate Citrix ADC with Microsoft Entra ID.
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Citrix ADC single sign-on (SSO) enabled subscription.
 

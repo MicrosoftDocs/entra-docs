@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with IBM Digital Business Automation on Cloud
+title: Configure IBM Digital Business Automation on Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and IBM Digital Business Automation on Cloud.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IBM Digital Business Automation on Cloud so that I can control who has access to IBM Digital Business Automation on Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with IBM Digital Business Automation on Cloud
+# Configure IBM Digital Business Automation on Cloud for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate IBM Digital Business Automation on Cloud with Microsoft Entra ID. When you integrate IBM Digital Business Automation on Cloud with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate IBM Digital Business Automation on 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * IBM Digital Business Automation on Cloud single sign-on (SSO) enabled subscription.
 

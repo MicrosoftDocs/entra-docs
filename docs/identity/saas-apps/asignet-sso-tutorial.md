@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with AsignetSSOIntegration
+title: Configure AsignetSSOIntegration for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AsignetSSOIntegration.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AsignetSSOIntegration so that I can control who has access to AsignetSSOIntegration, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with AsignetSSOIntegration
+# Configure AsignetSSOIntegration for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate AsignetSSOIntegration with Microsoft Entra ID. When you integrate AsignetSSOIntegration with Microsoft Entra ID, you can:
 

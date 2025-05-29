@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 12/13/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-image-nochange
 ---
  
 # Create an access review of groups and applications in Microsoft Entra ID 

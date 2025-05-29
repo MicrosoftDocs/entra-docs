@@ -1,9 +1,6 @@
 ---
-title: Microsoft Entra roles Discovery and insights (preview) in Privileged Identity
-  Management former Security Wizard
-description: Discovery and insights (formerly Security Wizard) help you convert permanent
-  Microsoft Entra role assignments to just-in-time assignments with Privileged Identity
-  Management.
+title: Microsoft Entra roles Discovery and insights (preview) in Privileged Identity Management former Security Wizard
+description: Discovery and insights (formerly Security Wizard) help you convert permanent Microsoft Entra role assignments to just-in-time assignments with Privileged Identity Management.
 author: barclayn
 manager: femila
 ms.service: entra-id-governance
@@ -12,7 +9,7 @@ ms.subservice: privileged-identity-management
 ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim ; H1Hack27Feb2017
+ms.custom: pim, H1Hack27Feb2017, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Discovery and Insights (preview) for Microsoft Entra roles (formerly Security Wizard)

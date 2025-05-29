@@ -1,7 +1,6 @@
 ---
 title: 'Install Microsoft Entra Connect by using an existing ADSync database'
 description: This topic describes how to use an existing ADSync database.
-
 author: billmath
 manager: femila
 ms.reviewer: cychua
@@ -11,7 +10,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Install Microsoft Entra Connect using an existing ADSync database

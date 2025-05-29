@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Clarity
+title: Configure Clarity for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Clarity.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Clarity so that I can control who has access to Clarity, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Clarity
+# Configure Clarity for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Clarity with Microsoft Entra ID. When you integrate Clarity with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Clarity with Microsoft Entra ID. Wh
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Clarity single sign-on (SSO) enabled subscription.
 

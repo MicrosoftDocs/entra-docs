@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
 ms.date: 12/10/2024
-ms.custom: template-concept
+ms.custom: template-concept, sfi-image-nochange
 ---
 
 # Auditing Lifecycle Workflows

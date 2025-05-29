@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Burp Suite Enterprise Edition
+title: Configure Burp Suite Enterprise Edition for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Burp Suite Enterprise Edition.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Burp Suite Enterprise Edition so that I can control who has access to Burp Suite Enterprise Edition, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Burp Suite Enterprise Edition
+# Configure Burp Suite Enterprise Edition for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Burp Suite Enterprise Edition with Microsoft Entra ID. When you integrate Burp Suite Enterprise Edition with Microsoft Entra ID, you can:
 
@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Burp Suite Enterprise Edition with 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Burp Suite Enterprise Edition single sign-on (SSO) enabled subscription.
 

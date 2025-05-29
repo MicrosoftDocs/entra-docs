@@ -1,16 +1,15 @@
 ---
 title: The Conditional Access What If tool
 description: Simulate Conditional Access policy results with the What If tool to troubleshoot and optimize your environment.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 04/28/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: kvenkit
+ms.custom: sfi-image-nochange
 ---
 # Troubleshoot Conditional Access Policies with the What If Tool
 

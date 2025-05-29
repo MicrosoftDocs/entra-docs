@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: sponnada
-
+ms.custom: sfi-ga-nochange
 #Customer intent: As an admin, I want steps for how to add a Microsoft Entra role as a resource in an access packages so that I can assign Microsoft Entra roles using access packages.
 ---
 

@@ -1,16 +1,14 @@
 ---
 title: Configure tenant restrictions - Microsoft Entra ID
 description: Use tenant restrictions to control the types of external accounts your users can use on your networks and the devices you manage. You can scope settings to apps, groups, and users for specified tenants.
- 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/14/2025
-
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
-ms.custom: it-pro
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As an IT admin, I want to configure tenant restrictions v2, so that I can control access to external apps and enhance security for users signing in from our networks or devices.
 ---
 

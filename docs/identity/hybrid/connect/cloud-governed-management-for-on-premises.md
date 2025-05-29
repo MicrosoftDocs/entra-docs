@@ -1,7 +1,6 @@
 ---
 title: 'Microsoft Entra Cloud Governed Management for On-Premises Workloads - Azure'
 description: This topic describes cloud governed management for on-premises workloads.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.topic: conceptual
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # How Microsoft Entra ID Delivers Cloud Governed Management for On-Premises Workloads

@@ -1,16 +1,15 @@
 ---
 title: Analyze Conditional Access policy impact
 description: Analyze Conditional Access policy impact using report-only mode and other tools.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 03/12/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: kvenkit
+ms.custom: sfi-image-nochange
 ---
 # Analyze Conditional Access Policy Impact
 

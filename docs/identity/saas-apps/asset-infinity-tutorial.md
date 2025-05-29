@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Asset Infinity
+title: Configure Asset Infinity for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Asset Infinity.
 services: active-directory
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Asset Infinity
+# Configure Asset Infinity for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Asset Infinity with Microsoft Entra ID. When you integrate Asset Infinity with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Asset Infinity with Microsoft Entra
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Asset Infinity single sign-on (SSO) enabled subscription.
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Float
+title: Configure Float for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Float.
 author: nguhiu
 manager: CelesteDG
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Float so that I can control who has access to Float, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Float
+# Configure Float for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Float with Microsoft Entra ID. When you integrate Float with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Float with Microsoft Entra ID. When
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Float subscription. If you don't have a subscription, you can get a [free account](https://app.float.com/join?).
 

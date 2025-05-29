@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with ClarivateWOS
+title: Configure ClarivateWOS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ClarivateWOS.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ClarivateWOS so that I can control who has access to ClarivateWOS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with ClarivateWOS
+# Configure ClarivateWOS for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ClarivateWOS with Microsoft Entra ID. When you integrate ClarivateWOS with Microsoft Entra ID, you can:
 
@@ -27,6 +27,7 @@ In this article,  you learn how to integrate ClarivateWOS with Microsoft Entra I
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * ClarivateWOS single sign-on (SSO) enabled subscription.
 

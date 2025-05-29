@@ -1,19 +1,15 @@
 ---
 title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
-
 author: barclayn
 manager: femila
-
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: sumitp
-
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange
 ---
 # Managing custom domain names in your Microsoft Entra ID
 

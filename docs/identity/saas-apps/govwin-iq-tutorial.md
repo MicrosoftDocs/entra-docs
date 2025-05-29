@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with GovWin IQ
+title: Configure GovWin IQ for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GovWin IQ.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GovWin IQ so that I can control who has access to GovWin IQ, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with GovWin IQ
+# Configure GovWin IQ for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate GovWin IQ with Microsoft Entra ID. GovWin IQ by Deltek is the industry-leading platform providing the most comprehensive market intelligence for U.S. federal, state and local, and Canadian governments. When you integrate GovWin IQ with Microsoft Entra ID, you can:
 
@@ -27,6 +27,7 @@ In this article,  you learn how to integrate GovWin IQ with Microsoft Entra ID. 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An active GovWin IQ Subscription. Single sign-on can be enabled at no cost. Make sure your Customer Success Manager has enabled a user at your organization as a SAML SSO Admin to perform the following steps.
 * All users must have same email address in Azure as provisioned in GovWin IQ.

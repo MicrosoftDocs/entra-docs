@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Hootsuite
+title: Configure Hootsuite for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hootsuite.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hootsuite so that I can control who has access to Hootsuite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Hootsuite
+# Configure Hootsuite for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Hootsuite with Microsoft Entra ID. When you integrate Hootsuite with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Hootsuite with Microsoft Entra ID. 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Hootsuite single sign-on (SSO) enabled subscription.
 
@@ -83,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://hootsuite.com/login`
+    `https://hootsuite.com/login?method=sso`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

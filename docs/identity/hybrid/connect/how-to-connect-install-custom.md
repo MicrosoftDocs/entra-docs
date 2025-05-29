@@ -1,7 +1,6 @@
 ---
 title: 'Customize an installation of Microsoft Entra Connect'
 description: This article explains the custom installation options for Microsoft Entra Connect. Use these instructions to install Active Directory through Microsoft Entra Connect.
-
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD
 author: billmath
 manager: femila
@@ -11,7 +10,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Custom installation of Microsoft Entra Connect

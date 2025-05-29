@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 03/10/2025
 ms.author: owinfrey
 ms.reviewer: jocastel
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an administrator, I want view resources a user has access to and view request logs for auditing purposes.
 ---
 

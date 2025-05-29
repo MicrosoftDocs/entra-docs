@@ -1,14 +1,14 @@
 ---
 title: "Tutorial: Use a managed identity on a virtual machine (VM) to access Azure Resource Manager"
 description: A tutorial that walks you through the process of using a system-assigned managed identity on a virtual machine (VM) to access Azure Resource Manager.
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 05/28/2024
-ms.author: ryanwi
+ms.author: shermanouko
 ms.custom: devx-track-arm-template, linux-related-content
 
 appliesto:

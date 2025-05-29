@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-image-nochange
 ---
 
 # Review access to groups and applications in access reviews

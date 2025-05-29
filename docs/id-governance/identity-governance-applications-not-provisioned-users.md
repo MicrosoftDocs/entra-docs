@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 12/20/2022
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to ensure that access to specific applications is governed by setting up access reviews for those applications. For this, I need to have the existing users of that application assigned to the application in Microsoft Entra ID.
 ---
 

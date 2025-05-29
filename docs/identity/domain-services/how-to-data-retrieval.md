@@ -3,13 +3,13 @@ title: Instructions for data retrieval from Microsoft Entra Domain Services | Mi
 description: Learn how to retrieve data from Microsoft Entra Domain Services.
 author: justinha
 manager: femila
-
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
 ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: manthanm
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Domain Services instructions for data retrieval

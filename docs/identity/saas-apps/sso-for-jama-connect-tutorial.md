@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with SSO for Jama Connect®
+title: Configure SSO for Jama Connect® for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SSO for Jama Connect®.
 
 author: nguhiu
@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SSO for Jama ConnectÂ® so that I can control who has access to SSO for Jama ConnectÂ®, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SSO for Jama Connect®
+# Configure SSO for Jama Connect® for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate SSO for Jama Connect® with Microsoft Entra ID. Jama Software®’s industry-leading platform helps teams manage requirements with Live Traceability™ through the systems development process for proven cycle time reduction and quality improvement. When you integrate SSO for Jama Connect® with Microsoft Entra ID, you can:
 

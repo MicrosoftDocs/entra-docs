@@ -1,20 +1,16 @@
 ---
 title: Enable passkeys for your organization
 description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (FIDO2).
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/05/2025
-
-
+ms.date: 05/21/2025
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: calui, tilarso
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
-
 ---
 # Enable passkeys (FIDO2) for your organization
 
@@ -60,7 +56,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
 
    - Set **Allow self-service set up** to **Yes**. If set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.  
    - Set **Enforce attestation** to **Yes** if your organization wants to be assured that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.
-     - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also pass Microsoft's another set of validation testing. For more information, see [Become a Microsoft-compatible FIDO2 security key vendor](/entra/identity/authentication/concept-fido2-hardware-vendor).
+     - For FIDO2 security keys, we require security key metadata to be published and verified with the FIDO Alliance Metadata Service, and also meet Microsoft's requirements for compatibility. For more information, including a list of Microsoft-compatible security key models, see [Become a Microsoft-compatible FIDO2 security key vendor](/entra/identity/authentication/concept-fido2-hardware-vendor).
      - Passkeys in Microsoft Authenticator also support attestation. For more information, see [How passkey attestation works with Authenticator](concept-authentication-authenticator-app.md#how-passkey-attestation-works-with-authenticator).
 
      >[!WARNING]

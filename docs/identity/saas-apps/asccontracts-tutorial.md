@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with ASC Contracts
+title: Configure ASC Contracts for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ASC Contracts.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ASC Contracts so that I can control who has access to ASC Contracts, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with ASC Contracts
+# Configure ASC Contracts for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ASC Contracts with Microsoft Entra ID. When you integrate ASC Contracts with Microsoft Entra ID, you can:
 

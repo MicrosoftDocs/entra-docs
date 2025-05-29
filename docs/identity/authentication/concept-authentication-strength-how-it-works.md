@@ -1,17 +1,15 @@
 ---
 title: Overview of how Microsoft Entra authentication strength works in a Conditional Access policy
 description: Learn how admins can use a Conditional Access Policy to require specific authentication combinations to access a resource.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/17/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: inbarc
+ms.custom: sfi-image-nochange
 ---
 #  How Conditional Access authentication strength works 
 

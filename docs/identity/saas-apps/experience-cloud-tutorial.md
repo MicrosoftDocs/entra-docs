@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Experience Cloud
+title: Configure Experience Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Experience Cloud.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Experience Cloud so that I can control who has access to Experience Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Experience Cloud
+# Configure Experience Cloud for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Experience Cloud with Microsoft Entra ID. When you integrate Experience Cloud with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Experience Cloud with Microsoft Ent
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Experience Cloud single sign-on (SSO) enabled subscription.
 

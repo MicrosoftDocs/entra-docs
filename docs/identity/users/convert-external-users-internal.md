@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
 ms.workload: identity
-ms.custom: 
+ms.custom: sfi-image-nochange
 ms.reviewer: yuank
 ---
 

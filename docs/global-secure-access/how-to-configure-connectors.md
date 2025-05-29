@@ -10,6 +10,7 @@ ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy
 

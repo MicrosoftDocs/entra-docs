@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/02/2023
-ms.reviewer: ludwignick, jeedes, rahulnagraj
+ms.reviewer: ludwignick
 ms.service: identity-platform
 ms.topic: reference
 #Customer intent: As an admin managing policies for enterprise apps, I want to understand how claims management works using policies and the different claim sets which are available, so that I can customize the claims included in token.

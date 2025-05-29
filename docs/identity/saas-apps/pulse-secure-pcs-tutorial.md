@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Pulse Secure PCS
+title: Configure Pulse Secure PCS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Pulse Secure PCS.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Pulse Secure PCS so that I can control who has access to Pulse Secure PCS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Pulse Secure PCS
+# Configure Pulse Secure PCS for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Pulse Secure PCS with Microsoft Entra ID. When you integrate Pulse Secure PCS with Microsoft Entra ID, you can:
 
@@ -26,6 +23,7 @@ In this article,  you learn how to integrate Pulse Secure PCS with Microsoft Ent
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Pulse Secure PCS single sign-on (SSO) enabled subscription.
 

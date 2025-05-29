@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.date: 11/21/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
+ms.custom: sfi-ga-nochange
 ---
 
 # Govern access for applications in your environment

@@ -7,13 +7,15 @@ manager: celestedg
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 04/01/2024
+ms.date: 05/20/2025
 ms.author: godonnell
 ---
 
 # Migrating users to Microsoft Entra External ID
 
 In this guide, you learn the fundamentals of how to migrate users and credentials from your current identity provider, including Azure AD B2C, to Microsoft Entra External ID. This guide covers different solutions you can use depending on your current configuration. With each of these approaches, you need to write an application or script that uses the [Microsoft Graph API](/graph/api/resources/identity-network-access-overview) to create user accounts in External ID.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](../includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ## Pre-requisites
 

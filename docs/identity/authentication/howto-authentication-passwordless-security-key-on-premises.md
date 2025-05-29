@@ -1,16 +1,15 @@
 ---
 title: Passwordless security key sign-in to on-premises resources
 description: Learn how to enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 04/16/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: calui
+ms.custom: sfi-ga-nochange
 ---
 # Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID 
 
@@ -108,7 +107,7 @@ Run the following steps in each domain and forest in your organization that cont
 
 ### Select Azure Cloud (Default is Azure Commercial)
 
-By default the `Set-AzureADKerberosSever` cmdlet will use the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment, you need to set the cmdlet to use the specified cloud.  
+By default the `Set-AzureADKerberosServer` cmdlet will use the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment, you need to set the cmdlet to use the specified cloud.  
 
 To get a **list** of the available clouds and the numeric value needed to change, run the following:  
 `Get-AzureADKerberosServerEndpoint`  

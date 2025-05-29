@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Eventfinity
+title: Configure Eventfinity for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Eventfinity.
 
 author: nguhiu
@@ -13,7 +13,7 @@ ms.date: 03/25/2025
 ms.author: gideonkiratu
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Eventfinity
+# Configure Eventfinity for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Eventfinity with Microsoft Entra ID. When you integrate Eventfinity with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ To learn more about SaaS app integration with Microsoft Entra ID, see [What is a
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Eventfinity single sign-on (SSO) enabled subscription.
 

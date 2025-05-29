@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra SSO integration with Hornbill
+title: Configure Hornbill for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hornbill.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hornbill so that I can control who has access to Hornbill, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Hornbill
+# Configure Hornbill for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Hornbill with Microsoft Entra ID. When you integrate Hornbill with Microsoft Entra ID, you can:
 
@@ -25,6 +23,7 @@ In this article,  you learn how to integrate Hornbill with Microsoft Entra ID. W
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Hornbill single sign-on (SSO) enabled subscription.
 

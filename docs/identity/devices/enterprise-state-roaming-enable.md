@@ -1,17 +1,15 @@
 ---
 title: Enable Enterprise State Roaming in Microsoft Entra ID
 description: Frequently asked questions about Enterprise State Roaming settings in Windows devices.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 08/01/2024
-
 ms.author: owinfrey
 author: MicrosoftGuyJFlo
 manager: owinfreyATL
 ms.reviewer: sempofu, micrider
-ms.custom: references_regions
+ms.custom: references_regions, sfi-ga-blocked
 ---
 # Enable Enterprise State Roaming in Microsoft Entra ID
 

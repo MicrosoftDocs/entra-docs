@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with AuditBoard
+title: Configure AuditBoard for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AuditBoard.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AuditBoard so that I can control who has access to AuditBoard, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with AuditBoard
+# Configure AuditBoard for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate AuditBoard with Microsoft Entra ID. When you integrate AuditBoard with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate AuditBoard with Microsoft Entra ID.
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * AuditBoard single sign-on enabled subscription.
 

@@ -8,6 +8,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: conceptual
 ms.date: 08/12/2024
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 ---
 # Understanding lifecycle workflows 
 

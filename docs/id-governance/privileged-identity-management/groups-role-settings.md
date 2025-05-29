@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 04/30/2025
 ms.author: barclayn
-ms.custom: pim
+ms.custom: pim, sfi-image-nochange
 ---
 
 # Configure PIM for Groups settings

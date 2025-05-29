@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra integration with Envi MMIS
+title: Configure Envi MMIS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Envi MMIS.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Envi MMIS so that I can control who has access to Envi MMIS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Envi MMIS
+# Configure Envi MMIS for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Envi MMIS with Microsoft Entra ID. When you integrate Envi MMIS with Microsoft Entra ID, you can:
 
@@ -25,6 +23,7 @@ In this article,  you learn how to integrate Envi MMIS with Microsoft Entra ID. 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Envi MMIS single sign-on (SSO) enabled subscription.
 

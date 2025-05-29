@@ -1,16 +1,14 @@
 ---
 title: Add Facebook for customer sign-in
 description: Learn how to add Facebook as an identity provider for your external tenant, enabling customers to sign in to your applications using their Facebook accounts.
- 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 03/06/2025
-ms.author: mimart
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.date: 05/22/2025
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 #Customer intent: As a developer or IT admin, I want to add Facebook as an identity provider for my external tenant so that customers can sign in to my applications using their Facebook accounts.
 ---
 
@@ -53,10 +51,10 @@ If you don't already have a Facebook account, sign up at [https://www.facebook.c
 1. Select **Save changes**. 
 1. Select **Use cases** on the left and select **Customize** next to **Authentication and account creation**.
 1. Select **Go to settings** under **Facebook Login**.
-1.  In **Valid OAuth Redirect URIs**, enter the following URIs, replacing `<tenant-ID>` with your Microsoft Entra tenant ID and `<tenant-name>` with your Microsoft Entra tenant name:
+1.  In **Valid OAuth Redirect URIs**, enter the following URIs, replacing `<tenant-ID>` with your **external tenant ID** and `<tenant-name>` with your **external tenant name**:
 
 - `https://login.microsoftonline.com/te/<tenant-ID>/oauth2/authresp`
-- `https://login.microsoftonline.com/te/<tenant-subdomain>.onmicrosoft.com/oauth2/authresp`
+- `https://login.microsoftonline.com/te/<tenant-name>.onmicrosoft.com/oauth2/authresp`
 - `https://<tenant-name>.ciamlogin.com/<tenant-ID>/federation/oidc/www.facebook.com`
 - `https://<tenant-name>.ciamlogin.com/<tenant-name>.onmicrosoft.com/federation/oidc/www.facebook.com`
 - `https://<tenant-name>.ciamlogin.com/<tenant-ID>/federation/oauth2`

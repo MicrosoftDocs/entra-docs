@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Datava Enterprise Service Platform
+title: Configure Datava Enterprise Service Platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Datava Enterprise Service Platform.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Datava Enterprise Service Platform so that I can control who has access to Datava Enterprise Service Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Datava Enterprise Service Platform
+# Configure Datava Enterprise Service Platform for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Datava Enterprise Service Platform with Microsoft Entra ID. When you integrate Datava Enterprise Service Platform with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Datava Enterprise Service Platform 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Datava Enterprise Service Platform single sign-on (SSO) enabled subscription.
 

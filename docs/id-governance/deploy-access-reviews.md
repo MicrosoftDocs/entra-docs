@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
+ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
 ---
 

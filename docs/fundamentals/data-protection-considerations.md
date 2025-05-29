@@ -9,8 +9,8 @@ ms.topic: conceptual
 ms.date: 01/31/2023
 ms.author: jricketts
 ms.reviewer: jricketts
-ms.custom: "it-pro"
-ms.collection:
+ms.collection: 
+ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As a cloud service customer, I want to understand the data protection considerations for Microsoft Entra, so that I can ensure the security and privacy of my data stored in the service.
 ---
 

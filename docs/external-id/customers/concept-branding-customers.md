@@ -1,17 +1,14 @@
 ---
 title: Customize the company branding
 description: Learn how to customize the sign-in and sign-up experiences for your customers.
- 
 author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: concept-article
-ms.date:  01/07/2025
+ms.date: 01/07/2025
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As an it admin, I want to know how can I customize my customers' sign-in experiences, including company branding and languages customizations.
 ---
 

@@ -10,6 +10,7 @@ ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Password vaulting for single sign-on with application proxy

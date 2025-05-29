@@ -1,7 +1,6 @@
 ---
 title: Bulk remove group members by uploading a CSV file
 description: Remove group members in bulk operations by using a comma-separated values (CSV) file.
-
 author: barclayn
 ms.author: barclayn
 manager: femila
@@ -9,7 +8,7 @@ ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
 

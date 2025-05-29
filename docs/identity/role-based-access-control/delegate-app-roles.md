@@ -1,7 +1,6 @@
 ---
 title: Delegate application management administrator permissions
 description: Grant permissions for application access management in Microsoft Entra ID
-
 author: rolyon
 manager: femila
 ms.service: entra-id
@@ -10,8 +9,7 @@ ms.topic: how-to
 ms.date: 11/17/2024
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to reduce overusing highly-privileged administrator roles by delegating app access management to lower-privilege roles.
 ---
 

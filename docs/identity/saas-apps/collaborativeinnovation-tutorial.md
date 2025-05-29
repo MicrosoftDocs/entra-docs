@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Collaborative Innovation
+title: Configure Collaborative Innovation for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Collaborative Innovation.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Collaborative Innovation so that I can control who has access to Collaborative Innovation, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Collaborative Innovation
+# Configure Collaborative Innovation for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Collaborative Innovation with Microsoft Entra ID. When you integrate Collaborative Innovation with Microsoft Entra ID, you can:
 
@@ -28,6 +28,7 @@ To learn more about SaaS app integration with Microsoft Entra ID, see [What is a
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Collaborative Innovation single sign-on (SSO) enabled subscription.
 

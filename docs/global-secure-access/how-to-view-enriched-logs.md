@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 03/19/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # How to use the Global Secure Access enriched Microsoft 365 logs

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with DLG Learning Center
+title: Configure DLG Learning Center for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DLG Learning Center.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DLG Learning Center so that I can control who has access to DLG Learning Center, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with DLG Learning Center
+# Configure DLG Learning Center for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate DLG Learning Center with Microsoft Entra ID. When you integrate DLG Learning Center with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate DLG Learning Center with Microsoft 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * DLG Learning Center single sign-on (SSO) enabled subscription.
 

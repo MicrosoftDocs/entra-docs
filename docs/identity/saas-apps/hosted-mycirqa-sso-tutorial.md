@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Hosted MyCirqa SSO
+title: Configure Hosted MyCirqa SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hosted MyCirqa SSO.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hosted MyCirqa so that I can control who has access to Hosted MyCirqa, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Hosted MyCirqa SSO
+# Configure Hosted MyCirqa SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Hosted MyCirqa SSO with Microsoft Entra ID. When you integrate Hosted MyCirqa SSO with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Hosted MyCirqa SSO with Microsoft E
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Hosted MyCirqa SSO single sign-on (SSO) enabled subscription.
 

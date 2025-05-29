@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with AppSecEngineer
+title: Configure AppSecEngineer for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AppSecEngineer.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AppSecEngineer so that I can control who has access to AppSecEngineer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with AppSecEngineer
+# Configure AppSecEngineer for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate AppSecEngineer with Microsoft Entra ID. When you integrate AppSecEngineer with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate AppSecEngineer with Microsoft Entra
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * AppSecEngineer single sign-on (SSO) enabled subscription.
 

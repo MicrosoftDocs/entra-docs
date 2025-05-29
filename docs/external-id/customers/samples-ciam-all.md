@@ -1,14 +1,14 @@
 ---
 title: Samples and guides for integrating apps with External ID
 description: Learn how to build and integrate apps with external tenants with scenarios such as sign-up, sign in, and getting an access token to call an API.
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: sample
 ms.date: 03/11/2025
-ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
 ---

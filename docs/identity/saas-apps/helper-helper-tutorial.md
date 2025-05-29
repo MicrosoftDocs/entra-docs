@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Helper Helper
+title: Configure Helper Helper for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Helper Helper.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Helper Helper so that I can control who has access to Helper Helper, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Helper Helper
+# Configure Helper Helper for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Helper Helper with Microsoft Entra ID. When you integrate Helper Helper with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Helper Helper with Microsoft Entra 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Helper Helper single sign-on (SSO) enabled subscription.
 

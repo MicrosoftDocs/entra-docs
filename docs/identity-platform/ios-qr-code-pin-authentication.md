@@ -8,7 +8,7 @@ ms.service: msal
 ms.subservice: msal-ios-mac
 ms.topic: concept-article
 ms.date: 02/05/2025
-ms.reviewer: amgusain, akgoel, dmwendia
+ms.reviewer: akgoel
 
 #Customer intent: As a developer, I want to learn how to configure your iOS app to have optimized QR code authentication experience using the Microsoft Authentication Library for iOS and macOS. 
 ---

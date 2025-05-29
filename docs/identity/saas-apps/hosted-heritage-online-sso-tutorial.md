@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Hosted Heritage Online SSO
+title: Configure Hosted Heritage Online SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hosted Heritage Online SSO.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hosted Heritage Online SSO so that I can control who has access to Hosted Heritage Online SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Hosted Heritage Online SSO
+# Configure Hosted Heritage Online SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Hosted Heritage Online SSO with Microsoft Entra ID. When you integrate Hosted Heritage Online SSO with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Hosted Heritage Online SSO with Mic
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Hosted Heritage Online SSO single sign-on (SSO) enabled subscription.
 

@@ -8,7 +8,7 @@ ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 01/02/2025
-ms.custom: template-how-to
+ms.custom: template-how-to, sfi-image-nochange
 ---
 
 

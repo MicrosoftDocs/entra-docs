@@ -10,6 +10,7 @@ ms.topic: troubleshooting
 ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
+ms.custom: sfi-ga-nochange
 #Customer intent: As an administrator, I want checklists and tips to help troubleshoot entitlement management to unblock users from performing their job.
 ---
 # Troubleshoot entitlement management

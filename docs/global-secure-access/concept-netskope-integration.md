@@ -46,7 +46,7 @@ The general steps that you follow as you onboard to the program are:
 
 - **Configuring TLS Termination**:
     - Create a Key Vault
-    - Upload a Conditional Access certificate
+    - Upload a Certificate Authority(CA) certificate
     - Enable TLS termination in the Microsoft Entra admin center
 
 - **Creating and Linking ATP Policies**:

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with TechSafe Entra ID SSO
+title: Configure TechSafe Entra ID SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and TechSafe Entra ID SSO.
 services: active-directory
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with TechSafe Entra ID SSO
+# Configure TechSafe Entra ID SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate TechSafe Entra ID SSO with Microsoft Entra ID. When you integrate TechSafe Entra ID SSO with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate TechSafe Entra ID SSO with Microsof
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * TechSafe Entra ID SSO single sign-on (SSO) enabled subscription.
 

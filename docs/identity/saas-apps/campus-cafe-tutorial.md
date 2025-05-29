@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Campus Café
+title: Configure Campus Café for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Campus Café.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Campus CafÃ© so that I can control who has access to Campus CafÃ©, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Campus Café
+# Configure Campus Café for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Campus Café with Microsoft Entra ID. When you integrate Campus Café with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Campus Café with Microsoft Entra I
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Campus Café single sign-on (SSO) enabled subscription.
 

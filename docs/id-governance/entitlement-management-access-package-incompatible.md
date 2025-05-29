@@ -8,6 +8,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 08/23/2024
 ms.author: owinfrey
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an Identity Governance Administrator or access package manager, I want to configure that a user cannot request an access package if they already have incompatible access.
 ---
 # Configure separation of duties checks for an access package in entitlement management

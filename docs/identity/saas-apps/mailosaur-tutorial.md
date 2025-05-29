@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Mailosaur
+title: Configure Mailosaur for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mailosaur.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mailosaur so that I can control who has access to Mailosaur, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Mailosaur
+# Configure Mailosaur for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Mailosaur with Microsoft Entra ID. When you integrate Mailosaur with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Mailosaur with Microsoft Entra ID. 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Mailosaur single sign-on (SSO) enabled subscription.
 
