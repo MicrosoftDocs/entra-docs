@@ -1,5 +1,5 @@
 ---
-title: Using groups managed Privileged Identity Management with access packages reference
+title: Using groups managed Privileged Identity Management with access packages
 description: This article serves as a reference for Microsoft Entra ID behavior when assignment periods of an access package and PIM policy don't align.
 author: owinfreyATL
 ms.author: owinfrey
@@ -11,7 +11,7 @@ ms.date: 05/27/2025
 #CustomerIntent: As a customer, I want to become informed on what happens in the different scenarios when PIM expiration dates differ from the access package expiration date.
 ---
 
-# Using groups managed by Privileged Identity Management with access packages reference
+# Using groups managed by Privileged Identity Management with access packages
 
 This article contains information about Microsoft Entra ID behavior in scenarios where the group managed by PIM, and the access package expiration periods, differ. By assigning a group managed by PIM to an access package, you're able to assign eligible roles when an access package is requested. If you’re looking for a guide on setting up a group to assign eligible roles via access packages, see: [Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)](entitlement-management-access-package-eligible.md).
 
