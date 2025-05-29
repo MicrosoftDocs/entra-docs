@@ -1,0 +1,51 @@
+### YamlMime:FAQ
+metadata:
+  title: Transport Layer Security Inspection (Preview) Frequently Asked Questions   
+  description: "Get answers to common questions about Transport Layer Security (TLS) inspection."
+  author: HULKsmashGithub
+  ms.author: jayrusso
+  ms.service: global-secure-access
+  ms.topic: faq   
+  ms.date: 05/28/2025
+
+title: Frequently asked questions for Transport Layer Security inspection (preview)   
+summary: |
+  This article answers frequently asked questions about Transport Layer Security inspection.   
+
+sections:
+  - name: Single section - ignored
+    questions:
+      - question: What is Transport Layer Security (TLS) inspection? 
+        answer: TLS inspection decrypts and analyzes encrypted network traffic to detect threats, enforce security policies, and prevent data exfiltration. Since most internet traffic is encrypted, inspecting network traffic is crucial for comprehensive security.
+          
+      - question: How does TLS inspection work? 
+        answer: TLS inspection intercepts encrypted network traffic, decrypts it for security analysis, and re-encrypts it before sending it to its destination. To implement TLS inspection successfully, follow these best practices
+          - Before you enable TLS inspection in a live environment, work with your organization's legal and privacy teams to draft a Terms of Use (ToU) policy for users.  
+          - Select a root certificate authority or intermediate certificate authority to sign the Certificate Signing Request (CSR) for Global Secure Access.  
+          - Set up a TLS policy that fits your organization's needs.   
+          - Create a conditional access policy and associate it with the Global Secure Access security profile that's linked to the TLS policy.   
+          - Make sure the root certificate authority or intermediate certificate authority is installed on all client devices to establish trust for TLS inspection.   
+  
+      - question: What is certificate pinning, and how does it affect TLS inspection? 
+        answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection.   
+
+      - question: How should I handle applications that use certificate pinning? 
+        answer: The connection fails if TLS inspection terminates traffic from applications that use certificate pinning. To ensure your applications work as expected, create a custom bypass rule in the traffic forwarding profile to exclude traffic from these applications from Global Secure Access. You can perform this operation as part of custom bypass in the [Internet access forwarding profile](/mem/intune/protect/compliance-custom-script). We're working on custom TLS rules to let you acquire traffic and bypass TLS inspection only.      
+
+      - question: Is TLS 1.3 supported? 
+        answer: Microsoft Entra TLS inspection enables TLS 1.2 and TLS 1.3 by default. The highest mutually supported version is selected for the session, from the client to Global Secure Access and from Global Secure Access to the destinations. Microsoft Entra doesn't support TLS 1.3 with Encrypted Client Hello (ECH) because the Server Name Indication (SNI) is encrypted, which prevents Global Secure Access from creating the corresponding leaf certificates for TLS termination.
+
+      - question: What happens if I have legacy applications using less secure TLS versions, such as TLS 1.1?
+        answer: We recommend bypassing TLS inspection for these destinations. TLS 1.2 is the minimum recommended version because older versions, like TLS 1.1 and TLS 1.0, aren't secure and are vulnerable to attacks. When possible, move these applications to support TLS 1.2 or higher.
+
+      - question: Do you use hardware security modules (HSM) to protect keys?
+        answer: We use software-protected keys. Global Secure Access intermediate certificate keys are stored in memory to dynamically generate leaf certificates for websites. While these keys aren't protected by an HSM, access to our servers is highly restricted, and we use strict security controls to safeguard key access and system integrity.
+
+      - question: What other Global Secure Access features have dependencies on TLS inspection?
+        answer: Content-based security controls have dependencies on TLS inspection, including URL-enhanced web category filtering, anti-malware, DLP, ATP, and others. Additionally, Global Secure Access block notifications require you to enable TLS inspection.
+
+additionalContent: |
+    ## Related content
+
+    * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
+    * [Configure Transport Layer Security](how-to-transport-layer-security.md)
