@@ -36,7 +36,7 @@ When the PIM "*Expire eligible assignments after*" duration expires before the a
 |--------------------------------------------|-----------------------------------|-----------------------------|
 | 180 days                                   | 40 days                           | Entitlement management sets a 40 day expiration on the PIM assignment when the access policy assignment is created. On day 41, although the access package is still assigned, access is revoked. |
 
-## Permanent access package Assignment
+## Permanent access package assignment
 
 If the Access package assignment is permanent, access is revoked based on when the PIM "*Expire eligible assignments after*" assignment expires.
 
@@ -46,7 +46,7 @@ If the Access package assignment is permanent, access is revoked based on when t
 |------------------------------------|------------------------------------|-----------------------------|
 | None (permanent allowed)           | 40 days                            | Entitlement management sets a 40-day expiration on the PIM assignment when the access policy assignment is created. On day 41, although the access package is still assigned, access is revoked. |
 
-## Permanent PIM Assignment
+## Permanent PIM assignment
 
 When the PIM "*Expire eligible assignments after*" assignment is permanent, it's removed only when the access package assignment expires.
 
@@ -56,7 +56,7 @@ When the PIM "*Expire eligible assignments after*" assignment is permanent, it's
 |------------------------------------|------------------------------------|-----------------------------|
 | 60 days                            | None (permanent allowed)           | Entitlement management creates the PIM assignment and sets it to permanent on the access package policy assignment. Access is revoked on day 61 after the access package policy assignment expires. |
 
-## Permanent access package and PIM Assignment
+## Permanent access package and PIM assignment
 
 If both the access package and PIM "*Expire eligible assignments after*" assignments are permanent, the PIM assignment remains as long as the access package assignment.
 
