@@ -1,6 +1,6 @@
 ---
-title: Regional telecom restrictions
-description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Microsoft Azure B2C
+title: Telephony Fraud Protections and Throttles 
+description: Microsoft Entra ID uses heuristics and machine learning to detect and throttle suspicious telephony activity during MFA. Some regions require opt-in via support ticket due to elevated fraud risk.
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -13,11 +13,15 @@ manager: femila
 ms.reviewer: aloom3
 ms.custom: references_regions
 ---
-# Regions that need to opt in for MFA telephony verification  
+# Overview
 
+To protect customers from telephony-based abuse and fraud, Microsoft Entra ID applies intelligent detection and throttling mechanisms to all telecom based authentication requests. 
 
+These protections use a combination of heuristics, machine learning models, and risk-based signals to detect and block potentially abusive or fraudulent telephony activity in real time. 
 
-As a protection for our customers, Microsoft doesn't automatically support telephony verification for certain region codes. If you want to receive traffic from phone numbers with these region codes, a Microsoft Entra administrator must submit a support ticket and request to opt in.  
+In addition, some region codes require opt-in. Admins can submit a support request to enable telephony verification for these regions if needed. 
+
+Together, these safeguards help organizations defend against fraud while preserving a smooth authentication experience for legitimate users. 
 
 B2C tenants can follow the guidelines in [B2C service limits](/azure/active-directory-b2c/service-limits).
 Microsoft Entra External ID tenants can follow the guidelines in [How to region code opt-in](/entra/external-id/customers/how-to-region-code-opt-in).
@@ -37,6 +41,22 @@ Here's how an IRSF attack may happen:
 The most common way to conduct IRSF is through an end-user experience that requires a two-factor authentication code. Bad actors add those premium rate phone numbers and pump traffic to them by requesting two-factor authentication codes. This activity results in revenue-skimming, and can lead to billions of dollars in loss.  
 
 IRSF poses a significant threat to online businesses and can cause reputational damage. By understanding IRSF, you can be more aware of the problem and can engage in implementing preventive measures such as regional restrictions, rate limiting, and phone number verification.  
+
+## Behind-the-Scenes Protections 
+To combat telephony fraud, Microsoft Entra ID employes layered protections that assess each telephony transaction (SMS or voice call) using a combination of heuristics, risk signals and machine learning models. 
+
+These protections help detect: 
+- Unusualy call volumes or repeated attempts
+- High-risk geographic or carrier patterns
+- Known abusive behavior signals
+- Abuse of free or metered phone number services
+
+When a transaction is flagged as potentially abusive: 
+- The transaction may be throttled, preventing immediate delivery of the SMS or voice call.
+- The user may receive a message to try again later, indicating that the request was temporarily blocked.
+- The user can choose an alternative authentication method, such as using the Microsoft Authenticator app or another registered method.
+
+New tenants are subject to additional safeguards to prevent abuse from newly created or compromised tenants. Specifically, telephony activity is throttled for the first few days of the tenant's creation to limit excess telecom usage and reduce fraud exposure during this high-risk window. 
 
 ## SMS and Voice verification
  
