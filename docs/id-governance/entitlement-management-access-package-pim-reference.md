@@ -1,6 +1,6 @@
 ---
 title: Using groups managed Privileged Identity Management with access packages reference
-description: This article serves as a reference for Microsoft Entra ID behavior when assignment periods of an access package and PIM policy dont align.
+description: This article serves as a reference for Microsoft Entra ID behavior when assignment periods of an access package and PIM policy don't align.
 author: owinfreyATL
 ms.author: owinfrey
 manager: femila
@@ -28,7 +28,7 @@ When an access package's expiration date is shorter than PIM's "*Expire eligible
 
 ## Shorter PIM duration
 
-When the PIM assignment duration expires before the access package assignment, access is revoked when the PIM assignment expires irrespective of the access package's expiration date.
+When the PIM "*Expire eligible assignments after*" duration expires before the access package assignment, access is revoked when the PIM assignment expires irrespective of the access package's expiration date.
 
 ### Example
 
@@ -38,7 +38,7 @@ When the PIM assignment duration expires before the access package assignment, a
 
 ## Permanent access package Assignment
 
-If the Access package assignment is permanent, access is revoked based on when the PIM assignment expires.
+If the Access package assignment is permanent, access is revoked based on when the PIM "*Expire eligible assignments after*" assignment expires.
 
 ### Example
 
@@ -48,7 +48,7 @@ If the Access package assignment is permanent, access is revoked based on when t
 
 ## Permanent PIM Assignment
 
-When the PIM assignment is permanent, it's removed only when the access package assignment expires.
+When the PIM "*Expire eligible assignments after*" assignment is permanent, it's removed only when the access package assignment expires.
 
 ### Example
 
@@ -58,7 +58,7 @@ When the PIM assignment is permanent, it's removed only when the access package 
 
 ## Permanent AP and PIM Assignment
 
-If both the access package and PIM assignments are permanent, the PIM assignment remains as long as the access package assignment.
+If both the access package and PIM "*Expire eligible assignments after*" assignments are permanent, the PIM assignment remains as long as the access package assignment.
 
 ### Example
 
