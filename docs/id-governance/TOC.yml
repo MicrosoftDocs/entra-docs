@@ -296,7 +296,9 @@
       - name: Assign Microsoft Entra Roles (Preview)
         href: entitlement-management-roles.md
       - name: Suggested access packages in MyAccess (Preview)
-        href: entitlement-management-suggested-access-packages.md   
+        href: entitlement-management-suggested-access-packages.md 
+      - name: Assign eligible group membership and ownership in access packages using PIM managed groups (Preview)
+        href: entitlement-management-access-package-eligible.md   
     - name: Approvers
       items:
       - name: Approve requests
