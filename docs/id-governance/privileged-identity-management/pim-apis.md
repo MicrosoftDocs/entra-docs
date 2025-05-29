@@ -57,7 +57,7 @@ This is the final iteration of the PIM API. It includes:
   - PIM alerts for Azure Resources in ARM API - Preview.
 
 > [!NOTE]
-> The roleAssignmentApprovals APIs are only available in /beta
+> The roleAssignmentApprovals APIs are only available in /beta.
 
 Having PIM for Microsoft Entra roles in Microsoft Graph API and PIM for Azure Resources in ARM API provide a few benefits including:
   - Alignment of the PIM APIs for regular role assignment for both Microsoft Entra roles and Azure Resource roles. 
