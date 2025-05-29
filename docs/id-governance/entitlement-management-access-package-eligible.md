@@ -94,7 +94,7 @@ Once the resource is managed by PIM, eligible roles can be added as its role ass
 1. Verify the Access Package expiration period doesn't exceed the **Expire eligible assignments after** setting in the PIM managed group.
 
 > [!NOTE]
-> If an Access Package expiration period exceeds the "*Expire eligible assignments after*" policy setting in the PIM managed group, it can cause discrepancies between Entitlement Management and Privileged Identity Management, leading to users losing access while EM shows they're still assigned. For more information, see: [Using groups managed by Privileged Identity Management with access packages reference](entitlement-management-access-package-pim-reference.md)
+> If an Access Package expiration period exceeds the "*Expire eligible assignments after*" policy setting in the PIM managed group, it can cause discrepancies between Entitlement Management and Privileged Identity Management, leading to users losing access while EM shows they're still assigned. For more information, see: [Using groups managed by Privileged Identity Management with access packages reference](entitlement-management-access-package-pim-reference.md).
 
 
 ## Next steps
