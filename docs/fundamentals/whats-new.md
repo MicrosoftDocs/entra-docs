@@ -24,6 +24,26 @@ This article provides information about the latest releases and change announcem
 
 ## May 2025
 
+### Public Preview - Microsoft Entra External ID:  User authentication with SAML/WS-Fed Identity Providers
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+Set up a SAML or WS-Fed identity provider to enable users to sign up and sign in to, your applications using their own account with the identity provider. Users will be redirected to the identity provider, and then redirected back to Microsoft Entra after successful sign in. For more information, see: [SAML/WS-Fed identity providers](../external-id/direct-federation-overview.md).
+
+---
+
+### General Availability - Pre/Post Attribute Collection Custom Extensions in Microsoft Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** Extensibility   
+
+Use Pre/Post Attribute Collection Custom Extensions to customize your self-service sign-up flow. This includes blocking sign-up, or prefilling, validating, and modifying attribute values. For more information, see: [Create a custom authentication extension for attribute collection start and submit events](../identity-platform/custom-extension-attribute-collection.md).
+
+---
+
 ### Public Preview - Roll out of Application Based Authentication on Microsoft Entra Connect Sync
 
 **Type:** New feature  
@@ -36,13 +56,13 @@ Check our [version history page](../identity/hybrid/connect/reference-connect-ve
 
 ---
 
-### General Availability – Conditional Access Per-Policy Reporting
+### General Availability – Analyze Conditional Access Policy impact
 
 **Type:** New feature  
 **Service category:** Conditional Access  
 **Product capability:** Identity Security & Protection  
 
-Conditional Access Per-Policy Reporting enables admins to easily evaluate the impact of enabled and report-only Conditional Access policies on their organization, without using Log Analytics. This feature surfaces a graph for each policy in the Microsoft Entra admin center, visualizing the policy’s impact on the tenant’s past sign-ins. For more information, see: [Policy impact](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact-preview).
+The policy impact view for individual Conditional Access policies enables admins to understand how each policy has affected recent sign-ins. The feature provides a clear, built-in graph in the Microsoft Entra admin center, making it easy to visualize and assess the impact without needing additional tools and resources, such as Log Analytics. For more information, see: [Policy impact](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact-preview).
 
 ---
 
