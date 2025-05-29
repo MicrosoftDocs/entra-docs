@@ -436,7 +436,7 @@ As of now, there's no way to manually force or retrigger the download of the CRL
 
 [!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
-## Understanding CRL validation (Preview)
+## Understanding CRL validation
 
 A CRL is a record of digital certificates that have been revoked before the end of their validity period by a certificate authority (CA).
 When CAs are uploaded to the Microsoft Entra trust store, a CRL, or more specifically the CrlDistributionPoint attribute, isn't required. A CA can be uploaded without a CRL endpoint, and certificate-based authentication won't fail if an issuing CA doesn't have a CRL specified. 
@@ -457,8 +457,7 @@ An Authentication Policy Administrator can exempt a CA if its CRL has issues tha
 
 The CAs in the exempted list aren't required to have CRL configured and the end-user certificates that they issue don't fail authentication.
 
->[!NOTE]
->There's a known issue with the object picker where the selected items aren't displayed correctly. Use the **Certificate Authorities** tab to select or remove CAs.
+Select CAs and select **Add**. The **Search** text box can be used to filter the CA lists to select specific CAs.
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." :::  
 
