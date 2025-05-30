@@ -5,12 +5,12 @@ description: Learn how to use the Identity Secure Score to improve the security 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: conceptual
-ms.date: 05/27/2025
+ms.date: 05/30/2025
 
 ms.author: sarahlipsey
 author: shlipsey3
 manager: femila
-ms.reviewer: guptashi
+ms.reviewer: jadedsouza
 
 # Customer intent: As an IT admin, I want to know how to use the Identity Secure Score and related recommendations to improve the security posture of my Microsoft Entra tenant.
 
@@ -23,17 +23,28 @@ The Identity Secure Score is shown as a percentage that functions as an indicato
 
 The following recommendations are included in the Identity Secure Score:
 
-- Require multifactor authentication (MFA) for administrative roles
-- Ensure all users can complete MFA
-- Enable policy to block legacy authentication
-- Do not expire passwords
-- Protect all users with a user risk policy
-- Protect all users with a sign-in risk policy
-- Enable password hash sync if hybrid
-- Do not allow users to grant consent to unreliable applications
-- Use least privileged administrative roles
+- Configure VPN integration
 - Designate more than one Global Administrator
+- Do not allow users to grant consent to unreliable applications
+- Do not expire passwords
+- Edit misconfigured certificate templates ACL
+- Edit misconfigured enrollment agent certificate template
+- Enable policy to block legacy authentication
+- Enable password hash sync if hybrid
 - Enable self-service password reset
+- Ensure all users can complete MFA
+- Modify unsecure Kerberos delegations to prevent impersonation
+- Protect all users with a sign-in risk policy
+- Protect all users with a user risk policy
+- Protect and manage local admin passwords with Microsoft LAPS
+- Remove dormant accounts from sensitive groups
+- Remove unsafe permissions on sensitive Entra Connect accounts
+- Replace Enterprise or Domain Admin account for Entra Connect AD DS Connector
+- Require multifactor authentication (MFA) for administrative roles
+- Reversible passwords found in GPOs
+- Rotate password for Entra Connect AD DS Connector account
+- Stop clear text credentials exposure
+- Stop weak cipher usage
 
 ## How does the Identity Secure Score benefit me?
 
