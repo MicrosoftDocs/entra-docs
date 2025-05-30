@@ -149,6 +149,8 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Configure threat intelligence
+        href: how-to-configure-threat-intelligence.md
   - name: Logs and monitoring
     expanded: false
     items:
