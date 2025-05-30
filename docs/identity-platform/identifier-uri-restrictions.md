@@ -32,7 +32,7 @@ When this setting is enabled, the secure patterns are strictly enforced.   When 
 
 Existing identifier URIs already configured on the app won't be affected, and all apps will continue to function as normal. This will only affect new updates to Microsoft Entra app configurations.
 
-When it isn't enabled, some insecure patterns can still be used. For example, URIs of the format `api://{string}` can still be added.
+When it isn't enabled, some insecure patterns can still be used. For example, URIs of the format `api://{string}` can still be added.  However, even when the setting is disabled, a tenant verified or initial domain may still be required in some scenarios - for example, when using the `https://` scheme.
 
 ### Enabling and managing the policy
 
@@ -75,7 +75,7 @@ Like the other policy, administrators can also [grant exemptions](https://aka.ms
 
 ## FAQ
 
-## What are identifier URIs?
+### What are identifier URIs?
 
 Identifier URIs (also called 'App ID URIs') allow a resource (API) developer to specify a string value for their application as its identifier. Clients who acquire a token for the API can use this string value during an OAuth request. For example, if an API had configured an identifier URI of `https://api.contoso.com`, then clients of the API could specify that value in OAuth requests to Microsoft Entra. This identifier URI is used as the audience claim in v1.0 access tokens.
 
@@ -85,9 +85,7 @@ Identifier URIs are configured using the 'Expose an API' page in [App registrati
 
 ### How do these policies work?
 
-The enforcements are turned on by configuring an organization's [app management policies](https://learn.microsoft.com/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta). A tenant administrator can turn it on or off. 
-
-Because the setting requiring [secure identifier URI formats](#secure-patterns) is an important security protection, Microsoft is enabling it in customer tenants during the months of June and July 2025.
+The enforcements are turned on by configuring an organization's [app management policies](https://learn.microsoft.com/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta). A tenant administrator can turn it on or off.   Microsoft is enabling it by default in some organizations during the months of June and July 2025.  
 
 [Learn how to check if the protection has been enabled in your organization](https://aka.ms/check-identifier-uri-protection-state)
 
