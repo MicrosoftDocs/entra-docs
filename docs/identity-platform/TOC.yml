@@ -560,11 +560,13 @@
       href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: .NET acquire token and call API
-          href: tutorial-dotnet-daemon-call-api.md
+        - name: .NET
+          items: 
+            - name: Acquire token and call API
+              href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
           items:
-            - name: Acquire access token and call API
+            - name: Acquire token and call API
               href: tutorial-daemon-node-call-api-build-app.md
             - name: Call Microsoft Graph API
               href: tutorial-v2-nodejs-console.md
