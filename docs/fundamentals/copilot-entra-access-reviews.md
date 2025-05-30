@@ -34,11 +34,13 @@ This article describes how to use Microsoft Security Copilot to investigate acce
 1. Navigate to **Identity Governance** > **Access reviews**.
 1. {ADDME}
 
+> [!NOTE]
+> This space is being reserved for an image showing the Copilot experience in the Microsoft Entra admin center.
 
 Use the following example prompts to extract access reviews data in Microsoft Entra:
 
 | Use Case | Example Prompts |
-|---  -----|-----------------|
+|----------|-----------------|
 | Explore current configured access reviews in the tenant | *Show me top 10 access reviews with schedule, status, and metadata* |
 | Get detailed info on a specific access review | *Get access review details for Finance M365 Groups Q2* |
 | View access review decisions for a specific instance | *Who approved or denied access in the Q2 finance review?* |
