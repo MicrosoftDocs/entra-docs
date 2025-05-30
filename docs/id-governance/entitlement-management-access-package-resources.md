@@ -134,6 +134,9 @@ For more information, see [Compare groups](/office365/admin/create-groups/compar
 
     Any users with existing assignments to the access package will automatically become members (or owners) of this group or team after it's added. For more information, see [when changes are applied](#when-changes-are-applied).
 
+> [!NOTE]
+> If an Access Package expiration period exceeds the "*Expire eligible assignments after*" policy setting in the PIM managed group, it can cause discrepancies between Entitlement Management and Privileged Identity Management, leading to users losing access while EM shows they're still assigned. For more information, see: [Using groups managed by Privileged Identity Management with access packages reference](entitlement-management-access-package-pim-reference.md).
+
 ## Add an application resource role
 
 You can have Microsoft Entra ID automatically assign users access to a Microsoft Entra enterprise application, including SaaS applications, on-premises applications, and your organization's applications integrated with Microsoft Entra ID, when a user is assigned an access package. For applications that integrate with Microsoft Entra ID through federated single sign-on, Microsoft Entra ID issues federation tokens for users assigned to the application.
