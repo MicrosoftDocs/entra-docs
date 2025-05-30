@@ -22,7 +22,7 @@ ms.author: billmath
 > [!IMPORTANT]
 > Microsoft doesn't support modifying or operating Microsoft Entra Connect Sync outside of the actions that are formally documented. Any of these actions might result in an inconsistent or unsupported state of Microsoft Entra Connect Sync. As a result, Microsoft can't provide technical support for such deployments.
 
-You can find the download for Microsoft Entra Connect on [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=615771).
+As previously announced, new versions of Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within the Microsoft Entra Admin Center and will no longer be released to the Microsoft Download Centre.
 
 | Solution | Scenario |
 | --- | --- |
