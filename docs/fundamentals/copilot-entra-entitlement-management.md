@@ -10,7 +10,7 @@ ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
 ms.collection: ce-skilling-ai-copilot
-# Customer intent: 
+# Customer intent: As an identity administrator, I want to learn how to use Microsoft Security Copilot to investigate insights within entitlements management in Microsoft Entra so that I can quickly respond to identity-based security incidents.
 ---
 
 # Investigate insights within entitlements management in Microsoft Entra Copilot

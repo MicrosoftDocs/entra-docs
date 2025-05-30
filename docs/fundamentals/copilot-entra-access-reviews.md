@@ -10,6 +10,7 @@ ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
 ms.collection: null
+# Customer intent: As an identity administrator, I want to learn how to use Microsoft Security Copilot to investigate access reviews in Microsoft Entra so that I can quickly respond to identity-based security incidents.
 ---
 
 # Investigate access reviews in Microsoft Entra Copilot
