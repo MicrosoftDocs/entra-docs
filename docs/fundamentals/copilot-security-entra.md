@@ -64,6 +64,18 @@ Microsoft Entra ID Protection applies the capabilities of Security Copilot to [s
 
 :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the ID Protection risky user summarization details.":::
 
+### Investigate access reviews
+
+Administrators can use Microsoft Security Copilot with Microsoft Entra ID Governance Access Reviews to extract and analyze access review data. This integration allows admins to explore, track, and analyze access reviews at scale. For more information, see [Investigate access reviews in Microsoft Entra Copilot](copilot-entra-access-reviews.md).
+
+### Investigate recommendations
+
+The Microsoft Entra recommendations feature helps monitor the status of your tenant, so you don't have to. Entra Recommendations applies the capabilities of Microsoft Security Copilot  to help your security team investigate how to evolve your tenants to secure and healthy state while also helping you maximize the value of the features available in Microsoft Entra ID. For more information, see [Microsoft Entra Recommendations with Microsoft Security Copilot](copilot-entra-recommendations.md).
+
+### Investigate insights within entitlements management
+
+Use Microsoft Security Copilot with Microsoft Entra ID Governance Entitlement Management to get quick access to information about access packages, policies, connected organizations, and catalog resources. For more information, see [Investigate insights within entitlements management in Microsoft Entra Copilot](copilot-entra-entitlement-management.md).
+
 ## Enable the Security Copilot integration in Microsoft Entra
 
 You can learn more about plugins implemented in the Security Copilot portal in [Manage plugins in Security Copilot](/security-copilot/manage-plugins). Additionally, you can learn more about the embedded experiences in other Microsoft security products in [Security Copilot experiences](/security-copilot/experiences-security-copilot).

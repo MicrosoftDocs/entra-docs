@@ -1,5 +1,5 @@
 ---
-title: 'Investigate Access Reviews With Microsoft Entra Copilot  '
+title: Investigate Access Reviews With Microsoft Security Copilot
 description: Learn how to use Microsoft Entra Copilot to extract and analyse access review data
 keywords: null
 author: cilwerner
