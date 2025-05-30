@@ -22,7 +22,7 @@ When you enable universal tenant restrictions, Global Secure Access adds policy 
 
 The following diagram shows the steps that an example organization takes to help protect against malicious users by using tenant restrictions v2.
 
-:::image type="content" source="media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png" alt-text="Diagram that shows how tenant restrictions v2 helps protect against malicious users." lightbox="media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png":::
+:::image type="content" source="./media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png" alt-text="Diagram that shows how tenant restrictions v2 helps protect against malicious users." lightbox="media/how-to-universal-tenant-restrictions/tenant-restrictions-v-2-universal-tenant-restrictions-flow.png":::
 
 | Step | Description |
 | --- | --- |
