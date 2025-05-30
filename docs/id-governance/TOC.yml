@@ -298,7 +298,9 @@
       - name: Assign Microsoft Entra Roles (Preview)
         href: entitlement-management-roles.md
       - name: Suggested access packages in MyAccess (Preview)
-        href: entitlement-management-suggested-access-packages.md   
+        href: entitlement-management-suggested-access-packages.md 
+      - name: Assign eligible group membership and ownership in access packages using PIM managed groups (Preview)
+        href: entitlement-management-access-package-eligible.md   
     - name: Approvers
       items:
       - name: Approve requests
@@ -406,6 +408,8 @@
     href: best-practices-secure-id-governance.md 
   - name: Securing custom extension extensibility to Azure Logic Apps
     href: custom-extension-security.md  
+  - name: Using groups managed by Privileged Identity Management with access packages
+    href: entitlement-management-access-package-pim-reference.md
   - name: Identity Governance - PowerShell
     href: /powershell/module/microsoft.graph.identity.governance/?viewFallbackFrom=graph-powershell-beta&preserve-view=true&view=graph-powershell-1.0
   - name: Access reviews - Microsoft Graph API

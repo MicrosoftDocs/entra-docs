@@ -36,8 +36,6 @@ You can upgrade your Microsoft Entra Connect server from all supported versions 
 
 You can download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under **Manage**.
 
-Or, you can download the latest version of Microsoft Entra Connect 2.x from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest release](reference-connect-version-history.md#21200).
-
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
 The following table lists related topics:
@@ -72,7 +70,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
-|[2.4.131.0](#241310)|30 April 2026|(12 months after release of 2.5.2.0)|
+|[2.4.131.0](#241310)|26 May 2026|(12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)||
 
 **All other versions are not supported**
@@ -105,7 +103,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 05/27/2025: Released for download via the Microsoft Entra admin center.
 
 ### Added Features
-- Modern Authentication enabled allowing customers to configure application-based authentication for enhanced security (Public Preview).
+- Modern Authentication enabled allowing customers to configure application-based authentication for enhanced security (Public Preview). More details [here](authenticate-application-id.md)
 
 ### Updated Features
 - Upgraded the bundled health agent to version 4.5.2520.0
