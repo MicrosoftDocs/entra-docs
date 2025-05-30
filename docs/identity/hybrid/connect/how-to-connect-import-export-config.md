@@ -1,15 +1,14 @@
 ---
 title: How to import and export Microsoft Entra Connect configuration settings
 description: This article describes frequently asked questions for cloud provisioning.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-ga-nochange
 ---
 
 # Import and export Microsoft Entra Connect configuration settings 
@@ -47,7 +46,7 @@ To import previously exported settings:
 1. Select **Install**.
 
    ![Screenshot that shows the Install required components screen](media/how-to-connect-import-export-config/import-1.png)
-
+   
 > [!NOTE]
 > Override settings on this page like the use of SQL Server instead of LocalDB or the use of an existing service account instead of a default VSA. These settings aren't imported from the configuration settings file. They are there for information and comparison purposes.
 
@@ -59,15 +58,15 @@ To import previously exported settings:
 The import installation experience is intentionally kept simple with minimal inputs from the user to easily provide reproducibility of an existing server.
 
 Here are the only changes that can be made during the installation experience. All other changes can be made after installation from the Microsoft Entra Connect wizard:
-- **Microsoft Entra credentials**: The account name for the Azure Global Administrator used to configure the original server is suggested by default. It *must* be changed if you want to synchronize information to a new directory.
+- **Microsoft Entra credentials**: The account name for the Global Administrator used to configure the original server is suggested by default. It *must* be changed if you want to synchronize information to a new directory.
 - **User sign-in**: The sign-on options configured for your original server are selected by default and automatically prompt for credentials or other information that's needed during configuration. In rare cases, there might be a need to set up a server with different options to avoid changing the behavior of the active server. Otherwise, select **Next** to use the same settings.
 - **On-premises directory credentials**: For each on-premises directory included in your synchronization settings, you must provide credentials to create a synchronization account or supply a pre-created custom synchronization account. This procedure is identical to the clean install experience with the exception that you can't add or remove directories.
-- **Configuration options**: As with a clean install, you might choose to configure the initial settings for whether to start automatic synchronization or enable Staging mode. The main difference is that Staging mode is intentionally enabled by default to allow comparison of the configuration and synchronization results prior to actively exporting the results to Azure.
+- **Configuration options**: As with a clean install, you might choose to configure the initial settings for whether to start automatic synchronization or enable Staging mode. The main difference is that Staging mode is intentionally enabled by default to allow comparison of the configuration and synchronization results prior to actively exporting the results to Microsoft Entra ID.
 
 ![Screenshot that shows the Connect your directories screen](media/how-to-connect-import-export-config/import-2.png)
 
 > [!NOTE]
-> Only one synchronization server can be in the primary role and actively exporting configuration changes to Azure. All other servers must be placed in Staging mode.
+> Only one synchronization server can be in the primary role and actively exporting configuration changes to Microsoft Entra ID. All other servers must be placed in Staging mode.
 
 ## Migrate settings from an existing server 
 
@@ -80,28 +79,24 @@ To migrate the settings:
 
  1. Start **AzureADConnect.msi** on the new staging server, and stop at the **Welcome** page of Microsoft Entra Connect.
 
- 2. Copy **MigrateSettings.ps1** from the Microsoft Entra Connect\Tools directory to a location on the existing server. An example is C:\setup, where setup is a directory that was created on the existing server.</br>
-     ![Screenshot that shows Microsoft Entra Connect directories.](media/how-to-connect-import-export-config/migrate-1.png)
+1. Copy **MigrateSettings.ps1** from the Microsoft Entra Connect\Tools directory to a location on the existing server. An example is C:\setup, where setup is a directory that was created on the existing server.</br>
+![Screenshot that shows Microsoft Entra Connect directories.](media/how-to-connect-import-export-config/migrate-1.png)
 
-     >[!NOTE]
-     > If you see a message: “A positional parameter cannot be found that accepts argument **True**.”, as below:
-     >
-     >
-     >![Screenshot of error](media/how-to-connect-import-export-config/migrate-5.png)
-     >Then edit the MigrateSettings.ps1 file and remove **$true** and run the script:
-     >![Screenshot to edit config](media/how-to-connect-import-export-config/migrate-6.png)
- 
-
-
-
- 3. Run the script as shown here, and save the entire down-level server configuration directory. Copy this directory to the new staging server. You must copy the entire **Exported-ServerConfiguration-*** folder to the new server.
-     ![Screenshot that shows script in PowerShell.](media/how-to-connect-import-export-config/migrate-2.png)![Screenshot that shows copying the Exported-ServerConfiguration-* folder.](media/how-to-connect-import-export-config/migrate-3.png)
+   > [!NOTE]
+   > If you see a message: “A positional parameter cannot be found that accepts argument **True**.”, as below:
+> > ![Screenshot of error](media/how-to-connect-import-export-config/migrate-5.png)
+   > Then edit the MigrateSettings.ps1 file and remove **$true** and run the script:
+   > ![Screenshot to edit config](media/how-to-connect-import-export-config/migrate-6.png)
+   
+   
+1. Run the script as shown here, and save the entire down-level server configuration directory. Copy this directory to the new staging server. You must copy the entire **Exported-ServerConfiguration-*** folder to the new server.
+![Screenshot that shows script in PowerShell.](media/how-to-connect-import-export-config/migrate-2.png)![Screenshot that shows copying the Exported-ServerConfiguration-* folder.](media/how-to-connect-import-export-config/migrate-3.png)
 
  4. Start **Microsoft Entra Connect** by double-clicking the icon on the desktop. Accept the Microsoft Software License Terms, and on the next page, select **Customize**.
- 5. Select the **Import synchronization settings** check box. Select **Browse** to browse the copied-over Exported-ServerConfiguration-* folder. Select the MigratedPolicy.json to import the migrated settings.
+1. Select the **Import synchronization settings** check box. Select **Browse** to browse the copied-over Exported-ServerConfiguration-* folder. Select the MigratedPolicy.json to import the migrated settings.
 
-     ![Screenshot that shows the Import synchronization settings option.](media/how-to-connect-import-export-config/migrate-4.png)
-
+    ![Screenshot that shows the Import synchronization settings option.](media/how-to-connect-import-export-config/migrate-4.png)
+   
 ## Post-installation verification 
 
 Comparing the originally imported settings file with the exported settings file of the newly deployed server is an essential step in understanding any differences between the intended versus the resulting deployment. Using your favorite side-by-side text comparison application yields an instant visualization that quickly highlights any desired or accidental changes.
@@ -116,8 +111,6 @@ Here are known limitations:
 - **Custom run profiles**: Although it's possible to modify the default set of run profiles by using the Synchronization Service Manager, this feature isn't currently supported via synchronization settings. After you finish the installation, you must manually reapply the advanced configuration.
 - **Configuring the provisioning hierarchy**: This advanced feature of the Synchronization Service Manager isn't supported via synchronization settings. It must be manually reconfigured after you finish the initial deployment.
 - **Active Directory Federation Services (AD FS) and PingFederate authentication**: The sign-on methods associated with these authentication features are automatically preselected. You must interactively supply all other required configuration parameters.
-- **A disabled custom synchronization rule will be imported as enabled**: A disabled custom synchronization rule is imported as enabled. Make sure to disable it on the new server too.
-
  ## Next steps
 
 - [Hardware and prerequisites](how-to-connect-install-prerequisites.md) 

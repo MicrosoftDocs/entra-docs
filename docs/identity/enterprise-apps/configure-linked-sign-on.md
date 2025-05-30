@@ -38,7 +38,7 @@ To configure linked-based SSO in your Microsoft Entra tenant, you need:
 ## Configure linked-based single sign-on
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Search for and select the application that you want to add linked SSO.
 1. Select **Single sign-on** and then select **Linked**.
 1. Enter the URL for the sign-in page of the application.

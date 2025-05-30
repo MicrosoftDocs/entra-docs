@@ -1,19 +1,19 @@
 ### YamlMime:HowTo
-
 metadata:
   title: Add an existing Azure subscription to your tenant
   description: Instructions about how to add an existing Azure subscription to your Microsoft Entra tenant.
   author: barclayn
   ms.author: barclayn
-  manager: amycolannino
+  manager: femila
   ms.reviewer: jeffsta
-  ms.date: 01/07/2025
+  ms.date: 04/02/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
-
+    - sfi-ga-nochange
+    - sfi-image-nochange
 title: |
   Associate or add an Azure subscription to your Microsoft Entra tenant
 introduction: |

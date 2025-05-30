@@ -6,7 +6,6 @@ author: barclayn
 manager: martinco
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 12/16/2024
 ms.author: barclayn
 ms.custom: references_regions

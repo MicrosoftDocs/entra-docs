@@ -3,12 +3,12 @@ title: Assign Azure resource roles in Privileged Identity Management
 description: Learn how to assign Azure resource roles in Privileged Identity Management (PIM).
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.subservice: privileged-identity-management
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Assign Azure resource roles in Privileged Identity Management
@@ -47,9 +47,9 @@ For more information, see [What is Azure attribute-based access control (Azure A
 
 Follow these steps to make a user eligible for an Azure resource role.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Access Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a User Access Administrator.
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**.
 
 1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Select the Select button for the resource you want to manage to open its overview page.
 
@@ -208,7 +208,7 @@ Follow these steps to update or remove an existing role assignment.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-update-remove.png" alt-text="Screenshot demonstrates how to update or remove role assignment." lightbox="./media/pim-resource-roles-assign-roles/resources-update-remove.png":::
 
-1. To add or update a condition to refine Azure resource access, select **Add** or **View/Edit** in the **Condition** column for the role assignment. Currently, the Storage Blob Data Owner, Storage Blob Data Reader, and Storage Blob Data Contributor roles in Microsoft Entra PIM are the only roles that can have conditions added.
+1. To add or update a condition to refine Azure resource access, select **Add** or **View/Edit** in the **Condition** column for the role assignment.
 
 1. Select **Add expression** or **Delete** to update the expression. You can also select **Add condition** to add a new condition to your role.
 

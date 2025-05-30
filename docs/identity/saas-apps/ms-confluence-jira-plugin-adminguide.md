@@ -1,5 +1,5 @@
 ---
-title: 'Atlassian Jira/Confluence admin guide'
+title: Configure Atlassian Jira/Confluence for Single sign-on in Microsoft Entra ID
 description: Admin guide to use Atlassian Jira and Confluence with Microsoft Entra ID..
 
 author: dhivyagana
@@ -9,12 +9,12 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: dhivyag
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Atlassian Jira and Confluence so that I can control who has access to Atlassian Jira and Confluence, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Atlassian Jira and Confluence admin guide for Microsoft Entra ID
+# Configure Atlassian Jira/Confluence for Single sign-on in Microsoft Entra ID
 
 ## Overview
 
@@ -31,7 +31,7 @@ Sign-in works across Jira and Confluence. If users are signed in to the Jira app
 Users can also get to the Atlassian product through My Apps under the work or school account. They should be signed in without being asked for credentials.
 
 > [!NOTE]
-> User provisioning is not done through the plug-in.
+> User provisioning isn't done through the plug-in.
 
 ## Audience
 
@@ -63,7 +63,7 @@ The plug-in supports the following versions of Jira and Confluence:
 
 * Jira Core and Software: 6.0 to 9.10.0
 * Jira Service Desk: 3.0.0 to 4.22.1.
-* JIRA also supports 5.2. For more details, click [Microsoft Entra single sign-on for JIRA 5.2](./jira52microsoft-tutorial.md).
+* JIRA also supports 5.2. For more details, select [Microsoft Entra single sign-on for JIRA 5.2](./jira52microsoft-tutorial.md).
 * Confluence: 5.0 to 5.10.
 * Confluence: 6.0.1 to 6.15.9.
 * Confluence: 7.0.1 to 8.5.1.
@@ -140,9 +140,9 @@ JIRA:
 |                 |                                                                                           | Jira Service Desk: 3.0.0 to 4.22.1  |
 |                 |                                                                                           |                                     |
 |  1.0.18         |   Bug Fixes:                                                                              | Jira Core and Software:             |
-|                 |    Bug fix for the 405 error upon clicking on the Configure button of the Jira Microsoft Entra SSO Plugin.|  6.0 to 9.1.0.          |
+|                 |    Bug fix for the 405 error upon selecting the Configure button of the Jira Microsoft Entra SSO Plugin.|  6.0 to 9.1.0.          |
 |                 |    JIRA server isn't rendering the "Project Setting Page" correctly.                  | Jira Service Desk: 3.0.0 to 4.22.1. |
-|                 |    JIRA isn't forcing Microsoft Entra Login. An extra button click was required.                |                                     |
+|                 |    JIRA isn't forcing Microsoft Entra Login. An extra button select was required.                |                                     |
 |                 |    We have now resolved the security fix in this version. This will protect you from user impersonation vulnerability.|       |
 |                 |    JIRA Service Desk logout issue is resolved.                                         |                                     |
  
@@ -151,13 +151,13 @@ Confluence:
 |Plugin Version   |                                   Release Notes                                           |       Supported JIRA versions       |
 |-----------------|-------------------------------------------------------------------------------------------|-------------------------------------|
 |  6.3.9          |   Bug Fixes:                                                                              | Confluence Server: 7.20.3 to 8.5.1  |
-|                 |   System Error: Metadata link cannot be configured on SSO plugins.                        |                                     |
+|                 |   System Error: Metadata link can't be configured on SSO plugins.                        |                                     |
 |                 |                                                                                           |                                     |
 |  6.3.8          |   New Feature:                                                                            | Confluence Server: 5.0 to 7.20.1    |
 |                 |   Application Proxy Support - Checkbox on the configure plugin screen to toggle the application proxy mode so as to make the Reply URL editable as per the need to point it to the proxy server URL                                                                      |                                     |
 |                 |                                                                                           |                                     |
 |  6.3.7          |   Bug Fixes:                                                                              | Confluence Server: 5.0 to 7.19.0    |
-|                 |   "Force Login" functionality allows the IT admins to force the Microsoft Entra authentication to users. This way users will not see the username and password box and they will be forced to use SSO.                                                              |                                     |
+|                 |   "Force Login" functionality allows the IT admins to force the Microsoft Entra authentication to users. This way users don't see the username and password box and they is forced to use SSO.                                                              |                                     |
 |                 |   "Force Login" is configurable from the plugin                                           |                                     |
 |                 |   You can pass the domain string to Microsoft Entra ID so that Microsoft Entra ID can directly redirect the user to your Federation server.|        |  
  
@@ -173,7 +173,7 @@ Confluence:
 
   * For Confluence, follow the steps on the [Confluence support site](https://confluence.atlassian.com/doc/configuring-secure-administrator-sessions-218269595.html).
 
-* **Fields that are supposed to be populated by the metadata URL are not getting populated**:
+* **Fields that are supposed to be populated by the metadata URL aren't getting populated**:
 
   * Check if the URL is correct. Check if you have mapped the correct tenant and app ID.
 
@@ -211,7 +211,7 @@ The plug-in supports these versions:
 
 * Jira Core and Software: 6.0 to 9.10.0
 * Jira Service Desk: 3.0.0 to 4.22.1.
-* JIRA also supports 5.2. For more details, click [Microsoft Entra single sign-on for JIRA 5.2](./jira52microsoft-tutorial.md).
+* JIRA also supports 5.2. For more details, select [Microsoft Entra single sign-on for JIRA 5.2](./jira52microsoft-tutorial.md).
 * Confluence: 5.0 to 5.10.
 * Confluence: 6.0.1 to 6.15.9.
 * Confluence: 7.0.1 to 8.5.1.
@@ -222,7 +222,7 @@ It's a free add-on.
 
 ### Do I need to restart Jira or Confluence after I deploy the plug-in?
 
-A restart is not required. You can start using the plug-in immediately.
+A restart isn't required. You can start using the plug-in immediately.
 
 ### How do I get support for the plug-in?
 

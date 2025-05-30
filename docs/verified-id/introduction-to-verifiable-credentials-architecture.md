@@ -3,12 +3,12 @@ title: Microsoft Entra Verified ID architecture overview
 description: Learn foundational information to plan and design your solution
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 12/16/2024
 ms.author: barclayn
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Verified ID architecture overview

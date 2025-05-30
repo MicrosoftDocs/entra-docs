@@ -1,18 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Accounts and permissions'
 description: Learn about accounts that are used and created and the permissions that are required to install and use Microsoft Entra Connect.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
 ---
 # Microsoft Entra Connect: Accounts and permissions
 
@@ -101,7 +98,7 @@ The AD DS Connector account is created to read and write to Windows Server AD. T
 
 In an express settings installation, the wizard creates some accounts and settings for you.
 
-:::image type="content" source="media/how-to-connect-install-express/express.png" alt-text="Screenshot that shows the Express Settings page in Microsoft Entra Connect.":::
+:::image type="content" source="media/how-to-connect-install-express/install-4.png" alt-text="Screenshot that shows the Express Settings page in Microsoft Entra Connect Sync." lightbox="media/how-to-connect-install-express/install-4.png":::
 
 The following table is a summary of the express settings wizard pages, the credentials that are collected, and what they're used for:
 

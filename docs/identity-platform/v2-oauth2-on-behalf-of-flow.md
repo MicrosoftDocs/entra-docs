@@ -4,12 +4,11 @@ description: This article describes how to use HTTP messages to implement servic
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
-ms.date: 04/08/2024
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.reviewer: jmprieur, ludwignick
+ms.topic: reference
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As a developer building a web API, I want to understand how to implement the OAuth 2.0 On-Behalf-Of flow, so that I can securely pass a user's identity and permissions to another web API.
 ---
 
@@ -203,7 +202,7 @@ A service-to-service request for a SAML assertion contains the following paramet
 | --- | --- | --- |
 | grant_type |required | The type of the token request. For a request that uses a JWT, the value must be `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
 | assertion |required | The value of the access token used in the request.|
-| client_id |required | The app ID assigned to the calling service during registration with Microsoft Entra ID. To find the app ID in the Microsoft Entra admin center, browse to **Identity** > **Applications** > **App registrations** and then select the application name. |
+| client_id |required | The app ID assigned to the calling service during registration with Microsoft Entra ID. To find the app ID in the Microsoft Entra admin center, browse to **Entra ID** > **App registrations** and then select the application name. |
 | client_secret |required | The key registered for the calling service in Microsoft Entra ID. This value should be noted at the time of registration.  The Basic auth pattern of instead providing credentials in the Authorization header, per [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1) is also supported. |
 | scope |required | A space-separated list of scopes for the token request. For more information, see [scopes](./permissions-consent-overview.md). SAML itself doesn't have a concept of scopes, but is used to identify the target SAML application for which you want to receive a token. For this OBO flow, the scope value must always be the SAML Entity ID with `/.default` appended. For example, in case the SAML application's Entity ID is `https://testapp.contoso.com`, then the requested scope should be `https://testapp.contoso.com/.default`. In case the Entity ID doesn't start with a URI scheme such as `https:`, Microsoft Entra prefixes the Entity ID with `spn:`. In that case you must request the scope `spn:<EntityID>/.default`, for example `spn:testapp/.default` in case the Entity ID is `testapp`. The scope value you request here determines the resulting `Audience` element in the SAML token, which could be important to the SAML application receiving the token. |
 | requested_token_use |required | Specifies how the request should be processed. In the On-Behalf-Of flow, the value must be `on_behalf_of`. |

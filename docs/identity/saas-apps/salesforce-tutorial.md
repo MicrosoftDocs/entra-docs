@@ -1,23 +1,21 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Salesforce
+title: Configure Salesforce for Single sign-on in Microsoft Entra ID
 description: Learn how to configure the single sign-on between Microsoft Entra ID and Salesforce.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce so that I can control who has access to Salesforce, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Salesforce
+# Configure Salesforce for Single sign-on in Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Salesforce with Microsoft Entra ID. When you integrate Salesforce with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Salesforce with Microsoft Entra ID. When you integrate Salesforce with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Salesforce.
 * Enable your users to be automatically signed-in to Salesforce with their Microsoft Entra accounts.
@@ -25,14 +23,14 @@ In this tutorial, you'll learn how to integrate Salesforce with Microsoft Entra 
 
 ## Prerequisites
 
-To get started, you need the following items:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* Salesforce single sign-on (SSO) enabled subscription.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+- Salesforce single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article, you configure and test Microsoft Entra SSO in a test environment.
 
 * Salesforce supports **SP** initiated SSO.
 
@@ -40,18 +38,18 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 * Salesforce supports **Just In Time** user provisioning.
 
-* Salesforce Mobile application can now be configured with Microsoft Entra ID for enabling SSO. In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+* Salesforce Mobile application can now be configured with Microsoft Entra ID for enabling SSO. In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
-## Adding Salesforce from the gallery
+## Add Salesforce from the gallery
 
 To configure the integration of Salesforce into Microsoft Entra ID, you need to add Salesforce from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Salesforce** in the search box.
 1. Select **Salesforce** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-salesforce'></a>
 
@@ -62,10 +60,10 @@ Configure and test Microsoft Entra SSO with Salesforce using a test user called 
 To configure and test Microsoft Entra SSO with Salesforce, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    * **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    * **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    * **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    * **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Salesforce SSO](#configure-salesforce-sso)** - to configure the single sign-on settings on application side.
-    * **[Create Salesforce test user](#create-salesforce-test-user)** - to have a counterpart of B.Simon in Salesforce that is linked to the Microsoft Entra representation of user.
+    * **[Create Salesforce test user](#create-salesforce-test-user)** - to have a counterpart of B.Simon in Salesforce that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -75,9 +73,9 @@ To configure and test Microsoft Entra SSO with Salesforce, perform the following
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Salesforce** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Salesforce** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -102,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
     Developer account: `https://<subdomain>-dev-ed.my.salesforce.com`
 
     > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Salesforce Client support team](https://help.salesforce.com/support) to get these values.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Salesforce Client support team](https://help.salesforce.com/support) to get these values.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -114,69 +112,40 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to Salesforce.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Salesforce**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Salesforce SSO
 
-
-
-
 1. In a different web browser window, sign in to your up Salesforce company site as an administrator
 
-1. Click on the **Setup** under **settings icon** on the top right corner of the page.
+1. Select the **Setup** under **settings icon** on the top right corner of the page.
 
 	![Configure Single Sign-On settings icon](./media/salesforce-tutorial/configure1.png)
 
-1. Scroll down to the **SETTINGS** in the navigation pane, click **Identity** to expand the related section. Then click **Single Sign-On Settings**.
+1. Scroll down to the **SETTINGS** in the navigation pane, select **Identity** to expand the related section. Then select **Single Sign-On Settings**.
 
     ![Configure Single Sign-On Settings](./media/salesforce-tutorial/sf-admin-sso.png)
 
-1. On the **Single Sign-On Settings** page, click the **Edit** button.
+1. On the **Single Sign-On Settings** page, select the **Edit** button.
 
     ![Configure Single Sign-On Edit](./media/salesforce-tutorial/sf-admin-sso-edit.png)
 
     > [!NOTE]
-    > If you are unable to enable Single Sign-On settings for your Salesforce account, you may need to contact [Salesforce Client support team](https://help.salesforce.com/support).
+    > If you're unable to enable single sign-on settings for your Salesforce account, you may need to contact [Salesforce Client support team](https://help.salesforce.com/support).
 
-1. Select **SAML Enabled**, and then click **Save**.
+1. Select **SAML Enabled**, and then select **Save**.
 
     ![Configure Single Sign-On SAML Enabled](./media/salesforce-tutorial/sf-enable-saml.png)
 
-1. To configure your SAML single sign-on settings, click **New from Metadata File**.
+1. To configure your SAML single sign-on settings, select **New from Metadata File**.
 
     ![Configure Single Sign-On New from Metadata File](./media/salesforce-tutorial/sf-admin-sso-new.png)
 
-1. Click **Choose File** to upload the metadata XML file which you have downloaded and click **Create**.
+1. Select **Choose File** to upload the metadata XML file which you have downloaded and select **Create**.
 
     ![Configure Single Sign-On Choose File](./media/salesforce-tutorial/xmlchoose.png)
 
-1. On the **SAML Single Sign-On Settings** page, fields populate automatically, if you want to use SAML JIT, select the **User Provisioning Enabled** and select **SAML Identity Type** as **Assertion contains the Federation ID from the User object** otherwise, unselect the **User Provisioning Enabled** and select **SAML Identity Type** as **Assertion contains the User's Salesforce username**. Click **Save**.
+1. On the **SAML Single Sign-On Settings** page, fields populate automatically, if you want to use SAML JIT, select the **User Provisioning Enabled** and select **SAML Identity Type** as **Assertion contains the Federation ID from the User object** otherwise, unselect the **User Provisioning Enabled** and select **SAML Identity Type** as **Assertion contains the User's Salesforce username**. Select **Save**.
 
     ![Configure Single Sign-On User Provisioning Enabled](./media/salesforce-tutorial/salesforcexml.png)
 
@@ -188,63 +157,63 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     If you still have issues with getting users provisioned with SAML JIT, see [Just-in-time provisioning requirements and SAML assertion fields](https://help.salesforce.com/s/articleView?id=sf.sso_jit_requirements.htm&type=5). Generally, when JIT fails, you might see an error like `We can't log you in because of an issue with single sign-on. Contact your Salesforce admin for help.`
 
 
-1. On the left navigation pane in Salesforce, click **Company Settings** to expand the related section, and then click **My Domain**.
+1. On the left navigation pane in Salesforce, select **Company Settings** to expand the related section, and then select **My Domain**.
 
     ![Configure Single Sign-On My Domain](./media/salesforce-tutorial/sf-my-domain.png)
 
-1. Scroll down to the **Authentication Configuration** section, and click the **Edit** button.
+1. Scroll down to the **Authentication Configuration** section, and select the **Edit** button.
 
     ![Configure Single Sign-On Authentication Configuration](./media/salesforce-tutorial/sf-edit-auth-config.png)
 
-1. In the **Authentication Configuration** section, Check the **Login Page** and  **AzureSSO** as **Authentication Service** of your SAML SSO configuration, and then click **Save**.
+1. In the **Authentication Configuration** section, Check the **Login Page** and  **AzureSSO** as **Authentication Service** of your SAML SSO configuration, and then select **Save**.
 
     > [!NOTE]
     > If more than one authentication service is selected, users are prompted to select which authentication service they like to sign in with while initiating single sign-on to your Salesforce environment. If you don’t want it to happen, then you should **leave all other authentication services unchecked**.
 
 ### Create Salesforce test user
 
-In this section, a user called B.Simon is created in Salesforce. Salesforce supports just-in-time provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Salesforce, a new one is created when you attempt to access Salesforce. Salesforce also supports automatic user provisioning, you can find more details [here](salesforce-provisioning-tutorial.md) on how to configure automatic user provisioning.
+In this section, a user called B.Simon is created in Salesforce. Salesforce supports just-in-time provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Salesforce, a new one is created when you attempt to access Salesforce. Salesforce also supports automatic user provisioning, you can find more details [here](salesforce-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Salesforce Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Salesforce Sign-on URL where you can initiate the login flow. 
 
 * Go to Salesforce Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Salesforce tile in the My Apps portal, you should be automatically signed in to the Salesforce for which you set up the SSO. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Salesforce tile in the My Apps portal, you should be automatically signed in to the Salesforce for which you set up the SSO. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Test SSO for Salesforce (Mobile)
 
-1. Open Salesforce mobile application. On the sign-in page, click **Use Custom Domain**.
+1. Open Salesforce mobile application. On the sign-in page, select **Use Custom Domain**.
 
     ![Salesforce mobile app Use Custom Domain](media/salesforce-tutorial/mobile-app1.png)
 
-1. In the **Custom Domain** textbox, enter your registered custom domain name and click **Continue**.
+1. In the **Custom Domain** textbox, enter your registered custom domain name and select **Continue**.
 
     ![Salesforce mobile app Custom Domain](media/salesforce-tutorial/mobile-app2.png)
 
-1. Enter your Microsoft Entra credentials to sign in to the Salesforce application and click **Next**.
+1. Enter your Microsoft Entra credentials to sign in to the Salesforce application and select **Next**.
 
     ![Salesforce mobile app Microsoft Entra credentials](media/salesforce-tutorial/mobile-app3.png)
 
-1. On the **Allow Access** page as shown below, click **Allow** to give access to the Salesforce application.
+1. On the **Allow Access** page as shown below, select **Allow** to give access to the Salesforce application.
 
     ![Salesforce mobile app Allow Access](media/salesforce-tutorial/mobile-app4.png)
 
-1. Finally after successful sign-in, the application homepage will be displayed.
+1. Finally after successful sign-in, the application homepage is displayed.
 
     ![Salesforce mobile app homepage](media/salesforce-tutorial/mobile-app5.png)
     ![Salesforce mobile app](media/salesforce-tutorial/mobile-app6.png)
 
 
 ## Prevent application access through local accounts
-Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Salesforce. 
+Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your Conditional Access policies, MFA, etc. is in place to protect sign-ins to Salesforce. 
 
 
 ## Related content
 
-If you have Enterprise Mobility + Security E5 or another license for Microsoft Defender for Cloud Apps, then you can collect an audit trail of application activities in that product, which can be used when investigating alerts.  In Defender for Cloud Apps, alerts can be triggered when user, admin, or sign-in activities don't comply with your policies.  By [connecting Microsoft Defender for Cloud Apps to Salesforce](/defender-cloud-apps/protect-salesforce#how-to-connect-defender-for-cloud-apps-to-salesforce) , Salesforce sign-in events are collected by Defender for Cloud Apps.
+If you have Enterprise Mobility + Security E5 or another license for Microsoft Defender for Cloud Apps, then you can collect an audit trail of application activities in that product, which can be used when investigating alerts. In Defender for Cloud Apps, alerts can be triggered when user, admin, or sign-in activities don't comply with your policies. By [connecting Microsoft Defender for Cloud Apps to Salesforce](/defender-cloud-apps/protect-salesforce#how-to-connect-defender-for-cloud-apps-to-salesforce) , Salesforce sign-in events are collected by Defender for Cloud Apps.
 
 In addition, you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

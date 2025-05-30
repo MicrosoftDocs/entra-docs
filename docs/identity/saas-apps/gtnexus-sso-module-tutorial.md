@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with GTNexus SSO System
+title: Configure GTNexus SSO System for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GTNexus SSO System.
 
 author: nguhiu
@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GT Nexus Prod System so that I can control who has access to GT Nexus Prod System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with GTNexus SSO System
+# Configure GTNexus SSO System for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you learn how to integrate GTNexus SSO System with Microsoft Entra ID.
+In this article,  you learn how to integrate GTNexus SSO System with Microsoft Entra ID.
 Integrating GTNexus SSO System with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to GTNexus SSO System.
@@ -28,14 +28,14 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 
-To configure Microsoft Entra integration with GTNexus SSO System, you need the following items:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * GTNexus SSO System single sign-on enabled subscription
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * GTNexus SSO System supports **IDP** initiated SSO
 
@@ -46,8 +46,8 @@ To configure the integration of GTNexus SSO System into Microsoft Entra ID, you 
 **To add GTNexus SSO System from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the search box, type **GTNexus SSO System**, select **GTNexus SSO System** from result panel then click **Add** button to add the application.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+1. In the search box, type **GTNexus SSO System**, select **GTNexus SSO System** from result panel then select **Add** button to add the application.
 
 	 ![GTNexus SSO System in the results list](common/search-new-app.png)
 
@@ -62,9 +62,9 @@ To configure and test Microsoft Entra single sign-on with GTNexus SSO System, yo
 
 1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
 2. **[Configure GTNexus SSO System Single Sign-On](#configure-gtnexus-sso-system-single-sign-on)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
-5. **[Create GTNexus SSO System test user](#create-gtnexus-sso-system-test-user)** - to have a counterpart of Britta Simon in GTNexus SSO System that is linked to the Microsoft Entra representation of user.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
+5. **[Create GTNexus SSO System test user](#create-gtnexus-sso-system-test-user)** - to have a counterpart of Britta Simon in GTNexus SSO System that's linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-single-sign-on'></a>
@@ -76,7 +76,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with GTNexus SSO System, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **GTNexus SSO System** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **GTNexus SSO System** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -84,17 +84,17 @@ To configure Microsoft Entra single sign-on with GTNexus SSO System, perform the
 
     ![Single sign-on select mode](common/select-saml-option.png)
 
-1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
+1. On the **Set up Single Sign-On with SAML** page, select **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
-	a. Click **Upload metadata file**.
+	a. Select **Upload metadata file**.
 
     ![Screenshot that shows the "Basic S A M L Configuration" page with the "Upload metadata file" action selected.](common/upload-metadata.png)
 
-	b. Click on **folder logo** to select the metadata file and click **Upload**.
+	b. Select **folder logo** to select the metadata file and select **Upload**.
 
 	![Screenshot that shows the "Select a file" field with the "folder" logo and "Upload" button selected.](common/browse-upload-metadata.png)
 
@@ -103,9 +103,9 @@ To configure Microsoft Entra single sign-on with GTNexus SSO System, perform the
 	![image](common/idp-intiated.png)
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values are not getting auto populated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values aren't getting auto populated, then fill in the values manually according to your requirement.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -120,7 +120,7 @@ To configure single sign-on on **GTNexus SSO System** side, you need to send the
 The objective of this section is to create a test user called Britta Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -136,7 +136,7 @@ The objective of this section is to create a test user called Britta Simon.
 In this section, you enable Britta Simon to use Azure single sign-on by granting access to GTNexus SSO System.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **GTNexus SSO System**.
+1. Browse to **Entra ID** > **Enterprise apps** > **GTNexus SSO System**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -146,9 +146,9 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Add Assignment** dialog, select the **Assign** button.
 
 ### Create GTNexus SSO System test user
 
@@ -158,11 +158,11 @@ In this section, you create a user called Britta Simon in GTNexus SSO System. Wo
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the GTNexus SSO System tile in the Access Panel, you should be automatically signed in to the GTNexus SSO System for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the GTNexus SSO System tile in the Access Panel, you should be automatically signed in to the GTNexus SSO System for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

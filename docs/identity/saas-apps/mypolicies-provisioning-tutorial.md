@@ -8,25 +8,25 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to myPolicies so that I can streamline the user management process and ensure that users have the appropriate access to myPolicies.
 ---
 
-# Configure myPolicies for automatic user provisioning
+# Configure myPolicies for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in myPolicies and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to myPolicies.
+The objective of this article is to demonstrate the steps to be performed in myPolicies and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to myPolicies.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A myPolicies tenant](https://mypolicies.com/).
 * A user account in myPolicies with Admin permissions.
 
@@ -39,17 +39,17 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to myPolicies
 
-* It is recommended that a single Microsoft Entra user is assigned to myPolicies to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to myPolicies to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to myPolicies, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up myPolicies for provisioning
 
-Before configuring myPolicies for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on myPolicies.
+Before configuring myPolicies for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on myPolicies.
 
 1. Reach out to your myPolicies representative at **support@mypolicies.com** to obtain the secret token needed to configure SCIM provisioning.
 
-2.  Save the token value provided by the myPolicies representative. This value will be entered in the **Secret Token** field in the Provisioning tab of your myPolicies application.
+2.  Save the token value provided by the myPolicies representative. This value is entered in the **Secret Token** field in the Provisioning tab of your myPolicies application.
 
 ## Add myPolicies from the gallery
 
@@ -58,7 +58,7 @@ To configure myPolicies for automatic user provisioning with Microsoft Entra ID,
 **To add myPolicies from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **myPolicies**, select **myPolicies** in the search box.
 1. Select **myPolicies** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![myPolicies in the results list](common/search-new-app.png)
@@ -68,14 +68,14 @@ To configure myPolicies for automatic user provisioning with Microsoft Entra ID,
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in myPolicies based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for myPolicies, following the instructions provided in the [myPolicies Single sign-on tutorial](mypolicies-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for myPolicies, following the instructions provided in the [myPolicies Single sign-on  article](mypolicies-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-mypolicies-in-azure-ad'></a>
 
 ### To configure automatic user provisioning for myPolicies in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 5. Under the **Admin Credentials** section, input `https://<myPoliciesCustomDomain>.mypolicies.com/scim` in **Tenant URL** where `<myPoliciesCustomDomain>` is your myPolicies custom domain. You can retrieve your myPolicies customer domain, from your URL.
 Example: `<demo0-qa>`.mypolicies.com.
 
-6. In **Secret Token**, enter the token value which was retrieved earlier. Click **Test Connection** to ensure Microsoft Entra ID can connect to myPolicies. If the connection fails, ensure your myPolicies account has Admin permissions and try again.
+6. In **Secret Token**, enter the token value which was retrieved earlier. Select **Test Connection** to ensure Microsoft Entra ID can connect to myPolicies. If the connection fails, ensure your myPolicies account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -102,7 +102,7 @@ Example: `<demo0-qa>`.mypolicies.com.
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-8. Click **Save**.
+8. Select **Save**.
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to myPolicies**.
 
@@ -121,7 +121,7 @@ Example: `<demo0-qa>`.mypolicies.com.
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|
 
 
-11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 12. To enable the Microsoft Entra provisioning service for myPolicies, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -131,7 +131,7 @@ Example: `<demo0-qa>`.mypolicies.com.
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-14. When you are ready to provision, click **Save**.
+14. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -142,7 +142,7 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Connector limitations
 
 * myPolicies always requires **userName**, **email** and **externalId**.
-* myPolicies does not support hard deletes for user attributes.
+* myPolicies doesn't support hard deletes for user attributes.
 
 ## Change log
 

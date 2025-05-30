@@ -2,14 +2,15 @@
 title: Delegation and roles in entitlement management
 description: Learn how to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: conceptual
-ms.date: 07/15/2024
+ms.date: 02/20/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
 ---
 
@@ -75,6 +76,7 @@ Entitlement management has the following roles, with permissions for administeri
 | Entitlement management role | Role definition ID | Description |
 | --- | --- | -- |
 | Catalog creator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage catalogs. Typically an IT administrator who isn't a Global Administrator, or a resource owner for a collection of resources. The person that creates a catalog automatically becomes the catalog's first catalog owner, and can add more catalog owners. A catalog creator can’t manage or see catalogs that they don’t own and can’t add resources they don’t own to a catalog. If the catalog creator needs to manage another catalog or add resources they don’t own, they can request to be a co-owner of that catalog or resource. |
+| Connected Organization Administrator | `e65cf63f-9cc2-4b48-8871-cb667e9d90f` | Create and manage connected organizations. |
 
 Entitlement management has the following roles that are defined for each particular catalog, for administering access packages and other configuration within a catalog. An administrator or a catalog owner can add users, groups of users, or service principals to these roles.
 
@@ -94,29 +96,30 @@ Also, the chosen approver and a requestor of an access package have rights, alth
 
 The following table lists the tasks that the entitlement management roles can do within entitlement management.
 
-| Task |  Identity Governance Administrator | Catalog creator | Catalog owner | Access package manager | Access package assignment manager |
-| --- | :---: | :---: | :---: | :---: | :---: |
-| [Delegate to a catalog creator](entitlement-management-delegate-catalog.md) | :heavy_check_mark: |  |  |  |  |
-| [Add a connected organization](entitlement-management-organization.md) | :heavy_check_mark: |  |  |  |  |
-| [Create a new catalog](entitlement-management-catalog-create.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |  |
-| [Add a resource to a catalog](entitlement-management-catalog-create.md#add-resources-to-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Add a catalog owner](entitlement-management-catalog-create.md#add-more-catalog-owners) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Edit a catalog](entitlement-management-catalog-create.md#edit-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Delete a catalog](entitlement-management-catalog-create.md#delete-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Delegate to an access package manager](entitlement-management-delegate-managers.md) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Remove an access package manager](entitlement-management-delegate-managers.md#remove-an-access-package-manager) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Create a new access package in a catalog](entitlement-management-access-package-create.md) | :heavy_check_mark: |  | :heavy_check_mark:  | :heavy_check_mark:  |  |
-| [Change resource roles in an access package](entitlement-management-access-package-resources.md) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Create and edit policies, including policies for external collaboration](entitlement-management-access-package-request-policy.md) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Directly assign a user to an access package](entitlement-management-access-package-assignments.md#directly-assign-a-user) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
-| [Directly remove a user from an access package](entitlement-management-access-package-assignments.md#remove-an-assignment) | :heavy_check_mark:  |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [View who has an assignment to an access package](entitlement-management-access-package-assignments.md#view-who-has-an-assignment) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
-| [View an access package's requests](entitlement-management-access-package-requests.md#view-requests) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |
-| [View a request's delivery errors](entitlement-management-troubleshoot.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
-| [Reprocess a request](entitlement-management-troubleshoot.md#reprocess-a-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |
-| [Cancel a pending request](entitlement-management-troubleshoot.md#cancel-a-pending-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Hide an access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Delete an access package](entitlement-management-access-package-edit.md#delete-an-access-package) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
+| Task |  Identity Governance Administrator | Connected Organization Administrator | Catalog creator | Catalog owner | Access package manager | Access package assignment manager |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: |
+| [Delegate to a catalog creator](entitlement-management-delegate-catalog.md) | :heavy_check_mark: |  |  |  |  |  |
+| [Add a connected organization](entitlement-management-organization.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |
+| [Create a new catalog](entitlement-management-catalog-create.md) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |  |
+| [Add a resource to a catalog](entitlement-management-catalog-create.md#add-resources-to-a-catalog) | :heavy_check_mark: |  |  | :heavy_check_mark: |  |  |
+| [Add a catalog owner](entitlement-management-catalog-create.md#add-more-catalog-owners) | :heavy_check_mark: |  |  | :heavy_check_mark: |  |  |
+| [Edit a catalog](entitlement-management-catalog-create.md#edit-a-catalog) | :heavy_check_mark: |  |  | :heavy_check_mark: |  |  |
+| [Delete a catalog](entitlement-management-catalog-create.md#delete-a-catalog) | :heavy_check_mark: |  |  | :heavy_check_mark: |  |  |
+| [Delegate to an access package manager](entitlement-management-delegate-managers.md) | :heavy_check_mark: |  |  | :heavy_check_mark: |  |  |
+| [Remove an access package manager](entitlement-management-delegate-managers.md#remove-an-access-package-manager) | :heavy_check_mark: |  |  | :heavy_check_mark: |  |  |
+| [Create a new access package in a catalog](entitlement-management-access-package-create.md) | :heavy_check_mark: |  |  | :heavy_check_mark:  | :heavy_check_mark:  |  |
+| [Change resource roles in an access package](entitlement-management-access-package-resources.md) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Create and edit policies, including policies for external collaboration](entitlement-management-access-package-request-policy.md) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Directly assign a user to an access package](entitlement-management-access-package-assignments.md#directly-assign-a-user) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
+| [Directly remove a user from an access package](entitlement-management-access-package-assignments.md#remove-an-assignment) | :heavy_check_mark:  |  |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [View who has an assignment to an access package](entitlement-management-access-package-assignments.md#view-who-has-an-assignment) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
+| [View an access package's requests](entitlement-management-access-package-requests.md#view-requests) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |
+| [View a request's delivery errors](entitlement-management-troubleshoot.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
+| [Reprocess a request](entitlement-management-troubleshoot.md#reprocess-a-request) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |
+| [Cancel a pending request](entitlement-management-troubleshoot.md#cancel-a-pending-request) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Hide an access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Delete an access package](entitlement-management-access-package-edit.md#delete-an-access-package) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  |
+
 
 To determine the least privileged role for a task, you can also reference [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md#entitlement-management-least-privileged-roles).
 
@@ -136,7 +139,7 @@ The actions that entitlement management checks when a user adds a resource to a 
 
 * To add a security group or Microsoft 365 group: the user must be permitted to perform the `microsoft.directory/groups/members/update` and `microsoft.directory/groups/owners/update` actions
 * To add an application: the user must be permitted to perform the `microsoft.directory/servicePrincipals/appRoleAssignedTo/update` action
-* To add a SharePoint Online site: the user must be a SharePoint Administrator or be in a SharePoint Online site role allowing them to manage permissions in the site
+* To add a SharePoint Online site: the user must be a SharePoint Administrator or the user must be SharePoint site administrator of the site.
 
 The following table lists some of the role combinations that include the actions that allow users in those role combinations to add resources to a catalog. To remove resources from a catalog, you must also have a role or ownership with those same actions.
 
@@ -176,7 +179,7 @@ You can view the list of catalogs currently enabled for external users in the Mi
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 
 1. Change the filter setting for **Enabled for external users** to **Yes**.
 

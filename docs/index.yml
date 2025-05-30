@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: CelesteDG
   ms.author: celested
-  ms.date: 11/11/2024
+  ms.date: 05/07/2025
 
 ## BAND 1 - HIGHLIGHTED CONTENT ##############################################
 highlightedContent:
@@ -57,10 +57,6 @@ productDirectory:
       imageSrc: ./media/index/private-access-color.png
       summary: "Secure access to all private apps and resources with identity-centric Zero Trust Network Access (ZTNA)."
       url: /entra/global-secure-access/
-    - title: Microsoft Entra Permissions Management
-      imageSrc: ./media/index/permissions-management-color.png
-      summary: "One unified model to manage permissions of any identity across any cloud."
-      url: /entra/permissions-management/
     - title: Microsoft Entra Verified ID
       imageSrc: ./media/index/verified-id-color.png
       summary: "Enable more secure interactions while respecting privacy with an industry-leading global platform."

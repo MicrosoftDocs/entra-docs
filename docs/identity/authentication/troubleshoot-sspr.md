@@ -5,11 +5,11 @@ description: Learn how to troubleshoot common problems and resolution steps for 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 01/16/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
 ---
 # Troubleshoot self-service password reset in Microsoft Entra ID

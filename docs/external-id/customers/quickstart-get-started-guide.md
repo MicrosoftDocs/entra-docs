@@ -1,17 +1,14 @@
 ---
 title: Quickstart - Get started
 description: Learn how to get started with Microsoft Entra External ID. Customize your apps' look and feel, set up a user to test the sign-up flow, and configure a sample app in just a few minutes.
- 
 author: csmulligan
 manager: CelesteDG
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 11/28/2024
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or IT admin, I want to personalize the external tenant.
 ---
 # Quickstart: Get started with our guide to run a sample app and sign in your users 
@@ -85,7 +82,7 @@ Explore the features set up by the get started guide in the detailed article on 
 For the latest developer content and resources, see the [External ID developer center](https://aka.ms/ciam/dev).
 
 ## Related content
- - [Register an app in CIAM](how-to-register-ciam-app.md) 
+ - [Register an app in CIAM](/entra/identity-platform/quickstart-register-app) 
  - [Customize user experience for your customers](how-to-customize-branding-customers.md)
  - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
-
+ - [Migrate users to External ID](how-to-migrate-users.md)

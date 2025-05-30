@@ -1,16 +1,14 @@
 ---
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 12/19/2024
 ms.author: barclayn
-ms.custom: pim
-
+ms.custom: pim, sfi-ga-nochange
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
 
@@ -26,7 +24,7 @@ To open the settings for a Microsoft Entra role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Roles**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Roles**.
 
 1. On this page, you see a list of Microsoft Entra roles available in the tenant, including built-in and custom roles.
         :::image type="content" source="media/pim-how-to-change-default-settings/role-settings.png" alt-text="Screenshot that shows the list of Microsoft Entra roles available in the tenant, including built-in and custom roles." lightbox="media/pim-how-to-change-default-settings/role-settings.png":::

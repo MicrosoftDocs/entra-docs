@@ -5,13 +5,14 @@ metadata:
   description: Learn how to edit the built-in group policy objects (GPOs) and create your own custom policies in a Microsoft Entra Domain Services managed domain.
   author: justinha
   ms.author: justinha
-  manager: amycolannino
-  ms.date: 02/05/2025
+  manager: femila
+  ms.date: 02/25/2025
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-image-nochange
 title: |
   Administer Group Policy in a Microsoft Entra Domain Services managed domain
 introduction: |
@@ -19,7 +20,7 @@ introduction: |
 
   In a hybrid environment, group policies configured in an on-premises AD DS environment aren't synchronized to Domain Services. To define configuration settings for users or computers in Domain Services, edit one of the default GPOs or create a custom GPO.
 
-  This article shows you how to install the Group Policy Management tools, then edit the built-in GPOs and create custom GPOs.
+  This article shows you how to install the Group Policy Management tools, then edit the built-in GPOs and create custom GPOs. We recommend that you back up GPOs after you make any changes to them. For more information about how to back up and restore GPOs, see [Backup, restore, migrate, and copy Group Policy Objects](/windows-server/identity/ad-ds/manage/group-policy/group-policy-backup-restore).
 
   If you are interested in server management strategy, including machines in Azure and
   [hybrid connected](/azure/azure-arc/servers/overview),

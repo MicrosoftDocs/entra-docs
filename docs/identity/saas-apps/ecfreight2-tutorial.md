@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with ecFreight2
+title: Configure ecFreight2 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and ecFreight2.
 services: active-directory
 author: nguhiu
@@ -11,13 +11,13 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 08/16/2024
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ecFreight2 so that I can control who has access to ecFreight2, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with ecFreight2
+# Configure ecFreight2 for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate ecFreight2 with Microsoft Entra ID. When you integrate ecFreight2 with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate ecFreight2 with Microsoft Entra ID. When you integrate ecFreight2 with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access ecFreight2.
 Enable your users to be automatically signed in to ecFreight2 with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ To configure the integration of ecFreight2 into Microsoft Entra ID, you need to 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **ecFreight2** in the search box.
 
@@ -48,11 +48,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ecFreight2** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ecFreight2** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
-    1. Click **Go to application**.
+    1. Select **Go to application**.
 
         ![Screenshot of showing the identity configuration.](common/go-to-application.png)
 
@@ -71,25 +71,25 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot of showing the redirect values.](common/redirect.png)
 
-    1. Click **Configure** button.
+    1. Select **Configure** button.
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
-    1. Go to **Client secrets** tab and click **+New client secret**.
-    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
+    1. Go to **Client secrets** tab and select **+New client secret**.
+    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
 
         ![Screenshot of showing the client secrets value.](common/client-secret.png)
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the ecFreight2 side configuration.
+    1. Once you add a client secret, **Value** is generated. Copy the value and use it later in the ecFreight2 side configuration.
 
         ![Screenshot of showing how to add a client secret.](common/client.png)
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -100,21 +100,21 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to ecFreight2.
+In this section, you enable B.Simon to use single sign-on by granting access to ecFreight2.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ecFreight2**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ecFreight2**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Add Assignment** dialog, select the **Assign** button.
 
 ## Configure ecFreight2 SSO
 
 1. Log in to ecFreight2 Application as an administrator.
 
-1. Go to **Admin** -> **System Parameter** -> **Single Sign On** and perform the following steps:
+1. Go to **Admin** > **System Parameter** > **Single Sign On** and perform the following steps:
 
     ![Screenshot shows account setting for the configuration.](./media/ecfreight2-tutorial/value.png "Security")
 

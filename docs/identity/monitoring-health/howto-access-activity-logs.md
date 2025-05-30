@@ -2,7 +2,7 @@
 title: Access activity logs in Microsoft Entra ID
 description: How to choose the right method for accessing and integrating the activity logs in Microsoft Entra ID.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -24,18 +24,17 @@ You can access Microsoft Entra activity logs and reports using the following met
 - [Access activity logs through the **Microsoft Graph API**](#access-logs-with-the-microsoft-graph-api)
 - [Integrate activity logs with **Azure Monitor logs**](#integrate-logs-with-azure-monitor-logs)
 - [Monitor activity in real-time with **Microsoft Sentinel**](#monitor-events-with-microsoft-sentinel)
-- [View activity logs and reports in the **Azure portal**](#view-logs-through-the-portal)
+- [View activity logs and reports in the **Microsoft Entra admin center**](#view-logs-through-the-microsoft-entra-admin-center)
 - [Export activity logs for **storage and queries**](#export-logs-for-storage-and-queries)
 
 Each of these methods provides you with capabilities that might align with certain scenarios. This article describes those scenarios, including recommendations and details about related reports that use the data in the activity logs. Explore the options in this article to learn about those scenarios so you can choose the right method.
 
 ## Prerequisites
 
-- A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it.
-    - For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
-- Audit logs are available for features that you have licensed.
+- A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it. For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
 - [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) is the least privileged role required to configure diagnostic settings.
+- Audit logs are available for features that you have licensed.
 - To consent to the required permissions to view logs with Microsoft Graph, you need the [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
@@ -65,25 +64,26 @@ Use the following basic steps to access the reports in the Microsoft Entra admin
 #### [Microsoft Entra activity logs](#tab/microsoft-entra-activity-logs)
 <a name='azure-ad-activity-logs'></a>
 
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
 1. Adjust the filter according to your needs.
     - [Learn how to filter activity logs](howto-customize-filter-logs.md)
     - [Explore the Microsoft Entra audit log categories and activities](reference-audit-activities.md)
     - [Learn about basic info in the Microsoft Entra sign-in logs](concept-sign-in-log-activity-details.md)
 
-Audit logs can be accessed directly from the area of the Microsoft Entra admin center where you're working. For example, if you're in the **Groups** or **Licenses** section of Microsoft Entra ID, you can access the audit logs for those specific activities directly from that area. When you access the audit logs in this way, the filter categories are automatically set. If you're in **Groups**, the audit log filter category is set to **GroupManagement**.
+Audit logs can be accessed directly from the area of the Microsoft Entra admin center where you're working. For example, if you're in the **Groups** or **Licenses** section of Microsoft Entra ID, you can access the audit logs for those specific activities directly from that area. When you access the audit logs in this way, the filter categories are automatically set. For example, if you're in **Groups**, the audit log filter category is set to **GroupManagement**.
 
 #### [Microsoft Entra ID Protection reports](#tab/microsoft-entra-id-protection-reports)
 <a name='azure-ad-identity-protection-reports'></a>
 
-1. Browse to **Protection** > **Identity Protection**.
+1. Browse to **ID Protection** > **Dashboard**.
 1. Explore the available reports.
     - [Learn more about Identity Protection](../../id-protection/overview-identity-protection.md)
     - [Learn how to investigate risk](../../id-protection/howto-identity-protection-investigate-risk.md)
 
 #### [Usage and insights reports](#tab/usage-and-insights-reports)
 
-1. Browse to **Identity** > **Monitoring & health** > **Usage and insights**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage and insights**.
 1. Explore the available reports.
     - [Learn more about the Usage and insights report](concept-usage-insights-report.md)
 
@@ -104,7 +104,7 @@ The SIEM tools you can integrate with your event hub can provide analysis and mo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. Create an Event Hubs namespace and event hub.
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 1. Choose the logs you want to stream, select the **Stream to an event hub** option, and complete the fields.
     - [Set up an Event Hubs namespace and an event hub](/azure/event-hubs/event-hubs-create)
     - [Learn more about streaming activity logs to an event hub](howto-stream-logs-to-event-hub.md)
@@ -152,9 +152,9 @@ Integrating Microsoft Entra logs with Azure Monitor logs provides a centralized 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 1. Choose the logs you want to stream, select the **Send to Log Analytics workspace** option, and complete the fields.
-1. Browse to **Identity** > **Monitoring & health** > **Log Analytics** and begin querying the data.
+1. Browse to **Entra ID** > **Monitoring & health** > **Log Analytics** and begin querying the data.
     - [Integrate Microsoft Entra logs with Azure Monitor logs](howto-integrate-activity-logs-with-azure-monitor-logs.yml)
     - [Learn how to query using Log Analytics](howto-analyze-activity-logs-log-analytics.md)
 
@@ -209,14 +209,14 @@ Use the following basic steps to archive or download your activity logs.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. Create a storage account.
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 1. Choose the logs you want to stream, select the **Archive to a storage account** option, and complete the fields.
     - [Review the data retention policies](reference-reports-data-retention.md)
 
 #### [Manually download activity logs](#tab/manually-download-activity-logs)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs** from the **Monitoring** menu.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs** from the **Monitoring** menu.
 1. Select **Download**.
     - [Learn more about how to download logs](howto-download-logs.md).
 

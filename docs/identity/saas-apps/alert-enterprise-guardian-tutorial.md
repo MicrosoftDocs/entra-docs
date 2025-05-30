@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with AlertEnterprise-Guardian
+title: Configure AlertEnterprise-Guardian for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AlertEnterprise-Guardian.
 
 author: nguhiu
@@ -9,16 +9,16 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AlertEnterprise-Guardian so that I can control who has access to AlertEnterprise-Guardian, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with AlertEnterprise-Guardian
+# Configure AlertEnterprise-Guardian for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate AlertEnterprise-Guardian with Microsoft Entra ID. Application automates the identity management lifecycle. Built-in Regulatory Compliance ensures controls are in place before granting access to identities. When you integrate AlertEnterprise-Guardian with Microsoft Entra ID, you can:
+In this article, you learn how to integrate AlertEnterprise-Guardian with Microsoft Entra ID. Application automates the identity management lifecycle. Built-in Regulatory Compliance ensures controls are in place before granting access to identities. When you integrate AlertEnterprise-Guardian with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AlertEnterprise-Guardian.
 * Enable your users to be automatically signed-in to AlertEnterprise-Guardian with their Microsoft Entra accounts.
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AlertEnterprise-Guardian** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **AlertEnterprise-Guardian** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://<SUBDOMAIN>.alerthsc.com/api/auth/sso/callback?client_name=<Client_Name>`
 
 	> [!Note]
-    > The Reply URL is not real. Update this value with the actual Reply URL. Contact [AlertEnterprise-Guardian support team](mailto:info@alertenterprise.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > The Reply URL isn't  real. Update this value with the actual Reply URL. Contact [AlertEnterprise-Guardian support team](mailto:info@alertenterprise.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. AlertEnterprise-Guardian application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -90,7 +90,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| ---------------|  --------- |
     | tenant | <Share_By_ALERT_Team> |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -106,9 +106,9 @@ In this section, you create a user called Britta Simon at AlertEnterprise-Guardi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the AlertEnterprise-Guardian for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the AlertEnterprise-Guardian for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the AlertEnterprise-Guardian tile in the My Apps, you should be automatically signed in to the AlertEnterprise-Guardian for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the AlertEnterprise-Guardian tile in the My Apps, you should be automatically signed in to the AlertEnterprise-Guardian for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

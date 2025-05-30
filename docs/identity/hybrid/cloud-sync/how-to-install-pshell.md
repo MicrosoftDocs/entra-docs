@@ -3,10 +3,10 @@ title: 'Install the Microsoft Entra Connect cloud provisioning agent using a com
 description: Learn how to install the Microsoft Entra Connect cloud provisioning agent by using PowerShell cmdlets.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

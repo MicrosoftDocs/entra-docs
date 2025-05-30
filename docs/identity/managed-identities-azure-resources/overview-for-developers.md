@@ -1,19 +1,16 @@
 ---
 title: Developer introduction and guidelines
 description: An overview how developers can use managed identities for Azure resources.
-
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: overview
-
 ms.date: 09/26/2024
-ms.author: ryanwi
+ms.author: shermanouko
 ai-usage: ai-assisted
-
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control. 
 ---
 
@@ -785,7 +782,42 @@ if "access_token" in result:
 
 #### [Go](#tab/Go)
 
-MSAL Go doesn't support managed identities yet. You can use the Azure Identity library to acquire tokens for managed identities.
+```go
+import (
+    "context"
+    "fmt"
+    "net/http"
+
+    mi "github.com/AzureAD/microsoft-authentication-library-for-go/apps/managedidentity"
+)
+
+func RunManagedIdentity() {
+    // Use this for system-assigned managed identities
+    miSystemAssigned, err := mi.New(mi.SystemAssigned())
+    
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    result, err := miSystemAssigned.AcquireToken(context.TODO(), "https://management.azure.com")
+	
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    // Use this for user-assigned managed identities with a client ID.
+    miClientIdUserAssigned, err := mi.New(mi.ClientID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"))
+    
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    result, err := miClientIdUserAssigned.AcquireToken(context.TODO(), "https://management.azure.com")
+
+    // Print out token expiry time
+    fmt.Println("token expire at : ", result.ExpiresOn)
+}
+```
 
 ---
 

@@ -2,13 +2,12 @@
 title: Join a SLE VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a SUSE Linux Enterprise virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
-
+manager: femila
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: devx-track-linux, linux-related-content
+ms.custom: devx-track-linux, linux-related-content, sfi-image-nochange
 ms.topic: how-to
-ms.date: 02/05/2025
+ms.date: 03/18/2025
 ms.author: justinha
 ---
 # Join a SUSE Linux Enterprise virtual machine to a Microsoft Entra Domain Services managed domain
@@ -172,13 +171,11 @@ After you have joined the managed domain, you can sign in to it from your workst
 
 ## Join VM to the managed domain using Winbind from the YaST command line interface
 
-To join the managed domain using **winbind** and the *YaST command line interface*:
+To join the managed domain using **winbind** and the *YaST command line interface*, add `user` and `password` values for an administrator, and update other parameters for your organization:
 
-* Join the domain:
-
-  ```bash
-  sudo yast samba-client joindomain domain=aaddscontoso.com user=<admin> password=<admin password> machine=<(optional) machine account>
-  ```
+```bash
+sudo yast samba-client joindomain domain=aaddscontoso.com machine=<(optional) machine account>
+```
 
 ## Join VM to the managed domain using Winbind from the terminal
 

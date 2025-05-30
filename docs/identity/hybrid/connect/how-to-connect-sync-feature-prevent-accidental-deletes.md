@@ -1,19 +1,16 @@
 ---
 title: 'Microsoft Entra Connect Sync: Prevent accidental deletes'
 description: This topic describes how to prevent accidental deletes in Microsoft Entra Connect.
-
 author: billmath
-manager: amycolannino
-
+manager: femila
 ms.assetid: 6b852cb4-2850-40a1-8280-8724081601f7
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 12/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra Connect Sync: Prevent accidental deletes
 This topic describes the feature to prevent accidental deletes (preventing accidental deletions) in Microsoft Entra Connect.
@@ -31,10 +28,12 @@ Common scenarios involving many object deletions include:
 
 The default value of 500 objects can be changed with PowerShell using `Enable-ADSyncExportDeletionThreshold`, which is part of the AD Sync module installed with Microsoft Entra Connect. You should configure this value to fit the size of your organization. 
 
+
+## Notifications for preventing accidental deletes
+
 If there are too many deletes staged to be exported to Microsoft Entra ID, then the export stops before deleting any object and you receive an email like this:
 
 ![Prevent Accidental deletes email](./media/how-to-connect-sync-feature-prevent-accidental-deletes/email.png)
-
 
 
 | From:         | Microsoft Security <MSSecurity-noreply@microsoft.com>                                                                                                               |
@@ -47,12 +46,11 @@ If there are too many deletes staged to be exported to Microsoft Entra ID, then 
 | Tenant:       | FabrikamOnline.com                                                                                                                                                  |
 
 
-
-
 From [Microsoft Entra Connect Health](https://portal.azure.com/#blade/Microsoft_Azure_ADHybridHealth/AadHealthMenuBlade) portal, navigate to Sync services, select your tenant, then select your active Entra Connect server and select Alerts to see the list of events where the accidental delete threshold is reported.
 
-From the Application event viewer logs you can see a Warning event ID 116 as the following sample:
+![Screenshot that shows Microsoft Entra Connect Sync Alerts.](./media/how-to-connect-sync-feature-prevent-accidental-deletes/connect-health-alert.png)
 
+From the Application event viewer logs you can see a Warning event ID 116 as the following sample:
 
 ```
 Log Name:      Application
@@ -67,10 +65,12 @@ Computer:      <server name>
 Description:   Prevent Accidental Deletes: The number of deletions for this sync cycle (100 pending deletes) has exceeded the current threshold of 50 objects. Deletions will be suppressed for this sync cycle. Please visit http://go.microsoft.com/fwlink/?LinkId=390655 for more information.
 ```
 
-You can also see the status `stopped-deletion-threshold-exceeded` when you look in the **Synchronization Service Manager** UI for the Export profile.
+## Determine which objects are pending deletion
+
+You can see the run profile status `stopped-deletion-threshold-exceeded` when you look in the **Synchronization Service Manager** UI for the Export step.
 ![Prevent Accidental deletes Sync Service Manager UI](./media/how-to-connect-sync-feature-prevent-accidental-deletes/syncservicemanager.png)
 
-If this error is unexpected, then investigate and take corrective actions. To see which objects are about to be deleted, do the following steps:
+To see which objects are about to be deleted, do the following steps:
 
 1. Start __Synchronization Service__ from the Start Menu.
 
@@ -84,19 +84,18 @@ If this error is unexpected, then investigate and take corrective actions. To se
 
 1. Select Search to view a list of all objects about to be deleted. By opening each item, you can get additional information about the object. You can also select Column Settings to add more attributes to be visible in the grid, for instance, the onPremisesDistinguishedName.
 
-![Search Connector Space](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
+    ![Screenshot that shows the Search Connector Space.](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
-## If the deletions are unexpected
+### If the deletions are unexpected
 
 If you aren't sure that all deletes are desired, and wish to go down a safer route, you can use a more detailed method to [Verify](/entra/identity/hybrid/connect/how-to-connect-sync-staging-server) all the objects pending delete from a spreadsheet.
-
 
 Unexpected deletions are usually caused by changes in the OU structure or [Domain/OU scope filtering](/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering), so make sure the objects pending delete are in sync scope. For example, renaming an OU in Active Directory can cause unexpected mass deletions in Microsoft Entra ID unless you re-select the OU in Microsoft Entra Connect Wizard.
 If you're using attribute scoping filters, adjust the necessary sync rules in the Synchronization Rules Editor to make sure the objects are back in sync scope.
 > [!IMPORTANT]
-> Domain/OU scoping filter and sync rule changes don't take effect until you run a full sync cycle: `Start-ADSyncSyncCycle -PolicyType Initial`
+> Domain/OU scoping filter and sync rule changes don't take effect until you run a full sync cycle: `Start-ADSyncSyncCycle -PolicyType Initial`.
 
-## If all deletions are desired
+### If all deletions are desired
 
 If all the objects pending deletion are supposed to be deleted in Microsoft Entra ID, then using your Entra Global Administrator or Hybrid Identity Administrator credential, do the following steps:
 
@@ -107,11 +106,11 @@ If all the objects pending deletion are supposed to be deleted in Microsoft Entr
 
 1. With the Microsoft Entra Connector still selected, select the action __Run__ and select __Export__.
 
-1. To protect against unexpected deletions in the future, ensure the deletion threshold feature isn't permanently disabled. To re-enable the protection with the default value, run: `Enable-ADSyncExportDeletionThreshold -DeletionThreshold 500 -AADUserName "<UserPrincipalName>"`
+1. To protect against unexpected deletions in the future, ensure the deletion threshold feature isn't permanently disabled. To re-enable the protection with the default value, run: `Enable-ADSyncExportDeletionThreshold -DeletionThreshold 500 -AADUserName "<UserPrincipalName>"`.
 
-If a higher number of expected deletions are frequent in your organization, it's advisable to increase the deletion threshold rather than disabling this protection, as this could allow undesired deletions causing loss of critical data and disruption of services. Evaluate your specific desired number of deletions and use the following PowerShell cmdlet to set a new limit, for instance, to set a deletion threshold of 1000, use: `Enable-ADSyncExportDeletionThreshold -DeletionThreshold 1000 -AADUserName "<UserPrincipalName>"`
+If a higher number of expected deletions are frequent in your organization, it's advisable to increase the deletion threshold rather than disabling this protection, as this could allow undesired deletions causing loss of critical data and disruption of services. Evaluate your specific desired number of deletions and use the following PowerShell cmdlet to set a new limit, for instance, to set a deletion threshold of 1000, use: `Enable-ADSyncExportDeletionThreshold -DeletionThreshold 1000 -AADUserName "<UserPrincipalName>"`.
 
-To confirm the current deletion threshold, run: `Get-ADSyncExportDeletionThreshold -AADUserName "<UserPrincipalName>"`
+To confirm the current deletion threshold, run: `Get-ADSyncExportDeletionThreshold -AADUserName "<UserPrincipalName>"`.
 
 ## Next steps
 **Overview topics**

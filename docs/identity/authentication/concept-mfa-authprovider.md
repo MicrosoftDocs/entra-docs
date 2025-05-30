@@ -6,11 +6,11 @@ description: When should you use an authentication provider with Microsoft Entra
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jpettere
 ---
 # When to use a Microsoft Entra multifactor authentication provider
@@ -43,7 +43,7 @@ If your MFA provider isn't linked to a Microsoft Entra tenant, or you link the n
 > [!CAUTION]
 > There's no confirmation when deleting an authentication provider. Selecting **Delete** is a permanent process.
 
-Authentication providers can be found in the [Microsoft Entra admin center](https://entra.microsoft.com). Sign in as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator). Browse to **Protection** > **Multifactor authentication** > **Providers**. Click the listed providers to see details and configurations associated with that provider.
+Authentication providers can be found in the [Microsoft Entra admin center](https://entra.microsoft.com). Sign in as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator). Browse to **Entra ID** > **Multifactor authentication** > **Providers**. Click the listed providers to see details and configurations associated with that provider.
 
 Before removing an authentication provider, take note of any customized settings configured in your provider. Decide what settings need to be migrated to general MFA settings from your provider and complete the migration of those settings. 
 

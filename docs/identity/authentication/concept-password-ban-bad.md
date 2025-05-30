@@ -1,16 +1,15 @@
 ---
 title: Password protection in Microsoft Entra ID
 description: Learn how to dynamically ban weak passwords from your environment with Microsoft Entra Password Protection
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: miminans
+ms.custom: sfi-image-nochange
 ---
 # Eliminate bad passwords using Microsoft Entra Password Protection
 

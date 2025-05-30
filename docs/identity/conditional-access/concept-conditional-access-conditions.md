@@ -5,22 +5,22 @@ description: What are conditions in a Microsoft Entra Conditional Access policy?
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 03/12/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions
 
-Within a Conditional Access policy, an administrator can make use of one or more signals to enhance their policy decisions.
+Within a Conditional Access policy, an administrator can use one or more signals to enhance their policy decisions.
 
 :::image type="content" source="media/concept-conditional-access-conditions/conditional-access-conditions.png" alt-text="Screenshot of available conditions for a Conditional Access policy in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-conditions/conditional-access-conditions.png":::
 
 Multiple conditions can be combined to create fine-grained and specific Conditional Access policies.
 
-When users access a sensitive application, an administrator might factor multiple conditions into their access decisions like: 
+When users access a sensitive application, an administrator might factor multiple conditions into their access decisions, such as: 
 
 - Sign-in risk information from ID Protection
 - Network location
@@ -28,11 +28,11 @@ When users access a sensitive application, an administrator might factor multipl
 
 ## User risk 
 
-Administrators with access to [ID Protection](~/id-protection/overview-identity-protection.md), can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk is found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## Sign-in risk
 
-Administrators with access to [ID Protection](~/id-protection/overview-identity-protection.md), can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk can be found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Administrators with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk is found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## Insider risk
 
@@ -42,7 +42,7 @@ Administrators with access to [Microsoft Purview adaptive protection](/purview/i
 - Historical patterns
 - Anomaly detections
 
-This condition allows administrators to use Conditional Access policies to take actions like blocking access, requiring stronger authentication methods, or requiring terms of use acceptance.
+This condition lets administrators use Conditional Access policies to take actions like blocking access, requiring stronger authentication methods, or requiring terms of use acceptance.
 
 This functionality involves incorporating parameters that specifically address potential risks arising from within an organization. By configuring Conditional Access to consider Insider Risk, administrators can tailor access permissions based on contextual factors such as user behavior, historical patterns, and anomaly detection.
 
@@ -50,7 +50,7 @@ For more information, see the article [Configure and enable an insider risk base
 
 ## Device platforms
 
-Conditional Access identifies the device platform by using information provided by the device, such as user agent strings. Since user agent strings can be modified, this information is unverified. Device platform should be used in concert with Microsoft Intune device compliance policies or as part of a block statement. The default is to apply to all device platforms.
+Conditional Access identifies the device platform by using information provided by the device, such as user agent strings. Since user agent strings can be modified, this information is unverified. Use of device platform should be pared with Microsoft Intune device compliance policies or as part of a block statement. The default is to apply to all device platforms.
 
 Conditional Access supports the following device platforms:
 
@@ -62,10 +62,10 @@ Conditional Access supports the following device platforms:
 
 If you block legacy authentication using the **Other clients** condition, you can also set the device platform condition.
 
-We don't support selecting macOS or Linux device platforms when selecting **Require approved client app** or **Require app protection policy** as the only grant controls or when you choose **Require all the selected controls**.
+Selecting macOS or Linux device platforms isn't supported when selecting **Require approved client app** or **Require app protection policy** as the only grant controls or when you choose **Require all the selected controls**.
 
 > [!IMPORTANT]
-> Microsoft recommends that you have a Conditional Access policy for unsupported device platforms. As an example, if you want to block access to your corporate resources from **Chrome OS** or any other unsupported clients, you should configure a policy with a Device platforms condition that includes any device and excludes supported device platforms and Grant control set to Block access.
+> Microsoft recommends having a Conditional Access policy for unsupported device platforms. For example, to block access to your corporate resources from **Chrome OS** or any other unsupported clients, configure a policy with a Device platforms condition that includes any device and excludes supported device platforms and Grant control set to Block access.
 
 ## Locations
 
@@ -76,10 +76,10 @@ We don't support selecting macOS or Linux device platforms when selecting **Requ
 By default, all newly created Conditional Access policies apply to all client app types even if the client apps condition isn’t configured. 
 
 > [!NOTE]
-> The behavior of the client apps condition was updated in August 2020. If you have existing Conditional Access policies, they will remain unchanged. However, if you click on an existing policy, the **Configure** toggle has been removed and the client apps the policy applies to are selected.
+> The behavior of the client apps condition was updated in August 2020. If you have existing Conditional Access policies, they remain unchanged. However, if you select an existing policy, the **Configure** toggle is removed and the client apps the policy applies to are selected.
 
 > [!IMPORTANT]
-> Sign-ins from legacy authentication clients don’t support multifactor authentication (MFA) and don’t pass device state information, so they are blocked by Conditional Access grant controls, like requiring MFA or compliant devices. If you have accounts which must use legacy authentication, you must either exclude those accounts from the policy, or configure the policy to only apply to modern authentication clients.
+> Sign-ins from legacy authentication clients don’t support multifactor authentication (MFA) and don’t pass device state information, so they're blocked by Conditional Access grant controls, like requiring MFA or compliant devices. If you have accounts which must use legacy authentication, you must either exclude those accounts from the policy, or configure the policy to only apply to modern authentication clients.
 
 The **Configure** toggle when set to **Yes** applies to checked items, when set to **No** it applies to all client apps, including modern and legacy authentication clients. This toggle doesn’t appear in policies created before August 2020.
 
@@ -91,7 +91,7 @@ The **Configure** toggle when set to **Yes** applies to checked items, when set 
 - Legacy authentication clients
    - Exchange ActiveSync clients
       - This selection includes all use of the Exchange ActiveSync (EAS) protocol.
-      - When policy blocks the use of Exchange ActiveSync the affected user receives a single quarantine email. This email with provide information on why they’re blocked and include remediation instructions if able.
+When policy blocks the use of Exchange ActiveSync, the affected user receives a single quarantine email. This email provides information on why they’re blocked and includes remediation instructions if able.
       - Administrators can apply policy only to supported platforms (such as iOS, Android, and Windows) through the Conditional Access Microsoft Graph API.
    - Other clients
       - This option includes clients that use basic/legacy authentication protocols that don’t support modern authentication.
@@ -124,22 +124,24 @@ This setting works with all browsers. However, to satisfy a device policy, like 
 | Windows Server 2019 | Microsoft Edge, [Chrome](#chrome-support) |
 | iOS | Microsoft Edge, Safari (see the notes) |
 | Android | Microsoft Edge, Chrome |
-| macOS | Microsoft Edge, Chrome, Safari |
+| macOS | Microsoft Edge, Chrome, [Firefox 133+](https://support.mozilla.org/kb/firefox-enterprise-133-release-notes), Safari |
 | Linux Desktop|Microsoft Edge|
 
 These browsers support device authentication, allowing the device to be identified and validated against a policy. The device check fails if the browser is running in private mode or if cookies are disabled. 
 
 > [!NOTE]
-> Edge 85+ requires the user to be signed in to the browser to properly pass device identity. Otherwise, it behaves like Chrome without the [Microsoft Single Sign On extension](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). This sign-in might not occur automatically in a hybrid device join scenario.
+> Microsoft Edge 85+ requires the user to be signed in to the browser to properly pass device identity. Otherwise, it behaves like Chrome without the [Microsoft Single Sign On extension](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). This sign-in might not occur automatically in a hybrid device join scenario.
 >  
-> Safari is supported for device-based Conditional Access on a managed device, but it can't satisfy the **Require approved client app** or **Require app protection policy** conditions. A managed browser like Microsoft Edge will satisfy approved client app and app protection policy requirements.
-> On iOS with 3rd party MDM solution only Microsoft Edge browser supports device policy.
+> Safari is supported for device-based Conditional Access on a managed device, but it can't satisfy the **Require approved client app** or **Require app protection policy** conditions. A managed browser like Microsoft Edge satisfies approved client app and app protection policy requirements.
+> On iOS with non-Microsoft MDM solutions, only the Microsoft Edge browser supports device policy.
 > 
 > [Firefox 91+](https://support.mozilla.org/kb/windows-sso) is supported for device-based Conditional Access, but "Allow Windows single sign-on for Microsoft, work, and school accounts" needs to be enabled.
 >
 > [Chrome 111+](https://chromeenterprise.google/policies/#CloudAPAuthEnabled) is supported for device-based Conditional Access, but "CloudApAuthEnabled" needs to be enabled.
 >
 > macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device-based Conditional Access in Google Chrome.
+> 
+> macOS devices using the Firefox browser must be running macOS version 10.15 or newer and have the [Microsoft Enterprise SSO plug-in installed](/mem/intune-service/user-help/enroll-your-device-in-intune-macos-cp) and [configured appropriately](/entra/identity-platform/apple-sso-plugin#microsoft-intune-configuration).
 
 #### Why do I see a certificate prompt in the browser
 
@@ -226,11 +228,11 @@ By selecting **Other clients**, you can specify a condition that affects apps th
 **This condition was deprecated.** Customers should use the **Filter for devices** condition in the Conditional Access policy, to satisfy scenarios previously achieved using the device state condition.
 
 > [!IMPORTANT]
-> Device state and filters for devices cannot be used together in Conditional Access policy. Filters for devices provides more granular targeting including support for targeting device state information through the `trustType` and `isCompliant` property.
+> Device state and filters for devices can't be used together in Conditional Access policy. Filters for devices provide more granular targeting including support for targeting device state information through the `trustType` and `isCompliant` property.
 
 ## Filter for devices
 
-When administrators configure filter for devices as a condition, they can choose to include or exclude devices based on a filter using a rule expression on device properties. The rule expression for filter for devices can be authored using rule builder or rule syntax. This experience is similar to the one used for rules for dynamic membership groups for groups. For more information, see the article [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
+When administrators configure filter for devices as a condition, they can include or exclude devices based on a filter using a rule expression on device properties. The rule expression for filter for devices can be authored using rule builder or rule syntax. This experience is similar to the one used for rules for dynamic membership groups. For more information, see the article [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
 
 ## Authentication flows (preview)
 

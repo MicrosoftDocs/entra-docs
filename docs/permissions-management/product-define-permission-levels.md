@@ -2,15 +2,18 @@
 title: Define and manage users, roles, and access levels in Microsoft Permissions Management
 description: How to define and manage users, roles, and access levels in the Permissions Management User management dashboard.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Define and manage users, roles, and access levels
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 In Permissions Management, a key component of the interface is the User management dashboard. This topic describes how system administrators can define and manage users, their roles, and their access levels in the system.
 

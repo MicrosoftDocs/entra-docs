@@ -2,10 +2,10 @@
 title: 'Auditing administrator events in Microsoft Entra Connect Sync'
 description: This article describes security improvements to Microsoft Entra Connect Sync and how to enable logging of administrator activities.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 01/07/2025
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ---
@@ -34,7 +34,7 @@ You can also use PowerShell to disable audit logging of administrator events. Us
  ```powershell
  #Declare variables
  $registryPath = 'HKLM:\SOFTWARE\Microsoft\Azure AD Connect'
- $valueName = 'AuditEventLoggging'
+ $valueName = 'AuditEventLogging'
  $newValue = '0'
 
  #Create the AuditEventLogging key if it doesn't exist
@@ -70,6 +70,11 @@ The following table is a list of events that are logged with the new auditing fe
 |2519|Reinitialize Entra ID Connector account password| Shows that the AD Sync service account password was reset|
 |2520|Install ADFS Server| Shows the selected server|
 |2521|Set ADFS Service Account| Specifies if group-managed or domain user. Includes administrator username|
+|2522|ConfigureEntraApplicationAuthentication|Specifies that configuring application authentication to Microsoft Entra ID was attempted. It provides the status of the operation along with relevant details like application (Client) Id.|
+|2523|RotateEntraApplicationCertificate|Speifies that rotation of the application certificate that is used for authentication to Microsoft Entra ID was attempted along with the status of the operation.|
+|2524|DeleteEntraConnectorAccount|Specifies that deletion of the Microsoft Entra ID synchronization account was attempted. It provides the status of the operation along with the name of the account.|
+|2525|DeleteEntraApplication|Specifies that deletion of the Entra Connect Sync application used for synchronizing with Microsoft Entra ID was attempted. It provides the application(Client) Id along with the status of the operation.|
+|2526|DeleteApplicationCertificate|Specifies that deletion of the Entra Connect Sync application certificate was attempted. It provides the application (Client) Id and the Certificate Id along with the status of the operation.|
 
 
  ## Next steps

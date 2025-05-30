@@ -1,6 +1,6 @@
 ---
-title: 'Configure enterprise application properties'
-description: Configure the properties of an enterprise application in Microsoft Entra ID.
+title: Configure enterprise application properties
+description: Learn how to configure the properties of an enterprise to how users access and interact with the application.
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,11 +8,12 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 02/20/2024
+ms.date: 04/08/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps
+ai-usage: ai-assisted
 
 #customer intent: As a Microsoft Entra admin, I want to configure the properties of an enterprise application, so that I can control how the application is represented and accessed by users.
 ---
@@ -26,10 +27,11 @@ This article shows you where you can configure the properties of an enterprise a
 To configure the properties of an enterprise application, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: 
+    - Cloud Application Administrator
+    - Application Administrator, or owner of the service principal.
 
 ## Configure application properties
-
 
 Application properties control how the application is represented and how the application is accessed.
 
@@ -38,7 +40,7 @@ Application properties control how the application is represented and how the ap
 To configure the application properties:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Search for and select the application that you want to use.
 1. In the **Manage** section, select **Properties** to open the **Properties** pane for editing.
 1. On the **Properties** pane, you might want to configure the following properties for your application.
@@ -47,7 +49,7 @@ To configure the application properties:
    - App visibility to users
    - Set available URL options
    - Choose whether app assignment is required
-1. After you've configured the properties according to your apps needs, select **Save**.
+1. After you configure the properties according to your apps needs, select **Save**.
    
 :::zone-end
 
@@ -125,12 +127,13 @@ Content-type: application/json
 ```
 :::zone-end
 
-## Use Microsoft Graph to configure application properties
+> [!NOTE]
+> Managed identities are distinct from Microsoft Entra App Registrations. Managed identities only have a service principal object and do not possess an application object, which is typically used for granting app permissions. As a result, global admins cannot change the settings of a managed identity, as the security boundary is the resource itself.
 
-You can also configure other advanced properties of both app registrations and enterprise applications (service principals) through Microsoft Graph. These include properties such as permissions, and role assignments. For more information, see [Create and manage a Microsoft Entra application using Microsoft Graph](/graph/tutorial-applications-basics#configure-other-basic-properties-for-your-app).
+## Use Microsoft Graph to configure advanced app properties
 
-## Next steps
+You can also configure other advanced properties of both app registrations and enterprise applications (service principals) through Microsoft Graph. These properties include permissions and role assignments. For more information, see [Create and manage a Microsoft Entra application using Microsoft Graph](/graph/tutorial-applications-basics#configure-other-basic-properties-for-your-app).
 
-Learn more about how to manage enterprise applications.
-> [!div class="nextstepaction"]
-> [What is application management in Microsoft Entra ID?](what-is-application-management.md)
+## Related content
+
+- [What is application management in Microsoft Entra ID?](what-is-application-management.md)

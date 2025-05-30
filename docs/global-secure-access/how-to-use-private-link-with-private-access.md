@@ -3,9 +3,9 @@ title: How to access an Azure Storage account behind Azure Private Link using Mi
 description: Learn how to access an Azure Storage account behind Azure Private Link using Microsoft Entra Private Access.
 author: kenwith    
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 01/15/2025
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish

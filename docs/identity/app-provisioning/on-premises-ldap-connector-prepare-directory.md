@@ -3,11 +3,11 @@ title: Preparing for Microsoft Entra provisioning to Active Directory Lightweigh
 description: This document describes how to configure Microsoft Entra ID to provision users into Active Directory Lightweight Directory Services as an example of an LDAP directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.reviewer: arvinh
 ---
@@ -212,7 +212,7 @@ Write-Output "Enabling service account"
 
 # Add the service account to the Administrators role
 Get-ADGroup -Server "APP3:389" -SearchBase "CN=Administrators,CN=Roles,CN=App,DC=contoso,DC=lab" -Filter "name -like 'Administrators'" | Add-ADGroupMember -Members "CN=svcAccountLDAP,CN=ServiceAccounts,CN=App,DC=contoso,DC=lab"
-Write-Output "Adding service accounnt to Administrators role"
+Write-Output "Adding service account to Administrators role"
 
 
  ```

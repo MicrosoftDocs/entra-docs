@@ -2,12 +2,13 @@
 title: Govern an application's existing users in Microsoft Entra ID with Microsoft PowerShell
 description: Planning for a successful access reviews campaign for a particular application includes identifying if any users in that application have access that doesn't derive from Microsoft Entra ID.
 author: markwahl-msft
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 06/20/2023
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-blocked, sfi-ropc-nochange
 #Customer intent: As an IT admin, I want to ensure that access to specific applications is governed by setting up access reviews for those applications. For this, I need to have the existing users of that application assigned to the application in Microsoft Entra ID.
 ---
 

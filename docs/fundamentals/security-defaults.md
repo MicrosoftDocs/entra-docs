@@ -1,16 +1,15 @@
 ---
 title: Providing a default level of security in Microsoft Entra ID
 description: Get protected from common identity threats using Microsoft Entra security defaults.
-
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 04/15/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: sama
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Security defaults in Microsoft Entra ID
 
@@ -34,7 +33,7 @@ These basic controls include:
 ### Who should use Conditional Access?
 
 - If you're an organization with Microsoft Entra ID P1 or P2 licenses, security defaults are probably not right for you.
-- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/conditional-access/overview).
+- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/conditional-access/concept-conditional-access-policy-common).
 
 ## Enabling security defaults
 
@@ -55,7 +54,7 @@ To configure security defaults in your directory, you must be assigned at least 
 To enable security defaults:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Identity** > **Overview** > **Properties**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Enabled**.
 1. Select **Save**.
@@ -147,7 +146,7 @@ This policy applies to all users who are accessing Azure Resource Manager servic
 > Pre-2017 Exchange Online tenants have modern authentication disabled by default. In order to avoid the possibility of a login loop while authenticating through these tenants, you must [enable modern authentication](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
 
 > [!NOTE]
-> The Microsoft Entra Connect synchronization account is excluded from security defaults and will not be prompted to register for or perform multifactor authentication. Organizations should not be using this account for other purposes.
+> The Microsoft Entra Connect / Microsoft Entra Cloud Sync synchronization accounts (or any security principal assigned to the "Directory Synchronization Accounts" role) are excluded from security defaults and will not be prompted to register for or perform multifactor authentication. Organizations should not be using this account for other purposes.
 
 ## Deployment considerations
 
@@ -177,7 +176,7 @@ Organizations that choose to implement Conditional Access policies that replace 
 To disable security defaults in your directory:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
-1. Browse to **Identity** > **Overview** > **Properties**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Disabled (not recommended)**.
 1. Select **Save**.

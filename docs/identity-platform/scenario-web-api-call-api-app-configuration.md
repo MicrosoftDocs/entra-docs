@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # A web API that calls web APIs: Code configuration
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 This article describes how to configure code for a Web API app using the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md).
 
 Microsoft recommends that you use the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web) NuGet package when developing an ASP.NET Core protected API calling downstream web APIs. See [Protected web API: Code configuration | Microsoft.Identity.Web](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) for a quick presentation of that library in the context of a web API.

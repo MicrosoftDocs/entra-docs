@@ -3,13 +3,12 @@ title: The Global Secure Access Client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 02/10/2025
+ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: macOS users, I want to download and install the Global Secure Access client.
 ---
 # Global Secure Access client for macOS (Preview)

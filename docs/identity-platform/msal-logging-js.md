@@ -4,9 +4,9 @@ description: Learn how to log errors and exceptions in MSAL.js
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 12/19/2023
-ms.reviewer: saeeda, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -22,7 +22,7 @@ Enable logging in MSAL.js (JavaScript) by passing a loggerOptions object during 
 
 The loggerOptions object has the following properties:
 
-- `loggerCallback`: a Callback function that can be provided by the developer to handle the logging of MSAL statements in a custom manner. Implement the `loggerCallback` function depending on how you want to redirect logs. The loggerCallback function has the following format ` (level: LogLevel, message: string, containsPii: boolean): void`
+- `loggerCallback`: a Callback function that can be provided by the developer to handle the logging of MSAL statements in a custom manner. Implement the `loggerCallback` function depending on how you want to redirect logs. The loggerCallback function has the following format `(level: LogLevel, message: string, containsPii: boolean): void`
      - The supported log levels are: `Error`, `Warning`, `Info`, and `Verbose`. The default is `Info`.
 - `piiLoggingEnabled` (optional): if set to true, logs personal and organizational data. By default this is false so that your application doesn't log personal data. Personal data logs are never written to default outputs like Console, Logcat, or NSLog.
 

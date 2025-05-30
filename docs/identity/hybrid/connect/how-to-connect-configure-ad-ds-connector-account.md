@@ -1,17 +1,14 @@
 ---
 title: 'Microsoft Entra Connect: Configure AD DS Connector Account Permissions '
 description: This document details how to configure the AD DS Connector account with the new ADSyncConfig PowerShell module
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
-ms.custom:
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Connect: Configure AD DS Connector Account Permissions 
@@ -43,7 +40,7 @@ The following table provides a summary of the permissions required on AD objects
 The ADSyncConfig module requires the [Remote Server Administration Tools (RSAT) for AD DS](/windows-server/remote/remote-server-administration-tools) since it depends on the AD DS PowerShell module and tools. To install RSAT for AD DS, open a Windows PowerShell window with ‘Run As Administrator’ and execute: 
 
 ``` powershell
-Install-WindowsFeature RSAT-AD-Tools 
+Install-WindowsFeature "RSAT-AD-Tools"
 ```
 ![Configure](media/how-to-connect-configure-ad-ds-connector-account/configure2.png)
 
@@ -274,9 +271,9 @@ This PowerShell script tightens permissions for the AD Connector Account provide
 
 - Disable inheritance on the specified object 
 - Remove all ACEs on the specific object, except ACEs specific to SELF as we want to keep the default permissions intact when it comes to SELF. 
- 
-  The -ADConnectorAccountDN parameter is the AD account whose permissions need to be tightened. This is typically the MSOL_nnnnnnnnnnnn domain account that is configured in the AD DS Connector (see Determine your AD DS Connector Account). The -Credential parameter is necessary to specify the Administrator account that has the necessary privileges to restrict Active Directory permissions on the target AD object (this account must be different from the ADConnectorAccountDN account). This is typically the Enterprise or Domain Administrator.  
 
+  The `-ADConnectorAccountDN` parameter is the AD account whose permissions need to be tightened. This is typically the MSOL_nnnnnnnnnnnn domain account that is configured in the AD DS Connector (see [Determine your AD DS Connector Account](#determine-your-ad-ds-connector-account)). The `-Credential` parameter is necessary to specify the Administrator account that has the necessary privileges to restrict Active Directory permissions on the target AD object (this account must be different from the ADConnectorAccountDN account). This is typically the Enterprise or Domain Administrator.  
+  
 ``` powershell
 Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <PSCredential> [-DisableCredentialValidation] [-WhatIf] [-Confirm] [<CommonParameters>] 
 ```

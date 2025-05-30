@@ -2,7 +2,8 @@
 title: MFA in external tenants
 description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP) or SMS as a second verification method for sign-up and sign-in.
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
 
@@ -10,7 +11,6 @@ ms.subservice: external
 
 ms.topic: concept-article
 ms.date: 11/20/2024
-ms.author: mimart
 ms.custom: it-pro, references_regions
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about ways to secure apps in my external tenant by adding multifactor authentication and enabling SMS and email one-time passcodes.
@@ -37,7 +37,7 @@ For details, see [how to create a Conditional Access policy in an external tenan
 
 ## Enabling MFA methods
 
-When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in a separate section of the Microsoft Entra admin center, under **Authentication methods** in the **Protection** section.
+When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in the Microsoft Entra admin center under **Entra ID** > **Authentication methods**.
 
 Depending on which option you choose as the first factor, different second-factor verification methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md).
 

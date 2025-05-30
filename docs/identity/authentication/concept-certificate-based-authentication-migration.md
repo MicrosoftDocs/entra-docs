@@ -5,12 +5,12 @@ description: Learn how to migrate from Federated server to Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/03/2024
+ms.date: 03/04/2025
 
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
@@ -41,6 +41,8 @@ To configure Staged Rollout, follow these steps:
 1. On the Microsoft Entra Connect page, under the Staged Rollout of cloud authentication, select **Enable Staged Rollout for managed user sign-in**.
 1. On the **Enable Staged Rollout** feature page, select **On** for the option [Certificate-based authentication](./certificate-based-authentication-federation-get-started.md)
 1. Select **Manage groups** and add groups you want to be part of cloud authentication. To avoid a time-out, ensure that the security groups contain no more than 200 members initially.
+>[!NOTE] 
+>Microsoft recommends using separate groups to manage staged rollout for Entra certificate-based authentication and the certificate-based authentication method policy
 
 For more information, see [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md).
 

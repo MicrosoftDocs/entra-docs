@@ -3,13 +3,12 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 01/10/2025
+ms.date: 03/17/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: Windows users, I want to download and install the Global Secure Access client.
 ---
 # Global Secure Access client for Microsoft Windows
@@ -44,6 +43,127 @@ The most current version of the Global Secure Access client is available to down
 ## Install the Global Secure Access client
 ### Automated installation
 Organizations can install the Global Secure Access client silently with the `/quiet` switch, or use Mobile Device Management (MDM) solutions, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) to deploy the client to their devices.
+
+### Deploy Global Secure Access client with Intune
+
+In this section, you learn how to manually install the Global Secure Access client on a Windows 11 client device with Intune.
+
+#### Prerequisites
+
+- A security group with devices or users to identify where to install the Global Secure Access client
+
+#### Package the client
+
+Convert the `.exe` file to a `.intunewin` file.
+
+1. Download the Global Secure Access client from the [Microsoft Entra admin center](https://entra.microsoft.com/) > **Global Secure Access** > **Connect** > **Client download**. Select **Download client** under Windows 11.
+1. Go to [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
+
+   :::image type="content" source="media/how-to-install-windows-client/install-content-prep-tool.png" alt-text="Screenshot of prep tool install file selection." lightbox="media/how-to-install-windows-client/install-content-prep-tool-expanded.png":::
+
+1. In the top right corner, select the three dot menu. Select **Download**.
+
+   :::image type="content" source="media/how-to-install-windows-client/three-dot-menu-download.png" alt-text="Screenshot of three dot menu to select Download.":::
+
+1. Navigate to and run `IntuneWinAppUtil.exe`. A command prompt opens.
+1. Enter the folder path location of the Global Secure Access `.exe` file. Select **Enter**.
+1. Enter the name of the Global Secure Access `.exe` file. Select **Enter**.
+1. Enter the folder path in which to place the `.intunewin` file. Select **Enter**.
+1. Enter **N**. Select **Enter**.
+
+   :::image type="content" source="media/how-to-install-windows-client/install-from-command-line.png" alt-text="Screenshot of command line to install client.":::
+
+The `.intunewin` file is ready for you to deploy Microsoft Intune.
+
+#### Deploy Global Secure Access client with Intune
+
+Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/mem/intune/apps/apps-win32-add#add-a-win32-app-to-intune).
+
+1. Navigate to [https://intune.microsoft.com](https://intune.microsoft.com/).
+1. Select **Apps** > **All apps** > **Add**.
+1. On **Select app type**, under **Other** app types, select **Windows app (Win32)**.
+1. Select **Select**. The **Add app** steps appear.
+1. Select **Select app package file**.
+1. Select the folder icon. Open the `.intunewin` file you created in the previous section.
+
+   :::image type="content" source="media/how-to-install-windows-client/app-package-file.png" alt-text="Screenshot of App package file selection.":::
+
+1. Select **OK**.
+1. Configure these fields:
+
+   - **Name**: Enter a name for the client app.
+   - **Description**: Enter a description.
+   - **Publisher**: Enter **Microsoft**.
+   - **App Version** *(optional)*: Enter the client version.
+
+1. You can use the default values in the remaining fields. Select **Next**.
+
+   :::image type="content" source="media/how-to-install-windows-client/add-app.png" alt-text="Screenshot of Add App to install client.":::
+
+1. Configure these fields:
+
+   - **Install command**: Use the original name of the `.exe` file for `"OriginalNameOfFile.exe" /install /quiet /norestart`.
+   - **Uninstall command**: Use the original name of the `.exe` file for `"OriginalNameOfFile.exe" /uninstall /quiet /norestart`.
+   - **Allow available uninstall**: Select **No**.
+   - **Install behavior**: Select **System**.
+   - **Device restart behavior**: Select **Determine behavior based on return codes**.
+
+|Return code|Code type|
+|-----------|---------|
+|0|Success|
+|1707|Success|
+|3010|Success|
+|1641|Success|
+|1618|Retry|
+
+> [!NOTE]
+> The Return codes populate with default Windows exit codes. In this case, we changed two of the code types to **Success** to avoid unnecessary device reboots.
+
+   :::image type="content" source="media/how-to-install-windows-client/program-install-parameters.png" alt-text="Screenshot of Program to configure installation parameters.":::
+
+1. Select **Next**.
+1. Configure these fields:
+
+   - **Operating system architecture**: Select your minimum requirements.
+   - **Minimum operating system**: Select your minimum requirements.
+
+   :::image type="content" source="media/how-to-install-windows-client/requirements-install-parameters.png" alt-text="Screenshot of Requirements to configure installation parameters.":::
+
+1. Leave the remaining fields blank. Select **Next**.
+1. Under **Rules format**, select **Manually configure detection rules**.
+1. Select **Add**.
+1. Under **Rule type**, select **File**.
+1. Configure these fields:
+
+   - **Path**: Enter `C:\Program Files\Global Secure Access Client\TrayApp`.
+   - **File or folder**: Enter `GlobalSecureAccessClient.exe`.
+   - **Detection method**: Select **String (version)**.
+   - **Operator**: Select **Greater than or equal to**.
+   - **Value**: Enter the client version number.
+   - **Associated with a 32-bit app on 64-bit client**: Select **No**.
+
+   :::image type="content" source="media/how-to-install-windows-client/detection-rule.png" alt-text="Screenshot of Detection rule for client.":::
+
+1. Select **OK**. Select **Next**.
+1. Select **Next** two more times to get to **Assignments**.
+1. Under **Required**, select **+Add group**. Select a group of users or devices. Select **Select**.
+1. Select **Next**. Select **Create**.
+
+#### Update the client to a newer version
+
+To update to the newest client version, follow the [Update a line-of-business app](/mem/intune/apps/lob-apps-windows#update-a-line-of-business-app) steps. Be sure to update the following settings in addition to uploading the new `.intunewin` file:
+
+- Client version
+- Install and uninstall commands
+- Detection rule value set to the new client version number
+
+In a production environment, it's best practice to deploy new client versions in a phased deployment approach:
+
+1. Leave the existing app in place for now.
+1. Add a new app for the new client version, repeating the previous steps.
+1. Assign the new app to a small group of users to pilot the new client version. It's okay to assign these users to the app with the old client version for an in-place upgrade.
+1. Slowly increase the membership of the pilot group until you deploy the new client to all desired devices.
+1. Delete the app with the old client version.
 
 ### Manual installation
 To manually install the Global Secure Access client:
@@ -104,7 +224,7 @@ For more detailed information on troubleshooting the Global Secure Access client
 ## Client registry keys
 The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solutions, such as Microsoft Intune or Group Policy to control the registry values.
 > [!CAUTION] 
-> Do not change other registry values unless instructed by Microsoft Support.
+> Don't change other registry values unless instructed by Microsoft Support.
 
 ### Restrict nonprivileged users
 The administrator can prevent nonprivileged users on the Windows device from disabling or enabling the client by setting the following registry key:   
@@ -122,7 +242,7 @@ This registry value controls whether Private Access is enabled or disabled for t
 Users can disable and enable Private Access through the system tray menu.
 
 > [!TIP]
-> This option is available on the menu only if it is not hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
+> This option is available on the menu only if it isn't hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
 
 Administrators can disable or enable Private Access for the user by setting the registry key:   
 `Computer\HKEY_CURRENT_USER\Software\Microsoft\Global Secure Access Client`

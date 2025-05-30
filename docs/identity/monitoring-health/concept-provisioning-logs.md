@@ -2,14 +2,14 @@
 title: User provisioning logs in Microsoft Entra ID
 description: Learn about the details included in the user provisioning logs in Microsoft Entra ID when a non-Microsoft service provisions users.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/04/2024
+ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra user provisioning logs so I know what to look for when I need to troubleshoot an issue.
 ---
 
@@ -46,7 +46,7 @@ The logs display the identity, action taken, source system, target system, and t
     - Examples of Other include if the source and target system details already match, so no change was made.
 - **Source System** and **Target System**: Paired together, these details show which system the identity is coming from and where it's being provisioned.
 - **Status**: Possible values include Success, Failure, Skipped, and Warning.
-    - There are several scenarios that could trigger the Skipped status. For details on these scenarios, see [No users are being provisioned](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md#provisioning-logs-say-users-are-skipped-and-not-provisioned-even-though-they-are-assigned)
+    - There are several scenarios that could trigger the Skipped status. For details on these scenarios, see [No users are being provisioned](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md)
 
 Select an item from the provisioning logs to see more details about this item, such as the steps taken to provision the user and tips for troubleshooting issues. The details are grouped into four tabs.
 
@@ -72,7 +72,7 @@ Select an item from the provisioning logs to see more details about this item, s
 
 ## Using provisioning logs workbooks and Log Analytics
 
-With the querying and alerting capabilities of Log Analytics and workbooks, you can create custom reports and alerts. To get started, you need to [create a Log Analytics workspace](tutorial-configure-log-analytics-workspace.md#create-the-workspace). Once you have a workspace, you can stream your logs to that workspace, which allows you to query and analyze the data in Log Analytics and workbooks.
+With the querying and alerting capabilities of Log Analytics and workbooks, you can create custom reports and alerts. To get started, you need to [create a Log Analytics workspace](tutorial-configure-log-analytics-workspace.md#create-a-log-analytics-workspace). Once you have a workspace, you can stream your logs to that workspace, which allows you to query and analyze the data in Log Analytics and workbooks.
 
 For more information, see [Integrating provisioning logs with Azure Monitor logs](../app-provisioning/application-provisioning-log-analytics.md).
 

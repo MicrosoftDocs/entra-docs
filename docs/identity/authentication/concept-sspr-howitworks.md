@@ -1,16 +1,15 @@
 ---
 title: Self-service password reset deep dive
 description: How does self-service password reset work
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # How it works: Microsoft Entra self-service password reset
 
@@ -84,9 +83,12 @@ When you don't require registration, users aren't prompted during sign-in, but t
 
 ## Reconfirm authentication information
 
-To make sure that authentication methods are correct when they're needed to reset or change their password, you can require users confirm their info registered information after a certain period of time. This option is only available if you enable the **Require users to register when signing in** option.
+You can require users to confirm their authentication information after a certain period of time. This option is only available if you enable the **Require users to register when signing in** option.
 
-Valid values to prompt a user to confirm their registered methods are from *0* to *730* days. Setting this value to *0* means that users are never asked to confirm their authentication information. When using the combined registration experience users will be required to confirm their identity before reconfirming their information.
+Valid values to prompt a user to confirm their authentication information are from *0* to *730* days. Setting this value to *0* means that users are never asked to confirm their authentication information. Users need to sign in before they can reconfirm their information.
+
+> [!NOTE]
+> If SSPR requires more than one authentication method, a user who deletes a method isn't required to confirm their authentication information until they reach the **Number of days before users are asked to re-confirm their authentication information**.
 
 ## Authentication methods
 
@@ -96,6 +98,8 @@ The following authentication methods are available for SSPR:
 
 * Mobile app notification
 * Mobile app code
+* Hardware OATH token
+* Software OATH token
 * Email
 * Mobile phone
 * Office phone (available only for tenants with paid subscriptions)

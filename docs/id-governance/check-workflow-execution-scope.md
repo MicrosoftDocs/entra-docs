@@ -2,13 +2,14 @@
 title: 'Check execution user scope of a workflow - Microsoft Entra ID'
 description: Describes how to check the users who fall into the execution scope of a Lifecycle Workflow.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 12/10/2024
 ms.author: owinfrey
 ms.reviewer: krbain
+ms.custom: sfi-image-nochange
 ---
 
 # Check execution user scope of a workflow
@@ -22,7 +23,7 @@ To check the users who fall under the execution scope of a workflow, you'd follo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
 
 1. From the list of workflows, select the workflow you want to check the execution scope of.
 

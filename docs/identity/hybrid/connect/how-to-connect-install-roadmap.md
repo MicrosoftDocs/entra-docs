@@ -3,11 +3,11 @@ title: 'Microsoft Entra Connect and Microsoft Entra Connect Health installation 
 description: This document provides an overview of the installation options and paths available for installing Microsoft Entra Connect and Connect Health.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

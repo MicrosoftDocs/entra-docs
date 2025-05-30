@@ -2,11 +2,11 @@
 title: 'Microsoft Entra Connect: Clear on-premises attributes from migrated Microsoft Entra ID users'
 description: Learn how to clean up on-premises attributes from migrated users in Microsoft Entra ID.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 11/13/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref

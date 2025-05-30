@@ -2,11 +2,11 @@
 title: Protect your tenant with Insider Risk in Conditional Access
 description: Learn how you can protect your tenant by enabling the Insider Risk condition in Conditional Access integrated with Microsoft Purview Adaptive Protection.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 07/12/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: poulomib
 

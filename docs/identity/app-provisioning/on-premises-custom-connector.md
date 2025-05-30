@@ -3,11 +3,11 @@ title: Microsoft Entra provisioning to applications using custom connectors
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer REST and SOAP APIs.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.reviewer: arvinh
 ---

@@ -3,11 +3,11 @@ title: Remove Microsoft Entra role assignments
 description: Remove role assignments in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 01/03/2025
+ms.date: 05/25/2025
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -47,7 +47,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select a role name to open the role. 
 
@@ -63,7 +63,9 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 # [PowerShell](#tab/ms-powershell)
 
-Use the [Remove-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/remove-mgrolemanagementdirectoryroleassignment) command to remove role assignments.
+Use the [Get-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroleassignment) command to list the role assignment ID you want to remove. For examples, see [List Microsoft Entra role assignments](view-assignments.md?tabs=ms-powershell).
+
+With the role assignment ID, use the [Remove-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/remove-mgrolemanagementdirectoryroleassignment) command to remove the role assignment.
 
 ```powershell
 Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $roleAssignment.Id
@@ -71,7 +73,9 @@ Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $roleAss
 
 # [Graph API](#tab/ms-graph)
 
-Use the [Delete unifiedRoleAssignment](/graph/api/unifiedroleassignment-delete) API to remove role assignments.
+Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to list the role assignment ID you want to remove. For examples, see [List Microsoft Entra role assignments](view-assignments.md?tabs=ms-graph).
+
+With the role assignment ID, use the [Delete unifiedRoleAssignment](/graph/api/unifiedroleassignment-delete) API to remove the role assignment.
 
 ### Remove a role assignment for a user
 

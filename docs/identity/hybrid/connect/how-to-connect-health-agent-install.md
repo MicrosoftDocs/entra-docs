@@ -1,17 +1,15 @@
 ---
 title: Install the Microsoft Entra Connect Health agents in Microsoft Entra ID
 description: Learn how to install the Microsoft Entra Connect Health agents for Active Directory Federation Services (AD FS) and for sync.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.topic: how-to
 ms.author: billmath
-
-ms.custom:
+ms.custom: sfi-ga-nochange
 ---
 # Install the Microsoft Entra Connect Health agents
 
@@ -72,12 +70,12 @@ To download and install the Microsoft Entra Connect Health agent:
 
 - Make sure that you satisfy the [requirements](how-to-connect-health-agent-install.md#requirements) to install Microsoft Entra Connect Health.
 - Get started using Microsoft Entra Connect Health for AD FS:
-  - [Download the Microsoft Entra Connect Health agent for AD FS](https://go.microsoft.com/fwlink/?LinkID=518973).
+  - [Download the Microsoft Entra Connect Health agent for AD FS](https://download.microsoft.com/download/07e33770-970b-424b-95a2-e99dfe5f5e8d/MicrosoftEntraConnectHealthAgentSetup.exe).
   - See the [installation instructions](#install-the-agent-for-ad-fs).
 - Get started using Microsoft Entra Connect Health for sync:
   - [Download and install the latest version of Microsoft Entra Connect](https://go.microsoft.com/fwlink/?linkid=615771). The health agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or later).
 - Get started using Microsoft Entra Connect Health for AD Domain Services:
-  - [Download the Microsoft Entra Connect Health agent for AD Domain Services](https://go.microsoft.com/fwlink/?LinkID=820540).
+  - [Download the Microsoft Entra Connect Health agent for AD Domain Services](https://download.microsoft.com/download/07e33770-970b-424b-95a2-e99dfe5f5e8d/MicrosoftEntraConnectHealthAgentSetup.exe).
   - See the [installation instructions](#install-the-agent-for-azure-ad-ds).
 
 ## Install the agent for AD FS
@@ -108,12 +106,12 @@ If the Microsoft Entra Connect Health for sync agent registration fails after yo
 
 Manually register the Microsoft Entra Connect Health agent for sync by using the following PowerShell command. The Microsoft Entra Connect Health services will start after the agent has been successfully registered.
 
-`Register-MicrosoftEntraConnectHealthAgent -AttributeFiltering $true -StagingMode $false`
+`Register-MicrosoftEntraConnectHealthAgent -AttributeFiltering $true -StagingMode (Get-ADSyncScheduler).StagingModeEnabled`
 
 The command takes following parameters:
 
 - `AttributeFiltering`: `$true` (default) if Microsoft Entra Connect isn't syncing the default attribute set and has been customized to use a filtered attribute set. Otherwise, use `$false`.
-- `StagingMode`: `$false` (default) if the Microsoft Entra Connect server is *not* in staging mode. If the server is configured to be in staging mode, use `$true`.
+- `StagingMode`: `$false` (default) if the Microsoft Entra Connect server is *not* in staging mode. If the server is configured to be in staging mode, use `$true`. You can determine if the server is in staging mode with `(Get-ADSyncScheduler).StagingModeEnabled`.
 
 When you're prompted for authentication, use the same Global Administrator account (such as `admin@domain.onmicrosoft.com`) that you used to configure Microsoft Entra Connect.
 
@@ -157,7 +155,7 @@ To verify that the agent was installed, look for the following services on the s
     $userName = "NEWUSER@DOMAIN"
     $secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
     $myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
-    import-module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
+    Import-Module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
      
     Register-MicrosoftEntraConnectHealthAgent -Credential $myCreds
     ```
@@ -245,7 +243,7 @@ Set-MicrosoftEntraConnectHealthProxySettings -HttpsProxyAddress address:port
 
 Here's an example:
 
-`Set-MicrosoftEntraConnectHealthProxySettings -HttpsProxyAddress myproxyserver: 443`
+`Set-MicrosoftEntraConnectHealthProxySettings -HttpsProxyAddress myproxyserver:443`
 
 In this example:
 

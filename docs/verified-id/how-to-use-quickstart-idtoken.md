@@ -3,10 +3,9 @@ title: Create verifiable credentials for ID tokens
 description: Learn how to use a quickstart to create custom credentials for ID tokens
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 01/17/2025
 ms.author: barclayn
 
@@ -162,6 +161,8 @@ https://login.microsoftonline.com/<your-tenantId>/oauth2/v2.0/authorize?client_i
 In the code, replace \<your-tenantId> with your tenant ID. To get the extra claims, you need to have **profile** as part of the **scope**.
 
 **For Azure Active Directory B2C**: The app registration process is the same, but B2C has built-in support in the Azure portal for testing your B2C policies via the **Run user flow** functionality.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ## Claims in the ID token from the identity provider
 

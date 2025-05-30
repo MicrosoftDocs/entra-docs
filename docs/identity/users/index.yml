@@ -9,7 +9,7 @@ metadata:
   description: Learn how to use groups, domain names, and licenses to manage user authentication in your Microsoft Entra organization.
   ms.service: entra-id
   ms.subservice: users
-  manager: amycolannino
+  manager: femila
   ms.topic: landing-page
   ms.date: 01/15/2025
   author: barclayn

@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Web app that signs in users: Code configuration
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 This article describes how to configure code for a web app that signs in users.
 
 ## Microsoft libraries supporting web apps

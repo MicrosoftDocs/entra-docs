@@ -1,18 +1,17 @@
 ---
 title: Delegated administration in Microsoft Entra ID
 description: The relationship between older delegated admin permissions and new granular delegated admin permissions in Microsoft Entra ID
-keywords:
+keywords: 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.reviewer: yuank
 ms.date: 12/13/2024
 ms.topic: overview
 ms.service: entra-id
 ms.subservice: users
-
-ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, access management requires me to understand the permissions of partners who have access to our resources.
 ---
 # What is delegated administration?

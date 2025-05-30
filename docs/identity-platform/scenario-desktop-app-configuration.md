@@ -4,16 +4,17 @@ description: Learn how to configure the code of a desktop app that calls web API
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: 
 ms.date: 04/09/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # Desktop app that calls web APIs: Code configuration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 Now that you've created your application, you'll learn how to configure the code with the application's coordinates.
 

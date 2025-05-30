@@ -1,15 +1,14 @@
 ---
 title: 'On-demand provisioning - Microsoft Entra ID to Active Directory'
 description: This article describes how to use on-demand provisioning when provisioning from Microsoft Entra ID to Active Directory.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -32,7 +31,7 @@ The following is true for on-demand group provisioning:
 To use on-demand provisioning, follow these steps:
 
 >[!NOTE]
->When using on-demand provisioning, members aren't automatically provsisioned. You need to select which members you wish to test on and there's a five member limit.
+>When using on-demand provisioning, members aren't automatically provisioned. You need to select which members you wish to test on and there's a five member limit.
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 

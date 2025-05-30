@@ -6,8 +6,8 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 12/19/2024
-ms.custom: template-tutorial
+ms.date: 03/10/2025
+ms.custom: template-tutorial, sfi-image-nochange
 ---
 
 # Tutorial: Automated ServiceNow Ticket Creation with Microsoft Entra Entitlement Management Integration
@@ -29,7 +29,7 @@ In this tutorial, you'll learn:
 ## Prerequisites
 
 - A Microsoft Entra user account with an active Azure subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following least privileged roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - A [ServiceNow instance](https://www.servicenow.com/) of Rome or higher
 - SSO integration with ServiceNow. If this isn't already configured, see:[Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow](~/identity/saas-apps/servicenow-tutorial.md) before continuing.
 
@@ -109,7 +109,7 @@ With Azure, you're able to use [Azure Key Vault](/azure/key-vault/secrets/about-
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. Under Manage, select App registrations > New registration.
 
@@ -121,7 +121,7 @@ With Azure, you're able to use [Azure Key Vault](/azure/key-vault/secrets/about-
 
 After registering your application, you must add a client secret by following these steps: 
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. select your application.
 

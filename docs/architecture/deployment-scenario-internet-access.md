@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra deployment scenario - Secure internet access
+title: Microsoft Entra Suite deployment scenario - Secure internet access
 description: Configure Microsoft Entra Suite products for strict default internet access policies to control internet access according to business requirements.
 ms.author: gasinh
 author: gargi-sinha
@@ -8,12 +8,12 @@ ms.service: entra
 ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
-
-#CustomerIntent: As a Microsoft Entra customer, I want configure strict access policies so that we can control access according to business requirements.
+ms.custom: sfi-ga-nochange
+#CustomerIntent: As a Microsoft Entra Suite customer, I want to configure strict access policies so that we can control access according to business requirements.
 ---
-# Microsoft Entra deployment scenario - Secure internet access based on business needs
+# Microsoft Entra Suite deployment scenario - Secure internet access based on business needs
 
-The Microsoft Entra deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
+The Microsoft Entra Suite deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
@@ -63,7 +63,7 @@ This section defines the requirements for the scenario solution.
 
 Administrators who interact with Global Secure Access features require the Global Secure Access Administrator and Application Administrator roles.
 
-Conditional Access (CA) policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
+Conditional Access policy configuration requires the Conditional Access Administrator or Security Administrator role. Some features might require more roles.
 
 Identity Governance configuration requires at least the Identity Governance Administrator role.
 
@@ -113,10 +113,10 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 
 ### Create security groups
 
-In this scenario, we use two security groups to assign security profiles using Conditional Access (CA) policies. In the Microsoft Entra admin center, create security groups with these names:
+In this scenario, we use two security groups to assign security profiles using Conditional Access policies. In the Microsoft Entra admin center, create security groups with these names:
 
 - Internet Access -- Allow Social Networking sites
-= Internet Access -- Allow Hacking sites
+- Internet Access -- Allow Hacking sites
 
 Don't add any members to these groups. Later in this article, we configure Identity Governance to add members on request.
 
@@ -245,10 +245,10 @@ In this section, we create a security profile that allows access to social netwo
 
 ### Create social networking Conditional Access policy
 
-In this section, we create a Conditional Access (CA) policy that enforces the **Allow Social Networking** security profile for users that request access.
+In this section, we create a Conditional Access policy that enforces the **Allow Social Networking** security profile for users that request access.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. In **New Conditional Access Policy**, complete these fields:
    - **Name**: Internet Access -- Allow Social Networking sites
@@ -330,7 +330,7 @@ In this section, we create a new security profile that allows access to hacking 
 In this section, we create a Conditional Access policy that enforces the **Allow Hacking sites** security profile for the users that request access.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. In the **New Conditional Access Policy** dialog box, complete these fields:
    - **Name**: Internet Access -- Allow Hacking sites
@@ -372,7 +372,7 @@ Follow these steps to create an entitlement management catalog:
 In this section, we create access packages that allow users to request access to the internet site categories that each security profile defines. Follow these steps to create an access package in Entitlement management:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 1. Select **New access package**.
 1. For **Basics**, give the access package a name (such as *Internet Access -- Allow Social Networking sites*). Specify the catalog that you previously created.
 1. For **Resource roles**, select the security that you previously added (such as *Internet Access -- Allow Social Networking sites*).

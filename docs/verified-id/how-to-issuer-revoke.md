@@ -3,10 +3,9 @@ title: Revoke a verifiable credential as an issuer - Microsoft Entra Verified ID
 description: Learn how to revoke an issued verifiable credential.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 01/31/2025
 ms.author: barclayn
 

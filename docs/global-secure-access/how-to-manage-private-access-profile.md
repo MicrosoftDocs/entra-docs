@@ -3,13 +3,14 @@ title: How to Manage the Private Access Profile
 description: Learn how to manage the Private Access traffic forwarding profile for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 12/23/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
-ms.subservice: entra-private-access 
+ms.subservice: entra-private-access
 ms.reviewer: katabish
-
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to enable and manage the Private Access traffic forwarding profile so that the private access apps I configured can forward traffic according to the profile.
 ---
 
@@ -52,7 +53,7 @@ Details of your Quick Access and enterprise apps for Private Access are displaye
 Conditional Access policies for Private Access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:
 
 - Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select an application and then select **Conditional Access** from the side menu.
-- Go to **Protection** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
+- Go to **Entra ID** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
 
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md).
 

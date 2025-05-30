@@ -2,13 +2,14 @@
 title: Tutorial - Customize Microsoft Entra attribute mappings in Application Provisioning
 description: Learn about attribute mappings for Software as a Service (SaaS) apps in Microsoft Entra Application Provisioning. Learn what attributes are and how you can modify them to address your business needs.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 02/28/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Tutorial - Customize user provisioning attribute-mappings for SaaS applications in Microsoft Entra ID
@@ -32,7 +33,7 @@ You can customize the default attribute-mappings according to your business need
 Follow these steps to access the **Mappings** feature of user provisioning:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select any app to load its app management pane, where you can view reports and manage app settings.
 1. Select **Provisioning** to manage user account provisioning settings for the selected app.
@@ -145,13 +146,13 @@ When you're editing the list of supported attributes, the following properties a
 #### Provisioning a custom extension attribute to a SCIM compliant application
 
 The SCIM Request for Comments (RFC) defines a core user and group schema, while also allowing for extensions to the schema to meet your application's needs. To add a custom attribute to a SCIM application:
-   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-   1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-   1. Select your application, and then select **Provisioning**.
-   1. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.
-   1. At the bottom of the page, select **Show advanced options**.
-   1. Select **Edit attribute list for AppName**.
-   1. At the bottom of the attribute list, enter information about the custom attribute in the fields provided. Then select **Add Attribute**.
+  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+  1. Browse to **Entra ID** > **Enterprise apps**.
+  1. Select your application, and then select **Provisioning**.
+  1. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.
+  1. At the bottom of the page, select **Show advanced options**.
+  1. Select **Edit attribute list for AppName**.
+  1. At the bottom of the attribute list, enter information about the custom attribute in the fields provided. Then select **Add Attribute**.
 
 For SCIM applications, the attribute name must follow the pattern shown in the example. The "CustomExtensionName" and "CustomAttribute" can be customized per your application's requirements, for example: urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User:CustomAttribute 
 
@@ -163,17 +164,17 @@ Custom attributes can't be referential attributes, multi-value, or complex-typed
 
 ```json
 {
-  "schemas":[
+  "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User",
-      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
+    "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
   ],
-  "userName":"bjensen",
+  "userName": "bjensen",
   "id": "48af03ac28ad4fb88478",
-  "externalId":"bjensen",
-  "name":{
-    "formatted":"Ms. Barbara J Jensen III",
-    "familyName":"Jensen",
-    "givenName":"Barbara"
+  "externalId": "bjensen",
+  "name": {
+    "formatted": "Ms. Barbara J Jensen III",
+    "familyName": "Jensen",
+    "givenName": "Barbara"
   },
   "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
     "employeeNumber": "701984",
@@ -225,36 +226,45 @@ Use the steps in the example to provision application roles for a user to your a
 
 ```json
 {
-    "schemas": [
+  "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User"
-      ],
-    "externalId": "alias",
-    "userName": "alias@contoso.OnMicrosoft.com",
-    "active": true,
-    "displayName": "First Name Last Name",
-    "meta": {
-        "resourceType": "User"
-    },
-    "roles": [{
-        "primary": true,
-        "type": "WindowsAzureActiveDirectoryRole",
-        "value": "Admin"
-        }
-]}
- ```
+  ],
+  "externalId": "alias",
+  "userName": "alias@contoso.OnMicrosoft.com",
+  "active": true,
+  "displayName": "First Name Last Name",
+  "meta": {
+    "resourceType": "User"
+  },
+  "roles": [
+    {
+      "primary": true,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "value": "Admin"
+    }
+  ]
+}
+```
 
 **Example output (PATCH)** 
 
 ```json
-"Operations": [
 {
-    "op": "Add",
-    "path": "roles",
-    "value": [{
-        "value": "{\"id\":\"06b07648-ecfe-589f-9d2f-6325724a46ee\",\"value\":\"25\",\"displayName\":\"Role1234\"}"
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+  ],
+  "Operations": [
+    {
+      "op": "Add",
+      "path": "roles",
+      "value": [
+        {
+          "value": "{\"id\":\"06b07648-ecfe-589f-9d2f-6325724a46ee\",\"value\":\"25\",\"displayName\":\"Role1234\"}"
         }
-    ]
-}]
+      ]
+    }
+  ]
+}
 ```
 
 The request formats in the PATCH and POST differ. To ensure that POST and PATCH are sent in the same format, you can use the feature flag described [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior). 
@@ -262,8 +272,9 @@ The request formats in the PATCH and POST differ. To ensure that POST and PATCH 
 **AppRoleAssignmentsComplex**
 
 **When to use:** Use the AppRoleAssignmentsComplex expression to provision multiple roles for a user. 
-**How to configure:** Edit the list of supported attributes as described to include a new attribute for roles: 
-  
+
+**How to configure:** Edit the list of supported attributes as described to include a new attribute for roles:
+
 ![Add roles](./media/customize-application-attributes/add-roles.png)<br>
 
 Then use the AppRoleAssignmentsComplex expression to map to the custom role attribute as shown in the image:
@@ -274,70 +285,75 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
 
 - All roles are provisioned as primary = false.
 - The `id` attribute isn't required in SCIM roles. Use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, use it to provision the role. You can use the feature flag [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior) to fix the id attribute issue. However, relying solely on the value attribute isn't always sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it's necessary to use the id attribute to properly provision the role
- 
-    
+
+
 **Limitations** 
 
 - AppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
-    
+
 **Example Request (POST)**
-  
+
 ```json
 {
-    "schemas": [
-        "urn:ietf:params:scim:schemas:core:2.0:User"
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User"
   ],
   "externalId": "alias",
   "userName": "alias@contoso.OnMicrosoft.com",
   "active": true,
   "displayName": "First Name Last Name",
   "meta": {
-        "resourceType": "User"
+    "resourceType": "User"
   },
   "roles": [
-      {
-            "primary": false,
-            "type": "WindowsAzureActiveDirectoryRole",
-            "displayName": "Admin",
-            "value": "Admin"
-      },
-      {
-            "primary": false,
-            "type": "WindowsAzureActiveDirectoryRole",
-            "displayName": "User",
-          "value": "User"
-      }
+    {
+      "primary": false,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "displayName": "Admin",
+      "value": "Admin"
+    },
+    {
+      "primary": false,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "displayName": "User",
+      "value": "User"
+    }
   ]
 }
 ```
 
- **Example output (PATCH)** 
+**Example output (PATCH)** 
 
 ```json
-"Operations": [
-  {
-    "op": "Add",
-    "path": "roles",
-    "value": [
-      {
-        "value": "{"id":"06b07648-ecfe-589f-9d2f-6325724a46ee","value":"Admin","displayName":"Admin"}
-      },
 {
-        "value": "{"id":"06b07648-ecfe-599f-9d2f-6325724a46ee","value":"User","displayName":"User"}
-      }
-    ]
-  }
-]
- ```
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+  ],
+  "Operations": [
+    {
+      "op": "Add",
+      "path": "roles",
+      "value": [
+        {
+          "value": "{\"id\":\"06b07648-ecfe-589f-9d2f-6325724a46ee\",\"value\":\"Admin\",\"displayName\":\"Admin\"}"
+        },
+        {
+          "value": "{\"id\":\"06b07648-ecfe-599f-9d2f-6325724a46ee\",\"value\":\"User\",\"displayName\":\"User\"}"
+        }
+      ]
+    }
+  ]
+}
+```
 
 **AssertiveAppRoleAssignmentsComplex**   (Recommended for complex roles)
 
 **When to use:** Use the AssertiveAppRoleAssignmentsComplex to enable PATCH Replace functionality. For SCIM applications that support multiple roles, this ensures that roles removed in Microsoft Entra ID are also removed in the target application. The replace functionality will also remove any additional roles the user has that are not reflected in Entra ID 
 
-The difference between the AppRoleAssignmentsComplex and AssertiveAppRoleAssignmentsComplex is the mode of the patch call and the effect on the target systen. The former does PATCH add only and therefore does not remove any existing roles on the target. The latter does PATCH replace which removes roles in the target system if they have not been assigned to the user on Entra ID. 
+The difference between the AppRoleAssignmentsComplex and AssertiveAppRoleAssignmentsComplex is the mode of the patch call and the effect on the target system. The former does PATCH add only and therefore does not remove any existing roles on the target. The latter does PATCH replace which removes roles in the target system if they have not been assigned to the user on Entra ID. 
 
 **How to configure:** Edit the list of supported attributes as described to include a new attribute for roles: 
-  
+
 ![Add roles](./media/customize-application-attributes/add-roles.png)<br>
 
 Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom role attribute as shown in the image:
@@ -347,79 +363,66 @@ Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom 
 **Things to consider**
 - All roles are provisioned as primary = false.
 - The `id` attribute isn't required in SCIM roles. Use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, use it to provision the role. You can use the feature flag [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior) to fix the id attribute issue. However, relying solely on the value attribute isn't always sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it's necessary to use the id attribute to properly provision the role
-  
+
 **Limitations** 
 
 - AssertiveAppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
-    
+
 **Example Request (POST)**
-  
+
 ```json
-{"schemas":["urn:ietf:params:scim:schemas:core:2.0:User"], 
-
-"externalId":"contoso", 
-
-"userName":"contoso@alias.onmicrosoft.com", 
-
-"active":true, 
-
-"roles":[{ 
-
-  "primary":false, 
-
-  "type":"WindowsAzureActiveDirectoryRole", 
-
-  "display":"User", 
-
-  "value":"User"}, 
-
-  {"primary":false, 
-
-  "type":"WindowsAzureActiveDirectoryRole", 
-
-  "display":"Test", 
-
-  "value":"Test"}], 
-
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User"
+  ],
+  "externalId": "contoso",
+  "userName": "contoso@alias.onmicrosoft.com",
+  "active": true,
+  "roles": [
+    {
+      "primary": false,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "display": "User",
+      "value": "User"
+    },
+    {
+      "primary": false,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "display": "Test",
+      "value": "Test"
+    }
+  ]
 }
 ```
 
 **Example output (PATCH)** 
 
 ```json
-{"schemas":["urn:ietf:params:scim:api:messages:2.0:PatchOp"], 
-
-"Operations":[{ 
-
-    "op":"replace", 
-
-    "path":"roles", 
-
-    "value":[{ 
-
-        "primary":false, 
-
-        "type":"WindowsAzureActiveDirectoryRole", 
-
-        "display":"User", 
-
-        "value":"User"}, 
-
-        {"primary":false, 
-
-        "type":"WindowsAzureActiveDirectoryRole", 
-
-        "display":"Test", 
-
-        "value":"Test"} 
-
-        ] 
-
-        } 
-
-        ] 
-
-    } 
+{
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+  ],
+  "Operations": [
+    {
+      "op": "replace",
+      "path": "roles",
+      "value": [
+        {
+          "primary": false,
+          "type": "WindowsAzureActiveDirectoryRole",
+          "display": "User",
+          "value": "User"
+        },
+        {
+          "primary": false,
+          "type": "WindowsAzureActiveDirectoryRole",
+          "display": "Test",
+          "value": "Test"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ## Provisioning a multi-value attribute
@@ -427,25 +430,30 @@ Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom 
 Certain attributes such as phoneNumbers and emails are multi-value attributes where you need to specify different types of phone numbers or emails. Use the expression for multi-value attributes. It allows you to specify the attribute type and map that to the corresponding Microsoft Entra user attribute for the value. 
 
 * `phoneNumbers[type eq "work"].value`
-* `phoneNumbers[type eq "mobile"]`.value
+* `phoneNumbers[type eq "mobile"].value`
 * `phoneNumbers[type eq "fax"].value`
 
-  ```json
+```json
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User"
+  ],
   "phoneNumbers": [
-     {
-        "value": "555-555-5555",
-        "type": "work"
-     },
-     {
-        "value": "555-555-5555",
-        "type": "mobile"
-     },
-     {
-        "value": "555-555-5555",
-        "type": "fax"
-     }
+    {
+      "value": "555-555-5555",
+      "type": "work"
+    },
+    {
+      "value": "555-555-5555",
+      "type": "mobile"
+    },
+    {
+      "value": "555-555-5555",
+      "type": "fax"
+    }
   ]
-  ```
+}
+```
 
 ## Restoring the default attributes and attribute-mappings
 
@@ -462,7 +470,11 @@ Selecting this option forces a resynchronization of all users while the provisio
 - Updating attribute-mappings affects the performance of a synchronization cycle. An update to the attribute-mapping configuration requires all managed objects to be reevaluated.
 - A recommended best practice is to keep the number of consecutive changes to your attribute-mappings at a minimum.
 - Adding a photo attribute to be provisioned to an app isn't supported today as you can't specify the format to sync the photo. You can request the feature on [User Voice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
-- The attribute `IsSoftDeleted` is often part of the default mappings for an application. `IsSoftdeleted` can be true in one of four scenarios: 1) The user is out of scope due to being unassigned from the application. 2) The user is out of scope due to not meeting a scoping filter. 3) The user is soft deleted in Microsoft Entra ID. 4) The property `AccountEnabled` is set to false on the user. Try to keep the `IsSoftDeleted` attribute in your attribute mappings.
+- The attribute `IsSoftDeleted` is often part of the default mappings for an application and can be true in one of four scenarios:
+  - The user is out of scope due to being unassigned from the application. 
+  - The user is out of scope due to not meeting a scoping filter. 
+  - The user is soft deleted in Microsoft Entra ID. 
+  - The property `AccountEnabled` is set to false on the user. Try to keep the `IsSoftDeleted` attribute in your attribute mappings.
 - The Microsoft Entra provisioning service doesn't support provisioning null values.
 - They primary key, typically `ID`, shouldn't be included as a target attribute in your attribute mappings. 
 - The role attribute typically needs to be mapped using an expression, rather than a direct mapping. For more information about role mapping, see [Provisioning a role to a SCIM app](#provisioning-a-role-to-a-scim-app). 

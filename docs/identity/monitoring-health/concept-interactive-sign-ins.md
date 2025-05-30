@@ -2,14 +2,14 @@
 title: Interactive user sign-in logs
 description: Learn about the type of information captured in the interactive user sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/09/2024
+ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is captured in the interactive sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
 ---
 # What are interactive user sign-ins in Microsoft Entra?
@@ -24,22 +24,30 @@ Interactive sign-ins are performed *by* a user. They provide an authentication f
 
 ## Log details
 
-**Report size:** small </br>
-**Examples:**
+The following examples show the type of information captured in the interactive user sign-in logs:
 
 - A user provides username and password in the Microsoft Entra sign-in screen.
 - A user passes an SMS MFA challenge.
 - A user provides a biometric gesture to unlock their Windows PC with Windows Hello for Business.
 - A user is federated to Microsoft Entra ID with an AD FS SAML assertion.
 
-In addition to the default fields, the interactive sign-in log also shows:
+In addition to the default fields, the interactive sign-in logs also show:
 
 - The sign-in location
 - Whether Conditional Access was applied
+- Cross-tenant access details, such as home and resource tenant IDs
 
 > [!NOTE]
 > Entries in the sign-in logs are system generated and can't be changed or deleted.
+
 ## Special considerations
+
+### Partner access to downstream tenant resources
+
+The interactive sign-in logs now include details about when a partner accesses a downstream tenant's resources. By looking at the **Cross tenant access type**, **Home tenant ID**, and **Resource tenant ID** columns, which are now visible by default, you can see when a partner logs into a downstream tenant resource.
+
+- Filter on **Service Provider** in the **Cross tenant access type** column to isolate events related to partner sign-ins.
+- Compare the details in the **Home tenant ID** and **Resource tenant ID** columns to identify sign-ins coming from your partner's tenant to the downstream tenant.
 
 ### Non-interactive sign-ins on the interactive sign-in logs
 

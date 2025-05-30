@@ -1,36 +1,41 @@
 ---
-title: "Tutorial: Sign in user in Angular Single-page Application"
-description: Sign in user in an Angular Single-page Application in a Microsoft Entra tenant to manage authentication and secure user access.
-author: henrymbuguakiarie
-manager: mwongerapk
-ms.author: henrymbugua
-ms.date: 11/11/2024
-ms.reviewer: ejahjaloo
+title: "Tutorial: Sign in user in Angular single-page app (SPA)"
+description: Sign in user in an Angular single-page app (SPA) in a Microsoft Entra tenant to manage authentication and secure user access.
+author: garrodonnell
+manager: celested
+ms.author: godonnell
+ms.date: 02/20/2025
 ms.service: identity-platform
-
 ms.topic: tutorial
 #Customer intent: As an Angular developer, I want to know how to use functional components to add sign in and sign out experiences in my Angular application.
 ---
 
 # Tutorial: Add sign in and sign out in your Angular single-page application
 
-This tutorial is part 3 of a series that demonstrates building an Angular single-page app (SPA), which uses the Microsoft identity platform for authentication. In this tutorial, you'll add sign in and sign out experiences to your Angular SPA. 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-In this tutorial:
+This tutorial is part 2 of a series that demonstrates building an Angular single-page application (SPA) and adding authentication using the Microsoft identity platform.  In [Part 1 of this series](tutorial-single-page-apps-angular-prepare-app.md), you created an Angular SPA and added initial configurations. 
+
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
-> * Add sign-in and sign-out functionality to your app.
+> * Add sign-in and sign-out
 
 ## Prerequisites
 
-- [Tutorial: Create an Angular single-page application](tutorial-single-page-apps-angular-prepare-app.md)
+- Completion of the prerequisites and steps in [Tutorial: Create an Angular single-page application](tutorial-single-page-apps-angular-prepare-app.md)
 
 ## Add sign-in and sign-out functionality to your app
 
+In this section you'll add components to support sign-in and sign-out functionality in your Angular application. These components enable users to authenticate and manage their sessions. You'll add routing to the application to direct users to the appropriate components based on their authentication status.
+
+### [Workforce tenant](#tab/workforce-tenant)
+
 To enable sign-in and sign-out functionality in your Angular application, follow these steps:
 
-1. Open the `src/app/app.component.html` file and replace the contents with the following code.
+1. Open the `src/app/app.component.html` file and replace the contents with the following code. 
+
     ```html
     <a class="navbar navbar-dark bg-primary" variant="dark" href="/">
         <a class="navbar-brand"> Microsoft Identity Platform </a>
@@ -143,7 +148,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     ```html
     <div class="title">
         <h5>
-            Welcome to the Microsoft Authentication Library For Javascript - Angular SPA
+            Welcome to the Microsoft Authentication Library For JavaScript - Angular SPA
         </h5>
         <p >View your data from Microsoft Graph by clicking the "View Profile" link above.</p>
     </div>
@@ -171,7 +176,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     <html lang="en">
       <head>
         <meta charset="utf-8">
-        <title>MSAL For Javascript - Angular SPA</title>
+        <title>MSAL For JavaScript - Angular SPA</title>
       </head>
       <body>
         <app-root></app-root>
@@ -180,7 +185,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     </html>
     ```
 
-    The code snippet defines an HTML5 document with English as the language and UTF-8 character encoding. It sets the title to "MSAL For Javascript - Angular SPA." The body includes the `<app-root>` component as the main entry point and the `<app-redirect>` component for redirection functionalities.
+    The code snippet defines an HTML5 document with English as the language and UTF-8 character encoding. It sets the title to "MSAL For JavaScript - Angular SPA." The body includes the `<app-root>` component as the main entry point and the `<app-redirect>` component for redirection functionalities.
 
 1. Open the `src/styles.css` file and replace the contents with the following code.
 
@@ -224,7 +229,272 @@ To enable sign-in and sign-out functionality in your Angular application, follow
 
     The CSS code styles the webpage by setting the body font to a modern sans-serif stack, removing default margins, and applying font smoothing for enhanced readability. It centers text and adds padding to the `.app`, `.title`, and `.profile` classes, while the `.profileButton` class uses flexbox to center its elements.
 
-## Next steps
+### [External tenant](#tab/external-tenant)
+
+1. Open *src/app/app.component.html* and replace the existing code with the following code snippet.
+
+    ```html
+      <mat-toolbar color="primary">
+          <a class="title" href="/">{{ title }}</a>
+          <div class="toolbar-spacer"></div>
+          <a mat-button [routerLink]="['guarded']">Guarded Component</a>
+          <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
+          <button mat-raised-button color="accent" *ngIf="loginDisplay" (click)="logout()">Logout</button>
+        </mat-toolbar>
+        <div class="container">
+          <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+          <router-outlet *ngIf="!isIframe"></router-outlet>
+        </div>
+        <footer *ngIf="loginDisplay">
+          <mat-toolbar>
+            <div class="footer-text"> How did we do? <a
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_ivMYEeUKlEq8CxnMPgdNZUNDlUTTk2NVNYQkZSSjdaTk5KT1o4V1VVNS4u"
+                target="_blank"> Share your experience with us!</a>
+            </div>
+          </mat-toolbar>
+        </footer>
+    ```
+    This code snippet adds a navigation bar to the Angular application. The navigation bar includes a title and **Login** and **Logout** buttons which enable users to sign in and out of the application.
+
+1. Open *src/app/app.component.css* and replace the code with the following snippet.
+
+    ```css
+    .toolbar-spacer {
+      flex: 1 1 auto;
+    }
+
+    a.title {
+      color: white;
+    }
+
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: small;
+      text-align: center;
+      flex: 1 1 auto;
+    }
+    ```
+    This code snippet styles the navigation bar and footer of the Angular application. It sets the color of the title to white, aligns the footer text to the center, and adjusts the size of the footer text. 
+
+1. Open *src/app/app-routing.module.ts* and replace the entire contents of the file with the following snippet. This will add routes to the `home` and `guarded` components.
+
+    ```javascript	
+    import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import { BrowserUtils } from '@azure/msal-browser';
+    import { MsalGuard } from '@azure/msal-angular';
+
+    import { HomeComponent } from './home/home.component';
+    import { GuardedComponent } from './guarded/guarded.component';
+
+    /**
+     * MSAL Angular can protect routes in your application
+        * using MsalGuard. For more info, visit:
+        * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/docs/v2-docs/initialization.md#secure-the-routes-in-your-application
+        */
+    const routes: Routes = [
+        {
+        path: 'guarded',
+        component: GuardedComponent,
+        canActivate: [
+            MsalGuard
+        ]
+        },
+        {
+        path: '',
+        component: HomeComponent,
+        },
+    ];
+
+    @NgModule({
+        imports: [
+        RouterModule.forRoot(routes, {
+            // Don't perform initial navigation in iframes or popups
+            initialNavigation:
+            !BrowserUtils.isInIframe() && !BrowserUtils.isInPopup()
+                ? 'enabledNonBlocking'
+                : 'disabled', // Set to enabledBlocking to use Angular Universal
+        }),
+        ],
+        exports: [RouterModule],
+    })
+    export class AppRoutingModule { }
+    ```
+1. Open *src/styles.css* and replace the existing code with the following code snippet.
+
+    ```css
+    @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+    html, body { height: 100%; }
+    body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+    ```
+    This code snippet imports the Angular Material prebuilt theme and sets the height of the HTML and body elements. It removes the default margin and sets the font family.
+
+1. Open *src/app/home/home.component.ts* and replace the existing code with the following code snippet.
+
+    ```javascript
+    import { Component, Inject, OnInit } from '@angular/core';
+    import { Subject } from 'rxjs';
+    import { filter } from 'rxjs/operators';
+
+    import { MsalBroadcastService, MsalGuardConfiguration, MsalService, MSAL_GUARD_CONFIG } from '@azure/msal-angular';
+    import { AuthenticationResult, InteractionStatus, InteractionType } from '@azure/msal-browser';
+
+    import { createClaimsTable } from '../claim-utils';
+
+    @Component({
+      selector: 'app-home',
+      templateUrl: './home.component.html',
+      styleUrls: ['./home.component.css'],
+    })
+    export class HomeComponent implements OnInit {
+      loginDisplay = false;
+      dataSource: any = [];
+      displayedColumns: string[] = ['claim', 'value', 'description'];
+
+      private readonly _destroying$ = new Subject<void>();
+
+      constructor(
+        @Inject(MSAL_GUARD_CONFIG)
+        private msalGuardConfig: MsalGuardConfiguration,
+        private authService: MsalService,
+        private msalBroadcastService: MsalBroadcastService
+      ) { }
+
+      ngOnInit(): void {
+
+        this.msalBroadcastService.inProgress$
+          .pipe(
+            filter((status: InteractionStatus) => status === InteractionStatus.None)
+          )
+          .subscribe(() => {
+            this.setLoginDisplay();
+            this.getClaims(
+              this.authService.instance.getActiveAccount()?.idTokenClaims
+            );
+          });
+      }
+
+      setLoginDisplay() {
+        this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
+      }
+
+      getClaims(claims: any) {
+        if (claims) {
+          const claimsTable = createClaimsTable(claims);
+          this.dataSource = [...claimsTable];
+        }
+      }
+
+      signUp() {
+        if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
+          this.authService.loginPopup({
+            scopes: [],
+            prompt: 'create',
+          })
+            .subscribe((response: AuthenticationResult) => {
+              this.authService.instance.setActiveAccount(response.account);
+            });
+        } else {
+          this.authService.loginRedirect({
+            scopes: [],
+            prompt: 'create',
+          });
+        }
+
+      }
+
+      // unsubscribe to events when component is destroyed
+      ngOnDestroy(): void {
+        this._destroying$.next(undefined);
+        this._destroying$.complete();
+      }
+    }
+    ```
+
+    This code snippet defines the `HomeComponent` class, which is responsible for managing the home page of the Angular application. The component subscribes to the `inProgress$` observable from `MsalBroadcastService` to monitor the authentication status of the application. When the authentication status changes, the component updates the login display and retrieves the claims from the active account's ID token. The `signUp()` method is called when the user clicks the **Sign up** button, initiating the authentication process.
+
+1. Open *src/app/home/home.component.html* and replace the existing code with the following code snippet. This code defines the HTML elements of the home page of the application.
+
+    ```html
+    <mat-card class="card-section" *ngIf="!loginDisplay">
+      <mat-card-title>Angular single-page application built with MSAL Angular</mat-card-title>
+      <mat-card-subtitle>Sign in with Microsoft Entra External ID</mat-card-subtitle>
+      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign up, sign in and sign out with Microsoft Entra External ID</mat-card-content>
+      <button mat-raised-button color="primary" (click)="signUp()">Sign up</button>
+    </mat-card>
+    <br>
+    <p class="text-center" *ngIf="loginDisplay"> See below the claims in your <strong> ID token </strong>. For more
+      information, visit: <span>
+        <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#claims-in-an-id-token">
+          docs.microsoft.com </a>
+      </span>
+    </p>
+    <div id="table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="loginDisplay">
+        <!-- Claim Column -->
+        <ng-container matColumnDef="claim">
+          <th mat-header-cell *matHeaderCellDef> Claim </th>
+          <td mat-cell *matCellDef="let element"> {{element.claim}} </td>
+        </ng-container>
+        <!-- Value Column -->
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef> Value </th>
+          <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+        </ng-container>
+        <!-- Value Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    ```
+    This code snippet defines the HTML elements of the home page of the Angular application. It includes a card section with a **Sign up** button for users to authenticate with Microsoft Entra External ID. 
+
+1. Open *src/app/home/home.component.css*. Replace any existing code with the following code snippet.
+
+    ```css
+    #table-container {
+      height: '100vh';
+      overflow: auto;
+    }
+
+    table {
+      margin: 3% auto 1% auto;
+      width: 70%;
+    }
+
+    .mat-row {
+      height: auto;
+    }
+
+    .mat-cell {
+      padding: 8px 8px 8px 0;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .card-section {
+      margin: 10%;
+      padding: 5%;
+    }
+    ```
+    This code snippet styles the HTML elements of the home page of the Angular application. It sets the height and overflow properties of the table container, adjusts the margin and width of the table, and aligns the text in the paragraph element.
+---
+    
+## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Call an API from an Angular single-page app](tutorial-single-page-apps-angular-call-api.md)
+> [Tutorial: Tutorial: Extract user data with an Angular SPA](tutorial-single-page-apps-angular-extract-user-data.md)

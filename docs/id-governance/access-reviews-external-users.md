@@ -2,7 +2,7 @@
 title: Use Microsoft Entra ID Governance to review and remove external users who no longer have resource access
 description: Use Access Reviews to extend of remove access from members of partner organizations.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
@@ -53,11 +53,11 @@ To create an Access Review for external identities, you'd follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 
 1. Search for the group that contains members that are external identities that don't have access to resources in your tenant and make note of this group. To automate creating a group with members that fit this criteria, see: [Gathering information around external identity proliferation](https://github.com/microsoft/access-reviews-samples/tree/master/ExternalIdentityUse).
 
-1. Browse to **Identity governance** > **Access Reviews**.
+1. Browse to **ID Governance** > **Access Reviews**.
 
 1. Select **+ New access review**.
 

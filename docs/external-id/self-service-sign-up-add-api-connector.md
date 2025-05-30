@@ -1,16 +1,14 @@
 ---
 title: Add API connectors to self-service sign-up flows
 description: Configure a web API to be used in a user flow.
- 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/05/2024
-
-ms.author: mimart
-author: msmimart
+ms.date: 04/15/2025
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
-ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As a User Administrator in Microsoft Entra, I want to add an API connector to a user flow after the authentication step or before creating the user, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems.
 ---
 
@@ -22,14 +20,14 @@ To use an [API connector](api-connectors-overview.md), you first create the API 
 
 > [!IMPORTANT]
 >
-> - **Starting July 12, 2021**,  if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-> - **Starting September 30, 2021**, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+> - **As of July 12, 2021**, if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+> - **On September 30, 2021**, Google [deprecated embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users can't authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
 
 ## Create an API connector
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External Identities** > **Overview**.
 1. Select **All API connectors**, and then select **New API connector**.
 
     :::image type="content" source="media/self-service-sign-up-add-api-connector/api-connector-new.png" alt-text="Screenshot of adding a new API connector to External ID.":::
@@ -74,12 +72,12 @@ Content-type: application/json
 }
 ```
 
-Only user properties and custom attributes listed in the **Identity** > **External Identities** > **Overview** > **Custom user attributes** experience are available to be sent in the request.
+Only user properties and custom attributes listed in the **Entra ID** > **External Identities** > **Overview** > **Custom user attributes** experience are available to be sent in the request.
 
 Custom attributes exist in the **extension_\<extensions-app-id>_AttributeName**  format in the directory. Your API should expect to receive claims in this same serialized format. For more information on custom attributes, see [define custom attributes for self-service sign-up flows](user-flow-add-custom-attributes.md).
 
 Additionally, the claims are typically sent in all request:
-- **UI Locales ('ui_locales')** -  An end-user's locale(s) as configured on their device. This can be used by your API to return internationalized responses.
+- **UI Locales ('ui_locales')** -  An end-user's locales as configured on their device, which your API can use to return internationalized responses.
 <!-- - **Step ('step')** - The step or point on the user flow that the API connector was invoked for. Values include:
   - `PostFederationSignup` - corresponds to "After federating with an identity provider during sign-up"
   - `PostAttributeCollection` - corresponds to "Before creating the user"
@@ -87,14 +85,14 @@ Additionally, the claims are typically sent in all request:
 - **Email Address ('email')** or [**identities ('identities')**](/graph/api/resources/objectidentity) - these claims can be used by your API to identify the end-user that is authenticating to the application.
 
 > [!IMPORTANT]
-> If a claim does not have a value at the time the API endpoint is called, the claim will not be sent to the API. Your API should be designed to explicitly check and handle the case in which a claim is not in the request.
+> If a claim doesn't have a value at the time the API endpoint is called, it isn't sent to the API. Your API should be designed to explicitly check and handle the case in which a claim isn't in the request.
 
 ## Enable the API connector in a user flow
 
 Follow these steps to add an API connector to a self-service sign-up user flow.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External Identities** > **Overview**.
 4. Select **User flows**, and then select the user flow you want to add the API connector to.
 5. Select **API connectors**, and then select the API endpoints you want to invoke at the following steps in the user flow:
 
@@ -143,7 +141,7 @@ When the web API receives an HTTP request from Microsoft Entra ID during a user 
 
 A continuation response indicates that the user flow should continue to the next step: the attribute collection page.
 
-In a continuation response, the API can return claims. If a claim is returned by the API, the claim does the following:
+In a continuation response, the API can return a claim that:
 
 - Prefills the input field in the attribute collection page.
 
@@ -151,7 +149,7 @@ See an example of a [continuation response](#example-of-a-continuation-response)
 
 #### Blocking Response
 
-A blocking response exits the user flow. It can be purposely issued by the API to stop the continuation of the user flow by displaying a block page to the user. The block page displays the `userMessage` provided by the API.
+A blocking response exits the user flow. The API can purposely issue a blocking response to stop the continuation of the user flow by displaying a block page to the user. The block page displays the `userMessage` provided by the API.
 
 See an example of a [blocking response](#example-of-a-blocking-response).
 
@@ -201,14 +199,14 @@ When the web API receives an HTTP request from Microsoft Entra ID during a user 
 #### Continuation response
 A continuation response indicates that the user flow should continue to the next step: create the user in the directory.
 
-In a continuation response, the API can return claims. If a claim is returned by the API, the claim does the following:
+In a continuation response, the API can return a claim that:
 
-- Overrides any value that has already been assigned to the claim from the attribute collection page.
+- Overrides any value already assigned to the claim from the attribute collection page.
 
 See an example of a [continuation response](#example-of-a-continuation-response).
 
 #### Blocking Response
-A blocking response exits the user flow. It can be purposely issued by the API to stop the continuation of the user flow by displaying a block page to the user. The block page displays the `userMessage` provided by the API.
+A blocking response exits the user flow. The API can purposely issue a blocking response to stop the continuation of the user flow by displaying a block page to the user. The block page displays the `userMessage` provided by the API.
 
 See an example of a [blocking response](#example-of-a-blocking-response).
 
@@ -300,7 +298,7 @@ Serverless functions, like [HTTP triggers in Azure Functions](/azure/azure-funct
 
 ### Best practices
 Ensure that:
-* Your API is following the API request and response contracts as outlined above. 
+* Your API is following the API request and response contracts as outlined earlier. 
 * The **Endpoint URL** of the API connector points to the correct API endpoint.
 * Your API explicitly checks for null values of received claims that it depends on.
 * Your API implements an authentication method outlined in [secure your API Connector](self-service-sign-up-secure-api-connector.md).

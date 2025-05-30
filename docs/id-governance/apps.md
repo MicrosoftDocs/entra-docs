@@ -2,10 +2,10 @@
 title: Microsoft Entra ID Governance integrations
 description: This page provides an overview of the Microsoft Entra ID Governance integrations available to automate provisioning and governance controls.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.reviewer: amycolannino
 ---
@@ -229,7 +229,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Contentstack](../identity/saas-apps/contentstack-provisioning-tutorial.md) | ●  | ● |
 | [Contrast Security](../identity/saas-apps/contrast-security-tutorial.md) |  | ● |
 | [Convene](../identity/saas-apps/convene-tutorial.md) |  | ● |
-| [Cornerstone OnDemand](../identity/saas-apps/cornerstone-ondemand-provisioning-tutorial.md) | ● | ● |
 | [Couchbase Capella - SSO](../identity/saas-apps/couchbase-capella-sso-tutorial.md) |  | ● |
 | [Couchbase Server - SSO](../identity/saas-apps/couchbase-server-sso-tutorial.md) |  | ● |
 | [Coupa Risk Assess](../identity/saas-apps/coupa-risk-assess-tutorial.md) |  | ● |
@@ -353,7 +352,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [GoProfiles](../identity/saas-apps/goprofiles-tutorial.md) |  | ● |
 | [GoSearch](../identity/saas-apps/gosearch-tutorial.md) |  | ● |
 | [GoTo](../identity/saas-apps/goto-provisioning-tutorial.md) | ● | ● |
-| [GoToMeeting](../identity/saas-apps/citrixgotomeeting-provisioning-tutorial.md) | ● | ● |
 | [Graebel Single Sign On with globalCONNECT](../identity/saas-apps/graebel-single-sign-on-with-globalconnect-tutorial.md) |  | ● |
 | [Grammarly](../identity/saas-apps/grammarly-provisioning-tutorial.md) | ● | ● |
 | [Granite](../identity/saas-apps/granite-tutorial.md) |  | ● |

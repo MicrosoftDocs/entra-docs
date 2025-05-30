@@ -4,15 +4,16 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: 
 ms.date: 10/07/2022
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # Desktop app that calls web APIs: Acquire a token using integrated Windows authentication
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 To sign in a domain user on a domain or Microsoft Entra joined machine, use integrated Windows authentication (IWA).
 

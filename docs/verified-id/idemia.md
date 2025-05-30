@@ -1,13 +1,11 @@
 ---
 title: Configure Verified ID by IDEMIA as your identity verification partner 
-description: This article shows you the steps you need to follow to configure IDEMIA as your identity verification partner
-
+description: This article shows you the steps you need to follow to configure IDEMIA as your identity verification partner.
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: how-to
-ms.date: 12/17/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
@@ -26,7 +24,7 @@ Before you can continue, you need to meet the following requirements:
    - Register on the IDEMIA Experience Portal where you can create your own Microsoft verifiable credential application with a few steps low code integration. 
 
 >[!IMPORTANT]
->Before you can proceed, you must have already received a URL from IDEMIA. If you have not yet received it, follow up with IDEMIA before you try the steps documented below.
+>Before you can proceed, you must have already received a URL from IDEMIA. If you haven't yet received it, follow up with IDEMIA before you try the steps documented below.
 
 
 ## Scenario description

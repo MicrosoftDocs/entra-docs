@@ -5,11 +5,11 @@ description: Learn how Microsoft Entra registered devices provide your users wit
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 02/26/2024
+ms.date: 02/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: sandeo
 ---
 
@@ -41,6 +41,9 @@ Microsoft Entra registration can be accomplished when accessing a work applicati
 A user in your organization wants to access your benefits enrollment tool from their home PC. Your organization requires that anyone accesses this tool from an Intune compliant device. The user registers their home PC with Microsoft Entra ID and Enrolls the device in Intune, then the required Intune policies are enforced giving the user access to their resources.
 
 Another user wants to access their organizational email on their personal Android phone that is rooted. Your company requires a compliant device and has an Intune device compliance policy to block any rooted devices. The employee is stopped from accessing organizational resources on this device.
+
+> [!NOTE]
+> Microsoft Entra registered devices don't support the [Unified Write Filter](/windows/configuration/unified-write-filter/) feature.
 
 ## Related content
 

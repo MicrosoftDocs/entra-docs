@@ -4,8 +4,8 @@ description: Learn how Microsoft Entra ID's shared device mode feature enables d
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 08/27/2024
-ms.reviewer: brianmel, akgoel, dmwendia
+ms.date: 05/09/2025
+ms.reviewer: akgoel
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -22,7 +22,7 @@ To allow employees to use an organization's apps across shared devices, develope
 
 - **Single sign-on:** Allow users to sign into one of the apps that support shared device mode and gain seamless authentication across all other SDM supported apps without having to reenter their credentials. Exempt users from First Run Experience (FRE) screens on shared devices. 
 - **Single sign out:** Enable users to sign out of the device without needing to sign out individually from each SDM supported application. Signing out assures users that their data won’t be shown to subsequent device users, provided apps ensure cleaning up of any cached user data.
-- **Security via Conditional Access policies support:** Provide admins the ability to target specific conditional access policies on shared devices, ensuring that employees have access to company data only when their shared device meets internal compliance standards.
+- **Security via Conditional Access policies support:** Provide admins the ability to target specific Conditional Access policies on shared devices, ensuring that employees have access to company data only when their shared device meets internal compliance standards.
 
 ## Supported and unsupported scenarios
 
@@ -39,7 +39,7 @@ Shared Device Mode feature supports following scenarios:
 
 To take advantage of the shared device mode feature, cloud device admins and application developers work together:
 
-**Device administrators** prepare the devices to be shared by setting up the devices in shared device mode manually or via a mobile device management (MDM) provider like Microsoft Intune. The preferred option is using an MDM as it allows the device setup in shared device mode at scale via zero-touch provisioning. The MDM is configured to push the Microsoft Authenticator app to the device with shared device mode turned on. On iOS devices, MDM also enables the Microsoft Enterprise SSO plug-in that is required for shared device mode. 
+**Device administrators** prepare the devices to be shared by setting up the devices in shared device mode manually or via a mobile device management (MDM) provider like Microsoft Intune. The preferred option is using an MDM as it allows the device setup in shared device mode at scale via zero-touch provisioning. The MDM is configured to push the Microsoft Authenticator app to the device with shared device mode turned on. On iOS devices, MDM also enables the Microsoft Enterprise single sign-on (SSO) plug-in that is required for shared device mode. 
 
 The following guides provide more details on how to set up devices in shared device mode via Intune:
 

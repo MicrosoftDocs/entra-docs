@@ -1,12 +1,11 @@
 ---
 title: Issue verifiable credentials by presenting claims from an existing verifiable credential
-description: Learn how to use a quickstart to create custom credentials for from other Verifiable Credential attestation
+description: Learn how to use a quickstart to create custom credentials for from other Verifiable Credential attestation.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 01/21/2025
 ms.author: barclayn
 

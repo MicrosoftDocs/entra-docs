@@ -10,6 +10,8 @@ ms.manager: mwongerapk
 
 ### Use custom URL domain (Optional)
 
+[!INCLUDE [applies-to-external-only](../../includes/applies-to-external-only.md)]
+
 Use a custom domain to fully brand the authentication URL. From a user perspective, users remain on your domain during the authentication process, rather than being redirected to *ciamlogin.com* domain name.
 
 Use the following steps to use a custom domain:

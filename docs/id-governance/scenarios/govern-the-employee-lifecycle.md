@@ -2,10 +2,10 @@
 title: 'Govern the employee lifecycle with Microsoft Entra ID Governance'
 description: Describes overview of identity lifecycle management and what is meant by governing the employee lifecycle.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ---
 

@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra multifact
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/16/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
@@ -60,7 +60,7 @@ In this tutorial, we create a basic Conditional Access policy to prompt for MFA 
 First, create a Conditional Access policy and assign your test group of users as follows:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Security Center**>**Conditional Access**, select **+ New policy**, and then select **Create new policy**.
+ 1. Browse to **Entra ID** > **Conditional Access** > Overview , select **+ Create new policy**.
  
    :::image type="content" alt-text="A screenshot of the Conditional Access page, where you select 'New policy' and then select 'Create new policy'." source="media/tutorial-enable-azure-mfa/tutorial-enable-azure-mfa-conditional-access-menu-new-policy.png":::
 

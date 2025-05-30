@@ -1,16 +1,15 @@
 ---
 title: Enable on-premises Microsoft Entra Password Protection
 description: Learn how to enable Microsoft Entra Password Protection for an on-premises Active Directory Domain Services environment
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/14/2025
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jsimmons
+ms.custom: sfi-image-nochange
 ---
 # Enable on-premises Microsoft Entra Password Protection
 
@@ -28,7 +27,7 @@ This article shows you how to enable Microsoft Entra Password Protection for you
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Password protection**.
+1. Browse to **Entra ID** > **Authentication methods** > **Password protection**.
 1. Set the option for **Enable password protection on Windows Server Active Directory** to *Yes*.
 
     When this setting is set to *No*, all deployed Microsoft Entra Password Protection DC agents go into a quiescent mode where all passwords are accepted as-is. No validation activities are performed, and audit events aren't generated.

@@ -2,7 +2,7 @@
 title: Use managed identities on a virtual machine to acquire access token
 description: Step-by-step instructions and examples for using managed identities for Azure resources on virtual machines to acquire an OAuth access token.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: entra-id
@@ -10,14 +10,12 @@ ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.custom: devx-track-dotnet, devx-track-extended-java
-ms.date: 05/15/2023
-ms.author: ryanwi
+ms.date: 02/27/2025
+ms.author: shermanouko
 
 ---
 
 # How to use managed identities for Azure resources on an Azure VM to acquire an access token 
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]  
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 
@@ -34,7 +32,7 @@ If you plan to use the Azure PowerShell examples in this article, be sure to ins
 > - All sample code/script in this article assumes the client is running on a virtual machine with managed identities for Azure resources. Use the virtual machine "Connect" feature in the Azure portal, to remotely connect to your VM. For details on enabling managed identities for Azure resources on a VM, see [Configure managed identities for Azure resources on a VM using the Azure portal](qs-configure-portal-windows-vm.md), or one of the variant articles (using PowerShell, CLI, a template, or an Azure SDK). 
 
 > [!IMPORTANT]
-> - The security boundary of managed identities for Azure resources, is the resource where the identity is used. All code/scripts running on a virtual machine can request and retrieve tokens for any managed identities available on it. 
+> - The security boundary of managed identities for Azure resources is the resource where the identity is used. All code/scripts running on a virtual machine can request and retrieve tokens for any managed identities available on it. 
 
 ## Overview
 
@@ -45,7 +43,7 @@ A client application can request a managed identity [app-only access token](~/id
 | -------------- | -------------------- |
 | [Get a token using HTTP](#get-a-token-using-http) | Protocol details for managed identities for Azure resources token endpoint |
 | [Get a token using Azure.Identity](#get-a-token-using-the-azure-identity-client-library) | Get a token using Azure.Identity library |
-| [Get a token using the Microsoft.Azure.Services.AppAuthentication library for .NET](#get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net) | Example of using the Microsoft.Azure.Services.AppAuthentication library from a .NET client
+| [Get a token using the Microsoft.Azure.Services.AppAuthentication library for .NET](#get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net) | Example of using the Microsoft.Azure.Services.AppAuthentication library from a .NET client |
 | [Get a token using C#](#get-a-token-using-c) | Example of using managed identities for Azure resources REST endpoint from a C# client |
 | [Get a token using Java](#get-a-token-using-java) | Example of using managed identities for Azure resources REST endpoint from a Java client |
 | [Get a token using Go](#get-a-token-using-go) | Example of using managed identities for Azure resources REST endpoint from a Go client |
@@ -362,8 +360,8 @@ The managed identities endpoint signals errors via the status code field of the 
 | 410  | IMDS is going through updates |  IMDS will be available within 70 seconds |
 | 429 Too many requests. |  IMDS Throttle limit reached. | Retry with Exponential Backoff. See guidance below. |
 | 4xx Error in request. | One or more of the request parameters was incorrect. | Don't retry.  Examine the error details for more information.  4xx errors are design-time errors.|
-| 5xx Transient error from service. | The managed identities for Azure resources subsystem or Microsoft Entra ID returned a transient error. | It's safe to retry after waiting for at least 1 second.  If you retry too quickly or too often, IMDS and/or Microsoft Entra ID may return a rate limit error (429).|
-| timeout | IMDS endpoint is updating. | Retry with Exponential Backoff. See guidance below. |
+| 5xx Transient error from service. | The managed identities for Azure resources subsystem or Microsoft Entra ID returned a transient error. | It's safe to retry after waiting for at least 1 second. If you retry too quickly or too often, IMDS and/or Microsoft Entra ID may return a rate limit error (429).|
+| time out | IMDS endpoint is updating. | Retry with Exponential Backoff. See guidance later. |
 
 If an error occurs, the corresponding HTTP response body contains JSON with the error details:
 
@@ -386,14 +384,14 @@ This section documents the possible error responses. A "200 OK" status is a succ
 |           | access_denied | The resource owner or authorization server denied the request. |  |
 |           | unsupported_response_type | The authorization server doesn't support obtaining an access token using this method. |  |
 |           | invalid_scope | The requested scope is invalid, unknown, or malformed. |  |
-| 500 Internal server error | unknown | Failed to retrieve token from the Active directory. For details see logs in *\<file path\>* | Verify that the VM has managed identities for Azure resources enabled. See [Configure managed identities for Azure resources on a VM using the Azure portal](qs-configure-portal-windows-vm.md) if you need assistance with VM configuration.<br><br>Also verify that your HTTP GET request URI is formatted correctly, particularly the resource URI specified in the query string. See the "Sample request" in the preceding REST section for an example, or [Azure services that support Microsoft Entra authentication](./managed-identities-status.md) for a list of services and their respective resource IDs.
+| 500 Internal server error | unknown | Failed to retrieve token from the Active directory. For details see logs in *\<file path\>* | Verify that the VM has managed identities for Azure resources enabled. See [Configure managed identities for Azure resources on a VM using the Azure portal](qs-configure-portal-windows-vm.md) if you need assistance with VM configuration.<br><br>Also verify that your HTTP GET request URI is formatted correctly, particularly the resource URI specified in the query string. See the "Sample request" in the preceding REST section for an example, or [Azure services that support Microsoft Entra authentication](./managed-identities-status.md) for a list of services and their respective resource IDs. |
 
 > [!IMPORTANT]
-> - IMDS is not intended to be used behind a proxy and doing so is unsupported. For examples of how to bypass proxies, refer to the [Azure Instance Metadata Samples](https://github.com/microsoft/azureimds).  
+> - IMDS isn't intended to be used behind a proxy and doing so is unsupported. For examples of how to bypass proxies, refer to the [Azure Instance Metadata Samples](https://github.com/microsoft/azureimds).  
 
 ## Retry guidance 
 
-It's recommended to retry if you receive a 404, 429, or 5xx error code (see [Error handling](#error-handling) above). If you receive a 410 error, it indicates that IMDS is going through updates and will be available in a maximum of 70 seconds.  
+Retry if you receive a 404, 429, or 5xx error code (see [Error handling](#error-handling)). If you receive a 410 error, it indicates that IMDS is going through updates and will be available in a maximum of 70 seconds.  
 
 Throttling limits apply to the number of calls made to the IMDS endpoint. When the throttling threshold is exceeded, IMDS endpoint limits any further requests while the throttle is in effect. During this period, the IMDS endpoint returns the HTTP status code 429 ("Too many requests"), and the requests fail. 
 

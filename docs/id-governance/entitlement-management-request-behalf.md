@@ -41,7 +41,7 @@ Follow these steps to edit the policies, allowing on behalf of requests, for an 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**. 
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**. 
 
 1. Select the access package you want to set up for on behalf of requests.  
 

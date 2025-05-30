@@ -4,9 +4,8 @@ description: Learn about acquiring and caching tokens using MSAL.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-adal-ref 
-ms.date: 02/28/2024
-ms.reviewer: saeeda, ddelimarsky
+ms.date: 05/14/2025
+ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
 
@@ -97,7 +96,7 @@ For confidential client applications (web app, web API, or a daemon app like a W
 
 - Acquire tokens **for the application itself** and not for a user, using the [client credentials flow](msal-authentication-flows.md#client-credentials). This technique can be used for syncing tools, or tools that process users in general and not a specific user.
 - Use the [on-behalf-of (OBO) flow](msal-authentication-flows.md#on-behalf-of-obo) for a web API to call an API on behalf of the user. The application is identified with client credentials in order to acquire a token based on a user assertion (SAML, for example, or a JWT token). This flow is used by applications that need to access resources of a particular user in service-to-service calls. Tokens should be cached on a session basis, not on a user basis.
-- Acquire tokens using the [authorization code flow](msal-authentication-flows.md#authorization-code) in web apps after the user signs in through the authorization request URL. OpenID Connect application typically use this mechanism, which lets the user sign in using OpenID Connect and then access web APIs on behalf of the user. Tokens can be cached on a user or on a session basis. If caching tokens on a user basis, we recommend to limit the session lifetime, so that Microsoft Entra ID can check the state of the Conditional Access policies frequently.
+- Acquire tokens using the [authorization code flow](msal-authentication-flows.md#authorization-code) in web apps after the user signs in through the authorization request URL. OpenID Connect application typically use this mechanism, which lets the user sign in using OpenID Connect and then access web APIs on behalf of the user. Tokens can be cached on a user or on a session basis. If caching tokens on a user basis, we recommend limiting the session lifetime, so that Microsoft Entra ID can check the state of the Conditional Access policies frequently.
 
 ## Authentication results
 
@@ -113,10 +112,6 @@ When your client requests an access token, Microsoft Entra ID also returns an au
 ## (Advanced) Accessing the user's cached tokens in background apps and services
 
 [!INCLUDE [advanced-token-caching](~/includes/advanced-token-cache.md)]
-
-
-> [!NOTE]
-> When acquiring tokens interactivelly using [authentication broker](msal-net-use-brokers-with-xamarin-apps.md), the authentication broker will do cache-lookup first and return cached token if available ([GitHub issue - acquireToken uses caching](https://github.com/AzureAD/microsoft-authentication-library-for-android/issues/2197#issuecomment-2447771586)).
 
 ## See also
 

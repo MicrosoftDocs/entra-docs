@@ -2,15 +2,18 @@
 title: Set and view configuration settings in Permissions Management
 description: How to view the Permissions Management API integration settings and create service accounts and roles.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Set and view configuration settings
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This topic describes how to view configuration settings, create and delete a service account, and create a role in Permissions Management.
 

@@ -2,11 +2,11 @@
 title: Microsoft Entra activity log integration options
 description: Introduction to the options and considerations for integrating Microsoft Entra activity logs with storage and analysis tools.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 10/02/2024
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -25,9 +25,9 @@ The following logs can be integrated with one of many endpoints:
 
 * The [**audit logs activity report**](concept-audit-logs.md) gives you access to the history of every task performed in your tenant.
 * With the [**sign-in activity report**](concept-sign-ins.md), you can see when users attempt to sign in to your applications or troubleshoot sign-in errors.
-* With the [**provisioning logs**](~/identity/app-provisioning/application-provisioning-log-analytics.md), you can monitor which users were, updated, and deleted in all your non-Mirosoft applications.
-* The [**risky users logs**](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users-report) helps you monitor changes in user risk level and remediation activity.
-* With the [**risk detections logs**](~/id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report), you can monitor user's risk detections and analyze trends in risk activity detected in your organization.
+* With the [**provisioning logs**](../../identity/app-provisioning/application-provisioning-log-analytics.md), you can monitor which users were, updated, and deleted in all your non-Microsoft applications.
+* The [**risky users logs**](../../id-protection/howto-identity-protection-investigate-risk.md#risky-users-report) helps you monitor changes in user risk level and remediation activity.
+* With the [**risk detections logs**](../../id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report), you can monitor user's risk detections and analyze trends in risk activity detected in your organization.
 
 ## Integration options
 

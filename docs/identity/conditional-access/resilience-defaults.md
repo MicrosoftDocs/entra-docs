@@ -9,7 +9,7 @@ ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: dawoo
 ---
 # Conditional Access: Resilience defaults
@@ -70,7 +70,7 @@ When resilience defaults are disabled, the Backup Authentication Service won't u
 
 ## Testing resilience defaults
 
-It isn't possible to conduct a dry run using the Backup Authentication Service or simulate the result of a policy with resilience defaults enabled or disabled at this time. Microsoft Entra conducts monthly exercises using the Backup Authentication Service. The sign-in logs display if the Backup Authentication Service was used to issue the access token. In **Identity** > **Monitoring & health** > **Sign-in Logs** blade, you can add the filter "Token issuer type == Microsoft Entra Backup Auth" to display the logs processed by Microsoft Entra Backup Authentication service.
+It isn't possible to conduct a dry run using the Backup Authentication Service or simulate the result of a policy with resilience defaults enabled or disabled at this time. Microsoft Entra conducts monthly exercises using the Backup Authentication Service. The sign-in logs display if the Backup Authentication Service was used to issue the access token. In **Entra ID** > **Monitoring & health** > **Sign-in Logs** blade, you can add the filter "Token issuer type == Microsoft Entra Backup Auth" to display the logs processed by Microsoft Entra Backup Authentication service.
 
 ## Configuring resilience defaults
 
@@ -79,7 +79,7 @@ You can configure Conditional Access resilience defaults from the Microsoft Entr
 ### Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Create a new policy or select an existing policy
 1. Open the Session control settings
 1. Select Disable resilience defaults to disable the setting for this policy. Sign-ins in scope of the policy are blocked during a Microsoft Entra outage

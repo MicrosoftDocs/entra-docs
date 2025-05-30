@@ -2,7 +2,7 @@
 title: Common scenarios in entitlement management
 description: Learn the high-level steps you should follow for common scenarios in Microsoft Entra entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management

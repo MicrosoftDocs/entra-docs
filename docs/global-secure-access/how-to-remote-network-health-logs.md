@@ -3,14 +3,14 @@ title: How to use the remote network health logs
 description: Learn how to check the health of your remote networks with the Global Secure Access remote network health logs.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.reviewer: katabish
-
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 # Customer intent: As a network admin, I want to be able to check the health of my remote networks so that I can troubleshoot issues and make improvements to my configurations.
-
 ---
 
 # What are remote network health logs?
@@ -118,7 +118,7 @@ The basic steps to configure diagnostic settings are as follows:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. 
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**. 
 
 1. Any existing diagnostic settings appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
 

@@ -2,7 +2,7 @@
 title: Self-review of an access package in entitlement management
 description: Learn how to review user access of entitlement management access packages in access reviews.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to

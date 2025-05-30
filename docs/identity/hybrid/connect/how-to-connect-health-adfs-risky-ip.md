@@ -1,18 +1,16 @@
 ---
 title: Microsoft Entra Connect Health with the AD FS Risky IP report
 description: This article describes the Microsoft Entra Connect Health AD FS Risky IP report.
-
 ms.reviewer: zhiweiwangmsft
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.author: billmath
-ms.custom: H1Hack27Feb2017
-
+ms.custom: H1Hack27Feb2017, sfi-image-nochange
 ---
 
 # The Risky IP report 

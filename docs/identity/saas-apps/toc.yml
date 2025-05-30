@@ -1,7 +1,7 @@
   items:
-  - name: Application tutorials
+  - name: Application articles
     href: tutorial-list.md
-  - name: Single sign-on tutorials
+  - name: Single sign-on articles
     expanded: true
     items:
     - name: 0 - 9
@@ -66,8 +66,6 @@
         href: adem-tutorial.md
       - name: Adobe Captivate Prime
         href: adobecaptivateprime-tutorial.md
-      - name: Adobe Creative Cloud
-        href: adobe-creative-cloud-tutorial.md
       - name: Adobe Experience Manager
         href: adobeexperiencemanager-tutorial.md
       - name: Adobe Identity Management (SAML)
@@ -1563,8 +1561,6 @@
         href: kantegassoforfisheyecrucible-tutorial.md
       - name: Kantega SSO for JIRA
         href: kantegassoforjira-tutorial.md
-      - name: Kao Navi
-        href: kao-navi-tutorial.md
       - name: Karlsgate Identity Exchange (KIE) SSO Add-on
         href: karlsgate-identity-exchange-kie-sso-add-on-tutorial.md
       - name: Keepabl
@@ -2431,24 +2427,24 @@
         href: samsung-knox-and-business-services-tutorial.md
       - name: Sansan
         href: sansan-tutorial.md
-      - name: SAP Business ByDesign
-        href: sapbusinessbydesign-tutorial.md
       - name: SAP Analytics Cloud
         href: sapboc-tutorial.md
-      - name: SAP Cloud for Customer
-        href: sap-customer-cloud-tutorial.md
+      - name: SAP Business ByDesign
+        href: sapbusinessbydesign-tutorial.md
       - name: SAP Business Technology Platform
         href: sap-hana-cloud-platform-tutorial.md
+      - name: SAP Cloud for Customer
+        href: sap-customer-cloud-tutorial.md
       - name: SAP Cloud Identity Services
         href: sap-hana-cloud-platform-identity-authentication-tutorial.md
       - name: SAP Fiori
         href: sap-fiori-tutorial.md
       - name: SAP HANA
         href: saphana-tutorial.md
-      - name: Sapient
-        href: sapient-tutorial.md
       - name: SAP NetWeaver
         href: sap-netweaver-tutorial.md
+      - name: Sapient
+        href: sapient-tutorial.md
       - name: SAS Viya SSO
         href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
@@ -3271,7 +3267,7 @@
         href: zwayam-tutorial.md
       - name: Zylo
         href: zylo-tutorial.md  
-  - name: User provisioning tutorials
+  - name: User provisioning articles
     expanded: true
     items:
     - name: 0 - 9
@@ -3692,6 +3688,8 @@
         href: open-text-directory-services-provisioning-tutorial.md
       - name: Oracle Cloud Infrastructure Console
         href: oracle-cloud-infrastructure-console-provisioning-tutorial.md
+      - name: Oracle E-Business Suite
+        href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Oracle Fusion ERP
         href: oracle-fusion-erp-provisioning-tutorial.md
       - name: Oracle HCM
@@ -3794,6 +3792,8 @@
         href: sas-viya-sso-provisioning-tutorial.md
       - name: SchoolStream ASA
         href: schoolstream-asa-provisioning-tutorial.md
+      - name: SCIM (cloud)
+        href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SCIM (on-premises)
         href: ~/identity/app-provisioning/on-premises-scim-provisioning.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: ScreenSteps
@@ -3828,6 +3828,8 @@
         href: smallstep-ssh-provisioning-tutorial.md
       - name: Snowflake
         href: snowflake-provisioning-tutorial.md
+      - name: SOAP and REST
+        href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Soloinsight-CloudGate SSO
         href: soloinsight-cloudgate-sso-provisioning-tutorial.md
       - name: SoSafe

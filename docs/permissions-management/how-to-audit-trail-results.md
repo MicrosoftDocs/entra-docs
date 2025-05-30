@@ -2,15 +2,18 @@
 title: Generate an on-demand report from a query in the Audit dashboard in Permissions Management
 description: How to generate an on-demand report from a query in the **Audit** dashboard in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Generate an on-demand report from a query
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how you can generate an on-demand report from a query in the **Audit** dashboard in Permissions Management. You can:
 

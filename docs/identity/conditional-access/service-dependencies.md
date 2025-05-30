@@ -9,7 +9,7 @@ ms.date: 06/14/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: calebb
 ---
 # What are service dependencies in Microsoft Entra Conditional Access? 

@@ -1,17 +1,15 @@
 ---
 title: Troubleshoot password hash synchronization with Microsoft Entra Connect Sync
 description: This article provides information about how to troubleshoot password hash synchronization problems.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Troubleshoot password hash synchronization with Microsoft Entra Connect Sync
 
@@ -431,11 +429,11 @@ Write-Host
 
 You can trigger a full sync of all passwords by using the following script:
 
-1. Assign the local Active Directory *$adConnector* value
+1. Assign the local Active Directory **$adConnector** value
    
     ```$adConnector = "<CASE SENSITIVE AD CONNECTOR NAME>"```
 
-2. Assign the AzureAD *$aadConnector* value
+2. Assign the AzureAD **$aadConnector** value
    
     ```$aadConnector = "<CASE SENSITIVE AAD CONNECTOR NAME>"```
 
@@ -443,21 +441,21 @@ You can trigger a full sync of all passwords by using the following script:
    
    ```Import-Module adsync```
 
-4. Create a new Force Full Password Sync configuration oarameter object
+4. Create a new Force Full Password Sync configuration parameter object
    
     ```$c = Get-ADSyncConnector -Name $adConnector```
 
 5. Update the existing connector with the following new configurations. Run each line separately
    
-    ```$p = New-Object Microsoft.IdentityManagement.PowerShell.ObjectModel.ConfigurationParameter "Microsoft.Synchronize.ForceFullPasswordSync", String, ConnectorGlobal, $null,   $null, $null```
+   a.  ```$p = New-Object Microsoft.IdentityManagement.PowerShell.ObjectModel.ConfigurationParameter "Microsoft.Synchronize.ForceFullPasswordSync", String, ConnectorGlobal, $null,   $null, $null```
 
-    ```$p.Value = 1```
+    b. ```$p.Value = 1```
   
-    ```$c.GlobalParameters.Remove($p.Name)```
+    c. ```$c.GlobalParameters.Remove($p.Name)```
 
-    ```$c.GlobalParameters.Add($p)```
+    d. ```$c.GlobalParameters.Add($p)```
 
-    ```$c = Add-ADSyncConnector -Connector $c```
+    e. ```$c = Add-ADSyncConnector -Connector $c```
 
 6. Disable Entra ID Connect
     

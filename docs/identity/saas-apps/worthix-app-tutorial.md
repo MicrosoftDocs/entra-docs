@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Worthix App
+title: Configure Worthix App for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Worthix App.
 
 author: nguhiu
@@ -9,16 +9,16 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Worthix App so that I can control who has access to Worthix App, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Worthix App
+# Configure Worthix App for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Worthix App with Microsoft Entra ID. Worthix App is a Customer Value Alignment platform that uses I.A to dialogue with your company customers to collect their company value perceptions. When you integrate Worthix App with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Worthix App with Microsoft Entra ID. Worthix App is a Customer Value Alignment platform that uses I.A to dialogue with your company customers to collect their company value perceptions. When you integrate Worthix App with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Worthix App.
 * Enable your users to be automatically signed-in to Worthix App with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Worthix App** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Worthix App** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -75,7 +75,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://production-worthix.us.auth0.com/login/callback?connection=<Company_Name>Saml`
 	
 	> [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Worthix App support team](mailto:support@worthix.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Worthix App support team](mailto:support@worthix.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -97,9 +97,9 @@ In this section, a user called B.Simon is created in Worthix App. Worthix App su
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Worthix App for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Worthix App for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Worthix App tile in the My Apps, you should be automatically signed in to the Worthix App for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Worthix App tile in the My Apps, you should be automatically signed in to the Worthix App for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

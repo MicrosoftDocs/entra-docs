@@ -4,12 +4,11 @@ description: Shows how to convert an existing single-tenant app to a multitenant
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:
 ms.date: 11/13/2024
 ms.reviewer: jmprieur, sureshja
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an Azure user, I want to convert a single tenant app to a Microsoft Entra multitenant app so any Microsoft Entra user can sign in,
 ---
 
@@ -47,7 +46,7 @@ For example, if the name of your tenant was `contoso.onmicrosoft.com` then a val
 
 With a multitenant application, the application can't immediately tell which tenant the user is from, so requests can't be sent to a tenant’s endpoint. Instead, requests are sent to a common endpoint (`https://login.microsoftonline.com/common`) that serves across all Microsoft Entra tenants, acting as a central hub that handles requests.
 
-Open your app in your IDE and edit your code and change the value for your tenant ID to `/common`. This endpoint isn't a tenant or an issuer itself. When the Microsoft identity platform receives a request on the `/common` endpoint, it signs the user in, discovering which tenant the user is from. This endpoint works with all of the authentication protocols supported by the Microsoft Entra ID (OpenID Connect, OAuth 2.0, SAML 2.0, WS-Federation).
+Open your app in your IDE and edit your code and change the value for your tenant ID to `/common`. For SAML apps, this can be configured in the identity provider XML file. This endpoint isn't a tenant or an issuer itself. When the Microsoft identity platform receives a request on the `/common` endpoint, it signs the user in, discovering which tenant the user is from. This endpoint works with all of the authentication protocols supported by the Microsoft Entra ID (OpenID Connect, OAuth 2.0, SAML 2.0, WS-Federation).
 
 The sign-in response to the application then contains a token representing the user. The issuer value in the token tells an application what tenant the user is from. When a response returns from the `/common` endpoint, the issuer value in the token corresponds to the user’s tenant.
 

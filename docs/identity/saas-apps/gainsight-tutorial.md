@@ -1,24 +1,21 @@
 ---
-title: Microsoft Entra SSO integration with Gainsight
+title: Configure Gainsight for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Gainsight.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Gainsight so that I can control who has access to Gainsight, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Gainsight
+# Configure Gainsight for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Gainsight with Microsoft Entra ID. Use Microsoft Entra ID to manage user access and enable single sign-on with Gainsight. Requires an existing Gainsight subscription. When you integrate Gainsight with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Gainsight with Microsoft Entra ID. Use Microsoft Entra ID to manage user access and enable single sign-on with Gainsight. Requires an existing Gainsight subscription. When you integrate Gainsight with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Gainsight.
 * Enable your users to be automatically signed-in to Gainsight with their Microsoft Entra accounts.
@@ -60,7 +57,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Gainsight** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Gainsight** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. Provide any dummy url like (`https://gainsight.com`) in the **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** in **Basic SAML Configuration**.
 
@@ -72,7 +69,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
    ![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Metadata")
 
-1. Now on the Gainsight Side, Navigate to **User Management** and click on **Authentication** tab, create a new **SAML** Authentication.
+1. Now on the Gainsight Side, Navigate to **User Management** and select **Authentication** tab, create a new **SAML** Authentication.
 
 ## Setup SAML 2.0 Authentication in Gainsight
 
@@ -83,11 +80,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Log in to your **Gainsight** company site as an administrator.
 
-1. Click **search bar** on the left side menu and select **User Management**.
+1. Select **search bar** on the left side menu and select **User Management**.
 
     ![Screenshot shows the Gainsight Left Nav Search Bar.](media/gainsight-tutorial/search-bar.png "Search bar")
 
-1. In the **User Management** page, navigate to **Authentication** tab and click **Add Authentication** > **SAML**.
+1. In the **User Management** page, navigate to **Authentication** tab and select **Add Authentication** > **SAML**.
 
     ![Screenshot shows the Gainsight User Management Authentication Page.](media/gainsight-tutorial/authentication.png "Authentication Page")
 
@@ -99,9 +96,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     1. Enter a valid **Email Domain** in the textbox.
     1. In the **Sign In URL** textbox, paste the **Login URL** value, which you copied previously.
     1. In the **Sign Out URL** textbox, paste the **Logout URL** value, which you copied previously.
-    1. Open the downloaded **Certificate (Base64)** and upload it into the **Certificate** by clicking **Browse** option.
-    1. Click **Save**.
-    1. Reopen the new **SAML** Authentication and click on edit on the newly created connection, and download the **metadata**. Open the **metadata** file in your favorite Editor, and copy **entityID** and **Assertion Consumer Service Location URL**.
+    1. Open the downloaded **Certificate (Base64)** and upload it into the **Certificate** by selecting **Browse** option.
+    1. Select **Save**.
+    1. Reopen the new **SAML** Authentication and select edit on the newly created connection, and download the **metadata**. Open the **metadata** file in your favorite Editor, and copy **entityID** and **Assertion Consumer Service Location URL**.
 
     > [!Note]
     > For more information on SAML creation, please refer [GAINSIGHT SAML](https://support.gainsight.com/Gainsight_NXT/01Onboarding_and_Implementation/Onboarding_for_Gainsight_NXT/Login_and_Permissions/03Gainsight_Authentication).
@@ -143,7 +140,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     
     ![Screenshot shows how to add users in Gainsight.](media/gainsight-tutorial/user.png "Add Users")
 
-1. Fill required fields and click **Save**. Users must be created and activated before you use single sign-on.
+1. Fill required fields and select **Save**. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
@@ -151,15 +148,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Gainsight Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Gainsight Sign-on URL where you can initiate the login flow. 
 
 * Go to Gainsight Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Gainsight for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Gainsight for which you set up the SSO.
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Gainsight tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Gainsight for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Gainsight tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Gainsight for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

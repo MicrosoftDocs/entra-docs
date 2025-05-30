@@ -1,16 +1,14 @@
 ---
 title: Reset guest redemption status
 description: Learn how to reset the redemption status for a guest user in Microsoft Entra External ID. This guide covers using the admin center, PowerShell, and Microsoft Graph API.
-
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 02/05/2025
-
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 # Customer intent: As an admin managing guest users in B2B collaboration, I want to reset the redemption status for a guest user, so that I can update their sign-in information and reinvite them without deleting their account.
 ---
 
@@ -39,7 +37,7 @@ To reset a user's redemption status, you'll need one of the following roles assi
 ## Use the Microsoft Entra admin center to reset redemption status
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. In the list, select the user's name to open their user profile.
 1. (Optional) If the user wants to sign in using a different email:
    1. Select the **Edit properties** icon.

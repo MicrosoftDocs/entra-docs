@@ -9,7 +9,7 @@ metadata:
   description: Learn how to use Microsoft Entra role-based access control (RBAC) to manage access in your organization.  
   ms.service: entra-id
   ms.subservice: role-based-access-control
-  manager: amycolannino
+  manager: femila
   ms.topic: landing-page
   ms.date: 02/18/2025
   author: rolyon

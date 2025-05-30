@@ -2,12 +2,13 @@
 title: Troubleshoot problems installing the Microsoft Entra private network connector
 description: Troubleshoot problems installing the Microsoft Entra private network connector.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 04/15/2024
+ms.date: 05/07/2025
 ms.author: kenwith
-ms.reviewer: ashishj
+ms.reviewer: ashishj,dhruvinshah
+ai-usage: ai-assisted
 ---
 
 # Troubleshoot problems installing the private network connector
@@ -37,10 +38,10 @@ When the installation of a connector fails, the root cause is usually one of the
 
 ## Verify machine and backend component certificate support
 
-**Objective:** Verify that the connector machine, backend proxy, and firewall can support the certificate created by the connector. Also, verify the certificate is valid.
+**Objective:** Verify that the connector machine, backend proxy, and firewall support the certificate the connector created. Also, verify the certificate is valid.
 
 >[!NOTE]
->The connector tries to create a `SHA512` cert that is supported by Transport Layer Security (TLS) 1.2. If the machine or the backend firewall and proxy does not support TLS 1.2, the installation fails.
+>The connector tries to create a `SHA512` cert that supports Transport Layer Security (TLS) 1.2. If the machine or the backend firewall and proxy does not support TLS 1.2, the installation fails.
 
 **Review the prerequisites required:**
 
@@ -62,19 +63,19 @@ Verify the thumbprint of the current client certificate. The certificate store c
 </ConnectorTrustSettingsFile>
 ```
 
-The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration initiated by `Register-MicrosoftEntraPrivateNetworkConnector`. The certificate is stored in the personal container in the certificate store of the local machine.
+The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration `Register-MicrosoftEntraPrivateNetworkConnector` initiates. The certificate is stored in the personal container in the certificate store of the local machine.
 
 If the value is **true**, follow these steps to verify the certificate:
 1. Download [PsTools.zip](/sysinternals/downloads/pstools).
 2. Extract [PsExec](/sysinternals/downloads/psexec) from the package and run **psexec -i -u "nt authority\network service" cmd.exe** from an elevated command prompt.
 3. Run **certmgr.msc** in the newly appeared command prompt.
 4. In the management console, expand the Personal container and select on Certificates.
-5. Locate the certificate issued by **connectorregistrationca.msappproxy.net**.
+5. Locate the certificate issued for **connectorregistrationca.msappproxy.net**.
 
 If the value is **false**, follow these steps to verify the certificate:
 1. Run **certlm.msc**.
 2. In the management console, expand the Personal container and select on Certificates.
-3. Locate the certificate issued by **connectorregistrationca.msappproxy.net**.    
+3. Locate the certificate issued for **connectorregistrationca.msappproxy.net**.    
 
 **To renew the client certificate:**
 
@@ -97,7 +98,7 @@ To learn more about the `Register-MicrosoftEntraPrivateNetworkConnector` command
 
 **To verify the credentials are correct:**
 
-Connect to `https://login.microsoftonline.com` and use the same credentials. Make sure the sign in is successful. You can check the user role by going to **Microsoft Entra ID** -&gt; **Users and Groups** -&gt; **All Users**. 
+Connect to `https://login.microsoftonline.com` and use the same credentials. Make sure the sign in is successful. Check the user role, go to **Microsoft Entra ID** -&gt; **Users and Groups** -&gt; **All Users**. 
 
 Select your user account, then **Directory Role** in the resulting menu. Verify that the selected role is **Application Administrator**. If you're unable to access any of the pages along these steps, you don't have the required role.
 

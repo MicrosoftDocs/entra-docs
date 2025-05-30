@@ -2,7 +2,7 @@
 title: Enable Microsoft Entra Domain Services using PowerShell | Microsoft Learn
 description: Learn how to configure and enable Microsoft Entra Domain Services using Microsoft Graph PowerShell and Azure PowerShell.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
 ms.service: entra-id

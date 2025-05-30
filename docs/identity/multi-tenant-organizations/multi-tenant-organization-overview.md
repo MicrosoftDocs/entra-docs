@@ -1,13 +1,13 @@
 ---
 title: What is a multitenant organization in Microsoft Entra ID?
 description: Learn about multitenant organizations in Microsoft Entra ID and Microsoft 365.
-author: rolyon
-manager: amycolannino
+author: kenwith
+manager: femila
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 10/28/2024
-ms.author: rolyon
+ms.date: 05/27/2025
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
@@ -123,7 +123,7 @@ Administrators staying in control of their resources is a guiding principle for 
 
 - Cross-tenant access partner configurations
 
-    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-beta&preserve-view=true).
+    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner).
 
 - Cross-tenant access identity synchronization
 
@@ -138,7 +138,7 @@ To ease the setup of homogenous cross-tenant access settings applied to partner 
 The multitenant organization capability has been designed with the following constraints:
 
 - Any given tenant can only create or join a single multitenant organization.
-- Tenants that are in a [granular delegated admin privileges (GDAP)](/partner-center/customers/gdap-introduction) relationship cannot create or join a multitenant organization.
+- A multitenant organization is not allowed between a Cloud Solution Provider (CSP) and their customer tenants.
 - Any multitenant organization must have at least one active owner tenant.
 - Each active tenant must have cross-tenant access settings for all active tenants.
 - Any active tenant may leave a multitenant organization by removing themselves from it.

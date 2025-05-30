@@ -103,7 +103,9 @@
     - name: Search group and member lists   
       href: groups-members-owners-search.md
     - name: Dynamic groups    
-      items: 
+      items:
+      - name: Managing dynamic membership group processing    
+        href: manage-dynamic-group.md
       - name: Create a dynamic group    
         href: groups-create-rule.md
       - name: Dynamic group rule syntax
@@ -146,9 +148,7 @@
       href: licensing-admin-center.md
     - name: Additional scenarios    
       href: licensing-group-advanced.md
-    - name: Group licensing with PowerShell and Graph
-      href: licensing-ps-examples.md
-    - name: Group licensing examples Microsoft Graph PowerShell
+    - name: Group licensing examples using PowerShell
       href: licensing-powershell-graph-examples.md
     - name: Service plan IDs for licensing
       href: licensing-service-plan-reference.md

@@ -3,7 +3,7 @@ title: Manage workflow properties
 description: This article guides a user to editing a workflow's properties using Lifecycle Workflows.
 author: OWinfreyATL
 ms.author: owinfrey
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
@@ -35,7 +35,7 @@ To edit the properties of a workflow using the Microsoft Entra admin center, you
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
 
 1. Here you see a list of all of your current workflows. Select the workflow that you want to edit.
     

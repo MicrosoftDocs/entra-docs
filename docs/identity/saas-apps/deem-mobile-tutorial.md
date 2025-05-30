@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Deem Mobile
+title: Configure Deem Mobile for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Deem Mobile.
 
 author: nguhiu
@@ -9,16 +9,16 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Deem Mobile so that I can control who has access to Deem Mobile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Deem Mobile
+# Configure Deem Mobile for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Deem Mobile with Microsoft Entra ID. Deem Mobile is designed for anyone who wants business travel to be fast and easy.  With full functionality to book flights, hotels, rental cars, and even Uber for Business. When you integrate Deem Mobile with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Deem Mobile with Microsoft Entra ID. Deem Mobile is designed for anyone who wants business travel to be fast and easy.  With full functionality to book flights, hotels, rental cars, and even Uber for Business. When you integrate Deem Mobile with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Deem Mobile.
 * Enable your users to be automatically signed-in to Deem Mobile with their Microsoft Entra accounts.
@@ -60,11 +60,11 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Deem Mobile** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Deem Mobile** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   [ ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")](common/edit-urls.png#lightbox)
+   [![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")](common/edit-urls.png#lightbox)
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
     
@@ -79,15 +79,15 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://go.deem.com/idp/ACS.saml2`
 
     > [!Note]
-    >  The Identifier value is not real. Update this value with the actual Identifier. Contact [Deem Mobile support team](mailto:customer.success@deem.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    >  The Identifier value isn't real. Update this value with the actual Identifier. Contact [Deem Mobile support team](mailto:customer.success@deem.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your Deem Mobile application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Deem Mobile expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
-	[ ![Screenshot shows the image of token attributes configuration.](common/default-attributes.png "Image")](common/default-attributes.png#lightbox)
+	[![Screenshot shows the image of token attributes configuration.](common/default-attributes.png "Image")](common/default-attributes.png#lightbox)
     
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
-    [ ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")](common/copy-metadataurl.png#lightbox)
+    [![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")](common/copy-metadataurl.png#lightbox)
 
 ## Configure Deem Mobile SSO
 
@@ -101,9 +101,9 @@ In this section, you create a user called Britta Simon in Deem Mobile. Work with
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Deem Mobile for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Deem Mobile for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Deem Mobile tile in the My Apps, you should be automatically signed in to the Deem Mobile for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Deem Mobile tile in the My Apps, you should be automatically signed in to the Deem Mobile for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

@@ -1,13 +1,13 @@
 ---
 title: Configure multitenant organization policy templates using Microsoft Graph API
 description: Learn how to configure multitenant organization policy templates in Microsoft Entra ID using the Microsoft Graph API.
-author: rolyon
-manager: amycolannino
+author: kenwith
+manager: femila
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 10/15/2024
-ms.author: rolyon
+ms.date: 05/27/2025
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
@@ -33,7 +33,7 @@ To specify which trust settings and automatic user consent settings to apply to 
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
 
 {
     "inboundTrust": {
@@ -56,7 +56,7 @@ To apply this template only to new multitenant organization members and exclude 
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
 
 {
     "inboundTrust": {
@@ -79,7 +79,7 @@ To disable the template completely, set the `templateApplicationLevel` parameter
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
 
 {
     "inboundTrust": {
@@ -100,7 +100,7 @@ PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/template
 To reset the template to its default state (decline all trust and automatic user consent), use the [multiTenantOrganizationPartnerConfigurationTemplate: resetToDefaultSettings](/graph/api/multitenantorganizationpartnerconfigurationtemplate-resettodefaultsettings) API.
 
 ```http
-POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration/resetToDefaultSettings
+POST https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration/resetToDefaultSettings
 ```
 
 ## Cross-tenant synchronization template
@@ -114,7 +114,7 @@ To allow inbound user synchronization in the policy template, use the [Update mu
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
 
 {
     "userSyncInbound": {
@@ -131,7 +131,7 @@ To apply this template only to new multitenant organization members and exclude 
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
 
 {
     "userSyncInbound": {
@@ -148,7 +148,7 @@ To disable the template completely, set the `templateApplicationLevel` parameter
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
 
 {
     "userSyncInbound": {
@@ -165,7 +165,7 @@ To reset the template to its default state (decline inbound synchronization), us
 **Request**
 
 ```http
-POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings
+POST https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings
 ```
 
 ## Next steps

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with ContractSafe Saml2 SSO
+title: Configure ContractSafe Saml2 SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ContractSafe Saml2 SSO.
 
 author: nguhiu
@@ -9,15 +9,15 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ContractSafe Saml2 SSO so that I can control who has access to ContractSafe Saml2 SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Microsoft Entra SSO with ContractSafe Saml2 SSO
+# Configure ContractSafe Saml2 SSO for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate ContractSafe Saml2 SSO with Microsoft Entra ID. When you integrate ContractSafe Saml2 SSO with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate ContractSafe Saml2 SSO with Microsoft Entra ID. When you integrate ContractSafe Saml2 SSO with Microsoft Entra ID, you can:
 
 * Control who has access to ContractSafe Saml2 SSO in Microsoft Entra ID.
 * Enable your users to automatically sign in to ContractSafe Saml2 SSO with their Microsoft Entra accounts.
@@ -25,14 +25,14 @@ In this tutorial, you'll learn how to integrate ContractSafe Saml2 SSO with Micr
 
 ## Prerequisites
 
-To get started, you need:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A ContractSafe Saml2 SSO subscription with SSO enabled.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ContractSafe Saml2 SSO supports **IDP**-initiated SSO.
 
@@ -41,11 +41,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of ContractSafe Saml2 SSO into Microsoft Entra ID, you need to add ContractSafe Saml2 SSO from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **ContractSafe Saml2 SSO** in the search box.
 1. Select **ContractSafe Saml2 SSO** from the results panel, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-contractsafe-saml2-sso'></a>
 
@@ -56,10 +56,10 @@ Configure and test Microsoft Entra SSO with ContractSafe Saml2 SSO by using a te
 To configure and test Microsoft Entra SSO with ContractSafe Saml2 SSO, perform the following steps:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
-   1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra SSO by using the **B.Simon** account.
-   1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable **B.Simon** to use Microsoft Entra SSO.
+   1. Create a Microsoft Entra test user to test Microsoft Entra SSO by using the **B.Simon** account.
+   1. Assign the Microsoft Entra test user to enable **B.Simon** to use Microsoft Entra SSO.
 1. [Configure ContractSafe Saml2 SSO](#configure-contractsafe-saml2-sso) to configure the SSO settings on application side.
-   1. [Create a ContractSafe Saml2 SSO test user](#create-a-contractsafe-saml2-sso-test-user) to have a counterpart of **B.Simon** in ContractSafe Saml2 SSO that is linked to the Microsoft Entra representation of the user.
+   1. [Create a ContractSafe Saml2 SSO test user](#create-a-contractsafe-saml2-sso-test-user) to have a counterpart of **B.Simon** in ContractSafe Saml2 SSO that's linked to the Microsoft Entra representation of the user.
 1. [Test SSO](#test-sso) to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -69,7 +69,7 @@ To configure and test Microsoft Entra SSO with ContractSafe Saml2 SSO, perform t
 Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ContractSafe Saml2 SSO** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ContractSafe Saml2 SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -107,33 +107,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user in the Azure portal called **B.Simon**.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable **B.Simon** to use Azure SSO by granting access to ContractSafe Saml2 SSO.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ContractSafe Saml2 SSO**.
-1. In the app's overview page, find the **Manage** section, and then select **Users and groups**.
-1. Select **Add user**, and then select **Users and groups** in the **Add Assignment** dialog box.
-1. In the **Users and groups** dialog box, select **B.Simon** from the **Users** list. Then, select the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list. Then, choose the **Select** button at the bottom of the screen.
-1. In the **Add Assignment** dialog box, select the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure ContractSafe Saml2 SSO
 
@@ -147,9 +121,9 @@ Create a user called B.Simon in ContractSafe Saml2 SSO. Work with the [Contract
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the ContractSafe Saml2 SSO for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the ContractSafe Saml2 SSO for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the ContractSafe Saml2 SSO tile in the My Apps, you should be automatically signed in to the ContractSafe Saml2 SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the ContractSafe Saml2 SSO tile in the My Apps, you should be automatically signed in to the ContractSafe Saml2 SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

@@ -1,14 +1,14 @@
 ---
-title: Microsoft Entra admin center 
+title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
 author: jason-nydegger
 manager: CelesteDG
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 11/08/2024
+ms.date: 04/25/2025
 ms.author: janydegger
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
 ---
 
@@ -18,27 +18,17 @@ The [Microsoft Entra admin center](https://entra.microsoft.com/) is a web-based 
 
 ## Explore the Microsoft Entra admin center
 
-The Microsoft Entra admin center is organized by product. The products can be accessed through the search bar, left-hand menu, or the **View all products** pop-up menu.
+The Microsoft Entra admin center is organized by product. The products can be accessed through the search bar or left-hand menu.
 
+**Home** includes at-a-glance information about your tenant, recent activities, and other helpful resources, including shortcuts and deployment guides.
+ 
 :::image type="content" source="./media/entra-admin-center/entra-admin-center-home.png" alt-text="Screenshot of the Microsoft Entra admin center overview home page.":::
 
 The following sections provide a high-level overview of the product interfaces and links to learn more about the features.
 
-### What's new
+### Entra ID
 
-**What's new** provides information about the latest updates to the Microsoft Entra product categorized into **Highlights**, **Roadmap**, and **Change announcements**.
-
-* **Highlights**: Summarizes important product launches and impactful changes. 
-* **Roadmap**: Lists the public previews and recent general availability releases.
-* **Change announcements**: Describes the modifications to existing features.
-
-:::image type="content" source="./media/entra-admin-center/entra-admin-whats-new.png" alt-text="Screenshot of the Microsoft Entra admin center What's new page.":::
-
-For more information about the **What's new** experience, see [What's new in Microsoft Entra](./whats-new-overview.md).
-
-### Identity
-
-**Identity** gives administrators and developers access to [Microsoft Entra ID](./whatis.md) and [Microsoft Entra External ID](~/external-id/external-identities-overview.md) solutions, including tenants, users, groups, devices, applications, roles, and licensing.
+**Entra ID** gives administrators and developers access to [Microsoft Entra ID](./whatis.md) and [Microsoft Entra External ID](~/external-id/external-identities-overview.md) solutions, including tenants, users, groups, devices, applications, roles, and licensing.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-identity.png" alt-text="Screenshot of the Microsoft Entra admin center Identity menu.":::
 
@@ -46,25 +36,29 @@ For more information about configuring and managing Microsoft Entra ID solutions
 
 * [Users and groups](~/identity/users/directory-overview-user-model.md)
 * [Devices](~/identity/devices/overview.md)
-* [Applications](~/identity-platform/application-model.md)
 * [Enterprise applications](~/identity/enterprise-apps/what-is-application-management.md)
+* [App registrations](~/identity-platform/application-model.md)
 * [Roles and admins](~/identity/role-based-access-control/custom-overview.md)
+* [External identities](~/external-id/external-identities-overview.md)
+* [Conditional access](~/identity/conditional-access/overview.md)
+* [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
+* [Identity secure score](~/identity/monitoring-health/concept-identity-secure-score.md)
+* [Authentication methods](~/identity/authentication/concept-authentication-methods.md)
+* [Password reset](~/identity/authentication/concept-sspr-howitworks.md)
+* [Custom security attributes](~/fundamentals/custom-security-attributes-overview.md)
 
-### Protection
+### ID Protection
 
-**Protection** gives administrators and developers access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) solutions, including the protection dashboard, conditional access, multifactor authentication, and password reset.
+**ID Protection** gives administrators and developers access to [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) solutions, including the protection dashboard, risk-based access policies, risky users report, multifactor authentication, and password reset.
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-protection.png" alt-text="Screenshot of the Microsoft Entra admin center Protection menu.":::
 
 For more information about configuring and managing Microsoft Entra ID Protection solutions, see the following documentation:
 
 * [Identity Protection dashboard](~/id-protection/id-protection-dashboard.md)
-* [Conditional Access](~/identity/conditional-access/overview.md)
-* [Identity secure score](~/identity/monitoring-health/concept-identity-secure-score.md)
-* [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
-* [Authentication methods](~/identity/authentication/concept-authentication-methods.md)
-* [Password reset](~/identity/authentication/concept-sspr-howitworks.md)
-* [Custom security attributes](~/fundamentals/custom-security-attributes-overview.md)
+* [Risk-based access policies](~/id-protection/concept-identity-protection-policies.md)
+* [Risky users](~/id-protection/howto-identity-protection-investigate-risk.md)
+* [Risky workload identities](~/id-protection/concept-workload-identity-risk.md)
 
 ### Identity governance
 
@@ -120,7 +114,8 @@ For more information about configuring and managing Global Secure Access solutio
 
 :::image type="content" source="./media/entra-admin-center/entra-admin-learn-and-support.png" alt-text="Screenshot of the Microsoft Entra admin center Learn & support menu.":::
 
-## Next steps
+
+## Related content
 
 * [Find your tenant](./how-to-find-tenant.yml)
 * [Create a new tenant](./create-new-tenant.md)

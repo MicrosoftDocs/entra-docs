@@ -7,6 +7,6 @@ items:
     tocHref: /entra/identity/
     topicHref: /entra/identity/index
     items: 
-      - name: Application tutorials
+      - name: Application articles
         tocHref: /azure/azure-databricks/administration-guide/users-groups/scim/
         topicHref: /entra/identity/saas-apps/tutorial-list/

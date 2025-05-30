@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with OptiTurn
+title: Configure OptiTurn for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and OptiTurn.
 
 author: nguhiu
@@ -9,16 +9,16 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OptiTurn so that I can control who has access to OptiTurn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with OptiTurn
+# Configure OptiTurn for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate OptiTurn with Microsoft Entra ID. OptiTurn is a returns management platform that helps retailers route returned items, improve warehouse operations, and manage inventory backlogs. When you integrate OptiTurn with Microsoft Entra ID, you can:
+In this article, you learn how to integrate OptiTurn with Microsoft Entra ID. OptiTurn is a returns management platform that helps retailers route returned items, improve warehouse operations, and manage inventory backlogs. When you integrate OptiTurn with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OptiTurn.
 * Enable your users to be automatically signed-in to OptiTurn with their Microsoft Entra accounts.
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **OptiTurn** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **OptiTurn** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -108,7 +108,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| last_name | user.surname |
 
 	> [!Note]
-	> The warehouse_identifier assertion attribute is recommended for ease of use, but it is not required. warehouse_identifier is an identifier for the warehouse where a given employee is physically located. We will match the identifier against a warehouse that is configured in OptiTurn. The user’s activity and data will then be “scoped” to that warehouse.
+	> The warehouse_identifier assertion attribute is recommended for ease of use, but it isn't required. warehouse_identifier is an identifier for the warehouse where a given employee is physically located. We will match the identifier against a warehouse that's configured in OptiTurn. The user’s activity and data will then be “scoped” to that warehouse.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -130,11 +130,11 @@ In this section, a user called B.Simon is created in OptiTurn. OptiTurn supports
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to OptiTurn Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to OptiTurn Sign-on URL where you can initiate the login flow. 
 
 * Go to OptiTurn Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the OptiTurn tile in the My Apps, this will redirect to OptiTurn Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the OptiTurn tile in the My Apps, this option redirects to OptiTurn Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

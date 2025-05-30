@@ -1,19 +1,15 @@
 ---
 title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
-
 author: barclayn
-manager: amycolannino
-
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: sumitp
-
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange
 ---
 # Managing custom domain names in your Microsoft Entra ID
 
@@ -27,7 +23,7 @@ A domain name is an important part of the identifier for resources in many Micro
 When your organization is created, the initial domain name, such as "contoso.onmicrosoft.com," is also the primary domain name. The primary domain is the default domain name for a new user when you create a new user. Setting a primary domain name streamlines the process for an administrator to create new users in the portal. To change the primary domain name:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to Identity > Settings > Domain names  
+1. Browse to **Entra ID** > **Domain names**  
 3. Select **Custom domain names**.
 
    :::image type="content" source="./media/domains-manage/add-custom-domain.png" alt-text="Screenshot of opening the user management page.":::

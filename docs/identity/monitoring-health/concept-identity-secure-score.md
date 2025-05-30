@@ -5,11 +5,11 @@ description: Learn how to use the Identity Secure Score to improve the security 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: conceptual
-ms.date: 01/24/2025
+ms.date: 05/27/2025
 
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.reviewer: guptashi
 
 # Customer intent: As an IT admin, I want to know how to use the Identity Secure Score and related recommendations to improve the security posture of my Microsoft Entra tenant.
@@ -64,9 +64,9 @@ Every 24 hours, we look at your security configuration and compare your settings
 To access the Identity Secure Score:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Protection** > **Identity Secure Score** to view the dashboard.
+1. Browse to **Entra ID** > **Identity Secure Score** to view the dashboard.
 
-The score and related recommendations are also found at **Identity** > **Overview** > **Recommendations**.
+The score and related recommendations are also found at **Entra ID** > **Overview** > **Recommendations**.
 
 Each recommendation is measured based on your configuration. If you're using non-Microsoft products to enable a best practice recommendation, you can indicate this configuration in the settings of an improvement action. You might set recommendations to be ignored if they don't apply to your environment. An ignored recommendation doesn't contribute to the calculation of your score.
 
@@ -96,6 +96,10 @@ The [Microsoft 365 Defender portal](https://security.microsoft.com/) shows your 
 ### Does the score measure my risk of getting breached?
 
 No, score doesn't express an absolute measure of how likely you're to get breached. It expresses the extent to which you adopted features that can *offset* risk. No service can guarantee protection, and the score shouldn't be interpreted as a guarantee in any way.
+
+### Is there a minimum score I should aim for?
+
+Instead of focusing on a specific score, you should focus on the high importance recommendations that are relevant to your organization. It's more beneficial to have a high score on the high importance recommendations than a high score on low importance recommendations. 
 
 ### How should I interpret my score?
 

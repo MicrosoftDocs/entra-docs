@@ -2,12 +2,13 @@
 title: Plan a Lifecycle Workflow deployment
 description: Planning guide for a successful Lifecycle Workflow deployment.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 12/10/2024
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 ---
 
 # Plan a Lifecycle Workflow deployment

@@ -2,16 +2,14 @@
 title: What is Microsoft Entra ID?
 description: Learn about Microsoft Entra ID, including terminology, available licenses, and a list of associated features.
 author: barclayn
-manager: amycolannino
-
+manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 12/19/2024
+ms.date: 03/05/2025
 ms.author: barclayn
-ms.custom: it-pro
+ms.custom: it-pro, sfi-ga-nochange
 ms.collection: M365-identity-device-management
-# Customer intent: As a new administrator, I want to understand what Microsoft Entra ID is, which license is right for me, and what features are available.
 ---
 
 # What is Microsoft Entra ID?
@@ -59,7 +57,9 @@ In addition to Microsoft Entra ID licenses, you can enable additional identity m
 
 - **Microsoft Entra Permissions Management.** [Microsoft Entra Permissions Management](/entra/permissions-management/) is a cloud infrastructure entitlement management (CIEM) solution that provides comprehensive visibility into permissions assigned to all identities (users and workloads), actions, and resources across cloud infrastructures Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
 
-- **"Pay as you go" feature licenses.** You can also get licenses for features such as Microsoft Entra Domain Services, and Microsoft Entra Business-to-Customer (B2C). B2C can help you provide identity and access management solutions for your customer-facing apps. For more information, see [Azure Active Directory B2C documentation](/azure/active-directory-b2c/).
+- **"Pay as you go" feature licenses.** You can also get licenses for features such as Microsoft Entra Domain Services, and Microsoft Entra customer identity and access management solution (CIAM). CIAM can help you provide identity and access management solutions for your customer-facing apps. For more information, see our next-generation solution for external identities, [Microsoft Entra External ID](/entra/external-id/).
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 For more information on the Microsoft Entra product family, see [Microsoft Entra](https://www.microsoft.com/security/business/microsoft-entra).
 
@@ -88,7 +88,7 @@ After you choose your Microsoft Entra ID license, you'll get access to some or a
 |Managed identities for Azure resources|Provide your Azure services with an automatically managed identity in Microsoft Entra ID that can authenticate any Microsoft Entra-supported authentication service, including Key Vault. For more information, see [What is managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).|
 |Privileged identity management (PIM)|Manage, control, and monitor access within your organization. This feature includes access to resources in Microsoft Entra ID and Azure, and other Microsoft Online Services, like Microsoft 365 or Intune. For more information, see [Microsoft Entra Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).|
 |Monitoring and health|Gain insights into the security and usage patterns in your environment. For more information, see [Microsoft Entra monitoring and health](~/identity/monitoring-health/index.yml).|
-| Workload identities| Give an identity to your software workload (such as an application, service, script, or container) to authenticate and access other services and resources. For more information, see [workload identities faqs](~/workload-id/workload-identities-faqs.md).
+|Workload identities| Give an identity to your software workload (such as an application, service, script, or container) to authenticate and access other services and resources. For more information, see [workload identities faqs](~/workload-id/workload-identities-faqs.md).|
 
 ## Terminology
 

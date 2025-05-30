@@ -1,17 +1,14 @@
 ---
 title: Overview of custom URL domains for External ID
 description: Learn about setting up custom URL domains to personalize the authentication sign-in endpoints for the external customers and consumers of your app.
- 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 12/03/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.date: 03/12/2025
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about personalizing my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 
@@ -63,7 +60,7 @@ When using custom URL domains:
 > [!IMPORTANT]
 >
 >- Azure Front Door: The connection from the browser to Azure Front Door should always use IPv4 instead of IPv6.
->- Social identity providers: Custom URL domains support Apple. However, Google and Facebook are not currently supported. Users who want to sign up or sign in using Google or Facebook must use the default endpoint, *&lt;tenant-name&gt;.ciamlogin.com*, instead of the custom URL domain endpoint.
+>- Social identity providers: Custom URL domains now support Google and Facebook in addition to Apple.
 
 ## Blocking the default domain
 
@@ -79,7 +76,7 @@ Blocking the default domain will disable certain features that depend on it. How
 |Feature  |Workaround  |
 |---------|------------|
 |Run now                  | In the Microsoft Entra admin center, update the URL used by the "Run now" feature in the get started guide and the user flow pane with your custom URL domain. In the browser URL, replace `{your_domain}.ciamlogin.com` with your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
-|Get started samples      |Configure the samples in the get started guide with your custom URL domain. For detailed instructions, refer to the documentation for each sample. For example, see the “Use custom URL domain” section in the [Vanilla JavaScript single-page app tutorial](tutorial-single-page-app-vanillajs-configure-authentication.md).         |
+|Get started samples      |Configure the samples in the get started guide with your custom URL domain. For detailed instructions, refer to the documentation for each sample. For example, see the “Use custom URL domain” section in the [Vanilla JavaScript single-page app tutorial](../../identity-platform/tutorial-single-page-app-javascript-configure-authentication.md).         |
 |Power Pages with External ID        |When using [External ID with your Power Pages site](/power-pages/security/authentication/entra-external-id), update the site settings with your custom URL domain. In the Power Pages identity provider configuration page, replace the Authority URL field, which contains `{your_domain}.ciamlogin.com`, with your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
 |Azure App Service with External ID  |When using [External ID with Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service), edit the identity provider and change the Issuer URL field from `{your_domain}.ciamlogin.com` to your custom URL domain `{your_custom_URL_domain}/{your_tenant_ID}`.         |
 |Visual Studio Code Extension        |In the [Visual Studio Code extension](visual-studio-code-extension.md), add your custom URL domain to the application's MSAL configuration so the application and the “Run it now” feature work properly. Change the authority in the authconfig file from `{your_domain}.ciamlogin.com` to `{your_custom_URL_domain}/{your_tenant_ID}`, and add the known authorities with your custom URL domain.         |

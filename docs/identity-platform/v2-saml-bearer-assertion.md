@@ -8,7 +8,7 @@ ms.date: 09/24/2024
 ms.reviewer: nickludwig, paulgarn
 ms.service: identity-platform
 ms.topic: how-to
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer integrating SSO with AD FS and Microsoft Graph, I want to exchange a SAML token issued by AD FS for an OAuth 2.0 access token, so that I can enable SSO in my application and access Microsoft Graph APIs.
 ---
 
@@ -52,7 +52,7 @@ Create a POST request to the AD FS endpoint using SOAP envelope to fetch the SAM
 
 | Key | Value |
 | --- | ----- |
-| SOAPAction | http://schema.xlmsoap.org/ws/2005/02/trust/RST/Issue |
+| SOAPAction | `http://schema.xlmsoap.org/ws/2005/02/trust/RST/Issue` |
 | Content-Type | application/soap+xml |
 | client-request-id | CLIENT_ID |
 | return-client-request-id | true |
@@ -111,7 +111,7 @@ In the body of the request, replace client_id, client_secret, and assertion (the
 | client_id     | CLIENTID                                             | Your application's client ID          |
 | client_secret | CLIENTSECRET                                         | Your application's client secret      |
 | assertion     | ASSERTION                                            | The base64 encoded SAML assertion     |
-| scope         | openid https://graph.microsoft.com/.default          | The scopes for which the token is valid|
+| scope         | openid `https://graph.microsoft.com/.default`        | The scopes for which the token is valid|
 
 Upon successful request, you'll receive an access token from Microsoft Entra ID.
 

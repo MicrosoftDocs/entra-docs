@@ -4,10 +4,10 @@ description: Use Microsoft Entra API connectors to customize and extend your sel
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 01/23/2024
+ms.date: 04/14/2025
 
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: "it-pro"                 
 ms.collection: M365-identity-device-management

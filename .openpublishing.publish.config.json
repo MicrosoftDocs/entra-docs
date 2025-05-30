@@ -116,6 +116,12 @@
       "branch_mapping": {}
     },
     {
+      "path_to_root": "AspNetCore.Docs",
+      "url": "https://github.com/dotnet/AspNetCore.Docs",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
       "path_to_root": "powershell_scripts",
       "url": "https://github.com/Azure/azure-docs-powershell-samples",
       "branch": "master",
@@ -126,8 +132,14 @@
       "url": "https://github.com/microsoft/authentication-events-function",
       "branch": "main",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "security-copilot",
+      "url": "https://github.com/MicrosoftDocs/security-copilot-pr/",
+      "branch": "main",
+      "branch_mapping": {}
     }
-
+    
   ],
   "branch_target_mapping": {},
   "targets": {},

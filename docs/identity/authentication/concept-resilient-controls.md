@@ -8,7 +8,7 @@ ms.custom: has-azure-ad-ps-ref
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/29/2023
+ms.date: 03/04/2025
 ms.author: martinco
 ---
 # Create a resilient access control management strategy with Microsoft Entra ID

@@ -4,12 +4,12 @@ description: Reporting on Microsoft Entra self-service password reset events
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-
-ms.date: 01/24/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
+ms.custom: sfi-ga-nochange
 ---
 # Reporting options for Microsoft Entra password management
 
@@ -39,7 +39,7 @@ The following questions can be answered by the reports that exist in the [Micros
 Use the following the steps to find the password reset and password reset registration events:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Users**.
+1. Browse to **Entra ID** > **Users**.
 5. Select **Audit Logs** from the **Users** blade. This shows you all of the audit events that occurred against all the users in your directory. You can filter this view to see all the password-related events.
 6. From the **Filter** menu at the top of the pane, select the **Service** drop-down list, and change it to the **Self-service Password Management** service type.
 7. Optionally, further filter the list by choosing the specific **Activity** you're interested in.

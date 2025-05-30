@@ -1,17 +1,14 @@
 ---
 title: How to enable custom URL domains for External ID
 description: Learn how to set up custom URL domains to personalize the authentication sign-in endpoints for the external customers and consumers of your app.
- 
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 12/03/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn how to personalize my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 
@@ -26,7 +23,7 @@ This article describes how to enable [custom URL domains](concept-custom-url-dom
 - [Learn how custom URL domains work](concept-custom-url-domain.md) in External ID.
 - If you haven't already created an external tenant, [create one now](how-to-create-external-tenant-portal.md).
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) so users can sign up and sign in to your application.
-- [Register a web application](how-to-register-ciam-app.md).
+- [Register a web application](/entra/identity-platform/quickstart-register-app).
 
 ## Step 1: Add a custom domain name to your tenant
 
@@ -34,7 +31,7 @@ When you create an external tenant, it comes with an initial domain name, &lt;do
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
 1. Choose your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
-1. Navigate to **Identity** > **Settings** > **Domain names** > **Custom domain names**.
+1. Navigate to **Entra ID** > **Domain names** > **Custom domain names**.
 
 1. [Add your custom domain name](~/fundamentals/add-custom-domain.yml#add-your-custom-domain-name) to Microsoft Entra ID.
 
@@ -63,7 +60,7 @@ After you add and verify the custom domain name in your external tenant, associa
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Choose your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
-1. Navigate to **Identity** > **Settings** > **Domain names** > **Custom URL domains**.
+1. Navigate to **Entra ID** > **Domain names** > **Custom URL domains**.
 1. Select **Add custom url domain**.
 1. In the **Add custom url domain** pane, select the custom domain name you entered in [Step 1](#step-1-add-a-custom-domain-name-to-your-tenant).
 

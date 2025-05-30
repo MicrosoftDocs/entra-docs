@@ -2,11 +2,11 @@
 title: Create and manage downloadable access review history report
 description: Using Microsoft Entra access reviews, you can download a review history for access reviews in your organization.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 11/13/2024
+ms.date: 03/10/2025
 ms.author: owinfrey
 ---
 
@@ -16,7 +16,7 @@ With access reviews, you can create a downloadable review history to help your o
  
 ## Who can access and request review history
 
-Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed) Global Administrator, Privileged Role Administrator, Identity Governance Administrator, User Administrator, Security Reader, Global Reader, and Security Administrator roles can create history reports.
+Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Least privilege roles that can create history reports include Privileged Role Administrator, Identity Governance Administrator, User Administrator, Security Reader, Global Reader, and Security Administrator role.
 
 ## How to create a review history report
 
@@ -24,7 +24,7 @@ Review history and request review history are available for any user if they're 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews** > **Review History**.
+1. Browse to **ID Governance** > **Access Reviews** > **Review History**.
  
 1. Select **New report**. 
 

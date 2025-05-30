@@ -1,17 +1,15 @@
 ---
 title: How to configure Microsoft Entra certificate-based authentication
 description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/07/2025
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: femila
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
 # How to configure Microsoft Entra certificate-based authentication
 
@@ -75,7 +73,7 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
 #### Create a PKI container object
 1.	Create a PKI container object.
    1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
-   1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Public key infrastructure (Preview)**.
+   1. Browse to **Entra ID** > **Identity Secure Score** > **Public key infrastructure (Preview)**.
    1. Click **+ Create PKI**.
    1. Enter **Display Name**.
    1. Click **Create**.
@@ -270,9 +268,11 @@ To enable CBA in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users.
-1. Browse to **Protection** > **Authentication methods** > **Certificate-based Authentication**.
-1. Under **Enable and Target**, select **Enable**.
-1. Select **Add groups** to select specific groups like the one you created. Use specific groups rather than **All users**.
+1. Browse to **Entra ID** > **Authentication methods** > **Certificate-based Authentication**.
+1. Under **Enable and Target**, select **Enable**, and click **I Acknowledge**.
+1. Click **Select groups**, click **Add groups**.
+1. Choose specific groups like the one you created, and click **Select**. Use specific groups rather than **All users**.
+1. When you are done, click **Save**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot of how to enable CBA.":::
  
@@ -294,7 +294,7 @@ Authentication binding rules map certificate attributes, such as Issuer, or Poli
 To modify tenant default settings and create custom rules in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. Under **Manage**, select **Authentication methods** > **Certificate-based Authentication**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy.png" alt-text="Screenshot of Authentication policy.":::
@@ -343,20 +343,6 @@ To modify tenant default settings and create custom rules in the Microsoft Entra
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-issuer-and-policy-oid.png" alt-text="Screenshot of how to add a low affinity binding.":::
 
    1. Authenticate with a certificate that has policy OID of 3.4.5.6 and Issued by CN=CBATestRootProd. Authentication should pass and get a multifactor claim.
-
->[!IMPORTANT]
->There's a known issue where a Microsoft Entra tenant Authentication Policy Administrator configures a CBA authentication policy rule by using both Issuer and Policy OID. The issue impacts some device registration scenarios, including:
->- Windows Hello For Business enrollment
->- FIDO2 security key registration
->- Windows passwordless phone sign-in
->  
->Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios aren't impacted. CBA authentication policy rules using either Issuer OR Policy OID aren't impacted.
->To mitigate, admins should:
->- Edit the certificate-based authentication policy rules that use both Issuer and Policy OID options. Remove either the Issuer or Policy OID requirement and **Save**. 
->  -Or-
->- Remove the authentication policy rule that uses both Issuer and Policy OID. Create rules that use only Issuer or Policy OID.
->  
->We're working to fix the issue.
 
    To create a rule by Issuer and Serial Number:
 
@@ -577,7 +563,7 @@ X509:<S>DC=com,DC=contoso,DC=corp,OU=UserAccounts,CN=FirstUserATCSession
 ### Test affinity binding
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. Under **Manage**, select **Authentication methods** > **Certificate-based Authentication**.
 1. Select **Configure**.
 1. Set **Required Affinity Binding** at the tenant level.

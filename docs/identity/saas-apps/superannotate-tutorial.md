@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with SuperAnnotate
+title: Configure SuperAnnotate for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SuperAnnotate.
 
 author: nguhiu
@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SuperAnnotate so that I can control who has access to SuperAnnotate, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SuperAnnotate
+# Configure SuperAnnotate for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate SuperAnnotate with Microsoft Entra ID. SuperAnnotate is the all-in-one AI data infrastructure platform that helps ML and data teams save time on building accurate AI models with the highest quality training data - SuperData. When you integrate SuperAnnotate with Microsoft Entra ID, you can:
 
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SuperAnnotate** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SuperAnnotate** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://auth.superannotate.com/login`
 
 	> [!Note]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [SuperAnnotate support team](mailto:support@superannotate.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [SuperAnnotate support team](mailto:support@superannotate.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
 
 1. SuperAnnotate application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -106,11 +106,11 @@ In this section, you create a user called Britta Simon in SuperAnnotate. Work wi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to SuperAnnotate Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to SuperAnnotate Sign-on URL where you can initiate the login flow. 
 
 * Go to SuperAnnotate Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the SuperAnnotate tile in the My Apps, this will redirect to SuperAnnotate Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the SuperAnnotate tile in the My Apps, this option redirects to SuperAnnotate Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

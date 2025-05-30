@@ -3,10 +3,9 @@ title: Link your domain to your decentralized identifier (DID) - Microsoft Entra
 description: Learn how to link your domain to your decentralized identifier (DID).
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 12/18/2024
 ms.author: barclayn
 

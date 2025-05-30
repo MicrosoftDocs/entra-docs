@@ -74,6 +74,9 @@ This option only applies to the following types of applications and services:
 - Application Proxy applications with Microsoft Entra preauthentication enabled
 - Applications or services for which other applications or service are requesting access tokens
 
+>[!NOTE]
+>Users with a Global Administrator role can sign in to applications, regardless of the assignment required settings.
+
 ## Visible to users
 
 Makes the application visible in My Apps and the Microsoft 365 Launcher

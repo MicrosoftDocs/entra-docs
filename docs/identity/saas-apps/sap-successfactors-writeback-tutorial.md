@@ -1,20 +1,18 @@
 ---
 title: Configure SAP SuccessFactors writeback in Microsoft Entra ID
 description: Learn how to configure attribute write-back to SAP SuccessFactors from Microsoft Entra ID
-
 author: cmmdesai
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-
 ms.date: 05/06/2024
 ms.author: chmutali
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors Writeback so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors Writeback.
 ---
 # Configure attribute write-back from Microsoft Entra ID to SAP SuccessFactors
-The objective of this tutorial is to show the steps to write-back attributes from Microsoft Entra ID to SAP SuccessFactors Employee Central. 
+The objective of this article is to show the steps to write-back attributes from Microsoft Entra ID to SAP SuccessFactors Employee Central. 
 
 ## Overview
 
@@ -30,7 +28,7 @@ You can configure the SAP SuccessFactors Writeback app to write specific attribu
 * loginMethod attribute
 
 > [!NOTE]
-> This app does not have any dependency on the SuccessFactors inbound user provisioning integration apps. You can configure it independent of [SuccessFactors to on-premises AD](sap-successfactors-inbound-provisioning-tutorial.md) provisioning app or [SuccessFactors to Microsoft Entra ID](sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) provisioning app.
+> This app doesn't have any dependency on the SuccessFactors inbound user provisioning integration apps. You can configure it independent of [SuccessFactors to on-premises AD](sap-successfactors-inbound-provisioning-tutorial.md) provisioning app or [SuccessFactors to Microsoft Entra ID](sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) provisioning app.
 
 Refer to the [Writeback scenarios section](~/identity/app-provisioning/sap-successfactors-integration-reference.md#writeback-scenarios) of the SAP SuccessFactors integration reference guide for more details on the supported scenarios, known issues and limitations.
 
@@ -59,13 +57,13 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 
    ![Manage Permission Roles](./media/sap-successfactors-inbound-provisioning/manage-permission-roles.png)
 
-1. From the Permission Role List, click **Create New**.
+1. From the Permission Role List, select **Create New**.
 
    > [!div class="mx-imgBorder"]
    > ![Create New Permission Role](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
 
 1. Add a **Role Name** and **Description** for the new permission role. The name and description should indicate that the role is for API usage permissions.
-1. Under Permission settings, click **Permission...**, then scroll down the permission list and click **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
+1. Under Permission settings, select **Permission...**, then scroll down the permission list and select **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
 
    > [!div class="mx-imgBorder"]
    > ![Manage integration tools](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
@@ -75,7 +73,7 @@ Work with your SuccessFactors admin team or implementation partner to create or 
    > [!div class="mx-imgBorder"]
    > ![Read write permissions](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
 
-1. Click on **Done**. Click **Save Changes**.
+1. Select **Done**. Select **Save Changes**.
 
 ### Create a Permission Group for the API user
 
@@ -84,7 +82,7 @@ Work with your SuccessFactors admin team or implementation partner to create or 
    > [!div class="mx-imgBorder"]
    > ![Manage permission groups](./media/sap-successfactors-inbound-provisioning/manage-permission-groups.png)
 
-1. From the Manage Permission Groups window, click **Create New**.
+1. From the Manage Permission Groups window, select **Create New**.
 
    > [!div class="mx-imgBorder"]
    > ![Add new group](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
@@ -94,21 +92,21 @@ Work with your SuccessFactors admin team or implementation partner to create or 
    > [!div class="mx-imgBorder"]
    > ![Permission group name](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
 
-1. Add members to the group. For example, you could select **Username** from the People Pool drop-down menu and then enter the username of the API account that will be used for the integration. 
+1. Add members to the group. For example, you could select **Username** from the People Pool drop-down menu and then enter the username of the API account that's used for the integration. 
 
    > [!div class="mx-imgBorder"]
    > ![Add group members](./media/sap-successfactors-inbound-provisioning/add-group-members.png)
 
-1. Click **Done** to finish creating the Permission Group.
+1. Select **Done** to finish creating the Permission Group.
 
 ### Grant Permission Role to the Permission Group
 
 1. In SuccessFactors Admin Center, search for *Manage Permission Roles*, then select **Manage Permission Roles** from the search results.
 1. From the **Permission Role List**, select the role that you created for API usage permissions.
-1. Under **Grant this role to...**, click **Add...** Button.
-1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above.
+1. Under **Grant this role to...**, select **Add...** Button.
+1. Select **Permission Group...** from the drop-down menu, then select **Select...** to open the Groups window to search and select the group created above.
 1. Review the Permission Role grant to the Permission Group. 
-1. Click **Save Changes**.
+1. Select **Save Changes**.
 
 ## Preparing for SuccessFactors Writeback
 
@@ -119,29 +117,29 @@ The SuccessFactors Writeback provisioning app uses certain *code* values for set
 
 ### Identify Email and Phone Number picklist names 
 
-In SAP SuccessFactors, a *picklist* is a configurable set of options from which a user can make a selection. The different types of email and phone number (such as business, personal, and other) are represented using a picklist. In this step, we'll identify the picklists configured in your SuccessFactors tenant to store email and phone number values. 
+In SAP SuccessFactors, a *picklist* is a configurable set of options from which a user can make a selection. The different types of email and phone number (such as business, personal, and other) are represented using a picklist. In this step, we identify the picklists configured in your SuccessFactors tenant to store email and phone number values. 
  
 1. In SuccessFactors Admin Center, search for *Manage business configuration*. 
 
    > [!div class="mx-imgBorder"]
    > ![Manage business configuration](./media/sap-successfactors-inbound-provisioning/manage-business-config.png)
 
-1. Under **HRIS Elements**, select **emailInfo** and click on the *Details* for the **email-type** field.
+1. Under **HRIS Elements**, select **emailInfo** and select the *Details* for the **email-type** field.
 
    > [!div class="mx-imgBorder"]
    > ![Get email info](./media/sap-successfactors-inbound-provisioning/get-email-info.png)
 
-1. On the **email-type** details page, note down the name of the picklist associated with this field. By default, it is **ecEmailType**. However it may be different in your tenant. 
+1. On the **email-type** details page, note down the name of the picklist associated with this field. By default, it's **ecEmailType**. However it may be different in your tenant. 
 
    > [!div class="mx-imgBorder"]
    > ![Identify email picklist](./media/sap-successfactors-inbound-provisioning/identify-email-picklist.png)
 
-1. Under **HRIS Elements**, select **phoneInfo** and click on the *Details* for the **phone-type** field.
+1. Under **HRIS Elements**, select **phoneInfo** and select the *Details* for the **phone-type** field.
 
    > [!div class="mx-imgBorder"]
    > ![Get phone info](./media/sap-successfactors-inbound-provisioning/get-phone-info.png)
 
-1. On the **phone-type** details page, note down the name of the picklist associated with this field. By default, it is **ecPhoneType**. However it may be different in your tenant. 
+1. On the **phone-type** details page, note down the name of the picklist associated with this field. By default, it's **ecPhoneType**. However it may be different in your tenant. 
 
    > [!div class="mx-imgBorder"]
    > ![Identify phone picklist](./media/sap-successfactors-inbound-provisioning/identify-phone-picklist.png)
@@ -164,7 +162,7 @@ In SAP SuccessFactors, a *picklist* is a configurable set of options from which 
    > [!div class="mx-imgBorder"]
    > ![Select business email type](./media/sap-successfactors-inbound-provisioning/select-business-email-type.png)
 
-1. Note down the **Option ID** associated with the *Business* email. This is the code that we'll use with *emailType* in the attribute-mapping table.
+1. Note down the **Option ID** associated with the *Business* email. This is the code that we use with *emailType* in the attribute-mapping table.
 
    > [!div class="mx-imgBorder"]
    > ![Get email type code](./media/sap-successfactors-inbound-provisioning/get-email-type-code.png)
@@ -190,12 +188,12 @@ In SAP SuccessFactors, a *picklist* is a configurable set of options from which 
    > [!div class="mx-imgBorder"]
    > ![Review phone types](./media/sap-successfactors-inbound-provisioning/review-phone-types.png)
 
-1. Note down the **Option ID** associated with the *Business* phone. This is the code that we'll use with *businessPhoneType* in the attribute-mapping table.
+1. Note down the **Option ID** associated with the *Business* phone. This is the code that we use with *businessPhoneType* in the attribute-mapping table.
 
    > [!div class="mx-imgBorder"]
    > ![Get business phone code](./media/sap-successfactors-inbound-provisioning/get-business-phone-code.png)
 
-1. Note down the **Option ID** associated with the *Cell* phone. This is the code that we'll use with *cellPhoneType* in the attribute-mapping table.
+1. Note down the **Option ID** associated with the *Cell* phone. This is the code that we use with *cellPhoneType* in the attribute-mapping table.
 
    > [!div class="mx-imgBorder"]
    > ![Get cell phone code](./media/sap-successfactors-inbound-provisioning/get-cell-phone-code.png)
@@ -217,7 +215,7 @@ This section provides steps for
 **To configure SuccessFactors Writeback:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 5. Search for **SuccessFactors Writeback**, and add that app from the gallery.
 
@@ -237,15 +235,15 @@ This section provides steps for
     > [!NOTE]
     > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
-   * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
+   * Select the **Test Connection** button. If the connection test succeeds, select the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and URL are valid.
  
-   * Once the credentials are saved successfully, the **Mappings** section displays the default mapping. Refresh the page, if the attribute mappings are not visible.  
+   * Once the credentials are saved successfully, the **Mappings** section displays the default mapping. Refresh the page, if the attribute mappings aren't visible.  
 
 ### Part 2: Configure attribute mappings
 
 In this section, you configure how user data flows from SuccessFactors to Active Directory.
 
-1. On the Provisioning tab under **Mappings**, click **Provision Microsoft Entra users**.
+1. On the Provisioning tab under **Mappings**, select **Provision Microsoft Entra users**.
 
 1. In the **Source Object Scope** field, you can select which sets of  users in Microsoft Entra ID should be considered for write-back, by defining a set of attribute-based filters. The default scope is **all users in Microsoft Entra ID**. 
    > [!TIP]
@@ -260,7 +258,7 @@ In this section, you configure how user data flows from SuccessFactors to Active
    | 1 | employeeId | personIdExternal | By default, this attribute is the matching identifier. Instead of employeeId you can use any other Microsoft Entra attribute that may store the value equal to personIdExternal in SuccessFactors.    |
    | 2 | mail | email | Map email attribute source. For testing purposes, you can map userPrincipalName to email. |
    | 3 | 8448 | emailType | This constant value is the SuccessFactors ID value associated with business email. Update this value to match your SuccessFactors environment. See the section [Retrieve constant value for emailType](#retrieve-constant-value-for-emailtype) for steps to set this value. |
-   | 4 | true | emailIsPrimary | Use this attribute to set business email as primary in SuccessFactors. If business email is not primary, set this flag to false. |
+   | 4 | true | emailIsPrimary | Use this attribute to set business email as primary in SuccessFactors. If business email isn't primary, set this flag to false. |
    | 5 | userPrincipalName | [custom01 – custom15] | Using **Add New Mapping**, you can optionally write userPrincipalName or any Microsoft Entra attribute to a custom attribute available in the SuccessFactors User object.  |
    | 6 | On Prem SamAccountName | username | Using **Add New Mapping**, you can optionally map on-premises samAccountName to SuccessFactors username attribute. Use [Microsoft Entra Connect Sync: Directory extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md) to sync samAccountName to Microsoft Entra ID. This appears in the source drop down as *extension_yourTenantGUID_samAccountName* |
    | 7 | SSO | loginMethod | If SuccessFactors tenant is setup for [partial SSO](https://userapps.support.sap.com/sap/support/knowledge/2320766), then using Add New Mapping, you can optionally set loginMethod to a    constant value of "SSO" or "PWD". |
@@ -273,12 +271,12 @@ In this section, you configure how user data flows from SuccessFactors to Active
    | 14 | [extensionAttribute1-15] | userId | Use this mapping to ensure that the active record in SuccessFactors is updated when there are multiple employment records for the same user. For more details refer to [Enabling writeback with UserID](~/identity/app-provisioning/sap-successfactors-integration-reference.md#enabling-writeback-with-userid) |
  
 1. Validate and review your attribute mappings.
-1. Click **Save** to save the mappings. Next, we'll update the JSON Path API expressions to use the phoneType codes in your SuccessFactors instance. 
+1. Select **Save** to save the mappings. Next, we update the JSON Path API expressions to use the phoneType codes in your SuccessFactors instance. 
 1. Select **Show advanced options**. 
-1. Click on **Edit attribute list for SuccessFactors**. 
+1. Select **Edit attribute list for SuccessFactors**. 
 
    > [!NOTE] 
-   > If the **Edit attribute list for SuccessFactors** option does not show in the Entra admin center, use the URL *https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true* to access the page. 
+   > If the **Edit attribute list for SuccessFactors** option doesn't show in the Entra admin center, use the URL *https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true* to access the page. 
 
 1. The **API expression** column in this view displays the JSON Path expressions used by the connector. 
 1. Update the JSON Path expressions for business phone and cell phone to use the ID value (*businessPhoneType* and *cellPhoneType*) corresponding to your environment. 
@@ -286,7 +284,7 @@ In this section, you configure how user data flows from SuccessFactors to Active
     >[!div class="mx-imgBorder"]
     >![Phone JSON Path change](./media/sap-successfactors-inbound-provisioning/phone-json-path-change.png)
 
-1. Click **Save** to save the mappings.
+1. Select **Save** to save the mappings.
 
 ## Enable and launch user provisioning
 
@@ -298,8 +296,8 @@ Once the SuccessFactors provisioning app configurations are complete, you can tu
 1. In the **Provisioning** tab, set the **Provisioning Status** to **On**.
 
 1. Select **Scope**. You can select from one of the following options: 
-   * **Sync all users and groups**: Select this option if you plan to write back mapped attributes of all users from Microsoft Entra ID to SuccessFactors, subject to the scoping rules defined under **Mappings** -> **Source Object Scope**. 
-   * **Sync only assigned users and groups**: Select this option if you plan to write back mapped attributes of only users that you have assigned to this application in the **Application** -> **Manage** -> **Users and groups** menu option. These users are also subject to the scoping rules defined under **Mappings** -> **Source Object Scope**.
+   * **Sync all users and groups**: Select this option if you plan to write back mapped attributes of all users from Microsoft Entra ID to SuccessFactors, subject to the scoping rules defined under **Mappings** > **Source Object Scope**. 
+   * **Sync only assigned users and groups**: Select this option if you plan to write back mapped attributes of only users that you have assigned to this application in the **Application** > **Manage** > **Users and groups** menu option. These users are also subject to the scoping rules defined under **Mappings** > **Source Object Scope**.
 
    > [!div class="mx-imgBorder"]
    > ![Select Writeback scope](./media/sap-successfactors-inbound-provisioning/select-writeback-scope.png)
@@ -307,7 +305,7 @@ Once the SuccessFactors provisioning app configurations are complete, you can tu
    > [!NOTE]
    > SuccessFactors Writeback provisioning apps created after 12-Oct-2022 support the "group assignment" feature. If you created the app prior to 12-Oct-2022, it only has "user assignment" support. To use the "group assignment" feature, create a new instance of the SuccessFactors Writeback application and move your existing mapping configurations to this app. 
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the Microsoft Entra tenant and the scope defined for the operation. You can check the progress bar to the track the progress of the sync cycle. 
 

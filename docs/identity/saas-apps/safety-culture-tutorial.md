@@ -1,24 +1,21 @@
 ---
-title: Microsoft Entra SSO integration with SafetyCulture (formerly iAuditor)
+title: Configure SafetyCulture (formerly iAuditor) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SafetyCulture (formerly iAuditor).
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SafetyCulture so that I can control who has access to SafetyCulture, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SafetyCulture
+# Configure SafetyCulture (formerly iAuditor) for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate SafetyCulture (formerly iAuditor) with Microsoft Entra ID. When you integrate SafetyCulture with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SafetyCulture (formerly iAuditor) with Microsoft Entra ID. When you integrate SafetyCulture with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SafetyCulture.
 * Enable your users to be automatically logged in to SafetyCulture with their Microsoft Entra accounts.
@@ -38,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SafetyCulture supports **SP and IDP** initiated SSO.
 
@@ -47,7 +44,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of SafetyCulture into Microsoft Entra ID, you need to add SafetyCulture from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **SafetyCulture** in the search box.
 1. Select **SafetyCulture** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -62,9 +59,9 @@ Configure and test Microsoft Entra SSO with SafetyCulture using a test user call
 To configure and test Microsoft Entra SSO with SafetyCulture, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    * **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    * **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.]
-    * **[Create SafetyCulture test user](#create-safetyculture-test-user)** - to have a counterpart of B.Simon in SafetyCulture that is linked to the Microsoft Entra representation of user.
+    * **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    * **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.]
+    * **[Create SafetyCulture test user](#create-safetyculture-test-user)** - to have a counterpart of B.Simon in SafetyCulture that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,18 +71,18 @@ To configure and test Microsoft Entra SSO with SafetyCulture, perform the follow
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SafetyCulture** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SafetyCulture** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. Go to the SafetyCulture web app:
 
     1. Log in to the [SafetyCulture](https://app.safetyculture.com) web app.
-    1. Click your organization name on the lower-left corner of the page and select **Organization settings**.
+    1. Select your organization name on the lower-left corner of the page and select **Organization settings**.
     1. Select **Security** on the top of the page.
-    1. Click **Set up** in the **Single sign-on (SSO)** box.
+    1. Select **Set up** in the **Single sign-on (SSO)** box.
     1. Select **SAML**, **_not Microsoft Entra ID_**, as the connection option.
     1. Perform the following steps on the below page.
 
@@ -119,7 +116,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Screenshot shows the Certificate download link.](common/certificate-base64-download.png "Certificate")
 
-1. Go back to the SafetyCulture web app and click **Continue** and perform the below steps in the **Step 2: Login details** page.
+1. Go back to the SafetyCulture web app and select **Continue** and perform the below steps in the **Step 2: Login details** page.
 
     ![Screenshot shows the login details step of SafetyCulture's SSO setup.](./media/safety-culture-tutorial/sso-configuration.png "SafetyCulture SSO login details")
 
@@ -127,37 +124,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
     b. Upload the **Certificate (PEM)** you downloaded into the **Signing certificate** field.
 
-    c. Click **Complete setup**.
+    c. Select **Complete setup**.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to SafetyCulture.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SafetyCulture**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ### Create SafetyCulture test user
 
@@ -169,17 +140,17 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP-initiated
 
-1. Click on **Test this application**. This will redirect you to the SafetyCulture Sign-on URL where you can initiate the login flow.
+1. Select **Test this application**. This redirects you to the SafetyCulture Sign-on URL where you can initiate the login flow.
 1. On the SafetyCulture login page, initiate the SSO login by entering the test user's email address.
-1. Click **Log in with single sign-on (SSO)**.
+1. Select **Log in with single sign-on (SSO)**.
 
     ![Screenshot shows the log in with SSO option on SafetyCulture.](./media/safety-culture-tutorial/test-sso.png "Log in with SSO on SafetyCulture")
 
 #### IDP-initiated
 
-* Click on **Test this application**, and you should be automatically logged in to SafetyCulture for which you set up the SSO.
+* Select **Test this application**, and you should be automatically logged in to SafetyCulture for which you set up the SSO.
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the SafetyCulture tile in My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IdP mode, you should be automatically logged in to SafetyCulture for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the SafetyCulture tile in My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IdP mode, you should be automatically logged in to SafetyCulture for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

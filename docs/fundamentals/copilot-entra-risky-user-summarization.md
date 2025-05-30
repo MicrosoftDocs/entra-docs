@@ -1,16 +1,14 @@
 ---
-# required metadata
-
 title: Investigate risky users with Copilot
 description: Use Copilot in Microsoft Entra to quickly respond to identity threats by summarizing the risk level for a user and receiving insights relevant to the incident.
-keywords:
+keywords: 
 author: rwike77
 ms.author: ryanwi
 manager: celestedg
 ms.date: 11/07/2024
 ms.topic: conceptual
 ms.service: entra
-ms.custom: microsoft-copilot, ignite-2024
+ms.custom: microsoft-copilot, ignite-2024, sfi-image-nochange
 # Customer intent: As a SOC analyst or IT admin, I want to learn about risky user summarization in the Microsoft Entra ID Protection UX so that I can quickly respond to identity threats.
 ---
 
@@ -29,7 +27,7 @@ This article describes how to access the risky user summary capability of Micros
 To view and investigate a risky user:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
-1. Navigate to **Protection** > **Identity Protection** and then to the [Risky users](https://aka.ms/entracopilotriskyuser) report.  
+1. Navigate to **ID Protection** > [Risky users](https://aka.ms/entracopilotriskyuser).  
 1. Select a user from the risky users report.
 
     :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-users-report.png" alt-text="Screenshot that shows the ID Protection risky users report.":::
@@ -46,7 +44,7 @@ The risky user summary contains three sections:
 
 In this example, suggested remediations are to: 
 
-- Create sign-in risk and user risk based [conditional access policies](/entra/id-protection/howto-identity-protection-configure-risk-policies).  
+- Create sign-in risk and user risk based [Conditional Access policies](/entra/id-protection/howto-identity-protection-configure-risk-policies).  
 
 Suggested help and documentation are:
 - [What is risk in ID Protection?](/entra/id-protection/concept-identity-protection-risks)

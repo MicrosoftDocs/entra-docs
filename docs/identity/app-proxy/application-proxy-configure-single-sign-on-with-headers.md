@@ -2,13 +2,14 @@
 title: Header-based single sign-on (SSO) for on-premises apps with Microsoft Entra application proxy
 description: Learn how to provide single sign-on for on-premises applications that are secured with header-based authentication.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/26/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Header-based single sign-on (SSO) for on-premises apps with Microsoft Entra application proxy
@@ -38,7 +39,7 @@ The table lists common capabilities required for header-based authentication app
 |Fine grained authorization |Provides access control at the URL level. Added policies can be enforced based on the URL being accessed. The internal URL configured for the app defines the scope of the app that the policy is applied to. The policy configured for the most granular path is enforced. |
 
 > [!NOTE] 
-> This article describes the connection between header-based authentication applications and Microsoft Entra ID using application proxy and is the recommended pattern. As an alternative, there is an integration pattern that uses PingAccess with Microsoft Entra ID to enable header-based authentication. For more information, see [Header-based authentication for single sign-on with application proxy and PingAccess](application-proxy-ping-access-publishing-guide.md).
+> This article describes the connection between header-based authentication applications and Microsoft Entra ID using application proxy and is the recommended pattern. As an alternative, there's an integration pattern that uses PingAccess with Microsoft Entra ID to enable header-based authentication. For more information, see [Header-based authentication for single sign-on with application proxy and PingAccess](application-proxy-ping-access-publishing-guide.md).
 
 ## How it works
 

@@ -5,11 +5,11 @@ description: This article shows how to migrate a classic Conditional Access poli
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 12/04/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: nigu
 ---
 # Migrate from a classic policy
@@ -27,7 +27,7 @@ This article shows an example of how to migrate a classic policy that requires *
 ## Open a classic policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Classic policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Classic policies**.
 
    ![Classic policies view](./media/policy-migration-mfa/12.png)
 

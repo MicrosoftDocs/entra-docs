@@ -2,7 +2,7 @@
 title: Join a RHEL VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a Red Hat Enterprise Linux virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
 ms.service: entra-id
@@ -88,7 +88,7 @@ sudo yum install adcli sssd authconfig krb5-workstation
 
 Now that the required packages are installed on the VM, join the VM to the managed domain.
 
-1. Use the `adcli info` command to discover the managed domain. The following example discovers the realm *ADDDSCONTOSO.COM*. Specify your own managed domain name in ALL UPPERCASE:
+1. Use the `adcli info` command to discover the managed domain. The following example discovers the realm *AADDSCONTOSO.COM*. Specify your own managed domain name in ALL UPPERCASE:
 
     ```bash
     sudo adcli info aaddscontoso.com

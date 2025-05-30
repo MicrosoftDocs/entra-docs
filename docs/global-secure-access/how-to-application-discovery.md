@@ -6,10 +6,9 @@ ms.topic: how-to
 ms.date: 12/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.
 ---
 # Application discovery (Preview) for Global Secure Access
@@ -19,7 +18,7 @@ ms.reviewer: lirazbarak
 
 Application discovery enables administrators to gain comprehensive visibility into application usage within their corporate network. By identifying which applications are accessed and by whom, administrators can create private applications with precise segmentation and least privilege access, which minimizes unnecessary access. 
 
-With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a conditional access policy and set user assignments per application.  
+With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a Conditional Access policy and set user assignments per application.  
 
 This article walks through the process of using Application discovery to detect which applications users access (through Quick Access) and creating separate private applications.
 

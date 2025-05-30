@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Canva
+title: Configure Canva for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Canva.
 
 author: nguhiu
@@ -9,16 +9,16 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Canva so that I can control who has access to Canva, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Canva
+# Configure Canva for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Canva with Microsoft Entra ID. Canva is your photo editor, video editor, and graphic design tool all in one app. Create stunning social media posts, videos, cards, flyers, photo collages & more. When you integrate Canva with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Canva with Microsoft Entra ID. Canva is your photo editor, video editor, and graphic design tool all in one app. Create stunning social media posts, videos, cards, flyers, photo collages & more. When you integrate Canva with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Canva.
 * Enable your users to be automatically signed-in to Canva with their Microsoft Entra accounts.
@@ -60,13 +60,13 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Canva** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Canva** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
 1. Your Canva application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Canva expects this to be mapped with the user's object id. For that you can use **user.objectid** attribute from the list or use the appropriate attribute value based on your organization configuration and select Name identifier format as **Persistent** from the dropdown.
 
@@ -92,9 +92,9 @@ In this section, a user called B.Simon is created in Canva. Canva supports just-
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Canva for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Canva for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Canva tile in the My Apps, you should be automatically signed in to the Canva for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Canva tile in the My Apps, you should be automatically signed in to the Canva for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 

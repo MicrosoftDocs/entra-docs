@@ -1,17 +1,15 @@
 ---
 title: Sign-in to Microsoft Entra ID with email as an alternate login ID
 description: Learn how to enable users to sign in to Microsoft Entra ID with their email as an alternate login ID
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 02/14/2025
-
+ms.date: 04/17/2025
 ms.author: justinha
-author: calui
-manager: amycolannino
-ms.reviewer: calui
+author: justinha
+manager: femila
+ms.reviewer: rahulnagraj
 ---
 # Sign-in to Microsoft Entra ID with email as an alternate login ID (Preview)
 
@@ -62,10 +60,8 @@ In the current preview state, the following limitations apply to email as an alt
     * [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md)
     * [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md)
     * [Microsoft Entra registered devices](~/identity/devices/concept-device-registration.md)
-    * [Resource Owner Password Credentials (ROPC)](~/identity-platform/v2-oauth-ropc.md)
     * [Single Sign-On and App Protection Policies on Mobile Platform](~/identity-platform/mobile-sso-support-overview.md)
     * Legacy authentication such as POP3 and SMTP
-    * Skype for Business
 
 * **Unsupported apps** - Some third-party applications may not work as expected if they assume that the `unique_name` or `preferred_username` claims are immutable or will always match a specific user attribute, such as UPN.
 
@@ -145,7 +141,7 @@ You can use either Microsoft Entra admin center or Graph PowerShell to set up th
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**
+1. Browse to **Entra ID** > **Entra Connect** > **Connect Sync**
 1. Select Email as alternate login ID**.
 
     ![Screenshot of email as alternate login ID option in the Microsoft Entra admin center.](media/howto-authentication-use-email-signin/azure-ad-connect-screen.png)
@@ -164,8 +160,6 @@ With the policy applied, it can take up to one hour to propagate and for users t
 
 Once users with the *ProxyAddresses* attribute applied are synchronized to Microsoft Entra ID using Microsoft Entra Connect, you need to enable the feature for users to sign-in with email as an alternate login ID for your tenant. This feature tells the Microsoft Entra login servers to not only check the sign-in identifier against UPN values, but also against *ProxyAddresses* values for the email address.
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
-
 1. Open a PowerShell session as an administrator, then install the *Microsoft.Graph* module using the `Install-Module` cmdlet:
 
     ```powershell
@@ -174,7 +168,7 @@ Once users with the *ProxyAddresses* attribute applied are synchronized to Micro
 
     For more information on installation, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-1. Sign-in to your Microsoft Entra tenant using the `Connect-MgGraph` cmdlet:
+1. Sign-in to your Microsoft Entra tenant using the `Connect-MgGraph` cmdlet:
 
     ```powershell
     Connect-MgGraph -Scopes "Policy.ReadWrite.ApplicationConfiguration" -TenantId organizations
@@ -212,7 +206,7 @@ Once users with the *ProxyAddresses* attribute applied are synchronized to Micro
     New-MgPolicyHomeRealmDiscoveryPolicy @AzureADPolicyParameters
     ```
 
-    When the policy has been successfully created, the command returns the policy ID, as shown in the following example output:
+    When the policy has been successfully created, the command returns the policy ID, as shown in the following example output:
 
     ```powershell
     Definition                                                           DeletedDateTime Description DisplayName                 Id            IsOrganizationDefault
@@ -220,7 +214,7 @@ Once users with the *ProxyAddresses* attribute applied are synchronized to Micro
     {{"HomeRealmDiscoveryPolicy":{"AlternateIdLogin":{"Enabled":true}}}}                             BasicAutoAccelerationPolicy HRD_POLICY_ID True
     ```
 
-1. If there's already a configured policy, check if the *AlternateIdLogin* attribute is enabled, as shown in the following example policy output:
+1. If there's already a configured policy, check if the *AlternateIdLogin* attribute is enabled, as shown in the following example policy output:
 
     ```powershell
     Definition                                                           DeletedDateTime Description DisplayName                 Id            IsOrganizationDefault
@@ -231,9 +225,9 @@ Once users with the *ProxyAddresses* attribute applied are synchronized to Micro
     If the policy exists but the *AlternateIdLogin* attribute that isn't present or enabled, or if other attributes exist on the policy you wish to preserve, update the existing policy using the `Update-MgPolicyHomeRealmDiscoveryPolicy` cmdlet.
 
     > [!IMPORTANT]
-    > When you update the policy, make sure you include any old settings and the new *AlternateIdLogin* attribute.
+    > When you update the policy, make sure you include any old settings and the new *AlternateIdLogin* attribute.
 
-    The following example adds the *AlternateIdLogin* attribute and preserves the *AllowCloudPasswordValidation* attribute that was previously set:
+    The following example adds the *AlternateIdLogin* attribute and preserves the *AllowCloudPasswordValidation* attribute that was previously set:
 
     ```powershell
     $AzureADPolicyDefinition = @(
@@ -281,7 +275,6 @@ Remove-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId "HRD_POLICY_
 
 Staged rollout policy allows tenant administrators to enable features for specific Microsoft Entra groups. It is recommended that tenant administrators use staged rollout to test user sign-in with an email address. When administrators are ready to deploy this feature to their entire tenant, they should use [HRD policy](#enable-user-sign-in-with-an-email-address).  
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
 
 1. Open a PowerShell session as an administrator, then install the *Microsoft.Graph.Beta* module using the [Install-Module][Install-Module] cmdlet:
 
@@ -291,7 +284,7 @@ Staged rollout policy allows tenant administrators to enable features for specif
 
     If prompted, select **Y** to install NuGet or to install from an untrusted repository.
 
-1. Sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) cmdlet:
+1. Sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) cmdlet:
 
     ```powershell
     Connect-MgGraph -Scopes "Directory.ReadWrite.All"
@@ -382,15 +375,15 @@ You can review the [sign-in logs in Microsoft Entra ID][sign-in-logs] for more i
 
 Within a tenant, a cloud-only user's UPN may take on the same value as another user's proxy address synced from the on-premises directory. In this scenario, with the feature enabled, the cloud-only user will not be able to sign in with their UPN. Here are the steps for detecting instances of this issue.
 
-1. Open a PowerShell session as an administrator, then install the *AzureADPreview* module using the [Install-Module][Install-Module] cmdlet:
+1. Open a PowerShell session as an administrator, then install Microsoft Graph by using the [Install-Module][Install-Module] cmdlet:
 
     ```powershell
-    Install-Module Microsoft.Graph.Beta
+    Install-Module Microsoft.Graph.Authentication
     ```
 
     If prompted, select **Y** to install NuGet or to install from an untrusted repository.
 
-1. [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+1. Connect to Microsoft Graph:
 
     ```powershell
     Connect-MgGraph -Scopes "User.Read.All"

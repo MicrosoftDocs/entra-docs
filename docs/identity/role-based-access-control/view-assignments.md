@@ -1,16 +1,15 @@
 ---
 title: List Microsoft Entra role assignments
 description: Learn how to list Microsoft Entra role assignments using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
-
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 01/03/2025
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # List Microsoft Entra role assignments
@@ -50,7 +49,7 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 
 1. Select *user name* > **Assigned roles**.
 
@@ -66,7 +65,7 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 
 1. Select a role-assignable group.
 
@@ -110,7 +109,7 @@ This procedure describes how to list role assignments with tenant scope.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select a role name to open the role. Don't add a check mark next to the role.
 
@@ -128,7 +127,7 @@ This section describes how to list role assignments with single-application scop
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 
 1. Select an app registration for the list of role assignments you want to view.
 
@@ -152,7 +151,7 @@ You can view all the role assignments created with an administrative unit scope 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select an administrative unit for the list of role assignments you want to view.
 

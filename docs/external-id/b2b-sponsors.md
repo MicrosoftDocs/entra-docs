@@ -1,16 +1,14 @@
 ---
 title: Add sponsors to a guest user in the Microsoft Entra admin center - External ID
 description: Shows how an admin can add sponsors to guest users in Microsoft Entra B2B collaboration.
-
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 12/12/2024
-
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
 ms.collection: M365-identity-device-management
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a B2B organization administrator, I want to track and manage sponsors for guest users, so that I can ensure accountability and proper governance of external partners in my directory.
 ---
 # Sponsors field for B2B users
@@ -45,7 +43,7 @@ The Microsoft Entra B2B collaboration sponsor feature serves as a foundation for
 You can add up to five sponsors when inviting a new guest user. If you don’t specify a sponsor, the inviter will be added as a sponsor. To invite a guest user, you need to have at least the [Guest Inviter](/entra/identity/role-based-access-control/permissions-reference#guest-inviter) or [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Invite external user** from the menu.
 1. Entered the details on the Basics tab and select **Next: Properties**.
 1. You can add sponsors under  **Job information** on the **Properties** tab.
@@ -64,7 +62,7 @@ You can also add sponsors with the Microsoft Graph API, using invitation manager
 When you invite a guest user, you became their sponsor by default. If you need to manually change the guest user's sponsor, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. In the list, select the user's name to open their user profile
 1. Under **Properties** > **Job information** check the **Sponsors** field. If the guest user already has a sponsor, you can select **View** to see the sponsor's name.
 

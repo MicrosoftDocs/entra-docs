@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Health Support System
+title: Configure Health Support System for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Health Support System.
 
 author: nguhiu
@@ -9,15 +9,15 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/25/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Health Support System so that I can control who has access to Health Support System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Health Support System
+# Configure Health Support System for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Health Support System with Microsoft Entra ID. When you integrate Health Support System with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Health Support System with Microsoft Entra ID. When you integrate Health Support System with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Health Support System.
 * Enable your users to be automatically signed-in to Health Support System with their Microsoft Entra accounts.
@@ -25,14 +25,14 @@ In this tutorial, you'll learn how to integrate Health Support System with Micro
 
 ## Prerequisites
 
-To get started, you need the following items:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Health Support System single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Health Support System supports **SP** initiated SSO.
 
@@ -44,11 +44,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Health Support System into Microsoft Entra ID, you need to add Health Support System from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Health Support System** in the search box.
 1. Select **Health Support System** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-health-support-system'></a>
 
@@ -59,10 +59,10 @@ Configure and test Microsoft Entra SSO with Health Support System using a test u
 To configure and test Microsoft Entra SSO with Health Support System, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Health Support System SSO](#configure-health-support-system-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Health Support System test user](#create-health-support-system-test-user)** - to have a counterpart of B.Simon in Health Support System that is linked to the Microsoft Entra representation of user.
+    1. **[Create Health Support System test user](#create-health-support-system-test-user)** - to have a counterpart of B.Simon in Health Support System that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,9 +72,9 @@ To configure and test Microsoft Entra SSO with Health Support System, perform th
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Health Support System** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Health Support System** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Sign-on URL** text box, type the URL:
     `https://suntory.karakoko.jp`
 	
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
 
@@ -91,10 +91,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -107,15 +107,15 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Health Support System.
+In this section, you enable B.Simon to use single sign-on by granting access to Health Support System.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Health Support System**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Health Support System**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
-1. In the **Add Assignment** dialog, click the **Assign** button.
+1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then select the **Select** button at the bottom of the screen.
+1. In the **Add Assignment** dialog, select the **Assign** button.
 
 ## Configure Health Support System SSO
 
@@ -129,11 +129,11 @@ In this section, you create a user called B.Simon in Health Support System. Work
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Health Support System Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Health Support System Sign-on URL where you can initiate the login flow. 
 
 * Go to Health Support System Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Health Support System tile in the My Apps, this will redirect to Health Support System Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Health Support System tile in the My Apps, this option redirects to Health Support System Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Related content
 

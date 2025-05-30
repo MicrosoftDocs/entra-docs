@@ -2,13 +2,14 @@
 title: Enable remote access to SharePoint - Microsoft Entra application proxy
 description: Covers the basics about how to integrate on-premises SharePoint Server with Microsoft Entra application proxy.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/20/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Enable remote access to SharePoint with Microsoft Entra application proxy
@@ -22,7 +23,7 @@ To perform the configuration, you need the following resources:
 - A Microsoft Entra tenant with a plan that includes application proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.yml) in the Microsoft Entra tenant.
-- On-premises Active Directory synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).
+- On-premises Active Directory deployments synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).
 - a private network connector installed and running on a machine within the corporate domain.
 
 Configuring SharePoint with application proxy requires two URLs:
@@ -33,7 +34,7 @@ Configuring SharePoint with application proxy requires two URLs:
 > To make sure the links are mapped correctly, follow these recommendations for the internal URL:
 > - Use HTTPS.
 > - Don't use custom ports.
-> - In the corporate Domain Name System (DNS), create a host (A) to point to the SharePoint WFE (or load balancer), and not an alias (CName).
+> - Create a host (`A` record) in the corporate Domain Name System (DNS) that point to the SharePoint Web Front End (WFE) (or load balancer), and not an alias (`CName` record).
 
 This article uses the following values:
 - Internal URL: `https://sharepoint`.
@@ -68,10 +69,10 @@ In this step, you create an application in your Microsoft Entra tenant that uses
 The SharePoint web application must be configured with Kerberos and the appropriate alternate access mappings to work correctly with Microsoft Entra application proxy. There are two possible options:
 
 - Create a new web application and use only the **default** zone. Using the default zone is the preferred option, it offers the best experience with SharePoint. For example, the links in email alerts that SharePoint generates point to the **default** zone.
-- Extend an existing web application to configure Kerberos in a non default zone.
+- Extend an existing web application to configure Kerberos in a nondefault zone.
 
 > [!IMPORTANT]
-> Regardless of the zone that's used, the application pool account of the SharePoint web application must be a domain account for Kerberos to work correctly.
+> Regardless of the zone used, the application pool account of the SharePoint web application must be a domain account for Kerberos to work correctly.
 
 ### Create the SharePoint web application
 
@@ -150,7 +151,7 @@ Because the Internal URL uses HTTPS protocol (`https://SharePoint/`), a certific
 1. Open the Internet Information Services Manager console.
 1. Expand the server in the tree view, expand **Sites**, select the **SharePoint - Microsoft Entra ID Proxy** site, and select **Bindings**.
 1. Select **https binding** and then select **Edit**.
-1. In the TLS/SSL certificate field, choose **SharePoint** certificate and then select **OK**.
+1. In the Transport Layer Security (TLS) certificate field, choose **SharePoint** certificate and then select **OK**.
 
 You can now access the SharePoint site externally through Microsoft Entra application proxy.
 

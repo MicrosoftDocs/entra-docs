@@ -1,6 +1,6 @@
 ---
 title: Plan a tenant restrictions v1 migration to tenant restrictions v2
-description: Learn about tenant-level restrictions and controls for users, groups, and applications, also policy management in a cloud-based portal. 
+description: Learn about tenant-level restrictions and controls for users, groups, and applications, also policy management in a cloud-based portal.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
@@ -10,8 +10,7 @@ ms.date: 02/12/2024
 ms.author: gasinh
 ms.reviewer: jebley
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps-article
-
+ms.custom: enterprise-apps-article, sfi-image-nochange
 #customer intent: As an IT admin responsible for managing access to cloud services, I want to restrict access to approved resources for users in my organization, so that I can ensure security and compliance.
 ---
 
@@ -69,15 +68,15 @@ Allow internal identities, such as employees, to access specific external tenant
 1. In **Cross-tenant access settings**, [add each domain/tenant as an organization under Organizational settings](cross-tenant-access-settings-b2b-collaboration.yml#add-an-organization).
 2. To allow all users and groups and allow all applications, for each added organization, [configure outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings). 
 
-   [ ![Screenshot of the Organizationsl settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/organizational-settings.png)](media/tenant-restrictions-migration/organizational-settings.png#lightbox)
+   [![Screenshot of the Organizational settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/organizational-settings.png)](media/tenant-restrictions-migration/organizational-settings.png#lightbox)
 
 3. To block all users and groups and all applications for B2B collaboration, [configure the default cross-tenant access outbound settings](cross-tenant-access-settings-b2b-collaboration.yml#configure-default-settings). This action applies only to tenants not added in [step 1](#allow-only-internal-identities-access-to-specific-external-tenants).
 
-   [ ![Screenshot of the Default settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/default-settings.png)](media/tenant-restrictions-migration/default-settings.png#lightbox)
+   [![Screenshot of the Default settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/default-settings.png)](media/tenant-restrictions-migration/default-settings.png#lightbox)
 
 4. In **Tenant restrictions** defaults, create the policy ID (if not created) and [configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md#configure-server-side-tenant-restrictions-v2-cloud-policy). This action applies only to tenants not added in [step 1](#allow-only-internal-identities-access-to-specific-external-tenants).
 
-   [ ![Screenshot of the Tenant restrictions defaults.](media/tenant-restrictions-migration/tenant-restrictions-default.png)](media/tenant-restrictions-migration/tenant-restrictions-default.png#lightbox)
+   [![Screenshot of the Tenant restrictions defaults.](media/tenant-restrictions-migration/tenant-restrictions-default.png)](media/tenant-restrictions-migration/tenant-restrictions-default.png#lightbox)
 
 ### Allow internal and external identities to access specific external tenants 
 
@@ -87,15 +86,15 @@ Allow internal identities such as employees, and external identities such as con
 2. For each added organization to enable internal identities, [configure Outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings) to allow all users, groups, and applications.
 3. For each added organization to enable external identities, [configure the organization tenant restrictions](tenant-restrictions-v2.md#step-2-configure-tenant-restrictions-v2-for-specific-partners) to allow all users, groups, and applications.  
 
-   [ ![Screenshot of Outbound access and Tenant restrictions details under Organizational settings.](media/tenant-restrictions-migration/organizational-settings-outbound.png)](media/tenant-restrictions-migration/organizational-settings-outbound.png#lightbox)
+   [![Screenshot of Outbound access and Tenant restrictions details under Organizational settings.](media/tenant-restrictions-migration/organizational-settings-outbound.png)](media/tenant-restrictions-migration/organizational-settings-outbound.png#lightbox)
 
 4. To block all users, groups, and applications for B2B collaboration, [configure the default Cross Tenant Access outbound access settings](cross-tenant-access-settings-b2b-collaboration.yml#configure-default-settings). This action applies only to tenants not added in [step 1](#allow-internal-and-external-identities-to-access-specific-external-tenants).
 
-   [ ![Screenshot of Outbound access settings under Default settings.](media/tenant-restrictions-migration/default-settings-outbound.png)](media/tenant-restrictions-migration/default-settings-outbound.png#lightbox)
+   [![Screenshot of Outbound access settings under Default settings.](media/tenant-restrictions-migration/default-settings-outbound.png)](media/tenant-restrictions-migration/default-settings-outbound.png#lightbox)
 
 5. In **Tenant restrictions defaults**, [create the policy ID (if not created) and configure the policy to block all users, groups, and external applications](tenant-restrictions-v2.md#configure-server-side-tenant-restrictions-v2-cloud-policy). This action applies only to tenants not added in [step 1](#allow-internal-and-external-identities-to-access-specific-external-tenants).
 
-   [ ![Screenshot of Tenant restrictions, with external users and groups, also external apps.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)](media/tenant-restrictions-migration/tenant-restrictions-applies.png#lightbox)
+   [![Screenshot of Tenant restrictions, with external users and groups, also external apps.](media/tenant-restrictions-migration/tenant-restrictions-applies.png)](media/tenant-restrictions-migration/tenant-restrictions-applies.png#lightbox)
 
    > [!NOTE]
    > To target consumer Microsoft accounts (MSAs), add an organization with the following tenant ID: 9188040d-6c67-4c5b-b112-36a304b66dad. 
