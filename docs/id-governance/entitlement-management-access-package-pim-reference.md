@@ -13,7 +13,7 @@ ms.date: 05/27/2025
 
 # Using groups managed by Privileged Identity Management with access packages
 
-This article contains information about Microsoft Entra ID behavior in scenarios where the group managed by PIM, and the access package expiration periods, differ. By assigning a group managed by PIM to an access package, you're able to assign eligible roles when an access package is requested. If you’re looking for a guide on setting up a group to assign eligible roles via access packages, see: [Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)](entitlement-management-access-package-eligible.md).
+This article contains information about Microsoft Entra ID behavior in scenarios where a group managed by PIM, and the access package expiration periods, differ. By assigning a group managed by PIM to an access package, you're able to assign eligible roles when an access package is requested. If you’re looking for a guide on setting up a group to assign eligible roles via access packages, see: [Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)](entitlement-management-access-package-eligible.md).
 
 
 ## Shorter access package expiration
@@ -24,7 +24,7 @@ When an access package's expiration date is shorter than PIM's "*Expire eligible
 
 | Access package policy assignment expiration | PIM policy max assignment duration | Microsoft Entra ID behavior |
 |-------------------------------------|-----------------------------------|-----------------------------|
-| 30 days                            | 365 days                          | Entitlement management sets a 365 day expiration on the PIM assignment when the access policy assignment is created, but removes the PIM assignment after the access policy assignment expires in 30 days. |
+| 30 days                            | 365 days                          | Entitlement management sets a 365 day expiration on the PIM assignment when the access policy assignment is created, but removes the PIM assignment after the access policy assignment expires after 30 days. |
 
 ## Shorter PIM duration
 
@@ -44,7 +44,7 @@ If the Access package assignment is permanent, access is revoked based on when t
 
 | Access package policy assignment expiration | PIM Policy Max Assignment Duration | Microsoft Entra ID behavior |
 |------------------------------------|------------------------------------|-----------------------------|
-| None (permanent allowed)           | 40 days                            | Entitlement management sets a 40-day expiration on the PIM assignment when the access policy assignment is created. On day 41, although the access package is still assigned, access is revoked. |
+| None (permanent allowed)           | 40 days                            | Entitlement management sets a 40 day expiration on the PIM assignment when the access policy assignment is created. On day 41, although the access package is still assigned, access is revoked. |
 
 ## Permanent PIM assignment
 
