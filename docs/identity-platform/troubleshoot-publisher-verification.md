@@ -28,7 +28,7 @@ Here are some common issues that may occur during the process of publisher verif
     1. Navigate to the [Cloud Partner Program enrollment page](https://partner.microsoft.com/dashboard/account/v3/enrollment/joinnow/basicpartnernetwork/new).
     1. Sign in with a user account in the org's primary Microsoft Entra tenant. 
     1. If a Cloud Partner Program account already exists, this account is recognized and you are added to the account. 
-    1. Navigate to the [partner profile page](https://partner.microsoft.com/en-us/dashboard/account/v3/overview) where the Partner One ID and primary account contact are listed.
+    1. Navigate to the [partner profile page](https://partner.microsoft.com/dashboard/account/v3/overview) where the Partner One ID and primary account contact are listed.
 
 - **I don't know who my Microsoft Entra Global Administrator (also known as company admin or tenant admin) is, how do I find them? What about the Application Administrator or Cloud Application Administrator?**
     1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
@@ -37,7 +37,7 @@ Here are some common issues that may occur during the process of publisher verif
     1. The list of users assigned that role are displayed.
 
 - **I don't know who the admin(s) for my CPP account are**
-    Go to the [CPP User Management page](https://partner.microsoft.com/en-us/dashboard/account/v3/usermanagement) and filter the user list to see what users are in various admin roles.
+    Go to the [CPP User Management page](https://partner.microsoft.com/dashboard/account/v3/usermanagement) and filter the user list to see what users are in various admin roles.
 
 - **I am getting an error saying that my Partner One ID is invalid or that I do not have access to it.**
     Follow the [remediation guidance](#mpnaccountnotfoundornoaccess).
