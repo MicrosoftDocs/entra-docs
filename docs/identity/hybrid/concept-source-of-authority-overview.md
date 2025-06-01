@@ -87,16 +87,16 @@ SOA allows organizations to advance their [journey to the cloud](/entra/architec
 
 This allows consistent administrative operational procedures for both migrated and cloud-native objects.
 
-The following diagram and table below outlines the [cloud first](https://learn.microsoft.com/entra/architecture/road-to-the-cloud-posture#state-3-cloud-first)/[AD minimization](https://learn.microsoft.com/entra/architecture/road-to-the-cloud-posture#state-4-active-directory-minimized) approach.
+The following diagram and table below outlines the [cloud first](/entra/architecture/road-to-the-cloud-posture#state-3-cloud-first)/[AD minimization](/entra/architecture/road-to-the-cloud-posture#state-4-active-directory-minimized) approach.
 
 :::image type="content" source="media/concept-source-of-authority-overview/image2.png" alt-text="Screenshot of the cloud first and AD minimization approach.":::
 
 | *State* | *Description* |
 | --- | --- |
-| [Cloud attached](https://learn.microsoft.com/entra/architecture/road-to-the-cloud-posture#state-1-cloud-attached) | In the cloud-attached state, organizations have created a Microsoft Entra tenant to enable user productivity and collaboration tools. The tenant is fully operational. |
-| [Hybrid](https://learn.microsoft.com/entra/architecture/road-to-the-cloud-posture#state-2-hybrid) | In the hybrid state, organizations start to enhance their on-premises environment through cloud capabilities. |
-| [Cloud first](https://learn.microsoft.com/entra/architecture/road-to-the-cloud-posture#state-3-cloud-first) | In the cloud-first state, the teams across the organization build a track record of success and start planning to move more challenging workloads to Microsoft Entra ID. Organizations typically spend the most time in this state of transformation. As complexity, the number of workloads, and the use of Active Directory grow over time, an organization needs to increase its effort and its number of initiatives to shift to the cloud. |
-| [AD minimized](https://learn.microsoft.com/entra/architecture/road-to-the-cloud-posture#state-4-active-directory-minimized) | Microsoft Entra ID provides most IAM capability, whereas edge cases and exceptions continue to use on-premises Active Directory. A state of minimizing Active Directory is more difficult to achieve, especially for larger organizations that have significant on-premises technical debt. |
+| [Cloud attached](/entra/architecture/road-to-the-cloud-posture#state-1-cloud-attached) | In the cloud-attached state, organizations have created a Microsoft Entra tenant to enable user productivity and collaboration tools. The tenant is fully operational. |
+| [Hybrid](/entra/architecture/road-to-the-cloud-posture#state-2-hybrid) | In the hybrid state, organizations start to enhance their on-premises environment through cloud capabilities. |
+| [Cloud first](/entra/architecture/road-to-the-cloud-posture#state-3-cloud-first) | In the cloud-first state, the teams across the organization build a track record of success and start planning to move more challenging workloads to Microsoft Entra ID. Organizations typically spend the most time in this state of transformation. As complexity, the number of workloads, and the use of Active Directory grow over time, an organization needs to increase its effort and its number of initiatives to shift to the cloud. |
+| [AD minimized](/entra/architecture/road-to-the-cloud-posture#state-4-active-directory-minimized) | Microsoft Entra ID provides most IAM capability, whereas edge cases and exceptions continue to use on-premises Active Directory. A state of minimizing Active Directory is more difficult to achieve, especially for larger organizations that have significant on-premises technical debt. |
 
 ## Implications of SOA changes
 
@@ -116,11 +116,11 @@ If your organization is using AD management tools such as Active Directory Users
 
 :::image type="content" source="media/concept-source-of-authority-overview/image4.png" alt-text="Screenshot of Microsoft Identity Manager with the AD MA.":::
 
-If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to a SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](https://learn.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are sent to Microsoft Entra and then to Active Directory where needed. For more information, see <u>Prep your MIM setup</u>.
+If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to a SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are sent to Microsoft Entra and then to Active Directory where needed. For more information, see <u>Prep your MIM setup</u>.
 
 ### Applications (User SOA only)
 
-Your application must be modernized and should leverage [cloud authentication](https://learn.microsoft.com/entra/architecture/authenticate-applications-and-users) in order for your source of authority to change user objects to work. If you need to access on-premises resources, you can leverage Microsoft Entra Kerberos and [Entra Private Access](https://learn.microsoft.com/entra/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend customers use Microsoft Entra Domain Services.
+Your application must be modernized and should leverage [cloud authentication](/entra/architecture/authenticate-applications-and-users) in order for your source of authority to change user objects to work. If you need to access on-premises resources, you can leverage Microsoft Entra Kerberos and [Entra Private Access](/entra/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend customers use Microsoft Entra Domain Services.
 
 ### Devices (User SOA Only)
 
@@ -184,7 +184,7 @@ Users, groups, or contacts whose SOA has isn’t changing, can continue to
 be managed using Active Directory Users and Computers, Active Directory
 Module for PowerShell, or other AD management tools. After creating an
 OU, move the objects to that OU. For more information, see
-[Move-ADObject](https://learn.microsoft.com/powershell/module/activedirectory/move-adobject?view=windowsserver2025-ps).
+[Move-ADObject](/powershell/module/activedirectory/move-adobject).
 
 ### Shift your HR integration to the cloud (only for User SOA)
 
@@ -253,65 +253,17 @@ For customers using MIM, you can update the sync rules in MIM to
 determine which objects will continue to be provisioned into Active
 Directory vs. which ones will be provisioned into Entra ID.
 
-1.  Select the attributes which will be the unique identifiers for users
-    and groups that are the same in both AD and Microsoft Entra.
-
-<!-- -->
-
-2.  Add to MIM sync the [Microsoft Identity Manager connector for
-    Microsoft Graph \| Microsoft
-    Learn,](https://learn.microsoft.com/en-us/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph)
-    configure a join of the existing AD users and groups with those
-    brought in from this connector.
-
-<!-- -->
-
-3.  Check the precedence settings on the user, group and contact
-    objects.
-
-<!-- -->
-
-4.  Perform a full import from Microsoft Entra using the Microsoft Graph
-    connector.
-
-<!-- -->
-
-5.  Confirm that all the users and groups which are planned for SOA
-    conversion have been joined between the metaverse and the Microsoft
-    Graph connector.
-
-<!-- -->
-
-6.  Update the management system for those users and groups (e.g., MIM
-    Portal and Service) to add a label to user and group objects for
-    which the SOA is changing to Entra ID.
-
-<!-- -->
-
-7.  Update the sync rules so that you’re no longer syncing those labeled
-    user and group objects from MIM to AD, and instead synching to
-    Microsoft Graph connector.
-
-<!-- -->
-
-8.  Keep the sync rules de-activated until SOA transfer is complete.
-
-<!-- -->
-
-9.  After the SOA transfer, re-sync users and groups. Confirm there are
-    no exports pending for those users and groups to the AD MA, only to
-    the Microsoft Graph connector.
-
-<!-- -->
-
-10. Add to your run profile schedules a run of exporting changes from
-    MIM to Entra ID using the Microsoft Graph connector.
-
-<!-- -->
-
-11. If you’re no longer exporting any changes to other users and groups
-    in AD, then remove the export to AD run profile from your run
-    profile schedules.
+1. Select the attributes which will be the unique identifiers for users and groups that are the same in both AD DS and Microsoft Entra.
+1. Add to MIM sync the [Microsoft Identity Manager connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) configure a join of the existing AD users and groups with those brought in from this connector.
+1. Check the precedence settings on the user, group and contact objects.
+1. Perform a full import from Microsoft Entra using the Microsoft Graph connector.
+1. Confirm that all the users and groups which are planned for SOA conversion have been joined between the metaverse and the Microsoft Graph connector.
+1. Update the management system for those users and groups (such as in the MIM portal and service) to add a label to user and group objects for which the SOA is changing to Entra ID.
+1. Update the sync rules so that you’re no longer syncing those labeled user and group objects from MIM to AD, and instead synching to Microsoft Graph connector.
+1. Keep the sync rules de-activated until SOA transfer is complete.
+1. After the SOA transfer, re-sync users and groups. Confirm there are no exports pending for those users and groups to the AD MA, only to the Microsoft Graph connector.
+1. Add to your run profile schedules a run of exporting changes from MIM to Entra ID using the Microsoft Graph connector.
+1. If you’re no longer exporting any changes to other users and groups in AD DS, then remove the export to AD DS run profile from your run profile schedules.
 
 :::image type="content" source="media/concept-source-of-authority-overview/image9.png" alt-text="Screenshot of the MIM setup preparation steps.":::
 
@@ -329,36 +281,13 @@ these users and related groups can be managed in Microsoft 365 you can
 safely switch SOA of users and groups to cloud. Additionally disable
 Exchange Hybrid by completing following steps:
 
-1.  Point the MX and Autodiscover DNS records to Exchange Online,
-    instead of Exchange Server.
+1. Point the MX and Autodiscover DNS records to Exchange Online, instead of Exchange Server.
+1. Remove the Service Connection Point (SCP) values on Exchange servers. This step ensures that no SCPs are returned, and the Outlook clients will instead use the DNS method for Autodiscover.
+1. Optionally, to secure your environment, remove the inbound and outbound connectors created by the Hybrid Configuration Wizard used for mail flow between Exchange Server and Exchange online.
+1. Optionally, to secure your environment, remove the organization relationship, Fed Trust and oauth trust set up between Exchange Server and Exchange Online by HCW.
+1. Stop writing to on-premises Exchange for the object and sync the object to cloud to ensure EXO has the latest changes from on-premises.
 
-<!-- -->
-
-2.  Remove the Service Connection Point (SCP) values on Exchange
-    servers. This step ensures that no SCPs are returned, and the
-    Outlook clients will instead use the DNS method for Autodiscover.
-
-<!-- -->
-
-3.  Optionally, to secure your environment, remove the inbound and
-    outbound connectors created by the Hybrid Configuration Wizard used
-    for mail flow between Exchange Server and Exchange online.
-
-<!-- -->
-
-4.  Optionally, to secure your environment, remove the organization
-    relationship, Fed Trust and oauth trust set up between Exchange
-    Server and Exchange Online by HCW.
-
-<!-- -->
-
-5.  Stop writing to on-premises Exchange for the object and sync the
-    object to cloud to ensure EXO has the latest changes from
-    on-premises.
-
- For more information on disabling [Exchange Hybrid see Manage
-recipients in Exchange Hybrid environments using Management
-tools](https://learn.microsoft.com/Exchange/manage-hybrid-exchange-recipients-with-management-tools).
+For more information about how to disable Exchange Hybrid, see [Manage recipients in Exchange Hybrid environments using Management tools](/exchange/manage-hybrid-exchange-recipients-with-management-tools).
 
 ## Sequence of Steps for using SOA
 
