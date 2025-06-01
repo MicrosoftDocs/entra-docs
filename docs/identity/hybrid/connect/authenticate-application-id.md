@@ -299,7 +299,7 @@ Use the following steps to remove the legacy service account.
 1. Add the service account username and password.
 
  ``` powershell 
- $HACredential
+ $HACredential = Get-Credential
  ```
  2. You're prompted to enter your Microsoft Entra ID Administrator UserPrincipalName and the password. Enter the username and password.
 
