@@ -5,35 +5,47 @@ description: Learn how to use the Identity Secure Score to improve the security 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: conceptual
-ms.date: 05/27/2025
+ms.date: 06/02/2025
 
 ms.author: sarahlipsey
 author: shlipsey3
-manager: femila
-ms.reviewer: guptashi
+manager: pmwongera 
+ms.reviewer: jadedsouza
 
 # Customer intent: As an IT admin, I want to know how to use the Identity Secure Score and related recommendations to improve the security posture of my Microsoft Entra tenant.
 
 ---
 # What is Identity Secure Score?
 
-The Identity Secure Score is shown as a percentage that functions as an indicator for how aligned you are with Microsoft's recommendations for security. Each improvement action in Identity Secure Score is tailored to your configuration. You can access the score and view individual recommendations related to your score in Microsoft Entra recommendations. You can also see how your score has changed over time. 
+The Identity Secure Score is shown as a percentage that functions as an indicator for how aligned you are with Microsoft's recommendations for security. Each improvement action in Identity Secure Score is tailored to your configuration. You can access the score and view individual recommendations related to your score in Microsoft Entra recommendations. You can also see how your score changes over time. 
 
 ![Screenshot of the Recommendations page with the Secure Score details highlighted.](./media/concept-identity-secure-score/secure-score-overview.png)
 
 The following recommendations are included in the Identity Secure Score:
 
-- Require multifactor authentication (MFA) for administrative roles
-- Ensure all users can complete MFA
-- Enable policy to block legacy authentication
-- Do not expire passwords
-- Protect all users with a user risk policy
-- Protect all users with a sign-in risk policy
-- Enable password hash sync if hybrid
-- Do not allow users to grant consent to unreliable applications
-- Use least privileged administrative roles
+- Configure VPN integration
 - Designate more than one Global Administrator
+- Do not allow users to grant consent to unreliable applications
+- Do not expire passwords
+- Edit misconfigured agent certificate templates
+- Edit misconfigured enrollment agent certificate template
+- Enable policy to block legacy authentication
+- Enable password hash sync if hybrid
 - Enable self-service password reset
+- Ensure all users can complete MFA
+- Modify unsecure Kerberos delegations to prevent impersonation
+- Protect all users with a sign-in risk policy
+- Protect all users with a user risk policy
+- Protect and manage local admin passwords with Microsoft LAPS
+- Remove dormant accounts from sensitive groups
+- Remove unsafe permissions on sensitive Microsoft Entra Connect accounts
+- Replace Enterprise or Domain Admin account for Microsoft Entra Connect AD DS Connector
+- Require multifactor authentication (MFA) for administrative roles
+- Reversible passwords found in GPOs
+- Rotate password for Microsoft Entra Connect AD DS Connector account
+- Stop clear text credentials exposure
+- Stop weak cipher usage
+- Use least privileged administrative roles
 
 ## How does the Identity Secure Score benefit me?
 
@@ -91,7 +103,7 @@ Actions labeled as [Not Scored] are ones you can perform in your organization bu
 
 ### My score changed. How do I figure out why?
 
-The [Microsoft 365 Defender portal](https://security.microsoft.com/) shows your complete Microsoft secure score. You can easily see all the changes to your secure score by reviewing the in-depth changes on the history tab.
+The [Microsoft Defender XDR portal](https://security.microsoft.com/) shows your complete Microsoft secure score. You can easily see all the changes to your secure score by reviewing the in-depth changes on the history tab.
 
 ### Does the score measure my risk of getting breached?
 
