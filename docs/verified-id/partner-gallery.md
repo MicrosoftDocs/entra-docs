@@ -11,22 +11,21 @@ ms.author: barclayn
 
 # Microsoft Entra Verified ID Identity Verification partners
 
-Our Identity Verification (IDV) partner network extends Microsoft Entra Verified ID's capabilities to help you build seamless end-user experiences. With Verified ID, you can integrate with IDV partners to enable scenarios like remote onboarding with government ID checks using identity verification and proofing services.
+Our Identity Verification (IDV) partner network extends Microsoft Entra Verified ID capabilities to help you build seamless end-user experiences. With Verified ID, you can integrate with IDV partners to enable scenarios like remote onboarding with government ID checks using identity verification and proofing services.
 The diagram shows a low-level workflow of how all parties interact with each other in a remote onboarding scenario. This integration pattern could be used as a reference. 
 
-:::image type="content" source="media/partner-gallery/identity-verification-integration.png" alt-text="Screenshot of the IDV integration pattern.":::
+:::image type="content" source="media/partner-gallery/identity-verification-integration.png" alt-text="Screenshot of the IDV integration pattern." lightbox="true":::
 
 The following section covers a set of steps that IDVs can use for setting up issuance flows and by customers for verifying IDV Verified IDs.
 
 ## Issuer flow
-Identity Verification (IDV) partners are ISVs who can use Verified ID Request Service REST API to issue Verified IDs. The steps required by an IDV to function as an issuer are as follows:
+Identity Verification (IDV) partners are Independent Software vendors (ISVs) who can use Verified ID Request Service REST API to issue Verified IDs. The steps required by an IDV to function as an issuer are as follows:
 
 1.	Set up Microsoft Entra Verified ID Service: using [Quick setup](verifiable-credentials-configure-tenant-quick.md) or [Advanced setup instructions](verifiable-credentials-configure-tenant.md).
+    >[!Note]
+    >For a multi-tenant model, IDV should explore setting up dedicated authorities if there is a 1:1 relationship required with the customer. Refer [Admin API](admin-api.md) section of the docs for creating authorities. 
 
->[!Note]
->For a multi-tenant model, IDV should explore setting up dedicated authorities if there is a 1:1 relationship required with the customer. Refer [Admin API](admin-api.md) section of the docs for creating authorities. 
-
-2.	Set up a credential definition that defines what type of credentials you'll issue from the service – [Custom Credential](credential-design.md). Based on the scenario, select between id token (for Open ID connect attestations from providers) or id token hint (ISVs to use REST APIs to get the required attestations), self issued (user provided input), presentation or multiple attestations.
+2.	Set up a credential definition that defines what type of credentials you'll issue from the service – [Custom Credential](credential-design.md). Based on the scenario, select between ID token (for Open ID connect attestations from providers) or ID token hint (ISVs to use REST APIs to get the required attestations), self issued (user provided input), presentation or multiple attestations.
 
 3.	Make sure to publish the credential in the Verified ID network if this credential is for general purpose consumption. If this credential was created for a specific customer, then skip this step. To publish the credential in the Verified ID network, select **Issue a credential** option under Manage and then select **Publish credential to Verified ID network** checkbox. You could also use [Admin APIs](admin-api.md) to set **“availableInVcDirectory"** to true for the credential.
 
@@ -35,7 +34,7 @@ Identity Verification (IDV) partners are ISVs who can use Verified ID Request Se
 5.	The end user starts the journey on the relying party application – in the example above, Contoso’s onboarding portal asks the user to prove their identity. If the user already has the required Verified ID for onboarding, they'll follow steps 1 through 4 in the diagram. If the user doesn’t have the required Verified ID, user has to launch the IDV offer URL from onboarding application to initiate the identity verification process. 
     The IDV and customer relying party need to build this redirection model. The IDV needs to identify that the user is coming to the IDV portal from a registered organization and isn't a SPAM request. The relying party needs to generate a “one-time” use url with a JWT token, for example: ```https://idvpartner.com/contoso/?token=jwt_token```
 
-    The JWT token is signed with customer's relying party private key and the public key is shared with the IDV via an endpoint or via a scheduled process. The IDV needs to ensure that for the kickstart journey, it uses attributes from the JWT like org id, request id, mscv id and expiry. Note [mscv](https://github.com/microsoft/CorrelationVector) is preferred for end-to-end troubleshooting. An example of the JWT could be as follows:
+    Note that The JWT token is signed with customer's relying party private key and the public key is shared with the IDV via an endpoint or via a scheduled process. The IDV needs to ensure that for the kickstart journey, it uses attributes from the JWT like org ID, request ID, mscv id, and expiry. Note [mscv](https://github.com/microsoft/CorrelationVector) is preferred for end-to-end troubleshooting. An example of the JWT could be as follows:
 
     Header: Algorithm and Token type 
     ```json
@@ -56,8 +55,7 @@ Identity Verification (IDV) partners are ISVs who can use Verified ID Request Se
 
 6.	Upon successful completion, IDV kicks off Verified ID issuance flow and issues a Verified ID. At this point, user is presented with a deep link or QR code to **Add Card** in Microsoft Authenticator application. The IDV website receives a successful issuance callback from Verified ID service.
     >[!Note]
-    
-    >IDV partner must provide or build the required web experience where the identity of the user can be proofed in any way necessary as agreed between the relying party application and IDV partner. When the process is completed a list of values are collected according to the Verified ID Credential Type. These values (as “claims” parameter) are passed as part of the Verified ID issuance request API call. If the IDV is building this journey on a webapp, IDV needs to render it as a QR code or deep link.  For further details, refer [Specify the Request Service REST API issuance request](issuance-request-api.md)
+    > IDV partner must provide or build the required web experience where the identity of the user can be proofed in any way necessary as agreed between the relying party application and IDV partner. When the process is completed a list of values are collected according to the Verified ID Credential Type. These values (as “claims” parameter) are passed as part of the Verified ID issuance request API call. If the IDV is building this journey on a webapp, IDV needs to render it as a QR code or deep link.  For further details, refer [Specify the Request Service REST API issuance request](issuance-request-api.md)
 
 7.	IDV redirects the user back to the customer’s relying party application. 
 
@@ -70,7 +68,7 @@ Identity Verification (IDV) partners are ISVs who can use Verified ID Request Se
 
 Application developers can use Verified ID issued by IDVs for the verification flows in their applications. Refer [planning a verification solution](plan-verification-solution.md) document for planning details. The steps required to setup verification are as follows:
 1.	Set up Microsoft Entra Verified ID Service: using [Quick setup](verifiable-credentials-configure-tenant-quick.md) or [Advanced setup instructions](verifiable-credentials-configure-tenant.md).
-2.	If you have details like **VCType** and **did** from the IDV partner, then you can use the payload reference from [Presentation Request API](presentation-request-api.md) section to verify Verified ID’s issued by Identity verification partners (IDVs). 
+2.	If you have details like **VCType** and **did** from the IDV partner, then you can use the payload reference from [Presentation Request API](presentation-request-api.md) section to verify Verified IDs issued by Identity verification partners (IDVs). 
 3. Customers can also generate the presentation request API payload using the following steps:
 	1. Go to **Microsoft Entra admin center** -> **Verified ID**.
 	2. Select **Create Verification Request** tab
