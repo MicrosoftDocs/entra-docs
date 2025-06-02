@@ -2,7 +2,7 @@
 title: Source of Authority (SOA) Migration Best Practices for Microsoft Entra ID
 description: Learn best practices for migrating Source of Authority (SOA) from Active Directory to Microsoft Entra ID, including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
 author: Justinha
-ms.topic: concept-article
+ms.topic: conceptual
 ms.date: 05/27/2025
 ms.author: justinha
 ms.reviewer: justinha
@@ -91,7 +91,7 @@ The following diagram and table below outlines the [cloud first](/entra/architec
 
 :::image type="content" source="media/concept-source-of-authority-overview/image2.png" alt-text="Screenshot of the cloud first and AD minimization approach.":::
 
-| *State* | *Description* |
+| State | Description |
 | --- | --- |
 | [Cloud attached](/entra/architecture/road-to-the-cloud-posture#state-1-cloud-attached) | In the cloud-attached state, organizations have created a Microsoft Entra tenant to enable user productivity and collaboration tools. The tenant is fully operational. |
 | [Hybrid](/entra/architecture/road-to-the-cloud-posture#state-2-hybrid) | In the hybrid state, organizations start to enhance their on-premises environment through cloud capabilities. |
@@ -104,9 +104,11 @@ The change of SOA from AD DS to Microsoft Entra has implications on how organiza
 
 ### Microsoft Entra HR inbound from an HR source such as Workday or SuccessFactors
 
-:::image type="content" source="media/concept-source-of-authority-overview/image3.png" alt-text="Screenshot of Microsoft Entra HR inbound configuration.":::
+Let's suppose your organization uses Microsoft Entra HR inbound from an HR source such as Workday or SuccessFactors to populate users in AD DS. You want to change the source of authority for one or more of those users. 
 
-If your organization is using Microsoft Entra HR inbound from an HR source such as Workday or SuccessFactors to populate users in AD, and you wish to change the source of authority for one or more of those users, then you’ll need to update your Microsoft Entra HR inbound configuration to send any subsequent changes for those users to Microsoft Entra ID. For more information, see <u>Shift your HR integration to the cloud</u>.
+You’ll need to update your Microsoft Entra HR inbound configuration to send any subsequent changes for those users to Microsoft Entra ID. For more information, see [Shift your HR integration to the cloud](#shift-your-hr-integration-to-the-cloud-only-for-user-soa)
+
+:::image type="content" source="media/concept-source-of-authority-overview/image3.png" alt-text="Screenshot of Microsoft Entra HR inbound configuration.":::
 
 ### Active Directory Users and Computers or the Active Directory module for PowerShell
 
@@ -116,7 +118,7 @@ If your organization is using AD management tools such as Active Directory Users
 
 :::image type="content" source="media/concept-source-of-authority-overview/image4.png" alt-text="Screenshot of Microsoft Identity Manager with the AD MA.":::
 
-If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to a SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are sent to Microsoft Entra and then to Active Directory where needed. For more information, see <u>Prep your MIM setup</u>.
+If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to a SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are sent to Microsoft Entra and then to Active Directory where needed. For more information, see Prep your MIM setup.
 
 ### Applications (User SOA only)
 
@@ -142,38 +144,17 @@ The following outlines what you need to do to get ready for the SOA change.
 
 ### Confirm your AD objects are ready to have their SOA changed
 
-Prior to changing the SOA on a user or group object, retrieve the objects from your AD domain and confirm that they’re ready to be converted.
+Prior to changing the SOA on a user or group object, retrieve the objects from AD DS, and confirm that they’re ready to be converted.
 
-- Confirm that the objects are already synchronized to Microsoft Entra.
-  Administrative objects or those excluded from synchronization can’t
-  have their SOA changed.
+- Confirm that the objects are already synchronized to Microsoft Entra. Administrative objects or those excluded from synchronization can’t have their SOA changed.
 
-<!-- -->
+- Confirm that all attributes which you have or plan to modify on those users or groups are being synched to Microsoft Entra and are visible as [directory schema extensions](/graph/api/resources/extensionproperty) in Microsoft Graph.
 
-- Confirm that all attributes which you have or plan to modify on those
-  users or groups are being synched to Microsoft Entra and are visible
-  as \[directory schema extensions\]
-  /graph/api/resources/extensionproperty in Microsoft Graph.
+- Confirm there are no reference-valued attributes populated on those objects in AD, other than the user’s manager or the group’s members.
 
-<!-- -->
+- Confirm that the value of the manager and member attributes, if set, must be references to users and groups in the same AD domain and that is synchronized to Microsoft Entra; they can’t refer to other object types or to objects that aren’t synchronized from the same domain to Microsoft Entra.
 
-- Confirm there are no reference-valued attributes populated on those
-  objects in AD, other than the user’s manager or the group’s members.
-
-<!-- -->
-
-- Confirm that the value of the manager and member attributes, if set,
-  must be references to users and groups in the same AD domain and that
-  are synchronized to Microsoft Entra; they can’t refer to other object
-  types or to objects which aren’t synchronized from this domain to
-  Microsoft Entra.
-
-<!-- -->
-
-- Confirm that there are no attributes on the objects which are updated
-  by another Microsoft on-premises technology, other than Active
-  Directory Domain Services itself. For example, don’t change the SOA of
-  a user whose userCertificate attribute is maintained by AD CS.
+- Confirm that there are no attributes on the objects which are updated by another Microsoft on-premises technology, other than AD DS itself. For example, don’t change the SOA of a user whose **userCertificate** attribute is maintained by AD CS.
 
 ### Update your AD
 
@@ -199,51 +180,22 @@ planning your source of authority change project.
 
 This section assumes you have Microsoft Entra cloud integrations with
 your HR sources, such as Workday or SuccessFactors. If you’re using MIM
-and have your HR systems connected through MIM,  follow the steps called
-out in the [Section “Prep for MIM”](bookmark://_Prep_your_MIM).
+and have your HR systems connected through MIM, follow the steps in [Prepare your MIM setup](#prepare-your-mim-setup).
 
 :::image type="content" source="media/concept-source-of-authority-overview/image7.png" alt-text="Screenshot of the steps for shifting HR integration to the cloud.":::
 
 ### Steps for shifting your HR integration to the cloud
 
-1.  Make sure you have your cloud HR system is ready and in place to
-    initiate provisioning to Entra ID.
+1. Make sure your cloud HR system is ready and in place to
+initiate provisioning to Microsft Entra ID.
+1. Go to your HR Provisioning to AD configuration and remove the users no longer needed in AD from the App-to-AD provisioning configuration (for example, Workday to AD DS) so they no longer sync into AD. Apply a phased approach to provision identities from the HR system into the directory by starting with a few users and then using your selection criteria to scope users.
+1. Switch the Source of Authority of the selected users from AD DS to Microsoft Entra ID.
+1. In your HR Provisioning configuration, manually migrate or transfer the attribute mappings to ensure the transformation happens from HR to Microsoft Entra ID. This would require you setting up a new provisioning configuration with target as Microsoft Entra ID and setting up the mappings in that configuration.
+1. If you have switched AD group management to the cloud, ensure these users are provisioned into that group moving forward.
 
-<!-- -->
+### Prepare your sync client
 
-2.  Go to your HR Provisioning to AD configuration and remove the users
-    no longer needed in AD from the App-\> AD provisioning configuration
-    (e.g., Workday to AD) so they no longer sync into AD. Apply phased
-    approach to provision identities from HR system into directory by
-    starting with a few users and then using your selection criteria to
-    scope users.
-
-<!-- -->
-
-3.  Switch the Source of Authority of the selected users from AD to
-    Entra ID.
-
-<!-- -->
-
-4.  In your HR Provisioning configuration, manually Migrate/transfer
-    attribute mappings from to ensure the mappings/transformation
-    happens from HR to Entra ID. This would require you setting up a new
-    provisioning configuration with target as Entra ID and setting up
-    the mappings in that configuration.
-
-<!-- -->
-
-5.  If you have switched AD group management to the cloud, ensure these
-    users are provisioned into that group moving forward.
-
-### Prep your sync client
-
-\<\<need a visual diagram to help Admins understand this prep\>\>
-
-\[Duplicate the above title for each best practice. Describe the best
-practice. Use H2s to define best practices, even if you include best
-practices section H2s. You can provide steps to show how to implement a
-recommendation.\] 
+<!---need a visual diagram to help Admins understand this prep--->
 
 ### Prepare your MIM setup
 
@@ -295,17 +247,19 @@ For more information about how to disable Exchange Hybrid, see [Manage recipient
 
 1. Identify the users and/or groups for whom you’re going to Switch the source of authority (SOA) to Entra ID. Ensure these users and groups are currently being synced using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync.
 
-1. **Note:** **If you’re moving groups first, we recommend you first Switch the source of authority of the groups’ first before doing it for users**
+   >[!NOTE]
+   >If you’re moving groups first, we recommend you first switch the source of authority of the groups before users.
 
-1. Remove these users from the App-> AD provisioning configuration (e.g., Workday to AD or MIM to AD etc.) so they no longer sync into AD.
+1. Remove these users from the App-to-AD provisioning configuration (for example, Workday-to-AD, MIM-to-AD, and so on) so they no longer sync into AD.
 
-1. **Note: How you remove the users and/or groups from scope depends on the management tool**
+   >[!NOTE]
+   >How you remove the users and groups from scope depends on the management tool.
 
 1. Wait for the sync cycle to complete and make sure the object data is the same between AD and Entra ID. You can use tools like Provision on-demand to do this.
 
-1. Stop making any changes to the users and/or groups in Step #2 in AD directly.
+1. Stop making any changes to the users and groups in Step #2 in AD directly.
 
-1. Switch the SOA of the users and/or groups identified in Step #2 by running the API provided as part of SOA feature. You can also customize this script to enable bulk operations.
+1. Switch the SOA of the users and groups identified in Step #2 by running the API provided as part of SOA feature. You can also customize this script to enable bulk operations.
 
 1. Confirm that the users and groups can now be managed from the cloud by following these steps:
 
