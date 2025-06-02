@@ -45,6 +45,23 @@ Traffic logs include four TLS-related metadata fields that help you understand h
 
 To get started with TLS inspection, see [Configure Transport Layer Security](how-to-transport-layer-security.md). 
 
+## Supported Cyphers
+|List of supported cyphers  |
+|-------------------|
+|ECDHE-ECDSA-AES128-GCM-SHA256|
+|ECDHE-ECDSA-CHACHA20-POLY1305| 
+|ECDHE-RSA-AES128-GCM-SHA256|
+|ECDHE-RSA-CHACHA20-POLY1305| 
+|ECDHE-ECDSA-AES128-SHA| 
+|ECDHE-RSA-AES128-SHA| 
+|AES128-GCM-SHA256| 
+|AES128-SHA|
+|ECDHE-ECDSA-AES256-GCM-SHA384|
+|ECDHE-RSA-AES256-GCM-SHA384 |
+|ECDHE-ECDSA-AES256-SHA |
+|ECDHE-RSA-AES256-SHA |
+|AES256-GCM-SHA384| 
+|AES256-SHA |
 ## Known limitations
 TLS inspection has the following known limitations:
 - When a TLS inspection rule is enabled, all categories except Education, Government, Finance, and Health and Medicine are decrypted by default. Additionally, Global Secure Access manages a system bypass list that includes common destinations known to be incompatible with TLS inspection. If a request matches the system bypass, the TLS action is logged as Bypassed. Work is underway to support custom TLS rules for intercepting or bypassing specific destinations or categories. In the meantime, use the custom bypass feature in the Internet Access forwarding profile to exclude destinations that TLS inspection affects. 
@@ -52,9 +69,9 @@ TLS inspection has the following known limitations:
 - You can use only one active certificate at a time.
 - TLS inspection doesn't support Application-Layer Protocol Negotiation (ALPN) version 2. If a destination site requires HTTP/2, the upstream TLS handshake fails, and the site isn't accessible when TLS inspection is enabled.
 - TLS inspection doesn't follow Authority Information Access (AIA) and Online Certificate Status Protocol (OCSP) links when validating destination certificates.
+- Many mobile applications implement certificate pinning, which prevents successful TLS inspection and may lead to app failures. As a result, support for TLS inspection on mobile platforms is limited. We recommend enabling TLS inspection for Windows platform only at this time."
 
 ## Related content
 
 * [Configure Transport Layer Security](how-to-transport-layer-security.md)
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
-* [Ciphers for Microsoft Entra Private Access](reference-ciphers.md)
