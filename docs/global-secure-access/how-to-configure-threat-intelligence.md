@@ -15,7 +15,7 @@ ms.reviewer: fgomulka
 
 Threat intelligence empowers you to protect your users from accessing malicious destinations on the internet, based on real-time data on current threats. 
 
-You can configure a threat intelligence policy to block users from high-severity known malicious internet destinations. In this policy, Microsoft Entra Internet Access blocks traffic based on domain and URL indicators from both Microsoft and third-party threat intelligence providers. With the threat intelligence rule engine, you can also configure allow lists for handling false positives. All of these policies can become context-aware with the Security Profile framework, linking GSA security policies to Conditional Access. 
+You can configure a threat intelligence policy to block users from high-severity known malicious internet destinations. In this policy, Microsoft Entra Internet Access blocks traffic based on domain and URL indicators from both Microsoft and third-party threat intelligence providers. With the threat intelligence rule engine, you can also configure allow lists for handling false positives. All of these policies can become context-aware with the Security Profile framework, linking Global Secure Access (GSA) security policies to Conditional Access. 
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ You can configure a threat intelligence policy to block users from high-severity
 - Disable built-in DNS client on Chrome and Microsoft Edge.
 - IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
 - User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
-- (Optional) [Configure TLS inspection](how-to-transport-layer-security) in order for URL indicators to be evaluated against HTTPS traffic.
+- (Optional) [Configure Transport Layer Security (TLS) inspection](how-to-transport-layer-security) in order for URL indicators to be evaluated against HTTPS traffic.
 
 ## High level steps
 
@@ -51,22 +51,22 @@ You can scope the Internet Access profile to specific users and groups. To learn
 1. Browse to **Global Secure Access** > **Secure** > **Threat Intelligence Policies**.
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
-1. The default action for threat intelligence is "Allow". This means that if traffic does not match a rule in the threat intelligence policy, the policy engine will allow the traffic to go to the next security control.
+1. The default action for threat intelligence is "Allow". This means that if traffic doesn't match a rule in the threat intelligence policy, the policy engine will allow the traffic to go to the next security control.
 1. Select **Next** and **Review** your new threat intelligence policy.
 1. Select **Create**
 
 > [!IMPORTANT]
-> This policy will be created with a rule blocking access to destinations where high severity threats are detected.
+> This policy is created with a rule blocking access to destinations where high severity threats are detected.
 
 ## Configure your allow list (optional)
 
-If you are aware of sites that may be business-critical or have been identified as false positives in the past, you can configure rules that allow these sites. Please note the security risks involved with this action, as the internet threat landscape is ever-changing.
+If you're aware of sites that may be business-critical or are labeled as false positives, you can configure rules that allow these sites. Note the security risks involved with this action, as the internet threat landscape is ever-changing.
 
 1. Under **Global Secure Access** > **Secure** > **Threat Intelligence Policies**, select your chosen threat intelligence policy.
 1. Select **Rules**.
 1. Select **Add rule**.
 1. Enter a name, description, priority, and status for the rule.
-1. Edit **Destination FQDNs** and select the list of domains for your allow list. You can enter these as comma-separated domains.
+1. Edit **Destination FQDNs** and select the list of domains for your allow list. You can enter these FQDNs as comma-separated domains.
 1. Select **Add**. 
 
 ## Create a security profile
@@ -113,8 +113,8 @@ You can scope the Internet Access profile to specific users and groups. To learn
 Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to malicious websites is blocked as expected.
 
 1. Right-click on the Global Secure Access client icon in the task manager tray and open **Advanced Diagnostics** > **Forwarding profile**. Ensure that the Internet access acquisition rules are present.
-1. Navigate to a known malicious site (for example, `entratestthreat.com` or `smartscreentestratings2.net`). Ensure that you are blocked and that the Threat Type field is non-empty in the traffic logs. Traffic logs may take up to 5 minutes to appear in the portal.
-1. If blocked by Windows Defender or Smartscreen, override and access the site to test the Global Secure Access block message.
+1. Navigate to a known malicious site (for example, `entratestthreat.com` or `smartscreentestratings2.net`). Ensure that you're blocked and that the Threat Type field is nonempty in the traffic logs. Traffic logs may take up to 5 minutes to appear in the portal.
+1. If blocked by Windows Defender or Smart screen, override and access the site to test the Global Secure Access block message.
 1. To test allow-listing, create a rule in the Threat Intelligence policy to allow access to the site. Within 2 minutes, you should be able to access it. (You may need to clear your browser cache.)
 1. Evaluate the rest of the threat feed against your known threat indicators.
 
