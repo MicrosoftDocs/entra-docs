@@ -123,7 +123,7 @@ When setting the scope of the group membership change trigger, the following det
 
 ## On-demand only trigger
 
-The **On-demand only** trigger is set to only run the workflow for users you manually select. Workflows with these triggers don't run on a schedule. The users are selected within the scope details section of the workflow.
+The **On-demand only** trigger is set to run the workflow for users you manually select. Workflows with these triggers don't run on a schedule. The users are selected within the scope details section of the workflow.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/on-demand-select-users.png" alt-text="Screenshot of selecting users for manual workflow execution.":::
 
