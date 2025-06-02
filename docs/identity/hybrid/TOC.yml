@@ -104,8 +104,6 @@
       items:
         - name: Multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect
           href: connect/parallel-hybrid-migration.md
-    - name: SOA overview
-      href: concept-source-of-authority-overview.md
 - name: Cloud sync reference
   items:
     - name: What is cloud sync?
@@ -573,3 +571,14 @@
           href: connect/reference-connect-version-history-archive.md
         - name: How to use BypassDirSyncOverrides
           href: connect/how-to-bypassdirsyncoverrides.md
+- name: Source of Authoity reference
+  items:
+  - name: Concepts
+    items:
+    - name: SOA overview
+      href: concept-source-of-authority-overview.md
+  - name: How-to guides
+    items:
+  - name: Reference
+    items:
+
