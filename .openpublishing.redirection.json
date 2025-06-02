@@ -106,7 +106,7 @@
       "redirect_document_id": true
     },
     {
-      "source_path_from_root": "/docs/identity/devices/enterprise-state-roaming-windows-settings-reference-.md",
+      "source_path_from_root": "/docs/identity/devices/enterprise-state-roaming-windows-settings-reference.md",
       "redirect_url": "/windows/configuration/windows-backup/catalog-esr",
       "redirect_document_id": false
     },
