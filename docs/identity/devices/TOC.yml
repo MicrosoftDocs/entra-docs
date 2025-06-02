@@ -111,7 +111,7 @@
     - name: Enterprise state roaming Group Policy Object (GPO) settings
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Enterprise state roaming Windows settings
-      href: enterprise-state-roaming-windows-settings-reference.md
+      href: /windows/configuration/windows-backup/catalog-esr
   - name: KDFv1 removal
     href: deprecation-key-derivation-function-version-1.md
 - name: Reference
