@@ -2,11 +2,11 @@
 title: Interactive user sign-in logs
 description: Learn about the type of information captured in the interactive user sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: femila
+manager: pmwongera 
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 03/17/2025
+ms.date: 06/02/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ms.custom: sfi-image-nochange
@@ -51,7 +51,7 @@ The interactive sign-in logs now include details about when a partner accesses a
 
 ### Non-interactive sign-ins on the interactive sign-in logs
 
-Previously, some non-interactive sign-ins from Microsoft Exchange clients were included in the interactive user sign-in log for better visibility. This increased visibility was necessary before the non-interactive user sign-in logs were introduced in November 2020. However, it's important to note that some non-interactive sign-ins, such as those using FIDO2 keys, might still be marked as interactive due to the way the system was set up before the separate non-interactive logs were introduced. These sign-ins might display interactive details like client credential type and browser information, even though they're technically non-interactive sign-ins.
+Previously, some non-interactive sign-ins were included in the interactive user sign-in log for better visibility. This increased visibility was necessary before the non-interactive user sign-in logs were introduced in November 2020. Non-interactive sign-ins involving FIDO2 keys were previously marked as interactive sign-ins, even though they were technically non-interactive. As of April 11, 2025, all new sign-ins that obtain a refresh token with FIDO2 keys are now logged in the non-interactive sign-in logs.
 
 ### Passthrough sign-ins
 

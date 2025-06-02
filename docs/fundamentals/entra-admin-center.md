@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
-author: jason-nydegger
-manager: CelesteDG
+author: barclayn
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 04/25/2025
-ms.author: janydegger
+ms.author: barclayn
 ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
 ---
