@@ -55,11 +55,11 @@ Group SOA converts the group to a cloud object. After it converts, you can edit,
 
 The following table outlines the scenarios that are supported using Group SOA.
 
-| Scenario | Description | Solution |
+|Scenario | Description | Solution |
 | --- | --- | --- |
-| Govern access with Microsoft Entra ID Governance | There are applications in your portfolio that you can’t modernize or that connect to AD DS. These applications use Kerberos or LDAP to query non-mail-enabled security groups in AD DS to determine access permissions. Your goal is to regulate access to these applications with Microsoft Entra ID and Microsoft Entra ID Governance. This goal necessitates that the group membership information that Microsoft Entra manages be accessible to the applications. | You can achieve your goal in one of two ways: <br> 1. Use the Groups SOA Preview instructions document from the Private Preview channel to change the source of authority of the existing AD DS. Provision the groups back to AD DS with Group Provision to AD DS. In this model, you don’t need to change the app or create new groups. For more information, see Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance. <br> 2. To replicate the groups in AD DS, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD DS as Universal groups with Group Provision to AD DS. In this model, you can change the app to use the new group security identifiers (SID). If you use the account, global, domain local, permission model, nest the newly provisioned group under the existing group. For more information, see Govern on-premises Active Directory (Kerberos) application access with groups from the cloud - Microsoft Entra ID | Microsoft Learn. |
+| Govern access with Microsoft Entra ID Governance | There are applications in your portfolio that you can’t modernize or that connect to AD DS. These applications use Kerberos or LDAP to query non-mail-enabled security groups in AD DS to determine access permissions. Your goal is to regulate access to these applications with Microsoft Entra ID and Microsoft Entra ID Governance. This goal necessitates that the group membership information that Microsoft Entra manages be accessible to the applications. | You can achieve your goal in one of two ways: <br> 1. Use the Groups SOA Preview instructions document from the Private Preview channel to change the source of authority of the existing AD DS. Provision the groups back to AD DS with Group Provision to AD DS. In this model, you don’t need to change the app or create new groups. For more information, see Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance. <br> 2. To replicate the groups in AD DS, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD DS as Universal groups with Group Provision to AD DS. In this model, you can change the app to use the new group security identifiers (SID). If you use the account, global, domain local, permission model, nest the newly provisioned group under the existing group. For more information, see Govern on-premises Active Directory (Kerberos) application access with groups from the cloud - Microsoft Entra ID. |
 | AD DS Minimization | You modernized some or all your applications and removed the need to use AD DS groups for access. For example, these applications now use group claims with Security Assertion Markup Language (SAML) or OpenID Connect from Microsoft Entra ID instead of federation systems such as AD FS. However, these apps still rely on the existing synched security group to manage access. Using Group SOA, you can make the security group membership editable in the cloud, remove the AD DS security group completely, and govern the cloud security group through Microsoft Entra ID Governance capabilities if desired. | You can use Group SOA to make these groups cloud managed groups and remove them from AD DS. You can continue to create new groups directly in the cloud. For more information, see Best practices for managing groups in the cloud. |
-| Remove on-premises Exchange dependencies | You migrated all user exchange mailboxes to the cloud. You updated applications that rely on mail routing features to use modern authentication methods like SAML and OpenID Connect. You no longer need to manage Distribution Lists (DL) and Mail-Enabled Security Groups (MESG) in AD DS. Your goal is to migrate existing DLs and MESGs to the cloud. Then you either update these groups to Microsoft 365 groups or manage them through Exchange Online. | You can achieve this goal with Group SOA to make these groups cloud managed groups and remove them from AD DS. You can continue to edit these groups directly in EXO or via Exchange PowerShell modules . These mail objects cannot be managed directly in Microsoft Entra ID or using the MS Graph APIs. |
+| Remove on-premises Exchange dependencies | You migrated all user exchange mailboxes to the cloud. You updated applications that rely on mail routing features to use modern authentication methods like SAML and OpenID Connect. You no longer need to manage Distribution Lists (DL) and Mail-Enabled Security Groups (MESG) in AD DS. Your goal is to migrate existing DLs and MESGs to the cloud. Then you either update these groups to Microsoft 365 groups or manage them through Exchange Online. | You can achieve this goal with Group SOA to make these groups cloud managed groups and remove them from AD DS. You can continue to edit these groups directly in Exchange Online or by using Exchange PowerShell modules. These mail objects can't be managed directly in Microsoft Entra ID or using the Microsoft Graph APIs. |
 
 ## Benefits of using Group SOA
 
@@ -289,117 +289,60 @@ Exchange Hybrid by completing following steps:
 
 For more information about how to disable Exchange Hybrid, see [Manage recipients in Exchange Hybrid environments using Management tools](/exchange/manage-hybrid-exchange-recipients-with-management-tools).
 
-## Sequence of Steps for using SOA
+## Sequence of steps for using SOA
 
 :::image type="content" source="media/concept-source-of-authority-overview/image10.png" alt-text="Screenshot of the sequence of steps for using SOA.":::
 
-1.  Identify the users and/or groups for whom you’re going to Switch the
-    source of authority (SOA) to Entra ID. Ensure these users and groups
-    are currently being synced using Microsoft Entra Connect Sync or
-    Microsoft Entra Cloud Sync.
+1. Identify the users and/or groups for whom you’re going to Switch the source of authority (SOA) to Entra ID. Ensure these users and groups are currently being synced using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync.
 
-<!-- -->
+1. **Note:** **If you’re moving groups first, we recommend you first Switch the source of authority of the groups’ first before doing it for users**
 
-1.  **Note:** **If you’re moving groups first, we recommend you first
-    Switch the source of authority of the groups’ first before doing it
-    for users**
+1. Remove these users from the App-> AD provisioning configuration (e.g., Workday to AD or MIM to AD etc.) so they no longer sync into AD.
 
-<!-- -->
+1. **Note: How you remove the users and/or groups from scope depends on the management tool**
 
-2.  Remove these users from the App-\> AD provisioning configuration
-    (e.g., Workday to AD or MIM to AD etc.) so they no longer sync into
-    AD.
+1. Wait for the sync cycle to complete and make sure the object data is the same between AD and Entra ID. You can use tools like Provision on-demand to do this.
 
-<!-- -->
+1. Stop making any changes to the users and/or groups in Step #2 in AD directly.
 
-1.  **Note: How you remove the users and/or groups from scope depends on
-    the management tool**
+1. Switch the SOA of the users and/or groups identified in Step #2 by running the API provided as part of SOA feature. You can also customize this script to enable bulk operations.
 
-<!-- -->
+1. Confirm that the users and groups can now be managed from the cloud by following these steps:
 
-3.  Wait for the sync cycle to complete and make sure the object data is
-    the same between AD and Entra ID. You can use tools like Provision
-    on-demand to do this.
+   1. Go to the Microsoft Entra admin center and find the user/group you switched SOA of and see if they’re a cloud object that can be edited.
 
-<!-- -->
+      -Or-
 
-4.  Stop making any changes to the users and/or groups in Step \#2 in AD
-    directly.
+      Run this script to check if the **DirSync** and **isCloudManaged** attributes are set to cloud.
 
-<!-- -->
+   1. Check the events listed here in Audit logs to see whether the SOA status has changed.
 
-5.  Switch the SOA of the users and/or groups identified in Step \#2 by
-    running the . You can also customize this script to enable bulk
-    operations.
+1. Continue to keep the users and groups in scope for Connect/Cloud Sync. This is needed if these objects have references to groups, devices and contacts managed in AD DS.
 
-<!-- -->
+1. Change the direction of provisioning for users in Step #2 in order to ensure these user changes are provisioned directly into Microsoft Entra ID from the corresponding HR systems.
 
-6.  Confirm that the users and/or groups can now be managed from the
-    cloud by following these steps.
+1. Create a new provisioning configuration to provision the users in Step #2 from equivalent cloud app system to Microsoft Entra ID by using the Provisioning API.
 
-<!-- -->
+1. Start provisioning the same users (from Step #2) from cloud system (HR or other apps) into Microsoft Entra directly.
 
-1.  Go to the Micrsoft Entra admin center and find the user/group you
-    switched SOA of and see if they’re a cloud object and can be edited
-    (or)
-
-<!-- -->
-
-2.  Run this script to check if the “DirSync” and “isCloudManaged”
-    attribute it set to cloud
-
-<!-- -->
-
-3.  Check the events listed here in Audit logs to see whether the SOA
-    status has changed
-
-<!-- -->
-
-7.  Continue to keep the users and/or groups in scope for Connect/Cloud
-    Sync. This is needed if these objects have references to groups,
-    devices and contacts managed in AD.
-
-<!-- -->
-
-8.  Change the direction of provisioning for users in \#2 in order to
-    ensure these user changes are provisioned directly into Entra ID
-    from the corresponding HR systems.
-
-<!-- -->
-
-1.  Create a new provisioning configuration to provision the users in
-    \#2 from equivalent cloud app system to Entra ID using Provisioning
-    API
-
-- Start provisioning the same users (from \#2) from cloud system (HR or
-  other apps) into Entra directly.
-
-<!-- -->
-
-- At this point, SOA transfer is complete, and the identities have
-  started flowing from Cloud system -\> Entra ID or Entra ID has become
-  the source of authority.
+At this point, SOA transfer is complete, and the identities have started flowing from the cloud system to Microsoft Entra ID, or Microsoft Entra ID has become the source of authority.
 
 ## Validate your SOA change end to end
 
 Once you have switched the source of authority of the object, you can
-either go to the Micrsoft Entra admin center or use MS Graph API to
-check if the switched object is a cloud object. In the Micrsoft Entra
-admin center, you can click on the switched object and see that it’s now
-editable. In MS Graph API for user/group resources, you can validate if
-the “isDirSyncEnabled” field is set to “false” and “isCloudManaged”
-field is set to “true”.
+either go to the Micrsoft Entra admin center or use Microsoft Graph API to check if the switched object is a cloud object. In the Micrsoft Entra
+admin center, you can click the switched object and see that it’s now
+editable. In Microsoft Graph API for user/group resources, you can validate if the **isDirSyncEnabled** field is set to `false` and **isCloudManaged** field is set to `true`.
 
 You can also look at the following events in the Audit logs:
 
-- Change Source of Authority from AD to cloud” - for an object that
-  switched SOA to the cloud
+- Change Source of Authority from AD to cloud - for an object that
+  switched SOA to the cloud.
 
-<!-- -->
-
-- Undo changes to source of authority from AD to cloud” – for rollback
+- Undo changes to source of authority from AD to cloud – for rollback
   of SOA change.
 
+<!---
 === Appendix / Reference material ===
 
 | Object Type | Attributes | Attribute status in AD DS | Attribute status in Microsoft Entra |
@@ -410,3 +353,8 @@ You can also look at the following events in the Audit logs:
 |  |  | Can be read and can’t be updated | Can be read and updated |
 |  |  |  |  |
 |  |  |  |  |
+--->
+
+## Related content
+
+How to use Group Source of Authority
