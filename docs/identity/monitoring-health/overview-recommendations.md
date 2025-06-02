@@ -2,11 +2,11 @@
 title: What are Microsoft Entra recommendations?
 description: Provides a general overview of Microsoft Entra recommendations so you can keep your tenant secure and healthy.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: monitoring-health
-ms.date: 05/30/2025
+ms.date: 06/02/2025
 ms.author: sarahlipsey
 ms.reviewer: jadedsouza 
 ms.custom: sfi-ga-nochange
@@ -41,7 +41,7 @@ The recommendations listed in the following table are currently available in pub
 | Recommendation | Impacted resources | Availability | Identity Secure Score | Target roles for email notifications |
 | --- | --- | --- | --- | --- |
 | AAD Connect Deprecated | Tenant | Preview | No | Hybrid Identity Administrator |
-| Configure VPN integration | | Tenant | Preview | Yes | |
+| Configure VPN integration | Users | Preview | Yes | |
 | [Convert per-user MFA to Conditional Access MFA](recommendation-turn-off-per-user-mfa.md) | Users | Generally available | No | Security Administrator |
 | Designate more than one Global Administrator | Users | Generally available | Yes | Global Administrator |
 | Do not allow users to grant consent to unreliable applications | Tenant | Generally available | Yes | Global Administrator |
@@ -76,7 +76,7 @@ The recommendations listed in the following table are currently available in pub
 | Review inactive users with Access Reviews | Users | Preview | No | Identity Governance Administrator |
 | Rotate password for Entra Connect AD DS Connector account | Users | Preview | Yes | |
 | Secure and govern your apps with automatic user and group provisioning | Applications | Preview | No | Application Administrator, IT Governance Administrator |
-| Stop clear text credentials exposure | | Preview | Yes | |
+| Stop clear text credentials exposure | Users | Preview | Yes | |
 | Stop weak cipher usage | Tenant | Preview | Yes | |
 | Use least privileged administrative roles | Users | Generally available | Yes | Privileged Role Administrator |
 | Verify App Publisher | Applications | Preview | No | Global Administrator |
