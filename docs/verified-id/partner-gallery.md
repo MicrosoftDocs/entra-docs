@@ -14,7 +14,7 @@ ms.author: barclayn
 Our Identity Verification (IDV) partner network extends Microsoft Entra Verified ID capabilities to help you build seamless end-user experiences. With Verified ID, you can integrate with IDV partners to enable scenarios like remote onboarding with government ID checks using identity verification and proofing services.
 The diagram shows a low-level workflow of how all parties interact with each other in a remote onboarding scenario. This integration pattern could be used as a reference. 
 
-:::image type="content" source="media/partner-gallery/identity-verification-integration.png" alt-text="Screenshot of the IDV integration pattern." lightbox="true":::
+:::image type="content" source="media/partner-gallery/identity-verification-integration.png" alt-text="Screenshot of the IDV integration pattern." lightbox="media/partner-gallery/identity-verification-integration.png":::
 
 The following section covers a set of steps that IDVs can use for setting up issuance flows and by customers for verifying IDV Verified IDs.
 
