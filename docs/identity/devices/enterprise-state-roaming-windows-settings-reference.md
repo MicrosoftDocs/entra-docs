@@ -48,8 +48,6 @@ For more information on the Sync behavior for the new Microsoft Edge, see the ar
 
 Microsoft Edge browser setting group (favorites, reading list) syncing is managed through the Microsoft Edge browser Settings menu option.
 
-![Account](./media/enterprise-state-roaming-windows-settings-reference/entra-enterprise-state-roaming-edge.png)
-
 ## Next steps
 
 For an overview, see [enterprise state roaming overview](./enterprise-state-roaming-enable.md).
