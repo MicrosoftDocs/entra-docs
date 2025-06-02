@@ -1,4 +1,15 @@
-**Govern on-premises Active Directory based apps (Kerberos) using
+---
+title: Govern On-Premises Active Directory Apps with Microsoft Entra ID Governance
+description: Learn how to govern on-premises Active Directory-based applications using Microsoft Entra ID Governance, including supported scenarios, prerequisites, and step-by-step guidance for managing AD group memberships and application access.
+author: Justinha
+
+ms.topic: how-to
+ms.date: 06/02/2025
+ms.author: justinha
+ms.reviewer: justinha
+---
+
+# Govern on-premises Active Directory based apps (Kerberos) using
 Microsoft Entra ID Governance**
 
 | ***Intro text: The content in this article will be appended to the existing article at <https://learn.microsoft.com/entra/identity/hybrid/cloud-sync/govern-on-premises-groups>*** |
