@@ -24,7 +24,7 @@ This article provides information about the latest releases and change announcem
 
 ## May 2025
 
-### Public Preview - Microsoft Entra External ID:  User authentication with SAML/WS-Fed Identity Providers
+### General Availability - Microsoft Entra External ID:  User authentication with SAML/WS-Fed Identity Providers
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management  
