@@ -1,14 +1,14 @@
 ---
 title: How to configure Global Secure Access threat intelligence
 description: Learn how to configure threat intelligence in Microsoft Entra Internet Access.
-author: frankgomulka
+author: fgomulka
 ms.author: frankgomulka
 manager: ashishj
 ms.topic: how-to
 ms.date: 05/29/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
-ms.reviewer: frankgomulka
+ms.reviewer: fgomulka
 ---
 
 # How to configure Global Secure Access threat intelligence (preview)
@@ -28,7 +28,7 @@ You can configure a threat intelligence policy to block users from high-severity
 - Disable built-in DNS client on Chrome and Microsoft Edge.
 - IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
 - User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
-- (Optional) [Configure TLS inspection](how-to-configure-tls-inspection) in order for URL indicators to be evaluated against HTTPS traffic.
+- (Optional) [Configure TLS inspection](how-to-transport-layer-security) in order for URL indicators to be evaluated against HTTPS traffic.
 
 ## High level steps
 
@@ -36,7 +36,7 @@ There are several steps to configuring threat intelligence. Take note of where y
 
 1. [Enable internet traffic forwarding.](#enable-internet-traffic-forwarding)
 1. [Create a threat intelligence policy.](#create-a-threat-intelligence-policy)
-1. [Configure your allow list (optional).](#configure-your-allow-list-(optional))
+1. [Configure your allow list (optional).](#configure-your-allow-list-optional)
 1. [Create a security profile.](#create-a-security-profile)
 1. [Link the security profile to a Conditional Access policy.](#create-and-link-conditional-access-policy)
 
@@ -118,7 +118,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 1. To test allow-listing, create a rule in the Threat Intelligence policy to allow access to the site. Within 2 minutes, you should be able to access it. (You may need to clear your browser cache.)
 1. Evaluate the rest of the threat feed against your known threat indicators.
 
-![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-ti.png)
+![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-threat-intelligence/http-block-ti.png)
 
 > [!CAUTION]
 > Testing with real malicious sites should be performed in a sandbox or test environment to protect your device and enterprise.
