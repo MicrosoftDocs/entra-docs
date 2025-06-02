@@ -3,33 +3,42 @@ title: Remediate risks and unblock users
 description: Learn how to configure user self-remediation and manually remediate risky users in Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 04/10/2025
+ms.date: 06/02/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera
 ms.reviewer: chuqiaoshi
-ms.custom: sfi-image-nochange
+
 # Customer intent: As an IT admin, I want to learn how to remediate risks and unblock users in Microsoft Entra ID Protection.
 ---
 # Remediate risks and unblock users
 
 After completing your [risk investigation](howto-identity-protection-investigate-risk.md), you need to take action to remediate risky users or unblock them. You can enable automated remediation by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md) or manually updating the user's risk status. Microsoft recommends acting quickly because time matters when working with risks.
 
-This article covers several options for remediating risks. You can enable self-remediation for users or manually remediate risks on the user's behalf. This article also covers scenarios when users were blocked because of user risk, so you know how to unblock them.
+As an IT administrator, you can configure the ability for users to self-remediate or manually remediate on behalf of the user. This article covers several options for remediating risks and scenarios when users were blocked because of user risk, so you know how to unblock them.
+
+## Prerequisites
+
+- The [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) role is the least privileged role required to **reset passwords**.
+- The [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) role is the least privileged role required to **dismiss user risk**.
+- The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **create or edit risk-based policies**.
+- The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role is the least privileged role required to **create or edit Conditional Access policies**.
 
 ## Types of risk remediation
 
-All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so they're no longer at risk or blocked from access.
+All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so they're no longer at risk or blocked from access. How risk is remediated depends on your tenant configuration and the risk level of the user or sign-in.
 
-When Microsoft Entra ID Protection identifies a risk detection and the corresponding risky sign-in as no longer posing a security threat, the risk state is automatically updated as **Dismissed** and the risk detail as **Microsoft Entra ID Protection assessed sign-in safe**. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
+### Automatic risk remediation
 
-As an IT administrator, you can configure the ability for users to self-remediate or manually remediate on behalf of the user.
+When risk-based Conditional Access policies are configured, remediating user risk and sign-in risk can be a self-service process for users. This self-remediation allows users to resolve their own risks without needing to contact the help desk or an administrator. As an IT administrator, you might not need to take any action to remediate risks, but you do need to know how to configure the policies that allow self-remediation. This article explains how to enable self-remediation with risk-based Conditional Access policies and manual options for remediating risks. For details on how to configure risk-based policies, see []().
 
-Self-remediation options include:
+Automatic options include:
 
 - Set up risk-based policies to allow users to self-remediate their risks.
 - Allow users to self-remediate their user risks using self-service password reset (SSPR).
 - Initiate a password reset for the user to remediate their user risk.
+
+### Manual risk remediation
 
 Manual remediation options include:
 
@@ -38,6 +47,10 @@ Manual remediation options include:
 - Unblock the user based on user risk or sign-in risk.
 
 You can also [remediate in Microsoft Defender for Identity](/defender-for-identity/remediation-actions).
+
+### ID Protection risk remediation
+
+In some cases, Microsoft Entra ID Protection can also automatically dismiss a user's risk state. When Microsoft Entra ID Protection identifies a risk detection and the corresponding risky sign-in as no longer posing a security threat, the risk state is automatically updated as **Dismissed** and the risk detail as **Microsoft Entra ID Protection assessed sign-in safe**. This automatic intervention can happen if the user provides a second factor, such as multifactor authentication (MFA) or if the real-time and offline assessment determines that the sign-in is no longer risky. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
 
 ## User self-remediation
 
