@@ -2,7 +2,7 @@
 title: Extend or renew PIM for groups assignments
 description: Learn how to extend or renew PIM for groups assignments.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.reviewer: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: how-to
