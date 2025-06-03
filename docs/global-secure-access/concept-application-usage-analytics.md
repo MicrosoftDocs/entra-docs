@@ -5,8 +5,8 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: concept-article
-ms.date: 05/05/2025
-manager: femila
+ms.date: 06/03/2025
+manager: dougeby
 ms.reviewer: kerenSemel
 
 
@@ -14,26 +14,26 @@ ms.reviewer: kerenSemel
 ---
 
 # Application usage analytics overview
-Application usage analytics gives IT admins actionable insights into their organization's cloud application use. By analyzing traffic patterns, app categories, risk scores, and user activity, admins can identify shadow IT, generative AI apps, and potential security or compliance risks. This feature lets organizations enhance visibility, improve security posture, and optimize app use across their environment.
+Application usage analytics gives IT admins actionable insights into their organization's cloud application use. By analyzing traffic patterns, app categories, risk scores, and user activity, admins can identify shadow IT, generative AI apps, and potential security or compliance risks. This feature helps organizations enhance visibility, improve security posture, and optimize app use across their environment.
 
 ## Cloud application analytics
 Cloud application analytics give admins visibility and insights into the cloud applications their organization uses, including generative AI applications. These insights include the application category, risk score, number of transactions, traffic (bytes sent and received), and the users accessing the applications.   
 
-This information helps admins identify generative AI applications, shadow AI applications, and shadow IT. Insights gleaned from the analytics help the administrator understand the security and compliance status.   
+This information helps admins identify generative AI applications, shadow AI applications, and shadow IT. Insights from the analytics help admins check the security and compliance status.   
 
-### Key Capabilities
+### Key capabilities
 Key capabilities of cloud application analytics include:
 <!-- The images in this section have been modified to use approved, fictitious company names from https://microsoft.sharepoint.com/:b:/r/sites/CELAWeb-Copyrights-Trademarks-And-Patents/Shared%20Documents/Approved%20Fictitious%20Company%20Names%20and%20Domain%20Names%20-%20Oct%202024.pdf?csf=1&web=1&e=2JKgvG. -->
-- Identify the cloud applications accessed by users (using the Microsoft Defender for Cloud Apps Cloud app catalog), for both Internet and Microsoft 365 traffic. Details include **Name**, **Category**, **Risk score**, and the number of **Users**.  
+- Identify the cloud applications that users access (using the Microsoft Defender for Cloud Apps Cloud app catalog), for both internet and Microsoft 365 traffic. Details include **Name**, **Category**, **Risk score**, and the number of **Users**.  
 :::image type="content" source="media/concept-application-usage-analytics/application-discovery-cloud.png" alt-text="Screenshot of a list of discovered cloud applications accessed by users.":::
 
-- Identify the generative AI applications accessed by users, for both Internet and Microsoft 365 traffic.   
+- Identify the generative AI applications that users access, for both internet and Microsoft 365 traffic.   
 :::image type="content" source="media/concept-application-usage-analytics/application-discovery-generative-ai.png" alt-text="Screenshot of a list of discovered generative AI applications accessed by users.":::
 
-- The traffic log enriched to include **Cloud application** information, including application name, category, risk score, security score, legal score, and general score.
+- The traffic log includes **Cloud application** information, including application name, category, risk score, security score, legal score, and general score.
 :::image type="content" source="media/concept-application-usage-analytics/traffic-logs-enrichment.png" alt-text="Screenshot of the cloud application details of the traffic log.":::
 
-- Report on all cloud applications discovered, including insights into the number of transactions, the amount of traffic, and which users are accessing the applications.
+- Report on all discovered cloud applications, including insights into the number of transactions, the amount of traffic, and which users are accessing the applications.
 :::image type="content" source="media/concept-application-usage-analytics/usage-statistics.png" alt-text="Screenshot of cloud application usage statistics showing transactions over time.":::
 
 - Show statistics regarding the usage of an application segment and which users are accessing it.
@@ -49,10 +49,9 @@ Key capabilities of cloud application analytics include:
 
 
 ## Private application analytics
+Private application analytics gives IT admins visibility and insights into the private enterprise applications their organization uses, including quick access. These insights include the application name, application ID, users accessing the application, devices used, access type, number of transactions, bytes sent and received, and the first and last access times.
 
-## Use cases
-
-
+The dashboard shows the number of newly discovered network segments that aren't onboarded and includes a link to the Application discovery page.
 
 ## Related content
-- [Related article title](link.md)
+- [Application discovery for Global Secure Access](how-to-application-discovery.md)
