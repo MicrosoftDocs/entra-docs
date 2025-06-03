@@ -4,7 +4,9 @@ title: Microsoft Entra fundamentals documentation
 summary: Learn about Microsoft Entra concepts and processes, such as creating a basic environment, adding users, applying licenses, and managing groups.
 
 metadata:
-  title: Microsoft Entra fundamentals documentation  description: Microsoft Entra fundamentals, such as users, groups, licenses, company branding, subscriptions, tenants, and more.
+  title: Microsoft Entra fundamentals documentation
+  description: Microsoft Entra fundamentals, such as users, groups, licenses, company branding, subscriptions, tenants, and more.
+  author: barclayn
   manager: pmwongera
   ms.author: barclayn
   ms.date: 03/05/2025
