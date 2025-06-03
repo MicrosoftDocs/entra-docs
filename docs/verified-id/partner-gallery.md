@@ -23,7 +23,7 @@ Identity Verification (IDV) partners are Independent Software vendors (ISVs) who
 
 1.	Set up Microsoft Entra Verified ID Service: using [Quick setup](verifiable-credentials-configure-tenant-quick.md) or [Advanced setup instructions](verifiable-credentials-configure-tenant.md).
     >[!Note]
-    >For a multi-tenant model, IDV should explore setting up dedicated authorities if there is a 1:1 relationship required with the customer. Refer [Admin API](admin-api.md) section of the docs for creating authorities. 
+    >For a multi-tenant model, IDV should explore setting up dedicated authorities if there is a 1:1 relationship required with the customer. Refer to the [Admin API](admin-api.md) section of the docs for creating authorities. 
 
 2.	Set up a credential definition that defines what type of credentials you'll issue from the service – [Custom Credential](credential-design.md). Based on the scenario, select between ID token (for Open ID connect attestations from providers) or ID token hint (ISVs to use REST APIs to get the required attestations), self issued (user provided input), presentation or multiple attestations.
 
@@ -34,7 +34,7 @@ Identity Verification (IDV) partners are Independent Software vendors (ISVs) who
 5.	The end user starts the journey on the relying party application – in the example above, Contoso’s onboarding portal asks the user to prove their identity. If the user already has the required Verified ID for onboarding, they'll follow steps 1 through 4 in the diagram. If the user doesn’t have the required Verified ID, user has to launch the IDV offer URL from onboarding application to initiate the identity verification process. 
     The IDV and customer relying party need to build this redirection model. The IDV needs to identify that the user is coming to the IDV portal from a registered organization and isn't a SPAM request. The relying party needs to generate a “one-time” use url with a JWT token, for example: ```https://idvpartner.com/contoso/?token=jwt_token```
 
-    Note that The JWT token is signed with customer's relying party private key and the public key is shared with the IDV via an endpoint or via a scheduled process. The IDV needs to ensure that for the kickstart journey, it uses attributes from the JWT like org ID, request ID, mscv id, and expiry. Note [mscv](https://github.com/microsoft/CorrelationVector) is preferred for end-to-end troubleshooting. An example of the JWT could be as follows:
+    Note that the JWT token is signed with customer's relying party private key and the public key is shared with the IDV via an endpoint or via a scheduled process. The IDV needs to ensure that for the kickstart journey, it uses attributes from the JWT like org ID, request ID, mscv ID, and expiry. Note that [mscv](https://github.com/microsoft/CorrelationVector) is preferred for end-to-end troubleshooting. An example of the JWT could be as follows:
 
     Header: Algorithm and Token type 
     ```json
@@ -55,7 +55,7 @@ Identity Verification (IDV) partners are Independent Software vendors (ISVs) who
 
 6.	Upon successful completion, IDV kicks off Verified ID issuance flow and issues a Verified ID. At this point, user is presented with a deep link or QR code to **Add Card** in Microsoft Authenticator application. The IDV website receives a successful issuance callback from Verified ID service.
     >[!Note]
-    > IDV partner must provide or build the required web experience where the identity of the user can be proofed in any way necessary as agreed between the relying party application and IDV partner. When the process is completed a list of values are collected according to the Verified ID Credential Type. These values (as “claims” parameter) are passed as part of the Verified ID issuance request API call. If the IDV is building this journey on a webapp, IDV needs to render it as a QR code or deep link.  For further details, refer [Specify the Request Service REST API issuance request](issuance-request-api.md)
+    > IDV partner must provide or build the required web experience where the identity of the user can be proofed in any way necessary as agreed between the relying party application and IDV partner. When the process is completed a list of values are collected according to the Verified ID Credential Type. These values (as “claims” parameter) are passed as part of the Verified ID issuance request API call. If the IDV is building this journey on a webapp, IDV needs to render it as a QR code or deep link.  For further details, refer to [Specify the Request Service REST API issuance request](issuance-request-api.md).
 
 7.	IDV redirects the user back to the customer’s relying party application. 
 
