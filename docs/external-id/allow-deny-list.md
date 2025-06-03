@@ -1,6 +1,6 @@
 ---
 title: Allow or Block Invitations
-description: Learn how an administrator create a list to allow or block B2B collaboration with specific domains by using the Microsoft Entra admin center.
+description: Learn how an administrator creates a list to allow or block B2B collaboration with specific domains by using the Microsoft Entra admin center.
 
  
 ms.service: entra-external-id
