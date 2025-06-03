@@ -166,24 +166,24 @@ The risk state and risk details for the user, sign-ins, and corresponding risk d
 - Risk state: "At risk" -> "Remediated"
 - Risk detail: "-" -> "User performed secure password change"
 
-## Dismiss user risk
+### Dismiss risk
 
-If after investigation, you confirm the user account isn't at risk of being compromised, you can dismiss the risky user.
+If after investigation, you confirm the sign-in or user account isn't at risk of being compromised, you can dismiss the risk.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator).
-1. Browse to **Protection** > **Identity Protection** > **Risky users**, and select the affected user.
-1. Select **Dismiss user risk**.
-   - When you select **Dismiss user risk**, the user is no longer at risk, and all the risky sign-ins and corresponding risk detections are dismissed.
-   - Because this method doesn't affect the user's existing password, it doesn't bring their identity back into a safe state.
+1. Browse to **Protection** > **Identity Protection** > **Risky sign-ins** or **Risky users**, and select the risky activity.
+1. Select **Dismiss risky sign-in(s)** or **Dismiss user risk**.
+
+When you dismiss risk, the affected sign-in or user is no longer at risk. All the risky sign-ins and corresponding risk detections are dismissed. Because this method doesn't change the user's existing password, it doesn't bring their identity back into a safe state. You might still need to contact the user to inform them of the risk and advise them to change their password.
 
 The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
 
 - Risk state: "At risk" -> "Dismissed"
-- Risk detail: "-" -> "Admin dismissed all risk for user"
+- Risk detail: "-" -> "Admin dismissed risk for sign-in" or "Admin dismissed all risk for user"
 
 ### Confirm a user to be compromised
 
-If after investigation, an account is confirmed compromised:
+If after investigation, you confirm that the sign-in or user *is* at risk, you can manually confirm an account is compromised:
 
 1. Select the event or user in the **Risky sign-ins** or **Risky users** reports and choose **Confirm compromised**.
 1. If a risk-based policy wasn't triggered, and the risk wasn't self-remediated using one of the methods described in this article, then take one or more of the following actions:
@@ -193,40 +193,38 @@ If after investigation, an account is confirmed compromised:
    1. [Disable any devices](../identity/devices/manage-device-identities.md) that are considered compromised.
    1. If using [continuous access evaluation](../identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
 
-For more information about what happens when confirming compromise, see [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
-
 The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
 
 - Risk state: "At risk" -> "Confirmed compromised"
 - Risk detail: "-" -> "Admin confirmed user compromised"
 
+For more information about what happens when confirming compromise, see [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
+
 ## Unblocking users
 
 Risk-based policies can be used to block accounts to protect your organization from compromised accounts. You should investigate these scenarios to determine how to unblock the user and then determine why the user was blocked.
 
-### Unblocking based on sign-in risk
+### Sign in from a familiar location or device
 
-To unblock an account based on sign-in risk, you have the following options:
+Sign-ins are often blocked as suspicious if the sign-in attempt appears to come from an unfamiliar location or device. Your users can sign-in from a familiar location or device to try and unblock the sign-in. If the sign-in is successful, Microsoft ID Protection automatically remediates the sign-in risk.
 
-- **Sign in from a familiar location or device**: Sign-ins are often blocked as suspicious if the sign-in attempt appears to come from an unfamiliar location or device. Your users can sign-in from a familiar location or device to try and unblock the sign-in. If the sign-in is successful, Microsoft ID Protection automatically remediates the sign-in risk.
-  - Risk state: "At risk" -> "Dismissed"
-  - Risk detail: "-" -> "Microsoft Entra ID Protection assessed sign-in safe"
+- Risk state: "At risk" -> "Dismissed"
+- Risk detail: "-" -> "Microsoft Entra ID Protection assessed sign-in safe"
 
-- **Exclude the user from policy**: If you think the current configuration of your sign-in policy is causing issues for *specific* users, you can exclude the users from the policy. The user's risk might need to be manually dismissed so they can sign in.
-  - For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
+### Exclude the user from policy
 
-- **Disable policy**: If you think that your policy configuration is causing issues for *all* users, you can disable the policy. For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
+If you think the current configuration of your sign-in or user risk policy is causing issues for *specific* users, you can exclude the users from the policy. You need to confirm that it's safe to grant access to these users without applying this policy to them. For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
 
-### Unblocking based on user risk
+You might need to [manually dismiss](#dismiss-risk) the risk or user so they can sign in.
 
-To unblock an account blocked because of user risk, you have the following options:
+### Disable the policy
 
+If you think that your policy configuration is causing issues for *all* users, you can disable the policy. For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
+
+You might need to [manually dismiss](#dismiss-risk) the risk or user so they can sign in.
+
+<!-- question about this one - how is this scenario different from just regular risky sign-ins or users? -->
 - **Reset password**: If a user is compromised or is at risk of being compromised, the user's password should be reset to protect their account and your organization.
-- **Dismiss user risk**: The user risk policy blocks a user when the configured user risk level for blocking access is reached. If after investigation you're confident that the user isn't at risk of being compromised, and it's safe to allow their access, then you can reduce a user's risk level by dismissing their user risk.
-- **Exclude the user from policy**: If you think that the current configuration of your sign-in policy is causing issues for specific users, and it's safe to grant access to these users without applying this policy to them, then you can exclude them from this policy. For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
-- **Disable policy**: If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
-
-
 
 ### Automatic blocking due to high confidence risk
 
@@ -236,8 +234,9 @@ When a user is blocked for either scenario, they receive a 50053 authentication 
 
 To unblock an account based on high confidence sign-in risk, you have the following options:
 
-1. **Add the IPs being used to sign in to the Trusted location settings** - If the sign-in is performed from a known location for your company, you can add the IP to the trusted list. For more information, see [Conditional Access: Network assignment](../identity/conditional-access/concept-assignment-network.md#trusted-locations).
-1. **Use a modern authentication protocol** - If the sign-in is performed using a legacy protocol, switching to a modern method unblocks the attempt.
+- **Add the IPs being used to sign in to the Trusted location settings**: If the sign-in is performed from a known location for your company, you can add the IP to the trusted list. For more information, see [Conditional Access: Network assignment](../identity/conditional-access/concept-assignment-network.md#trusted-locations).
+
+- **Use a modern authentication protocol**: If the sign-in is performed using a legacy protocol, switching to a modern method unblocks the attempt.
 
 ### Deleted users
 
