@@ -46,7 +46,7 @@ Requiring access control when risk level is low introduces more friction and use
 
 ### Risk remediation
 
-Organizations can choose to block access when risk is detected. Blocking sometimes stops legitimate users from doing what they need to. A better solution is to configure [user](#user-risk-policy-in-conditional-access) and [sign-in](#sign-in-risk-policy-in-conditional-access) risk-based Conditional Access policies that [allow users to self-remediate](howto-identity-protection-remediate-unblock.md#user-self-remediation).
+Organizations can choose to block access when risk is detected. Blocking sometimes stops legitimate users from doing what they need to. A better solution is to configure [user](#user-risk-policy-in-conditional-access) and [sign-in](#sign-in-risk-policy-in-conditional-access) risk-based Conditional Access policies that [allow users to self-remediate](howto-identity-protection-remediate-unblock.md#automatic).
 
 > [!WARNING]
 > Users must register for Microsoft Entra multifactor authentication before they face a situation requiring remediation. For hybrid users that are synced from on-premises, password writeback must be enabled. Users not registered are blocked and require administrator intervention.
@@ -55,7 +55,7 @@ Organizations can choose to block access when risk is detected. Blocking sometim
 
 ## Enable policies
 
-Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or use [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md).
+Organizations can choose to deploy risk-based policies in Conditional Access using the following steps or use [Conditional Access templates](../identity/conditional-access/concept-conditional-access-policy-common.md).
 
 Before organizations enable these policies, they should take action to [investigate](howto-identity-protection-investigate-risk.md) and [remediate](howto-identity-protection-remediate-unblock.md) any active risks.
 

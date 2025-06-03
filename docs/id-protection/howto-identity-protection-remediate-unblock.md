@@ -28,11 +28,11 @@ This article provides several options for automatically and manually remediating
 
 All active risk detections contribute to the calculation of the user's risk level, which indicates the probability that the user's account is compromised. Depending on the risk level and your tenant's configuration, you might need to investigate and address the risk. 
 
-### Automatic risk remediation
+### Automatic
 
 When risk-based Conditional Access policies are configured, remediating user risk and sign-in risk can be a self-service process for users. This self-remediation allows users to resolve their own risks without needing to contact the help desk or an administrator. As an IT administrator, you might not need to take any action to remediate risks, but you do need to know how to configure the policies that allow self-remediation. This article explains the high-level steps to enable self-remediation with risk-based Conditional Access policies and describes how the users's self-remediation experience works. For details on how to configure risk-based policies, see [Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
 
-### Manual risk remediation
+### Manual
 
 Some situations require an IT administrator to manually remediate sign-in or user risk. If you don't have risk-based policies configured, if the risk level doesn't meet the criteria for self-remediation, or if time is of the essence, you might need to take one of the following actions:
 
@@ -44,7 +44,7 @@ Some situations require an IT administrator to manually remediate sign-in or use
 
 You can also [remediate in Microsoft Defender for Identity](/defender-for-identity/remediation-actions).
 
-### ID Protection risk remediation
+### Microsoft Entra ID Protection
 
 In some cases, Microsoft Entra ID Protection can also automatically dismiss a user's risk state. Both the risk detection and the corresponding risky sign-in are identified by ID Protection as no longer posing a security threat. This automatic intervention can happen if the user provides a second factor, such as multifactor authentication (MFA) or if the real-time and offline assessment determines that the sign-in is no longer risky. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
 
@@ -63,7 +63,7 @@ For risk-based policies to be applied to allow self-remediation, users must firs
    -  The user must be registered for Microsoft Entra multifactor authentication.
    -  For hybrid users that are synced from on-premises to the cloud, password writeback must be enabled for their password change to sync from the cloud to on-premises.
 
-If a risk-based policy is applied during sign-in where the criteria aren't met, the user is blocked. This block occurs because the user can't perform the required step, so admin intervention is required to [unblock the user](#dismiss-user-risk).
+If a risk-based policy is applied during sign-in where the criteria aren't met, the user is blocked. This block occurs because the user can't perform the required step, so admin intervention is required to [unblock the user](#dismiss-risk).
 
 Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, so administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary, such as [blocking access from locations](../identity/conditional-access/policy-block-by-location.md) or lowering the acceptable risk in their policies.
 
@@ -187,7 +187,7 @@ If after investigation, you confirm that the sign-in or user *is* at risk, you c
 
 1. Select the event or user in the **Risky sign-ins** or **Risky users** reports and choose **Confirm compromised**.
 1. If a risk-based policy wasn't triggered, and the risk wasn't self-remediated using one of the methods described in this article, then take one or more of the following actions:
-   1. [Request a password reset](#manual-password-reset).
+   1. [Request a password reset](#require-a-password-reset).
    1. Block the user if you suspect the attacker can reset the password or do multifactor authentication for the user.
    1. [Revoke refresh tokens](/entra/identity/users/users-revoke-access).
    1. [Disable any devices](../identity/devices/manage-device-identities.md) that are considered compromised.
