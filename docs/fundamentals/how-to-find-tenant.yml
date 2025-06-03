@@ -1,7 +1,8 @@
 ### YamlMime:HowTo
 metadata:
   title: How to find your tenant ID
-  description: Instructions about how to find and Microsoft Entra tenant ID to an existing Azure subscription.  author: barclayn
+  description: Instructions about how to find and Microsoft Entra tenant ID to an existing Azure subscription.
+  author: barclayn
   ms.author: barclayn
   manager: pmwongera
   ms.reviewer: jeffsta
