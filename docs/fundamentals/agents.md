@@ -17,7 +17,7 @@ Agents fit naturally into existing workflows. You don't need special training or
 
 Microsoft Security Copilot agents offer significant benefits for security teams and IT operations by automating routine tasks and freeing up valuable time for teams to concentrate on strategic initiatives and complex problem-solving. This leads to improved operational efficiency, enhanced security and giving teams the ability to respond more swiftly to emerging threats. With Security Copilot agents, organizations can achieve greater scalability and resilience in their security and IT processes. --->
 
-[!INCLUDE [agents-overview](~/../security-copilot/securityopilot.md]
+[!INCLUDE [agents-overview](~/../security-copilot/securitycopilot.md]
 
 ## Available agents
 
