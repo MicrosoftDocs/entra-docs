@@ -2,7 +2,7 @@
 title: Set up group writeback within entitlement management - Microsoft Entra ID
 description: Learn how to set up group writeback in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 editor: HANKI
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
