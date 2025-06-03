@@ -8,11 +8,11 @@ ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: thwimmer
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Symantec Web Security Service (WSS) so that I can streamline the user management process and ensure that users have the appropriate access to Symantec Web Security Service (WSS).
 ---
 
-# Configure Symantec Web Security Service (WSS) for automatic user provisioning
+# Configure Symantec Web Security Service (WSS) for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in Symantec Web Security Service (WSS) and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Symantec Web Security Service (WSS).
 

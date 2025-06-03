@@ -8,7 +8,7 @@ ms.date: 03/04/2025
 ms.author: justinha
 author: mjsantani
 manager: femila
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 

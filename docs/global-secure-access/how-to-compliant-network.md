@@ -9,6 +9,7 @@ author: kenwith
 manager: femila
 ms.reviewer: smistry
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Enable compliant network check with Conditional Access
 

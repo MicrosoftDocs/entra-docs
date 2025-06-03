@@ -2,12 +2,13 @@
 title: Change request settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change request settings for an access package in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
 # Change request settings for an access package in entitlement management

@@ -5,10 +5,10 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 05/14/2025
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn about the types of client applications so I can decide if this platform meets my app development needs.
 ---
 

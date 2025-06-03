@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Sauce Labs - Mobile and Web Testing
+title: Configure Sauce Labs - Mobile and Web Testing for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sauce Labs - Mobile and Web Testing.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sauce Labs - Mobile and Web Testing so that I can control who has access to Sauce Labs - Mobile and Web Testing, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Sauce Labs - Mobile and Web Testing
+# Configure Sauce Labs - Mobile and Web Testing for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Sauce Labs - Mobile and Web Testing with Microsoft Entra ID. When you integrate Sauce Labs - Mobile and Web Testing with Microsoft Entra ID, you can:
 

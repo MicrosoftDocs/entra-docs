@@ -1,16 +1,14 @@
 ---
 title: External ID pricing
 description: Learn about the pricing structure for Microsoft Entra External ID. Understand the monthly active users (MAU) billing model, core offering, and premium add-ons. Link your tenant to an Azure subscription for proper billing and feature access.
-
-
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 05/19/2025
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
- 
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra tenant administrator, I want to link my tenant to an Azure subscription, so that I can take advantage of the monthly active users (MAU) billing model and activate MAU billing for guest user collaboration.
 ---
 

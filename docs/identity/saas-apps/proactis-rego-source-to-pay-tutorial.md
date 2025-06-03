@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Proactis Rego Source-to-Pay
+title: Configure Proactis Rego Source-to-Pay for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Proactis Rego Source-to-Pay.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Proactis Rego Source-to-Pay so that I can control who has access to Proactis Rego Source-to-Pay, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Proactis Rego Source-to-Pay
+# Configure Proactis Rego Source-to-Pay for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Proactis Rego Source-to-Pay with Microsoft Entra ID. Proactis Rego is a powerful Source-to-Pay software platform designed for mid-market organizations. It's easy to use and integrate, giving you control over your spend and supply-chain risks. When you integrate Proactis Rego Source-to-Pay with Microsoft Entra ID, you can:
 

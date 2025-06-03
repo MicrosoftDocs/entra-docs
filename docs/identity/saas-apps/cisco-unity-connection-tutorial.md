@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Cisco Unity Connection
+title: Configure Cisco Unity Connection for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cisco Unity Connection.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Unity Connection so that I can control who has access to Cisco Unity Connection, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Cisco Unity Connection
+# Configure Cisco Unity Connection for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Cisco Unity Connection with Microsoft Entra ID. Cisco Unity Connection is a robust unified messaging and voicemail solution that provides users with flexible message access options including support for voice commands, STT transcriptions, and so on. When you integrate Cisco Unity Connection with Microsoft Entra ID, you can:
 

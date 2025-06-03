@@ -9,6 +9,7 @@ author: kenwith
 manager: femila
 ms.reviewer: smistry
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Universal Conditional Access through Global Secure Access
 

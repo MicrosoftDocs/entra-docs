@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Venafi Control Plane - Datacenter
+title: Configure Venafi Control Plane - Datacenter for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Venafi Control Plane - Datacenter.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Venafi Control Plane - Datacenter so that I can control who has access to Venafi Control Plane - Datacenter, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Venafi Control Plane - Datacenter
+# Configure Venafi Control Plane - Datacenter for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Venafi Control Plane - Datacenter with Microsoft Entra ID. The Venafi Control Plane includes TLS Protect Datacenter, SSH Protect and CodeSign Protect. When you integrate Venafi Control Plane - Datacenter with Microsoft Entra ID, you can:
 

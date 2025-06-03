@@ -1,20 +1,18 @@
 ---
 title: Configure Reward Gateway for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Reward Gateway.
-
 author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Reward Gateway so that I can streamline the user management process and ensure that users have the appropriate access to Reward Gateway.
 ---
 
-# Configure Reward Gateway for automatic user provisioning
+# Configure Reward Gateway for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in Reward Gateway and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Reward Gateway.
 

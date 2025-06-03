@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 05/14/2025
 ms.devlang: java
-ms.reviewer: shoatman
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article

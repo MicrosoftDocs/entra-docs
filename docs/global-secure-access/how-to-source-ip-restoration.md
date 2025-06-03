@@ -9,6 +9,7 @@ author: kenwith
 manager: femila
 ms.reviewer: alexpav
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Source IP restoration
 

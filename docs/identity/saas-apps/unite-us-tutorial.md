@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Unite Us
+title: Configure Unite Us for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Unite Us.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Unite Us so that I can control who has access to Unite Us, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Unite Us
+# Configure Unite Us for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Unite Us with Microsoft Entra ID. Unite Us provides a default implementation for SCIM user provisioning and SAML SSO /JIT. When you integrate Unite Us with Microsoft Entra ID, you can:
 

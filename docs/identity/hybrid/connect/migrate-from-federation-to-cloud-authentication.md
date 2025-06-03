@@ -8,7 +8,7 @@ ms.date: 04/09/2025
 ms.author: billmath
 author: gargi-sinha
 manager: femila
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Migrate from federation to cloud authentication  
 

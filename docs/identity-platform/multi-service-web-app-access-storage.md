@@ -4,14 +4,13 @@ description: Learn how to access Azure Storage from a web app in Azure App Servi
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom: azureday1, devx-track-azurecli, devx-track-azurepowershell, subject-rbac-steps
 ms.date: 05/12/2025
 ms.devlang: csharp
 ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
-services: storage, app-service-web
+ms.custom: azureday1, devx-track-azurecli, devx-track-azurepowershell, subject-rbac-steps, sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to access Azure Storage for an app by using managed identities.
 ---
 

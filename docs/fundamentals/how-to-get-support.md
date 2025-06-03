@@ -1,19 +1,19 @@
 ---
-title: Find help and get support for Microsoft Entra ID
-description: Instructions about how to get help, find community support, and open a support request for Microsoft Entra ID.
+title: Find help and get support for Microsoft Entra
+description: Instructions about how to get help, find community support, and open a support request for Microsoft Entra.
 author: shlipsey3
 manager: femila
 ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.date: 03/17/2025
+ms.date: 05/23/2025
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 ---
 
-# Find help and get support for Microsoft Entra ID
+# Find help and get support for Microsoft Entra
 
-Microsoft documentation and learning content provide quality support and troubleshooting information, but if you have a problem not covered in our content, there are several options to get help and support for Microsoft Entra ID.
+Microsoft documentation and learning content provide quality support and troubleshooting information, but if you have a problem not covered in our content, there are several options to get help and support for Microsoft Entra.
 
 This article provides the options to find support from the Microsoft community and how to submit a support request with Microsoft.
 
@@ -98,9 +98,9 @@ Online support requests can be created from several places in the admin center:
 > [!NOTE]
 >
 > - If you're using Microsoft Entra External ID in an external tenant, the support request feature is currently unavailable for external tenant technical issues. Instead, use the **Give Feedback** link on the **New support request** page. Or, switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
-> - If you're using Azure AD B2C, open a support ticket by first switching to a Microsoft Entra tenant that has an Azure subscription associated with it. Typically, this is your employee tenant or the default tenant created for you when you signed up for an Azure subscription. To learn more, see [how an Azure subscription is related to Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
+> - If you're using Azure AD B2C, open a support ticket by first switching to a Microsoft Entra tenant that has an Azure subscription associated with it. Typically, this is your employee tenant or the default tenant created for you when you signed up for an Azure subscription. To learn more, see [how an Azure subscription is related to Microsoft Entra](./how-subscriptions-associated-directory.yml).
 
-### To open a support request in Microsoft Entra ID:
+### To open a support request in Microsoft Entra:
 
 The steps to open a support request represent the high-level process. The actual steps vary based on your scenario and the values you select.
 
@@ -130,14 +130,14 @@ The Microsoft Security Copilot is a platform that brings together the power of A
 
 ## Get Microsoft 365 admin center support
 
-Support for Microsoft Entra ID in the [Microsoft 365 admin center](https://admin.microsoft.com) is offered for administrators through the admin center. Review the [support for Microsoft 365 for business article](/microsoft-365/admin/).
+Support for Microsoft Entra in the [Microsoft 365 admin center](https://admin.microsoft.com) is offered for administrators through the admin center. Review the [support for Microsoft 365 for business article](/microsoft-365/admin/).
 
 ## Stay informed
 
 Things can change quickly. The following resources provide updates and information on the latest releases.
 
-- [What's new in Microsoft Entra ID](whats-new.md): Get to know what's new in Microsoft Entra ID including the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
-- [Microsoft Entra identity blog](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bg-p/Identity): Get news and information about Microsoft Entra ID.
+- [What's new in Microsoft Entra](whats-new.md): Get to know what's new in Microsoft Entra including the latest release notes, known issues, bug fixes, deprecated functionality, and upcoming changes.
+- [Microsoft Entra identity blog](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bg-p/Identity): Get news and information about Microsoft Entra.
 - [Azure updates](https://azure.microsoft.com/updates/?category=identity): Learn about important product updates, roadmap, and announcements.
 
 ## Related content

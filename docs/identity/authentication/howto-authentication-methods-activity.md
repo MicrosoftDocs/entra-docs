@@ -9,7 +9,7 @@ ms.author: justinha
 author: sopand
 manager: femila
 ms.reviewer: dawoo
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Authentication Methods Activity 
 

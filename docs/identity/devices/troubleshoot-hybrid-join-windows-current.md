@@ -9,7 +9,7 @@ ms.author: owinfrey
 author: owinfreyATL
 manager: femila
 ms.reviewer: mozmaili
-ms.custom: has-adal-ref, sfi-ropc-nochange
+ms.custom: has-adal-ref, sfi-ropc-nochange, sfi-image-nochange
 ---
 # Troubleshoot Microsoft Entra hybrid joined devices
 

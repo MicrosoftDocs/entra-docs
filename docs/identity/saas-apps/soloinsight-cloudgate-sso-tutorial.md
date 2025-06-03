@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra integration with Soloinsight-CloudGate SSO
+title: Configure Soloinsight-CloudGate SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Soloinsight-CloudGate SSO.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Soloinsight-CloudGate SSO so that I can control who has access to Soloinsight-CloudGate SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Soloinsight-CloudGate SSO with Microsoft Entra ID
+# Configure Soloinsight-CloudGate SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Soloinsight-CloudGate SSO with Microsoft Entra ID. When you integrate Soloinsight-CloudGate SSO with Microsoft Entra ID, you can:
 

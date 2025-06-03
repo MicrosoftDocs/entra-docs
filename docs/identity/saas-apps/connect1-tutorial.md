@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Connect1
+title: Configure Connect1 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Connect1.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Connect1 so that I can control who has access to Connect1, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Connect1
+# Configure Connect1 for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Connect1 with Microsoft Entra ID. Connect1 provides complete fleet analytics, real-time status of your fleet, viewing historical trends, receiving on-demand notifications, alerts, and reporting, creating geofences. When you integrate Connect1 with Microsoft Entra ID, you can:
 

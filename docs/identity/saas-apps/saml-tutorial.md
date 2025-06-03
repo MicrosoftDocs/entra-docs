@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with SAML 1.1 Token enabled LOB App
+title: Configure SAML 1.1 Token enabled LOB App for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML 1.1 Token enabled LOB App.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML 1.1 Token enabled LOB App so that I can control who has access to SAML 1.1 Token enabled LOB App, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with SAML 1.1 Token enabled LOB App
+# Configure SAML 1.1 Token enabled LOB App for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SAML 1.1 Token enabled LOB App with Microsoft Entra ID. When you integrate SAML 1.1 Token enabled LOB App with Microsoft Entra ID, you can:
 

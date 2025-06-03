@@ -2,13 +2,13 @@
 title: What are Microsoft Entra recommendations?
 description: Provides a general overview of Microsoft Entra recommendations so you can keep your tenant secure and healthy.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: monitoring-health
-ms.date: 04/15/2025
+ms.date: 06/02/2025
 ms.author: sarahlipsey
-ms.reviewer: deawari
+ms.reviewer: jadedsouza 
 ms.custom: sfi-ga-nochange
 # Customer intent: As a Microsoft Entra administrator, I want guidance to so that I can keep my Microsoft Entra tenant in a healthy state.
 ---
@@ -20,7 +20,7 @@ Microsoft Entra recommendations now include *Identity Secure Score* recommendati
 
 All these Microsoft Entra recommendations provide you with personalized insights with actionable guidance to:
 
-- Help you identify opportunities to implement best practices for Microsoft Entra related features.
+- Help you identify opportunities to implement identity best practices.
 - Improve the state of your Microsoft Entra tenant.
 - Optimize the configurations for your scenarios.
 
@@ -41,10 +41,13 @@ The recommendations listed in the following table are currently available in pub
 | Recommendation | Impacted resources | Availability | Identity Secure Score | Target roles for email notifications |
 | --- | --- | --- | --- | --- |
 | AAD Connect Deprecated | Tenant | Preview | No | Hybrid Identity Administrator |
+| Configure VPN integration | Users | Preview | Yes | N/A |
 | [Convert per-user MFA to Conditional Access MFA](recommendation-turn-off-per-user-mfa.md) | Users | Generally available | No | Security Administrator |
 | Designate more than one Global Administrator | Users | Generally available | Yes | Global Administrator |
 | Do not allow users to grant consent to unreliable applications | Tenant | Generally available | Yes | Global Administrator |
 | Do not expire passwords | Tenant | Generally available | Yes | Global Administrator |
+| Edit misconfigured certificate templates access control lists | Applications | Preview | Yes | N/A |
+| Edit misconfigured enrollment agent certificate template | Applications | Preview | Yes | N/A |
 | Enable password hash sync if hybrid | Tenant | Generally available | Yes | Hybrid Identity Administrator |
 | Enable policy to block legacy authentication | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
 | Enable self-service password reset | Users | Generally available | Yes | Authentication Policy Administrator |
@@ -56,16 +59,25 @@ The recommendations listed in the following table are currently available in pub
 | [Migrate service principals from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | Preview | No | Application Administrator |
 | [Migrate to Microsoft Authenticator](recommendation-migrate-to-authenticator.md) | Users | Preview | No | Global Administrator | 
 | [Minimize MFA prompts from known devices](recommendation-mfa-from-known-devices.md) | Users | Generally available | No | Global Administrator |
+| Modify unsecure Kerberos delegations to prevent impersonation | Applications | Preview | Yes | N/A |
 | Protect all users with a sign-in risk policy | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
 | Protect all users with a user risk policy | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
+| Protect and manage local admin passwords with Microsoft LAPS | Users | Preview | Yes | N/A |
 | [Protect your tenant with Insider Risk Conditional Access policy](recommendation-insider-risk-condition.md) | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
+| Remove dormant accounts from sensitive groups | Users | Preview | Yes | N/A |
+| Remove unsafe permissions on sensitive Microsoft Entra Connect accounts | Users | Preview | Yes | N/A |
 | [Remove unused applications](recommendation-remove-unused-apps.md) | Applications | Preview | No | Application Administrator |
 | [Remove unused credentials from applications](recommendation-remove-unused-credential-from-apps.md) | Applications | Preview | No | Application Administrator |
 | [Renew expiring application credentials](recommendation-renew-expiring-application-credential.md) | Applications | Preview | No | Application Administrator |
 | [Renew expiring service principal credentials](recommendation-renew-expiring-service-principal-credential.md) | Applications | Preview | No | Application Administrator |
+| Replace Enterprise or Domain Admin account for Microsoft Entra Connect AD DS Connector | Users | Preview | Yes | N/A |
 | Require MFA for administrative roles | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
+| Reversible passwords found in GPOs | Users | Preview | Yes | N/A |
 | Review inactive users with Access Reviews | Users | Preview | No | Identity Governance Administrator |
+| Rotate password for Microsoft Entra Connect AD DS Connector account | Users | Preview | Yes | N/A |
 | Secure and govern your apps with automatic user and group provisioning | Applications | Preview | No | Application Administrator, IT Governance Administrator |
+| Stop clear text credentials exposure | Users | Preview | Yes | N/A |
+| Stop weak cipher usage | Tenant | Preview | Yes | N/A |
 | Use least privileged administrative roles | Users | Generally available | Yes | Privileged Role Administrator |
 | Verify App Publisher | Applications | Preview | No | Global Administrator |
 

@@ -1,16 +1,15 @@
 ---
 title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
 description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign-on
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/19/2024
-
 ms.author: cwerner
 author: cilwerner
 manager: CelesteDG
 ms.reviewer: brianmel
+ms.custom: sfi-image-nochange
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference between setting up with secure enclave, smart card, or password based authentication methods.
 ---
 

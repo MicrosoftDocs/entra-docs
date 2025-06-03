@@ -9,7 +9,7 @@ ms.author: justinha
 author: vimrang
 manager: femila
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
+ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
 # How to configure Microsoft Entra certificate-based authentication
 

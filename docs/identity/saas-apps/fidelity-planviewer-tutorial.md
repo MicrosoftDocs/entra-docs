@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Fidelity PlanViewer
+title: Configure Fidelity PlanViewer for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fidelity PlanViewer.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fidelity PlanViewer so that I can control who has access to Fidelity PlanViewer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Fidelity PlanViewer
+# Configure Fidelity PlanViewer for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Fidelity PlanViewer with Microsoft Entra ID. When you integrate Fidelity PlanViewer with Microsoft Entra ID, you can:
 

@@ -1,16 +1,14 @@
 ---
 title: Add custom approvals to self-service sign-up flows
 description: Add API connectors for custom approval workflows in External ID self-service sign-up
- 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
-
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As an IT admin managing guest user accounts in my Microsoft Entra tenant, I want to add a custom approval workflow to the self-service sign-up process, so that I can control which guest user accounts are created and manage the approval process.
 ---
 

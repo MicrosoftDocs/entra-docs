@@ -1,20 +1,15 @@
 ---
 title: Sign-in event details for Microsoft Entra multifactor authentication
 description: Learn how to view sign-in activity for Microsoft Entra multifactor authentication events and status messages.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: michmcla
-
-
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 # Use the sign-in logs to review Microsoft Entra multifactor authentication events
 

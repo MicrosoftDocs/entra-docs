@@ -9,7 +9,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: sama
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Security defaults in Microsoft Entra ID
 

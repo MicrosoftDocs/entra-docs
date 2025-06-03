@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with CloudBees CI
+title: Configure CloudBees CI for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and CloudBees CI.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CloudBees CI so that I can control who has access to CloudBees CI, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with CloudBees CI
+# Configure CloudBees CI for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate CloudBees CI with Microsoft Entra ID. Centralize management, ensure compliance, and automate at scale with CloudBees CI - the secure, scalable, and flexible CI solution based on Jenkins. When you integrate CloudBees CI with Microsoft Entra ID, you can:
 

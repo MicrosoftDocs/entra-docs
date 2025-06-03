@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 01/30/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure Datawiza to enable Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) to Oracle JD Edwards. My goal is to enhance security and access control for the application.
 ---
 

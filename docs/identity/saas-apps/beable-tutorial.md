@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Beable
+title: Configure Beable for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Beable.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Beable so that I can control who has access to Beable, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Beable
+# Configure Beable for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Beable with Microsoft Entra ID. Beable Education offers interactive & engaging online learning platforms, textbooks & mobile apps for students to access information & succeed in studies. When you integrate Beable with Microsoft Entra ID, you can:
 

@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Changing the ADSync service account password
 If you change the ADSync service account password, the Synchronization Service doesn't start correctly until you abandon the encryption key and reinitialized the ADSync service account password. 

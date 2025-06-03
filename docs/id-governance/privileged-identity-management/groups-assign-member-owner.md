@@ -2,14 +2,14 @@
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
 ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: ilyal
-ms.custom: pim
+ms.custom: pim, sfi-image-nochange
 ---
 
 # Assign eligibility for a group in Privileged Identity Management

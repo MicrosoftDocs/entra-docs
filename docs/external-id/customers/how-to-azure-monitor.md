@@ -8,7 +8,7 @@ ms.subservice: external
 ms.topic: how-to
 ms.date: 09/16/2024
 ms.author: cmulligan
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to set up Azure Monitor in external tenants to collect and analyze data in this tenant.
 ---
 # Set up Azure Monitor in external tenants (preview)

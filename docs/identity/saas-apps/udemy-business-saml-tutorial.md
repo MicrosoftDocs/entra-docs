@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Udemy Business SAML
+title: Configure Udemy Business SAML for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Udemy Business SAML.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Udemy Business SAML so that I can control who has access to Udemy Business SAML, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Udemy Business SAML
+# Configure Udemy Business SAML for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Udemy Business SAML with Microsoft Entra ID. Udemy for Business helps employees do whatever comes next - whether that’s the next project to tackle, skill to learn or role to master. When you integrate Udemy Business SAML with Microsoft Entra ID, you can:
 

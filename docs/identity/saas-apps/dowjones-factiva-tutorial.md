@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Dow Jones Factiva
+title: Configure Dow Jones Factiva for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Dow Jones Factiva.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Dow Jones Factiva so that I can control who has access to Dow Jones Factiva, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Dow Jones Factiva
+# Configure Dow Jones Factiva for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Dow Jones Factiva with Microsoft Entra ID.
 Integrating Dow Jones Factiva with Microsoft Entra ID provides you with the following benefits:

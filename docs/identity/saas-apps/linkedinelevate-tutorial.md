@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with LinkedIn Elevate
+title: Configure LinkedIn Elevate for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and LinkedIn Elevate.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LinkedIn Elevate so that I can control who has access to LinkedIn Elevate, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with LinkedIn Elevate
+# Configure LinkedIn Elevate for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate LinkedIn Elevate with Microsoft Entra ID. When you integrate LinkedIn Elevate with Microsoft Entra ID, you can:
 

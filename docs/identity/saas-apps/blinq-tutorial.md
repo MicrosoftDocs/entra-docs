@@ -1,7 +1,6 @@
 ---
-title: Microsoft Entra SSO integration with Blinq
+title: Configure Blinq for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Blinq.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
@@ -10,11 +9,11 @@ ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Blinq so that I can control who has access to Blinq, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Blinq
+# Configure Blinq for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Blinq with Microsoft Entra ID. When you integrate Blinq with Microsoft Entra ID, you can:
 

@@ -108,6 +108,24 @@ Another factor that affects performance is the quality of the networking between
 
 For more information about optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 
+## Expanding Ephemeral Port Range
+
+Private Network connectors initiate TCP/UDP connections to designated destination endpoints, requiring available source ports on the connector host machine. Expanding the ephemeral port range can improve the availability of source ports, particularly when managing a high volume of concurrent connections.
+
+To view the current dynamic port range on a system, use the following netsh commands:
+- netsh int ipv4 show dynamicport tcp
+- netsh int ipv4 show dynamicport udp
+- netsh int ipv6 show dynamicport tcp
+- netsh int ipv6 show dynamicport udp
+ 
+Sample netsh commands to increase the ports
+- netsh int ipv4 set dynamicport tcp start=1025 num=64511
+- netsh int ipv4 set dynamicport udp start=1025 num=64511
+- netsh int ipv6 set dynamicport tcp start=1025 num=64511
+- netsh int ipv6 set dynamicport udp start=1025 num=64511
+
+These commands set the dynamic port range from 1025 to the maximum of 65535. The minimum start port is 1025.
+
 ## Specifications and Sizing Requirements
 The following specifications are recommended for each Entra Private Network Connector:
 

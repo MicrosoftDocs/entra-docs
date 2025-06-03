@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with Flipsnack SAML
+title: Configure Flipsnack SAML for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Flipsnack SAML.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Flipsnack SAML so that I can control who has access to Flipsnack SAML, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Flipsnack SAML
+# Configure Flipsnack SAML for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Flipsnack SAML with Microsoft Entra ID. Flipsnack is the complete solution perfect for creating interactive catalogs, magazines, brochures & many more. Convert a PDF file to a flipbook or make the entire design from scratch. When you integrate Flipsnack SAML with Microsoft Entra ID, you can:
 

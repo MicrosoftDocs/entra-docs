@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks - GlobalProtect
+title: Configure Palo Alto Networks - GlobalProtect for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - GlobalProtect.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - GlobalProtect so that I can control who has access to Palo Alto Networks - GlobalProtect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks - GlobalProtect
+# Configure Palo Alto Networks - GlobalProtect for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Palo Alto Networks - GlobalProtect with Microsoft Entra ID. When you integrate Palo Alto Networks - GlobalProtect with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Nodetrax Project
+title: Configure Nodetrax Project for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Nodetrax Project.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Nodetrax Project so that I can control who has access to Nodetrax Project, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Nodetrax Project
+# Configure Nodetrax Project for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Nodetrax Project with Microsoft Entra ID. When you integrate Nodetrax Project with Microsoft Entra ID, you can:
 

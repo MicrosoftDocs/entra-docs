@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra integration with Freshdesk
+title: Configure Freshdesk for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Freshdesk.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/09/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Freshdesk so that I can control who has access to Freshdesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Freshdesk
+# Configure Freshdesk for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Freshdesk with Microsoft Entra ID. When you integrate Freshdesk with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with elia
+title: Configure elia for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and elia.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and elia so that I can control who has access to elia, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with elia
+# Configure elia for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate elia with Microsoft Entra ID. When you integrate elia with Microsoft Entra ID, you can:
 

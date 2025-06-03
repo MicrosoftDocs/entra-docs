@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra integration with SmarterU
+title: Configure SmarterU for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SmarterU.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SmarterU so that I can control who has access to SmarterU, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with SmarterU
+# Configure SmarterU for Single sign-on with Microsoft Entra ID
 
 > [!NOTE]
 > The process for integrating SmarterU with Microsoft Entra ID is also documented and maintained in the [SmarterU help system](https://support.smarteru.com/docs/sso-azure-active-directory).

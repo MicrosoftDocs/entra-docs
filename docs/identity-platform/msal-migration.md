@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.custom: has-adal-ref
 ms.date: 02/27/2025
-ms.reviewer: saeeda, jmprieur, localden
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article

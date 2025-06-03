@@ -9,7 +9,7 @@ ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: calui, tilarso
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
 ---
 # Enable passkeys (FIDO2) for your organization

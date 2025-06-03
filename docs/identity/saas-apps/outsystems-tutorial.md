@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with OutSystems Microsoft Entra ID
+title: Configure OutSystems Microsoft Entra ID for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and OutSystems Microsoft Entra ID.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OutSystems so that I can control who has access to OutSystems, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate OutSystems Microsoft Entra ID with Microsoft Entra ID
+# Configure OutSystems Microsoft Entra ID for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate OutSystems Microsoft Entra ID with Microsoft Entra ID. When you integrate OutSystems Microsoft Entra ID with Microsoft Entra ID, you can:
 

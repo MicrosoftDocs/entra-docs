@@ -10,6 +10,7 @@ author: kenwith
 manager: femila
 ms.reviewer: katabish
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Apply Conditional Access policies to Private Access apps

@@ -110,6 +110,8 @@ items:
     items:
     - name: How to use Microsoft Entra Recommendations
       href: howto-use-recommendations.md
+    - name: How to configure recommendation email notifications
+      href: howto-configure-recommendation-email-notifications.md
     - name: Enable insider risk Conditional Access condition
       href: recommendation-insider-risk-condition.md
     - name: Migrate ADAL to MSAL

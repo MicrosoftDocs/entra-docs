@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Cisco Unified Communications Manager
+title: Configure Cisco Unified Communications Manager for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cisco Unified Communications Manager.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Unified Communications Manager so that I can control who has access to Cisco Unified Communications Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Cisco Unified Communications Manager
+# Configure Cisco Unified Communications Manager for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Cisco Unified Communications Manager with Microsoft Entra ID. Cisco Unified Communications Manager (Unified CM) provides reliable, secure, scalable, and manageable call control and session management. When you integrate Cisco Unified Communications Manager with Microsoft Entra ID, you can:
 

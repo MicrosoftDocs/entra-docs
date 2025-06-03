@@ -1,18 +1,14 @@
 ---
 title: Analyze user activity in Microsoft Entra External ID
 description: Learn about how to analyze user activity and engagement for your registered application in the external tenant.
- 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/07/2024
-
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about data analytics into user activity and engagement for  registered applications.
 ---
 # Gain insights into your app users’ activity

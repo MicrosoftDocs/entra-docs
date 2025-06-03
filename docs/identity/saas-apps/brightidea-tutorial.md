@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra integration with Brightidea
+title: Configure Brightidea for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Brightidea.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brightidea so that I can control who has access to Brightidea, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Brightidea
+# Configure Brightidea for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Brightidea with Microsoft Entra ID. When you integrate Brightidea with Microsoft Entra ID, you can:
 
