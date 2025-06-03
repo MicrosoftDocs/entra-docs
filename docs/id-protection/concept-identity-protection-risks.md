@@ -5,11 +5,11 @@ description: Learn about risk detections, risk levels, and how they map to risk 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 05/16/2025
+ms.date: 06/03/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera
 ms.reviewer: cokoopma
 ---
 # What are risk detections?
@@ -256,6 +256,30 @@ Calculated offline. This risk detection type indicates user activity that is unu
 ### Locations 
 
 Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/location-condition.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
+
+## Token theft related detections
+
+With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Microsoft Threat Intelligence Center (MSTIC) Nation State IP detection triggers during sign-in. 
+
+The following ID Protection detections that identify suspicious token activity or the MSTIC Nation State IP detection are no longer autoremediated: 
+
+- Microsoft Entra threat intelligence  
+- Anomalous token
+- Attacker in the Middle
+- MSTIC Nation State IP
+- Token issuer anomaly  
+
+ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user-level risk details provides valuable information to assist with investigation. This information includes:
+
+- Token Issuer type
+- Sign-in time
+- IP address
+- Sign-in location
+- Sign-in client
+- Sign-in request ID
+- Sign-in correlation ID
+
+If you have [user risk-based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) configured and one of these detections that denotes suspicious token activity is fired on a user, the end user is required to perform secure password change and reauthenticate their account with multifactor authentication to clear the risk.
 
 ## Related content
 
