@@ -2,7 +2,7 @@
 title: What is Microsoft Entra ID?
 description: Learn about Microsoft Entra ID, including terminology, available licenses, and a list of associated features.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
