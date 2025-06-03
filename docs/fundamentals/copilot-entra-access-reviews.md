@@ -19,9 +19,9 @@ ms.collection: null
 > 
 > This article is a work in progress. It will be updated with more information, methods, and examples before GA.
 
-Access reviews in Microsoft Entra ID enable organizations to manage group memberships, application access, and role assignments effectively. Using the capabilities of Microsoft Security Copilot, administrators can now interact with access reviews data using natural language, enabling fast and actionable insights that reduce manual effort and enhance governance. This integration allows admins to explore, track, and analyze access reviews at scale by asking questions.
+Access reviews in Microsoft Entra ID help organizations to more effectively manage group memberships, application access, and role assignments. Using the capabilities of Microsoft Security Copilot, administrators can now interact with access review data using natural language, enabling fast and actionable insights that reduce manual effort and enhance governance. This integration allows admins to explore, track, and analyze access reviews at scale by asking questions.
 
-Specifically, this feature helps administrators;:
+This feature helps administrators;:
 
 - Understand who approved access
 - Identify reviewers who took no decisions
@@ -43,7 +43,7 @@ Use the following example prompts to extract access reviews data in Microsoft En
 | Use Case | Example Prompts |
 |----------|-----------------|
 | Explore current configured access reviews in the tenant | *Show me top 10 access reviews with schedule, status, and metadata* |
-| Get detailed info on a specific access review | *Get access review details for Finance M365 Groups Q2* |
+| Get detailed info on a specific access review | *Get access review details for Finance Microsoft 365 Groups Q2* |
 | View access review decisions for a specific instance | *Who approved or denied access in the Q2 finance review?* |
 | Track reviews assigned to a specific reviewer | *List reviews where Alex Chen is the assigned reviewer* |
 | Identify decisions that went against AI recommendations | *Which access review decisions overrode AI-suggested actions?* |
