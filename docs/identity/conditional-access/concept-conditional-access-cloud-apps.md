@@ -7,7 +7,7 @@ ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 
-ms.date: 10/28/2024
+ms.date: 06/03/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -29,10 +29,10 @@ Target resources (formerly Cloud apps, actions, and authentication context) are 
 
 Many of the existing Microsoft cloud applications are included in the list of applications you can select from.
 
-Administrators can assign a Conditional Access policy to these Microsoft cloud applications. Some apps like [Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. 
+Administrators can assign a Conditional Access policy to cloud apps from Microsoft as long as the service principal appears in their tenant. Some apps like [Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new supported Microsoft cloud applications are created, they appear in the app picker list.
 
 > [!IMPORTANT]
-> Applications that are available to Conditional Access go through an onboarding and validation process. These applications don't include all Microsoft apps. Many applications are backend services that aren't meant to have policy directly applied to them. If you're looking for an application that is missing, you can contact the specific application team or make a request on [UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
+> Applications that are available to Conditional Access have gone through an onboarding and validation process. This list doesn't include some backend services not meant to have policy directly applied to them. If you're looking for an application that is missing, you can contact the specific application team or make a request on [UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
 
 ### Office 365
 
@@ -217,7 +217,7 @@ Authentication contexts are managed under **Entra ID** > **Conditional Access** 
 Create new authentication context definitions by selecting **New authentication context**. Organizations are limited to a total of 99 authentication context definitions **c1-c99**. Configure the following attributes:
 
 - **Display name** is the name that is used to identify the authentication context in Microsoft Entra ID and across applications that consume authentication contexts. We recommend names that can be used across resources, like *trusted devices*, to reduce the number of authentication contexts needed. Having a reduced set limits the number of redirects and provides a better end to end-user experience.
-- **Description** provides more information about the policies, used by administrators and those applying authentication contexts to resources.
+- **Description** provides more information about the policies. This information is used by administrators and those applying authentication contexts to resources.
 - **Publish to apps** checkbox when checked, advertises the authentication context to apps and makes them available to be assigned. If not checked the authentication context is unavailable to downstream resources.
 - **ID** is read-only and used in tokens and apps for request-specific authentication context definitions. Listed here for troubleshooting and development use cases.
 
