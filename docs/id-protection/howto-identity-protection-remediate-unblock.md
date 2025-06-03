@@ -28,11 +28,11 @@ This article provides several options for automatically and manually remediating
 
 All active risk detections contribute to the calculation of the user's risk level, which indicates the probability that the user's account is compromised. Depending on the risk level and your tenant's configuration, you might need to investigate and address the risk. 
 
-### Automatic
+### Self-remediation with risk-based policies
 
 When risk-based Conditional Access policies are configured, remediating user risk and sign-in risk can be a self-service process for users. This self-remediation allows users to resolve their own risks without needing to contact the help desk or an administrator. As an IT administrator, you might not need to take any action to remediate risks, but you do need to know how to configure the policies that allow self-remediation. This article explains the high-level steps to enable self-remediation with risk-based Conditional Access policies and describes how the users's self-remediation experience works. For details on how to configure risk-based policies, see [Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
 
-### Manual
+### Manual remediation with administrator intervention
 
 Some situations require an IT administrator to manually remediate sign-in or user risk. If you don't have risk-based policies configured, if the risk level doesn't meet the criteria for self-remediation, or if time is of the essence, you might need to take one of the following actions:
 
@@ -40,18 +40,18 @@ Some situations require an IT administrator to manually remediate sign-in or use
 - Require the user to reset their password.
 - Dismiss the user's risk.
 - Confirm the user is compromised and take action to secure the account.
-- Unblock the user based on user risk or sign-in risk.
+- Unblock the user.
 
 You can also [remediate in Microsoft Defender for Identity](/defender-for-identity/remediation-actions).
 
-### Microsoft Entra ID Protection
+### Automatic remediation with Microsoft Entra ID Protection
 
 In some cases, Microsoft Entra ID Protection can also automatically dismiss a user's risk state. Both the risk detection and the corresponding risky sign-in are identified by ID Protection as no longer posing a security threat. This automatic intervention can happen if the user provides a second factor, such as multifactor authentication (MFA) or if the real-time and offline assessment determines that the sign-in is no longer risky. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
 
 - **Risk state**: "At risk" -> "Dismissed"
 - **Risk detail**: "-" -> "Microsoft Entra ID Protection assessed sign-in safe"
 
-## Automatic risk remediation
+## Self-remediation
 
 You can allow users to self-remediate their sign-in and user risks by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md). If users pass the required access control, such as multifactor authentication or secure password change, then their risks are automatically remediated.
 
@@ -63,9 +63,9 @@ For risk-based policies to be applied to allow self-remediation, users must firs
    -  The user must be registered for Microsoft Entra multifactor authentication.
    -  For hybrid users that are synced from on-premises to the cloud, password writeback must be enabled for their password change to sync from the cloud to on-premises.
 
-If a risk-based policy is applied during sign-in where the criteria aren't met, the user is blocked. This block occurs because the user can't perform the required step, so admin intervention is required to [unblock the user](#dismiss-risk).
+If a risk-based policy is applied during sign-in where the criteria aren't met, the user is blocked. This block occurs because the user can't perform the required step, so admin intervention is required to [unblock the user](#unblock-users).
 
-Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, so administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary, such as [blocking access from locations](../identity/conditional-access/policy-block-by-location.md) or lowering the acceptable risk in their policies.
+Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, so administrators need to handle those situations manually. Administrators can determine that extra measures are necessary, such as [blocking access from locations](../identity/conditional-access/policy-block-by-location.md) or lowering the acceptable risk in their policies.
 
 ### Self-remediation of sign-in risk
 
@@ -106,7 +106,7 @@ If your organization has a hybrid environment, you can allow on-premises passwor
 > [!NOTE]
 > Allowing on-premises password change to remediate user risk is an opt-in only feature. Customers should evaluate this feature before enabling it in production environments. We recommend customers secure the on-premises password change process. For example, require multifactor authentication before allowing users to change their password on-premises using a tool like [Microsoft Identity Manager's Self-Service Password Reset Portal](/microsoft-identity-manager/working-with-self-service-password-reset).
 
-To configure this setting:
+To allow on-premises password change to reset user risk:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator).
 1. Browse to **Protection** > **Identity Protection** > **Settings**.
@@ -138,6 +138,7 @@ To generate a temporary password:
 1. Provide the temporary password to the user. The user must change their password the next time they sign-in.
 
 The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
+
 - Risk state: "At risk" -> "Remediated"
 - Risk detail: "-" -> "Admin generated temporary password for user"
 
@@ -200,7 +201,7 @@ The risk state and risk details for the user, sign-ins, and corresponding risk d
 
 For more information about what happens when confirming compromise, see [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
 
-## Unblocking users
+## Unblock users
 
 Risk-based policies can be used to block accounts to protect your organization from compromised accounts. You should investigate these scenarios to determine how to unblock the user and then determine why the user was blocked.
 

@@ -50,7 +50,7 @@ Administrators might block users upon sign-in depending on their risk level. To 
 
 :::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-blocked.png" alt-text="A screenshot showing your account is blocked screen." lightbox="media/concept-identity-protection-user-experience/conditional-access-blocked.png":::
 
-IT staff can follow the instructions in [Unblocking users](howto-identity-protection-remediate-unblock.md#unblocking-users) to allow users to sign back in.
+IT staff can follow the instructions in [Unblocking users](howto-identity-protection-remediate-unblock.md#unblock-users) to allow users to sign back in.
 
 ## High risk technician
 
