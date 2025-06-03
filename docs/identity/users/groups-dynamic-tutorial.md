@@ -2,7 +2,7 @@
 title: Add users to a dynamic group
 description: Use groups with user membership rules to add or remove users automatically
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: tutorial
