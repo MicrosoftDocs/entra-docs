@@ -3,7 +3,7 @@ title: Convert external users to internal users (Preview)
 description: You can convert users from external to internal without the need to recreate them.
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.date: 01/06/2025
 ms.topic: how-to
 ms.service: entra-id

@@ -2,7 +2,7 @@
 title: Set expiration for Microsoft 365 groups
 description: Learn how to set up expiration for Microsoft 365 groups in Microsoft Entra ID.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
