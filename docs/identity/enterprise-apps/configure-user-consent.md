@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 06/04/2025
 ms.author: jomondi
 ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
