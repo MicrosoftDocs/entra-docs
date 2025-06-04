@@ -23,9 +23,14 @@ Additionally, by enforcing the requirement that applications must be registered 
 
 You must act **before March 31, 2026**, to avoid authentication failure of applications. 
 
-If you identified traffic using service principal-less authentication between **February 11th and March 11th, 2025**, it will continue to work until **March 2026**. However, any traffic that wasn't detected during this period or any new traffic starting after **March 11, 2025** will be blocked starting **April 2025**.
+In February-March 2025, we froze most resource apps accessed by service principal-less client apps. We allowed traffic where the client app home tenant and resource tenant matched if it was observed between **February 11th and March 11th, 2025**, which will continue to work until March 2026. However, any traffic that was not identified during this period or new traffic after March 11th was blocked starting April 2025. 
+
+We are now addressing the remaining client apps. Starting late June/July 2025, service principal-less traffic observed between **June 16th and 27th, 2025** will be allowed until March 2026. Low-volume traffic will be excluded. This change only applies to a small set of first-party and third-party resource apps, including first-party apps such as EXO, AADGraph, and ARM. 
 
 ## Use sign-in logs to find service principal-less applications
+
+> [!NOTE]
+> Action is only required for apps authenticating without a service principal found in the "Service principal sign-ins" (app-only) sign-in logs. *User* sign-in logs will include Microsoft applications and services that are authenticating without a service principal. Sign-ins and authentication without a service principal by Microsoft apps is expected, and no action is required by customers.
 
 First, you'll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
 
