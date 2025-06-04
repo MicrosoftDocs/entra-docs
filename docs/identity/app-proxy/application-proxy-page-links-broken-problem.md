@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: asteen
 ai-usage: ai-assisted

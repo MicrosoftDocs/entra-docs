@@ -6,10 +6,11 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Header based authentication for single sign-on with application proxy and PingAccess
@@ -79,7 +80,7 @@ To publish your own on-premises application:
    1. **Translate URL in Headers**: Choose **No**.
 
    > [!NOTE]
-   > If this is your first application, use port 3000 to start and come back to update this setting if you change your PingAccess configuration. For subsequent applications, the port will need to match the Listener you've configured in PingAccess.
+   > For the first application, use port 3000 to start and come back to update this setting if you change your PingAccess configuration. For subsequent applications, the port needs to match the Listener configured in PingAccess.
 
 1. Select **Add**. The overview page for the new application appears.
 
@@ -89,12 +90,12 @@ Now assign a user for application testing and choose header-based single sign-on
 
    ![Shows the list of users and groups](./media/application-proxy-configure-single-sign-on-with-ping-access/users-and-groups.png)
 
-1. Select a user for application testing, and select **Select**. Make sure this test account has access to the on-premises application.
+1. Select a user for application testing, and select **Select**. Make sure the test account has access to the on-premises application.
 1. Select **Assign**.
 1. From the application sidebar, select **Single sign-on** > **Header-based**.
 
    > [!TIP]
-   > If this is your first time using header-based single sign-on, you need to install PingAccess. To make sure your Microsoft Entra subscription is automatically associated with your PingAccess installation, use the link on this single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
+   > Install PingAccess the first time you use header-based single sign-on. To make sure your Microsoft Entra subscription is automatically associated with your PingAccess installation, use the link on the single sign-on page to download PingAccess. You can open the download site now, or come back to this page later.
 
    ![Shows header-based sign-on screen and PingAccess](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
 
@@ -186,7 +187,7 @@ To use a custom claim and include more fields in your application. [Created a cu
 > [!NOTE]
 > To use a custom claim, you must also have a custom policy defined and assigned to the application. The policy should include all required custom attributes.
 >
-> You can do policy definition and assignment through PowerShell or Microsoft Graph. If you're doing them in PowerShell, you may need to first use `New-AzureADPolicy` and then assign it to the application with `Add-AzureADServicePrincipalPolicy`. For more information, see [Claims mapping policy assignment](~/identity-platform/saml-claims-customization.md).
+> You can do policy definition and assignment through PowerShell or Microsoft Graph. If you're doing them in PowerShell, you need to first use `New-AzureADPolicy` and then assign it to the application with `Add-AzureADServicePrincipalPolicy`. For more information, see [Claims mapping policy assignment](~/identity-platform/saml-claims-customization.md).
 
 Example:
 ```powershell

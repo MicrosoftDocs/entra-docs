@@ -194,12 +194,6 @@ A Joiner is an individual who needs access. When you onboard new employees, use 
 
 A Mover is an individual moving between boundaries in an organization, for instance, the employee goes from a role in Sales to one in Marketing. The movement might require more, or different, access, and authorization.  
 
-**Lifecycle workflows custom task extension**
-
-As part of a workflow, use custom task extensions to call-out external systems with Azure Logic Apps. 
-
-You can learn to [trigger Logic Apps based on custom task extensions](../id-governance/trigger-custom-task.md).
-
 ### Leaver
 
 The Leaver no longer needs access, such as terminated or retiring employees. Effective Leaver workflows reduce the risk of unauthorized data access, after termination. Therefore, handle Leaver personal information in compliance with regulations and policies. Use customizable workflow templates for timely, reliable, and graceful resource-access removal. 
@@ -217,7 +211,7 @@ Microsoft Entra ID provisioning service keeps source and target systems in sync.
 
 ### Lifecycle workflows custom extensions
 
-Use custom extensions to create workflows using tools like Azure Logic Apps. For workflows, you can enable custom task extensions to call out to external systems. For example, a Joiner workflow with a custom task extension assigns a Microsoft Teams number. Or, when a user becomes a Leaver, a separate workflow grants access to an email account for their manager. 
+Use custom extensions to create workflows using tools like Azure Logic Apps. For workflows, you can enable custom task extensions to call out to external systems. For example, a Joiner workflow with a custom task extension assigns a Microsoft Teams number. Or, when a user becomes a Leaver, a separate workflow grants access to an email account for their manager. You can learn to [trigger Logic Apps based on custom task extensions](../id-governance/trigger-custom-task.md).
 
    > [!NOTE]
    > To create a logic app resource for hosting, select **Consumption**. A consumption logic app has one workflow that runs in multitenant Azure Logic Apps. 

@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Resource isolation with multiple tenants

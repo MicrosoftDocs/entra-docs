@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with Cisco Webex
+title: Configure Cisco Webex for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cisco Webex.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Webex so that I can control who has access to Cisco Webex, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Cisco Webex
+# Configure Cisco Webex for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Cisco Webex with Microsoft Entra ID. When you integrate Cisco Webex with Microsoft Entra ID, you can:
 
@@ -24,7 +22,9 @@ In this article,  you learn how to integrate Cisco Webex with Microsoft Entra ID
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Cisco Webex single sign-on (SSO) enabled subscription.
 *  Service Provider Metadata file from Cisco Webex.
@@ -48,7 +48,7 @@ To configure the integration of Cisco Webex into Microsoft Entra ID, you need to
 1. In the **Add from the gallery** section, type **Cisco Webex** in the search box.
 1. Select **Cisco Webex** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-cisco-webex'></a>
 
@@ -106,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| uid | user.userprincipalname |
 
 	> [!NOTE]
-	>  The source attribute value is by default mapped to userpricipalname. This can be changed to user.mail or user.onpremiseuserprincipalname or any other value as per the setting in Webex.
+	>  The source attribute value is by default mapped to userprincipalname. This can be changed to user.mail or user.onpremiseuserprincipalname or any other value as per the setting in Webex.
 
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.

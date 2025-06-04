@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with gamba!
+title: Configure gamba! for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and gamba!.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and gamba! so that I can control who has access to gamba!, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with gamba!
+# Configure gamba! for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate gamba! with Microsoft Entra ID. When you integrate gamba! with Microsoft Entra ID, you can:
 
@@ -51,7 +51,7 @@ To configure the integration of gamba! into Microsoft Entra ID, you need to add 
 1. In the **Add from the gallery** section, type **gamba!** in the search box.
 1. Select **gamba!** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-gamba'></a>
 

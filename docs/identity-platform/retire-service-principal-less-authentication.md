@@ -13,7 +13,7 @@ From March 2026, Microsoft Entra ID will no longer support service principal-les
 ## Prerequisites
 - An account in the resource tenant with at least the **Application administrator** or **Cloud application administrator** role assigned. 
 
-## Transitioning to Service Principal-less authentication
+## Transitioning from Service Principal-less authentication
 
 Microsoft Entra ID will block authentication for multitenant applications that don't have an enterprise application registration in the resource tenant. This scenario is also known as service principal-less authentication. This behavior has already been blocked for most resources. This change will address a few remaining exceptions. Service principal-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
 

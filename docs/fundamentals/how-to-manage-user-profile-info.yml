@@ -4,7 +4,7 @@ metadata:
   description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
   author: barclayn
   ms.author: barclayn
-  manager: femila
+  manager: pmwongera
   ms.reviewer: jeffsta
   ms.date: 03/25/2025
   ms.service: entra
@@ -12,6 +12,8 @@ metadata:
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-ga-nochange
+    - sfi-image-nochange
 # Customer intent: As an IT admin, I need to understand the information contained in the user profile and settings so that I can properly create and manage users in my organization.
 
 title: |

@@ -1,7 +1,6 @@
 ---
 title: Create custom roles to manage enterprise apps in Microsoft Entra ID
 description: Create and assign custom Microsoft Entra roles for enterprise apps access in Microsoft Entra ID
-
 author: rolyon
 manager: femila
 ms.service: entra-id
@@ -10,8 +9,7 @@ ms.topic: how-to
 ms.date: 01/03/2025
 ms.author: rolyon
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Create custom roles to manage enterprise apps in Microsoft Entra ID

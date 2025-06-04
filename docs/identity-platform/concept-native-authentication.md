@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-ms.date:  09/30/2024
+ms.date:  04/28/2025
 ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
@@ -75,11 +75,12 @@ First, review the guidelines above on [when to use native authentication](/entra
 If your team has determined that native authentication is necessary for your application, follow these steps to enable native authentication in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Applications** > **App registrations** and select your app.
-1. Navigate to **Authentication** and select the **Settings** tab.
-1. Select the **Allow native authentication** and the **Allow public client flow** field.
-
-Once you have enabled both **Allow native authentication** and **Allow public client flow**, update your configuration code accordingly.
+1. Browse to **Applications** > **App registrations** and select the app registration for which you want to enable public client and native authentication flows.
+1. Under **Manage**, select **Authentication**.
+1. Under **Advanced settings**, allow public client flows: 
+    1. For **Enable the following mobile and desktop flows** select **Yes**.
+    1. For **Enable native authentication**, select **Yes**.
+1. Select **Save** button.
 
 ## Update your configuration code
 

@@ -1,17 +1,14 @@
 ---
 title: Export and use Microsoft Entra ID Protection data
 description: Learn about the many long-term data storage and monitoring options for exporting risk data from Microsoft Entra ID Protection.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 11/18/2024
-
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: cokoopma
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to know how to export and use Microsoft Entra ID Protection data so that I can investigate using long-term data in Microsoft Entra ID Protection.
 ---
 # How To: Export risk data

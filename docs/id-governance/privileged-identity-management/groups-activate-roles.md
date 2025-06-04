@@ -3,11 +3,11 @@ title: Activate your group membership or ownership in Privileged Identity Manage
 description: Learn how to activate your group membership or ownership in Privileged
   Identity Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim
@@ -22,7 +22,7 @@ This article is for eligible members or owners who want to activate their group 
 >[!IMPORTANT]
 >When a group membership or ownership is activated, Microsoft Entra PIM temporarily adds an active assignment. Microsoft Entra PIM creates an active assignment (adds user as member or owner of the group) within seconds. When deactivation (manual or through activation time expiration) happens, Microsoft Entra PIM removes user’s group membership or ownership within seconds as well.
 >
->Application may provide access to users based on their group membership. In some situations, application access may not immediately reflect the fact that user was added to the group or removed from it. If application previously cached the fact that user is not member of the group – when user tries to access application again, access may not be provided. Similarly, if application previously cached the fact that user is member of the group – when group membership is deactivated, user may still get access. Specific situation depends on the application’s architecture. For some applications, signing out and signing back in may help to get access added or removed.
+>Application may provide access to users based on their group membership. In some situations, application access may not immediately reflect the fact that user was added to the group or removed from it. If application previously cached the fact that user isn't member of the group – when user tries to access application again, access may not be provided. Similarly, if application previously cached the fact that user is member of the group – when group membership is deactivated, user may still get access. Specific situation depends on the application’s architecture. For some applications, signing out and signing back in may help to get access added or removed.
 
 ## PIM for Groups and ownership deactivation
 

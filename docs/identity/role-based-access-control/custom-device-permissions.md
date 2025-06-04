@@ -1,7 +1,6 @@
 ---
 title: Device management permissions for Microsoft Entra custom roles
 description: Device management permissions for Microsoft Entra custom roles in the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
-
 author: rolyon
 manager: femila
 ms.service: entra-id
@@ -9,7 +8,7 @@ ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 07/18/2024
 ms.author: rolyon
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ---
 
 # Device management permissions for Microsoft Entra custom roles

@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/28/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Secure external access to Microsoft Teams, SharePoint, and OneDrive with Microsoft Entra ID

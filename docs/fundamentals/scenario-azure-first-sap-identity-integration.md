@@ -8,8 +8,8 @@ ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/26/2021
 ms.author: christoc
-ms.custom:
-ms.collection:
+ms.custom: sfi-image-nochange
+ms.collection: 
 ---
 
 # Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications
@@ -263,6 +263,8 @@ If the certificates are allowed to expire, or when they are replaced in time but
 Consider building automation to execute the entire certificate rollover process. For example, one can periodically check for expiring certificates and replace them while updating all relying parties with the new metadata.
 
 ## Using Azure AD B2C as the Identity Provider
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 [Azure Active Directory B2C](/azure/active-directory-b2c/overview) provides business-to-customer identity as a service. Given that the integration with Azure AD B2C is similar to how you would allow enterprise users to sign in with Microsoft Entra ID, the recommendations above still mostly apply when you want to use Azure AD B2C for your customers, consumers or citizens and allow them to use their preferred social, enterprise, or local account identities. 
 

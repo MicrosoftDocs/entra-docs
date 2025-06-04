@@ -1,17 +1,15 @@
 ---
 title: How to configure Microsoft Entra certificate-based authentication
 description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: vimrang
 manager: femila
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
 # How to configure Microsoft Entra certificate-based authentication
 
@@ -345,20 +343,6 @@ To modify tenant default settings and create custom rules in the Microsoft Entra
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/add-issuer-and-policy-oid.png" alt-text="Screenshot of how to add a low affinity binding.":::
 
    1. Authenticate with a certificate that has policy OID of 3.4.5.6 and Issued by CN=CBATestRootProd. Authentication should pass and get a multifactor claim.
-
->[!IMPORTANT]
->There's a known issue where a Microsoft Entra tenant Authentication Policy Administrator configures a CBA authentication policy rule by using both Issuer and Policy OID. The issue impacts some device registration scenarios, including:
->- Windows Hello For Business enrollment
->- FIDO2 security key registration
->- Windows passwordless phone sign-in
->  
->Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios aren't impacted. CBA authentication policy rules using either Issuer OR Policy OID aren't impacted.
->To mitigate, admins should:
->- Edit the certificate-based authentication policy rules that use both Issuer and Policy OID options. Remove either the Issuer or Policy OID requirement and **Save**. 
->  -Or-
->- Remove the authentication policy rule that uses both Issuer and Policy OID. Create rules that use only Issuer or Policy OID.
->  
->We're working to fix the issue.
 
    To create a rule by Issuer and Serial Number:
 

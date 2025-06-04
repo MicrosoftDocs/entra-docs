@@ -17,7 +17,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Freshservice Provisioning so that I can streamline the user management process and ensure that users have the appropriate access to Freshservice Provisioning.
 ---
 
-# Configure Freshservice Provisioning for automatic user provisioning
+# Configure Freshservice Provisioning for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Freshservice Provisioning and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [Freshservice Provisioning](https://effy.co.in/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -103,21 +103,21 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
    |userName|String|&check;|
-   |active|Boolean|
-   |emails[type eq "work"].value|String|
-   |displayName|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |addresses[type eq "work"].formatted|String|
-   |locale|String|
-   |title|String|
-   |timezone|String|
-   |externalId|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|
-   |urn:ietf:params:scim:schemas:extension:freshservice:2.0:User:isAgent|String|
+   |active|Boolean||
+   |emails[type eq "work"].value|String||
+   |displayName|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |addresses[type eq "work"].formatted|String||
+   |locale|String||
+   |title|String||
+   |timezone|String||
+   |externalId|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
+   |urn:ietf:params:scim:schemas:extension:freshservice:2.0:User:isAgent|String||
 
 > [!NOTE]
 > Custom extension attributes can be added to your schema to meet your application's needs by following the below steps:
@@ -128,7 +128,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > * The appropriate data type has to be selected for the custom attribute and select **Save**.
 > * Navigate back to the default mappings screen and select **Add  New Mapping**. The custom attributes will show up in the **Target Attribute** list dropdown.
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Freshservice Provisioning, change the **Provisioning Status** to **On** in the **Settings** section.
 

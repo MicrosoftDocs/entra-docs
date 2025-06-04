@@ -106,6 +106,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/identity/devices/enterprise-state-roaming-windows-settings-reference.md",
+      "redirect_url": "/windows/configuration/windows-backup/catalog-esr",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
       "redirect_url": "/entra/id-protection/overview-identity-protection",
       "redirect_document_id": false
@@ -153,6 +158,11 @@
     {
       "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds-archive.md",
       "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/how-to-navigate.md",
+      "redirect_url": "/entra/fundamentals/what-is-entra",
       "redirect_document_id": false
     },
     {
@@ -426,10 +436,10 @@
       "redirect_document_id": false
     },
     {
-    "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-connector-tutorial.md",
-    "redirect_url": "/entra/identity/saas-apps/axiad-conductor-tutorial",
-    "redirect_document_id": false
-    }, 
+      "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-connector-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/axiad-conductor-tutorial",
+      "redirect_document_id": false
+    },
     {
       "source_path_from_root": "/docs/identity/saas-apps/karlsgate-identity-exchange-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/karlsgate-identity-exchange-kie-sso-add-on-tutorial",
@@ -521,31 +531,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-configure-single-sign-on-with-kcd.md",
-      "redirect_url": "/entra/identity",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-deployment-plan.md",
-      "redirect_url": "/entra/identity",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/app-proxy/what-is-application-proxy.md",
-      "redirect_url": "/entra/identity",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-config-sso-how-to.md",
-      "redirect_url": "/entra/identity",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/app-proxy/whats-new-docs.md",
-      "redirect_url": "/entra/identity",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-release-version-history.md",
       "redirect_url": "/entra/global-secure-access/reference-version-history",
       "redirect_document_id": false
@@ -576,28 +561,18 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/app-provisioning/application-provisioning-config-problem.md",
-      "redirect_url": "/entra/identity",
+      "source_path_from_root": "/docs/global-secure-access/concept-zscaler-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-zscaler-coexistence",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/global-secure-access/concept-palo-alto-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-palo-alto-coexistence",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/app-provisioning/inbound-provisioning-api-postman.md",
       "redirect_url": "/entra/identity/app-provisioning/inbound-provisioning-api-curl-tutorial",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-configure-single-sign-on-on-premises-apps.md",
-      "redirect_url": "/entra/identity",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy-configure-custom-domain.md",
-      "redirect_url": "/entra/identity",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/app-proxy/application-proxy.md",
-      "redirect_url": "/entra/identity/app-proxy",
       "redirect_document_id": false
     },
     {
@@ -643,6 +618,16 @@
     {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-net-use-brokers-with-xamarin-apps.md",
+      "redirect_url": "/entra/msal/objc/single-sign-on-macos-ios",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-net-xamarin-ios-considerations.md",
+      "redirect_url": "/entra/msal/objc/single-sign-on-macos-ios",
       "redirect_document_id": false
     },
     {
@@ -799,7 +784,7 @@
       "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-otp.md",
       "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
-    }, 
+    },
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-call-api.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-call-microsoft-graph-api?tabs=workforce-tenant",
@@ -835,7 +820,8 @@
       "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?tabs=workforce-tenant",
       "redirect_document_id": false
     },
-    {"source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
+    {
+      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
       "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
     },
@@ -883,22 +869,22 @@
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-android-kotlin-prepare-tenant.md",
       "redirect_url": "/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
       "redirect_document_id": false
-  },
-  {
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-android-kotlin-prepare-app.md",
       "redirect_url": "/entra/identity-platform/tutorial-mobile-app-android-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
-  },
-  {
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-android-kotlin-sign-in.md",
       "redirect_url": "/entra/identity-platform/tutorial-mobile-app-android-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
-  },
-  {
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-android-kotlin-sign-in-call-api.md",
       "redirect_url": "/entra/identity-platform/tutorial-mobile-app-android-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
-  },
+    },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-mobile-app-ios-swift-sign-in-call-api.md",
       "redirect_url": "/entra/identity-platform/quickstart-mobile-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
@@ -913,30 +899,30 @@
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-maui-sign-in-prepare-tenant.md",
       "redirect_url": "/entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
-  },
-  {
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-maui-sign-in-prepare-app.md",
       "redirect_url": "/entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
-  },
-  {
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-maui-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-mobile-app-maui-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
-  },
-  {
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-maui-role-based-access-control.md",
       "redirect_url": "/entra/identity-platform/tutorial-mobile-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
-  },  
-  {
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/custom-extension-onattributecollectionstart-reference.md",
       "redirect_url": "/entra/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data",
       "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/identity-platform/custom-extension-onattributecollectionsubmit-reference.md",
-    "redirect_url": "/entra/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data",
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/custom-extension-onattributecollectionsubmit-reference.md",
+      "redirect_url": "/entra/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data",
       "redirect_document_id": false
     },
     {
@@ -1259,7 +1245,6 @@
       "redirect_url": "/entra/identity-platform/scenario-web-api-call-api-app-registration",
       "redirect_document_id": false
     },
-
     {
       "source_path_from_root": "/docs/identity-platform/scenario-protected-web-api-overview.md",
       "redirect_url": "/entra/identity-platform/scenario-protected-web-api-app-registration",
@@ -1586,7 +1571,6 @@
       "redirect_document_id": false
     },
     {
-
       "source_path_from_root": "/docs/id-governance/what-is-identity-lifecycle-management.md",
       "redirect_url": "/entra/id-governance/scenarios/govern-the-employee-lifecycle",
       "redirect_document_id": false
@@ -1686,10 +1670,10 @@
       "redirect_url": "/entra/identity-platform/quickstart-daemon-dotnet-acquire-token",
       "redirect_document_id": false
     },
-    {      
-    "source_path_from_root": "/docs/identity/saas-apps/concur-provisioning-tutorial.md",
-    "redirect_url": "/entra/identity/saas-apps/sap-concur-provisioning-tutorial",
-    "redirect_document_id": false
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/concur-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/sap-concur-provisioning-tutorial",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/saas-apps/ghae-tutorial.md",
@@ -1735,7 +1719,7 @@
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-flask.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-call-api.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-call-api",
@@ -1819,6 +1803,51 @@
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-prepare-app.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-android.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-android-prepare-app?tabs=workforce-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-single-sign-on.md",
+      "redirect_url": "/entra/msal/android/single-sign-on",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/single-multi-account.md",
+      "redirect_url": "/entra/msal/android/single-multi-account",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-logging-android.md",
+      "redirect_url": "/entra/msal/android/logging",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity-platform/migrate-android-adal-msal.md",
+      "redirect_url": "/entra/msal/android/migrate-android-adal-msal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-shared-devices.md",
+      "redirect_url": "/entra/msal/android/shared-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-b2c.md",
+      "redirect_url": "/azure/active-directory-b2c/configure-authentication-sample-android-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-configuration.md",
+      "redirect_url": "/entra/msal/android/msal-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-handling-exceptions.md",
+      "redirect_url": "/entra/msal/android/handling-exceptions",
       "redirect_document_id": false
     },
     {
@@ -1920,14 +1949,14 @@
       "source_path_from_root": "/docs/identity/enterprise-apps/configure-user-consent-groups.md",
       "redirect_url": "/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent",
       "redirect_document_id": false
-    },  
+    },
     {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant.md", 
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-app.md", 
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-app.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
       "redirect_document_id": false
     },
@@ -1968,72 +1997,72 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-native-authentication-cors-solution-production-environment.md",
-      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-production-environment", 
+      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-production-environment",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-native-authentication-cors-solution-test-environment.md",
-      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-test-environment", 
+      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-test-environment",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/quickstart-native-authentication-single-page-app-react-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in", 
+      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-reset-password.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-set-up-local-cors.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-in.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-android-app.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-prepare-android-app", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-prepare-android-app",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-up", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-up",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-sign-out", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-sign-out",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-after-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-self-service-password-reset.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-support-web-fallback.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-support-web-fallback", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-support-web-fallback",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-call-api.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up", 
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up",
       "redirect_document_id": false
     },
     {
@@ -2043,22 +2072,22 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-prepare-tenant.md",
-      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant", 
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-prepare-app.md",
-      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app", 
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-sign-in.md",
-      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in", 
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-sign-in-call-api.md",
-      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in-call-api", 
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in-call-api",
       "redirect_document_id": false
     },
     {
@@ -2093,17 +2122,17 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-prepare-tenant.md",
-      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app", 
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-configure-authentication.md",
-      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-configure-authentication", 
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-configure-authentication",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-prepare-app.md",
-      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app", 
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app",
       "redirect_document_id": false
     },
     {
@@ -2116,27 +2145,27 @@
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md",
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-self-service-password-reset.md",
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback.md",
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-call-api.md",
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
@@ -2255,62 +2284,101 @@
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-app.md",
       "redirect_url": "/entra/identity-platform/how-to-web-app-node-edit-profile-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-update-profile.md",
-    "redirect_url": "/entra/identity-platform/how-to-web-app-node-edit-profile-update-profile?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-call-api.md",
-    "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-app.md",
-    "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-tenant.md",
-    "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md",
-    "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-use-certificate.md",
-    "redirect_url": "/entra/identity-platform/how-to-web-app-node-use-certificate?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-role-based-access-control.md",
-    "redirect_url": "/entra/identity-platform/how-to-web-app-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-modify-group-writeback.md",
-    "redirect_url": "/entra/identity/hybrid/connect/how-to-connect-group-writeback-enable",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-disable.md",
-    "redirect_url": "/entra/identity/hybrid/connect/how-to-connect-group-writeback-enable",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/identity/users/licensing-ps-examples.md",
-    "redirect_url": "/entra/identity/users/licensing-powershell-graph-examples",
-    "redirect_document_id": false
-  },
-  {
-    "source_path_from_root": "/docs/identity-platform/deprecate-service-principal-less-authentication.md",
-    "redirect_url": "/entra/identity-platform/retire-service-principal-less-authentication",
-    "redirect_document_id": false
-  }
-
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-update-profile.md",
+      "redirect_url": "/entra/identity-platform/how-to-web-app-node-edit-profile-update-profile?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-call-api.md",
+      "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md",
+      "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-use-certificate.md",
+      "redirect_url": "/entra/identity-platform/how-to-web-app-node-use-certificate?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-role-based-access-control.md",
+      "redirect_url": "/entra/identity-platform/how-to-web-app-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-modify-group-writeback.md",
+      "redirect_url": "/entra/identity/hybrid/connect/how-to-connect-group-writeback-enable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/hybrid/connect/how-to-connect-group-writeback-disable.md",
+      "redirect_url": "/entra/identity/hybrid/connect/how-to-connect-group-writeback-enable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-ps-examples.md",
+      "redirect_url": "/entra/identity/users/licensing-powershell-graph-examples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/deprecate-service-principal-less-authentication.md",
+      "redirect_url": "/entra/identity-platform/retire-service-principal-less-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/howto-build-services-resilient-to-metadata-refresh.md",
+      "redirect_url": "/entra/identity-platform/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/v2-howto-get-appsource-certified.md",
+      "redirect_url": "/power-platform/developer/appsource/publish-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/migrate-off-email-claim-authorization.md",
+      "redirect_url": "/entra/identity-platform/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/saas-apps/kao-navi-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/shucchonavi-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/saas-apps/adobe-creative-cloud-tutorial.md",
+      "redirect_url": "../../../entra/identity/saas-apps/adobe-identity-management-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/external-id/customers/whats-new-docs.md",
+      "redirect_url": "/entra/external-id/whats-new-docs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/architecture/deployment-external-audit-monitor.md",
+      "redirect_url": "/entra/architecture/deployment-external-operations",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs/identity-platform/scenario-spa-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-spa-app-configuration",
+      "redirect_document_id": false
+    }
   ]
 }

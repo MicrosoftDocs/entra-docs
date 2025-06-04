@@ -5,8 +5,8 @@ description: Learn how to enable and use email one-time passcode authentication 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: CelesteDG
 ms.custom: it-pro
 ms.collection: M365-identity-device-management

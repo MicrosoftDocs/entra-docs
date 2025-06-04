@@ -2,14 +2,14 @@
 title: Frequently asked questions
 description: Find answers to frequently asked questions about Microsoft Entra External ID. Learn about pricing, features, and the future of Azure AD B2C and External Identities. 
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: faq
 ms.date: 04/25/2025
-ms.author: mimart
 ms.custom: it-pro
 ---
 
@@ -155,6 +155,6 @@ You can see example code for each of these steps in our [sample applications](sa
 
 External ID supports server-side integrations with external systems via [custom authentication extensions](~/identity-platform/custom-extension-overview.md). This capability allows developers to implement their own logic and invoke it via real-time API calls during sign-in/up flows.
 
-## Next steps
+## Related content
 
 [Learn more about Microsoft Entra External ID](../index.yml).

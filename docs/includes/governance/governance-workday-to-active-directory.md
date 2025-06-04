@@ -3,8 +3,8 @@ author: billmath
 ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
-ms.author: billmath
-# Used by articles entra governance
+ms.author: billmath # Used by articles entra governance
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -360,7 +360,7 @@ In this section, you configure how user data flows from Workday to Active Direct
 | ---------- | ---------- | ---------- | ---------- |
 | **WorkerID**  |  EmployeeID | **Yes** | Written on create only |
 | **PreferredNameData**    |  cn    |   |   Written on create only |
-| **SelectUniqueValue( Join("\@", Join(".",  \[FirstName\], \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Written on create only 
+| **SelectUniqueValue( Join("\@", Join(".",  \[FirstName\], \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Written on create only |
 | `Replace(Mid(Replace([UserID], , "([\\/\\\\\\[\\]\\:\\;\\|\\=\\,\\+\\*\\?\\<\\>])", , "", , ), 1, 20), , "(\\.)*$", , "", , )`      |    sAMAccountName            |     |         Written on create only |
 | **Switch(\[Active\], , "0", "True", "1", "False")** |  accountDisabled      |     | Create + update |
 | **FirstName**   | givenName       |     |    Create + update |

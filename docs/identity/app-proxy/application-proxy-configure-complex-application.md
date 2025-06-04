@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: dhruvinshah
 ai-usage: ai-assisted
@@ -44,7 +44,7 @@ This article shows you how to configure wildcard application publishing in your 
 - CORS Rules (optional) can be configured per application segment.
 - Access is only granted to defined application segments for a complex application.
     > [!NOTE]
-    > If all application segments are deleted, a complex application will behave as a wildcard application opening access to all valid URLs by specified domain. 
+    > If you delete all application segments, the complex application acts like a wildcard application, allowing access to any valid URL under the specified domain.
 - You can have an internal URL defined both as an application segment and a regular application.
     > [!NOTE]
     > Regular applications always take precedence over a complex app (wildcard application).
@@ -56,7 +56,7 @@ This article shows you how to configure wildcard application publishing in your 
 ## Configure application segments for complex application. 
 
 > [!NOTE]
-> Two application segment per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
+> Two application segments per complex distributed application are supported for [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
 
 To publish a complex distributed app through application proxy with application segments:
 
@@ -87,7 +87,7 @@ To edit/update an application segment, select the application segment from the l
 ## Configuring single sign-on (SSO)
 
 > [!NOTE]
-> Integrated Windows Authentication (IWA) single sign-on doesn't support using wildcard SPNs. For example, a wildcard such as `http/*.contoso.com` uses the single configured SPN such as `http/app.contoso.com` for all the segments.
+> Single sign-on with Integrated Windows Authentication (IWA) doesn't support wildcard Service Principal Names (SPNs). For example, a wildcard such as `http/*.contoso.com` uses the single configured SPN such as `http/app.contoso.com` for all the segments.
 
 ## DNS updates
 

@@ -1,7 +1,6 @@
 ---
 title: Grant access to inbound provisioning API
 description: Learn how to grant access to the inbound provisioning API.
-
 author: jenniferf-skc
 manager: femila
 ms.service: entra-id
@@ -10,6 +9,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Grant access to the inbound provisioning API

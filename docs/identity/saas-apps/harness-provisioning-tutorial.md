@@ -1,20 +1,18 @@
 ---
 title: Configure Harness for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Harness.
-
 author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Harness so that I can streamline the user management process and ensure that users have the appropriate access to Harness.
 ---
 
-# Configure Harness for automatic user provisioning
+# Configure Harness for automatic user provisioning with Microsoft Entra ID
 
 In this article, you learn how to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Harness.
 
@@ -96,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > You may also choose to enable SAML-based single sign-on for Harness by following the instructions in the [Harness single sign-on  article](./harness-tutorial.md). You can configure single sign-on independent of automatic user provisioning, although these two features complement each other.
 
 > [!NOTE]
-> To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://docs.harness.io/article/smloyragsm-api-keys) article.
+> To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://developer.harness.io/docs/platform/automation/api/add-and-manage-api-keys/) article.
 
 To configure automatic user provisioning for Harness in Microsoft Entra ID, do the following:
 

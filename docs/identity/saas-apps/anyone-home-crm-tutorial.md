@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Anyone Home CRM
+title: Configure Anyone Home CRM for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Anyone Home CRM.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Anyone Home CRM so that I can control who has access to Anyone Home CRM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Anyone Home CRM
+# Configure Anyone Home CRM for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Anyone Home CRM with Microsoft Entra ID. When you integrate Anyone Home CRM with Microsoft Entra ID, you can:
 
@@ -47,7 +47,7 @@ To configure the integration of Anyone Home CRM into Microsoft Entra ID, you nee
 1. In the **Add from the gallery** section, type **Anyone Home CRM** in the search box.
 1. Select **Anyone Home CRM** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-anyone-home-crm'></a>
 

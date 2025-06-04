@@ -1,20 +1,18 @@
 ---
 title: Configure Infor CloudSuite for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Infor CloudSuite.
-
 author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Infor CloudSuite so that I can streamline the user management process and ensure that users have the appropriate access to Infor CloudSuite.
 ---
 
-# Configure Infor CloudSuite for automatic user provisioning
+# Configure Infor CloudSuite for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in Infor CloudSuite and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Infor CloudSuite.
 
@@ -132,22 +130,22 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Infor CloudSuite|
 	|---|---|---|---|
-	|userName|String|&check;|&check;
-	|active|Boolean||
-	|displayName|String||
-	|externalId|String||
-	|name.familyName|String||
-	|name.givenName|String||
-	|displayName|String||
-	|title|String||
-	|emails[type eq "work"].value|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:actorId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:federationId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:ifsPersonId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:lnUser|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:userAlias|String||
+	|userName|String|&check;|&check;|
+	|active|Boolean|||
+	|displayName|String|||
+	|externalId|String|||
+	|name.familyName|String|||
+	|name.givenName|String|||
+	|displayName|String|||
+	|title|String|||
+	|emails[type eq "work"].value|String|||
+	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
+	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:actorId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:federationId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:ifsPersonId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:lnUser|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:userAlias|String|||
 
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Infor CloudSuite**.
@@ -156,11 +154,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	|Attribute|Type|Supported for filtering|Required by Infor CloudSuite|
 	|---|---|---|---|
-	|displayName|String|&check;|&check;
-	|members|Reference||
-	|externalId|String||
+	|displayName|String|&check;|&check;|
+	|members|Reference|||
+	|externalId|String|||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Infor CloudSuite, change the **Provisioning Status** to **On** in the **Settings** section.
 

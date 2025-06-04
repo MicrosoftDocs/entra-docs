@@ -1,13 +1,11 @@
 ---
 title: Troubleshoot combined registration
 description: Troubleshoot Microsoft Entra multifactor authentication and self-service password reset combined registration
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: troubleshooting
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 manager: femila

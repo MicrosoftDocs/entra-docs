@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Active and Thriving
+title: Configure Active and Thriving for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Active and Thriving.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Active and Thriving so that I can control who has access to Active and Thriving, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Active and Thriving
+# Configure Active and Thriving for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Active and Thriving with Microsoft Entra ID. When you integrate Active and Thriving with Microsoft Entra ID, you can:
 
@@ -25,7 +25,9 @@ In this article,  you learn how to integrate Active and Thriving with Microsoft 
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Active and Thriving single sign-on (SSO) enabled subscription.
 
@@ -44,7 +46,7 @@ To configure the integration of Active and Thriving into Microsoft Entra ID, you
 1. In the **Add from the gallery** section, type **Active and Thriving** in the search box.
 1. Select **Active and Thriving** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-active-and-thriving'></a>
 

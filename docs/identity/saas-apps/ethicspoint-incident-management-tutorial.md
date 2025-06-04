@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with EthicsPoint Incident Management (EPIM)
+title: Configure EthicsPoint Incident Management (EPIM) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and EthicsPoint Incident Management (EPIM).
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EthicsPoint Incident Management (EPIM) so that I can control who has access to EthicsPoint Incident Management (EPIM), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with EthicsPoint Incident Management (EPIM)
+# Configure EthicsPoint Incident Management (EPIM) for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EthicsPoint Incident Management (EPIM) with Microsoft Entra ID. When you integrate EthicsPoint Incident Management (EPIM) with Microsoft Entra ID, you can:
 
@@ -23,7 +23,9 @@ In this article,  you learn how to integrate EthicsPoint Incident Management (EP
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * EthicsPoint Incident Management (EPIM) single sign-on (SSO) enabled subscription.
 
@@ -42,7 +44,7 @@ To configure the integration of EthicsPoint Incident Management (EPIM) into Micr
 1. In the **Add from the gallery** section, type **EthicsPoint Incident Management (EPIM)** in the search box.
 1. Select **EthicsPoint Incident Management (EPIM)** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-ethicspoint-incident-management-epim'></a>
 

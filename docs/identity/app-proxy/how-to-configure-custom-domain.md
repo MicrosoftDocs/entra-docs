@@ -1,16 +1,16 @@
 ---
 title: Custom domains in Microsoft Entra application proxy
 description: Configure and manage custom domains in Microsoft Entra application proxy.
-
 author: kenwith
 manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Configure custom domains with Microsoft Entra application proxy
@@ -27,16 +27,16 @@ It's a good idea to set up custom domains for your apps whenever possible. Some 
 
 - You can control your branding and create the URLs you want. A custom domain can help build your users' confidence, because users see and use a familiar name instead of *`msappproxy.net`*.
 
-- Some configurations only work with custom domains. For example, you need custom domains for apps that use Security Assertion Markup Language (SAML). SAML is used when you’re using Active Directory Federation Services (AD FS) but are unable to use WS-Federation. For more information, see [Work with claims-aware apps in application proxy](application-proxy-configure-for-claims-aware-applications.md). 
+- Some configurations only work with custom domains. For example, you need custom domains for apps that use Security Assertion Markup Language (SAML). SAML is used when you’re using Active Directory Federation Services (ADFS) but are unable to use WS-Federation. For more information, see [Work with claims-aware apps in application proxy](application-proxy-configure-for-claims-aware-applications.md). 
 
 If you're not able to make the internal and external URLs match, it's not as important to use custom domains. But you can still take advantage of the other benefits. 
 
 ## DNS configuration options
 
-There are several options for setting up your DNS configuration, depending on your requirements:
+There are several options for setting up your Domain Name System (DNS) configuration, depending on your requirements:
 
 
-### Same internal and external URL, different internal and external behavior 
+### Same internal and external URL, but different behavior 
 
 If you don't want your internal users to be directed through the application proxy, you can set up a *split-brain DNS*. A split DNS infrastructure directs name resolution based on host location. Internal hosts are directed to an internal domain name server, and external hosts to an external domain name server.
 
@@ -51,10 +51,10 @@ When you select a custom domain for an external URL, an information bar shows th
 
 ## Set up and use custom domains
 
-To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a PFX certificate for the custom domain, and an on-premises app to configure. 
+To configure an on-premises app to use a custom domain, you need a verified Microsoft Entra custom domain, a Personal Information eXchange (PFX) certificate for the custom domain, and an on-premises app to configure. 
 
 > [!IMPORTANT]
-> You are responsible for maintaining DNS records that redirect your custom domains to the *`msappproxy.net`* domain. If you choose to later delete your application or tenant, make sure to also delete associated DNS records for application proxy to prevent misuse of dangling DNS records. 
+> You're responsible for maintaining DNS records that redirect your custom domains to the *`msappproxy.net`* domain. If you choose to later delete your application or tenant, make sure to also delete associated DNS records for application proxy to prevent misuse of dangling DNS records. 
 
 ### Create and verify a custom domain
 
@@ -108,7 +108,7 @@ To publish your app through application proxy with a custom domain:
 10. Follow the instructions at [Manage DNS records and record sets by using the Microsoft Entra admin center](/azure/dns/dns-operations-recordsets-portal) to add a DNS record that redirects the new external URL to the *`msappproxy.net`* domain in Azure DNS. If a different DNS provider is used, contact the vendor for the instructions.
 
        > [!IMPORTANT] 
-       > Ensure that you are properly using a CNAME record that points to the *`msappproxy.net`* domain. Do not point records to IP addresses or server DNS names since these are not static and may impact the resiliency of the service.
+       > Ensure that you're properly using a CNAME record that points to the *`msappproxy.net`* domain. Don't point records to IP addresses or server DNS names since they aren't static and might affect the resiliency of the service.
    
 11. To check that the DNS record is configured correctly, use the [nslookup](https://social.technet.microsoft.com/wiki/contents/articles/29184.nslookup-for-beginners.aspx) command to confirm that your external URL is reachable and the *`msappproxy.net`* domain appears as an alias.
 
@@ -120,7 +120,7 @@ For more detailed instructions for application proxy, see [Tutorial: Add an on-p
 
 ## Certificates for custom domains
 
-A certificate creates the secure TLS connection for your custom domain. 
+A certificate creates the secure Transport Layer Security (TLS) connection for your custom domain. 
 
 ### Certificate formats
 
@@ -132,7 +132,7 @@ You can use wildcard certificates as long as the wildcard matches the external U
 
 You can use certificates issued by your own public key infrastructure (PKI) if the certificate chain is installed on your client devices. Microsoft Intune can deploy these certificates to managed devices. For nonmanaged devices, you must manually install these certificates. 
 
-We don't recommend using a private root Certificate Authority (CA) since the private root CA would also need to be pushed to client machines, which may introduce many challenges.
+We don't recommend using a private root Certificate Authority (CA) since the private root CA would also need to be pushed to client machines, which might introduce many challenges.
 
 ### Certificate management
 
@@ -140,7 +140,7 @@ All certificate management is through the individual application pages. Go to th
 
 If you upload a certificate, then **new** apps use it. As long as they're configured to use it. However, you need to upload the certificate again for apps that were already there when you uploaded it.
 
-When a certificate expires, you get a warning telling you to upload another certificate. If the certificate is revoked, your users may see a security warning when accessing the app. To update the certificate for an app, navigate to the **Application proxy** page for the app, select **Certificate**, and upload a new certificate. Old certificates that aren't being used by other apps are automatically deleted. 
+When a certificate expires, you get a warning telling you to upload another certificate. If the certificate is revoked, your users might see a security warning when accessing the app. To update the certificate for an app, navigate to the **Application proxy** page for the app, select **Certificate**, and upload a new certificate. Old certificates that aren't being used by other apps are automatically deleted. 
 
 ## Next steps
 

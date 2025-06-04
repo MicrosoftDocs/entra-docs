@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 # Manage mappings and users in applications that did not match to users in Microsoft Entra ID

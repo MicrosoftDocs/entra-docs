@@ -17,7 +17,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BIC Cloud Design so that I can streamline the user management process and ensure that users have the appropriate access to BIC Cloud Design.
 ---
 
-# Configure BIC Cloud Design for automatic user provisioning
+# Configure BIC Cloud Design for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both BIC Cloud Design and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [BIC Cloud Design](https://www.gbtec.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -100,12 +100,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by BIC Cloud Design|
    |---|---|---|---|
-    |userName|String|&check;|&check;
-    |emails[type eq "work"].value|String|&check;|&check;
-    |active|Boolean||&check;
-    |roles[primary eq "True"].value|String||&check;
-    |displayName|String||&check;
-    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||&check;
+    |userName|String|&check;|&check;|
+    |emails[type eq "work"].value|String|&check;|&check;|
+    |active|Boolean||&check;|
+    |roles[primary eq "True"].value|String||&check;|
+    |displayName|String||&check;|
+    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||&check;|
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to BIC Cloud Design**.
 
@@ -113,9 +113,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by BIC Cloud Design|
    |---|---|---|---|
-      |displayName|String|&check;|&check;
-      |externalId|String||&check;
-      |members|Reference|
+      |displayName|String|&check;|&check;|
+      |externalId|String||&check;|
+      |members|Reference|||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

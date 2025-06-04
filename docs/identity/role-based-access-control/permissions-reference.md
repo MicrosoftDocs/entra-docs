@@ -7,10 +7,10 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 01/08/2025
+ms.date: 05/26/2025
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
-ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 
 # Microsoft Entra built-in roles
@@ -90,6 +90,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Microsoft 365 Backup Administrator](#microsoft-365-backup-administrator) | Back up and restore content across supported services (SharePoint, OneDrive, and Exchange Online) in Microsoft 365 Backup | 1707125e-0aa2-4d4d-8655-a7c786c76a25 |
 > | [Microsoft 365 Migration Administrator](#microsoft-365-migration-administrator) | Perform all migration functionality to migrate content to Microsoft 365 using Migration Manager. | 8c8b803f-96e1-4129-9349-20738d9f9652 |
 > | [Microsoft Entra Joined Device Local Administrator](#microsoft-entra-joined-device-local-administrator) | Users assigned to this role are added to the local administrators group on Microsoft Entra joined devices. | 9f06204d-73c1-4d4c-880a-6edb90606fd8 |
+> | [Microsoft Graph Data Connect Administrator](#microsoft-graph-data-connect-administrator) | Manage aspects of Microsoft Graph Data Connect service in a tenant. | ee67aa9c-e510-4759-b906-227085a7fd4d |
 > | [Microsoft Hardware Warranty Administrator](#microsoft-hardware-warranty-administrator) | Create and manage all aspects warranty claims and entitlements for Microsoft manufactured hardware, like Surface and HoloLens. | 1501b917-7653-4ff9-a4b5-203eaf33784f |
 > | [Microsoft Hardware Warranty Specialist](#microsoft-hardware-warranty-specialist) | Create and read warranty claims for Microsoft manufactured hardware, like Surface and HoloLens. | 281fe777-fb20-4fbb-b7a3-ccebce5b0d96 |
 > | [Modern Commerce Administrator](#modern-commerce-administrator) | Can manage commercial purchases for a company, department or team. | d24aef57-1500-4070-84db-2666f29cf966 |
@@ -1044,6 +1045,9 @@ Users with this role have global permissions within Microsoft Exchange Online, w
 > | microsoft.backup/restorePoints/userMailboxes/allProperties/allTasks | Manage all restore points associated with selected Exchange Online mailboxes in M365 Backup |
 > | microsoft.backup/userMailboxProtectionUnits/allProperties/allTasks | Manage mailboxes added to Exchange Online protection policy in Microsoft 365 Backup |
 > | microsoft.backup/userMailboxRestoreArtifacts/allProperties/allTasks | Manage mailboxes added to restore session for Exchange Online in Microsoft 365 Backup |
+> | microsoft.directory/contacts/allProperties/read | Read all properties for contacts |
+> | microsoft.directory/contacts/memberOf/read | Read the group membership for all contacts in Microsoft Entra ID |
+> | microsoft.directory/contacts/standard/read | Read basic properties on contacts in Microsoft Entra ID |
 > | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
@@ -1051,6 +1055,7 @@ Users with this role have global permissions within Microsoft Exchange Online, w
 > | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
 > | microsoft.office365.exchange/allEntities/basic/allTasks | Manage all aspects of Exchange Online |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
@@ -1295,6 +1300,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.insights/allEntities/allProperties/allTasks | Manage all aspects of Insights app |
 > | microsoft.intune/allEntities/allTasks | Manage all aspects of Microsoft Intune |
 > | microsoft.networkAccess/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Entra Network Access |
+> | microsoft.networkAccess/trafficLogs/standard/read | Read standard properties of traffic logs such as DeviceId, DestinationIp and PolicyRuleId |
 > | microsoft.office365.complianceManager/allEntities/allTasks | Manage all aspects of Office 365 Compliance Manager |
 > | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft 365 Copilot |
 > | microsoft.office365.desktopAnalytics/allEntities/allTasks | Manage all aspects of Desktop Analytics |
@@ -1322,6 +1328,10 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.office365.userCommunication/allEntities/allTasks | Read and update what's new messages visibility |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.office365.yammer/allEntities/allProperties/allTasks | Manage all aspects of Yammer |
+> | microsoft.peopleAdmin/organization/allProperties/read | Read people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.peopleAdmin/organization/allProperties/update | Update people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.people/users/photo/read | Read profile photo of user |
+> | microsoft.people/users/photo/update | Update profile photo of user |
 > | microsoft.permissionsManagement/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Entra Permissions Management |
 > | microsoft.powerApps/allEntities/allTasks | Manage all aspects of Power Apps |
 > | microsoft.powerApps.powerBI/allEntities/allTasks | Manage all aspects of Fabric and Power BI |
@@ -1407,6 +1417,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/multiTenantOrganization/tenants/standard/read | Read basic properties of a tenant participating in a multi-tenant organization |
 > | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/read | Read all properties of OAuth 2.0 permission grants |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
 > | microsoft.directory/organization/allProperties/read | Read all properties for an organization |
 > | microsoft.directory/pendingExternalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
 > | microsoft.directory/permissionGrantPolicies/standard/read | Read standard properties of permission grant policies |
@@ -1967,6 +1978,31 @@ This role is available for assignment only as an additional local administrator 
 > | microsoft.directory/groupSettings/standard/read | Read basic properties on group settings |
 > | microsoft.directory/groupSettingTemplates/standard/read | Read basic properties on group setting templates |
 
+## Microsoft Graph Data Connect Administrator
+
+Assign the Microsoft Graph Data Connect Administrator role to users who need to do the following tasks:
+
+- Access the full set of administrative capabilities of Microsoft Graph Data Connect
+- Manage Microsoft Graph Data Connect settings in a tenant
+- Enable or disable the Microsoft Graph Data Connect service
+- Configure dataset workload selections in Microsoft Graph Data Connect
+- Configure cross-tenant data movement settings in Microsoft Graph Data Connect
+- View, approve, or deny application authorization requests for Microsoft Graph Data Connect
+- View, create, update, or delete application registrations for Microsoft Graph Data Connect
+
+[Learn more](/graph/data-connect-concept-overview)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.graph.dataConnect/allEntities/allProperties/allTasks | Manage aspects of Microsoft Graph Data Connect |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
 ## Microsoft Hardware Warranty Administrator
 
 Assign the Microsoft Hardware Warranty Administrator role to users who need to do the following tasks:
@@ -2244,6 +2280,7 @@ Assign the People Administrator role to users who need to do the following tasks
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.peopleAdmin/organization/allProperties/read | Read people settings for users, such as pronouns, name pronunciation, and profile card settings |
 > | microsoft.peopleAdmin/organization/allProperties/update | Update people settings for users, such as pronouns, name pronunciation, and profile card settings |
 > | microsoft.people/users/photo/read | Read profile photo of user |
@@ -2949,6 +2986,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/groups/settings/update | Update settings of groups |
 > | microsoft.directory/groups/visibility/update | Update the visibility property of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
 > | microsoft.directory/policies/standard/read | Read basic properties on policies |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
@@ -3028,6 +3066,7 @@ For more information, see [Key roles for Viva Glint](/viva/glint/start/role-defi
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.viva.glint/allEntities/allProperties/allTasks | Manage and configure all Microsoft Viva Glint settings in the Microsoft 365 admin center |

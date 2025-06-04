@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
 ms.date: 01/16/2020
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to

@@ -16,8 +16,6 @@ items:
     href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
     href: introduction-identity-access-management.md
-  - name: Get the most out of documentation
-    href: how-to-navigate.md
 - name: Set up your tenant and directory
   expanded: true
   items:

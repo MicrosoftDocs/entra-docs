@@ -1,7 +1,6 @@
 ---
 title: Frontline worker management
 description: Learn about frontline worker management capabilities that are provided through the My Staff portal.
-
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
@@ -10,7 +9,7 @@ ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
 ms.reviewer: stevebal
-
+ms.custom: sfi-image-nochange
 #Customer Intent: As a manager of frontline workers, I want an intuitive portal so that I can easily onboard new workers and provision shared devices.
 ---
 

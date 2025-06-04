@@ -1,10 +1,8 @@
 ---
 title: Using Microsoft Entra Connect Health with AD DS
 description: This is the Microsoft Entra Connect Health page that will discuss how to monitor AD DS.
-
 author: billmath
 manager: femila
-
 ms.assetid: 19e3cf15-f150-46a3-a10c-2990702cd700
 ms.service: entra-id
 ms.subservice: hybrid-connect
@@ -12,8 +10,7 @@ ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Using Microsoft Entra Connect Health with AD DS
 The following documentation is specific to monitoring Active Directory Domain Services with Microsoft Entra Connect Health. The supported versions of AD DS are: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2, and Windows Server 2016.

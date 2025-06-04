@@ -1,15 +1,14 @@
 ---
 title: Restricted management administrative units in Microsoft Entra ID (Preview)
 description: Use restricted management administrative units for more sensitive resources in Microsoft Entra ID.
-
 author: rolyon
 manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: role-based-access-control
-ms.date: 06/13/2024
+ms.date: 05/24/2025
 ms.author: rolyon
-ms.custom: oldportal;it-pro;
+ms.custom: oldportal, it-pro;, sfi-ga-nochange
 ---
 
 # Restricted management administrative units in Microsoft Entra ID (Preview)
@@ -59,6 +58,7 @@ For administrators not explicitly assigned at the restricted management administ
 | Modify email and mailbox settings in Exchange for the user in the restricted management administrative unit |  | :white_check_mark: |
 | Apply policies to a device in a restricted management administrative unit using Intune |  | :white_check_mark: |
 | Add or remove a group as a site owner in SharePoint |  | :white_check_mark: |
+| Assign licenses and update the usage location of users in a restricted management administrative unit |  | :white_check_mark: |
 
 ## Who can modify objects?
 
@@ -79,7 +79,8 @@ Only administrators with an explicit assignment at the scope of a restricted man
 Here are some of the limits and constraints for restricted management administrative units.
 
 - The restricted management setting must be applied during administrative unit creation and can't be changed once the administrative unit is created.
-- Groups in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Microsoft Entra Privileged Identity Management](../../id-governance/privileged-identity-management/groups-discover-groups.md) or [Microsoft Entra entitlement management](../../id-governance/entitlement-management-overview.md).
+- Groups and users in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Privileged Identity Management](../../id-governance/privileged-identity-management/groups-discover-groups.md), [Entitlement management](../../id-governance/entitlement-management-overview.md), [Lifecycle workflows](../../id-governance/what-are-lifecycle-workflows.md) and [Access reviews](../../id-governance/access-reviews-overview.md).
+- When a group is configured to have public membership (by setting the [visibility](/graph/api/resources/group#properties) property to `Public`), users can join the group by using [self-service group membership](../users/groups-self-service-management.md). This configuration is not the default setting, and it is not recommended to configure groups in restricted management administrative units to allow for public membership. This is a temporary limitation and will be removed.
 - Role-assignable groups, when added to a restricted management administrative unit, can't have their membership modified. Group owners aren't allowed to manage groups in restricted management administrative units and only Global Administrators and Privileged Role Administrators (neither of which can be assigned at administrative unit scope) can modify membership.
 - Certain actions might not be possible when an object is in a restricted management administrative unit, if the required role isn't one of the roles that can be assigned at administrative unit scope. For example, a Global Administrator in a restricted management administrative unit can't have their password reset by any other administrator in the system, because there's no admin role that can be assigned at the administrative unit scope that can reset the password of a Global Administrator. In such scenarios, the Global Administrator would need to be removed from the restricted management administrative unit first, and then have their password reset by another Global Administrator or Privileged Role Administrator.
 - When deleting a restricted management administrative unit, it can take up to 30 minutes to remove all protections from the former members.
