@@ -99,7 +99,6 @@ With the Azure Logic App given the access package assignment manager role for th
 1. On the **HTTP** pane under Parameters, enter the following parameters:
     - URI: https://graph.microsoft.com/v1.0@{triggerBody()?['CallbackUriPath']}
     - Method: POST
-    - Body: Your own custom logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard). For an example of the body action see: [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
     - Authentication Type: Managed identity
     - Managed Identity: System-assigned managed identity
     - Audience: https://graph.microsoft.com
