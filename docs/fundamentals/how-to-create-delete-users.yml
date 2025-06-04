@@ -50,7 +50,7 @@ introduction: |
   A Microsoft Entra tenant in an *external* configuration is used exclusively for [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) scenarios. An external tenant can include the following user types:
 
   - **Internal user**: These users authenticate internally, and are typically admins with assigned [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md) in your external tenant.
-  - **External user**: These users are consumers and business customers of the apps registered in your external tenant. They have a local account with [default user privileges](~/external-id/customers/reference-user-permissions.md). See how to [create a new external user](#create-a-new-external-user).
+  - **External user**: These users are consumers and business customers of the apps registered in your external tenant. They have a local account with [default user privileges](~/external-id/customers/reference-user-permissions.md) and authenticate via external identity providers or accounts. See how to [create a new external user](#create-a-new-external-user).
   - **External guest**:  These users sign in with their own external credentials and are typically admins with assigned [Microsoft Entra roles](~/identity/role-based-access-control/permissions-reference.md) in your external tenant.
 
   For more information, see [Default user permissions](~/external-id/customers/reference-user-permissions.md) for external tenants.
