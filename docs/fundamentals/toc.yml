@@ -88,6 +88,8 @@ items:
   items:
   - name: Overview
     href: copilot-security-entra.md
+  - name: Microsoft Security Copilot scenarios
+    href: copilot-entra-security-scenarios.md
   - name: Security Copilot agents in Microsoft Entra
     href: agents.md
   - name: Respond to identity threats using risky user summarization
@@ -98,12 +100,6 @@ items:
     href: copilot-security-entra-investigate-incident.md 
   - name: Investigate app risk using Microsoft Security Copilot
     href: copilot-security-entra-investigate-risky-apps.md
-  - name: Investigate Access Reviews With Microsoft Security Copilot
-    href: copilot-entra-investigate-access-reviews.md
-  - name: Microsoft Entra Recommendations with Microsoft Security Copilot
-    href: copilot-entra-recommendations.md
-  - name: Investigate insights within entitlements management in Microsoft Entra Copilot
-    href: copilot-entra-entitlements-management.md
   - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
     href: copilot-security-entra-responsible-ai-faq.md
 - name: Support and help
