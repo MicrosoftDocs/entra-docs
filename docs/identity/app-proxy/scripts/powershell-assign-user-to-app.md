@@ -2,7 +2,7 @@
 title: PowerShell sample - Assign user to a Microsoft Entra application proxy app
 description: PowerShell example that assigns a user to a Microsoft Entra application proxy application.
 author: kenwith
-manager: femila
+manager: 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom:

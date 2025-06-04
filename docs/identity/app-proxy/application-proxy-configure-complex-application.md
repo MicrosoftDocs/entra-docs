@@ -2,7 +2,7 @@
 title: Complex applications for Microsoft Entra application proxy
 description: Understand complex applications in Microsoft Entra application proxy.
 author: kenwith
-manager: femila
+manager: 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
