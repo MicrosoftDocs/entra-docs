@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/03/2025
+ms.date: 06/04/2025
 ms.author: justinha
 author: justinha
 manager: femila
@@ -43,6 +43,8 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | September 1, 2025 |
 | [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | September 1, 2025 |
 | [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | September 1, 2025 | 
+| [REST API](/rest/api/azure/) | N/A | September 1, 2025 | 
+| [Azure SDK](https://azure.github.io/azure-sdk/) | N/A | September 1, 2025 | 
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
