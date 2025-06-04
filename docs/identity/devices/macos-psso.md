@@ -62,7 +62,7 @@ Learn how you can use Platform SSO for macOS to enable passwordless authenticati
 * [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md)
 * [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment.md)
 
-Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-authentication scenarios). Admins need to enable the FIDO2 security key authentication method for this capability. If you use key restrictions in your FIDO policy then you'll need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
+Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-authentication scenarios). If you use key restrictions in your FIDO policy then you'll need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
 
 ### Microsoft Platform SSO: UserSecureEnclaveKeyBiometricPolicy
 
