@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 05/29/2025
+ms.date: 05/28/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -121,7 +121,6 @@ To disable TLS inspection:
 ## Test with a self-signed root certificate authority using OpenSSL
 For **testing purposes only**, use a self-signed root certificate authority (CA) that you create with OpenSSL to sign the CSR. To test with OpenSSL:
 1. If you don't already have one, create an *openssl.cnf* file with this configuration:
-
 ```ini
 [ rootCA_ext ]
 subjectKeyIdentifier = hash
