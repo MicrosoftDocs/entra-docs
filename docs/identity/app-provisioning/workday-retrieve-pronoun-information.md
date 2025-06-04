@@ -2,7 +2,7 @@
 title: Retrieve pronoun information from Workday
 description: Learn how to retrieve pronoun information from Workday
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference

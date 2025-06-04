@@ -3,7 +3,7 @@ title: Microsoft Global Secure Access built-in roles
 description: Learn about the built-in administrator roles you can assign to manage Global Secure Access permissions.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: reference
 ms.date: 03/05/2025
 ai-usage: ai-assisted
