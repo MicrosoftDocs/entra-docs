@@ -109,7 +109,7 @@ With the Azure Logic App given the access package assignment manager role for th
 
 ## Add business logic to the logic app
 
-With the logic app configured for communication with Microsoft Entra, you can now add what you want the app to do. Logic app actions are added to the body of the **HTTP** section you configured for the logic app. To edit this, do the following:
+With the logic app configured for communication with Microsoft Entra, you can now add what you want the app to do. Logic app actions are added to the body of the **HTTP** section you configured for the logic app. To edit this, you do the following:
 
 1. On the logic app created, go to **Development Tools** > **Logic app designer**.
 
