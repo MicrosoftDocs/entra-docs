@@ -7,7 +7,7 @@ manager: celestedg
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/20/2025
+ms.date: 06/04/2025
 ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
 ---
@@ -102,15 +102,26 @@ The following table compares the features available for [Application registratio
 | **Authentication** > **Redirect URIs**| The URIs Microsoft Entra ID accepts as destinations when returning authentication responses (tokens) after successfully authenticating or signing out users. | Same as workforce.|
 | **Authentication** > **Front-channel logout URL**| This URL is where Microsoft Entra ID sends a request to have the application clear the user's session data. The Front-channel logout URL is required for single sign-out to work correctly.| Same as workforce.|
 | **Authentication** > **Implicit grant and hybrid flows**| Request a token directly from the authorization endpoint. | Same as workforce.|
-| **Certificates & secrets** | <ul><li>[Certificate](../../identity-platform/how-to-add-credentials.md?tabs=certificate)</li><li>[Client secrets](../../identity-platform/how-to-add-credentials.md?tabs=client-secret)</li><li>[Federated credentials](../../identity-platform/how-to-add-credentials.md?tabs=federated-credential)</li></ul>| Same as workforce.|
+| **Certificates & secrets** | Multiple credentials: <ul><li>[Certificates](../../identity-platform/how-to-add-credentials.md?tabs=certificate)</li><li>[Client secrets](../../identity-platform/how-to-add-credentials.md?tabs=client-secret)</li><li>[Federated credentials](../../identity-platform/how-to-add-credentials.md?tabs=federated-credential)</li></ul> | Same as workforce.|
 | **Certificates & secrets** > **Rotation**| Update client credentials to ensure they remain valid and secure, while users can continue to sign-in. [Certificates](../../identity-platform/how-to-add-credentials.md?tabs=certificate), [secrets](../../identity-platform/how-to-add-credentials.md?tabs=client-secret), and [federated credentials](../../identity-platform/how-to-add-credentials.md?tabs=federated-credential) can be rotated by adding a new one and then removing the old one.|Same as workforce.|
 |**Certificates & secrets** > **Policy** | Configure the [application management policies](~/identity/enterprise-apps/tutorial-enforce-secret-standards.md) to enforce secret and certificate restrictions. | Not available |
 | **API permissions** | Add, remove, and replace permissions to an application. After permissions are added to your application, users or admins need to grant consent to the new permissions. Learn more about [updating an app's requested permissions in Microsoft Entra ID](../../identity-platform/howto-update-permissions.md).  | The following are the allowed permissions: Microsoft Graph `offline_access`, `openid`, and `User.Read` and your **My APIs** delegated permissions. Only an admin can consent on behalf of the organization.  |
 | **Expose an API** | [Define custom scopes](../../identity-platform/quickstart-configure-app-expose-web-apis.md) to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that a user or admin consent to one or more of these scopes. | Define custom scopes to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that admin consent to one or more of these scopes. |
-| **App roles**| App roles are [custom roles](../../identity-platform/howto-add-app-roles-in-apps.md) to assign permissions to users or apps. The application defines and publishes the app roles and interprets them as permissions during authorization.| Same as workforce. Learn more about [using role-based access control for applications](how-to-use-app-roles-customers.md) in an external tenant. |
 | **Owners** | Application owners can view and edit the application registration. Additionally, any user (who might not be listed) with administrative privileges to manage any application (for example, [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)) can view and edit the application registration. | Same as workforce. |
 | **Roles and administrators** | [Administrative roles](~/identity/role-based-access-control/permissions-reference.md) are used for granting access for privileged actions in Microsoft Entra ID. | Only the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role can be used for apps in external tenants. This role grants the ability to create and manage all aspects of application registrations and enterprise applications.  |
-| **Assigning users and groups to an app**| When user assignment is required, only those users you assign to the application (either through direct user assignment or based on group membership) are able to sign in. For more information, see [manage users and groups assignment to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)| Not available |
+
+### Access control for applications
+
+The following table compares the features available for application authorization in each type of tenant.
+
+|Feature  |Workforce tenant  | External tenant |
+|---------|---------|---------|
+| **Role-based access control (RBAC)**| You can define [application roles](../../identity-platform/custom-rbac-for-developers.md#app-roles) for your application and assign those roles to users and groups. Microsoft Entra ID includes the user roles in the security token. Your application can then make authorization decisions based on the values in the security token.| Same as workforce. Learn more about [using role-based access control for applications](how-to-use-app-roles-customers.md) in an external tenant. For available features, see [groups and application roles support](./reference-group-app-roles-support.md).  |
+|**Security groups**| You can use [security groups](../../identity-platform/custom-rbac-for-developers.md#groups) to implement RBAC in your applications, where the memberships of the user in specific groups are interpreted as their role memberships. Microsoft Entra ID includes user group membership in the security token. Your application can then make authorization decisions based on the values in the security token. |Same as workforce. The [groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID.|
+| **Attribute-based access control (ABAC)** | You can configure the app to include user attributes in the access token. Your application can then make authorization decisions based on the values in the security token. For more information, see [token customization](#token-customization). | Same as workforce.|
+| **Require user assignment**| When user assignment is required, only those users you assign to the application (either through direct user assignment or based on group membership) are able to sign in. For more information, see [manage users and groups assignment to an application](../../identity-platform/howto-restrict-your-app-to-a-set-of-users.md)| Same as workforce. For details, see [groups and application roles support](./reference-group-app-roles-support.md). |
+
+
 
 ## OpenID Connect and OAuth2 flows
 

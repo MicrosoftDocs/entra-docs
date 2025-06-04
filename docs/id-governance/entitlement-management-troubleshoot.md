@@ -2,7 +2,7 @@
 title: Troubleshoot entitlement management
 description: Learn about some items you should check to help you troubleshoot Microsoft Entra entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
