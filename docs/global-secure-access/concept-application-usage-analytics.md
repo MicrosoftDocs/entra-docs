@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: concept-article
-ms.date: 06/03/2025
+ms.date: 06/04/2025
 manager: dougeby
 ms.reviewer: kerenSemel
 
