@@ -44,7 +44,7 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | September 1, 2025 |
 | [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | September 1, 2025 | 
 | [REST API (Control Plane)](/azure/azure-resource-manager/management/control-plane-and-data-plane#control-plane) | N/A | September 1, 2025 | 
-| [Azure SDK](https://azure.github.io/azure-sdk/) | N/A | September 1, 2025 | 
+| [Azure SDK](/azure/developer/intro/azure-developer-create-resources#azure-sdk-and-rest-apis) | N/A | September 1, 2025 | 
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
