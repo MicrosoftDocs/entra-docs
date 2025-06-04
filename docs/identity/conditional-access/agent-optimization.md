@@ -12,11 +12,10 @@ ms.topic: how-to
 ---
 # Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot
 
-[!INCLUDE [copilot-security-optimization-agent](../../includes/copilot-security-optimization-agent.md)]
 
 The Conditional Access optimization agent helps you ensure all users are protected by policy. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
-In preview, the agent evaluates policies requiring multifactor authentication (MFA), enforces device based controls (device compliance, app protection policies, and Domain Joined Devices), and blocks legacy authentication and device code flow. 
+In preview, the Security Copilot agent evaluates policies requiring multifactor authentication (MFA), enforces device based controls (device compliance, app protection policies, and Domain Joined Devices), and blocks legacy authentication and device code flow. 
 
 The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies.
 
@@ -27,19 +26,19 @@ The agent also evaluates all existing enabled policies to propose potential cons
    - On average, each agent run consumes less than one SCU.
 - To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
 - To interact with the agent and apply suggestions, you need the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
-
+   - For more information, see [Understand authentication in Microsoft Security Copilot](/copilot/security/authentication)
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
-
-
-
+- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Limitations
 
-- During the preview, avoid using an account to set up the agent that requires role activation with Privileged Identity Management. Using an account that doesn't have standing permissions might cause authentication failures for the agent.
+- During the preview, avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- For policy consolidation, each agent run only looks at four similar policy pairs
+- For policy consolidation, each agent run only looks at four similar policy pairs.
 - The agent currently runs as the user who enables it.
 - In preview, you should only run the agent from the Microsoft Entra admin center.
+- Scanning is limited to a 24 hour period.
+- Suggestions from the agent can't be customized or overridden.
 
 ## Conditional Access optimization agent key features
 
@@ -56,9 +55,9 @@ The Conditional Access optimization agent scans your tenant for new users and ap
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-try-now.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/agent-optimization/conditional-access-optimization-agent-try-now.png":::
 
-1. Select **View details** under the Conditional Access Optimization Agent, then select **Start agent** to begin your first run. 
+1. Select **View details** under the Conditional Access Optimization Agent, then select **Run agent** to begin your first run. 
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization Agent configuration page." lightbox="media/agent-optimization/conditional-access-optimization-start-agent.png":::
+   :::image type="content" source="media/agent-optimization/agent-optimization-start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization Agent configuration page." lightbox="media/agent-optimization/agent-optimization-start-agent.png":::
 
 1. When the agent overview page loads, you see most recent and next scheduled runtimes, performance highlights, recent suggestions, and recent activity.
 
@@ -89,19 +88,32 @@ Use the **Give Microsoft feedback** button at the top of the agent window to pro
 
 ## Settings
 
-The agent is configured to run every 24 hours based on when it's initially configured. Toggling **Trigger** to off under the settings page of the agent and back on at a specific time reconfigures the agent to run at that time.
+Once the agent is enabled, you can adjust a few settings. You can access the settings from two places in the Microsoft Entra admin center:
+
+- From **Agents** > **Conditional Access optimization agent** > **Settings**.
+- From **Conditional Access** > select the **Conditional Access optimization agent** card under **Policy summary** > **Settings**.
+
+### Trigger
+
+The agent is configured to run every 24 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
+
+:::image type="content" source="media/agent-optimization/agent-optimization-trigger-toggle.png" alt-text="Screenshot showing the Conditional Access Optimization Agent enabled in an organization." lightbox="media/agent-optimization/agent-optimization-trigger-toggle.png":::
+
+### Objects
 
 Use the checkboxes under **Objects** to specify what the agent should monitor when making policy recommendations. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
 
-The agent runs under the **Identity and permissions** of the user who enabled the agent in your tenant. Because of this requirement you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation.
+### Identity and permissions
+
+The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*. Because of this requirement you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation.
+
+The Security Administrator and Global Administrator roles also have access to Security Copilot by default.
+
+You can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authenticate#assign-security-copilot-access).
+
+### Custom instructions
 
 You can tailor policy to your needs using the optional **Custom Instructions** field. This allows you to provide a prompt to the agent as part of its execution. For example: "The user "Break Glass" should be excluded from policies created." When you save the custom instruction prompt Security Copilot will attempt to interpret and the results appear in the settings page.
-
-### Roles and permissions
-
-   - These roles also have [access to Security Copilot by default](/copilot/security/authentication).
-
-   - You can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well.
 
 ## Remove agent
 
