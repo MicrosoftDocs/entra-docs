@@ -2,7 +2,7 @@
 title: PowerShell sample - Assign group to a Microsoft Entra application proxy app
 description: PowerShell example that assigns a group to a Microsoft Entra application proxy application.
 author: kenwith
-manager: 
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom:

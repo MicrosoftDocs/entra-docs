@@ -2,7 +2,7 @@
 title: Debug Application Proxy Issues
 description: Learn about debugging issues that occur when configuring Microsoft Entra application proxy.
 author: kenwith
-manager: 
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
