@@ -61,7 +61,7 @@ The Conditional Access optimization agent scans your tenant for new users and ap
 
 1. When the agent overview page loads, you see most recent and next scheduled runtimes, performance highlights, recent suggestions, and recent activity.
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot showing the Conditional Access Optimization Agent enabled in an organization." lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
+   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot showing recent activity of the Conditional Access optimization agent." lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
 
 1. Selecting a suggestion allows you to see the proposed change, make edits, see [potential policy impact](concept-conditional-access-report-only.md#reviewing-results).
 1. Newly created policies are created in report-only mode. As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
@@ -97,7 +97,7 @@ Once the agent is enabled, you can adjust a few settings. You can access the set
 
 The agent is configured to run every 24 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
 
-:::image type="content" source="media/agent-optimization/agent-optimization-trigger-toggle.png" alt-text="Screenshot showing the Conditional Access Optimization Agent enabled in an organization." lightbox="media/agent-optimization/agent-optimization-trigger-toggle.png":::
+:::image type="content" source="media/agent-optimization/agent-optimization-trigger-toggle.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/agent-optimization-trigger-toggle.png":::
 
 ### Objects
 
@@ -109,7 +109,7 @@ The agent runs under the identity and permissions of the *user who enabled the a
 
 The Security Administrator and Global Administrator roles also have access to Security Copilot by default.
 
-You can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authenticate#assign-security-copilot-access).
+You can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 
 ### Custom instructions
 
