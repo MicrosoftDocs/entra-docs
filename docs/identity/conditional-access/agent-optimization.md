@@ -1,16 +1,18 @@
 ---
 title: Microsoft Entra Conditional Access optimization agent
-description: Learn how the Microsoft Entra Conditional Access optimization agent can help secure your organization.
+description: Learn how the Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot can help secure your organization.
 ms.author: joflore
 author: MicrosoftGuyJFlo
 
-ms.date: 04/26/2025
+ms.date: 06/04/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ---
-# Microsoft Entra Conditional Access optimization agent
+# Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot
+
+[!INCLUDE [copilot-security-optimization-agent](../../includes/copilot-security-optimization-agent.md)]
 
 The Conditional Access optimization agent helps you ensure all users are protected by policy. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
@@ -20,10 +22,16 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 ## Prerequisites
 
-- For the initial agent enablement/setup, you will need to be either a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview. These roles also have [access to Security Copilot by default](/copilot/security/authentication). After setup, you can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well.
-- You must have at least [Microsoft Entra ID P1](overview.md#license-requirements).
-- You must have available [security compute units (SCU)](/copilot/security/manage-usage). On average, each agent run consumes less than one SCU.
+- You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
+- You must have available [security compute units (SCU)](/copilot/security/manage-usage).
+   - On average, each agent run consumes less than one SCU.
+- To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
+- To interact with the agent and apply suggestions, you need the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
+
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
+
+
+
 
 ### Limitations
 
@@ -32,6 +40,14 @@ The agent also evaluates all existing enabled policies to propose potential cons
 - For policy consolidation, each agent run only looks at four similar policy pairs
 - The agent currently runs as the user who enables it.
 - In preview, you should only run the agent from the Microsoft Entra admin center.
+
+## Conditional Access optimization agent key features
+
+The Conditional Access optimization agent scans your tenant for new users and applications and determines if Conditional Access policies are applicable. In preview, the key features include:
+
+- **Block legacy authentication**: User accounts with legacy authentication are blocked from signing in.
+- **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
+- **One-click remediation**: When the agent identifies a suggestion, you can select **Apply suggestion** to have the agent update the associated policy with one click.
 
 ## Getting started
 
@@ -64,6 +80,9 @@ The agent might run and:
 - Suggest creation of a new Conditional Access policy in report-only mode
 - Suggest adding newly created users to an existing policy
 
+> [!WARNING]
+> Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
+
 ### Providing feedback
 
 Use the **Give Microsoft feedback** button at the top of the agent window to provide feedback to Microsoft about the agent.
@@ -77,6 +96,12 @@ Use the checkboxes under **Objects** to specify what the agent should monitor wh
 The agent runs under the **Identity and permissions** of the user who enabled the agent in your tenant. Because of this requirement you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation.
 
 You can tailor policy to your needs using the optional **Custom Instructions** field. This allows you to provide a prompt to the agent as part of its execution. For example: "The user "Break Glass" should be excluded from policies created." When you save the custom instruction prompt Security Copilot will attempt to interpret and the results appear in the settings page.
+
+### Roles and permissions
+
+   - These roles also have [access to Security Copilot by default](/copilot/security/authentication).
+
+   - You can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well.
 
 ## Remove agent
 
