@@ -25,7 +25,7 @@ Some organizations target the following services directly using the underlying s
 - bb3d68c2-d09e-4455-94a0-e323996dbaa3 - Security Copilot API
 - b0cf1501-8e0f-4fbb-b70a-52ca5ea7bda6 - Security Copilot Logic Apps Connector
 
-In these cases administrators must create, assign, and then target custom security attributes.
+In these cases administrators must create, assign, and then target these underlying service principals with custom security attributes.
 
 ## Required roles
 
