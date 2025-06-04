@@ -88,7 +88,7 @@ With the Azure logic app created, you must enable its system-assigned identity, 
 
 ## Configure the logic app and corresponding business logic
 
-With the Azure Logic App given the access package assignment manager role for the catalog, you must now go to logic app to edit it to communicate with Microsoft Entra and add your business logic. To do this, you'd do the following steps:
+With the Azure Logic App given the access package assignment manager role for the catalog, you must now go to logic app to edit it to communicate with Microsoft Entra. To do this, you'd do the following steps:
 
 1. On the logic app created, go to **Development Tools** > **Logic app designer**.
 
@@ -97,7 +97,7 @@ With the Azure Logic App given the access package assignment manager role for th
 1. On the Add an Action pane, select **HTTP**.
 
 1. On the **HTTP** pane under Parameters, enter the following parameters:
-    - URI: https://graph.microsoft.com/beta@{triggerBody()?['CallbackUriPath']}
+    - URI: https://graph.microsoft.com/v1.0@{triggerBody()?['CallbackUriPath']}
     - Method: POST
     - Body: Your own custom logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard). For an example of the body action see: [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
     - Authentication Type: Managed identity
@@ -106,6 +106,21 @@ With the Azure Logic App given the access package assignment manager role for th
 1. Under HTTP Settings, disable **Asynchronous Pattern**. 
     :::image type="content" source="media/entitlement-management-dynamic-approval/disable-asynchronous-pattern.png" alt-text="Screenshot of disabling asynchronous pattern in a logic app http call.":::
 1. After you've made changes to the HTTP trigger, select **Save**. 
+
+## Add business logic to the logic app
+
+With the logic app configured for communication with Microsoft Entra, you can now add what you want the app to do. Logic app actions are added to the body of the **HTTP** section you configured for the logic app. To edit this, do the following:
+
+1. On the logic app created, go to **Development Tools** > **Logic app designer**.
+
+1. On the logic app designer page, select **HTTP**.
+
+1. On the HTTP pane under **Parameters**, scroll down to **Body** and enter your logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard).
+    :::image type="content" source="media/entitlement-management-dynamic-approval/logic-app-business-logic.png" alt-text="Screenshot of adding business logic to logic app.":::
+    > [!NOTE]
+    > For an example of the body action see: [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
+1. When finished adding your business logic, select **save**.
+
 
 ## Verify the extension worked
 
