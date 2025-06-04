@@ -2,7 +2,7 @@
 title: Multitenant organization identity provisioning for Microsoft 365
 description: Learn how multitenant organizations identity provisioning and Microsoft 365 work together.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: conceptual
