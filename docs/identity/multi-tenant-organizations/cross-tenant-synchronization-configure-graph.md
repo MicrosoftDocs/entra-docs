@@ -10,7 +10,7 @@ ms.date: 10/15/2024
 ms.author: kenwith
 ms.custom: it-pro
 
-#Customer intent: As a dev, devops, or it admin, I want to 
+#Customer intent: As a dev, devops, or it admin, I want to
 ---
 
 # Configure cross-tenant synchronization using PowerShell or Microsoft Graph API
