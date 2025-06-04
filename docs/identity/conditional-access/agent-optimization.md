@@ -119,6 +119,30 @@ You can tailor policy to your needs using the optional **Custom Instructions** f
 
 If you no longer wish to use the Conditional Access optimization agent, you can remove it using the **Remove agent** button at the top of the agent window.
 
+## FAQs
+
+### When should I use the Conditional Access optimization agent vs Copilot Chat
+
+Both features provide different insights into your Conditional Access policies. The following table provides a comparison of the two features:
+
+| Scenario | Conditional Access Optimization Agent | Copilot Chat |
+|----------|---------------------------------------|--------------|
+| **Generic Scenarios** |||
+| Utilizes tenant-specific config | ✅ |  |
+| Advanced reasoning | ✅ |  |
+| On-demand insights |  | ✅ |
+| Interactive troubleshooting |  | ✅ |
+| Continuous policy assessment | ✅ |  |
+| Automated improvement suggestions | ✅ |  |
+| Getting guidance on CA best practices and configuration | ✅ | ✅ |
+| **Specific Scenarios** |||
+| Identifying unprotected users or applications proactively | ✅ |  |
+| Enforcing MFA and other baseline controls for all users | ✅ |  |
+| Continuous monitoring and optimization of CA policies | ✅ |  |
+| One-click policy changes | ✅ |  |
+| Reviewing existing CA policies and assignments (e.g., policies apply to Alice?) | ✅ | ✅ |
+| Troubleshoot a user’s access (e.g., Why was Alice prompted for MFA?) |  | ✅ |
+
 ## Related content
 
 - [Conditional Access policy templates](concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
