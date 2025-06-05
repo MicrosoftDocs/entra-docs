@@ -2,7 +2,7 @@
 title: Provision a user or group on demand using the Microsoft Entra provisioning service
 description: Learn how to provision users on demand in Microsoft Entra ID.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
