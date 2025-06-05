@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 ---
 # How to configure Microsoft Entra Private Access for Active Directory Domain Controllers
 
-This guide describes how to configure Entra Private Access for Active Directory Domain Controllers (DCs). This capability helps strengthen secure access for on-premises users by enforcing conditional access/MFA to on-premises applications that use Kerberos authentication with the DCs.
+This guide describes how to configure Microsoft Entra Private Access for Active Directory Domain Controllers (DCs). This capability helps strengthen secure access for on-premises users by enforcing conditional access/MFA to on-premises applications that use Kerberos authentication with the DCs.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 
 - The **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- The client machine is at least Windows 10 and is Microsoft Entra joined or hybrid joined device. The client machine must also have line of sight to the private resources and DC (user is in a corporate network and accessing on-premises resources). User identity used for joining the device and accessing these resources was created in Active Directory (AD) and synced to Entra ID using Entra Connect.  
+- The client machine is at least Windows 10 and is Microsoft Entra joined or hybrid joined device. The client machine must also have line of sight to the private resources and DC (user is in a corporate network and accessing on-premises resources). User identity used for joining the device and accessing these resources was created in Active Directory (AD) and synced to Microsoft Entra ID using Microsoft Entra Connect.  
 - The latest Microsoft Entra Private network connector is installed and has a line of sight to the DC. 
 - Open inbound port in the Windows Defender Firewall on the DC(s) for TCP port 1337.  
 - Identify the Service Principal Names (SPNs) of the private apps that you want to protect. You will later add these to configure the policy for Private Access Sensor(s) that are installed on the DC(s) (Please note that SPNs to be used in the policy are case insensitive and should be an exact match). 
@@ -41,16 +41,16 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 
 Follow these steps to configure Microsoft Entra Private Access for Active Directory Domain Controllers.
 
-### 1. Download and install the Private Network Connector
+### 1. Download and install the Microsoft Entra private network connector
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Go to **Global Secure Access** > **Connect** > **Connectors** > **Private Network Connectors**.
-1. Download the latest version of the Private Network Connector.
+1. Download the latest version of the private network connector.
 1. Install the connector on a Windows Server that has line of sight to your domain controller.
-1. After installation, verify the connector status is **Active** in the Entra portal.
+1. After installation, verify the connector status is **Active** in the Microsoft Entra admin center.
 
 > [!TIP]
-> Note the private IP address(es) of your connector(s) (for example, `10.5.0.7`). You will need these later when configuring the Private Access Sensor policy.
+> Note the private IP address(es) of your connector(s) (for example, `10.5.0.7`). You need these later when configuring the Private Access Sensor policy.
 
 ### 2. Create a Global Secure Access application
 
@@ -65,27 +65,27 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 
 ### 4. Assign users and configure Conditional Access
 
-1. In the Entra application where you configured the DCs, assign all users synchronized from Active Directory.
+1. In the Microsoft Entra application where you configured the DCs, assign all users synchronized from Active Directory.
 1. Add a Conditional Access policy with Multi-Factor Authentication (MFA) as required.
 
 ### 5. Enable the Private Access profile
 
-1. In the Entra portal, go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
+1. In the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
 1. Enable the Private Access profile.
 
 ### 6. Install the Global Secure Access client
 
 1. Download the latest Global Secure Access Windows client from **Global Secure Access** > **Connect** > **Client download** > **Windows 10/11**.
-1. Install the client on a Windows 10/11 device that is Entra joined or hybrid joined.
+1. Install the client on a Windows 10/11 device that is Microsoft Entra joined or hybrid joined.
 1. Ensure the client device has line of sight to the private applications and the domain controller.
 1. After installation, pause (disable) the client.
 
 ### 7. Install the Private Access Sensor on the domain controller
 
-1. Download the Private Access Sensor for DC.
+1. Download the Private Access Sensor for DC at [https://aka.ms/PASensorpPrefresh](https://aka.ms/PASensorpPrefresh).
 1. Extract the zip file.
 1. Install the sensor by running the `PrivateAccessSensorInstaller` batch file, or install the `PrivateAccessSensor` package followed by the `PrivateAccessSensorPolicyRetreiverInstaller` package.
-1. During installation, sign in with an Entra ID user when prompted.
+1. During installation, sign in with an Microsoft Entra ID user when prompted.
 1. After installation, verify the sensor status is **Active** in **Global Secure Access** > **Connect** > **Connectors** > **Private access sensor**.
 
 > [!NOTE]
@@ -107,7 +107,7 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 - Enable breakglass mode by setting `"IsBreakGlass": true` in the policy file or changing the `TmpBreakglass` registry key from `0` to `1`.
 - Changes may take a few minutes to propagate; restarting the sensor is not required.
 
-### 9. Test Entra Private Access for Domain Controllers
+### 9. Test Microsoft Entra Private Access for Domain Controllers
 
 1. Keep both the Global Secure Access client and Private Access Sensor(s) turned off.
 1. Confirm that the DC FQDN(s)/IP(s) configured in the Quick Access app are present in the Global Secure Access client policy.
@@ -132,7 +132,6 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 > [!TIP]
 > If you encounter issues, provide screenshots, command outputs, and collected logs to Microsoft support for further assistance.
 
-
-## Next steps
+## Related content
 - [Learn about traffic profiles](concept-traffic-forwarding.md)
 - [Configure per-app access](how-to-configure-per-app-access.md)
