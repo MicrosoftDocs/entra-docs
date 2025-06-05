@@ -129,11 +129,11 @@ To generate a temporary password:
 1. Browse to **Protection** > **Identity Protection** > **Risky users**, and select the affected user.
 1. Select **Reset password** from the panel that appears.
 
-    :::image type="content" source="media/howto-identity-protection-remediate-unblock/risky-user-details.png" alt-text="Screenshot of the Risky User Details panel with reset password highlighted.":::
+    :::image type="content" source="media/howto-identity-protection-remediate-unblock/risky-user-details.png" alt-text="Screenshot of the Risky User Details panel with reset password highlighted." lightbox="media/howto-identity-protection-remediate-unblock/risky-user-details.png":::
 
 1. Review the message and select **Reset password** again.
 
-   :::image type="content" source="media/howto-identity-protection-remediate-unblock/reset-password.png" alt-text="Screenshot of the second reset password button.":::
+   :::image type="content" source="media/howto-identity-protection-remediate-unblock/reset-password.png" alt-text="Screenshot of the second reset password button." lightbox="media/howto-identity-protection-remediate-unblock/reset-password.png":::
 
 1. Provide the temporary password to the user. The user must change their password the next time they sign-in.
 
@@ -151,7 +151,7 @@ Pay attention to the following considerations when generating a temporary passwo
    - Enable password hash synchronization, including the PowerShell script in the [Synchronizing temporary passwords](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) section.
    - Enable the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting in Microsoft Entra ID Protection.
    - Enable [Self-service password reset](../identity/authentication/tutorial-enable-sspr.md).
-   - In Active Directory, only select the option **User must change password at next logon** if everything in the previous bullets is enabled.
+   - In Active Directory, only select the option **User must change password at next logon** after you enable everything in the previous bullets.
 
 ### Require a password reset
 

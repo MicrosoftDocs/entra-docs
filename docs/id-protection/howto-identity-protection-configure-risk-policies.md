@@ -5,7 +5,7 @@ description: Enable and configure risk policies in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 04/11/2025
+ms.date: 06/05/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -46,7 +46,7 @@ Requiring access control when risk level is low introduces more friction and use
 
 ### Risk remediation
 
-Organizations can choose to block access when risk is detected. Blocking sometimes stops legitimate users from doing what they need to. A better solution is to configure [user](#user-risk-policy-in-conditional-access) and [sign-in](#sign-in-risk-policy-in-conditional-access) risk-based Conditional Access policies that [allow users to self-remediate](howto-identity-protection-remediate-unblock.md#automatic).
+Organizations can choose to block access when risk is detected. Blocking sometimes stops legitimate users from doing what they need to. A better solution is to configure [user](#user-risk-policy-in-conditional-access) and [sign-in](#sign-in-risk-policy-in-conditional-access) risk-based Conditional Access policies that [allow users to self-remediate](howto-identity-protection-remediate-unblock.md#self-remediation).
 
 > [!WARNING]
 > Users must register for Microsoft Entra multifactor authentication before they face a situation requiring remediation. For hybrid users that are synced from on-premises, password writeback must be enabled. Users not registered are blocked and require administrator intervention.
