@@ -30,6 +30,7 @@ You configure and test Microsoft Entra single sign-on for my.sdworx.com in a tes
  
 When using **SP** initiated initiated single sign-on, only “email domain” realm discovery is supported, which means only company/enterprise email addresses are allowed (no private email addresses like hotmail.com, gmail.com, …)
 
+<!-- Changes made by Rhythm -->
 
 
 > [!NOTE]
