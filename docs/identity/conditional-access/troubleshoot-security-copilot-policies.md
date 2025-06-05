@@ -16,7 +16,7 @@ ms.reviewer: lhuangnorth
 
 [Generative artificial intelligence (AI)](/ai/playbook/technology-guidance/generative-ai/) services like [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) can bring value to your organization when used appropriately.
 
-Apply Conditional Access policy to these generative AI services by following [our recommendation to target all resources](concept-conditional-access-cloud-apps.md#all-resources). These policies might include those for [all users](policy-all-users-mfa-strength.md), risky [users](policy-risk-based-user.md), [sign-ins](policy-risk-based-sign-in.md), and users with [insider risk](policy-risk-based-insider-block.md).
+Apply Conditional Access policy to these generative AI services by following [our recommendation to target all resources](concept-conditional-access-cloud-apps.md#all-resources). These policies might include those for [all users](policy-all-users-mfa-strength.md), risky [users](policy-risk-based-user.md), [sign-ins](policy-risk-based-sign-in.md), [device compliance](policy-all-users-device-compliance.md), and users with [insider risk](policy-risk-based-insider-block.md).
 
 Some organizations target these services directly by using the underlying service principals and custom security attributes in their Conditional Access policies:
 
