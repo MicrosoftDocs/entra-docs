@@ -104,6 +104,9 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 
 > [!IMPORTANT]
 > The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `AuditMode` registry key for `PrivateAccessSensor` from `1` to `0`.
+>
+> ![Screenshot showing the Private Access Sensor settings in the Windows Registry](media/how-to-configure-domain-controllers/private-access-sensor-windows-registry.png)
+
 
 #### Break glass mode
 
