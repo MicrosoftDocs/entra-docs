@@ -7,7 +7,7 @@ ms.subservice: users
 ms.topic: how-to
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.reviewer: krbain
 ms.date: 01/07/2025
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done

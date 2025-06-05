@@ -2,7 +2,7 @@
 title: 'Microsoft Entra ID Governance licensing fundamentals'
 description: This article describes shows the licensing requirements for Microsoft Entra ID Governance features.
 author: billmath
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.date: 04/09/2025

@@ -3,7 +3,7 @@ title: PIM PowerShell for Azure Resources Migration Guidance
 description: The following documentation provides guidance for Privileged Identity Management (PIM) PowerShell migration.
 
 author: billmath
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to

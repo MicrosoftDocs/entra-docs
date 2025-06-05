@@ -2,7 +2,7 @@
 title: Header based authentication with PingAccess for Microsoft Entra application proxy
 description: Support header-based authentication with PingAccess and Microsoft Entra application proxy.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to

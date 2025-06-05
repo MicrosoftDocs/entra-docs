@@ -3,7 +3,7 @@ title: Users, groups, licensing, and roles in Microsoft Entra ID
 description: The relationship between users and licenses assigned, administrator roles, dynamic membership groups in Microsoft Entra ID
 keywords: 
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.author: barclayn
 ms.reviewer: krbain
 ms.date: 01/31/2025

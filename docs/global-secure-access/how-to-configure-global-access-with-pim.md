@@ -2,7 +2,7 @@
 title: Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
 description: Learn how to secure highly valued private application access with Privileged Identity Management (PIM) and Global Secure Access
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual

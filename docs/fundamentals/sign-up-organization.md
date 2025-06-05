@@ -3,7 +3,7 @@ title: Sign up your organization
 description: Learn about the options to sign up your organization to use Azure and
   Microsoft Entra ID.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual

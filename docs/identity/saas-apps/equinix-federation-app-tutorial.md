@@ -102,7 +102,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Equinix Federation App SSO
 
-To configure Single Sign-On on **Equinix Federation App** side, please follow the [link](https://docs.equinix.com/Content/home.htm).
+To configure Single Sign-On on **Equinix Federation App** side, please follow the [link](https://docs.equinix.com).
 
 ### Create Equinix Federation App test user
 

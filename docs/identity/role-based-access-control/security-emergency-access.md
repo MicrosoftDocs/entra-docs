@@ -1,9 +1,9 @@
 ---
 title: Manage emergency access admin accounts
 description: This article describes how to use emergency access accounts to help prevent being inadvertently locked out of your Microsoft Entra organization.
-author: markwahl-msft
-manager: femila
-ms.author: rolyon
+author: barclayn
+manager: pmwongera
+ms.author: barclayn
 ms.date: 02/10/2025
 ms.topic: conceptual
 ms.service: entra-id
