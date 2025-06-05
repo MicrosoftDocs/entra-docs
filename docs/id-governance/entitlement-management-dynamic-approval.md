@@ -15,13 +15,9 @@ ms.date: 04/12/2025
 
 # Externally determine the approval requirements for an access package using custom extensions (Preview)
 
-In entitlement management, approvers for access package requests can either be directly assigned, or determined dynamically.
-
-Entitlement management natively supports approvers when they are the requestors manager, their second-level manager, or a sponsor from a connected organization:
+In entitlement management, approvers for access package requests can either be directly assigned, or determined dynamically. Entitlement management natively supports approvers when they are the requestors manager, their second-level manager, or a sponsor from a connected organization:
 
 :::image type="content" source="media/entitlement-management-dynamic-approval/native-support-diagram.png" alt-text="Screenshot of native support of approvers in Entitlement management.":::
-
- While entitlement management natively supports dynamic approvers such as the requestor's manager, second-level manager, or sponsor from a connected organization, these options don't cover all scenarios. 
  
 With the inclusion of [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview), you're able to determine approval based on each of the [ApprovalStage properties](/graph/api/resources/approvalstage?view=graph-rest-beta#properties). For example, if the user requesting an access package is in a department where leadership has recently changed, dynamic approvals can query the system and assign the new department head as the approver.
 
