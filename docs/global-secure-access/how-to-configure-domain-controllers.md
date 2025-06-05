@@ -52,7 +52,7 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 1. After installation, verify the connector status is **Active** in the Microsoft Entra admin center.
 
 > [!TIP]
-> Note the private IP addresses of your connectors (for example, `10.5.0.7`). You need the IPs when configuring the Private Access Sensor policy.
+> Note the private IP addresses of your connectors (for example, `10.5.0.8`). You need the IPs when configuring the Private Access Sensor policy.
 
 ### 2. Create a Global Secure Access application
 
@@ -67,8 +67,9 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 ### 3. Assign users and configure Conditional Access
 
-1. Assign the users who are synchronized from Active Directory in the Microsoft Entra application where you configured the domain controllers.
-1. Create a Conditional Access policy that requires multifactor authentication (MFA) for these users.
+1. On the application settings page, Quick Access in this example, select **Users and groups**.
+1. Select **Add user/group** to assign the users who are synchronized from Active Directory in the Microsoft Entra application where you configured the domain controllers.
+1. Create a Conditional Access policy that requires multifactor authentication (MFA) for these users. To learn how to create an MFA policy, see [Building a Conditional Access policy](/entra/identity/conditional-access/concept-conditional-access-policies).
 
 ### 4. Enable the Private Access profile
 
