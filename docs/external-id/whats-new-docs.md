@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 04/01/2025
+ms.date: 06/05/2025
 ms.service: entra-external-id
 ms.topic: whats-new
 
@@ -16,36 +16,16 @@ manager: CelesteDG
 
 Welcome to what's new in documentation for Microsoft Entra External ID. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-# [Workforce tenants](#tab/workforce-tenants)
+# [External ID in external tenants](#tab/external-tenants)
 
-## March 2025
-
-### Updated articles
-
-- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated important considerations
-- [Authentication flow for non-Microsoft Entra ID external users](authentication-conditional-access.md) - Replaced retired MSOnline references 
-- [Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](bulk-invite-powershell.md) - Editorial updates
-- [B2B collaboration invitation redemption](redemption-experience.md) - Editorial updates
-
-## February 2025
-
-### New articles
-
-- [SAML/WS-Fed identity providers](direct-federation-overview.md)
+## May 2025
 
 ### Updated articles
 
-- [Add federation with SAML/WS-Fed identity providers](direct-federation.md) - Editorial updates
-- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Global Administrator role update
-
-## December 2024
-
-### Updated articles
-
-- [Leave an organization where you have a guest account](leave-the-organization.md) - Added additional support options
-- [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated pricing information
-
-# [External tenants](#tab/external-tenants)
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added multiple updates
+- [Collect custom user attributes during sign-up](customers/how-to-define-custom-attributes.md) - Attribute visibility update
+- [Microsoft Entra External ID training, live demo, and videos](customers/reference-training-videos.md) - Added new videos
+- [Add the SAML/WS-Fed identity provider to a user flow](customers/how-to-saml-ws-federation-self-service-sign-up.md) - SAML/WS-Fed federation is generally available
 
 ## March 2025
 
@@ -77,24 +57,33 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 - [Microsoft Entra External ID frequently asked questions](customers/faq-customers.md) - Updated billing for phone charges
 - [Identity providers for external tenants](customers/concept-authentication-methods-customers.md) - Included SAML/WS-Fed details
 
-## January 2025
+# [External ID in workforce tenants](#tab/workforce-tenants)
 
-### New articles
-
-- [Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication (preview)](customers/how-to-native-authentication-cors-solution-production-environment.md)
-- [Set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App (preview)](customers/how-to-native-authentication-cors-solution-test-environment.md)
-- [Quickstart: Sign in users in a sample React single-page application by using native authentication (preview)](customers/quickstart-native-authentication-single-page-app-react-sign-in.md)
-- [Tutorial: Reset password in a React single-page app by using native authentication (preview)](customers/tutorial-native-authentication-single-page-app-react-reset-password.md)
-- [Tutorial: Set up CORS proxy server to manage CORS headers for native authentication (preview)](customers/tutorial-native-authentication-single-page-app-react-set-up-local-cors.md)
-- [Tutorial: Sign in users into a React single-page app by using native authentication (preview)](customers/tutorial-native-authentication-single-page-app-react-sign-in.md)
-- [Tutorial: Sign up users into a React single-page app by using native authentication (preview)](customers/tutorial-native-authentication-single-page-app-react-sign-up.md)
-- [Register a SAML app in your external tenant (preview)](customers/how-to-register-saml-app.md)
-- [Configure Microsoft Entra External ID with Azure Web Application Firewall](customers/tutorial-configure-external-id-web-app-firewall.md)
-- [Register a SAML app in your external tenant (preview)](customers/tutorial-web-app-node-sign-in-sign-out.md)
-- [Tutorial: Add add sign-in to a Node/Express.js web app by using Microsoft identity platform](customers/how-to-register-saml-app.md)
+## March 2025
 
 ### Updated articles
 
-- [Add Azure AD B2C tenant as an OpenID Connect identity provider](customers/how-to-b2c-federation-customers.md) - Editorial updates
+- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated important considerations
+- [Authentication flow for non-Microsoft Entra ID external users](authentication-conditional-access.md) - Replaced retired MSOnline references 
+- [Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](bulk-invite-powershell.md) - Editorial updates
+- [B2B collaboration invitation redemption](redemption-experience.md) - Editorial updates
+
+## February 2025
+
+### New articles
+
+- [SAML/WS-Fed identity providers](direct-federation-overview.md)
+
+### Updated articles
+
+- [Add federation with SAML/WS-Fed identity providers](direct-federation.md) - Editorial updates
+- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Global Administrator role update
+
+## December 2024
+
+### Updated articles
+
+- [Leave an organization where you have a guest account](leave-the-organization.md) - Added additional support options
+- [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated pricing information
 
 ---
