@@ -1,15 +1,14 @@
 ---
 title: 'Quickstart: Add a guest user and send an invitation'
 description: Use this quickstart to learn how Microsoft Entra admins can add B2B guest users in the Microsoft Entra admin center and walk through the B2B invitation workflow.
- 
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.date: 04/02/2024
+ms.date: 01/07/2025
 ms.topic: quickstart
 ms.service: entra-external-id
-ms.custom: it-pro, mode-ui
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, mode-ui, sfi-image-nochange
 #Customer intent: As an administrator, I want to add a guest user to my Microsoft Entra directory and send them an invitation, so that they can collaborate with my organization using their own work, school, or social account.
 ---
 
@@ -35,11 +34,10 @@ To complete the scenario in this quickstart, you need:
 
 ## Invite an external guest user
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 
    :::image type="content" source="media/quickstart-add-users-portal/all-users-page.png" alt-text="Screenshot of the All users page.":::
 
@@ -55,7 +53,7 @@ In this section, you're inviting the guest to your tenant using *their email add
 
 - **Display name**: Provide the display name.
 
--  **Invitation message**: Select the **Send invite message** checkbox to send an invitation message. When enabling this checkbox, you can also set up the customized short message and additional CC recipient.
+-  **Invitation message**: Select the **Send invite message** checkbox to send an invitation message. When enabling this checkbox, you can also set up the customized short message and another CC recipient.
 
 :::image type="content" source="media/quickstart-add-users-portal/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 
@@ -94,7 +92,7 @@ Now sign in as the guest user to see the invitation.
 When no longer needed, delete the test guest user.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **User settings**.
+1. Browse to **Entra ID** > **Users** > **User settings**.
 1. Select the test user, and then select **Delete user**.
 
 ## Next steps

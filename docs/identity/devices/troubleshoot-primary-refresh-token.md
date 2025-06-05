@@ -220,7 +220,7 @@ The UPN for the user isn't in the expected format. The UPN value varies accordin
 
 ##### Solution
 
-- Set the UPN of the user to an internet-style sign-in name, based on internet standard [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). To find the current UPN, look for event ID 1144 in the Microsoft Entra analytic logs.
+- Set the UPN of the user to an internet-style sign-in name, based on internet standard RFC 822. To find the current UPN, look for event ID 1144 in the Microsoft Entra analytic logs.
 
   To view Event IDs in the Microsoft Entra analytic logs, refer to the [Method 2: Use Event Viewer to examine Microsoft Entra analytic and operational logs][view-event-ids] section.
 

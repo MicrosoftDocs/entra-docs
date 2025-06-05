@@ -6,37 +6,47 @@ metadata:
   description: Instructions about how to create and update Microsoft Entra groups, such as membership and settings.
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: amycolannino
-  ms.date: 11/11/2024
+  manager: femila
+  ms.date: 02/12/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-image-nochange
 
 title: |
   Manage Microsoft Entra groups and group membership
 introduction: |
   Microsoft Entra groups are used to manage users that all need the same access and permissions to resources, such as potentially restricted apps and services. Instead of adding special permissions to individual users, you create a group that applies the special permissions to every member of that group. 
 
-  This article covers basic group scenarios where a single group is added to a single resource and users are added as members to that group. For more complex scenarios like dynamic membership groups and rule creation, see the [Microsoft Entra user management documentation](~/identity/users/index.yml).
+  This article covers basic group scenarios where a single group is added to a single resource and users are added as members to that group. For more complex scenarios like dynamic membership groups and rule creation, see the [Microsoft Entra user management documentation](../identity/users/index.yml).
   
   Before adding groups and members, [learn about groups and membership types](concept-learn-about-groups.md) to help you decide which options to use when you create a group.
+
+prerequisites: 
+  summary: |
+    The following prerequisites are required to manage groups in Microsoft Entra:
+  dependencies:
+    - |
+      **[User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator)** or **[Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator)** role is required to manage group membership settings.
+    - | 
+      An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
+    - |
+      Access to a Microsoft Entra tenant. For more information, see [Create a new tenant](create-new-tenant.md).
 
 procedureSection:
   - title: | 
       Create a basic group and add members
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
-      You can create a basic group and add your members at the same time using the Microsoft Entra admin center. You must have at least the **Groups Administrator** or **User Administrator** role assigned to create groups. Review the [appropriate Microsoft Entra roles for managing groups](~/identity/role-based-access-control/delegate-by-task.md#groups)
+      You can create a basic group and add your members at the same time using the Microsoft Entra admin center. You must have at least the **Groups Administrator** or **User Administrator** role assigned to create groups. Review the [appropriate Microsoft Entra roles for managing groups](../identity/role-based-access-control/delegate-by-task.md#groups-least-privileged-roles).
 
       To create a basic group and add members:
     steps: 
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Select **New group**.
    
@@ -59,7 +69,7 @@ procedureSection:
         - You must have at least the **Privileged Role Administrator** role.
         - Enabling this option automatically selects **Assigned** as the Membership type.
         - The ability to add roles while creating the group is added to the process.
-        - [Learn more about role-assignable groups](~/identity/role-based-access-control/groups-create-eligible.md).
+        - [Learn more about role-assignable groups](../identity/role-based-access-control/groups-create-eligible.md).
       - |
         Select a **Membership type.** For more information on membership types, see the [learn about groups and membership types](concept-learn-about-groups.md) article.
       - |
@@ -78,12 +88,14 @@ procedureSection:
     summary: |
       Members and owners can be added from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to add members and owners.
 
-      Need to add multiple members at one time? Learn about the [add members in bulk](~/identity/users/groups-bulk-import-members.md) option.
+      >[!Note]
+      >Need to add multiple members at one time? Learn about the [add members in bulk](../identity/users/groups-bulk-import-members.md) option.
+      
     steps: 
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Select the group you need to manage.
       - |
@@ -102,10 +114,10 @@ procedureSection:
         Members and owners can be removed from existing groups. The process is the same for members and owners. You'll need the **Groups Administrator** or **User Administrator** role to remove members and owners.
     steps: 
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
 
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
 
       - |
         Select the group you need to manage.
@@ -126,9 +138,9 @@ procedureSection:
       To edit your group settings:
     steps: 
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Scroll through the list or enter a group name in the search box. Select the group you need to manage.
       - |
@@ -144,13 +156,11 @@ procedureSection:
         
         - **Membership type.** Change the membership type. If you enabled the **Microsoft Entra roles can be assigned to the group** option, you can't change the membership type. For more info about the available membership types, see the [learn about groups and membership types](concept-learn-about-groups.md) article. 
         
-        - **Object ID.** You can't change the Object ID, but you can copy it to use in your PowerShell commands for the group. For more info about using PowerShell cmdlets, see [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-v2-cmdlets.md).
+        - **Object ID.** You can't change the Object ID, but you can copy it to use in your PowerShell commands for the group. For more info about using PowerShell cmdlets, see [Microsoft Entra cmdlets for configuring group settings](../identity/users/groups-settings-v2-cmdlets.md).
   - title: |
       Add a group to another group
     summary: |
-      For the security group type, you can add an existing group to another group (also known as nested groups). Depending on the group membership types, you can add a group as a member of another group, just like a user, which applies settings like access permissions and roles to nested groups. But for nested groups, Entra doesn't apply assigned membership to shared resources and applications. 
-      
-      You'll need the **Groups Administrator** or **User Administrator** role to edit group membership. For more info about security groups, see [What to know before creating a group](concept-learn-about-groups.md#what-to-know-before-creating-a-group).
+      For the security group type, you can add an existing group to another group (also known as nested groups). Depending on the group membership types, you can add a group as a member of another group. Nested groups can be used for membership and Conditional Access scopes. Nested groups don't gain access to shared resources and applications that are assigned to the parent group. 
 
       We currently don't support:
         - Adding groups to a group synced with on-premises Active Directory.
@@ -163,9 +173,9 @@ procedureSection:
         - Adding groups as members of a role-assignable group.
     steps: 
       - | 
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         On the **All groups** page, search for and select the group you want to become a member of another group.
 
@@ -188,11 +198,8 @@ procedureSection:
   - title: |
       Remove a group from another group
     summary: |
-      For the security group type, you can add an existing group to another group (also known as nested groups). Depending on the group membership types, you can add a group as a member of another group, just like a user, which applies settings like access permissions and roles to nested groups. But for nested groups, Entra doesn't apply assigned membership to shared resources and applications. 
-      
-      You'll need the **Groups Administrator** or **User Administrator** role to edit group membership. For more info about security groups, see [What to know before creating a group](concept-learn-about-groups.md#what-to-know-before-creating-a-group).
-
       You can remove an existing Security group from another Security group; however, removing the group also removes any inherited access for its members.
+
     steps: 
       - | 
         On the **All groups** page, search for and select the group you need to remove as a member of another group.
@@ -219,9 +226,9 @@ procedureSection:
         - No longer need the group.
     steps: 
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator).
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Search for and select the group you want to delete.
       - |
@@ -232,15 +239,15 @@ relatedContent:
     url: concept-learn-about-groups.md
 
   - text: Set up groups for self-service
-    url: ~/identity/users/groups-self-service-management.md
+    url: ../identity/users/groups-self-service-management.md
 
   - text: Manage groups using PowerShell commands
-    url: ~/identity/users/groups-settings-v2-cmdlets.md
+    url: ../identity/users/groups-settings-v2-cmdlets.md
   
 #  - text: Manage rules for dynamic membership groups
-#    url: ~/identity/users/groups-create-rule.md
+#    url: ../identity/users/groups-create-rule.md
 
 #    - text: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
-#        url: ~/identity/users/licensing-group-advanced.md#limitations-and-known-issues
+#        url: ../identity/users/licensing-group-advanced.md#limitations-and-known-issues
 #    - text: Associate or add an Azure subscription to Microsoft Entra ID
 #      url: ./how-subscriptions-associated-directory.yml

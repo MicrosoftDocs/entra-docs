@@ -4,10 +4,10 @@ description: Code samples for API connectors in self-service sign-up flows for M
  
 ms.service: entra-external-id
 ms.topic: sample
-ms.date: 01/23/2024
+ms.date: 04/14/2025
 
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management

@@ -1,15 +1,16 @@
 ---
 title: 'Author SAP ECC 7 Template for ECMA2Host'
-description: This article describes how to create a template for the Web Service ECMA connector to manage SAP ECC users. 
+description: This article describes how to create a template for the Web Service ECMA connector to manage SAP ECC users.
 ms.service: entra-id-governance
-ms.subservice:
+ms.subservice: 
 documentationcenter: ''
 author: billmath
-manager: amycolannino
+manager: femila
 editor: ''
 ms.topic: conceptual
-ms.date: 07/28/2023
+ms.date: 04/09/2025
 ms.author: billmath
+ms.custom: sfi-image-nochange
 ---
 
 # Authoring the SAP ECC 7.51 Web Service connector template for the ECMA2Host 
@@ -20,7 +21,7 @@ This guide walks you through the process of creating a template for the Web Serv
 
 This template demonstrates how to manage users. Other object types like Local Activity Groups, Roles, and Profiles aren't covered by this guide as the ECMA2Host doesn't currently support multi-valued references. Password operations are also out of scope for this guide. 
 
-This guide doesn't cover the creation of the service account within SAP that is used to call the exposed BAPI functions. It assumes that a pre-created demo account **Developer** is used with a profile **RFC_ALL** that grants permissions to the BAPIs mentioned below. 
+This guide doesn't cover the creation of the service account within SAP that is used to call the exposed BAPI functions. It assumes that a pre-created demo account **Developer** is used with a profile **RFC_ALL** that grants permissions to the BAPIs mentioned in this article. 
 
 The Web Service Configuration Tool doesn't support the following features exposed in SAP by default: WSP Policies and multiple bindings per endpoint. It does expect a WSDL with SOAP 1.1 only, all-in-one document style binding without policies. 
 
@@ -40,30 +41,30 @@ The programming language used is Visual Basic.
 
 Before you can design import and export workflows, you need to create a template and define an endpoint with the SAP BAPI functions exposed over a SOAP interface. Then create a schema of the ECMA2 objects and their properties is available in this template. 
 
- 1. From the "C:\Program Files\Microsoft ECMA2Host\Web Service Configuration Tool" folder start the Web Service Configuration tool **wsconfigTool.exe**
- 2. From the File-New menu choose Create new SOAP Project 
+ 1. From the "C:\Program Files\Microsoft ECMA2Host\Web Service Configuration Tool" folder, start the Web Service Configuration tool **wsconfigTool.exe**
+ 2. From the File-New menu, choose Create new SOAP Project 
  
 :::image type="content" source="media/sap-template/sap-template-1.png" alt-text="Screenshot of create SOAP project." lightbox="media/sap-template/sap-template-1.png":::
  
- 3. Click on SOAP Project and choose Add new Web Service.
+ 3. Select on SOAP Project and choose Add new Web Service.
 
 :::image type="content" source="media/sap-template/sap-template-12.png" alt-text="Screenshot of add new web service." lightbox="media/sap-template/sap-template-12.png":::
  
  4. Name your web service SAPECC, provide a URL to download WSDL published, enter SAPECC as namespace. 
- Web Service name helps you to distinguish this web service in your template from others. Namespace defines a name of the Microsoft .NET namespace used to generate classes. Choose Basic authentication mode unless instructed otherwise by SAP administrator. Click Next.
+ Web Service name helps you to distinguish this web service in your template from others. Namespace defines a name of the Microsoft .NET namespace used to generate classes. Choose Basic authentication mode unless instructed otherwise by SAP administrator. Select Next.
 
 :::image type="content" source="media/sap-template/sap-template-23.png" alt-text="Screenshot of naming web service." lightbox="media/sap-template/sap-template-23.png"::: 
  
- 5. Provide credentials to connect to SAP ECC endpoint. Click Next. 
- 6. On the endpoints and operations page ensure that the BAPIs are displayed and click Finish 
+ 5. Provide credentials to connect to SAP ECC endpoint. Select Next. 
+ 6. On the endpoints and operations page, ensure that the BAPIs are displayed and select Finish 
  >[!NOTE]
  >if you see more than one endpoint, then you have both SOAP 1.2 and SOAP 1.1 bindings enabled. This causes the connector to fail. Modify your binding definition in SOAMANAGER and keep only one. Then re-add a web service. 
  
 :::image type="content" source="media/sap-template/sap-template-45.png" alt-text="Screenshot of BAPIs." lightbox="media/sap-template/sap-template-45.png":::
  
  7. Save the project into C:\Program Files\Microsoft ECMA2Host\Service\ECMA folder. 
- 8. Click on Object Types tab and choose to add User object type. Click Ok. 
- 9. Expand Object Types tab and click on User type definition. 
+ 8. Select on Object Types tab and choose to add User object type. Select Ok. 
+ 9. Expand Object Types tab and select on User type definition. 
   
 :::image type="content" source="media/sap-template/sap-template-46.png" alt-text="Screenshot of object types." lightbox="media/sap-template/sap-template-46.png":::
  
@@ -91,11 +92,11 @@ Before you can design import and export workflows, you need to create a template
 
 The Import workflow, while being optional in the ECMA2Host, allows you to import existing SAP users into the ECMA2Host in-memory cache and avoid duplicate users being created during provisioning. 
 
-If you do not create an import workflow, then your connector is operating in Export-only mode and causes the ECMA2Host to always issue **Create user** operations, even for existing users. This may lead to failures or duplicates when standard SAP BAPIs are used unless duplicates are handled by the export workflow. 
+If you don't create an import workflow, then your connector is operating in Export-only mode and causes the ECMA2Host to always issue **Create user** operations, even for existing users. This may lead to failures or duplicates when standard SAP BAPIs are used unless duplicates are handled by the export workflow. 
 
 SAP ECC doesn't offer a built-in mechanism for reading changes made since the last read. 
 
-Therefore, we're implementing the Full Import workflow only. Should you need to implement Delta Imports for performance reasons, consult your SAP administrator for a list of BAPIs and have them published as a SOAP webservice. Then implement the Delta Import workflow using the below described approach and a customData property that contains a timestamp of the previous successful run. 
+Therefore, we're implementing the Full Import workflow only. Should you need to implement Delta Imports for performance reasons, consult your SAP administrator for a list of BAPIs and have them published as a SOAP webservice. Then, implement the Delta Import workflow using the following approach as described and a customData property that contains a timestamp of the previous successful run. 
 
 SAP ECC offers several BAPI functions to get a list of users with their properties: 
 
@@ -105,8 +106,8 @@ SAP ECC offers several BAPI functions to get a list of users with their properti
 Only these two BAPIs are used to retrieve existing users from SAP ECC in this template. 
 
  1. Navigate to Object Types -> User -> Import -> Full Import workflow and from the Toolbox on the right drag and drop Sequence activity onto workflow designer pane. 
- 2. On the bottom left, find the Variables button and click it to expand a list of variables defined within this Sequence. 
- 3. Add the following variables. To select a variable type generated from the SAP WSDL, click to Browse for Types and expand **generated** and then expand SAPECC namespace. 
+ 2. On the bottom left, find the Variables button and select it to expand a list of variables defined within this Sequence. 
+ 3. Add the following variables. To select a variable type generated from the SAP WSDL, select to Browse for Types and expand **generated** and then expand SAPECC namespace. 
 
  |Name|Variable Type|Scope|Default| 
  |-----|-----|-----|-----|
@@ -119,7 +120,7 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 
 :::image type="content" source="media/sap-template/sap-template-48.png" alt-text="Screenshot of full import operation workflow." lightbox="media/sap-template/sap-template-48.png":::
 
- 4. From the Toolbox drag and drop four Assign activities inside your Sequence activity and set these values: 
+ 4. From the Toolbox, drag and drop four Assign activities inside your Sequence activity and set these values: 
 
  ```
  selRangeTable.item(0).PARAMETER = "USERNAME" 
@@ -135,7 +136,7 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 
 :::image type="content" source="media/sap-template/sap-template-2.png" alt-text="Screenshot of returnedsize screen." lightbox="media/sap-template/sap-template-2.png":::
 
- 7. Click on the Variables and add currentPageNumber property of int32 type within DoWhile cycle with default value of 0. 
+ 7. Select on the Variables and add currentPageNumber property of int32 type within DoWhile cycle with default value of 0. 
 
 :::image type="content" source="media/sap-template/sap-template-3.png" alt-text="Screenshot of dowhile screen." lightbox="media/sap-template/sap-template-3.png":::
  
@@ -145,11 +146,11 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 
 :::image type="content" source="media/sap-template/sap-template-4.png" alt-text="Screenshot of the customdata screen." lightbox="media/sap-template/sap-template-4.png":::
  
- 9. From the Toolbox drag and drop Sequence activity inside your DoWhile activity. Drag and drop WebServiceCall activity inside that Sequence activity and select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_GETLIST operation.  
+ 9. From the Toolbox, drag and drop Sequence activity inside your DoWhile activity. Drag and drop WebServiceCall activity inside that Sequence activity and select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_GETLIST operation.  
 
 :::image type="content" source="media/sap-template/sap-template-5.png" alt-text="Screenshot of dowhile sequence." lightbox="media/sap-template/sap-template-5.png":::
  
- 10. Click on ... Arguments button to define parameters for web service call as follows: 
+ 10. Select on ... Arguments button to define parameters for web service call as follows: 
  
  |Name|Direction|Type|Value| 
  |-----|-----|-----|-----|
@@ -162,20 +163,20 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
  |WITH_USERNAME|In|String|| 
  |ROWS|Out|Int32|returnedSize| 
  
- 11. Click OK. The warning sign disappears. 
+ 11. Select OK. The warning sign disappears. 
  The list of users stored in the usersTable variable. As SAP doesn't return a complete list of users in one single response, we need to implement pagination and call this function several times while switching pages. Then for every user imported you need to get that user's details by making a separate call. 
- That means that for a landscape with 1000 users and a page size of 200, Web Service connector makes 5 calls to retrieve a list of users and 1000 individual calls to retrieve users' details. 
- To improve performance ask you SAP team to develop a custom BAPI program that lists all uses with their properties to avoid the need of making 1000 individual calls and expose that BAPI function over SOAP WS endpoint. 
- 12. From the Toolbox drag and drop IF activity inside your DoWhile activity after WebServiceCall activity. Specify this condition to check for non-empty response and absence of errors: ```IsNothing(getListRetTable.item) OrElse getListRetTable.item.Count(Function(errItem) errItem.TYPE.Equals("E") = True) = 0``` 
- 13. From the Toolbox drag and drop Throw activity into Else branch of your IF activity to throw an error on unsuccessful import. Switch to the Properties tab and enter this expression for Exception property of the Throw activity: ```New Exception(getListRetTable.item.First(Function(retItem) retItem.TYPE.Equals("E")).MESSAGE)``` 
+ That means that for a landscape with 1,000 users and a page size of 200, Web Service connector makes 5 calls to retrieve a list of users and 1,000 individual calls to retrieve users' details. 
+ To improve performance, ask your SAP team to develop a custom BAPI program that lists all uses with their properties. This avoids the need of making 1,000 individual calls and expose that BAPI function over SOAP WS endpoint. 
+ 12. From the Toolbox, drag and drop IF activity inside your DoWhile activity after WebServiceCall activity. Specify this condition to check for non-empty response and absence of errors: ```IsNothing(getListRetTable.item) OrElse getListRetTable.item.Count(Function(errItem) errItem.TYPE.Equals("E") = True) = 0``` 
+ 13. From the Toolbox, drag and drop Throw activity into Else branch of your IF activity to throw an error on unsuccessful import. Switch to the Properties tab and enter this expression for Exception property of the Throw activity: ```New Exception(getListRetTable.item.First(Function(retItem) retItem.TYPE.Equals("E")).MESSAGE)``` 
  
 :::image type="content" source="media/sap-template/sap-template-6.png" alt-text="Screenshot of exception property." lightbox="media/sap-template/sap-template-6.png":::
  
- 14. To process a list of imported users, drag and drop ForEachWithBodyFactory activity from the Toolbox into Then branch of your IF activity. Switch to Properties tab and select SAPECC.BAPIUSNAME as TypeArgument. Click on ... button and type this expression for values property: ```if(usersTable.item,Enumerable.Empty(of BAPIUSNAME)())``` 
+ 14. To process a list of imported users, drag and drop ForEachWithBodyFactory activity from the Toolbox into Then branch of your IF activity. Switch to Properties tab and select SAPECC.BAPIUSNAME as TypeArgument. Select on ... button and type this expression for values property: ```if(usersTable.item,Enumerable.Empty(of BAPIUSNAME)())``` 
 
 :::image type="content" source="media/sap-template/sap-template-7.png" alt-text="Screenshot of IF activity." lightbox="media/sap-template/sap-template-7.png":::
  
- 15. From the Toolbox drag and drop Sequence activity inside your ForEach activity. Having this Sequence activity window active, click on the Variables button and define these variables:
+ 15. From the Toolbox, drag and drop Sequence activity inside your ForEach activity. Having this Sequence activity window active, select on the Variables button and define these variables:
 
 |Name|Variable Type|Scope|Default| 
 |-----|-----|-----|-----|
@@ -189,11 +190,11 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 
 :::image type="content" source="media/sap-template/sap-template-8.png" alt-text="Screenshot of IF activity with foreach." lightbox="media/sap-template/sap-template-8.png":::
 
- 16. Drag and drop CreateCSEntryChangeScope activity inside your Sequence activity. In the DN property enter schemaType.Name & item.USERNAME. In the CreateAnchorAttribute AnchorValue field enter item.username. 
+ 16. Drag and drop CreateCSEntryChangeScope activity inside your Sequence activity. In the DN property, enter schemaType.Name & item.USERNAME. In the CreateAnchorAttribute AnchorValue field enter item.username. 
    
    :::image type="content" source="media/sap-template/sap-template-9.png" alt-text="Screenshot of CreateCSEntryChangeScope." lightbox="media/sap-template/sap-template-9.png":::
  
- 17. To retrieve details of each user, from the Toolbox drag and drop WebServiceCall activity inside Sequence activity right before CreateAnchorAttribute activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_GET_DETAIL operation. Click on ... Arguments button to define parameters for web service call as follows: 
+ 17. To retrieve details of each user, from the Toolbox drag and drop WebServiceCall activity inside Sequence activity right before CreateAnchorAttribute activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_GET_DETAIL operation. Select on ... Arguments button to define parameters for web service call as follows: 
 
 |Name|Direction|Type|Value|
 |-----|-----|-----|-----|
@@ -206,7 +207,7 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 |WITH_USERNAME|In|String| 
 |ROWS|Out|Int32|returnedSize|
 
- 18. Click OK. The warning sign disappears. The details of a user are stored in the above listed variables. Your IF activity looks like this:
+ 18. Select OK. The warning sign disappears. The details of a user are stored in the above listed variables. Your IF activity looks like this:
     
 :::image type="content" source="media/sap-template/sap-template-10.png" alt-text="Screenshot of parameters." lightbox="media/sap-template/sap-template-10.png":::
  
@@ -245,7 +246,7 @@ Only these two BAPIs are used to retrieve existing users from SAP ECC in this te
 
 :::image type="content" source="media/sap-template/sap-template-15.png" alt-text="Screenshot of DoWhile cycle." lightbox="media/sap-template/sap-template-15.png":::
  
- 24. To retrieve the next page of users, update ```selRangeTable.item(0).LOW``` property. Drag and drop IF activity into Sequence activity within DoWhile, place it after existing IF activity. Enter returnedSize>0 as Condition. Add Assign activity into Then branch of IF activity and set ```selRangeTable.item(0).LOW``` to ```usersTable.item(returnedSize-1).username```.  
+ 24. To retrieve the next page of users, update ```selRangeTable.item(0).LOW``` property. Drag and drop IF activity into Sequence activity within DoWhile. Place it after existing IF activity. Enter returnedSize>0 as Condition. Add Assign activity into Then branch of IF activity and set ```selRangeTable.item(0).LOW``` to ```usersTable.item(returnedSize-1).username```.  
 
 :::image type="content" source="media/sap-template/sap-template-16.png" alt-text="Screenshot of DoWhile final." lightbox="media/sap-template/sap-template-16.png":::
  
@@ -261,8 +262,8 @@ This guide doesn't demonstrate assignment of licenses, local or global activity 
 There's no need to implement pagination in export workflows. There's only one object objectToExport available within the workflow context. 
 
  1. Navigate to Object Types -> User -> Export -> Add workflow and from the Toolbox on the right drag and drop Sequence activity onto workflow designer pane. 
- 2. On the bottom left, find the Variables button and click it to expand a list of variables defined within this Sequence. 
- 3. Add the following variables. To select a variable type generated from the SAP WSDL, click to Browse for Types and expand **generated** and then expand SAPECC namespace. This initializes the data structures used by BAPI_USER_CREATE1 program. 
+ 2. On the bottom left, find the Variables button and select it to expand a list of variables defined within this Sequence. 
+ 3. Add the following variables. To select a variable type generated from the SAP WSDL, select to Browse for Types and expand **generated** and then expand SAPECC namespace. This initializes the data structures used by BAPI_USER_CREATE1 program. 
  
  |Name|Variable Type|Scope|Default|
 |-----|-----|-----|-----|
@@ -278,24 +279,24 @@ There's no need to implement pagination in export workflows. There's only one ob
 
 :::image type="content" source="media/sap-template/sap-template-17.png" alt-text="Screenshot of export add workflow." lightbox="media/sap-template/sap-template-17.png":::
 
- 4. As we defined userName property as an immutable ID, an anchor, we'll need to extract userName value from a collection of anchors of our export object. Drag and drop ForEachWithBodyFactory activity from the Toolbox into your Sequence activity. Replace **item** variable name with **anchor**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AnchorAttribute```. In the Value field type ```objectToExport.AnchorAttributes```. 
+ 4. As we defined userName property as an immutable ID, an anchor, we need to extract userName value from a collection of anchors of our export object. Drag and drop ForEachWithBodyFactory activity from the Toolbox into your Sequence activity. Replace **item** variable name with **anchor**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AnchorAttribute```. In the Value field, type ```objectToExport.AnchorAttributes```. 
 
 :::image type="content" source="media/sap-template/sap-template-18.png" alt-text="Screenshot of export add sequence." lightbox="media/sap-template/sap-template-18.png":::
 
- 5. To extract a string value of a userName anchor, drag and drop Switch activity inside the ForEach activity. In the popup window select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AnchorAttributeNameWrapper``` type of a switch. Enter Expression value of: New AnchorAttributeNameWrapper(anchor.Name). 
- 6. Click on Add new case area of Switch activity. Type userName as Case Value. Drag and drop Assign activity into userName case body and assign anchor.Value.ToString() to userName variable. 
+ 5. To extract a string value of a userName anchor, drag and drop Switch activity inside the ForEach activity. In the popup window, select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AnchorAttributeNameWrapper``` type of a switch. Enter Expression value of: New AnchorAttributeNameWrapper(anchor.Name). 
+ 6. Select on Add new case area of Switch activity. Type userName as Case Value. Drag and drop Assign activity into userName case body and assign anchor.Value.ToString() to userName variable. 
 
 :::image type="content" source="media/sap-template/sap-template-19.png" alt-text="Screenshot of new case." lightbox="media/sap-template/sap-template-19.png":::
  
  7. Now that we extracted userName value from exported object anchor property, we need to populate other structures like company, defaults, address, logon data that contain other SAP user details. We do this by cycling through collection of attribute changes. 
- 8. Collapse your ForEach activity and drag and drop another ForEachWithBothFactory activity inside your Sequence activity after the existing ForEach activity. Replace **item** variable name with **attributeChange**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AttributeChange```. In the Value field type ```objectToExport.AttributeChanges```. 
+ 8. Collapse your ForEach activity and drag and drop another ForEachWithBothFactory activity inside your Sequence activity after the existing ForEach activity. Replace **item** variable name with **attributeChange**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AttributeChange```. In the Value field, type ```objectToExport.AttributeChanges```. 
 
 :::image type="content" source="media/sap-template/sap-template-20.png" alt-text="Screenshot of new sequence." lightbox="media/sap-template/sap-template-20.png":::
  
  9. Drag and drop the Switch activity into the body of your ForEach activity. 
- 10. In the popup menu select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AttributeNameWrapper``` and click Ok. 
+ 10. In the popup menu, select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AttributeNameWrapper``` and select Ok. 
  11. Enter the following expression: New AttributeNameWrapper(attributeChange.Name). You'll see a warning icon in the top right corner of your Switch activity about unhandled attributes defined in schema and not assigned to any property. 
- 12. Click on Add new case area of Switch activity and type a case value of **city**. 
+ 12. Select on Add new case area of Switch activity and type a case value of **city**. 
  13. Drag and drop Assign activity into the body of this case. Assign ```attributeChange.ValueChanges(0).Value.ToString()``` to address.city. 
 
 :::image type="content" source="media/sap-template/sap-template-21.png" alt-text="Screenshot of new export add workflow." lightbox="media/sap-template/sap-template-21.png":::
@@ -316,17 +317,17 @@ There's no need to implement pagination in export workflows. There's only one ob
 |jobTitle|address.function = attributeChange.ValueChanges(0)Value.ToString()| 
 |export_password|password.BAPIPWD1 = attributeChange.ValueChanges(0)Value.ToString()| 
 
- Here export_password is a special virtual attribute that is always defined in the schema and can be used to pass an initial password of user being created. 
+ Here, export_password is a special virtual attribute that is always defined in the schema and can be used to pass an initial password of user being created. 
 
 :::image type="content" source="media/sap-template/sap-template-22.png" alt-text="Screenshot of cases." lightbox="media/sap-template/sap-template-22.png":::
  
 
  15. Collapse your ForEach activity and drag and drop the IF activity into the Sequence activity, after the second ForEach activity, to validate the user properties, before submitting the create user request. We need at least 3 non-empty values: username, last name, initial password. Enter this condition: ```(String.IsNullOrEmpty(address.lastname) = False ) AND (String.IsNullOrEmpty(userName) = False) AND (String.IsNullOrEmpty(password.BAPIPWD1) = False)```
- 16. In the Else branch of IF activity add one more IF activity as we want to throw different errors depending on what is missing. Enter condition value: String.IsNullOrEmpty(userName). Drag and Drop ```CreateCSEntryChangeResult``` activities into both branches of the second IF activity and set up ErrorCode of ```ExportErrorMissingAnchorComponent``` and ```ExportErrorMissingProvisioningAttribute```. 
+ 16. In the Else branch of IF activity, add one more IF activity as we want to throw different errors depending on what is missing. Enter condition value: String.IsNullOrEmpty(userName). Drag and Drop ```CreateCSEntryChangeResult``` activities into both branches of the second IF activity and set up ErrorCode of ```ExportErrorMissingAnchorComponent``` and ```ExportErrorMissingProvisioningAttribute```. 
 
 :::image type="content" source="media/sap-template/sap-template-24.png" alt-text="Screenshot of second IF activity." lightbox="media/sap-template/sap-template-24.png":::
 
- 17. Drag and drop Sequence activity in the empty Then branch of the first IF activity. Drag and drop WebSeviceCall activity inside the Sequence activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_CREATE1 operation. Click on ... Arguments button to define parameters for web service call as follows:
+ 17. Drag and drop Sequence activity in the empty Then branch of the first IF activity. Drag and drop WebSeviceCall activity inside the Sequence activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_CREATE1 operation. Select on ... Arguments button to define parameters for web service call as follows:
 
 |Name|Direction|Type|Value|
 |-----|-----|-----|-----|
@@ -339,24 +340,24 @@ There's no need to implement pagination in export workflows. There's only one ob
 |SELF_REGISTER|In|String|"X"| 
 |USERNAME|In|String|userName| 
 
- 18. Click OK. The warning sign disappears. 
+ 18. Select OK. The warning sign disappears. 
 
 :::image type="content" source="media/sap-template/sap-template-25.png" alt-text="Screenshot of workflow after parameters." lightbox="media/sap-template/sap-template-25.png":::
  
- 19. To process create user request results drag and drop IF activity inside the Sequence activity after the WebServiceCall activity. Enter the following condition: ```IsNothing (bapiret2Table.item) OrElse bapiret2Table.item.Count(Function(errItem) errItem.TYPE.Equals("E") = True) <> 0``` 
+ 19. To process create user request results, drag and drop IF activity inside the Sequence activity after the WebServiceCall activity. Enter the following condition: ```IsNothing (bapiret2Table.item) OrElse bapiret2Table.item.Count(Function(errItem) errItem.TYPE.Equals("E") = True) <> 0``` 
  21. If we get no errors, we assume that export operation completed successfully, and we want to indicate successful export of this object by creating CSEntryChangeResult with Success status. Drag and drop CreateCSEntryChangeResult activity into Else branch of your IF activity and select Success error code. 
- 22. Optional: If the web service call returns a generated account name of a user, we need to update an anchor value of exported object. To do that, drag and drop ```CreateAttrubuteChange```activity inside the ```CreateCSEntryChangeResult``` activity and select to Add a userName. Then drag and drop ```CreateValueChange``` activity inside the ```CreateAttributeChange``` activity and enter the variable name populated by a web service call activity. In this guide, you use the userName variable that is not updated on export. 
+ 22. Optional: If the web service call returns a generated account name of a user, we need to update an anchor value of exported object. To do that, drag and drop ```CreateAttrubuteChange```activity inside the ```CreateCSEntryChangeResult``` activity and select to Add a userName. Then drag and drop ```CreateValueChange``` activity inside the ```CreateAttributeChange``` activity and enter the variable name populated by a web service call activity. In this guide, you use the userName variable that isn't updated on export. 
 
 :::image type="content" source="media/sap-template/sap-template-26.png" alt-text="Screenshot of updated sequence flow." lightbox="media/sap-template/sap-template-26.png":::
  
  23. The last step in the Export Add workflow is to handle and log export errors. Drag and drop Sequence activity into the empty Then branch of your IF activity. 
  24. Drag and drop Log activity into Sequence activity. Switch to Properties tab and enter LogText value of: ```bapiret2Table.item.First(Function(retItem) retItem.TYPE.Equals("E"))```.MESSAGE. Keep High logging level and Trace tag. This logs an error message into ConnectorsLog or the ECMA2Host event log when verbose tracing is enabled. 
- 25. Drag and drop Switch activity inside the Sequence activity after Log activity. In the popup window select String type of the switch value. Enter the following expression: ```bapiret2Table.item.First(Function(retItem) retItem.TYPE.Equals("E")).NUMBER```
- 26. Click on Default case and drag and drop CreateCSEntryChangeResult activity into the body of this case. Choose ExportErrorInvalidProvisioningAttributeValue error code. 
+ 25. Drag and drop Switch activity inside the Sequence activity after Log activity. In the popup window, select String type of the switch value. Enter the following expression: ```bapiret2Table.item.First(Function(retItem) retItem.TYPE.Equals("E")).NUMBER```
+ 26. Select on Default case and drag and drop CreateCSEntryChangeResult activity into the body of this case. Choose ExportErrorInvalidProvisioningAttributeValue error code. 
     
 :::image type="content" source="media/sap-template/sap-template-27.png" alt-text="Screenshot of new update to workflow." lightbox="media/sap-template/sap-template-27.png":::
  
- 27. Click on the Add new case area and type a case value of 224. Drag and drop ```CreateCSEntryChangeResult``` activity into the body of this case. Choose ```ExportErrorCustomContinueRun``` error code. 
+ 27. Select on the Add new case area and type a case value of 224. Drag and drop ```CreateCSEntryChangeResult``` activity into the body of this case. Choose ```ExportErrorCustomContinueRun``` error code. 
 
 :::image type="content" source="media/sap-template/sap-template-28.png" alt-text="Screenshot of final update to workflow." lightbox="media/sap-template/sap-template-28.png":::
  
@@ -367,35 +368,35 @@ You completed the definition of Export Add workflow.
 
 ## Creating Export Delete workflow 
 
-To delete a user in SAP ECC you can call BAPI_USER_DELETE program and provide an account name to be deleted in connected system. Consult with your SAP Administrator whether this scenario is mandatory as most often SAP ECC accounts aren't to be deleted but to be expired to keep historical records. 
+To delete a user in SAP ECC, you can call BAPI_USER_DELETE program and provide an account name to be deleted in connected system. Consult with your SAP Administrator to determine whether this scenario is mandatory. Most often, SAP ECC accounts aren't deleted but are set to expire to keep historical records.
 
 This guide doesn't cover scenarios related to SAP Common User Administration system, deprovisioning of users from connected systems, revocation of licenses, etc. 
 
 There's no need to implement pagination in export workflows. There's only one object objectToExport available within the workflow context. 
 
  1. Navigate to Object Types -> User -> Export -> Delete workflow and from the Toolbox on the right drag and drop Sequence activity onto workflow designer pane. 
- 2. On the bottom left, find the Variables button and click it to expand a list of variables defined within this Sequence. 
- 3. Add the following variables. To select a variable type generated from the SAP WSDL, click to Browse for Types and expand **generated** and then expand SAPECC namespace. This initializes the data structures used by BAPI_USER_DELETE program. 
+ 2. On the bottom left, find the Variables button and select it to expand a list of variables defined within this Sequence. 
+ 3. Add the following variables. To select a variable type generated from the SAP WSDL, select to Browse for Types and expand **generated** and then expand SAPECC namespace. This initializes the data structures used by BAPI_USER_DELETE program. 
 
 |Name|Variable Type|Scope|Default|
 |-----|-----|-----|-----|
 |userName|String|Sequence| 
 |bapiret2Table|SAPECC.TABLE_OF_BAPIRET2|Sequence|new TABLE_OF_BAPIRET2()|
 
- 4. As we defined userName property as an immutable ID, an anchor, we'll need to extract userName value from a collection of anchors of our export object. Drag and drop ForEachWithBodyFactory activity from the Toolbox into your Sequence activity. Replace **item** variable name with **anchor**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AnchorAttribute```. In the Value field type ```objectToExport.AnchorAttributes```. 
+ 4. As we defined userName property as an immutable ID, an anchor, we need to extract userName value from a collection of anchors of our export object. Drag and drop ForEachWithBodyFactory activity from the Toolbox into your Sequence activity. Replace **item** variable name with **anchor**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AnchorAttribute```. In the Value field, type ```objectToExport.AnchorAttributes```. 
 
 :::image type="content" source="media/sap-template/sap-template-29.png" alt-text="Screenshot of export delete operation workflow." lightbox="media/sap-template/sap-template-29.png":::
  
 
- 5. To extract a string value of a userName anchor, drag and drop Switch activity inside the ForEach activity. In the popup window select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AnchorAttributeNameWrapper``` type of a switch. Enter Expression value of: New ```AnchorAttributeNameWrapper(anchor.Name)```. Click on Add new case area of Switch activity. Type userName as Case Value. Drag and drop Assign activity into userName case body and assign ```anchor.Value.ToString()``` to userName variable. 
- 6. Drag and drop WebSeviceCall activity inside the Sequence activity after ForEach activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_DELETE operation. Click on ... Arguments button to define parameters for web service call as follows: 
+ 5. To extract a string value of a userName anchor, drag and drop Switch activity inside the ForEach activity. In the popup window, select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AnchorAttributeNameWrapper``` type of a switch. Enter Expression value of: New ```AnchorAttributeNameWrapper(anchor.Name)```. Select on Add new case area of Switch activity. Type userName as Case Value. Drag and drop Assign activity into userName case body and assign ```anchor.Value.ToString()``` to userName variable. 
+ 6. Drag and drop WebSeviceCall activity inside the Sequence activity after ForEach activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_DELETE operation. Select on ... Arguments button to define parameters for web service call as follows: 
 
 |Name|Direction|Type|Value|
 |-----|-----|-----|-----|
 |RETURN|In/Out|TABLE_OF_BAPIRET2|bapiret2Table| 
 |USERNAME|In|String|userName| 
 
- 7. Click OK. The warning sign disappears.  
+ 7. Select OK. The warning sign disappears.  
 
 :::image type="content" source="media/sap-template/sap-template-30.png" alt-text="Screenshot of updated delete operation workflow." lightbox="media/sap-template/sap-template-30.png":::
 
@@ -406,12 +407,12 @@ There's no need to implement pagination in export workflows. There's only one ob
 
  10. The last step in the Export Delete workflow is to handle and log export errors. Drag and drop Sequence activity into the empty Then branch of your IF activity. 
  11. Drag and drop Log activity into Sequence activity. Switch to Properties tab and enter LogText value of: ```bapiRetTable.item.First(Function(retItem) retItem.TYPE.Equals("E")= True).MESSAGE```. Keep High logging level and Trace tag. This logs an error message into the ConnectorsLog or ECMA2Host event log when verbose tracing is enabled. 
- 12. Drag and drop Switch activity inside the Sequence activity after Log activity. In the popup window select String type of the switch value. Enter the following expression: ```bapiret2Table.item.First(Function(retItem) retItem.TYPE.Equals("E")).NUMBER``` 
- 13. Click on Default case and drag and drop CreateCSEntryChangeResult activity into the body of this case. Choose ExportErrorSyntaxViolation error code.  
+ 12. Drag and drop Switch activity inside the Sequence activity after Log activity. In the popup window, select String type of the switch value. Enter the following expression: ```bapiret2Table.item.First(Function(retItem) retItem.TYPE.Equals("E")).NUMBER``` 
+ 13. Select on Default case and drag and drop CreateCSEntryChangeResult activity into the body of this case. Choose ExportErrorSyntaxViolation error code.  
 
 :::image type="content" source="media/sap-template/sap-template-32.png" alt-text="Screenshot of update to export delete operation workflow." lightbox="media/sap-template/sap-template-32.png":::
 
- 14. Click on the Add new case area and type a case value of 124. Drag and drop ```CreateCSEntryChangeResult``` activity into the body of this case. Choose ```ExportErrorCustomContinueRun``` error code.  
+ 14. Select on the Add new case area and type a case value of 124. Drag and drop ```CreateCSEntryChangeResult``` activity into the body of this case. Choose ```ExportErrorCustomContinueRun``` error code.  
 
 :::image type="content" source="media/sap-template/sap-template-33.png" alt-text="Screenshot of final export delete operation workflow." lightbox="media/sap-template/sap-template-33.png":::
 
@@ -419,13 +420,13 @@ There's no need to implement pagination in export workflows. There's only one ob
 
 ## Creating Export Replace workflow 
 
-To update a user in SAP ECC you can call BAPI_USER_CHANGE program and provide all the parameters including an account name and all user details, including those that aren't changing. The ECMA2 export mode when all user properties are to be provided is called Replace. In comparison, export mode of AttributeUpdate only provides you with attributes that are being changed and this may cause some user properties to be overwritten with empty values. Therefore, Webservice connector always uses Object Replace export mode and expects the connector to be configured for Export Type: Replace. 
+To update a user in SAP ECC, you can call BAPI_USER_CHANGE program and provide all the parameters including an account name and all user details, including those that aren't changing. The ECMA2 export mode when all user properties are to be provided is called Replace. In comparison, export mode of AttributeUpdate only provides you with attributes that are being changed and this may cause some user properties to be overwritten with empty values. Therefore, Webservice connector always uses Object Replace export mode and expects the connector to be configured for Export Type: Replace. 
 
-Export Replace workflow is almost identical to the Export Add workflow. The only difference is that you need to specify extra parameters like addressX or companyX for BAPI_USER_CHANGE program, where X ending in the addressX indicates that the structure of address does contain a change. 
+Export Replace workflow is almost identical to the Export Add workflow. The only difference is that you need to specify extra parameters like addressX or companyX for the BAPI_USER_CHANGE program. The X at the end of addressX indicates that the structure of the address does contain a change. 
 
  1. Navigate to Object Types -> User -> Export -> Replace workflow and from the Toolbox on the right drag and drop Sequence activity onto workflow designer pane. 
- 2. On the bottom left, find the Variables button and click it to expand a list of variables defined within this Sequence. 
- 3. Add the following variables. To select a variable type generated from the SAP WSDL, click to Browse for Types and expand **generated** and then expand SAPECC namespace. This initializes the data structures used by BAPI_USER_CHANGE program. 
+ 2. On the bottom left, find the Variables button and select it to expand a list of variables defined within this Sequence. 
+ 3. Add the following variables. To select a variable type generated from the SAP WSDL, select to Browse for Types and expand **generated** and then expand SAPECC namespace. This initializes the data structures used by BAPI_USER_CHANGE program. 
 
 |Name|Variable Type|Scope|Default| 
 |-----|-----|-----|-----|
@@ -444,25 +445,25 @@ Your Export Replace workflow looks like this:
 
 :::image type="content" source="media/sap-template/sap-template-35.png" alt-text="Screenshot of start of replace operation workflow." lightbox="media/sap-template/sap-template-35.png":::
 
- 4. As we defined userName property as an immutable ID, an anchor, we'll need to extract userName value from a collection of anchors of our export object. Drag and drop ForEachWithBodyFactory activity from the Toolbox into your Sequence activity. Replace **item** variable name with **anchor**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AnchorAttribute```. In the Value field type ```objectToExport.AnchorAttributes```. 
+ 4. As we defined userName property as an immutable ID, an anchor, we need to extract userName value from a collection of anchors of our export object. Drag and drop ForEachWithBodyFactory activity from the Toolbox into your Sequence activity. Replace **item** variable name with **anchor**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.AnchorAttribute```. In the Value field, type ```objectToExport.AnchorAttributes```. 
 
 :::image type="content" source="media/sap-template/sap-template-36.png" alt-text="Screenshot of update to replace operation workflow." lightbox="media/sap-template/sap-template-36.png":::
 
- 5. To extract a string value of a userName anchor, drag and drop Switch activity inside the ForEach activity. In the popup window select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AnchorAttributeNameWrapper``` type of a switch. Enter Expression value of: New ```AnchorAttributeNameWrapper(anchor.Name)```. Click on Add new case area of Switch activity. Type userName as Case Value. Drag and drop Assign activity into userName case body and assign ```anchor.Value.ToString()``` to userName variable.  Your Export Replace workflow looks like this: 
+ 5. To extract a string value of a userName anchor, drag and drop Switch activity inside the ForEach activity. In the popup window, select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AnchorAttributeNameWrapper``` type of a switch. Enter Expression value of: New ```AnchorAttributeNameWrapper(anchor.Name)```. Select on Add new case area of Switch activity. Type userName as Case Value. Drag and drop Assign activity into userName case body and assign ```anchor.Value.ToString()``` to userName variable.  Your Export Replace workflow looks like this: 
 
 :::image type="content" source="media/sap-template/sap-template-37.png" alt-text="Screenshot of another update to replace operation workflow." lightbox="media/sap-template/sap-template-37.png":::
 
  6. Now that we extracted userName value from exported object anchor property, we need to populate other structures like company, defaults, address, logon data that contain other SAP user details. We do this by cycling through collection of all attributes defined in the schema. 
  7. Collapse your ForEach activity and drag and drop another ForEachWithBothFactory activity inside your Sequence activity after the existing ForEach activity. Replace **item** variable 
-name with **schemaAttr**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.SchemaAttribute```. In the Value field type ```schemaType.Attributes```. 
+name with **schemaAttr**, switch to properties and choose TypeArgument of ```Microsoft.MetadirectoryServices.SchemaAttribute```. In the Value field, type ```schemaType.Attributes```. 
 
 :::image type="content" source="media/sap-template/sap-template-38.png" alt-text="Screenshot of replace operation sequence activity." lightbox="media/sap-template/sap-template-38.png":::
 
- 8. Drag and drop the Sequence activity into the body of your ForEach activity. On the bottom left, find the Variables button and click it to expand a list of variables defined within this Sequence. Add the following variable: xValue of String type. Drag and drop Assign activity into your Sequence activity. Assign xValue the expression of: ```If(objectToExport.AttributeChanges.Contains(schemaAttr.Name), objectToExport.AttributeChanges(schemaAttr.Name).ValueChanges(0).Value.ToString(), String.Empty)```  It will either extract the changes staged for export for this attribute or initialize it with an empty string. Your Export Replace workflow looks like this: 
+ 8. Drag and drop the Sequence activity into the body of your ForEach activity. On the bottom left, find the Variables button and select it to expand a list of variables defined within this Sequence. Add the following variable: xValue of String type. Drag and drop Assign activity into your Sequence activity. Assign xValue the expression of: ```If(objectToExport.AttributeChanges.Contains(schemaAttr.Name), objectToExport.AttributeChanges(schemaAttr.Name).ValueChanges(0).Value.ToString(), String.Empty)```  It either extracts the changes staged for export for this attribute, or initializes it with an empty string. Your Export Replace workflow looks like this: 
 
 :::image type="content" source="media/sap-template/sap-template-39.png" alt-text="Screenshot of update to the replace sequence." lightbox="media/sap-template/sap-template-39.png":::
 
- 9. Drag and drop the Switch activity after Assign activity. In the popup menu select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AttributeNameWrapper``` and click Ok. Enter the following expression: New ```AttributeNameWrapper(schemaAttr.Name)```. You'll see a warning icon in the top right corner of your Switch activity about unhandled attributes defined in the schema and not assigned to any property. Click on Add new case area of Switch activity and type a case value of **city**. Drag and drop Sequence activity into the body of this case. Drag and drop the Assign activity into the body of this case. Assign "X" value to addressX.city. Drag and drop another Assign activity into the body of this case. Assign xValue to address.city. Your Export Replace workflow looks like this: 
+ 9. Drag and drop the Switch activity after Assign activity. In the popup menu, select ```Microsoft.IdentityManagement.MA.WebServices.Activities.Extensions.AttributeNameWrapper``` and select Ok. Enter the following expression: New ```AttributeNameWrapper(schemaAttr.Name)```. You'll see a warning icon in the top right corner of your Switch activity about unhandled attributes defined in the schema and not assigned to any property. Select on Add new case area of Switch activity and type a case value of **city**. Drag and drop Sequence activity into the body of this case. Drag and drop the Assign activity into the body of this case. Assign "X" value to addressX.city. Drag and drop another Assign activity into the body of this case. Assign xValue to address.city. Your Export Replace workflow looks like this: 
 
 :::image type="content" source="media/sap-template/sap-template-40.png" alt-text="Screenshot of drag and drop switch activity." lightbox="media/sap-template/sap-template-40.png":::
 
@@ -490,7 +491,7 @@ Your Export Replace workflow looks like this:
  12. When username is empty, we want to indicate that operation was unsuccessful. Drag and drop ```CreateCSEntryChangeResult``` activity into the Else branch of your IF activity and select ```ExportErrorCustomContinueRun``` error code. Your Export Replace workflow looks like this: 
 :::image type="content" source="media/sap-template/sap-template-42.png" alt-text="Screenshot of CreateCSEntryChangeResult activity." lightbox="media/sap-template/sap-template-42.png":::
 
- 13. Drag and drop the Sequence activity in the empty Then branch of the first IF activity. Drag and drop WebSeviceCall activity inside the Sequence activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_CHANGE operation. Click on ... Arguments button to define parameters for web service call as follows: 
+ 13. Drag and drop the Sequence activity in the empty Then branch of the first IF activity. Drag and drop WebSeviceCall activity inside the Sequence activity. Select SAPECC service name, ZSAPCONNECTORWS endpoint and BAPI_USER_CHANGE operation. Select on ... Arguments button to define parameters for web service call as follows: 
 
 |Name|Direction|Type|Value|
 |-----|-----|-----|-----| 
@@ -505,7 +506,7 @@ Your Export Replace workflow looks like this:
 |RETURN|In/Out|TABLE_OF_BAPIRET2|bapiret2Table| 
 |USERNAME|In|String|userName| 
 
- 14. Click OK. The warning sign disappears. Your Export Replace workflow looks like this: 
+ 14. Select OK. The warning sign disappears. Your Export Replace workflow looks like this: 
     
 :::image type="content" source="media/sap-template/sap-template-43.png" alt-text="Screenshot of BAPI_USER_CHANGE operation." lightbox="media/sap-template/sap-template-43.png":::
 

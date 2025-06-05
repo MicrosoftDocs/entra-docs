@@ -1,19 +1,16 @@
 ---
-
 title: Secure access practices for administrators in Microsoft Entra ID
 description: Ensure that your organization's administrative access and administrator accounts are secure. For system architects and IT pros who configure Microsoft Entra ID, Azure, and Microsoft Online Services.
-
-keywords:
-author: rolyon
-manager: amycolannino
-ms.author: rolyon
+keywords: 
+author: barclayn
+manager: pmwongera
+ms.author: barclayn
 ms.date: 11/21/2024
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.reviewer: "martincoetzer; MarkMorow"
-
 ---
 
 # Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID
@@ -37,7 +34,7 @@ Securing privileged access requires changes to:
 Secure your privileged access in a way that is managed and reported in the Microsoft services you care about. If you have on-premises administrator accounts, see the guidance for on-premises and hybrid privileged access in Active Directory at [Securing Privileged Access](/security/privileged-access-workstations/overview).
 
 > [!NOTE]
-> The guidance in this article refers primarily to features of Microsoft Entra ID that are included in Microsoft Entra ID P1 and P2. Microsoft Entra ID P2 is included in the EMS E5 suite and Microsoft 365 E5 suite. This guidance assumes your organization already has Microsoft Entra ID P2 licenses purchased for your users. If you do not have these licenses, some of the guidance might not apply to your organization. Also, throughout this article, the term Global Administrator means the same thing as "company administrator" or "tenant administrator."
+> The guidance in this article refers primarily to features of Microsoft Entra ID that are included in Microsoft Entra ID P1 and P2. Microsoft Entra ID P2 is included in the EMS E5 suite and Microsoft 365 E5 suite. This guidance assumes your organization already has Microsoft Entra ID P2 licenses purchased for your users. If you do not have these licenses, some of the guidance might not apply to your organization.
 
 ## Develop a roadmap
 
@@ -81,7 +78,7 @@ After you start using Microsoft Entra Privileged Identity Management:
 
 1. To switch directories where you want to use Privileged Identity Management, select your user name in the upper right corner of the Microsoft Entra admin center.
 
-1. Browse to **Identity governance** > **Privileged Identity Management**.
+1. Browse to **ID Governance** > **Privileged Identity Management**.
 
 Make sure the first person to use PIM in your organization is assigned to the [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) and [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) roles. Only Privileged Role Administrators can manage the Microsoft Entra directory role assignments of users. The PIM security wizard walks you through the initial discovery and assignment experience. You can exit the wizard without making any additional changes at this time.
 
@@ -140,7 +137,7 @@ The increase in "bring your own device" and work from home policies and the grow
 
 #### Identify Microsoft accounts in administrative roles that need to be switched to work or school accounts
 
-If your initial Global Administrators reuse their existing Microsoft account credentials when they began using Microsoft Entra ID, replace the Microsoft accounts with individual cloud-based or synchronized accounts.
+If your initial Global Administrators reuse their existing Microsoft account credentials when they began using Microsoft Entra ID, replace the Microsoft accounts with individual cloud-based accounts.
 
 #### Ensure separate user accounts and mail forwarding for Global Administrator accounts
 

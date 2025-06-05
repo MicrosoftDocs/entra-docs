@@ -2,11 +2,11 @@
 title: Review access of an access package in entitlement management
 description: Learn how to complete an access review of entitlement management access packages in access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 03/10/2025
 ms.author: owinfrey
 #Customer intent: As an administrator, I want to review the active assignments of my users to ensure everyone has the appropriate access.
 ---

@@ -1,15 +1,14 @@
 ---
 title: Tutorial - Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
-description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID
+description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 12/13/2024
+ms.date: 04/30/2025
+ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
@@ -144,7 +143,7 @@ The claim containing the photo must be named and you might optionally specify yo
 
 #### Successful Face Check presentation_verified callback event
 
-The JSON payload for the `presentation_verified` has more data when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
+The JSON payload for the `presentation_verified` has more data in the response when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
 
 ```json
   "verifiedCredentialsData": [ 
@@ -163,6 +162,42 @@ The JSON payload for the `presentation_verified` has more data when a Face Check
   ], 
 ```
  
+#### Face Check presentation_verified callback event receipt
+
+If the presentation request was created with asking for a [receipt](presentation-request-api.md#presentation-request-payload), 
+then the `presentation_verified` callback will contain an attribute named `faceCheck`.
+
+```JSON
+{
+  "requestId": "11111111-2222-3333-4444-55555555",
+  "requestStatus": "presentation_verified",
+  "receipt": {
+    ...
+    "faceCheck": "eyJhbGc...svw"
+  },
+  ...
+}
+```
+
+The value of the `faceCheck` attribute is a signed JWT token that is source data for the liveness check. Base64-decoding the JWT token gives a verifiable credential of type `MicrosoftFaceCheckReceipt`. The `sourceVcJti` is the identity of the credential used to match the liveness check.
+
+```JSON
+... 
+    "type": [
+      "VerifiableCredential",
+      "MicrosoftFaceCheckReceipt"
+    ],
+    "credentialSubject": {
+      "faceCheckResults": [
+        {
+          "sourceVcJti": "urn:pic:4f741111222233334444000000000000",
+          "matchConfidenceThreshold": 70,
+          "matchConfidenceScore": 86.314159,
+          "sourcePhotoQuality": "HIGH"
+        }
+      ]
+```
+
 #### Failed Face Check callback event
 
 When the confidence score is lower than the threshold, the presentation request is failed and a `presentation_error` is returned. The verifying application doesn't get the score returned.

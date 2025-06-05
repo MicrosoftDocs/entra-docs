@@ -2,13 +2,14 @@
 title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access.
 description: Covers how to provide single sign-on using Kerberos with Microsoft Entra Private Access.
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 11/10/2024
+ms.date: 04/10/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Use Kerberos for single sign-on (SSO) to your resources with Microsoft Entra Private Access
@@ -25,7 +26,7 @@ Before you get started with single sign-on, make sure your environment is ready.
 ### Publish resources for use with single sign-on
 To test single sign-on, create a new enterprise application that publishes a file share. Using an enterprise application to publish your file share lets you assign a Conditional Access policy to the resource and enforce extra security controls, such as multifactor authentication.
 
-1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator). 
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application Administrator](reference-role-based-permissions.md#application-administrator). 
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application**. 
 1. Add a new app segment with the IP of your file server using port `445/TCP` and then select **Save**. The Server Message Block (SMB) protocol uses the port.
@@ -53,20 +54,28 @@ At a minimum, publish all Domain Controllers that are configured in the Active D
 
 The Domain Controller ports are required to enable SSO to on-premises resources.
 
-|Port      |Protocol   |Purpose     |
-|----------|-----------|------------|
-|88        |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
-|389       |UDP        |DC locator  |
-|464       |UDP/TCP        |Password Change Request  |
-|123       |UDP        |Time Synchronization  |
+|Port        |Protocol   |Purpose     |
+|------------|-----------|------------|
+|88          |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
+|123         |UDP        |Network Time Protocol (NTP)  |
+|135         |UDP/TCP    |Domain controller to domain controller and client to domain controller operations  |
+|138         |UDP        |File replication service between domain controllers  |
+|139         |TCP        |File replication service between domain controllers  |
+|389         |UDP        |DC locator  |
+|445         |UDP/TCP    |Replication, User and Computer Authentication, Group Policy  |
+|464         |UDP/TCP    |Password Change Request  |
+|636         |TCP        |LDAP SSL  |
+|1025-5000   |UDP/TCP    |Ephemeral ports, includes 3268-3269 TCP used for Global catalog from client to domain controller  |
+|49152-65535  |UDP/TCP    |Ephemeral ports  |
+
 
 > [!NOTE]
-> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).
+> The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.). To learn more about Windows network port requirements, see [Service overview and network port requirements for Windows](/troubleshoot/windows-server/networking/service-overview-and-network-port-requirements)
 
-1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator).
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application Administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application** to create a new application to publish your Domain Controllers.
-1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.
+1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published. 
 
 > [!NOTE]
 > Make sure you don’t use wildcard FQDNs to publish your domain controllers, instead add their specific IPs or FQDNs.

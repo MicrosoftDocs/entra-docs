@@ -6,11 +6,11 @@ description: After you install the NPS extension, use these steps for advanced c
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: michmcla
 ---
 # Advanced configuration options for the NPS extension for multifactor authentication
@@ -29,22 +29,22 @@ To configure alternate sign-in IDs, go to `HKLM\SOFTWARE\Microsoft\AzureMfa` and
 | ---- | ---- | ------------- | ----------- |
 | LDAP_ALTERNATE_LOGINID_ATTRIBUTE | string | Empty | Designate the name of Active Directory attribute that you want to use as the UPN. This attribute is used as the AlternateLoginId attribute. If this registry value is set to a [valid Active Directory attribute](/windows/win32/adschema/attributes-all) (for example, mail or displayName), then the attribute's value is used as the user's UPN for authentication. If this registry value is empty or not configured, then AlternateLoginId is disabled and the user's UPN is used for authentication. |
 | LDAP_FORCE_GLOBAL_CATALOG | boolean | False | Use this flag to force the use of Global Catalog for LDAP searches when looking up AlternateLoginId. Configure a domain controller as a Global Catalog, add the AlternateLoginId attribute to the Global Catalog, and then enable this flag. <br><br> If LDAP_LOOKUP_FORESTS is configured (not empty), **this flag is enforced as true**, regardless of the value of the registry setting. In this case, the NPS extension requires the Global Catalog to be configured with the AlternateLoginId attribute for each forest. |
-| LDAP_LOOKUP_FORESTS | string | Empty | Provide a semi-colon separated list of forests to search. For example, *contoso.com;foobar.com*. If this registry value is configured, the NPS extension iteratively searches all the forests in the order in which they were listed, and returns the first successful AlternateLoginId value. If this registry value is not configured, the AlternateLoginId lookup is confined to the current domain.|
+| LDAP_LOOKUP_FORESTS | string | Empty | Provide a semi-colon separated list of forests to search. For example, *contoso.com;foobar.com*. If this registry value is configured, the NPS extension iteratively searches all the forests in the order in which they were listed, and returns the first successful AlternateLoginId value. If this registry value isn't configured, the AlternateLoginId lookup is confined to the current domain.|
 
 To troubleshoot problems with alternate sign-in IDs, use the recommended steps for [Alternate sign-in ID errors](howto-mfa-nps-extension-errors.md#alternate-login-id-errors).
 
 ## IP exceptions
 
-If you need to monitor server availability, like if load balancers verify which servers are running before sending workloads, you don't want these checks to be blocked by verification requests. Instead, create a list of IP addresses that you know are used by service accounts, and disable multifactor authentication requirements for that list.
+If you need to monitor server availability, like if load balancers verify which servers are running before sending workloads, you don't want verification requests to block these checks. Instead, create a list of IP addresses that you know are used by service accounts, and disable multifactor authentication requirements for that list.
 
 To configure an IP allowed list, go to `HKLM\SOFTWARE\Microsoft\AzureMfa` and configure the following registry value:
 
 | Name | Type | Default value | Description |
 | ---- | ---- | ------------- | ----------- |
-| IP_WHITELIST | string | Empty | Provide a semi-colon separated list of IP addresses. Include the IP addresses of machines where service requests originate, like the NAS/VPN server. IP ranges and subnets are not supported. <br><br> For example, *10.0.0.1;10.0.0.2;10.0.0.3*.
+| IP_WHITELIST | string | Empty | Provide a semi-colon separated list of IP addresses. Include the IP addresses of machines where service requests originate, like the NAS/VPN server. IP ranges and subnets aren't supported. <br><br> For example, *10.0.0.1;10.0.0.2;10.0.0.3*. |
 
 > [!NOTE]
-> This registry key is not created by default by the installer and an error appears in the AuthZOptCh log when the service is restarted. This error in the log can be ignored, but if this registry key is created and left empty if not needed then the error message does not return.
+> This registry key isn't created by default by the installer and an error appears in the AuthZOptCh log when the service is restarted. This error in the log can be ignored, but if this registry key is created and left empty if not needed then the error message doesn't return.
 
 When a request comes in from an IP address that exists in the `IP_WHITELIST`, two-step verification is skipped. The IP list is compared to the IP address that is provided in the *ratNASIPAddress* attribute of the RADIUS request. If a RADIUS request comes in without the ratNASIPAddress attribute, a warning is logged: "IP_WHITE_LIST_WARNING::IP Whitelist is being ignored as the source IP is missing in the RADIUS request NasIpAddress attribute."
 

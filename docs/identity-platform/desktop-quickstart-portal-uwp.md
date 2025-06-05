@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.custom: scenarios:getting-started, "languages:UWP", mode-api
+ms.custom:
 ms.date: 08/18/2022
 ms.service: identity-platform
 

@@ -1,18 +1,15 @@
 ---
 title: Create a trust relationship between an app and an external identity provider
 description: Set up a trust relationship between an app in Microsoft Entra ID and an external identity provider. This allows a software workload outside of Azure to access Microsoft Entra protected resources without using secrets or certificates.
-
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
-
 ms.service: entra-workload-id
-
 ms.topic: how-to
 ms.date: 12/13/2024
-ms.author: ryanwi
-ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell
+ms.author: shermanouko
 ms.reviewer: shkhalid, udayh, vakarand
 zone_pivot_groups: identity-wif-apps-methods
+ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell, sfi-image-nochange
 #Customer intent: As an application developer, I want to configure a federated credential on an app registration so I can create a trust relationship with an external identity provider and use workload identity federation to access Microsoft Entra protected resources without managing secrets.
 ---
 
@@ -26,7 +23,9 @@ In this article, you learn how to create, list, and delete federated identity cr
 
 ## Important considerations and restrictions
 
-To create, update, or delete a federated identity credential, the account performing the action must have the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or Application Owner role. The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
+
+To create, update, or delete a federated identity credential, the account performing the action must be the owner of the application, or have one of these Entra roles: [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), or [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
+
 
 [!INCLUDE [federated credential configuration](./includes/federated-credential-configuration-considerations.md)]
 
@@ -71,8 +70,6 @@ Use the following values from your Microsoft Entra application registration for 
     The following screenshot demonstrates how to copy the application ID and tenant ID.
 
     ![Screenshot that demonstrates how to copy the application ID and tenant ID from Microsoft Entra admin center.](./media/workload-identity-federation-create-trust/copy-client-id.png)
-
-- `AZURE_SUBSCRIPTION_ID` your subscription ID. To get the subscription ID, open **Subscriptions** in [Azure portal](https://portal.azure.com) and find your subscription. Then, copy the **Subscription ID**.
 
 #### Entity type examples
 

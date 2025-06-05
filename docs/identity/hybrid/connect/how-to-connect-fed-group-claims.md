@@ -1,15 +1,15 @@
 ---
 title: Configure group claims for applications by using Microsoft Entra ID
 description: Get information on how to configure group claims for use with Microsoft Entra ID.
-
 ms.reviewer: paulgarn
-manager: amycolannino
+manager: femila
 ms.subservice: hybrid-connect
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/04/2024
+ms.date: 04/09/2025
 ms.author: billmath
 author: billmath
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 ---
 
 # Configure group claims for applications by using Microsoft Entra ID
@@ -133,11 +133,11 @@ You can configure group claim to include the group display name for the cloud-on
 
 4. To emit group display name just for cloud groups, in the **Source attribute** dropdown select the **Cloud-only group display names**:
 
-   ![Screenshot that shows the Group Claims source attribute dropdown, with the option for configuring cloud only group names selected.](media/how-to-connect-fed-group-claims/group-claims-ui-8.png)
+ :::image type="content" source="media/how-to-connect-fed-group-claims/group-claims-ui-8-new.png" alt-text="Screenshot that shows the Group Claims source attribute dropdown, with the option for configuring cloud only group names selected." lightbox="media/how-to-connect-fed-group-claims/group-claims-ui-8-new.png":::
 
 5. For a hybrid setup, to emit on-premises group attribute for synced groups and display name for cloud groups, you can select the desired on-premises sources attribute and check the checkbox **Emit group name for cloud-only groups**:
 
-   ![Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups.](media/how-to-connect-fed-group-claims/group-claims-ui-9.png)
+ :::image type="content" source="media/how-to-connect-fed-group-claims/group-claims-ui-9-new.png" alt-text="Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups." lightbox="media/how-to-connect-fed-group-claims/group-claims-ui-9-new.png":::
 
 > [!Note]
 > You can only add cloud-group names of assigned groups to an application. The restriction to `groups assigned to the application` is because a group name is not unique, and display names can only be emitted for groups explicitly assigned to the application to reduce the security risks. Otherwise, any user could create a group with duplicate name and gain access in the application side.
@@ -202,7 +202,7 @@ After you add a group claim configuration to the **User Attributes & Claims** co
 
 You can also configure group claims in the [optional claims](~/identity-platform/optional-claims.md) section of the [application manifest](~/identity-platform/reference-app-manifest.md).
 
-1. In the portal, select **Identity** > **Applications** > **App registrations** > **Select Application** > **Manifest**.
+1. In the portal, select **Entra ID** > **App registrations** > **Select Application** > **Manifest**.
 
 2. Enable group membership claims by changing `groupMembershipClaims`.
 

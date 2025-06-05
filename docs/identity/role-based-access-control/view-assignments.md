@@ -1,113 +1,199 @@
 ---
 title: List Microsoft Entra role assignments
-description: You can now see and manage members of a Microsoft Entra administrator role in the Microsoft Entra admin center.
-
-author: rolyon
-manager: amycolannino
+description: Learn how to list Microsoft Entra role assignments using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 11/21/2024
-ms.author: rolyon
+ms.date: 01/03/2025
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 ---
+
 # List Microsoft Entra role assignments
 
-This article describes how to list roles you have assigned in Microsoft Entra ID. In Microsoft Entra ID, roles can be assigned at an organization-wide scope or with a single-application scope.
+This article describes how to list roles you have assigned in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
-- Role assignments at the organization-wide scope are added to and can be seen in the list of single application role assignments.
-- Role assignments at the single application scope aren't added to and can't be seen in the list of organization-wide scoped assignments.
+Role assignments contain information linking a given security principal (a user, group, or application service principal) to a role definition. Listing users, groups, and assigned roles are default user permissions.
+
+## Scopes
+
+In Microsoft Entra ID, roles can be assigned at different scopes.
+
+- Role assignments at tenant scope are added to and can be seen in the list of single application role assignments.
+- Role assignments at the single application scope aren't added to and can't be seen in the list of tenant scoped assignments.
 
 ## Prerequisites
 
-- Microsoft Graph PowerShell module when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+## List Microsoft Entra role assignments
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+# [Admin center](#tab/admin-center)
 
-This procedure describes how to list role assignments with organization-wide scope.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
-
-1. Select a role to open it and view its properties.
-
-1. Select **Assignments** to list the role assignments.
-
-    ![List role assignments and permissions when you open a role from the list](./media/view-assignments/role-assignments.png)
 
 ### List my role assignments
 
-It's easy to list your own permissions as well. Select **Your Role** on the **Roles and administrators** page to see the roles that are currently assigned to you.
+It's easy to list your own permissions as well. On the **Roles and administrators** page, select **Your Role** to see the roles that are currently assigned to you.
 
-   ![List my role assignments](./media/view-assignments/list-my-role-assignments.png)
+:::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
+
+### List role assignments for a user
+
+Follow these steps to list Microsoft Entra roles for a user using the Microsoft Entra admin center. Your experience will be different depending on whether you have [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) enabled.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+1. Browse to **Entra ID** > **Users**.
+
+1. Select *user name* > **Assigned roles**.
+
+    You can see the list of roles assigned to the user at different scopes. Additionally, you can see whether the role has been assigned directly or via a group.
+
+    :::image type="content" source="./media/view-assignments/user-role-assignments.png" alt-text="Screenshot of roles assigned to a user." lightbox="./media/view-assignments/user-role-assignments.png":::
+
+    If you have a Microsoft Entra ID P2 license, you'll see the PIM experience, which has eligible, active, and expired role assignment details.
+
+    :::image type="content" source="./media/view-assignments/user-role-assignments-pim.png" alt-text="Screenshot of roles assigned to a user in PIM." lightbox="./media/view-assignments/user-role-assignments-pim.png":::
+
+### List role assignments for a group
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+1. Browse to **Entra ID** > **Groups** > **All groups**.
+
+1. Select a role-assignable group.
+
+    To determine if a group is role-assignable, you can view the **Properties** for the group.
+
+1. Select **Assigned roles**.
+
+    You can now see all the Microsoft Entra roles assigned to this group. If you don't see the **Assigned roles** option, the group is not a role-assignable group.
+
+    :::image type="content" source="./media/view-assignments/group-role-assignments.png" alt-text="Screenshot of roles assigned to a group." lightbox="./media/view-assignments/group-role-assignments.png":::
 
 ### Download role assignments
 
-To download all active role assignments across all roles, including built-in and custom roles, follow these steps (currently in Preview).
+To download all active role assignments across all roles, including built-in and custom roles, follow these steps.
+
+Bulk operations can only run for up to 1 hour and has limitations in large tenants. For more information, see [Bulk operations](../../fundamentals/bulk-operations-service-limitations.md) and [Bulk create users in Microsoft Entra ID](https://go.microsoft.com/fwlink/?linkid=2103821).
 
 1. On the **Roles and administrators** page, select **All roles**.
 
 1. Select **Download assignments**.
 
+    :::image type="content" source="./media/view-assignments/download-role-assignments-all.png" alt-text="Screenshot of pane to download all role assignments." lightbox="./media/view-assignments/download-role-assignments-all.png":::
+
+1. Specify a file name and select **Start download**.
+
     A CSV file that lists assignments at all scopes for all roles is downloaded.
 
-    :::image type="content" source="./media/view-assignments/download-role-assignments-all.png" alt-text="Screenshot showing download all role assignments." lightbox="./media/view-assignments/download-role-assignments-all.png":::
-
-To download all assignments for a specific role, follow these steps.
+To download role assignments for a specific role, follow these steps.
 
 1. On the **Roles and administrators** page, select a role.
 
 1. Select **Download assignments**.
 
+    If you have a Microsoft Entra ID P2 license, you'll see the PIM experience. Select **Export** to download the role assignments.
+
     A CSV file that lists assignments at all scopes for that role is downloaded.
 
-    :::image type="content" source="./media/view-assignments/download-role-assignments.png" alt-text="Screenshot showing download all assignments for a specific role." lightbox="./media/view-assignments/download-role-assignments.png":::
+### List role assignments with tenant scope
 
-### List role assignments with single-application scope
-
-This section describes how to list role assignments with single-application scope. This feature is currently in public preview.
+This procedure describes how to list role assignments with tenant scope.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
-1. Select the app registration to view its properties. You might have to select **All applications** to see the complete list of app registrations in your Microsoft Entra organization.
+1. Select a role name to open the role. Don't add a check mark next to the role.
 
-    ![Create or edit app registrations from the App registrations page](./media/view-assignments/app-reg-all-apps.png)
+    :::image type="content" source="../../media/common/entra-roles-admins-mouse.png" alt-text="Screenshot of Roles and administrators page with mouse over role name.":::
 
-1. In the app registration, select **Roles and administrators**, and then select a role to view its properties.
+1. Select **Assignments** to list the role assignments.
 
-    ![List app registration role assignments from the App registrations page](./media/view-assignments/app-reg-assignments.png)
+    :::image type="content" source="./media/view-assignments/role-assignments-tenant.png" alt-text="Screenshot that lists role assignments with tenant scope." lightbox="./media/view-assignments/role-assignments-tenant.png":::
 
-1. Select **Assignments** to list the role assignments. Opening the assignments page from within the app registration shows you the role assignments that are scoped to this Microsoft Entra resource.
+1. In the **Scope** column, see the role assignments with **Directory** scope.
 
-    ![List app registration role assignments from the properties of an app registration](./media/view-assignments/app-reg-assignments-2.png)
+### List role assignments with app registration scope
 
+This section describes how to list role assignments with single-application scope.
 
-## PowerShell
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-This section describes viewing assignments of a role with organization-wide scope. This article uses the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module. To view single-application scope assignments using PowerShell, you can use the cmdlets in [Assign custom roles with PowerShell](custom-assign-powershell.md).
+1. Browse to **Entra ID** > **App registrations**.
+
+1. Select an app registration for the list of role assignments you want to view.
+
+    You might have to select **All applications** to see the complete list of app registrations in your Microsoft Entra organization.
+
+1. Select **Roles and administrators**.
+
+1. Select a role name to open the role.
+
+1. Select **Assignments** to list the role assignments.
+
+    Opening the assignments page from within the app registration shows you the role assignments that are scoped to this Microsoft Entra resource.
+
+    :::image type="content" source="./media/view-assignments/role-assignments-app-registration.png" alt-text="Screenshot that lists role assignments with application registration scope." lightbox="./media/view-assignments/role-assignments-app-registration.png":::
+
+1. In the **Scope** column, see the role assignments with **This resource** scope.
+
+### List role assignments with administrative unit scope
+
+You can view all the role assignments created with an administrative unit scope in the **Admin units** section of the Microsoft Entra admin center.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
+
+1. Select an administrative unit for the list of role assignments you want to view.
+
+1. Select **Roles and administrators**.
+
+1. Select a role name to open the role.
+
+1. Select **Assignments** to list the role assignments.
+
+    :::image type="content" source="./media/view-assignments/role-assignments-admin-unit.png" alt-text="Screenshot that lists role assignments with administrative unit scope." lightbox="./media/view-assignments/role-assignments-admin-unit.png":::
+
+1. In the **Scope** column, see the role assignments with **This resource** scope.
+
+# [PowerShell](#tab/ms-powershell)
+
+This section describes viewing assignments of a role with tenant scope. This section uses the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module.
+
+### Setup
+
+1. Install the Microsoft Graph module using [Install-Module](/powershell/module/powershellget/install-module).
+  
+    ```powershell
+    Install-Module -name Microsoft.Graph
+    ```
+
+3. Use the [Connect-MgGraph](/powershell/module/microsoft.graph.authentication/connect-mggraph) command to sign into and use Microsoft Graph PowerShell cmdlets.
+  
+      ```powershell
+      Connect-MgGraph
+      ```
+
+### List role assignments with tenant scope
 
 Use the [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) and [Get-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroleassignment) commands to list role assignments.
 
 The following example shows how to list the role assignments for the [Groups Administrator](permissions-reference.md#groups-administrator) role.
 
 ```powershell
-# Fetch list of all directory roles with template ID
-Get-MgRoleManagementDirectoryRoleDefinition
-
-# Fetch a specific directory role by ID
+# Get a specific directory role by ID
 $role = Get-MgRoleManagementDirectoryRoleDefinition -UnifiedRoleDefinitionId fdd7a751-b60b-444a-984c-02652fe8fa1c
 
-# Fetch membership for a role
+# Get role assignments for a given role definition
 Get-MgRoleManagementDirectoryRoleAssignment -Filter "roleDefinitionId eq '$($role.Id)'"
 ```
 
@@ -119,7 +205,7 @@ lAPpYvVpN0KRkAEhdxReEH2Fs3EjKm1BvSKkcYVN2to-1 aaaaaaaa-bbbb-cccc-1111-2222222222
 lAPpYvVpN0KRkAEhdxReEMdXLf2tIs1ClhpzQPsutrQ-1 bbbbbbbb-cccc-dddd-2222-333333333333 62e90394-69f5-4237-9190-012177145e10 /
 ```
 
-The following example shows how to list all active role assignments across all roles, including built-in and custom roles (currently in Preview).
+The following example shows how to list all active role assignments across all roles, including built-in and custom roles.
 
 ```powershell
 $roles = Get-MgRoleManagementDirectoryRoleDefinition
@@ -141,14 +227,119 @@ BSub0kaAukSHWB4mGC_PModww03rMgNOkpK77ePhDnI-1 eeeeeeee-ffff-aaaa-5555-6666666666
 BSub0kaAukSHWB4mGC_PMgzOWSgXj8FHusA4iaaTyaI-1 ffffffff-aaaa-bbbb-6666-777777777777 d29b2b05-8046-44ba-8758-1e26182fcf32 /
 ```
 
-## Microsoft Graph API
+### List role assignments for a principal
 
-This section describes how to list role assignments with organization-wide scope. To list single-application scope role assignments using Graph API, you can use the operations in [Assign custom roles with Graph API](custom-assign-graph.md).
+Use the [Get-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroleassignment) command to list the role assignments for a principal.
 
-Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignments for a specific role definition. The following example shows how to list the role assignments for a specific role definition with the ID `00000000-0000-0000-0000-000000000000`.
+```powershell
+# Get role assignments for a given principal
+Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq 'aaaaaaaa-bbbb-cccc-1111-222222222222'"
+```
+
+### List direct and transitive role assignments for a principal
+
+Use the [List transitiveRoleAssignments](/graph/api/rbacapplication-list-transitiveroleassignments) API to get roles assigned directly and transitively to a user.
+
+```powershell
+$response = $null
+$uri = "https://graph.microsoft.com/beta/roleManagement/directory/transitiveRoleAssignments?`$count=true&`$filter=principalId eq 'aaaaaaaa-bbbb-cccc-1111-222222222222'"
+$method = 'GET'
+$headers = @{'ConsistencyLevel' = 'eventual'}
+
+$response = (Invoke-MgGraphRequest -Uri $uri -Headers $headers -Method $method -Body $null).value
+```
+
+### List role assignments for a group
+
+Use the [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) command to get a group.
+
+```powershell
+Get-MgGroup -Filter "DisplayName eq 'Contoso_Helpdesk_Administrators'"
+```
+
+Use the [Get-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroleassignment) command to list the role assignments for the group.
+
+```powershell
+Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq '<object id of group>'" 
+```
+
+### List role assignments with administrative unit scope
+
+Use the [Get-MgDirectoryAdministrativeUnitScopedRoleMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunitscopedrolemember) command to list role assignments with administrative unit scope.
+
+```powershell
+$adminUnit = Get-MgDirectoryAdministrativeUnit -Filter "displayname eq 'Example_admin_unit_name'"
+Get-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $adminUnit.Id | FL *
+```
+
+# [Graph API](#tab/ms-graph)
+
+This section describes how to list role assignments with tenant scope. Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignments.
+
+### List role assignments for a principal
 
 ```http
-GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=roleDefinitionId eq ‘<template-id-of-role-definition>’
+GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=principalId+eq+'<object-id-of-principal>'
+```
+
+Response
+
+```http
+HTTP/1.1 200 OK
+{
+"value":[
+            { 
+                "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0uIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+                "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
+                "directoryScopeId": "/"  
+            } ,
+            {
+                "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+                "roleDefinitionId": "fe930be7-5e62-47db-91af-98c3a49a38b1",
+                "directoryScopeId": "/"
+            }
+        ]
+}
+```
+
+### List direct and transitive role assignments for a principal
+
+Follow these steps to list Microsoft Entra roles assigned to a user using the Microsoft Graph API in [Graph Explorer](https://aka.ms/ge).
+
+1. Sign in to the [Graph Explorer](https://aka.ms/ge).
+
+1. Use the [List transitiveRoleAssignments](/graph/api/rbacapplication-list-transitiveroleassignments) API to get roles assigned directly and transitively to a user. Add following query to the URL.
+
+   ```http
+   GET https://graph.microsoft.com/beta/rolemanagement/directory/transitiveRoleAssignments?$count=true&$filter=principalId eq 'aaaaaaaa-bbbb-cccc-1111-222222222222'
+   ```
+  
+3. Navigate to **Request headers** tab. Add `ConsistencyLevel` as key and `Eventual` as its value. 
+
+5. Select **Run query**.
+
+### List role assignments for a group
+
+Use the [Get group](/graph/api/group-get) API to get a group.
+
+```http
+GET https://graph.microsoft.com/v1.0/groups?$filter=displayName+eq+'Contoso_Helpdesk_Administrator'
+```
+
+Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to get the role assignment.
+
+```http
+GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=principalId eq
+```
+
+### List role assignments for a role definition
+
+The following example shows how to list the role assignments for a specific role definition.
+
+```http
+GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=roleDefinitionId eq '<template-id-of-role-definition>'
 ```
 
 Response
@@ -162,6 +353,70 @@ HTTP/1.1 200 OK
     "directoryScopeId": "/"
 }
 ```
+
+### List a role assignment by ID
+
+```http
+GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
+```
+
+Response
+
+```http
+HTTP/1.1 200 OK
+{ 
+    "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0uIiSDKQoTVJrLE9etXyrY0-1",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+    "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
+    "directoryScopeId": "/"
+}
+```
+
+### List role assignments with app registration scope
+
+```http
+GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=directoryScopeId+eq+'/d23998b1-8853-4c87-b95f-be97d6c6b610'
+```
+
+Response
+
+```http
+HTTP/1.1 200 OK
+{
+"value":[
+            { 
+                "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0uIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+                "roleDefinitionId": "10dae51f-b6af-4016-8d66-8c2a99b929b3",
+                "directoryScopeId": "/d23998b1-8853-4c87-b95f-be97d6c6b610"
+            } ,
+            {
+                "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1wIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+                "roleDefinitionId": "00000000-0000-0000-0000-000000000000",
+                "directoryScopeId": "/d23998b1-8853-4c87-b95f-be97d6c6b610"
+            }
+        ]
+}
+```
+
+### List role assignments with administrative unit scope
+
+Use the [List scopedRoleMembers](/graph/api/administrativeunit-list-scopedrolemembers) API to list role assignments with administrative unit scope.
+
+Request
+
+```http
+GET /directory/administrativeUnits/{admin-unit-id}/scopedRoleMembers
+```
+
+Body
+
+```http
+{}
+```
+
+---
 
 ## Next steps
 

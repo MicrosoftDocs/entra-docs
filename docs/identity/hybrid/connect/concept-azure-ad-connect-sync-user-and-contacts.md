@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect Sync: Understanding Users, Groups, and Contacts'
 description: Explains users, groups, and contacts in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 8d204647-213a-4519-bd62-49563c421602
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/05/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -18,7 +18,7 @@ ms.author: billmath
 # Microsoft Entra Connect Sync: Understanding Users, Groups, and Contacts
 There are several different reasons why you would have multiple Active Directory forests and there are several different deployment topologies. Common models include an account-resource deployment and GAL sync’ed forests after a merger & acquisition. But even if there are pure models, hybrid models are common as well. The default configuration in Microsoft Entra Connect Sync doesn't assume any particular model. However, depending on how user matching was selected in the installation guide, different behaviors can be observed.
 
-In this topic, we go through how the default configuration behaves in certain topologies. We go through the configuration and the Synchronization Rules Editor can be used to look at the configuration.
+In this article, we go through how the default configuration behaves in certain topologies. We go through the configuration and the Synchronization Rules Editor can be used to look at the configuration.
 
 There are a few general rules the configuration assumes:
 * Regardless of which order we import from the source Active Directories, the end result should always be the same.
@@ -54,10 +54,10 @@ Important points to be aware of when synchronizing groups from Active Directory 
       * An Active Directory group whose proxyAddress attribute has values *{"X500:/0=contoso.com/ou=users/cn=testgroup", "smtp:johndoe\@contoso.com"}* will also be mail-enabled in Microsoft Entra ID.
 
 ## Contacts
-Having contacts representing a user in a different forest is common after a merger & acquisition where a GALSync solution is bridging two or more Exchange forests. The contact object is always joining from the connector space to the metaverse using the mail attribute. If there's already a contact object or user object with the same mail address, the objects are joined together. This is configured in the rule **In from AD – Contact Join**. There is also a rule named **In from AD – Contact Common** with an attribute flow to the metaverse attribute **sourceObjectType** with the constant **Contact**. This rule has low precedence so if any user object is joined to the same metaverse object, then the rule **In from AD – User Common** contributes the value User to this attribute. With this rule, this attribute has the value Contact if no user is joined and the value User if at least one user is found.
+Having contacts representing a user in a different forest is common after a merger & acquisition where a GALSync solution is bridging two or more Exchange forests. The contact object is always joining from the connector space to the metaverse using the mail attribute. If there's already a contact object or user object with the same mail address, the objects are joined together. This is configured in the rule **In from AD – Contact Join**. There's also a rule named **In from AD – Contact Common** with an attribute flow to the metaverse attribute **sourceObjectType** with the constant **Contact**. This rule has low precedence so if any user object is joined to the same metaverse object, then the rule **In from AD – User Common** contributes the value User to this attribute. With this rule, this attribute has the value Contact if no user is joined and the value User if at least one user is found.
 
 For provisioning an object to Microsoft Entra ID, the outbound rule **Out to Microsoft Entra ID – Contact Join** creates a contact object if the metaverse attribute **sourceObjectType** is set to **Contact**. If this attribute is set to **User**, then the rule **Out to Microsoft Entra ID – User Join** creates a user object instead.
-It is possible that an object is promoted from Contact to User when more source Active Directories are imported and synchronized.
+It's possible that an object is promoted from Contact to User when more source Active Directories are imported and synchronized.
 
 For example, in a GALSync topology we find contact objects for everyone in the second forest when we import the first forest. This stages new contact objects in the Microsoft Entra Connector. When we later import and synchronize the second forest, we find the real users and join them to the existing metaverse objects. We'll then delete the contact object in Microsoft Entra ID and create a new user object instead.
 

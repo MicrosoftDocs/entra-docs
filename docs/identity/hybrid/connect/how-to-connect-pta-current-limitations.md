@@ -4,12 +4,12 @@ description: This article describes the current limitations of Microsoft Entra p
 
 keywords: Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -29,18 +29,18 @@ The following scenarios are supported:
 
 ## Unsupported scenarios
 
-The following scenarios are *not* supported:
+The following scenarios *aren't* supported:
 
 - Detection of users with [leaked credentials](~/id-protection/overview-identity-protection.md).
 - Microsoft Entra Domain Services needs Password Hash Synchronization to be enabled on the tenant. Therefore tenants that use Pass-through Authentication *only* don't work for scenarios that need Microsoft Entra Domain Services.
-- Pass-through Authentication is not integrated with [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md).
-- Signing in to Microsoft Entra joined (AADJ) devices with a temporary or expired password is not supported for Pass-through authentication users. The error "the sign-in method you're trying to use isn't allowed" will appear.  These users must sign in to a browser to update their temporary password.
+- Pass-through Authentication isn't integrated with [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md).
+- Signing in to Microsoft Entra joined (AADJ) devices with a temporary or expired password isn't supported for Pass-through authentication users. The error "the sign-in method you're trying to use isn't allowed" will appear. These users must sign in to a browser to update their temporary password.
 
 > [!IMPORTANT]
 > As a workaround for unsupported scenarios *only* (except Microsoft Entra Connect Health integration), enable Password Hash Synchronization on the [Optional features](how-to-connect-install-custom.md#optional-features) page in the Microsoft Entra Connect wizard.
 > 
 > [!NOTE]
-> Enabling Password Hash Synchronization gives you the option to failover authentication if your on-premises infrastructure is disrupted. This failover from Pass-through Authentication to Password Hash Synchronization is not automatic. You'll need to switch the sign-in method manually using Microsoft Entra Connect. If the server running Microsoft Entra Connect goes down, you'll require help from Microsoft Support to turn off Pass-through Authentication.
+> Enabling Password Hash Synchronization gives you the option to failover authentication if your on-premises infrastructure is disrupted. This failover from Pass-through Authentication to Password Hash Synchronization isn't automatic. You'll need to switch the sign-in method manually using Microsoft Entra Connect. If the server running Microsoft Entra Connect goes down, you'll require help from Microsoft Support to turn off Pass-through Authentication.
 
 ## Next steps
 - [Quick start](how-to-connect-pta-quick-start.md): Get up and running with Microsoft Entra pass-through authentication.

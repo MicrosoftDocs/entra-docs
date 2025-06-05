@@ -1,17 +1,15 @@
 ---
 title: Delegate application management administrator permissions
 description: Grant permissions for application access management in Microsoft Entra ID
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 11/17/2024
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to reduce overusing highly-privileged administrator roles by delegating app access management to lower-privilege roles.
 ---
 
@@ -36,13 +34,13 @@ To disable the default ability to create application registrations or consent to
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Users** > **User settings**.
+1. Browse to **Entra ID** > **Users** > **User settings**.
 
 1. Set the **Users can register applications** setting to **No**.
 
     This will disable the default ability for users to create application registrations.
 
-1. Browse to **Identity** > **Enterprise applications** > **Consent and permissions**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Consent and permissions**.
 
 1. Select the **Do not allow user consent** option.
 
@@ -75,8 +73,8 @@ Follow the instructions in the [Assign roles to users with Microsoft Entra ID](~
 
 Creating custom roles and assigning custom roles are separate steps:
 
-- [Create a custom *role definition*](custom-create.yml) and [add permissions to it from a preset list](custom-available-permissions.md). These are the same permissions used in the built-in roles.
-- [Create a *role assignment*](custom-assign-powershell.md) to assign the custom role.
+- [Create a custom *role definition*](custom-create.md) and [add permissions to it from a preset list](custom-available-permissions.md). These are the same permissions used in the built-in roles.
+- [Create a *role assignment*](manage-roles-portal.md) to assign the custom role.
 
 This separation allows you to create a single role definition and then assign it many times at different *scopes*. A custom role can be assigned at organization-wide scope, or it can be assigned at the scope of a single Microsoft Entra object. An example of an object scope is a single app registration. Using different scopes, the same role definition can be assigned to Sally over all app registrations in the organization and then to Naveen over only the Contoso Expense Reports app registration.
 
@@ -85,7 +83,7 @@ Tips when creating and using custom roles for delegating application management:
 - Custom roles do not grant access to the Microsoft Entra admin center when the [Restrict access to Microsoft Entra administration portal](~/fundamentals/users-default-permissions.md) user setting is set to **Yes**.
 - App registrations the user has access to using role assignments only show up in the ‘All applications’ tab on the App registration page. They do not show up in the ‘Owned applications’ tab.
 
-For more information on the basics of custom roles, see the [custom roles overview](custom-overview.md), as well as how to [create a custom role](custom-create.yml) and how to [assign a role](custom-assign-powershell.md).
+For more information on the basics of custom roles, see the [custom roles overview](custom-overview.md), as well as how to [create a custom role](custom-create.md) and how to [assign a role](manage-roles-portal.md).
 
 ## Troubleshoot
 

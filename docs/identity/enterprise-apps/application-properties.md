@@ -8,7 +8,8 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 08/21/2024
+ai-usage: ai-assisted
+ms.date: 01/31/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
@@ -24,7 +25,7 @@ This article describes the properties that you can configure for an enterprise a
 
 If this option is set to **Yes**, then assigned users are able to sign in to the application from the My Apps portal, the User access URL, or by navigating to the application URL directly. If assignment is required, then only users who are assigned to the application are able to sign-in. If assignment is required, applications must be assigned to get a token.
 
-If this option is set to **No**, then no users are able to sign in to the application, even if they're assigned to it. Tokens aren't issued for the application.  
+If this option is set to **No**, then no users are able to sign in to the application, even if they're assigned to it. Tokens aren't issued for the application. This setting not only prevents users from signing in but also restricts service principals from accessing the application using application permissions.
 
 ## Name
 
@@ -72,6 +73,9 @@ This option only applies to the following types of applications and services:
 - WS-Federation for user sign
 - Application Proxy applications with Microsoft Entra preauthentication enabled
 - Applications or services for which other applications or service are requesting access tokens
+
+>[!NOTE]
+>Users with a Global Administrator role can sign in to applications, regardless of the assignment required settings.
 
 ## Visible to users
 

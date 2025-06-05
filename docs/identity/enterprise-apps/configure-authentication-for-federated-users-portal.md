@@ -1,7 +1,6 @@
 ---
 title: Configure sign-in auto-acceleration
 description: Learn how to force federated IdP auto-acceleration for an application using Home Realm Discovery policy.
-
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
@@ -10,9 +9,9 @@ ms.topic: how-to
 ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: ludwignick
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-minus-portal-aad
+ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-ropc-nochange
 #customer intent: As an IT admin configuring sign-in behavior for federated users in Microsoft Entra ID, I want to understand how to use Home Realm Discovery (HRD) policy to enable auto-acceleration sign-in and direct username/password authentication, so that I can streamline the sign-in process for specific applications and improve user experience.
 ---
 
@@ -154,7 +153,7 @@ You need the **ObjectID** of the service principals to which you want to assign 
 
 You can use the [Microsoft Entra admin center](https://entra.microsoft.com). Using this option:
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results. Copy the Object ID of the application.
 
 Because you're using Microsoft Graph PowerShell, run the following cmdlet to list the service principals and their IDs.
@@ -293,7 +292,7 @@ You need the **ObjectID** of the service principals to which you want to assign 
 
 You can use the [Microsoft Entra admin center](https://entra.microsoft.com). Using this option:
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results. Copy the Object ID of the application.
 
    Because you're using Microsoft Graph explorer, run the following request to list the service principals and their IDs.

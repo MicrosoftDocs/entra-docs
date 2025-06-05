@@ -4,13 +4,13 @@ metadata:
   description: Answers to frequently asked questions about Microsoft Entra seamless single sign-on.  
   keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
   author: billmath
-  manager: amycolannino
+  manager: femila
   ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
   ms.service: entra-id
   ms.tgt_pltfrm: na
-  ms.custom: has-azure-ad-ps-ref
+  ms.custom: no-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 12/04/2024
+  ms.date: 12/20/2024
   ms.subservice: hybrid-connect
   ms.author: billmath
   
@@ -92,11 +92,10 @@ sections:
           
              **Step 1. Get list of AD forests where Seamless SSO is enabled**
           
-             1. First, download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
-             2. Navigate to the `$env:programfiles"\Microsoft Azure Active Directory Connect"` folder.
-             3. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
-             4. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
-             5. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides a list of AD forests (look at the "Domains" list) on which this feature has been enabled.
+             1. Navigate to the `$env:programfiles"\Microsoft Azure Active Directory Connect"` folder.
+             2. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
+             3. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
+             4. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides a list of AD forests (look at the "Domains" list) on which this feature has been enabled.
           
              **Step 2. Update the Kerberos decryption key on each AD forest that it was set up on**
           
@@ -139,11 +138,10 @@ sections:
           
              Run the following steps on the on-premises server where you're running Microsoft Entra Connect:
           
-             1. First, download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
-             2. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
-             3. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
-             4. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
-             5. Call `Enable-AzureADSSO -Enable $false`.
+             1. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
+             2. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
+             3. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
+             4. Call `Enable-AzureADSSO -Enable $false`.
              
              At this point Seamless SSO is disabled but the domains remain configured in case you would like to enable Seamless SSO back. If you would like to remove the domains from Seamless SSO configuration completely, call the following cmdlet after you completed step 5 above: `Disable-AzureADSSOForest -DomainFqdn <fqdn>`.
           
@@ -157,11 +155,10 @@ sections:
           
              Follow tasks 1 through 4 if you have disabled Seamless SSO using Microsoft Entra Connect. If you have disabled Seamless SSO using PowerShell instead, jump ahead to task 5.
           
-             1. First, download, and install [Azure AD PowerShell](/powershell/azure/active-directory/overview).
-             2. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
-             3. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
-             4. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
-             5. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides you the list of AD forests (look at the "Domains" list) on which this feature has been enabled.
+             1. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
+             2. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
+             3. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
+             4. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides you with the list of AD forests (look at the "Domains" list) on which this feature has been enabled.
           
              **Step 3. Manually delete the `AZUREADSSO` computer account from each AD forest that you see listed.**
           

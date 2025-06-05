@@ -1,6 +1,7 @@
 ---
 title: Configure how users consent to applications
-description: Learn how to manage how and when users can consent to applications that request access to your organization's data.
+
+description: Configure user consent settings in Microsoft Entra ID to control when and how users grant permissions to your organization's data. Secure your environment with step‑by‑step guidance.
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,11 +9,11 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 09/16/2024
+ms.date: 04/30/2025
 ms.author: jomondi
 ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 
 
 #customer intent: As an IT admin, I want to configure user consent settings for applications, so that I can control the level of access users have to my organization's data and reduce the risk of malicious applications.
@@ -20,14 +21,14 @@ zone_pivot_groups: enterprise-apps-minus-former-powershell
 
 # Configure how users consent to applications
 
-In this article, you'll learn how to configure the way users consent to applications and how to disable all future user consent operations to applications.
+In this article, you learn how to configure user consent settings in Microsoft Entra ID to control when and how users grant permissions to applications. This guidance helps IT admins reduce security risks by restricting or disabling user consent.
 
 Before an application can access your organization's data, a user must grant the application permissions to do so. Different permissions allow different levels of access. By default, all users are allowed to consent to applications for permissions that don't require administrator consent. For example, by default, a user can consent to allow an app to access their mailbox but can't consent to allow an app unfettered access to read and write to all files in your organization.
 
 To reduce the risk of malicious applications attempting to trick users into granting them access to your organization's data, we recommend that you allow user consent only for applications that have been published by a [verified publisher](~/identity-platform/publisher-verification-overview.md).
 
 > [!NOTE]
-> Applications that requires users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
+> Applications that require users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
 
 ## Prerequisites
 
@@ -38,15 +39,17 @@ To configure user consent, you need:
 
 ## Configure user consent settings
 
+You can configure user consent settings in Microsoft Entra ID using either the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API. The settings you configure apply to all users in your organization.
+
 :::zone pivot="portal"
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+### Configure user consent in Microsoft Entra admin center
 
 To configure user consent settings through the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **User consent settings**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Consent and permissions** > **User consent settings**.
 
 1. Under **User consent for applications**, select which consent setting you want to configure for all users.
 
@@ -58,9 +61,7 @@ To configure user consent settings through the Microsoft Entra admin center:
 
 :::zone pivot="ms-powershell"
 
-To choose which app consent policy governs user consent for applications, you can use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true) module. The cmdlets used here are included in the [Microsoft.Graph.Identity.SignIns](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.SignIns) module.
-
-### Connect to Microsoft Graph PowerShell
+To choose which app consent policy governs user consent for applications, use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true) module. The cmdlets used here are included in the [Microsoft.Graph.Identity.SignIns](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.SignIns) module.
 
 Connect to Microsoft Graph PowerShell using the least-privilege permission needed. For reading the current user consent settings, use *Policy.Read.All*. For reading and changing the user consent settings, use *Policy.ReadWrite.Authorization*. You need to sign in as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -68,7 +69,7 @@ Connect to Microsoft Graph PowerShell using the least-privilege permission neede
 Connect-MgGraph -Scopes "Policy.ReadWrite.Authorization"
 ```
 
-### Disable user consent
+### Disable user consent using Microsoft Graph PowerShell
 
 To disable user consent, ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 
@@ -120,6 +121,8 @@ $body = @{
 :::zone pivot="ms-graph"
 
 Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which app consent policy governs user consent for applications. You need to sign in as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+
+### Disable user consent using Microsoft Graph
 
 To disable user consent, ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 

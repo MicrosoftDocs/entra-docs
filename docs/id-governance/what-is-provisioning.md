@@ -2,10 +2,10 @@
 title: 'What is provisioning with Microsoft Entra ID?'
 description: Describes overview of identity provisioning and the ILM scenarios.
 author: billmath
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 10/23/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ---
 
@@ -13,9 +13,9 @@ ms.author: billmath
 
 Provisioning and deprovisioning are the processes that ensure consistency of digital identities across multiple systems.  These processes are typically used as part of [identity lifecycle management](scenarios/govern-the-employee-lifecycle.md).
 
-**Provisioning** is the processes of creating an identity in a target system based on certain conditions.  **De-provisioning** is the process of removing the identity from the target system, when conditions are no longer met. **Synchronization** is the process of keeping the provisioned object, up to date, so that the source object and target object are similar.
+**Provisioning** is the processes of creating an identity in a target system based on certain conditions. **De-provisioning** is the process of removing the identity from the target system, when conditions are no longer met. **Synchronization** is the process of keeping the provisioned object, up to date, so that the source object and target object are similar.
 
-For example, when a new employee joins your organization, that employee is entered in to the HR system.  At that point, provisioning **from** HR **to** Microsoft Entra ID can create a corresponding user account in Microsoft Entra ID. Applications which query Microsoft Entra ID can see the account for that new employee.  If there are applications that don't use Microsoft Entra ID, then provisioning **from** Microsoft Entra ID **to** those applications' databases, ensures that the user will be able to access all of the applications that the user needs access to.  This process allows the user to start work and have access to the applications and systems they need on day one.  Similarly, when their properties, such as their department or employment status, change in the HR system, synchronization of those updates from the HR system to Microsoft Entra ID, and furthermore to other applications and target databases, ensures consistency.
+For example, when a new employee joins your organization, that employee is entered in to the HR system. At that point, provisioning **from** HR **to** Microsoft Entra ID can create a corresponding user account in Microsoft Entra ID. Applications which query Microsoft Entra ID can see the account for that new employee. If there are applications that don't use Microsoft Entra ID, then provisioning **from** Microsoft Entra ID **to** those applications' databases, ensures that the user can access all of the applications that the user needs access to. This process allows the user to start work and have access to the applications and systems they need on day one. Similarly, when their properties, such as their department or employment status, change in the HR system, synchronization of those updates from the HR system to Microsoft Entra ID ensures consistency. Furthermore, this synchronization extends to other applications and target databases.
 
 Microsoft Entra ID currently provides three areas of automated provisioning.  They are:  
 
@@ -31,10 +31,10 @@ Microsoft Entra ID currently provides three areas of automated provisioning.  Th
 
 Provisioning from HR to Microsoft Entra ID involves the creation of objects, typically user identities representing each employee, but in some cases other objects representing departments or other structures, based on the information that is in your HR system.  
 
-The most common scenario would be, when a new employee joins your company, they're entered into the HR system.  Once that occurs, they're automatically provisioned as a new user in Microsoft Entra ID, without needing administrative involvement for each new hire.  In general, provisioning from HR can cover the following scenarios.
+The most common scenario would be, when a new employee joins your company, they're entered into the HR system. Once that occurs, they're automatically provisioned as a new user in Microsoft Entra ID, without needing administrative involvement for each new hire. In general, provisioning from HR can cover the following scenarios.
 
 - **Hiring new employees** - When a new employee is added to an HR system, a user account is automatically created in Active Directory, Microsoft Entra ID, and optionally in the directories for other  applications supported by Microsoft Entra ID, with write-back of the email address to the HR system.
-- **Employee attribute and profile updates** - When an employee record is updated in that HR system (such as their name, title, or manager), their user account will be automatically updated in Active Directory, Microsoft Entra ID, and optionally other applications supported by Microsoft Entra ID.
+- **Employee attribute and profile updates** - When an employee record is updated in that HR system (such as their name, title, or manager), their user account is automatically updated in Active Directory, Microsoft Entra ID, and optionally other applications supported by Microsoft Entra ID.
 - **Employee terminations** - When an employee is terminated in HR, their user account is automatically blocked from sign in or removed in Active Directory, Microsoft Entra ID, and in other applications.
 - **Employee rehires** - When an employee is rehired in cloud HR, their old account can be automatically reactivated or reprovisioned (depending on your preference).
 
@@ -64,7 +64,7 @@ Many organizations rely upon both Active Directory and Microsoft Entra ID, and m
 
 As many organizations historically have deployed HR-driven provisioning on-premises, they may already have user identities for all their employees in Active Directory. The most common scenario for inter-directory provisioning is when a user already in Active Directory is provisioned into Microsoft Entra ID. This provisioning is usually accomplished by Microsoft Entra Connect Sync or Microsoft Entra Connect cloud provisioning. 
 
-In addition, organizations may wish to also provision to on-premises systems from Microsoft Entra ID. For example, an organization may have brought guests into the Microsoft Entra directory, but those guests will need access to on-premises Windows Integrated Authentication (WIA) based web applications via the app proxy. This scenario requires the provisioning of on-premises AD accounts for those users in Microsoft Entra ID.
+In addition, organizations may wish to also provision to on-premises systems from Microsoft Entra ID. For example, an organization may have guests in the Microsoft Entra directory, but those guests need access to on-premises Windows Integrated Authentication (WIA) based web applications via the app proxy. This scenario requires the provisioning of on-premises AD accounts for those users in Microsoft Entra ID.
 
 For more information, see [What is inter-directory provisioning?](~/identity/hybrid/what-is-inter-directory-provisioning.md)
 

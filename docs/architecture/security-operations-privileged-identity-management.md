@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 09/06/2022
 ms.author: jricketts
-ms.reviewer: ajburnle
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Entra security operations for Privileged Identity Management
@@ -85,7 +85,7 @@ The following are recommended baseline settings:
 
 | What to monitor| Risk level| Recommendation| Roles| Notes |
 | - |- |- |- |- |
-| Microsoft Entra roles assignment| High| Require justification for activation. Require approval to activate. Set two-level approver process. On activation, require Microsoft Entra multifactor authentication. Set maximum elevation duration to 8 hrs.|  Security Administrator, Privileged Role Administrator, Global Administrator| A privileged role administrator can customize PIM in their Microsoft Entra organization, including changing the experience for users activating an eligible role assignment. |
+| Microsoft Entra roles assignment| High| Require justification for activation. Require approval to activate. Set two-level approver process. On activation, require Microsoft Entra multifactor authentication. Set maximum elevation duration to 8 hrs.|  Security Administrator, Privileged Role Administrator, Global Administrator| A Privileged Role Administrator can customize PIM in their Microsoft Entra organization, including changing the experience for users activating an eligible role assignment. |
 | Azure Resource Role Configuration| High| Require justification for activation. Require approval to activate. Set two-level approver process. On activation, require Microsoft Entra multifactor authentication. Set maximum elevation duration to 8 hrs.| Owner, User Access Administrator | Investigate immediately if not a planned change. This setting might enable attacker access to Azure subscriptions in your environment. |
 
 <a name='azure-ad-roles-assignment'></a>
@@ -108,7 +108,7 @@ Privileged Identity Management (PIM) generates alerts when there's suspicious or
 
 ## Microsoft Entra roles assignment
 
-A privileged role administrator can customize PIM in their Microsoft Entra organization, which includes changing the user experience of activating an eligible role assignment:
+A Privileged Role Administrator can customize PIM in their Microsoft Entra organization, which includes changing the user experience of activating an eligible role assignment:
 
 * Prevent bad actor to remove Microsoft Entra multifactor authentication requirements to activate privileged access.
 

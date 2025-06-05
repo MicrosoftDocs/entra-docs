@@ -1,30 +1,28 @@
 ---
-title: 'Tutorial: User provisioning for GitHub'
+title: Configure GitHub for automatic user provisioning in Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user organization membership in GitHub Enterprise Cloud.
-
 author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub so that I can streamline the user management process and ensure that users have the appropriate access to GitHub.
 ---
-# Tutorial: Configure GitHub for automatic user provisioning
+# Configure GitHub for automatic user provisioning in Microsoft Entra ID
 
-The objective of this tutorial is to show you the steps you need to perform in GitHub and Microsoft Entra ID to automate provisioning of GitHub Enterprise Cloud organization membership.
+The objective of this article is to show you the steps you need to perform in GitHub and Microsoft Entra ID to automate provisioning of GitHub Enterprise Cloud organization membership.
 
 > [!NOTE]
 > The Microsoft Entra provisioning integration relies on the [GitHub SCIM API](https://developer.github.com/v3/scim/), which is available to [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise) customers on the [GitHub Enterprise billing plan](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A GitHub organization created in [GitHub Enterprise Cloud](https://help.github.com/articles/github-s-products/#github-enterprise), which requires the [GitHub Enterprise billing plan](https://help.github.com/articles/github-s-billing-plans/#billing-plans-for-organizations)
 * A user account in GitHub with Admin permissions to the organization
 * [SAML configured for the GitHub Enterprise Cloud organization](./github-tutorial.md)
@@ -46,7 +44,7 @@ For more information, see [Assign a user or group to an enterprise app](~/identi
 
 * We recommend that you assign a single Microsoft Entra user to GitHub to test the provisioning configuration. Additional users and/or groups may be assigned later.
 
-* When assigning a user to GitHub, you must select either the **User** role, or another valid application-specific role (if available) in the assignment dialog. The **Default Access** role does not work for provisioning, and these users are skipped.
+* When assigning a user to GitHub, you must select either the **User** role, or another valid application-specific role (if available) in the assignment dialog. The **Default Access** role doesn't work for provisioning, and these users are skipped.
 
 ## Configuring user provisioning to GitHub
 
@@ -57,7 +55,7 @@ This section guides you through connecting your Microsoft Entra ID to GitHub's S
 ### Configure automatic user account provisioning to GitHub in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 2. If you have already configured GitHub for single sign-on, search for your instance of GitHub using the search field.
 
@@ -65,11 +63,11 @@ This section guides you through connecting your Microsoft Entra ID to GitHub's S
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-5. In the Azure portal, input **Tenant URL** and click **Test Connection** to ensure Microsoft Entra ID can connect to your GitHub Organization. If the connection fails, ensure your GitHub account has Admin permissions and **Tenant URL** is entered correctly, then try the "Authorize" step again (you can constitute **Tenant URL** by rule: `https://api.github.com/scim/v2/organizations/<Organization_name>`, you can find your organizations under your GitHub account: **Settings** > **Organizations**).
+5. In the Azure portal, input **Tenant URL** and select **Test Connection** to ensure Microsoft Entra ID can connect to your GitHub Organization. If the connection fails, ensure your GitHub account has Admin permissions and **Tenant URL** is entered correctly, then try the "Authorize" step again (you can constitute **Tenant URL** by rule: `https://api.github.com/scim/v2/organizations/<Organization_name>`, you can find your organizations under your GitHub account: **Settings** > **Organizations**).
 
    ![Screenshot shows Organizations page in GitHub.](./media/github-provisioning-tutorial/github3.png)
 
-6. Under the **Admin Credentials** section, click **Authorize**. This operation opens a GitHub authorization dialog in a new browser window. Note that you need to ensure you are approved to authorize access. Follow the directions described [here](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
+6. Under the **Admin Credentials** section, select **Authorize**. This operation opens a GitHub authorization dialog in a new browser window. Note that you need to ensure you're approved to authorize access. Follow the directions described [here](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/approving-oauth-apps-for-your-organization).
 
    ![Screenshot shows the GitHub Provisioning.](./media/github-provisioning-tutorial/github1.png)
 
@@ -79,15 +77,15 @@ This section guides you through connecting your Microsoft Entra ID to GitHub's S
 
 8. Enter the email address of a person or group who should receive provisioning error notifications in the **Notification Email** field, and check the checkbox "Send an email notification when a failure occurs."
 
-9. Click **Save**.
+9. Select **Save**.
 
 10. Under the Mappings section, select **Synchronize Microsoft Entra users to GitHub**.
 
-11. In the **Attribute Mappings** section, review the user attributes that are synchronized from Microsoft Entra ID to GitHub. The attributes selected as **Matching** properties are used to match the user accounts in GitHub for update operations. Do not enable the **Matching precedence** setting for the other default attributes in the **Provisioning** section because errors might occur. Select **Save** to commit any changes.
+11. In the **Attribute Mappings** section, review the user attributes that are synchronized from Microsoft Entra ID to GitHub. The attributes selected as **Matching** properties are used to match the user accounts in GitHub for update operations. don't enable the **Matching precedence** setting for the other default attributes in the **Provisioning** section because errors might occur. Select **Save** to commit any changes.
 
 12. To enable the Microsoft Entra provisioning service for GitHub, change the **Provisioning Status** to **On** in the **Settings** section.
 
-13. Click **Save**.
+13. Select **Save**.
 
 This operation starts the initial synchronization of any users and/or groups assigned to GitHub in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service. 
 
@@ -98,6 +96,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

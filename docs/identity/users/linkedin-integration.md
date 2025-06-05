@@ -1,16 +1,15 @@
 ---
 title: Admin consent for LinkedIn account connections
 description: Explains how to enable or disable LinkedIn integration account connections in Microsoft apps in Microsoft Entra ID
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: beengen
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ms.collection: M365-identity-device-management
 ---
 
@@ -32,6 +31,8 @@ You can allow users in your organization to access their LinkedIn connections wi
 ## Enable LinkedIn account connections in the Azure portal
 
 You can enable LinkedIn account connections for only the users you want to have access, from your entire organization to only selected users in your organization.
+
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.

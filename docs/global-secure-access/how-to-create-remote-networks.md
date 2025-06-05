@@ -1,16 +1,15 @@
 ---
-title: How to create remote networks
-description: Learn how to create remote networks, such as branch office locations, for Global Secure Access.
+title: How to Create Remote Networks
+description: Learn how to create remote networks, for remote locations such as branch offices, for Global Secure Access.
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 02/25/2025
 ms.service: global-secure-access
 ms.reviewer: absinh
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
-
 ---
 # How to create a remote network with Global Secure Access
 
@@ -37,9 +36,7 @@ To configure remote networks, you must have:
 
 ### Known limitations
 
-- The number of remote networks per tenant is limited to 10. The number of device links per remote network is limited to four.
-- Microsoft traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access client.
-- You must use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity only supports Microsoft Entra Internet Access.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## High-level steps
 

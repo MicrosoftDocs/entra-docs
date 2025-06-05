@@ -3,11 +3,11 @@ title: 'Configure accidental deletion prevention with Active Directory'
 description: This article describes how you can configure accidental deletion prevention for the synchronization tools with Active Directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 12/16/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid
 ms.author: billmath
 

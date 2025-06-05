@@ -2,13 +2,13 @@
 title: Add custom attributes
 description: Learn how to add custom attributes to self-service sign-up flows in Microsoft Entra External ID. Extend the set of attributes stored on a guest account and customize the user experience.
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
-ms.author: mimart
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 
@@ -30,14 +30,13 @@ You can create custom attributes in the Microsoft Entra admin center and use the
 "extension_831374b3bd5041bfaa54263ec9e050fc_loyaltyNumber": "212342"
 ```
 
-The `<extensions-app-id>` is specific to your tenant. To find this identifier, navigate to **Identity** > **Applications** > **App registrations** > **All applications**. Search for the app that starts with "aad-extensions-app" and select it. On the app's Overview page, note the Application (client) ID.
+The `<extensions-app-id>` is specific to your tenant. To find this identifier, navigate to **Entra ID** > **App registrations** > **All applications**. Search for the app that starts with "aad-extensions-app" and select it. On the app's Overview page, note the Application (client) ID.
 
 ## Create a custom attribute
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External Identities** > **Overview**.
 1. Select **Custom user attributes**. The available user attributes are listed.
 
    :::image type="content" source="media/user-flow-add-custom-attributes/user-attributes.png" alt-text="Screenshot of selecting custom user attributes for sign-up." lightbox="media/user-flow-add-custom-attributes/user-attributes.png":::

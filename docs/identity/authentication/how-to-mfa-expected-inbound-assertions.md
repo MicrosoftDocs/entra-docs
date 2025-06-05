@@ -5,11 +5,11 @@ description: Explains Microsoft Entra ID multifactor authentication (MFA) SAML/W
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/09/2024
+ms.date: 03/04/2025
 
 author: brozbab
 ms.author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: bozbayburtlu
 ---
 # Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP
@@ -17,9 +17,9 @@ ms.reviewer: bozbayburtlu
 This document outlines the assertions Microsoft Entra ID requires from a [federated identity provider (IdP)](~/identity/hybrid/connect/whatis-fed.md) to honor configured [federatedIdpMfaBehaviour](/graph/api/domain-post-federationconfiguration#federatedidpmfabehavior-values) values of acceptIfMfaDoneByFederatedIdp and enforceMfaByFederatedIdp for Security Assertions Markup Language (SAML) and WS-Fed federation.
 
    > [!TIP]
-   > Configuring Microsoft Entra ID with a federated IdP is **optional**. Microsoft recommends [authentication methods](~/identity/authentication/concept-authentication-methods.md) available in Microsoft Entra ID.
+   > Configuring Microsoft Entra ID with a federated IdP is **optional**. Microsoft Entra recommends [authentication methods](~/identity/authentication/concept-authentication-methods.md) available in Microsoft Entra ID.
    > 
-   > - Microsoft Entra ID includes support for authentication methods previously only availble via a federated IdP such as certificate/smartcards with [Entra Certificate Baseed Authentication](~/identity/authentication/concept-certificate-based-authentication.md)
+   > - Microsoft Entra ID includes support for authentication methods previously only available via a federated IdP such as certificate/smartcards with [Entra Certificate Based Authentication](~/identity/authentication/concept-certificate-based-authentication.md)
    > - Microsoft Entra ID includes support for integrating 3rd party MFA providers with [External Authentication Methods](~/identity/authentication/how-to-authentication-external-method-manage.md) 
    > - Applications integrated with a federated IdP can be [integrated directly with Microsoft Entra ID](/entra/architecture/migration-best-practices)
 

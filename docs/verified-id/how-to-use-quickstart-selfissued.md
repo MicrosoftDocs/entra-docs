@@ -1,15 +1,14 @@
 ---
 title: Create verifiable credentials for self-asserted claims
-description: Learn how to use a quickstart to create custom credentials for self-issued claims
+description: Learn how to use a quickstart to create custom credentials for self-issued claims.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 11/11/2024
+ms.date: 01/17/2025
 ms.author: barclayn
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for self-asserted claims scenario. 
 ---
 

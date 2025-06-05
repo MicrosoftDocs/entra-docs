@@ -1,14 +1,14 @@
 ---
 title: Allow or Block Invitations
-description: Learn how an administrator create a list to allow or block B2B collaboration with specific domains by using the Microsoft Entra admin center or PowerShell.
+description: Learn how an administrator creates a list to allow or block B2B collaboration with specific domains by using the Microsoft Entra admin center.
 
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 09/18/2024
+ms.date: 04/16/2025
 
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: it-pro, seo-july-2024
 ms.collection: M365-identity-device-management
@@ -24,7 +24,6 @@ You can use an allowlist or a blocklist to allow or block invitations to B2B col
 This article discusses two ways to configure an allow or blocklist for B2B collaboration:
 
 - In the portal by configuring collaboration restrictions in your organization's [External collaboration settings](external-collaboration-settings-configure.md)
-- Through PowerShell
 
 ## Important considerations
 
@@ -39,12 +38,10 @@ This article discusses two ways to configure an allow or blocklist for B2B colla
 
 By default, the **Allow invitations to be sent to any domain (most inclusive)** setting is enabled. In this case, you can invite B2B users from any organization.
 
-> [!IMPORTANT]
-> Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
+[!INCLUDE [least-privilege-note](../includes/definitions/least-privilege-note.md)]
 
 ### Add a blocklist
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This is the most typical scenario, where your organization wants to work with almost any organization, but wants to prevent users from specific domains to be invited as B2B users.
 
@@ -53,7 +50,7 @@ To add a blocklist:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
 
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **Collaboration restrictions**, select **Deny invitations to the specified domains**.
 
@@ -75,7 +72,7 @@ If you want to use an allowlist, make sure that you spend time to fully evaluate
 To add an allowlist:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 4. Under **Collaboration restrictions**, select **Allow invitations only to the specified domains (most restrictive)**.
 5. Under **Target domains**, enter the name of one of the domains that you want to allow. For multiple domains, enter each domain on a new line. For example:
 
@@ -89,85 +86,6 @@ After you set the policy, if you try to invite a user from a domain that's not o
 
 Switching from one policy to another discards the existing policy configuration. Make sure to back up details of your configuration before you perform the switch. 
 
-## Set the allow or blocklist policy using PowerShell
-
-### Prerequisite
-
-> [!Note]
-> The AzureADPreview Module is not a fully supported module as it is in preview. 
-
-To set the allow or blocklist by using PowerShell, you must install the preview version of the Azure AD PowerShell module. Specifically, install the AzureADPreview module version 2.0.0.98 or later.
-
-To check the version of the module (and see if it's installed):
- 
-1. Open Windows PowerShell as an elevated user (Run as Administrator). 
-2. Run the following command to see if you have any versions of the Azure AD PowerShell module installed on your computer:
-
-   ```powershell  
-   Get-Module -ListAvailable AzureAD*
-   ```
-
-If the module isn't installed, or you don't have a required version, do one of the following:
-
-- If no results are returned, run the following command to install the latest version of the `AzureADPreview` module:
-  
-   ```powershell
-   Install-Module AzureADPreview
-   ```
-- If only the `AzureAD` module is shown in the results, run the following commands to install the `AzureADPreview` module:
-
-   ```powershell
-   Uninstall-Module AzureAD
-   Install-Module AzureADPreview
-   ```
-- If only the `AzureADPreview` module is shown in the results, but the version is less than `2.0.0.98`, run the following commands to update it: 
-
-   ```powershell 
-   Uninstall-Module AzureADPreview 
-   Install-Module AzureADPreview 
-   ```
-
-- If both the `AzureAD` and `AzureADPreview` modules are shown in the results, but the version of the `AzureADPreview` module is less than `2.0.0.98`, run the following commands to update it: 
-
-   ```powershell 
-   Uninstall-Module AzureAD 
-   Uninstall-Module AzureADPreview 
-   Install-Module AzureADPreview 
-    ```
-
-### Use the AzureADPolicy cmdlets to configure the policy
-
-To create an allow or blocklist, use the [New-AzureADPolicy](/powershell/module/azuread/new-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) cmdlet. The following example shows how to set a blocklist that blocks the "live.com" domain.
-
-```powershell 
-$policyValue = @("{`"B2BManagementPolicy`":{`"InvitationsAllowedAndBlockedDomainsPolicy`":{`"AllowedDomains`": [],`"BlockedDomains`": [`"live.com`"]}}}")
-
-New-AzureADPolicy -Definition $policyValue -DisplayName B2BManagementPolicy -Type B2BManagementPolicy -IsOrganizationDefault $true 
-```
-
-The following shows the same example, but with the policy definition inline.
-
-```powershell
-New-AzureADPolicy -Definition @("{`"B2BManagementPolicy`":{`"InvitationsAllowedAndBlockedDomainsPolicy`":{`"AllowedDomains`": [],`"BlockedDomains`": [`"live.com`"]}}}") -DisplayName B2BManagementPolicy -Type B2BManagementPolicy -IsOrganizationDefault $true 
-```
-
-To set the allow or blocklist policy, use the [Set-AzureADPolicy](/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) cmdlet. For example:
-
-```powershell
-Set-AzureADPolicy -Definition $policyValue -Id $currentpolicy.Id 
-```
-
-To get the policy, use the [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) cmdlet. For example:
-
-```powershell
-$currentpolicy = Get-AzureADPolicy -All $true | ?{$_.Type -eq 'B2BManagementPolicy'} | select -First 1 
-```
-
-To remove the policy, use the [Remove-AzureADPolicy](/powershell/module/azuread/remove-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) cmdlet. For example:
-
-```powershell
-Remove-AzureADPolicy -Id $currentpolicy.Id 
-```
 
 ## Next steps
 

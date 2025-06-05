@@ -3,10 +3,10 @@ title: 'What is Microsoft Entra Connect and Connect Health.'
 description: Learn about the tools used to synchronize and monitor your on-premises environment with Microsoft Entra ID.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: overview
-ms.date: 12/04/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -28,11 +28,11 @@ Microsoft Entra Connect is an on-premises Microsoft application designed to meet
 <a name='consider-moving-to-azure-ad-connect-cloud-sync'></a>
 
 ## Consider moving to Microsoft Entra Cloud Sync
-Microsoft Entra Cloud Sync is the future of synchronization for Microsoft.  It replaces Microsoft Entra Connect.  
+Microsoft Entra Cloud Sync is the future of synchronization for Microsoft. It replaces Microsoft Entra Connect.  
 
 > [!VIDEO https://www.youtube.com/embed/9T6lKEloq0Q]
 
-Before moving the Microsoft Entra Connect V2.0, you should consider moving to cloud sync.  You can see if cloud sync is right for you, by accessing the [Check sync tool](https://aka.ms/M365Wizard) from the portal or via the link provided.
+Before moving to Microsoft Entra Connect V2.0, you should consider moving to cloud sync. You can see if cloud sync is right for you, by accessing the [Check sync tool](https://aka.ms/M365Wizard) from the portal or via the link provided.
 
 For more information, see [What is cloud sync?](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 

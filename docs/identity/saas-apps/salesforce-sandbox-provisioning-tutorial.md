@@ -1,25 +1,23 @@
 ---
-title: 'Tutorial: Configure Salesforce Sandbox for automatic user provisioning with Microsoft Entra ID| Microsoft Docs'
+title: Configure Salesforce Sandbox for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps you need to perform in Salesforce Sandbox and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce Sandbox.
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 05/20/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Salesforce Sandbox so that I can streamline the user management process and ensure that users have the appropriate access to Salesforce Sandbox.
 ---
-# Tutorial: Configure Salesforce Sandbox for automatic user provisioning
+# Configure Salesforce Sandbox for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to show you the steps you need to perform in Salesforce Sandbox and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce Sandbox.
+The objective of this article is to show you the steps you need to perform in Salesforce Sandbox and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce Sandbox.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 *   A Microsoft Entra tenant.
 *   A valid tenant for Salesforce Sandbox for Work or Salesforce Sandbox for Education. You may use a free trial     account for either service.
@@ -33,9 +31,9 @@ Before configuring and enabling the provisioning service, you need to decide whi
 
 ### Important tips for assigning users to Salesforce Sandbox
 
-* It is recommended that a single Microsoft Entra user is assigned to Salesforce Sandbox to test the provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Salesforce Sandbox to test the provisioning configuration. Additional users and/or groups may be assigned later.
 
-* When assigning a user to Salesforce Sandbox, you must select a valid user role. The "Default Access" role does not work for provisioning.
+* When assigning a user to Salesforce Sandbox, you must select a valid user role. The "Default Access" role doesn't work for provisioning.
 
 > [!NOTE]
 > The Salesforce Sandbox app will, by default, append a string to the username and email of the users provisioned. Usernames and Emails have to be unique across all of Salesforce so this is to prevent creating real user data in the sandbox which would prevent these users being provisioned to the production Salesforce environment 
@@ -55,7 +53,7 @@ This section guides you through connecting your Microsoft Entra ID to Salesforce
 The objective of this section is to outline how to enable user provisioning of Active Directory user accounts to Salesforce Sandbox.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. If you have already configured Salesforce Sandbox for single sign-on, search for your instance of Salesforce Sandbox using the search field. Otherwise, select **Add** and search for **Salesforce Sandbox** in the application gallery. Select Salesforce Sandbox from the search results, and add it to your list of applications.
 
@@ -71,15 +69,15 @@ The objective of this section is to outline how to enable user provisioning of A
    
     1. In the **Admin Password** textbox, type the password for this account.
 
-1. To get your Salesforce Sandbox security token, open a new tab and sign into the same Salesforce Sandbox admin account. On the top right corner of the page, click your name, and then click **Settings**.
+1. To get your Salesforce Sandbox security token, open a new tab and sign into the same Salesforce Sandbox admin account. On the top right corner of the page, select your name, and then select **Settings**.
 
      ![Screenshot shows the Settings link selected.](./media/salesforce-sandbox-provisioning-tutorial/sf-my-settings.png "Enable automatic user provisioning")
 
-1. On the left navigation pane, click **My Personal Information** to expand the related section, and then click **Reset My Security Token**.
+1. On the left navigation pane, select **My Personal Information** to expand the related section, and then select **Reset My Security Token**.
   
     ![Screenshot shows Reset My Security Token selected from My Personal Information.](./media/salesforce-sandbox-provisioning-tutorial/sf-personal-reset.png "Enable automatic user provisioning")
 
-1. On the **Reset Security Token** page, click the **Reset Security Token** button.
+1. On the **Reset Security Token** page, select the **Reset Security Token** button.
 
     ![Screenshot shows the Rest Security Token page, with explanatory text and the option to Reset Security Token](./media/salesforce-sandbox-provisioning-tutorial/sf-reset-token.png "Enable automatic user provisioning")
 
@@ -91,7 +89,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive provisioning error notifications, and check the checkbox.
 
-1. Click **Save.**  
+1. Select **Save.**  
     
 1.  Under the Mappings section, select **Synchronize Microsoft Entra users to Salesforce Sandbox.**
 
@@ -99,7 +97,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 1. To enable the Microsoft Entra provisioning service for Salesforce Sandbox, change the **Provisioning Status** to **On** in the Settings section
 
-1. Click **Save.**
+1. Select **Save.**
 
 It starts the initial synchronization of any users and/or groups assigned to Salesforce Sandbox in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on Salesforce Sandbox app.
 

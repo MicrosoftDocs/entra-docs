@@ -3,11 +3,11 @@ title: Change subdomain authentication type using PowerShell and Graph
 description: Change default subdomain authentication settings inherited from root domain settings in Microsoft Entra ID.
 
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -24,7 +24,7 @@ Because subdomains inherit the authentication type of the root domain by default
 
 
 > [!WARNING]
-> This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You may have to adjust the code to meet the specific needs of your environment.
+> This small script an example for demonstration purposes. If you intend to use it in your environment, test first. You should adjust the code to meet your requirements.
 
 ## Add the subdomain
 
@@ -37,7 +37,7 @@ Because subdomains inherit the authentication type of the root domain by default
     
     # Define the parameters for the new domain
     $domainParams = @{
-        Name = "child6.mydomain.com"
+        Id = "child6.mydomain.com"
         AuthenticationType = "Federated"
     }
     
@@ -85,14 +85,14 @@ POST https://graph.microsoft.com/v1.0/{tenant-id}/domains/foo.contoso.com/promot
 
 Scenario | Method | Code | Message
 -------- | ------ | ---- | -------
-Invoking API with a subdomain whose parent domain is unverified | POST | 400 | Unverified domains can't be promoted. Please verify the domain before promotion.
-Invoking API with a federated verified subdomain with user references | POST | 400 | Promoting a subdomain with user references isn't allowed. Please migrate the users to the current root domain before promotion of the subdomain.
+Invoking API with a subdomain whose parent domain is unverified | POST | 400 | Unverified domains can't be promoted. Verify the domain before promotion.
+Invoking API with a federated verified subdomain with user references | POST | 400 | Promoting a subdomain with user references isn't allowed. Migrate the users to the current root domain before promotion of the subdomain.
 
 
 ### Change the subdomain authentication type to managed
 
 > [!IMPORTANT]
-> If you are changing the authentication type for a federated subdomain, you should take note of the existing federation configuration values before completing the steps below. This information may become necessary if you decide to reimplement federation prior to promoting a domain. 
+> If you change the authentication type for a federated subdomain, you should take note of the existing federation configuration values before completing the next steps. The information is needed if you decide to reimplement federation before promoting a domain. 
 
 1. Use the following command to change the subdomain authentication type:
 

@@ -1,106 +1,90 @@
 ---
-title: "Tutorial: Call an API and display the results"
+title: "Tutorial: Test an ASP.NET Core web app that signs in users"
 description: Learn how to call the Microsoft Graph web API, sign-in, and display the profile information of the logged-in user
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/18/2024
 ms.service: identity-platform
-
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to use my app to call a web API, in this case Microsoft Graph. I need to know how to modify my code so the API can be called successfully.
 ---
 
-# Tutorial: Call an API and display the results
+# Tutorial: Test an ASP.NET Core web app that signs in users
 
-In the [previous tutorial](tutorial-web-app-dotnet-sign-in-users.md), you added the sign-in and sign-out experiences to the application. The application can now be configured to call a web API. For the purposes of this tutorial, the Microsoft Graph API is called to display the profile information of the logged-in user.
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-In this tutorial:
+In this tutorial, you test the sign in and sign out experience of your ASP.NET Core web app and view the claims in the ID token. In the [previous tutorial](./tutorial-web-app-dotnet-sign-in-users.md), you added the authentication elements, the sign-in, and sign-out experiences to the application to enable your app call a web API. For the purposes of this tutorial, the Microsoft Graph API is called to display the profile information of the logged-in user.
+
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
-> * Call the API and display the results
-> * Test the application
+> * Test the application and display ID token claims
+> * Sign out of the application
+> * Clean up resources
 
 ## Prerequisites
 
 * Completion of the prerequisites and steps in [Tutorial: Add sign in to an application](tutorial-web-app-dotnet-sign-in-users.md).
 
-## Call the API and display the results
-
-1. Under **Pages**, open the *Index.cshtml.cs* file and replace the entire contents of the file with the following snippet. Check that the project `namespace` matches your project name.
-
-   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Index.cshtml.cs":::
-
-1. Open *Index.cshtml* and add the following code to the bottom of the file. This handles how the information received from the API is displayed:
-
-   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Index.cshtml" range="13-17":::
-
 ## Test the application
 
-### [Visual Studio](#tab/visual-studio)
+This section demonstrates how to test the application by signing in and calling the Microsoft Graph API to display the profile information of the logged-in user.
 
-Start the application by selecting **Start without debugging**.
+### [Workforce tenant](#tab/workforce-tenant)
 
-### [Visual Studio Code](#tab/visual-studio-code)
+1. Start the application by typing the following in the terminal, which launches the `https` profile in the *launchSettings.json* file.
 
-1. Start the application by typing the following in the terminal:
-
-    #### [.NET 6.0](#tab/dotnet6)
-
-    ```powershell
-    dotnet run
-    ```
-
-    #### [.NET 7.0](#tab/dotnet7)
-
-    ```powershell
+    ```bash
     dotnet run --launch-profile https
     ```
 
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
+1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:5001`.
+1. After the sign-in window appears, select the account in which to sign in with. Ensure the account matches the criteria of the app registration.
+1. Fill in your email, one time-passcode as instructed to complete the sign-in flow. You can choose to stay signed in or not in the **Stay signed in** window.
+1. The application requests permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**.
+1. The following screenshot appears, indicating that you've signed in to the application. The ID token claims are displayed automatically.
 
-Start the application by selecting the **Play** icon.
+    :::image type="content" source="./media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png" alt-text="Screenshot depicting the results of the API call." lightbox="./media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png":::
 
->[!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
+
+### [External tenant](#tab/external-tenant)
+
+1. Start the application by typing the following in the terminal, which launches the `https` profile in the *launchSettings.json* file.
+
+    ```bash
+    dotnet run --launch-profile https
+    ```
+
+1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:5001`.
+1. To test the sign-up user flow you configured earlier, select **No account? Create one**.
+1. In the **Create account** window, enter the email address registered to your external tenant, which starts the sign-up flow as a user for your application.
+1. Fill in your email, one time-passcode, new password as instructed to complete the sign-up flow. You can choose to stay signed in or not in the **Stay signed in** window.
+1. The application requests permission to maintain access to data it you have given it access to, and to sign you in and read your profile. Select **Accept**.
+1. The following screenshot appears, indicating that you've signed in to the application. The ID token claims are displayed automatically.
+
+    :::image type="content" source="./media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png" alt-text="Screenshot depicting the results of the API call." lightbox="./media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png":::
 
 ---
 
-1. Depending on your IDE, you may need to enter the application URI into the browser, for example `https://localhost:7100`. After the sign-in window appears, select the account in which to sign in with. Ensure the account matches the criteria of the app registration.
+## Sign out from the application
 
-    :::image type="content" source="./media/web-app-tutorial-04-call-web-api/pick-account.png" alt-text="Screenshot depicting account options to sign in.":::
-
-1. Upon selecting the account, a second window appears indicating that a code will be sent to your email address. Select **Send code**, and check your email inbox.
-
-    :::image type="content" source="./media/web-app-tutorial-04-call-web-api/sign-in-send-code.png" alt-text="Screenshot depicting a screen to send a code to the user's email.":::
-
-1. Open the email from the sender **Microsoft account team**, and enter the 7-digit *single-use code*. Once entered, select **Sign in**.
-
-    :::image type="content" source="./media/web-app-tutorial-04-call-web-api/enter-code.png" alt-text="Screenshot depicting the single-use code sign in procedure.":::
-
-1. For **Stay signed in**, you can select either **No** or **Yes**.
-
-    :::image type="content" source="./media/web-app-tutorial-04-call-web-api/stay-signed-in.png" alt-text="Screenshot depicting the option on whether to stay signed in.":::
-
-1. The application requests permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**.
-
-    :::image type="content" source="./media/web-app-tutorial-04-call-web-api/permissions-requested.png" alt-text="Screenshot depicting the permission requests.":::
-
-1. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
-
-    :::image type="content" source="./media/common-web-app/dotnet-core/display-api-call-results-dotnet-core.png" alt-text="Screenshot depicting the results of the API call." lightbox="./media/common-web-app/dotnet-core/display-api-call-results-dotnet-core.png":::
-
-## Sign-out from the application
+Now that the application is tested and called the Microsoft Graph API, you should sign out of the application.
 
 1. Find the **Sign out** link in the top right corner of the page, and select it.
 1. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 1. A message appears indicating that you signed out. You can now close the browser window.
 
-## Next steps
+## Clean up resources
 
-Learn how to use the Microsoft identity platform by building a web API with the following tutorial series.
+You should delete the application registration if you don't plan on using it further. You can also delete your local application and self signed certificate.
 
-> [!div class="nextstepaction"]
-> [Tutorial: Register a web API with the Microsoft identity platform](web-api-tutorial-01-register-app.md)
+1. Navigate to your application's **Overview** page in the Microsoft Entra admin center, and select **Delete** at the top of the page. Check the box in the side panel and select **Delete**.
+1. Find your local application and delete it using either your IDE or the terminal. 
+1. Check that your certificate isn't being used by another test application, then repeat the process with your self-signed certificate.
+
+## See also
+
+- [Enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md)

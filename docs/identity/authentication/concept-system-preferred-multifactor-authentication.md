@@ -4,13 +4,13 @@ description: Learn how to use system-preferred multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/02/2024
+ms.date: 03/19/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: msft-poulomi
 
-# Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
+# Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method they registered.
 ---
 
 # System-preferred multifactor authentication  - Authentication methods policy
@@ -31,7 +31,7 @@ After system-preferred MFA is enabled, the authentication system does all the wo
 By default, system-preferred MFA is Microsoft managed and disabled for all users. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Settings**.
+1. Browse to **Entra ID** > **Authentication methods** > **Settings**.
 1. For **System-preferred multifactor authentication**, choose whether to explicitly enable or disable the feature, and include or exclude any users. Excluded groups take precedence over include groups. 
 
    For example, the following screenshot shows how to make system-preferred MFA explicitly enabled for only the Engineering group. 
@@ -106,7 +106,8 @@ Content-Type: application/json
 When a user signs in, the authentication process checks which authentication methods are registered for the user. The user is prompted to sign-in with the most secure method according to the following order. The order of authentication methods is dynamic. It's updated as the security landscape changes, and as better authentication methods emerge. Due to known issues with certificate-based authentication (CBA) and system-preferred MFA, we moved CBA to the bottom of the list. Click the link for more information about each method.
 
 1. [Temporary Access Pass](howto-authentication-temporary-access-pass.md)
-1. [Passkey (FIDO2)](concept-authentication-passwordless.md)
+1. [Passkey (FIDO2)](concept-authentication-passwordless.md#passkeys-fido2)
+1. [External authentication methods](how-to-authentication-external-method-manage.md)
 1. [Microsoft Authenticator notifications](concept-authentication-authenticator-app.md)
 1. [Time-based one-time password (TOTP)](concept-authentication-oath-tokens.md)<sup>1</sup>
 1. [Telephony](concept-authentication-phone-options.md)<sup>2</sup>

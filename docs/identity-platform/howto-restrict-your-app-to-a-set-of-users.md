@@ -41,13 +41,12 @@ The option to restrict an app to a specific set of users, apps or security group
 
 ## Update the app to require user assignment
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To update an application to require user assignment, you must be owner of the application under Enterprise apps, or be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **Enterprise applications**, then select **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps**, then select **All applications**.
 1. Select the application you want to configure to require assignment. Use the filters at the top of the window to search for a specific application.
 1. On the application's **Overview** page, under **Manage**, select **Properties**.
 1. Locate the setting **Assignment required?** and set it to **Yes**.

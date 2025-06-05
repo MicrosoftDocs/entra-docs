@@ -1,18 +1,15 @@
 ---
 title: Troubleshoot Microsoft Entra hybrid joined devices
 description: This article helps you troubleshoot Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 11/25/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: mozmaili
-
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-ropc-nochange, sfi-image-nochange
 ---
 # Troubleshoot Microsoft Entra hybrid joined devices
 
@@ -338,10 +335,10 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 
 ### Step 5: Collect logs and contact Microsoft Support
 
-1. [Download the *Auth.zip* file](https://cesdiagtools.blob.core.windows.net/windows/Auth.zip).
+1. [Download the *Auth.zip* file](https://aka.ms/authscripts).
 
 1. Extract the files to a folder, such as *c:\temp*, and then go to the folder.
-1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -v -accepteula`.
+1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -vAuth -accepteula`.
 1. Select **Switch Account** to toggle to another session with the problem user.
 1. Reproduce the issue.
 1. Select **Switch Account** to toggle back to the admin session that's running the tracing.
@@ -436,7 +433,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 | **STATUS_REQUEST_NOT_ACCEPTED** (-1073741616/ 0xc00000d0) | Received an error response (HTTP 400) from the Microsoft Entra authentication service or WS-Trust endpoint.<br>**Note**: WS-Trust is required for federated authentication. | Events 1081 and 1088 (Microsoft Entra operational logs) would contain the server error code and error description for errors originating from Microsoft Entra authentication service and WS-Trust endpoint, respectively. Common server error codes and their resolutions are listed in the next section. The first instance of event 1022 (Microsoft Entra analytics logs), preceding events 1081 or 1088, contain the URL that's being accessed. |
 | **STATUS_NETWORK_UNREACHABLE** (-1073741252/ 0xc000023c)<br>**STATUS_BAD_NETWORK_PATH** (-1073741634/ 0xc00000be)<br>**STATUS_UNEXPECTED_NETWORK_ERROR** (-1073741628/ 0xc00000c4) | <li>Received an error response (HTTP > 400) from the Microsoft Entra authentication service or WS-Trust endpoint.<br>**Note**: WS-Trust is required for federated authentication.<li>Network connectivity issue to a required endpoint. | <li>For server errors, events 1081 and 1088 (Microsoft Entra operational logs) would contain the error code from the Microsoft Entra authentication service and the error description from the WS-Trust endpoint. Common server error codes and their resolutions are listed in the next section.<li>For connectivity issues, event 1022 (Microsoft Entra analytics logs) contains the URL that's being accessed, and event 1084 (Microsoft Entra operational logs) contains the suberror code from the network stack. |
 | **STATUS_NO_SUCH_LOGON_SESSION**    (-1073741729/ 0xc000005f) | User realm discovery failed because the Microsoft Entra authentication service was unable to find the user's domain. | <li>The domain of the user's UPN must be added as a custom domain in Microsoft Entra ID. Event 1144 (Microsoft Entra analytics logs) will contain the UPN provided.<li>If the on-premises domain name is nonroutable (jdoe@contoso.local), configure an Alternate Login ID (AltID). References: [Prerequisites](hybrid-join-plan.md); [Configure Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id). |
-| **AAD_CLOUDAP_E_OAUTH_USERNAME_IS_MALFORMED**   (-1073445812/ 0xc004844c) | The user's UPN isn't in the expected format.<br>**Notes**:<li>For Microsoft Entra joined devices, the UPN is the text that's entered by the user in the LoginUI. <li>For Microsoft Entra hybrid joined devices, the UPN is returned from the domain controller during the login process. | <li>User's UPN should be in the internet-style login name, based on the internet standard [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). Event 1144 (Microsoft Entra analytics logs) contains the UPN provided.<li>For hybrid-joined devices, ensure that the domain controller is configured to return the UPN in the correct format. In the domain controller, `whoami /upn` should display the configured UPN.<li>If the on-premises domain name is nonroutable (jdoe@contoso.local), configure Alternate Login ID (AltID). References: [Prerequisites](hybrid-join-plan.md); [Configure Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id). |
+| **AAD_CLOUDAP_E_OAUTH_USERNAME_IS_MALFORMED**   (-1073445812/ 0xc004844c) | The user's UPN isn't in the expected format.<br>**Notes**:<li>For Microsoft Entra joined devices, the UPN is the text that's entered by the user in the LoginUI. <li>For Microsoft Entra hybrid joined devices, the UPN is returned from the domain controller during the login process. | <li>User's UPN should be in the internet-style login name, based on the internet standard RFC 822. Event 1144 (Microsoft Entra analytics logs) contains the UPN provided.<li>For hybrid-joined devices, ensure that the domain controller is configured to return the UPN in the correct format. In the domain controller, `whoami /upn` should display the configured UPN.<li>If the on-premises domain name is nonroutable (jdoe@contoso.local), configure Alternate Login ID (AltID). References: [Prerequisites](hybrid-join-plan.md); [Configure Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id). |
 | **AAD_CLOUDAP_E_OAUTH_USER_SID_IS_EMPTY** (-1073445822/ 0xc0048442) | The user SID is missing in the ID token that's returned by the Microsoft Entra authentication service. | Ensure that the network proxy isn't interfering with and modifying the server response. |
 | **AAD_CLOUDAP_E_WSTRUST_SAML_TOKENS_ARE_EMPTY** (--1073445695/ 0xc00484c1) | Received an error from the WS-Trust endpoint.<br>**Note**: WS-Trust is required for federated authentication. | <li>Ensure that the network proxy isn't interfering with and modifying the WS-Trust response.<li>Event 1088 (Microsoft Entra operational logs) would contain the server error code and error description from the WS-Trust endpoint. Common server error codes and their resolutions are listed in the next section. |
 | **AAD_CLOUDAP_E_HTTP_PASSWORD_URI_IS_EMPTY** (-1073445749/ 0xc004848b) | The MEX endpoint is incorrectly configured. The MEX response doesn't contain any password URLs. | <li>Ensure that the network proxy isn't interfering with and modifying the server response.<li>Fix the MEX configuration to return valid URLs in response. |

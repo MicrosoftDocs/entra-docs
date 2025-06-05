@@ -2,7 +2,7 @@
 title: Integrate your applications for identity governance and establishing a baseline of reviewed access
 description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility.  You can integrate your existing business critical third party on-premises and cloud-based applications with Microsoft Entra ID for identity governance scenarios.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: conceptual
@@ -41,6 +41,8 @@ Next, if the application implements a provisioning protocol, then you should con
    If the SaaS application isn't in the gallery, then [ask the SaaS vendor to onboard](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).  
 1. If this is a private or custom application, you can also select a single sign-on integration that's most appropriate, based on the location and capabilities of the application.
 
+   * If this application is on SAP Business Technology Platform (BTP), then configure Microsoft Entra integration with SAP Cloud Identity Services. For more information, see [Microsoft Entra SSO integration with SAP BTP](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md) and [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
+
    * If this application is in the public cloud, and it supports single sign-on, then configure single sign-on directly from Microsoft Entra ID to the application.
 
      |Application supports| Next steps|
@@ -49,6 +51,8 @@ Next, if the application implements a provisioning protocol, then you should con
      | SAML 2.0 | Register the application and configure the application with [the SAML endpoints and certificate of Microsoft Entra ID](~/identity-platform/saml-protocol-reference.md) |
      | SAML 1.1 | [Add a SAML-based application](~/identity/saas-apps/saml-tutorial.md) |
 
+   * If this is a SAP application that uses the SAP GUI, then integrate Microsoft Entra for single-sign on using the [integration with SAP Secure Login Service](https://community.sap.com/t5/technology-blogs-by-members/sap-gui-mfa-with-microsoft-entra-part-i-integration-with-sap-secure-login/ba-p/13605383) or [integration with Microsoft Entra Private Access](https://community.sap.com/t5/technology-blogs-by-members/sap-gui-mfa-with-microsoft-entra-part-ii-integration-with-microsoft-entra/ba-p/13691141).
+
    * Otherwise, if this is an on-premises or IaaS hosted application that supports single sign-on, then configure single sign-on from Microsoft Entra ID to the application through the application proxy.
 
      |Application supports| Next steps|
@@ -56,6 +60,8 @@ Next, if the application implements a provisioning protocol, then you should con
      | SAML 2.0| Deploy the [application proxy](/entra/identity/app-proxy) and configure an application for [SAML SSO](~/identity/app-proxy/conceptual-sso-apps.md) |
      | Integrated Windows Auth (IWA) | Deploy the [application proxy](/entra/identity/app-proxy), configure an application for [Integrated Windows authentication SSO](~/identity/app-proxy/how-to-configure-sso-with-kcd.md), and set firewall rules to prevent access to the application's endpoints except via the proxy.|
      | header-based authentication | Deploy the [application proxy](/entra/identity/app-proxy) and configure an application for [header-based SSO](~/identity/app-proxy/application-proxy-configure-single-sign-on-with-headers.md) |
+
+1. If your application is on SAP BTP, then you can use Microsoft Entra groups to maintain the membership of each role. For more information on assigning the groups to the BTP role collections, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
 
 1. If your application has multiple roles, each user has only one role in the application, and the application relies upon Microsoft Entra ID to send a user's single application-specific role as a claim of a user signing into the application, then configure those app roles in Microsoft Entra ID on your application, and then assign each user to the application role. You can use the [app roles UI](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui) to add those roles to the application manifest. If you're using the Microsoft Authentication Libraries, there is a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles inside your application for access control.  If a user could have multiple roles simultaneously, then you may wish to implement the application to check security groups, either in the token claims or available via Microsoft Graph, instead of using app roles from the app manifest for access control.
 

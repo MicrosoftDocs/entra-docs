@@ -86,16 +86,15 @@ In these cases, you can select **Leave**, but then you'll see a message saying y
 
 ## More information for administrators
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Administrators can use the **External user leave settings** to control whether external users can remove themselves from their organization. If you disallow the ability for external users to remove themselves from your organization, external users will need to contact your admin, or privacy contact to be removed.
 
 > [!IMPORTANT]
 > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.yml) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable. We recommend adding your privacy information to allow external users to review your policies and email your privacy contact when necessary.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **External user leave** settings, choose whether to allow external users to leave your organization themselves:
 
@@ -110,9 +109,9 @@ When a B2B collaboration user leaves an organization, the user's account is "sof
 
 If desired, a tenant administrator can permanently delete the account at any time during the soft-deleted period with the following steps. This action is irrevocable.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 
-1. Browse to **Identity** > **Users** > **All users**
+1. Browse to **Entra ID** > **Users**
 
 1. Select **Deleted users**.
 

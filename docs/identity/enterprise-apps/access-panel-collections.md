@@ -33,12 +33,11 @@ To create collections on the My Apps portal, you need:
 
 ## Create a collection
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To create a collection, you must have a Microsoft Entra ID P1 or P2 license.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Under **Manage**, select **App launchers**.
 1. Select **New collection**. In the **New collection** page, enter a **Name** for the collection (we recommend not using "collection" in the name). Then enter a **Description**.
 1. Select the **Applications** tab. Select **+ Add application**, and then in the **Add applications** page, select all the applications you want to add to the collection, or use the **Search** box to find applications.
@@ -72,7 +71,7 @@ The Audit logs record My Apps collections operations, including collection creat
 - Self-service application adding (end user)
 - Self-service application deletion (end user)
 
-You can access audit logs in the [Microsoft Entra admin center](https://entra.microsoft.com) by selecting **Identity** > **Applications** > **Enterprise applications** > **Audit logs** in the Activity section. For **Service**, select **My Apps**.
+You can access audit logs in the [Microsoft Entra admin center](https://entra.microsoft.com) by selecting **Entra ID** > **Enterprise apps** > **Audit logs** in the Activity section. For **Service**, select **My Apps**.
 
 ## Get support for My Account pages
 
@@ -80,7 +79,7 @@ From the My Apps page, a user can select **My account** > **View account** to op
 
 In case you need to submit a support request for an issue with the Microsoft Entra account page or the Office account page, follow these steps so your request is routed properly:
 
-- For issues with the **Microsoft Entra ID "My Account"** page, open a support request from within the Microsoft Entra admin center. Go to **Microsoft Entra admin center** > **Identity** > **Learn & support** > **New support request**.
+- For issues with the **Microsoft Entra ID "My Account"** page, open a support request from within the Microsoft Entra admin center. Go to **Microsoft Entra admin center** > **Learn & support** > **New support request**.
 
 - For issues with the **Office "My account"** page, open a support request from within the Microsoft 365 admin center. Go to **Microsoft 365 admin center** > **Support**.
 

@@ -1,15 +1,14 @@
 ---
 title: Create verifiable credentials with multiple attestations
-description: Learn how to use a quickstart to create custom credentials with multiple attestations
+description: Learn how to use a quickstart to create custom credentials with multiple attestations.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 11/11/2024
+ms.date: 01/17/2025
 ms.author: barclayn
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential with multiple attestations. 
 ---
 
@@ -17,7 +16,7 @@ ms.author: barclayn
 
   
 
-A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses multiple attestations types produces an issuance flow where claims come from more than one source. For instance you may be required to present an existing credential and also manually enter values for claims in Microsoft Authenticator.  
+A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses multiple attestations types produces an issuance flow where claims come from more than one source. For instance, you may be required to present an existing credential and also manually enter values for claims in Microsoft Authenticator.  
 
 In this how-to guide, we extend the [ID token hint attestation](how-to-use-quickstart-idtoken.md) example by adding a self attested claim that the user has to enter in the Authenticator during issuance. The issuance request to Verified ID contains an ID token hint with the claim values for `given_name` and `family_name` and a self issued attestation type for claim `displayName` that the user enters themselves.
   

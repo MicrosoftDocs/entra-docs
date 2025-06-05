@@ -2,18 +2,16 @@
 title: Microsoft Entra Connect - AD FS management and customization
 description: This article discusses how to manage AD FS with Microsoft Entra Connect and customize the AD FS user sign-in experience with Microsoft Entra Connect and PowerShell.
 keywords: AD FS, ADFS, AD FS management, AAD Connect, Connect, sign-in, AD FS customization, repair trust, M365, federation, relying party
-
 author: billmath
-manager: amycolannino
-
+manager: femila
 ms.assetid: 2593b6c6-dc3f-46ef-8e02-a8e2dc4e9fb9
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 # Manage and customize AD FS by using Microsoft Entra Connect
 
@@ -39,11 +37,15 @@ You'll also learn about other common AD FS tasks that you might need to perform 
 
 You can perform various AD FS-related tasks in Microsoft Entra Connect with minimal user intervention by using the Microsoft Entra Connect wizard. After you've finished installing Microsoft Entra Connect by running the wizard, you can run it again to perform other tasks.
 
+>[!IMPORTANT]
+>Please note that if you are configuring federation with AD FS or PingFederate you will need either an account with the global administrator role or an account that has the [hybrid identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) and [domain name administrator](../../role-based-access-control/permissions-reference.md#domain-name-administrator) roles. The configurations related to federation require permissions that the [hybrid identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) currently doesn't have but the [domain name administrator](../../role-based-access-control/permissions-reference.md#domain-name-administrator) role does.
+
 <a name="repairthetrust"></a>
 
 ## Repair the trust 
 
 You can use Microsoft Entra Connect to check the current health of the AD FS and Microsoft Entra ID trust and then take appropriate actions to repair the trust. To repair your Microsoft Entra ID and AD FS trust, do the following:
+
 
 1. Select **Repair Microsoft Entra ID and ADFS Trust** from the list of tasks.
 
@@ -275,7 +277,7 @@ With this rule, you're simply checking the temporary flag `idflag`. You decide w
 
 ### SSO with a subdomain UPN
 
-You can add more than one domain to be federated by using Microsoft Entra Connect, as described in [Add a new federated domain](#addadfsserver). Microsoft Entra Connect versions 1.1.553.0 and later create the correct claim rule for `issuerID` automatically. If you can't use Microsoft Entra Connect version 1.1.553.0 or later, we recommend that you use the [Microsoft Entra RPT Claim Rules](https://aka.ms/aadrptclaimrules) tool to generate and set correct claim rules for the Microsoft Entra ID relying party trust.
+You can add more than one domain to be federated by using Microsoft Entra Connect, as described in [Add a new federated domain](#addadfsserver). Microsoft Entra Connect versions 1.1.553.0 and later create the correct claim rule for `issuerID` automatically.
 
 ## Next steps
 

@@ -1,23 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Cisco Webex'
+title: Configure Cisco Webex for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cisco Webex.
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Webex so that I can control who has access to Cisco Webex, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Cisco Webex
+# Configure Cisco Webex for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Cisco Webex with Microsoft Entra ID. When you integrate Cisco Webex with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Cisco Webex with Microsoft Entra ID. When you integrate Cisco Webex with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cisco Webex.
 * Enable your users to be automatically signed-in to Cisco Webex with their Microsoft Entra accounts.
@@ -25,15 +23,15 @@ In this tutorial, you'll learn how to integrate Cisco Webex with Microsoft Entra
 
 ## Prerequisites
 
-To get started, you need the following items:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Cisco Webex single sign-on (SSO) enabled subscription.
 *  Service Provider Metadata file from Cisco Webex.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cisco Webex supports **SP** initiated SSO.
 * Cisco Webex supports [**Automated user provisioning**](./cisco-webex-provisioning-tutorial.md).
@@ -46,11 +44,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Cisco Webex into Microsoft Entra ID, you need to add Cisco Webex from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Cisco Webex** in the search box.
 1. Select **Cisco Webex** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-cisco-webex'></a>
 
@@ -61,10 +59,10 @@ Configure and test Microsoft Entra SSO with Cisco Webex using a test user called
 To configure and test Microsoft Entra SSO with Cisco Webex, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.
-	1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with B.Simon.
-	1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable B.Simon to use Microsoft Entra single sign-on.
+	1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with B.Simon.
+	1. **Assign the Microsoft Entra test user** to enable B.Simon to use Microsoft Entra single sign-on.
 2. **[Configure Cisco Webex SSO](#configure-cisco-webex-sso)** to configure the SSO settings on application side.
-	1. **[Create Cisco Webex test user](#create-cisco-webex-test-user)** to have a counterpart of B.Simon in Cisco Webex that is linked to the Microsoft Entra representation of user.
+	1. **[Create Cisco Webex test user](#create-cisco-webex-test-user)** to have a counterpart of B.Simon in Cisco Webex that's linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,20 +72,20 @@ To configure and test Microsoft Entra SSO with Cisco Webex, perform the followin
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cisco Webex** application integration page, find the **Manage** section and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Cisco Webex** application integration page, find the **Manage** section and select **Single sign-on**.
 1. On the **Select a Single sign-on method** page, select **SAML**.
-1. On the **Set up Single Sign-On with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, upload the downloaded **Service Provider metadata** file and configure the application by performing the following steps:
 
 	>[!Note]
-	>You will get the Service Provider Metadata file from the **Configure Cisco Webex** section, which is explained later in the tutorial. 
+	>You get the Service Provider Metadata file from the **Configure Cisco Webex** section, which is explained later in the article. 
 
-	a. Click **Upload metadata file**.
+	a. Select **Upload metadata file**.
 
-	b. Click on **folder logo** to select the metadata file and click **Upload**.
+	b. Select **folder logo** to select the metadata file and select **Upload**.
 
 	c. After successful completion of uploading Service Provider metadata file the **Identifier** and **Reply URL** values get auto populated in **Basic SAML Configuration** section:
 
@@ -95,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	`https://web.ciscospark.com/idb/Consumer/metaAlias/<ID>/sp`
 	
 	> [!NOTE]
-	> This value is not real. Copy the literal Reply URL value and add this value to the `https://web.ciscospark.com/` to formulate the actual Sign on URL value.
+	> This value isn't real. Copy the literal Reply URL value and add this value to the `https://web.ciscospark.com/` to formulate the actual Sign on URL value.
 
 1. Cisco Webex application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -108,7 +106,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| uid | user.userprincipalname |
 
 	> [!NOTE]
-	>  The source attribute value is by default mapped to userpricipalname. This can be changed to user.mail or user.onpremiseuserprincipalname or any other value as per the setting in Webex.
+	>  The source attribute value is by default mapped to userprincipalname. This can be changed to user.mail or user.onpremiseuserprincipalname or any other value as per the setting in Webex.
 
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
@@ -117,58 +115,33 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to Cisco Webex.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cisco Webex**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Cisco Webex SSO
 
 1. Sign in to Cisco Webex with your administrator credentials.
 
-1. Select **Organization Settings** and under the **Authentication** section, click **Modify**.
+1. Select **Organization Settings** and under the **Authentication** section, select **Modify**.
 
     ![Screenshot shows Authentication Settings where you can select Modify.](./media/cisco-spark-tutorial/organization-settings.png)
   
-1. Select **Integrate a 3rd-party identity provider. (Advanced)** and click on **Next**.
+1. Select **Integrate a 3rd-party identity provider. (Advanced)** and select **Next**.
 
 	![Screenshot shows Integrate a 3rd-party identity provider.](./media/cisco-spark-tutorial/enterprise-settings.png)
 
-1. Click on **Download Metadata File** to download the **Service Provider Metadata file** and save it in your computer, click on **Next**.
+1. Select **Download Metadata File** to download the **Service Provider Metadata file** and save it in your computer, select **Next**.
 
 	![Screenshot shows Service Provider Metadata file.](./media/cisco-spark-tutorial/sp-metadata.png)
 
-1. Click on **file browser** option to locate and upload the Microsoft Entra metadata file. Then, select **Require certificate signed by a certificate authority in Metadata (more secure)** and click **Next**.
+1. Select **file browser** option to locate and upload the Microsoft Entra metadata file. Then, select **Require certificate signed by a certificate authority in Metadata (more secure)** and select **Next**.
 
 	![Screenshot shows Import I d P Metadata page.](./media/cisco-spark-tutorial/idp-metadata.png)
 
 1. Select **Test SSO Connection**, and when a new browser tab opens, authenticate with Microsoft Entra ID by signing in.
 
-1. Return to the **Cisco Cloud Collaboration Management** browser tab. If the test was successful, select **This test was successful. Enable Single Sign-On option** and click **Next**.
+1. Return to the **Cisco Cloud Collaboration Management** browser tab. If the test was successful, select **This test was successful. Enable Single Sign-On option** and select **Next**.
 
-1. Click **Save**.
+1. Select **Save**.
 
 > [!NOTE]
 > To know more about how to configure the Cisco Webex, please refer to [this](https://help.webex.com/WBX000022701/How-Do-I-Configure-Microsoft-Azure-Active-Directory-Integration-with-Cisco-Webex-Through-Site-Administration#:~:text=In%20the%20Azure%20portal%2C%20select,in%20the%20Add%20Assignment%20dialog) page.
@@ -181,7 +154,7 @@ If you need to create a user manually, perform the following steps:
 
 1. Sign in to Cisco Webex with your administrator credentials.
 
-2. Click **Users** and then **Manage Users**.
+2. Select **Users** and then **Manage Users**.
    
     ![Screenshot shows the Users page where you can Manage Users.](./media/cisco-spark-tutorial/user-1.png) 
 
@@ -197,21 +170,21 @@ If you need to create a user manually, perform the following steps:
 
 	c. In the **Email address** textbox, type email address of user like b.simon@contoso.com.
 
-5. Click the plus sign to add B.Simon. Then, click **Next**.
+5. Select the plus sign to add B.Simon. Then, select **Next**.
 
-6. In the **Add Services for Users** window, click **Add Users** and then **Finish**.
+6. In the **Add Services for Users** window, select **Add Users** and then **Finish**.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Cisco Webex Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Cisco Webex Sign-on URL where you can initiate the login flow. 
 
 * Go to Cisco Webex Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Cisco Webex tile in the My Apps, this will redirect to Cisco Webex Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Cisco Webex tile in the My Apps, this option redirects to Cisco Webex Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 Once you configure Cisco Webex you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

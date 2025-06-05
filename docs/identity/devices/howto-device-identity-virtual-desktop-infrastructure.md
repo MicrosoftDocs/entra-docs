@@ -5,11 +5,11 @@ description: Learn how VDI and Microsoft Entra device identities can be used tog
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 11/25/2024
+ms.date: 05/21/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: sandeo
 ---
 # Device identity and desktop virtualization
@@ -56,7 +56,10 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 |   |   |   | Non-persistent | No |
 | Microsoft Entra registered | Federated/Managed | Windows current | Persistent/Non-persistent | Not Applicable |
 
-<sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other non-Microsoft IdP. In a federated identity infrastructure environment, computers follow the [managed device registration flow](device-registration-how-it-works.md#hybrid-azure-ad-joined-in-managed-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
+> [!IMPORTANT]
+> When deploying a VDI farm (persistent or non-persistent), customers should take into consideration [Entra device operation throttling limits](https://learn.microsoft.com/graph/throttling-limits#identity-and-access-device-operation-service-limits). Microsoft recommends device registration requests to be staged at the rate of 500 requests per every 2 minutes and 30 seconds interval. Failure to stage such requests can lead to throttling errors resulting in device registration failures and longer delays for device registration to succeed.
+
+<sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other non-Microsoft IdP. In a federated identity infrastructure environment, computers follow the [federated device registration flow](device-registration-how-it-works.md#microsoft-entra-joined-in-federated-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
 
 <sup>4</sup> A **Managed** identity infrastructure environment represents an environment with Microsoft Entra ID as the identity provider deployed with either [password hash sync (PHS)](~/identity/hybrid/connect/whatis-phs.md) or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) with [seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md).
 
@@ -105,6 +108,7 @@ Roaming any data under the path `%localappdata%` is not supported. If you choose
 - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\IdentityCRL`
 - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\AAD`
 - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin`
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\TokenBroker`
 
 Roaming of the work account's device certificate is not supported. The certificate, issued by "MS-Organization-Access", is stored in the Personal (MY) certificate store of the current user and on the local machine.
 

@@ -1,15 +1,14 @@
 ---
 title: 'Install the Microsoft Entra provisioning agent'
 description: Learn how to install the Microsoft Entra provisioning agent and how to configure it in the Microsoft Entra admin center.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-ga-nochange
 ---
 
 # Install the Microsoft Entra provisioning agent
@@ -24,7 +23,7 @@ This article walks you through the installation process for the Microsoft Entra 
 
 For more information and an example, view the following video:
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWK5mR]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=f28ee688-8834-4d0b-a3e0-bc99a167e0ef]
 
 ## Group Managed Service Accounts
 A group Managed Service Account (gMSA) is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, and the ability to delegate the management to other administrators. A gMSA also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and recommends the use of a gMSA for running the agent. For more information, see [Group Managed Service Accounts](how-to-prerequisites.md#group-managed-service-accounts).
@@ -54,7 +53,7 @@ You can enable password writeback in SSPR directly in the portal or through Powe
 To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, using the portal, complete the following steps: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
- 2. On the left, select **Protection**, select **Password reset**, then choose **On-premises integration**.
+ 2. Browse to **Entra ID** > **Password reset** > **On-premises integration**.
  3. Check the option for **Enable password write back for synced users** .
  4. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Cloud Sync**.   
  5. Check the option for **Allow users to unlock accounts without resetting their password** to *Yes*.

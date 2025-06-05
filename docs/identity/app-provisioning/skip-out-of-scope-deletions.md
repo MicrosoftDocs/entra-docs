@@ -1,15 +1,16 @@
 ---
 title: Skip deletion of out of scope users in Microsoft Entra Application Provisioning
 description: Learn how to override the default behavior of deprovisioning out of scope users in Microsoft Entra ID.
-
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Skip deletion of user accounts that go out of scope in Microsoft Entra ID
 
@@ -23,10 +24,9 @@ Because this configuration is widely used with the *Workday to Active Directory 
 
 ## Step 1: Retrieve your Provisioning App Service Principal ID (Object ID)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select your application and go to Properties section of your provisioning app. In this example, we're using Workday.
 1. Copy the GUID value in the *Object ID* field. This value is also called the **ServicePrincipalId** of your app and it's used in Graph Explorer operations.
 

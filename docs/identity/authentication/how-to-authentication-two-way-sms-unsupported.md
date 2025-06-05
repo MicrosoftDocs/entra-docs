@@ -5,11 +5,11 @@ description: Explains how to enable another method for users who still use two-w
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: rhicock
-manager: amycolannino
+manager: femila
 ms.reviewer: dawoo
 ---
 # Two-way SMS unsupported
@@ -21,7 +21,7 @@ Email notifications and Service Health notifications (portal toasts) were sent t
 ## Required actions
 
 1. Enable the mobile app for your users, if you haven't done so already. For more information, see [Enable mobile app authentication with MFA Server](howto-mfaserver-deploy-mobileapp.md).
-1. Notify your end users to visit your MFA Server [User portal](howto-mfaserver-deploy-userportal.md) to activate the mobile app. The [Microsoft Authenticator app](https://www.microsoft.com/en-us/account/authenticator) is the recommended verification option since it's more secure than two-way SMS. For more information, see please see [It's Time to Hang Up on Phone Transports for Authentication](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752).
+1. Notify your end users to visit your MFA Server [User portal](howto-mfaserver-deploy-userportal.md) to activate the mobile app. The [Microsoft Authenticator app](https://www.microsoft.com/en-us/account/authenticator) is the recommended verification option since it's more secure than two-way SMS. For more information, see [It's Time to Hang Up on Phone Transports for Authentication](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752).
 1. Change the user settings from two-way text message to mobile app as the default method.
 
 ## FAQ

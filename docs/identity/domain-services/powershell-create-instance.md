@@ -1,14 +1,14 @@
 ---
-title: Enable Azure DS Domain Services using PowerShell | Microsoft Docs
+title: Enable Microsoft Entra Domain Services using PowerShell | Microsoft Learn
 description: Learn how to configure and enable Microsoft Entra Domain Services using Microsoft Graph PowerShell and Azure PowerShell.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: sample
-ms.date: 10/07/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -349,7 +349,7 @@ $replicaSetParams = @{
   Location = $AzureLocation
   SubnetId = "/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.Network/virtualNetworks/$VnetName/subnets/DomainServices"
 }
-$replicaSet = New-AzADDomainServiceReplicaSet @replicaSetParams
+$replicaSet = New-AzADDomainServiceReplicaSetObject @replicaSetParams
 
 $domainServiceParams = @{
   Name = $ManagedDomainName

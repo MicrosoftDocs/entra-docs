@@ -1,16 +1,15 @@
 ---
 title: AD FS sign-ins in Microsoft Entra ID with Connect Health
 description: This document describes how to integrate AD FS sign-ins with the Microsoft Entra Connect Health sign-ins report.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 04/09/2025
 ms.author: billmath
-
+ms.custom: sfi-ga-nochange, sfi-ropc-nochange
 ---
 
 # AD FS sign-ins in Microsoft Entra ID with Connect Health - preview
@@ -84,7 +83,8 @@ If a single factor authentication is performed, two rows are populated with the 
 In cases of multifactor authentication, there are three rows with a shared correlation ID and three corresponding Authentication Methods (that is, Forms, Microsoft Entra multifactor authentication, Multifactor). In this particular example, the multifactor in this case shows that the SSO has an MFA.
 
 ***What are the errors that I can see in the report?***
-For a full list of AD FS related errors that are populated in the sign-in report and descriptions, visit [AD FS Help Error Code Reference](https://adfshelp.microsoft.com/References/ConnectHealthErrorCodeReference)
+
+For a full list of AD FS related errors that are populated in the sign-in report and descriptions, visit [Microsoft Entra Connect Health Alert Catalog](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services)
 
 ***I am seeing “00000000-0000-0000-0000-000000000000” in the “User” section of a sign-in. What does that 
 mean?***

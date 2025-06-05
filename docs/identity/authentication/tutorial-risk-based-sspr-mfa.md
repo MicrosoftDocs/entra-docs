@@ -1,17 +1,15 @@
 ---
 title: Risk-based user sign-in protection in Microsoft Entra ID
 description: In this tutorial, you learn how to enable Microsoft Entra ID Protection to protect users when risky sign-in behavior is detected on their account.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 02/05/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: chuqiaoshi
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to use Microsoft Entra ID Protection to protect users by automatically detecting risk sign-in behavior and prompting for additional forms of authentication or request a password change.
 ---
 # Tutorial: Use risk detections for user sign-ins to trigger Microsoft Entra multifactor authentication or password changes
@@ -78,7 +76,7 @@ Microsoft Entra ID Protection includes a default policy that can help get users 
 It's recommended to enable this registration policy for users that use multifactor authentication. To enable this policy, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Protection** > **Identity Protection** > **Multifactor authentication registration policy**.
+1. Browse to **ID Protection** > **Dashboard** > **Multifactor authentication registration policy**.
 1. By default, the policy applies to *All users*. If desired, select **Assignments**, then choose the users or groups to apply the policy on.
 1. Under *Controls*, select **Access**. Make sure the option for *Require Microsoft Entra multifactor authentication registration* is checked, then choose **Select**.
 1. Set **Enforce Policy** to *On*, then select **Save**.

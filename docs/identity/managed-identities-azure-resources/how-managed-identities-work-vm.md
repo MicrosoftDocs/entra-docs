@@ -1,17 +1,15 @@
 ---
 title: How managed identities for Azure resources work with Azure virtual machines
 description: Description of managed identities for Azure resources work with Azure virtual machines.
-
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: conceptual
-
-ms.date: 11/15/2022
-ms.author: ryanwi
-
+ms.date: 03/14/2025
+ms.author: shermanouko
+ms.custom: sfi-image-nochange
 ---
 
 # How managed identities for Azure resources work with Azure virtual machines
@@ -45,7 +43,7 @@ The following table shows the differences between the system-assigned and user-a
 
 1. Azure Resource Manager receives a request to enable the system-assigned managed identity on a VM.
 
-2. Azure Resource Manager creates a service principal in Microsoft Entra ID for the identity of the VM. The service principal is created in the Microsoft Entra tenant that's trusted by the subscription.
+2. Azure Resource Manager creates a service principal in Microsoft Entra ID for the identity of the VM. The service principal is created in the subscription's trusted Microsoft Entra tenant.
 
 3. Azure Resource Manager updates the VM identity using the Azure Instance Metadata Service identity endpoint (for [Windows](/azure/virtual-machines/windows/instance-metadata-service) and [Linux](/azure/virtual-machines/linux/instance-metadata-service)), providing the endpoint with the service principal client ID and certificate.
 
@@ -53,7 +51,7 @@ The following table shows the differences between the system-assigned and user-a
 
 5. Your code that's running on the VM can request a token from the Azure Instance Metadata service endpoint, accessible only from within the VM: `http://169.254.169.254/metadata/identity/oauth2/token`
     - The resource parameter specifies the service to which the token is sent. To authenticate to Azure Resource Manager, use `resource=https://management.azure.com/`.
-    - API version parameter specifies the IMDS version, use api-version=2018-02-01 or greater.
+    - API version parameter specifies the IMDS version. Use api-version=2018-02-01 or later.
 
     The following example demonstrates how to to use CURL to make a request to the local Managed Identity endpoint to get an access token for Azure Instance Metadata service.
 
@@ -69,7 +67,7 @@ The following table shows the differences between the system-assigned and user-a
 
 1. Azure Resource Manager receives a request to create a user-assigned managed identity.
 
-2. Azure Resource Manager creates a service principal in Microsoft Entra ID for the user-assigned managed identity. The service principal is created in the Microsoft Entra tenant that's trusted by the subscription.
+2. Azure Resource Manager creates a service principal in Microsoft Entra ID for the user-assigned managed identity. The service principal is created in the subscription's trusted Microsoft Entra tenant.
 
 3. Azure Resource Manager receives a request to configure the user-assigned managed identity on a VM and updates the Azure Instance Metadata Service identity endpoint with the user-assigned managed identity service principal client ID and certificate.
 

@@ -1,20 +1,16 @@
 ---
 title: Identity synchronization and duplicate attribute resiliency
 description: New behavior of how to handle objects with UPN or ProxyAddress conflicts during directory sync using Microsoft Entra Connect.
-
 author: billmath
-manager: amycolannino
-
+manager: femila
 ms.assetid: 537a92b7-7a84-4c89-88b0-9bce0eacd931
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 12/09/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
 ---
 # Identity synchronization and duplicate attribute resiliency
 Duplicate Attribute Resiliency is a feature in Microsoft Entra ID that eliminates friction caused by **UserPrincipalName** and SMTP **ProxyAddress** conflicts when running one of Microsoft’s synchronization tools.
@@ -54,25 +50,22 @@ Duplicate Attribute Resiliency is the new default behavior across all Microsoft 
 
 To check if the feature is enabled for your tenant, you can do so by downloading the latest version of the Azure Active Directory PowerShell module and running:
 
-`Get-MsolDirSyncFeatures -Feature DuplicateUPNResiliency`
+`Get-EntraDirSyncFeature -Feature DuplicateUPNResiliency`
 
-`Get-MsolDirSyncFeatures -Feature DuplicateProxyAddressResiliency`
+`Get-EntraDirSyncFeature -Feature DuplicateProxyAddressResiliency`
 
 > [!NOTE]
-> You can no longer use Set-MsolDirSyncFeature cmdlet to proactively enable the Duplicate Attribute Resiliency feature before it's turned on for your tenant. To be able to test the feature, you'll need to create a new Microsoft Entra tenant.
-
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+> You can't use the `Set-EntraDirSyncFeature` cmdlet to proactively enable the Duplicate Attribute Resiliency feature before it's turned on for your tenant. To be able to test the feature, you'll need to create a new Microsoft Entra tenant.
 
 ## Identifying Objects with DirSyncProvisioningErrors
-There are currently two methods to identify objects that have these errors due to duplicate property conflicts, Azure Active Directory PowerShell and the [Microsoft 365 admin center](https://admin.microsoft.com). There are plans to extend to additional portal based reporting in the future.
+There are currently two methods to identify objects that have these errors due to duplicate property conflicts, Microsoft Entra PowerShell and the [Microsoft 365 admin center](https://admin.microsoft.com). There are plans to extend to additional portal based reporting in the future.
 
-### Azure Active Directory PowerShell
+### Microsoft Entra PowerShell
 For the PowerShell cmdlets in this topic, the following is true:
 
 * All of the following cmdlets are case sensitive.
-* The **–ErrorCategory PropertyConflict** must always be included. There are currently no other types of **ErrorCategory**, but this may be extended in the future.
 
-First, get started by running **Connect-MsolService** and entering credentials for a tenant administrator.
+First, get started by running **Connect-Entra** and entering credentials for a tenant administrator.
 
 Then, use the following cmdlets and operators to view errors in different ways:
 
@@ -81,40 +74,36 @@ Then, use the following cmdlets and operators to view errors in different ways:
 3. [By Conflicting Value](#by-conflicting-value)
 4. [Using a String Search](#using-a-string-search)
 5. Sorted
-6. [In a Limited Quantity or All](#in-a-limited-quantity-or-all)
+6. [In a Limited Quantity](#in-a-limited-quantity)
 
 #### See all
 Once connected, to see a general list of attribute provisioning errors in the tenant run:
 
-`Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict`
-
-This produces a result like the following:  
- ![Get-MsolDirSyncProvisioningError](./media/how-to-connect-syncservice-duplicate-attribute-resiliency/1.png "Get-MsolDirSyncProvisioningError")  
+`Get-MsolDirSyncProvisioningError`
 
 #### By property type
-To see errors by property type, add the **-PropertyName** flag with the **UserPrincipalName** or **ProxyAddresses** argument:
+To see errors by property type, specify **UserPrincipalName** or **ProxyAddresses**:
 
-`Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName UserPrincipalName`
+`Get-EntraDirectoryObjectOnPremisesProvisioningError | Where-Object PropertyCausingError -eq 'UserPrincipalName'`
 
 Or
 
-`Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
+`Get-EntraDirectoryObjectOnPremisesProvisioningError | Where-Object PropertyCausingError -eq 'ProxyAddresses'`
 
 #### By conflicting value
-To see errors relating to a specific property add the **-PropertyValue** flag (**-PropertyName** must be used as well when adding this flag):
+To see errors relating to a specific property add the value:
 
-`Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyValue User@domain.com -PropertyName UserPrincipalName`
+`Get-EntraDirectoryObjectOnPremisesProvisioningError | Where-Object PropertyCausingError -eq 'UserPrincipalName' | Where-Object Value -eq 'User@domain.com'`
 
 #### Using a string search
-To do a broad string search use the **-SearchString** flag. This can be used independently from all of the above flags, with the exception of **-ErrorCategory PropertyConflict**, which is always required:
+To do a broad string search:
 
-`Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -SearchString User`
+`Get-EntraDirectoryObjectOnPremisesProvisioningError | Select-Object 'User@domain.com'`
 
-#### In a limited quantity or all
-1. **MaxResults \<Int>** can be used to limit the query to a specific number of values.
-2. **All** can be used to ensure all results are retrieved in the case that a large number of errors exists.
+#### In a limited quantity
+Use the following command to limit the query to a specific number of values.
 
-`Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -MaxResults 5`
+`Get-EntraDirectoryObjectOnPremisesProvisioningError | Select-Object -First 10`
 
 ## Microsoft 365 admin center
 You can view directory synchronization errors in the Microsoft 365 admin center. The report in the Microsoft 365 admin center only displays **User** objects that have these errors. It doesn't show info about conflicts between **Groups** and **Contacts**.

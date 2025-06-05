@@ -4,13 +4,11 @@ description: Learn about the best practices and general guidance for security re
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: template-concept
 ms.date: 01/06/2023
-ms.reviewer:
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: concept-article
-
+ms.custom: template-concept, sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an application developer, I want to follow security best practices for application properties in Microsoft Entra ID, so that I can ensure the security and health of my applications and protect them from compromise or downtime.
 ---
 
@@ -70,16 +68,19 @@ Consider the following guidance related to implicit flow:
 - If the application was configured to receive access tokens using implicit flow, but doesn't actively use them, turn off the setting to protect from misuse.
 - Use separate applications for valid implicit flow scenarios.
 
-## Application ID URI
+## Application ID URI (also known as Identifier URI)
 
-The **Application ID URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for scopes and in access tokens, it's also the value of the audience claim and it must use a verified customer owned domain. For multi-tenant applications, the value must also be globally unique. It's also referred to as an identifier URI. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.
+The **Application ID URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for the scope value in requests to Microsoft Entra. It's also the value of the audience (`aud`) claim in v1.0 access tokens. For multi-tenant applications, the value must also be globally unique. It's also referred to as an **Identifier URI**. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.
 
 :::image type="content" source="./media/application-registration-best-practices/app-id-uri.png" alt-text="Screenshot that shows where the Application I D U R I is located.":::
 
-Consider the following guidance related to defining the Application ID URI:
+Best practices for defining the Application ID URI change depending on if the app is issued v1.0 or v2.0 access tokens. If you're unsure whether an app is issued v1.0 access tokens, check the `requestedAccessTokenVersion` of the [app manifest](reference-microsoft-graph-app-manifest.md).  A value of `null` or `1` indicates that the app receives v1.0 access tokens.  A value of `2` indicates that the app receives v2.0 access tokens.
 
-- The api or https URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
-- Use a verified domain in Line of Business (LoB) applications.
+For applications that are issued v1.0 access tokens, only the default URIs should be used.  The default URIs are `api://<appId>` and `api://<tenantId>/<appId>`. 
+
+For applications that are issued v2.0 access tokens, use the following guidelines when defining the App ID URI: 
+- The `api` or `https` URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
+- Use a verified domain of your organization.
 - Keep an inventory of the URIs in your organization to help maintain security.
 - Use the Application ID URI to expose the WebApi in the organization. Don't use the Application ID URI to identify the application, and instead use the Application (client) ID property.
 

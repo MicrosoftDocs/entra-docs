@@ -1,20 +1,17 @@
 ---
 title: Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 description: Persona-specific guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
-
-ms.service: entra-id 
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/01/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: mepples21
-manager: amycolannino
+manager: femila
 ms.reviewer: miepping
-
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID
-
 ---
 # Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 
@@ -28,7 +25,7 @@ Information workers typically have the simplest requirements and are the easiest
 
 Information worker deployments, just like any other user persona, require proper communication and support. This commonly involves convincing users to install certain apps on their phones, distributing security keys where users won’t use apps, addressing concerns about biometrics, and developing processes for helping users recover from partial or total loss of their credentials.
 
-When dealing with concerns about biometrics, make sure that you understand how technologies like Windows Hello for Business handle biometrics. The biometric data is stored only locally on the device and cannot be converted back into raw biometric data even if stolen:
+When dealing with concerns about biometrics, make sure that you understand how technologies like Windows Hello for Business handle biometrics. The biometric data is stored only locally on the device and can't be converted back into raw biometric data even if stolen:
 
 - [Windows Hello for Business Biometric data storage](/windows/security/identity-protection/hello-for-business/how-it-works#biometric-data-storage)
 
@@ -73,7 +70,7 @@ Phases 1-3 of the deployment flow for frontline workers should typically follow 
 
 ## IT pros/DevOps workers
 
-IT pros and DevOps workers are especially reliant on remote access and multiple user accounts, which is why they are considered different from information workers. Many of the challenges posed by phishing-resistant passwordless for IT pros are caused by their increased need for remote access to systems and ability to run automations.
+IT pros and DevOps workers are especially reliant on remote access and multiple user accounts, which is why they're considered different from information workers. Many of the challenges posed by phishing-resistant passwordless for IT pros are caused by their increased need for remote access to systems and ability to run automations.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-examples.png" alt-text="Diagram that shows examples of requirements for IT pro workers.":::
 
@@ -86,7 +83,7 @@ Make sure to understand where users are using scripts that run in the user conte
 
 ### IT pros/DevOps worker deployment flow
 
-Phases 1-3 of the deployment flow for IT pro/DevOps workers should typically follow the standard deployment flow as pictured above for the user’s primary account. IT pros/DevOps workers often have secondary accounts that require different considerations. Adjust the methods used at each step as needed in your environment for the primary accounts:
+Phases 1-3 of the deployment flow for IT pro/DevOps workers should typically follow the standard deployment flow as previously pictured for the user’s primary account. IT pros/DevOps workers often have secondary accounts that require different considerations. Adjust the methods used at each step as needed in your environment for the primary accounts:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-deployment.png" alt-text="Diagram that shows deployment flow for IT pros/DevOps workers.":::
 
@@ -99,7 +96,7 @@ Phases 1-3 of the deployment flow for IT pro/DevOps workers should typically fol
    1. Windows Hello for Business
    1. Platform SSO Secure Enclave Key
 
-If your IT pro/DevOps workers have secondary accounts you may need to handle those accounts differently. For example, for secondary accounts you may choose to use alternative portable credentials and forego local credentials on your computing devices entirely:
+If your IT pro/DevOps workers have secondary accounts, you may need to handle those accounts differently. For example, for secondary accounts you may choose to use alternative portable credentials and forego local credentials on your computing devices entirely:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/it-pro-secondary.png" alt-text="Diagram that shows an alternative deployment flow for IT pros/DevOps workers.":::
 
@@ -148,3 +145,4 @@ If you plan to use certificates, smart cards, and PKI, then the deployment flow 
 
 [Deploy a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 
+[Considerations for Remote Desktop Connections in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-rdp-phishing-resistant-passwordless-authentication.md)

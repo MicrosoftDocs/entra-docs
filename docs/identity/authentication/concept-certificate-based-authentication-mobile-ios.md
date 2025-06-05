@@ -5,11 +5,11 @@ description: Learn about Microsoft Entra certificate-based authentication on App
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
@@ -184,7 +184,7 @@ CBA support for YubiKey is available in the latest Microsoft Authentication Libr
 
 - On iOS, users with certificate-based authentication will see a "double prompt", where they must select the option to use certificate-based authentication twice.
 - On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor.
-- On iOS, an auth strength policy requiring CBA and an MAM app protection policy will end up in a loop between device registration and MFA satisfaction. Due to the bug on iOS, when a user uses CBA to satisfy MFA requirement, the MAM policy is not satisfied with error being thrown by server saying device registration is required, even though the device is registered. This incorrect error causes re-registeration and the request is stuck in loop of using CBA to sign in and device need registration.
+- On iOS, an auth strength policy requiring CBA and an MAM app protection policy will end up in a loop between device registration and MFA satisfaction. Due to the bug on iOS, when a user uses CBA to satisfy MFA requirement, the MAM policy is not satisfied with error being thrown by server saying device registration is required, even though the device is registered. This incorrect error causes re-registration and the request is stuck in loop of using CBA to sign in and device need registration. Due to the above issues, CBA as a second factor is blocked on iOS and will be unblocked as soon as the fixes are fixed. 
 
 ## Next steps
 

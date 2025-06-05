@@ -2,12 +2,13 @@
 title: 'How to synchronize attributes for Lifecycle workflows'
 description: Describes overview of Lifecycle workflow attributes.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: troubleshooting
-ms.date: 08/14/2024
+ms.date: 03/10/2025
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 ---
 
 # How to synchronize attributes for Lifecycle workflows
@@ -157,9 +158,9 @@ Once you have set up your provisioning application, you're able to edit its attr
 
 To update this mapping, you'd do the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. Open your provisioned application.
 

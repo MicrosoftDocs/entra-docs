@@ -4,10 +4,9 @@ description: This article discusses the registration and use of certificate cred
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref
-ms.date: 04/10/2024
-ms.reviewer: jeedes
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
 ms.topic: reference
 #Customer intent: As a developer, I want to authenticate my application using its own credentials, so that I can securely access resources using the Microsoft identity platform.
@@ -31,7 +30,7 @@ To compute the assertion, you can use one of the many JWT libraries in the langu
 | --- | --- |
 | `alg` | Should be **PS256** |
 | `typ` | Should be **JWT** |
-| `x5t#s256` | Base64url-encoded SHA-256 thumbprint of the X.509 certificate's DER encoding. |
+| `x5t` | Base64url-encoded SHA-256 thumbprint of the X.509 certificate's DER encoding. |
 
 ### Claims (payload)
 
@@ -55,7 +54,7 @@ The signature is computed by applying the certificate as described in the [JSON 
 {
   "alg": "PS256",
   "typ": "JWT",
-  "x5t#sha256": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
+  "x5t": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
 }
 .
 {
@@ -106,7 +105,8 @@ Provide a GUID to identify the key in the application manifest (`$keyId`).
 
 In the Azure app registration for the client application:
 1. Select **Manifest** to open the application manifest.
-2. Replace the *keyCredentials* property with your new certificate information using the following schema.
+2. Select Microsoft Graph App Manifest.
+3. Replace the *keyCredentials* property with your new certificate information using the following schema.
 
    ```JSON
    "keyCredentials": [
@@ -115,11 +115,11 @@ In the Azure app registration for the client application:
            "keyId": "$keyid",
            "type": "AsymmetricX509Cert",
            "usage": "Verify",
-           "value":  "$base64Value"
+           "key":  "$base64Value"
        }
    ]
    ```
-3. Save the edits to the application manifest and then upload the manifest to Microsoft identity platform.
+4. Save the edits to the application manifest and then upload the manifest to Microsoft identity platform.
 
    The `keyCredentials` property is multi-valued, so you may upload multiple certificates for richer key management.
    

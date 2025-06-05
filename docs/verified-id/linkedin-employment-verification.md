@@ -1,13 +1,13 @@
 ---
 title: Setting up LinkedIn workplace verification
-description: A design pattern describing how to configure employment verification using LinkedIn
+description: A design pattern describing how to configure employment verification using LinkedIn.
 services: decentralized-identity
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 
 ms.topic: conceptual
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ---
 

@@ -1,16 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot object synchronization'
 description: Learn how to troubleshoot issues with object synchronization by using the troubleshooting task.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 12/09/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot object synchronization with Microsoft Entra Connect Sync

@@ -1,15 +1,14 @@
 ---
 title: Tutorial - Set up and use Microsoft Authenticator with VerifiedID
-description: In this tutorial, you learn how to install and use Microsoft Authenticator for VerifiedID
+description: In this tutorial, you learn how to install and use Microsoft Authenticator for VerifiedID.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 10/06/2023
+ms.date: 01/06/2025
+ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Using the Microsoft Authenticator with Verified ID

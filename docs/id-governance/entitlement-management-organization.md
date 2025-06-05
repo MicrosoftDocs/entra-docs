@@ -2,7 +2,7 @@
 title: Manage connected organizations in entitlement management
 description: Learn how to allow people outside your organization to request access packages so that you can collaborate on projects.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -60,15 +60,14 @@ How users from the Microsoft Entra directory or domain authenticate depends on t
 
 For a demonstration of how to add a connected organization, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4dskS]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=15a99953-2677-4a28-8432-eedd333456ac]
 
 ## View the list of connected organizations
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
 1. In the search box, you can search for a connected organization by the name of the connected organization. However, you can't search for a domain name.
 
@@ -78,7 +77,7 @@ To add an external Microsoft Entra directory or domain as a connected organizati
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
 1. On the Connected organizations page, select **Add connected organization**.
 
@@ -129,7 +128,7 @@ If the connected organization changes to a different domain, the organization's 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
 1. On the Connected organizations page, select the connected organization you want to update.
 
@@ -146,7 +145,7 @@ If you no longer have a relationship with an external Microsoft Entra directory 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
+1. Browse to **ID Governance** > **Entitlement management** > **Connected organizations**.
 
 1. On the Connected organizations page, select the connected organization you want to delete to open it.
 

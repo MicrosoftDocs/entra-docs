@@ -1,19 +1,16 @@
 ---
 title: Advanced certificate signing options in a SAML token
 description: Learn how to use advanced certificate signing options in the SAML token for preintegrated apps in Microsoft Entra ID
-
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: concept-article
 ms.date: 07/19/2024
 ms.author: jomondi
 ms.reviewer: saumadan
-ms.custom: enterprise-apps
 ms.collection: M365-identity-device-management
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an administrator managing SAML-based single sign-on in Microsoft Entra ID, I want to change the certificate signing options and signing algorithm for an application, so that I can ensure the security and compatibility of the SAML tokens used for authentication.
 ---
 
@@ -50,14 +47,13 @@ To change an application's SAML certificate signing options and the certificate 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Cloud Application Administrator, Application Administrator.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Change certificate signing options and signing algorithm
 
 To change an application's SAML certificate signing options and the certificate signing algorithm:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 
 Next, change the certificate signing options in the SAML token for that application:

@@ -5,8 +5,8 @@ author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
 ms.custom: has-adal-ref
-ms.date: 07/17/2023
-ms.reviewer: saeeda, jmprieur, localden
+ms.date: 02/27/2025
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -18,7 +18,7 @@ ms.topic: concept-article
 If any of your applications use the Azure Active Directory Authentication Library (ADAL) for authentication and authorization capabilities, it's time to migrate them to the [Microsoft Authentication Library (MSAL)](/entra/msal).
 
 - All Microsoft support and development for ADAL, including security fixes, ended on June 30, 2023.
-- There were no ADAL feature releases or new platform version releases planned prior to the deprecation date.
+- There were no ADAL feature releases or new platform version releases planned before the deprecation date.
 - No new features have been added to ADAL since June 30, 2020.
 
 > [!WARNING]
@@ -57,7 +57,7 @@ MSAL provides multiple benefits over ADAL, including the following features:
 - System browsers on mobile devices
 - Where ADAL had only authentication context class, MSAL exposes the notion of a collection of client apps (public client and confidential client).
 
-## AD FS support in MSAL
+## Active Directory Federation Services (AD FS) support in MSAL
 
 You can use MSAL.NET, MSAL Java, MSAL.js, and MSAL Python to get tokens from Active Directory Federation Services (AD FS) 2019 or later. Earlier versions of AD FS, including AD FS 2016, are unsupported by MSAL.
 

@@ -1,48 +1,45 @@
 ---
-title: Use additional context in Microsoft Authenticator notifications
-description: Learn how to use additional context in MFA notifications
+title: Use additional context in Authenticator notifications
+description: Learn how to use additional context in multifactor authentication (MFA) notifications.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/28/2024
+ms.date: 03/04/2025
 ms.author: justinha
 author: mjsantani
-# Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
+ms.custom: sfi-image-nochange
+# Customer intent: As an identity administrator, I want to encourage users to use the Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
-# How to use additional context in Microsoft Authenticator notifications - Authentication methods policy
+# Use additional context in Authenticator notifications - Authentication methods policy
 
-This topic covers how to improve the security of user sign-in by adding the application name and geographic location of the sign-in to Microsoft Authenticator passwordless and push notifications.  
+This article discusses how to improve the security of user sign-in by adding the application name and geographic location of the sign-in to Authenticator passwordless and push notifications.
 
 ## Prerequisites
 
-- Your organization needs to enable Microsoft Authenticator passwordless and push notifications for some users or groups by using the new Authentication methods policy. You can edit the Authentication methods policy by using the Microsoft Entra admin center or Microsoft Graph API. 
+- Your organization needs to enable Authenticator passwordless and push notifications for some users or groups by using the new Authentication methods policy. You can edit the Authentication methods policy by using the Microsoft Entra admin center or Microsoft Graph API.
+- Additional context can be targeted to only a single group, which can be dynamic or nested. The group can be synchronized from on-premises or cloud-only.
 
-  >[!NOTE]
-  >The policy schema for Microsoft Graph APIs has been improved. The older policy schema is now deprecated. Make sure you use the new schema to help prevent errors.
+## Passwordless phone sign-in and multifactor authentication
 
-- Additional context can be targeted to only a single group, which can be dynamic or nested. On-premises synchronized security groups and cloud-only security groups are supported for the Authentication method policy.
+When a user receives a passwordless phone sign-in or multifactor authentication (MFA) push notification in Authenticator, they see the name of the application that requests the approval and the location based on the IP address from where the sign-in originated.
 
-## Passwordless phone sign-in and multifactor authentication 
+:::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location.png" alt-text="Screenshot that shows additional context in the MFA push notification.":::
 
-When a user receives a passwordless phone sign-in or MFA push notification in Microsoft Authenticator, they'll see the name of the application that requests the approval and the location based on the IP address where the sign-in originated from.
+Admins can combine additional context with [number matching](how-to-mfa-number-match.md) to further improve sign-in security.
 
-:::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location.png" alt-text="Screenshot of additional context in the MFA push notification.":::
+:::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location-with-number-match.png" alt-text="Screenshot that shows additional context with number matching in the MFA push notification.":::
 
-The additional context can be combined with [number matching](how-to-mfa-number-match.md) to further improve sign-in security. 
+### Policy schema changes
 
-:::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location-with-number-match.png" alt-text="Screenshot of additional context with number matching in the MFA push notification.":::
+You can enable and disable the application name and geographic location separately. Under `featureSettings`, you can use the following name mapping for each feature:
 
-### Policy schema changes 
+- **Application name**: `displayAppInformationRequiredState`
+- **Geographic location**: `displayLocationInformationRequiredState`
 
-You can enable and disable application name and geographic location separately. Under featureSettings, you can use the following name mapping for each feature:
+> [!NOTE]
+> Make sure that you use the new policy schema for Microsoft Graph APIs. In Graph Explorer, you need to consent to the `Policy.Read.All` and `Policy.ReadWrite.AuthenticationMethod` permissions.
 
-- Application name: displayAppInformationRequiredState
-- Geographic location: displayLocationInformationRequiredState
-
->[!NOTE]
->Make sure you use the new policy schema for Microsoft Graph APIs. In Graph Explorer, you'll need to consent to the **Policy.Read.All** and **Policy.ReadWrite.AuthenticationMethod** permissions. 
-
-Identify your single target group for each of the features. Then use the following API endpoint to change the displayAppInformationRequiredState or displayLocationInformationRequiredState properties under featureSettings to **enabled** and include or exclude the groups you want:
+Identify your single target group for each of the features. Then use the following API endpoint to change `displayAppInformationRequiredState` or `displayLocationInformationRequiredState properties` under `featureSettings` to `enabled` and include or exclude the groups you want:
 
 ```msgraph-interactive
 GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/MicrosoftAuthenticator
@@ -52,13 +49,13 @@ For more information, see [microsoftAuthenticatorAuthenticationMethodConfigurati
 
 #### Example of how to enable additional context for all users
 
-In **featureSettings**, change **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** from **default** to **enabled**. 
+In `featureSettings`, change `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` from `default` to `enabled`.
 
-The value of Authentication Mode can be either **any** or **push**, depending on whether or not you also want to enable passwordless phone sign-in. In these examples, we'll use **any**, but if you don't want to allow passwordless, use **push**.
+The value of Authentication mode is either `any` or `push`, depending on whether or not you also want to enable passwordless phone sign-in. In these examples, we use `any`, but if you don't want to allow passwordless, use `push`.
 
-You might need to PATCH the entire schema to prevent overwriting any previous configuration. In that case, do a GET first, update only the relevant fields, and then PATCH. The following example shows how to update **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** under **featureSettings**. 
+You might need to `PATCH` the entire schema to prevent overwriting any previous configuration. In that case, do a `GET` first. Then update only the relevant fields and then `PATCH`. The following example shows how to update `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` under `featureSettings`.
 
-Only users who are enabled for Microsoft Authenticator under Microsoft Authenticator’s **includeTargets** will see the application name or geographic location. Users who aren't enabled for Microsoft Authenticator won't see these features.
+Only users who are enabled for Authenticator under `includeTargets` see the application name or geographic location. Users who aren't enabled for Authenticator don't see these features.
 
 ```json
 //Retrieve your existing policy via a GET. 
@@ -105,16 +102,15 @@ Only users who are enabled for Microsoft Authenticator under Microsoft Authentic
     ]
 } 
 ```
- 
- 
+
 #### Example of how to enable application name and geographic location for separate groups
- 
-In **featureSettings**, change **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** from **default** to **enabled.** 
-Inside the **includeTarget** for each featureSetting, change the **id** from **all_users** to the ObjectID of the group from the Microsoft Entra admin center.
 
-You need to PATCH the entire schema to prevent overwriting any previous configuration. We recommend that you do a GET first, and then update only the relevant fields and then PATCH. The following example shows an update to **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** under **featureSettings**. 
+In `featureSettings`, change `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` from `default` to `enabled`.
+Inside `includeTarget` for each `featureSetting`, change the ID from `all_users` to the object ID of the group from the Microsoft Entra admin center.
 
-Only users who are enabled for Microsoft Authenticator under Microsoft Authenticator’s **includeTargets** will see the application name or geographic location. Users who aren't enabled for Microsoft Authenticator won't see these features.
+You need to `PATCH` the entire schema to prevent overwriting any previous configuration. We recommend that you do a `GET` first. Then update only the relevant fields and then `PATCH`. The following example shows an update to `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` under `featureSettings`.
+
+Only users who are enabled for Authenticator under `includeTargets` see the application name or geographic location. Users who aren't enabled for Authenticator don't see these features.
 
 ```json
 {
@@ -157,21 +153,21 @@ Only users who are enabled for Microsoft Authenticator under Microsoft Authentic
     ]
 }
 ```
- 
-To verify, run GET again and verify the ObjectID:
+
+To verify, run `GET` again and verify the object ID:
 
 ```msgraph-interactive
 GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/MicrosoftAuthenticator
 ```
 
-#### Example of how to disable application name and only enable geographic location 
- 
-In **featureSettings**, change the state of **displayAppInformationRequiredState** to **default** or **disabled** and **displayLocationInformationRequiredState** to **enabled.** 
-Inside the **includeTarget** for each featureSetting, change the **id** from **all_users** to the ObjectID of the group from the Microsoft Entra admin center.
+#### Example of how to disable the application name and only enable the geographic location
 
-You need to PATCH the entire schema to prevent overwriting any previous configuration. We recommend that you do a GET first, and then update only the relevant fields and then PATCH. The following example shows an update to **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** under **featureSettings**. 
+In `featureSettings`, change the state of `displayAppInformationRequiredState` to `default` or `disabled` and `displayLocationInformationRequiredState` to `enabled`.
+Inside `includeTarget` for each `featureSetting` value, change the ID from `all_users` to the object ID of the group from the Microsoft Entra admin center.
 
-Only users who are enabled for Microsoft Authenticator under Microsoft Authenticator’s **includeTargets** will see the application name or geographic location. Users who aren't enabled for Microsoft Authenticator won't see these features.
+You need to `PATCH` the entire schema to prevent overwriting any previous configuration. We recommend that you do a `GET` first. Then update only the relevant fields and then `PATCH`. The following example shows an update to `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` under `featureSettings`.
+
+Only users who are enabled for Authenticator under `includeTargets` see the application name or geographic location. Users who aren't enabled for Authenticator don't see these features.
 
 ```json
 {
@@ -215,16 +211,13 @@ Only users who are enabled for Microsoft Authenticator under Microsoft Authentic
 }
 ```
 
-#### Example of how to exclude a group from application name and geographic location 
- 
-In **featureSettings**, change the states of **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** from **default** to **enabled.** 
-Inside the **includeTarget** for each featureSetting, change the **id** from **all_users** to the ObjectID of the group from the Microsoft Entra admin center.
+#### Example of how to exclude a group from the application name and geographic location
 
-In addition, for each of the features, you'll change the id of the excludeTarget to the ObjectID of the group from the Microsoft Entra admin center. This change excludes that group from seeing application name or geographic location.
+In addition, for each of the features, you change the ID of `excludeTarget` to the object ID of the group from the Microsoft Entra admin center. This change excludes that group from seeing the application name or geographic location.
 
-You need to PATCH the entire schema to prevent overwriting any previous configuration. We recommend that you do a GET first, and then update only the relevant fields and then PATCH. The following example shows an update to **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** under **featureSettings**. 
+You need to `PATCH` the entire schema to prevent overwriting any previous configuration. We recommend that you do a `GET` first. Then update only the relevant fields and then `PATCH`. The following example shows an update to `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` under `featureSettings`.
 
-Only users who are enabled for Microsoft Authenticator under Microsoft Authenticator’s **includeTargets** will see the application name or geographic location. Users who aren't enabled for Microsoft Authenticator won't see these features.
+Only users who are enabled for Authenticator under `includeTargets` see the application name or geographic location. Users who aren't enabled for Authenticator don't see these features.
 
 ```json
 {
@@ -267,14 +260,14 @@ Only users who are enabled for Microsoft Authenticator under Microsoft Authentic
     ]
 }
 ```
-#### Example of removing the excluded group 
- 
-In **featureSettings**, change the states of **displayAppInformationRequiredState** from **default** to **enabled.** 
-You need to change the **id** of the **excludeTarget** to `00000000-0000-0000-0000-000000000000`.
 
-You need to PATCH the entire schema to prevent overwriting any previous configuration. We recommend that you do a GET first, and then update only the relevant fields and then PATCH. The following example shows an update to **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** under **featureSettings**. 
+#### Example of removing the excluded group
 
-Only users who are enabled for Microsoft Authenticator under Microsoft Authenticator’s **includeTargets** will see the application name or geographic location. Users who aren't enabled for Microsoft Authenticator won't see these features.
+In `featureSettings`, change the states of `displayAppInformationRequiredState` from `default` to `enabled`. Change the ID of `excludeTarget` to `00000000-0000-0000-0000-000000000000`.
+
+You need to `PATCH` the entire schema to prevent overwriting any previous configuration. We recommend that you do a `GET` first. Then update only the relevant fields and then `PATCH`. The following example shows an update to `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` under `featureSettings`.
+
+Only users who are enabled for Authenticator under `includeTargets` see the application name or geographic location. Users who aren't enabled for Authenticator don't see these features.
 
 ```json
 {
@@ -309,7 +302,7 @@ Only users who are enabled for Microsoft Authenticator under Microsoft Authentic
 
 ### Turn off additional context
 
-To turn off additional context, you'll need to PATCH **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** from **enabled** to **disabled**/**default**. You can also turn off just one of the features.
+To turn off additional context, you need to `PATCH` `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` from `enabled` to `disabled`/`default`. You can also turn off only one of the features.
 
 ```json
 {
@@ -355,40 +348,40 @@ To turn off additional context, you'll need to PATCH **displayAppInformationRequ
 
 ## Enable additional context in the Microsoft Entra admin center
 
-To enable application name or geographic location in the Microsoft Entra admin center, complete the following steps:
+To enable the application name or geographic location in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Microsoft Authenticator**.
-1. On the **Basics** tab, click **Yes** and **All users** to enable the policy for everyone, and change **Authentication mode** to **Any**. 
-   
-   Only users who are enabled for Microsoft Authenticator here can be included in the policy to show the application name or geographic location of the sign-in, or excluded from it. Users who aren't enabled for Microsoft Authenticator can't see application name or geographic location.
+1. Browse to **Entra ID** > **Authentication methods** > **Microsoft Authenticator**.
+1. On the **Basics** tab, select **Yes** and **All users** to enable the policy for everyone. Change **Authentication mode** to **Any**.
 
-   :::image type="content" border="true" source="./media/how-to-mfa-additional-context/enable-settings-additional-context.png" alt-text="Screenshot of how to enable Microsoft Authenticator settings for Any authentication mode.":::
+   Only users who are enabled for Authenticator here are included in the policy to show the application name or geographic location of the sign-in, or excluded from it. Users who aren't enabled for Authenticator can't see the application name or geographic location.
 
-1. On the **Configure** tab, for **Show application name in push and passwordless notifications**, change **Status** to **Enabled**, choose who to include or exclude from the policy, and click **Save**. 
+   :::image type="content" border="true" source="./media/how-to-mfa-additional-context/enable-settings-additional-context.png" alt-text="Screenshot that shows how to enable Authenticator settings for Any authentication mode.":::
 
-   :::image type="content" border="true" source="./media/how-to-mfa-additional-context/enable-app-name.png" alt-text="Screenshot of how to enable application name.":::
+1. On the **Configure** tab, for **Show application name in push and passwordless notifications**, change **Status** to **Enabled**. Choose who to include or exclude from the policy, and then select **Save**.
+
+   :::image type="content" border="true" source="./media/how-to-mfa-additional-context/enable-app-name.png" alt-text="Screenshot that shows how to enable the application name.":::
 
    Then do the same for **Show geographic location in push and passwordless notifications**.
 
-   :::image type="content" border="true" source="./media/how-to-mfa-additional-context/enable-geolocation.png" alt-text="Screenshot of how to enable geographic location.":::
+   :::image type="content" border="true" source="./media/how-to-mfa-additional-context/enable-geolocation.png" alt-text="Screenshot that shows how to enable the geographic location.":::
 
-   You can configure application name and geographic location separately. For example, the following policy enables application name and geographic location for all users but excludes the Operations group from seeing geographic location. 
+   You can configure the application name and geographic location separately. For example, the following policy enables the application name and geographic location for all users but excludes the Operations group from seeing the geographic location.
 
-   :::image type="content" border="true" source="./media/how-to-mfa-additional-context/exclude.png" alt-text="Screenshot of how to enable application name and geographic location separately.":::
+   :::image type="content" border="true" source="./media/how-to-mfa-additional-context/exclude.png" alt-text="Screenshot that shows how to enable the application name and geographic location separately.":::
 
 ## Known issues
 
-- Additional context isn't supported for Network Policy Server (NPS) or Active Directory Federation Services (AD FS). 
-- Users can modify the location reported by iOS and Android devices. As a result, Microsoft Authenticator is updating its security baseline for Location Based Access Control (LBAC) Conditional Access policies. Authenticator will deny authentications where the user may be using a different location than the actual GPS location of the mobile device where Authenticator installed.  
+- Additional context isn't supported for Network Policy Server (NPS) or Active Directory Federation Services.
+- Users can modify the location reported by iOS and Android devices. As a result, Authenticator is updating its security baseline for Location-Based Access Control (LBAC) Conditional Access policies. Authenticator denies authentications where the user might be using a different location than the actual GPS location of the mobile device where Authenticator is installed.  
 
-  In the November 2023 release of Authenticator, users who modify the location of their device will see a denial message in Authenticator when doing an LBAC authentication. Beginning January 2024, any users that run older Authenticator versions will be blocked from LBAC authentication with a modified location:
+  In the November 2023 release of Authenticator, users who modify the location of their device see a denial message in Authenticator when they do an LBAC authentication. Beginning in January 2024, any users who run older Authenticator versions are blocked from LBAC authentication with a modified location:
   
   - Authenticator version 6.2309.6329 or earlier on Android
   - Authenticator version 6.7.16 or earlier on iOS
   
-  To find which users run older versions of Authenticator, use [Microsoft Graph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod#properties). 
+  To find which users run older versions of Authenticator, use [Microsoft Graph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod#properties).
 
-## Next steps
+## Related content
 
-[Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app.md)
+- [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app.md)

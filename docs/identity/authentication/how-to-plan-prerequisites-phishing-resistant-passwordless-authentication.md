@@ -5,11 +5,11 @@ description: Detailed guidance for planning the prerequisites to deploy password
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/01/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: mepples21
-manager: amycolannino
+manager: femila
 ms.reviewer: miepping
 
 ms.collection: M365-identity-device-management
@@ -32,7 +32,7 @@ Microsoft Entra ID offers the following phishing-resistant passwordless authenti
 - Passkeys (FIDO2)
   - Windows Hello for Business
   - Platform credential for macOS (preview)
-  - Microsoft Authenticator app passkeys (preview)
+  - Microsoft Authenticator app passkeys
   - FIDO2 security keys
   - Other passkeys and providers, such as iCloud Keychain - [**_on roadmap_**](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-expanding-passkey-support-in-microsoft-entra-id/ba-p/4062702)
 - Certificate-based authentication/smart cards
@@ -84,3 +84,5 @@ End-User Communications	             | Messages changes to end users in preparat
 [Deploy a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 
 [Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-persona-phishing-resistant-passwordless-authentication.md)
+
+[Considerations for Remote Desktop Connections in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-rdp-phishing-resistant-passwordless-authentication.md)

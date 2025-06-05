@@ -1,13 +1,11 @@
 ---
 title: Microsoft Entra Verified ID-supported standards
 description: This article outlines current and upcoming standards
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: how-to
-ms.date: 10/31/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
@@ -55,7 +53,7 @@ Starting February 2024, Verified ID support NIST compliant P-256 curve.
 
 For the quick setup customers, the newly issued credentials use P-256 curve as default and any previously issued credentials continue to work until they expire. Existing authorities automatically migrate to using P-256 for any future issuances.
 
-For the advanced setup customers, Verified ID credentials issued be signed with P-256 curve by default for any new authorities. For existing authorities, there is no change to already issued or newly issued credentials.
+For the advanced setup customers, Verified ID credentials issued are signed with P-256 curve by default for any new authorities. For existing authorities, there are no changes to already issued or newly issued credentials.
 
 ## Interoperability
 

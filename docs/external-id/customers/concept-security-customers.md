@@ -1,15 +1,15 @@
 ---
 title: Security and governance
-description: Learn about security and governance in Microsoft Entra External ID. Use features like multifactor authentication (MFA), Conditional Access, and ID Protection to secure your applications and mitigate risks.
+description: Learn about security and governance in Microsoft Entra External ID. Use features like multifactor authentication (MFA), and Conditional Access to secure your applications and mitigate risks.
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 10/21/2024
-ms.author: mimart
+ms.date: 04/03/2025
 ms.custom: it-pro
 ---
 
@@ -17,10 +17,10 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-The integration of customer capabilities into Microsoft Entra ID means that your customer scenarios benefit from the advanced security and governance features available in Microsoft Entra ID. Your customers are able to self-service register for your applications using their preferred authentication methods. These methods include social accounts through identity providers like Facebook, Google, Apple, or a custom-configured OpenID Connect (OIDC) identity provider. And you can use features like multifactor authentication (MFA), Conditional Access, and Microsoft Entra ID Protection to mitigate threats and detect risks.
+The integration of customer capabilities into Microsoft Entra ID means that your customer scenarios benefit from the advanced security and governance features available in Microsoft Entra ID. Your customers are able to self-service register for your applications using their preferred authentication methods. These methods include social accounts through identity providers like Facebook, Google, Apple, or a custom-configured OpenID Connect (OIDC) identity provider. And you can use features like multifactor authentication (MFA) and Conditional Access to mitigate threats.
 
 > [!NOTE]
-> Conditional Access, MFA, and ID Protection aren't available in free trial external tenants.
+> Conditional Access and MFA aren't available in free trial external tenants.
 
 ## Conditional Access
 
@@ -44,18 +44,6 @@ Microsoft Entra MFA helps safeguard access to data and applications while mainta
 Learn more about [MFA in external tenants](concept-multifactor-authentication-customers.md) or see [how to enable multifactor authentication](how-to-multifactor-authentication-customers.md).
 
 <a name='identity-protection'></a>
-
-## ID Protection
-
-Microsoft Entra [ID Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your external tenant. It allows you to discover, investigate, and remediate identity-based risks. ID Protection allows organizations to accomplish three key tasks:
-
-- Automate the detection and remediation of identity-based risks.
-
-- Investigate risks using data in the portal.
-
-- Export risk detection data to other tools.
-
-ID Protection comes with risk reports that can be used to investigate identity risks in external tenants. For details, see [Investigate risk with ID Protection in Microsoft Entra External ID](how-to-identity-protection-customers.md).
 
 ## Analyze user authentication trends for your apps
 

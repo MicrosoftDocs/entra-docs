@@ -2,14 +2,15 @@
 title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
 author: shlipsey3
-manager: amycolannino
-
+manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/06/2024
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: almars
+ms.custom: sfi-image-nochange
+# Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
 ---
 
 # Configure your company branding
@@ -17,9 +18,6 @@ ms.reviewer: almars
 When users authenticate into your corporate intranet or web-based applications, Microsoft Entra ID provides the identity and access management (IAM) service. You can add company branding that applies to all these experiences to create a consistent sign-in experience for your users.
 
 The default sign-in experience is the global look and feel that applies across all sign-ins to your tenant. Before you customize any settings, the default Microsoft branding appears in your sign-in pages. You can customize this default experience with a custom background image or color, favicon, layout, header, and footer. You can also upload a custom CSS file.
-
-> [!NOTE]
-> Instructions for how to manage the **'Stay signed in prompt?'** can be found in the **[Manage the 'Stay signed in?' prompt](how-to-manage-stay-signed-in-prompt.yml)** article.
 
 ## Prerequisites
 
@@ -38,6 +36,12 @@ The **Organizational Branding Administrator** role is the minimum role required 
 **All branding elements are optional. Default settings will remain, if left unchanged.** For example, if you specify a banner logo but no background image, the sign-in page shows your logo with a default background image from the destination site such as Microsoft 365. Additionally, sign-in page branding doesn't carry over to personal Microsoft accounts. If your users or guests authenticate using a personal Microsoft account, the sign-in page doesn't reflect the branding of your organization.
 
 **Images have different image and file size requirements.** We recommend you review the company branding process in the Microsoft Entra admin center to gather the image requirements you need. You might need to use a photo editor to create the right size images. The preferred image type for all images is PNG, but JPG is accepted.
+
+**External URLs aren't supported in the sign-in experience.** For example, if you add an external URL for your internal help desk to the footer, that URL is displayed explicitly but isn't clickable. Users must copy the URL and navigate to it directly.
+
+**The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding.md) in the Azure AD B2C documentation.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 **Use Microsoft Graph with Microsoft Entra company branding.** Company branding can be viewed and managed using Microsoft Graph on the `/beta` endpoint and the `organizationalBranding` resource type. For more information, see the [organizational branding API documentation](/graph/api/resources/organizationalbranding?view=graph-rest-beta&preserve-view=true).
 
@@ -63,11 +67,9 @@ The branding elements are called out in the following example. Text descriptions
 
 ## How to navigate the company branding process
 
-[!INCLUDE [portal update](../includes/portal-update.md)]
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
-1. Browse to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Entra ID** > **Custom Branding**.
     - If you currently have a customized sign-in experience, the **Edit** button is available.
 
    :::image type="content" source="media/how-to-customize-branding/customize-branding-getting-started.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button." lightbox="media/how-to-customize-branding/customize-branding-getting-started.png":::
@@ -118,14 +120,17 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 - **Show 'Privacy & Cookies':** This option is selected by default and displays the [Microsoft 'Privacy & Cookies'](https://privacy.microsoft.com/privacystatement) link.
 
-    Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to privacy and cookies.
+  - Uncheck this option to hide the default Microsoft link.
+  - Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to privacy and cookies.
+  - Custom URLs are displayed as text and aren't clickable.
 
 - **Show 'Terms of Use':** This option is also selected by default and displays the [Microsoft 'Terms of Use'](https://www.microsoft.com/servicesagreement/) link.
 
-    Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to your terms of use.
+  - Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**.
+  - The text and links don't have to be related to your terms of use.
 
     > [!IMPORTANT]
-    > The default Microsoft 'Terms of Use' link is not the same as the Conditional Access Terms of Use. Seeing the terms here doesn't mean you've accepted those terms and conditions.
+    > The default Microsoft 'Terms of Use' link isn't the same as the Conditional Access Terms of Use. Seeing the terms here doesn't mean you accepted those terms and conditions.
 
    :::image type="content" source="media/how-to-customize-branding/customize-branding-footer.png" alt-text="Screenshot of customizing branding on the Footer section.":::
 
@@ -159,7 +164,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 - **Self-service password reset**:
     - Show self-service password reset (SSPR): Select the checkbox to turn on SSPR.
-    - Common URL: Enter the destination URL for where your users reset their passwords. This URL appears on the username and password collection screens.
+    - Common URL: Enter the destination URL for where your users reset their passwords. This URL appears on the username and password collection screens as text and isn't clickable.
     - Username collection display text: Replace the default text with your own custom username collection text.
     - Password collection display text: Replace the default text with your own customer password collection text.
 
@@ -169,13 +174,15 @@ All of the available options appear in one list so you can review everything you
 
 Once your default sign-in experience is created, select the **Edit** button to make any changes. You can't delete a default sign-in experience after it's created, but you can remove all custom settings.
 
+The time it takes for changes to appear in the sign-in experience vary based on the tenant's geographical location.
+
 ## Customize the sign-in experience by browser language
 
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements for that browser language. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
-1. Browse to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Entra ID** > **Custom Branding**.
 
 1. Select **Add browser language**.
 

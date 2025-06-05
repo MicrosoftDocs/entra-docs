@@ -2,13 +2,13 @@
 title: 'Use partner driven integrations to provision accounts into all your applications'
 description: Use partner driven integrations to provision accounts into all your applications.
 
-author: billmath
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.topic: overview
-ms.date: 12/16/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: kenwith
 ms.collection: M365-identity-device-management
 ---
 # Partner-driven provisioning integrations
@@ -40,10 +40,11 @@ If you've built a SCIM Gateway and would like to add it to this list, follow the
 
 1. Review the Microsoft Entra SCIM [documentation](use-scim-to-provision-users-and-groups.md) to understand the Microsoft Entra SCIM implementation.
 1. Test compatibility between the Microsoft Entra SCIM client and your SCIM gateway.
-1. Select the pencil at the top of this document to edit the article
-1. Once you're redirected to GitHub, select the pencil at the top of the article to start making changes
+1. Navigate to the following [github repository](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/includes/application-integration-partners.md).
+1. Select the pencil at the top of the article to start making changes
 1. Make changes in the article using the Markdown language and create a pull request. Make sure to provide a description for the pull request.  
 1. An admin of the repository reviews and merges your changes so that others can view them.
+
 
 ## Guidelines
 * Add any new partners in alphabetical order.

@@ -1,19 +1,17 @@
 ---
 title: Microsoft Entra Connect - Manage AD FS trust with Microsoft Entra ID using Microsoft Entra Connect
 description: Operational details of Microsoft Entra ID trust handling by Microsoft Entra Connect.
-
 ms.reviewer: anandyadavmsft
-manager: amycolannino
+manager: femila
 ms.subservice: hybrid-connect
 ms.assetid: 2593b6c6-dc3f-46ef-8e02-a8e2dc4e9fb9
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 04/09/2025
 ms.author: billmath
 author: billmath
-ms.custom:
-
+ms.custom: sfi-image-nochange
 ---
 # Manage AD FS trust with Microsoft Entra ID using Microsoft Entra Connect
 
@@ -104,7 +102,7 @@ Microsoft Entra Connect version 1.1.873.0 or later makes a backup of the Microso
 
 ![A screenshot of example back up of Microsoft Entra ID trust](./media/how-to-connect-azure-ad-trust/backup.png)
 
-You can restore the issuance transform rules using the suggested steps below
+You can restore the issuance transform rules using the suggested steps that follow:
 
 1. Open the AD FS management UI in Server Manager
 2. Open the Microsoft Entra ID trust properties by going **AD FS &gt; Relying Party Trusts &gt; Microsoft Office 365 Identity Platform &gt; Edit Claims Issuance Policy**
@@ -121,7 +119,7 @@ You can restore the issuance transform rules using the suggested steps below
 ## Best practice for securing and monitoring the AD FS trust with Microsoft Entra ID
 When you federate your AD FS with Microsoft Entra ID, it's critical that the federation configuration (trust relationship configured between AD FS and Microsoft Entra ID) is monitored closely, and any unusual or suspicious activity is captured. To do so, we recommend setting up alerts and getting notified whenever any changes are made to the federation configuration. To learn how to setup alerts, see [Monitor changes to federation configuration](how-to-connect-monitor-federation-changes.md). 
 
-If you're using cloud Microsoft Entra multifactor authentication, for multifactor authentication, with federated users, we highly recommend enabling additional security protection. This security protection prevents bypassing of cloud Microsoft Entra multifactor authentication when federated with Microsoft Entra ID. When enabled for a federated domain in your Microsoft Entra tenant, it ensures that a bad actor cannot bypass Azure MFA. This is achieved by preventing the bad actor from imitating that a multi-factor authentication has already been performed by the identity provider. The protection can be enabled via new security setting, `federatedIdpMfaBehavior`.For more information, see [Best practices for securing Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#enable-protection-to-prevent-by-passing-of-cloud-azure-mfa-when-federated-with-azure-ad)
+If you're using cloud Microsoft Entra multifactor authentication, for multifactor authentication, with federated users, we highly recommend enabling additional security protection. This security protection prevents bypassing of cloud Microsoft Entra multifactor authentication when federated with Microsoft Entra ID. When enabled for a federated domain in your Microsoft Entra tenant, it ensures that a bad actor can't bypass Microsoft Entra multifactor authentication. This is achieved by preventing the bad actor from imitating that a multifactor authentication has already been performed by the identity provider. The protection can be enabled via new security setting, `federatedIdpMfaBehavior`.For more information, see [Best practices for securing Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#enable-protection-to-prevent-by-passing-of-cloud-azure-mfa-when-federated-with-azure-ad)
 
 ## Next steps
 * [Manage and customize Active Directory Federation Services using Microsoft Entra Connect](how-to-connect-fed-management.md)

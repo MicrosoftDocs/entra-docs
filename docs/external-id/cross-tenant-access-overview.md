@@ -1,17 +1,14 @@
 ---
 title: Cross-tenant access overview
-description: Get an overview of cross-tenant access in Microsoft Entra External ID. Learn how to manage your B2B collaboration with other Microsoft Entra organizations through this overview of cross-tenant access settings.
- 
+description: Learn how to manage cross-tenant access in Microsoft Entra External ID. Configure B2B collaboration and direct connect settings to control access and trust for external organizations.
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 08/20/2024
-
+ms.date: 03/28/2025
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
-
+ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing cross-tenant access settings, I want to configure B2B collaboration and B2B direct connect with external organizations, so that I can control inbound and outbound access and manage trust settings for multifactor authentication and device claims.
 ---
 
@@ -24,14 +21,14 @@ Microsoft Entra organizations can use External ID cross-tenant access settings t
 This article covers cross-tenant access settings for managing B2B collaboration and B2B direct connect with external Microsoft Entra organizations, including across Microsoft clouds. Other settings are available for B2B collaboration with non-Microsoft Entra identities (for example, social identities or non-IT managed external accounts). These [external collaboration settings](external-collaboration-settings-configure.md) include options for restricting guest user access, specifying who can invite guests, and allowing or blocking domains.
 
 There are no limits to the number of organizations you can add in cross-tenant access settings.
- 
+
 ## Manage external access with inbound and outbound settings
 
 The external identities cross-tenant access settings manage how you collaborate with other Microsoft Entra organizations. These settings determine both the level of inbound access users in external Microsoft Entra organizations have to your resources, and the level of outbound access your users have to external organizations. 
 
 The following diagram shows the cross-tenant access inbound and outbound settings. The **Resource Microsoft Entra tenant** is the tenant containing the resources to be shared. For B2B collaboration, the resource tenant is the inviting tenant (for example, your corporate tenant, where you want to invite the external users). The **User's home Microsoft Entra tenant** is the tenant where the external users are managed.
 
-:::image type="content" source="media/cross-tenant-access-overview/cross-tenant-access-settings-overview.png" alt-text="Overview diagram of cross-tenant access settings.":::
+:::image type="content" source="media/cross-tenant-access-overview/cross-tenant-access-settings-overview.png" alt-text="Screenshot of a diagram showing cross-tenant access settings for inbound and outbound collaboration.":::
 
 By default, B2B collaboration with other Microsoft Entra organizations is enabled, and B2B direct connect is blocked. But the following comprehensive admin settings let you manage both of these features.
 
@@ -98,7 +95,7 @@ When using this feature, consider the following known limitations:
 
 ### Direct federation for Microsoft Entra ID verified domains
 
-SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in Microsoft Entra.
+SAML/WS-Fed identity provider federation (Direct federation) is now supported for Microsoft Entra ID verified domains. This feature allows you to set up a Direct federation with an external identity provider for a domain that is verified in another Microsoft Entra tenant
 
 > [!NOTE]
 > Ensure that the domain is not verified in the same tenant in which you are trying to set up the Direct federation configuration.
@@ -176,6 +173,8 @@ For more information, see the [Configure Microsoft cloud settings for B2B collab
 - If you want to allow B2B direct connect with an external organization and your Conditional Access policies require MFA, you must configure your trust settings to accept MFA claims from the external organization.
 
 - If you block access to all apps by default, users are unable to read emails encrypted with Microsoft Rights Management Service, also known as Office 365 Message Encryption (OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If you allow only this application, access to all other apps is blocked by default.
+
+- If an external organization requires MFA or Terms of Use (ToU) by Conditional Access policies, users might be blocked from registering MFA methods or consenting to ToU. To avoid this issue, configure outbound settings to let users access app ID 0000000c-0000-0000-c000-000000000000 (Microsoft App Access Panel) for MFA registration and app ID d52792f4-ba38-424d-8140-ada5b883f293 (AAD Terms of Use) for ToU.
 
 ## Custom roles for managing cross-tenant access settings
 <!--Added content as a reference. -->

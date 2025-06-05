@@ -5,10 +5,10 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 10/04/2024
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: inbarc
 ---
 
@@ -108,21 +108,23 @@ Under each sign-in log, go to the **Authentication Details** tab and explore **S
 
 To configure or review the **Show option to remain signed in** option:
 
-1. [!INCLUDE [Privileged role](../../includes/privileged-role-include.md)]
-1. Browse to **Identity** > **Company Branding**. Then, for each locale, select **Show option to remain signed in**.
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Browse to **Entra ID** > **Custom Branding**. Then, for each locale, select **Show option to remain signed in**.
 1. Select **Yes**, and then select **Save**.
 
 To remember multifactor authentication settings on trusted devices:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Multifactor authentication**.
+1. Browse to **Entra ID** > **Multifactor authentication**.
 1. Under **Configure**, select **Additional cloud-based MFA settings**.
 1. On the **Multifactor authentication service settings** pane, scroll to **Remember multifactor authentication settings** and select the checkbox.
 
 To configure Conditional Access policies for sign-in frequency and persistent browser sessions:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Configure a policy by using the options for session management that this article recommends.
 
 To review token lifetimes, [use Microsoft Graph PowerShell to query any Microsoft Entra policies](~/identity-platform/configure-token-lifetimes.yml). Disable any policies that you have in place.

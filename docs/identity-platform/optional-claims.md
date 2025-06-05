@@ -1,11 +1,11 @@
 ---
 title: Configure optional claims
-description: Learn how to configure optional claims in tokens issued by Microsoft identity platform.
+description: Learn how to configure optional claims and attributes in access tokens issued by Microsoft identity platform; optional claims can add useful user information for your app.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/10/2024
+ms.date: 01/27/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -13,7 +13,7 @@ ms.topic: how-to
 #Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
 ---
 
-# Configure optional claims
+# Configure and manage optional claims in ID tokens, access tokens, and SAML tokens
 
 Tokens that Microsoft Entra returns are kept smaller to ensure optimal performance by clients that request them. As a result, several claims are no longer present in the token by default and must be asked for specifically on a per-application basis.
 
@@ -27,7 +27,7 @@ You can configure optional claims for your application through the Microsoft Ent
 ## Configure optional claims in your application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Choose the application for which you want to configure optional claims based on your scenario and desired outcome.
 
 # [Proceed with app UI](#tab/appui)
@@ -112,7 +112,6 @@ Within the JWT, these claims are emitted with the following name format:  `extn.
 
 ## Configure groups optional claims
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This section covers the configuration options under optional claims for changing the group attributes used in group claims from the default group objectID to attributes synced from on-premises Windows Active Directory. You can configure groups optional claims for your application through the Azure portal or application manifest. Group optional claims are only emitted in the JWT for user principals. Service principals aren't included in group optional claims emitted in the JWT.
 

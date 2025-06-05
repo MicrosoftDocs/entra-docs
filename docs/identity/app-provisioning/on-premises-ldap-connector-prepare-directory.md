@@ -2,13 +2,13 @@
 title: Preparing for Microsoft Entra provisioning to Active Directory Lightweight Directory Services
 description: This document describes how to configure Microsoft Entra ID to provision users into Active Directory Lightweight Directory Services as an example of an LDAP directory.
 
-author: billmath
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 12/13/2024
-ms.author: billmath
+ms.date: 04/09/2025
+ms.author: kenwith
 ms.reviewer: arvinh
 ---
 
@@ -78,13 +78,9 @@ Now that we have configured the certificate and granted the network service acco
     - Port: 636
     - Place a check in the SSL box
     [![Screenshot that shows the Ldp tool connection configuration.](~/includes/media/app-provisioning-ldap/ldp-2.png)](~/includes/media/app-provisioning-ldap/ldp-2.png#lightbox)
- 5. You should see a response similar to the following screenshot.
- [![Screenshot that shows the Ldp tool connection configuration success.](~/includes/media/app-provisioning-ldap/ldp-3.png)](~/includes/media/app-provisioning-ldap/ldp-3.png#lightbox)</br>
- 6. At the top, under **Connection** select **Bind**.
- 7. Leave the defaults and select **OK**.
- [![Screenshot that shows the Ldp tool bind operation.](~/includes/media/app-provisioning-ldap/ldp-4.png)](~/includes/media/app-provisioning-ldap/ldp-4.png#lightbox)</br>
- 8. You should now successfully bind to the instance.
- [![Screenshot that shows the Ldp tool bind success.](~/includes/media/app-provisioning-ldap/ldp-5.png)](~/includes/media/app-provisioning-ldap/ldp-5.png#lightbox)</br>
+ 5. At the top, under **Connection** select **Bind**.
+ 6. Leave the defaults and select **OK**.
+ 7. You should now successfully bind to the instance.
 
 ### Disable the local password policy
 Currently, the LDAP connector provisions users with a blank password. This provisioning won't satisfy the local password policy on our server so we're going to disable it for testing purposes. To disable password complexity, on a non-domain-joined server, use the following steps.
@@ -216,7 +212,7 @@ Write-Output "Enabling service account"
 
 # Add the service account to the Administrators role
 Get-ADGroup -Server "APP3:389" -SearchBase "CN=Administrators,CN=Roles,CN=App,DC=contoso,DC=lab" -Filter "name -like 'Administrators'" | Add-ADGroupMember -Members "CN=svcAccountLDAP,CN=ServiceAccounts,CN=App,DC=contoso,DC=lab"
-Write-Output "Adding service accounnt to Administrators role"
+Write-Output "Adding service account to Administrators role"
 
 
  ```

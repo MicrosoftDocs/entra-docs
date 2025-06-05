@@ -2,14 +2,14 @@
 title: Self-service sign up for email-verified users
 description: Use self-service sign-up in a Microsoft Entra organization
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: overview
 ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: elkuzmen
-
+ms.custom: sfi-ga-nochange
 ---
 # What is self-service sign-up for Microsoft Entra ID?
 

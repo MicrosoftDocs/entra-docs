@@ -1,14 +1,12 @@
 ---
 title: Tokens and claims overview
-description: Learn about the basics of security tokens in the Microsoft identity platform.
+description: Learn how Microsoft Entra tenants publish metadata for authentication and authorization endpoints, scopes, and claims.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: curation-claims
-ms.date: 03/20/2024
-ms.reviewer: jmprieur, saeeda, ludwignick
+ms.date: 03/21/2025
+ms.reviewer: jmprieur, ludwignick
 ms.service: identity-platform
-
 ms.topic: concept-article
 #Customer intent: As an application developer, I want to understand the basic concepts of security tokens in the Microsoft identity platform.
 ---
@@ -58,11 +56,11 @@ A claim consists of key-value pairs that provide the following types of informat
 
 ## Token endpoints and issuers
 
-Microsoft Entra ID supports two tenant configurations: A workforce configuration that’s intended for internal use and manages employees and business guests, and a [customer configuration](/entra/external-id/customers/concept-supported-features-customers) which is optimized for isolating consumers and partners in a restricted external-facing directory. While the underlying identity service is identical for both tenant configurations, the login domains and token issuing authority for external tenants is different. This allows applications to keep workforce and external ID workflows separated if needed.
+Microsoft Entra ID supports two tenant configurations: A workforce configuration that’s intended for internal use and manages employees and business guests, and a [customer configuration](/entra/external-id/customers/concept-supported-features-customers) which is optimized for isolating consumers and partners in a restricted external-facing directory. While the underlying identity service is identical for both tenant configurations, the sign in domains and token issuing authority for external tenants is different. This allows applications to keep workforce and external ID workflows separated if needed.
 
-Microsoft Entra workforce tenants authenticate at login.microsoftonline.com with tokens issued by *sts.windows.net*. Workforce tenant tokens are generally interchangeable across tenants and multi-tenant applications so long as underlying trust relationships permit this interoperability. Microsoft Entra external tenants use tenanted endpoints of the form *{tenantname}.ciamlogin.com*. Applications registered to external tenants must be aware of this separation to receive and validate tokens correctly.
+Microsoft Entra workforce tenants authenticate at login.microsoftonline.com with tokens issued by *sts.windows.net*. Workforce tenant tokens are interchangeable across tenants and multitenant applications so long as underlying trust relationships permit this interoperability. Microsoft Entra external tenants use endpoints of the form `{tenantname}.ciamlogin.com`. Applications registered to external tenants must be aware of this separation to receive and validate tokens correctly.
 
-Every Microsoft Entra tenant publishes a standards-compliant well-known metadata. This document contains information about the issuer name, the authentication and authorization endpoints, supported scopes and claims. For external tenants, the document is publicly available at: *https://{tenantname}.ciamlogin.com/{tenantid}/v2.0/.well-known/openid-configuration*. This endpoint returns an issuer value *https://{tenantid}.ciamlogin.com/{tenantid}/v2.0*.
+Every Microsoft Entra tenant publishes a standards-compliant well-known metadata. This document contains information about the issuer name, the authentication and authorization endpoints, supported scopes and claims. For external tenants, the document is publicly available at: `https://{tenantname}.ciamlogin.com/{tenantid}/v2.0/.well-known/openid-configuration`. This endpoint returns an issuer value `https://{tenantid}.ciamlogin.com/{tenantid}/v2.0`.
 
 ## Authorization flows and authentication codes
 
@@ -77,11 +75,8 @@ Depending on how your client is built, it can use one or several of the authenti
 | [On-behalf-of flow](v2-oauth2-on-behalf-of-flow.md) | Access token | x | x| x | |
 | [Client credentials](v2-oauth2-client-creds-grant-flow.md) | | | x (App only) | | |
 
-## See also
-
-* [OAuth 2.0](./v2-protocols.md)
-* [OpenID Connect](v2-protocols-oidc.md)
-
-## Next steps
+## Related content
 
 * To learn about the basic concepts of authentication and authorization, see [Authentication vs. authorization](authentication-vs-authorization.md).
+* [OAuth 2.0](./v2-protocols.md)
+* [OpenID Connect](v2-protocols-oidc.md)

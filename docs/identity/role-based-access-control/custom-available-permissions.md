@@ -1,17 +1,15 @@
 ---
 title: Custom role permissions for app registration
 description: Delegate custom administrator role permissions for managing app registrations.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 11/04/2020
-ms.author: rolyon
+ms.date: 03/30/2025
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Application registration permissions for custom roles in Microsoft Entra ID
@@ -48,7 +46,7 @@ If both permissions are assigned, the /create permission takes precedence. Thoug
 
 Create permissions grant access to the **New registration** command.
 
-![These permissions grant access to the New Registration portal command](./media/custom-available-permissions/new-custom-role.png)
+:::image type="content" source="./media/custom-available-permissions/new-custom-role.png" alt-text="Screenshot of permissions to grant access to the New Registration portal command." lightbox="./media/custom-available-permissions/new-custom-role.png":::
 
 There are two permissions available for granting the ability to delete app registrations:
 
@@ -60,7 +58,7 @@ Grants the ability to delete app registrations regardless of subtype including b
 
 Grants the ability to delete app registrations restricted to those that are accessible only to accounts in your organization or single-tenant applications (myOrganization subtype).
 
-![These permissions grant access to the Delete app registration command](./media/custom-available-permissions/delete-app-registration.png)
+:::image type="content" source="./media/custom-available-permissions/delete-app-registration.png" alt-text="Screenshot of permissions to grant access to the Delete app registration command." lightbox="./media/custom-available-permissions/delete-app-registration.png":::
 
 > [!NOTE]
 > When assigning a role that contains create permissions, the role assignment must be made at the directory scope. A create permission assigned at a resource scope doesn't grant the ability to create app registrations.
@@ -81,7 +79,7 @@ Grants the same permissions as microsoft.directory/applications/allProperties/re
 
 Grants the ability to read owners property on single-tenant and multitenant applications. Grants access to all fields on the application registration owners page:
 
-![This permissions grants access to the app registration owners page](./media/custom-available-permissions/app-registration-owners.png)
+:::image type="content" source="./media/custom-available-permissions/app-registration-owners.png" alt-text="Screenshot of permissions to grant access to the app registration owners page." lightbox="./media/custom-available-permissions/app-registration-owners.png":::
 
 #### microsoft.directory/applications/standard/read
 
@@ -107,7 +105,7 @@ Grants the same permissions as microsoft.directory/applications/allProperties/up
 
 Allows the ability to update the supported account type (signInAudience) property on single-tenant and multitenant applications.
 
-![This permission grants access to app registration supported account type property on authentication page](./media/custom-available-permissions/supported-account-types.png)
+:::image type="content" source="./media/custom-available-permissions/supported-account-types.png" alt-text="Screenshot of permission to grant access to app registration supported account type property on authentication page." lightbox="./media/custom-available-permissions/supported-account-types.png":::
 
 #### microsoft.directory/applications.myOrganization/audience/update
 
@@ -117,7 +115,7 @@ Grants the same permissions as microsoft.directory/applications/audience/update,
 
 Allows the ability to update the reply URL, sign-out URL, implicit flow, and publisher domain properties on single-tenant and multitenant applications. Grants access to all fields on the application registration authentication page except supported account types:
 
-![Grants access to app registration authentication but not supported account types](./media/custom-available-permissions/supported-account-types.png)
+:::image type="content" source="./media/custom-available-permissions/supported-account-types.png" alt-text="Screenshot of permissions to grant access to app registration authentication, but not supported account types." lightbox="./media/custom-available-permissions/supported-account-types.png":::
 
 #### microsoft.directory/applications.myOrganization/authentication/update
 
@@ -127,7 +125,7 @@ Grants the same permissions as microsoft.directory/applications/authentication/u
 
 Allows the ability to update the name, logo, homepage URL, terms of service URL, and privacy statement URL properties on single-tenant and multitenant applications. Grants access to all fields on the application registration branding page:
 
-![This permission grants access to the app registration branding page](./media/custom-available-permissions/app-registration-branding.png)
+:::image type="content" source="./media/custom-available-permissions/app-registration-branding.png" alt-text="Screenshot of permission to grant access to the app registration branding page." lightbox="./media/custom-available-permissions/app-registration-branding.png":::
 
 #### microsoft.directory/applications.myOrganization/basic/update
 
@@ -137,7 +135,7 @@ Grants the same permissions as microsoft.directory/applications/basic/update, bu
 
 Allows the ability to update the certificates and client secrets properties on single-tenant and multitenant applications. Grants access to all fields on the application registration certificates & secrets page:
 
-![This permission grants access to the app registration certificates & secrets page](./media/custom-available-permissions/app-registration-secrets.png)
+:::image type="content" source="./media/custom-available-permissions/app-registration-secrets.png" alt-text="Screenshot of permission to grant access to the app registration certificates & secrets page." lightbox="./media/custom-available-permissions/app-registration-secrets.png":::
 
 #### microsoft.directory/applications.myOrganization/credentials/update
 
@@ -147,7 +145,7 @@ Grants the same permissions as microsoft.directory/applications/credentials/upda
 
 Allows the ability to update the owner property on single-tenant and multitenant. Grants access to all fields on the application registration owners page:
 
-![This permissions grants access to the app registration owners page](./media/custom-available-permissions/app-registration-owners.png)
+:::image type="content" source="./media/custom-available-permissions/app-registration-owners.png" alt-text="Screenshot of permissions to grant access to the app registration owners page." lightbox="./media/custom-available-permissions/app-registration-owners.png":::
 
 #### microsoft.directory/applications.myOrganization/owners/update
 
@@ -157,9 +155,9 @@ Grants the same permissions as microsoft.directory/applications/owners/update, b
 
 This permission allows updates to various properties on single-tenant and multitenant applications, including delegated permissions, application permissions, authorized client applications, required permissions, and consent properties. It doesn't grant the ability to perform consent. Grants access to all fields on the application registration API permissions and Expose an API pages:
 
-![This permissions grants access to the app registration API permissions page](./media/custom-available-permissions/app-registration-api-permissions.png)
+:::image type="content" source="./media/custom-available-permissions/app-registration-api-permissions.png" alt-text="Screenshot of permissions to grant access to the app registration API permissions page." lightbox="./media/custom-available-permissions/app-registration-api-permissions.png":::
 
-![This permissions grants access to the app registration Expose an API page](./media/custom-available-permissions/app-registration-expose-api.png)
+:::image type="content" source="./media/custom-available-permissions/app-registration-expose-api.png" alt-text="Screenshot of permissions to grant access to the app registration Expose an API page." lightbox="./media/custom-available-permissions/app-registration-expose-api.png":::
 
 #### microsoft.directory/applications.myOrganization/permissions/update
 
@@ -167,5 +165,5 @@ Grants the same permissions as microsoft.directory/applications/permissions/upda
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
 - [List role assignments](view-assignments.md)

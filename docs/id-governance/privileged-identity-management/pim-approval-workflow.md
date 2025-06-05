@@ -1,16 +1,14 @@
 ---
 title: Approve or deny requests for Microsoft Entra roles in PIM
 description: Learn how to approve or deny requests for Microsoft Entra roles in Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
-ms.custom: pim
-
+ms.custom: pim, sfi-ga-nochange
 ---
 
 # Approve or deny requests for Microsoft Entra roles in Privileged Identity Management
@@ -21,13 +19,12 @@ Privileged Identity Management (PIM) in Microsoft Entra ID allows you to configu
 
 ## View pending requests
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As a delegated approver, you receive an email notification when a Microsoft Entra role request is pending your approval. You can view these pending requests in Privileged Identity Management.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Approve requests**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Approve requests**.
 
     :::image type="content" source="./media/azure-ad-pim-approval-workflow/resources-approve-pane.png" alt-text="Screenshot showing the **Approve requests** page showing request to review Microsoft Entra roles.":::
 
@@ -92,7 +89,7 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
 ## Approve requests
 
 >[!NOTE]
->Approvers are not able to approve their own role activation requests.
+>Approvers aren't able to approve their own role activation requests. Additionally, service principals aren't allowed to approve requests.
 
  1. Find and select the request that you want to approve. An approve or deny page appears.
  2. In the **Justification** box, enter the business justification.
@@ -168,7 +165,7 @@ Here's some information about workflow notifications:
 - Global Administrators and Privileged Role Administrators are notified when an approved user becomes active in their role.
 
 >[!NOTE]
->A Global Administrator or Privileged Role Admin who believes that an approved user should not be active can remove the active role assignment in Privileged Identity Management. Although administrators are not notified of pending requests unless they are an approver, they can view and cancel any pending requests for all users by viewing pending requests in Privileged Identity Management.
+>A Global Administrator or Privileged Role Admin who believes that an approved user shouldn't be active can remove the active role assignment in Privileged Identity Management. Although administrators aren't notified of pending requests unless they are an approver, they can view and cancel any pending requests for all users by viewing pending requests in Privileged Identity Management.
 
 ## Next steps
 

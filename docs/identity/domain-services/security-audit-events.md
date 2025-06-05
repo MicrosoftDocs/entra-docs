@@ -2,19 +2,19 @@
 title: Enable security and DNS audits for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to enable security audits to centralize the logging of events for analysis and alerts in Microsoft Entra Domain Services
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.assetid: 662362c3-1a5e-4e94-ae09-8e4254443697
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 02/19/2025
 ms.author: justinha
 ms.custom: devx-track-azurepowershell
 ---
 # Enable security and DNS audits for Microsoft Entra Domain Services
 
-Microsoft Entra Domain Services security and DNS audits let Azure stream events to targeted resources. These resources include Azure Storage, Azure Log Analytics workspaces, or Azure Event Hub. After you enable security audit events, Domain Services sends all the audited events for the selected category to the targeted resource.
+Microsoft Entra Domain Services security and DNS audits let Azure stream events to targeted resources. These resources include Azure Storage, Azure Log Analytics workspaces, or Azure Event Hubs. After you enable security audit events, Domain Services sends all the audited events for the selected category to the targeted resource.
 
 You can archive events into Azure storage and stream events into security information and event management (SIEM) software (or equivalent) using Azure Event Hubs, or do your own analysis and using Azure Log Analytics workspaces from the Microsoft Entra admin center.
 
@@ -40,7 +40,7 @@ To enable Domain Services security audit events using the Microsoft Entra admin 
 > [!IMPORTANT]
 > Domain Services security audits aren't retroactive. You can't retrieve or replay events from the past. Domain Services can only send events that occur after security audits are enabled.
 
-1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)] 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Search for and select **Microsoft Entra Domain Services**. Choose your managed domain, such as *aaddscontoso.com*.
 1. In the Domain Services window, select **Diagnostic settings** on the left-hand side.
 1. No diagnostics are configured by default. To get started, select **Add diagnostic setting**.

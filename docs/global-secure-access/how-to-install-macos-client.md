@@ -1,21 +1,20 @@
 ---
-title: The Global Secure Access client for macOS
+title: The Global Secure Access Client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: macOS users, I want to download and install the Global Secure Access client.
 ---
 # Global Secure Access client for macOS (Preview)
 > [!IMPORTANT]
 > The Global Secure Access client for macOS is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
 
@@ -45,23 +44,32 @@ Use the following command for silent installation.
 
 `sudo installer -pkg ~/Downloads/GlobalSecureAccessClient.pkg -target / -verboseR`
 
-The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automatically approve the components.
+The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automatically approve the components with mobile device management.
 
 ### Allow system extensions through mobile device management (MDM)
 The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
-1. Create a profile for the macOS platform based on a template of type **Extensions**. Select **Create**.
-:::image type="content" source="media/how-to-install-macos-client/macos-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and the Extensions template highlighted.":::
+1. Create a profile with a **Platform** of **macOS** and a **Profile type** set to **Settings catalog**. Select **Create**.
+:::image type="content" source="media/how-to-install-macos-client/macos-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the macOS Platform and Settings catalog Profile type highlighted.":::
 1. On the **Basics** tab, enter a name for the new profile and select **Next**.
-1. On the **Configuration settings** tab, enter the **Bundle identifier** and the **Team identifier** of the two extensions according to the following table. Select **Next**.   
- 
-|Bundle identifier  |Team identifier  |
-|---------|---------|
-|com.microsoft.naas.globalsecure.tunnel-df     |UBF8T346G9         |
-|com.microsoft.naas.globalsecure-df     |UBF8T346G9         |
+1. On the **Configuration settings** tab, select **+ Add settings**.
+1. In the **Settings picker**, expand the **System Configuration** category and select **System Extensions**.
+1. From the **System Extensions** subcategory, select **Allowed System Extensions**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-settings-picker.png" alt-text="Screenshot of the Settings picker with the category and subcategory selections highlighted.":::
+1. Close the **Settings picker**.
+1. In the list of **Allowed System Extensions**, select **+ Edit instance**.
+1. In the **Configure instance** dialog, configure the System Extensions payload settings with the following entries:
 
-5. Complete the creation of the profile by assigning users and devices according to your needs.
+|Bundle identifier   |Team identifier   |
+|---------|---------|
+|com.microsoft.naas.globalsecure.tunnel-df   |UBF8T346G9   |
+|com.microsoft.naas.globalsecure-df   |UBF8T346G9   |
+
+10. Select **Save** and **Next**.   
+1. On the **Scope tags** tab, add tags as appropriate.
+1. On the **Assignments** tab, assign the profile to a group of macOS devices or users.
+1. On the **Review + create** tab, review the configuration and select **Create**.
 
 ### Allow transparent application proxy through MDM
 The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
@@ -69,8 +77,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile for the macOS platform based on a template of type **Custom** and select **Create**.
 :::image type="content" source="media/how-to-install-macos-client/macos-client-create-profile-custom.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and Custom template highlighted.":::
-1. On the **Basics** tab, enter a **Name** for the profile.
-image.png
+1. On the **Basics** tab, enter a **Name** for the profile.   
 1. On the **Configuration settings** tab, enter a **Custom configuration profile name**.
 1. Keep **Deployment channel** set to "Device channel."
 1. Upload an .xml file that contains the following data:
@@ -79,46 +86,70 @@ image.png
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-    <key>PayloadDescription</key>
-    <string>Ttransparent proxy settings</string>
-    <key>PayloadDisplayName</key>
-    <string>Global Secure Access Client - AppProxy</string>
-    <key>PayloadIdentifier</key>
-    <string>com.microsoft.naas.globalsecure-df.</string>
-    <key>PayloadType</key>
-    <string>Configuration</string>
-    <key>PayloadUUID</key>
-    <string>68C6A9A4-ECF8-4FB7-BA00-291610F998D6</string>
-    <key>PayloadVersion</key>
-    <real>1</real>
-    <key>TransparentProxy</key>
-    <dict>
-        <key>AuthName</key>
-        <string>NA</string>
-        <key>AuthPassword</key>
-        <string>NA</string>
-        <key>AuthenticationMethod</key>
-        <string>Password</string>
-        <key>ProviderBundleIdentifier</key>
-        <string>com.microsoft.naas.globalsecure.tunnel-df</string>
-        <key>RemoteAddress</key>
-        <string>100.64.0.0</string>
-        <key>ProviderDesignatedRequirement</key>
-        <string>identifier &quot;com.microsoft.naas.globalsecure.tunnel-df&quot; and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
-        <key>Order</key>
-        <string>1</string>
-    </dict>
-    <key>UserDefinedName</key>
-    <string>Global Secure Access Client - AppProxy</string>
-    <key>VPNSubType</key>
-    <string>com.microsoft.naas.globalsecure.tunnel-df</string>
-    <key>VPNType</key>
-    <string>TransparentProxy</string>
-</dict>
+	<dict>
+		<key>PayloadUUID</key>
+		<string>87cbb424-6af7-4748-9d43-f1c5dda7a0a6</string>
+		<key>PayloadType</key>
+		<string>Configuration</string>
+		<key>PayloadOrganization</key>
+		<string>Microsoft Corporation</string>
+		<key>PayloadIdentifier</key>
+		<string>com.microsoft.naas.globalsecure-df</string>
+		<key>PayloadDisplayName</key>
+		<string>Global Secure Access Proxy Configuration</string>
+		<key>PayloadDescription</key>
+		<string>Add Global Secure Access Proxy Configuration</string>
+		<key>PayloadVersion</key>
+		<integer>1</integer>
+		<key>PayloadEnabled</key>
+		<true/>
+		<key>PayloadRemovalDisallowed</key>
+		<true/>
+		<key>PayloadScope</key>
+		<string>System</string>
+		<key>PayloadContent</key>
+		<array>
+			<dict>
+				<key>PayloadUUID</key>
+				<string>04e13063-2bb8-4b72-b1ed-45290f91af68</string>
+				<key>PayloadType</key>
+				<string>com.apple.vpn.managed</string>
+				<key>PayloadOrganization</key>
+				<string>Microsoft Corporation</string>
+				<key>PayloadIdentifier</key>
+				<string>com.microsoft.naas.globalsecure-df</string>
+				<key>PayloadDisplayName</key>
+				<string>Global Secure Access Proxy Configuration</string>
+				<key>PayloadDescription</key>
+				<string/>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+				<key>TransparentProxy</key>
+				<dict>
+					<key>AuthenticationMethod</key>
+					<string>Password</string>
+					<key>Order</key>
+					<integer>1</integer>
+					<key>ProviderBundleIdentifier</key>
+					<string>com.microsoft.naas.globalsecure.tunnel-df</string>
+					<key>ProviderDesignatedRequirement</key>
+					<string>identifier "com.microsoft.naas.globalsecure.tunnel-df" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
+					<key>ProviderType</key>
+					<string>app-proxy</string>
+					<key>RemoteAddress</key>
+					<string>100.64.0.0</string>
+				</dict>
+				<key>UserDefinedName</key>
+				<string>Global Secure Access Proxy Configuration</string>
+				<key>VPNSubType</key>
+				<string>com.microsoft.naas.globalsecure-df</string>
+				<key>VPNType</key>
+				<string>TransparentProxy</string>
+			</dict>
+		</array>
+	</dict>
 </plist>
 ```
-:::image type="content" source="media/how-to-install-macos-client/macos-client-custom-configuration-settings.png" alt-text="Screenshot of the Configuration settings tab showing a portion of the .xml data.":::
 
 7. Complete the creation of the profile by assigning users and devices according to your needs.
 
@@ -219,35 +250,8 @@ The settings window contains two tabs:
 :::image type="content" source="media/how-to-install-macos-client/macos-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Troubleshooting tab selected.":::	
 
 ## Known limitations
-Known limitations for the current version of the Global Secure Access client include:
 
-### Secure Domain Name System (DNS)
-If Secure DNS is enabled on the browser or in macOS and the DNS server supports Secure DNS, then the client doesn't tunnel traffic set to be acquired by FQDN. (Network traffic that's acquired by IP isn't affected and is tunneled according to the forwarding profile.) To mitigate the Secure DNS issue, disable Secure DNS, set a DNS server that doesn't support Secure DNS, or create rules based on IP.
-
-### IPv6 not supported
-The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and therefore routed directly to the network.
-To make sure that all traffic is routed to Global Secure Access, disable IPv6.
-
-### Connection fallback
-If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
-
-### Geolocation of source IP address
-For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This scenario might affect services that rely on geolocation.
-> [!TIP]
-> For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
-
-### Virtualization support with UTM
-- When the network is in **bridged** mode and Global Secure Access client is installed on the host machine:
-    - If the Global Secure Access client is installed on the virtual machine, network traffic of the virtual machine is subject to its local policy. The host machine's policy doesn't affect the forwarding profile on the virtual machine.
-    - If the Global Secure Access client *isn't* installed on the virtual machine, network traffic of the virtual machine is bypassed.
-- The Global Secure Access client doesn't support network **shared** mode because it might block the network traffic of the virtual machine.
-- If the network is in **shared** mode, you can install the Global Secure Access client on a virtual machine running macOS, as long as the client isn't also installed on the host machine.
-
-### QUIC not supported for Internet Access
-Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
-> [!TIP]
-> QUIC is currently supported in Private Access and Microsoft 365 workloads.
-Administrators can disable QUIC protocol on browsers, triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Related content
 - [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md)

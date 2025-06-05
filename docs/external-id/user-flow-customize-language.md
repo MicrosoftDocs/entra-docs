@@ -2,13 +2,13 @@
 title: Language customization in Microsoft Entra user flows
 description: Learn about customizing the language experience in your user flows in Microsoft Entra External ID.
  
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/15/2024
-ms.author: mimart
 
 ms.collection: M365-identity-device-management
 ms.custom:  
@@ -30,12 +30,11 @@ By default, language customization is enabled for users signing up to ensure a c
 
 ## Customize your strings 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Language customization enables you to customize any string in your user flow.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External ID User Flow Administrator](~/identity/role-based-access-control/permissions-reference.md#external-id-user-flow-administrator).
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow that you want to enable for translations.
 1. Select **Languages**.
 1. On the **Languages** page for the user flow, select the language that you want to customize.

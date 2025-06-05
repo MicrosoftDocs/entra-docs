@@ -6,10 +6,9 @@ ms.topic: how-to
 ms.date: 12/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.
 ---
 # Application discovery (Preview) for Global Secure Access
@@ -19,7 +18,7 @@ ms.reviewer: lirazbarak
 
 Application discovery enables administrators to gain comprehensive visibility into application usage within their corporate network. By identifying which applications are accessed and by whom, administrators can create private applications with precise segmentation and least privilege access, which minimizes unnecessary access. 
 
-With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a conditional access policy and set user assignments per application.  
+With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a Conditional Access policy and set user assignments per application.  
 
 This article walks through the process of using Application discovery to detect which applications users access (through Quick Access) and creating separate private applications.
 
@@ -74,7 +73,7 @@ Use Application discovery to create new Microsoft Entra ID applications based on
         1. Select the application you created. 
         1. Modify the user and group assignments as needed. 
 > [!IMPORTANT]
-> To avoid service disruption, new applications you create through application discovery inherit the assigned users and groups from Quick Access (at the time of creation).
+> Global Secure Access prioritizes traffic for individually defined applications higher than Quick Access. This means that once you move an application segment from Quick Access to a specific Global Secure Access app, all traffic routed to that application segment will be routed according to your application configuration. No traffic to the new application will route through Quick Access even though the application segment may persist within the ranges defined by Quick Access. As a result, to avoid service disruption, new applications you create through application discovery inherit all of the assigned users and groups from Quick Access (at the time of creation). After the new application is validated, you should rescope the permissions of the application to only those users who need to connect to the application segments defined within it.
 
 4. (Optional) For extra security, you can set Conditional Access policies according to your company's security policies. For example, you might want to require multifactor authentication (MFA) and device compliance when users access a critical application.
 > [!NOTE]

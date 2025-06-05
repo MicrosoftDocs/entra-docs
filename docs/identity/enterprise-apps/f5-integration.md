@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT administrator responsible for secure remote access to on-premises applications, I want to integrate F5 BIG-IP with Microsoft Entra ID for secure hybrid access, so that I can improve remote access and strengthen the security posture of legacy services.
 ---
 
@@ -136,7 +135,6 @@ Advanced configuration tutorials:
 
 - [F5 BIG-IP in Azure deployment walk-through](f5-bigip-deployment-guide.md)
 - [F5 BIG-IP SSL-VPN with Microsoft Entra SHA](f5-passwordless-vpn.md)
-- [Azure AD B2C protects applications using F5 BIG-IP](/azure/active-directory-b2c/partner-f5)
 - [F5 BIG-IP APM and Microsoft Entra SSO to Kerberos applications](f5-big-ip-kerberos-advanced.md)
 - [F5 BIG-IP APM and Microsoft Entra SSO to header-based applications](f5-big-ip-header-advanced.md)
 - [F5 BIG-IP APM and Microsoft Entra SSO to forms-based applications](f5-big-ip-forms-advanced.md)

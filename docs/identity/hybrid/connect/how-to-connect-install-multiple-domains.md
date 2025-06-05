@@ -1,20 +1,16 @@
 ---
 title: Microsoft Entra Connect Multiple Domains
 description: This document describes setting up and configuring multiple top level domains with Microsoft 365 and Microsoft Entra ID.
-
 author: billmath
-manager: amycolannino
-
+manager: femila
 ms.assetid: 5595fb2f-2131-4304-8a31-c52559128ea4
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
 ---
 # Multiple Domain Support for Federating with Microsoft Entra ID
 The following documentation provides guidance on how to use multiple top-level domains and subdomains when federating with Microsoft 365 or Microsoft Entra domains.
@@ -29,9 +25,7 @@ When a domain is federated with Microsoft Entra ID, several properties are set o
 >
 >
 
-You can view the IssuerUri by using the PowerShell command `Get-MsolDomainFederationSettings -DomainName <your domain>`.
-
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+You can view the IssuerUri by using the PowerShell command `Get-EntraDomainFederationSettings -DomainName <your domain>`.
 
 A problem arises when you add more than one top-level domain. For example, let's say you have set up federation between Microsoft Entra ID and your on-premises environment. For this document, the domain, bmcontoso.com is being used. Now a second, top-level domain, bmfabrikam.com has been added.
 
@@ -39,18 +33,13 @@ A problem arises when you add more than one top-level domain. For example, let's
 
 When you attempt to convert the bmfabrikam.com domain to be federated, an error occurs. The reason is, Microsoft Entra ID has a constraint that doesn't allow the IssuerUri property to have the same value for more than one domain. 
 
-![Screenshot that shows a federation error in PowerShell.](./media/how-to-connect-install-multiple-domains/error.png)
-
 ### SupportMultipleDomain Parameter
 To work around this constraint, you need to add a different IssuerUri, which can be done by using the `-SupportMultipleDomain` parameter. This parameter is used with the following cmdlets:
 
-* `New-MsolFederatedDomain`
-* `Convert-MsolDomaintoFederated`
-* `Update-MsolFederatedDomain`
+* `New-MgDomainFederationConfiguration`
+* `Update-MgDomainFederationConfiguration`
 
 This parameter makes Microsoft Entra ID configure the IssuerUri so that it's based on the name of the domain. The IssuerUri will be unique across directories in Microsoft Entra ID. Using the parameter allows the PowerShell command to complete successfully.
-
-![Screenshot that shows a successful completion of the PowerShell command.](./media/how-to-connect-install-multiple-domains/convert.png)
 
 `-SupportMultipleDomain` doesn't change the other endpoints, which are still configured to point to the federation service on adfs.bmcontoso.com.
 
@@ -77,37 +66,25 @@ c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://sche
 ## How to update the trust between AD FS and Microsoft Entra ID
 If you didn't set up the federated trust between AD FS and your instance of Microsoft Entra ID, you may need to re-create this trust. The reason is, when it's originally set up without the `-SupportMultipleDomain` parameter, the IssuerUri is set with the default value. In the screenshot below, you can see the IssuerUri is set to `https://adfs.bmcontoso.com/adfs/services/trust`.
 
-If you have successfully added a new domain in the [Microsoft Entra admin center](https://entra.microsoft.com) and then attempt to convert it using `Convert-MsolDomaintoFederated -DomainName <your domain>`, you'll get the following error.
-
-![Screenshot that shows a federation error in PowerShell after attempting to convert a new domain with the "Convert-MsolDomaintoFederated" command.](./media/how-to-connect-install-multiple-domains/trust1.png)
-
-If you try to add the `-SupportMultipleDomain` switch, you'll receive the following error:
-
-![Screenshot that shows a federation error after adding the "-SupportMultipleDomain" switch.](./media/how-to-connect-install-multiple-domains/trust2.png)
-
-Simply trying to run `Update-MsolFederatedDomain -DomainName <your domain> -SupportMultipleDomain` on the original domain will also result in an error.
-
-![Federation error](./media/how-to-connect-install-multiple-domains/trust3.png)
+If you have successfully added a new domain in the [Microsoft Entra admin center](https://entra.microsoft.com) and then attempt to convert it using `New-MgDomainFederationConfiguration -DomainName <your domain>`, you'll get an error.
 
 Use the steps below to add an additional top-level domain. If you have already added a domain, and didn't use the `-SupportMultipleDomain` parameter, start with the steps for removing and updating your original domain. If you haven't added a top-level domain yet, you can start with the steps for adding a domain using PowerShell of Microsoft Entra Connect.
 
 Use the following steps to remove the Microsoft Online trust and update your original domain.
 
 1. On your AD FS federation server, open **AD FS Management**.
-2. On the left, expand **Trust Relationships** and **Relying Party Trusts**.
-3. On the right, delete the **Microsoft Office 365 Identity Platform** entry.
+1. On the left, expand **Trust Relationships** and **Relying Party Trusts**.
+1. On the right, delete the **Microsoft Office 365 Identity Platform** entry.
   ![Remove Microsoft Online](./media/how-to-connect-install-multiple-domains/trust4.png)
-4. On a machine that has [Azure AD PowerShell module](/previous-versions/azure/jj151815(v=azure.100)) installed on it run the following PowerShell: `$cred=Get-Credential`.
-5. Enter the username and password of a Hybrid Identity Administrator for the Microsoft Entra domain you're federating with.
-6. In PowerShell, enter `Connect-MsolService -Credential $cred`.
-7. In PowerShell, enter `Update-MSOLFederatedDomain -DomainName <Federated Domain Name> -SupportMultipleDomain`. This update is for the original domain. So using the above domains it would be: `Update-MsolFederatedDomain -DomainName bmcontoso.com -SupportMultipleDomain`
+1. In PowerShell, enter `Connect-Entra -Scopes 'Domain.ReadWrite.All'`.
+1. In PowerShell, enter `Update-MgDomainFederationConfiguration -DomainName <Federated Domain Name> -SupportMultipleDomain`. This update is for the original domain. So using the above domains it would be: `Update-MgDomainFederationConfiguration -DomainName bmcontoso.com -SupportMultipleDomain`
 
 Use the following steps to add the new top-level domain using PowerShell
 
 1. On a machine that has [Azure AD PowerShell module](/previous-versions/azure/jj151815(v=azure.100)) installed on it run the following PowerShell: `$cred=Get-Credential`.
 2. Enter the username and password of a Hybrid Identity Administrator for the Microsoft Entra domain you're federating with
-3. In PowerShell, enter `Connect-MsolService -Credential $cred`
-4. In PowerShell, enter `New-MsolFederatedDomain –SupportMultipleDomain –DomainName`
+3. In PowerShell, enter `Connect-Entra -Scopes 'Domain.ReadWrite.All'`
+4. In PowerShell, enter `New-MgDomainFederationConfiguration –SupportMultipleDomain –DomainName`
 
 Use the following steps to add the new top-level domain using Microsoft Entra Connect.
 
@@ -120,7 +97,7 @@ Use the following steps to add the new top-level domain using Microsoft Entra Co
 5. Click Install
 
 ### Verify the new top-level domain
-By using the PowerShell command `Get-MsolDomainFederationSettings -DomainName <your domain>`you can view the updated IssuerUri. The screenshot below shows the federation settings were updated on the original domain `http://bmcontoso.com/adfs/services/trust`
+By using the PowerShell command `Get-MgDomainFederationConfiguration -DomainName <your domain>`you can view the updated IssuerUri. The screenshot below shows the federation settings were updated on the original domain `http://bmcontoso.com/adfs/services/trust`
 
 
 And the IssuerUri on the new domain has been set to `https://bmcontoso.com/adfs/services/trust`

@@ -1,22 +1,19 @@
 ---
 title: Configure Cloudflare with Microsoft Entra ID for secure hybrid access
-description: In this tutorial, learn how to integrate Cloudflare with Microsoft Entra ID for secure hybrid access 
-
+description: In this tutorial, learn how to integrate Cloudflare with Microsoft Entra ID for secure hybrid access
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 05/02/2023
+ms.date: 05/21/2025
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent:As an administrator configuring access policies in Cloudflare Access, I want to learn how to integrate Cloudflare with Microsoft Entra ID, so that I can enforce organizational policies and provide secure access to self-hosted, SaaS, or nonweb applications.
 ---
 
-# Tutorial: Configure Cloudflare with Microsoft Entra ID for secure hybrid access
+# Configure Cloudflare with Microsoft Entra ID for secure hybrid access
 
 In this tutorial, learn to integrate Microsoft Entra ID with Cloudflare Zero Trust. Build rules based on user identity and group membership. Users authenticate with Microsoft Entra credentials and connect to Zero Trust protected applications.
 
@@ -63,12 +60,11 @@ Integrate Cloudflare Zero Trust account with an instance of Microsoft Entra ID.
 
 ## Register Cloudflare with Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the instructions in the following three sections to register Cloudflare with Microsoft Entra ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations**.
+2. Navigate to **Entra ID** > **App registrations**.
 3. Select **New registration**.
 4. Enter an application **Name**.
 5. Enter a team name with **callback** at the end of the path. For example, `https://<your-team-name>.cloudflareaccess.com/cdn-cgi/access/callback`
@@ -145,8 +141,7 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
    ![Screenshot of the Your connection works message.](./media/cloudflare-integration/connection-success-screen.png)
 
 
-## Next steps
+## Related content
 
-- Go to developer.cloudflare.com for [Integrate SSO](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/)
+- Go to developer.cloudflare.com for [Integrate Single sign-on](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/)
 - [Tutorial: Configure Conditional Access policies for Cloudflare Access](cloudflare-conditional-access-policies.md)
-- [Tutorial: Configure Cloudflare Web Application Firewall with Azure AD B2C](/azure/active-directory-b2c/partner-cloudflare)

@@ -3,11 +3,11 @@ title: 'What is federation with Microsoft Entra ID?'
 description: Describes federation with Microsoft Entra ID.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: overview
-ms.date: 12/09/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

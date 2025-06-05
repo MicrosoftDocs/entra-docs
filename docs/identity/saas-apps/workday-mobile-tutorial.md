@@ -1,21 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application'
+title: Configure Workday Mobile Application for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workday Mobile Application.
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
+# Configure Workday Mobile Application for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you’ll learn how to integrate Microsoft Entra ID, Conditional Access, and Intune with Workday Mobile Application. When you integrate Workday Mobile Application with Microsoft, you can:
+In this article,  you’ll learn how to integrate Microsoft Entra ID, Conditional Access, and Intune with Workday Mobile Application. When you integrate Workday Mobile Application with Microsoft, you can:
 
 * Ensure that devices are compliant with your policies prior to sign-in.
 * Add controls to Workday Mobile Application to ensure that users are securely accessing corporate data. 
@@ -32,7 +31,7 @@ To get started:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra Conditional Access policies and Intune with Workday Mobile Application.
+In this article,  you configure and test Microsoft Entra Conditional Access policies and Intune with Workday Mobile Application.
 
 For enabling single sign-on (SSO), you can configure Workday Federated application with Microsoft Entra ID. For more information, see [Microsoft Entra single sign-on (SSO) integration with Workday](./workday-tutorial.md).
 
@@ -140,7 +139,7 @@ To ensure that iOS devices are only able to sign in through Workday managed by m
 1. Under **Platform**, choose **iOS/iPadOS**.
 1. Under **Associated App**, choose the Workday for iOS app that you added.
 1. Select **Configuration Settings**. Under **Configuration settings format**, select **Enter XML Data**.
-1. Here's an example XML file. Add the configurations you want to apply. Replace `STRING_VALUE` with the string you want to use. Replace `<true /> or <false />` with `<true />` or  `<false />`. If you don't add a configuration, this example functions like it is set to `True`.
+1. Here's an example XML file. Add the configurations you want to apply. Replace `STRING_VALUE` with the string you want to use. Replace `<true /> or <false />` with `<true />` or  `<false />`. If you don't add a configuration, this example functions like it's set to `True`.
 
     ```
     <dict>

@@ -2,12 +2,12 @@
 title: Troubleshoot account lockout in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot common problems that cause user accounts to be locked out in Microsoft Entra Domain Services.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: troubleshooting
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
 #Customer intent: As a directory administrator, I want to troubleshoot why user accounts are locked out in a Microsoft Entra Domain Services managed domain.
 ---
@@ -22,7 +22,7 @@ This troubleshooting article outlines why account lockouts happen and how you ca
 
 A user account in a Domain Services managed domain is locked out when a defined threshold for unsuccessful sign-in attempts has been met. This account lockout behavior is designed to protect you from repeated brute-force sign-in attempts that may indicate an automated digital attack.
 
-**By default, if there are 5 bad password attempts in 2 minutes, the account is locked out for 30 minutes.**
+**By default, if there are 5 bad password attempts within 2 minutes, the account will be locked. It will automatically unlock after 30 minutes.**
 
 The default account lockout thresholds are configured using fine-grained password policy. If you have a specific set of requirements, you can override these default account lockout thresholds. However, it's not recommended to increase the threshold limits to try to reduce the number account lockouts. Troubleshoot the source of the account lockout behavior first.
 
@@ -44,7 +44,7 @@ The most common reasons for an account to be locked out, without any malicious i
     * If an account is used by applications or services, those resources may repeatedly try to sign in using an old password. This behavior causes the account to be locked out.
     * Try to minimize account use across multiple different applications or services, and record where credentials are used. If an account password is changed, update the associated applications or services accordingly.
 * **Password has been changed in a different environment and the new password hasn't synchronized yet.**
-    * If an account password is changed outside of the managed domain, such as in an on-prem AD DS environment, it can take a few minutes for the password change to synchronize through Microsoft Entra ID and into the managed domain.
+    * If an account password is changed outside of the managed domain, such as in an on-premises AD DS environment, it can take a few minutes for the password change to synchronize through Microsoft Entra ID and into the managed domain.
     * A user that tries to sign in to a resource in the managed domain before that password synchronization process has completed causes their account to be locked out.
 
 ## Troubleshoot account lockouts with security audits

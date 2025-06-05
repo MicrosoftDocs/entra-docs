@@ -1,13 +1,13 @@
 ---
 title: Tutorial - Use a Windows VM/VMSS to access Azure resources
 description: A tutorial that shows you how to use a Windows VM/VMSS to access Azure resources.
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: tutorial
 ms.date: 06/06/2024
-ms.author: ryanwi
+ms.author: shermanouko
 ms.custom: mode-api, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
 
@@ -16,8 +16,6 @@ zone_pivot_groups: identity-windows-mi-vm-access
 ---
 
 # Tutorial: Use a Windows VM/VMSS to access Azure resources
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 ## Prerequisites
 

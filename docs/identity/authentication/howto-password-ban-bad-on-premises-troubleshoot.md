@@ -5,11 +5,11 @@ description: Learn how to troubleshoot Microsoft Entra Password Protection for a
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jsimmons
 ---
 # Troubleshoot: On-premises Microsoft Entra Password Protection
@@ -18,25 +18,25 @@ After the deployment of Microsoft Entra Password Protection, troubleshooting may
 
 ## The DC agent can't locate a proxy in the directory
 
-The main symptom of this problem is 30017 events in the DC agent Admin event log.
+The main symptom of this problem is 30,017 events in the DC agent Admin event log.
 
-The usual cause of this issue is that a proxy hasn't yet been registered. If a proxy is registered, there may be some delay due to AD replication latency until a particular DC agent is able to see that proxy.
+The usual cause of this issue is that a proxy hasn't been registered. If a proxy is registered, there may be some delay due to AD replication latency until a particular DC agent is able to see that proxy.
 
 ## The DC agent isn't able to communicate with a proxy
 
-The main symptom of this problem is 30018 events in the DC agent Admin event log. This problem may have several possible causes:
+The main symptom of this problem is 30,018 events in the DC agent Admin event log. This problem may have several possible causes:
 
-1. The DC agent is located in an isolated portion of the network that doesn't allow network connectivity to the registered proxy(s). This problem may be benign as long as other DC agents can communicate with the proxy(s) in order to download password policies from Azure. Once downloaded, those policies will then be obtained by the isolated DC via replication of the policy files in the sysvol share.
+* The DC agent is located in an isolated portion of the network that doesn't allow network connectivity to the registered proxy(s). This problem may be benign as long as other DC agents can communicate with the proxy(s) in order to download password policies from Azure. Once downloaded, those policies are obtained by the isolated DC via replication of the policy files in the sysvol share.
 
-1. The proxy host machine is blocking access to the RPC endpoint mapper endpoint (port 135)
+* The proxy host machine is blocking access to the RPC endpoint mapper endpoint (port 135)
 
    The Microsoft Entra Password Protection Proxy installer automatically creates a Windows Firewall inbound rule that allows access to port 135. If this rule is later deleted or disabled, DC agents are unable to communicate with the Proxy service. If the builtin Windows Firewall is disabled in lieu of another firewall product, you must configure that firewall to allow access to port 135.
 
-1. The proxy host machine is blocking access to the RPC endpoint (dynamic or static) listened on by the Proxy service
+* The proxy host machine is blocking access to the RPC endpoint (dynamic or static) listened on by the Proxy service
 
    The Microsoft Entra Password Protection Proxy installer automatically creates a Windows Firewall inbound rule that allows access to any inbound ports listened to by the Microsoft Entra Password Protection Proxy service. If this rule is later deleted or disabled, DC agents are unable to communicate with the Proxy service. If the builtin Windows Firewall is disabled in lieu of another firewall product, you must configure that firewall to allow access to any inbound ports listened to by the Microsoft Entra Password Protection Proxy service. This configuration may be made more specific if the Proxy service is configured to listen on a specific static RPC port (using the `Set-AzureADPasswordProtectionProxyConfiguration` cmdlet).
 
-1. The proxy host machine isn't configured to allow domain controllers the ability to sign-in to the machine. This behavior is controlled via the "Access this computer from the network" user privilege assignment. All domain controllers in all domains in the forest must be granted this privilege. This setting is often constrained as part of a larger network hardening effort.
+* The proxy host machine isn't configured to allow domain controllers the ability to sign-in to the machine. This behavior is controlled via the "Access this computer from the network" user privilege assignment. All domain controllers in all domains in the forest must be granted this privilege. This setting is often constrained as part of a larger network hardening effort.
 
 ## Proxy service is unable to communicate with Azure
 
@@ -52,7 +52,7 @@ The main symptom of this problem is 30018 events in the DC agent Admin event log
 
 Microsoft Entra Password Protection has a critical dependency on the encryption and decryption functionality supplied by the Microsoft Key Distribution Service. Encryption or decryption failures can manifest with various symptoms and have several potential causes.
 
-1. Ensure that the KDS service is enabled and functional on all Windows Server 2012 and later domain controllers in a domain.
+* Ensure that the KDS service is enabled and functional on all Windows Server 2012 and later domain controllers in a domain.
 
    By default the KDS service's service start mode is configured as Manual (Trigger Start). This configuration means that the first time a client tries to use the service, it's started on-demand. This default service start mode is acceptable for Microsoft Entra Password Protection to work.
 
@@ -62,15 +62,15 @@ Microsoft Entra Password Protection has a critical dependency on the encryption 
 
    The most common root cause for the KDS service being unable to start is that the Active Directory domain controller object is located outside of the default Domain Controllers OU. This configuration isn't supported by the KDS service and isn't a limitation imposed by Microsoft Entra Password Protection. The fix for this condition is to move the domain controller object to a location under the default Domain Controllers OU.
 
-1. Incompatible KDS encrypted buffer format change from Windows Server 2012 R2 to Windows Server 2016
+* Incompatible KDS encrypted buffer format change from Windows Server 2012 R2 to Windows Server 2016
 
-   A KDS security fix was introduced in Windows Server 2016 that modifies the format of KDS encrypted buffers; these buffers will sometimes fail to decrypt on Windows Server 2012 and Windows Server 2012 R2. The reverse direction is okay - buffers that are KDS-encrypted on Windows Server 2012 and Windows Server 2012 R2 will always successfully decrypt on Windows Server 2016 and later. If the domain controllers in your Active Directory domains are running a mix of these operating systems, occasional Microsoft Entra Password Protection decryption failures may be reported. It isn't possible to accurately predict the timing or symptoms of these failures given the nature of the security fix, and given that it's non-deterministic which Microsoft Entra Password Protection DC Agent on which domain controller will encrypt data at a given time.
+   A KDS security fix was introduced in Windows Server 2016 that modifies the format of KDS encrypted buffers. These buffers sometimes fail to decrypt on Windows Server 2012 and Windows Server 2012 R2. The reverse direction is okay. Buffers that are KDS-encrypted on Windows Server 2012 and Windows Server 2012 R2 always successfully decrypt on Windows Server 2016 and later. If the domain controllers in your Active Directory domains are running a mix of these operating systems, occasional Microsoft Entra Password Protection decryption failures may be reported. It isn't possible to accurately predict the timing or symptoms of these failures given the nature of the security fix. Also, given that it's non-deterministic which Microsoft Entra Password Protection DC Agent on which domain controller encrypts data at a given time.
 
    There's no workaround for this issue other than to not run a mix of these incompatible operating systems in your Active Directory domain(s). In other words, you should run only Windows Server 2012 and Windows Server 2012 R2 domain controllers, OR you should only run Windows Server 2016 and above domain controllers.
 
 ## DC agent thinks the forest hasn't been registered
 
-The symptom of this issue is 30016 events getting logged in the DC Agent\Admin channel that says in part:
+The symptom of this issue is 30,016 events getting logged in the DC Agent\Admin channel that says in part:
 
 ```text
 The forest hasn't been registered with Azure. Password policies can't be downloaded from Azure unless this is corrected.
@@ -78,32 +78,32 @@ The forest hasn't been registered with Azure. Password policies can't be downloa
 
 There are two possible causes for this issue.
 
-1. The forest hasn't been registered. To resolve the problem, run the Register-AzureADPasswordProtectionForest command as described in the [deployment requirements](howto-password-ban-bad-on-premises-deploy.md).
-1. The forest is registered, but the DC agent is unable to decrypt the forest registration data. This case has the same root cause as issue #2 listed under [DC agent is unable to encrypt or decrypt password policy files](howto-password-ban-bad-on-premises-troubleshoot.md#dc-agent-is-unable-to-encrypt-or-decrypt-password-policy-files). An easy way to confirm this theory is that you'll see this error only on DC agents running on Windows Server 2012 or Windows Server 2012R2 domain controllers, while DC agents running on Windows Server 2016 and later domain controllers are fine. The workaround is the same: upgrade all domain controllers to Windows Server 2016 or later.
+* The forest hasn't been registered. To resolve the problem, run the Register-AzureADPasswordProtectionForest command as described in the [deployment requirements](howto-password-ban-bad-on-premises-deploy.md).
+* The forest is registered, but the DC agent is unable to decrypt the forest registration data. This case has the same root cause as issue #2 listed under [DC agent is unable to encrypt or decrypt password policy files](howto-password-ban-bad-on-premises-troubleshoot.md#dc-agent-is-unable-to-encrypt-or-decrypt-password-policy-files). An easy way to confirm this theory is that you'll see this error only on DC agents running on Windows Server 2012 or Windows Server 2012R2 domain controllers, while DC agents running on Windows Server 2016 and later domain controllers are fine. The workaround is the same: upgrade all domain controllers to Windows Server 2016 or later.
 
 ## Weak passwords are being accepted but should not be
 
 This problem may have several causes.
 
-1. Your DC agent(s) are running a public preview software version that's expired. See [Public preview DC agent software has expired](howto-password-ban-bad-on-premises-troubleshoot.md#public-preview-dc-agent-software-has-expired).
+*  Your DC agent(s) are running a public preview software version that's expired. See [Public preview DC agent software has expired](howto-password-ban-bad-on-premises-troubleshoot.md#public-preview-dc-agent-software-has-expired).
 
-1. Your DC agent(s) can't download a policy or is unable to decrypt existing policies. Check for possible causes in the prior articles.
+* Your DC agent(s) can't download a policy or is unable to decrypt existing policies. Check for possible causes in the prior articles.
 
-1. The password policy Enforce mode is still set to Audit. If this configuration is in effect, reconfigure it to Enforce using the Microsoft Entra Password Protection portal. For more information, see [Modes of operation](howto-password-ban-bad-on-premises-operations.md#modes-of-operation).
+* The password policy Enforce mode is still set to Audit. If this configuration is in effect, reconfigure it to Enforce using the Microsoft Entra Password Protection portal. For more information, see [Modes of operation](howto-password-ban-bad-on-premises-operations.md#modes-of-operation).
 
-1. The password policy is disabled. If this configuration is in effect, reconfigure it to enabled using the Microsoft Entra Password Protection portal. For more information, see [Modes of operation](howto-password-ban-bad-on-premises-operations.md#modes-of-operation).
+* The password policy is disabled. If this configuration is in effect, reconfigure it to enabled using the Microsoft Entra Password Protection portal. For more information, see [Modes of operation](howto-password-ban-bad-on-premises-operations.md#modes-of-operation).
 
-1. You haven't installed the DC agent software on all domain controllers in the domain. In this situation, it's difficult to ensure that remote Windows clients target a particular domain controller during a password change operation. If you think you have successfully targeted a particular DC where the DC agent software is installed, you can verify by double-checking the DC agent admin event log: regardless of outcome, there is at least one event to document the outcome of the password validation. If there's no event present for the user whose password is changed, then the password change was likely processed by a different domain controller.
+* You haven't installed the DC agent software on all domain controllers in the domain. In this situation, it's difficult to ensure that remote Windows clients target a particular domain controller during a password change operation. If you think you successfully targeted a particular DC where the DC agent software is installed, you can verify by double-checking the DC agent admin event log: regardless of outcome, there is at least one event to document the outcome of the password validation. If there's no event present for the user whose password is changed, then the password change was likely processed by a different domain controller.
 
    As an alternative test, try setting\changing passwords while logged in directly to a DC where the DC agent software is installed. This technique isn't recommended for production Active Directory domains.
 
    While incremental deployment of the DC agent software is supported subject to these limitations, Microsoft strongly recommends that the DC agent software is installed on all domain controllers in a domain as soon as possible.
 
-1. The password validation algorithm may actually be working as expected. See [How are passwords evaluated](concept-password-ban-bad.md#how-are-passwords-evaluated).
+* The password validation algorithm may actually be working as expected. See [How are passwords evaluated](concept-password-ban-bad.md#how-are-passwords-evaluated).
 
 ## Ntdsutil.exe fails to set a weak DSRM password
 
-Active Directory will always validate a new Directory Services Repair Mode password to make sure it meets the domain's password complexity requirements; this validation also calls into password filter dlls like Microsoft Entra Password Protection. If the new DSRM password is rejected, the following error message results:
+Active Directory always validates a new Directory Services Repair Mode password to make sure it meets the domain's password complexity requirements; this validation also calls into password filter dlls like Microsoft Entra Password Protection. If the new DSRM password is rejected, the following error message results:
 
 ```text
 C:\>ntdsutil.exe
@@ -130,13 +130,13 @@ Just like in the previous issue, any Microsoft Entra Password Protection passwor
 
 ## Domain controller demotion fails due to a weak local Administrator password
 
-It is supported to demote a domain controller that is still running the DC agent software. Administrators should be aware however that the DC agent software continues to enforce the current password policy during the demotion procedure. The new local Administrator account password (specified as part of the demotion operation) is validated like any other password. Microsoft recommends that secure passwords be chosen for local Administrator accounts as part of a DC demotion procedure.
+It's supported to demote a domain controller that is still running the DC agent software. Administrators should be aware however that the DC agent software continues to enforce the current password policy during the demotion procedure. The new local Administrator account password (specified as part of the demotion operation) is validated like any other password. Microsoft recommends that secure passwords be chosen for local Administrator accounts as part of a DC demotion procedure.
 
 Once the demotion is successful, and the domain controller is rebooted and is again running as a normal member server, the DC agent software reverts to running in a passive mode. It may then be uninstalled at any time.
 
 ## Booting into Directory Services Repair Mode
 
-If the domain controller is booted into Directory Services Repair Mode, the DC agent password filter dll detects this condition and will cause all password validation or enforcement activities to be disabled, regardless of the currently active policy configuration. The DC agent password filter dll will log a 10023 warning event to the Admin event log, for example:
+If the domain controller is booted into Directory Services Repair Mode, the DC agent password filter dll detects this condition and causes all password validation or enforcement activities to be disabled, regardless of the currently active policy configuration. The DC agent password filter dll logs a 10023 warning event to the Admin event log, for example:
 
 ```text
 The password filter dll is loaded but the machine appears to be a domain controller that is booted into Directory Services Repair Mode. All password change and set requests are automatically approved. No further messages are logged until after the next reboot.
@@ -145,7 +145,7 @@ The password filter dll is loaded but the machine appears to be a domain control
 
 During the Microsoft Entra Password Protection public preview period, the DC agent software was hard-coded to stop processing password validation requests on the following dates:
 
-* Version 1.2.65.0 will stop processing password validation requests on September 1 2019.
+* Version 1.2.65.0 stopped processing password validation requests on September 1 2019.
 * Version 1.2.25.0 and prior stopped processing password validation requests on July 1 2019.
 
 As the deadline approaches, all time-limited DC agent versions emit a 10021 event in the DC agent Admin event log at boot time that looks like this:
@@ -153,14 +153,14 @@ As the deadline approaches, all time-limited DC agent versions emit a 10021 even
 ```text
 The password filter dll has successfully loaded and initialized.
 
-The allowable trial period is nearing expiration. Once the trial period has expired, the password filter dll will no longer process passwords. Please contact Microsoft for a newer supported version of the software.
+The allowable trial period is nearing expiration. Once the trial period has expired, the password filter dll no longer processes passwords. Please contact Microsoft for a newer supported version of the software.
 
 Expiration date:  9/01/2019 0:00:00 AM
 
 This message won't be repeated until the next reboot.
 ```
 
-Once the deadline has passed, all time-limited DC agent versions will emit a 10022 event in the DC agent Admin event log at boot time that looks like this:
+Once the deadline has passed, all time-limited DC agent versions emit a 10022 event in the DC agent Admin event log at boot time that looks like this:
 
 ```text
 The password filter dll is loaded but the allowable trial period has expired. All password change and set requests are automatically approved. Please contact Microsoft for a newer supported version of the software.
@@ -168,7 +168,7 @@ The password filter dll is loaded but the allowable trial period has expired. Al
 No further messages are logged until after the next reboot.
 ```
 
-Since the deadline is only checked on initial boot, you may not see these events until long after the calendar deadline has passed. Once the deadline is recognized, no negative effects on either the domain controller or the larger environment will occur other than all passwords are automatically approved.
+Since the deadline is only checked on initial boot, you may not see these events until long after the calendar deadline has passed. Once the deadline is recognized, no negative effects on either the domain controller or the larger environment occur other than all passwords are automatically approved.
 
 > [!IMPORTANT]
 > Microsoft recommends that expired public preview DC agents be immediately upgraded to the latest version.
@@ -187,7 +187,7 @@ HeartbeatUTC          : 8/1/2019 10:00:00 PM
 AzureTenant           : bpltest.onmicrosoft.com
 ```
 
-For this topic, the SoftwareVersion field is obviously the key property to look at. You can also use PowerShell filtering to filter out DC agents that are already at or above the required baseline version, for example:
+For this article, the SoftwareVersion field is obviously the key property to look at. You can also use PowerShell filtering to filter out DC agents that are already at or above the required baseline version, for example:
 
 ```powershell
 PS C:\> $LatestAzureADPasswordProtectionVersion = "1.2.125.0"
@@ -200,7 +200,7 @@ Refer to [Upgrading the DC agent](howto-password-ban-bad-on-premises-deploy.md#u
 
 ## Emergency remediation
 
-If a situation occurs where the DC agent service is causing problems, the DC agent service may be immediately shut down. The DC agent password filter dll still attempts to call the non-running service and will log warning events (10012, 10013), but all incoming passwords are accepted during that time. The DC agent service may then also be configured via the Windows Service Control Manager with a startup type of “Disabled” as needed.
+If a situation occurs where the DC agent service is causing problems, the DC agent service may be immediately shut down. The DC agent password filter dll still attempts to call the non-running service and logs warning events (10012, 10013), but all incoming passwords are accepted during that time. The DC agent service may then also be configured via the Windows Service Control Manager with a startup type of “Disabled” as needed.
 
 Another remediation measure would be to set the Enable mode to No in the Microsoft Entra Password Protection portal. Once the updated policy is downloaded, each DC agent service shifts into a quiescent mode where all passwords are accepted as-is. For more information, see [Modes of operation](howto-password-ban-bad-on-premises-operations.md#modes-of-operation).
 
@@ -209,7 +209,7 @@ Another remediation measure would be to set the Enable mode to No in the Microso
 If you decide to uninstall the Microsoft Entra password protection software and cleanup all related state from the domain(s) and forest, this task can be accomplished using the following steps:
 
 > [!IMPORTANT]
-> It is important to perform these steps in order. If any instance of the Proxy service is left running it will periodically re-create its serviceConnectionPoint object. If any instance of the DC agent service is left running it will periodically re-create its serviceConnectionPoint object and the sysvol state.
+> It's important to perform these steps in order. If any instance of the Proxy service is left running, it periodically re-creates its serviceConnectionPoint object. If any instance of the DC agent service is left running, it periodically re-creates its serviceConnectionPoint object and the sysvol state.
 
 1. Uninstall the Proxy software from all machines. This step does **not** require a reboot.
 2. Uninstall the DC Agent software from all domain controllers. This step **requires** a reboot.
@@ -256,9 +256,9 @@ If you decide to uninstall the Microsoft Entra password protection software and 
 
 ## Health testing with PowerShell cmdlets
 
-The AzureADPasswordProtection PowerShell module includes two health-related cmdlets that perform basic verification that the software is installed and working. It is a good idea to run these cmdlets after setting up a new deployment, periodically thereafter, and when a problem is being investigated.
+The AzureADPasswordProtection PowerShell module includes two health-related cmdlets that perform basic verification that the software is installed and working. It's a good idea to run these cmdlets after setting up a new deployment, periodically thereafter, and when a problem is being investigated.
 
-Each individual health test returns a basic Passed or Failed result, plus an optional message on failure. In cases where the cause of a failure isn't clear, look for error event log messages that may explain the failure. Enabling text-log messages may also be useful. For more details please see [Monitor Microsoft Entra Password Protection](howto-password-ban-bad-on-premises-monitor.md).
+Each individual health test returns a basic Passed or Failed result, plus an optional message on failure. In cases where the cause of a failure isn't clear, look for error event log messages that may explain the failure. Enabling text-log messages may also be useful. For more details, see [Monitor Microsoft Entra Password Protection](howto-password-ban-bad-on-premises-monitor.md).
 
 ## Proxy health testing
 
@@ -266,7 +266,7 @@ The Test-AzureADPasswordProtectionProxyHealth cmdlet supports two health tests t
 
 ### Proxy registration verification
 
-This test verifies that the Proxy agent is properly registered with Azure and is able to authenticate to Azure. A successful run will look like this:
+This test verifies that the Proxy agent is properly registered with Azure and is able to authenticate to Azure. A successful run looks like this:
 
 ```powershell
 PS C:\> Test-AzureADPasswordProtectionProxyHealth -VerifyProxyRegistration
@@ -276,7 +276,7 @@ DiagnosticName          Result AdditionalInfo
 VerifyProxyRegistration Passed
 ```
 
-If an error is detected, the test will return a Failed result and an optional error message. Here's an example of one possible failure:
+If an error is detected, the test returns a Failed result and an optional error message. Here's an example of one possible failure:
 
 ```powershell
 PS C:\> Test-AzureADPasswordProtectionProxyHealth -VerifyProxyRegistration
@@ -290,7 +290,7 @@ VerifyProxyRegistration Failed No proxy certificates were found - please run the
 
 This test is a superset of the -VerifyProxyRegistration test. It requires that the Proxy agent is properly registered with Azure, is able to authenticate to Azure, and finally adds a check that a message can be successfully sent to Azure thus verifying full end-to-end communication is working.
 
-A successful run will look like this:
+A successful run looks like this:
 
 ```powershell
 PS C:\> Test-AzureADPasswordProtectionProxyHealth -VerifyAzureConnectivity
@@ -302,7 +302,7 @@ VerifyAzureConnectivity Passed
 
 ### Proxy verification of all tests
 
-This mode allows for the bulk running of all tests supported by the cmdlet that don't require parameter input. A successful run will look like this:
+This mode allows for the bulk running of all tests supported by the cmdlet that don't require parameter input. A successful run looks like this:
 
 ```powershell
 PS C:\> Test-AzureADPasswordProtectionProxyHealth -TestAll
@@ -330,7 +330,7 @@ The following tests can all be run individually and don't accept parameters. A b
 |-VerifyDomainIsUsingDFSR|Verifies that the current domain is using DFSR for sysvol replication|
 |-VerifyAzureConnectivity|Verifies end-to-end communication with Azure is working using any available proxy|
 
-Here's an example of the -VerifyPasswordFilterDll test passing; the other tests will look similar on success:
+What follows is an example of the -VerifyPasswordFilterDll test passing, and other successful tests look similar:
 
 ```powershell
 PS C:\> Test-AzureADPasswordProtectionDCAgentHealth -VerifyPasswordFilterDll
@@ -342,7 +342,7 @@ VerifyPasswordFilterDll Passed
 
 ### DC agent verification of all tests
 
-This mode allows for the bulk running of all tests supported by the cmdlet that don't require parameter input. A successful run will look like this:
+This mode allows for the bulk running of all tests supported by the cmdlet that don't require parameter input. A successful run looks like this:
 
 ```powershell
 PS C:\> Test-AzureADPasswordProtectionDCAgentHealth -TestAll

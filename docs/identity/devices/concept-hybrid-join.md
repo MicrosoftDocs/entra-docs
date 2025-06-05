@@ -5,11 +5,11 @@ description: Learn how device identity management can help you to manage devices
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 02/26/2024
+ms.date: 05/09/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: femila
 ms.reviewer: sandeo
 ---
 

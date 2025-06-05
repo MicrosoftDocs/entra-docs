@@ -1,17 +1,14 @@
 ---
 title: Migrate Okta federation to Microsoft Entra authentication
 description: Migrate Okta-federated applications to managed authentication under Microsoft Entra ID. See how to migrate federation in a staged manner.
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: gasinh
-ms.custom: kr2b-contr-experiment, not-enterprise-apps
-
+ms.custom: kr2b-contr-experiment, not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using Okta for single sign-on (SSO) with Office 365, I want to migrate to Microsoft Entra ID-managed authentication in a staged manner, so that I can ensure a good authentication experience for users and test reverse federation access to remaining Okta SSO applications.
 ---
 
@@ -70,7 +67,6 @@ For this tutorial, you configure password hash synchronization and seamless SSO.
 
 ## Configure staged rollout features
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you test defederating a domain, in Microsoft Entra ID use a cloud authentication staged rollout to test defederating users. 
 
@@ -79,7 +75,7 @@ Learn more: [Migrate to cloud authentication using Staged Rollout](~/identity/hy
 After you enable password hash sync and seamless SSO on the Microsoft Entra Connect server, configure a staged rollout:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**. 
+2. Browse to **Entra ID** > **Entra Connect** > **Connect Sync**. 
 3. Confirm **Password Hash Sync** is enabled in the tenant.
 4. Select **Enable staged rollout for managed user sign-in**.
 5. After the server configuration, **Password Hash Sync** setting can change to **On**. 
@@ -107,7 +103,7 @@ Users that converted to managed authentication might need access to applications
 Configure the enterprise application registration for Okta.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 
    ![Screenshot of the left menu of the Microsoft Entra admin center.](media/migrate-okta-federation/enterprise-application.png)
 
@@ -204,7 +200,7 @@ You created the identity provider (IDP). Send users to the correct IDP.
 
 After you configure the Okta app in Microsoft Entra ID and configure the IDP in the Okta portal, assign the application to users.
 
-1. In the Microsoft Entra admin center, browse to **Identity** > **Applications** > **Enterprise applications**.
+1. In the Microsoft Entra admin center, browse to **Entra ID** > **Enterprise apps**.
 2. Select the app registration you created.
 3. Go to **Users and groups**. 
 4. Add the group that correlates with the managed authentication pilot.

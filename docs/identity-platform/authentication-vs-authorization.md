@@ -1,12 +1,12 @@
 ---
 title: Authentication vs. authorization
-description: Learn about the basics of authentication and authorization in the Microsoft identity platform.
+description: Understand the fundamentals of authentication, authorization, and how the Microsoft identity platform simplifies these processes for developers.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom:  scenarios:getting-started
-ms.date: 03/20/2024
-ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
+ms.date: 03/21/2025
+ms.reviewer: jmprieur, sureshja, ludwignick
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -19,11 +19,11 @@ This article defines authentication and authorization. It also briefly covers mu
 
 ## Authentication
 
-*Authentication* is the process of proving that you're who you say you are. This is achieved by verification of the identity of a person or device. It's sometimes shortened to *AuthN*. The Microsoft identity platform uses the [OpenID Connect](https://openid.net/connect/) protocol for handling authentication.
+*Authentication* is the process of proving that you are who you say you are. This is achieved by verification of the identity of a person or device. It's sometimes shortened to *AuthN*. The Microsoft identity platform uses the [OpenID Connect](https://openid.net/connect/) protocol for handling authentication.
 
 ## Authorization
 
-*Authorization* is the act of granting an authenticated party permission to do something. It specifies what data you're allowed to access and what you can do with that data. Authorization is sometimes shortened to *AuthZ*. The Microsoft identity platform provides resource owners the ability to use the [OAuth 2.0](https://oauth.net/2/) protocol for handling authorization, but the Microsoft cloud also has other authorization systems such as [Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Azure RBAC](/azure/role-based-access-control/overview), and [Exchange RBAC](/exchange/permissions-exo/application-rbac).
+*Authorization* is the act of granting an authenticated party permission to do something. It specifies what data you're allowed to access and what you can do with that data. Authorization is sometimes shortened to *AuthZ*. The Microsoft identity platform provides resource owners the ability to use the [OAuth 2.0](https://oauth.net/2/) protocol for handling authorization, but the Microsoft cloud also has other authorization systems such as [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Azure RBAC](/azure/role-based-access-control/overview), and [Exchange RBAC](/exchange/permissions-exo/application-rbac).
 
 ## Multifactor authentication
 
@@ -51,9 +51,9 @@ Here's a comparison of the protocols that the Microsoft identity platform uses:
 * **OAuth versus SAML**: The platform uses OAuth 2.0 for authorization and SAML for authentication. For more information on how to use these protocols together to both authenticate a user and get authorization to access a protected resource, see [Microsoft identity platform and OAuth 2.0 SAML bearer assertion flow](./scenario-token-exchange-saml-oauth.md).
 * **OpenID Connect versus SAML**: The platform uses both OpenID Connect and SAML to authenticate a user and enable single sign-on. SAML authentication is commonly used with identity providers such as Active Directory Federation Services (AD FS) federated to Microsoft Entra ID, so it's often used in enterprise applications. OpenID Connect is commonly used for apps that are purely in the cloud, such as mobile apps, websites, and web APIs.
 
-## Next steps
+## Related content
 
-For other topics that cover authentication and authorization basics:
+For other articles that cover authentication and authorization basics:
 
 * To learn how access tokens, refresh tokens, and ID tokens are used in authorization and authentication, see [Security tokens](security-tokens.md).
 * To learn about the process of registering your application so it can integrate with the Microsoft identity platform, see [Application model](application-model.md).

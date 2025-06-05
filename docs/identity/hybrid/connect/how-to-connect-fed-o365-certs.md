@@ -1,19 +1,16 @@
 ---
 title: Certificate renewal for Microsoft 365 and Microsoft Entra users
 description: This article explains to Microsoft 365 users how to resolve issues with emails that notify them about renewing a certificate.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 543b7dc1-ccc9-407f-85a1-a9944c0ba1be
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
 ---
 # Renew federation certificates for Microsoft 365 and Microsoft Entra ID
 ## Overview
@@ -72,39 +69,32 @@ Get-Adfsproperties
 <a name='step-2-confirm-that-ad-fs-and-azure-ad-are-in-sync'></a>
 
 ### Step 2: Confirm that AD FS and Microsoft Entra ID are in sync
-On your AD FS server, open the MSOnline PowerShell prompt, and connect to Microsoft Entra ID.
+On your AD FS server, open the PowerShell prompt, and connect to Microsoft Entra ID.
 
 > [!NOTE]
-> MSOL-Cmdlets are part of the MSOnline PowerShell module.
-> You can download the MSOnline PowerShell module directly from the PowerShell Gallery.
-> 
->
+> Microsoft Entra are part of the Microsoft Entra PowerShell.
+> You can download the Microsoft Entra PowerShell module directly from the PowerShell Gallery.
 
 ```azurepowershell-interactive
-Install-Module MSOnline
+Install-Module -Name Microsoft.Entra
 ```
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-Connect to Microsoft Entra ID using the MSOnline PowerShell-Module.
+Connect to Microsoft Entra ID.
 
 ```azurepowershell-interactive
-Import-Module MSOnline
-Connect-MsolService
+Connect-Entra -Scopes 'Domain.Read.All'
 ```
 
 Check the certificates configured in AD FS and Microsoft Entra ID trust properties for the specified domain.
 
 ```azurepowershell-interactive
-Get-MsolFederationProperty -DomainName <domain.name> | FL Source, TokenSigningCertificate
+Get-EntraFederationProperty -DomainName <domain.name> | FL Source, TokenSigningCertificate
 ```
-
-![Get-MsolFederationProperty](./media/how-to-connect-fed-o365-certs/certsync.png)
-
 If the thumbprints in both the outputs match, your certificates are in sync with Microsoft Entra ID.
 
 ### Step 3: Check if your certificate is about to expire
-In the output of either Get-MsolFederationProperty or Get-AdfsCertificate, check for the date under "Not After." If the date is less than 35 days away, you should take action.
+
+In the output of either Get-EntraFederationProperty or Get-AdfsCertificate, check for the date under "Not After." If the date is less than 35 days away, you should take action.
 
 | AutoCertificateRollover | Certificates in sync with Microsoft Entra ID | Federation metadata is publicly accessible | Validity | Action |
 |:---:|:---:|:---:|:---:|:---:|
@@ -142,7 +132,7 @@ You may choose to renew the token signing certificates manually. For example, th
 > If you're migrating an existing federated domain to a new federation service, it is recommended to follow [Emergency Rotation of the AD FS certificates](how-to-connect-emergency-ad-fs-certificate-rotation.md)
 
 
-In these scenarios, every time you update the token signing certificates, you must also update your Microsoft 365 domain by using the PowerShell command, Update-MsolFederatedDomain.
+In these scenarios, every time you update the token signing certificates, you must also update your Microsoft 365 domain by using the PowerShell command, Update-MgDomainFederationConfiguration.
 
 ### Step 1: Ensure that AD FS has new token signing certificates
 **Non-default configuration**
@@ -172,18 +162,16 @@ Two certificates should be listed now, one of which has a **NotAfter** date of a
 ### Step 2: Update the new token signing certificates for the Microsoft 365 trust
 Update Microsoft 365 with the new token signing certificates to be used for the trust, as follows.
 
-1. Open the Azure AD PowerShell module.
-2. Run `$cred=Get-Credential`. When this cmdlet prompts you for credentials, type your cloud service administrator account credentials.
-3. Run `Connect-MsolService -Credential $cred`. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
-4. If you're running these commands on a computer that is not the AD FS primary federation server, run `Set-MSOLAdfscontext -Computer <AD FS primary server>`, where &lt;AD FS primary server&gt; is the internal FQDN name of the primary AD FS server. This cmdlet creates a context that connects you to AD FS.
-5. Run `Update-MSOLFederatedDomain -DomainName <domain>`. This cmdlet updates the settings from AD FS into the cloud service, and configures the trust relationship between the two.
+1. Open Azure PowerShell.
+1. Run `Connect-Entra -Scopes 'Domain.Read.All'`. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
+1. Run `Update-MgDomainFederationConfiguration -DomainId <domain> -InternalDomainFederationId <AD FS primary server>`. This cmdlet updates the settings from AD FS into the cloud service, and configures the trust relationship between the two.
 
 > [!NOTE]
 > If you need to support multiple top-level domains, such as contoso.com and fabrikam.com, you must use the **SupportMultipleDomain** switch with any cmdlets. For more information, see [Support for Multiple Top Level Domains](how-to-connect-install-multiple-domains.md).
 >
-> If your tenant is federated with more than one domain, the `Update-MsolFederatedDomain` needs to be run for all the domains, listed in the output from `Get-MsolDomain -Authentication Federated`. This ensures that all of the federated domains are updated to the Token-Signing certificate.
+> If your tenant is federated with more than one domain, the `Update-MgDomainFederationConfiguration` needs to be run for all the domains, listed in the output from `Get-EntraDomain | Select-Object -Property AuthenticationType:Federated`. This ensures that all of the federated domains are updated to the Token-Signing certificate.
 >You can achieve this by running:
->`Get-MsolDomain -Authentication Federated | % { Update-MsolFederatedDomain -DomainName $_.Name -SupportMultipleDomain }`
+>`Get-EntraDomain | Select-Object -Property AuthenticationType:Federated | % { Update-MgDomainFederationConfiguration -DomainName $_.Name -SupportMultipleDomain }`
 
 <a name='repair-azure-ad-trust-by-using-azure-ad-connect-a-nameconnectrenewa'></a>
 
@@ -199,6 +187,6 @@ Token signing certificates are standard X509 certificates that are used to secur
 
 By default, AD FS is configured to generate token signing and token decryption certificates automatically, both at the initial configuration time and when the certificates are approaching their expiration date.
 
-Microsoft Entra ID tries to retrieve a new certificate from your federation service metadata 35 days before the expiry of the current certificate. In case a new certificate is not available at that time, Microsoft Entra ID continues to monitor the metadata on regular daily intervals. As soon as the new certificate is available in the metadata, the federation settings for the domain are updated with the new certificate information. You can use `Get-MsolDomainFederationSettings` to verify if you see the new certificate in the NextSigningCertificate / SigningCertificate.
+Microsoft Entra ID tries to retrieve a new certificate from your federation service metadata 35 days before the expiry of the current certificate. In case a new certificate is not available at that time, Microsoft Entra ID continues to monitor the metadata on regular daily intervals. As soon as the new certificate is available in the metadata, the federation settings for the domain are updated with the new certificate information. You can use `Get-MgDomainFederationConfiguration` to verify if you see the new certificate in the NextSigningCertificate / SigningCertificate.
 
 For more information on Token Signing certificates in AD FS, see [Obtain and Configure Token Signing and Token Decryption Certificates for AD FS](/windows-server/identity/ad-fs/operations/configure-ts-td-certs-ad-fs)

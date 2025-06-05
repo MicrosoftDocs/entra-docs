@@ -2,12 +2,12 @@
 title: PowerShell sample - Replace certificate in Microsoft Entra application proxy apps
 description: PowerShell example that bulk replaces a certificate across Microsoft Entra application proxy applications.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
-ms.date: 02/27/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -90,7 +90,9 @@ foreach ($item in $allApps) {
 
   $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
 
-  $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+
+  $aadapAppId =  Get-MgBetaApplication -Filter "AppId eq '$($item.AppID)'"
+
   $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
   $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
     | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 

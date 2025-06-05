@@ -1,32 +1,30 @@
 ---
-title: 'Tutorial: Configure SpaceIQ for automatic user provisioning with Microsoft Entra ID'
+title: Configure SpaceIQ for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to SpaceIQ.
-
 author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 05/20/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SpaceIQ so that I can streamline the user management process and ensure that users have the appropriate access to SpaceIQ.
 ---
 
-# Tutorial: Configure SpaceIQ for automatic user provisioning
+# Configure SpaceIQ for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in SpaceIQ and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to SpaceIQ.
+The objective of this article is to demonstrate the steps to be performed in SpaceIQ and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to SpaceIQ.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A SpaceIQ tenant](https://spaceiq.com/)
 * A user account in SpaceIQ with Admin permissions.
 
@@ -53,13 +51,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![SpaceIQ Add SCIM](media/spaceiq-provisioning-tutorial/thirdparty.png)
 
-3.	Navigate to **Provisioning and SSO** tab. Search for the **Azure** tile. Click on **Activate**.
+3.	Navigate to **Provisioning and SSO** tab. Search for the **Azure** tile. Select **Activate**.
 
 	![SpaceIQ Provisioning and SSO](media/spaceiq-provisioning-tutorial/provisioning.png)
 
 	![SpaceIQ Activate Azure](media/spaceiq-provisioning-tutorial/azure.png)
 
-3.	Copy the **SCIM Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your SpaceIQ application. Click **Activate**
+3.	Copy the **SCIM Bearer Token**. This value is entered in the Secret Token field in the Provisioning tab of your SpaceIQ application. Select **Activate**
 
 	![SpaceIQ Create Token](media/spaceiq-provisioning-tutorial/token.png)
 
@@ -70,7 +68,7 @@ Before configuring SpaceIQ for automatic user provisioning with Microsoft Entra 
 **To add SpaceIQ from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **SpaceIQ**, select **SpaceIQ** in the search box.
 1. Select **SpaceIQ** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![SpaceIQ in the results list](common/search-new-app.png)
@@ -80,14 +78,14 @@ Before configuring SpaceIQ for automatic user provisioning with Microsoft Entra 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in SpaceIQ based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for SpaceIQ, following the instructions provided in the [SpaceIQ Single sign-on tutorial](./spaceiq-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for SpaceIQ, following the instructions provided in the [SpaceIQ Single sign-on  article](./spaceiq-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-spaceiq-in-azure-ad'></a>
 
 ### To configure automatic user provisioning for SpaceIQ in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -103,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input `https://api.spaceiq.com/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to SpaceIQ. If the connection fails, ensure your SpaceIQ account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input `https://api.spaceiq.com/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to SpaceIQ. If the connection fails, ensure your SpaceIQ account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -111,7 +109,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to SpaceIQ**.
 
@@ -119,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![SpaceIQ User Attributes](media/spaceiq-provisioning-tutorial/userattributes.png)
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for SpaceIQ, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -129,7 +127,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -142,6 +140,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

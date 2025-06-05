@@ -7,9 +7,9 @@ ms.subservice: users
 ms.topic: how-to
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.reviewer: krbain
-ms.date: 11/21/2023
+ms.date: 01/07/2025
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
@@ -117,12 +117,12 @@ Once admins take the above steps, the user can't gain new tokens for any applica
   - Use [Microsoft Entra app provisioning](~/identity/app-provisioning/user-provisioning.md). Microsoft Entra app provisioning typically runs automatically every 20-40 minutes. [Configure Microsoft Entra provisioning](~/identity/saas-apps/tutorial-list.md) to deprovision or deactivate users in SaaS and on-premises applications. If you were using [Microsoft Identity Manager](/microsoft-identity-manager/mim-how-provision-users-adds) to automate the deprovisioning of users from on-premises applications, you can use Microsoft Entra app provisioning to reach on-premises applications with a [SQL database](~/identity/app-provisioning/on-premises-sql-connector-configure.md), [non-AD directory server](~/identity/app-provisioning/on-premises-ldap-connector-configure.md) or [other connectors](~/identity/app-provisioning/on-premises-custom-connector.md).
   - For on-premises applications using Windows Server AD, you can configure Microsoft Entra Lifecycle Workflows to [update users in AD (preview)](~/id-governance/lifecycle-workflow-on-premises.md) when employees leave.
   
-  - Identify and develop a process for applications that requires manual deprovisioning, such as the [automated ServiceNow ticket creation with Microsoft Entra Entitlement Management](~/id-governance/entitlement-management-ticketed-provisioning.md) to open a ticket when employees lose access. Ensure admins and application owners can quickly run the required manual tasks to deprovision the user from these apps when needed.
+  - Identify and develop a process for applications that require manual deprovisioning. For example, the [automated ServiceNow ticket creation with Microsoft Entra Entitlement Management](~/id-governance/entitlement-management-ticketed-provisioning.md) can open a ticket when employees lose access. Ensure admins and application owners can quickly run the required manual tasks to deprovision the user from these apps when needed.
   
 - [Manage your devices and applications with Microsoft Intune](/mem/intune/remote-actions/device-management). Intune-managed [devices can be reset to factory settings](/mem/intune/remote-actions/devices-wipe). If the device is unmanaged, you can [wipe the corporate data from managed apps](/mem/intune/apps/apps-selective-wipe). These processes are effective for removing potentially sensitive data from end users' devices. However, for either process to be triggered, the device must be connected to the internet. If the device is offline, it still has access to any locally stored data.
 
 > [!NOTE]
-> Data on the device cannot be recovered after a wipe.
+> Data on the device can't be recovered after a wipe.
 
 - Use [Microsoft Defender for Cloud Apps to block data download](/defender-cloud-apps/use-case-proxy-block-session-aad) when appropriate. If the data can only be accessed online, organizations can monitor sessions and achieve real-time policy enforcement.
 

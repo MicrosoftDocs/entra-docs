@@ -1,17 +1,14 @@
 ---
 title: Customize your branding for your customers
 description: Learn how to customize the look and feel of your customers' sign-in experiences.
- 
 author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 05/07/2025
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
 ---
 
@@ -30,17 +27,15 @@ You can also create user flows programmatically using the Company Branding Graph
 ## Prerequisites
 
 - If you haven't already created your own Microsoft Entra external tenant, create one now.
-- [Register an application](how-to-register-ciam-app.md).  
+- [Register an application](/entra/identity-platform/quickstart-register-app).  
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md)
 - Review the file size requirements for each image you want to add. You may need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
-
-
 
 <a name='comparing-the-default-sign-in-experiences-between-the-external-tenant-and-the-azure-ad-tenant'></a>
 
 ## Branding elements
 
-By default, Microsoft offers a neutral branding for your tenant that can be personalized to suit your company's specific requirements. This default branding doesn't include any pre-existing Microsoft branding. If the custom company branding fails to load, the sign-in page will automatically switch back to this neutral branding. Additionally, each custom branding property can be manually added to the custom sign-in page.  
+By default, Microsoft offers a neutral branding for your tenant that can be personalized to suit your company's specific requirements. This default branding doesn't include any preexisting Microsoft branding. If the custom company branding fails to load, the sign-in page will automatically switch back to this neutral branding. Additionally, each custom branding property can be manually added to the custom sign-in page.  
 
 You can customize this neutral branding with a custom background image or color, favicon, layout, header, and footer. You can also customize the sign-in form and add custom text to different instances or upload [custom CSS](~/fundamentals/reference-company-branding-css-template.md). 
 The following image displays the neutral default branding of the tenant. You can find the numbered branding elements and their corresponding descriptions after the image.
@@ -59,11 +54,8 @@ Before you customize any settings, the neutral default branding appears in your 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-1. Browse to **Company Branding** either by using the search bar or by navigating to **Home** > **Tenant overview** > **Customize branding**.
-
-   :::image type="content" source="media/how-to-customize-branding-customers/browse-to-company-branding.png" alt-text="Screenshot of the company branding option.":::
-
-1. On the **Default sign-in** tab select **Edit**.
+1. Browse to **Company branding** either by using the search bar or by navigating to **Identity** > **User experiences** > **Company branding**.
+1. On the **Default sign-in** tab, select **Edit**.
 
    :::image type="content" source="media/how-to-customize-branding-customers/company-branding-default-edit-button.png" alt-text="Screenshot of the company branding edit button.":::
 
@@ -81,7 +73,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
 1. Select **Next: Layout** if you would like to continue customizing or **Review + save** if you would like to save your changes.
 
-1. On the Layout tab, select the placement of web page elements on the sign-in page.
+1. On the **Layout** tab, select the placement of web page elements on the sign-in page.
 
    - **Template** – Choose whether the background displays full-screen or partial-screen.
 
@@ -107,7 +99,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
    - **Privacy & Cookies** – Select the checkbox next to Privacy & Cookies to display this hyperlink in the footer. The Microsoft default privacy link displays unless you enter your own hyperlink Display text and URL. 
 
-   - **Terms of Use** – Select the checkbox next to Terms of Use to display this hyperlink in the footer. The Microsoft terms of use link displays unless you enter your own hyperlink Display text and URL. 
+   - **Terms of Use** – Select the checkbox next to Terms of Use to display this hyperlink in the footer. The Microsoft terms of use link display unless you enter your own hyperlink Display text and URL. 
 
    :::image type="content" source="media/how-to-customize-branding-customers/company-branding-footer-tab.png" alt-text="Screenshot of the company branding footer tab." lightbox="media/how-to-customize-branding-customers/company-branding-footer-tab.png":::
 
@@ -156,7 +148,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
 For your tenant, you might have different requirements for the information you want to collect during sign-up and sign-in. The tenant comes with a built-in set of information stored in attributes, such as Given Name, Surname, City, and Postal Code. You can create custom attributes in your tenant using the  Microsoft Graph API or in the portal under the **Text** tab in **Company Branding**. 
 
-1. On the **Text** tab select **Add Custom Text**.
+1. On the **Text** tab, select **Add Custom Text**.
 1. Select any of the options:
 
       - Select **Attributes** to override the default values. 

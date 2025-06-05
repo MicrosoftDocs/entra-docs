@@ -4,12 +4,11 @@ description: In this how-to guide, you get a complete list of all apps that are 
 author: SHERMANOUKO
 manager: CelesteDG
 ms.author: shermanouko
-ms.custom: has-adal-ref
 ms.date: 05/01/2024
-ms.reviewer: dmwendia
+ms.reviewer: 
 ms.service: identity-platform
-
-ms.topic: how-to 
+ms.topic: how-to
+ms.custom: has-adal-ref, sfi-image-nochange
 #Customer intent: As an application developer / IT admin, I need to know / identify which of my apps are using ADAL.
 ---
 
@@ -39,12 +38,11 @@ No sign-in event that occurred *before* you configure Microsoft Entra ID to send
 
 ## Step 2: Access Sign-ins workbook in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Once you integrate your Microsoft Entra sign-in and audit logs with Azure Monitor as specified in the Azure Monitor integration, access the sign-ins workbook:
 
    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-   1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+   1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
    1. In the **Usage** section, open the **Sign-ins** workbook.
 
    :::image type="content" source="media/howto-get-list-of-all-auth-library-apps/sign-in-workbook.png" alt-text="Screenshot of the Microsoft Entra admin center workbooks interface highlighting the sign-ins workbook.":::

@@ -1,17 +1,14 @@
 ---
 title: Export and use Microsoft Entra ID Protection data
 description: Learn about the many long-term data storage and monitoring options for exporting risk data from Microsoft Entra ID Protection.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 11/18/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: cokoopma
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to know how to export and use Microsoft Entra ID Protection data so that I can investigate using long-term data in Microsoft Entra ID Protection.
 ---
 # How To: Export risk data
@@ -42,7 +39,7 @@ The endpoint you select for exporting the logs must be set up before you can con
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Select **+ Add diagnostic setting**.
 
@@ -60,7 +57,7 @@ Integrating risk data with Log Analytics provides robust data analysis and visua
 1. [Configure Microsoft Entra diagnostic settings to export the data](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 1. [Query the data in Log Analytics](/azure/azure-monitor/logs/get-started-queries).
 
-You need to configure a Log Analytics workspace before you can export and then query the data. Once you configured a Log Analytics workspace and exported the data with diagnostic settings, go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Log Analytics**. Then, with Log Analytics, you can query data using built-in or custom Kusto queries.
+You need to configure a Log Analytics workspace before you can export and then query the data. Once you configured a Log Analytics workspace and exported the data with diagnostic settings, go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Monitoring & health** > **Log Analytics**. Then, with Log Analytics, you can query data using built-in or custom Kusto queries.
 
 The following tables are of most interest to Microsoft Entra ID Protection administrators:
 

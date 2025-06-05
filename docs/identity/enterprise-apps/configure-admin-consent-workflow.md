@@ -1,18 +1,16 @@
 ---
 title: Configure the admin consent workflow
-description: Learn how to configure a way for end users to request access to applications that require admin consent. 
-
+description: Learn how to configure a way for end users to request access to applications that require admin consent.
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 12/29/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps
+ms.custom: enterprise-apps, sfi-ga-blocked
 #customer intent: As an admin, I want to configure the admin consent workflow, so that users can request access to applications that require admin consent and I can review and approve those requests.
 ---
 
@@ -30,17 +28,16 @@ To configure the admin consent workflow, you need:
 
 - An Azure account. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - You must be a Global Administrator to turn on the admin consent workflow.
-     > [!IMPORTANT]
-     > Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
+
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 ## Enable the admin consent workflow
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable the admin consent workflow and choose reviewers:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **Admin consent settings**. 
+1. Browse to **Entra ID** > **Enterprise apps** > **Consent and permissions** > **Admin consent settings**. 
 1. Under **Admin consent requests**,  select **Yes** for **Users can request admin consent to apps they are unable to consent to** .
 
    ![Screenshot of configure admin consent workflow settings.](./media/configure-admin-consent-workflow/enable-admin-consent-workflow.png)

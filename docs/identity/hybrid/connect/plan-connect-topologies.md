@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Supported topologies'
 description: This topic details supported and unsupported topologies for Microsoft Entra Connect
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 1034c000-59f2-4fc8-8137-2416fa5e4bfe
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/04/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 # Topologies for Microsoft Entra Connect
 This article describes various on-premises and Microsoft Entra topologies that use Microsoft Entra Connect Sync as the key integration solution. This article includes both supported and unsupported configurations.

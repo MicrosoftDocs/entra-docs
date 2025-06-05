@@ -3,12 +3,12 @@ title: Check status of a Lifecycle workflow
 description: This article guides a user on checking the status of a Lifecycle workflow
 author: OWinfreyATL
 ms.author: owinfrey
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 12/10/2024
-ms.custom: template-how-to
+ms.date: 01/02/2025
+ms.custom: template-how-to, sfi-image-nochange
 ---
 
 
@@ -19,13 +19,12 @@ When a workflow is created, it's important to check its status, and run history 
 
 ## Run workflow history using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 You're able to retrieve run information of a workflow using Lifecycle Workflows. To check the runs of a workflow using the Microsoft Entra admin center, you would do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. Select the workflow you want to run history of. 
 
@@ -33,7 +32,7 @@ You're able to retrieve run information of a workflow using Lifecycle Workflows.
 
 1. On the history page, select the **Runs** button.  
 
-1. Here you'll see a summary of workflow runs.
+1. Here you see a summary of workflow runs.
     :::image type="content" source="media/check-status-workflow/run-list.png" alt-text="Screenshot of a workflow Runs list.":::
 1. The runs summary cards include the total number of processed runs, the number of successful runs, the number of failed runs, and the total number of failed tasks.   
 
@@ -51,9 +50,9 @@ To get further information than just the runs summary for a workflow, you're als
     :::image type="content" source="media/check-status-workflow/workflow-history.png" alt-text="Screenshot of a workflow overview history.":::
 1. On the workflow history page, you're presented with a summary of every user processed by the workflow along with counts of successful and failed users and tasks.
     :::image type="content" source="media/check-status-workflow/workflow-history-list.png" alt-text="Screenshot of a list of workflow summaries.":::
-1. By selecting total tasks by a user you're able to see which tasks have successfully completed, or are currently in progress.
+1. By selecting total tasks by a user you're able to see which tasks successfully completed, or are currently in progress.
     :::image type="content" source="media/check-status-workflow/task-history-status.png" alt-text="Screenshot of workflow task history status.":::
-1. By selecting failed tasks, you're able to see which tasks have failed for a specific user.
+1. By selecting failed tasks, you're able to see which tasks failed for a specific user.
     :::image type="content" source="media/check-status-workflow/task-history-failed.png" alt-text="Screenshot of workflow failed tasks history.":::
 1. By selecting unprocessed tasks, you're able to see which tasks are unprocessed.
     :::image type="content" source="media/check-status-workflow/task-history-unprocessed.png" alt-text="Screenshot of unprocessed tasks of a workflow.":::
@@ -92,9 +91,9 @@ To list task processing results for a user processing result via API using Micro
 
 
 > [!NOTE]
-> A workflow must have activity in the past 7 days to get **userProcessingResults ID**. If there has not been any activity in that time-frame, the **userProcessingResults** call will not return a value.
+> A workflow must have activity in the past 7 days to get **userProcessingResults ID**. If there isn't any activity in that time-frame, the **userProcessingResults** call returns no value.
 
 ## Next steps
 
 - [Manage workflow versions](manage-workflow-tasks.md)
-- [Download workflow history reports (Preview)](download-workflow-history.md)
+- [Download workflow history reports](download-workflow-history.md)

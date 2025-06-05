@@ -6,16 +6,18 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.date: 08/30/2024
 ms.service: identity-platform
-ms.reviewer: akgoel, henrymbugua
+ms.reviewer: akgoel
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to learn how to setup an Android device in Shared Device Mode using Microsoft Authenticator App.
 ---
 
 # Set up an Android device in Shared Device Mode
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-workforce-only.md)]
+
 In this tutorial, you learn how to add shared device mode support to an Android device with the Microsoft Authenticator App or a Mobile Device Management (MDM) tool like Microsoft Intune. Employees sign in once for single sign-on (SSO) to all SDM-supported apps and sign out to make the device ready for the next user with no access to previous data.
 
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -42,7 +44,7 @@ Once enrolled, switch on the device to initiate standard Android device setup, w
 
 The following third-party Mobile Device Management (MDM) tools support Microsoft Entra shared device mode
 
-- [VMware Workspace ONE](https://docs.omnissa.com/bundle/UEMSharedDevicesVSaaS/page/UEMSharedDeviceConditionalAccess.html) - VMware supports conditional access capabilities but currently doesn’t support global sign-in and global sign-out with shared device mode.
+- [VMware Workspace ONE](https://docs.omnissa.com/bundle/UEMSharedDevicesVSaaS/page/UEMSharedDeviceConditionalAccess.html) - VMware supports Conditional Access capabilities but currently doesn’t support global sign-in and global sign-out with shared device mode.
 - [SOTI MobiControl](https://soti.net/resources/blog/2023/soti-mobicontrol-supports-microsoft-shared-device-mode/)
 
 > [!NOTE]

@@ -4,9 +4,8 @@ description: Learn about acquiring and caching tokens using MSAL.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-adal-ref 
-ms.date: 02/28/2024
-ms.reviewer: saeeda, ddelimarsky
+ms.date: 05/14/2025
+ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
 
@@ -81,6 +80,7 @@ For web applications that use the [OpenID Connect authorization code flow](v2-pr
 
 The method of acquiring a token depends on whether it's a public client or confidential client application.
 
+
 ### Public client applications
 
 In public client applications (desktop and mobile), you can:
@@ -96,7 +96,7 @@ For confidential client applications (web app, web API, or a daemon app like a W
 
 - Acquire tokens **for the application itself** and not for a user, using the [client credentials flow](msal-authentication-flows.md#client-credentials). This technique can be used for syncing tools, or tools that process users in general and not a specific user.
 - Use the [on-behalf-of (OBO) flow](msal-authentication-flows.md#on-behalf-of-obo) for a web API to call an API on behalf of the user. The application is identified with client credentials in order to acquire a token based on a user assertion (SAML, for example, or a JWT token). This flow is used by applications that need to access resources of a particular user in service-to-service calls. Tokens should be cached on a session basis, not on a user basis.
-- Acquire tokens using the [authorization code flow](msal-authentication-flows.md#authorization-code) in web apps after the user signs in through the authorization request URL. OpenID Connect application typically use this mechanism, which lets the user sign in using OpenID Connect and then access web APIs on behalf of the user. Tokens can be cached on a user or on a session basis. If caching tokens on a user basis, we recommend to limit the session lifetime, so that Microsoft Entra ID can check the state of the Conditional Access policies frequently.
+- Acquire tokens using the [authorization code flow](msal-authentication-flows.md#authorization-code) in web apps after the user signs in through the authorization request URL. OpenID Connect application typically use this mechanism, which lets the user sign in using OpenID Connect and then access web APIs on behalf of the user. Tokens can be cached on a user or on a session basis. If caching tokens on a user basis, we recommend limiting the session lifetime, so that Microsoft Entra ID can check the state of the Conditional Access policies frequently.
 
 ## Authentication results
 

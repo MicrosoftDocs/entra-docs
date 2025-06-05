@@ -2,12 +2,12 @@
 title: Secure remote VM access in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to secure remote access to VMs using Network Policy Server (NPS) and Microsoft Entra multifactor authentication with a Remote Desktop Services deployment in a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ---
 # Secure remote access to virtual machines in Microsoft Entra Domain Services

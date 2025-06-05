@@ -3,11 +3,11 @@ title: 'Microsoft Entra Connect and Microsoft Entra Connect Health installation 
 description: This document provides an overview of the installation options and paths available for installing Microsoft Entra Connect and Connect Health.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 03/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -27,12 +27,12 @@ You can find the download for Microsoft Entra Connect on [Microsoft Download Cen
 | Solution | Scenario |
 | --- | --- |
 | Before you start - [Hardware and prerequisites](how-to-connect-install-prerequisites.md) |<li>Steps to complete before you start to install Microsoft Entra Connect.</li> |
-| [Express settings](how-to-connect-install-express.md) |<li>If you have a single forest AD then this is the recommended option to use.</li> <li>User sign in with the same password using password synchronization.</li> |
+| [Express settings](how-to-connect-install-express.md) |<li>If you have a single forest AD, then this is the recommended option to use.</li> <li>User sign in with the same password using password synchronization.</li> |
 | [Customized settings](how-to-connect-install-custom.md) |<li>Used when you have multiple forests. Supports many on-premises [topologies](plan-connect-topologies.md).</li> <li>Customize your sign-in option, such as pass-through authentication, ADFS for federation or use a 3rd party identity provider.</li> <li>Customize synchronization features, such as filtering and writeback.</li> |
 | [Upgrade from DirSync](how-to-dirsync-upgrade-get-started.md) |<li>Used when you have an existing DirSync server already running.</li> |
 | [Upgrade from Azure AD Sync or Microsoft Entra Connect](how-to-upgrade-previous-version.md) |<li>There are several different methods depending on your preference.</li> |
 
-[After installation](how-to-connect-post-installation.md) you should verify it is working as expected and assign licenses to the users.
+[After installation](how-to-connect-post-installation.md), you should verify it's working as expected and assign licenses to the users.
 
 <a name='next-steps-to-install-azure-ad-connect'></a>
 
@@ -48,7 +48,7 @@ You can find the download for Microsoft Entra Connect on [Microsoft Download Cen
 <a name='learn-more-about-install-azure-ad-connect'></a>
 
 ### Learn more about Install Microsoft Entra Connect
-You also want to prepare for [operational](./how-to-connect-sync-staging-server.md) concerns. You might want to have a stand-by server so you easily can fail over if there is a [disaster](how-to-connect-sync-staging-server.md#disaster-recovery). If you plan to make frequent configuration changes, you should plan for a [staging mode](how-to-connect-sync-staging-server.md) server.
+You also want to prepare for [operational](./how-to-connect-sync-staging-server.md) concerns. You might want to have a stand-by server so you easily can fail over if there's a [disaster](how-to-connect-sync-staging-server.md#disaster-recovery). If you plan to make frequent configuration changes, you should plan for a [staging mode](how-to-connect-sync-staging-server.md) server.
 
 |Topic |Link|  
 | --- | --- |
@@ -65,9 +65,9 @@ Microsoft Entra Connect comes with several features you can optionally turn on o
 
 [Password hash synchronization](how-to-connect-password-hash-synchronization.md) synchronizes the password hash in Active Directory to Microsoft Entra ID. The  end-user can use the same password on-premises and in the cloud but only manage it in one location. Since it uses your on-premises Active Directory as the authority, you can also use your own password policy.
 
-[Password writeback](~/identity/authentication/tutorial-enable-sspr.md) will allow your users to change and reset their passwords in the cloud and have your on-premises password policy applied.
+[Password writeback](~/identity/authentication/tutorial-enable-sspr.md) allows your users to change and reset their passwords in the cloud and have your on-premises password policy applied.
 
-[Device writeback](how-to-connect-device-writeback.md) will allow a device registered in Microsoft Entra ID to be written back to on-premises Active Directory so it can be used for Conditional Access.
+[Device writeback](how-to-connect-device-writeback.md) allows a device registered in Microsoft Entra ID to be written back to on-premises Active Directory so it can be used for Conditional Access.
 
 The [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md) feature is turned on by default and protects your cloud directory from numerous deletes at the same time. By default it allows 500 deletes per run. You can change this setting depending on your organization size.
 
@@ -87,13 +87,13 @@ The [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-
 <a name='customize-azure-ad-connect-sync'></a>
 
 ## Customize Microsoft Entra Connect Sync
-Microsoft Entra Connect Sync comes with a default configuration that is intended to work for most customers and topologies. But there are always situations where the default configuration does not work and must be adjusted. It is supported to make changes as documented in this section and linked topics.
+Microsoft Entra Connect Sync comes with a default configuration that is intended to work for most customers and topologies. But there are always situations where the default configuration doesn't work and must be adjusted. It's supported to make changes as documented in this section and linked topics.
 
-If you have not worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](how-to-connect-sync-technical-concepts.md). Even if some things are similar, a lot has changed as well.
+If you haven't worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](how-to-connect-sync-technical-concepts.md). Even if some things are similar, a lot has changed as well.
 
-The [default configuration](concept-azure-ad-connect-sync-default-configuration.md) assumes there might be more than one forest in the configuration. In those topologies a user object might be represented as a contact in another forest. The user might also have a linked mailbox in another resource forest. The behavior of the default configuration is described in [users and contacts](concept-azure-ad-connect-sync-user-and-contacts.md).
+The [default configuration](concept-azure-ad-connect-sync-default-configuration.md) assumes there might be more than one forest in the configuration. In those topologies, a user object might be represented as a contact in another forest. The user might also have a linked mailbox in another resource forest. The behavior of the default configuration is described in [users and contacts](concept-azure-ad-connect-sync-user-and-contacts.md).
 
-The configuration model in sync is called [declarative provisioning](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md). The advanced attribute flows are using [functions](reference-connect-sync-functions-reference.md) to express attribute transformations. You can see and examine the entire configuration using tools which comes with Microsoft Entra Connect. If you need to make configuration changes, make sure you follow the [best practices](how-to-connect-sync-best-practices-changing-default-configuration.md) so it is easier to adopt new releases.
+The configuration model in sync is called [declarative provisioning](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md). The advanced attribute flows are using [functions](reference-connect-sync-functions-reference.md) to express attribute transformations. You can see and examine the entire configuration using tools which comes with Microsoft Entra Connect. If you need to make configuration changes, make sure you follow the [best practices](how-to-connect-sync-best-practices-changing-default-configuration.md) so it's easier to adopt new releases.
 
 <a name='next-steps-to-customize-azure-ad-connect-sync'></a>
 
@@ -117,9 +117,9 @@ Microsoft Entra Connect provides several features that simplify federating with 
 
 [Repair the trust](how-to-connect-fed-management.md#repairthetrust) with Microsoft Entra ID in a few simple clicks.
 
-ADFS can be configured to support [multiple domains](how-to-connect-install-multiple-domains.md). For example you might have multiple top domains you need to use for federation.
+ADFS can be configured to support [multiple domains](how-to-connect-install-multiple-domains.md). For example, you might have multiple top domains you need to use for federation.
 
-If your ADFS server has not been configured to automatically update certificates from Microsoft Entra ID or if you use a non-ADFS solution, then you will be notified when you have to [update certificates](how-to-connect-fed-o365-certs.md).
+If your ADFS server isn't configured to update certificates from Microsoft Entra ID automatically, or if you use a non-ADFS solution, then you'll be notified when you have to [update certificates](how-to-connect-fed-o365-certs.md).
 
 ### Next steps to configure federation features
 |Topic |Link|  
@@ -152,7 +152,7 @@ To get started with Microsoft Entra Connect Health, use the following steps:
     * [Download Microsoft Entra Connect Health Agent for AD FS.](https://go.microsoft.com/fwlink/?LinkID=518973)
     * [See the installation instructions](how-to-connect-health-agent-install.md#install-the-agent-for-ad-fs).
 * Get started using Microsoft Entra Connect Health for sync
-    * [Download and install the latest version of Microsoft Entra Connect](https://go.microsoft.com/fwlink/?linkid=615771). The Health Agent for sync will be installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or higher).
+    * [Download and install the latest version of Microsoft Entra Connect](https://go.microsoft.com/fwlink/?linkid=615771). The Health Agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or higher).
 * Get started using Microsoft Entra Connect Health for AD DS
     * [Download Microsoft Entra Connect Health Agent for AD DS](https://go.microsoft.com/fwlink/?LinkID=820540).
     * [See the installation instructions](how-to-connect-health-agent-install.md#install-the-agent-for-azure-ad-ds).
@@ -169,7 +169,7 @@ The Microsoft Entra Connect Health portal shows views of alerts, performance mon
 ![Microsoft Entra Connect Health Portal](./media/whatis-hybrid-identity-health/portalsidebar.png)
 
 * **Quick Start**: When you select this option, the **Quick Start** blade opens. You can download the Microsoft Entra Connect Health Agent by selecting **Get Tools**. You can also access documentation and provide feedback.
-* **Microsoft Entra Connect (sync)**: This option shows your Microsoft Entra Connect servers that Microsoft Entra Connect Health is currently monitoring. **Sync errors** entry will show basic sync errors of your first onboarded sync service  by categories. When you select the **Sync services** entry, the blade that opens shows information about your Microsoft Entra Connect servers. Read more about the capabilities at [Using Microsoft Entra Connect Health for sync](how-to-connect-health-sync.md).
+* **Microsoft Entra Connect (sync)**: This option shows your Microsoft Entra Connect servers that Microsoft Entra Connect Health is currently monitoring. **Sync errors** entry shows basic sync errors of your first onboarded sync service  by categories. When you select the **Sync services** entry, the blade that opens shows information about your Microsoft Entra Connect servers. Read more about the capabilities at [Using Microsoft Entra Connect Health for sync](how-to-connect-health-sync.md).
 * **Active Directory Federation Services**: This option shows all the AD FS services that Microsoft Entra Connect Health is currently monitoring. When you select an instance, the blade that opens shows information about that service instance. This information includes an overview, properties, alerts, monitoring, and usage analytics. Read more about the capabilities at [Using Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md).
 * **Active Directory Domain Services**: This option shows all the AD DS forests that Microsoft Entra Connect Health is currently monitoring. When you select a forest, the blade that opens shows information about that forest. This information includes an overview of essential information, the Domain Controllers dashboard, the Replication Status dashboard, alerts, and monitoring. Read more about the capabilities at [Using Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).
 * **Configure**: This section includes options to turn the following on or off:

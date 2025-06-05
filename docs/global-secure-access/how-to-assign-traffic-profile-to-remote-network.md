@@ -1,13 +1,13 @@
 ---
-title: How to assign a remote network to a traffic forwarding profile for Global Secure Access
+title: How to Assign a Remote Network to a Traffic Forwarding Profile for Global Secure Access
 description: Learn how to assign a remote network to a traffic forwarding profile for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 02/29/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
-
+ai-usage: ai-assisted
 ---
 # Assign a remote network to a traffic forwarding profile for Global Secure Access
 
@@ -28,7 +28,7 @@ To assign a remote network to a traffic forwarding profile to, you must have:
 
 ### Known limitations
 
-- At this time, remote networks can only be assigned to the Microsoft traffic forwarding profile.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Assign the Microsoft traffic profile to a remote network
 

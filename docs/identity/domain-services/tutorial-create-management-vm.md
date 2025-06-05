@@ -2,12 +2,12 @@
 title: Tutorial - Create a management VM for Microsoft Entra Domain Services | Microsoft Docs
 description: In this tutorial, you learn how to create and configure a Windows virtual machine that you use to administer Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
 #Customer intent: As an identity administrator, I want to create a management VM and install the required tools to connect to and manage a Microsoft Entra Domain Services managed domain.
 ---

@@ -5,11 +5,11 @@ description: Create Conditional Access policies using Microsoft Entra ID Protect
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/17/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, cokoopma
 ---
 # Require multifactor authentication for elevated sign-in risk

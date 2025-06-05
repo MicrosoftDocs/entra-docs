@@ -1,13 +1,13 @@
 ---
 title: Configure managed identities on Azure virtual machines (VMs)
 description: Step-by-step instructions for configuring system and user-assigned managed identities on an Azure VMs.
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: quickstart
-ms.date: 05/29/2024
-ms.author: ryanwi
+ms.date: 01/16/2025
+ms.author: shermanouko
 ms.custom: mode-api, devx-track-azurecli, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
 
@@ -16,8 +16,6 @@ zone_pivot_groups: identity-configure-mi-methods
 ---
 
 # Configure managed identities on Azure virtual machines (VMs)
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 Managed identities for Azure resources provide Azure services with an automatically managed identity in Microsoft Entra ID. You can use this identity to authenticate to any service that supports Microsoft Entra authentication, without having credentials in your code. 
 

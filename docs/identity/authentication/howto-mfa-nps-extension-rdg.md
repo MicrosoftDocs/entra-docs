@@ -1,17 +1,14 @@
 ---
 title: Integrate RDG with Microsoft Entra multifactor authentication NPS extension
 description: Integrate your Remote Desktop Gateway infrastructure with Microsoft Entra multifactor authentication using the Network Policy Server extension for Microsoft Azure
-
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 ms.topic: how-to
-ms.date: 11/29/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jpettere
 ---
 # Integrate your Remote Desktop Gateway infrastructure using the Network Policy Server (NPS) extension and Microsoft Entra ID
@@ -23,7 +20,7 @@ The Network Policy Server (NPS) extension for Azure allows customers to safeguar
 This article provides step-by-step instructions for integrating the NPS infrastructure with Microsoft Entra multifactor authentication using the NPS extension for Azure. This enables secure verification for users attempting to sign in to a Remote Desktop Gateway.
 
 > [!NOTE]
-> This article should not be used with MFA Server deployments and should only be used with Microsoft Entra multifactor authentication (Cloud-based) deployments.
+> This article shouldn't be used with MFA Server deployments and should only be used with Microsoft Entra multifactor authentication (Cloud-based) deployments.
 
 The Network Policy and Access Services (NPS) gives organizations the ability to do the following:
 
@@ -33,19 +30,9 @@ The Network Policy and Access Services (NPS) gives organizations the ability to 
 
 Typically, organizations use NPS (RADIUS) to simplify and centralize the management of VPN policies. However, many organizations also use NPS to simplify and centralize the management of RD Desktop Connection Authorization Policies (RD CAPs).
 
-Organizations can also integrate NPS with Microsoft Entra multifactor authentication to enhance security and provide a high level of compliance. This helps ensure that users establish two-step verification to sign in to the Remote Desktop Gateway. For users to be granted access, they must provide their username/password combination along with information that the user has in their control. This information must be trusted and not easily duplicated, such as a cell phone number, landline number, application on a mobile device, and so on. RDG currently supports phone call and **Approve**/**Deny** push notifications from Microsoft authenticator app methods for 2FA. For more information about supported authentication methods see the section [Determine which authentication methods your users can use](howto-mfa-nps-extension.md#determine-which-authentication-methods-your-users-can-use).
+Organizations can also integrate NPS with Microsoft Entra multifactor authentication to enhance security and provide a high level of compliance. This helps ensure that users establish two-step verification to sign in to the Remote Desktop Gateway. For users to be granted access, they must provide their username/password combination along with information that the user has in their control. This information must be trusted and not easily duplicated, such as a cell phone number, landline number, application on a mobile device, and so on. RDG currently supports phone call and **Approve**/**Deny** push notifications from Microsoft authenticator app methods for 2FA. For more information about supported authentication methods, see the section [Determine which authentication methods your users can use](howto-mfa-nps-extension.md#determine-which-authentication-methods-your-users-can-use).
 
-If your organization uses Remote Desktop Gateway and the user is registered for a TOTP code along with Authenticator push notifications, the user can't meet the MFA challenge and the Remote Desktop Gateway sign-in fails. In that case, you can set OVERRIDE_NUMBER_MATCHING_WITH_OTP = FALSE to fallback to push notifications to Approve/Deny with Authenticator.
-
-In order for an NPS extension to continue working for Remote Desktop Gateway users, this registry key must be created on the NPS server. On the NPS server, open the registry editor. Navigate to:
-
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa
-
-Create the following String/Value pair:
-
-Name: OVERRIDE_NUMBER_MATCHING_WITH_OTP
-
-Value = FALSE
+If your organization uses Remote Desktop Gateway and the user is registered for a TOTP code along with Authenticator push notifications, the user can't meet the MFA challenge and the Remote Desktop Gateway sign-in fails. In that case, you can override this behaviour by creating a new registry key (**OVERRIDE_NUMBER_MATCHING_WITH_OTP**) to fallback to push notifications to Approve/Deny with Authenticator. To perform it, follow [NPS extension override number matching](how-to-mfa-number-match.md#nps-extension) procedure, assuming final value will be *OVERRIDE_NUMBER_MATCHING_WITH_OTP = FALSE*.
 
 Prior to the availability of the NPS extension for Azure, customers who wished to implement two-step verification for integrated NPS and Microsoft Entra multifactor authentication environments had to configure and maintain a separate MFA Server in the on-premises environment as documented in [Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS](howto-mfaserver-nps-rdg.md).
 
@@ -55,7 +42,7 @@ The availability of the NPS extension for Azure now gives organizations the choi
 
 For users to be granted access to network resources through a Remote Desktop Gateway, they must meet the conditions specified in one RD Connection Authorization Policy (RD CAP) and one RD Resource Authorization Policy (RD RAP). RD CAPs specify who is authorized to connect to RD Gateways. RD RAPs specify the network resources, such as remote desktops or remote apps, that the user is allowed to connect to through the RD Gateway.
 
-An RD Gateway can be configured to use a central policy store for RD CAPs. RD RAPs cannot use a central policy, as they are processed on the RD Gateway. An example of an RD Gateway configured to use a central policy store for RD CAPs is a RADIUS client to another NPS server that serves as the central policy store.
+An RD Gateway can be configured to use a central policy store for RD CAPs. RD RAPs can't use a central policy, as they're processed on the RD Gateway. An example of an RD Gateway configured to use a central policy store for RD CAPs is a RADIUS client to another NPS server that serves as the central policy store.
 
 When the NPS extension for Azure is integrated with the NPS and Remote Desktop Gateway, the successful authentication flow is as follows:
 
@@ -80,7 +67,7 @@ This section details the prerequisites necessary before integrating Microsoft En
 
 ### Remote Desktop Services (RDS) infrastructure
 
-You must have a working Remote Desktop Services (RDS) infrastructure in place. If you do not, then you can quickly create this infrastructure in Azure using the following quickstart template: [Create Remote Desktop Session Collection deployment](https://github.com/Azure/azure-quickstart-templates/tree/ad20c78b36d8e1246f96bb0e7a8741db481f957f/rds-deployment).
+You must have a working Remote Desktop Services (RDS) infrastructure in place. If you don't, then you can quickly create this infrastructure in Azure using the following quickstart template: [Create Remote Desktop Session Collection deployment](https://github.com/Azure/azure-quickstart-templates/tree/ad20c78b36d8e1246f96bb0e7a8741db481f957f/rds-deployment).
 
 If you wish to manually create an on-premises RDS infrastructure quickly for testing purposes, follow the steps to deploy one.
 **Learn more**: [Deploy RDS with Azure quickstart](/windows-server/remote/remote-desktop-services/rds-in-azure) and [Basic RDS infrastructure deployment](/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure).
@@ -92,7 +79,7 @@ The NPS extension requires Windows Server 2008 R2 SP1 or above with the NPS role
 
 ### Network Policy and Access Services (NPS) role
 
-The NPS role service provides the RADIUS server and client functionality as well as Network Access Policy health service. This role must be installed on at least two computers in your infrastructure: The Remote Desktop Gateway and another member server or domain controller. By default, the role is already present on the computer configured as the Remote Desktop Gateway.  You must also install the NPS role on at least on another computer, such as a domain controller or member server.
+The NPS role service provides the RADIUS server and client functionality and Network Access Policy health service. This role must be installed on at least two computers in your infrastructure: The Remote Desktop Gateway and another member server or domain controller. By default, the role is already present on the computer configured as the Remote Desktop Gateway. You must also install the NPS role on at least on another computer, such as a domain controller or member server.
 
 For information on installing the NPS role service Windows Server 2012 or older, see [Install a NAP Health Policy Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd296890(v=ws.10)). For a description of best practices for NPS, including the recommendation to install NPS on a domain controller, see [Best Practices for NPS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771746(v=ws.10)).
 
@@ -106,7 +93,7 @@ To use the NPS extension, on-premises users must be synced with Microsoft Entra 
 
 ### Microsoft Entra GUID ID
 
-To install NPS extension, you need to know the GUID of the Microsoft Entra ID. Instructions for finding the GUID of the Microsoft Entra ID are provided below.
+To install NPS extension, you need to know the GUID of the Microsoft Entra ID. The following provides instructions for finding the GUID of the Microsoft Entra ID.
 
 <a name='configure-multi-factor-authentication'></a>
 
@@ -118,7 +105,7 @@ Follow the steps in [Getting started with Microsoft Entra multifactor authentica
 
 ### Configure accounts for two-step verification
 
-Once an account has been enabled for MFA, you cannot sign in to resources governed by the MFA policy until you have successfully configured a trusted device to use for the second authentication factor and have authenticated using two-step verification.
+Once an account has been enabled for MFA, you can't sign in to resources governed by the MFA policy until you have successfully configured a trusted device to use for the second authentication factor and have authenticated using two-step verification.
 
 Follow the steps in [What does Microsoft Entra multifactor authentication mean for me?](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) to understand and properly configure your devices for MFA with your user account.
 
@@ -135,15 +122,14 @@ This section provides instructions for configuring RDS infrastructure to use Mic
 
 ### Obtain the directory tenant ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
-
+   
 ### Install the NPS extension
 
 Install the NPS extension on a server that has the Network Policy and Access Services (NPS) role installed. This functions as the RADIUS server for your design.
@@ -180,13 +166,13 @@ To use the script, provide the extension with your Microsoft Entra Admin credent
 1. Type `.\AzureMfaNpsExtnConfigSetup.ps1`, and press **ENTER**. The script checks to see if the PowerShell module is installed. If not installed, the script installs the module for you.
 
    ![Running AzureMfaNpsExtnConfigSetup.ps1 in PowerShell](./media/howto-mfa-nps-extension-rdg/image4.png)
-  
+   
 1. After the script verifies the installation of the PowerShell module, it displays the PowerShell module dialog box. In the dialog box, enter your Microsoft Entra admin credentials and password, and select **Sign In**.
 
 1. When prompted, paste the *Tenant ID* you copied to the clipboard earlier, and press **ENTER**.
 
    ![Inputting the Tenant ID in PowerShell](./media/howto-mfa-nps-extension-rdg/image6.png)
-
+   
 1. The script creates a self-signed certificate and performs other configuration changes. 
 
 ## Configure NPS components on Remote Desktop Gateway
@@ -201,33 +187,33 @@ Remote Desktop connection authorization policies (RD CAPs) specify the requireme
 
 1. On the RD Gateway server, open **Server Manager**.
 1. On the menu, select **Tools**, point to **Remote Desktop Services**, and then select **Remote Desktop Gateway Manager**.
-1. In the RD Gateway Manager, right-select **\[Server Name\] (Local)**, and select **Properties**.
+1. In the RD Gateway Manager, right-select **[Server Name] (Local)**, and select **Properties**.
 1. In the Properties dialog box, select the **RD CAP Store** tab.
 1. On the RD CAP Store tab, select **Central server running NPS**. 
 1. In the **Enter a name or IP address for the server running NPS** field, type the IP address or server name of the server where you installed the NPS extension.
 
    ![Enter the name or IP Address of your NPS Server](./media/howto-mfa-nps-extension-rdg/image10.png)
-  
+   
 1. Select **Add**.
 1. In the **Shared Secret** dialog box, enter a shared secret, and then select **OK**. Ensure you record this shared secret and store the record securely.
 
-   >[!NOTE]
+      >[!NOTE]
    >Shared secret is used to establish trust between the RADIUS servers and clients. Create a long and complex secret.
    >
 
    ![Creating a shared secret to establish trust](./media/howto-mfa-nps-extension-rdg/image11.png)
-
+   
 1. Select **OK** to close the dialog box.
 
 ### Configure RADIUS timeout value on Remote Desktop Gateway NPS
 
-To ensure there is time to validate users' credentials, perform two-step verification, receive responses, and respond to RADIUS messages, it is necessary to adjust the RADIUS timeout value.
+To ensure there is time to validate users' credentials, perform two-step verification, receive responses, and respond to RADIUS messages, it's necessary to adjust the RADIUS timeout value.
 
 1. On the RD Gateway server, open Server Manager. On the menu, select **Tools**, and then select **Network Policy Server**.
 1. In the **NPS (Local)** console, expand **RADIUS Clients and Servers**, and select **Remote RADIUS Server**.
 
    ![Network Policy Server management console showing Remote RADIUS Server](./media/howto-mfa-nps-extension-rdg/image12.png)
-
+   
 1. In the details pane, double-select **TS GATEWAY SERVER GROUP**.
 
    >[!NOTE]
@@ -237,13 +223,13 @@ To ensure there is time to validate users' credentials, perform two-step verific
 1. In the **TS GATEWAY SERVER GROUP Properties** dialog box, select the IP address or name of the NPS server you configured to store RD CAPs, and then select **Edit**.
 
    ![Select the IP or name of the NPS Server configured earlier](./media/howto-mfa-nps-extension-rdg/image13.png)
-
+   
 1. In the **Edit RADIUS Server** dialog box, select the **Load Balancing** tab.
 1. In the **Load Balancing** tab, in the **Number of seconds without response before request is considered dropped** field, change the default value from 3 to a value between 30 and 60 seconds.
 1. In the **Number of seconds between requests when server is identified as unavailable** field, change the default value of 30 seconds to a value that is equal to or greater than the value you specified in the previous step.
 
    ![Edit Radius Server timeout settings on the load balancing tab](./media/howto-mfa-nps-extension-rdg/image14.png)
-
+   
 1. Select **OK** two times to close the dialog boxes.
 
 ### Verify Connection Request Policies
@@ -256,11 +242,11 @@ By default, when you configure the RD Gateway to use a central policy store for 
 1. On **Settings** tab, under Forwarding Connection Request, select **Authentication**. RADIUS client is configured to forward requests for authentication.
 
    ![Configure Authentication Settings specifying the server group](./media/howto-mfa-nps-extension-rdg/image15.png)
-
+   
 1. Select **Cancel**.
 
 >[!NOTE]
-> For more information about creating a connection request policy see the article, [Configure connection request policies](/windows-server/networking/technologies/nps/nps-crp-configure#add-a-connection-request-policy) documentation for the same. 
+> For more information about creating a connection request policy, see the article [Configure connection request policies](/windows-server/networking/technologies/nps/nps-crp-configure#add-a-connection-request-policy) documentation for the same. 
 
 ## Configure NPS on the server where the NPS extension is installed
 
@@ -276,7 +262,7 @@ To function properly in this scenario, the NPS server needs to be registered in 
 1. Select **OK** two times.
 
    ![Register the NPS server in Active Directory](./media/howto-mfa-nps-extension-rdg/image16.png)
-
+   
 1. Leave the console open for the next procedure.
 
 ### Create and configure RADIUS client
@@ -286,12 +272,12 @@ The Remote Desktop Gateway needs to be configured as a RADIUS client to the NPS 
 1. On the NPS server where the NPS extension is installed, in the **NPS (Local)** console, right-select **RADIUS Clients** and select **New**.
 
    ![Create a New RADIUS Client in the NPS console](./media/howto-mfa-nps-extension-rdg/image17.png)
-
+   
 1. In the **New RADIUS Client** dialog box, provide a friendly name, such as *Gateway*, and the IP address or DNS name of the Remote Desktop Gateway server.
 1. In the **Shared secret** and the **Confirm shared secret** fields, enter the same secret that you used before.
 
    ![Configure a friendly name and the IP or DNS address](./media/howto-mfa-nps-extension-rdg/image18.png)
-
+   
 1. Select **OK** to close the New RADIUS Client dialog box.
 
 ### Configure Network Policy
@@ -302,44 +288,44 @@ Recall that the NPS server with the Microsoft Entra multifactor authentication e
 1. Right-select **Connections to other access servers**, and select **Duplicate Policy**.
 
    ![Duplicate the connection to other access servers policy](./media/howto-mfa-nps-extension-rdg/image19.png)
-
+   
 1. Right-select **Copy of Connections to other access servers**, and select **Properties**.
 1. In the **Copy of Connections to other access servers** dialog box, in **Policy name**, enter a suitable name, such as *RDG_CAP*. Check **Policy enabled**, and select **Grant access**. Optionally, in **Type of network access server**, select **Remote Desktop Gateway**, or you can leave it as **Unspecified**.
 
    ![Name the policy, enable, and grant access](./media/howto-mfa-nps-extension-rdg/image21.png)
-
+   
 1. Select the **Constraints** tab, and check **Allow clients to connect without negotiating an authentication method**.
 
    ![Modify authentication methods to allow clients to connect](./media/howto-mfa-nps-extension-rdg/image22.png)
-
+   
 1. Optionally, select the **Conditions** tab and add conditions that must be met for the connection to be authorized, for example, membership in a specific Windows group.
 
    ![Optionally specify connection conditions](./media/howto-mfa-nps-extension-rdg/image23.png)
-
+   
 1. Select **OK**. When prompted to view the corresponding Help topic, select **No**.
 1. Ensure that your new policy is at the top of the list, that the policy is enabled, and that it grants access.
 
    ![Move your policy to the top of the list](./media/howto-mfa-nps-extension-rdg/image24.png)
-
+   
 ## Verify configuration
 
 To verify the configuration, you need to sign in to the Remote Desktop Gateway with a suitable RDP client. Be sure to use an account that is allowed by your Connection Authorization Policies and is enabled for Microsoft Entra multifactor authentication.
 
-As show in the image below, you can use the **Remote Desktop Web Access** page.
+As show in the following image, you can use the **Remote Desktop Web Access** page.
 
 ![Testing in Remote Desktop Web Access](./media/howto-mfa-nps-extension-rdg/image25.png)
 
-Upon successfully entering your credentials for primary authentication, the Remote Desktop Connect dialog box shows a status of Initiating remote connection, as shown below. 
+When you successfully entering your credentials for primary authentication, the Remote Desktop Connect dialog box shows a status of Initiating remote connection, as shown in the following section. 
 
-If you successfully authenticate with the secondary authentication method you previously configured in Microsoft Entra multifactor authentication, you are connected to the resource. However, if the secondary authentication is not successful, you are denied access to the resource. 
+If you successfully authenticate with the secondary authentication method you previously configured in Microsoft Entra multifactor authentication, you're connected to the resource. However, if the secondary authentication isn't successful, you're denied access to the resource. 
 
 ![Remote Desktop Connection initiating a remote connection](./media/howto-mfa-nps-extension-rdg/image26.png)
 
-In the example below, the Authenticator app on a Windows phone is used to provide the secondary authentication.
+In the following example, the Authenticator app on a Windows phone is used to provide the secondary authentication.
 
 ![Example Windows Phone Authenticator app showing verification](./media/howto-mfa-nps-extension-rdg/image27.png)
 
-Once you have successfully authenticated using the secondary authentication method, you are logged into the Remote Desktop Gateway as normal. However, because you are required to use a secondary authentication method using a mobile app on a trusted device, the sign in process is more secure than it would be otherwise.
+Once you have successfully authenticated using the secondary authentication method, you're logged into the Remote Desktop Gateway as normal. However, because you're required to use a secondary authentication method using a mobile app on a trusted device, the sign in process is more secure than it would be otherwise.
 
 ### View Event Viewer logs for successful logon events
 
@@ -364,7 +350,7 @@ You can also view this log and filter on event IDs, 300 and 200. To query succes
 
 ![Sample successful logon events](./media/howto-mfa-nps-extension-rdg/image30.png)
 
-You can also view the Security log or the Network Policy and Access Services custom view, as shown below:
+You can also view the Security log or the Network Policy and Access Services custom view:
 
 ![Network Policy and Access Services Event Viewer](./media/howto-mfa-nps-extension-rdg/image31.png)
 
@@ -374,15 +360,15 @@ On the server where you installed the NPS extension for Microsoft Entra multifac
 
 ## Troubleshoot Guide
 
-If the configuration is not working as expected, the first place to start to troubleshoot is to verify that the user is configured to use Microsoft Entra multifactor authentication. Have the user sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). If users are prompted for secondary verification and can successfully authenticate, you can eliminate an incorrect configuration of Microsoft Entra multifactor authentication.
+If the configuration isn't working as expected, the first place to start to troubleshoot is to verify that the user is configured to use Microsoft Entra multifactor authentication. Have the user sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). If users are prompted for secondary verification and can successfully authenticate, you can eliminate an incorrect configuration of Microsoft Entra multifactor authentication.
 
 If Microsoft Entra multifactor authentication is working for the user(s), you should review the relevant Event logs. These include the Security Event, Gateway operational, and Microsoft Entra multifactor authentication logs that are discussed in the previous section.
 
-Below is an example output of Security log showing a failed logon event (Event ID 6273).
+See the following example output of Security log showing a failed logon event (Event ID 6273).
 
 ![Sample of a Failed logon event](./media/howto-mfa-nps-extension-rdg/image33.png)
 
-Below is a related event from the AzureMFA logs:
+What follows is a related event from the AzureMFA logs:
 
 ![Sample Microsoft Entra multifactor authentication log in Event Viewer](./media/howto-mfa-nps-extension-rdg/image34.png)
 
@@ -390,7 +376,7 @@ To perform advanced troubleshoot options, consult the NPS database format log fi
 
 For a description of these log files, see [Interpret NPS Database Format Log Files](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10)). The entries in these log files can be difficult to interpret without importing them into a spreadsheet or a database. You can find several IAS parsers online to assist you in interpreting the log files.
 
-The image below shows the output of one such downloadable [shareware application](https://www.deepsoftware.com/iasviewer).
+The following image shows the output of one such downloadable [shareware application](https://www.deepsoftware.com/iasviewer).
 
 ![Sample Shareware app IAS parser](./media/howto-mfa-nps-extension-rdg/image35.png)
 

@@ -1,6 +1,6 @@
 ---
-author: rwike77 
-ms.author: ryanwi
+author: SHERMANOUKO 
+ms.author: shermanouko
 ms.date: 06/10/2024 
 ms.topic: include
 ms.service: entra-id
@@ -9,7 +9,6 @@ ms.subservice: managed-identities
 
 ## Use a Windows VM system-assigned managed identity to access resource manager
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This tutorial explains how to create a system-assigned identity, assign it to a Windows Virtual Machine (VM), and then use that identity to access the [Azure Resource Manager](/azure/azure-resource-manager/management/overview) API. Managed Service Identities are automatically managed by Azure. They enable authentication to services that support Microsoft Entra authentication, without needing to embed credentials into your code.
 

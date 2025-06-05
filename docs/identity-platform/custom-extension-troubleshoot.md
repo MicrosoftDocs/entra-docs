@@ -4,20 +4,18 @@ description: Troubleshoot and monitor your custom claims provider API.  Learn ho
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
 ms.date: 04/10/2024
-ms.reviewer: JasSuri
+ms.reviewer: jasuri
 ms.service: identity-platform
-
 ms.topic: troubleshooting
 titleSuffix: Microsoft identity platform
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer integrating external systems with Microsoft Entra ID, I want to troubleshoot issues with my custom authentication extension, so that I can identify and resolve any errors or performance problems affecting the authentication experience.
 ---
 
 # Troubleshoot your custom authentication extension
 
-Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) or [SAML app](custom-extension-configure-saml-app.md) to receive tokens with claims from an external store.
+Authentication events and [custom claims providers](custom-claims-provider-overview.md) allow you to customize the Microsoft Entra authentication experience by integrating with external systems.  For example, you can create a custom claims provider API and configure an [OpenID Connect app](./custom-extension-tokenissuancestart-configuration.md) to receive tokens with claims from an external store.
 
 ## Error behavior
 
@@ -34,7 +32,6 @@ In order to troubleshoot issues with your custom claims provider REST API endpoi
 
 ## Microsoft Entra sign-in logs
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can also use [Microsoft Entra sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) in addition to your REST API logs, and hosting environment diagnostics solutions. Using Microsoft Entra sign-in logs, you can find errors, which may affect the users' sign-ins. The Microsoft Entra sign-in logs provide  information about the HTTP status, error code, execution duration, and number of retries that occurred the API was called by Microsoft Entra ID.
 
@@ -43,7 +40,7 @@ Microsoft Entra sign-in logs also integrate with [Azure Monitor](/azure/azure-mo
 To access the Microsoft Entra sign-in logs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **Sign-in logs**, and then select the latest sign-in log.
 1. For more details, select the **Authentication Events** tab. Information related to the custom authentication extension REST API call is displayed, including any [error codes](#error-codes-reference).
 
@@ -56,7 +53,7 @@ Use the following table to diagnose an error code.
 |Error code |Error name |Description |
 |----|----|----|
 |1003000 | EventHandlerUnexpectedError | There was an unexpected error when processing an event handler.|
-|1003001 | CustomExtenstionUnexpectedError | There was an unexpected error while calling a custom extension API.|
+|1003001 | CustomExtensionUnexpectedError | There was an unexpected error while calling a custom extension API.|
 |1003002 | CustomExtensionInvalidHTTPStatus | The custom extension API returned an invalid HTTP status code. Check that the API returns an accepted status code defined for that custom extension type.|
 |1003003 | CustomExtensionInvalidResponseBody | There was a problem parsing the custom extension's response body. Check that the API response body is in an acceptable schema for that custom extension type.|
 |1003004 | CustomExtensionThrottlingError | There are too many custom extension requests. This exception is thrown for custom extension API calls when throttling limits are reached.|
@@ -194,7 +191,7 @@ Your REST API is protected by a Microsoft Entra access token. You can test your 
 After you acquire an access token, pass it the HTTP `Authorization` header. To obtain an access token, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the *Azure Functions authentication events API* app registration, previously configured in [configure a custom claim provider for a token issuance event](custom-extension-tokenissuancestart-configuration.md#step-1-register-a-custom-authentication-extension).
 1. Copy the [application ID](custom-extension-tokenissuancestart-configuration.md#12-grant-admin-consent).
 1. If you haven't created an app secret, follow these steps:
@@ -239,5 +236,4 @@ One of the most common issues is that your custom claims provider API doesn't re
 ## See also
 
 - [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
-- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md) article.

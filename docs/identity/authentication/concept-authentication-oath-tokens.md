@@ -1,20 +1,17 @@
 ---
 title: OATH tokens authentication method
 description: Learn about using OATH tokens in Microsoft Entra ID to help improve and secure sign-in events.
-
 services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/15/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: lvandenende
-manager: amycolannino
-
+manager: femila
 ms.collection: M365-identity-device-management
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use OATH tokens in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -51,17 +48,16 @@ Microsoft Entra ID adjusts time drift of the tokens during activation and every 
 
 ### Improvements in the preview refresh
 
-This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. 
-Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators or Authentication Policy Administrators. 
+This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators or Authentication Policy Administrators. 
 
-The following table compares the administrator role requirements to manage hardware OATH tokens in the preview refresh versus the original preview.
+The following table lists the role requirements to manage hardware OATH tokens in the preview refresh.
 
-| Task    | Original preview role | Preview refresh role |
-|---------|------------------|-----------------|
-| Create a new token in the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
-| Read a token from the tenant’s inventory; doesn't return the secret. | Global Administrator | Authentication Policy Administrator |
-| Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Global Administrator | Authentication Policy Administrator |
-| Delete a token from the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
+| Task                                                                                               | Preview refresh role                |
+|----------------------------------------------------------------------------------------------------|-------------------------------------|
+| Create a new token in the tenant’s inventory.                                                      | Authentication Policy Administrator |
+| Read a token from the tenant’s inventory; doesn't return the secret.                               | Authentication Policy Administrator |
+| Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Authentication Policy Administrator |
+| Delete a token from the tenant’s inventory.                                                        | Authentication Policy Administrator |
 
 As part of the preview refresh, end users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info). In the preview refresh, a token can only be assigned to one user. The following table lists token and role requirements to assign and activate tokens. 
 
@@ -86,10 +82,10 @@ For more information about how to enable hardware OATH tokens and Microsoft Grap
 
 Users can add and manage OATH tokens at [Security info](https://aka.ms/mysecurityinfo), or they can select **Security info** from **My account**. Software and hardware OATH tokens have different icons.  
 
-Token registration type | Icon |
------- | ------ |
-OATH software token   | <img width="63" alt="Software OATH token" src="media/concept-authentication-methods/software-oath-token-icon.png">  |
-OATH hardware token | <img width="63" alt="Hardware OATH token" src="media/concept-authentication-methods/hardware-oath-token-icon.png"> |
+| Token registration type | Icon |
+| ------ | ------ |
+| OATH software token   | <img width="63" alt="Software OATH token" src="media/concept-authentication-methods/software-oath-token-icon.png"> |
+| OATH hardware token | <img width="63" alt="Hardware OATH token" src="media/concept-authentication-methods/hardware-oath-token-icon.png"> |
 
 
 ## Related content

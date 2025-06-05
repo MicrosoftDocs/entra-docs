@@ -5,8 +5,8 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom:
-ms.date: 04/26/2024
-ms.reviewer: justhu
+ms.date: 03/13/2025
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -39,6 +39,12 @@ Building great multitenant apps can be challenging because of the number of diff
 - Test your app in a tenant that has configured [Conditional Access policies](v2-conditional-access-dev-guide.md).
 - Follow the principle of least user access to ensure that your app only requests permissions it actually needs.
 - Provide appropriate names and descriptions for any permissions you expose as part of your app. This helps users and admins know what they're agreeing to when they attempt to use your app's APIs. For more information, see the best practices section in the [permissions guide](./permissions-consent-overview.md).
+
+> [!NOTE]
+> Multitenant applications can be deployed to the same national cloud instances, but not across [Azure National Clouds](./authentication-national-cloud.md).
+> Examples:
+> - A multitenant application created in a commercial tenant can be added to other commercial tenants.
+> - A multitenant application created in an Azure Government tenant can be added to other Azure Government tenants.
 
 ## Next steps
 
