@@ -17,11 +17,11 @@ ms.date: 04/12/2025
 
 In entitlement management, approvers for access package requests can either be directly assigned, or determined dynamically. Entitlement management natively supports approvers when they are the requestors manager, their second-level manager, or a sponsor from a connected organization:
 
-:::image type="content" source="media/entitlement-management-dynamic-approval/native-support-diagram.png" alt-text="Screenshot of native support of approvers in Entitlement management.":::
+:::image type="content" source="media/entitlement-management-dynamic-approval/native-support-diagram.png" alt-text="Screenshot of native support of approvers in Entitlement management." lightbox="media/entitlement-management-dynamic-approval/native-support-diagram.png":::
  
 With the inclusion of [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview), you're able to determine approval based on each of the [ApprovalStage properties](/graph/api/resources/approvalstage?view=graph-rest-beta#properties). For example, if the user requesting an access package is in a department where leadership has recently changed, dynamic approvals can query the system and assign the new department head as the approver.
 
-:::image type="content" source="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png" alt-text="Screenshot of example of determining approvers using custom extensions.":::
+:::image type="content" source="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png" alt-text="Screenshot of example of determining approvers using custom extensions." lightbox="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png":::
 
 This article walks you through making a custom extension, its underlying Azure Logic App, setting its system-assigned identity and role in the catalog, editing the logic app action to perform business logic, and testing to see if it runs successfully.
 
