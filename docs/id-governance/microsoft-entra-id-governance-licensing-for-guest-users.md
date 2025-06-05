@@ -38,18 +38,18 @@ Below is a list of currently billable actions for **guest users**. Note that thi
 
 | Service  | Action | Billable event & API  | Audit Log Where TargetUserType is Guest and GovernanceLicenseFeatureUsed is True  |
 |----------|----------|----------|----------|
-| Entitlement Management  | Row 1C2  | Row 1C3  | Row 1C4  |
-| Entitlement Management  | Row 2C2  | Row 2C3  | Row 2C4  |
-| Entitlement Management  | Row 3C2  | Row 3C3  | Row 3C4  |
-| Entitlement Management  | Row 4C2  | Row 4C3  | Row 4C4  |
-| Entitlement Management  | Row 5C2  | Row 5C3  | Row 5C4  |
-| Entitlement Management  | Row 6C2  | Row 6C3  | Row 6C4  |
-| Entitlement Management| Row 7C2  | Row 7C3  | Row 7C4  |
-| Entitlement Management  | Row 8C2  | Row 8C3  | Row 8C4  |
-| Entitlement Management | Row 9C2  | Row 9C3  | Row 9C4  |
-| Lifecycle Workflows   | Row 10C2 | Row 10C3 | Row 10C4 |
-| Access Reviews   | Row 11C2 | Row 11C3 | Available after 8/1/2025  |
-| Access Reviews    | Row 12C2 | Row 12C3 | Available after 8/1/2025  |
+| Entitlement Management  | [Request access package on-behalf-of other users](entitlement-management-request-behalf.md)  | Row 1C3  | User requests access package assignment, Create access package assignment user update request   |
+| Entitlement Management  | [Guest is assigned to an Entra role assignment](entitlement-management-roles.md)  | Row 2C3  | User requests access package assignment, Create access package assignment user update request   |
+| Entitlement Management  | [Sponsor policy is applied to assignment](entitlement-management-access-package-create.md)  | Row 3C3  | User requests access package assignment, Create access package assignment user update request   |
+| Entitlement Management  | [EM – PIM for groups](create-access-review-pim-for-groups.md) | Row 4C3  | User requests access package assignment, Create access package assignment user update request.  |
+| Entitlement Management  | [Guest uses verified ID for request](entitlement-management-verified-id-settings.md)  | Row 5C3  | User requests access package assignment, Create access package assignment user update request.  |
+| Entitlement Management  | [Guest policy assigned with custom extension](entitlement-management-logic-apps-integration.md) | Row 6C3  | User requests access package assignment, Create access package assignment user update request.  |
+| Entitlement Management| [Guest is granted an auto-assignment policy](entitlement-management-access-package-auto-assignment-policy.md)  | Row 7C3  | Entitlement Management creates access package assignment request for user.  |
+| Entitlement Management  | [Directly assign any user](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)  | Row 8C3  | Administrator directly assigns user to access package.  |
+| Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Row 9C3  | Update access package user lifecycle. |
+| Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Row 10C3 | Workflow execution started for user.  |
+| Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Row 11C3 | Available after 8/1/2025  |
+| Access Reviews    | [Access Review – inactive users](review-recommendations-access-reviews.md#inactive-user-recommendations) | Row 12C3 | Available after 8/1/2025  |
 
 
 ## Guest billing in multi-tenant organizations
