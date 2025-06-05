@@ -56,34 +56,33 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 
 ### 2. Create a Global Secure Access application
 
-1. Publish the domain controllers using their IP addresses or Fully Qualified Domain Name (FQDN) to allow the Global Secure Access client to obtain Kerberos tickets.
-1. When configuring, add port `88` and select **TCP**.
+Create a new Enterprise Application or use Quick Access to publish the domain controllers using their IP addresses or Fully Qualified Domain Name (FQDN). Publishing the DCs lets the Global Secure Access client obtain Kerberos tickets. In this example, Quick Access is used.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Go to **Global Secure Access** > **Applications** > **Quick Access** and then select **Add Quick Access application segment**. Use port `88` and select **TCP**.
 1. You can configure the port in either a Quick Access or Enterprise Application.
+1. Add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
 
 ![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers](media/how-to-configure-domain-controllers/quick-access-settings.png)
 
-### 3. Add Service Principal Names (SPNs) to Quick Access
-
-1. In your Quick Access application, add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
-
-### 4. Assign users and configure Conditional Access
+### 3. Assign users and configure Conditional Access
 
 1. Assign the users who are synchronized from Active Directory in the Microsoft Entra application where you configured the domain controllers.
 1. Create a Conditional Access policy that requires multifactor authentication (MFA) for these users.
 
-### 5. Enable the Private Access profile
+### 4. Enable the Private Access profile
 
 1. In the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
 1. Enable the Private Access profile.
 
-### 6. Install the Global Secure Access client
+### 5. Install the Global Secure Access client
 
 1. Download the latest Global Secure Access Windows client from **Global Secure Access** > **Connect** > **Client download** > **Windows 10/11**.
 1. Install the client on a Windows 10/11 device that is Microsoft Entra joined or hybrid joined.
 1. Ensure the client device has line of sight to the private applications and the domain controller.
 1. After installation, pause (disable) the client.
 
-### 7. Install the Private Access Sensor on the domain controller
+### 6. Install the Private Access Sensor on the domain controller
 
 1. Download the Private Access Sensor for DC at [https://aka.ms/PASensorpPrefresh](https://aka.ms/PASensorpPrefresh).
 1. Extract the zip file.
@@ -94,7 +93,7 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 > [!NOTE]
 > Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path.
 
-### 8. Configure Private Access Sensor policy files
+### 7. Configure Private Access Sensor policy files
 
 1. Confirm that the SPNs configured earlier are present in the `cloudpolicy` file.
 1. In the `localpolicy` file, add the private connector IPs to the `SourceIPAllowList` and save.
@@ -110,7 +109,7 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 - Enable break glass mode by setting `"IsBreakGlass": true` in the policy file or changing the `TmpBreakglass` registry key from `0` to `1`.
 - Changes take a few minutes to propagate; restarting the sensor isn't required.
 
-### 9. Test Microsoft Entra Private Access for Domain Controllers
+### 8. Test Microsoft Entra Private Access for Domain Controllers
 
 1. Keep both the Global Secure Access client and Private Access Sensors turned off.
 1. Confirm that the DC FQDNs/IPs configured in the Quick Access app are present in the Global Secure Access client policy.
@@ -123,7 +122,7 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 1. Turn on the Global Secure Access client and try to access the SPN again. You should receive Kerberos tickets, and MFA might be required if your Conditional Access policy enforces it.
 1. To verify Kerberos traffic is tunneled through Global Secure Access, use Advanced Diagnostics in the Global Secure Access client.
 
-### 10. Investigation and troubleshooting
+### 9. Investigation and troubleshooting
 
 - Use **Event Viewer** to review Private Access Sensor logs.
 - To collect Private Access Sensor logs, run `PrivateAccessSensorLogsCollector` from the sensor installation path and share the generated zip file with Microsoft support.
