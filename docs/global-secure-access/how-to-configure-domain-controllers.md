@@ -77,6 +77,8 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
 1. Enable the Private Access profile.
 
+![Screenshot showing the Private Access traffic forwarding profile activated in the Microsoft Entra admin center](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png)
+
 ### 5. Install the Global Secure Access client
 
 1. Download the latest Global Secure Access Windows client from **Global Secure Access** > **Connect** > **Client download** > **Windows 10/11**.
