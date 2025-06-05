@@ -60,6 +60,8 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 1. When configuring, add port `88` and select **TCP**.
 1. You can configure the port in either a Quick Access or Enterprise Application.
 
+![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers](media/how-to-configure-domain-controllers/quick-access-settings.png)
+
 ### 3. Add Service Principal Names (SPNs) to Quick Access
 
 1. In your Quick Access application, add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
