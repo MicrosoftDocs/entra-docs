@@ -17,7 +17,7 @@ ms.collection: ce-skilling-ai-copilot
 
 # Copilot in Microsoft Entra
 
-**Applies to:** Microsoft Entra ![Green circle with a white check mark symbol.](./media/common/applies-to-yes.png)
+**Applies to:** Microsoft Entra ![Green circle with a white check mark symbol.](../media/common/applies-to-yes.png)
 
 [Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) is a platform that brings together the power of AI and human expertise to help administrators and security teams respond to attacks faster and more effectively. Security Copilot is embedded in Microsoft Entra so you can investigate and resolve identity risks, assess identities and access with AI-driven intelligence, and complete complex tasks quickly.  Copilot in Microsoft Entra (Copilot) gets insights from your Microsoft Entra users, groups, sign-in logs, audit logs, and more. 
 
