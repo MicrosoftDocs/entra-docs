@@ -5,11 +5,11 @@ description: Learn about risk detections and risk levels, including the differen
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 05/15/2025
+ms.date: 06/05/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera 
 ms.reviewer: cokoopma
 
 ---
@@ -19,6 +19,9 @@ ms.reviewer: cokoopma
 Microsoft Entra ID Protection provides organizations with information about suspicious activity in their tenant and allows you to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
 
 User risk detections might flag a legitimate user account as at risk, when a potential threat actor gains access to an account by compromising their credentials or when anomalous user activity is detected. Sign-in risk detections represent the probability that a given authentication request isn't the authorized owner of the account. Having the ability to identify risk at the user and sign-in level is critical for customers to be empowered to secure their tenant.
+
+> [!NOTE]
+> For the full list of risk detections, how they're calculated, and their license requirements, see [**Risk detection and event types**](reference-risk-event-types.md).
 
 ## Risk levels
 
@@ -70,8 +73,11 @@ These fields are essential for real-time monitoring, threat response, and mainta
 
 Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/location-condition.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
 
+> [!NOTE]
+> Looking for the **Risk detections mapped to riskEventType** table? It's moved to [**Risk detection and event types**](reference-risk-event-types.md).
+
 ## Related content
 
 - [Learn about risk-based access policies](concept-identity-protection-policies.md)
 - [Learn how to investigate risk](howto-identity-protection-investigate-risk.md)
-- [FAQs](id-protection-faq.yml)
+- [Review all risk event types](reference-risk-event-types.md)

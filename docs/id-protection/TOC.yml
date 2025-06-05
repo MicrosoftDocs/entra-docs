@@ -12,6 +12,8 @@
     href: id-protection-dashboard.md
   - name: What are risk detections?
     href: concept-identity-protection-risks.md
+  - name: Risk detection and risk event types
+    href: reference-risk-event-types.md
   - name: Risk-based access control policies
     href: concept-identity-protection-policies.md
   - name: User sign-in experience
@@ -53,8 +55,6 @@
   items:
   - name: FAQs
     href: id-protection-faq.yml
-  - name: Risk detection and risk event types
-    href: reference-risk-event-types.md
   - name: Microsoft Graph APIs
     items: 
     - name: riskDetection API

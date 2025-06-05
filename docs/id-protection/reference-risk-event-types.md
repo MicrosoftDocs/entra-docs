@@ -5,11 +5,11 @@ description: Reference table that maps risk detections to risk event types, and 
 ms.service: entra-id-protection
 
 ms.topic: reference
-ms.date: 05/08/2025
+ms.date: 06/05/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera 
 ms.reviewer: cokoopma
 ---
 
