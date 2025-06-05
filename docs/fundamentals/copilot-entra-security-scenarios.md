@@ -40,7 +40,7 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 
 Recommendations in Microsoft Entra help you improve the security posture of your tenant by providing actionable insights and guidance. These recommendations cover the many features, best practices, and settings of Microsoft Entra, such as using least privileged administrator roles, configuring Self-Service Password Reset, and protecting your tenant with Conditional Access policies. Some recommendations factor into your Identity Secure Score, which can help you monitor and improve the security of your tenant. Using the capabilities of Microsoft Security Copilot, you can now interact with these recommendations using natural language, enabling your security team to quickly investigate how to evolve your tenant to a secure and healthy state. 
 
-This feature is available using a free Microsoft Entra ID license, or a Microsoft Entra ID P1 or P2 license. It's also available in Microsoft Entra Workload ID. 
+This feature is available using a free Microsoft Entra ID license, or a [Microsoft Entra ID P1 or P2 license](/entra/id-protection/overview-identity-protection#license-requirements). It's also available in Microsoft Entra Workload ID. 
 
 The following roles can use this feature: 
 
@@ -69,7 +69,7 @@ The following example prompts can be used to investigate recommendations in Micr
 For more information, see;
 
 - [What are Microsoft Entra Recommendations?](../identity/monitoring-health/overview-recommendations.md)
-- [How to use Microsoft Entra Recommendations](/identity/monitoring-health/howto-use-recommendations.md)
+- [How to use Microsoft Entra Recommendations](../identity/monitoring-health/howto-use-recommendations.md)
 
 ### Summarize a user's risk level
 
@@ -79,7 +79,7 @@ Microsoft Entra ID Protection applies the capabilities of Security Copilot to [s
 
 ### Investigate access reviews
 
-Administrators can use Microsoft Security Copilot with Microsoft Entra ID Governance Access Reviews to extract and analyze access review data. This integration allows admins to explore, track, and analyze access reviews at scale. Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-governance/access-reviews-overview#license-requirements) and a tenant with access reviews configured.
+Administrators can use Microsoft Security Copilot with Microsoft Entra ID Governance Access Reviews to extract and analyze access review data. This integration allows admins to explore, track, and analyze access reviews at scale. Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements) and a tenant with access reviews configured.
 
 This feature helps administrators;
 
@@ -106,11 +106,11 @@ For more information, see;
 
 ### Investigate insights within entitlements management
 
-Use Microsoft Security Copilot with Microsoft Entra ID Governance Entitlement Management to get quick access to information about access packages, policies, connected organizations, and catalog resources. For more information, see [Investigate insights within entitlements management in Microsoft Entra Copilot](copilot-entra-entitlement-management.md).
+Use Microsoft Security Copilot with Microsoft Entra ID Governance Entitlement Management to get quick access to information about access packages, policies, connected organizations, and catalog resources.
 
 Entitlement management in Microsoft Entra ID enables organizations to manage identity and access lifecycle at scale, by automating workflows, access assignments, reviews, and expirations. Using the capabilities of Microsoft Security Copilot with Microsoft Entra ID Governance Entitlement Management, administrators can now interact with entitlement management data using natural language. You can get quick access to information about access packages, policies, connected organizations, and catalog resources, and customize curated data only previously available through custom scripting.
 
-Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-governance/entitlement-management/overview#license-requirements).
+Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
 
 You can use the following example prompts to investigate insights within entitlements management in Microsoft Entra:
 
@@ -129,7 +129,7 @@ External Health Monitoring is a feature in Microsoft Entra that analyzes scenari
 
 For example, in the multifactor authentication (MFA) scenario, External Health Monitoring tracks metrics such as sign-in success rate, sign-in failure rate, and failure count. If there's a spike in failures, an alert is raised to notify the tenant admin, who can then take appropriate action to resolve the issue. 
 
-Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-governance/entitlement-management/overview#license-requirements) and a public cloud tenant.
+Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements) and a public cloud tenant.
 
 The following roles can use this feature:
 
