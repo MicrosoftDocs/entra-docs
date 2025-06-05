@@ -1,5 +1,5 @@
 ---
-title: Troubleshoot Conditional Access policies for Security Copilot
+title: Troubleshoot Conditional Access policies for Microsoft Security Copilot
 description: Security Copilot Conditional Access - Learn to create, assign, and troubleshoot policies using custom security attributes for better protection.
 
 ms.service: entra-id
@@ -12,7 +12,7 @@ author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: lhuangnorth
 ---
-# Troubleshoot Conditional Access policies for Security Copilot
+# Troubleshoot Conditional Access policies for Microsoft Security Copilot
 
 [Generative artificial intelligence (AI)](/ai/playbook/technology-guidance/generative-ai/) services like [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) can bring value to your organization when used appropriately.
 
@@ -86,4 +86,7 @@ Follow the instructions in the article [Add or deactivate custom security attrib
 ## Which policy is causing issues?
 
 It's sometimes hard for an admin to check which policy to update when there's an issue. Use the guidance in [Troubleshooting sign-in problems with Conditional Access](troubleshoot-conditional-access.md#microsoft-entra-sign-in-events) to check which policies apply, which policies don't apply, and run sign-in diagnostics to avoid ongoing issues.
- 
+
+## Next steps
+
+[Understand authentication in Microsoft Security Copilot](/copilot/security/authentication)
