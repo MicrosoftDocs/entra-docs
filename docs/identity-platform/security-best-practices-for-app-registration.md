@@ -28,6 +28,23 @@ This article describes security best practices for the following application pro
 - Application ID URI
 - Application ownership
 
+## Credentials (including certificates and secrets)
+
+Credentials are a vital part of an application when it's used as a confidential client. Under the **Certificates and secrets** page for the application in the Azure portal, credentials can be added or removed.
+
+:::image type="content" source="./media/application-registration-best-practices/credentials.png" alt-text="Screenshot that shows where the certificates and secrets are located.":::
+
+Consider the following guidance related to certificates and secrets:
+
+- Use a [managed identity](../identity/managed-identities-azure-resources/overview) as a credential whenever possible.  This is strongly recommended, as managed identities are both the most secure option and don't require any ongoing credential management.  Follow [this guidance](../workload-id/workload-identity-federation-config-app-trust-managed-identity) to configure a managed identity as a credential.  However, this option may only be possible if your service' runs on Azure.
+- If a managed identity is not possible, use [certificate credentials](./certificate-credentials.md). **Don't use password credentials, also known as *secrets***. While it's convenient to use password secrets as a credential, password credentials are often mismanaged and can be easily compromised.
+- If a certificate must be used instead of a managed identity, store that certificate in a secure key vault, like [Azure Key Vault](https://azure.microsoft.com/products/key-vault)
+- Configure [application management policies](/graph/api/resources/applicationauthenticationmethodpolicy) to govern the use of secrets by limiting their lifetimes or blocking their use altogether.
+- If an application is used only as a public or installed client (for example, mobile or desktop apps that are installed on the end user machine), make sure that there are no credentials specified on the application object.
+- Review the credentials used in applications for freshness of use and their expiration. An unused credential on an application can result in a security breach. Rollover credentials frequently and don't share credentials across applications. Don't have many credentials on one application.
+- Monitor your production pipelines to prevent credentials of any kind from being committed into code repositories. [Credential Scanner](/previous-versions/azure/security/develop/security-code-analysis-overview#credential-scanner) is a static analysis tool that can be used to detect credentials (and other sensitive content) in source code and build output.
+
+
 ## Redirect URI
 
 It's important to keep Redirect URIs of your application up to date. Under **Authentication** for the application in the Azure portal, a platform must be selected for the application and then the **Redirect URI** property can be defined.
@@ -52,22 +69,6 @@ Consider the following guidance related to implicit flow:
 - Understand if [implicit flow is required](./v2-oauth2-implicit-grant-flow.md#suitable-scenarios-for-the-oauth2-implicit-grant). Don't use implicit flow unless explicitly required.
 - If the application was configured to receive access tokens using implicit flow, but doesn't actively use them, turn off the setting to protect from misuse.
 - Use separate applications for valid implicit flow scenarios.
-
-## Certificates and secrets
-
-Certificates and secrets, also known as credentials, are a vital part of an application when it's used as a confidential client. Under **Certificates and secrets** for the application in the Azure portal, certificates and secrets can be added or removed.
-
-:::image type="content" source="./media/application-registration-best-practices/credentials.png" alt-text="Screenshot that shows where the certificates and secrets are located.":::
-
-Consider the following guidance related to certificates and secrets:
-
-- Always use [certificate credentials](./certificate-credentials.md) whenever possible and don't use password credentials, also known as *secrets*. While it's convenient to use password secrets as a credential, when possible use x509 certificates as the only credential type for getting tokens for an application.
-  - Configure [application authentication method policies](/graph/api/resources/applicationauthenticationmethodpolicy) to govern the use of secrets by limiting their lifetimes or blocking their use altogether.
-- Use Key Vault with [managed identities](~/identity/managed-identities-azure-resources/overview.md) to manage credentials for an application.
-- If an application is used only as a Public Client App (allows users to sign in using a public endpoint), make sure that there are no credentials specified on the application object.
-- Review the credentials used in applications for freshness of use and their expiration. An unused credential on an application can result in a security breach. Rollover credentials frequently and don't share credentials across applications. Don't have many credentials on one application.
-- Monitor your production pipelines to prevent credentials of any kind from being committed into code repositories.
-- [Credential Scanner](/previous-versions/azure/security/develop/security-code-analysis-overview#credential-scanner) is a static analysis tool that can be used to detect credentials (and other sensitive content) in source code and build output.
 
 ## Application ID URI
 
@@ -94,12 +95,6 @@ Consider the following guidance related to specifying application owners:
 
 - Application ownership should be kept to a minimal set of people within the organization.
 - An administrator should review the owners list once every few months to make sure that owners are still part of the organization and should still own an application.
-
-## Integration assistant
-
-The **Integration assistant** in Azure portal can be used to make sure that an application meets a high quality bar and to provide secure integration. The integration assistant highlights best practices and recommendation that help avoid common oversights when integrating with the Microsoft identity platform.
-
-:::image type="content" source="./media/application-registration-best-practices/checklist.png" alt-text="Screenshot that shows where to find the integration assistant.":::
 
 ## Next steps
 
