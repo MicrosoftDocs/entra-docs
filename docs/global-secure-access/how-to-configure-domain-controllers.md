@@ -21,16 +21,16 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 
 - The **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- The client machine is at least Windows 10 and is Microsoft Entra joined or hybrid joined device. The client machine must also have line of sight to the private resources and DC (user is in a corporate network and accessing on-premises resources). User identity used for joining the device and accessing these resources was created in Active Directory (AD) and synced to Microsoft Entra ID using Microsoft Entra Connect.  
-- The latest Microsoft Entra Private network connector is installed and has a line of sight to the DC. 
+- The client machine is at least Windows 10 and is Microsoft Entra joined or hybrid joined device. The client machine must also have line of sight to the private resources and DC (user is in a corporate network and accessing on-premises resources). User identity used for joining the device and accessing these resources was created in Active Directory (AD) and synced to Microsoft Entra ID using Microsoft Entra Connect.
+- The latest Microsoft Entra Private network connector is installed and has a line of sight to the DC.
 - Open inbound Transmission Control Protocol (TCP) port `1337` in the Windows Firewall on the DCs.
 - Identify the Service Principal Names (SPNs) of the private apps you want to protect. You add the SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
-> The SPNs are *case insensitive* and should be an *exact match*. 
+> The SPNs are *case insensitive* and should be an *exact match*.
 - Understand that only one Private Access Sensor is required on a DC in your environment. To test functionality, you don’t need to install sensors on all DCs. To test functionality, install one sensor in `Audit` (report-only) mode. A sensor is installed in `Audit` mode by default.
-- As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.  
-- If you have multiple DCs in the sites/domain and would only like to test on one, recommend setting a preferred DC using klist add_bind cmd. In addition, create a firewall rule on Windows Defender to block connections to all other DCs in the site except the test DC. 
-- Recommended but optional: Restrict NT Lan Manager (NTLM) v1/v2 and use Kerberos auth in the domain.  
+- As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.
+- If you have multiple DCs in the sites/domain and would only like to test on one, we recommend setting a preferred DC using the `klist add_bind` command. In addition, create a firewall rule on Windows Defender to block connections to all other DCs in the site except the test DC.
+- Recommended but optional: Restrict NT Lan Manager (NTLM) v1/v2 and use Kerberos auth in the domain.
 
 > [!Note]
 > Setting the policy Restrict NTLM: NTLM authentication in this domain without performing an impact assessment first might cause service outage for those applications and users still using NTLM authentication.
