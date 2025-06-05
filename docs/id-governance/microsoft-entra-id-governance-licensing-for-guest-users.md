@@ -38,18 +38,18 @@ Below is a list of currently billable actions for **guest users**. Note that thi
 
 | Service  | Action | Billable event & API  | Audit Log Where TargetUserType is Guest and GovernanceLicenseFeatureUsed is True  |
 |----------|----------|----------|----------|
-| Row 1C1  | Row 1C2  | Row 1C3  | Row 1C4  |
-| Row 2C1  | Row 2C2  | Row 2C3  | Row 2C4  |
-| Row 3C1  | Row 3C2  | Row 3C3  | Row 3C4  |
-| Row 4C1  | Row 4C2  | Row 4C3  | Row 4C4  |
-| Row 5C1  | Row 5C2  | Row 5C3  | Row 5C4  |
-| Row 6C1  | Row 6C2  | Row 6C3  | Row 6C4  |
-| Row 7C1  | Row 7C2  | Row 7C3  | Row 7C4  |
-| Row 8C1  | Row 8C2  | Row 8C3  | Row 8C4  |
-| Row 9C1  | Row 9C2  | Row 9C3  | Row 9C4  |
-| Row 10C1 | Row 10C2 | Row 10C3 | Row 10C4 |
-| Row 11C1 | Row 11C2 | Row 11C3 | Row 11C4 |
-| Row 12C1 | Row 12C2 | Row 12C3 | Row 12C4 |
+| Entitlement Management  | Row 1C2  | Row 1C3  | Row 1C4  |
+| Entitlement Management  | Row 2C2  | Row 2C3  | Row 2C4  |
+| Entitlement Management  | Row 3C2  | Row 3C3  | Row 3C4  |
+| Entitlement Management  | Row 4C2  | Row 4C3  | Row 4C4  |
+| Entitlement Management  | Row 5C2  | Row 5C3  | Row 5C4  |
+| Entitlement Management  | Row 6C2  | Row 6C3  | Row 6C4  |
+| Entitlement Management| Row 7C2  | Row 7C3  | Row 7C4  |
+| Entitlement Management  | Row 8C2  | Row 8C3  | Row 8C4  |
+| Entitlement Management | Row 9C2  | Row 9C3  | Row 9C4  |
+| Lifecycle Workflows   | Row 10C2 | Row 10C3 | Row 10C4 |
+| Access Reviews   | Row 11C2 | Row 11C3 | Available after 8/1/2025  |
+| Access Reviews    | Row 12C2 | Row 12C3 | Available after 8/1/2025  |
 
 
 ## Guest billing in multi-tenant organizations
