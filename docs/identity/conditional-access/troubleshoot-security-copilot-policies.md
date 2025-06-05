@@ -1,6 +1,6 @@
 ---
-title: Troubleshooting Conditional Access policies and Security Copilot
-description: 
+title: Troubleshoot Conditional Access policies for Security Copilot
+description: Security Copilot Conditional Access - Learn to create, assign, and troubleshoot policies using custom security attributes for better protection.
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -12,24 +12,24 @@ author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: lhuangnorth
 ---
-# Troubleshooting Conditional Access policies and Security Copilot
+# Troubleshoot Conditional Access policies for Security Copilot
 
-[Generative Artificial Intelligence (AI)](/ai/playbook/technology-guidance/generative-ai/) services like [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) when used appropriately bring value to your organization.
+[Generative artificial intelligence (AI)](/ai/playbook/technology-guidance/generative-ai/) services like [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) can bring value to your organization when used appropriately.
 
-Applying Conditional Access policy to these Generative AI services can be accomplished through [our recomendation to target all resources](concept-conditional-access-cloud-apps.md#all-resources). These policies might include those for [all users](policy-all-users-mfa-strength.md), risky [users](policy-risk-based-user.md) or [sign-ins](policy-risk-based-sign-in.md), and users with [insider risk](policy-risk-based-insider-block.md). 
+Apply Conditional Access policy to these generative AI services by following [our recommendation to target all resources](concept-conditional-access-cloud-apps.md#all-resources). These policies might include those for [all users](policy-all-users-mfa-strength.md), risky [users](policy-risk-based-user.md), [sign-ins](policy-risk-based-sign-in.md), and users with [insider risk](policy-risk-based-insider-block.md).
 
-Some organizations target the following services directly using the underlying service principals and custom security attributes in their Conditional Access policies:
+Some organizations target these services directly by using the underlying service principals and custom security attributes in their Conditional Access policies:
 
 - 43d7b169-1d9e-4d32-8cd8-06c5974ed90c - Security Copilot Agent Management
 - bb5ffd56-39eb-458c-a53a-775ba21277da - Security Copilot Portal
 - bb3d68c2-d09e-4455-94a0-e323996dbaa3 - Security Copilot API
 - b0cf1501-8e0f-4fbb-b70a-52ca5ea7bda6 - Security Copilot Logic Apps Connector
 
-In these cases administrators must create, assign, and then target these underlying service principals with custom security attributes.
+In these cases, admins create, assign, and target these underlying service principals with custom security attributes.
 
 ## Required roles
 
-Custom security attributes are security sensitive and can only be managed by delegated users. One or more of the following roles should be assigned to the users who manage or report on these attributes.
+Custom security attributes are security sensitive and only delegated users can manage them. Assign one or more of the following roles to the user who manages or reports on these attributes.
 
 | Role name | Description |
 | --- | --- |
@@ -44,35 +44,35 @@ Assign the appropriate role to the users who manage or report on these attribute
 
 ## Create custom security attributes
 
-Follow the instructions in the article, [Add or deactivate custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md) to add the following **Attribute set** and **New attributes**.
+Follow the instructions in the article [Add or deactivate custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md) to add the following **Attribute set** and **New attributes**.
 
 - Create an **Attribute set** named *SecurityCopilotAttributeSet*.
-- Create **New attributes** named *SecurityCopilotAttribute* with **Allow multiple values to be assigned** set to **No** and **Only allow predefined values to be assigned** set to **Yes**. We add the following predefined value:
+- Create **New attributes** named *SecurityCopilotAttribute* with **Allow multiple values to be assigned** set to **No** and **Only allow predefined values to be assigned** set to **Yes**. Add the following predefined value:
    - MFARequired
 
 > [!NOTE]
-> Conditional Access filters for applications only works with custom security attributes of type "string". Custom Security Attributes support creation of Boolean data type but Conditional Access Policy only supports "string".
+> Conditional Access filters for applications only work with custom security attributes of type "string". Custom security attributes support creating the Boolean data type, but Conditional Access Policy only supports "string".
 
-## Assign a custom security attribute to applications
+## Assign custom security attributes to applications
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Assignment Administrator](../role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
-1. Select the apps you want to apply a custom security attribute to:
+1. Select the apps to apply a custom security attribute to:
    1. 43d7b169-1d9e-4d32-8cd8-06c5974ed90c - Security Copilot Agent Management
    1. bb5ffd56-39eb-458c-a53a-775ba21277da - Security Copilot Portal
    1. bb3d68c2-d09e-4455-94a0-e323996dbaa3 - Security Copilot API
    1. b0cf1501-8e0f-4fbb-b70a-52ca5ea7bda6 - Security Copilot Logic Apps Connector
 1. Under **Manage** > **Custom security attributes**, select **Add assignment**.
 1. Under **Attribute set**, select the attribute set you created.
-1. Under **Attribute name**, select attribute you created.
-1. Under **Assigned values**, select **Add values**, select the value you created from the list, then select **Done**.
+1. Under **Attribute name**, select the attribute you created.
+1. Under **Assigned values**, select **Add values**, choose the value you created from the list, then select **Done**.
 1. Select **Save**.
 
 ## Targeting custom security attributes in Conditional Access policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
 1. Browse to **Entra ID** > **Conditional Access**.
-1. Select **New policy** or an existing policy to update.
+1. Select **New policy** or select an existing policy to update.
 1. When configuring your **Target resources**, select the following options:
    1. Select what this policy applies to **Cloud apps**.
    1. Include **Select resources**.
@@ -82,3 +82,8 @@ Follow the instructions in the article, [Add or deactivate custom security attri
    1. Set **Operator** to **Contains**.
    1. Set **Value** to one of your custom attributes.
    1. Select **Done**.
+
+## Which policy is causing issues?
+
+It's sometimes hard for an admin to check which policy to update when there's an issue. Use the guidance in [Troubleshooting sign-in problems with Conditional Access](troubleshoot-conditional-access.md#microsoft-entra-sign-in-events) to check which policies apply, which policies don't apply, and run sign-in diagnostics to avoid ongoing issues.
+ 
