@@ -73,7 +73,8 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 ### 4. Enable the Private Access profile
 
-1. In the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
 1. Enable the Private Access profile.
 
 ### 5. Install the Global Secure Access client
@@ -89,16 +90,14 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Extract the zip file.
 1. Install the sensor by running the `PrivateAccessSensorInstaller` batch file, or install the `PrivateAccessSensor` package followed by the `PrivateAccessSensorPolicyRetreiverInstaller` package.
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
-1. After installation, verify the sensor status is **Active** in **Global Secure Access** > **Connect** > **Connectors** > **Private access sensor**.
-
-> [!NOTE]
-> Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path.
+1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors** > **Private access sensor** and verify the sensor status is **Active**.
 
 ### 7. Configure Private Access Sensor policy files
 
+Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path.
+
 1. Confirm that the SPNs configured earlier are present in the `cloudpolicy` file.
-1. In the `localpolicy` file, add the private connector IPs to the `SourceIPAllowList` and save.
-    - Only Kerberos requests from these connector IPs are allowed; others are blocked.
+1. In the `localpolicy` file, add the private connector IPs to the `SourceIPAllowList` and save. Only Kerberos requests from these connector IPs are allowed; others are blocked.
 1. Ensure the **Private Access Sensor** and **PaSensorPolicyRetreiverService** services are running.
 
 > [!IMPORTANT]
@@ -113,8 +112,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 ### 8. Test Microsoft Entra Private Access for Domain Controllers
 
 1. Keep both the Global Secure Access client and Private Access Sensors turned off.
-1. Confirm that the DC FQDNs/IPs configured in the Quick Access app are present in the Global Secure Access client policy.
-    - Check via the Global Secure Access system tray icon: **Advanced Diagnostics** > **Traffic Forwarding Profile**.
+1. Confirm that the DC FQDNs/IPs configured in the Quick Access app are present in the Global Secure Access client policy. Check via the Global Secure Access system tray icon: **Advanced Diagnostics** > **Traffic Forwarding Profile**.
 1. (Optional) Run `nltest` from your client machine to list domain controllers.
 1. Run `klist purge` to clear all Kerberos tickets.
 1. Use `klist tgt get cifs/SPN` or access the Server Message Block (SMB) share to verify access to the target resource.
@@ -130,7 +128,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 - For Global Secure Access client logs:
     1. Right-click the Global Secure Access tray icon.
     2. Select **Advanced Diagnostics** > **Advanced log collection** > **Collect advanced logs**.
-    3. Reproduce your issue, then stop log collection and submit the logs to Microsoft.
+    3. Reproduce your issue, then stop log collection and submit the logs to Microsoft support.
 
 > [!TIP]
 > If you encounter issues, provide screenshots, command outputs, and collected logs to Microsoft support for further assistance.
