@@ -513,7 +513,7 @@ CA Scoping allows admins to define rules that associate a CA (identified by its 
 
 1. To edit or delete a CA scoping policy select "..." on the rule row. Select **Edit** to edit the rule and **Delete** to delete the rule.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-policy-edit-delete.png" alt-text="Screenshot of CA scoping save cbaconfig.":::
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-policy-edit-delete.png" alt-text="Screenshot of CA scoping edit or delete.":::
 
 ### Known Limitations
 - Only one group can be assigned per CA.
