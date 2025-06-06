@@ -36,22 +36,6 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - [Directory Roles](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
 - [License Usage](#license-usage): Track licenses purchased and actual usage across your Microsoft Entra tenant using natural language queries.
 
-
-The table below summarizes the scenarios supported by Microsoft Security Copilot in Microsoft Entra, including the required roles and licenses.
-
-| Scenario | Role(s) | Required License |
-|----------|---------|------------------|
-| Investigate recommendations | &#8226; Application Administrator <br/>&#8226; Identity Governance Administrator <br/>&#8226; Privileged Role Administrator<br/>&#8226; Conditional Access Administrator<br/>&#8226; Security Administrator<br/>&#8226; Hybrid Identity Administrator<br/>&#8226; Authentication Policy Administrator<br/>&#8226; Authentication Administrator | &#8226; Free Microsoft Entra ID<br/>&#8226; Microsoft Entra ID P1<br>&#8226; Microsoft Entra ID P2<br/>&#8226; Entra Workload ID |
-| Summarize a user's risk level | &#8226; Identity Governance Administrator | Microsoft Entra ID P2 |
-| Investigate access reviews | &#8226; Identity Governance Administrator | &#8226; Microsoft Entra ID P2 |
-| Investigate insights within entitlements management | &#8226; Identity Governance Administrator | &#8226; Microsoft Entra ID P2 |
-| Investigate alerts in Scenario Health Monitoring | &#8226; Security Administrator<br/>&#8226; Security Reader<br/>&#8226; Global Reader | &#8226; Microsoft Entra ID P2 (public cloud tenant) |
-| SLA in Scenario Health Monitoring | _TBD_ | _TBD_ |
-| Microsoft Entra domains | &#8226; Domain Name Administrator | &#8226; Any Microsoft Entra ID license |
-| Microsoft Entra tenants | &#8226; Global Reader | &#8226; Any Microsoft Entra ID license |
-| Directory Roles (RBAC) | Directory Reader<br/>&#8226; Global Reader | &#8226; Any Microsoft Entra ID license |
-| License Usage | &#8226; Global Reader | &#8226; Any Microsoft Entra ID license |
-
 ### Investigate recommendations
 
 Recommendations in Microsoft Entra help you improve the security posture of your tenant by providing actionable insights and guidance. These recommendations cover the many features, best practices, and settings of Microsoft Entra, such as using least privileged administrator roles, configuring Self-Service Password Reset, and protecting your tenant with Conditional Access policies. Some recommendations factor into your Identity Secure Score, which can help you monitor and improve the security of your tenant. Using the capabilities of Microsoft Security Copilot, you can now interact with these recommendations using natural language, enabling your security team to quickly investigate how to evolve your tenant to a secure and healthy state. 
