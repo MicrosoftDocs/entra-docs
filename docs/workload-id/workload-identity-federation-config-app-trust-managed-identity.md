@@ -250,7 +250,7 @@ func main() {
   }
 
   client := azsecrets.NewClient("https://testfickv.vault.azure.net", cred, nil)
-	resp, err := client.GetSecret(context.TODO(), "<SECRET_NAME>", version, nil)
+	resp, err := client.GetSecret(context.TODO(), "<SECRET_NAME>", "", nil)
 	if err != nil {
 		// TODO: handle error
 	}
