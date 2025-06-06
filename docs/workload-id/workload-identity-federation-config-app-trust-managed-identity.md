@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.service: entra-workload-id
 ms.topic: how-to
-ms.date: 05/08/2025
+ms.date: 06/06/2025
 ms.author: cwerner
 ms.reviewer: hosamsh
 ms.custom: sfi-image-nochange
