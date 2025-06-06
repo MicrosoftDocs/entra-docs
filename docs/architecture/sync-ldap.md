@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 03/01/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 # LDAP synchronization with Microsoft Entra ID
 

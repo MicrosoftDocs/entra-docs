@@ -1,5 +1,5 @@
 ---
-title: Configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access 
+title: Configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access
 description: Learn how to configure Datawiza Access Proxy for Microsoft Entra SSO and MFA for Outlook Web Access
 author: gargi-sinha
 ms.service: entra-id
@@ -8,8 +8,7 @@ ms.topic: how-to
 ms.date: 07/02/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure Datawiza Access Proxy (DAP) to enable single sign-on (SSO) and Microsoft Entra multifactor authentication (MFA) for Outlook Web Access (OWA). My goal is to enhance application security and solve issues with legacy-app and modern-SSO integration.
 ---
 
@@ -34,7 +33,7 @@ Integration benefits:
     -   See, [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/)
 -   Use the Datawiza Cloud Management Console (DCMC) to manage access to cloud and on-premises apps:
     -   Go to
-        [login.datawizwa.com](https://login.datawiza.com/df3f213b-68db-4966-bee4-c826eea4a310/b2c_1a_linkage/oauth2/v2.0/authorize?client_id=4f011d0f-44d4-4c42-ad4c-88c7bbcd1ac8&scope=https%3A%2F%2Fdatawizab2cprod.onmicrosoft.com%2F4f011d0f-44d4-4c42-ad4c-88c7bbcd1ac8%2FReadWrite.All%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fconsole.datawiza.com%2Fhome&client-request-id=3c20ca19-1dc7-4226-b2cf-fab4d7af3929&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.14.2&x-client-OS=&x-client-CPU=&client_info=1&code_challenge=hz6u_I8Z04mD8zz-olLBSXJ_OI1T2-Evy699ff0O8Ik&code_challenge_method=S256&nonce=80f15c2b-ff10-40a8-a48c-a2533fb2b8d9&state=eyJpZCI6ImY1NzEyZTcyLTBiZTItNGJjMC1hMmExLTYzNjE3NzYyMGU1OSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D) to sign in or sign up for an account
+        [login.datawiza.com](https://login.datawiza.com/df3f213b-68db-4966-bee4-c826eea4a310/b2c_1a_linkage/oauth2/v2.0/authorize?client_id=4f011d0f-44d4-4c42-ad4c-88c7bbcd1ac8&scope=https%3A%2F%2Fdatawizab2cprod.onmicrosoft.com%2F4f011d0f-44d4-4c42-ad4c-88c7bbcd1ac8%2FReadWrite.All%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fconsole.datawiza.com%2Fhome&client-request-id=3c20ca19-1dc7-4226-b2cf-fab4d7af3929&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.14.2&x-client-OS=&x-client-CPU=&client_info=1&code_challenge=hz6u_I8Z04mD8zz-olLBSXJ_OI1T2-Evy699ff0O8Ik&code_challenge_method=S256&nonce=80f15c2b-ff10-40a8-a48c-a2533fb2b8d9&state=eyJpZCI6ImY1NzEyZTcyLTBiZTItNGJjMC1hMmExLTYzNjE3NzYyMGU1OSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D) to sign in or sign up for an account
 
 ## Architecture
 

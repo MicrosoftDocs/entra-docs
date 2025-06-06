@@ -9,9 +9,8 @@ ms.subservice: monitoring-health
 ms.date: 03/19/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
-
 ---
 
 # How to download and analyze the Microsoft Entra provisioning logs
@@ -67,7 +66,7 @@ The JSON file is downloaded in a format to reduce the size of the download. This
 
 - Use PowerShell to format the JSON. This script produces a JSON output in a format that includes tabs and spaces:
 
-  ` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
+  `$JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
 
   `$JSONContent | ConvertTo-Json > <PATH TO OUTPUT THE JSON FILE>`
 
@@ -77,7 +76,7 @@ You can use any programming language that you're comfortable with. The following
 
 - [Read the JSON file](/powershell/module/microsoft.powershell.utility/convertfrom-json):
 
-    ` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
+    `$JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
 
 Now you can parse the data according to your scenario. Here are a couple of examples:
 
@@ -87,12 +86,13 @@ Now you can parse the data according to your scenario. Here are a couple of exam
 
 - Output all change IDs for events where the action was "create":
 
-  `foreach ($provitem in $JSONContent) { `
-  `   if ($provItem.action -eq 'Create') {`
-  `       $provitem.changeId `
-  `   }`
-  `}`
-
+  ```powershell
+  foreach ($provitem in $JSONContent) {
+     if ($provItem.action -eq 'Create') {
+         $provitem.changeId
+     }
+  }
+  ```
 ## What you should know
 
 Here are some tips and considerations for analyzing the provisioning logs:
@@ -159,5 +159,5 @@ Use the following table to better understand how to resolve errors that you find
 ## Related content
 
 - [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)
-- [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem.md)
+- [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/troubleshoot.md)
 - [Graph API for provisioning logs](/graph/api/resources/provisioningobjectsummary)

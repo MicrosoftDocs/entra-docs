@@ -1,18 +1,18 @@
 ---
 title: Create a custom authentication extension for attribute collection start and submit events (preview)
-description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.  
+description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.
 author: msmimart
 manager: CelesteDG
 ms.author: mimart
-ms.date: 10/01/2024
+ms.date: 04/28/2025
 ms.service: identity-platform
-
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
+ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Create a custom authentication extension for attribute collection start and submit events (preview)
+# Create a custom authentication extension for attribute collection start and submit events
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -618,7 +618,7 @@ In this step, you register a custom authentication extension that is used by Mic
 
 After your custom authentication extension is created, grant application consent to the registered app, which allows the custom authentication extension to authenticate to your API.
 
-1. Browse to **Entra ID** > **External Identities** > **Custom authentication extensions (Preview)**.
+1. Browse to **Entra ID** > **External Identities** > **Custom authentication extensions**.
 1. Select your custom authentication extension from the list.
 1. On the **Overview** tab, select the **Grant permission** button to give admin consent to the registered app. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission. Select **Accept**. 
 

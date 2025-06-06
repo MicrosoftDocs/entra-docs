@@ -6,13 +6,13 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Veritas Enterprise Vault.cloud SSO-SCIM so that I can streamline the user management process and ensure that users have the appropriate access to Veritas Enterprise Vault.cloud SSO-SCIM.
 ---
 
-# Configure Veritas Enterprise Vault.cloud SSO-SCIM for automatic user provisioning
+# Configure Veritas Enterprise Vault.cloud SSO-SCIM for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Veritas Enterprise Vault.cloud SSO-SCIM and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [Veritas Enterprise Vault.cloud SSO-SCIM](https://www.veritas.com/insights/enterprise-vault.html?inid=us_veritas_home_products_enterprisevaultcloud) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 

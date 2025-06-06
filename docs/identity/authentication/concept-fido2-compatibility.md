@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/15/2025
+ms.date: 05/12/2025
 
 author: justinha
 ms.author: justinha
@@ -14,9 +14,9 @@ ms.reviewer: calui
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 
-Microsoft Entra ID allows passkeys (FIDO2) to be used for multifactor passwordless authentication. This article covers which native apps, web browsers, and operating systems support sign-in using passkey with Microsoft Entra ID.
+This article provides a comprehensive overview of passkey (FIDO2) authentication support in Microsoft Entra ID. It outlines compatibility across web browsers, native apps, and operating systems, enabling passwordless multifactor authentication. You'll also find platform-specific considerations, known issues, and guidance for third-party app and identity provider (IdP) support. Use this information to ensure seamless integration and optimal user experiences with passkeys in your environment.
 
-For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID](howto-authentication-passwordless-security-key-windows.md).
+For more information about how to sign in with FIDO2 security keys on a Windows device, see [Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID](howto-authentication-passwordless-security-key-windows.md).
 
 > [!NOTE]
 > Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys or in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys, and plans to support synced passkeys for Microsoft Entra ID.
@@ -79,7 +79,7 @@ If you registered more than three passkeys, sign in with a passkey might not wor
 
 ## [**Native apps**](#tab/native)
 
-The following sections cover support for passkey (FIDO2) authentication in Microsoft Entra ID for:
+The next sections cover support for passkey (FIDO2) authentication in Microsoft Entra ID for:
 
 - [Microsoft app support with authentication broker](#microsoft-app-support-with-authentication-broker)
 - [Microsoft app support without authentication broker](#microsoft-app-support-without-authentication-broker)
@@ -157,7 +157,7 @@ For more information, see the following Apple documentation:
 #### Android
 - Sign-in with FIDO2 security key to native apps requires Android 13 or later.
 - Sign-in with passkey in Microsoft Authenticator to native apps requires Android 14 or later.
-- Sign-in with Yubico-manufactured FIDO2 security keys with YubiOTP enabled might not work on Samsung Galaxy devices. As a workaround, users can disable YubiOTP and attempt to sign in again.
+- Sign-in with Yubico-manufactured FIDO2 security keys with YubiOTP enabled might not work on Samsung Galaxy devices. As a workaround, users can disable YubiOTP and attempt to sign in again. For more information, see [FIDO issues on Samsung devices](https://support.yubico.com/hc/articles/18801283920156-FIDO-issues-on-Samsung-devices).
 
 ---
 

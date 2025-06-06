@@ -31,7 +31,7 @@ A high-level Private DNS flow for Windows clients is shown in the following diag
 
 1. User requests a DNS query for `app.contoso.com`. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge. 
 1. DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access.  
-1. Connector local resolvers resolve the DNS query and return it back to the DNS proxy. 
+1.The connector server sends the DNS query to the DNS servers configured at operating system level. 
 1. DNS proxy responds back to the client with the internal IP. The client stores the internal IP address and returns a synthetic IP to the application.
 
 
@@ -42,7 +42,7 @@ When a DNS suffix is configured in Quick Access, all DNS queries for a fully qua
 
 ## Single-label domain (SLD) resolution
 
-The Private DNS provides name resolution for SLD without a domain suffix. An NRPT entry is created to send GSA suffix `globalsecureaccess.local.` to DNS proxy when Private DNS is configured. The client machine will attempt to resolve the SLD by appending the locally configured search suffixes. If none of the search suffixes are resolved, the GSA client appends the `<appid>.globalsecureaccess.local.` suffix to the SLD and sends the DNS request to the DNS proxy. DNS proxy strips away the search suffix before sending the DNS query to the connector. The connector then uses its local search suffixes to resolve the SLD query. Resolved IP address for the resource is returned to the DNS proxy and passed along to the client.
+The Private DNS provides name resolution for SLD without a domain suffix. An NRPT entry is created to send GSA suffix `globalsecureaccess.local.` to DNS proxy when Private DNS is configured.  The client machine appends the `<appid>.globalsecureaccess.local.` suffix to the SLD and sends the DNS request to the DNS proxy. DNS proxy strips away the search suffix before sending the DNS query to the connector. The connector then uses its local search suffixes to resolve the SLD query. Resolved IP address for the resource is returned to the DNS proxy and passed along to the client.
 
 > [!NOTE]  
 > For some applications such as Kerberos authentication, it is important to have the correct SPN. GSA synthetic suffix may break Kerberos flow, so it's recommended to use FQDN for applications that require Kerberos authentication.

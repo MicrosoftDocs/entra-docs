@@ -1,14 +1,14 @@
 ---
 title: Tutorial - Quick setup of your tenant for Microsoft Entra Verified ID
-description: In this tutorial, you learn how to quickly configure your tenant to support the Verified ID service. 
+description: In this tutorial, you learn how to quickly configure your tenant to support the Verified ID service.
 ms.service: entra-verified-id
 author: barclayn
 manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 12/12/2024
+ms.date: 04/30/2025
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Quick Microsoft Entra Verified ID setup
@@ -30,7 +30,7 @@ Specifically, you learn how to:
 - Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the advanced setup experience.
 
 > [!NOTE]
-> The Quick setup method is currently not supported in EDU Entra tenants.
+> The Quick setup method is currently not supported in EDU Microsoft Entra tenants.
 
 ## How Quick Verified ID setup works
 

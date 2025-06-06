@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Illumio SSO
+title: Configure Illumio SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Illumio SSO.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Illumio SSO so that I can control who has access to Illumio SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Illumio SSO
+# Configure Illumio SSO for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Illumio SSO with Microsoft Entra ID. Illumio SSO app provides a simple, convenient, and secure way for organizations to manage user access to illumio PCE. When you integrate Illumio SSO with Microsoft Entra ID, you can:
 

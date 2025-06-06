@@ -1,11 +1,10 @@
 ---
 title: OAuth 2.0 and OpenID Connect protocols 
-description: Learn about OIDC authentication and OAuth 2.0 in the Microsoft identity platform. Understand authentication flows and OIDC endpoints for secure user authentication. 
+description: Learn about OAuth 2.0 and OpenID Connect in Microsoft identity platform. Explore authentication flows, endpoints, and secure user authentication.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-adal-ref
-ms.date: 01/27/2025
+ms.date: 05/14/2025
 ms.reviewer: nickludwig
 ms.service: identity-platform
 
@@ -21,7 +20,7 @@ Knowing about OAuth or OpenID Connect (OIDC) at the protocol level isn't require
 
 Four parties are generally involved in an OAuth 2.0 and OpenID Connect authentication and authorization exchange. These exchanges are often called *authentication flows* or *auth flows*.
 
-![Diagram showing the OAuth 2.0 roles](./media/v2-flows/protocols-roles.svg)
+![Screenshot of a diagram showing the roles in OAuth 2.0, including authorization server, client, resource owner, and resource server](./media/v2-flows/protocols-roles.svg)
 
 * **Authorization server** - The Microsoft identity platform is the authorization server. Also called an *identity provider* or *IdP*, it securely handles the end-user's information, their access, and the trust relationships between the parties in the auth flow. The authorization server issues the security tokens your apps and APIs use for granting, denying, or revoking access to resources (authorization) after the user has signed in (authenticated).
 

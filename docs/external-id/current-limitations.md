@@ -7,10 +7,9 @@ ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 04/15/2025
 
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
-ms.reviewer: elisolMS
 
 ms.collection: content-health, M365-identity-device-management
 

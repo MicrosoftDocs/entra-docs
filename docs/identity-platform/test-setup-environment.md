@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/24/2025
-ms.reviewer: ryanwi, arcrowe
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to

@@ -3,12 +3,12 @@ title: Join a Windows Server VM to a Microsoft Entra Domain Services managed dom
 description: In this tutorial, learn how to join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
 manager: femila
-
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
 ms.date: 02/05/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 #Customer intent: As a server administrator, I want to learn how to join a Windows Server VM to a Microsoft Entra Domain Services managed domain to provide centralized identity and policy.
 ---
 # Tutorial: Join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain
@@ -83,8 +83,8 @@ If you already have a VM that you want to domain-join, skip to the section to [j
     
     If you select a virtual network subnet that isn't connected to the subnet for your managed domain, you can't join the VM to the managed domain. For this tutorial, let's create a new subnet in the Azure virtual network.
 
-    In the **Networking** pane, select the virtual network in which your managed domain is deployed, such as *aaads-vnet*
-1. In this example, the existing *aaads-subnet* is shown that the managed domain is connected to. Don't connect your VM to this subnet. To create a subnet for the VM, select **Manage subnet configuration**.
+    In the **Networking** pane, select the virtual network in which your managed domain is deployed, such as *aadds-vnet*
+1. In this example, the existing *aadds-subnet* is shown that the managed domain is connected to. Don't connect your VM to this subnet. To create a subnet for the VM, select **Manage subnet configuration**.
 
     ![Choose to manage the subnet configuration](./media/join-windows-vm/manage-subnet.png)
 

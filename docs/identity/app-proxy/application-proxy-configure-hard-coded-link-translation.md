@@ -2,11 +2,11 @@
 title: Translate links and URLs for Microsoft Entra application proxy.
 description: Learn how to redirect hard coded links for applications published with Microsoft Entra application proxy.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
@@ -22,7 +22,7 @@ The best way to make sure that links work the same both inside and outside of yo
 If you can't use custom domains in your tenant, there are several other options for providing this functionality. All of the other options are also compatible with custom domains and each other, so you can configure custom domains and other solutions.
 
 > [!NOTE]
-> Link translation is not supported for hard-coded internal URLs generated through JavaScript.
+> Link translation isn't supported for hard-coded internal URLs generated through JavaScript.
 
 **Option 1: Use Microsoft Edge** – This solution is only applicable if you plan to recommend or require that users access the application through the Microsoft Edge browser. It handles all published URLs. 
 
@@ -43,7 +43,7 @@ These three features keep your links working no matter where your users are. Whe
 
 You can use Microsoft Edge to further protect your application and content. To use this solution, you need to require/recommend users access the application through Microsoft Edge. Microsoft Edge recognizes all internal URLs published with application proxy and redirects them to the corresponding external URL. The redirection ensures that hard coded internal URLs work. If a user goes to the browser and directly types the internal URL, it works even if the user is remote.  
 
-To learn more, including how to configure this option, see the [Manage web access by using Microsoft Edge for iOS and Android with Microsoft Intune](/mem/intune/apps/manage-microsoft-edge) documentation.  
+To learn more, including how to configure this option, see [Manage web access by using Microsoft Edge for iOS and Android with Microsoft Intune](/mem/intune/apps/manage-microsoft-edge) documentation.  
 
 ### Option 2: MyApps Browser Extension 
 
@@ -54,14 +54,14 @@ To use this feature, the user needs to download the extension and be logged in. 
 To learn more, including how to configure this option, see the [MyApps Browser Extension](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510#download-and-install-the-my-apps-secure-sign-in-extension) documentation.
 
 > [!NOTE]
-> The MyApps Browser Extension does not support link translation for wildcard URLs.
+> The MyApps Browser Extension doesn't support link translation for wildcard URLs.
 
 ### Option 3: Link Translation Setting 
 
 The application proxy service searches through HTML and CSS for published internal links and translates them when link translation is enabled. Link translation provides an uninterrupted experience. Using the MyApps Browser Extension is preferred to the Link Translation Setting since it gives a more performant experience.
 
 > [!NOTE]
-> If you are using option 2 or 3, only one of these should be enabled at a time.
+> If you're using option 2 or 3, only one of these settings should be enabled at a time.
 
 ## How link translation works
 

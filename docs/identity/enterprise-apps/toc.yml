@@ -24,7 +24,9 @@ items:
     - name: Govern and monitor
       href: tutorial-govern-monitor.md
     - name: Manage certificates
-      href: tutorial-manage-certificates-for-federated-single-sign-on.md 
+      href: tutorial-manage-certificates-for-federated-single-sign-on.md
+    - name: Enforce app secrets standards
+      href: tutorial-enforce-secret-standards.md
   - name: Samples
     items: 
     - name: Overview of App Management samples

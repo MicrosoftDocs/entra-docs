@@ -2,11 +2,11 @@
 title: Troubleshoot Application Proxy
 description: Learn how to troubleshoot errors in Microsoft Entra application proxy.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
@@ -20,7 +20,7 @@ This article describes steps you can take to troubleshoot issues and error messa
 
 The first thing to check is the connector. To learn how to debug a private network connector, see [Debug private network connector issues](application-proxy-debug-connectors.md). If you still have issues connecting to your application, return to this article to troubleshoot the application.  
 
-If an error occurs when a user accesses a published application or when you publish an application, check the following options to see if Microsoft Entra application proxy is working correctly:
+If a user encounters an error while accessing or publishing an application, use these steps to verify that Microsoft Entra application proxy is functioning properly:
 
 * Open the Windows Services console. Verify that the **Microsoft Entra private network connector** service is enabled and running. Look at the application proxy service properties page.
 
@@ -40,7 +40,7 @@ This problem occurs if an application requires content that exists outside the p
 
 For example, if you publish the path `https://yourapp/app`, but the application refers to images that are located in `https://yourapp/media`, the images don't appear in the application.
 
-Make sure that you publish the application by using the highest-level path you need to include all referenced content and files. In this example, that level is `http://yourapp/`.
+Make sure that you publish the application by using the highest-level path you need to include all referenced content and files. In the example, that level is `http://yourapp/`.
 
 Verify that the missing resources caused the issue:
 
@@ -102,12 +102,12 @@ The following table describes errors an app user might encounter when they try t
 
 | Error | Explanation and steps to take |
 | ----- | ----------------- |
-| `The website cannot display the page.` | A user sees this error when they try to access an Integrated Windows Authentication (IWA) app you published. The defined SPN for this application is incorrect. <br><br> For IWA apps, make sure that the SPN that's configured for this application is correct. |
-| `The website cannot display the page.` | A user sees this error when they try to access an Outlook Web Application (OWA) app you published. The issue results from: <br><br>- The defined SPN for this application is incorrect. Make sure that the SPN that's configured for this application is correct.<br><br>- The user who tried to access the application is using a Microsoft account instead of their corporate account to sign in, or the user is a guest user. Make sure the user signs in by using a corporate account that matches the domain of the published application. Microsoft Account users and guests can't access IWA applications.<br><br>- The user who tried to access the application isn't properly defined for this application in the on-premises configuration. Make sure that this user has the required on-premises permissions to access this back-end application. |
-| `This corporate app can’t be accessed. You are not authorized to access this application. Authorization failed. Make sure to assign the user with access to this application.` | A user sees this error when they try to access an app you published if they use a Microsoft account instead of their corporate account to sign in, or the user is a guest user. <br><br>Microsoft Account users and guests can't access IWA applications. Make sure the user signs in by using a corporate account that matches the domain of the published application.<br><br>You must assign the user for this application. On the **Application** tab, under **Users and Groups**, assign this user or user group to this application.|
-| `This corporate app can’t be accessed right now. Please try again later… The connector timed out.` | The user who tried to access the application isn't properly defined for this application in the on-premises configuration. Make sure that this user has the required on-premises permissions to access this back-end application. |
-| `This corporate app can’t be accessed. You are not authorized to access this application. Authorization failed. Make sure that the user has a license for Microsoft Entra ID P1 or P2.` | A user sees this error when they try to access the app you published if they weren't explicitly assigned with a Premium license by the subscriber’s administrator. <br><br>On the subscriber’s Microsoft Entra ID **Licenses** tab, make sure that this user or user group is assigned a Premium license. |
-| `A server with the specified host name could not be found.` | A user sees this error when they try to access the app you published and the application's custom domain isn't configured correctly. <br><br> Check the certificate for the domain and configure the Domain Name System (DNS) record correctly. <br><br> For more information, see [Work with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md). |
+| `The website cannot display the page.` | A user sees the error when they try to access an Integrated Windows Authentication (IWA) app you published. The defined SPN for the application is incorrect. <br><br> Make sure the SPN for the application is correct. |
+| `The website cannot display the page.` | A user sees the error when they try to access an Outlook Web Application (OWA) app you published. The issue results from: <br><br>- The defined SPN for the application is incorrect. Make sure the SPN for the application is correct.<br><br>- The user who tried to access the application is using a Microsoft account instead of their corporate account to sign in, or the user is a guest user. Make sure the user signs in by using a corporate account that matches the domain of the published application. Microsoft Account users and guests can't access IWA applications.<br><br>- The user who tried to access the application isn't properly defined for the application in the on-premises configuration. Make sure that the user has the required on-premises permissions to access the back-end application. |
+| `This corporate app can’t be accessed. You are not authorized to access the application. Authorization failed. Make sure to assign the user with access to the application.` | This error occurs when a user tries to access an app using a Microsoft account or as a guest user. Microsoft Account users and guests can't access IWA applications. Ensure the user signs in with a corporate account matching the app's domain.<br><br>To fix the issue, go to the **Application** tab, under **Users and Groups**, and assign the user or group to the app. |
+| `This corporate app can’t be accessed right now. Please try again later… The connector timed out.` | The user who tried to access the application isn't properly defined for the application in the on-premises configuration. Make sure that the user has the required on-premises permissions to access the back-end application. |
+| `This corporate app can’t be accessed. You are not authorized to access the application. Authorization failed. Make sure that the user has a license for Microsoft Entra ID P1 or P2.` | A user sees the error when they try to access the app you published if they weren't explicitly assigned with a Premium license by the subscriber’s administrator. <br><br>On the subscriber’s Microsoft Entra ID **Licenses** tab, make sure that the user or user group is assigned a Premium license. |
+| `A server with the specified host name could not be found.` | A user sees the error when they try to access the app you published and the application's custom domain isn't configured correctly. <br><br> Check the certificate for the domain and configure the Domain Name System (DNS) record correctly. <br><br> For more information, see [Work with custom domains in Microsoft Entra application proxy](./how-to-configure-custom-domain.md). |
 | `Forbidden: This corporate app can't be accessed OR The user could not be authorized. Make sure the user is defined in your on-premises AD and that the user has access to the app in your on-premises AD.` | The issue might be a problem with access to authorization information. To learn more, see (<https://support.microsoft.com/help/331951/some-applications-and-apis-require-access-to-authorization-information>). <br><br> To resolve the error, add the private network connector machine account to the Windows Authorization Access Group built-in domain group. |
 | `InternalServerError: This corporate app can’t be accessed right now. Please try again later… ConnectorError:Unauthorized.` | The connector uses a client certificate to secure outbound connections to Microsoft Entra application proxy cloud service endpoints. The error occurs when the client certificate fails to reach the endpoint. For example, it might occur when a network device performs Transport Layer Security (TLS) inspection or breaks the TLS connection. <br><br> To resolve the error, avoid inline inspection and termination of outbound TLS communications. Inspection and termination must not happen between Microsoft Entra private network connectors and Microsoft Entra application proxy cloud services.|
 

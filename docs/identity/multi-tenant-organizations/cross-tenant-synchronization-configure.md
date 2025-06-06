@@ -1,14 +1,14 @@
 ---
 title: Configure cross-tenant synchronization
 description: Learn how to configure cross-tenant synchronization in Microsoft Entra ID using the Microsoft Entra admin center.
-author: rolyon
-manager: femila
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 10/09/2024
-ms.author: rolyon
-ms.custom: it-pro
+ms.date: 05/02/2025
+ms.author: kenwith
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
@@ -138,7 +138,13 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. At the top of the page, select **New configuration**.
 
-1. Provide a name for the configuration and select **Create**.
+1. Provide a name for the configuration.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-tenant synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
+
+    You might see a **Setup cross-tenant synchronization across Microsoft clouds** check box. This capability is currently being deployed in stages. This setting is not yet functional and you shouldn't try to select this check box.
+
+1. Select **Create**.
 
     It can take up to 15 seconds for the configuration that you just created to appear in the list.
 
@@ -271,7 +277,7 @@ Attribute mappings allow you to define how data should flow between the source t
     | **Guest** | Users will be created as external guests (B2B collaboration users) in the target tenant. |
 
     > [!NOTE]
-    > If the B2B user already exists in the target tenant then **Member (userType)** will not changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
+    > If the B2B user already exists in the target tenant then **Member (userType)** will not be changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
 
     The user type you choose has the following limitations for apps or services (but aren't limited to):
 
@@ -391,7 +397,7 @@ Once you've started a provisioning job, you can monitor the status.
 
     You can also view audit logs in the target tenant.
 
-1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross tenant synchronziation in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
+1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross tenant synchronization in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png" alt-text="Screenshot of the Audit logs page in the target tenant that lists the log entries for user management." lightbox="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png":::
 

@@ -1,8 +1,8 @@
 ---
-title: Understanding and Managing Dynamic Group Processing in Microsoft Entra ID
+title: Understand and Manage Dynamic Group Processing in Microsoft Entra ID
 description: Learn how dynamic group management works. 
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
@@ -11,67 +11,62 @@ ms.author: barclayn
 ms.reviewer: mbhargava
 ---
 
-# Understanding and Managing Dynamic Group Processing  in Microsoft Entra ID
+# Understand and manage dynamic group processing in Microsoft Entra ID
 
-Dynamic membership groups in Microsoft Entra are a powerful feature that allows administrators to automate group membership management. Changes to membership typically process within a few hours. However, under certain conditions, customers can experience delays in membership updates. Processing can take more than 24 hours. Understanding the underlying causes can help admins optimize their configurations and avoid unnecessary processing bottlenecks. 
+Dynamic membership groups in Microsoft Entra ID are a powerful feature that enables administrators to automate the management of group memberships. Changes to memberships are typically processed within a few hours.
 
-## How Dynamic Group Processing Works 
+However, under certain conditions, customers can experience delays in membership updates. Processing can take more than 24 hours. Understanding the underlying causes can help admins optimize their configurations and avoid unnecessary processing bottlenecks.
 
-Dynamic group processing operates in a sequential manner, meaning changes for a single tenant are evaluated and applied in order rather than all at once. Large volumes of changes, especially those affecting many users or devices, can lead to long processing queues, extending the time required for updates to be complete processing.   
+## How dynamic group processing works
 
-### Key Factors Affecting Processing Time
+Dynamic group processing operates in a sequential manner. Changes for a single tenant are evaluated and applied in order, rather than all at once. Large volumes of changes, especially when they affect many users or devices, can lead to long processing queues. The long queues can extend the time required for updates to finish processing.
 
-The three biggest factors influencing processing that can cause membership updates to take longer are: 
+### Key factors that affect processing time
 
-- **Number of dynamic groups**: Tenants with a large number of dynamic groups require more evaluations, increasing processing time. 
+The three biggest factors that influence processing and can cause membership updates to take longer are:
 
-- **Number of object changes**: A high volume of user or device changes can create a long processing queue, extending the time taken to complete processing. Some examples include: changes to extension attributes, device additions or removals, and bulk user updates. 
+- **Number of dynamic groups**: Tenants that have a large number of dynamic groups require more evaluations, increasing processing time.
 
-- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like Match, Contains, or MemberOf can increase processing time. Rule complexity is also a contributing factor.  
+- **Number of object changes**: A high volume of user or device changes can create a long processing queue and extend the processing time. Examples include changes to extension attributes, device additions or removals, and bulk user updates.
 
-## Best Practices to manage dynamic membership groups in your tenant 
+- **Rule configuration**: Certain rule configurations can affect processing time. For instance, the choice of inefficient operators like `Match`, `Contains`, or `memberOf` can increase processing time. Rule complexity is also a contributing factor.  
 
-To ensure efficient processing and minimize delays, consider the following best practices: 
+## Best practices for managing dynamic membership groups in your tenant
 
-### **Monitor the number of dynamic membership groups in your tenant**:
+To help ensure efficient processing and minimize delays, consider the following best practices.
 
-Regularly review the number of groups in your tenant and delete inactive or outdated groups.
+### Monitor the number of dynamic membership groups in your tenant
 
-### **Pause non-essential groups**: 
+Regularly review the number of groups in your tenant. Delete inactive or outdated groups.
 
-If you anticipate making a large number of changes to group membership (for example – changes to more than 500 groups or making over 20,000 membership changes), pause nonessential groups to improve processing performance.
+### Pause nonessential groups
 
-#### When to Pause Group Processing: 
+You can pause nonessential groups to improve processing performance. You might consider pausing group processing in these circumstances:
 
-- Planned large-scale updates: If you anticipate making a large number of changes to group membership (for example – changes to more than 500 groups or making over 20,000 membership changes). 
+- **Planned large-scale updates**: You anticipate making a large number of changes to group membership. For example, you plan to make changes to more than 500 groups or make more than 20,000 membership changes.
+- **Unexpected delays**: You notice that group membership hasn't changed and you encounter unexpected delays.  
 
-- Unexpected delays:  if you notice that group membership hasn't changed/ you encounter unexpected delays.  
+To temporarily halt processing, use the **Pause All Groups** script. Allow the service to recover before resuming.
 
-#### How to Pause/resume:  
+Don't unpause the groups immediately. We recommend waiting a minimum of 24 hours to allow group processing to catch up. Then, check your audit logs to see if they're back to baseline. If necessary, unpause groups in phases rather than all at once.
 
-- Use the Pause All Groups script to temporarily halt processing and allow the service to recover before resuming. 
+### Optimize rule efficiency
 
-- Don't unpause the groups immediately. We recommend waiting a minimum of 24 hours to allow group processing to catch up and then look at your audit logs to see if they are back to baseline. If necessary, unpause groups in phases rather than all at once. 
+- Avoid the use of the `Match` operator in rules as much as possible. Instead, use the `StartsWith`, `Equals`, or `EndsWith` operator.  
 
-### Optimizing Rule Efficiency 
+- Avoid the use of the `Contains` operator in rules as much as possible. It can lead to increased processing time.  
 
-- **Avoid the use of the Match operator** in rules as much as possible. Instead use the StartsWith, Equals, or EndsWith operators.  
+- Use fewer `-or` operators. Instead, use the `-in` operator to group rules into a single criterion. Grouping rules makes them easier to evaluate.  
 
-- **Avoid Contains**: Similar to the use of Match, avoid the use of Contains operator in rules as much as possible as it can lead to increased processing time.  
+- Avoid the use of the [`memberOf`](groups-dynamic-rule-member-of.md) operator if possible. It's currently in preview, and it comes with bugs and limitations. It can also introduce more complexity, particularly if a tenant has a large number of groups or frequent updates. The recommendation is to delete existing `memberOf` groups in your tenant.
 
-- **Use fewer OR operators**: Instead, use the -in operator to group them into a single criterion to make the rules easier to evaluate.  
+For more help with optimizing dynamic group processing, review [Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-rule-more-efficient.md).
 
-- **Minimize use of MemberOf at this time**: [```memberOf```](groups-dynamic-rule-member-of.md), which is currently in preview, can introduce more complexity, particularly if a tenant has a large number of groups or frequent updates. Avoid using this operator if possible as it comes with bugs and limitations. The recommendation is to delete existing MemberOf groups in your tenant: Learn More 
+## Summary
 
->[!NOTE]
-> Review [Create simpler and more efficient rules](groups-dynamic-rule-more-efficient.md) to help you optimize dynamic group processing.
+Delays in dynamic group processing primarily happen due to high volumes of changes and large numbers of groups. By following best practices like optimizing rule efficiency, monitoring changes, and pausing nonessential groups when necessary, IT administrators can improve processing performance and avoid unnecessary delays.  
 
-
-## Other Troubleshooting Resources 
-
-Delays in dynamic group processing primarily happen due to high volumes of changes and large numbers of groups. By following best practices—such as optimizing rule efficiency, monitoring changes, and pausing nonessential groups when needed—IT administrators can improve processing performance and avoid unnecessary delays.  
-
-## Related Articles
+## Related content
 
 - [Manage rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-membership.md)
-- Review detailed information on pausing group processing in [Troubleshoot dynamic group processing](/troubleshoot/entra/entra-id/dir-dmns-obj/troubleshoot-dynamic-groups)
+- [Troubleshoot dynamic groups](/troubleshoot/entra/entra-id/dir-dmns-obj/troubleshoot-dynamic-groups)

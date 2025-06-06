@@ -1,17 +1,15 @@
 ---
-title: Mapping to the certificateUserIds attribute in Microsoft Entra ID 
+title: Mapping to the certificateUserIds attribute in Microsoft Entra ID
 description: Learn about certificate user IDs for Microsoft Entra certificate-based authentication without federation
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: vimrang
 manager: femila
 ms.reviewer: vranganathan
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-image-nochange
 ---
 
 # Mapping to the certificateUserIds attribute in Microsoft Entra ID
@@ -144,6 +142,13 @@ Get-EntraUserCertificateUserIdsFromCertificate
  `[-Path] <string>`
  `[[-Certificate] <System.Security.Cryptography.X509Certificates.X509Certificate2> [-CertificateMapping] <string>]`
  `[<CommonParameters>]`
+
+If the values from the certificate are too long, you can send the output to a file and copy from there.
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All'
+Get-EntraUserCertificateUserIdsFromCertificate -Path C:\Downloads\test.pem | Format-List | Out-File -FilePath ".\certificateUserIds.txt"
+```
 
 **Example 1: Retrieve certificate object from a certificate path**
 

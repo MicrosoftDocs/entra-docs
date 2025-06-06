@@ -66,11 +66,11 @@ By default, a managed domain synchronizes all objects from Microsoft Entra ID, i
 
 In Domain Services, you can also create a forest *trust* with another domain to allow users to access resources. Depending on your access requirements, you can create the forest trust in different directions. 
 
-Trust direction | User access
-----------------|------------
-Two-way | Allows users in both the managed domain and the on-premises domain to access resources in either domain. 
-One-way outgoing | Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
-One-way incoming | Allows users in the managed domain to access resources in the on-premises domain. 
+| Trust direction | User access |
+|-----------------|-------------|
+| Two-way | Allows users in both the managed domain and the on-premises domain to access resources in either domain. |
+| One-way outgoing | Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. |
+| One-way incoming | Allows users in the managed domain to access resources in the on-premises domain. |
 
 <a name='azure-ad-ds-skus'></a>
 

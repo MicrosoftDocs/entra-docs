@@ -5,7 +5,7 @@ author: barclayn
 manager: femila
 ms.service: entra-verified-id
 ms.topic: conceptual
-ms.date: 12/16/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 # Customer intent: As a developer I am looking for information on how to enable my users to control their own information
 ---

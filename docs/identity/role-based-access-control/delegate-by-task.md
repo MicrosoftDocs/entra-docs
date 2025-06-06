@@ -1,15 +1,14 @@
 ---
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 03/12/2025
-ms.author: rolyon
-ms.custom: it-pro
-
+ms.date: 05/25/2025
+ms.author: barclayn
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
 
@@ -115,7 +114,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Configure notifications | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | [Configure settings](../hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
 > | Configure sync notifications | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
-> | Read ADFS security reports | [Security Reader](/azure/role-based-access-control/built-in-roles#security-reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner)
+> | Read ADFS security reports | [Security Reader](/azure/role-based-access-control/built-in-roles#security-reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Read all configuration | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Read sync errors | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Read sync services | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
@@ -405,7 +404,7 @@ Here are the least privileged roles you should use when performing tasks for [au
 > | Enable or disable authentication methods | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | View, provision on behalf of, and manage individual user authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
 > | Configure password protection | [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Configure smart lockout | [Security Administrator](permissions-reference.md#security-administrator) |
+> | Configure smart lockout | [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 
 ## Security - Conditional Access least privileged roles
@@ -529,7 +528,7 @@ Here are the least privileged roles you should use when performing tasks for [su
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Submit support ticket | [Service Support Administrator](permissions-reference.md#service-support-administrator) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Azure Information Protection Administrator](permissions-reference.md#azure-information-protection-administrator)<br/>[Billing Administrator](permissions-reference.md#billing-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Compliance Administrator](permissions-reference.md#compliance-administrator)<br/>[Dynamics 365 Administrator](permissions-reference.md#dynamics-365-administrator)<br/>[Desktop Analytics Administrator](permissions-reference.md#desktop-analytics-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Password Administrator](permissions-reference.md#password-administrator)<br/>[Fabric Administrator](permissions-reference.md#fabric-administrator)<br/>[Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator)<br/>[Skype for Business Administrator](permissions-reference.md#skype-for-business-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator)<br/>[Teams Communications Administrator](permissions-reference.md#teams-communications-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
+> | Submit support ticket | [Service Support Administrator](permissions-reference.md#service-support-administrator) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Azure Information Protection Administrator](permissions-reference.md#azure-information-protection-administrator)<br/>[Billing Administrator](permissions-reference.md#billing-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Compliance Administrator](permissions-reference.md#compliance-administrator)<br/>[Dynamics 365 Administrator](permissions-reference.md#dynamics-365-administrator)<br/>[Desktop Analytics Administrator](permissions-reference.md#desktop-analytics-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Password Administrator](permissions-reference.md#password-administrator)<br/>[Fabric Administrator](permissions-reference.md#fabric-administrator)<br/>[Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator)<br/>[Skype for Business Administrator](permissions-reference.md#skype-for-business-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator)<br/>[Teams Communications Administrator](permissions-reference.md#teams-communications-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 
 ## Next steps
 

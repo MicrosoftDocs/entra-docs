@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with EverBridge
+title: Configure EverBridge for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and EverBridge.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EverBridge so that I can control who has access to EverBridge, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with EverBridge
+# Configure EverBridge for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EverBridge with Microsoft Entra ID.
 When you integrate EverBridge with Microsoft Entra ID, you can:
@@ -24,7 +24,9 @@ When you integrate EverBridge with Microsoft Entra ID, you can:
 * Manage your accounts in one central location by using the Azure portal.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An EverBridge subscription that uses single sign-on.
 
@@ -43,7 +45,7 @@ To configure the integration of EverBridge into Microsoft Entra ID, you need to 
 1. In the **Add from the gallery** section, type **EverBridge** in the search box.
 1. Select **EverBridge** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-everbridge'></a>
 

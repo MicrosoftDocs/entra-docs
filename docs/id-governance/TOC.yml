@@ -101,7 +101,9 @@
       - name: Manage access to SAP applications
         href: sap.md
       - name: Using Entra Private Access with Entitlement Management  
-        href: scenarios/entitlement-management-private-access.md    
+        href: scenarios/entitlement-management-private-access.md
+      - name: Restrict employee access to cloud apps using Microsoft Entra Suite
+        href: entra-suite-scenario.md      
   - name: Migrations
     items:
     - name: Transform your cloud posture
@@ -253,6 +255,8 @@
         href: entitlement-management-catalog-create.md
       - name: Create a custom extension (logic apps) for catalogs
         href: entitlement-management-logic-apps-integration.md
+      - name: Determine access package approvers externally (Preview)
+        href: entitlement-management-dynamic-approval.md  
       - name: Delegate to access package managers
         href: entitlement-management-delegate-managers.md
       - name: Set up group writeback
@@ -294,7 +298,9 @@
       - name: Assign Microsoft Entra Roles (Preview)
         href: entitlement-management-roles.md
       - name: Suggested access packages in MyAccess (Preview)
-        href: entitlement-management-suggested-access-packages.md   
+        href: entitlement-management-suggested-access-packages.md 
+      - name: Assign eligible group membership and ownership in access packages using PIM managed groups (Preview)
+        href: entitlement-management-access-package-eligible.md   
     - name: Approvers
       items:
       - name: Approve requests
@@ -380,7 +386,9 @@
         - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md              
         - name: Check Workflow Insights
-          href: manage-workflow-insights.md            
+          href: manage-workflow-insights.md
+        - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
+          href: ~/fundamentals/copilot-entra-lifecycle-workflow.md              
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
@@ -400,6 +408,8 @@
     href: best-practices-secure-id-governance.md 
   - name: Securing custom extension extensibility to Azure Logic Apps
     href: custom-extension-security.md  
+  - name: Using groups managed by Privileged Identity Management with access packages
+    href: entitlement-management-access-package-pim-reference.md
   - name: Identity Governance - PowerShell
     href: /powershell/module/microsoft.graph.identity.governance/?viewFallbackFrom=graph-powershell-beta&preserve-view=true&view=graph-powershell-1.0
   - name: Access reviews - Microsoft Graph API
@@ -408,6 +418,8 @@
     href: /graph/api/resources/entitlementmanagement-overview
   - name: Custom Alerts
     href: governance-custom-alerts.md
+  - name: Access reviews - FAQs
+    href: access-reviews-faqs.md    
   - name: Lifecycle Workflows
     items:
     - name: Lifecycle Workflows - Microsoft Graph API

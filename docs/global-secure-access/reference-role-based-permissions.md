@@ -1,14 +1,14 @@
 ---
-title: Microsoft Global Secure Access built-in roles 
+title: Microsoft Global Secure Access built-in roles
 description: Learn about the built-in administrator roles you can assign to manage Global Secure Access permissions.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: reference
 ms.date: 03/05/2025
 ai-usage: ai-assisted
-
 ms.service: global-secure-access
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Global Secure Access built-in roles
@@ -67,7 +67,6 @@ The following Microsoft Entra ID admin roles have access to Global Secure Access
 | View traffic logs and alerts | ✅ | ✅ | ✅ |  |  |  |  | ✅ |
 | View all other logs and dashboards | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 | Configure universal tenant restrictions and Global Secure Access signaling for Conditional Access | ✅ | ✅ | ✅ |  |  |  |  |
-| Configure enriched Microsoft 365 logs | ✅ |  |  |  |  |  |  |
 | Read-only access to product settings | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 
 ## Next steps

@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Manage external access to resources with Conditional Access policies

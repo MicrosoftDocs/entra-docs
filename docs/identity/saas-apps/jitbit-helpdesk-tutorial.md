@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra integration with Jitbit Helpdesk
+title: Configure Jitbit Helpdesk for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jitbit Helpdesk.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jitbit Helpdesk so that I can control who has access to Jitbit Helpdesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Jitbit Helpdesk
+# Configure Jitbit Helpdesk for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Jitbit Helpdesk with Microsoft Entra ID. When you integrate Jitbit Helpdesk with Microsoft Entra ID, you can:
 
@@ -24,6 +22,7 @@ In this article,  you learn how to integrate Jitbit Helpdesk with Microsoft Entr
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Jitbit Helpdesk single sign-on (SSO) enabled subscription.
 
@@ -80,12 +79,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Sign on URL** text box, type one of the URLs using the following pattern:
-	| |
-    | ----------------------------------------|
-	| `https://<hostname>/helpdesk/User/Login`|
-	| `https://<tenant-name>.Jitbit.com`|
-	| |
+	a. In the **Sign on URL** text box, type one of the URLs using the patterns:
+    - `https://<hostname>/helpdesk/User/Login`
+	- `https://<tenant-name>.Jitbit.com`
     
 	> [!NOTE] 
 	> This value isn't real. Update this value with the actual Sign-On URL. Contact [Jitbit Helpdesk Client support team](https://www.jitbit.com/support/) to get this value.
@@ -121,9 +117,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
     ![Authentication settings](./media/jitbit-helpdesk-tutorial/authentication.png "Authentication settings")
 
-	a. Select **Enable SAML 2.0 single sign on**, to sign in using Single Sign-On (SSO), with **OneLogin**.
+	a. Select **Enable SAML 2.0 single sign on**, to sign in using single sign-on (SSO), with **OneLogin**.
 
-	b. In the **EndPoint URL** textbox, paste the value of **Login URL**..
+	b. In the **EndPoint URL** textbox, paste the value of **Login URL**.
 
 	c. Open your **base-64** encoded certificate in notepad, copy the content of it into your clipboard, and then paste it to the **X.509 Certificate** textbox
 
@@ -159,7 +155,7 @@ In order to enable Microsoft Entra users to sign in to Jitbit Helpdesk, they mus
 
    c. In the **First Name** textbox, type first name of the user like **Britta**.
 
-   d. In the **Last Name** textbox, type last name of the user like **Simon**.
+   d. In the **Last Name** textbox, type the family name of the user like **Simon**.
 
    e. Select **Create**.
 
@@ -170,9 +166,9 @@ In order to enable Microsoft Entra users to sign in to Jitbit Helpdesk, they mus
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this option redirects to Jitbit Helpdesk Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Jitbit Helpdesk Sign-on URL where you can initiate the sign-in flow. 
 
-* Go to Jitbit Helpdesk Sign-on URL directly and initiate the login flow from there.
+* Go to Jitbit Helpdesk Sign-on URL directly and initiate the sign-in flow from there.
 
 * You can use Microsoft My Apps. When you select the Jitbit Helpdesk tile in the My Apps, this option redirects to Jitbit Helpdesk Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 

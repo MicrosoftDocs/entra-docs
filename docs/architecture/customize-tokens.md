@@ -8,6 +8,7 @@ ms.service: entra
 ms.topic: conceptual
 ms.date: 03/14/2024
 ms.author: jricketts
+ms.custom: sfi-ropc-nochange
 ---
 # Customize tokens
 

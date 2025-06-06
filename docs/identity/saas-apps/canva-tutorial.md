@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Canva
+title: Configure Canva for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Canva.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Canva so that I can control who has access to Canva, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Canva
+# Configure Canva for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Canva with Microsoft Entra ID. Canva is your photo editor, video editor, and graphic design tool all in one app. Create stunning social media posts, videos, cards, flyers, photo collages & more. When you integrate Canva with Microsoft Entra ID, you can:
 

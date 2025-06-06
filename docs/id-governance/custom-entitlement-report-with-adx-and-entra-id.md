@@ -2,11 +2,12 @@
 title: Create Custom Reports Using Microsoft Entra and Application Data
 description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from Microsoft Entra.
 author: billmath
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: tutorial
 ms.date: 04/09/2025
 ms.author: billmath
+ms.custom: sfi-ga-nochange
 ---
 
 # Tutorial: Create customized reports in Azure Data Explorer by using data from Microsoft Entra
@@ -183,7 +184,19 @@ Generate a JSON file with group names and IDs that are used to create custom vie
 
 ```powershell
     # Get all groups and select Id and DisplayName 
-    $groups = Get-MgGroup -All | Select-Object Id,DisplayName 
+    $groups = Get-MgGroup -All | Foreach-Object {
+       $groupObject = @{} 
+       $groupObject["Id"] = $_.Id
+       $groupObject["DisplayName"] = $_.DisplayName
+       $groupObject["SecurityEnabled"] = $_.SecurityEnabled
+       $groupObject["MailEnabled"] = $_.MailEnabled
+       $groupObject["MailNickname"] = $_.MailNickname
+       $groupObject["SecurityIdentifier"] = $_.SecurityIdentifier
+       $date = [datetime]::Parse($_.CreatedDateTime) 
+       $groupObject["CreatedDateTime"] = $date.ToString("yyyy-MM-dd") 
+       $groupObject["SnapshotDate"] = $SnapshotDate
+      [pscustomobject]$groupObject 
+    }
     # Export the groups to a JSON file 
     $groups | ConvertTo-Json | Set-Content ".\EntraGroups.json" 
 ```
@@ -213,7 +226,7 @@ Generate a JSON file with group membership, which is used to create custom views
       Start-Sleep -Milliseconds 200 
     } 
     # Convert the results array to JSON format and save it to a file 
-    $results | ConvertTo-Json | Set-Content "EntraGroupMembership.json" 
+    $results | ConvertTo-Json | Set-Content "EntraGroupMemberships.json" 
 ```
 
 #### Get application and service principal data
@@ -225,11 +238,13 @@ Generate a JSON file with all applications and the corresponding service princip
     Get-MgApplication -All | ForEach-Object { 
       $app = $_ 
       $sp = Get-MgServicePrincipal -Filter "appId eq '$($app.AppId)'" 
+      $date = [datetime]::Parse($app.CreatedDateTime)
       [pscustomobject]@{ 
-        Name        = $app.DisplayName 
+        DisplayName     = $app.DisplayName
         ApplicationId   = $app.AppId 
         ServicePrincipalId = $sp.Id 
         SnapshotDate = $SnapshotDate
+        CreatedDateTime = $date.ToString("yyyy-MM-dd")
       } 
     } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
 ```
@@ -277,12 +292,16 @@ Generate a JSON file of all app role assignments of users in the tenant:
         $createdDateTime = $_.CreatedDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
         # Convert the milliseconds timestamp to a readable date format if necessary 
         $result += [PSCustomObject]@{ 
-          AppRoleId      = $_.AppRoleId 
-          CreatedDateTime   = $createdDateTime 
-          PrincipalDisplayName = $_.PrincipalDisplayName 
-          PrincipalId     = $_.PrincipalId 
-          ResourceDisplayName = $_.ResourceDisplayName 
-          ResourceId      = $_.ResourceId 
+          Id = $_.Id
+          AppRoleId      = $_.AppRoleId
+          CreatedDateTime   = $createdDateTime
+          PrincipalDisplayName = $user.DisplayName
+          PrincipalId     = $user.Id
+          AssignmentPrincipalType = $_.PrincipalType
+          AssignmentPrincipalDisplayName = $_.PrincipalDisplayName
+          AssignmentPrincipalId     = $_.PrincipalId
+          ResourceDisplayName = $_.ResourceDisplayName
+          ResourceId      = $_.ResourceId
           SnapshotDate     = $SnapshotDate
         } 
       } 
@@ -316,7 +335,7 @@ In this section, you import the newly created JSON files for the Microsoft Entra
 
    1. Repeat the preceding steps for each of the JSON files that you generated in the previous section.
 
-At the end of those steps, you have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMembership`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
+At the end of those steps, you have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMemberships`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
 
 ## Extract Microsoft Entra ID Governance data by using PowerShell
 
@@ -520,7 +539,7 @@ let directAssignments = roleAssignments
 // Process group-based assignments 
 
 let groupAssignments = roleAssignments 
-    | join kind=inner EntraGroupMembership on $left.PrincipalId == $right.GroupId // Join with group membership 
+    | join kind=inner EntraGroupMemberships on $left.PrincipalId == $right.GroupId // Join with group membership 
     | mvexpand Members // Expand group members 
     | extend MembersStr = tostring(Members) // Convert the member ID to a string 
     | distinct MembersStr, CreatedDateTime, AppRoleIdStr, SnapshotDate // Get distinct values 

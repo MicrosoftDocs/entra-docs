@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with SAML SSO for Bamboo by resolution GmbH
+title: Configure SAML SSO for Bamboo by resolution GmbH for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Bamboo by resolution GmbH.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Bamboo by resolution GmbH so that I can control who has access to SAML SSO for Bamboo by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with SAML SSO for Bamboo by resolution GmbH
+# Configure SAML SSO for Bamboo by resolution GmbH for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID, you can:
 
@@ -45,7 +45,7 @@ To configure the integration of SAML SSO for Bamboo by resolution GmbH into Micr
 1. In the **Add from the gallery** section, type **SAML SSO for Bamboo by resolution GmbH** in the search box.
 1. Select **SAML SSO for Bamboo by resolution GmbH** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-with-saml-sso-for-bamboo-by-resolution-gmbh'></a>
 

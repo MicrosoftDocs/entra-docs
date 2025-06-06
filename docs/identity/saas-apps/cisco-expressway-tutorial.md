@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Cisco Expressway
+title: Configure Cisco Expressway for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cisco Expressway.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Expressway so that I can control who has access to Cisco Expressway, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Cisco Expressway
+# Configure Cisco Expressway for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Cisco Expressway with Microsoft Entra ID. Cisco Expressway is a suite of applications that provide call control and related functions for IP Telephony systems, also provides tools for media quality analysis in the presence of media flows. When you integrate Cisco Expressway with Microsoft Entra ID, you can:
 

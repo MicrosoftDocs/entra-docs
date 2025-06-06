@@ -1,16 +1,15 @@
 ---
 title: Prevent attacks using smart lockout
 description: Learn how Microsoft Entra smart lockout helps protect your organization from brute-force attacks that try to guess user passwords.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
-
+ms.date: 04/29/2025
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: rogoya
+ms.custom: sfi-image-nochange
 ---
 # Protect user accounts from attacks with Microsoft Entra smart lockout
 
@@ -76,7 +75,7 @@ Based on your organizational requirements, you can customize the Microsoft Entra
 
 To check or modify the smart lockout values for your organization, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Password protection**.
 1. Set the **Lockout threshold**, based on how many failed sign-ins are allowed on an account before its first lockout.
 

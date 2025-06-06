@@ -1,7 +1,6 @@
 ---
 title: Recommendation to remove unused apps
 description: Learn how the Microsoft Entra recommendation to remove unused apps works and why you should follow the guidance.
-
 author: shlipsey3
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT Admin I need to know what applications haven't been used so I can remove them to improve security.
 ---
 # Microsoft Entra recommendation: Remove unused applications (preview)

@@ -9,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 02/21/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete.
 ---
 # How to detect and investigate inactive user accounts

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Meta Work Accounts
+title: Configure Meta Work Accounts for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Meta Work Accounts.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Meta Work Accounts so that I can control who has access to Meta Work Accounts, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Meta Work Accounts
+# Configure Meta Work Accounts for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Meta Work Accounts with Microsoft Entra ID. When you integrate Meta Work Accounts with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Meta Work Accounts with Microsoft E
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Meta Work Accounts single sign-on (SSO) enabled subscription.
 

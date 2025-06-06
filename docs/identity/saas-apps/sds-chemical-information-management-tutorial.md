@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with SDS & Chemical Information Management
+title: Configure SDS & Chemical Information Management for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SDS & Chemical Information Management.
 
 author: nguhiu
@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SDS & Chemical Information Management so that I can control who has access to SDS & Chemical Information Management, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with SDS & Chemical Information Management
+# Configure SDS & Chemical Information Management for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SDS & Chemical Information Management with Microsoft Entra ID. When you integrate SDS & Chemical Information Management with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate SDS & Chemical Information Manageme
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SDS & Chemical Information Management single sign-on (SSO) enabled subscription.
 

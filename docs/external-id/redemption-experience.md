@@ -1,16 +1,13 @@
 ---
-
 title: B2B Invitation Redemption
-description: Learn about Microsoft Entra B2B collaboration invitation redemption and sign-in experiences for guest users, including the consent process and privacy terms agreement.
-ms.service: entra-external-id
+description: Learn how Microsoft Entra B2B invitation redemption works, including guest sign-in, consent process, and privacy terms. Ensure secure access for your organization’s resources.
 ms.topic: concept-article
-ms.date: 03/10/2025
+ms.date: 05/14/2025
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: seo-july-2024
 ms.collection: M365-identity-device-management
-
+ms.custom: seo-july-2024, sfi-image-nochange
 # Customer intent: As a Microsoft Entra B2B administrator, I want to understand the redemption process for guest users, so that I can ensure they can access our resources and complete the consent process smoothly.
 ---
 
@@ -18,7 +15,7 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-This article describes how guest users can access your resources and the consent process they encounter. If you send an invitation email to the guest, the invitation includes a link that the guest can redeem to access your app or portal. The invitation email is just one way guests can access your resources. Alternatively, you can add guests to your directory and give them a direct link to the portal or app you want to share. Regardless of the method they use, guests are guided through a first-time consent process. This process ensures that your guests agree to privacy terms and accept any [terms of use](~/identity/conditional-access/terms-of-use.md) you've set up.
+This article explains the Microsoft Entra B2B invitation redemption process for guest users, including how they access your resources and complete the required consent steps. Whether you send an invitation email or provide a direct link, guests are guided through a secure sign-in and consent process to ensure compliance with your organization’s privacy terms and [terms of use](~/identity/conditional-access/terms-of-use.md).
 
 When you add a guest user to your directory, the guest user account has a consent status (viewable in PowerShell) that’s initially set to **PendingAcceptance**. This setting remains until the guest accepts your invitation and agrees to your privacy policy and terms of use. After that, the consent status changes to **Accepted**, and the consent pages are no longer presented to the guest.
 
@@ -31,7 +28,7 @@ When you add a guest user to your directory, the guest user account has a consen
 
 Guest users can now sign in to your multitenant or Microsoft first-party apps through a common endpoint (URL), for example `https://myapps.microsoft.com`. Previously, a common URL would redirect a guest user to their home tenant instead of your resource tenant for authentication, so a tenant-specific link was required (for example `https://myapps.microsoft.com/?tenantid=<tenant id>`). Now the guest user can go to the application's common URL, choose **Sign-in options**, and then select **Sign in to an organization**. The user then types the domain name of your organization.
 
-![Screenshots showing common endpoints used for signing in.](media/redemption-experience/common-endpoint-flow-small.png)
+![Screenshot of the Microsoft Entra B2B invitation redemption flow diagram.](media/redemption-experience/common-endpoint-flow-small.png)
 
 The user is then redirected to your tenant-specific endpoint, where they can either sign in with their email address or select an identity provider you've configured.
 

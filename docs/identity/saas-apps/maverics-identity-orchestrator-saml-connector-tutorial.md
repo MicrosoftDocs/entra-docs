@@ -1,5 +1,5 @@
 ---
-title: Integrate Microsoft Entra single sign-on (SSO) with Maverics Identity Orchestrator SAML Connector
+title: Configure Maverics Identity Orchestrator SAML Connector for Single sign-on
 description: Learn how to configure single sign-on between Microsoft Entra ID and Maverics Identity Orchestrator SAML Connector.
 
 author: nguhiu
@@ -13,7 +13,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Maverics Identity Orchestrator SAML Connector so that I can control who has access to Maverics Identity Orchestrator SAML Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Integrate Microsoft Entra single sign-on with Maverics Orchestrator SAML Connector
+# Configure Maverics Identity Orchestrator SAML Connector for Single sign-on
 
 Strata's Maverics Orchestrator provides a simple way to integrate on-premises applications with Microsoft Entra ID for authentication and access control. The Maverics Orchestrator is capable of modernizing authentication and authorization for apps that currently rely on headers, cookies, and other proprietary authentication methods. Maverics Orchestrator instances can be deployed on-premises or in the cloud.
 

@@ -1,19 +1,18 @@
 ---
-title: Microsoft Entra single sign-on integration with F5
+title: Configure F5 Kerberos Constrained Delegation for a Single-Tier SaaS App
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and F5.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on integration with F5
+# Configure F5 Kerberos Constrained Delegation for a Single-Tier SaaS App
 
 In this article,  you learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
@@ -25,6 +24,7 @@ To learn more about SaaS app integration with Microsoft Entra ID, see [What is a
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 
 * F5 single sign-on (SSO) enabled subscription.
@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 * F5 BIG-IP system is provisioned with APM modules (LTM is optional)
 
-* Although optional, it's highly recommended to Deploy the F5 systems in a [sync/failover device group](https://techdocs.f5.com/content/techdocs/en-us/bigip-14-1-0/big-ip-device-service-clustering-administration-14-1-0.html) (S/F DG), which includes the active standby pair, with a floating IP address for high availability (HA). Further interface redundancy can be achieved using the Link Aggregation Control Protocol (LACP). LACP manages the connected physical interfaces as a single virtual interface (aggregate group) and detects any interface failures within the group.
+* Although optional, it's highly recommended to Deploy the F5 systems in a [sync/failover device group](https://techdocs.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-device-service-clustering-admin-11-6-0.html) (S/F DG), which includes the active standby pair, with a floating IP address for high availability (HA). Further interface redundancy can be achieved using the Link Aggregation Control Protocol (LACP). LACP manages the connected physical interfaces as a single virtual interface (aggregate group) and detects any interface failures within the group.
 
 * For Kerberos applications, an on-premises AD service account for constrained delegation.  Refer to [F5 Documentation](https://support.f5.com/csp/article/K43063049) for creating an AD delegation account.
 

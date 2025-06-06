@@ -3,13 +3,12 @@ title: Tutorial - Create a customized Microsoft Entra Domain Services managed do
 description: In this tutorial, you learn how to create and configure a customized Microsoft Entra Domain Services managed domain and specify advanced configuration options using the Microsoft Entra admin center.
 author: justinha
 manager: femila
-
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: tutorial
 ms.date: 02/19/2025
 ms.author: justinha
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services managed domain and define advanced configuration options so that I can synchronize identity information with my Microsoft Entra tenant and provide Domain Services connectivity to virtual machines and applications in Azure.
 ---
 
@@ -126,7 +125,7 @@ Complete the fields in the *Network* window as follows:
     1. If you choose to create a virtual network, enter a name for the virtual network, such as *myVnet*, then provide an address range, such as *10.0.1.0/24*.
     1. Create a dedicated subnet with a clear name, such as *DomainServices*. Provide an address range, such as *10.0.1.0/24*.
 
-    [ ![Create a virtual network and subnet for use with Microsoft Entra Domain Services](./media/tutorial-create-instance-advanced/create-vnet.png)](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
+    [![Create a virtual network and subnet for use with Microsoft Entra Domain Services](./media/tutorial-create-instance-advanced/create-vnet.png)](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
 
     Make sure to pick an address range that is within your private IP address range. IP address ranges you don't own that are in the public address space cause errors within Domain Services.
 

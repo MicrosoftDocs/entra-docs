@@ -1,51 +1,29 @@
 ---
 title: Configure Microsoft Entra multifactor authentication
 description: Learn how to configure settings for Microsoft Entra multifactor authentication
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/24/2025
-
+ms.date: 05/21/2025
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: jupetter
+ms.custom: sfi-image-nochange
 ---
 # Configure Microsoft Entra multifactor authentication settings
 
 To customize the end-user experience for Microsoft Entra multifactor authentication (MFA), you can configure options for reporting suspicious activities. The following table describes Microsoft Entra MFA settings, and subsections cover each setting in more detail.
 
+>[!NOTE]
+>[Report suspicious activity](#report-suspicious-activity) replaces the Block/unblock users, Fraud alert, and Notifications legacy features. On March 1, 2025, the legacy features were removed. 
+
 | Feature | Description |
 | ------- | ----------- |
-| [Account lockout (MFA Server only)](#account-lockout-mfa-server-only) | Temporarily lock accounts from using Microsoft Entra MFA if there are too many denied authentication attempts in a row. This feature applies only to users who use MFA Server to enter a PIN to authenticate. |
 | [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. |
 | [OATH tokens](concept-authentication-oath-tokens.md) | Used in cloud-based Microsoft Entra MFA environments to manage OATH tokens for users. |
 | [Phone call settings](#phone-call-settings) | Configure settings related to phone calls and greetings for cloud and on-premises environments. |
 | Providers | This will show any existing authentication providers that you've associated with your account. Adding new providers is disabled as of September 1, 2018. |
-
-## Account lockout (MFA Server only)
-
-
->[!NOTE]
->Account lockout only affects users who sign in by using MFA Server on-premises. 
-
-To prevent repeated MFA attempts as part of an attack, the account lockout settings let you specify how many failed attempts to allow before the account becomes locked out for a period of time. The account lockout settings are applied only when a PIN code is entered for the MFA prompt by using MFA Server on-premises.
-
-The following settings are available:
-
-* Number of MFA denials that trigger account lockout
-* Minutes until account lockout counter is reset
-* Minutes until account is automatically unblocked
-
-To configure account lockout settings, complete these steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Entra ID** > **Multifactor authentication** > **Account lockout**. You might need to click **Show more** to see **Multifactor authentication**.
-1. Enter the values for your environment, and then select **Save**.
-
-    ![Screenshot that shows the account lockout settings.](./media/howto-mfa-mfasettings/account-lockout-settings.png)
 
 ## Report suspicious activity
 
@@ -76,7 +54,7 @@ When a user reports an MFA prompt as suspicious, the event shows up in the sign-
 |--------------|--------|---------|
 | Risk detections report | **ID Protection** > **Dashboard** > **Risk detection** | Detection type: **User Reported Suspicious Activity**<br>Risk level: **High**<br>Source **End user reported** |
 | Sign-in logs | **Entra ID** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied** |
-| Audit logs   | **Entra ID** > **Monitoring & health** > **Audit logs** | The suspecious activity appears under **Activity type** |
+| Audit logs   | **Entra ID** > **Monitoring & health** > **Audit logs** | The suspicious activity appears under **Activity type** |
 
 >[!NOTE]
 >A user isn't reported as High Risk if they perform passwordless authentication.
@@ -141,7 +119,7 @@ If users receive phone calls for MFA prompts, you can configure their experience
 
 In the United States, if you haven't configured MFA caller ID, voice calls from Microsoft come from the following numbers. Users with spam filters should exclude these numbers.
 
-Default number: *+1 (855) 330-8653*
+Default numbers: *+1 (855) 330-8653*, *+1 (855) 336-2194*, *+1 (855) 341-5605*
 
 The following table lists more numbers for different countries/regions.
 

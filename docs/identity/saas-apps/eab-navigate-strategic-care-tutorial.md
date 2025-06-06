@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with EAB Navigate Strategic Care
+title: Configure EAB Navigate Strategic Care for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and EAB Navigate Strategic Care.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EAB Navigate Strategic Care so that I can control who has access to EAB Navigate Strategic Care, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with EAB Navigate Strategic Care
+# Configure EAB Navigate Strategic Care for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EAB Navigate Strategic Care with Microsoft Entra ID. When you integrate EAB Navigate Strategic Care with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate EAB Navigate Strategic Care with Mi
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * EAB Navigate Strategic Care single sign-on (SSO) enabled subscription.
 

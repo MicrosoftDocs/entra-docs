@@ -1,8 +1,8 @@
 ---
 title: Register a SAML app
 description: Learn how to create and register a SAML app with External ID for customer identity and access management (CIAM). Choose your app type and get detailed steps. 
-author: msmimart
-ms.author: mimart
+ms.author: cmulligan
+author: csmulligan
 manager: CelesteDG
 ms.service: entra-external-id 
 ms.subservice: external

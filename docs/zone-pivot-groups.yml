@@ -93,6 +93,15 @@ groups:
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
+## template with only graph-powershell, ms-graph
+- id: enterprise-app-graph-ps-ms-graph
+  title: Manage Enterprise apps policy
+  prompt: Choose an option
+  pivots:
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
 ## Template without portal
 - id: enterprise-apps-minus-portal
   title: Manage Enterprise apps
@@ -104,7 +113,7 @@ groups:
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
-## Template without portal and Azure AD Graph
+## Template without portal and Azure AD PowerShell
 - id: enterprise-apps-minus-portal-aad
   title: Manage Enterprise apps
   prompt: Choose an option

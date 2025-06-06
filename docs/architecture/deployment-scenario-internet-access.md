@@ -8,7 +8,7 @@ ms.service: entra
 ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
-
+ms.custom: sfi-ga-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want to configure strict access policies so that we can control access according to business requirements.
 ---
 # Microsoft Entra Suite deployment scenario - Secure internet access based on business needs

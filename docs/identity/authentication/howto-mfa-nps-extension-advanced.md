@@ -41,7 +41,7 @@ To configure an IP allowed list, go to `HKLM\SOFTWARE\Microsoft\AzureMfa` and co
 
 | Name | Type | Default value | Description |
 | ---- | ---- | ------------- | ----------- |
-| IP_WHITELIST | string | Empty | Provide a semi-colon separated list of IP addresses. Include the IP addresses of machines where service requests originate, like the NAS/VPN server. IP ranges and subnets aren't supported. <br><br> For example, *10.0.0.1;10.0.0.2;10.0.0.3*.
+| IP_WHITELIST | string | Empty | Provide a semi-colon separated list of IP addresses. Include the IP addresses of machines where service requests originate, like the NAS/VPN server. IP ranges and subnets aren't supported. <br><br> For example, *10.0.0.1;10.0.0.2;10.0.0.3*. |
 
 > [!NOTE]
 > This registry key isn't created by default by the installer and an error appears in the AuthZOptCh log when the service is restarted. This error in the log can be ignored, but if this registry key is created and left empty if not needed then the error message doesn't return.
