@@ -2,7 +2,7 @@
 title: Delete an external tenant
 description: Learn how to delete an external tenant in the  Microsoft Entra admin center.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

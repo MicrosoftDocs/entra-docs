@@ -10,7 +10,7 @@ ms.date: 06/06/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: inbarc
 ms.custom: references_regions
 ---

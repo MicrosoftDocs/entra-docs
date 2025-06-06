@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 05/07/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.

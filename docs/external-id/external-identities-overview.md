@@ -9,7 +9,7 @@ ms.topic: overview
 ms.date: 09/06/2024
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As a developer creating apps for consumers and business customers, I want to understand the capabilities of Microsoft Entra External ID, so that I can securely manage my customers' identity experiences and allow them to use their own credentials to sign in.

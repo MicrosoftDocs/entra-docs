@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 07/12/2023
 ms.author: cmulligan
-ms.manager: celestedg
+ms.manager: dougeby
 ---
 For your application to access data in Microsoft Graph API, grant the registered application the relevant application permissions. The effective permissions of your application are the full level of privileges implied by the permission. For example, to create, read, update, and delete every user in your external tenant, add the User.ReadWrite.All permission.
 

@@ -4,7 +4,7 @@ description: Discover the steps for setting up a customer identity and access ma
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 
 ms.subservice: external

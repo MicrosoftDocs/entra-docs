@@ -5,7 +5,7 @@ metadata:
   description: Learn how to edit the built-in group policy objects (GPOs) and create your own custom policies in a Microsoft Entra Domain Services managed domain.
   author: justinha
   ms.author: justinha
-  manager: femila
+  manager: dougeby
   ms.date: 02/25/2025
   ms.service: entra-id
   ms.subservice: domain-services
