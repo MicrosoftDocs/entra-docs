@@ -193,24 +193,24 @@ For example, if there's only one custom message, and it's in German:
 
 ### Custom voice message defaults
 
-You can use the following sample scripts to create your own custom messages. These phrases are the defaults if you don't configure your own custom messages.
+You can use the following sample scripts to create your own custom messages. These phrases are used by default if you don't configure your own custom messages.
 
-| Message name | Script |
-| --- | --- |
-| Authentication successful | Your sign-in was successfully verified. Goodbye. |
-| Extension prompt | Thank you for using Microsoft's sign-in verification system. Please press the pound key to continue. |
-| Activation | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Authentication denied retry | Verification denied. |
-| Retry (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Greeting (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Retry (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Extension prompt after digits | If already at this extension, press the pound key to continue. |
-| Authentication denied | I'm sorry, we cannot sign you in at this time. Please try again later. |
-| Activation greeting (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Activation retry (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Activation greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Extension prompt before digits | Thank you for using Microsoft's sign-in verification system. Please transfer this call to extension \<extension>. |
+Message name | Script
+-------------|--------
+OTP extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue. 
+OTP fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to continue. If you are not trying to sign in, press 0 and #.
+OTP fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+OTP fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+OTP goodbye | Goodbye.
+OTP greeting | This is Microsoft. If you are trying to sign in, press the # key to continue.
+OTP last verification code | Again, your code is
+Greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
+Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
+Fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+Fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
+Authentication successful | Your sign-in was successful.
+Authentication failed | I'm sorry we can't sign you in at this time. Please try again later.
 
 ### Set up a custom message
 
