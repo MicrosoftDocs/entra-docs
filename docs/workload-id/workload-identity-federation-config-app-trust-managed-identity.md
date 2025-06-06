@@ -297,7 +297,7 @@ public class KeyVaultFIC {
         .clientId("<YOUR_MI_CLIENT_ID>")
         .build();
     TokenRequestContext requestContext = new TokenRequestContext()
-        .addScopes(audience);
+        .addScopes(audience + "/.default");
 
     return managedIdentityCredential
         .getToken(requestContext)
@@ -335,7 +335,7 @@ const main = async () => {
     const clientAssertionCredential = new ClientAssertionCredential(
         "<YOUR_TENANT_ID>",
         "<YOUR_APP_CLIENT_ID>",
-        () => getAccessToken(managedIdentityCredential, [MI_AUDIENCE]));
+        () => getAccessToken(managedIdentityCredential, [`${MI_AUDIENCE}/.default`]));
     const client = new SecretClient("https://testfickv.vault.azure.net", clientAssertionCredential);
 
     try {
@@ -371,7 +371,7 @@ managed_identity_credential = ManagedIdentityCredential(client_id="<YOUR_MI_CLIE
 client_assertion_credential = ClientAssertionCredential(
     "<YOUR_RESOURCE_TENANT_ID>",
     "<YOUR_APP_CLIENT_ID>",
-    lambda: get_managed_identity_token(managed_identity_credential, MI_AUDIENCE))
+    lambda: get_managed_identity_token(managed_identity_credential, f"{MI_AUDIENCE}/.default"))
 
 client = SecretClient(
     vault_url="https://testfickv.vault.azure.net",
