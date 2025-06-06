@@ -22,7 +22,7 @@ In this article,  you learn how to integrate multiple IdP connections on Coupa w
 
 ## Prerequisites
 
-The scenario outlined in this article assumes that you already have the following prerequisites:
+This article's presumes that you have the following prerequisites already in place:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Coupa single sign-on (SSO) enabled subscription.
@@ -34,11 +34,9 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Scenario description
 
-In this article, you configure and test Microsoft Entra single sign-on in a test environment.
+This article outlines step to configure and test Coupa with Microsoft Entra single sign-on in a test environment.
 
-* Coupa supports **SP** initiated SSO and **IdP** initiated SSO
-
-## Repeat below steps for each IdP connection you create
+* Coupa supports **SP initiated SSO** and **IdP initiated SSO**.
 
 ## Download Coupa SP Metadata
 1. Sign on to your Coupa company site as an administrator.
@@ -49,10 +47,9 @@ In this article, you configure and test Microsoft Entra single sign-on in a test
 ![coupa-identity-providers](./media/coupa-multi-sso-tutorial/coupa-identity-provider.png)
 
 3. Select **Create**.
-4. Add an **IdP Name** and one or more comma seperated **Email Domains**.
-Users with these email domains will be redirected to the configured IdP for SSO login.
+4. Enter **IdP Name** and **Email Domains**. These email domains will be used to redirect the users the IdP for SSO login. Multiple Email domains can be specified as comma-seperated.
 ![coupa-add-identity-provider](./media/coupa-multi-sso-tutorial/coupa-add-identity-provider.png)
-5. Select **Create**.
+5. Select **Create**. Which will take you to edit page. 
 6. Download the **Coupa SP metadata** for the IdP.
 ![coupa-sp-metadata](./media/coupa-multi-sso-tutorial/coupa-sp-metadata.png)
 
@@ -130,21 +127,14 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Coupa SSO for respective IdP
 
-1. Sign on to your Coupa company site as an administrator.
-
-2. Go to **Setup** > **Multi SSO**.
-
-3. Select **Edit** for IdP created above.
-
-    ![Edit Identity Provider](./media/coupa-multi-sso-tutorial/coupa-edit-identity-provider.png)
-
-4. Upload the IdP Metadata downloaded above in **Configure Microsoft Entra SSO**[#configure-microsoft-entra-sso]. Select **Save**.
+1. In Coupa Company site, Goto the edit page of the IdP created in the step "Download Coupa SP Metadata". 
+2. Upload the IdP Metadata downloaded above in **Configure Microsoft Entra SSO**[#configure-microsoft-entra-sso]. Select **Save**.
 
     ![Upload IdP Metadata](./media/coupa-multi-sso-tutorial/coupa-upload-idp-metadata.png) 
 
-5. Go to **Setup** > **Security**.
+3. Go to **Setup** > **Security**.
 
-6. Enable **Prompt for username to determine login method** in Sign in using SAML. Select **Save**.
+4. Enable **Prompt for username to determine login method** in Sign in using SAML. Select **Save**.
 
     ![Determine Login Method](./media/coupa-multi-sso-tutorial/coupa-determine-login-method.png) 
      
@@ -191,3 +181,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Go to Coupa Sign-on URL directly and initiate the login flow from there.
 
 * You can use Microsoft My Apps. When you select the Coupa tile in the My Apps, you should be automatically signed in to the Coupa for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+
+
+Once these steps are complete, you can follow same steps to create multiple connections.
