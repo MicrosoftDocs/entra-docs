@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with AWS ClientVPN
+title: Configure AWS ClientVPN for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AWS ClientVPN.
-
 author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/09/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS ClientVPN so that I can control who has access to AWS ClientVPN, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with AWS ClientVPN
+# Configure AWS ClientVPN for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate AWS ClientVPN with Microsoft Entra ID. When you integrate AWS ClientVPN with Microsoft Entra ID, you can:
 
@@ -25,7 +22,9 @@ In this article,  you learn how to integrate AWS ClientVPN with Microsoft Entra 
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * AWS ClientVPN single sign-on (SSO) enabled subscription.
 
@@ -49,7 +48,7 @@ To configure the integration of AWS ClientVPN into Microsoft Entra ID, you need 
 1. In the **Add from the gallery** section, type **AWS ClientVPN** in the search box.
 1. Select **AWS ClientVPN** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-aws-clientvpn'></a>
 
@@ -95,17 +94,11 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values aren't real.  Update these values with the actual Sign on URL and Reply URL.  The Sign on URL and Reply URL can have the same value (`http://127.0.0.1:35001`). Refer to [AWS Client VPN Documentation](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html#ad) for details.   You can also refer to the patterns shown in the **Basic SAML Configuration** section. Contact [AWS ClientVPN support team](https://aws.amazon.com/contact-us/) for any configuration issues. 
 
-1. In the Microsoft Entra service, navigate to **App registrations** and then select **All Applications**.
-
-1. Type **AWS ClientVPN** in the search box and select **AWS ClientVPN** from the search panel.
-
-1. Select **Manifest**. Under **replyUrlWithType**, keep the Reply URL as **http** instead of **https** to get the integration working. Select **Save**.
-
 1. AWS ClientVPN application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![image](common/default-attributes.png)
 
-1. In addition to above, AWS ClientVPN application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, AWS ClientVPN application expects few more attributes to be passed back in the SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
 	| Name |  Source Attribute|
 	| -------------- | --------- |

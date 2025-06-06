@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with courses.work
+title: Configure courses.work for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and courses.work.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and courses.work so that I can control who has access to courses.work, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with courses.work
+# Configure courses.work for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate courses.work with Microsoft Entra ID. courses.work is a product of Succeed Technologies®, a ISO 27001-2013 company with rich experience in developing engaging and interactive eLearning. When you integrate courses.work with Microsoft Entra ID, you can:
 

@@ -4,7 +4,6 @@ description: "New and updated articles in the Microsoft identity platform docume
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-adal-ref
 ms.date: 05/02/2025
 ms.service: identity-platform
 

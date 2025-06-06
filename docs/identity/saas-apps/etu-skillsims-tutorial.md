@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with ETU Skillsims
+title: Configure ETU Skillsims for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ETU Skillsims.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ETU Skillsims so that I can control who has access to ETU Skillsims, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with ETU Skillsims
+# Configure ETU Skillsims for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate ETU Skillsims with Microsoft Entra ID. ETU Learning Simulation Platform SAML SSO launch for Microsoft Entra users. Users are managed on ETU using SAML attributes. ETU enables immersive learning and simulation-based training at scale. When you integrate ETU Skillsims with Microsoft Entra ID, you can:
 

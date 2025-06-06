@@ -311,6 +311,8 @@ items:
         href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+      - name: Register a SAML app
+        href: how-to-register-saml-app.md
       - name: Add a sign-up and sign-in flow
         href: how-to-user-flow-sign-up-sign-in-customers.md
         displayName: disable sign-up, disable sign up 
@@ -417,8 +419,12 @@ items:
                   href: ~/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionSubmit event reference
                   href: ~/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-            - name: Configure a custom email provider for one time code send events
-              href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Custom email provider
+              items:             
+                - name: Configure a custom email provider for one time code send events
+                  href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: On email OTP send event reference
+                  href: ~/identity-platform/custom-extension-email-otp-send-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json                  
             - name: Troubleshoot your custom authentication extension
               href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure

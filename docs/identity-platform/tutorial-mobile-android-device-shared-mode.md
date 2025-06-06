@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: dmwendia
 ms.date: 08/30/2024
 ms.service: identity-platform
-ms.reviewer: akgoel, henrymbugua
+ms.reviewer: akgoel
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to learn how to setup an Android device in Shared Device Mode using Microsoft Authenticator App.
 ---

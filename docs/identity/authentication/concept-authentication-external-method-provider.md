@@ -1,20 +1,16 @@
 ---
 title: Microsoft Entra multifactor authentication external method provider reference (Preview)
 description: Learn how to configure an external authentication method (EAM) provider for Microsoft Entra multifactor authentication
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 04/17/2025
-
 ms.author: justinha
 author: gregkmsft
 manager: femila
 ms.reviewer: gkinasewitz, gustavosa
-
+ms.custom: sfi-ropc-blocked
 # Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external authentication method (EAM) for tenants.
-
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
 

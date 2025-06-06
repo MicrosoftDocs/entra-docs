@@ -1,7 +1,6 @@
 ---
 title: 'Configure - Provisioning Microsoft Entra ID to Active Directory using Microsoft Entra Cloud Sync'
 description: This article describes how to configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -9,7 +8,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Provision Microsoft Entra ID to Active Directory - Configuration

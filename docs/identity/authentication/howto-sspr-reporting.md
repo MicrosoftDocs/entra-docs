@@ -4,12 +4,12 @@ description: Reporting on Microsoft Entra self-service password reset events
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: tilarso
+ms.custom: sfi-ga-nochange
 ---
 # Reporting options for Microsoft Entra password management
 

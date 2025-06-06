@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Pinpoint (SAML)
+title: Configure Pinpoint (SAML) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Pinpoint (SAML).
 
 author: nguhiu
@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Pinpoint (SAML) so that I can control who has access to Pinpoint (SAML), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Pinpoint (SAML)
+# Configure Pinpoint (SAML) for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Pinpoint (SAML) with Microsoft Entra ID. DDI’s Pinpoint platform makes it easy to design, deliver, and track blended learning journeys for leaders. Pinpoint is seamlessly integrated into DDI’s award-winning leadership development solutions. When you integrate Pinpoint (SAML) with Microsoft Entra ID, you can:
 

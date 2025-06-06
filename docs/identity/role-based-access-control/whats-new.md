@@ -2,13 +2,13 @@
 title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: whats-new
-ms.date: 05/02/2025
-ms.author: rolyon
+ms.date: 05/26/2025
+ms.author: barclayn
 
 ---
 
@@ -20,6 +20,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| May 2025 | Roles | Updated permissions for multiple roles. See [Microsoft Entra built-in roles](permissions-reference.md). |
 | May 2025 | Roles | Added [Microsoft Graph Data Connect Administrator](permissions-reference.md#microsoft-graph-data-connect-administrator) role. |
 | March 2025 | Roles | Added [Viva Glint Tenant Administrator](permissions-reference.md#viva-glint-tenant-administrator) role. |
 | March 2025 | Roles | Added [IoT Device Administrator](permissions-reference.md#iot-device-administrator) role. |

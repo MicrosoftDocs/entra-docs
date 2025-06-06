@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Spacio
+title: Configure Spacio for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Spacio.
 
 author: nguhiu
@@ -9,12 +9,12 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Spacio so that I can control who has access to Spacio, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Spacio
+# Configure Spacio for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Spacio with Microsoft Entra ID.
 Integrating Spacio with Microsoft Entra ID provides you with the following benefits:
@@ -28,6 +28,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Spacio single sign-on enabled subscription
 

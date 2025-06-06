@@ -3,14 +3,13 @@ title: Global Secure Access network traffic logs
 description: Learn how to use Global Secure Access traffic logs (preview) to monitor connections to the service, the type of traffic, and who's connecting.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: how-to
 ms.date: 04/24/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
-
 ---
 
 # How to use the Global Secure Access traffic logs (preview)

@@ -1,16 +1,14 @@
 ---
 title: Add a SAML/WS-Fed identity provider
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
-
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/21/2025
-
-ms.author: mimart
-author: msmimart
+ms.date: 05/07/2025
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
@@ -19,9 +17,6 @@ ms.collection: M365-identity-device-management
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
 Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in. 
-<!-- Do we need to break down the preview status further by tenant type and invitation vs. SSSU? -->
-> [!NOTE]
-> SAML/WS-Fed federation is currently in preview for external tenants and is generally available for workforce tenants.
 
 ## Prerequisites
 

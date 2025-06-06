@@ -1,20 +1,20 @@
 ---
-title: Glossary of terms in the Microsoft identity platform
-description: Definitions of terms commonly found in Microsoft identity platform documentation, Microsoft Entra admin center, and authentication SDKs like the Microsoft Authentication Library (MSAL).
+title: Microsoft Identity Platform Glossary
+description: Learn key terms used in Microsoft identity platform documentation, Microsoft Entra admin center, and authentication SDKs like the Microsoft Authentication Library (MSAL).
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.date: 03/20/2024
-ms.reviewer:
+ms.date: 05/12/2025
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: glossary
+ms.custom: sfi-ga-nochange
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand the terminology and concepts related to authentication and authorization, so that I can effectively implement secure access to protected resources in my application.
 ---
 
-# Glossary: Microsoft identity platform
+# Microsoft identity platform glossary
 
-You see these terms when you use our documentation, the Microsoft Entra admin center, our authentication libraries, and the Microsoft Graph API. Some terms are Microsoft-specific while others are related to protocols like OAuth or other technologies you use with the Microsoft identity platform.
+This glossary explains key terms in the Microsoft Identity Platform, Microsoft Entra admin center, and Microsoft Graph API. Learn about OAuth protocols and authentication concepts to build secure applications.
 
 ## Access token
 
@@ -43,7 +43,7 @@ An application manifest is a feature that produces a JSON representation of the 
 
 ## Application object
 
-When you register/update an application, both an application object and a corresponding [service principal object](#service-principal-object) are created/updated for that tenant. The application object *defines* the application's identity configuration globally (across all tenants where it has access), providing a template from which its corresponding service principal object(s) are *derived* for use locally at run-time (in a specific tenant).
+When you register/update an application, both an application object and a corresponding [service principal object](#service-principal-object) are created/updated for that tenant. The application object *defines* the application's identity configuration globally (across all tenants where it has access), providing a template from which its corresponding service principal objects are *derived* for use locally at run-time (in a specific tenant).
 
 For more information, see [Application and Service Principal Objects][AAD-App-SP-Objects].
 
@@ -82,7 +82,7 @@ See the OAuth 2.0 specification's [authorization grant types][OAuth2-AuthZ-Grant
 
 A credential representing the [resource owner's](#resource-owner) [authorization](#authorization) to access its protected resources, granted to a [client application](#client-application). A client application can use one of the [four grant types defined by the OAuth 2.0 Authorization Framework][OAuth2-AuthZ-Grant-Types] to obtain a grant, depending on client type/requirements: "authorization code grant", "client credentials grant", "implicit grant", and "resource owner password credentials grant". The credential returned to the client is either an [access token](#access-token), or an [authorization code](#authorization-code) (exchanged later for an access token), depending on the type of authorization grant used.
 
-The resource owner password credentials grant [shouldn't be used](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/) except in scenarios when other flows can't be used. If you are building a SPA, use the [authorization code flow with PKCE instead of implicit grant](https://devblogs.microsoft.com/identity/migrate-to-auth-code-flow/).
+The resource owner password credentials grant [shouldn't be used](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/) except in scenarios when other flows can't be used. If you're building a SPA, use the [authorization code flow with PKCE instead of implicit grant](https://devblogs.microsoft.com/identity/migrate-to-auth-code-flow/).
 
 ## Authorization server
 
@@ -104,7 +104,7 @@ A client application requests [authorization](#authorization) from a resource ow
 
 ## Consent
 
-The process of a [resource owner](#resource-owner) granting authorization to a [client application](#client-application), to access protected resources under specific [permissions](#permissions), on behalf of the resource owner. Depending on the permissions requested by the client, an administrator or user will be asked for consent to allow access to their organization/individual data respectively. Note, in a [multi-tenant](#multi-tenant-application) scenario, the application's [service principal](#service-principal-object) is also recorded in the tenant of the consenting user.
+The process of a [resource owner](#resource-owner) granting authorization to a [client application](#client-application), to access protected resources under specific [permissions](#permissions), on behalf of the resource owner. Depending on the permissions requested by the client, an administrator or user will be asked for consent to allow access to their organization/individual data respectively. Note, in a [multitenant](#multitenant-application) scenario, the application's [service principal](#service-principal-object) is also recorded in the tenant of the consenting user.
 
 See [consent framework](./application-consent-experience.md) for more information.
 
@@ -122,11 +122,11 @@ Eliminate the need for developers to manage credentials. Managed identities prov
 
 The Microsoft identity platform is an evolution of the Microsoft Entra identity service and developer platform. It allows developers to build applications that sign in all Microsoft identities, get tokens to call Microsoft Graph, other Microsoft APIs, or APIs that developers have built. It's a full-featured platform that consists of an authentication service, libraries, application registration and configuration, full developer documentation, code samples, and other developer content. The Microsoft identity platform supports industry standard protocols such as OAuth 2.0 and OpenID Connect.
 
-## Multi-tenant application
+## Multitenant application
 
-A class of application that enables sign in and [consent](#consent) by users provisioned in any Microsoft Entra [tenant](#tenant), including tenants other than the one where the client is registered. [Native client](#native-client) applications are multi-tenant by default, whereas [web client](#web-client) and [web resource/API](#resource-server) applications have the ability to select between single or multi-tenant. By contrast, a web application registered as single-tenant, would only allow sign-ins from user accounts provisioned in the same tenant as the one where the application is registered.
+A class of application that enables sign in and [consent](#consent) by users provisioned in any Microsoft Entra [tenant](#tenant), including tenants other than the one where the client is registered. [Native client](#native-client) applications are multitenant by default, whereas [web client](#web-client) and [web resource/API](#resource-server) applications have the ability to select between single or multitenant. By contrast, a web application registered as single-tenant, would only allow sign-ins from user accounts provisioned in the same tenant as the one where the application is registered.
 
-See [How to sign in any Microsoft Entra user using the multi-tenant application pattern][AAD-Multi-Tenant-Overview] for more details.
+See [How to sign in any Microsoft Entra user using the multitenant application pattern][AAD-Multi-Tenant-Overview] for more details.
 
 ## Native client
 
@@ -163,7 +163,7 @@ As defined by the [OAuth 2.0 Authorization Framework][OAuth2-Role-Def], a server
 
 A resource server exposes APIs and enforces access to its protected resources through [scopes](#scopes) and [roles](#roles), using the OAuth 2.0 Authorization Framework. Examples include the [Microsoft Graph API][Microsoft-Graph], which provides access to Microsoft Entra tenant data, and the Microsoft 365 APIs that provide access to data such as mail and calendar.
 
-Just like a client application, resource application's identity configuration is established via [registration](#application-registration) in a Microsoft Entra tenant, providing both the application and service principal object. Some Microsoft-provided APIs, such as the Microsoft Graph API, have pre-registered service principals made available in all tenants during provisioning.
+Just like a client application, resource application's identity configuration is established via [registration](#application-registration) in a Microsoft Entra tenant, providing both the application and service principal object. Some Microsoft-provided APIs, such as the Microsoft Graph API, have preregistered service principals made available in all tenants during provisioning.
 
 ## Roles
 
@@ -213,7 +213,7 @@ An instance of a Microsoft Entra directory is referred to as a Microsoft Entra t
 
 - a registry service for integrated applications
 - authentication of user accounts and registered applications
-- REST endpoints required to support various protocols including OAuth 2.0 and SAML, including the [authorization endpoint](#authorization-endpoint), [token endpoint](#token-endpoint) and the "common" endpoint used by [multi-tenant applications](#multi-tenant-application).
+- REST endpoints required to support various protocols including OAuth 2.0 and SAML, including the [authorization endpoint](#authorization-endpoint), [token endpoint](#token-endpoint) and the "common" endpoint used by [multi-tenant applications](#multitenant-application).
 
 Microsoft Entra tenants are created/associated with Azure and Microsoft 365 subscriptions during sign-up, providing Identity & Access Management features for the subscription. Azure subscription administrators can also create additional Microsoft Entra tenants. See [How to get a Microsoft Entra tenant][AAD-How-To-Tenant] for details on the various ways you can get access to a tenant. See [Associate or add an Azure subscription to your Microsoft Entra tenant][AAD-How-Subscriptions-Assoc] for details on the relationship between subscriptions and a Microsoft Entra tenant, and for instructions on how to associate or add a subscription to a Microsoft Entra tenant.
 

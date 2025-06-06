@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Learning Seat LMS
+title: Configure Learning Seat LMS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Learning Seat LMS.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Learning Seat LMS so that I can control who has access to Learning Seat LMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Learning Seat LMS
+# Configure Learning Seat LMS for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Learning Seat LMS with Microsoft Entra ID. When you integrate Learning Seat LMS with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Learning Seat LMS with Microsoft En
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Learning Seat LMS single sign-on (SSO) enabled subscription.
 

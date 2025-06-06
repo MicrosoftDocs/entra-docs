@@ -6,9 +6,10 @@ ms.topic: conceptual
 ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
-manager: femila
+manager: dougeby
 ms.reviewer: smistry
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Universal Conditional Access through Global Secure Access
 
@@ -41,7 +42,7 @@ With Conditional Access, you can enable access controls and security policies fo
 
 - Create a policy that targets all [Microsoft traffic](how-to-target-resource-microsoft-profile.md).
 - Apply Conditional Access policies to your [Private Access apps](how-to-target-resource-private-access-apps.md), such as Quick Access.
-- Enable [Global Secure Access signaling in Conditional Access](how-to-source-ip-restoration.md) so the source IP address is visible in the appropriate logs and reports.
+- Enable [Global Secure Access source IP restoration](how-to-source-ip-restoration.md) so the source IP address is visible in the appropriate logs and reports.
 
 ## Internet Access flow diagram
 

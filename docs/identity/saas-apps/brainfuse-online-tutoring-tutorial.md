@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Brainfuse Online Tutoring
+title: Configure Brainfuse Online Tutoring for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Brainfuse Online Tutoring.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Brainfuse Online Tutoring so that I can control who has access to Brainfuse Online Tutoring, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Brainfuse Online Tutoring
+# Configure Brainfuse Online Tutoring for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Brainfuse Online Tutoring with Microsoft Entra ID. This app provides single sign-on integration to Brainfuse Live Tutoring. You must be a subscriber to use the app. When you integrate Brainfuse Online Tutoring with Microsoft Entra ID, you can:
 

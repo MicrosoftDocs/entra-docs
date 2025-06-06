@@ -1,7 +1,6 @@
 ---
 title: 'Microsoft Entra Connect Sync: Changing the default configuration'
 description: Provides best practices for changing the default configuration of Microsoft Entra Connect Sync.
-
 author: billmath
 manager: femila
 ms.assetid: 7638a031-1635-4942-94c3-fce8f09eed5e
@@ -11,8 +10,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra Connect Sync: Best practices for changing the default configuration
 The purpose of this topic is to describe supported and unsupported changes to Microsoft Entra Connect Sync.

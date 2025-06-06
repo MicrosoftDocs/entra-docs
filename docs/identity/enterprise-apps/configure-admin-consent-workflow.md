@@ -1,18 +1,16 @@
 ---
 title: Configure the admin consent workflow
-description: Learn how to configure a way for end users to request access to applications that require admin consent. 
-
+description: Learn how to configure a way for end users to request access to applications that require admin consent.
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 12/29/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps
+ms.custom: enterprise-apps, sfi-ga-blocked
 #customer intent: As an admin, I want to configure the admin consent workflow, so that users can request access to applications that require admin consent and I can review and approve those requests.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with SiteIntel
+title: Configure SiteIntel for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SiteIntel.
 
 author: nguhiu
@@ -9,13 +9,13 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SiteIntel so that I can control who has access to SiteIntel, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with SiteIntel
+# Configure SiteIntel for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SiteIntel with Microsoft Entra ID. When you integrate SiteIntel with Microsoft Entra ID, you can:
 
@@ -27,6 +27,7 @@ To learn more about software as a service (SaaS) app integration with Microsoft 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SiteIntel single sign-on (SSO)-enabled subscription.
 
