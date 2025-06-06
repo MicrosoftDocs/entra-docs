@@ -179,7 +179,7 @@ procedureSection:
           - Administrators can access My Staff
 
   - title: |
-      Edit multiple users at once (preview)
+      Edit multiple users at once
     summary: |
          This new Microsoft Entra admin center update allows editing certain user attributes in bulk. On the All Users page, you can select up to 60 users at a time and update their attributes at once. For information about how to add users in bulk, see [Bulk create users in Microsoft Entra ID](../identity/users/users-bulk-add.md).
     steps:
