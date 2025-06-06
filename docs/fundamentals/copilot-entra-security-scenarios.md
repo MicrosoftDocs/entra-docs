@@ -31,8 +31,8 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - [Investigate insights within entitlements management](#investigate-insights-within-entitlements-management): Get quick access to information about access packages, policies, connected organizations, and catalog resources.
 - [Investigate alerts in Scenario Health Monitoring](#alerts-in-scenario-health-monitoring): Analyze scenario-specific metrics, detect anomalies, and raise alerts for proactive investigation.
 - [SLA in Scenario Health Monitoring](#sla-in-scenario-health-monitoring): <!--Placeholder for details on SLA in Scenario Health Monitoring.-->
-- [Domains](#domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
-- [Tenants](#tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
+- [Microsoft Entra domains](#microsoft-entra-domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
+- [Microsoft Entra tenants](#microsoft-entra-tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
 - [Directory Roles](#directory-roles): <!--Placeholder for details on Directory Roles.-->
 - [License Usage](#license-usage): Track licenses purchased and actual usage across your Microsoft Entra tenant using natural language queries.
 
@@ -44,15 +44,14 @@ This feature is available using a free Microsoft Entra ID license, or a [Microso
 
 The following roles can use this feature: 
 
-- Application Administrator
-- IT Governance Administrator
-- Privileged Role Administrator
-- Identity Governance Administrator
-- Conditional Access Administrator
-- Security Administrator
-- Hybrid Identity Administrator
-- Authentication Policy Administrator
-- Authentication Administrator
+- [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+- [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator)
+- [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator)
+- [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator)
+- [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
+- [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator)
+- [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator)
+- [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator)
 
 The following example prompts can be used to investigate recommendations in Microsoft Entra:
 
@@ -75,17 +74,21 @@ For more information, see;
 
 Microsoft Entra ID Protection applies the capabilities of Security Copilot to [summarize a user's risk level](copilot-entra-risky-user-summarization.md), provide insights relevant to the incident at hand, and provide recommendations for rapid mitigation. Identity risk investigation is a crucial step to defend an organization. Copilot helps reduce the time to resolution by providing IT admins and security operations center (SOC) analysts the right context to investigate and remediate identity risk and identity-based incidents. Risky user summarization provides admins and responders quick access to the most critical information in context to aid their investigation.
 
+Using this feature requires the [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator) role in Microsoft Entra ID and a [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements).
+
 :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the ID Protection risky user summarization details.":::
 
 ### Investigate access reviews
 
-Administrators can use Microsoft Security Copilot with Microsoft Entra ID Governance Access Reviews to extract and analyze access review data. This integration allows admins to explore, track, and analyze access reviews at scale. Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements) and a tenant with access reviews configured.
+Administrators can use Microsoft Security Copilot with Microsoft Entra ID Governance Access Reviews to extract and analyze access review data. This integration allows admins to explore, track, and analyze access reviews at scale. 
 
 This feature helps administrators;
 
 - Understand who approved access
 - Identify reviewers who took no decisions
 - Investigate overrides of AI recommendations
+
+Using this feature requires a minimum of the [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator) role in Microsoft Entra ID, a [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements) and a tenant with access reviews configured.
 
 Use the following example prompts to extract access reviews data in Microsoft Entra:
 
@@ -110,7 +113,7 @@ Use Microsoft Security Copilot with Microsoft Entra ID Governance Entitlement Ma
 
 Entitlement management in Microsoft Entra ID enables organizations to manage identity and access lifecycle at scale, by automating workflows, access assignments, reviews, and expirations. Using the capabilities of Microsoft Security Copilot with Microsoft Entra ID Governance Entitlement Management, administrators can now interact with entitlement management data using natural language. You can get quick access to information about access packages, policies, connected organizations, and catalog resources, and customize curated data only previously available through custom scripting.
 
-Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
+Using this feature requires a minimum of the [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator) role in Microsoft Entra ID and a [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
 
 You can use the following example prompts to investigate insights within entitlements management in Microsoft Entra:
 
@@ -123,7 +126,7 @@ You can use the following example prompts to investigate insights within entitle
 * *Who are the external users of connected organization “XYZ”?*
 * *What custom extensions does catalog “XYZ” have?*
 
-### Alerts in Scenario Health Monitoring 
+### Investigate alerts in Scenario Health Monitoring 
 
 External Health Monitoring is a feature in Microsoft Entra that analyzes scenario-specific metrics for each tenant, detects anomalies, and raises alerts. These alerts are sent via the Microsoft Graph API and displayed in the Microsoft Entra admin center UI, enabling tenant admins to proactively investigate and address issues. 
 
@@ -133,9 +136,9 @@ Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protectio
 
 The following roles can use this feature:
 
-- Security Administrator
-- Security Reader
-- Global Reader
+- [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
+- [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader)
+- [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader)
 
 The following example prompts can be used to investigate alerts in Scenario Health Monitoring:
 
@@ -152,12 +155,11 @@ The following example prompts can be used to investigate alerts in Scenario Heal
 > 
 > Details of this feature haven't been provided yet. This section is updated with more information, methods, and examples before GA.
 
-### Domains
+### Microsoft Entra domains
 
-Microsoft Entra uses the capabilities of Security Copilot to simplify domain management in the Microsoft Entra admin center.  
-This feature allows administrators to quickly access domain information, verify DNS records, and manage domain settings using natural language queries.
+Microsoft Entra uses the capabilities of Security Copilot to simplify domain management in the Microsoft Entra admin center. This feature allows administrators to quickly access domain information, verify DNS records, and manage domain settings using natural language queries.
 
-Using this feature requires a minimum of Domain Name Administrator role in Microsoft Entra ID, and can be used with any tenant and Microsoft Entra ID license.
+Using this feature requires a minimum of the [Domain Name Administrator](/entra/identity/role-based-access-control/permissions-reference#domain-name-administrator) role in Microsoft Entra ID, and can be used with any tenant and Microsoft Entra ID license.
 
 The following example prompts can be used to investigate alerts in Scenario Health Monitoring:
 
@@ -165,15 +167,11 @@ The following example prompts can be used to investigate alerts in Scenario Heal
 - *Show me DNS verification records of contoso.com*
 - *What is my initial domain name?*
 
-### Tenants
+### Microsoft Entra tenants
 
 With Microsoft Security Copilot, administrators can now get quick access to their Microsoft Entra ID organization information using natural language. This feature allows admins to ask questions about their tenant, such as the tenant ID, display name, and active licenses. It also provides insights into the technical and security compliance contacts for the tenant, and whether users can create new tenants.
 
-> [!WARNING]
->
-> Only role supplied is Global Administrator. We need to add more roles that can use this feature.
-> 
-> Using this feature requires a minimum of **FIX ME** role in Microsoft Entra ID, and can be used with any Microsoft Entra ID license.
+This feature requires a minimum of the [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader) role in Microsoft Entra ID, and can be used with any tenant and Microsoft Entra ID license.
 
 The following example prompts can be used to investigate alerts in Scenario Health Monitoring:
 
@@ -183,33 +181,35 @@ The following example prompts can be used to investigate alerts in Scenario Heal
 - *Who is the technical contact for my tenant?*
 - *Who is the security compliance contact for my tenant?*
 
-### Directory Roles
+### Microsoft Entra Role Based Access Control (RBAC)
 
-> [!NOTE]
-> 
-> Details of this feature haven't been provided yet. This section is updated with more information, methods, and examples before GA.
+Microsoft Entra role-based access control (RBAC) helps you manage who has access to Microsoft Entra resources by assigning roles to users, groups, or applications. You can use built-in roles or create custom roles with specific permissions to meet your organization's needs. You can now use Microsoft Security Copilot to investigate roles within a directory. For example, you can ask which roles a user or group has, who has a specific role, or get details about a particular role. This makes it easier for administrators and analysts to understand and manage role assignments across your environment.
+
+Users assigned the following roles can use this feature:
+
+- [Directory Reader](/entra/identity/role-based-access-control/permissions-reference#directory-readers)
+- [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader)
+
+The following example prompts can be used to investigate roles in Microsoft Entra:
+
+- *What role does user/group/app <name/email/id> have?*
+- *What are the transitive roles user/group/app <name/email/id> has?*
+- *What are the eligible roles user/group/app <name/email/id> has?*
+- *What are the scheduled roles user/group/app <name/email/id> has?*
+- *Who has the Cloud Application Administrator role assigned to them?*
+- *Who has eligibility for the Global Reader role?*
 
 ### License Usage 
 
 Managing license purchases and usage across your Microsoft Entra tenant can be challenging. Microsoft Security Copilot simplifies this process by allowing administrators to ask natural language questions about license usage, such as “How many Microsoft Entra P2 licenses are in use?” or “How many users are using Conditional Access?” Security Copilot provides clear and actionable answers in seconds, helping your organization optimize license utilization and get the most value from your Microsoft Entra investment.
 
-> [!NOTE]
->
-> Check the roles required to use this feature.  
+This feature requires a minimum of the [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader) role in Microsoft Entra ID, and can be used with any tenant and Microsoft Entra ID license.
 
-This feature requires a minimum of the Global Reader role in Microsoft Entra ID, and can be used with any tenant and Microsoft Entra ID license.
+The following example prompts can be used to investigate roles in Microsoft Entra:
 
-Supported Prompts (Examples) 
-
-- *How many Microsoft Entra P1 licenses do I have?*
-- *Show me P1 feature utilization*
-- *Microsoft Entra P1 license usage details*
-- *How many Microsoft Entra P2 licenses do I have?*
-- *Count of P2 Microsoft Entra licenses*
-- *Number of Microsoft Entra ID P2 licenses*
-- *What is the usage of Microsoft Entra P2 Premium license?*
-- *Show me P2 feature utilization*
-- *Microsoft Entra P2 license usage details*
+- *How many Microsoft Entra P1/P2 licenses do I have?*
+- *Show me the Microsoft Entra P1/P2 feature utilization*
+- *Show me the Microsoft Entra P1/P2 license usage details*
 
 ## See also
 
