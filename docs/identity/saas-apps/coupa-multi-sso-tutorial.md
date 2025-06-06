@@ -127,7 +127,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Coupa SSO for respective IdP
 
-1. In Coupa Company site, Goto the edit page of the IdP created in the step "Download Coupa SP Metadata". 
+1. In Coupa Company site, Goto the edit page of the IdP created in the step **[Download Coupa SP  Metadata](#download-coupa-sp-metadata)** above.
 2. Upload the IdP Metadata downloaded above in **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)**. Select **Save**.
 
     ![Upload IdP Metadata](./media/coupa-multi-sso-tutorial/coupa-upload-idp-metadata.png) 
@@ -183,4 +183,4 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * You can use Microsoft My Apps. When you select the Coupa tile in the My Apps, you should be automatically signed in to the Coupa for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-Once these steps are complete, you can follow same steps to create multiple connections.
+**Once these steps are complete, you can follow same steps to create multiple connections.**
