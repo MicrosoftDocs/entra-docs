@@ -127,7 +127,7 @@ If you no longer wish to use the Conditional Access optimization agent, you can 
 
 ## FAQs
 
-### When should I use the Conditional Access optimization agent vs Copilot Chat
+### When should I use the Conditional Access optimization agent vs Copilot Chat?
 
 Both features provide different insights into your Conditional Access policies. The following table provides a comparison of the two features:
 
@@ -148,6 +148,10 @@ Both features provide different insights into your Conditional Access policies. 
 | One-click policy changes | ✅ |  |
 | Reviewing existing CA policies and assignments (e.g., policies apply to Alice?) | ✅ | ✅ |
 | Troubleshoot a user’s access (e.g., Why was Alice prompted for MFA?) |  | ✅ |
+
+### I activated the agent but see "Fail" in the activity status. What's happening?
+
+It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. To resolve this issue, you can remove the agent, then re-enable it with an account that has standing permissions, such as a Break Glass account.
 
 ## Related content
 
