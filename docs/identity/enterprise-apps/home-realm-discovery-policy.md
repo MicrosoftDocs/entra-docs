@@ -1,18 +1,15 @@
 ---
 title: Home Realm Discovery policy for an application
 description: Learn how to manage Home Realm Discovery policy for Microsoft Entra authentication for federated users, including auto-acceleration and domain hints.
-
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
-
 ms.date: 11/26/2024
 ms.author: jomondi
 ms.reviewer: sreyanth, ludwignick
-ms.custom: enterprise-apps, no-azure-ad-ps-ref, 
-
+ms.custom: enterprise-apps, no-azure-ad-ps-ref sfi-ropc-nochange
 #customer intent: As an IT admin, I want to understand how to configure Home Realm Discovery (HRD) policies, so that I can control the sign-in behavior for an application and ensure a streamlined authentication experience for users.
 ---
 # Home Realm Discovery for an Application  

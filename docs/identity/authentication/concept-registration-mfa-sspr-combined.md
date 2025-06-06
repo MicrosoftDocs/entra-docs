@@ -1,16 +1,15 @@
 ---
 title: Combined registration for SSPR and Microsoft Entra multifactor authentication
 description: Learn about the combined registration experience for Microsoft Entra ID to let users register for both Microsoft Entra multifactor authentication and self-service password reset
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 manager: femila
 ms.reviewer: tilarso
+ms.custom: sfi-image-nochange
 ---
 # Combined security information registration for Microsoft Entra overview
 

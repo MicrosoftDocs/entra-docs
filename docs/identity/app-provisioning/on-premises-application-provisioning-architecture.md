@@ -2,13 +2,13 @@
 title: 'Microsoft Entra on-premises application provisioning architecture'
 description: Presents an overview of on-premises application provisioning architecture.
 
-author: billmath
-manager: femila
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: kenwith
 ms.collection: M365-identity-device-management
 ---
 

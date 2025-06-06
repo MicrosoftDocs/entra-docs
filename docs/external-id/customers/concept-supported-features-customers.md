@@ -1,17 +1,14 @@
 ---
 title: External Tenant Features
 description: Compare features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
-
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/15/2025
-ms.author: mimart
-ms.custom: it-pro, seo-july-2024
-
+ms.date: 06/04/2025
+ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
 ---
 
@@ -74,8 +71,24 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md)</br>- [Apple federation (preview)](./how-to-apple-federation-customers.md)</br>- [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)<br>- [SAML/WS-Fed federation](../direct-federation.md) |
-|   **Authentication methods for MFA**  | **For internal users (employees and admins)** </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>**For guests (invited or self-service sign-up)** </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  **For self-service sign-up users (consumers, business customers) or invited users (preview)**</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)    |
+| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Authentication methods available in Microsoft Entra external ID](#authentication-methods-available-in-microsoft-entra-external-id)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)<br>- [SAML/WS-Fed federation](../direct-federation.md) |
+| **Authentication methods for MFA**  | **For internal users (employees and admins)** </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>**For guests (invited or self-service sign-up)** </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  **For self-service sign-up users (consumers, business customers)**</br>- [Authentication methods available in Microsoft Entra external ID](#authentication-methods-available-in-microsoft-entra-external-id) </br></br>**For invited users (preview)**</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)    |
+
+### Authentication methods available in Microsoft Entra external ID
+
+Some authentication methods can be used as the primary factor when users sign in to an application, such username and password. Other authentication methods are only available as a secondary factor. The following table outlines when an authentication method can be used during sign-in, self-service sign-up, self-service password reset, and  multifactor authentication (MFA) in Microsoft Entra external ID.
+
+|Method  |Sign-in  |Sign-up  |Password reset  |MFA  |
+|---------|---------|---------|---------|---------|
+| [Email with password](./concept-authentication-methods-customers.md#email-and-password-sign-in) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |:::image type="icon" source="../media/common/applies-to-yes.png" border="false":::   | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |
+| [SMS-based authentication](./concept-multifactor-authentication-customers.md#sms-based-authentication)|  |  |  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |
+| [Apple federation](./how-to-apple-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |:::image type="icon" source="../media/common/applies-to-yes.png" border="false":::   |  |  |
+| [Facebook federation](./how-to-facebook-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [Google federation](./how-to-google-federation-customers.md) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| Microsoft personal account ([OpenID Connect](./how-to-custom-oidc-federation-customers.md)) | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [OpenID Connect federation](./how-to-custom-oidc-federation-customers.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  | :::image type="icon" source="../media/common/applies-to-yes.png" border="false":::  |  |  |
+| [SAML/WS-Fed federation](../direct-federation.md)| :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: | :::image type="icon" source="../media/common/applies-to-yes.png" border="false"::: ||
 
 ## Application registration
 
@@ -85,17 +98,30 @@ The following table compares the features available for [Application registratio
 |---------|---------|---------|
 |   **Protocol** |  SAML relying parties, OpenID Connect, and OAuth2  |  [SAML relying parties](how-to-register-saml-app.md), [OpenID Connect](how-to-register-ciam-app.md), and OAuth2 |
 | **Supported account types**| The following [account types](~/identity-platform/quickstart-register-app.md#register-an-application): <ul><li>Accounts in this organizational directory only (Single tenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant) and personal Microsoft accounts (such as Skype, Xbox)</li><li>Personal Microsoft accounts only</li></ul> | Always use *Accounts in this organizational directory only (Single tenant)*. |
-| **Platform** | The following [platforms](../../identity-platform/how-to-add-redirect-uri.md): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li></ul>| The following [platforms](../../identity-platform/how-to-add-redirect-uri.md): <ul><li>Public client (mobile & desktop)</li><li>[Native authentication mobile](concept-native-authentication.md) </li><li>Web</li><li>Single page application (SPA)</li></ul>|
+| **Platform** | The following [platforms](../../identity-platform/how-to-add-redirect-uri.md): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li></ul>| The following [platforms](../../identity-platform/how-to-add-redirect-uri.md): <ul><li>Public client (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li><li>Native authentication for [mobile](concept-native-authentication.md) and [single page (SPA)](how-to-native-authentication-cors-solution-production-environment.md) applications. </li></ul>|
 | **Authentication** > **Redirect URIs**| The URIs Microsoft Entra ID accepts as destinations when returning authentication responses (tokens) after successfully authenticating or signing out users. | Same as workforce.|
 | **Authentication** > **Front-channel logout URL**| This URL is where Microsoft Entra ID sends a request to have the application clear the user's session data. The Front-channel logout URL is required for single sign-out to work correctly.| Same as workforce.|
 | **Authentication** > **Implicit grant and hybrid flows**| Request a token directly from the authorization endpoint. | Same as workforce.|
-| **Certificates & secrets** | <ul><li>[Certificate](../../identity-platform/quickstart-register-app.md?tabs=certificate)</li><li>[Client secrets](../../identity-platform/quickstart-register-app.md?tabs=client-secret)</li><li>[Federated credentials](../../identity-platform/quickstart-register-app.md?tabs=federated-credential)</li></ul>| Same as workforce.|
+| **Certificates & secrets** | Multiple credentials: <ul><li>[Certificates](../../identity-platform/how-to-add-credentials.md?tabs=certificate)</li><li>[Client secrets](../../identity-platform/how-to-add-credentials.md?tabs=client-secret)</li><li>[Federated credentials](../../identity-platform/how-to-add-credentials.md?tabs=federated-credential)</li></ul> | Same as workforce.|
+| **Certificates & secrets** > **Rotation**| Update client credentials to ensure they remain valid and secure, while users can continue to sign-in. [Certificates](../../identity-platform/how-to-add-credentials.md?tabs=certificate), [secrets](../../identity-platform/how-to-add-credentials.md?tabs=client-secret), and [federated credentials](../../identity-platform/how-to-add-credentials.md?tabs=federated-credential) can be rotated by adding a new one and then removing the old one.|Same as workforce.|
+|**Certificates & secrets** > **Policy** | Configure the [application management policies](~/identity/enterprise-apps/tutorial-enforce-secret-standards.md) to enforce secret and certificate restrictions. | Not available |
 | **API permissions** | Add, remove, and replace permissions to an application. After permissions are added to your application, users or admins need to grant consent to the new permissions. Learn more about [updating an app's requested permissions in Microsoft Entra ID](../../identity-platform/howto-update-permissions.md).  | The following are the allowed permissions: Microsoft Graph `offline_access`, `openid`, and `User.Read` and your **My APIs** delegated permissions. Only an admin can consent on behalf of the organization.  |
 | **Expose an API** | [Define custom scopes](../../identity-platform/quickstart-configure-app-expose-web-apis.md) to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that a user or admin consent to one or more of these scopes. | Define custom scopes to restrict access to data and functionality protected by the API. An application that requires access to parts of this API can request that admin consent to one or more of these scopes. |
-| **App roles**| App roles are [custom roles](../../identity-platform/howto-add-app-roles-in-apps.md) to assign permissions to users or apps. The application defines and publishes the app roles and interprets them as permissions during authorization.| Same as workforce. Learn more about [using role-based access control for applications](how-to-use-app-roles-customers.md) in an external tenant. |
 | **Owners** | Application owners can view and edit the application registration. Additionally, any user (who might not be listed) with administrative privileges to manage any application (for example, [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)) can view and edit the application registration. | Same as workforce. |
 | **Roles and administrators** | [Administrative roles](~/identity/role-based-access-control/permissions-reference.md) are used for granting access for privileged actions in Microsoft Entra ID. | Only the [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role can be used for apps in external tenants. This role grants the ability to create and manage all aspects of application registrations and enterprise applications.  |
-|**Assigning users and groups to an app**| When user assignment is required, only those users you assign to the application (either through direct user assignment or based on group membership) are able to sign in. For more information, see [manage users and groups assignment to an application](~/identity/enterprise-apps/assign-user-or-group-access-portal.md)| Not available |
+
+### Access control for applications
+
+The following table compares the features available for application authorization in each type of tenant.
+
+|Feature  |Workforce tenant  | External tenant |
+|---------|---------|---------|
+| **Role-based access control (RBAC)**| You can define [application roles](../../identity-platform/custom-rbac-for-developers.md#app-roles) for your application and assign those roles to users and groups. Microsoft Entra ID includes the user roles in the security token. Your application can then make authorization decisions based on the values in the security token.| Same as workforce. Learn more about [using role-based access control for applications](how-to-use-app-roles-customers.md) in an external tenant. For available features, see [groups and application roles support](./reference-group-app-roles-support.md).  |
+|**Security groups**| You can use [security groups](../../identity-platform/custom-rbac-for-developers.md#groups) to implement RBAC in your applications, where the memberships of the user in specific groups are interpreted as their role memberships. Microsoft Entra ID includes user group membership in the security token. Your application can then make authorization decisions based on the values in the security token. |Same as workforce. The [groups optional claims](../../identity-platform/optional-claims.md#configure-groups-optional-claims) are limited to the group object ID.|
+| **Attribute-based access control (ABAC)** | You can configure the app to include user attributes in the access token. Your application can then make authorization decisions based on the values in the security token. For more information, see [token customization](#token-customization). | Same as workforce.|
+| **Require user assignment**| When user assignment is required, only those users you assign to the application (either through direct user assignment or based on group membership) are able to sign in. For more information, see [manage users and groups assignment to an application](../../identity-platform/howto-restrict-your-app-to-a-set-of-users.md)| Same as workforce. For details, see [groups and application roles support](./reference-group-app-roles-support.md). |
+
+
 
 ## OpenID Connect and OAuth2 flows
 
@@ -139,6 +165,16 @@ The following table compares the features available for Conditional Access in ea
 |**Grant**|[Grant or block access to resources](~/identity/conditional-access/concept-conditional-access-grant.md)|<ul><li>[Block access](~/identity/conditional-access/concept-conditional-access-grant.md#block-access)</li><li>[Require multifactor authentication](./how-to-multifactor-authentication-customers.md)</li><li>[Require password reset](./how-to-enable-password-reset-customers.md)</li></ul>|
 |**Session**|[Session controls](~/identity/conditional-access/concept-conditional-access-session.md)|Not available|
 
+## Terms of use policies
+
+The following table compares the features available for terms of use policies in each type of tenant.
+
+|Feature  |Workforce tenant  | External tenant |
+|---------|---------|---------|
+| Conditional Access policies | [Microsoft Entra terms of use](~/identity/conditional-access/terms-of-use.md) |Not available|
+| Self-service sign-up| Not available | Add a [required attribute](how-to-define-custom-attributes.md#configure-a-single-select-checkbox-checkboxsingleselect) linked to your terms of use policies on the sign-up page. The hyperlink can be customized to support various languages. |
+| Sign-in page | Links you can add to the lower-right corner for privacy information using [Company branding](~/fundamentals/how-to-customize-branding.md). | [Same as workforce](how-to-customize-branding-customers.md#to-customize-the-logo-privacy-link-and-terms-of-use).|
+
 ## Account management
 
 The following table compares the features available for user management in each type of tenant. As noted in the table, certain account types are created through invitation or self-service sign-up. A user admin in the tenant can also create accounts via the admin center.
@@ -181,6 +217,7 @@ The following table compares the features available for token customization in e
 |---------|---------|---------|
 | **Types of application registration** | <ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li><li>Enterprise applications offer [more options](../../identity/enterprise-apps/plan-sso-deployment.md), like password-based, linked, and header-based.</li></ul> |<ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li></ul>|
 | **Domain name** | When a user authenticates, a session cookie is set on the Microsoft Entra domain `login.microsoftonline.com` in the web browser.| When a user authenticates, a session cookie is set on the Microsoft Entra external ID domain `<tenant-name>.ciamlogin.com` or a [custom URL domain](concept-custom-url-domain.md) in the web browser. To ensure SSO functions correctly, use a single URL domain.|
+| **Keep me signed in** | You can enable or disabled [stay signed in](~/fundamentals/how-to-manage-stay-signed-in-prompt.yml) option. | Same as workforce. |
 | **Session invalidation** | Scenarios where SSO may be invalidated, which require reauthentication: <ul><li>Session expiry</li><li>Browser issues, such as clearing browser cookies or cache.</li><li>Conditional access policy, such as multifactor authentication requirement.</li><li>[Session revocation](/graph/api/user-revokesigninsessions)</li><li>Security issues, such as suspicious activity.</li><li>The application specifies in the authorization request to prompt the user for their credentials using `login=prompt` query string parameter in OpenID Connect and `ForceAuthn` attribute in SAML request. </li></ul> |Same as workforce.|
 |**Conditional access**| Check the [conditional access](#conditional-access) section. | Check the [conditional access](#conditional-access) section.| 
 |**Microsoft Entra’s native authentication**| Not available| [Native authentication](concept-native-authentication.md) doesn't support SSO.|

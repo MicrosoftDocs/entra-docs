@@ -8,8 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/07/2023
 ms.author: jricketts
-
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Securing managed identities in Microsoft Entra ID

@@ -8,8 +8,7 @@ ms.topic: how-to
 ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin responsible for securing hybrid access to form-based applications. I need to learn how to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure access. My goal is to improve Zero Trust governance and implement SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
@@ -464,7 +463,7 @@ If no BIG-IP error message appears, the issue might relate to the back-end reque
 
 Use the **View Variables** link in this location to help determine root cause, particularly if the APM fails to obtain correct user identifier and password.
 
-To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html).
+To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html).
 
 ## Resources
 

@@ -1,17 +1,14 @@
 ---
 title: Customize your branding for your customers
 description: Learn how to customize the look and feel of your customers' sign-in experiences.
- 
 author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 05/07/2025
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Health Support System
+title: Configure Health Support System for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Health Support System.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Health Support System so that I can control who has access to Health Support System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Health Support System
+# Configure Health Support System for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Health Support System with Microsoft Entra ID. When you integrate Health Support System with Microsoft Entra ID, you can:
 
@@ -24,7 +24,9 @@ In this article,  you learn how to integrate Health Support System with Microsof
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Health Support System single sign-on (SSO) enabled subscription.
 
@@ -46,7 +48,7 @@ To configure the integration of Health Support System into Microsoft Entra ID, y
 1. In the **Add from the gallery** section, type **Health Support System** in the search box.
 1. Select **Health Support System** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-health-support-system'></a>
 

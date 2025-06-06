@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with SAP Concur Travel and Expense
+title: Configure SAP Concur Travel and Expense for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Concur Travel and Expense.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Concur Travel and Expense so that I can control who has access to SAP Concur Travel and Expense, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with SAP Concur Travel and Expense
+# Configure SAP Concur Travel and Expense for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SAP Concur Travel and Expense with Microsoft Entra ID. When you integrate SAP Concur Travel and Expense with Microsoft Entra ID, you can:
 
@@ -24,7 +24,9 @@ In this article,  you learn how to integrate SAP Concur Travel and Expense with 
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAP Concur Travel and Expense subscription.
 * A "Company Administrator" role under your Concur user account. You can test if you have the right access by going to [Concur SSO Self-Service Tool](https://www.concursolutions.com/nui/authadmin/ssoadmin). If you don't have the access, please contact Concur support or implementation project manager. 
@@ -48,7 +50,7 @@ To configure the integration of SAP Concur Travel and Expense into Microsoft Ent
 1. In the **Add from the gallery** section, type **SAP Concur Travel and Expense** in the search box.
 1. Select **SAP Concur Travel and Expense** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-sap-concur-travel-and-expense'></a>
 

@@ -1,9 +1,8 @@
 ---
 title: Retrieve pronoun information from Workday
 description: Learn how to retrieve pronoun information from Workday
-
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -11,6 +10,7 @@ ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh, chmutali
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Configure Microsoft Entra provisioning to retrieve pronoun information from Workday

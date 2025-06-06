@@ -2,7 +2,7 @@
 title: Change resource roles for an access package in entitlement management
 description: Learn how to change the resource roles for an existing access package in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -133,6 +133,9 @@ For more information, see [Compare groups](/office365/admin/create-groups/compar
 1. Select **Add**.
 
     Any users with existing assignments to the access package will automatically become members (or owners) of this group or team after it's added. For more information, see [when changes are applied](#when-changes-are-applied).
+
+> [!NOTE]
+> If an Access Package expiration period exceeds the "*Expire eligible assignments after*" policy setting in the PIM managed group, it can cause discrepancies between Entitlement Management and Privileged Identity Management, leading to users losing access while EM shows they're still assigned. For more information, see: [Using groups managed by Privileged Identity Management with access packages reference](entitlement-management-access-package-pim-reference.md).
 
 ## Add an application resource role
 

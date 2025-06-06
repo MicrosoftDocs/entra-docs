@@ -7,8 +7,8 @@ ms.service: entra-external-id
 ms.topic: sample
 ms.date: 04/15/2025
 
-ms.author: mimart
-author: msmimart
+ms.author: cmulligan
+author: csmulligan
 manager: celestedg
 ms.custom: it-pro, has-adal-ref, devx-track-linux, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management

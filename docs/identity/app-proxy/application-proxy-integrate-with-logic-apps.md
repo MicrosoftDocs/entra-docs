@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: kfriedemann
-ms.custom:
+ms.custom: sfi-image-nochange
 ai-usage: ai-assisted
 ---
 # Securely integrate Azure Logic Apps with on premises  APIs using Microsoft Entra application proxy

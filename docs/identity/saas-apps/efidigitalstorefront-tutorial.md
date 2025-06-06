@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with EFI Digital StoreFront
+title: Configure EFI Digital StoreFront for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and EFI Digital StoreFront.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EFI Digital StoreFront so that I can control who has access to EFI Digital StoreFront, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with EFI Digital StoreFront
+# Configure EFI Digital StoreFront for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EFI Digital StoreFront with Microsoft Entra ID. When you integrate EFI Digital StoreFront with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate EFI Digital StoreFront with Microso
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * EFI Digital StoreFront single sign-on (SSO) enabled subscription.
 

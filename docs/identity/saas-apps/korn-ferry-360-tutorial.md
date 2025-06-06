@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Korn Ferry 360
+title: Configure Korn Ferry 360 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Korn Ferry 360.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Korn Ferry 360 so that I can control who has access to Korn Ferry 360, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Korn Ferry 360
+# Configure Korn Ferry 360 for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Korn Ferry 360 with Microsoft Entra ID. When you integrate Korn Ferry 360 with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Korn Ferry 360 with Microsoft Entra
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Korn Ferry 360 single sign-on (SSO) enabled subscription.
 

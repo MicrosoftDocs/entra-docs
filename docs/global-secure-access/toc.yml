@@ -140,7 +140,7 @@ items:
         href: how-to-application-discovery.md
       - name: Configure Private Access with Privileged Identity Management (PIM)
         href: how-to-configure-global-access-with-pim.md
-      - name: Management for SSH-based server administration
+      - name: Configure Private Access to enable SSH-based server administration
         href: how-to-manage-ssh-server-administration.md
       - name: Kerberos single sign-on (SSO)
         href: how-to-configure-kerberos-sso.md
@@ -157,6 +157,10 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: What is Transport Layer Security inspection? 
+        href: concept-transport-layer-security.md 
+      - name: Configure Transport Layer Security inspection 
+        href: how-to-transport-layer-security.md 
   - name: Logs and monitoring
     expanded: false
     items:
@@ -224,7 +228,7 @@ items:
            - name: Coexistence with Cisco
              href: concept-cisco-coexistence.md
            - name: Coexistence with Palo Alto Networks
-             href: concept-palo-alto-coexistence.md
+             href: how-to-palo-alto-coexistence.md
            - name: Coexistence with Zscaler
              href: how-to-zscaler-coexistence.md
            - name: Coexistence with Netskope
@@ -248,8 +252,12 @@ items:
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: Ciphers for Microsoft Entra Private Access
     href: reference-ciphers.md
-  - name: FAQs
+  - name: Global Secure Access FAQs
     href: resource-faq.yml
+  - name: Transport Layer Security inspection FAQs
+    href: faq-transport-layer-security.yml
+  - name: Ciphers for Microsoft Entra Private Access
+    href: reference-ciphers.md       
   - name: Connector version history
     href: reference-version-history.md
   - name: Windows client version history
@@ -258,3 +266,5 @@ items:
     href: reference-macos-client-release-history.md
   - name: Global Secure Access Certifications
     href: reference-global-secure-access-certifications.md
+  - name: Global Secure Access in China
+    href: reference-china-user-support.md

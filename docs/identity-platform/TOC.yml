@@ -111,6 +111,8 @@
       items:
         - name: Application security
           href: security-best-practices-for-app-registration.md
+        - name: Identifier URI restrictions
+          href: identifier-uri-restrictions.md
         - name: Least privileged access
           href: secure-least-privileged-access.md
         - name: Secure access control using groups
@@ -534,7 +536,7 @@
                     - name: System browser on Android
                       href: msal-net-system-browser-android-considerations.md
                     - name: Shared device mode for Android devices
-                      href: msal-android-shared-devices.md
+                      href: /entra/msal/android/shared-devices
                     - name: QR code authentication
                       href: android-qr-code-pin-authentication.md
                 - name: iOS
@@ -549,7 +551,7 @@
               href: scenario-mobile-acquire-token.md
             - name: Acquire token with broker
               displayName: Microsoft Authenticator Microsoft Intune, Authenticator
-              href: msal-net-use-brokers-with-xamarin-apps.md
+              href: /entra/msal/objc/single-sign-on-macos-ios
             - name: Calling a web API
               href: scenario-mobile-call-api.md
 - name: Service, daemon, script
@@ -560,11 +562,13 @@
       href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: .NET acquire token and call API
-          href: tutorial-dotnet-daemon-call-api.md
+        - name: .NET
+          items: 
+            - name: Acquire token and call API
+              href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
           items:
-            - name: Acquire access token and call API
+            - name: Acquire token and call API
               href: tutorial-daemon-node-call-api-build-app.md
             - name: Call Microsoft Graph API
               href: tutorial-v2-nodejs-console.md
@@ -664,8 +668,12 @@
                   href: custom-extension-OnAttributeCollectionStart-retrieve-return-data.md
                 - name: Retrieve data from attribute collection submit event
                   href: custom-extension-OnAttributeCollectionSubmit-retrieve-return-data.md
-            - name: Configure a custom email provider for one time code send events
-              href: custom-extension-email-otp-get-started.md
+            - name: Custom email provider
+              items: 
+                - name: Configure a custom email provider for one time code send events
+                  href: custom-extension-email-otp-get-started.md
+                - name: On email OTP send event reference
+                  href: custom-extension-email-otp-send-data.md
             - name: Troubleshoot your custom authentication extension
               href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
@@ -786,29 +794,29 @@
             - name: Library initialization
               items:
                 - name: Android MSAL configuration file
-                  href: msal-configuration.md
+                  href: /entra/msal/android/msal-configuration
                 - name: Shared device mode
                   displayName: firstline worker, frontline worker, flw
                   href: msal-android-shared-devices.md
                 - name: Integrate with Azure AD B2C
-                  href: msal-android-b2c.md
+                  href: /azure/active-directory-b2c/configure-authentication-sample-android-app
             - name: Authentication and single sign-on (SSO)
               items:
                 - name: SSO with MSAL Android
-                  href: msal-android-single-sign-on.md
+                  href: /entra/msal/android/single-sign-on
                 - name: Accounts and tenant profiles
                   href: accounts-overview.md
                 - name: Single- and multi-account public client apps
-                  href: single-multi-account.md
+                  href: /entra/msal/android/single-multi-account
             - name: Logging and error handling
               items:
                 - name: Logging in MSAL for Android
-                  href: msal-logging-android.md
+                  href: /entra/msal/android/logging
                 - name: Handle errors and exceptions in MSAL for Android
                   displayName: android, mobile, handling, catch
-                  href: msal-android-handling-exceptions.md
+                  href: /entra/msal/android/handling-exceptions
             - name: Migrate from ADAL to MSAL Android
-              href: migrate-android-adal-msal.md
+              href: /entra/msal/android/migrate-android-adal-msal
         - name: MSAL iOS and macOS
           href: /entra/msal/objc/
         - name: MSAL Java

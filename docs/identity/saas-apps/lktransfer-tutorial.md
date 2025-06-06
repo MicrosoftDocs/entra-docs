@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with LKTransfer
+title: Configure LKTransfer for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and LKTransfer.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LKTransfer so that I can control who has access to LKTransfer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with LKTransfer
+# Configure LKTransfer for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate LKTransfer with Microsoft Entra ID. When you integrate LKTransfer with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate LKTransfer with Microsoft Entra ID.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * LKTransfer single sign-on (SSO) enabled subscription.
 

@@ -12,6 +12,8 @@ items:
     href: customers/concept-supported-features-customers.md
   - name: External ID pricing
     href: external-identities-pricing.md
+  - name: What's new in docs?
+    href: whats-new-docs.md
 - name: External ID in external tenants
   href: customers/toc.yml
   expanded: true
@@ -180,10 +182,6 @@ items:
       href: reference-cross-tenant-custom-roles.md
 - name: Resources
   items:
-  - name: What's new in docs for external tenants?
-    href: customers/whats-new-docs.md
-  - name: What's new in docs for workforce tenants?
-    href: whats-new-docs.md
   - name: Help and support for developers
     href: ~/identity-platform/developer-support-help-options.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
   - name: Microsoft Entra ID help and support options
