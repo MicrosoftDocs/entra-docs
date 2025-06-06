@@ -6,7 +6,7 @@ description: Learn what personal and organizational data Microsoft Entra multifa
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 06/06/2025
 
 ms.author: justinha
 author: justinha
@@ -70,7 +70,6 @@ For Microsoft Azure Government, Microsoft Azure operated by 21Vianet, Azure AD B
 Organizational data is tenant-level information that can expose configuration or environment setup. Tenant settings from the multifactor authentication pages might store organizational data such as lockout thresholds or caller ID information for incoming phone authentication requests:
 
 * Account lockout
-* Fraud alert
 * Notifications
 * Phone call settings
 
