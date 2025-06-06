@@ -4,7 +4,7 @@ description: Find answers to frequently asked questions about Microsoft Entra Ex
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

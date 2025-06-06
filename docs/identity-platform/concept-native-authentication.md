@@ -3,7 +3,7 @@ title: Native authentication
 description: Learn how to set up native authentication in Microsoft Entra External ID. Customize the user interface for mobile and desktop apps, and provide a seamless sign-in experience.
  
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article

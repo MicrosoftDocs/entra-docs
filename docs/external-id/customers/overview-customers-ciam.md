@@ -4,7 +4,7 @@ description: Learn how Microsoft Entra External ID provides to manage your exter
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

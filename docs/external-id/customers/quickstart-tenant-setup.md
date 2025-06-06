@@ -3,7 +3,7 @@ title: External Tenant Quickstart
 description: In this quickstart, learn how to create an external tenant for customer identity and access management (CIAM). Customize a sign-in experience and try it out with a sample app.
  
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
