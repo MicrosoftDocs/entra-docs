@@ -126,6 +126,10 @@ You can use the following example prompts to investigate insights within entitle
 * *Who are the external users of connected organization “XYZ”?*
 * *What custom extensions does catalog “XYZ” have?*
 
+For more information, see;
+
+[What is entitlement management?](/entra/id-governance/entitlement-management-overview)
+
 ### Investigate alerts in Scenario Health Monitoring 
 
 External Health Monitoring is a feature in Microsoft Entra that analyzes scenario-specific metrics for each tenant, detects anomalies, and raises alerts. These alerts are sent via the Microsoft Graph API and displayed in the Microsoft Entra admin center UI, enabling tenant admins to proactively investigate and address issues. 
@@ -148,6 +152,11 @@ The following example prompts can be used to investigate alerts in Scenario Heal
 - *Show me managed device health monitoring alerts*
 - *Show me compliant device health monitoring alerts*
 - *Show me device scenario health monitoring alerts*
+
+For more information, see:
+
+- [What is Microsoft Entra Health monitoring?](/entra/identity/monitoring-health/concept-microsoft-entra-health)
+- [How to investigate Microsoft Entra Health monitoring alerts](/entra/identity/monitoring-health/howto-investigate-health-scenario-alerts?tabs=admin-center)
 
 ### SLA in Scenario Health Monitoring
 
@@ -199,6 +208,11 @@ The following example prompts can be used to investigate roles in Microsoft Entr
 - *Who has the Cloud Application Administrator role assigned to them?*
 - *Who has eligibility for the Global Reader role?*
 
+For more information, see:
+
+- [Overview of role-based access control in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-overview)
+- [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
+
 ### License Usage 
 
 Managing license purchases and usage across your Microsoft Entra tenant can be challenging. Microsoft Security Copilot simplifies this process by allowing administrators to ask natural language questions about license usage, such as “How many Microsoft Entra P2 licenses are in use?” or “How many users are using Conditional Access?” Security Copilot provides clear and actionable answers in seconds, helping your organization optimize license utilization and get the most value from your Microsoft Entra investment.
@@ -210,6 +224,10 @@ The following example prompts can be used to investigate roles in Microsoft Entr
 - *How many Microsoft Entra P1/P2 licenses do I have?*
 - *Show me the Microsoft Entra P1/P2 feature utilization*
 - *Show me the Microsoft Entra P1/P2 license usage details*
+
+For more information, see:
+
+- [Microsoft Entra licensing](/entra/fundamentals/licensing)
 
 ## See also
 
