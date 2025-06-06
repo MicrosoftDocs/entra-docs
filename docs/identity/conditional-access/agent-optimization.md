@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 
-ms.date: 06/04/2025
+ms.date: 06/06/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -51,25 +51,31 @@ The Conditional Access optimization agent scans your tenant for new users and ap
 ## Getting started
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. From the new home page, select **Go to agents** from the agent notification card. 
+1. From the new home page, select **Go to agents** from the agent notification card then select **View details** under the Conditional Access Optimization Agent.
 
    :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-try-now.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/agent-optimization/conditional-access-optimization-agent-try-now.png":::
 
-1. Select **View details** under the Conditional Access Optimization Agent, then select **Run agent** to begin your first run. 
+1. Select **Run agent** to begin your first run. 
 
    :::image type="content" source="media/agent-optimization/agent-optimization-start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization Agent configuration page." lightbox="media/agent-optimization/agent-optimization-start-agent.png":::
 
-1. When the agent overview page loads, you see most recent and next scheduled runtimes, performance highlights, recent suggestions, and recent activity.
+1. When the agent overview page loads, any suggestions appear at the top. You can also see the recent activity 
+and performance highlights.
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-overview.png" alt-text="Screenshot showing recent activity of the Conditional Access optimization agent." lightbox="media/agent-optimization/conditional-access-optimization-agent-overview.png":::
+   :::image type="content" source="media/agent-optimization/agent-optimization-overview-activity.png" alt-text="Screenshot showing recent activity of the Conditional Access optimization agent." lightbox="media/agent-optimization/agent-optimization-overview-activity.png":::
 
-1. Selecting a suggestion allows you to see the proposed change, make edits, see [potential policy impact](concept-conditional-access-report-only.md#reviewing-results).
-1. Newly created policies are created in report-only mode. As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
+1. Select **Review suggestion** to see the details of the suggestion. Next steps on this page include the following options:
+   - **Apply suggestion**: The agent can apply the suggested changes to the policy with one click.
+   - **Review policy changes**: Review the policy changes before applying them.
+   - **Policy impact**: Displays a visualization of the potential impact of the policy. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
 
-> [!TIP]
-> Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+   :::image type="content" source="media/agent-optimization/agent-optimization-require-mfa-details.png" alt-text="Screenshot showing recent activity of the Conditional Access optimization agent." lightbox="media/agent-optimization/agent-optimization-require-mfa-details.png":::
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
+
+> [!TIP]
+> - Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+> - Newly created policies are created in report-only mode. As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
 
 ## Reviewing results
 
