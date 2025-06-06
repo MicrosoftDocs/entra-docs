@@ -5,7 +5,7 @@ keywords: null
 author: cilwerner
 ms.author: cwerner
 manager: pmwongera
-ms.date: 06/05/2025
+ms.date: 05/30/2025
 ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
@@ -29,12 +29,28 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - [Summarize a user's risk level](#summarize-a-users-risk-level): Quickly summarize a user's risk level and receive insights relevant to the incident at hand.
 - [Investigate access reviews](#investigate-access-reviews): Extract and analyze access review data using natural language queries.
 - [Investigate insights within entitlements management](#investigate-insights-within-entitlements-management): Get quick access to information about access packages, policies, connected organizations, and catalog resources.
-- [Investigate alerts in Scenario Health Monitoring](#alerts-in-scenario-health-monitoring): Analyze scenario-specific metrics, detect anomalies, and raise alerts for proactive investigation.
+- [Investigate alerts in Scenario Health Monitoring](#investigate-alerts-in-scenario-health-monitoring): Analyze scenario-specific metrics, detect anomalies, and raise alerts for proactive investigation.
 - [SLA in Scenario Health Monitoring](#sla-in-scenario-health-monitoring): <!--Placeholder for details on SLA in Scenario Health Monitoring.-->
 - [Microsoft Entra domains](#microsoft-entra-domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
 - [Microsoft Entra tenants](#microsoft-entra-tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
-- [Directory Roles](#directory-roles): <!--Placeholder for details on Directory Roles.-->
+- [Directory Roles](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
 - [License Usage](#license-usage): Track licenses purchased and actual usage across your Microsoft Entra tenant using natural language queries.
+
+
+The table below summarizes the scenarios supported by Microsoft Security Copilot in Microsoft Entra, including the required roles and licenses.
+
+| Scenario | Description | Role(s) | Required License |
+|----------|-------------|---------|------------------|
+| Investigate recommendations | Use natural language to interact with Microsoft Entra recommendations and improve your tenant's security posture. | &#8226; Application Administrator <br/>&#8226; Identity Governance Administrator <br/>&#8226; Privileged Role Administrator<br/>&#8226; Conditional Access Administrator<br/>&#8226; Security Administrator<br/>&#8226; Hybrid Identity Administrator<br/>&#8226; Authentication Policy Administrator<br/>&#8226; Authentication Administrator | &#8226; Free Microsoft Entra ID<br/>&#8226; Microsoft Entra ID P1<br>&#8226; Microsoft Entra ID P2<br>&#8226; Entra Workload ID |
+| Summarize a user's risk level | Quickly summarize a user's risk level and receive insights relevant to the incident at hand. | &#8226; Identity Governance Administrator | Microsoft Entra ID P2 |
+| Investigate access reviews | Extract and analyze access review data using natural language queries. | &#8226; Identity Governance Administrator | &#8226; Microsoft Entra ID P2 |
+| Investigate insights within entitlements management | Get quick access to information about access packages, policies, connected organizations, and catalog resources. | &#8226; Identity Governance Administrator | &#8226; Microsoft Entra ID P2 |
+| Investigate alerts in Scenario Health Monitoring | Analyze scenario-specific metrics, detect anomalies, and raise alerts for proactive investigation. | &#8226; Security Administrator<br/>&#8226; Security Reader<br/>&#8226; Global Reader | &#8226; Microsoft Entra ID P2 (public cloud tenant) |
+| SLA in Scenario Health Monitoring | <!--Placeholder for details on SLA in Scenario Health Monitoring.--> | _TBD_ | _TBD_ |
+| Microsoft Entra domains | Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries. | &#8226; Domain Name Administrator | &#8226; Any Microsoft Entra ID license |
+| Microsoft Entra tenants | Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts. | &#8226; Global Reader | Any Microsoft Entra ID license |
+| Directory Roles (RBAC) | Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role. | Directory Reader<br/>&#8226 Global Reader | &#8226; Any Microsoft Entra ID license |
+| License Usage | Track licenses purchased and actual usage across your Microsoft Entra tenant using natural language queries. | &#8226; Global Reader | &#8226; Any Microsoft Entra ID license |
 
 ### Investigate recommendations
 
