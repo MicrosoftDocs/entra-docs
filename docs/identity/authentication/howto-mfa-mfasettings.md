@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 06/06/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: jupetter
 ms.custom: sfi-image-nochange
 ---
@@ -197,18 +197,18 @@ You can use the following sample scripts to create your own custom messages. The
 
 Message name | Script
 -------------|--------
-OTP extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue. <br>The "#" represents the # key on a phone keypad. When translating, translate "#" to the word used to describe that key. For example, this phrase in English is "Press the pound key to continue.
-OTP fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to continue. If you are not trying to sign in, press 0 and #.<br>The "#" represents the # key on a phone keypad. When translating, translate "#" to the word used to describe that key. For example, these phrases in English are "Press the pound key to continue" and "To report this authentication to your IT team, press 0 pound".
+OTP extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue. 
+OTP fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to continue. If you are not trying to sign in, press 0 and #.
 OTP fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
 OTP fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
 OTP goodbye | Goodbye.
-OTP greeting | This is Microsoft. If you are trying to sign in, press the # key to continue.<br>The "#" represents the # key on a phone keypad. When translating, translate "#" to the word used to describe that key. For example, this phrase in English is "Press the pound key to continue."
+OTP greeting | This is Microsoft. If you are trying to sign in, press the # key to continue.
 OTP last verification code | Again, your code is
-Greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.<br>The "#" represents the # key on a phone keypad. When translating, translate "#" to the word used to describe that key. For example, this phrase in English is "Press the pound key to continue."
-Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #<br>The "#" represents the # key on a phone keypad. When translating, translate "#" to the word used to describe that key. For example, this phrase in English is "Press the pound key to continue."
+Greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
+Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
 Fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
 Fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
-Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.<br>The "#" represents the # key on a phone keypad. When translating, translate "#" to the word used to describe that key. For example, this phrase in English is "Press the pound key to continue."
+Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
 Authentication successful | Your sign-in was successful.
 Authentication failed | I'm sorry we can't sign you in at this time. Please try again later.
 

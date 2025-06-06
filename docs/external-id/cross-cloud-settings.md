@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 04/14/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #customer intent: As an admin configuring B2B collaboration between partner organizations in different Microsoft Azure clouds, I want to enable collaboration with the partner's cloud, add the partner to my organizational settings, and configure inbound and outbound settings, so that Microsoft Entra B2B collaboration between the organizations is enabled.

@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: jpettere
 ---
 # When to use a Microsoft Entra multifactor authentication provider

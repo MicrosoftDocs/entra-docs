@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 02/25/2025
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing internal guest users, I want to invite them to use B2B collaboration, so that they can sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
