@@ -9,7 +9,7 @@ ms.date: 05/12/2025
 
 author: justinha
 ms.author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: calui
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID

@@ -2,7 +2,7 @@
 title: Enable self-service password reset
 description: Learn how to enable self-service password reset so your customers can reset their own passwords without admin assistance.
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

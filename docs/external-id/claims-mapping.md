@@ -6,7 +6,7 @@ ms.topic: concept-article
 ms.date: 04/09/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As a B2B collaboration user, I want to customize the claims issued in the SAML token for my application in Microsoft Entra External ID, so that I can ensure the token contains the specific information I need for user identification and authentication.

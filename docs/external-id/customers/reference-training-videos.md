@@ -4,7 +4,7 @@ description: Explore Microsoft Entra External ID training, live demos, and video
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 
 ms.subservice: external

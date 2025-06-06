@@ -7,7 +7,7 @@ ms.topic: whats-new
 
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 
 # Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
