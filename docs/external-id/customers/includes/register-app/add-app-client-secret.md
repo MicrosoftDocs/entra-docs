@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 11/22/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 
 Create a client secret for the registered application. The application uses the client secret to prove its identity when it requests for tokens:
