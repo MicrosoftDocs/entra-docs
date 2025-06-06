@@ -122,8 +122,6 @@
         href: policy-old-require-mfa-admin-portals.md
       - name: Require MFA for Azure management
         href: policy-old-require-mfa-azure-mgmt.md
-    - name: Protect Microsoft Security Copilot
-      href: policy-all-users-security-copilot.md
     - name: Conditional Access for Generative AI
       href: policy-all-users-copilot-ai-security.md
     - name: Block users with elevated insider risk
@@ -148,6 +146,8 @@
       href: troubleshoot-policy-changes-audit-log.md
     - name: Troubleshoot sign-in problems
       href: troubleshoot-conditional-access.md
+    - name: Troubleshoot Security Copilot
+      href: troubleshoot-security-copilot-policies.md
     - name: Troubleshoot using the What If tool 
       href: troubleshoot-conditional-access-what-if.md
     - name: Troubleshoot continuous access evaluation
