@@ -26,7 +26,7 @@ This article's presumes that you have the following prerequisites already in pla
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Coupa single sign-on (SSO) enabled subscription.
-* Single sign-on (SSO) is configured for you instance. [coupa-tutorial.md](./coupa-tutorial.md)
+* Single sign-on (SSO) is configured for you instance. [coupa-sso-tutorial.md](./coupa-sso-tutorial.md)
 * Coupa Multi sign-on (SSO) enabled subscription.
 
 
@@ -128,7 +128,7 @@ Follow these steps to enable Microsoft Entra SSO.
 ## Configure Coupa SSO for respective IdP
 
 1. In Coupa Company site, Goto the edit page of the IdP created in the step "Download Coupa SP Metadata". 
-2. Upload the IdP Metadata downloaded above in **Configure Microsoft Entra SSO**[#configure-microsoft-entra-sso]. Select **Save**.
+2. Upload the IdP Metadata downloaded above in **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)**. Select **Save**.
 
     ![Upload IdP Metadata](./media/coupa-multi-sso-tutorial/coupa-upload-idp-metadata.png) 
 
