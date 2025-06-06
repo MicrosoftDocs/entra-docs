@@ -160,9 +160,9 @@ For more information, see:
 
 ### SLA in Scenario Health Monitoring
 
-Microsoft Entra Health provides look-back reporting on Service Level Agreements (SLA) for authentication availability for your Microsoft Entra tenant. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month. IT admins often need to review the SLA reports in conjuntion with service outages. Security Copilot interacts with the Microsoft Entra SLA using the Microsoft Graph API.
+Microsoft Entra Health provides look-back reporting on Service Level Agreements (SLA) for authentication availability for your Microsoft Entra tenant. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month. IT admins often need to review the SLA reports in conjuntion with service outages. If availability dips below 99.99% in any given month, you might be eligible for service credits in alignment with the [Microsoft Entra SLA](/entra/identity/monitoring-health/reference-sla-performance). Security Copilot interacts with the Microsoft Entra SLA using the Microsoft Graph API.
 
-The least privileged role needed for this feature is [Reports Reader](/entra/identity/role-based-access-control/permissions-reference.md#reports-reader).
+The least privileged role needed for this feature is [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader).
 
 The following example prompts can be used to get SLA information:
 
