@@ -14,7 +14,7 @@ ms.reviewer: katabish
 
 The [Universal Conditional Access documentation](../concept-universal-conditional-access#known-tunnel-authorization-limitations) notes that Global Secure Access has tunnel authoriziation limitations. This means that you can block access to a forwarding profile in Conditional Access and inadvertenty lock users out from accessing anything on their machine.
 
-The way to mitigate this issue is bypassing Network endpoints for Microsoft Intune. This PowerShell script adds Intune-related endpoints to the Global Secure Access Internet Access (IA) custom bypass policy. This helps mitigate device compliance issues and supports scenarios such as AzVPN side-by-side deployments.
+The way to mitigate this issue is bypassing network endpoints for Microsoft Intune. This PowerShell script adds Intune-related endpoints to the Global Secure Access Internet Access (IA) custom bypass policy. This helps mitigate device compliance issues and supports scenarios such as AzVPN side-by-side deployments.
 
 The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer.
 
