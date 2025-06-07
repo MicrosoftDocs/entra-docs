@@ -30,7 +30,7 @@ To compute the assertion, you can use one of the many JWT libraries in the langu
 | --- | --- |
 | `alg` | Should be **PS256** |
 | `typ` | Should be **JWT** |
-| `x5t` | Base64url-encoded SHA-256 thumbprint of the X.509 certificate's DER encoding. |
+| `x5t` | Base64url-encoded SHA1 thumbprint of the X.509 certificate's DER encoding. |
 
 ### Claims (payload)
 
