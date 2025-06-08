@@ -111,77 +111,41 @@ billing meter. See [Set up a multitenant org in Microsoft
 
 ### Link your tenant to a subscription
 
-Your tenants must be linked to an Azure subscription for proper billing
-and access to features. To link your tenant to a subscription, follow
-these steps.
+Your tenants must be linked to an Azure subscription for proper billing and access to features. To link your tenant to a subscription, follow these steps.
 
-1.  Sign in to the [Microsoft Entra admin
-    center](https://entra.microsoft.com/) with an account that has at
-    least the Contributor role within the subscription or a resource
-    group within the subscription.
+1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that has at least the Contributor role within the subscription or a resource group within the subscription.
 
-2.  Select the directory you want to link: In the Microsoft Entra admin
-    center toolbar, select the **Settings** icon in the portal toolbar.
-    Then on the **Portal settings \| Directories + subscriptions** page,
-    find your workforce tenant in the **Directory name** list, and then
-    select **Switch**.
+2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings \| Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
 
 3.  Browse to **Entra ID** > **Identity Governance** > **Dashboard**.
 
-4.  On the governance dashboard, locate the guest governance panel and
-    select **Get Started**.
+4.  On the governance dashboard, locate the guest governance panel and select **Get Started**.
 
-5.  In the **Link a subscription** pane, select a **Subscription** and
-    a **Resource group**. Then select **Turn on**.
+5.  In the **Link a subscription** pane, select a **Subscription** and a **Resource group**. Then select **Turn on**.
 
-After you complete these steps, your Azure subscription is billed based
-on your Azure Direct or Enterprise Agreement details, if applicable.
+After you complete these steps, your Azure subscription is billed based on your Azure Direct or Enterprise Agreement details, if applicable.
 
 ## What if I can't find a subscription?
 
-If no subscriptions are available in the **Link a subscription** pane,
-here are some possible reasons:
+If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
 
-- You don't have the appropriate permissions. Be sure to sign in with an
-  Azure account that has at least the Contributor role within the
-  subscription or a resource group within the subscription.
+- You don't have the appropriate permissions. Be sure to sign in with an Azure account that has at least the Contributor role within the subscription or a resource group within the subscription.
 
-- A subscription exists, but it isn't associated with your directory
-  yet. You can [associate an existing subscription to your
-  tenant](https://learn.microsoft.com/en-us/entra/fundamentals/how-subscriptions-associated-directory) and
-  then repeat the steps for [linking it to your
-  tenant](https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing#link-your-azure-ad-tenant-to-a-subscription).
+- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](../fundamentals/how-subscriptions-associated-directory.yml) and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
 
-- No subscription exists. In the **Link a subscription** pane, you can
-  create a subscription by selecting the link **if you don't already
-  have a subscription you may create one here**. After you create a new
-  subscription, you'll need to [create a resource
-  group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) in
-  the new subscription, and then repeat the steps for [linking it to
-  your
-  tenant](https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing#link-your-azure-ad-tenant-to-a-subscription).
+- No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
 
 ## Turn off guest billing
 
-You can turn off governance guest billing by returning to the governance
-dashboard and selecting **Edit** on the guest governance panel. In the
-Edit Guest Access panel, select “Turn Off” to disable billing and Microsoft Entra
-ID Governance features for your guest users.
+You can turn off governance guest billing by returning to the governance dashboard and selecting **Edit** on the guest governance panel. In the Edit Guest Access panel, select “Turn Off” to disable billing and Microsoft Entra ID Governance features for your guest users.
 
 ## Guest user licensing FAQs
 
-**Do I need to have a subscription to Microsoft Entra ID Governance or
-Microsoft Entra Suite if I only want to govern guests?**
+**Do I need to have a subscription to Microsoft Entra ID Governance or Microsoft Entra Suite if I only want to govern guests?**
 
-Yes. While you don’t need a subscription for your guest users, you need to have at least one Microsoft Entra ID Governance or Microsoft
-Entra Suite license for an administrator in the tenant.
+Yes. While you don’t need a subscription for your guest users, you need to have at least one Microsoft Entra ID Governance or Microsoft Entra Suite license for an administrator in the tenant.
 
-**I have been using access reviews and entitlement management features
-included in Microsoft Entra P2 for my guest users. Will I start getting
-billed for this usage?**
+**I have been using access reviews and entitlement management features included in Microsoft Entra P2 for my guest users. Will I start getting billed for this usage?**
 
-Governance features included with Microsoft Entra P2 including basic
-access reviews and entitlement management capabilities won't be
-billed to the governance guest add-on. Only governance features that are
-exclusive to Microsoft Entra Suite or standalone Microsoft Entra ID Governance will be
-billed to the meter. See the table above for details.
+Governance features included with Microsoft Entra P2 including basic access reviews and entitlement management capabilities won't be
+billed to the governance guest add-on. Only governance features that are exclusive to Microsoft Entra Suite or standalone Microsoft Entra ID Governance will be billed to the meter. See the table above for details.
