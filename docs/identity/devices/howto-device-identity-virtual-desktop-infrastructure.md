@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # Device identity and desktop virtualization
