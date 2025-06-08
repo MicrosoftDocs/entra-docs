@@ -45,8 +45,8 @@ The following table contains a list of currently billable actions for **guest us
 | Entitlement Management  | [Guest uses verified ID for request](entitlement-management-verified-id-settings.md)  | Bill on successful request creation when verified ID is required in the policy.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the access package policy requires a Verified ID.    | User requests access package assignment, Create access package assignment user update request.  |
 | Entitlement Management  | [Guest policy assigned with custom extension](entitlement-management-logic-apps-integration.md) | Bill on successful request creation when a custom extension is included in the assignment policy.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when a custom extension is included in the assignment policy.  | User requests access package assignment, Create access package assignment user update request.  |
 | Entitlement Management| [Guest is granted an auto-assignment policy](entitlement-management-access-package-auto-assignment-policy.md)  | Bill on successful request creation with an auto-assignment policy.  | Entitlement Management creates access package assignment request for user.  |
-| Entitlement Management  | [Directly assign any user](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)  | Bill on successful request creation when using directly assigning an access package to a user not yet in the directory.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when using requestType “*AdminAdd*” for a user who doesn’t exist in the directory.  | Administrator directly assigns user to access package.  |
-| Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Bill on conversion to governed user.<br>**API**<br> https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/subjects where subjectLifecycle is set to “*governed*”.  | Update access package user lifecycle. |
+| Entitlement Management  | [Directly assign any user](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)  | Bill on successful request creation when using directly assigning an access package to a user not yet in the directory.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when using requestType "*AdminAdd*" for a user who doesn’t exist in the directory.  | Administrator directly assigns user to access package.  |
+| Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Bill on conversion to governed user.<br>**API**<br> https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/subjects where subjectLifecycle is set to "governed".  | Update access package user lifecycle. |
 | Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Bill on workflow execution.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/{workflowId}/activate  | Workflow execution started for user.  |
 | Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill on access review start date. | Available after 8/1/2025  |
 | Access Reviews    | [Access Review – inactive users](review-recommendations-access-reviews.md#inactive-user-recommendations) | Bill on access review start date. | Available after 8/1/2025  |
@@ -54,16 +54,11 @@ The following table contains a list of currently billable actions for **guest us
 
 ## Guest billing in multitenant organizations
 
-Governance guest billing only applies for users with a userType of
-**guest**, so if Microsoft Entra ID Governance licensed member users are brought
-into additional organization tenants with a userType of **member**, they
-won't accrue to the billing meter.
+Governance guest billing only applies for users with a userType of **guest**, so if Microsoft Entra ID Governance licensed member users are brought into additional organization tenants with a userType of **member**, they won't accrue to the billing meter.
 
 If these users are brought in with a userType of **guest** they accrue to the meter, however you can avoid being charged by setting up
-or joining a multitenant organization. If the guest user is from a
-participating organizational tenant, the guest won't accrue to the
-billing meter. See [Set up a multitenant org in Microsoft
-365](/microsoft-365/enterprise/set-up-multi-tenant-org?view=o365-worldwide).
+or joining a multitenant organization. If the guest user is from a participating organizational tenant, the guest won't accrue to the
+billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/enterprise/set-up-multi-tenant-org?view=o365-worldwide).
 
 ## Billing examples
 
@@ -71,11 +66,11 @@ billing meter. See [Set up a multitenant org in Microsoft
 
 **March**: 
 
-- Contoso creates an auto-assignment policy that assigns an access package to 500 guest users.
+- Contoso creates an autoassignment policy that assigns an access package to 500 guest users.
 
 - Contoso IT runs the guest conversion API for another set of 500 guest users.
 
-- Billing: For March, Contoso is billed for 1,000 total guest users: 500 users for the auto-assignment policy and 500 users for the guest conversion API.  
+- Billing: For March, Contoso is billed for 1,000 total guest users: 500 users for the autoassignment policy and 500 users for the guest conversion API.  
 
 **April**: 
 
@@ -91,7 +86,7 @@ billing meter. See [Set up a multitenant org in Microsoft
 
 - Fabrikam executes a lifecycle workflow for 300 guest users.
 
-- They also perform an access review for inactive users, targeting 100 of the same guests as above, plus a different set of 200 guests.
+- They also perform an access review for inactive users, targeting 100 of the same guests as before, plus a different set of 200 guests.
 
 - Billing: For March, Fabrikam is billed for 300 users for the lifecycle workflow and 200 users for the inactive access review. Since 100 of the guest users already incurred a charge for the lifecycle workflow, they didn't incur any additional charge for the inactive user review, since each guest user will only be charged once for one or more governance actions in the month. 
 
@@ -137,7 +132,7 @@ If no subscriptions are available in the **Link a subscription** pane, here ar
 
 ## Turn off guest billing
 
-You can turn off governance guest billing by returning to the governance dashboard and selecting **Edit** on the guest governance panel. In the Edit Guest Access panel, select “Turn Off” to disable billing and Microsoft Entra ID Governance features for your guest users.
+You can turn off governance guest billing by returning to the governance dashboard and selecting **Edit** on the guest governance panel. In the Edit Guest Access panel, select "Turn Off" to disable billing and Microsoft Entra ID Governance features for your guest users.
 
 ## Guest user licensing FAQs
 
@@ -148,7 +143,7 @@ Yes. While you don’t need a subscription for your guest users, you need to hav
 **I have been using access reviews and entitlement management features included in Microsoft Entra P2 for my guest users. Will I start getting billed for this usage?**
 
 Governance features included with Microsoft Entra P2 including basic access reviews and entitlement management capabilities won't be
-billed to the governance guest add-on. Only governance features that are exclusive to Microsoft Entra Suite or standalone Microsoft Entra ID Governance will be billed to the meter. See the table above for details.
+billed to the governance guest add-on. Only governance features that are exclusive to Microsoft Entra Suite or standalone Microsoft Entra ID Governance will be billed to the meter. See the billable tables action on this page for details.
 
 
 ## Related content
