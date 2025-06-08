@@ -149,3 +149,9 @@ Yes. While you don’t need a subscription for your guest users, you need to hav
 
 Governance features included with Microsoft Entra P2 including basic access reviews and entitlement management capabilities won't be
 billed to the governance guest add-on. Only governance features that are exclusive to Microsoft Entra Suite or standalone Microsoft Entra ID Governance will be billed to the meter. See the table above for details.
+
+
+## Related content
+
+- [Microsoft Entra ID Governance licensing fundamentals](licensing-fundamentals.md)
+- [Microsoft Entra ID Governance](identity-governance-overview.md)
