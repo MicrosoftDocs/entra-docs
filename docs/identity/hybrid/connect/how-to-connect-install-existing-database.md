@@ -24,7 +24,7 @@ By pointing to an existing ADSync database:
 
 > [!IMPORTANT]
 > In certain edge cases, installing from an existing ADSync database may trigger a full synchronization cycle. If you're not ready to initiate a full sync immediately after installation, you can defer it by configuring the sync scheduler. Use one of the following options:
-- To set the NextSyncCyclePolicyType: `Set-ADSyncScheduler -NextSyncCyclePolicyType Delta`
+> - To set the NextSyncCyclePolicyType: `Set-ADSyncScheduler -NextSyncCyclePolicyType Delta`
 > - To override connector behavior and prevent a full import/sync: `Set-ADSyncSchedulerConnectorOverride -ConnectorName '<connector name>' -FullImportRequired $false -FullSyncRequired $false`
 
 ## Scenarios where using an existing ADSync database is beneficial
@@ -62,7 +62,7 @@ Important notes to take note of before you proceed:
 
 ![PowerShell](./media/how-to-connect-install-existing-database/db2.png)
 1. You are greeted with the Welcome to Microsoft Entra Connect screen. Once you agree to the license terms and privacy notice, select **Continue**.
-![Screenshot that shows the "Welcome to Microsoft Entra Connect" page](./media/how-to-connect-install-existing-database/db3.png)
+![Screenshot that shows the "Welcome to Microsoft Entra Connect" page.](./media/how-to-connect-install-existing-database/db3.png)
 1. On the **Install required components** screen, the **Use an existing SQL Server** option is enabled. Specify the name of the SQL server that is hosting the ADSync database. If the SQL engine instance used to host the ADSync database isn't the default instance on the SQL server, you must specify the SQL engine instance name. Further, if SQL browsing isn't enabled, you must also specify the SQL engine instance port number. For example:  
 ![Screenshot that shows the "Install required components" page.](./media/how-to-connect-install-existing-database/db4.png)           
 
