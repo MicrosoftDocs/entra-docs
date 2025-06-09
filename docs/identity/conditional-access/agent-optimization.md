@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 
-ms.date: 06/06/2025
+ms.date: 06/09/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -15,7 +15,7 @@ ms.topic: how-to
 
 The Conditional Access optimization agent helps you ensure all users are protected by policy. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
-In preview, the Security Copilot agent evaluates policies requiring multifactor authentication (MFA), enforces device based controls (device compliance, app protection policies, and Domain Joined Devices), and blocks legacy authentication and device code flow. 
+In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow.
 
 The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies.
 
@@ -25,8 +25,8 @@ The agent also evaluates all existing enabled policies to propose potential cons
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
 - To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
-- To interact with the agent and apply suggestions, you need the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
-   - For more information, see [Understand authentication in Microsoft Security Copilot](/copilot/security/authentication)
+- You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
+   - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
@@ -44,8 +44,11 @@ The agent also evaluates all existing enabled policies to propose potential cons
 
 The Conditional Access optimization agent scans your tenant for new users and applications and determines if Conditional Access policies are applicable. In preview, the key features include:
 
+- **Require MFA**: The agent identifies users who aren't covered by a Conditional Access policy that requires MFA and can update the policy.
+- **Require device-based controls**: The agent can enforce device-based controls, such as device compliance, app protection policies, and domain-joined devices.
 - **Block legacy authentication**: User accounts with legacy authentication are blocked from signing in.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
+- **Block device code flow**: The agent looks for a policy blocking device code flow authentication.
 - **One-click remediation**: When the agent identifies a suggestion, you can select **Apply suggestion** to have the agent update the associated policy with one click.
 
 ## Getting started
@@ -111,15 +114,15 @@ Use the checkboxes under **Objects** to specify what the agent should monitor wh
 
 ### Identity and permissions
 
-The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*. Because of this requirement you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation.
+The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*. Because of this requirement, you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation.
 
 The Security Administrator and Global Administrator roles also have access to Security Copilot by default.
 
-You can assign Conditional Access Administrators with Security Copilot access. This will give your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 
 ### Custom instructions
 
-You can tailor policy to your needs using the optional **Custom Instructions** field. This allows you to provide a prompt to the agent as part of its execution. For example: "The user "Break Glass" should be excluded from policies created." When you save the custom instruction prompt Security Copilot will attempt to interpret and the results appear in the settings page.
+You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. For example: "The user "Break Glass" should be excluded from policies created."
 
 ## Remove agent
 
@@ -134,24 +137,24 @@ Both features provide different insights into your Conditional Access policies. 
 | Scenario | Conditional Access Optimization Agent | Copilot Chat |
 |----------|---------------------------------------|--------------|
 | **Generic Scenarios** |||
-| Utilizes tenant-specific config | ✅ |  |
+| Utilize tenant-specific configuration | ✅ |  |
 | Advanced reasoning | ✅ |  |
 | On-demand insights |  | ✅ |
 | Interactive troubleshooting |  | ✅ |
 | Continuous policy assessment | ✅ |  |
 | Automated improvement suggestions | ✅ |  |
-| Getting guidance on CA best practices and configuration | ✅ | ✅ |
+| Get guidance on CA best practices and configuration | ✅ | ✅ |
 | **Specific Scenarios** |||
-| Identifying unprotected users or applications proactively | ✅ |  |
-| Enforcing MFA and other baseline controls for all users | ✅ |  |
+| Identify unprotected users or applications proactively | ✅ |  |
+| Enforce MFA and other baseline controls for all users | ✅ |  |
 | Continuous monitoring and optimization of CA policies | ✅ |  |
 | One-click policy changes | ✅ |  |
-| Reviewing existing CA policies and assignments (e.g., policies apply to Alice?) | ✅ | ✅ |
-| Troubleshoot a user’s access (e.g., Why was Alice prompted for MFA?) |  | ✅ |
+| Review existing CA policies and assignments (Do policies apply to Alice?) | ✅ | ✅ |
+| Troubleshoot a user’s access (Why was Alice prompted for MFA?) |  | ✅ |
 
 ### I activated the agent but see "Fail" in the activity status. What's happening?
 
-It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. To resolve this issue, you can remove the agent, then re-enable it with an account that has standing permissions, such as a Break Glass account.
+It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. You are prompted to reauthenticate if PIM permission expired. You can resolve this issue by removing the agent, then enabling the agent again with a user account that has standing permissions for Security Copilot access. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 
 ## Related content
 
