@@ -33,7 +33,7 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - [SLA in Scenario Health Monitoring](#sla-in-scenario-health-monitoring): Get look-back reporting on Service Level Agreements (SLA) for authentication availability in your Microsoft Entra tenant.
 - [Microsoft Entra domains](#microsoft-entra-domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
 - [Microsoft Entra tenants](#microsoft-entra-tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
-- [Directory Roles](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
+- [Microsoft Entra Role Based Access Control (RBAC)](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
 - [License Usage](#license-usage): Track licenses purchased and actual usage across your Microsoft Entra tenant using natural language queries.
 
 ### Investigate recommendations
@@ -161,15 +161,19 @@ For more information, see:
 
 Microsoft Entra Health provides look-back reporting on Service Level Agreements (SLA) for authentication availability for your Microsoft Entra tenant. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month. IT admins often need to review the SLA reports in conjuntion with service outages. If availability dips below 99.99% in any given month, you might be eligible for service credits in alignment with the [Microsoft Entra SLA](/entra/identity/monitoring-health/reference-sla-performance). Security Copilot interacts with the Microsoft Entra SLA using the Microsoft Graph API.
 
-The least privileged role needed for this feature is [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader).
+Using this feature requires a minimum of the [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader) role.
 
 The following example prompts can be used to get SLA information:
 
 - *What is my SLA for Microsoft Entra authentication?*
 - *What is my Microsoft Entra SLA?*
-- *SLA of Microsoft Entra authentication*
+- *What is the SLA of Microsoft Entra authentication?*
 - *Show me my tenant's authentication availability.*
 - *Has my tenant had an SLA breach in the last "X" months?*
+
+For more information, see:
+
+- [SLA performance for Microsoft Entra ID](/entra/identity/monitoring-health/reference-sla-performance)
 
 ### Microsoft Entra domains
 
