@@ -6,7 +6,7 @@ ms.topic: overview
 ms.date: 02/19/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 # Customer intent: As an administrator managing B2B collaboration, I want to easily invite guest users from the Microsoft Entra admin center, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.

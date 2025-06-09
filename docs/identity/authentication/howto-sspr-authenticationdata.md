@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: tilarso
 ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ---

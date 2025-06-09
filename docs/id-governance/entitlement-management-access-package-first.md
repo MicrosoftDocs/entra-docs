@@ -2,7 +2,7 @@
 title: Tutorial - Manage access to resources in entitlement management
 description: Step-by-step tutorial for how to create your first access package using the Microsoft Entra admin center in entitlement management.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management

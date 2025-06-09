@@ -3,7 +3,7 @@ title: Create a lifecycle workflow - Microsoft Entra ID
 description: This article guides you in creating a lifecycle workflow.
 author: OWinfreyATL
 ms.author: owinfrey
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to

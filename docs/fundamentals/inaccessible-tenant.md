@@ -2,7 +2,7 @@
 title: Troubleshoot inaccessible tenants
 description: Instructions about how to unblock a tenant.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals

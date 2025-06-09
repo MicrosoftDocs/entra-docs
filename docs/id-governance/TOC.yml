@@ -224,6 +224,8 @@
       href: lifecycle-workflow-audits.md
     - name: Workflow History
       href: lifecycle-workflow-history.md
+    - name: Workflow Execution conditions
+      href: lifecycle-workflow-execution-conditions.md         
     - name: Synced AD DS users
       href: lifecycle-workflow-on-premises.md         
     - name: Workflow Insights

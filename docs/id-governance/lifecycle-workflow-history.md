@@ -3,7 +3,7 @@ title: Lifecycle Workflow History
 description: Conceptual article about Lifecycle Workflows reporting and history capabilities
 author: owinfreyATL
 ms.author: owinfrey
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual

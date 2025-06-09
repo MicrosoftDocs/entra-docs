@@ -4,7 +4,7 @@ description: Learn about tenant configurations in Microsoft Entra External ID. U
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

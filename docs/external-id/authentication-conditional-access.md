@@ -6,7 +6,7 @@ ms.topic: concept-article
 ms.date: 05/15/2024
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: As an IT admin managing external user access to resources in my organization, I want to understand the authentication flow and Conditional Access policies for external users, so that I can ensure secure access and compliance with our organization's policies.
