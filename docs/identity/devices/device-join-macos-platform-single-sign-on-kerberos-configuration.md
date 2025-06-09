@@ -23,7 +23,7 @@ This tutorial illustrates how to configure Platform SSO to support Kerberos-base
 
 ## Customize Kerberos TGT setting
 
-Customers can customize the TGT mapping setting using the SSO extension flag. This option is **only enabled in Company portal version 2506 and above.**
+Customers can customize the TGT mapping setting using the below key/value in the extension data dictionary in SSO extension configuration. This option is **only enabled in Company portal version 2506 and above.**
 
 - **Key**: `custom_tgt_setting`  
 - **Type**: `Integer`
