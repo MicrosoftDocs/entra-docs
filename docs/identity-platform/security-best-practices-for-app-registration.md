@@ -20,10 +20,12 @@ Because secure applications are essential to the organization, any downtime to t
 
 This article describes security best practices for the following application properties:
 
-- Redirect URI
-- Access tokens (used for implicit flows)
-- Certificates and secrets
-- Application ID URI
+- Credentials
+- Redirect URIs
+- Implicit flow configuration
+- Application ID URI (a.k.a. identifier URI)
+- Access token version
+- Application instance lock
 - Application ownership
 
 ## Credentials (including certificates and secrets)
@@ -43,7 +45,7 @@ Consider the following guidance related to certificates and secrets:
 - Monitor your production pipelines to prevent credentials of any kind from being committed into code repositories. [Credential Scanner](/previous-versions/azure/security/develop/security-code-analysis-overview#credential-scanner) is a static analysis tool that can be used to detect credentials (and other sensitive content) in source code and build output.
 
 
-## Redirect URI
+## Redirect URIs
 
 It's important to keep Redirect URIs of your application up to date. Under **Authentication** for the application in the Azure portal, a platform must be selected for the application and then the **Redirect URI** property can be defined.
 
@@ -56,7 +58,7 @@ Consider the following guidance for redirect URIs:
 - Don't use wildcard reply URLs or insecure URI schemes such as http, or URN.
 - Keep the list small. Trim any unnecessary URIs. If possible, update URLs from Http to Https.
 
-## Access tokens (used for implicit flows)
+## Implicit flow configuration
 
 Scenarios that required **implicit flow** can now use **Auth code flow** to reduce the risk of compromise associated with implicit flow misuse. Under **Authentication** for the application in the Azure portal, a platform must be selected for the application and then the **Access tokens (used for implicit flows)** property can be set.
 
@@ -82,9 +84,30 @@ For applications that are issued v2.0 access tokens, use the following guideline
 - The `api` or `https` URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
 - Use a verified domain of your organization.
 - Keep an inventory of the URIs in your organization to help maintain security.
-- Use the Application ID URI to expose the WebApi in the organization. Don't use the Application ID URI to identify the application, and instead use the Application (client) ID property.
 
 [!INCLUDE [active-directory-identifierUri](~/includes/entra-identifier-uri-patterns.md)]
+
+## Access token version
+
+This section is only applicable to resource applications - meaning applications that act as the audience in access tokens.  Resource applications are typically web APIs.  If an application only acts as a client (meaning it acquires tokens to send to resources like Microsoft Graph), then this section doesn't apply to it.
+
+Resource applications that have configured custom [identifier URIs](#application-id-uri-also-known-as-identifier-uri) should use the v2.0 access token format.  To check if an app should use v2.0 access tokens, look at the `identifierUris` property in the [App registrations manifest page](https://aka.ms/ra/prod) for the app. 
+
+    :::image type="content" source="media/identifier-uri-restrictions/screenshot-identifier-uri-manifest-configuration-cropped.png" alt-text="Screenshot of identifier URI modification experience in the manifest editor." lightbox="media/identifier-uri-restrictions/screenshot-identifier-uri-manifest-configuration.png":::
+
+ If there are any values configured there not in the format `api://{appId}` or `api://{tenantId}/{appId}`, then the app should use v2.0 access tokens.
+
+ To upgrade to v2.0 access tokens, first ensure the app can handle [v2.0 token claims](../identity-platform/access-token-claims-reference.md).  Then, update the access token version the application is issued using the manifest editor.
+
+    :::image type="content" source="media/identifier-uri-restrictions/update-access-token-version-cropped.png" alt-text="Screenshot of update token version experience." lightbox="media/identifier-uri-restrictions/update-access-token-version.png":::
+
+After the application configuration has been updated to use v2.0 tokens, ensure the application's audience validation logic is modified to **only** accept its `appId`.
+
+## Application instance property lock
+
+When a multitenant application has a service principal provisioned in a different tenant, that service principal can be customized by a tenant admin.  Those customization abilities can allow for modifications that the app owner didn't expect, leading to security risks.  For example, credentials can be added to the service principal, even though credentials should typically be owned and controlled by the app developer and owner.
+
+To reduce this risk, multitenant applications - meaning applications that are used in more than one tenant - should always [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md).  When configuring app instance lock, always lock every sensitive property available.
 
 ## App ownership configuration
 
