@@ -30,7 +30,7 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - [Investigate access reviews](#investigate-access-reviews): Extract and analyze access review data using natural language queries.
 - [Investigate insights within entitlements management](#investigate-insights-within-entitlements-management): Get quick access to information about access packages, policies, connected organizations, and catalog resources.
 - [Investigate alerts in Scenario Health Monitoring](#investigate-alerts-in-scenario-health-monitoring): Analyze scenario-specific metrics, detect anomalies, and raise alerts for proactive investigation.
-- [SLA in Scenario Health Monitoring](#sla-in-scenario-health-monitoring): <!--Placeholder for details on SLA in Scenario Health Monitoring.-->
+- [SLA in Scenario Health Monitoring](#sla-in-scenario-health-monitoring): Get look-back reporting on Service Level Agreements (SLA) for authentication availability in your Microsoft Entra tenant.
 - [Microsoft Entra domains](#microsoft-entra-domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
 - [Microsoft Entra tenants](#microsoft-entra-tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
 - [Directory Roles](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
@@ -94,7 +94,7 @@ Use the following example prompts to extract access reviews data in Microsoft En
 
 | Use Case | Example Prompts |
 |----------|-----------------|
-| Explore current configured access reviews in the tenant | *Show me top 10 access reviews with schedule, status, and metadata* |
+| Explore current configured access reviews in the tenant | *Show me the top 10 pending access reviews* |
 | Get detailed info on a specific access review | *Get access review details for Finance Microsoft 365 Groups Q2* |
 | View access review decisions for a specific instance | *Who approved or denied access in the Q2 finance review?* |
 | Track reviews assigned to a specific reviewer | *List reviews where Alex Chen is the assigned reviewer* |
@@ -104,7 +104,6 @@ Use the following example prompts to extract access reviews data in Microsoft En
 For more information, see;
 
 - [What are access reviews?](/entra/id-governance/access-reviews-overview)
-- [Create and manage downloadable access review history report in Microsoft Entra access reviews](/entra/id-governance/access-reviews-downloadable-review-history)
 - [Prepare for an access review of users' access to an application](/entra/id-governance/access-reviews-application-preparation) 
 
 ### Investigate insights within entitlements management
