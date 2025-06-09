@@ -2,7 +2,7 @@
 title: Manage users excluded from Conditional Access policies
 description: Learn how to use access reviews to manage users that have been excluded from Conditional Access policies
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
@@ -27,7 +27,7 @@ As another example, you might be using [named locations](../identity/conditional
 
 Unfortunately, some users might still have a valid reason to sign in from these blocked countries/regions. For example, users could be traveling for work and need to access corporate resources. In this case, the Conditional Access policy to block these countries/regions could use a cloud security group for the excluded users from the policy. Users who need access while traveling, can add themselves to the group using [Microsoft Entra self-service Group management](../identity/users/groups-self-service-management.md).
 
-Another example might be that you have a Conditional Access policy [blocking legacy authentication for most of your users](../identity/conditional-access/howto-conditional-access-policy-block-legacy.md). However, if you have some users that need to use legacy authentication methods to access specific resources, then you can exclude these users from the policy that blocks legacy authentication methods.
+Another example might be that you have a Conditional Access policy [blocking legacy authentication for most of your users](../identity/conditional-access/policy-block-legacy-authentication.md). However, if you have some users that need to use legacy authentication methods to access specific resources, then you can exclude these users from the policy that blocks legacy authentication methods.
 
 >[!NOTE]
 >Microsoft strongly recommends that you block the use of legacy protocols in your tenant to improve your security posture.
@@ -52,7 +52,7 @@ Follow these steps to create a new Microsoft Entra group and a Conditional Acces
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 
 1. Select **New group**.
 
@@ -70,7 +70,7 @@ Now you can create a Conditional Access policy that uses this exclusion group.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 
 1. Select **Create new policy**.
 
@@ -140,7 +140,7 @@ Now that you have everything in place, group, Conditional Access policy, and acc
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access reviews**.
+1. Browse to **ID Governance** > **Access reviews**.
 
 1. Select the Access review you're using with the group you created an exclusion policy for.
 

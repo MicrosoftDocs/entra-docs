@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.subservice: architecture
 ms.date: 08/25/2024
 ms.author: martinco
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra authentication management operations reference guide
@@ -146,8 +147,6 @@ If you would like to learn more about passwordless authentication, see [A world 
 
 Providing a standardized single sign-on mechanism to the entire enterprise is crucial for best user experience, reduction of risk, ability to report, and governance. If you're using applications that support SSO with Microsoft Entra ID but are currently configured to use local accounts, you should reconfigure those applications to use SSO with Microsoft Entra ID. Likewise, if you're using any applications that support SSO with Microsoft Entra ID but are using another Identity Provider, you should reconfigure those applications to use SSO with Microsoft Entra ID as well. For applications that don't support federation protocols but do support forms-based authentication, we recommend you configure the application to use [password vaulting](~/identity/app-proxy/application-proxy-configure-single-sign-on-password-vaulting.md) with Microsoft Entra application proxy.
 
-![AppProxy Password-based Sign-on](./media/ops-guide-auth/ops-img8.png)
-
 > [!NOTE]
 > If you don't have a mechanism to discover unmanaged applications in your organization, we recommend implementing a discovery process using a cloud application security broker (CASB) such as [Microsoft Defender for Cloud Apps](https://www.microsoft.com/enterprise-mobility-security/cloud-app-security).
 
@@ -170,7 +169,7 @@ Finally, if you have a Microsoft Entra app gallery and use applications that sup
 
 ### Assign users to applications
 
-[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include attribute-based [dynamic membership groups](~/identity/users/groups-dynamic-membership.md) and [delegation to app owners](~/fundamentals/how-to-manage-groups.yml). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
+[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include attribute-based [dynamic membership groups](~/identity/users/groups-dynamic-membership.md) and [delegation to app owners](/entra/fundamentals/how-to-manage-groups). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
 
 - Delegate group management and governance to application owners.
 - Allow self-service access to the application.
@@ -221,7 +220,7 @@ If you already own Microsoft Entra ID P2 licenses that support using risk in acc
 
 ### Client application access policies
 
-Microsoft Intune Application Management (MAM) provides the ability to push data protection controls such as storage encryption, PIN, remote storage cleanup, and so on. to compatible client mobile applications such as Outlook Mobile. In addition, Conditional Access policies can be created to [restrict access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml) to cloud services such as Exchange Online from approved or compatible apps.
+Microsoft Intune Application Management (MAM) provides the ability to push data protection controls such as storage encryption, PIN, remote storage cleanup, and so on. to compatible client mobile applications such as Outlook Mobile. In addition, Conditional Access policies can be created to [restrict access](~/identity/conditional-access/policy-all-users-device-compliance.md) to cloud services such as Exchange Online from approved or compatible apps.
 
 If your employees install MAM-capable applications such as Office mobile apps to access corporate resources such as Exchange Online or SharePoint in Microsoft 365, and you also support BYOD (bring your own device), we recommend you deploy application MAM policies to manage the application configuration in personally owned devices without MDM enrollment and then update your Conditional Access policies to only allow access from MAM-capable clients.
 

@@ -6,9 +6,10 @@ metadata:
   ms.service: entra-id
   ms.subservice: app-proxy
   ms.topic: faq
-  ms.date: 09/11/2024
+  ms.date: 02/21/2025
   ms.author: kenwith
   ms.reviewer: ashishj
+  ai-usage: ai-assisted
 title: Microsoft Entra application proxy frequently asked questions
 summary: This page answers frequently asked questions about Microsoft Entra application proxy.
 
@@ -56,7 +57,22 @@ sections:
         answer: |
               Yes, Microsoft Entra private network connector is used by both application proxy and Microsoft Entra Private Access. To learn more about the connector, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
               To troubleshoot connector configuration, see [troubleshoot connectors](../../global-secure-access/troubleshoot-connectors.md).
-          
+
+      - question: | 
+         ConnectorTroubleshooter cannot start
+        answer: |
+            The ConnectorTroubleshooterLauncher.exe is deprecated and no longer functional. Currently, there is no replacement available.
+
+      - question: | 
+         Can I Change the Logon User of the Microsoft Entra Private Network Connector / Updater Services?         
+        answer: |
+         Changing the logon user of the connector or updater service is not supported.
+
+         Correct Configuration:
+
+         Microsoft Entra Private Network Connector: *Network Service*
+         Microsoft Entra Private Network Connector Updater: *NT Authority\System*
+
   - name: Application configuration
     questions:
       - question: |
@@ -206,12 +222,12 @@ sections:
           
               In this case there's a fallback to “User principal name”. For more details on the B2B scenario, please read [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).
           
-  - name: Pass-through authentication
+  - name: Passthrough preauthentication
     questions:
       - question: |
-         Can I use Conditional Access Policies for applications published with pass-through authentication?
+         Can I use Conditional Access Policies for applications published with passthrough preauthentication?
         answer: |
-              Conditional Access Policies are only enforced for successfully preauthenticated users in Microsoft Entra ID. Pass-through authentication doesn’t trigger Microsoft Entra authentication, so Conditional Access Policies can't be enforced. With pass-through authentication, MFA policies must be implemented on the on-premises server, if possible, or by enabling preauthentication with Microsoft Entra application proxy.
+              Conditional Access Policies are only enforced for successfully authenticated users in Microsoft Entra ID. Passthrough preauthentication doesn’t trigger Microsoft Entra authentication, so Conditional Access Policies can't be enforced. With passthrough preauthentication, MFA policies must be implemented on the on-premises server, if possible, or by enabling Microsoft Entra ID preauthentication with Microsoft Entra application proxy.
 
       - question: |
          Can I publish a web application with client certificate authentication requirement?

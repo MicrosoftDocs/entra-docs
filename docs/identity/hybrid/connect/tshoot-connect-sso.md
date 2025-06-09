@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Seamless Single Sign-On'
 description: This topic describes how to troubleshoot Microsoft Entra seamless single sign-on
-
 author: billmath
 ms.reviewer: swkrish
-manager: amycolannino
+manager: femila
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.topic: troubleshooting
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot Microsoft Entra seamless single sign-on
@@ -37,7 +36,7 @@ This article helps you find troubleshooting information about common problems re
 
 ## Check status of feature
 
-Ensure that the Seamless SSO feature is still **Enabled** on your tenant. You can check the status by going to the **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync** pane in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/).
+Ensure that the Seamless SSO feature is still **Enabled** on your tenant. You can check the status by going to the **Entra ID** > **Entra Connect** > **Connect Sync** pane in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/).
 
 ![Screenshot of the Microsoft Entra admin center: Microsoft Entra Connect pane.](./media/tshoot-connect-sso/sso10.png)
 
@@ -51,7 +50,7 @@ If your tenant has a Microsoft Entra ID P1 or P2 license associated with it, you
 
 ![Screenshot of the Microsoft Entra admin center: Sign-ins report.](media/tshoot-connect-sso/sso9.png)
 
-Browse to **Identity** > **Monitoring & health** > **Sign-ins** in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/), and then select a specific user's sign-in activity. Look for the **SIGN-IN ERROR CODE** field. Map the value of that field to a failure reason and resolution by using the following table:
+Browse to **Entra ID** > **Monitoring & health** > **Sign-ins** in the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/), and then select a specific user's sign-in activity. Look for the **SIGN-IN ERROR CODE** field. Map the value of that field to a failure reason and resolution by using the following table:
 
 |Sign-in error code|Sign-in failure reason|Resolution
 | --- | --- | ---

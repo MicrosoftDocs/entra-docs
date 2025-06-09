@@ -1,22 +1,21 @@
 ---
 title: 'Microsoft Entra Connect: ADSync service account'
 description: This topic describes the ADSync service account and provides best practices regarding the account.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # ADSync service account
-Microsoft Entra Connect installs an on-premises service which orchestrates synchronization between Active Directory and Microsoft Entra ID.  The Microsoft Entra ID Sync synchronization service (ADSync) runs on a server in your on-premises environment.  The credentials for the service are set by default in the Express installations but may be customized to meet your organizational security requirements.  These credentials aren't used to connect to your on-premises forests or Microsoft Entra ID.
+Microsoft Entra Connect installs an on-premises service which orchestrates synchronization between Active Directory and Microsoft Entra ID.  The Microsoft Entra ID Sync synchronization service (ADSync) runs on a server in your on-premises environment. The credentials for the service are set by default in the Express installations but may be customized to meet your organizational security requirements. These credentials aren't used to connect to your on-premises forests or Microsoft Entra ID.
 
-Choosing the ADSync service account is an important planning decision to make prior to installing Microsoft Entra Connect.  Any attempt to change the credentials after installation will result in the service failing to start, losing access to the synchronization database, and failing to authenticate with your connected directories (Azure and AD DS).  No synchronization will occur until the original credentials are restored.
+Choosing the ADSync service account is an important planning decision to make before installing Microsoft Entra Connect. Any attempt to change the credentials after installation will result in the service failing to start, losing access to the synchronization database, and failing to authenticate with your connected directories (Azure and AD DS). No synchronization occurs until the original credentials are restored.
 
 The sync service can run under different accounts. It can run under a Virtual Service Account (VSA), a Managed Service Account (gMSA/sMSA), or a regular User Account. The supported options were changed with the 2017 April release and 2021 March release of Microsoft Entra Connect when you do a fresh installation. If you upgrade from an earlier release of Microsoft Entra Connect, these additional options aren't available. 
 
@@ -70,7 +69,7 @@ To use this option, on the [Install required components](how-to-connect-install-
 
  ![managed service account](media/concept-adsync-service-account/account-2.png)
 
-It is also supported to use a standalone managed service account. However, these can only be used on the local machine and there's no benefit to using them over the default Virtual Service Account. 
+It's also supported to use a standalone managed service account. However, these can only be used on the local machine and there's no benefit to using them over the default Virtual Service Account. 
 
 ### Auto-generated standalone Managed Service Account 
 
@@ -82,7 +81,7 @@ This account is intended to be used with scenarios where the sync engine and SQL
 
 ## User Account 
 
-A local service account is created by the installation wizard (unless you specify the account to use in custom settings). The account is prefixed AAD_ and used for the actual sync service to run as. If you install Microsoft Entra Connect on a Domain Controller, the account is created in the domain. The AAD_ service account must be located in the domain if: 
+The installation wizard creates a local service account (unless you specify the account to use in custom settings). The account is prefixed AAD_ and used for the actual sync service to run as. If you install Microsoft Entra Connect on a Domain Controller, the account is created in the domain. The AAD_ service account must be located in the domain if: 
 - You use a remote server running SQL Server 
 - You use a proxy that requires authentication 
 
@@ -92,7 +91,7 @@ The account is created with a long complex password that doesn't expire.
 
 This account is used to store passwords for the other accounts in a secure way. These other accounts passwords are stored encrypted in the database. The private keys for the encryption keys are protected with the cryptographic services secret-key encryption using Windows Data Protection API (DPAPI). 
 
-If you use a full SQL Server, then the service account is the DBO of the created database for the sync engine. The service won't function as intended with any other permission. A SQL login is also created. 
+If you use a full SQL Server, then the service account is the DBO of the created database for the sync engine. The service won't function as intended with any other permission. A SQL sign-in is also created. 
 
 The account is also granted permission to files, registry keys, and other objects related to the Sync Engine. 
 

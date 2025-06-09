@@ -2,16 +2,15 @@
 title: Security features in external tenants
 description: Learn about security features and fundamentals for Microsoft Entra External ID customer identity and access management (CIAM) in external tenant configurations.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
-ms.date: 10/02/2024
-ms.author: mimart
+ms.date: 06/09/2025
 ms.custom: it-pro
-
 ---
 
 # Security fundamentals for external tenants
@@ -20,28 +19,36 @@ ms.custom: it-pro
 
 Microsoft Entra External ID external tenants include several baseline security features to help immediately secure customer data. Default settings provide initial protection against threats like brute force attacks and network layer attacks. These protections serve as a starting point as you develop your own identity security plan and add Microsoft Entra premium security features.
 
-## Brute force protection
+## NEW
 
-|Feature                                 |Notes     |
-|----------------------------------------|----------|
-|IP level throttling                     |Detects when a bad actor tries to overwhelm the system with requests.|
-|Application and tenant level throttling |Detects unusually high traffic spikes from specific applications in your tenant and applies rate-limiting to protect your other applications.|
-|Smart Lockout                           |Blocks attackers who attempt to guess passwords or use brute force methods to gain access, while allowing legitimate users to retain access to their accounts. [Learn more](~/identity/authentication/howto-password-smart-lockout.md) |
-|Feature level throttling                |Ensures the availability of critical sign-in functionality by prioritizing it during times of high demand.|
-|User creation level throttling          |Allows for a steady increase in user sign-ups while protecting against misuse of tenant resources.|
+## Built-in Security Controls
 
-## Account protection and access control
+When you create a Microsoft Entra External ID external tenant, core security features are enabled by default. These controls are designed to protect applications from various cyber threats, ensuring robust security for external-facing applications.
 
-|Feature            |Notes     |
-|-------------------|----------|
-|Conditional Access |Allows organizations to set rules around user sign-in to applications and data, preventing unauthorized access (sign-up rules are currently unavailable). [Learn more](~/identity/conditional-access/overview.md) <br></br>**Note:** Default settings are provided, but risk-based access policies powered by ID Protection require configuration.|
-|ID Protection risk detection  |Reports risk events based on numerous parameters and can be used in Conditional Access for risk-based access control. [Learn more](~/id-protection/concept-identity-protection-risks.md#risk-detections-mapped-to-riskeventtype) <br></br>**Example:** *Impossible travel* is a risk detection that identifies user activities in distant locations, where the timeframe is too short to travel from one location to the other. The activity can be in a single session or multiple sessions. This type of activity might indicate that someone is using another user’s credentials. <br></br>**Note:** Default Conditional Access settings are provided, but risk-based access policies powered by ID Protection require configuration. |
+|Feature Name  |Description  |
+|--------------|-------------|
+|Brute Force Protection            | Helps mitigate brute force attacks by limiting the number of login attempts. |
+|Common Networking HTTP Protection | Provides protection against common networking HTTP threats.                  |
+|Account Protection                | Ensures accounts are protected from unauthorized access.                     |
+|Access Control                    | Controls access to applications and resources.                               |
+ 
+## Real-time and Offline Protection
 
-## Common networking protection
+Microsoft Entra External ID provides layers of protection that work together to detect and mitigate abnormal traffic patterns and malicious activities. These feature help ensure that legitimate requests are processed while harmful traffic is filtered out.
 
-|Feature         |Notes     |
-|----------------|----------|
-|HTTP protection |Network-layer attacks, such as those targeting common L3/L4 vulnerabilities and timing-based attacks, are blocked with only minimal processing. |
+|Feature Name	|Description |
+|---------------|------------|    
+|Real-time Protection	|Detects abnormal traffic patterns and activates mitigation protocols in real-time. |
+|Offline Protection	    |Filters out malicious traffic while allowing legitimate requests.                  |
+
+## Conditional Access and MFA
+
+Customizable policies and multifactor authentication methods significantly enhance security by reducing the risk of unauthorized access and ensuring that only legitimate users can access the applications and resources.
+
+|Feature Name	|Description |
+|---------------|------------| 
+|Conditional Access Policies	    |Customizable policies that trigger MFA to enhance security. [Learn more](~/identity/conditional-access/overview.md)   |
+|Multifactor Authentication (MFA)	|Methods configured to reduce the risk of compromise by 99.22%. [Learn more](concept-multifactor-authentication-customers.md)|
 
 ## Next steps
 

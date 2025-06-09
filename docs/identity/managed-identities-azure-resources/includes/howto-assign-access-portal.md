@@ -1,6 +1,6 @@
 --- 
-author: rwike77 
-ms.author: ryanwi
+author: SHERMANOUKO 
+ms.author: shermanouko
 ms.date: 06/03/2024 
 ms.topic: include
 ms.service: entra-id
@@ -9,7 +9,6 @@ ms.subservice: managed-identities
 
 ## Use Azure RBAC to assign a managed identity access to another resource using the Azure portal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 >[!IMPORTANT]
 > The steps outlined below show is how you grant access to a service using Azure RBAC. Check specific service documentation on how to grant access; for example, check [Azure Data Explorer](/azure/data-explorer/data-explorer-overview) for instructions. Some Azure services are in the process of adopting Azure RBAC on the data plane.

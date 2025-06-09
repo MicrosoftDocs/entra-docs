@@ -1,24 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP Fiori'
+title: Configure SAP Fiori for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Fiori.
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: gideonkiratu
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Fiori so that I can control who has access to SAP Fiori, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP Fiori
+# Configure SAP Fiori for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate SAP Fiori with Microsoft Entra ID. When you integrate SAP Fiori with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SAP Fiori with Microsoft Entra ID. When you integrate SAP Fiori with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAP Fiori.
 * Enable your users to be automatically signed-in to SAP Fiori with their Microsoft Entra accounts.
@@ -26,15 +23,14 @@ In this tutorial, you'll learn how to integrate SAP Fiori with Microsoft Entra I
 
 
 ## Prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAP Fiori single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SAP Fiori supports **SP** initiated SSO
 
@@ -46,11 +42,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of SAP Fiori into Microsoft Entra ID, you need to add SAP Fiori from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **SAP Fiori** in the search box.
 1. Select **SAP Fiori** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-sap-fiori'></a>
 
@@ -61,10 +57,10 @@ Configure and test Microsoft Entra SSO with SAP Fiori using a test user called *
 To configure and test Microsoft Entra SSO with SAP Fiori, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SAP Fiori SSO](#configure-sap-fiori-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create SAP Fiori test user](#create-sap-fiori-test-user)** - to have a counterpart of B.Simon in SAP Fiori that is linked to the Microsoft Entra representation of user.
+    1. **[Create SAP Fiori test user](#create-sap-fiori-test-user)** - to have a counterpart of B.Simon in SAP Fiori that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -98,7 +94,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     1. If necessary, adjust parameters in the instance (default) profile of the SAP system and restart the SAP system.
 
-    1. Double-click the relevant client to enable an HTTP security session.
+    1. Double-select the relevant client to enable an HTTP security session.
 
         ![The Current Values of Relevant Profile Parameters page in SAP](./media/sapfiori-tutorial/tutorial-sapnetweaver-profileparameter.png)
 
@@ -133,19 +129,19 @@ Follow these steps to enable Microsoft Entra SSO.
     ![The Download Metadata link in the SAP SAML 2.0 Metadata dialog box](./media/sapfiori-tutorial/tutorial-sapnetweaver-generatesp.png)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SAP Fiori** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SAP Fiori** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
-    1. Click **Upload metadata file**.
+    1. Select **Upload metadata file**.
 
         ![Upload metadata file](common/upload-metadata.png)
 
-    1. Click on **folder logo** to select the metadata file and click **Upload**.
+    1. Select **folder logo** to select the metadata file and select **Upload**.
 
         ![choose metadata file](common/browse-upload-metadata.png)
 
@@ -193,33 +189,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to SAP Fiori.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SAP Fiori**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure SAP Fiori SSO
 
@@ -321,10 +291,10 @@ In this section, you create a user named Britta Simon in SAP Fiori. Work with yo
 
     ![The standard test application page in SAP](./media/sapfiori-tutorial/testingsso.png)
 
-1. If you are prompted for a username and password, enable trace to help diagnose the issue. Use the following URL for the trace:
+1. If you're prompted for a username and password, enable trace to help diagnose the issue. Use the following URL for the trace:
 
     `https://<sap-url>/sap/bc/webdynpro/sap/sec_diag_tool?sap-client=122&sap-language=EN#`.
 
-## Next steps
+## Related content
 
 Once you configure SAP Fiori you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

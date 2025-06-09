@@ -1,17 +1,14 @@
 ---
 title: Overview of the Woodgrove Groceries demo
 description: Learn about the customer identity and access management solutions for your consumer and business customer apps that are provided by Microsoft Entra External ID.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
-ms.date: 01/07/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.date: 04/14/2025
+ms.custom: it-pro, sfi-image-nochange
 ---
 # Overview of the Woodgrove Groceries demo
 
@@ -49,13 +46,15 @@ To try out this feature, go to the Woodgrove Groceries demo and start the “[Se
 
 ### Sign-in with a social account
 
-You can offer your customers the ability to sign in with their existing social or enterprise accounts, without having to create a new account. On the sign-in page, select one of the identity providers, such as Google or Facebook. Then you're redirected to the selected provider's to complete the sign-in process.
+You can offer your customers the ability to sign in with their existing social or enterprise accounts, without having to create a new account. On the sign-in page, select one of the identity providers, such as Google, Facebook or Apple. Then you're redirected to the selected provider's to complete the sign-in process.
 
 :::image type="content" source="media/overview-solutions-customers/use-case-social.png" alt-text="Screenshot of the social sign-in use case.":::
 
-To allow your customers to sign up and sign in using their social accounts, you can navigate to **External Identities** > **All identity providers** in the admin center. You can find the exact steps for adding Google and Facebook as identity providers in the following links for [Google](how-to-google-federation-customers.md) and for [Facebook](how-to-facebook-federation-customers.md). 
+To allow your customers to sign up and sign in using their social accounts, you can navigate to **External Identities** > **All identity providers** in the admin center. You can find the exact steps for adding Facebook, Google and Apple as identity providers in the following links for [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md) and for [Apple](how-to-apple-federation-customers.md). 
 
 To try out this feature, go to the Woodgrove Groceries demo and start the “[Sign-in with social accounts](https://woodgrovedemo.com/#usecase=Social)” use case.
+
+<!--Ask PM about custom OIDC.-->
 
 ### Sign-up with a one-time passcode
 

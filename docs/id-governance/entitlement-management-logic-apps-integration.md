@@ -2,12 +2,13 @@
 title: Trigger Logic Apps with custom extensions in entitlement management
 description: Learn how to configure and use custom logic app workflows in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can configure and add custom logic apps to my catalogs and access packages in entitlement management.
 ---
 # Trigger Logic Apps with custom extensions in entitlement management
@@ -41,12 +42,11 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 ## Create and add a Logic App workflow to a catalog for use in entitlement management 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Resource group owner.
-1. Browse to **Identity governance** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. Select the catalog for which you want to add a custom extension and then in the left menu, select **Custom Extensions**. 
 
@@ -111,7 +111,7 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. Select the access package you want to add a custom extension (logic app) to from the list of access packages that have already been created.  
 
@@ -206,7 +206,10 @@ With Launch and wait, admins also have the ability to deny a request if the exte
 As mentioned, custom extensions created with the request workflow type, which includes four associated policy stages, can be enabled with “*Launch and wait*” if desired. 
 
 
-The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can't be denied at the **assignmentRequestCreated** stage of the callout.
+The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can only be denied at the **assignmentRequestCreated**  or **assignmentRequestApproved** stages of the callout.
+
+> [!TIP]
+> If you resume the access package assignment request via Azure Logic Apps, disable the [asynchronous pattern](/azure/connectors/connectors-native-http?tabs=standard#asynchronous-request-response-behavior).
 
 ``` http
 POST https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/9e60f18c-b2a0-4887-9da8-da2e30a39d99/resume

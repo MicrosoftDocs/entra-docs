@@ -6,7 +6,7 @@ summary:  Microsoft’s identity solutions span on-premises and cloud-based capa
 metadata:
   author: billmath
   description: Integrate your on-premises directories with Microsoft Entra ID. This allows you to provide a common identity for your users for Microsoft 365, Azure, and SaaS applications integrated with Microsoft Entra ID.
-  manager: amycolannino
+  manager: femila
   ms.author: billmath
   ms.collection: na
   ms.date: 05/01/2023

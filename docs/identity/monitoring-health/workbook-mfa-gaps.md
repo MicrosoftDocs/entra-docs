@@ -3,11 +3,11 @@ title: Multifactor Authentication Gaps workbook
 description: Learn how to use the MFA Gaps workbook in Microsoft Entra ID to identify apps and users who aren't protected by MFA.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -33,20 +33,23 @@ This article gives you an overview of the **Multifactor authentication gaps** wo
 The **MFA gaps** workbook is currently not available as a template, but you can import it from the Microsoft Entra workbooks GitHub repository.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 1. Select **+ New**.
 1. Select the **Advanced Editor** button from the top of the page. A JSON editor opens.
 
     ![Screenshot of the Advanced Editor button on the new workbook page.](./media/workbook-mfa-gaps/advanced-editor-button.png)
 
-1. Navigate to the Microsoft Entra workbooks GitHub repository
+1. Use the following link to access the GitHub repository that contains the JSON file for the **Multifactor Authentication Gaps** workbook:
     - **Direct link to the Multifactor Authentication Gaps JSON file**: https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Workbooks/Azure%20Active%20Directory/MultiFactorAuthenticationGaps/MultiFactorAuthenticationGaps.workbook
-    - Select the link provided in the JSON editor, select the **Application-Insights-Workbooks** breadcrumb from the top of the page, select the **Workbooks** folder, select the **Azure Active Directory** folder, select the **MultiFactorAuthenticationGaps** folder, and open the **.workbook** file.
-    ![Screenshot of the GitHub repository with the breadcrumbs and copy file button highlighted.](./media/workbook-mfa-gaps/github-repository.png)
+    - Make sure you're on the *MultiFactorAuthenticationGaps.workbook* file in the GitHub repository.
+
 1. Copy the entire JSON file from the GitHub repository.
-1. Return Advanced Editor window on the Azure portal and paste the JSON file over the exiting text.
-1. Select the **Apply** button. The workbook may take a few moments to populate.
-1. Select the **Save As** button and provide the required information.
+
+    ![Screenshot of the GitHub repository with the breadcrumbs and copy file button highlighted.](./media/workbook-mfa-gaps/github-repository.png)
+
+1. Return to the workbook Advanced Editor window and paste the JSON file over the existing text.
+1. Select the **Apply** button. The workbook might take a few moments to populate.
+1. Select **Done Editing** and then select the **Save** button and provide the required information.
     - Provide a **Title**, **Subscription**, **Resource Group** (you must have the ability to save a workbook for the selected Resource Group), and **Location**.
     - Optionally choose to save your workbook content to an [Azure Storage Account](/azure/azure-monitor/visualize/workbooks-bring-your-own-storage).
 1. Select the **Apply** button.
@@ -70,3 +73,8 @@ The summary widget provides a detailed look at sign-ins related to multifactor a
 
 ### Sign-ins not protected by MFA requirement by locations
 * **Number of sign-ins not protected by multi-factor authentication requirement by location:** This widget shows the sign-ins counts that aren't protected by MFA requirement in map bubble chart on the world map.
+
+## Related content
+
+- [How to use the identity workbooks](howto-use-workbooks.md)
+- [Conditional Access gap analyzer workbook](workbook-conditional-access-gap-analyzer.md)

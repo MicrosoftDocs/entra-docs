@@ -3,12 +3,12 @@ metadata:
   title: 'Microsoft Entra Connect FAQ -'
   description: This article answers frequently asked questions about Microsoft Entra Connect. 
   author: billmath
-  manager: amycolannino
+  manager: femila
   ms.assetid: 4e47a087-ebcd-4b63-9574-0c31907a39a3
   ms.service: entra-id
   ms.tgt_pltfrm: na
   ms.topic: faq
-  ms.date: 02/08/2023
+  ms.date: 12/27/2024
   ms.subservice: hybrid-connect
   ms.author: billmath
   
@@ -161,7 +161,7 @@ sections:
       - question: |
           I have a multi-forest environment and the network between the two forests is using NAT (Network Address Translation). Is using Microsoft Entra Connect between these two forests supported?
         answer: |
-          No, using Microsoft Entra Connect over NAT isn't supported. 
+          No, using Microsoft Entra Connect over NAT isn't supported because it's dependent on Active Directory which does not support NAT. See [support boundaries for Active Directory over NAT](https://learn.microsoft.com/troubleshoot/windows-server/active-directory/support-for-active-directory-over-nat).
           
   - name: Federation
     questions:

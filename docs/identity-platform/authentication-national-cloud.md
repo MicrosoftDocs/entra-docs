@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: references_regions
-ms.date: 12/11/2023
+ms.date: 01/15/2025
 ms.reviewer: negoe
 ms.service: identity-platform
 
@@ -46,7 +46,7 @@ The following table lists the base URLs for the Microsoft Entra endpoints used t
 You can find the authentication endpoints for your application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **Endpoints** in the top menu.
 
    The **Endpoints** page is displayed showing the authentication endpoints for the application.
@@ -88,7 +88,7 @@ To find out which services and features are available in a given cloud instance,
 
 To learn how to build an application by using the Microsoft identity platform, follow the [Single-page application (SPA) using auth code flow tutorial](tutorial-v2-angular-auth-code.md). Specifically, this app will sign in a user and get an access token to call the Microsoft Graph API.
 
-## Next steps
+## Related content
 
 Learn how to use the [Microsoft Authentication Library (MSAL) in a national cloud environment](msal-national-cloud.md).
 

@@ -8,17 +8,15 @@ items:
     href: what-is-entra.md
   - name: What is Microsoft Entra ID?
     href: whatis.md
+  - name: What is the Microsoft Entra admin center?
+    href: entra-admin-center.md
   - name: Trial user guide for Microsoft Entra Suite
     href: try-microsoft-entra-suite.md
-  - name: New name for Azure AD
-    href: new-name.md
   - name: Identity fundamentals
     href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
     href: introduction-identity-access-management.md
-  - name: Microsoft Entra admin center
-    href: entra-admin-center.md
-- name: First steps
+- name: Set up your tenant and directory
   expanded: true
   items:
   - name: Create a tenant
@@ -31,75 +29,79 @@ items:
     href: properties-area.yml
   - name: Add company branding
     href: how-to-customize-branding.md
-  - name: Rename Azure AD
-    href: how-to-rename-azure-ad.yml
-  - name: Get the most out of documentation
-    href: how-to-navigate.md
-- name: Users, groups, and licenses
+- name: Add users and groups
   expanded: false
   items:
-  - name: Create or delete users
-    href: how-to-create-delete-users.yml
-  - name: Apply licenses to users
-    href: license-users-groups.yml
   - name: Users
     expanded: false
     items: 
+    - name: Create or delete users
+      href: how-to-create-delete-users.yml
     - name: Assign roles to users
-      href: users-assign-role-azure-portal.yml
-    - name: Manage 'Stay signed in?' prompt
-      href: how-to-manage-stay-signed-in-prompt.yml
+      href: how-to-assign-roles-to-users.yml
+    - name: Default user permissions
+      href: users-default-permissions.md
     - name: Manage user profile info
       href: how-to-manage-user-profile-info.yml
     - name: Reset a user's password
       href: users-reset-password-azure-portal.yml
     - name: Restore a deleted user
       href: users-restore.yml
-    - name: Set default user permissions
-      href: users-default-permissions.md
   - name: Groups
     expanded: false
     items:
     - name: Learn about groups
       href: concept-learn-about-groups.md
-    - name: Create a group and add members
-      href: ./groups-view-azure-portal.md
     - name: Manage groups
       href: how-to-manage-groups.yml
+    - name: Quickstart - Create a group and add members
+      href: groups-view-azure-portal.md
   - name: Licenses
     expanded: false
     items: 
     - name: Group-based licensing
-      href: ./concept-group-based-licensing.md
+      href: concept-group-based-licensing.md
+    - name: Resolve group license assignment problems
+      href: licensing-groups-resolve-problems.md
     - name: Microsoft Entra ID preview program
       href: licensing-preview-info.md
     - name: Microsoft Entra licensing
       href: licensing.md
     - name: Sign up for Microsoft Entra ID P1 or P2
       href: get-started-premium.md
-- name: Microsoft Copilot for Security + Microsoft Entra
-  items:
-  - name: Overview
-    href: copilot-security-entra.md
-  - name: Respond to identity threats using risky user summarization
-    href: copilot-entra-risky-user-summarization.md  
-  - name: Investigate incidents using Microsoft Copilot for Security
-    href: copilot-security-entra-investigate-incident.md 
-- name: Quick security wins
+- name: Fundamental security settings
   expanded: false
   items:
-  - name: Enable MFA
-    href: ~/identity/authentication/concept-mfa-licensing.md?toc=/entra/identity/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
+  - name: Configure security recommendations
+    href: configure-security.md
   - name: Identity secure score
     href: ~/identity/monitoring-health/concept-identity-secure-score.md
   - name: Improve your security posture
     href: concept-secure-remote-workers.md
-  - name: Integrating all your apps with Microsoft Entra ID
+  - name: Integrate your apps with Microsoft Entra ID
     href: five-steps-to-full-application-integration.md
   - name: Security defaults
     href: security-defaults.md
-  - name: Block less secure authentications
-    href: ~/identity/conditional-access/block-legacy-authentication.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
+  - name: Manage 'Stay signed in?' prompt
+    href: how-to-manage-stay-signed-in-prompt.yml
+- name: Microsoft Security Copilot + Microsoft Entra
+  items:
+  - name: Overview
+    href: copilot-security-entra.md
+  - name: Microsoft Security Copilot scenarios in Microsoft Entra
+    href: copilot-entra-security-scenarios.md
+  - name: Security Copilot agents in Microsoft Entra
+    href: agents.md
+  - name: Respond to identity threats using risky user summarization
+    href: copilot-entra-risky-user-summarization.md  
+  - name: Manage lifecycle workflows using Microsoft Security Copilot
+    href: copilot-entra-lifecycle-workflow.md
+  - name: Investigate incidents using Microsoft Security Copilot
+    href: copilot-security-entra-investigate-incident.md 
+  - name: Investigate app risk using Microsoft Security Copilot
+    href: copilot-security-entra-investigate-risky-apps.md
+  - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
+    href: copilot-security-entra-responsible-ai-faq.md
 - name: Support and help
   expanded: false
   items:
@@ -107,27 +109,21 @@ items:
     href: how-to-find-tenant.yml
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
+  - name: Quarantine unsanctioned tenants 
+    href: quarantine-unsanctioned-tenants.md
   - name: Inaccessible tenant due to inactivity
     href: inaccessible-tenant.md
-  - name: Support access requests
-    expanded: false
-    items:
-      - name: What are support access requests (preview)?
-        href: concept-support-access-requests.md
-      - name: Approve and manage support access requests (preview)
-        href: how-to-manage-support-access-requests.md
-      - name: View support access request activity logs
-        href: how-to-view-support-access-request-logs.md
 - name: Reference
   expanded: false
   items:
   - name: What's new?
     expanded: false
     items:
-    
-    - name: What's new in Microsoft Entra ID
+    - name: What's new in Microsoft Entra
+      href: whats-new-overview.md    
+    - name: Releases and announcements
       href: whats-new.md
-    - name: Archive for What's new? in Microsoft Entra ID
+    - name: Archive for releases and announcements
       href: whats-new-archive.md
   - name: Frequently asked questions
     href: faq.yml
@@ -135,6 +131,10 @@ items:
     href: reference-company-branding-css-template.md
   - name: Bulk operations
     href: bulk-operations-service-limitations.md
+  - name: New name for Azure AD
+    href: new-name.md
+  - name: Rename Azure AD
+    href: how-to-rename-azure-ad.yml
   - name: Compliance
     expanded: false
     items:

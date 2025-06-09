@@ -1,26 +1,26 @@
 ---
-title: 'Tutorial: Configure SchoolStream ASA for automatic user provisioning with Microsoft Entra ID'
+title: Configure SchoolStream ASA for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to SchoolStream ASA.
 author: thomasakelo
 manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 05/20/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SchoolStream ASA so that I can streamline the user management process and ensure that users have the appropriate access to SchoolStream ASA.
 ---
 
-# Tutorial: Configure SchoolStream ASA for automatic user provisioning in SchoolStream ASA
+# Configure SchoolStream ASA for automatic user provisioning with Microsoft Entra ID
 
-This tutorial describes the steps you need to perform in both SchoolStream ASA and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [SchoolStream ASA](https://www.ssk12.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both SchoolStream ASA and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [SchoolStream ASA](https://www.ssk12.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities Supported
 > [!div class="checklist"]
 > * Create users in SchoolStream ASA 
-> * Remove users in SchoolStream ASA  when they do not require access anymore.
+> * Remove users in SchoolStream ASA  when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and SchoolStream ASA.
 > * Provision groups and group memberships in SchoolStream ASA.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to SchoolStream ASA (recommended).
@@ -28,24 +28,23 @@ This tutorial describes the steps you need to perform in both SchoolStream ASA a
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
-* A SchoolStream Website. Please contact [SchoolStream support](mailto:support@rtresponse.com) if you do not have one.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+* A SchoolStream Website. Please contact [SchoolStream support](mailto:support@rtresponse.com) if you don't have one.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and SchoolStream ASA](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-schoolstream-asa-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure SchoolStream ASA to support provisioning with Microsoft Entra ID
 
-1. Contact [SchoolStream support](mailto:support@rtresponse.com) to request SchoolStream ASA integration, you will need to provide your **Microsoft Entra tenant Id** and your **SchoolStream Website URL**.
+1. Contact [SchoolStream support](mailto:support@rtresponse.com) to request SchoolStream ASA integration, you need to provide your **Microsoft Entra tenant Id** and your **SchoolStream Website URL**.
 
-1. You will get your **Secret Token** and SchoolStream ASA **Tenant URL** after SchoolStream has mapped your SchoolStream Website and Microsoft Entra tenant ID.
+1. You get your **Secret Token** and SchoolStream ASA **Tenant URL** after SchoolStream has mapped your SchoolStream Website and Microsoft Entra tenant ID.
 
 <a name='step-3-add-schoolstream-asa-from-the-azure-ad-application-gallery'></a>
 
@@ -54,21 +53,16 @@ The scenario outlined in this tutorial assumes that you already have the followi
 To start managing provisioning to SchoolStream ASA in your Microsoft Entra ID, you need to add SchoolStream ASA from the Microsoft Entra application gallery. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Browse Microsoft Entra Gallery** section, type **SchoolStream ASA** in the search box.
 1. Select **SchoolStream ASA** from results panel and then **Sign up for the app**. Wait a few seconds while the app is added to your tenant.
 
 
-If you have previously setup SchoolStream ASA for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+If you have previously setup SchoolStream ASA for SSO you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
-
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to SchoolStream ASA 
 
@@ -79,7 +73,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for SchoolStream ASA in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -91,15 +85,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning tab](common/provisioning.png)
 
-1. If you are configuring provisioning for the first time, select **Get started**.
-
-	![Provisioning get started](media/schoolstream-asa-provisioning-tutorial/provisioning-get-started.png)
+1. If you're configuring provisioning for the first time, select **Get started**.
 	
 1. Set the **Provisioning Mode** to **Automatic**.
 
-	![Provisioning tab automatic](media/schoolstream-asa-provisioning-tutorial/provisioning-automatic.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, input your SchoolStream ASA **Tenant URL** and **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails , ensure your SchoolStream ASA account has Admin permissions and try again.
+1. In the **Admin Credentials** section, input your SchoolStream ASA **Tenant URL** and **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to SchoolStream ASA. If the connection fails, ensure your SchoolStream ASA account has Admin permissions and try again.
 
 	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -125,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	   ![Edit Attribute](media/schoolstream-asa-provisioning-tutorial/add-mappings-attribute.png)
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to SchoolStream ASA in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SchoolStream ASA for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the SchoolStream ASA API supports filtering users based on that attribute.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to SchoolStream ASA in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SchoolStream ASA for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the SchoolStream ASA API supports filtering users based on that attribute.
 
 
 
@@ -157,7 +149,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Save** button to commit any changes. You can go back to the **Application** tab and select **Edit provisioning** to continue.
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for SchoolStream ASA, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -167,18 +159,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 6: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
 
-* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Change log
 
@@ -189,6 +178,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

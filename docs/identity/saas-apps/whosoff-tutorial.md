@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with WhosOff
+title: Configure WhosOff for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and WhosOff.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WhosOff so that I can control who has access to WhosOff, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with WhosOff
+# Configure WhosOff for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate WhosOff with Microsoft Entra ID. WhosOff is an online leave management platform. Azure's WhosOff integration allows customers to sign in to their WhosOff account using Azure as a single sign-on provider. When you integrate WhosOff with Microsoft Entra ID, you can:
+In this article, you learn how to integrate WhosOff with Microsoft Entra ID. WhosOff is an online leave management platform. Azure's WhosOff integration allows customers to sign in to their WhosOff account using Azure as a single sign-on provider. When you integrate WhosOff with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to WhosOff.
 * Enable your users to be automatically signed-in to WhosOff with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **WhosOff** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **WhosOff** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -74,7 +74,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://app.whosoff.com/int/<Integration_ID>/sso/azure/`
 
 	> [!NOTE]
-    > This value is not real. Update this value with the actual Sign on URL. You can collect `Integration_ID` from your WhosOff account when activating Azure SSO which is explained later in this tutorial. For any queriers, please contact [WhosOff support team](mailto:support@whosoff.com). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > This value isn't real. Update this value with the actual Sign on URL. You can collect `Integration_ID` from your WhosOff account when activating Azure SSO which is explained later in this article. For any queriers, please contact [WhosOff support team](mailto:support@whosoff.com). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -88,19 +88,19 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Log in to your WhosOff company site as an administrator.
 
-1. Go to **ADMINISTRATION** on the left hand menu and click **COMPANY SETTINGS** > **Single Sign On**.
+1. Go to **ADMINISTRATION** on the left hand menu and select **COMPANY SETTINGS** > **Single Sign On**.
 
 1. In the **Setup Single Sign On** section, perform the following steps:
 	
 	![Screenshot shows settings of metadata and configuration.](./media/whosoff-tutorial/metadata.png "Account")
 
-	1. Select **Azure** SSO provider from the drop-down and click **Active SSO**.
+	1. Select **Azure** SSO provider from the drop-down and select **Active SSO**.
 
 	1. Once activated, copy the **Integration GUID** and save it on your computer.
 
-	1. Upload **Federation Metadata XML** file by clicking on the **Choose File** option, which you have downloaded.
+	1. Upload **Federation Metadata XML** file by selecting the **Choose File** option, which you have downloaded.
 
-	1. Click **Save changes**.
+	1. Select **Save changes**.
 
 ### Create WhosOff test user
 
@@ -112,21 +112,21 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to WhosOff Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to WhosOff Sign-on URL where you can initiate the login flow.  
 
 * Go to WhosOff Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the WhosOff for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the WhosOff for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the WhosOff tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the WhosOff for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the WhosOff tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the WhosOff for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure WhosOff you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

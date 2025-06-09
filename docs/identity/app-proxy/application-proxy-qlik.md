@@ -2,13 +2,14 @@
 title: Microsoft Entra application proxy and Qlik Sense
 description:  Integrate Microsoft Entra application proxy with Qlik Sense.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/14/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Microsoft Entra application proxy and Qlik Sense 
@@ -26,7 +27,7 @@ To publish Qlik Sense, publish two applications in Azure.
 Publish your application in Microsoft Entra. For a more detailed walkthrough of steps 1-8, see [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 3. Select **New application** at the top of the page. 
 4. Select **On-premises application**. 
 5. Fill out the required fields with information about your new app. 

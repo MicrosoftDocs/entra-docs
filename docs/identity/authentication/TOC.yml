@@ -5,7 +5,6 @@
   - name: What is authentication?
     href: overview-authentication.md
 - name: Tutorials
-  expanded: true
   items:
   - name: Enable self-service password reset
     href: tutorial-enable-sspr.md
@@ -21,14 +20,17 @@
     href: tutorial-risk-based-sspr-mfa.md
   - name: Enable security notifications
     href: tutorial-enable-security-notifications-for-audit-logs.md
-- name: Concepts
   expanded: true
+- name: Concepts
   items:
   - name: Authentication methods
     items:
+    - name: Accessibility
+      displayName: Accessibility, Special People, MFA Accessibility
+      href: ./accessibility/authentication-methods-accessibility.md
     - name: Overview
       href: concept-authentication-methods.md
-    - name: Manage 
+    - name: Manage
       href: concept-authentication-methods-manage.md
     - name: Temporary Access Pass
       href: howto-authentication-temporary-access-pass.md
@@ -42,6 +44,8 @@
       href: concept-authentication-oath-tokens.md
     - name: Phone options
       href: concept-authentication-phone-options.md
+    - name: QR code
+      href: concept-authentication-qr-code.md
     - name: Text
       href: howto-authentication-sms-signin.md
     - name: Email
@@ -78,11 +82,11 @@
     items:
     - name: How MFA works
       href: concept-mfa-howitworks.md
-    - name: Default protection 
+    - name: Default protection
       href: concept-authentication-default-enablement.md
-    - name: System-preferred MFA 
+    - name: System-preferred MFA
       href: concept-system-preferred-multifactor-authentication.md
-    - name: Mandatory MFA 
+    - name: Mandatory MFA
       href: concept-mandatory-multifactor-authentication.md
     - name: External MFA provider
       href: concept-authentication-external-method-provider.md
@@ -102,7 +106,7 @@
       href: multi-factor-authentication-faq.yml
   - name: Password protection
     items:
-    - name: Combined password policy check 
+    - name: Combined password policy check
       href: concept-password-ban-bad-combined-policy.md
     - name: Eliminate weak passwords in the cloud
       href: concept-password-ban-bad.md
@@ -114,98 +118,107 @@
     href: concept-resilient-controls.md
   - name: Web browser cookies
     href: concept-authentication-web-browser-cookies.md
+  expanded: true
 - name: How-to guides
   items:
   - name: Manage authentication methods
-    href: how-to-authentication-methods-manage.md      
+    href: how-to-authentication-methods-manage.md
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
+  - name: Enable QR code auth method
+    href: how-to-authentication-qr-code.md
   - name: Passwordless
-    items: 
-      - name: Plan phishing-resistant passwordless authentication
-        items: 
-        - name: Prerequisites
-          href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
-        - name: Plan and deploy
-          href: how-to-deploy-phishing-resistant-passwordless-authentication.md
-        - name: Persona guidance
-          href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
-      - name: Passkey (FIDO2) authentication
+    items:
+    - name: Plan phishing-resistant passwordless authentication
+      items:
+      - name: Get started
+        href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
+      - name: Plan and deploy
+        href: how-to-deploy-phishing-resistant-passwordless-authentication.md
+      - name: Persona guidance
+        href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
+      - name: RDP guidance
+        href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
+    - name: Passkey (FIDO2) authentication
+      items:
+      - name: Enable passkeys for an organization
+        href: how-to-enable-passkey-fido2.md
+      - name: Register passkey
+        href: how-to-register-passkey.md
+      - name: Register passkey with a mobile device
+        href: how-to-register-passkey-mobile.md
+      - name: Sign in with passkey
+        href: how-to-sign-in-passkey.md
+      - name: Passkey (FIDO2) compatibility matrix
+        href: concept-fido2-compatibility.md
+      - name: Become a FIDO2 security key vendor
+        href: concept-fido2-hardware-vendor.md
+    - name: Microsoft Authenticator
+      items:
+      - name: Enable passkeys in Authenticator
+        href: how-to-enable-authenticator-passkey.md
+      - name: Support passkeys in Authenticator
+        href: how-to-support-authenticator-passkey.md
+      - name: Register passkeys in Authenticator
+        href: how-to-register-passkey-authenticator.md
+      - name: Sign in with passkeys in Authenticator
+        href: how-to-sign-in-passkey-authenticator.md
+      - name: Passkeys in Authenticator FAQs
+        href: passkey-authenticator-faq.yml
+      - name: Enable Authenticator authentication method
+        href: howto-authentication-passwordless-phone.md
+      - name: How number matching works
+        href: how-to-mfa-number-match.md
+      - name: Use additional context
+        href: how-to-mfa-additional-context.md
+      - name: Use Authenticator Lite
+        href: how-to-mfa-authenticator-lite.md
+    - name: Hybrid
+      items:
+      - name: Register passkey with a security key
+        href: how-to-register-passkey-with-security-key.md
+      - name: Enable security key sign-in to Windows
+        href: howto-authentication-passwordless-security-key-windows.md
+      - name: SSO to on-premises resources
+        href: howto-authentication-passwordless-security-key-on-premises.md
+      - name: Hybrid FAQs
+        href: howto-authentication-passwordless-faqs.md
+      - name: Troubleshoot hybrid
+        href: howto-authentication-passwordless-troubleshoot.md
+    - name: Certificate-based authentication
+      items:
+      - name: Microsoft Entra CBA
         items:
-        - name: Enable passkeys for an organization
-          href: how-to-enable-passkey-fido2.md
-        - name: Register passkey (preview)
-          href: how-to-register-passkey.md
-        - name: Register passkey with a mobile device (preview)
-          href: how-to-register-passkey-mobile.md
-        - name: Sign in with passkey (preview)
-          href: how-to-sign-in-passkey.md  
-        - name: Passkey (FIDO2) compatibility matrix
-          href: concept-fido2-compatibility.md
-        - name: Become a FIDO2 security key vendor
-          href: concept-fido2-hardware-vendor.md  
-      - name: Microsoft Authenticator
+        - name: Overview
+          href: concept-certificate-based-authentication.md
+        - name: How Microsoft Entra CBA works
+          href: concept-certificate-based-authentication-technical-deep-dive.md
+        - name: Configure Microsoft Entra CBA
+          href: how-to-certificate-based-authentication.md
+        - name: Configure certificate authorities
+          href: how-to-configure-certificate-authorities.md
+        - name: Windows smart card sign-in
+          href: concept-certificate-based-authentication-smartcard.md
+        - name: Apple devices
+          href: concept-certificate-based-authentication-mobile-ios.md
+        - name: Android devices
+          href: concept-certificate-based-authentication-mobile-android.md
+        - name: Certificate user IDs
+          href: concept-certificate-based-authentication-certificateuserids.md
+        - name: Migrate federated users
+          href: concept-certificate-based-authentication-migration.md
+        - name: FAQ
+          href: certificate-based-authentication-faq.yml
+      - name: Federated CBA with Microsoft Entra ID
         items:
-        - name: Enable passkeys in Authenticator (preview)
-          href: how-to-enable-authenticator-passkey.md
-        - name: Register passkeys in Authenticator (preview)
-          href: how-to-register-passkey-authenticator.md
-        - name: Sign in with passkeys in Authenticator (preview)
-          href: how-to-sign-in-passkey-authenticator.md
-        - name: Passkeys in Authenticator FAQs (preview)
-          href: passkey-authenticator-faq.yml
-        - name: Enable Authenticator authentication method
-          href: howto-authentication-passwordless-phone.md
-        - name: How number matching works
-          href: how-to-mfa-number-match.md
-        - name: Use additional context 
-          href: how-to-mfa-additional-context.md
-        - name: Use Authenticator Lite
-          href: how-to-mfa-authenticator-lite.md
-      - name: Hybrid
-        items:
-        - name: Register passkey with a security key
-          href: how-to-register-passkey-with-security-key.md
-        - name: Enable security key sign-in to Windows
-          href: howto-authentication-passwordless-security-key-windows.md
-        - name: SSO to on-premises resources
-          href: howto-authentication-passwordless-security-key-on-premises.md
-        - name: Hybrid FAQs
-          href: howto-authentication-passwordless-faqs.md
-        - name: Troubleshoot hybrid
-          href: howto-authentication-passwordless-troubleshoot.md
-      - name: Certificate-based authentication
-        items:
-        - name: Microsoft Entra CBA
-          items:
-          - name: Overview
-            href: concept-certificate-based-authentication.md
-          - name: How Microsoft Entra CBA works
-            href: concept-certificate-based-authentication-technical-deep-dive.md
-          - name: Configure Microsoft Entra CBA
-            href: how-to-certificate-based-authentication.md
-          - name: Windows smart card logon
-            href: concept-certificate-based-authentication-smartcard.md
-          - name: Apple devices
-            href: concept-certificate-based-authentication-mobile-ios.md
-          - name: Android devices
-            href: concept-certificate-based-authentication-mobile-android.md
-          - name: Certificate user IDs
-            href: concept-certificate-based-authentication-certificateuserids.md
-          - name: Migrate federated users
-            href: concept-certificate-based-authentication-migration.md
-          - name: FAQ
-            href: certificate-based-authentication-faq.yml
-        - name: Federated CBA with Microsoft Entra ID
-          items:
-          - name: Configure CBA with federation
-            href: certificate-based-authentication-federation-get-started.md
-          - name: Use on Android Devices
-            href: certificate-based-authentication-federation-android.md
-          - name: Use on iOS Devices
-            href: certificate-based-authentication-federation-ios.md
+        - name: Configure CBA with federation
+          href: certificate-based-authentication-federation-get-started.md
+        - name: Use on Android Devices
+          href: certificate-based-authentication-federation-android.md
+        - name: Use on iOS Devices
+          href: certificate-based-authentication-federation-ios.md
   - name: Use SMS-based authentication
-    items:  
+    items:
     - name: Manage
       href: howto-authentication-sms-signin.md
     - name: Supported apps for SMS-based authentication
@@ -214,7 +227,7 @@
       href: how-to-authentication-two-way-sms-unsupported.md
   - name: Use email address sign-in
     href: howto-authentication-use-email-signin.md
-  - name: Use Microsoft managed settings 
+  - name: Use Microsoft managed settings
     href: concept-authentication-default-enablement.md
   - name: Security info registration
     items:
@@ -240,10 +253,20 @@
       href: howto-mfa-mfasettings.md
     - name: Configure users
       href: howto-mfa-userdevicesettings.yml
+    - name: Verify mandatory MFA
+      href: how-to-mandatory-multifactor-authentication.md
+    - name: Unlock users for mandatory MFA
+      href: how-to-unlock-users-for-mandatory-multifactor-authentication.md
+    - name: Federate MFA setup
+      href: how-to-mfa-expected-inbound-assertions.md
     - name: Find coverage gaps
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
       href: howto-mfa-userstates.md
+    - name: Manage hardware OATH tokens
+      href: how-to-mfa-manage-oath-tokens.md
+    - name: Upload hardware OATH tokens
+      href: how-to-mfa-upload-oath-tokens.md
     - name: Manage external authentication method
       href: how-to-authentication-external-method-manage.md
     - name: Configure authentication providers
@@ -288,6 +311,8 @@
     href: howto-password-smart-lockout.md
   - name: Reporting
     items:
+    - name: Linkable identifiers
+      href: how-to-authentication-track-linkable-identifiers.md
     - name: Authentication methods activity
       href: howto-authentication-methods-activity.md
     - name: SSPR Reports
@@ -307,47 +332,7 @@
       - name: Migrate to Azure MFA with Federation
         href: how-to-migrate-mfa-server-to-mfa-with-federation.md
       - name: Migration Utility
-        href: how-to-mfa-server-migration-utility.md    
-    - name: Deploy MFA on-premises
-      href: howto-mfaserver-deploy.md
-    - name: Install the user portal
-      href: howto-mfaserver-deploy-userportal.md
-    - name: Mobile App Web Service
-      href: howto-mfaserver-deploy-mobileapp.md
-    - name: Configure settings
-      href: howto-mfa-server-settings.md
-    - name: Configure high availability
-      href: howto-mfaserver-deploy-ha.md
-    - name: Upgrade MFA Server
-      href: howto-mfaserver-deploy-upgrade.md
-    - name: Upgrade from PhoneFactor
-      href: howto-mfaserver-deploy-upgrade-pf.md
-    - name: Windows Authentication
-      href: howto-mfaserver-windows.md
-    - name: IIS web apps
-      href: howto-mfaserver-iis.md
-    - name: Directory Integration
-      items:
-      - name: LDAP Authentication
-        href: howto-mfaserver-dir-ldap.md
-      - name: RADIUS Authentication
-        href: howto-mfaserver-dir-radius.md
-      - name: Active Directory
-        href: howto-mfaserver-dir-ad.md
-    - name: Directory Federation
-      items:
-      - name: Use AD FS 2.0
-        href: howto-mfaserver-adfs-2.md
-      - name: Use Windows Server AD FS
-        href: howto-mfaserver-adfs-windows-server.md
-    - name: RADIUS Integration
-      items:
-      - name: Remote Desktop Gateway
-        href: howto-mfaserver-nps-rdg.md
-      - name: Advanced VPN Configurations
-        href: howto-mfaserver-nps-vpn.md
-      - name: NPS extension errors
-        href: howto-mfa-nps-extension-errors.md
+        href: how-to-mfa-server-migration-utility.md
   - name: Troubleshoot
     items:
     - name: Self-service password reset (SSPR)
@@ -358,8 +343,6 @@
       href: passwords-faq.yml
     - name: MFA FAQ
       href: multi-factor-authentication-faq.yml
-    - name: NPS extension
-      href: howto-mfa-nps-extension-errors.md
 - name: Reference
   items:
   - name: MFA user guide
@@ -370,10 +353,12 @@
     href: /powershell/azure/
   - name: Authentication methods APIs - Microsoft Graph
     href: /graph/api/resources/authenticationmethods-overview
-  - name: Authentication strengths APIs - Microsoft Graph 
+  - name: Authentication strengths APIs - Microsoft Graph
     href: /graph/api/resources/authenticationstrengths-overview
-  - name: Authentication methods policy - Microsoft Graph
+  - name: Authentication methods policy APIs - Microsoft Graph
     href: /graph/api/resources/authenticationmethodspolicies-overview
+  - name: Authentication methods activity APIs - Microsoft Graph
+    href: /graph/api/resources/authenticationmethods-usage-insights-overview
   - name: Service limits and restrictions
     href: ~/identity/users/directory-service-limits-restrictions.md
 - name: Resources

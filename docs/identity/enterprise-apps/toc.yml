@@ -24,7 +24,9 @@ items:
     - name: Govern and monitor
       href: tutorial-govern-monitor.md
     - name: Manage certificates
-      href: tutorial-manage-certificates-for-federated-single-sign-on.md 
+      href: tutorial-manage-certificates-for-federated-single-sign-on.md
+    - name: Enforce app secrets standards
+      href: tutorial-enforce-secret-standards.md
   - name: Samples
     items: 
     - name: Overview of App Management samples
@@ -60,6 +62,8 @@ items:
         href: plan-sso-deployment.md
     - name: Application security
       items:
+      - name: Migrate away from secret-based authentication
+        href: migrate-applications-from-secrets.md
       - name: App access options
         href: what-is-access-management.md
       - name: Certificate signing options
@@ -127,22 +131,20 @@ items:
       items:
       - name: Enable Single sign-on with SAML
         href: add-application-portal-setup-sso.md
+      - name: Enable Single sign-on with a relying party STS
+        href: add-application-portal-setup-sso-rpsts.md
       - name: Enable Linked single sign-on
         href: configure-linked-sign-on.md
       - name: Enable OpenID Connect based single sign-on
         href: add-application-portal-setup-oidc-sso.md
       - name: Enable Password based single sign-on
         href: configure-password-single-sign-on-non-gallery-applications.md
-      - name: Perform One-click SSO
-        href: one-click-sso-tutorial.md
     - name: Manage access
       items:
       - name: Manage consent and permissions
         items:
         - name: Configure user consent
           href: configure-user-consent.md
-        - name: Configure group owner consent
-          href: configure-user-consent-groups.md
         - name: Configure risk-based step-up consent
           href: configure-risk-based-step-up-consent.md
         - name: Configure permission classifications

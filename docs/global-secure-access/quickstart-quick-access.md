@@ -3,10 +3,11 @@ title: "Quickstart: Configure Quick Access to private resources"
 description: Learn how to configure Quick Access to private resources in Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: quickstart
-ms.date: 07/22/2024
+ms.date: 02/21/2025
+ai-usage: ai-assisted
 
 #customer intent: As an administrator, I want learn how to configure Quick Access so that my users can access private resources in Global Secure Access.
 
@@ -18,13 +19,18 @@ Microsoft Entra Private Access provides a secure, zero-trust access solution for
  
 This quickstart shows you the steps needed to configure Quick Access to private resources. To learn more about Global Secure Access, see [What is Global Secure Access?](overview-what-is-global-secure-access.md)
 
+> [!NOTE]
+> Use Quick Access as a transition phase in your Zero Trust journey. After Quick Access has enabled you to replace your VPN, [configure per-app access](quickstart-per-app-access.md) to achieve application segmentation and per-app granular controls.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/MfcZ3zQhF-4]
+
 ## Prerequisites
 
 Administrators who interact with **Global Secure Access** features must have the [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference). Some features might also require other roles.
 
 To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure) to activate just-in-time privileged role assignments.
 
-The product requires licensing. For details, see the licensing section of [What is Global Secure Access?](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+The product requires licensing. For details, see the licensing section of [What is Global Secure Access?](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Configure Quick Access to private resources
 

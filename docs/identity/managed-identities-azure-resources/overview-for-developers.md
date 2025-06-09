@@ -1,19 +1,16 @@
 ---
 title: Developer introduction and guidelines
 description: An overview how developers can use managed identities for Azure resources.
-
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.assetid: 0232041d-b8f5-4bd2-8d11-27999ad69370
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: overview
-
 ms.date: 09/26/2024
-ms.author: ryanwi
+ms.author: shermanouko
 ai-usage: ai-assisted
-
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I'd like to securely manage the credentials that my application uses for authenticating to cloud services without having the credentials in my code or checked into source control. 
 ---
 
@@ -69,20 +66,11 @@ Any resources you want to access requires that you grant the identity permission
 
 After you complete the steps outlined above, your App Service has a managed identity with permissions to an Azure resource. You can use the managed identity to obtain an access token that your code can use to interact with Azure resources, instead of storing credentials in your code.
 
-We recommended that you use the Azure Identity library for your preferred programming language. The library acquires access tokens for you, making it simple to connect to target resources. 
+We recommended that you use the client libraries that we provide for your preferred programming language. These libraries acquire access tokens for you, making it easy to authenticate with Microsoft Entra ID. For more information, see [Client libraries for managed identities authentication](reference-managed-identity-libraries.md).
 
-Read more about the Azure Identity libraries below:
+### Using an Azure Identity library to access Azure resources
 
-* [Azure Identity library for .NET](/dotnet/api/overview/azure/identity-readme)
-* [Azure Identity library for Java](/java/api/overview/azure/identity-readme?view=azure-java-stable&preserve-view=true)
-* [Azure Identity library for JavaScript](/javascript/api/overview/azure/identity-readme?view=azure-node-latest&preserve-view=true)
-* [Azure Identity library for Python](/python/api/overview/azure/identity-readme?view=azure-python&preserve-view=true)
-* [Azure Identity module for Go](/azure/developer/go/azure-sdk-authentication)
-* [Azure Identity library for C++](https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/identity/azure-identity/README.md)
-
-### Using the Azure Identity library in your development environment
-
-The Azure Identity libraries each provide a `DefaultAzureCredential` type. `DefaultAzureCredential` automatically attempts to authenticate via multiple mechanisms, including environment variables or an interactive sign-in. The credential type can be used in your development environment using your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
+The Azure Identity libraries each provide a `DefaultAzureCredential` type. `DefaultAzureCredential` attempts to automatically authenticate the user through different flows, including environment variables or an interactive sign-in. The credential type can be used in a development environment with your own credentials. It can also be used in your production Azure environment using a managed identity. No code changes are required when you deploy your application.
 
 If you're using user-assigned managed identities, you should also explicitly specify the user-assigned managed identity you wish to authenticate with by passing in the identity's client ID as a parameter. You can retrieve the client ID by browsing to the identity in the Azure portal.
 
@@ -145,7 +133,7 @@ if (blobClient.exists()) {
 
 #### [Node.js](#tab/nodejs)
 
-```nodejs
+```javascript
 import { DefaultAzureCredential } from "@azure/identity";
 import { BlobServiceClient } from "@azure/storage-blob";
 
@@ -632,30 +620,229 @@ func main() {
 }
 ```
 
-
 ---
 
-<a name='connecting-to-resources-that-dont-support-azure-active-directory-or-token-based-authentication-in-libraries'></a>
+### Using the Microsoft Authentication Library (MSAL) to access Azure resources
+
+Apart from the Azure Identity libraries, you can also use MSAL to access Azure resources using managed identities. The following code snippets demonstrate how to use MSAL to access Azure resources in various programming languages.
+
+For system-assigned managed identities, the developer doesn't need to pass any additional information. MSAL automatically infers the relevant metadata about the assigned identity. For user-assigned managed identities, the developer needs to pass either the client ID, full resource identifier, or the object ID of the managed identity.
+
+You can then acquire a token to access a resource. Prior to using managed identities, developers must enable them for the resources they want to use.
+
+#### [.NET](#tab/dotnet)
+
+```csharp
+using Microsoft.Identity.Client;
+using System;
+
+string resource = "https://vault.azure.net";
+
+// Applies to system-assigned managed identities only
+IManagedIdentityApplication mi = ManagedIdentityApplicationBuilder.Create(ManagedIdentityId.SystemAssigned)
+    .Build();
+
+// Applies to user-assigned managed identities only
+string userAssignedManagedIdentityClientId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+IManagedIdentityApplication mi = ManagedIdentityApplicationBuilder.Create(ManagedIdentityId.WithUserAssignedClientId(userAssignedManagedIdentityClientId))
+    .Build();
+
+// Acquire token
+AuthenticationResult result = await mi.AcquireTokenForManagedIdentity(resource)
+    .ExecuteAsync()
+    .ConfigureAwait(false);
+
+if (!string.IsNullOrEmpty(result.AccessToken))
+{
+    Console.WriteLine(result.AccessToken);
+}
+
+```
+
+#### [Java](#tab/java)
+
+```java
+import com.microsoft.aad.msal4j.IAuthenticationResult;
+import com.microsoft.aad.msal4j.ManagedIdentityApplication;
+import com.microsoft.aad.msal4j.ManagedIdentityId;
+import com.microsoft.aad.msal4j.ManagedIdentityParameters;
+
+String resource = "https://vault.azure.net";
+
+// Use this for user-assigned managed identities
+private static final String USER_ASSIGNED_MI_CLIENT_ID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+
+// Use this for system-assigned managed identities
+ManagedIdentityApplication miApp = ManagedIdentityApplication
+                .builder(ManagedIdentityId.systemAssigned())
+                .build();
+
+// Use this for user-assigned managed identities
+ManagedIdentityApplication miApp = ManagedIdentityApplication
+                .builder(ManagedIdentityId.userAssignedClientId(USER_ASSIGNED_MI_CLIENT_ID))
+                .build();            
+
+// Acquire token
+IAuthenticationResult result = miApp.acquireTokenForManagedIdentity(
+                ManagedIdentityParameters.builder(resource)
+                .build()).get();
+
+System.out.println(result.accessToken()); 
+```          
+
+#### [Node.js](#tab/nodejs)
+
+```typescript
+import {
+    LogLevel,
+    LoggerOptions,
+    AuthenticationResult,
+} from "@azure/msal-common";
+import {
+    ManagedIdentityRequestParams,
+    ManagedIdentityConfiguration,
+    ManagedIdentityApplication,
+    ManagedIdentityIdParams,
+    NodeSystemOptions,
+} from "@azure/msal-node";
+
+// Define resource
+const managedIdentityRequestParams: ManagedIdentityRequestParams = {
+    resource: "https://vault.azure.net",
+};
+
+// This section applies to user-assigned managed identities only
+const userAssignedManagedIdentityIdParams: ManagedIdentityIdParams = {
+    userAssignedClientId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+};
+
+const userAssignedManagedIdentityConfig: ManagedIdentityConfiguration = {
+    userAssignedManagedIdentityIdParams, // applicable to user-assigned managed identities only
+    
+    // optional for logging
+    system: {
+        loggerOptions: {
+            logLevel: LogLevel.Verbose,
+        } as LoggerOptions,
+    } as NodeSystemOptions,
+};
+
+const userSystemAssignedManagedIdentityApplication: ManagedIdentityApplication =
+    new ManagedIdentityApplication(userAssignedManagedIdentityConfig);
+
+// Acquire token: user-assigned managed identity
+const response: AuthenticationResult =
+    await userAssignedManagedIdentityApplication.acquireToken(
+        managedIdentityRequestParams
+    );
+
+// This section applies to system-assigned managed identities only
+const systemAssignedManagedIdentityConfig: ManagedIdentityConfiguration = {
+    // optional for logging
+    system: {
+        loggerOptions: {
+            logLevel: LogLevel.Verbose,
+        } as LoggerOptions,
+    } as NodeSystemOptions,
+};
+
+const systemAssignedManagedIdentityApplication: ManagedIdentityApplication =
+    new ManagedIdentityApplication(systemAssignedManagedIdentityConfig);
+
+
+// Acquire token: system-assigned managed identity
+const response: AuthenticationResult =
+    await systemAssignedManagedIdentityApplication.acquireToken(
+        managedIdentityRequestParams
+    );
+
+console.log(response);
+```
+
+#### [Python](#tab/python)
+
+```python
+import msal
+import requests
+
+# Use this for system-assigned managed identities
+managed_identity = msal.SystemAssignedManagedIdentity()
+
+# Use this for user-assigned managed identities
+userAssignedClientId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+managed_identity = msal.UserAssignedManagedIdentity(client_id=userAssignedClientId)
+
+global_app = msal.ManagedIdentityClient(managed_identity, http_client=requests.Session())
+
+result = global_app.acquire_token_for_client(resource='https://vault.azure.net')
+
+if "access_token" in result:
+    print("Token obtained!")
+```
+
+#### [Go](#tab/Go)
+
+```go
+import (
+    "context"
+    "fmt"
+    "net/http"
+
+    mi "github.com/AzureAD/microsoft-authentication-library-for-go/apps/managedidentity"
+)
+
+func RunManagedIdentity() {
+    // Use this for system-assigned managed identities
+    miSystemAssigned, err := mi.New(mi.SystemAssigned())
+    
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    result, err := miSystemAssigned.AcquireToken(context.TODO(), "https://management.azure.com")
+	
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    // Use this for user-assigned managed identities with a client ID.
+    miClientIdUserAssigned, err := mi.New(mi.ClientID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"))
+    
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    result, err := miClientIdUserAssigned.AcquireToken(context.TODO(), "https://management.azure.com")
+
+    // Print out token expiry time
+    fmt.Println("token expire at : ", result.ExpiresOn)
+}
+```
+
+---
 
 ## Connecting to resources that don't support Microsoft Entra ID or token based authentication in libraries
 
 Some Azure resources either don't yet support Microsoft Entra authentication, or their client libraries don't support authenticating with a token. Typically these resources are open-source technologies that expect a username and password or an access key in a connection string.
 
-To avoid storing credentials in your code or your application configuration, you can store the credentials as a secret in Azure Key Vault. Using the example displayed above, you can retrieve the secret from Azure KeyVault using a managed identity, and pass the credentials into your connection string. This approach means that no credentials need to be handled directly in your code or environment.
+To avoid storing credentials in your code or your application configuration, you can store the credentials as a secret in Azure Key Vault. Using the example displayed above, you can retrieve the secret from Azure KeyVault using a managed identity, and pass the credentials into your connection string. This approach means that no credentials need to be handled directly in your code or environment. For a detailed example, see [Use managed identities to access Azure Key Vault certificates](/azure/frontdoor/managed-identity). For more info on Azure Key Vault authentication, see [Azure Key Vault authentication](/azure/key-vault/general/authentication).
 
 ## Guidelines if you're handling tokens directly
 
 In some scenarios, you may want to acquire tokens for managed identities manually instead of using a built-in method to connect to the target resource. These scenarios include no client library for the programming language that you're using or the target resource you're connecting to, or connecting to resources that aren't running on Azure. When acquiring tokens manually, we provide the following guidelines:
 
 ### Cache the tokens you acquire
+
 For performance and reliability, we recommend that your application caches tokens in local memory, or encrypted if you want to save them to disk. As Managed identity tokens are valid for 24 hours, there's no benefit in requesting new tokens regularly, as a cached one will be returned from the token issuing endpoint. If you exceed the request limits, you'll be rate limited and receive an HTTP 429 error. 
 
 When you acquire a token, you can set your token cache to expire 5 minutes before the `expires_on` (or equivalent property) that will be returned when the token is generated.
 
 ### Token inspection
+
 Your application shouldn't rely on the contents of a token. The token's content is intended only for the audience (target resource) that is being accessed, not the client that's requesting the token. The token content may change or be encrypted in the future.
 
 ### Don't expose or move tokens
+
 Tokens should be treated like credentials. Don't expose them to users or other services; for example, logging/monitoring solutions. They shouldn't be moved from the source resource that's using them, other than to authenticate against the target resource.
 
 ## Next steps

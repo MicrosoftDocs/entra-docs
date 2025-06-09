@@ -2,13 +2,13 @@
 title: Administrative units in Microsoft Entra ID
 description: Use administrative units for more granular delegation of permissions in Microsoft Entra ID.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: role-based-access-control
-ms.date: 03/07/2023
-ms.author: rolyon
+ms.date: 10/29/2024
+ms.author: barclayn
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ---
@@ -67,8 +67,8 @@ You can manage administrative units by using the Microsoft Entra admin center, P
 
 - [Create or delete administrative units](admin-units-manage.md)
 - [Add users, groups, or devices to an administrative unit](admin-units-members-add.md)
-- [Manage users or devices for an administrative unit with rules for dynamic membership groups (Preview)](admin-units-members-dynamic.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Manage users or devices for an administrative unit with rules for dynamic membership groups](admin-units-members-dynamic.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)
 - [Work with administrative units](/powershell/azure/active-directory/working-with-administrative-units): Covers how to work with administrative units by using PowerShell.
 - [Administrative unit Graph support](/graph/api/resources/administrativeunit): Provides detailed documentation on Microsoft Graph for administrative units.
 
@@ -90,7 +90,7 @@ As a Privileged Role Administrator, you can use the Microsoft Entra admin center
 
 - Create administrative units
 - Add users, groups, or devices as members of administrative units
-- Manage users or devices for an administrative unit with rules for dynamic membership groups (Preview)
+- Manage users or devices for an administrative unit with rules for dynamic membership groups
 - Assign IT staff to administrative unit-scoped administrator roles.
 
 Administrative unit-scoped admins can use the Microsoft 365 admin center for basic management of users in their administrative units. A group administrator with administrative unit scope can manage groups by using PowerShell, Microsoft Graph, and the Microsoft 365 admin centers.
@@ -109,7 +109,7 @@ The following sections describe current support for administrative unit scenario
 | Create or delete administrative units | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Add or remove members | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Assign administrative unit-scoped administrators | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Add or remove users or devices dynamically based on rules (Preview) | :white_check_mark: | :white_check_mark: | :x: |
+| Add or remove users or devices dynamically based on rules | :white_check_mark: | :white_check_mark: | :x: |
 | Add or remove groups dynamically based on rules | :x: | :x: | :x: |
 
 ### User management

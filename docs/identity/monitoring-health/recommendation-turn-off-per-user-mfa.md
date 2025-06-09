@@ -2,14 +2,16 @@
 title: Turn off per user MFA in Microsoft Entra ID
 description: Learn why you should turn off per user MFA in Microsoft Entra ID with Microsoft Entra recommendations
 author: shlipsey3
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/25/2024
+ms.date: 02/21/2025
 ms.author: sarahlipsey
-ms.reviewer: hafowler
+ms.reviewer: deawari
+
+# Customer intent: As an IT admin, I need to know how many users in my tenant are using per-user MFA so I can make a plan to switch to Conditional Access MFA.
 ---
 
 # Microsoft Entra recommendation: Switch from per-user MFA to Conditional Access MFA
@@ -35,20 +37,24 @@ This recommendation improves your user's productivity and minimizes the sign-in 
 
 ## Action plan
 
-1. Confirm that there's an existing Conditional Access policy with an MFA requirement. Ensure that you're covering all resources and users you would like to secure with MFA.
-    - Review your Conditional Access policies.
+1. Require MFA using a Conditional Access policy.
+    - [Enable Microsoft Entra multifactor authentication with Conditional Access](../authentication/tutorial-enable-azure-mfa.md).
+    - Ensure that you're covering all resources and users you would like to secure with MFA.
+1. Ensure that the per-user MFA configuration is turned off.
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+    1. Browse to **Users** > **All users** and select the **Per-user MFA** button.
 
-2. Require MFA using a Conditional Access policy.
-    - [Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md).
+    :::image type="content" source="media/recommendation-turn-off-per-user-mfa/disable-per-user-mfa.png" alt-text="Screenshot of the per-user MFA button in Microsoft Entra admin center." lightbox="media/recommendation-turn-off-per-user-mfa/disable-per-user-mfa-expanded.png":::
 
-3. Ensure that the per-user MFA configuration is turned off. 
+    1. Select **Disable MFA** for all users who had this option enabled.
 
-After all users are migrated to Conditional Access MFA accounts, the recommendation status automatically updates the next time the service runs. Continue to review your Conditional Access policies to improve the overall health of your tenant.
+    :::image type="content" source="media/recommendation-turn-off-per-user-mfa/per-user-mfa-details.png" alt-text="Screenshot of the per-user MFA settings in the admin center.":::
+    
+After all users are migrated to Conditional Access MFA accounts, the recommendation status automatically updates the next time the service runs. Continue to review your Conditional Access policies.
 
-## Next steps
+## Related content
 
-- [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
-- [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
-- [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
-- [Learn about requiring MFA for all users using Conditional Access](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
-- [View the MFA Conditional Access policy tutorial](../authentication/tutorial-enable-azure-mfa.md)
+- [How to use Microsoft Entra recommendations](howto-use-recommendations.md)
+- [Microsoft Graph API for recommendations](/graph/api/resources/recommendation)
+- [MFA and Conditional Access policy](../conditional-access/policy-all-users-mfa-strength.md)
+- [MFA and Conditional Access policy tutorial](../authentication/tutorial-enable-azure-mfa.md)

@@ -1,5 +1,5 @@
 ---
-title: Configure the F5 BIG-IP Easy Button for Header-based and LDAP SSO 
+title: Configure the F5 BIG-IP Easy Button for Header-based and LDAP SSO
 description: Learn to configure the F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure hybrid access to header-based applications that also require session augmentation through Lightweight Directory Access Protocol (LDAP) sourced attributes.
 author: gargi-sinha
 manager: martinco
@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 04/19/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on (SSO). My goal is to secure header and LDAP-based applications using Microsoft Entra ID and improve the overall application security posture.
 ---
 
@@ -80,14 +79,13 @@ This tutorial uses Guided Configuration 16.1 with an Easy Button template. With 
 
 ## Register Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service can access Microsoft Graph, it's trusted by the [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md)
 
 This first step creates a tenant app registration to authorize the **Easy Button** access to Graph. With these permissions, the BIG-IP can push the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations** > **New registration**.
+2. Browse to **Entra ID** > **App registrations** > **New registration**.
 3. Enter a display name for your application. For example, F5 BIG-IP Easy Button.
 4. Specify who can use the application > **Accounts in this organizational directory only**.
 5. Select **Register**.
@@ -133,17 +131,12 @@ Some of these settings are global, therefore can be reused to publish more appli
 4. Confirm the BIG-IP can connect to your tenant.
 5. Select **Next**.
 
-    ![Screenshot of entries for General Properties and Azure Service Account Details, on Configuration Properties.](./media/f5-big-ip-easy-button-ldap/config-properties.png)
-
 ### Service Provider
 
 The Service Provider settings define the properties for the SAML SP instance of the application protected through SHA.
 
 1. Enter **Host**, the public fully qualified domain name (FQDN) of the application being secured.
 2. Enter **Entity ID**, the identifier Microsoft Entra ID uses to identify the SAML SP requesting a token.
-
-    ![Screenshot of Host and Entity ID entries on Service Provider.](./media/f5-big-ip-easy-button-ldap/service-provider.png)
-
 Use the optional **Security Settings** to specify whether Microsoft Entra ID encrypts issued SAML assertions. Encrypting assertions between Microsoft Entra ID and the BIG-IP APM provides assurance the content tokens can’t be intercepted, and personal or corporate data can't be compromised.
 
 3. From the **Assertion Decryption Private Key** list, select **Create New**
@@ -218,7 +211,7 @@ Conditional Access policies are enforced after Microsoft Entra pre-authenticatio
 
 The **Available Policies** view lists Conditional Access policies that don't include user actions.
 
-The **Selected Policies** view shows policies targeting all cloud apps. These policies can't be deselected or moved to the Available Policies list because they're enforced at a tenant level.
+The **Selected Policies** view shows policies targeting all resources. These policies can't be deselected or moved to the Available Policies list because they're enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 
@@ -307,10 +300,6 @@ Your application is published and accessible via SHA, either with its URL or thr
 
 From a browser, in the [Microsoft MyApps portal](https://myapplications.microsoft.com/) connect to the application external URL or select the application icon. After authenticating against Microsoft Entra ID, you're redirected to the BIG-IP virtual server for the application and signed in through SSO.
 
-See the following screenshot for output of the injected headers in our headers-based application.
-
-   ![Screenshot of output values under Server Variables on My Events.](./media/f5-big-ip-easy-button-ldap/app-view.png)
-
 For increased security, organizations using this pattern can block direct access to the application. This action forces a strict path through the BIG-IP.
 
 ## Advanced deployment
@@ -363,4 +352,4 @@ To validate the APM service account for LDAP queries, use the following command 
 
  ```ldapsearch -xLLL -H 'ldap://192.168.0.58' -b "CN=partners,dc=contoso,dc=lds" -s sub -D "CN=f5-apm,CN=partners,DC=contoso,DC=lds" -w 'P@55w0rd!' "(cn=testuser)"```
 
-For more information, see the F5 article [K11072: Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072). You can use a BIG-IP reference table to help diagnose LDAP-related issues in AskF5 document, [LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/5.html).
+For more information, see the F5 article [K11072: Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072). You can use a BIG-IP reference table to help diagnose LDAP-related issues in AskF5 document, [LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/5.html).

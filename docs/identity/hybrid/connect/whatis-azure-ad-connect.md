@@ -3,10 +3,10 @@ title: 'What is Microsoft Entra Connect and Connect Health.'
 description: Learn about the tools used to synchronize and monitor your on-premises environment with Microsoft Entra ID.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: overview
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -14,7 +14,7 @@ ms.author: billmath
 
 # What is Microsoft Entra Connect?
 
-Microsoft Entra Connect is an on-premises Microsoft application that's designed to meet and accomplish your hybrid identity goals. If you're evaluating how to best meet your goals, you should also consider the cloud-managed solution [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync).
+Microsoft Entra Connect is an on-premises Microsoft application designed to meet and accomplish your hybrid identity goals. If you're evaluating how to best meet your goals, you should also consider the cloud-managed solution [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync).
 
 
 > [!div class="nextstepaction"]
@@ -28,13 +28,13 @@ Microsoft Entra Connect is an on-premises Microsoft application that's designed 
 <a name='consider-moving-to-azure-ad-connect-cloud-sync'></a>
 
 ## Consider moving to Microsoft Entra Cloud Sync
-Microsoft Entra Cloud Sync is the future of synchronization for Microsoft.  It will replace Microsoft Entra Connect.  
+Microsoft Entra Cloud Sync is the future of synchronization for Microsoft. It replaces Microsoft Entra Connect.  
 
 > [!VIDEO https://www.youtube.com/embed/9T6lKEloq0Q]
 
-Before moving the Microsoft Entra Connect V2.0, you should consider moving to cloud sync.  You can see if cloud sync is right for you, by accessing the [Check sync tool](https://aka.ms/M365Wizard) from the portal or via the link provided.
+Before moving to Microsoft Entra Connect V2.0, you should consider moving to cloud sync. You can see if cloud sync is right for you, by accessing the [Check sync tool](https://aka.ms/M365Wizard) from the portal or via the link provided.
 
-For more information see [What is cloud sync?](/azure/active-directory/cloud-sync/what-is-cloud-sync)
+For more information, see [What is cloud sync?](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 
 <a name='azure-ad-connect-features'></a>
 
@@ -43,7 +43,7 @@ For more information see [What is cloud sync?](/azure/active-directory/cloud-syn
 - [Password hash synchronization](whatis-phs.md) - A sign-in method that synchronizes a hash of a users on-premises AD password with Microsoft Entra ID.
 - [Pass-through authentication](how-to-connect-pta.md) - A sign-in method that allows users to use the same password on-premises and in the cloud, but doesn't require the additional infrastructure of a federated environment.
 - [Federation integration](how-to-connect-fed-whatis.md) - Federation is an optional part of Microsoft Entra Connect and can be used to configure a hybrid environment using an on-premises AD FS infrastructure. It also provides AD FS management capabilities such as certificate renewal and additional AD FS server deployments.
-- [Synchronization](how-to-connect-sync-whatis.md) - Responsible for creating users, groups, and other objects.  As well as, making sure identity information for your on-premises users and groups is matching the cloud.  This synchronization also includes password hashes.
+- [Synchronization](how-to-connect-sync-whatis.md) - Responsible for creating users, groups, and other objects. And, making sure identity information for your on-premises users and groups is matching the cloud. This synchronization also includes password hashes.
 - [Health Monitoring](whatis-azure-ad-connect.md#what-is-azure-ad-connect-health) - Microsoft Entra Connect Health can provide robust monitoring and provide a central location in the [Microsoft Entra admin center](https://entra.microsoft.com) to view this activity. 
 
 
@@ -61,8 +61,6 @@ For more information see [What is cloud sync?](/azure/active-directory/cloud-syn
 
 Microsoft Entra Connect Health provides robust monitoring of your on-premises identity infrastructure. It enables you to maintain a reliable connection to Microsoft 365 and Microsoft Online Services.  This reliability is achieved by providing monitoring capabilities for your key identity components. Also, it makes the key data points about these components easily accessible.
 
-
-
 The information is presented in the [Microsoft Entra Connect Health portal](https://aka.ms/aadconnecthealth). Use the Microsoft Entra Connect Health portal to view alerts, performance monitoring, usage analytics, and other information. Microsoft Entra Connect Health enables the single lens of health for your key identity components in one place.
 
 ![What is Microsoft Entra Connect Health](./media/whatis-hybrid-identity-health/aadconnecthealth2.png)
@@ -79,9 +77,9 @@ Integrating your on-premises directories with Microsoft Entra ID makes your user
 <a name='why-use-azure-ad-connect-health'></a>
 
 ## Why use Microsoft Entra Connect Health?
-When authenticating with Microsoft Entra ID, your users are more productive because there's a common identity to access both cloud and on-premises resources. Ensuring the environment is reliable, so that users can access these resources, becomes a challenge.  Microsoft Entra Connect Health helps monitor and gain insights into your on-premises identity infrastructure thus ensuring the reliability of this environment. It is as simple as installing an agent on each of your on-premises identity servers.
+When authenticating with Microsoft Entra ID, your users are more productive because there's a common identity to access both cloud and on-premises resources. Ensuring the environment is reliable, so that users can access these resources, becomes a challenge. Microsoft Entra Connect Health helps monitor and gain insights into your on-premises identity infrastructure thus ensuring the reliability of this environment. It's as simple as installing an agent on each of your on-premises identity servers.
 
-Microsoft Entra Connect Health for AD FS supports AD FS on Windows Server 2012 R2, Windows Server 2016, Windows Server 2019 and Windows Server 2022. It also supports monitoring the web application proxy servers that provide authentication support for extranet access. With an easy and quick installation of the Health Agent, Microsoft Entra Connect Health for AD FS provides you a set of key capabilities.
+Microsoft Entra Connect Health for AD FS supports AD FS on Windows Server 2012 R2, Windows Server 2016, Windows Server 2019, and Windows Server 2022. It also supports monitoring the web application proxy servers that provide authentication support for extranet access. With an easy and quick installation of the Health Agent, Microsoft Entra Connect Health for AD FS provides you with a set of key capabilities.
 
 Key benefits and best practices:
 

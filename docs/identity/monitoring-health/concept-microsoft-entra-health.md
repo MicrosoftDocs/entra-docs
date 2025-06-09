@@ -1,102 +1,83 @@
 ---
-title: Learn about Microsoft Entra Health
+title: Learn about Microsoft Entra Health monitoring
 description: Monitor the health of your tenant through several identity scenarios and authentication availability rates with Microsoft Entra Health
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 01/04/2024
+ms.date: 04/25/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
-
 ---
 
-# What is Microsoft Entra Health?
+# What is Microsoft Entra Health monitoring?
 
-Microsoft Entra Health (preview) provides you with the ability to view the health of your Microsoft Entra tenant through a report of service level agreement (SLA) attainment and a set of health metrics you can monitor for key Microsoft Entra ID scenarios. All the data is provided at the tenant level. The scenario monitoring solution is currently in public preview and can be enabled or disabled in the Preview Hub; the SLA Attainment report is available by default.
+Microsoft Entra Health provides you with observability of your Microsoft Entra tenant through continuous low-latency health monitoring and look-back reporting on [Service Level Agreements (SLA)](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/). The low-latency health monitoring solution includes a set of health metric data streams, known as signals, with built-in alerts designed to help IT operations teams maintain high levels of uptime and service for common Microsoft Entra scenarios. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month.
 
-## How to access Microsoft Entra Health
+When these metrics and signals are paired together, you get a comprehensive view of the health of your Microsoft Entra tenant. Regularly monitoring the information provided in Microsoft Entra Health can help you identify trends, potential issues, and areas for improvement in your tenant's health. Email notifications can also be configured to alert you when the service identifies an anomaly in the pattern for your tenant. This article provides an overview of the Microsoft Entra Health monitoring features.
 
-You can view the Microsoft Entra Health SLA attainment and Scenario monitoring (preview) from the Microsoft Entra admin center.
+> [!IMPORTANT]
+> Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring and health** > **Health (preview)**.
+## Access Microsoft Entra Health
 
-![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page.png)
+Scenario monitoring and SLA Attainment are available in the Microsoft Entra Health area of the Microsoft Entra admin center.
 
-### Enable the Scenario monitoring preview 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Entra ID** > **Monitoring & health** > **Health**.
 
-If you'd like to view the **Scenario monitoring (preview)**:
+The page opens to the SLA Attainment page.
 
-1. Sign into the [Microsoft Entra admin center] as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Settings** > **Preview hub**.
-1. Enable **Scenario monitoring**.
+:::image type="content" source="media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png" alt-text="Screenshot of the Microsoft Entra Health landing page." lightbox="media/concept-microsoft-entra-health/identity-health-landing-page-attainment-expanded.png":::
 
-Enabling preview feature might take up to 24 hours to populate. Enabling the preview only changes your view, not the entire tenant. You can disable the preview at any time.
+## How Microsoft Entra Health monitoring (preview) works
 
-## SLA attainment
+Scenario Monitoring in Microsoft Entra Health is built on two key components: signals and alerts. Here's a high-level look at how they both work together:
 
-In addition to providing global SLA performance, Microsoft Entra ID now provides tenant-level SLA performance for organizations with at least 5000 monthly active users. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. For the current availability target and details on how SLA is calculated, see [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
+1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health monitoring.
 
-Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
+1. These signals are fed into our anomaly detection service.
 
-You can also view SLA attainment using [Microsoft Graph](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
+1. When the anomaly detection service identifies a significant change to a pattern in the signal, it triggers an alert. 
 
-![Screenshot of the SLA attainment report.](media/concept-microsoft-entra-health/sla-attainment.png)
+1. When the alert is triggered, an email notification is sent to a set of users, preselected by the tenant admin. This email notification prompts recipients to investigate and determine if there's a problem.
 
-## Scenario monitoring (preview) 
+1. After you see an alert, you need to research possible root causes, determine the next steps, and take action to mitigate the root cause. Each health alert contains an impact assessment and links to resources to help you through the process.
 
-Many IT administrators spend a considerable amount of time investigating the health of the following key scenarios:
+### Signals
 
-- Interactive user sign-in requests that require Microsoft Entra multifactor authentication.
+Many IT administrators spend a considerable amount of time investigating several key scenarios, such as sign-ins requiring multifactor authentication (MFA). Microsoft Entra Health provides a visualization of the data associated with these metrics, so you can quickly identify trends and potential issues.
+
+The following key scenarios can be monitored in Microsoft Entra Health:
+
+- Interactive user sign-in requests that require MFA.
 - User sign-in requests that require a managed device through a Conditional Access policy.
 - User sign-in requests that require a compliant device through a Conditional Access policy.
 - User sign-in requests to applications using SAML authentication.
 
-The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities.
+The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. 
 
-Data is aggregated every 15 minutes, for low latency insights into your tenant's health. Each scenario detail page provides trends and totals for that scenario for the last 30 days. You can set the date range to 24 hours, 7 days, or 1 month.
+:::image type="content" source="media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa.png" alt-text="Screenshot of the MFA scenario monitoring data." lightbox="media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa-expanded.png":::
 
-Select **View details** on a tile to view the metrics for that scenario. You can also view these metric streams using [Microsoft Graph](/graph/api//resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
+Each scenario detail page provides trends and totals for that scenario for the last 30 days. This data is aggregated every 15 minutes, for low latency insights into your tenant's health.
 
-![Screenshot of the scenario monitoring landing page.](media/concept-microsoft-entra-health/scenario-monitoring.png)
+### Alerts
 
-### Sign-ins requiring a compliant device
+The anomaly detection service looks at the data and develops dynamic alerting thresholds based on a pattern specific to your tenant. When the service identifies a significant change to that pattern at the tenant level, it triggers an alert. By regularly monitoring these scenarios and reviewing the alerts when they come in, you can more effectively monitor and improve the health of your tenant.
 
-This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a compliant device.
+Alerts are specific to your tenant and to the scenario being monitored. Machine learning requires at least four weeks of data to establish a pattern for your tenant. The more data we collect on the signal, the more accurate the anomaly detection service becomes. The service looks back 25-30 minutes on the timeline and triggers an alert if the signal deviates from the pattern.
 
-- [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy).
-- [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access).
-- [Learn about Microsoft Entra joined devices](../devices/concept-directory-join.md).
+The service provides alerts for the following scenarios:
 
-![Screenshot of the compliant device scenario.](media/concept-microsoft-entra-health/scenario-monitoring-compliant-device.png)
+- [Sign-ins requiring a Conditional Access compliant device](scenario-health-sign-ins-compliant-managed-device.md)
+- [Sign-ins requiring a Conditional Access managed device](scenario-health-sign-ins-compliant-managed-device.md)
+- [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
+- [Conditional Access block policy](scenario-health-conditional-access-block-policy.md)
 
-### Sign-ins requiring a managed device
+## Related content
 
-This scenario captures each user authentication that satisfies a Conditional Access policy requiring sign-in from a managed device.
-
-- [What is device management](/mem/intune/fundamentals/what-is-device-management)?
-- [Learn about Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md).
-
-![Screenshot of the managed device scenario.](media/concept-microsoft-entra-health/scenario-monitoring-managed-device.png)
-
-### Sign-ins requiring multifactor authentication (MFA)
-
-This scenario provides two aggregated data graphs. The first displays the number of users who successfully completed an interactive MFA sign-in using a Microsoft Entra cloud MFA service. The metric excludes instances when a user refreshes the session without completing the interactive MFA or using passwordless sign-in methods.
-
-This scenario also provides an aggregated look at failures of interactive MFA sign-in attempts. The same type of refreshed sessions and passwordless methods are excluded from this metric.
-
-- [Configure Conditional Access for MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md).
-- [Troubleshoot common sign-in errors](howto-troubleshoot-sign-in-errors.md).
-
-![Screenshot of the MFA scenario.](media/concept-microsoft-entra-health/scenario-monitoring-MFA.png)
-
-### Sign-ins to applications using SAML authentication
-
-This scenario looks at SAML 2.0 authentication attempts that the Microsoft Entra cloud service for your tenant successfully processed. This metric currently excludes WS-FED/SAML 1.1 apps integrated with Microsoft Entra ID.
-
-- [Learn how the Microsoft Identity platform uses the SAML protocol](../../identity-platform/saml-protocol-reference.md)
-- [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-idp.md).
-
-![Screenshot of the SAML scenario.](media/concept-microsoft-entra-health/scenario-monitoring-SAML.png)
+- [Configure Health monitoring alerts](howto-configure-health-alert-emails.md)
+- [Investigate Health monitoring alerts](howto-use-health-scenario-alerts.md)
+- [Service Level Agreement attainment for Microsoft Entra ID](reference-sla-performance.md)

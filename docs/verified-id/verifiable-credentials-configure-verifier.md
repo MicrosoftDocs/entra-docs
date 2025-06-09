@@ -2,20 +2,19 @@
 title: Tutorial - Configure Microsoft Entra Verified ID verifier
 description: In this tutorial, you learn how to configure your tenant to verify credentials.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 08/16/2022
+ms.date: 04/30/2025
+ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Configure Microsoft Entra Verified ID verifier
 
   
-In [Issue Microsoft Entra Verified ID credentials from an application](verifiable-credentials-configure-issuer.md), you learn how to issue and verify credentials by using the same Microsoft Entra tenant. In a real-world scenario, where the issuer and verifier are separate organizations, the verifier uses *their own* Microsoft Entra tenant to perform the verification of the credential that was issued by the other organization. In this tutorial, you go over the steps needed to present and verify your first verifiable credential: a verified credential expert card.
+In [Issue Microsoft Entra Verified ID credentials from an application](verifiable-credentials-configure-issuer.md), you learn how to issue and verify credentials by using the same Microsoft Entra tenant. In a real-world scenario, where the issuer and verifier are separate organizations, the verifier uses *their own* Microsoft Entra tenant to perform the verification of the credential that issued by the other organization. In this tutorial, you go over the steps needed to present and verify your first verifiable credential: a verified credential expert card.
 
 As a verifier, you unlock privileges to subjects that possess verified credential expert cards. In this tutorial, you run a sample application from your local computer that asks you to present a verified credential expert card, and then verifies it.
 
@@ -34,7 +33,7 @@ In this article, you learn how to:
 - If you want to clone the repository that hosts the sample app, install [Git](https://git-scm.com/downloads).
 - [Visual Studio Code](https://code.visualstudio.com/Download), [Visual Studio](https://visualstudio.microsoft.com/downloads/) or similar code editor.
 - [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/6.0).
-- Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cannot-use-ngrok-what-do-i-do).
+- Download [ngrok](https://ngrok.com/) and sign up for a free account. If you can't use `ngrok` in your organization, read this [FAQ](verifiable-credentials-faq.md#i-cant-use-ngrok-what-do-i-do).
 - A mobile device with the latest version of Microsoft Authenticator.
 
 ## Gather tenant details to set up your sample application
@@ -149,7 +148,7 @@ Now you are ready to present and verify your first verified credential expert ca
 
     :::image type="content" source="media/verifiable-credentials-configure-verifier/verify-credential.png" alt-text="Screenshot showing how to verify credential from the sample app.":::
 
-1. Using Authenticator, scan the QR code, or scan it directly from your mobile camera.
+1. Using your mobile device, scan the QR code with the Authenticator app. For more info on scanning the QR code, see the [FAQ section](verifiable-credentials-faq.md#scanning-the-qr-code).
 
 1. When you see the warning message, *This app or website may be risky*, select **Advanced**. You are seeing this warning because your domain isn't verified. For this tutorial, you can skip the domain registration.  
 

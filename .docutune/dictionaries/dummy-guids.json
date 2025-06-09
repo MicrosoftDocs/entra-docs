@@ -1,7 +1,7 @@
 // List of the dummy GUIDs used in the documentation, and the sensitive term list that they are associated with. Refer to Learn Plaford for more information.
 // Used as part of docutune-1.5.2/dictionaries/Dictionary-Security-GUIDs.ps1 workflow.
 {
-  "appId|applicationId|application|clientId|audience|aud": [
+  "appId|applicationId|clientId|audience|aud|webAppId|nativeClientId|clusterApplication|clientApplication": [
     "00001111-aaaa-2222-bbbb-3333cccc4444",
     "11112222-bbbb-3333-cccc-4444dddd5555",
     "22223333-cccc-4444-dddd-5555eeee6666",
@@ -58,7 +58,7 @@
     "cccccccc-8888-9999-0000-dddddddddddd",
     "dddddddd-9999-0000-1111-eeeeeeeeeeee"
   ],
-  "principalId": [
+  "principalId|servicePrincipalId": [
     "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "bbbbbbbb-cccc-dddd-2222-333333333333",
     "cccccccc-dddd-eeee-3333-444444444444",
@@ -66,15 +66,6 @@
     "eeeeeeee-ffff-aaaa-5555-666666666666",
     "ffffffff-aaaa-bbbb-6666-777777777777",
     "aaaaaaaa-bbbb-cccc-7777-888888888888"
-  ],
-  "policyId": [
-    "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5",
-    "2bbbbbb2-3cc3-4dd4-5ee5-6ffffffffff6",
-    "3cccccc3-4dd4-5ee5-6ff6-7aaaaaaaaaa7",
-    "4dddddd4-5ee5-6ff6-7aa7-8bbbbbbbbbb8",
-    "5eeeeee5-6ff6-7aa7-8bb8-9cccccccccc9",
-    "6ffffff6-7aa7-8bb8-9cc9-0dddddddddd0",
-    "7aaaaaa7-8bb8-9cc9-0dd0-1eeeeeeeeee1"
   ],
   "resourceId": [
     "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
@@ -94,7 +85,7 @@
     "ffffffff-5a5a-6b6b-7c7c-888888888888",
     "aaaaaaaa-6b6b-7c7c-8d8d-999999999999"
   ],
-  "subscriptionId|subscriptions": [
+  "subscriptionId": [
     "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
     "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
     "cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a",
@@ -111,8 +102,5 @@
     "4444eeee-55ff-aaaa-bb66-cccccc777777",
     "5555ffff-66aa-bbbb-cc77-dddddd888888",
     "6666aaaa-77bb-cccc-dd88-eeeeee999999"
-  ],
-  "appRoleId|roleId|roleAssignments|roleDefinitions": [
-    "00000000-0000-0000-0000-000000000000"
   ]
 }

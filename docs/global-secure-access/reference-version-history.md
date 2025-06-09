@@ -2,12 +2,13 @@
 title: Microsoft Entra private network connector version release notes
 description: This article lists all releases of Microsoft Entra private network connector and describes new features and fixed issues.
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 05/28/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Microsoft Entra private network connector: version release history
@@ -25,6 +26,18 @@ Here's a list of related resources:
 | How to enable application proxy                  | Prerequisites for enabling application proxy and installing and registering a connector are described in this [tutorial](../identity/app-proxy/application-proxy-add-on-premises-application.md). |
 | Understand Microsoft Entra private network connectors | Find out more about [connector management](../identity/app-proxy/application-proxy-connectors.md) and how connectors [autoupgrade](../identity/app-proxy/application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra private network connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
+
+## Version 1.5.4287.0
+ 
+### Release status
+ 
+May 28, 2025: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center.
+ 
+### New features and improvements
+ 
+- The connector now supports routing outbound traffic to destinations in Microsoft Entra Private Access through a forward proxy, enhancing network control.
+- The connector includes a new diagnostics tool to assist with troubleshooting setup issues. 
+- Bug fixes and minor improvements.
 
 ## Version 1.5.3925.0
 
@@ -60,7 +73,7 @@ The new name is now the Microsoft Entra private network connector. The updated b
 
 ### New features and improvements
 
-- Support for User Datagram Protocol (UDP) and Private Domain Name System (DNS) features. *Requires the Early Access Preview. 
+- Support for User Datagram Protocol (UDP) and Private Domain Name System (DNS) features for Private Access flow. *Requires the Early Access Preview. 
 - Support for outbound proxy in connector for Private Access flow. *Requires the Early Access Preview. 
 - Improved resiliency and performance.
 - Improved logging and metrics reporting.

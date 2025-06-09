@@ -2,31 +2,31 @@
 title: Stream Microsoft Entra logs to an event hub
 description: Learn how to stream Microsoft Entra activity logs to an event hub for SIEM tool integration and analysis.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 09/27/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to stream Microsoft Entra activity logs to an event hub for SIEM tool integration and analysis.
 ---
 # How to stream activity logs to an event hub
 
-Your Microsoft Entra tenant produces large amounts of data every second. Sign-in activity and logs of changes made in your tenant add up to a lot of data that can be hard to analyze. Integrating with Security Information and Event Management (SIEM) tools can help you gain insights into your environment.
+Your Microsoft Entra tenant produces large amounts of data every second. Sign-in activity and logs of changes made in your tenant add up to so much data that it can be hard to analyze. Integrating with Security Information and Event Management (SIEM) tools can help you gain insights into your environment.
 
 This article shows how you can stream your logs to an event hub, to integrate with one of several SIEM tools.
 
 ## Prerequisites
 
-- To stream logs to a SIEM tool, you first need to create an **Azure event hub**. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).
-
-- Once you have an event hub that contains Microsoft Entra activity logs, you can set up the SIEM tool integration using the **Microsoft Entra diagnostic settings**.
+- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- An **Azure event hub** that is already set up. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access to create general diagnostic settings for the Microsoft Entra tenant.
+- [Attribute Log Administrator](../role-based-access-control/permissions-reference.md#attribute-log-administrator) access to create diagnostic settings for [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) logs.
 
 ## Stream logs to an event hub
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 [!INCLUDE [diagnostic-settings-include](../../includes/diagnostic-settings-include.md)]
 

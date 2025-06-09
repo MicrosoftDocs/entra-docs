@@ -7,13 +7,13 @@ metadata:
    title: Microsoft Entra External ID in external tenants documentation
    description: Microsoft Entra External ID is a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your external-facing apps and services.
    ms.service: entra-external-id
-   ms.subservice: customers
+   ms.subservice: external
     
    ms.topic: landing-page
-   ms.date: 04/29/2024
+   ms.date: 02/06/2025
    author: csmulligan
    ms.author: cmulligan
-   manager: celested
+   manager: dougeby
 
 landingContent:
   - title: About Microsoft Entra External ID in external tenants
@@ -45,7 +45,7 @@ landingContent:
           - text: Create an external tenant
             url: how-to-create-external-tenant-portal.md 
           - text: Register your app
-            url: how-to-register-ciam-app.md 
+            url: /entra/identity-platform/quickstart-register-app
           - text: Add a sign-up and sign-in flow
             url: how-to-user-flow-sign-up-sign-in-customers.md 
           - text: Add your application
@@ -87,9 +87,9 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: Vanilla JS SPA
-            url: tutorial-single-page-app-vanillajs-prepare-tenant.md
+            url: /entra/identity-platform/tutorial-single-page-app-javascript-prepare-app
           - text: React SPA
-            url: tutorial-single-page-app-react-sign-in-prepare-tenant.md
+            url: /entra/identity-platform/tutorial-single-page-app-react-prepare-app
           - text: Node.js web app
             url: tutorial-web-app-node-sign-in-prepare-tenant.md
           - text: ASP.NET web app
@@ -104,5 +104,5 @@ landingContent:
         links:
           - text: Code sample guides by app type
             url: samples-ciam-all.md?tabs=apptype
-          - text: Code sample guides by language
+          - text: nCode sample guides by language
             url: samples-ciam-all.md?tabs=language

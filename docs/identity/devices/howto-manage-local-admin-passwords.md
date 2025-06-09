@@ -68,9 +68,9 @@ LAPS is available to all customers with Microsoft Entra ID Free or higher licens
 
 ### Required roles or permission
 
-Other than the built-in Microsoft Entra roles like [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.yml) or administrative units to authorize local administrator password recovery. For example:
+Other than the built-in Microsoft Entra roles like [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example:
 
-- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.yml#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.yml#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
+- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can [create a custom role](../role-based-access-control/custom-create.md) and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), Microsoft Graph API, or PowerShell. Once you create a custom role, you can assign it to users.
 
 - You can also create a Microsoft Entra ID [administrative unit](../role-based-access-control/administrative-units.md), add devices, and assign the Cloud Device Administrator role scoped to the administrative unit to authorize local administrator password recovery.
 
@@ -81,7 +81,7 @@ Other than the built-in Microsoft Entra roles like [Cloud Device Administrator](
 To enable Windows LAPS with Microsoft Entra ID, you must take actions in Microsoft Entra ID and the devices you wish to manage. We recommend organizations [manage Windows LAPS using Microsoft Intune](/mem/intune/protect/windows-laps-policy). If your devices are Microsoft Entra joined but not using or don't support Microsoft Intune, you can deploy Windows LAPS for Microsoft Entra ID manually. For more information, see the article [Configure Windows LAPS policy settings](/windows-server/identity/laps/laps-management-policy-settings).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator).
-1. Browse to **Identity** > **Devices** > **Overview** > **Device settings**
+1. Browse to **Entra ID** > **Devices** > **Overview** > **Device settings**
 1. Select **Yes** for the **Enable Local Administrator Password Solution (LAPS)** setting, then select **Save**. You might also use the Microsoft Graph API [Update deviceRegistrationPolicy](/graph/api/deviceregistrationpolicy-update?view=graph-rest-beta&preserve-view=true) to complete this task.
 1. Configure a client-side policy and set the **BackUpDirectory** to be Microsoft Entra ID.
 
@@ -110,15 +110,15 @@ You can also use Microsoft Graph API [Get deviceLocalCredentialInfo](/graph/api/
 
 ## List all Windows LAPS enable devices
 
-To list all Windows LAPS enabled devices, you can browse to **Identity** > **Devices** > **Overview** > **Local administrator password recovery** or use the Microsoft Graph API.
+To list all Windows LAPS enabled devices, you can browse to **Entra ID** > **Devices** > **Overview** > **Local administrator password recovery** or use the Microsoft Graph API.
 
 ## Auditing local administrator password update and recovery
 
-To view audit events, you can browse to **Identity** > **Devices** > **Overview** > **Audit logs**, then use the **Activity** filter and search for **Update device local administrator password** or **Recover device local administrator password** to view the audit events.
+To view audit events, you can browse to **Entra ID** > **Devices** > **Overview** > **Audit logs**, then use the **Activity** filter and search for **Update device local administrator password** or **Recover device local administrator password** to view the audit events.
 
 ## Conditional Access policies for local administrator password recovery
 
-Conditional Access policies can be scoped to the built-in roles to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/howto-conditional-access-policy-admin-mfa.md).
+Conditional Access policies can be scoped to the built-in roles to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/policy-old-require-mfa-admin.md).
 
 > [!NOTE]
 > Other role types including administrative unit-scoped roles and custom roles aren't supported

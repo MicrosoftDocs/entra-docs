@@ -1,9 +1,9 @@
 ---
 title: Publisher verification overview
 description: Learn about benefits, program requirements, and frequently asked questions in the publisher verification program for the Microsoft identity platform.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+author: garrodonnell
+manager: dougeby
+ms.author: godonnell
 ms.date: 08/13/2024
 ms.reviewer:
 ms.service: identity-platform

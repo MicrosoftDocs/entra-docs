@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 03/05/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: anjusingh, ludwignick
 ---
 # Conditional Access: Authentication transfer (Preview)
@@ -35,9 +35,9 @@ Authentication transfer is enabled by default for all users. Administrators can 
 
 Authentication transfer checks all applicable Conditional Access policies before signing the user into a mobile app. If the required conditions aren't met, the user is prompted to authenticate on the mobile app.
 
-To create a policy that uses the authentication transfer condition, see the article [Block authentication transfer with Conditional Access policy](how-to-policy-authentication-flows.md#authentication-transfer-policies).
+To create a policy that uses the authentication transfer condition, see the article [Block authentication transfer with Conditional Access policy](policy-block-authentication-flows.md#authentication-transfer-policies).
 
 ## Related content
 
-- [Block authentication transfer with Conditional Access policy](how-to-policy-authentication-flows.md#authentication-transfer-policies)
+- [Block authentication transfer with Conditional Access policy](policy-block-authentication-flows.md#authentication-transfer-policies)
 - [Conditional Access: Conditions](concept-conditional-access-conditions.md)

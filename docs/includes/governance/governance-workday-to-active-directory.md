@@ -3,8 +3,8 @@ author: billmath
 ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
-ms.author: billmath
-# Used by articles entra governance
+ms.author: billmath # Used by articles entra governance
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -227,7 +227,7 @@ This section provides steps for user account provisioning from Workday to each A
 **To configure Workday to Active Directory provisioning:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Search for **Workday to Active Directory User Provisioning**, and add that app from the gallery.
 1. After the app is added and the app details screen is shown, select **Provisioning**.
 1. Change the **Provisioning** **Mode** to **Automatic**.
@@ -246,7 +246,7 @@ Transfer the downloaded agent installer to the server host and follow the steps 
 In this step, we establish connectivity with Workday and Active Directory. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > Workday to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent).
+1. Browse to **Entra ID** > **Enterprise apps** > Workday to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent).
 
 1. Complete the **Admin Credentials** section as follows:
 
@@ -280,10 +280,7 @@ In this step, we establish connectivity with Workday and Active Directory.
      > [!NOTE]
      > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
-   * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the Workday credentials and the AD credentials configured on the agent setup are valid.
-
-     >[!div class="mx-imgBorder"]
-     >![Screenshot that shows  the "Provisioning" page with credentials entered.](./media/workday-inbound-tutorial/wd_1.png)
+   * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at the top. If it fails, double-check that the Workday credentials and the AD credentials configured on the agent setup are valid.
 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping **Synchronize Workday Workers to On Premises Active Directory**
 
@@ -363,7 +360,7 @@ In this section, you configure how user data flows from Workday to Active Direct
 | ---------- | ---------- | ---------- | ---------- |
 | **WorkerID**  |  EmployeeID | **Yes** | Written on create only |
 | **PreferredNameData**    |  cn    |   |   Written on create only |
-| **SelectUniqueValue( Join("\@", Join(".",  \[FirstName\], \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Written on create only 
+| **SelectUniqueValue( Join("\@", Join(".",  \[FirstName\], \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Written on create only |
 | `Replace(Mid(Replace([UserID], , "([\\/\\\\\\[\\]\\:\\;\\|\\=\\,\\+\\*\\?\\<\\>])", , "", , ), 1, 20), , "(\\.)*$", , "", , )`      |    sAMAccountName            |     |         Written on create only |
 | **Switch(\[Active\], , "0", "True", "1", "False")** |  accountDisabled      |     | Create + update |
 | **FirstName**   | givenName       |     |    Create + update |
@@ -485,9 +482,6 @@ Yes, this configuration is supported. Here are the high level steps to configure
 Your feedback is highly valued as it helps us set the direction for the future releases and enhancements. We welcome all feedback and encourage you to submit your idea or improvement suggestion in the [feedback forum of Microsoft Entra ID](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789). For specific feedback related to the Workday integration, select the category *SaaS Applications* and search using the keywords *Workday* to find existing feedback related to the Workday.
 
 > [!div class="mx-imgBorder"]
-> ![Screenshot of UserVoice SaaS Apps.](media/workday-inbound-tutorial/uservoice_saas_apps.png)
-
-> [!div class="mx-imgBorder"]
 > ![Screenshot of UserVoice Workday.](media/workday-inbound-tutorial/uservoice_workday_feedback.png)
 
 When suggesting a new idea, please check to see if someone else has already suggested a similar feature. In that case, you can up vote the feature or enhancement request. You can also leave a comment regarding your specific use case to show your support for the idea and demonstrate how the feature is valuable for you too.
@@ -500,12 +494,9 @@ Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](~
 
 #### How do I know the version of my Provisioning Agent?
 
-* Sign in to the Windows server where the Provisioning Agent is installed.
-* Go to **Control Panel** -> **Uninstall or Change a Program** menu
-* Look for the version corresponding to the entry **Microsoft Entra Connect Provisioning Agent**
-
-  >[!div class="mx-imgBorder"]
-  >![Screenshot of Microsoft Entra admin center.](./media/workday-inbound-tutorial/pa_version.png)
+1. Sign in to the Windows server where the Provisioning Agent is installed.
+1. Go to **Control Panel** > **Uninstall or Change a Program** menu.
+1. Look for the version corresponding to the entry **Microsoft Entra Connect Provisioning Agent**.
 
 #### Does Microsoft automatically push Provisioning Agent updates?
 
@@ -577,7 +568,7 @@ Yes, one Provisioning Agent can be configured to handle multiple AD domains as l
 #### How do I uninstall the Provisioning Agent?
 
 * Sign in to the Windows server where the Provisioning Agent is installed.
-* Go to **Control Panel** -> **Uninstall or Change a Program** menu
+* Go to **Control Panel** > **Uninstall or Change a Program** menu
 * Uninstall the following programs:
   * Microsoft Entra Connect Provisioning Agent
   * Microsoft Entra Connect Agent Updater
@@ -814,11 +805,7 @@ When you click on any of the provisioning log records, the **Activity Details** 
 
   Look for the entry with *Event ID = 9*, which provides you with the LDAP search filter used by the agent to retrieve the AD account. You can verify if this is the right search filter to retrieve unique user entries.
 
-  ![Screenshot of LDAP Search.](media/workday-inbound-tutorial/wd_event_viewer_03.png)
-
   The record that immediately follows it with *Event ID = 2* captures the result of the search operation and if it returned any results.
-
-  ![Screenshot of LDAP Results.](media/workday-inbound-tutorial/wd_event_viewer_04.png)
 
 * **Synchronization rule action** record: This log record displays the results of the attribute mapping rules and configured scoping filters along with the provisioning action that is taken to process the incoming Workday event. Use information in the *Additional Details* section of the log record to troubleshoot issues with the synchronization action. An example record is shown below along with pointers on how to interpret each field.
 
@@ -1013,8 +1000,6 @@ To do this change, you must use [Workday Studio](https://community.workday.com/s
 4. Scroll to the bottom of the next screen, and select **Show advanced options**.
 
 5. Select **Edit attribute list for Workday**.
-
-    ![Screenshot that shows the "Workday to Microsoft Entra user provisioning - Provisioning" page with the "Edit attribute list for Workday" action highlighted.](./media/workday-inbound-tutorial/wdstudio_aad1.png)
 
 6. Scroll to the bottom of the attribute list to where the input fields are.
 

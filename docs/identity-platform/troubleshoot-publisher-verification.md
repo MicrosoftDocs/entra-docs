@@ -1,13 +1,13 @@
 ---
 title: Troubleshoot publisher verification
 description: Describes how to troubleshoot publisher verification for the Microsoft identity platform by calling Microsoft Graph APIs.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+manager: dougeby
+author: garrodonnell
+ms.author: godonnell
 ms.date: 07/19/2024
 ms.service: identity-platform
 ms.topic: troubleshooting
-
+ms.custom: sfi-ga-nochange
 #Customer intent: As a developer troubleshooting publisher verification, I want to understand the common issues and potential error codes related to the process, so that I can resolve any issues and successfully complete the verification for my application.
 ---
 
@@ -28,16 +28,16 @@ Here are some common issues that may occur during the process of publisher verif
     1. Navigate to the [Cloud Partner Program enrollment page](https://partner.microsoft.com/dashboard/account/v3/enrollment/joinnow/basicpartnernetwork/new).
     1. Sign in with a user account in the org's primary Microsoft Entra tenant. 
     1. If a Cloud Partner Program account already exists, this account is recognized and you are added to the account. 
-    1. Navigate to the [partner profile page](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) where the Partner One ID and primary account contact are listed.
+    1. Navigate to the [partner profile page](https://partner.microsoft.com/dashboard/account/v3/overview) where the Partner One ID and primary account contact are listed.
 
 - **I don't know who my Microsoft Entra Global Administrator (also known as company admin or tenant admin) is, how do I find them? What about the Application Administrator or Cloud Application Administrator?**
     1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-    1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+    1. Browse to **Entra ID** > **Roles & admins**.
     1. Select the desired admin role.
     1. The list of users assigned that role are displayed.
 
 - **I don't know who the admin(s) for my CPP account are**
-    Go to the [CPP User Management page](https://partner.microsoft.com/pcv/users) and filter the user list to see what users are in various admin roles.
+    Go to the [CPP User Management page](https://partner.microsoft.com/dashboard/account/v3/usermanagement) and filter the user list to see what users are in various admin roles.
 
 - **I am getting an error saying that my Partner One ID is invalid or that I do not have access to it.**
     Follow the [remediation guidance](#mpnaccountnotfoundornoaccess).
@@ -48,8 +48,8 @@ Here are some common issues that may occur during the process of publisher verif
 - **I'm getting an error related to multi-factor authentication. What should I do?** 
     Ensure [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario. For example, MFA could be:
     - Always required for the user you're signing in with.
-    - [Required for Azure management](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md).
-    - [Required for the type of administrator](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md) you're signing in with.
+    - [Required for Azure management](~/identity/conditional-access/policy-old-require-mfa-azure-mgmt.md).
+    - [Required for the type of administrator](~/identity/conditional-access/policy-old-require-mfa-admin.md) you're signing in with.
 
 ## Making Microsoft Graph API calls 
 
@@ -209,7 +209,7 @@ Most commonly caused when verification is being performed via Graph API, and the
 **Remediation Steps**
 1. The Object ID of the application must be provided, not the AppId/ClientId. See **id** on the list of application properties [here](/graph/api/resources/application).
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Find your app's registration to view the Object ID.
 
 
@@ -222,7 +222,7 @@ Most commonly caused when the verification is being performed via Graph API, and
 **Remediation Steps**
 1. The Object ID of the application must be provided, not the AppId/ClientId. See **id** on the list of application properties [here](/graph/api/resources/application).
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Find your app's registration to view the Object ID.
 
  
@@ -255,7 +255,7 @@ See [requirements](publisher-verification-overview.md) for a list of allowed dom
 1. Navigate to your [partner profile](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile), and view the email listed as Primary Contact
 1. The domain used to perform email verification in Partner Center is the portion after the "@" in the Primary Contact's email
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Application registrations** > **Branding and Properties**.
+1. Browse to **Entra ID** > **App registrations** > **Branding and Properties**.
 1. Select **Update Publisher Domain** and follow the instructions to **Verify a New Domain**.
 1. Add the domain used to perform email verification in Partner Center as a New Domain.
 
@@ -268,7 +268,7 @@ Most commonly caused by the signed-in user not being a member of the proper role
 
 **Remediation Steps**
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 1. Select the desired admin role and select **Add Assignment** if you have sufficient permissions.
 1. If you do not have sufficient permissions, contact an admin role for assistance.
 

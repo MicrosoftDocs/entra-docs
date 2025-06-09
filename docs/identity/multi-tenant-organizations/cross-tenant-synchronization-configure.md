@@ -1,14 +1,14 @@
 ---
 title: Configure cross-tenant synchronization
 description: Learn how to configure cross-tenant synchronization in Microsoft Entra ID using the Microsoft Entra admin center.
-author: rolyon
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 03/11/2024
-ms.author: rolyon
-ms.custom: it-pro
+ms.date: 05/02/2025
+ms.author: kenwith
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
@@ -52,13 +52,11 @@ By the end of this article, you'll be able to:
 
 ## Step 2: Enable user synchronization in the target tenant
 
-[!INCLUDE [portal updates](../../includes/portal-update.md)]
-
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the target tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Organization settings** tab, select **Add organization**.
 
@@ -106,7 +104,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Organization settings** tab, select **Add organization**.
 
@@ -128,13 +126,25 @@ In this step, you automatically redeem invitations in the source tenant.
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png" alt-text="Screenshot that shows the Cross-tenant synchronization navigation in the Microsoft Entra admin center." lightbox="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png":::
+
+    If you are using the Azure portal, browse to **Microsoft Entra ID** > **Manage** > **Cross-tenant synchronization**.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-azure.png" alt-text="Screenshot that shows the Cross-tenant synchronization navigation in the Azure portal." lightbox="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-azure.png":::
 
 1. Select **Configurations**.
 
 1. At the top of the page, select **New configuration**.
 
-1. Provide a name for the configuration and select **Create**.
+1. Provide a name for the configuration.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-tenant synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-tenant-sync.png":::
+
+    You might see a **Setup cross-tenant synchronization across Microsoft clouds** check box. This capability is currently being deployed in stages. This setting is not yet functional and you shouldn't try to select this check box.
+
+1. Select **Create**.
 
     It can take up to 15 seconds for the configuration that you just created to appear in the list.
 
@@ -267,7 +277,7 @@ Attribute mappings allow you to define how data should flow between the source t
     | **Guest** | Users will be created as external guests (B2B collaboration users) in the target tenant. |
 
     > [!NOTE]
-    > If the B2B user already exists in the target tenant then **Member (userType)** will not changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
+    > If the B2B user already exists in the target tenant then **Member (userType)** will not be changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
 
     The user type you choose has the following limitations for apps or services (but aren't limited to):
 
@@ -317,7 +327,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 Now that you have a configuration, you can test on-demand provisioning with one of your users.
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -355,7 +365,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 
 The provisioning job starts the initial synchronization cycle of all users defined in **Scope** of the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -387,7 +397,7 @@ Once you've started a provisioning job, you can monitor the status.
 
     You can also view audit logs in the target tenant.
 
-1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.
+1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross tenant synchronization in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png" alt-text="Screenshot of the Audit logs page in the target tenant that lists the log entries for user management." lightbox="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png":::
 
@@ -397,7 +407,7 @@ Once you've started a provisioning job, you can monitor the status.
 
 Even though users are being provisioned in the target tenant, they still might be able to remove themselves. If users remove themselves and they are in scope, they'll be provisioned again during the next provisioning cycle. If you want to disallow the ability for users to remove themselves from your organization, you must configure the **External user leave settings**.
 
-1. In the target tenant, browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. In the target tenant, browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **External user leave settings**, choose whether to allow external users to leave your organization themselves.
 
@@ -409,7 +419,7 @@ This setting also applies to B2B collaboration and B2B direct connect, so if you
 
 Follows these steps to delete a configuration on the **Configurations** page.
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. On the **Configurations** page, add a check mark next to the configuration you want to delete.
 
@@ -528,15 +538,15 @@ This error indicates the Guest invite settings in the target tenant are configur
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
 
-#### Symptom - User Principal Name does not update for existing B2B users in pending acceptance state
+#### Symptom - UserPrincipalName does not update for existing B2B users in pending acceptance state
 
-When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a user principal name (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
+When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UserPrincipalName (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
 
 The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (using the example above the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
 
 **Cause**
 
-This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The user principal name is not updated in the following scenarios:
+This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The UserPrincipalName is not updated in the following scenarios:
 
 1. The UPN and mail are different for a user when was manually invited.
 1. The user was invited prior to enabling cross-tenant sync.

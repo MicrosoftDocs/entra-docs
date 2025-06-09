@@ -1,12 +1,11 @@
 ---
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 06/10/2024
 ms.topic: include
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.custom:
-  - linux-related-content
+ms.custom: - linux-related-content, sfi-image-nochange
 ---
 
 ## Use a Linux VM system-assigned managed identity to access Azure Key Vault 
@@ -25,7 +24,6 @@ You also need a Linux Virtual machine that has system assigned managed identitie
   - If you need to create  a virtual machine for this tutorial, you can follow the article titled [Create a Linux virtual machine with the Azure portal](/azure/virtual-machines/linux/quick-create-portal#create-virtual-machine)
 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This section shows how to grant your VM access to a secret stored in a Key Vault. Using managed identities for Azure resources, your code can get access tokens to authenticate to resources that support Microsoft Entra authentication.
 

@@ -2,13 +2,13 @@
 title: Reprocess requests for an access package in entitlement management
 description: Learn how to reprocess a request for an access package in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
-#Customer intent: As an administrator or access package manager, I want detailed information about how I can repreocess a request for an access package if a request failed so that requestors have the resources in the access package they need to perform their job.
+#Customer intent: As an administrator or access package manager, I want detailed information about how I can reprocess a request for an access package if a request failed so that requestors have the resources in the access package they need to perform their job.
 ---
 # Reprocess requests for an access package in entitlement management
 
@@ -28,14 +28,13 @@ To use entitlement management and assign users to access packages, you must have
 
 ## Open an existing access package and reprocess user requests
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If you have a set of users whose requests are in the "Partially Delivered" or "Failed" state, you might need to reprocess some of those requests. Follow these steps to reprocess requests for an existing access package:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, Access package manager, and Access package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages,** open the access package.
 

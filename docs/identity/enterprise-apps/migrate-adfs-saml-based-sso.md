@@ -1,17 +1,15 @@
 ---
 title: 'SAML-based single sign-on: Configuration and Limitations'
 description: Learn concepts around configuring SAML-based SSO with Microsoft Entra ID such as user mapping, limitations, SAML certificates, token encryption, signature verification, and custom claims.
-
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
-
 ms.date: 08/20/2024
 ms.author: jomondi
 ms.reviewer: gasinh
-
+ms.custom: sfi-image-nochange
 #customer intent: As an IT admin migrating app authentication to Microsoft Entra ID, I want to understand the SAML-based single sign-on (SSO) configuration steps and limitations, so that I can successfully set up SSO for my SaaS applications and map users to specific application roles based on rules.
 ---
 # SAML-based single sign-on: Configuration and Limitations

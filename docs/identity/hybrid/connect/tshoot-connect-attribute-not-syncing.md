@@ -3,11 +3,11 @@ title: Troubleshoot an attribute not synchronizing in Microsoft Entra Connect'
 description: This topic provides steps for how to troubleshoot issues with attribute synchronization using the troubleshooting task.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

@@ -5,16 +5,16 @@ description: Learn how to configure Microsoft Entra hybrid join.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 02/26/2024
+ms.date: 02/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # Configure Microsoft Entra hybrid join
 
-Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) at the same time.
+Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md) at the same time.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hSCVR1oJhFI]
 
@@ -39,7 +39,7 @@ Microsoft Entra hybrid join requires devices to have access to the following Mic
 - Your organization's Security Token Service (STS) (**For federated domains**)
 
 > [!WARNING]
-> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or Microsoft Entra tenant restrictions, ensure that traffic to `https://device.login.microsoftonline.com` is excluded from TLS break-and-inspect. Failure to exclude this URL might cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access.
+> If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or Microsoft Entra tenant restrictions, ensure that traffic to `https://device.login.microsoftonline.com` and `https://enterpriseregistration.windows.net` are excluded from TLS break-and-inspect. Failure to exclude these URLs might cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access.
 
 If your organization requires access to the internet via an outbound proxy, you can use [Web Proxy Auto-Discovery (WPAD)](/previous-versions/tn-archive/cc995261(v=technet.10)) to enable Windows 10 or newer computers for device registration with Microsoft Entra ID. To address issues configuring and managing WPAD, see [Troubleshooting Automatic Detection](/previous-versions/tn-archive/cc302643(v=technet.10)).
 
@@ -78,8 +78,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a man
 
 A federated environment should have an identity provider that supports the following requirements. If you have a federated environment using Active Directory Federation Services (AD FS), then the below requirements are already supported.
 
-- **WIAORMULTIAUTHN claim:** This claim is required to do Microsoft Entra hybrid join for Windows down-level devices.
-- **WS-Trust protocol:** This protocol is required to authenticate Windows current Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
+- **WS-Trust protocol:** This protocol is required to authenticate the Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
    - `/adfs/services/trust/2005/windowstransport`
    - `/adfs/services/trust/13/windowstransport`
    - `/adfs/services/trust/2005/usernamemixed`
@@ -111,7 +110,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a fed
 
 ### Federation caveats
 
-With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using AD FS fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra ID to complete the device registration for Microsoft Entra hybrid join.
+With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using federation service fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra ID to complete the device registration for Microsoft Entra hybrid join.
 
 ## Other scenarios
 
@@ -142,5 +141,5 @@ If you experience issues with completing Microsoft Entra hybrid join for domain-
 ## Related content
 
 - [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
-- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 - [Planning a Windows Hello for Business Deployment](/windows/security/identity-protection/hello-for-business/hello-planning-guide)

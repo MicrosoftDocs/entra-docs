@@ -6,11 +6,14 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 02/28/2023
+ms.date: 05/20/2025
 ms.author: jricketts
+ms.custom: sfi-ropc-nochange
 ---
 
 # Microsoft Entra security operations for consumer accounts
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 Consumer identity activities are an important area for your organization to protect and monitor. This article is for Azure Active Directory B2C (Azure AD B2C) tenants and has guidance for monitoring consumer account activities. The activities are:
 
@@ -98,12 +101,12 @@ Use the remainder of the article for recommendations on what to monitor and aler
 | Account disabled or blocked for sign-ins | low | Microsoft Entra sign-in log | Status = Failure<br>-and-<br>Target = User UPN<br>-and-<br>error code = 50057 | The event could indicate someone trying to gain account access after they've left the organization. Although the account is blocked, log and alert this activity. |
 | MFA fraud alert or block | High | Microsoft Entra sign-in log/Azure Log Analytics | Sign-ins>Authentication details<br> Result details = MFA denied, fraud code entered | Privileged user indicates they haven't instigated the MFA prompt, which could indicate an attacker has the account password. |
 | MFA fraud alert or block | High | Microsoft Entra sign-in log/Azure Log Analytics | Activity type = Fraud reported - User is blocked for MFA or fraud reported - No action taken, based on fraud report tenant-level settings | Privileged user indicated no instigation of the MFA prompt. The scenario can indicate an attacker has the account password. |
-| Privileged account sign-ins outside of expected controls | High | Microsoft Entra sign-in log | Status = Failure<br>UserPricipalName = \<Admin account> <br> Location = \<unapproved location> <br> IP address = \<unapproved IP><br>Device info = \<unapproved Browser, Operating System> | Monitor and alert entries you defined as unapproved. |
+| Privileged account sign-ins outside of expected controls | High | Microsoft Entra sign-in log | Status = Failure<br>UserPrincipalName = \<Admin account> <br> Location = \<unapproved location> <br> IP address = \<unapproved IP><br>Device info = \<unapproved Browser, Operating System> | Monitor and alert entries you defined as unapproved. |
 | Outside of normal sign-in times | High | Microsoft Entra sign-in log | Status = Success<br>-and-<br>Location =<br>-and-<br>Time = Outside of working hours | Monitor and alert if sign-ins occur outside expected times. Find the normal working pattern for each privileged account and alert if there are unplanned changes outside normal working times. Sign-ins outside normal working hours could indicate compromise or possible insider threat. |
 | Password change | High | Microsoft Entra audit logs | Activity actor = Admin/self-service<br>-and-<br>Target = User<br>-and-<br>Status = Success or failure | Alert when any administrator account password changes. Write a query for privileged accounts. |
 | Changes to authentication methods | High | Microsoft Entra audit logs | Activity: Create identity provider<br>Category: ResourceManagement<br>Target: User Principal Name | The change could indicate an attacker adding an auth method to the account to have continued access. |
 | Identity Provider updated by nonapproved actors | High | Microsoft Entra audit logs | Activity: Update identity provider<br>Category: ResourceManagement<br>Target: User Principal Name | The change could indicate an attacker adding an auth method to the account to have continued access. |
-Identity Provider deleted by nonapproved actors | High | Microsoft Entra access reviews | Activity: Delete identity provider<br>Category: ResourceManagement<br>Target: User Principal Name | The change could indicate an attacker adding an auth method to the account to have continued access. |
+|Identity Provider deleted by nonapproved actors | High | Microsoft Entra access reviews | Activity: Delete identity provider<br>Category: ResourceManagement<br>Target: User Principal Name | The change could indicate an attacker adding an auth method to the account to have continued access. |
 
 ## Applications
 
@@ -112,7 +115,7 @@ Identity Provider deleted by nonapproved actors | High | Microsoft Entra access 
 | Added credentials to applications | High | Microsoft Entra audit logs | Service-Core Directory, Category-ApplicationManagement<br>Activity: Update Application-Certificates and secrets management<br>-and-<br>Activity: Update Service principal/Update Application | Alert when credentials are: added outside normal business hours or workflows, types not used in your environment, or added to a non-SAML flow supporting service principal. |
 | App assigned to an Azure role-based access control (RBAC) role, or Microsoft Entra role | High to medium | Microsoft Entra audit logs | Type: service principal<br>Activity: “Add member to role”<br>or<br>“Add eligible member to role”<br>-or-<br>“Add scoped member to role.” |N/A|
 | App granted highly privileged permissions, such as permissions with “.All” (Directory.ReadWrite.All) or wide-ranging permissions (Mail.) | High | Microsoft Entra audit logs |N/A | Apps granted broad permissions such as “.All” (Directory.ReadWrite.All) or wide-ranging permissions (Mail.) |
-| Administrator granting application permissions (app roles), or highly privileged delegated permissions | High | Microsoft 365 portal | “Add app role assignment to service principal”<br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph) “Add delegated permission grant”<br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph)<br>-and-<br>DelegatedPermissionGrant.Scope includes high-privilege permissions. | Alert when a global, application, or cloud application administrator consents to an application. Especially look for consent outside normal activity and change procedures. |
+| Administrator granting application permissions (app roles), or highly privileged delegated permissions | High | Microsoft 365 portal | “Add app role assignment to service principal”<br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph) “Add delegated permission grant”<br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph)<br>-and-<br>DelegatedPermissionGrant.Scope includes high-privilege permissions. | Alert when a Global Administrator, Application Administrator, or Cloud Application Administrator consents to an application. Especially look for consent outside normal activity and change procedures. |
 | Application is granted permissions for Microsoft Graph, Exchange, SharePoint, or Microsoft Entra ID. | High | Microsoft Entra audit logs | “Add delegated permission grant”<br>-or-<br>“Add app role assignment to service principal”<br>-where-<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph, Exchange Online, and so on) | Use the alert in the preceding row. |
 | Highly privileged delegated permissions granted on behalf of all users | High | Microsoft Entra audit logs | “Add delegated permission grant”<br>where<br>Target(s) identifies an API with sensitive data (such as Microsoft Graph)<br>DelegatedPermissionGrant.Scope includes high-privilege permissions<br>-and-<br>DelegatedPermissionGrant.ConsentType is “AllPrincipals”. | Use the alert in the preceding row. |
 | Applications that are using the ROPC authentication flow | Medium | Microsoft Entra sign-in log | Status=Success<br>Authentication Protocol-ROPC | High level of trust is placed in this application because the credentials can be cached or stored. If possible, move to a more secure authentication flow. Use the process only in automated application testing, if ever. |
@@ -120,7 +123,7 @@ Identity Provider deleted by nonapproved actors | High | Microsoft Entra access 
 | Redirect URI configuration changes | High | Microsoft Entra logs | Service-Core Directory<br>Category-ApplicationManagement<br>Activity: Update Application<br>Success – Property Name AppAddress | Look for URIs not using HTTPS*, URIs with wildcards at the end or the domain of the URL, URIs that are **not** unique to the application, URIs that point to a domain you don't control. |
 | Changes to AppID URI | High | Microsoft Entra logs | Service-Core Directory<br>Category-ApplicationManagement<br>Activity: Update Application<br>Activity: Update Service principal | Look for AppID URI modifications, such as adding, modifying, or removing the URI. |
 | Changes to application ownership | Medium | Microsoft Entra logs | Service-Core Directory<br>Category-ApplicationManagement<br>Activity: Add owner to application | Look for instances of users added as application owners outside normal change management activities. |
-| Changes to sign out URL | Low | Microsoft Entra logs | Service-Core Directory<br>Category-ApplicationManagement<br>Activity: Update Application<br>-and-<br>Activity: Update service principle | Look for modifications to a sign out URL. Blank entries or entries to non-existent locations would stop a user from terminating a session.
+| Changes to sign out URL | Low | Microsoft Entra logs | Service-Core Directory<br>Category-ApplicationManagement<br>Activity: Update Application<br>-and-<br>Activity: Update service principle | Look for modifications to a sign out URL. Blank entries or entries to non-existent locations would stop a user from terminating a session.|
 
 ## Infrastructure
 
@@ -137,10 +140,10 @@ Identity Provider deleted by nonapproved actors | High | Microsoft Entra access 
 | User flow deleted by nonapproved actors | Medium | Microsoft Entra audit logs| Activity: Delete user flow<br>Category: ResourceManagement<br>Target: User Principal Name | Monitor and alert on user flow changes. Initiated by (actor): approved to make changes to user flows? |
 | API connectors created by nonapproved actors | Medium | Microsoft Entra audit logs| Activity: Create API connector<br>Category: ResourceManagement<br>Target: User Principal Name | Monitor and alert API connector changes. Initiated by (actor): approved to make changes to API connectors? |
 | API connectors updated by nonapproved actors | Medium | Microsoft Entra audit logs| Activity: Update API connector<br>Category: ResourceManagement<br>Target: User Principal Name: ResourceManagement | Monitor and alert API connector changes. Initiated by (actor): approved to make changes to API connectors? |
-| API connectors deleted by nonapproved actors | Medium | Microsoft Entra audit logs|Activity: Update API connector<br>Category: ResourceManagment<br>Target: User Principal Name: ResourceManagment | Monitor and alert API connector changes. Initiated by (actor): approved to make changes to API connectors? |
+| API connectors deleted by nonapproved actors | Medium | Microsoft Entra audit logs|Activity: Update API connector<br>Category: ResourceManagement<br>Target: User Principal Name: ResourceManagement | Monitor and alert API connector changes. Initiated by (actor): approved to make changes to API connectors? |
 | Identity provider (IdP) created by nonapproved actors | High |Microsoft Entra audit logs | Activity: Create identity provider<br>Category: ResourceManagement<br>Target: User Principal Name | Monitor and alert IdP changes. Initiated by (actor): approved to make changes to IdP configuration? |
 | IdP updated by nonapproved actors | High | Microsoft Entra audit logs| Activity: Update identity provider<br>Category: ResourceManagement<br>Target: User Principal Name | Monitor and alert IdP changes. Initiated by (actor): approved to make changes to IdP configuration? |
-IdP deleted by nonapproved actors | Medium | Microsoft Entra audit logs| Activity: Delete identity provider<br>Category: ResourceManagement<br>Target: User Principal Name | Monitor and alert IdP changes. Initiated by (actor): approved to make changes to IdP configuration? |
+| IdP deleted by nonapproved actors | Medium | Microsoft Entra audit logs| Activity: Delete identity provider<br>Category: ResourceManagement<br>Target: User Principal Name | Monitor and alert IdP changes. Initiated by (actor): approved to make changes to IdP configuration? |
 
 
 ## Next steps

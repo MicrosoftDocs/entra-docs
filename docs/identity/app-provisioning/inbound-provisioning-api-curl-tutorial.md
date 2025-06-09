@@ -1,18 +1,18 @@
 ---
-title: Quickstart API-driven inbound provisioning with cURL
-description: Learn how to get started with API-driven inbound provisioning using cURL.
+title: Quickstart for API-driven inbound provisioning with cURL
+description: This tutorial provides step-by-step instructions so you can get started with API-driven inbound provisioning using cURL.
 
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with cURL
+# Quickstart: Get started with API-driven inbound provisioning using cURL
 
 ## Introduction
 
@@ -20,8 +20,8 @@ ms.reviewer: cmmdesai
 
 ## Pre-requisites
 
-* You have configured [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md). 
-* You have [configured a service principal and it has access](inbound-provisioning-api-grant-access.md) to the inbound provisioning API. Make note of the `ClientId` and `ClientSecret` of your service principal app for use in this tutorial. 
+* You configured [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md). 
+* You [configured a service principal and it has access](inbound-provisioning-api-grant-access.md) to the inbound provisioning API. Make note of the `ClientId` and `ClientSecret` of your service principal app for use in this tutorial. 
 
 ## Upload user data to the inbound provisioning API
 
@@ -35,24 +35,24 @@ ms.reviewer: cmmdesai
      ```
      curl -v "[InboundProvisioningAPIEndpoint]" -d @scim-bulk-upload-users.json -H "Authorization: Bearer [AccessToken]" -H "Content-Type: application/scim+json"
      ```
-1. Upon successful upload, you'll receive HTTP 202 Accepted response code. 
+1. Upon successful upload, you receive HTTP 202 Accepted response code. 
 1. The provisioning service starts processing the bulk request payload immediately and you can see the provisioning details by accessing the provisioning logs of the inbound provisioning app. 
 
 ## Verify processing of the bulk request payload
 
-1. Log in to [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
-1. Browse to **Microsoft Entra ID -> Applications -> Enterprise applications**.
+1. Log in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Under all applications, use the search filter text box to find and open your API-driven provisioning application.
 1. Open the Provisioning blade. The landing page displays the status of the last run.
-1. Click on **View provisioning logs** to open the provisioning logs blade. Alternatively, you can click on the menu option **Monitor -> Provisioning logs**.
+1. Select **View provisioning logs** to open the provisioning logs blade. Alternatively, you can select the menu option **Monitor** > **Provisioning logs**.
 
       [![Screenshot of provisioning logs in menu.](media/inbound-provisioning-api-curl-tutorial/access-provisioning-logs.png)](media/inbound-provisioning-api-curl-tutorial/access-provisioning-logs.png#lightbox)
 
-1. Click on any record in the provisioning logs to view more processing details.
+1. Select any record in the provisioning logs to view more processing details.
 1. The provisioning log details screen displays all the steps executed for a specific user. 
       * Under the **Import from API** step, see details of user data extracted from the bulk request.
-      * The **Match user** step shows details of any user match based on the matching identifier. If a user match happens, then the provisioning service performs an update operation. If there is no user match, then the provisioning service performs a create operation.
-      * The **Determine if User is in scope** step shows details of scoping filter evaluation. By default, all users are processed. If you have set a scoping filter (example, process only users belonging to the Sales department), the evaluation details of the scoping filter displays in this step.
+      * The **Match user** step shows details of any user match based on the matching identifier. If a user match happens, then the provisioning service performs an update operation. If there's no user match, then the provisioning service performs a create operation.
+      * The **Determine if User is in scope** step shows details of scoping filter evaluation. By default, all users are processed. If you set a scoping filter (example, process only users belonging to the Sales department), the evaluation details of the scoping filter displays in this step.
       * The **Provision User** step calls out the final processing step and changes applied to the user account.
       * Use the **Modified properties** tab to view attribute updates.
 
@@ -61,7 +61,7 @@ ms.reviewer: cmmdesai
 View this section for information on the bulk request with SCIM Enterprise User Schema. 
 
 ### Bulk request with SCIM Enterprise User Schema
-The bulk request shown below uses the SCIM standard Core User and Enterprise User Schema. 
+The bulk request shown as follows uses the SCIM standard Core User and Enterprise User Schema. 
 
 **Request body**
 

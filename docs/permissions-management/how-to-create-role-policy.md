@@ -2,15 +2,18 @@
 title: Create a role/policy in the Remediation dashboard
 description: How to create a role/policy in the Remediation dashboard.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 08/27/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Create a role/policy in the Remediation dashboard
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how you can use the **Remediation** dashboard in Microsoft Entra Permissions Management to create roles/policies for the Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) authorization systems.
 

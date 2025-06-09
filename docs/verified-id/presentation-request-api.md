@@ -4,11 +4,10 @@ titleSuffix: Microsoft Entra Verified ID
 description: Learn how to start a presentation request in Verifiable Credentials
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
-ms.date: 07/28/2022
+ms.date: 01/30/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
@@ -120,10 +119,10 @@ The `RequestRegistration` type provides information registration for the issuer.
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `clientName` | string|  A display name of the verifier of the verifiable credential. This name will be presented to the user in the authenticator app. |
+| `clientName` | string|  A display name of the verifier of the verifiable credential. This name is presented to the user in the authenticator app. |
 | `purpose` | string|  Optional. A string that is displayed to inform the user why the verifiable credentials are being requested. |
-| `logoUrl` | URL|  Optional. A URL for a logotype of the verifier. This is not used by the Authenticator app. |
-| `termsOfServiceUrl` | URL|  Optional. A URL to the terms of service for the verifier. This is not used by the Authenticator app. |
+| `logoUrl` | URL|  Optional. A URL for a logotype of the verifier. This value isn't used by the Authenticator app. |
+| `termsOfServiceUrl` | URL|  Optional. A URL to the terms of service for the verifier. This value isn't used by the Authenticator app. |
 
 The following screenshot shows the `clientName` property and the display name of the `authority` (the verifier) in the presentation request.
 
@@ -135,9 +134,9 @@ The Request Service REST API generates several events to the callback endpoint. 
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `url` | string| URI to the callback endpoint of your application. The URI must point to a reachable endpoint on the internet otherwise the service will throw a callback URL unreadable error. Accepted inputs IPv4, IPv6 or DNS resolvable hostname. |
+| `url` | string| URI to the callback endpoint of your application. The URI must point to a reachable endpoint on the internet otherwise the service throws a callback URL unreadable error. Accepted inputs IPv4, IPv6, or DNS resolvable hostname. To harden your network, see [FAQ](verifiable-credentials-faq.md#network-hardening-for-callback-events). |
 | `state` | string| Correlates the callback event with the state passed in the original payload. |
-| `headers` | string| Optional. You can include a collection of HTTP headers required by the receiving end of the POST message. The current supported header values are the `api-key` or the `Authorization` headers. Any other header will throw an invalid callback header error.|
+| `headers` | string| Optional. You can include a collection of HTTP headers required by the receiving end of the POST message. The current supported header values are the `api-key` or the `Authorization` headers. Any other header throws an invalid callback header error.|
 
 ### RequestCredential type
 
@@ -146,8 +145,8 @@ The `RequestCredential` provides information about the requested credentials the
 |Property |Type |Description |
 |---------|---------|---------|
 | `type`| string| The verifiable credential type. The `type` must match the type as defined in the `issuer` verifiable credential manifest (for example, `VerifiedCredentialExpert`). To get the issuer manifest, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md). Copy the **Issue credential URL**, open it in a web browser, and check the **id** property. |
-| `purpose`| string | Optional. Provide information about the purpose of requesting this verifiable credential. This is not used by the Authenticator app. |
-| `acceptedIssuers`| string collection | Optional. A collection of issuers' DIDs that could issue the type of verifiable credential that subjects can present. To get your issuer DID, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md), and copy the value of the **Decentralized identifier (DID)**. If the `acceptedIssuers` collection is empty or not present, then the presentation request will accept a credential type issued by any issuer. |
+| `purpose`| string | Optional. Provide information about the purpose of requesting this verifiable credential. This data isn't used by the Authenticator app. |
+| `acceptedIssuers`| string collection | Optional. A collection of issuers' DIDs that could issue the type of verifiable credential that subjects can present. To get your issuer DID, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md), and copy the value of the **Decentralized identifier (DID)**. If the `acceptedIssuers` collection is empty or not present, then the presentation request accepts a credential type issued by any issuer. |
 | `configuration.validation` | [Configuration.Validation](#configurationvalidation-type) | Optional settings for presentation validation.|
 | `constraints` | [Constraints](#constraints-type) | Optional. Collection of claims constraints.|
 
@@ -158,23 +157,23 @@ The `Configuration.Validation` provides information about how the presented cred
 |Property |Type |Description |
 |---------|---------|---------|
 | `allowRevoked` |  Boolean | Optional. Determines if a revoked credential should be accepted. Default is `false` (it shouldn't be accepted). |
-| `validateLinkedDomain` |  Boolean | Optional. Determines if the linked domain should be validated. Default is `false`. Setting this flag to `false` means you as a Relying Party application accept credentials from an unverified linked domain. Setting this flag to `true` means the linked domain will be validated and only verified domains will be accepted. |
+| `validateLinkedDomain` |  Boolean | Optional. Determines if the linked domain should be validated. Default is `false`. Setting this flag to `false` means you as a Relying Party application accept credentials from an unverified linked domain. Setting this flag to `true` means the linked domain will be validated and only verified domains are accepted. |
 | `faceCheck` |  [faceCheck](#facecheck-type) | Optional. Allows requesting a liveness check during presentation. |
 
 ### Constraints type
 
-The `constraints` type contains a collection of claims constraints that must be met when a wallet selects the candidate credentials. This enables requesting a credential with specific claim value. Constraints specified will use the AND logic, ie if you specify three constraints, all of them have to be met. For each constraint in the collection, you must select one operand of values, contains or startsWith. Values cannot be regular expressions. All comparisons are case-insensitive.
+The `constraints` type contains a collection of claims constraints that must be met when a wallet selects the candidate credentials. This enables requesting a credential with specific claim value. Constraints specified use the AND logic, that is, if you specify three constraints, all of them have to be met. For each constraint in the collection, you must select one operand of values, contains, or startsWith. Values can't be regular expressions. All comparisons are case-insensitive.
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `claimName` |  string | Mandatory. Name of the claim for the constraint. This is the claim name in the verifiable credential. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
-| `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it is a match if the claim value in the credential has any of the values in the collection.|
+| `claimName` |  string | Mandatory. Name of the claim for the constraint. This value is the claim name in the verifiable credential. See [outputClaim](rules-and-display-definitions-model.md#claimmapping-type) in claimMapping type. |
+| `values` |  string collection | Set of values that should match the claim value. If you specify multiple values, like ["red", "green", "blue"] it's a match if the claim value in the credential has any of the values in the collection.|
 | `contains` | string |	The constraint evaluates to true if the claim value contains the specified value.|
 | `startsWith` | string |	The constraint evaluates to true if the claim value starts with the specified value.|
 
 ### faceCheck type
 
-The faceCheck type contains information for performing liveness check during presentation of a credential. The credential requested must contain a photo of the holder in the claim named by the sourcePhotoClaimName. The presentation will succeed if the liveness check reaches a confidence level equal or greater to what is specified in the property matchConfidenceThreshold. If the threshold is not met, the entire presentation will fail.
+The faceCheck type contains information for performing liveness check during presentation of a credential. The credential requested must contain a photo of the holder in the claim named by the sourcePhotoClaimName. The presentation succeeds if the liveness check reaches a confidence level equal or greater to what is specified in the property matchConfidenceThreshold. If the threshold isn't met, the entire presentation fails.
 
 |Property |Type |Description |
 |---------|---------|---------|
@@ -200,14 +199,14 @@ The response contains the following properties:
 |---------|---------|---------|
 | `requestId`| string | An autogenerated request ID. The [callback](#callback-events) uses the same request, allowing you to keep track of the presentation request and its callbacks. |
 | `url`|  string| A URL that launches the authenticator app and starts the presentation process. You can present this URL to the user if they can't scan the QR code. |
-| `expiry`| integer| Indicates when the response will expire. |
+| `expiry`| integer| Indicates when the response expires. |
 | `qrCode`| string | A QR code that the user can scan to start the presentation flow. |
 
 When your app receives the response, the app needs to present the QR code to the user. The user scans the QR code, which opens the authenticator app and starts the presentation process.
 
 ## Error response
 
-If there's an error with the request, an [error responses](error-codes.md) is returned, and should be handled appropriately by the app.
+If there's an error with the request, an [error responses](error-codes.md) is returned. The app needs to handle the error appropriately.
 
 ## Callback events
 
@@ -216,10 +215,10 @@ The callback endpoint is called when a user scans the QR code, uses the deep lin
 |Property |Type |Description |
 |---------|---------|---------|
 | `requestId`| string | Mapped to the original request when the payload was posted to the Verifiable Credentials service.|
-| `requestStatus` |string |The status returned when the request was retrieved by the authenticator app. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li>li>`presentation_error`: There was an error in the presentation.</li></ul>    |
+| `requestStatus` |string |The status returned when the authenticator app retrieved the request. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li><li>`presentation_error`: There was an error in the presentation.</li></ul>    |
 | `state` |string| Returns the state value that you passed in the original payload.   |
 | `subject`|string | The verifiable credential user DID.|
-| `verifiedCredentialsData`| array |Returns an array of verifiable credentials requested. For each verifiable credential, it provides: </li><li>The verifiable credential type(s).</li><li>The issuer's DID</li><li>The claims retrieved.</li><li>The verifiable credential issuer's domain. </li><li>The verifiable credential issuer's domain validation status. </li></ul> |
+| `verifiedCredentialsData`| array |Returns an array of verifiable credentials requested. For each verifiable credential, it provides: </li><li>The verifiable credential types.</li><li>The issuer's DID</li><li>The claims retrieved.</li><li>The verifiable credential issuer's domain. </li><li>The verifiable credential issuer's domain validation status. </li></ul> |
 | `receipt`| string | Optional. The receipt contains the original payload sent from the wallet to the Verifiable Credentials service. The receipt should be used for troubleshooting/debugging only. The format in the receipt isn't fix and can change based on the wallet and version used.|
 
 The following example demonstrates a callback payload when the authenticator app starts the presentation request:
@@ -232,7 +231,7 @@ The following example demonstrates a callback payload when the authenticator app
 }
 ```
 
-The following example demonstrates a callback payload after the verifiable credential presentation has successfully completed:
+The following example shows a callback payload after the verifiable credential presentation successfully completes:
 
 ```json
 {

@@ -1,16 +1,15 @@
 ---
 title: Overview of the Microsoft Entra application gallery
-description: An overview of using the Microsoft Entra application gallery.
+description: Explore the Microsoft Entra application gallery for seamless SaaS integration with preconfigured SSO and user provisioning. Enhance cloud app deployment.
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: overview
-ms.date: 12/20/2023
+ms.date: 12/06/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: enterprise-apps
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to easily find and deploy pre-integrated SaaS applications from the Microsoft Entra application gallery, so that I can provide users with a seamless single sign-on experience and automate user provisioning.
 ---
 
@@ -18,9 +17,7 @@ ms.custom: enterprise-apps
 
 The Microsoft Entra application gallery is a collection of software as a service (SaaS) [applications](~/identity-platform/app-objects-and-service-principals.md) that are preintegrated with Microsoft Entra ID. The collection contains thousands of applications that make it easy to deploy and configure [single sign-on (SSO)](~/identity-platform/single-sign-on-saml-protocol.md) and [automated user provisioning](~/identity/app-provisioning/user-provisioning.md).
 
-To find the gallery when signed into your tenant, browse to **Identity** > **Applications** > **Enterprise applications** > **All applications** > **New application**.
-
-:::image type="content" source="media/overview-application-gallery/enterprise-applications.png" alt-text="Screenshot showing the Microsoft Entra application gallery pane in the [Microsoft Entra admin center](https://entra.microsoft.com).":::
+To find the gallery when signed into your tenant, browse to **Entra ID** > **Enterprise apps** > **All applications** > **New application**.
 
 The applications available from the gallery follow the SaaS model that allows users to connect to and use cloud-based applications over the Internet. Common examples are email, calendaring, and office tools (such as Microsoft Office 365).
 

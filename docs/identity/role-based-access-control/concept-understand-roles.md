@@ -1,18 +1,15 @@
 ---
 title: Understand Microsoft Entra role concepts
 description: Learn how to understand Microsoft Entra built-in and custom roles with resource scope in Microsoft Entra ID.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: conceptual
 ms.date: 07/30/2024
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 
 # Understand roles in Microsoft Entra ID
@@ -65,10 +62,10 @@ The following table is offered as an aid to understanding these role categories.
 | ---- | ---- |
 | Microsoft Entra ID-specific roles | Application Administrator<br>Application Developer<br>Authentication Administrator<br>B2C IEF Keyset Administrator<br>B2C IEF Policy Administrator<br>Cloud Application Administrator<br>Cloud Device Administrator<br>Conditional Access Administrator<br>Device Administrators<br>Directory Readers<br>Directory Synchronization Accounts<br>Directory Writers<br>External ID User Flow Administrator<br>External ID User Flow Attribute Administrator<br>External Identity Provider Administrator<br>Groups Administrator<br>Guest Inviter<br>Helpdesk Administrator<br>Hybrid Identity Administrator<br>License Administrator<br>Partner Tier1 Support<br>Partner Tier2 Support<br>Password Administrator<br>Privileged Authentication Administrator<br>Privileged Role Administrator<br>Reports Reader<br>User Administrator |
 | Service-specific roles in Microsoft Entra ID | Azure DevOps Administrator<br>Azure Information Protection Administrator<br>Billing Administrator<br>CRM Service Administrator<br>Customer Lockbox Access Approver<br>Desktop Analytics Administrator<br>Exchange Service Administrator<br>Insights Administrator<br>Insights Business Leader<br>Intune Service Administrator<br>Kaizala Administrator<br>Lync Service Administrator<br>Message Center Privacy Reader<br>Message Center Reader<br>Modern Commerce Administrator<br>Network Administrator<br>Office Apps Administrator<br>Power BI Service Administrator<br>Power Platform Administrator<br>Printer Administrator<br>Printer Technician<br>Search Administrator<br>Search Editor<br>SharePoint Service Administrator<br>Teams Communications Administrator<br>Teams Communications Support Engineer<br>Teams Communications Support Specialist<br>Teams Devices Administrator<br>Teams Administrator |
-| Cross-service roles in Microsoft Entra ID | Compliance Administrator<br>Compliance Data Administrator<br>Global Reader<br>Security Administrator<br>Security Operator<br>Security Reader<br>Service Support Administrator |
+| Cross-service roles in Microsoft Entra ID | Compliance Administrator<br>Compliance Data Administrator<br>Global Reader<br>Global Administrator<br>Security Administrator<br>Security Operator<br>Security Reader<br>Service Support Administrator |
 
 ## Next steps
 
 - [Overview of Microsoft Entra role-based access control](custom-overview.md)
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
 - [List role assignments](view-assignments.md)

@@ -1,21 +1,19 @@
 ---
 title: Configure F5 BIG-IP Easy Button for SSO to Oracle Enterprise Business Suite
 description: Learn to implement SHA with header-based SSO to Oracle Enterprise Business Suite using F5's BIG-IP Easy Button guided configuration
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to Oracle EBS so that I can control who has access to F5 BIG-IP Easy Button for SSO to Oracle EBS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Configure F5's BIG-IP Easy Button for SSO to Oracle Enterprise Business Suite
+# Configure F5's BIG-IP Easy Button for SSO to Oracle Enterprise Business Suite
 
 In this article, learn to secure Oracle Enterprise Business Suite (EBS) using Microsoft Entra ID, through F5's BIG-IP Easy Button guided configuration.
 
@@ -33,7 +31,7 @@ To learn about all the benefits, see the article on [F5 BIG-IP and Microsoft Ent
 
 This scenario looks at the classic **Oracle EBS application** that uses **HTTP authorization headers** to manage access to protected content.
 
-Being legacy, the application lacks modern protocols to support a direct integration with Microsoft Entra ID. The application can be modernized, but it is costly, requires careful planning, and introduces risk of potential downtime. Instead, an F5 BIG-IP Application Delivery Controller (ADC) is used to bridge the gap between the legacy application and the modern ID control plane, through protocol transitioning.
+Being legacy, the application lacks modern protocols to support a direct integration with Microsoft Entra ID. The application can be modernized, but it's costly, requires careful planning, and introduces risk of potential downtime. Instead, an F5 BIG-IP Application Delivery Controller (ADC) is used to bridge the gap between the legacy application and the modern ID control plane, through protocol transitioning.
 
 Having a BIG-IP in front of the app enables us to overlay the service with Microsoft Entra pre-authentication and header-based SSO, significantly improving the overall security posture of the application.
 
@@ -63,7 +61,7 @@ SHA for this scenario supports both SP and IdP initiated flows. The following im
 | 4| User is redirected back to BIG-IP (SAML SP) and SSO is performed using issued SAML token |
 | 5| BIG-IP performs LDAP query for users Unique ID (UID) attribute |
 | 6| BIG-IP injects returned UID attribute as user_orclguid header in EBS session cookie request to Oracle AccessGate |
-| 7| Oracle AccessGate validates UID against Oracle Internet Directory (OID) service and issues EBS access cookie
+| 7| Oracle AccessGate validates UID against Oracle Internet Directory (OID) service and issues EBS access cookie |
 | 8| EBS user headers and cookie sent to application and returns the payload to the user |
 
 ## Prerequisites
@@ -94,7 +92,7 @@ Prior BIG-IP experience isn't necessary, but you need:
 
 ## BIG-IP configuration methods
 
-There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This tutorial covers the latest Guided Configuration 16.1 offering an Easy button template. With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM's Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
+There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This article covers the latest Guided Configuration 16.1 offering an Easy button template. With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM's Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
 
 >[!NOTE] 
 > All example strings or values referenced throughout this guide should be replaced with those for your actual environment.
@@ -103,7 +101,7 @@ There are many methods to configure BIG-IP for this scenario, including two temp
 
 Before a client or service can access Microsoft Graph, it must be trusted by the [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md)
 
-This first step creates a tenant app registration that will be used to authorize the **Easy Button** access to Graph. Through these permissions, the BIG-IP will be allowed to push the configurations required to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
+This first step creates a tenant app registration that's used to authorize the **Easy Button** access to Graph. Through these permissions, the BIG-IP is allowed to push the configurations required to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) using an account with Application Administrative rights.
 
@@ -142,15 +140,9 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template](./media/f5-big-ip-oracle-ebs/easy-button-template.png)
+2. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-2. Review the list of configuration steps and select **Next**
-
-   ![Screenshot for Configure Easy Button - List configuration steps](./media/f5-big-ip-oracle-ebs/config-steps.png)
-
-3. Follow the sequence of steps required to publish your application.
-
-   ![Configuration steps flow](./media/f5-big-ip-oracle-ebs/config-steps-flow.png#lightbox)
+3. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
 ### Configuration Properties
 
@@ -202,13 +194,15 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 ### Microsoft Entra ID
 
-This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. For this scenario select **Oracle E-Business Suite > Add**.
+This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP and generic SHA template for any other apps.
 
-![Screenshot for Azure configuration add BIG-IP application](./media/f5-big-ip-oracle-ebs/azure-configuration-add-big-ip-application.png)
+For this scenario, in the **Azure Configuration** page, select **Oracle E-Business Suite** > **Add**.
 
 #### Azure Configuration
 
-1. Enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users see on [MyApps portal](https://myapplications.microsoft.com/)
+In the **Azure Configuration** page, follow these steps:
+
+1. Under **Configuration Properties**, enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users see on [MyApps portal](https://myapplications.microsoft.com/)
 
 2. In the **Sign On URL (optional)** enter the public FQDN of the EBS application being secured, along with the default path for the Oracle EBS homepage
 
@@ -222,7 +216,7 @@ This section defines all properties that you would normally use to manually conf
 
     ![Screenshot for Azure configuration - Add signing certificates info](./media/f5-big-ip-oracle-ebs/azure-configuration-sign-certificates.png)
 
-6. **User and User Groups** are dynamically queried from your Microsoft Entra tenant and used to authorize access to the application. Add a user or group that you can use later for testing, otherwise all access will be denied
+6. **User and User Groups** are dynamically queried from your Microsoft Entra tenant and used to authorize access to the application. Add a user or group that you can use later for testing, otherwise all access is denied
 
     ![Screenshot for Azure configuration - Add users and groups](./media/f5-big-ip-oracle-ebs/azure-configuration-add-user-groups.png)
 
@@ -268,9 +262,9 @@ The **Additional User Attributes** tab can support a variety of distributed syst
 
 Conditional Access policies are enforced post Microsoft Entra pre-authentication, to control access based on device, application, location, and risk signals.
 
-The **Available Policies** view, by default, will list all Conditional Access policies that do not include user-based actions.
+The **Available Policies** view, by default, will list all Conditional Access policies that don't include user-based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All cloud apps. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies can't be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 
@@ -278,7 +272,7 @@ To select a policy to be applied to the application being published:
 
 2. Select the right arrow and move it to the **Selected Policies** list
 
-   The selected policies should either have an **Include** or **Exclude** option checked. If both options are checked, the policy is not enforced.
+   The selected policies should either have an **Include** or **Exclude** option checked. If both options are checked, the policy isn't enforced.
 
    ![Screenshot for Conditional Access policies](./media/f5-big-ip-oracle-ebs/conditional-access-policy.png)
 
@@ -348,9 +342,9 @@ If making a change to the app is a no go, then consider having the BIG-IP listen
 
 This last step provides a breakdown of your configurations. Select **Deploy** to commit all settings and verify that the application now exists in your tenants list of 'Enterprise applications.
 
-## Next steps
+## Related content
 
-From a browser, connect to the **Oracle EBS application's external URL** or select the application's icon in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, you'll be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
+From a browser, connect to the **Oracle EBS application's external URL** or select the application's icon in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, you be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
 
 For increased security, organizations using this pattern could also consider blocking all direct access to the application, thereby forcing a strict path through the BIG-IP.
 
@@ -362,7 +356,7 @@ You can navigate to **Access > Guided Configuration** and select the **small pad
 
 ![Screenshot for Configure Easy Button - Strict Management](./media/f5-big-ip-oracle-ebs/strict-mode-padlock.png)
 
-At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application will be unlocked for direct management.
+At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application is unlocked for direct management.
 
 > [!NOTE] 
 > Re-enabling strict mode and deploying a configuration will overwrite any settings performed outside of the Guided Configuration UI, therefore we recommend the advanced configuration method for production services.
@@ -391,7 +385,7 @@ If you don't see a BIG-IP error page, then the issue is probably more related to
 
 2. The **View Variables** link in this location may also help root cause SSO issues, particularly if the BIG-IP APM fails to obtain the right attributes from Microsoft Entra ID or another source
 
-See [BIG-IP APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107) and [F5 BIG-IP session variables reference](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html) for more info.
+See [BIG-IP APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107) and [F5 BIG-IP session variables reference](https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html) for more info.
 
 The following command from a bash shell validates the APM service account used for LDAP queries and can successfully authenticate and query a user object:
 

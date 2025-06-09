@@ -2,7 +2,7 @@
 title: Change approval settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change approval and requestor information settings for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -29,25 +29,24 @@ In the Approval section, you specify whether an approval is required when users 
 
 For a demonstration of how to add approvers to a request policy, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4cZfg]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=15df4213-d77d-4c88-b5c4-9ccfb261eefa]
 
 For a demonstration of how to add a multi-stage approval to a request policy, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4d1Jw]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=25c39e83-da3e-4f41-8d91-8b865b25b702]
 
 > [!NOTE]
 > Approvers are not able to approve their own access package requests.
 
 ## Change approval settings of an existing access package assignment policy
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to specify the approval settings for requests for the access package through a policy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access Package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. On the Access packages page, open an access package.
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure ALVAO for automatic user provisioning with Microsoft Entra ID'
+title: Configure ALVAO for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to ALVAO.
 
 author: thomasakelo
@@ -7,29 +7,29 @@ manager: beatrizd
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ALVAO so that I can streamline the user management process and ensure that users have the appropriate access to ALVAO.
 
 ---
 
-# Tutorial: Configure ALVAO for automatic user provisioning
+# Configure ALVAO for automatic user provisioning with Microsoft Entra ID
 
-This tutorial describes the steps you need to perform in both ALVAO and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [ALVAO](https://www.alvao.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both ALVAO and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [ALVAO](https://www.alvao.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in ALVAO.
-> * Remove users in ALVAO when they do not require access anymore.
+> * Remove users in ALVAO when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and ALVAO.
 > * Provision groups and group memberships in ALVAO.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
@@ -37,14 +37,14 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 1. Determine what data to [map between Microsoft Entra ID and ALVAO](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-alvao-to-support-provisioning-with-azure-ad'></a>
 
 ## Step 2: Configure ALVAO to support provisioning with Microsoft Entra ID
 1. Find your **Tenant SCIM Endpoint URL**, which should have the format `{ALVAO REST API address}/scim` (for example, https://app.contoso.com/alvaorestapi/scim).
-1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Active Directory and Microsoft Entra ID](https://doc.alvao.com/en/11.2/ui/administration/settings/activedirectory)** and copy its value.
+1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Microsoft Entra ID](https://doc.alvao.com/en/25/ui/administration/settings/microsoft-entra-id)** and copy its value.
 
 <a name='step-3-add-alvao-from-the-azure-ad-application-gallery'></a>
 
@@ -52,14 +52,9 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 Add ALVAO from the Microsoft Entra application gallery to start managing provisioning to ALVAO. If you have previously setup ALVAO for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
-
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to ALVAO 
 
@@ -70,7 +65,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for ALVAO in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -86,7 +81,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your ALVAO Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to ALVAO. If the connection fails, ensure your ALVAO account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your ALVAO Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to ALVAO. If the connection fails, ensure your ALVAO account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -96,50 +91,51 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Save**.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to ALVAO**.
+1. Under the **Mappings** section, select **Provision Azure Active Directory Users**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to ALVAO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ALVAO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the ALVAO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to ALVAO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ALVAO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the ALVAO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by ALVAO|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |externalId|String|&check;|&check;
-   |active|Boolean||&check;
-   |displayName|String||&check;
-   |title|String||
-   |emails[type eq "work"].value|String||
-   |name.givenName|String||
-   |name.familyName|String||
-   |name.formatted|String||
-   |addresses[type eq "work"].formatted|String||
-   |addresses[type eq "work"].locality|String||
-   |addresses[type eq "work"].region|String||
-   |addresses[type eq "work"].country|String||
-   |addresses[type eq "work"].postalCode|String||
-   |addresses[type eq "work"].streetAddress|String||
-   |phoneNumbers[type eq "work"].value|String||
-   |phoneNumbers[type eq "mobile"].value|String||
-   |phoneNumbers[type eq "fax"].value|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
+   |userName|String|&check;|&check;|
+   |externalId|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |displayName|String||&check;|
+   |title|String|||
+   |emails[type eq "work"].value|String|||
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |name.formatted|String|||
+   |addresses[type eq "work"].formatted|String|||
+   |addresses[type eq "work"].locality|String|||
+   |addresses[type eq "work"].region|String|||
+   |addresses[type eq "work"].country|String|||
+   |addresses[type eq "work"].postalCode|String|||
+   |addresses[type eq "work"].streetAddress|String|||
+   |phoneNumbers[type eq "work"].value|String|||
+   |phoneNumbers[type eq "mobile"].value|String|||
+   |phoneNumbers[type eq "fax"].value|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
+
    > [!NOTE]
    >For advanced settings see:
-   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
-   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/object-attribute-mapping)
+   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/25/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
+   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/25/admin-guide/users/authentication/aad/provisioning/object-attribute-mapping)
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to ALVAO**.
+1. Under the **Mappings** section, select **Provision Azure Active Directory Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to ALVAO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in ALVAO for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by ALVAO|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |externalId|String||
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |externalId|String|||
+   |members|Reference|||
    
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for ALVAO, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -149,24 +145,21 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 6: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
 
-* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
-* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

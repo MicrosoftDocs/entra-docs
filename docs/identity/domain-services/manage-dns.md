@@ -2,14 +2,14 @@
 title: Manage DNS for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to install the DNS Server Tools to manage DNS and create conditional forwarders for a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 11/26/2023
+ms.date: 02/05/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 ---
 # Administer DNS and create conditional forwarders in a Microsoft Entra Domain Services managed domain
 
@@ -108,7 +108,7 @@ Name resolution of the resources in other namespaces from VMs connected to the m
 
 ## Next steps
 
-For more information about managing DNS, see the [DNS tools article on Technet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753579(v=ws.11)).
+For more information about managing DNS, see the [DNS tools article on TechNet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753579(v=ws.11)).
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: /azure/active-directory/fundamentals/sign-up-organization

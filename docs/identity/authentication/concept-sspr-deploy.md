@@ -1,17 +1,16 @@
 ---
 title: Deployment considerations for Microsoft Entra self-service password reset
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra self-service password reset
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/29/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: gargi-sinha
 manager: martinco
 ms.reviewer: tilarso
 adobe-target: true
+ms.custom: sfi-image-nochange
 ---
 # Plan a Microsoft Entra self-service password reset deployment
 
@@ -20,7 +19,7 @@ adobe-target: true
 >
 > **If you're an end user and need to get back into your account, go to [https://aka.ms/sspr](https://aka.ms/sspr)**.
 
-[Self-Service Password Reset (SSPR)](https://www.youtube.com/watch?v=pS3XwfxJrMo) is a Microsoft Entra feature that enables users to reset their passwords without contacting IT staff for help. The users can quickly unblock themselves and continue working no matter where they are or time of day. By allowing the employees to unblock themselves, your organization can reduce the non-productive time and high support costs for most common password-related issues.
+[Self-Service Password Reset (SSPR)](https://www.youtube.com/watch?v=pS3XwfxJrMo) is a Microsoft Entra feature that enables users to reset their passwords without contacting IT staff for help. The users can quickly unblock themselves and continue working no matter where they're or time of day. By allowing the employees to unblock themselves, your organization can reduce the non-productive time and high support costs for most common password-related issues.
 
 SSPR has the following key capabilities:
 
@@ -36,7 +35,7 @@ To quickly see SSPR in action and then come back to understand additional deploy
 > [Enable self-service password reset (SSPR)](tutorial-enable-sspr.md)
 
 > [!TIP]
-> As a companion to this article, we recommend using the [Plan your self-service password reset deployment guide](https://go.microsoft.com/fwlink/?linkid=2221501) when signed in to the Microsoft 365 Admin Center. This guide will customize your experience based on your environment. To review best practices without signing in and activating automated setup features, go to the [M365 Setup portal](https://go.microsoft.com/fwlink/?linkid=2221600). 
+> As a companion to this article, we recommend using the [Plan your self-service password reset deployment guide](https://go.microsoft.com/fwlink/?linkid=2221501) when signed in to the Microsoft 365 Admin Center. This guide customizes your experience based on your environment. To review best practices without signing in and activating automated setup features, go to the [M365 Setup portal](https://go.microsoft.com/fwlink/?linkid=2221600). 
 
 ## Learn about SSPR
 
@@ -66,7 +65,7 @@ For more information about pricing, see [Microsoft Entra pricing](https://www.mi
 
 * A working Microsoft Entra tenant with at least a trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* An account with Global Administrator privileges.
+* You must be assigned at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 
 ### Guided walkthrough
 
@@ -76,14 +75,13 @@ For a guided walkthrough of many of the recommendations in this article, see the
 
 | Resources| Link and Description |
 | - | - |
-| Videos| [Empower your users with better IT scalability](https://youtu.be/g9RpRnylxS8) 
+| Videos| [Empower your users with better IT scalability](https://youtu.be/g9RpRnylxS8)|
 | |[What is self-service password reset?](https://youtu.be/hc97Yx5PJiM)|
 | |[Deploying self-service password reset](https://www.youtube.com/watch?v=Pa0eyqjEjvQ&index=18&list=PLLasX02E8BPBm1xNMRdvP6GtA6otQUqp0)|
 | |[How to enable and configure SSPR in Microsoft Entra ID](https://www.youtube.com/watch?v=rA8TvhNcCvQ)|
-| |[How to configure self-service password reset for users in Microsoft Entra ID?](https://azure.microsoft.com/resources/videos/self-service-password-reset-azure-ad/) |
 | |[How to [prepare users to] register [their] security information for Microsoft Entra ID](https://youtu.be/gXuh0XS18wA) |
 | Online courses|[Managing Identities in Microsoft Entra ID](https://www.pluralsight.com/courses/microsoft-azure-active-directory-managing-identities) Use SSPR to give your users a modern, protected experience. See especially the "[`Managing Microsoft Entra Users and Groups`](https://app.pluralsight.com/library/courses/microsoft-azure-active-directory-managing-identities/table-of-contents)" module. |
-| |[Getting Started with the Microsoft Enterprise Mobility Suite](https://www.pluralsight.com/courses/microsoft-enterprise-mobility-suite-getting-started) Learn the best practices for extending on-premises assets to the cloud in a manner that allows for authentication, authorization, encryption, and a secured mobile experience. See especially the "Configuring Advanced Features of Microsoft Entra ID P1 or P2" module.
+| |[Getting Started with the Microsoft Enterprise Mobility Suite](https://www.pluralsight.com/courses/microsoft-enterprise-mobility-suite-getting-started) Learn the best practices for extending on-premises assets to the cloud in a manner that allows for authentication, authorization, encryption, and a secured mobile experience. See especially the "Configuring Advanced Features of Microsoft Entra ID P1 or P2" module.|
 |Tutorials |[Complete a Microsoft Entra self-service password reset pilot roll out](./tutorial-enable-sspr.md) |
 | |[Enabling password writeback](./tutorial-enable-sspr-writeback.md) |
 | |[Microsoft Entra password reset from the login screen for Windows 10](./howto-sspr-windows.md) |
@@ -101,13 +99,14 @@ To reset the password, users go to the [password reset portal](https://aka.ms/ss
 
 * For cloud-only users, SSPR stores the new password in Microsoft Entra ID. 
 
-* For hybrid users, SSPR writes back the password to the on-prem Active Directory via the Microsoft Entra Connect service. 
+* For hybrid users, SSPR writes back the password to the on-premises Active Directory via the Microsoft Entra Connect service. 
 
-Note: For users who have [Password hash synchronization (PHS)](~/identity/hybrid/connect/whatis-phs.md) disabled, SSPR stores the passwords in the on-prem Active Directory only.
+> [!Note]
+> For users who have [Password hash synchronization (PHS)](~/identity/hybrid/connect/whatis-phs.md) disabled, SSPR stores the passwords in the on-premises Active Directory only.
 
 ### Best practices
 
-You can help users register quickly by deploying SSPR alongside another popular application or service in the organization. This action will generate a large volume of sign-ins and will drive registration.
+You can help users register quickly by deploying SSPR alongside another popular application or service in the organization. This action generates a large volume of sign-ins and drives registration.
 
 Before deploying SSPR, you may opt to determine the number and the average cost of each password reset call. You can use this data post deployment to show the value SSPR is bringing to the organization.
 
@@ -134,13 +133,13 @@ When technology projects fail, they typically do so due to mismatched expectatio
 | - | - |
 | Level 1 helpdesk| Password Administrator |
 | Level 2 helpdesk| User Administrator |
-| SSPR administrator| Global Administrator |
+| SSPR administrator| Authentication Administrator |
 
 ### Plan a pilot
 
 We recommend that the initial configuration of SSPR is in a test environment. Start with a pilot group by enabling SSPR for a subset of users in your organization. See [Best practices for a pilot](~/architecture/deployment-plans.md).
 
-To create a group, see how to [create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml). 
+To create a group, see how to [create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups). 
 
 ## Plan configuration
 
@@ -190,12 +189,12 @@ Set **Number of days before users is asked to reconfirm their authentication inf
 Configure both the **Notify users on password resets** and the **Notify all admins when other admins reset their password** to **Yes**. Selecting **Yes** on both increases security by ensuring that users are aware when their password is reset. It also ensures that all admins are aware when an admin changes a password. If users or admins receive a notification and they haven't initiated the change, they can immediately report a potential security issue.
 
 > [!NOTE]
-> Email notifications from the SSPR service will be sent from the following addresses based on the Azure cloud you are working with: 
+> Email notifications from the SSPR service are sent from the following addresses based on the Azure cloud you're working with: 
 > - Public: msonlineservicesteam@microsoft.com
 > - China: msonlineservicesteam@oe.21vianet.com 
 > - Government: msonlineservicesteam@azureadnotifications.us
 > 
-> If you observe issues in receiving notifications, please check your spam settings. 
+> If you observe issues in receiving notifications, check your spam settings. 
 
 ### Customization settings
 
@@ -218,10 +217,10 @@ By default, Microsoft Entra ID unlocks accounts when it performs a password rese
 
 Administrator accounts have elevated permissions. The on-premises enterprise or domain administrators can't reset their passwords through SSPR. On-premises admin accounts have the following restrictions:
 
-* Can only change their password in their on-prem environment.
+* Can only change their password in their on-premises environment.
 * Can never use the secret questions and answers as a method to reset their password.
 
-We recommend that you don't sync your on-prem Active Directory admin accounts with Microsoft Entra ID.
+We recommend that you don't sync your on-premises Active Directory admin accounts with Microsoft Entra ID.
 
 ### Environments with multiple identity management systems
 
@@ -247,15 +246,15 @@ The following table includes useful test scenarios you can use to document your 
 | Reset user password from browser when user has not registered for password reset| User is not able to access the password reset flow |
 | User signs in when enforced to do password reset registration| Prompts the user to register security information |
 | User signs in when password reset registration is complete| Prompts the user to register security information |
-| SSPR portal is accessible when the user does not have a license| Is accessible |
+| SSPR portal is accessible when the user doesn't have a license| Is accessible |
 | Reset user password from Windows 10 Microsoft Entra joined or Microsoft Entra hybrid joined device lock screen| User can reset password |
 | SSPR registration and usage data are available to administrators in near real time| Is available via audit logs |
 
-You can also refer to [Complete out a Microsoft Entra self-service password reset pilot roll](./tutorial-enable-sspr.md). In this tutorial, you will enable a pilot roll out of SSPR in your organization and test using a non-administrator account.
+You can also refer to [Complete out a Microsoft Entra self-service password reset pilot roll](./tutorial-enable-sspr.md). In this tutorial, you enable a pilot roll out of SSPR in your organization and test using a non-administrator account.
 
 ### Plan support
 
-While SSPR does not typically create user issues, it is important to prepare support staff to deal with issues that may arise. To enable your support team's success, you can create a FAQ based on questions you receive from your users. Here are a few examples:
+While SSPR doesn't typically create user issues, it's important to prepare support staff to deal with issues that may arise. To enable your support team's success, you can create an FAQ based on questions you receive from your users. Here are a few examples:
 
 | Scenarios| Description |
 | - | - |
@@ -311,16 +310,16 @@ Microsoft Entra ID can provide additional information on your SSPR performance t
 
 ### Password management activity reports 
 
-You can use pre-built reports on Microsoft Entra admin center to measure the SSPR performance. If you're appropriately licensed, you can also create custom queries. For more information, see [Reporting options for Microsoft Entra password management](./howto-sspr-reporting.md)
+You can use pre-built reports on Microsoft Entra admin center to measure the SSPR performance. If you're appropriately licensed, you can also create custom queries. For more information, see [Reporting options for Microsoft Entra password management](./howto-sspr-reporting.md).
 
 > [!NOTE]
-> You must be a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator), and you must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
+> You must opt-in for this data to be gathered for your organization. To opt in, you must visit the Reporting tab or the audit logs on the Microsoft Entra admin center at least once. Until then, the data doesn't collect for your organization.
 
 Audit logs for registration and password reset are available for 30 days. If security auditing within your corporation requires longer retention, the logs need to be exported and consumed into a SIEM tool such as [Microsoft Sentinel](/azure/sentinel/connect-azure-active-directory), Splunk, or ArcSight.
 
 ![SSPR Reporting screenshot](./media/howto-sspr-deployment/sspr-reporting.png)
 
-### Authentication methods- Usage and Insights
+### Authentication methods - Usage and insights
 
 [Usage and insights](./howto-authentication-methods-activity.md) enable you to understand how authentication methods for features like Microsoft Entra multifactor authentication and SSPR are working in your organization. This reporting capability provides your organization with the means to understand what methods register and how to use them.
 

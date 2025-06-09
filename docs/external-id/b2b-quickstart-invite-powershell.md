@@ -4,7 +4,7 @@ description: In this quickstart, you learn how to use PowerShell to send an invi
  
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.date: 08/19/2024
 ms.topic: quickstart
 ms.service: entra-external-id

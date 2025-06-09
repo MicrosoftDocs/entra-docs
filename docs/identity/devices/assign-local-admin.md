@@ -1,17 +1,15 @@
 ---
 title: How to manage local administrators on Microsoft Entra joined devices
 description: Learn how to assign Azure roles to the local administrators group of a Windows device.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 06/27/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
-ms.reviewer:
-
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
+ms.reviewer: 
+ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
 ---
 # How to manage the local administrators group on Microsoft Entra joined devices
@@ -34,10 +32,10 @@ By adding users to the Microsoft Entra Joined Device Local Administrator role, y
 
 ## Manage administrator roles
 
-To view and update the membership of an [administrator role](~/identity/role-based-access-control/permissions-reference.md) role, see:
+To view and update the membership of an [administrator role](../role-based-access-control/permissions-reference.md) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
-- [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
+- [View all members of an administrator role in Microsoft Entra ID](../role-based-access-control/view-assignments.md)
+- [Assign a user to administrator roles in Microsoft Entra ID](../role-based-access-control/manage-roles-portal.md)
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role
 
@@ -64,8 +62,9 @@ Users aren't directly listed in the local administrator group, their permissions
 > The above actions are not applicable to users who have not signed in to the relevant device previously. In this case, the administrator privileges are applied immediately after their first sign in to the device.
 
 <a name='manage-administrator-privileges-using-azure-ad-groups-preview'></a>
+<a name='manage-administrator-privileges-using-microsoft-entra-groups-preview'></a>
 
-## Manage administrator privileges using Microsoft Entra groups (preview)
+## Manage administrator privileges using Microsoft Entra groups
 
 You can use Microsoft Entra groups to manage administrator privileges on Microsoft Entra joined devices with the [Local Users and Groups](/windows/client-management/mdm/policy-csp-localusersandgroups) mobile device management (MDM) policy. This policy allows you to assign individual users or Microsoft Entra groups to the local administrators group on a Microsoft Entra joined device, providing you with the granularity to configure distinct administrators for different groups of devices.
 
@@ -93,7 +92,7 @@ By default, Microsoft Entra ID adds the user performing the Microsoft Entra join
 
 In addition to using the Microsoft Entra join process, you can also manually elevate a regular user to become a local administrator on one specific device. This step requires you to already be a member of the local administrators group.
 
-Starting with the **Windows 10 1709** release, you can perform this task from **Settings -> Accounts -> Other users**. Select **Add a work or school user**, enter the user's user principal name (UPN) under **User account** and select *Administrator* under **Account type**
+Starting with the **Windows 10 1709** release, you can perform this task from **Settings** > **Accounts** > **Other users**. Select **Add a work or school user**, enter the user's user principal name (UPN) under **User account** and select *Administrator* under **Account type**
 
 Additionally, you can also add users using the command prompt:
 
@@ -110,4 +109,4 @@ Additionally, you can also add users using the command prompt:
 ## Next steps
 
 - To get an overview of how to manage devices, see [Managing device identities](manage-device-identities.md).
-- To learn more about device-based Conditional Access, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md).
+- To learn more about device-based Conditional Access, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md).

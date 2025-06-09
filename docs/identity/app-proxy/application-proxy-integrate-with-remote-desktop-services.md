@@ -2,13 +2,15 @@
 title: Publish Remote Desktop with Microsoft Entra application proxy
 description: Covers how to configure application proxy with Remote Desktop Services (RDS)
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Publish Remote Desktop with Microsoft Entra application proxy
@@ -30,7 +32,7 @@ In an RDS deployment, the Remote Desktop (RD) Web role and the RD Gateway role r
 - RD Gateway comes into the picture once a user launches the RDP connection. The RD Gateway handles encrypted RDP traffic coming over the internet and translates it to the on-premises server that the user is connecting to. In this scenario, the traffic the RD Gateway is receiving comes from the Microsoft Entra application proxy.
 
 >[!TIP]
->If you haven't deployed RDS before, or want more information before you begin, learn how to [seamlessly deploy RDS with Azure Resource Manager and Azure Marketplace](/windows-server/remote/remote-desktop-services/rds-in-azure).
+>For more information, see [how to seamlessly deploy RDS with Azure Resource Manager and Azure Marketplace](/windows-server/remote/remote-desktop-services/rds-in-azure).
 
 ## Requirements
 
@@ -62,7 +64,7 @@ After setting up RDS and Microsoft Entra application proxy for your environment,
    >[!Note]
    >Your users are asked to authenticate once to Microsoft Entra ID and once to RD Web, but they have single sign-on to RD Gateway.
 
-1. Browse to **Identity** > **Applications** > **App registrations**. Choose your app from the list.
+1. Browse to **Entra ID** > **App registrations**. Choose your app from the list.
 1. Under **Manage**, select **Branding**.
 1. Update the **Home page URL** field to point to your RD Web endpoint (like `https://<rdhost>.com/RDWeb`).
 
@@ -91,7 +93,7 @@ Connect to the RDS deployment as an administrator and change the RD Gateway serv
    Set-RDSessionCollectionConfiguration -CollectionName "QuickSessionCollection" -CustomRdpProperty "pre-authentication server address:s:https://remotedesktoptest-aadapdemo.msappproxy.net/`nrequire pre-authentication:i:1"
    ```
    >[!NOTE]
-   >The above command uses a backtick in "`nrequire".
+   >The command uses a backtick in \``nrequire`.
 
 9. To verify the modification of the custom RDP properties and view the RDP file contents that are downloaded from RDWeb for this collection, run the following command.
     ```

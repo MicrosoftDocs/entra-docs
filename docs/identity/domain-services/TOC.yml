@@ -93,6 +93,8 @@
       items:
         - name: Secure your managed domain
           href: secure-your-domain.md
+        - name: TLS 1.2 enforcement
+          href: reference-domain-services-tls-enforcement.md
         - name: Configure Kerberos Constrained Delegation
           href: deploy-kcd.md
         - name: Configure password and account lockout policies

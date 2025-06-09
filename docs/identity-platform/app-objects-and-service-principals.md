@@ -4,12 +4,11 @@ description: Learn about the relationship between application and service princi
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom: has-azure-ad-ps-ref
 ms.date: 10/01/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 # Customer intent: As an application developer, I want to understand the relationship between application objects and service principal objects in Microsoft Entra ID, so that I can properly register and manage my application's identity and access management functions.
 ---
 
@@ -53,7 +52,7 @@ There are three types of service principal:
 
   When an application is given permission to access resources in a tenant (upon registration or consent), a service principal object is created. When you register an application, a service principal is created automatically. You can also create service principal objects in a tenant using Azure PowerShell, Azure CLI, Microsoft Graph, and other tools.
 
-- **Managed identity** - This type of service principal is used to represent a [managed identity](~/identity/managed-identities-azure-resources/overview.md). Managed identities eliminate the need for developers to manage credentials. Managed identities provide an identity for applications to use when connecting to resources that support Microsoft Entra authentication. When a managed identity is enabled, a service principal representing that managed identity is created in your tenant. Service principals representing managed identities can be granted access and permissions, but can't be updated or modified directly.
+- **Managed identity** - This type of service principal is used to represent a [managed identity](~/identity/managed-identities-azure-resources/overview.md). Managed identities eliminate the need for developers to manage credentials. Managed identities provide an identity for applications to use when connecting to resources that support Microsoft Entra authentication. When a managed identity is enabled, a service principal representing that managed identity is created in your tenant. Service principals representing managed identities can be granted access and permissions, but can't be updated or modified directly. A service principal representing a managed identity doesn't have an associated app object (unlike the Application type above).
 
 - **Legacy** - This type of service principal represents a legacy app, which is an app created before app registrations were introduced or an app created through legacy experiences. A legacy service principal can have credentials, service principal names, reply URLs, and other properties that an authorized user can edit, but doesn't have an associated app registration. The service principal can only be used in the tenant where it was created.
 

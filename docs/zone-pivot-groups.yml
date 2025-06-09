@@ -46,6 +46,16 @@ groups:
     title: Cross-tenant synchronization
 ########### BEGIN MICROSOFT IDENTITY PLATFORM
 # Referenced by: /entra/identity-platform/*
+# Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner, kengaderdus
+## Tenant types
+- id: entra-tenants
+  title: entra-tenants
+  prompt: Choose a tenant type
+  pivots:
+  - id: workforce
+    title: Workforce
+  - id: external
+    title: External
 # Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner
 ## WEB API ##
 - id: web-api-howto-prereq
@@ -69,14 +79,7 @@ groups:
 ########### BEGIN APPLICATION MANAGEMENT
 # Owner(s):      jomondi, celested
 ## Home realm discovery ##
-- id: home-realm-discovery
-  title: hrd-policy
-  prompt: Choose an option
-  pivots:
-  - id: powershell-hrd
-    title: Azure AD PowerShell
-  - id: graph-hrd
-    title: Microsoft Graph
+
 ## template with all
 - id: enterprise-apps-all
   title: Manage Enterprise apps
@@ -84,8 +87,17 @@ groups:
   pivots:
   - id: portal
     title: Microsoft Entra admin center
-  - id: aad-powershell
-    title: Azure AD PowerShell
+  - id: entra-powershell
+    title: Microsoft Entra PowerShell
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+## template with only graph-powershell, ms-graph
+- id: enterprise-app-graph-ps-ms-graph
+  title: Manage Enterprise apps policy
+  prompt: Choose an option
+  pivots:
   - id: ms-powershell
     title: Microsoft Graph PowerShell
   - id: ms-graph
@@ -95,13 +107,13 @@ groups:
   title: Manage Enterprise apps
   prompt: Choose an option
   pivots:
-  - id: aad-powershell
-    title: Azure AD PowerShell
+  - id: entra-powershell
+    title: Microsoft Entra PowerShell
   - id: ms-powershell
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
-## Template without portal and Azure AD Graph
+## Template without portal and Azure AD PowerShell
 - id: enterprise-apps-minus-portal-aad
   title: Manage Enterprise apps
   prompt: Choose an option
@@ -121,8 +133,8 @@ groups:
     title: Azure AD PowerShell
   - id: ms-powershell
     title: Microsoft Graph PowerShell
-## template without azure AD PowerShell
-- id: enterprise-apps-minus-former-powershell
+## template without legacy PowerShell
+- id: enterprise-apps-minus-legacy-powershell
   title: Manage Enterprise apps
   prompt: Choose an option
   pivots:
@@ -138,7 +150,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: portal
-    title: Azure portal
+    title: Microsoft Entra admin center
   - id: ms-graph
     title: Microsoft Graph API
 ## Create service principal with appId
@@ -336,4 +348,18 @@ groups:
     title: Azure CLI
   - id: identity-mi-methods-sub-powershell
     title: PowerShell
-    
+# Owner: billmath
+- id: identity-governance-guest-new-project
+  title: Steps for a new external user project
+  prompt: Choose the step of your journey
+  pivots:
+  - id: identity-governance-guest-overview
+    title: Overview
+  - id: identity-governance-guest-discover
+    title: Discovery
+  - id: identity-governance-guest-secure
+    title: Security
+  - id: identity-governance-guest-onboard
+    title: Onboard
+  - id: identity-governance-guest-offboard
+    title: Offboard

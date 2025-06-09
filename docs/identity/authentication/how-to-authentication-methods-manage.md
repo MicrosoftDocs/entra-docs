@@ -1,27 +1,54 @@
 ---
 title: How to migrate to the Authentication methods policy
 description: Learn about how to centrally manage multifactor authentication and self-service password reset (SSPR) settings in the Authentication methods policy.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/24/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: jpettere
-manager: amycolannino
+manager: dougeby
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
 # How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID 
 
-You can migrate Microsoft Entra ID [legacy policy settings](concept-authentication-methods-manage.md#legacy-mfa-and-sspr-policies) that separately control multifactor authentication and self-service password reset (SSPR) to unified management with the [Authentication methods policy](./concept-authentication-methods-manage.md). 
+You can migrate Microsoft Entra ID [legacy policy settings](concept-authentication-methods-manage.md#legacy-mfa-and-sspr-policies) that separately control multifactor authentication (MFA) and self-service password reset (SSPR) to unified management with the [Authentication methods policy](./concept-authentication-methods-manage.md). 
 
-You migrate policy settings on your own schedule, and the process is fully reversible. You can continue to use tenant-wide MFA and SSPR policies while you configure authentication methods more precisely for users and groups in the Authentication methods policy. You complete the migration whenever you're ready to manage all authentication methods together in the Authentication methods policy.
+You can use the authentication methods migration guide in the Microsoft Entra admin center to automate the migration. The guide provides a wizard to help audit your current policy settings for MFA and SSPR. Then it consolidates those settings in the Authentication methods policy, where they can be managed together more easily.
+
+You can also migrate policy settings manually on your own schedule. The migration process is fully reversible. You can continue to use tenant-wide MFA and SSPR policies while you configure authentication methods more precisely for users and groups in the Authentication methods policy. 
 
 For more information about how these policies work together during migration, see [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md).
 
-## Before you begin
+## Automated migration guide
+The automated migration guide lets you migrate where you manage authentication methods in just a few clicks. It can be accessed from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Entra ID** > **Authentication methods** > **Policies**.
+
+:::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-entry-point.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard entry point."
+
+The first page of the wizard explains what it is and how it works. It also provides links to each of the legacy policies for your reference. 
+
+:::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-first-page.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard first page."
+
+
+The wizard then configures the Authentication method policy based on what your organization currently has enabled in the legacy MFA and SSPR policies. 
+If a method is enabled in either legacy policy, the recommendation is to also enable it in the Authentication method policy. 
+With that configuration, users can continue to sign in and reset their password by using the same method they used previously. 
+
+In addition, we recommend you enable the latest modern, secure methods like passkeys, Temporary Access Pass, and Microsoft Authenticator to help improve your organizations security posture. 
+To edit the recommended configuration, select the pencil icon next to each method. 
+
+:::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-second-page.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard second page."
+
+Once you're happy with the configuration, select **Migrate**, and then confirm the migration. 
+The Authentication methods policy gets updated to match the configuration specified in the wizard. 
+Authentication methods in the legacy MFA and SSPR policies become grayed out and no longer apply. 
+
+Your migration status is updated to **Migration Complete**. 
+You can change this status back to **In Progress** anytime to re-enable methods in the legacy policies if needed.
+
+## Manual migration
 
 Begin by doing an audit of your existing policy settings for each authentication method that's available for users. If you roll back during migration, you might want a record of the authentication method settings from each of these policies:
 
@@ -33,7 +60,12 @@ If you aren't using SSPR and aren't yet using the Authentication methods policy,
 
 ### Review the legacy MFA policy
 
-Start by documenting which methods are available in the legacy MFA policy. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). Go to **Identity** > **Users** > **All users** > **Per-user MFA** > **service settings** to view the settings. These settings are tenant-wide, so there's no need for user or group information. 
+Start by documenting which methods are available in the legacy MFA policy. 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Entra ID** > **Users** > **Per-user MFA** > **service settings** to view the settings. 
+
+These settings are tenant-wide, so there's no need for user or group information. 
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/legacy-mfa-policy.png" alt-text="Screenshot the shows the legacy Microsoft Entra multifactor authentication policy." lightbox="media/how-to-authentication-methods-manage/legacy-mfa-policy.png":::
 
@@ -48,11 +80,11 @@ For each method, note whether or not it's enabled for the tenant. The following 
 
 ### Review the legacy SSPR policy
 
-To get the authentication methods available in the legacy SSPR policy, go to **Identity** > **Users** > **Password reset** > **Authentication methods**. The following table lists the available methods in the legacy SSPR policy and corresponding methods in the Authentication method policy. 
+To get the authentication methods available in the legacy SSPR policy, go to **Entra ID** > **Users** > **Password reset** > **Authentication methods**. The following table lists the available methods in the legacy SSPR policy and corresponding methods in the Authentication method policy. 
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/legacy-sspr-policy.png" alt-text="Screenshot that shows the legacy Microsoft Entra SSPR policy." lightbox="media/how-to-authentication-methods-manage/legacy-sspr-policy.png":::
 
-Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. While security questions aren't yet available to manage in the Authentication methods policy, make sure you record them for later when they are. 
+Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. While security questions aren't yet available to manage in the Authentication methods policy, make sure you record them for later when they are. You can find this information by going to **Entra ID** > **Users** > **Password reset** > **Properties**.
 
 | SSPR authentication methods | Authentication method policy |
 |-----------------------------|------------------------------|
@@ -65,10 +97,10 @@ Record which users are in scope for SSPR (either all users, one specific group, 
 
 ### Authentication methods policy
 
-To check settings in the Authentication methods policy, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) and browse to **Protection** > **Authentication methods** > **Policies**. A new tenant has all methods **Off** by default, which makes migration easier because legacy policy settings don't need to be merged with existing settings. 
+To check settings in the Authentication methods policy, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) and browse to **Entra ID** > **Authentication methods** > **Policies**. A new tenant has all methods **Off** by default, which makes migration easier because legacy policy settings don't need to be merged with existing settings. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** >
+1. Browse to **Entra ID** > **Authentication methods** >
 
 :::image type="content"  source="media/concept-authentication-methods-manage/authentication-methods-policy.png" alt-text="Screenshot that shows the authentication methods." lightbox="media/concept-authentication-methods-manage/authentication-methods-policy.png":::
 
@@ -82,7 +114,7 @@ After you capture available authentication methods from the policies you're curr
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/start-mfa-migration.png" alt-text="Screenshot that shows how to start the migration process." lightbox="media/how-to-authentication-methods-manage/start-mfa-migration.png":::
 
-You'll want to set this option before you make any changes as it will apply your new policy to both sign-in and password reset scenarios.
+You set this option before you make any changes as it applies your new policy to both sign-in and password reset scenarios.
 
 :::image type="content" border="true" source="./media/Concept-authentication-methods-manage/manage-migration.png" alt-text="Screenshot of Migration in progress.":::
 
@@ -110,9 +142,9 @@ The next sections cover specific migration guidance for each method.
 
 There are two controls for **Email one-time passcode**:
 
-Targeting using include and exclude in the configuration's **Enable and target** section is used to enable email OTP for members of a tenant for use in **Password reset**.
+Under the **Enable and Target** section: Tenant members may be enabled to allow Email OTP for use in **Password Reset** with specific groups included or excluded (or enabled for all member users).
 
-There's a separate **Allow external users to use email OTP** control in the **Configure** section that controls use of email OTP for sign-in by B2B users. The authentication method can't be disabled if this control is enabled.
+Under the **Configure** section: A separate **Allow external users to use email OTP** control enables use of email OTP for **sign-in** by B2B users. The Email OTP authentication method can't be disabled if this setting is enabled.
 
 ### Microsoft Authenticator
 
@@ -123,7 +155,8 @@ If **Verification code from mobile app or hardware token** is enabled in the leg
 :::image type="content" border="true" source="./media/how-to-authentication-methods-manage/one-time-password.png" alt-text="Screenshot of Microsoft Authenticator OTP.":::
 
 > [!NOTE]
-> If users register the Microsoft Authenticator App only for OTP code using the "**I want to use a different authenticator app**" wizard, it will be needed to enable **Third-party software OATH tokens** policy.
+> If users register Microsoft Authenticator only for OTP code using the **I want to use a different authenticator app** wizard, it's needed to enable **Third-party software OATH tokens** policy.
+
 ### SMS and voice calls
 
 The legacy MFA policy has separate controls for **SMS** and **Phone calls**. But there's also a **Mobile phone** control that enables mobile phones for both SMS and voice calls. And another control for **Office phone** enables an office phone only for voice call.
@@ -131,7 +164,7 @@ The legacy MFA policy has separate controls for **SMS** and **Phone calls**. But
 The Authentication methods policy has controls for **SMS** and **Voice calls**, matching the legacy MFA policy. If your tenant is using SSPR and **Mobile phone** is enabled, you'll want to enable both **SMS** and **Voice calls** in the Authentication methods policy. If your tenant is using SSPR and **Office phone** is enabled, you'll want to enable **Voice calls** in the Authentication methods policy, and ensure that the **Office phone** option is enabled. 
 
 > [!NOTE] 
-> The **Use for sign-in** option is default enabled on **SMS** settings. This option enables SMS sign-in. If SMS sign-in is enabled for users, they will be skipped from cross-tenant synchronization. If you are using cross-tenant synchronization or don't want to enable SMS sign-in, disable SMS Sign-in for target users.
+> The **Use for sign-in** option is default enabled on **SMS** settings. This option enables SMS sign-in. If SMS sign-in is enabled for users, they're skipped from cross-tenant synchronization. If you are using cross-tenant synchronization or don't want to enable SMS sign-in, disable SMS Sign-in for target users.
 
 ### OATH tokens
 

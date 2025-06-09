@@ -1,11 +1,11 @@
 ---
 author: kengaderdus
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
 ms.date: 06/27/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 
 ### Use custom URL domain (Optional)

@@ -1,47 +1,47 @@
 ---
 title: Create a role-assignable group in Microsoft Entra ID
-description: Learn how to a role-assignable group in Microsoft Entra ID using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
+description: Learn how to a role-assignable group in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 10/12/2023
-ms.author: rolyon
+ms.date: 01/03/2025
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref
 
 
 ---
 
 # Create a role-assignable group in Microsoft Entra ID
 
-With Microsoft Entra ID P1 or P2, you can create [role-assignable groups](groups-concept.md) and assign Microsoft Entra roles to these groups. You create a new role-assignable group by setting **Microsoft Entra roles can be assigned to the group** to **Yes** or by setting the `isAssignableToRole` property set to `true`. A role-assignable group can't be a part of a [dynamic membership group](~/identity/users/groups-dynamic-membership.md) type. In Microsoft Entra, a single tenant can have a maximum of 500 role-assignable groups.
+This article describes how to create a role-assignable group using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
-This article describes how to create a role-assignable group using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
+With Microsoft Entra ID P1 or P2, you can create [role-assignable groups](groups-concept.md) and assign Microsoft Entra roles to these groups. You create a new role-assignable group by setting **Microsoft Entra roles can be assigned to the group** to **Yes** or by setting the `isAssignableToRole` property set to `true`. A role-assignable group can't be a part of a [dynamic membership group](~/identity/users/groups-dynamic-membership.md) type. In Microsoft Entra, a single tenant can have a maximum of 500 role-assignable groups.
 
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
 - [Privileged Role Administrator](./permissions-reference.md#privileged-role-administrator)
-- Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation?branch=main)
-- Azure AD PowerShell module when using [Azure AD PowerShell](/powershell/azure/active-directory/overview?branch=main)
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+## Create a role-assignable group
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+# [Admin center](#tab/admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
+
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 
 1. Select **New group**.
 
-1. On the **New Group** page, provide group type, name and description.
+1. On the **New Group** page, provide group type, name, and description.
 
 1. Set **Microsoft Entra roles can be assigned to the group** to **Yes**.
 
@@ -63,9 +63,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     The group is created with any roles you might have assigned to it.
 
-## PowerShell
-
-# [Microsoft Graph PowerShell](#tab/ms-powershell)
+# [PowerShell](#tab/ms-powershell)
 
 Use the [New-MgGroup](/powershell/module/microsoft.graph.groups/new-mggroup?branch=main) command to create a role-assignable group.
 
@@ -83,53 +81,7 @@ Connect-MgGraph -Scopes "Group.ReadWrite.All"
 $group = New-MgGroup -DisplayName "Contoso_Helpdesk_Administrators" -Description "Helpdesk Administrator role assigned to group" -MailEnabled:$true -SecurityEnabled -MailNickName "contosohelpdeskadministrators" -IsAssignableToRole:$true -GroupTypes "Unified"
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-Use the [New-AzureADMSGroup](/powershell/module/azuread/new-azureadmsgroup?branch=main) command to create a role-assignable group.
-
-```powershell
-$group = New-AzureADMSGroup -DisplayName "Contoso_Helpdesk_Administrators" -Description "Helpdesk Administrator role assigned to group" -MailEnabled $false -SecurityEnabled $true -MailNickName "contosohelpdeskadministrators" -IsAssignableToRole $true
-```
-
-For this type of group, `isPublic` will always be false and `isSecurityEnabled` will always be true.
-
-### Copy one group's users and service principals into a role-assignable group
-
-```powershell
-#Basic set up
-Install-Module -Name AzureAD
-Import-Module -Name AzureAD
-Get-Module -Name AzureAD
-
-#Connect to Azure AD. Sign in as Privileged Role Administrator. This role can create a role-assignable group.
-Connect-AzureAD
-
-#Input variabled: Existing group
-$idOfExistingGroup = "14044411-d170-4cb0-99db-263ca3740a0c"
-
-#Input variables: New role-assignable group
-$groupName = "Contoso_Bellevue_Admins"
-$groupDescription = "This group is assigned to Helpdesk Administrator built-in role in Azure AD."
-$mailNickname = "contosobellevueadmins"
-
-#Create new security group which is a role assignable group. For creating a Microsoft 365 group, set GroupTypes="Unified" and MailEnabled=$true
-$roleAssignablegroup = New-AzureADMSGroup -DisplayName $groupName -Description $groupDescription -MailEnabled $false -MailNickname $mailNickname -SecurityEnabled $true -IsAssignableToRole $true
-
-#Get details of existing group
-$existingGroup = Get-AzureADMSGroup -Id $idOfExistingGroup
-$membersOfExistingGroup = Get-AzureADGroupMember -ObjectId $existingGroup.Id
-
-#Copy users and service principals from existing group to new group
-foreach($member in $membersOfExistingGroup){
-if($member.ObjectType -eq 'User' -or $member.ObjectType -eq 'ServicePrincipal'){
-Add-AzureADGroupMember -ObjectId $roleAssignablegroup.Id -RefObjectId $member.ObjectId
-}
-}
-```
-
----
-
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Create group](/graph/api/group-post-groups?branch=main) API to create a role-assignable group.
 
@@ -145,6 +97,12 @@ POST https://graph.microsoft.com/v1.0/groups
     "mailNickname": "contosohelpdeskadministrators",
     "securityEnabled": true
 }
+```
+
+Response
+
+```http
+HTTP/1.1 201 Created
 ```
 
 This example shows how to create a Microsoft 365 role-assignable group.
@@ -165,10 +123,12 @@ POST https://graph.microsoft.com/v1.0/groups
 }
 ```
 
-For this type of group, `isPublic` will always be false and `isSecurityEnabled` will always be true.
+For this type of group, `isPublic` is always false and `isSecurityEnabled` is always true.
+
+---
 
 ## Next steps
 
-- [Assign Microsoft Entra roles to groups](groups-assign-role.md)
+- [Assign Microsoft Entra roles](manage-roles-portal.md)
 - [Use Microsoft Entra groups to manage role assignments](groups-concept.md)
 - [Troubleshoot Microsoft Entra roles assigned to groups](groups-faq-troubleshooting.yml)

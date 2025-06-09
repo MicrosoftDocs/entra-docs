@@ -1,15 +1,14 @@
 ---
 title: 'Microsoft Entra Cloud Sync accidental deletes'
 description: This topic describes how to use the accidental delete feature to prevent deletions.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Accidental delete prevention
@@ -27,7 +26,7 @@ To use this feature, you set the threshold for the number of objects that, if de
 
 For more information and an example, see the following video.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWK5mV]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=2af05990-497c-46b5-ae3e-d20c8909bbe8]
 
 
 ## Configure accidental delete prevention

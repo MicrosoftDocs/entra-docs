@@ -6,10 +6,10 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: signin_art
 ms.date: 12/15/2023
-ms.reviewer: arielgo
+ms.reviewer: 
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As a developer integrating with Microsoft Entra ID, I want to understand the branding guidelines for applications, so that I can correctly use the appropriate Microsoft logo and images in my app.
 ---
 

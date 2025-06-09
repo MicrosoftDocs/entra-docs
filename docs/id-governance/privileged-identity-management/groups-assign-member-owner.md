@@ -1,17 +1,15 @@
 ---
 title: Assign eligibility for a group in Privileged Identity Management
 description: Learn how to assign eligibility for a group in Privileged Identity Management.
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 09/12/2023
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: ilyal
-ms.custom: pim
-
+ms.custom: pim, sfi-image-nochange
 ---
 
 # Assign eligibility for a group in Privileged Identity Management
@@ -28,16 +26,15 @@ When a membership or ownership is assigned, the assignment:
 
 ## Assign an owner or member of a group
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Follow these steps to make a user eligible member or owner of a group. You'll need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to be at least a Directory Writer, Groups Administrator, or Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
+Follow these steps to make a user eligible member or owner of a group. You need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to be at least a Directory Writer, Groups Administrator, or Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable M365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
+> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**. 
 
 1. Here you can view groups that are already enabled for PIM for Groups.
 
@@ -62,10 +59,10 @@ Follow these steps to make a user eligible member or owner of a group. You'll ne
 1. Select **Next**.
 
 1. In the Assignment type list, select Eligible or Active. Privileged Identity Management provides two distinct assignment types:
-    - Eligible assignment requires member or owner to perform an activation to use the role. Activations may also require providing a multi-factor authentication (MFA), providing a business justification, or requesting approval from designated approvers.
+    - Eligible assignment requires member or owner to perform an activation to use the role. Activations may also require providing a multifactor authentication (MFA), providing a business justification, or requesting approval from designated approvers.
     > [!IMPORTANT]
     > For groups used for elevating into Microsoft Entra roles, Microsoft recommends that you require an approval process for eligible member assignments. Assignments that can be activated without approval can leave you vulnerable to a security risk from another administrator with permission to reset an eligible user's passwords.
-    - Active assignments don't require the member to perform any activations to use the role. Members or owners assigned as active have the privileges assigned to the role at all times.
+    - Active assignments don't require the member to perform any activations to use the role. Members or owners assigned as active have the privileges assigned to the role always.
 
 1. If the assignment should be permanent (permanently eligible or permanently assigned), select the **Permanently** checkbox. Depending on the group's settings, the check box might not appear or might not be editable. For more information, check out the [Configure PIM for Groups settings in Privileged Identity Management](groups-role-settings.md#assignment-duration) article.
 
@@ -75,16 +72,15 @@ Follow these steps to make a user eligible member or owner of a group. You'll ne
 
 ## Update or remove an existing role assignment
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Follow these steps to update or remove an existing role assignment. You'll need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
+Follow these steps to update or remove an existing role assignment. You need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
 
 > [!NOTE]
-> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable M365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
+> Other roles with permissions to manage groups (such as Exchange Administrators for non-role-assignable Microsoft 365 groups) and administrators with assignments scoped at administrative unit level can manage groups through Groups API/UX and override changes made in Microsoft Entra PIM.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**. 
 
 1. Here you can view groups that are already enabled for PIM for Groups.
 

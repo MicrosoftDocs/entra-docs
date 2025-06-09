@@ -1,20 +1,20 @@
 ---
 title: Microsoft Entra provisioning to applications via PowerShell
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer Windows PowerShell based APIs.
-
-author: billmath
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/13/2024
-ms.author: billmath
+ms.date: 04/09/2025
+ms.author: kenwith
 ms.reviewer: arvinh
+ms.custom: sfi-image-nochange
 ---
 # Provisioning users into applications using PowerShell
-The following documentation provides configuration and tutorial information demonstrating how the generic PowerShell connector and the Extensible Connectivity(ECMA) Connector host can be used to integrate Microsoft Entra ID with external systems that offer Windows PowerShell based APIs.
+The following documentation provides configuration and tutorial information. It demonstrates how the generic PowerShell connector and the Extensible Connectivity (ECMA) Connector host are used to integrate Microsoft Entra ID with external systems that offer Windows PowerShell-based APIs.
 
-For additional information see [Windows PowerShell Connector technical reference](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-powershell)
+For additional information, see [Windows PowerShell Connector technical reference](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-powershell)
 
 ## Prerequisites for provisioning via PowerShell
 
@@ -35,7 +35,7 @@ The connector provides a bridge between the capabilities of the ECMA Connector H
 - Connectivity between hosting server, the connector, and the target system that the PowerShell scripts interact with.
 - The execution policy on the server must be configured to allow the connector to run Windows PowerShell scripts. Unless the scripts the connector runs are digitally signed, configure the execution policy by running this command:  
 `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`
-- Deploying this connector requires one or more PowerShell scripts.  Some Microsoft products may provide scripts for use with this connector, and the support statement for those scripts would be provided by that product.  If you are developing your own scripts for use with this connector, you'll need to have familiarity with the [Extensible Connectivity Management Agent API](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)?redirectedfrom=MSDN) to develop and maintain those scripts.  If you are integrating with third party systems using your own scripts in a production environment, we recommend you work with the third party vendor or a deployment partner for help, guidance and support for this integration.
+- Deploying this connector requires one or more PowerShell scripts.  Some Microsoft products may provide scripts for use with this connector, and the support statement for those scripts would be provided by that product.  If you're developing your own scripts for use with this connector, you need to have familiarity with the [Extensible Connectivity Management Agent API](/previous-versions/windows/desktop/forefront-2010/hh859557(v=vs.100)?redirectedfrom=MSDN) to develop and maintain those scripts.  If you're integrating with third party systems using your own scripts in a production environment, we recommend you work with the third party vendor or a deployment partner for help, guidance and support for this integration.
 
 ### Cloud requirements
 
@@ -48,10 +48,10 @@ The connector provides a bridge between the capabilities of the ECMA Connector H
 
 ## Download, install, and configure the Microsoft Entra Connect Provisioning Agent Package
 
-If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
+If you've downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync** > **Agents**.
+1. Browse to **Entra ID** > **Entra Connect** > **Cloud sync** > **Agents**.
  
  :::image type="content" source="~/includes/media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="~/includes/media/entra-cloud-sync-how-to-install/new-ux-1.png":::
 
@@ -62,16 +62,15 @@ If you have already downloaded the provisioning agent and configured it for anot
 
 1. Open the provisioning agent installer, agree to the terms of service, and select **Install**.
 1. When the Microsoft Entra provisioning agent configuration wizard opens, continue to the **Select Extension** tab and select **On-premises application provisioning** when prompted for the extension you want to enable.
-1. The provisioning agent uses the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
+1. The provisioning agent uses the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider. If you're using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
 1. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role.
 1. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
 
 ## Configure the On-premises ECMA app
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**. 
+1. Browse to **Entra ID** > **Enterprise apps**. 
 1. Select **New application**.
 1. Search for the **On-premises ECMA app** application, give the app a name, and select **Create** to add it to your tenant.
 1. Navigate to the **Provisioning** page of your application.
@@ -93,8 +92,8 @@ Before you can create the PowerShell connector for this tutorial, you need to co
 
 ## Configure the Microsoft Entra ECMA Connector Host certificate
 
-1. On the Windows Server where the provisioning agent is installed, right click the **Microsoft ECMA2Host Configuration Wizard** from the start menu, and run as administrator.  Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
-2.  After the ECMA Connector Host Configuration starts, if it's the first time you have run the wizard, it will ask you to create a certificate. Leave the default port **8585** and select **Generate certificate** to generate a certificate. The autogenerated certificate will be self-signed as part of the trusted root. The certificate SAN matches the host name.
+1. On the Windows Server where the provisioning agent is installed, right select the **Microsoft ECMA2Host Configuration Wizard** from the start menu, and run as administrator.  Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
+2. After the ECMA Connector Host Configuration starts, if it's the first time you have run the wizard, it will ask you to create a certificate. Leave the default port **8585** and select **Generate certificate** to generate a certificate. The autogenerated certificate self-signs as part of the trusted root. The certificate SAN matches the host name.
 3. Select **Save**.
 
 ## Create the PowerShell Connector
@@ -102,12 +101,12 @@ Before you can create the PowerShell connector for this tutorial, you need to co
 ### General Screen
 1. Launch the Microsoft ECMA2Host Configuration Wizard from the start menu. 
 2. At the top, select **Import** and select the configuration.xml file from step 1.
-3. The new connector should be created and appear in red.  Click **Edit**.
-4. Generate a secret token used for authenticating Microsoft Entra ID to the connector.  It should be 12 characters minimum and unique for each application.  If you do not already have a secret generator, you can use a PowerShell command such as the following to generate an example random string.
+3. The new connector should be created and appear in red.  Select **Edit**.
+4. Generate a secret token used for authenticating Microsoft Entra ID to the connector. It should be 12 characters minimum and unique for each application. If you don't already have a secret generator, you can use a PowerShell command such as the following to generate an example random string.
     ```powershell
     -join (((48..90) + (96..122)) * 16 | Get-Random -Count 16 | % {[char]$_})
     ```
-5. On the **Properties** page, all of the information should be populated.  The table is provided as reference.  Click **Next**.
+5. On the **Properties** page, all of the information should be populated. The table is provided as reference.  Select **Next**.
      
    |Property|Value|
    |-----|-----|
@@ -122,7 +121,7 @@ Before you can create the PowerShell connector for this tutorial, you need to co
 
 The connectivity tab allows you to supply configuration parameters for connecting to a remote system. Configure the connectivity tab with the information provided in the table.
 
-- On the **Connectivity** page, all of the information should be populated.  The table is provided as reference.  Click **Next**.
+- On the **Connectivity** page, all of the information should be populated.  The table is provided as reference.  Select **Next**.
 
 :::image type="content" source="media/on-premises-powershell-connector/powershell-2.png" alt-text="Screenshot of the connectivity screen." lightbox="media/on-premises-powershell-connector/powershell-2.png":::
 
@@ -132,11 +131,11 @@ The connectivity tab allows you to supply configuration parameters for connectin
 |  Domain  | \<Blank\> |Domain of the credential to store for use when the connector is run.|
 |User| \<Blank\> |  Username of the credential to store for use when the connector is run.  |
 | Password | \<Blank\> |  Password of the credential to store for use when the connector is run.  |
-| Impersonate Connector Account  |Unchecked| When true, the synchronization service runs the Windows PowerShell scripts in the context of the credentials supplied. When possible, it is recommended that the **$Credentials** parameter is passed to each script is used instead of impersonation.|
-| Load User Profile When Impersonating |Unchecked|Instructs Windows to load the user profile of the connector’s credentials during impersonation. If the impersonated user has a roaming profile, the connector does not load the roaming profile.|
+| Impersonate Connector Account  |Unchecked| When true, the synchronization service runs the Windows PowerShell scripts in the context of the credentials supplied. When possible, it's recommended that the **$Credentials** parameter is passed to each script is used instead of impersonation.|
+| Load User Profile When Impersonating |Unchecked|Instructs Windows to load the user profile of the connector’s credentials during impersonation. If the impersonated user has a roaming profile, the connector doesn't load the roaming profile.|
 | Logon Type When Impersonating  |None|Logon type during impersonation. For more information, see the [dwLogonType](/windows/win32/api/winbase/nf-winbase-logonusera#parameters) documentation. |
 |Signed Scripts Only |Unchecked|  If true, the Windows PowerShell connector validates that each script has a valid digital signature. If false, ensure that the Synchronization Service server’s Windows PowerShell execution policy is RemoteSigned or Unrestricted.| 
-|Common Module Script Name (with extension)|xADSyncPSConnectorModule.psm1|The connector allows you to store a shared Windows PowerShell module in the configuration. When the connector runs a script, the Windows PowerShell module is extracted to the file system so that it can be imported by each script.|
+|Common Module Script Name (with extension)|xADSyncPSConnectorModule.psm1|The connector allows you to store a shared Windows PowerShell module in the configuration. When the connector runs a script, it extracts the Windows PowerShell module to the file system so that each script can import it.|
 |Common Module Script|[AD Sync PowerShell Connector Module code](https://github.com/microsoft/MIMPowerShellConnectors/blob/master/src/ECMA2HostCSV/Scripts/CommonModule.psm1) as value.  This module will be automatically created by the ECMA2Host when the connector is running.||
 |Validation Script|\<Blank\>|The Validation Script is an optional Windows PowerShell script that can be used to ensure that connector configuration parameters supplied by the administrator are valid.|
 |Schema Script|[GetSchema code](https://github.com/microsoft/MIMPowerShellConnectors/blob/master/src/ECMA2HostCSV/Scripts/Schema%20Script.ps1) as value.||
@@ -147,9 +146,9 @@ The connectivity tab allows you to supply configuration parameters for connectin
 
 ### Capabilities
 
-The capabilities tab defines the behavior and functionality of the connector. The selections made on this tab cannot be modified when the connector has been created. Configure the capabilities tab with the information provided in the table.
+The capabilities tab defines the behavior and functionality of the connector. The selections made on this tab can't be modified when the connector is created. Configure the capabilities tab with the information provided in the table.
 
-- On the **Capabilities** page, all of the information should be populated.  The table is provided as reference.  Click **Next**. 
+- On the **Capabilities** page, all of the information should be populated. The table is provided as reference.  Select **Next**. 
 
 :::image type="content" source="media/on-premises-powershell-connector/powershell-4.png" alt-text="Screenshot of the capabilities screen." lightbox="media/on-premises-powershell-connector/powershell-4.png":::
 
@@ -174,9 +173,9 @@ The capabilities tab defines the behavior and functionality of the connector. Th
 
 ### Global Parameters
 
-The Global Parameters tab enables you to configure the Windows PowerShell scripts that are run by the connector. You can also configure global values for custom configuration settings defined on the Connectivity tab.  Configure the global parameters tab with the information provided in the table.
+The Global Parameters tab enables you to configure the Windows PowerShell scripts the connector runs. You can also configure global values for custom configuration settings defined on the Connectivity tab. Configure the global parameters tab with the information provided in the table.
 
-- On the **Global Parameters** page, all of the information should be populated.  The table is provided as reference.  Click **Next**.
+- On the **Global Parameters** page, all of the information should be populated. The table is provided as reference.  Select **Next**.
 
 :::image type="content" source="media/on-premises-powershell-connector/powershell-5.png" alt-text="Screenshot of the global screen." lightbox="media/on-premises-powershell-connector/powershell-5.png":::
 
@@ -199,13 +198,13 @@ The Global Parameters tab enables you to configure the Windows PowerShell script
 
 ### Partitions, Run Profiles, Export, FullImport
 
-Keep the defaults and click **next**.
+Keep the defaults and select **next**.
 
 ### Object types
 
 Configure the object types tab with the information provided in the table.
 
-- On the **Object types** page, all of the information should be populated.  The table is provided as reference.  Click **Next**.
+- On the **Object types** page, all of the information should be populated. The table is provided as reference.  Select **Next**.
 
 :::image type="content" source="media/on-premises-powershell-connector/powershell-13.png" alt-text="Screenshot of the object types screen." lightbox="media/on-premises-powershell-connector/powershell-13.png":::
 
@@ -220,7 +219,7 @@ Configure the object types tab with the information provided in the table.
 
 Ensure that the following attributes are selected:
 
-- On the **Select Attributes** page, all of the information should be populated.  The table is provided as reference.  Click **Next**.
+- On the **Select Attributes** page, all of the information should be populated. The table is provided as reference.  Select **Next**.
 
 - AzureObjectID
 - IsActive
@@ -236,17 +235,17 @@ Ensure that the following attributes are selected:
 
 On the Deprovisioning page, you can specify if you wish to have Microsoft Entra ID remove users from the directory when they go out of scope of the application. If so, under Disable flow, select Delete, and under Delete flow, select Delete. If Set attribute value is chosen, the attributes selected on the previous page won't be available to select on the Deprovisioning page.
 
-- On the **Deprovisioning** page, all of the information should be populated.  The table is provided as reference.  Click **Next**.
+- On the **Deprovisioning** page, all of the information should be populated. The table is provided as reference. Select **Next**.
 
 :::image type="content" source="media/on-premises-powershell-connector/powershell-16.png" alt-text="Screenshot of the deprovisioning screen." lightbox="media/on-premises-powershell-connector/powershell-16.png":::
 
 ## Ensure ECMA2Host service is running and can read from file via PowerShell
 
-Follow these steps to confirm that the connector host has started and has identified any existing users from the target system.
+Follow these steps to confirm the connector host is started and has identified any existing users from the target system.
 
 1. On the server running the Microsoft Entra ECMA Connector Host, select **Start**.
 2. Select **run** if needed, then enter **services.msc** in the box.
-3. In the **Services** list, ensure that **Microsoft ECMA2Host** is present and running. If it is not running, select **Start**.
+3. In the **Services** list, ensure that **Microsoft ECMA2Host** is present and running. If it's not running, select **Start**.
 4. On the server running the Microsoft Entra ECMA Connector Host, launch PowerShell.
 5. Change to the folder where the ECMA host was installed, such as `C:\Program Files\Microsoft ECMA2Host`.
 6. Change to the subdirectory `Troubleshooting`.
@@ -257,8 +256,8 @@ Follow these steps to confirm that the connector host has started and has identi
     SecretToken: ************
     ```
 8. If the script displays an error or warning message, then check that the service is running, and the connector name and secret token match those values you configured in the configuration wizard.
-9. If the script displays the output `False`, then the connector has not seen any entries in the source target system for existing users.  If this is a new target system installation, then this behavior is to be expected, and you can continue at the next section.
-10. However, if the target system already contains one or more users but the script displayed `False`, then this status indicates the connector could not read from the target system.  If you attempt to provision, then Microsoft Entra ID may not correctly match users in that source directory with users in Microsoft Entra ID.  Wait several minutes for the connector host to finish reading objects from the existing target system, and then rerun the script. If the output continues to be `False`, then check the configuration of your connector and the permissions in the target system are allowing the connector to read existing users.
+9. If the script displays the output `False`, then the connector hasn't seen any entries in the source target system for existing users. If this is a new target system installation, then this behavior is to be expected, and you can continue at the next section.
+10. However, if the target system already contains one or more users but the script displayed `False`, then this status indicates the connector couldn't read from the target system. If you attempt to provision, then Microsoft Entra ID may not correctly match users in that source directory with users in Microsoft Entra ID.  Wait several minutes for the connector host to finish reading objects from the existing target system, and then rerun the script. If the output continues to be `False`, then check the configuration of your connector and the permissions in the target system are allowing the connector to read existing users.
 
 
 <a name='test-the-connection-from-azure-ad-to-the-connector-host'></a>
@@ -271,7 +270,7 @@ Follow these steps to confirm that the connector host has started and has identi
    > If the window had timed out, then you need to re-select the agent.
    
    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-   1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+   1. Browse to **Entra ID** > **Enterprise apps**.
    1. Select the **On-premises ECMA app** application.
    1. Select **Provisioning**.
    1. If **Get started** appears, then change the mode to **Automatic**,  on the **On-Premises Connectivity** section, select the agent that you just deployed and select **Assign Agent(s)**, and wait 10 minutes. Otherwise go to **Edit Provisioning**.
@@ -285,7 +284,7 @@ Follow these steps to confirm that the connector host has started and has identi
 1. Enter the **Secret Token** value that you defined when you created the connector.
 
    > [!NOTE]
-   > If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent** service, right-click the service, and restart.
+   > If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent** service, right-select the service, and restart.
 
 1. Select **Test Connection**, and wait one minute.
 1. After the connection test is successful and indicates that the supplied credentials are authorized to enable provisioning, select **Save**.
@@ -298,7 +297,7 @@ Return to the web browser window where you were configuring the application prov
 > If the window had timed out, then you need to re-select the agent.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
 1. If **Get started** appears, then change the mode to **Automatic**,  on the **On-Premises Connectivity** section, select the agent that you deployed and select **Assign Agent(s)**. Otherwise go to **Edit Provisioning**.
@@ -311,7 +310,7 @@ Return to the web browser window where you were configuring the application prov
 1. Enter the **Secret Token** value that you defined when you created the connector.
 
    > [!NOTE]
-   > If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent Service**, right-click the service, and restart.
+   > If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent Service**, right-select the service, and restart.
 
 1. Select **Test Connection**, and wait one minute.
 1. After the connection test is successful and indicates that the supplied credentials are authorized to enable provisioning, select **Save**.
@@ -324,13 +323,13 @@ Now you need to map attributes between the representation of the user in Microso
 You'll use the Azure portal to configure the mapping between the Microsoft Entra user's attributes and the attributes that you previously selected in the ECMA Host configuration wizard.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
 1. Select **Edit provisioning**, and wait 10 seconds.
 1. Expand **Mappings** and select **Provision Microsoft Entra users**. If this is the first time you've configured the attribute mappings for this application, there will be only one mapping present, for a placeholder.
 1. To confirm that the schema is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed.  If not, then wait several minutes for the schema to refresh, and then reload the page.  Once you see the attributes listed, then cancel from this page to return to the mappings list.
-1. Now, on the click on the **userPrincipalName** PLACEHOLDER mapping.  This mapping is added by default when you first configure on-premises provisioning. Change the value to match the following:
+1. Now, on the select on the **userPrincipalName** PLACEHOLDER mapping.  This mapping is added by default when you first configure on-premises provisioning. Change the value to match the following:
  
    |Mapping type|Source attribute|Target attribute|
    |-----|-----|-----|
@@ -358,7 +357,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that's at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
 
 If there are existing users in the InputFile.txt, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 
@@ -366,7 +365,7 @@ Otherwise, if there are no current users of the application, then select a test 
 
 1. Ensure that the user selected has all the properties, mapped to the required attributes of the schema.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. On the left, under **Manage**, select **Users and groups**.
 1. Select **Add user/group**.
@@ -379,7 +378,7 @@ Otherwise, if there are no current users of the application, then select a test 
 Now that your attributes are mapped and users are assigned, you can test on-demand provisioning with one of your users.
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
 1. Select **Provision on demand**.
@@ -389,7 +388,7 @@ Now that your attributes are mapped and users are assigned, you can test on-dema
 ## Start provisioning users
 
 1. After on-demand provisioning is successful, change back to the provisioning configuration page. Ensure that the scope is set to only assigned users and groups, turn provisioning **On**, and select **Save**.
-2. Wait several minutes for provisioning to start. It might take up to 40 minutes. After the provisioning job has been completed, as described in the next section, if you're done testing, you can change the provisioning status to **Off**, and select **Save**. This action stops the provisioning service from running in the future.
+2. Wait several minutes for provisioning to start. It might take up to 40 minutes. After the provisioning job is completed, as described in the next section, if you're done testing, you can change the provisioning status to **Off**, and select **Save**. This action stops the provisioning service from running in the future.
 
 ## Next steps
 

@@ -2,13 +2,12 @@
 title: B2B collaboration for hybrid organizations
 description: Give partners access to both on-premises and cloud resources with Microsoft Entra B2B collaboration.
 
- 
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 12/18/2023
+ms.date: 10/21/2024
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 
 # Customer intent: As an IT admin managing a hybrid organization, I want to grant external partners access to on-premises and cloud-based resources using Microsoft Entra B2B collaboration, so that I can easily manage their access and ensure they can use the same credentials for both environments.
@@ -45,7 +44,7 @@ To help protect your company data, you can control access to just the right reso
 
 For implementation details, see [Grant locally managed partner accounts access to cloud resources using Microsoft Entra B2B collaboration](hybrid-on-premises-to-cloud.md).
  
-## Next steps
+## Related content
 
 - [Grant Microsoft Entra B2B users access to your on-premises applications](hybrid-cloud-to-on-premises.md)
 - [Grant locally managed partner accounts access to cloud resources using Microsoft Entra B2B collaboration](hybrid-on-premises-to-cloud.md)

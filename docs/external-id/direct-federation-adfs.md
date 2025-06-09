@@ -1,21 +1,19 @@
 ---
-title: Set up SAML/WS-Fed IdP federation with an AD FS for B2B
-description: Learn how to set up AD FS as an identity provider (IdP) for SAML/WS-Fed IdP federation so guests can sign in to your Microsoft Entra apps
+title: Set up AD FS federation
+description: Learn how to set up SAML/WS-Fed IdP federation with AD FS for B2B collaboration in Microsoft Entra External ID. Configure AD FS as a SAML 2.0 or WS-Fed IdP and manage attributes and claims.
 
- 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.date: 04/09/2025
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin, I want to configure SAML/WS-Fed based identity provider federation with AD FS, so that I can enable federation between Microsoft Entra B2B and IdPs that use the SAML or WS-Fed protocol.
 ---
 
-# Example: Configure SAML/WS-Fed based identity provider federation with AD FS
+# Example: Set up SAML/WS-Fed IdP federation with AD FS for B2B collaboration
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -41,11 +39,10 @@ To set up federation, the following attributes must be received in the SAML 2.0 
 
 The following claims need to be configured in the SAML 2.0 token issued by the IdP:
 
-
-|Attribute  |Value  |
-|---------|---------|
-|NameID Format     |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`         |
-|emailaddress     |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`         |
+|Attribute                                                            |Value                                                 |
+|---------------------------------------------------------------------|------------------------------------------------------|
+|NameID Format                                                        |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`|
+|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | The user's email address                             |
 
 
 The next section illustrates how to configure the required attributes and claims using AD FS as an example of a SAML 2.0 IdP.

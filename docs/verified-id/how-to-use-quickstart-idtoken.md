@@ -3,19 +3,16 @@ title: Create verifiable credentials for ID tokens
 description: Learn how to use a quickstart to create custom credentials for ID tokens
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 07/06/2022
+ms.date: 01/17/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am looking for information to help me create verifiable credentials for ID tokens. 
 ---
 
 # Create verifiable credentials for ID tokens
-
-  
 
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokens attestation](rules-and-display-definitions-model.md#idtokenattestation-type) produces an issuance flow where you're required to do an interactive sign-in to an OpenID Connect (OIDC) identity provider in Microsoft Authenticator. Claims in the ID token that the identity provider returns can be used to populate the issued verifiable credential. The claims mapping section in the rules definition specifies which claims are used. 
 
@@ -42,7 +39,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
       "backgroundColor": "#000000",
       "textColor": "#ffffff",
       "logo": {
-        "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png",
+        "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png",
         "description": "Verified Credential Expert Logo"
       },
       "description": "Use your verified credential to prove to anyone that you know all about verifiable credentials."
@@ -78,7 +75,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
 
 ## Sample JSON rules definitions
 
-The JSON attestation definition should contain the **idTokens** name, the [OIDC configuration details](rules-and-display-definitions-model.md#idtokenattestation-type) (clientId, configuration, redirectUri and scope) and the claims mapping section. The expected JSON for the rules definitions is the inner content of the rules attribute, which starts with the attestation attribute. 
+The JSON attestation definition should contain the **idTokens** name, the [OIDC configuration details](rules-and-display-definitions-model.md#idtokenattestation-type) (clientId, configuration, redirectUri, and scope) and the claims mapping section. The expected JSON for the rules definitions is the inner content of the rules attribute, which starts with the attestation attribute. 
 
 The claims mapping in the following example requires that you configure the token as explained in the [Claims in the ID token from the identity provider](#claims-in-the-id-token-from-the-identity-provider) section.
 
@@ -134,7 +131,8 @@ The claims mapping in the following example requires that you configure the toke
 
 ## Application registration
 
-The clientId attribute is the application ID of a registered application in the OIDC identity provider. For Microsoft Entra ID, you create the application by doing the following:
+The clientId attribute is the application ID of a registered application in the OIDC identity provider. For Microsoft Entra ID, you create the application by following these steps:
+
 
 1. In the Azure portal, go to [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps).
 
@@ -144,7 +142,7 @@ The clientId attribute is the application ID of a registered application in the 
 
 1. In **Redirect URI (optional)**, select **Public client/native (mobile & desktop)**, and then enter **vcclient://openid/**.
  
-If you want to be able to test what claims are in the Microsoft Entra token, do the following:
+If you want to check the claims included in the Microsoft Entra ID token, take the following steps:
 
 1. On the left pane, select **Authentication**> **Add platform** > **Web**.
 
@@ -152,9 +150,9 @@ If you want to be able to test what claims are in the Microsoft Entra token, do 
 
 1. Select **Configure**.
 
-After you've finished testing your ID token, consider removing **https://jwt.ms** and the support for **implicit and hybrid flows**.
+After you finish testing your ID token, consider removing **https://jwt.ms** and the support for **implicit and hybrid flows**.
 
-**For Microsoft Entra ID**: You can test your app registration and, if you've enabled support for redirecting to **https://jwt.ms**, you can get an ID token by running the following in your browser: 
+**For Microsoft Entra ID**: You can test your app registration and, if you enable support for redirecting to **https://jwt.ms**, you can get an ID token by running the following in your browser: 
 
 ```http
 https://login.microsoftonline.com/<your-tenantId>/oauth2/v2.0/authorize?client_id=<your-appId>&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid%20profile&response_type=id_token&prompt=login
@@ -164,15 +162,17 @@ In the code, replace \<your-tenantId> with your tenant ID. To get the extra clai
 
 **For Azure Active Directory B2C**: The app registration process is the same, but B2C has built-in support in the Azure portal for testing your B2C policies via the **Run user flow** functionality.
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 ## Claims in the ID token from the identity provider
 
 Claims must exist in the returned identity provider so that they can successfully populate your verifiable credential.
 
-If the claims don't exist, there's no value in the issued verifiable credential. Most OIDC identity providers don't issue a claim in an ID token if the claim has a null value in your profile. Be sure to include the claim in the ID token definition, and ensure that you've entered a value for the claim in your user profile.
+If the claims don't exist, there's no value in the issued verifiable credential. Most OIDC identity providers don't issue a claim in an ID token if the claim has a null value in your profile. Be sure to include the claim in the ID token definition, and ensure that you enter a value for the claim in your user profile.
 
 **For Microsoft Entra ID**: To configure the claims to include in your token, see [Provide optional claims to your app](~/identity-platform/optional-claims.md). The configuration is per application, so this configuration should be for the app that has the application ID specified in the client ID in the rules definition.
 
-To match the display and rules definitions, you should make your application's optionalClaims JSON look like the following:
+To match the display and rules definitions, you should make your application's optionalClaims JSON look like the following example:
 
 ```json
 "optionalClaims": {

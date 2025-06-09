@@ -2,11 +2,10 @@
 author: barclayn
 ms.service: entra-id
 ms.topic: include
-ms.date: 05/13/2024
+ms.date: 01/24/2025
 ms.author: barclayn
-ms.custom: Identity-Managed-Definition
+ms.custom: Identity-Managed-Definition, sfi-ga-nochange
+#Inline of fundamentals/add-custom-domain.yml, fundamentals/faq.yml, fundamentals/how-subscriptions-associated-directory.yml, fundamentals/users-default-permissions.md, fundamentals/whatis.md
 ---
 
-
-
-When you create a new Microsoft Entra tenant, you become the first user of that tenant. As the first user, you're automatically assigned the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role. Review your user account by navigating to the [**Users**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers) page.
+By default, the user who creates a Microsoft Entra tenant is automatically assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role.

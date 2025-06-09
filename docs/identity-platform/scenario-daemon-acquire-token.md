@@ -2,17 +2,19 @@
 title: Acquire tokens to call a web API using a daemon application
 description: Learn how to build a daemon app that calls web APIs (acquiring tokens)
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.date: 04/09/2024
+ms.date: 03/25/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
 # Acquire tokens to call a web API using a daemon application
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 After you've constructed a confidential client application, you can acquire a token for the app by calling `AcquireTokenForClient`, passing the scope, and optionally forcing a refresh of the token.
 
@@ -80,7 +82,7 @@ The scope used for client credentials should always be the resource ID followed 
 
 > [!IMPORTANT]
 > When MSAL requests an access token for a resource that accepts a version 1.0 access token, Microsoft Entra ID parses the desired audience from the requested scope by taking everything before the last slash and using it as the resource identifier.
-> So if, like Azure SQL Database (`https://database.windows.net`), the resource expects an audience that ends with a slash (for Azure SQL Database, `https://database.windows.net/`), you'll need to request a scope of `https://database.windows.net//.default`. (Note the double slash.) See also MSAL.NET issue [#747: `Resource url's trailing slash is omitted, which caused sql auth failure`](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
+> So if, like Azure SQL Database (`https://database.windows.net`), the resource expects an audience that ends with a slash (for Azure SQL Database, `https://database.windows.net/`), you need to request a scope of `https://database.windows.net//.default`. (Note the double slash.) See also MSAL.NET issue [#747: `Resource url's trailing slash is omitted, which caused sql auth failure`](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## AcquireTokenForClient API
 
@@ -267,7 +269,7 @@ If you get an error message telling you that you used an invalid scope, you prob
 
 If you get an **Insufficient privileges to complete the operation** error when you call the API, the tenant administrator needs to grant permissions to the application.
 
-If you don't grant admin consent to your application, you'll run into the following error:
+If you don't grant admin consent to your application, you run into the following error:
 
 ```json
 Failed to call the web API: Forbidden

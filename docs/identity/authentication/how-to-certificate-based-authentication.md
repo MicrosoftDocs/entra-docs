@@ -1,23 +1,21 @@
 ---
 title: How to configure Microsoft Entra certificate-based authentication
-description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID
-
+description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/17/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
 # How to configure Microsoft Entra certificate-based authentication
 
 Microsoft Entra certificate-based authentication (CBA) enables organizations to configure their Microsoft Entra tenants to allow or require users to authenticate with X.509 certificates created by their Enterprise Public Key Infrastructure (PKI) for app and browser sign-in. This feature enables organizations to adopt phishing-resistant modern passwordless authentication by using an x.509 certificate.
  
-During sign-in, users will see also an option to authenticate with a certificate instead of entering a password. 
+During sign-in, users also see an option to authenticate with a certificate instead of entering a password. 
 If multiple matching certificates are present on the device, the user can pick which one to use. The certificate is validated against the user account and if successful, they sign in.
 
 <!---Clarify plans that are covered --->
@@ -27,9 +25,9 @@ Follow these instructions to configure and use Microsoft Entra CBA for tenants i
 
 Make sure that the following prerequisites are in place:
 
-- Configure at least one certification authority (CA) and any intermediate CAs in Microsoft Entra ID.
+- Configure at least one certificate authority (CA) and any intermediate CAs in Microsoft Entra ID.
 - The user must have access to a user certificate (issued from a trusted Public Key Infrastructure configured on the tenant) intended for client authentication to authenticate against Microsoft Entra ID. 
-- Each CA should have a certificate revocation list (CRL) that can be referenced from internet-facing URLs. If the trusted CA doesn't have a CRL configured, Microsoft Entra ID won't perform any CRL checking, revocation of user certificates won't work, and authentication won't be blocked.
+- Each CA should have a certificate revocation list (CRL) that can be referenced from internet-facing URLs. If the trusted CA doesn't have a CRL configured, Microsoft Entra ID doesn't perform any CRL checking, revocation of user certificates doesn't work, and authentication isn't blocked.
 
 >[!IMPORTANT]
 >Make sure the PKI is secure and can't be easily compromised. In the event of a compromise, the attacker can create and sign client certificates and compromise any user in the tenant, both users whom are synchronized from on-premises and cloud-only users. However, a strong key protection strategy, along with other physical and logical controls, such as HSM activation cards or tokens for the secure storage of artifacts, can provide defense-in-depth to prevent external attackers or insider threats from compromising the integrity of the PKI. For more information, see [Securing PKI](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn786443(v=ws.11)).
@@ -47,110 +45,238 @@ Make sure that the following prerequisites are in place:
 
 ## Steps to configure and test Microsoft Entra CBA
 
-Some configuration steps to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. Only the [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role can configure the CA.
+Some configuration steps need to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. 
+
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 Optionally, you can also configure authentication bindings to map certificates to single-factor or multifactor authentication, and configure username bindings to map the certificate field to an attribute of the user object. [Authentication Policy Administrators](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) can configure user-related settings. Once all the configurations are complete, enable Microsoft Entra CBA on the tenant. 
 
 :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/steps.png" alt-text="Diagram of the steps required to enable Microsoft Entra certificate-based authentication.":::
 
-## Step 1: Configure the certification authorities
+## Step 1: Configure the certificate authorities with PKI-based trust store (Preview)
 
-You can configure certificate authorities(CAs) by using the Microsoft Entra admin center or Microsoft Graph REST APIs and the supported SDKs, such as Microsoft Graph PowerShell. The PKI infrastructure or PKI admin should be able to provide the list of issuing CAs. To make sure you have configured all the CAs, open the user certificate and click on 'certification path' tab and make sure every CA until the root is uploaded to the Microsoft Entra ID trust store. CBA authentication will fail if there are missing CAs.
+Entra has a new public key infrastructure (PKI) based certificate authorities (CA) trust store. The PKI-based CA trust store keeps CAs within a container object for each different PKI. Admins can manage CAs in a container based on PKI easier than one flat list of CAs.
 
-### Configure certification authorities using the Microsoft Entra admin center
+The PKI-based trust store has higher limits for the number of CAs and the size of each CA file. A PKI-based trust store supports up to 250 CAs and 8-KB size for each CA object. We highly recommended you use the new PKI-based trust store for storing CAs, which is scalable and supports new functionality like issuer hints. 
 
-To enable the certificate-based authentication and configure user bindings in the Microsoft Entra admin center, complete the following steps:
+>[!Note]
+>If you use [the old trust store to configure CAs](how-to-configure-certificate-authorities.md), we recommended you configure a PKI-based trust store. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
-1. To upload a CA, select **Upload**: 
+An admin must configure the trusted CAs that issue user certificates. 
+Only least-privileged administrators are needed to make changes. 
+A PKI-based trust store has RBAC role [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
+
+Upload PKI feature of the PKI-based trust store is available only with  Microsoft Entra ID P1 or P2 license. However, with free license as well, admins can upload all the CAs individually instead of the PKI file and configure the PKI-based trust store.
+
+### Configure certificate authorities by using the Microsoft Entra admin center
+
+#### Create a PKI container object
+1.	Create a PKI container object.
+   1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
+   1. Browse to **Entra ID** > **Identity Secure Score** > **Public key infrastructure (Preview)**.
+   1. Click **+ Create PKI**.
+   1. Enter **Display Name**.
+   1. Click **Create**.
+
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
+
+   1. Select **Columns** to add or delete columns.
+   1. Select **Refresh** to refresh the list of PKIs.
+
+#### Delete a PKI container object
+1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
+
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
+
+#### Upload individual CAs into PKI container object
+1. To upload a CA into the PKI container:
+   1. Click on **+ Add certificate authority**.
    1. Select the CA file.
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
-   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates won't fail.
+   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates doesn't fail.
    1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
-   1. Select **Add**.
+   1. The **Issuer hints** flag is enabled by default. Turn off **Issuer hints** if the CA shouldn't be included in issuer hints.
+   1. Select **Save**.
+   1. To delete a CA certificate, select the certificate and select **Delete**.
 
-      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/upload-certificate-authority.png" alt-text="Screenshot of how to upload certification authority file.":::
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/delete-certificate-authority.png" alt-text="Diagram of how to delete a CA certificate.":::
+   
+   1. Select **Columns** to add or delete columns.
+   1. Select **Refresh** to refresh the list of CAs.
 
-1. To delete a CA certificate, select the certificate and select **Delete**.
-1. Select **Columns** to add or delete columns.
+#### Upload all CAs with upload PKI into PKI container object
+1. To upload all CAs at once into the PKI container:
+   1. Create a PKI container object, or open one.
+   1. Select **Upload PKI**.
+   1. Enter the http internet facing URL where the .p7b file is available.
+   1. Enter the SHA256 checksum of the file.
+   1. Select the upload.
+   1. Upload PKI is an asynchronous process. As each CA is uploaded, it's available in the PKI. Completion of PKI upload can take up to 30 minutes.
+   1. Select **Refresh** to refresh the CAs.
 
->[!NOTE]
->Upload of a new CA fails if any existing CA expired. A Global Administrator should delete any expired CA, and retry to upload the new CA.
+   To generate the SHA256 checksum of the PKI .p7b file, run this command:
 
-### Configure certificate authorities (CA) using PowerShell
+   ```powershell
+   Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
+   ```
 
-Only one CRL Distribution Point (CDP) for a trusted CA is supported. The CDP can only be HTTP URLs. Online Certificate Status Protocol (OCSP) or Lightweight Directory Access Protocol (LDAP) URLs aren't supported.
+#### Edit a PKI
 
-[!INCLUDE [Configure certification authorities](~/includes/entra-authentication-configure-certificate-authorities.md)]
+1. To edit PKI, select **...** on the PKI row and select **Edit**.
+1. Enter a new PKI name and select **Save**.
 
-### Connect
 
-[!INCLUDE [Connect-AzureAD](~/includes/entra-authentication-connect.md)]
+#### Edit a CA
 
-### Retrieve
+1. To edit CA, select **...** on the CA row and select **Edit**.
+1. Enter new values for Certificate Authority type (root/intermediate), CRL URL, Delta CRL URL, Issuer Hints enabled flag as necessary and select **Save**.
 
-[!INCLUDE [Get-AzureAD](~/includes/entra-authentication-get-trusted.md)]
-### Add
 
->[!NOTE]
->Upload of new CAs will fail when any of the existing CAs are expired. Tenant Admin should delete the expired CAs and then upload the new CA.
+### Restore a PKI
+1. Select the **Deleted PKIs** tab.
+1. Select the PKI and select **Restore PKI**.
 
-Follow the preceding steps to add a CA in the Microsoft Entra admin center. 
 
-**AuthorityType**
-- Use 0 to indicate a Root certification authority
-- Use 1 to indicate an Intermediate or Issuing certification authority
+### Restore a CA
+1. Select the **Deleted CAs** tab.
+1. Select the CA file and select **Restore certificate authority**.
 
-**crlDistributionPoint**
+#### Understanding isIssuerHintEnabled attribute on CA
 
-You can download the CRL and compare the CA certificate and the CRL information to validate the crlDistributionPoint value in the preceding PowerShell example is valid for the CA you want to add.
+Issuer hints send back a Trusted CA Indication as part of the Transport Layer Security (TLS) handshake. 
+The trusted CA list is set to the subject of the CAs uploaded by the tenant in the Entra trust store. 
+For more information about issuer hints, see [Understanding Issuer Hints](concept-certificate-based-authentication-technical-deep-dive.md#understanding-issuer-hints-preview).
 
-The following table and graphic show how to map information from the CA certificate to the attributes of the downloaded CRL.
+By default, the subject names of all CAs in the Microsoft Entra trust store are sent as hints. 
+If you want to send back a hint with only specific CAs, set the issuer hint attribute **isIssuerHintEnabled** to `true`. 
 
-| CA Certificate Info |= |Downloaded CRL Info|
-|----|:-:|----|
-|Subject |=|Issuer |
-|Subject Key Identifier |=|Authority Key Identifier (KeyID) |
+There's a character limit of 16 KB for the issuer hints (subject name of the CA) that the server can send back to the TLS client. As a good practice, set the attribute **isIssuerHintEnabled** to true only for the CAs that issue user certificates. 
 
-:::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Compare CA Certificate with CRL Information.":::
+If multiple intermediate CAs from the same root certificate issue the end user certificates, then by default all the certificates show up in the certificate picker. But if you set **isIssuerHintEnabled** to `true` for specific CAs, only the proper user certificates appear in the certificate picker. To enable **isIssuerHintEnabled**, edit the CA, and update the value to `true`.
 
->[!TIP]
->The value for crlDistributionPoint in the preceding example is the http location for the CA’s Certificate Revocation List (CRL). This value can be found in a few places:
->
->- In the CRL Distribution Point (CDP) attribute of a certificate issued from the CA.
->
->If the issuing CA runs Windows Server:
->
->- On the [Properties](/windows-server/networking/core-network-guide/cncg/server-certs/configure-the-cdp-and-aia-extensions-on-ca1#to-configure-the-cdp-and-aia-extensions-on-ca1)
- of the CA in the certification authority Microsoft Management Console (MMC).
->- On the CA by running `certutil -cainfo cdp`. For more information, see [certutil](/windows-server/administration/windows-commands/certutil#-cainfo).
+### Configure certificate authorities using the Microsoft Graph APIs 
+Microsoft Graph APIs can be used to configure CAs. 
+The following examples show how to use Microsoft Graph to run Create, Read, Update, or Delete (CRUD) operations for a PKI or CA.
 
-For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
+#### Create a PKI container object
 
-### Configure certification authorities using the Microsoft Graph APIs
-MS Graph APIs can be used to configure certificate authorities. Please follow the steps at [certificatebasedauthconfiguration MSGraph commands](/graph/api/resources/certificatebasedauthconfiguration?view=graph-rest-1.0) to update the Microsoft Entra Certificate Authority trust store.
+```http
+PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/
+Content-Type: application/json
+{
+   "displayName": "ContosoPKI"
+}
+```
 
-### Validate Certificate Authority configuration
+#### Get all the PKI objects
 
-It is important to ensure that the above configuration steps result is Microsoft Entra ability to both validate the certificate authority trust chain and succsessfully acquire the certificate revocation list (CRL) from the configured certificate authority CRL distribution point (CDP) . To assist with this task, it is recommended to install the [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
+```http
+GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations
+ConsistencyLevel: eventual
+```
+
+#### Get PKI object by PKI-id
+
+```http
+GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/
+ConsistencyLevel: eventual
+```
+
+#### Upload CAs with a .p7b file
+
+```http
+PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
+Content-Type: application/json
+{
+    	"uploadUrl":"https://CBA/demo/CBARootPKI.p7b,
+    	"sha256FileHash": "AAAAAAD7F909EC2688567DE4B4B0C404443140D128FE14C577C5E0873F68C0FE861E6F"
+}
+```
+
+#### Get all CAs in a PKI
+
+```http
+GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities
+ConsistencyLevel: eventual
+```
+
+#### Get a specific CA within a PKI by CA-id
+
+```http
+GET https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
+ConsistencyLevel: eventual
+```
+
+#### Update specific CA issuer hints flag
+
+```http
+PATCH https://graph.microsoft.com/beta/directory/publicKeyInfrastructure/certificateBasedAuthConfigurations/{PKI-id}/certificateAuthorities/{CA-id}
+Content-Type: application/json
+{
+   "isIssuerHintEnabled": true
+}
+```
+
+Configure certificate authorities (CA) using PowerShell
+For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/microsoftgraph/installation).
+
+1. Start PowerShell with administrator privileges.
+1. Install and import the Microsoft Graph PowerShell SDK.
+
+   ```powershell
+   Install-Module Microsoft.Graph -Scope AllUsers
+   Import-Module Microsoft.Graph.Authentication
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+
+1. Connect to the tenant and accept all.
+
+   ```powershell
+      Connect-MGGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All" -TenantId <tenantId>
+   ``` 
+
+
+### Audit log 
+Any CRUD operations on a PKI or CA within the trust store are logged into the Microsoft Entra audit logs. 
+
+:::image type="content" border="false" source="./media/how-to-certificate-based-authentication/audit-logs.png" alt-text="Diagram of Audit logs.":::
+
+### FAQs
+
+**Question**: Why does upload PKI fail?
+
+**Answer**: Check if the PKI file is valid and can be accessed without any issues. The max size of PKI file should be 
+
+**Question**: What is the service level agreement (SLA) for PKI upload?
+
+**Answer**: PKI upload is an asynchronous operation and may take up to 30 minutes for completion.
+
+**Question**: How do you generate SHA256 checksum for PKI file?
+
+**Answer**: To generate the SHA256 checksum of the PKI.p7b file, run this command: 
+
+```powershell
+Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
+```
 
 ## Step 2: Enable CBA on the tenant
 
 >[!IMPORTANT]
->A user is considered capable for **MFA** when the user is in scope for **Certificate-based authentication** in the Authentication methods policy. This policy requirement means a user can't use proof up as part of their authentication to register other available methods. If the users do not have access to certificates they will be locked out and not be able to register other methods for MFA. So the admin needs to enable users who have a valid certificate into the CBA scope. Do not use all users for CBA target and use groups of users who have valid certificates available. For more information, see [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md).
+>A user is considered capable for **MFA** when the user is in scope for **Certificate-based authentication** in the Authentication methods policy. This policy requirement means a user can't use proof up as part of their authentication to register other available methods. If the users don't have access to certificates, they get locked out and can't register other methods for MFA. Authentication Policy Administrators need to enable CBA only for users who have valid certificates. Don't include **All users** for CBA. Only use groups of users with valid certificates available. For more information, see [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md).
 
-To enable the certificate-based authentication in the Microsoft Entra admin center, complete the following steps:
+To enable CBA in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users
-1. Browse to **Protection** > **Authentication methods** > **Certificate-based Authentication**.
-1. Under **Enable and Target**, select **Enable**.
-1. Select **All users**, or select **Add groups** to select specific groups like the one created above. It is recommended to use specific groups rather than **All users**.
+1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users.
+1. Browse to **Entra ID** > **Authentication methods** > **Certificate-based Authentication**.
+1. Under **Enable and Target**, select **Enable**, and click **I Acknowledge**.
+1. Click **Select groups**, click **Add groups**.
+1. Choose specific groups like the one you created, and click **Select**. Use specific groups rather than **All users**.
+1. When you are done, click **Save**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot of how to enable CBA.":::
  
-Once certificate-based authentication is enabled on the tenant, all users in the tenant will see the option to sign in with a certificate. Only users who are enabled for certificate-based authentication will be able to authenticate using the X.509 certificate. 
+Once certificate-based authentication is enabled on the tenant, all users in the tenant see the option to sign in with a certificate. Only users who are enabled for CBA can authenticate by using the X.509 certificate. 
 
 >[!NOTE]
 >The network administrator should allow access to certauth endpoint for the customer's cloud environment in addition to `login.microsoftonline.com`. Disable TLS inspection on the certauth endpoint to make sure the client certificate request succeeds as part of the TLS handshake.
@@ -158,14 +284,17 @@ Once certificate-based authentication is enabled on the tenant, all users in the
 
 ## Step 3: Configure authentication binding policy
 
-The authentication binding policy helps determine the strength of authentication to either a single factor or multifactor. The default protection level for the certificates on the tenant is **single-factor authentication**.
+The authentication binding policy helps determine the strength of authentication to either a single factor or multifactor. The default protection level for all the certificates on the tenant is **Single-factor authentication**.
+The default affinity binding at the tenant level is **Low**. An Authentication Policy Administrator can change the default value from single-factor to multifactor and if changes, all the certificates on the tenant will be considered of strength **Multi-factor authentication**. Similarly, the affinity binding at the tenant level can be set to **High** which means all the certificates will be validated using only high affinity attributes.
 
-An Authentication Policy Administrator can change the default value from single-factor to multifactor and configure custom policy rules. Authentication binding rules map certificate attributes, such as Issuer, or Policy OID, or Issuer and Policy OID, to a value and select default protection level for that rule. You can create multiple rules.
+>[!IMPORTANT]
+>Admin should set the tenant default to a value that is applicable for most certificates and create custom rules only for specific certificates that needs different protection level and/or affinity binding than tenant default. All the authentication methods configuration go into the same policy file so creating multiple redundant rules can hit the policy file limit.
 
-To modify tenant default settings in the Microsoft Entra admin center, complete the following steps:
+Authentication binding rules map certificate attributes, such as Issuer, or Policy Object ID (OID), or Issuer and Policy OID, to a value and select default protection level as well as affinity binding for that rule. 
+To modify tenant default settings and create custom rules in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. Under **Manage**, select **Authentication methods** > **Certificate-based Authentication**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy.png" alt-text="Screenshot of Authentication policy.":::
@@ -178,9 +307,9 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/change-default.png" alt-text="Screenshot of how to change the default policy to MFA.":::
 
-1. You can also set up custom authentication binding rules to help determine the protection level for client certificates. It can be configured using either the issuer Subject or Policy OID fields in the certificate.
+1. You can also set up custom authentication binding rules to help determine the protection level for client certificates that need different values for protection level or affinity binding than tenant default. The rules can be configured using either the issuer Subject or Policy OID or both fields in the certificate.
 
-   Authentication binding rules will map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created.
+   Authentication binding rules map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created. For the config below let us assume the tenant default is **Multifactor authentication** and **Low** affinity binding.
 
    To add custom rules, select **Add rule**.
 
@@ -189,14 +318,14 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
    To create a rule by certificate issuer, select **Certificate issuer**.
 
    1. Select a **Certificate issuer identifier** from the list box.
-   1. Select **Multifactor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
+   1. Select **Multifactor authentication** but **High** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-issuer.png" alt-text="Screenshot of multifactor authentication policy.":::
 
    To create a rule by Policy OID, select **Policy OID**.
 
    1. Enter a value for **Policy OID**.
-   1. Select **Multifactor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. .
+   1. Select **Single-factor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-policy-oid.png" alt-text="Screenshot of mapping to Policy OID.":::
 
@@ -204,8 +333,8 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    1. Select **Certificate Issuer** and **Policy OID**.
    1. Select an issuer and enter the policy OID.
-   1. For Authentication strength, select **Single-factor authentication** or **Multifactor authentication**.
-   1. For Affinity binding, select **Low**.
+   1. For Authentication strength, select **Multifactor authentication**.
+   1. For Affinity binding, select **High**.
  
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer-and-policy-oid.png" alt-text="Screenshot of how to select a low affinity binding.":::
 
@@ -215,26 +344,13 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    1. Authenticate with a certificate that has policy OID of 3.4.5.6 and Issued by CN=CBATestRootProd. Authentication should pass and get a multifactor claim.
 
->[!IMPORTANT]
->There is a known issue where a Microsoft Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
->- Windows Hello For Business enrollment
->- Fido2 Security Key registration
->- Windows Passwordless Phone Sign-in
->  
->Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios are not impacted. CBA authentication policy rules using either Issuer OR Policy OID are not impacted.
->To mitigate, admins should :
->- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
->- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
->  
->We are working to fix the issue.
-
    To create a rule by Issuer and Serial Number:
 
-   1. Add an authentication binding policy that requires any cert issued by CN=CBATestRootProd with policyOID 1.2.3.4.6 needs only high affinity binding (that is, Issuer and serial number are used).
+   1. Add an authentication binding policy. The policy requires that any certificate issued by CN=CBATestRootProd with policyOID 1.2.3.4.6 needs only high affinity binding. Issuer and serial number are used.
       
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer-and-serial-number.png" alt-text="Screenshot of Issuer and Serial Number added the Microsoft Entra admin center.":::
 
-   1. Select the certificate field. In this example, we'll select **Issuer and Serial number**.
+   1. Select the certificate field. In this example, let's select **Issuer and Serial number**.
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/select-issuer-and-serial-number.png" alt-text="Screenshot of how to select Issuer and Serial Number.":::
 
@@ -244,14 +360,14 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    1. Select **Save**.
 
-   The sign-in log shows which binding was used and the details from certificate.
+      The sign-in log shows which binding was used for sign-in, and the details from the certificate.
 
-   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/sign-in-logs.png" alt-text="Screenshot of sign-in log.":::
+      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/sign-in-logs.png" alt-text="Screenshot of sign-in log.":::
 
 1. Select **Ok** to save any custom rule.
 
 >[!IMPORTANT]
->Enter the PolicyOID by using the [object identifier format](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.4). For example, if the certificate policy says **All Issuance Policies**, enter the OID as **2.5.29.32.0** when you add the rule. The string **All Issuance Policies** is invalid for the rules editor and won't take effect.
+>Enter the PolicyOID by using the [object identifier format](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.4). For example, if the certificate policy says **All Issuance Policies**, enter the OID as **2.5.29.32.0** when you add the rule. The string **All Issuance Policies** is invalid for the rules editor and doesn't take effect.
 
 ## Step 4: Configure username binding policy
 
@@ -259,7 +375,7 @@ The username binding policy helps validate the certificate of the user. By defau
 
 An Authentication Policy Administrator can override the default and create a custom mapping. To determine how to configure username binding, see [How username binding works](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-username-binding-policy).
 
-For more information on scenarios using certificateUserIds attribute see [Certificate user IDs](~/identity/authentication/concept-certificate-based-authentication-certificateuserids.md).
+For other scenarios that use the certificateUserIds attribute, see [Certificate user IDs](~/identity/authentication/concept-certificate-based-authentication-certificateuserids.md).
 
 >[!IMPORTANT]
 >If a username binding policy uses synchronized attributes, such as the certificateUserIds, onPremisesUserPrincipalName, and userPrincipalName attribute of the user object, be aware that accounts with administrative privileges in Active Directory (such as those with delegated rights on user objects or administrative rights on the Microsoft Entra Connect Server) can make changes that impact these attributes in Microsoft Entra ID. 
@@ -273,7 +389,7 @@ For more information on scenarios using certificateUserIds attribute see [Certif
 
 1. Select **Save** to save the changes. 
 
-The final configuration will look like this image:
+The final configuration looks like this image:
 
 :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/final.png" alt-text="Screenshot of the final configuration.":::
 
@@ -307,13 +423,13 @@ As a first configuration test, you should try to sign in to the [MyApps portal](
 
 If your sign-in is successful, then you know that:
 
-- The user certificate has been provisioned into your test device.
+- The user certificate is provisioned into your test device.
 - Microsoft Entra ID is configured correctly with trusted CAs.
 - Username binding is configured correctly, and the user is found and authenticated.
 
 ### Test custom authentication binding rules
 
-Let's walk through a scenario where we validate strong authentication. We'll create two authentication policy rules, one by using issuer subject to satisfy single-factor authentication, and another by using policy OID to satisfy multifactor authentication. 
+Let's walk through a scenario where we validate strong authentication. We create two authentication policy rules, one by using issuer subject to satisfy single-factor authentication, and another by using policy OID to satisfy multifactor authentication. 
 
 1. Create an issuer Subject rule with protection level as single-factor authentication and value set to your CAs Subject value. For example: 
 
@@ -323,7 +439,7 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/policy-oid-rule.png" alt-text="Screenshot of the Policy OID rule.":::
 
-1. Create a Conditional Access policy for the user to require multifactor authentication by following steps at [Conditional Access - Require MFA](../conditional-access/howto-conditional-access-policy-all-users-mfa.md#create-a-conditional-access-policy).
+1. Create a Conditional Access policy for the user to require multifactor authentication by following steps at [Conditional Access - Require MFA](../conditional-access/policy-all-users-mfa-strength.md#create-a-conditional-access-policy).
 1. Navigate to [MyApps portal](https://myapps.microsoft.com/). Enter your UPN and select **Next**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/name.png" alt-text="Screenshot of the User Principal Name.":::
@@ -360,13 +476,13 @@ Let's walk through a scenario where we validate strong authentication. We'll cre
 
 The username binding policy helps validate the certificate of the user. There are three bindings that are supported for the username binding policy:
 
-- IssuerAndSerialNumber > CertificateUserIds 
-- IssuerAndSubject > CertificateUserIds 
-- Subject > CertificateUserIds 
+- **IssuerAndSerialNumber** > **CertificateUserIds** 
+- **IssuerAndSubject** > **CertificateUserIds** 
+- **Subject** > **CertificateUserIds** 
 
-By default, Microsoft Entra ID maps Principal Name in the certificate to UserPrincipalName in the user object to determine the user. An Authentication Policy Administrator can override the default and create a custom mapping, as explained earlier in Step 4.
+By default, Microsoft Entra ID maps **Principal Name** in the certificate to **UserPrincipalName** in the user object to determine the user. An Authentication Policy Administrator can override the default and create a custom mapping, as explained earlier.
 
-Before enabling the new bindings, an Authentication Policy Administrator must make sure the correct values for the bindings are updated in the user object attribute Certificate UserIds for the corresponding username bindings. 
+An Authentication Policy Administrator needs to enable the new bindings. To prepare, they must make sure the correct values for the corresponding username bindings are updated in the **CertificateUserIds** attribute of the user object: 
 
 - For cloud only users, use the [Microsoft Entra admin center](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificate-user-ids-in-the-azure-portal) or [Microsoft Graph APIs](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificateuserids-using-microsoft-graph-queries) to update the value in CertificateUserIds. 
 - For on-premises synced users, use Microsoft Entra Connect to sync the values from on-premises by following [Microsoft Entra Connect Rules](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificate-user-ids-using-azure-ad-connect) or [syncing AltSecId value](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#synchronize-alternativesecurityid-attribute-from-ad-to-azure-ad-cba-certificateuserids). 
@@ -394,7 +510,7 @@ For example:
 certutil -dump -v firstusercert.cer >> firstCertDump.txt
 ```
 
-Here is an example for certutil command: 
+Here's an example for the certutil command: 
 
 ```
 certutil -dump -v C:\save\CBA\certs\CBATestRootProd\mfausercer.cer 
@@ -447,7 +563,7 @@ X509:<S>DC=com,DC=contoso,DC=corp,OU=UserAccounts,CN=FirstUserATCSession
 ### Test affinity binding
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. Under **Manage**, select **Authentication methods** > **Certificate-based Authentication**.
 1. Select **Configure**.
 1. Set **Required Affinity Binding** at the tenant level.
@@ -504,7 +620,7 @@ To enable CBA and configure username bindings using Graph API, complete the foll
     #### Request body:
 
     ```http
-    PATCH https: //graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate
+    PATCH https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate
     Content-Type: application/json
     
     {
@@ -556,18 +672,18 @@ To enable CBA and configure username bindings using Graph API, complete the foll
 1. You get a `204 No content` response code. Rerun the GET request to make sure the policies are updated correctly.
 1. Test the configuration by signing in with a certificate that satisfies the policy.
 
-## Enable CBA using Microsoft Power Shell
+## Enable CBA using Microsoft PowerShell
 
-1. Open a power shell command window
-1. Connect to Microsoft Graph
+1. Open PowerShell.
+1. Connect to Microsoft Graph:
     ```powershell
     Connect-MgGraph -Scopes "Policy.ReadWrite.AuthenticationMethod"
     ```
-1. Create a variable for defining group for CBA users
+1. Create a variable for defining group for CBA users:
    ```powershell
    $group = Get-MgGroup -Filter "displayName eq 'CBATestGroup'"
    ```
-1. Define the request body
+1. Define the request body:
     ```powershell
     $body = @{
     "@odata.type" = "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration"
@@ -613,10 +729,10 @@ To enable CBA and configure username bindings using Graph API, complete the foll
         }
     ) } | ConvertTo-Json -Depth 5
     ```
-1. Execute the PATCH request
-      ```powershell
-       Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate" -Body $body -ContentType "application/json"
-      ```
+1. Run the PATCH request:
+   ```powershell
+   Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate" -Body $body -ContentType "application/json"
+   ```
 
 ## Next steps 
 

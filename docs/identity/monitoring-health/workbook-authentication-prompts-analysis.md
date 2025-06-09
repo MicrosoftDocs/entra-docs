@@ -1,16 +1,15 @@
 ---
 title: Authentication prompts analysis workbook
 description: Learn how to use the authentication prompts analysis workbook in Microsoft Entra ID to investigate users getting too many MFA prompts.
-
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I need to use the Authentication prompts analysis workbook to investigate why users are getting too many authentication prompts so I can improve their experience and make sure MFA is working properly.
 ---
 
@@ -26,22 +25,22 @@ As an IT Pro, you want the right information about authentication prompts in you
 
 ![Workbook category](./media/workbook-authentication-prompts-analysis/workbook-category.png)
 
-Have you recently heard of complaints from your users about getting too many authentication prompts?
+Have you recently received complaints from your users about getting too many authentication prompts?
 
-Overprompting users can affect your user's productivity and often leads users getting phished for MFA. To be clear, MFA is essential! We aren't talking about *if* you should require MFA but *how frequently you should prompt your users*.
+Over-prompting users can affect productivity and can lead to users getting phished for multifactor authentication (MFA). To be clear, we aren't talking about *if* you should require MFA but *how frequently you should prompt your users*.
 
-Typically, this scenario is caused by:
+The following factors can cause over prompting:
 
 - Misconfigured applications
 - Over aggressive prompts policies 
 - Cyber-attacks 
  
-The authentication prompts analysis workbook identifies various types of authentication prompts. The types are  based on different pivots including users, applications, operating system, processes, and more.
+The authentication prompts analysis workbook identifies various types of authentication prompts. The types are based on different factors including users, applications, operating system, processes, and more.
 
 You can use this workbook in the following scenarios:
 
-- You received aggregated feedback of too many prompts.
-- To detect over prompting attributed to one specific authentication method, policy application, or device.
+- To research feedback of users getting too many prompts.
+- To detect over-prompting attributed to one specific authentication method, policy application, or device.
 - To view authentication prompt counts of high-profile users.
 - To track legacy TLS and other authentication process details.
 
@@ -49,7 +48,7 @@ You can use this workbook in the following scenarios:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Authentication Prompts Analysis** workbook from the **Usage** section.
 
@@ -93,7 +92,7 @@ Filtering for a specific user that has many authentication requests or only show
 
 ## Best practices
 
-- If data isn't showing up or seems to be showing up incorrectly, confirm that you have set the **Log Analytics Workspace** and **Subscriptions** on the proper resources.
+- If data isn't showing up or seems to be showing up incorrectly, confirm that you set the **Log Analytics Workspace** and **Subscriptions** on the proper resources.
 
     ![Set workspace and subscriptions](./media/workbook-authentication-prompts-analysis/workspace-and-subscriptions.png)
 
@@ -104,3 +103,9 @@ Filtering for a specific user that has many authentication requests or only show
 - To understand more about the different policies that affect MFA prompts, see [Optimize reauthentication prompts and understand session lifetime for Microsoft Entra multifactor authentication](~/identity/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md). 
 
 - To learn how to move users from telecom-based methods to the Authenticator app, see [How to run a registration campaign to set up Microsoft Authenticator - Microsoft Authenticator app](~/identity/authentication/how-to-mfa-registration-campaign.md).
+
+## Related content
+
+- [How to use the identity workbooks](howto-use-workbooks.md)
+- [Manage the 'Stay signed in?' prompt](../../fundamentals/how-to-manage-stay-signed-in-prompt.yml)
+- [How MFA works](../authentication/concept-mfa-howitworks.md)

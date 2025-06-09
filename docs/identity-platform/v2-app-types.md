@@ -3,13 +3,13 @@ title: Application types for the Microsoft identity platform
 description: The types of apps and scenarios supported by the Microsoft identity platform.
 author: cilwerner
 manager: CelesteDG
-ms.author: cwerner
-ms.custom: fasttrack-edit
-ms.date: 11/17/2023
-ms.reviewer: saeeda, jmprieur
+ms.author: owenrichards
+ms.custom:
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
-ms.topic: concept-article
+ms.topic: reference
 #Customer intent: As a developer or admin in the Microsoft identity platform, I want to understand the different types of applications supported by the Microsoft identity platform, so that I can choose the right type of application for my scenario.
 ---
 
@@ -44,13 +44,13 @@ The app types supported by the Microsoft identity platform are;
 
 ## Single-page apps
 
-Many modern apps have a single-page app (SPA) front end written primarily in JavaScript, often with a framework like Angular, React, or Vue. The Microsoft identity platform supports these apps by using the [OpenID Connect](v2-protocols-oidc.md) protocol for authentication and one of two types of authorization grants defined by OAuth 2.0. Use the [authorization code flow with PKCE](https://devblogs.microsoft.com/identity/migrate-to-auth-code-flow/) when developing SPAs. This flow is more secure than the implicit flow, which is no longer recommended. For more information, see [prefer the auth code flow](v2-oauth2-implicit-grant-flow.md#prefer-the-auth-code-flow).
+Many modern apps have a single-page app (SPA) front end written primarily in JavaScript, often with a framework like Angular, React, or Vue. The Microsoft identity platform supports these apps by using the [OpenID Connect](v2-protocols-oidc.md) protocol for authentication and one of two types of authorization grants defined by OAuth 2.0. Use the [authorization code flow with Proof Key for Code Exchange (PKCE)](https://devblogs.microsoft.com/identity/migrate-to-auth-code-flow/) when developing SPAs. This flow is more secure than the implicit flow, which is no longer recommended. For more information, see [prefer the auth code flow](v2-oauth2-implicit-grant-flow.md#prefer-the-auth-code-flow).
 
 The flow diagram demonstrates the OAuth 2.0 authorization code grant flow (with details around PKCE omitted), where the app receives a code from the Microsoft identity platform `authorize` endpoint, and redeems it for an access token and a refresh token using cross-site web requests. For SPAs, the access token is valid for 1 hour, and once expired, must request another code using the refresh token. In addition to the access token, an `id_token` that represents the signed-in user to the client application is typically also requested through the same flow and/or a separate OpenID Connect request (not shown here).
 
 :::image type="content" source="media/v2-oauth-auth-code-spa/oauth-code-spa.svg" alt-text="Diagram showing the OAuth 2.0 authorization code flow between a single-page app and the security token service endpoint." border="false":::
 
-To see this in action, refer to the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-javascript-sign-in.md).
+To see this in action, refer to the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-sign-in.md).
 
 ## Web apps
 
@@ -77,9 +77,9 @@ In web server apps, the sign-in authentication flow takes these high-level steps
 
 You can ensure the user's identity by validating the ID token with a public signing key that is received from the Microsoft identity platform. A session cookie is set, which can be used to identify the user on subsequent page requests.
 
-Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+Learn more by building an [ASP.NET Core web app to sign in users and call the Microsoft Graph API](./quickstart-web-app-dotnet-core-sign-in.md)
 
-In addition to simple sign-in, a web server app might need to access another web service, such as a [Representational State Transfer (REST) API](/rest/api/azure/). In this case, the web server app engages in a combined OpenID Connect and OAuth 2.0 flow, by using the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md). For more information about this scenario, refer to our code [sample](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-1-Call-MSGraph/README.md).
+In addition to simple sign-in, a web server app might need to access another web service, such as a [Representational State Transfer (REST) API](/rest/api/azure/). In this case, the web server app engages in a combined OpenID Connect and OAuth 2.0 flow, by using the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md). For more information about this scenario, see our code [sample](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/2-WebApp-graph-user/2-1-Call-MSGraph/README.md).
 
 ## Web APIs
 
@@ -118,7 +118,7 @@ In this flow, the app receives an authorization code from the Microsoft identity
 > [!NOTE]
 > If the application uses the default system webview, check the information about "Confirm My Sign-In" functionality and error code `AADSTS50199` in [Microsoft Entra authentication and authorization error codes](reference-error-codes.md).
 
-## Server, daemons and scripts
+## Server, daemons, and scripts
 
 Apps that have long-running processes or that operate without interaction with a user also need a way to access secured resources, such as web APIs. These apps can authenticate and get tokens by using the app's identity, rather than a user's delegated identity, with the OAuth 2.0 client credentials flow. You can prove the app's identity using a client secret or certificate. For more info, see [.NET daemon console application using Microsoft identity platform](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2).
 
@@ -130,4 +130,5 @@ To build a daemon app, see the [client credentials documentation](v2-oauth2-clie
 
 ## See also
 
-Now that you're familiar with the types of applications supported by the Microsoft identity platform, learn more about [OAuth 2.0 and OpenID Connect](./v2-protocols.md) to gain an understanding of the protocol components used by the different scenarios.
+- Learn about [OAuth 2.0 and OpenID Connect](./v2-protocols.md)
+- [Register an application](./quickstart-register-app.md)

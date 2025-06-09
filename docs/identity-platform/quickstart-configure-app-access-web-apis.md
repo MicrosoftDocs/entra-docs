@@ -1,21 +1,21 @@
 ---
-title: "Quickstart: Configure an app to access a web API"
-description: In this quickstart, you configure an app registration representing a web API in the Microsoft identity platform to enable scoped resource access (permissions) to client applications.
+title: "Web API app registration and API permissions"
+description: In this quickstart, you learn how to configure app registration and API permissions for a Web API, and how to grant admin consent to these permissions. 
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-api
-ms.date: 06/10/2024
+ms.date: 01/27/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
 
-ms.topic: quickstart
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to configure my web API's app registration with permissions client applications can use to obtain scoped access to the API.
 ---
 
-# Quickstart: Configure a client application to access a web API
+# Configure app permissions for a web API
 
-In this quickstart, you provide a client app registered with the Microsoft identity platform with scoped, permissions-based access to your own web API. You also provide the client app access to Microsoft Graph.
+In this how-to guide, you provide a client app registered with the Microsoft identity platform with scoped, permissions-based access to your own web API. You also provide the client app access to Microsoft Graph.
 
 By specifying a web API's scopes in your client app's registration, the client app can obtain an access token containing those scopes from the Microsoft identity platform. Within its code, the web API can then provide permission-based access to its resources based on the scopes found in the access token.
 
@@ -27,9 +27,8 @@ By specifying a web API's scopes in your client app's registration, the client a
 
 ## Add permissions to access your web API
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Access to APIs requires configuration of access scopes and roles. If you want to expose your resource application web APIs to client applications, you can configure access scopes and roles for the API. If you want a client application to access a web API, you configure permissions to access the API in the app registration.
+To enable client applications to access web APIs, you need to add permissions to the client application to access the web API. Similarly, in the web API, you need to configure access scopes and roles for the client application.
 
 To grant a client application to access to your own web API, you need to have two app registrations;
 
@@ -44,8 +43,12 @@ Once you've registered both your client app and web API and you've exposed the A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select your client application (*not* your web API).
+1. Browse to **Entra ID** > **App registrations**, and then select your client application (*not* your web API).
 1. Select **API permissions**, then **Add a permission** and select **My APIs** in the sidebar.
+
+
+   :::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-path-to-my-apis-pane.png" alt-text="Screenshot with highlighted buttons of App registrations, API permissions, Add a permission and My APIs to enable the user to request API permissions.":::
+
 1. Select the web API you registered as part of the prerequisites, and select **Delegated permissions**.
 
     - **Delegated permissions** are appropriate for client apps that access a web API as the signed-in user, and whose access should be restricted to the permissions you select in the next step. Leave **Delegated permissions** selected for this example.
@@ -53,7 +56,7 @@ Once you've registered both your client app and web API and you've exposed the A
     - **Application permissions** are for service- or daemon-type applications that need to access a web API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your web API, this option is disabled.
 
 1. Under **Select permissions**, expand the resource whose scopes you defined for your web API, and select the permissions the client app should have on behalf of the signed-in user.
-    - If you used the example scope names specified in the [previous quickstart](./quickstart-configure-app-access-web-apis.md), you should see **Employees.Read.All** and `Employees.Write.All`.
+    - If you used the example scope names specified in the [previous quickstart](./quickstart-configure-app-expose-web-apis.md), you should see **Employees.Read.All** and `Employees.Write.All`.
     
 1. Select the permission you created while completing the prerequisites, for example, `Employees.Read.All`.
 1. Select **Add permissions** to complete the process.
@@ -97,7 +100,7 @@ In the following steps, you grant permission to Microsoft Graph's *Files.Read.Al
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select your client application.
+1. Browse to **Entra ID** > **App registrations**, and then select your client application.
 1. Select **API permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**.
 1. All permissions exposed by Microsoft Graph are shown under **Select permissions**.
 1. Select the permission or permissions you want to grant your application. As an example, you might have a daemon app that scans files in your organization, alerting on a specific file type or name. Under **Select permissions**, expand **Files**, and then select the `Files.Read.All` permission.
@@ -108,7 +111,7 @@ In the following steps, you grant permission to Microsoft Graph's *Files.Read.Al
 
 Apps that use application permissions authenticate as themselves by using their own credentials, without requiring any user interaction. Before your application (or API) can access Microsoft Graph, your own web API, or another API by using application permissions, you must configure that client app's credentials.
 
-For more information about configuring an app's credentials, see the [Add credentials](quickstart-register-app.md#add-credentials) section of [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
+For more information about configuring an app's credentials, see the [Add credentials](how-to-add-credentials.md) section of [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
 
 ## More on API permissions and admin consent
 
@@ -139,7 +142,7 @@ The **Grant admin consent** button is *disabled* if you aren't an admin or if no
 It's important not to give an application too many permissions than is necessary. To revoke admin consent for a permission in your application;
 
 1. Navigate to your application and select **API permissions**.
-2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Remove permission**
+2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Revoke admin consent**.
 3. In the pop-up that appears, select **Yes, remove** to revoke the admin consent for the permission.
 
 ## Related content

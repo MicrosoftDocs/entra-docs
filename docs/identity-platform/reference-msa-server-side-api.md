@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 
 ms.service: identity-platform
-ms.topic: how-to
+ms.topic: reference
 ms.workload: identity
 ms.date: 03/19/2024
 ms.author: owenrichards
@@ -30,7 +30,7 @@ These are passed to `login.microsoftonline.com` or `login.live.com` as URL param
 | `LoginHint` | username | Prepopulates the username during sign-in, unless already provided (for example, via a refresh token). Users can modify this prepopulated username if needed. |
 | `cobrandid` | cobranding GUID | This parameter applies cobranding to the sign-in user experience. Cobranding enables customization of elements like the app logo, background image, subtitle text, description text, and button colors. If you’re integrating an application with Microsoft account sign-in and wish to customize the sign-in screen, reach out to Microsoft support.|
 | `client_flight` | String | `client_flight` is a passthrough parameter that is returned to the application upon completion of the sign-in process. The value of this parameter is logged to the telemetry stream and is utilized by applications to tie together their authentication requests. This can be beneficial for correlating sign-in requests, even if not all applications have access to this telemetry stream. Applications such as Office Union, Teams, and others are notable users of this parameter. |
-| `lw` | 0/1 | **Note: This feature is deprecated.** Enables Lightweight Signup. If enabled, users signing up through the authentication flow aren't required to enter their first name, last name, country, and date of birth, unless mandated by laws applicable to the user’s region. |
+| `lw` | 0/1 | **Note: This feature is deprecated.** Enables Lightweight Signup. If enabled, users signing up through the authentication flow aren't required to enter their first name, last name, country/region, and date of birth, unless mandated by laws applicable to the user’s region. |
 | `fl` | `phone2`,<br/> `email`,<br/> `wld`,<br/> `wld2`,<br/> `easi`,<br/> `easi2` | **Note: This feature is deprecated.** This parameter controls the username options provided during the sign-up process:<br/> `phone` – Restricts username to phone number,<br/>`phone2` – Defaults to phone number, but allows other options,<br/>`email` – Restricts username to email (Outlook or EASI),<br/>`wld` – Restricts username to Outlook,<br/>`wld2` – Defaults to Outlook, but allows other options, including phone,<br/>`easi` – Restricts username to EASI,<br/>`easi2` – Defaults to EASI, but allows other options, including phone. |
 | `nopa` | 0/1/2 | **Note: This feature is deprecated.** Enables passwordless signup. A value of 1 allows signup without a password, but enforces password creation after 30 days. A value of 2 allows signup without a password indefinitely. To use value 2, apps must be added to an allowlist through a manual process. |
 | `coa` | 0/1 | **Note: This feature is deprecated.** Enables passwordless sign-in by sending a code to the user’s phone number. To use value 1, apps must be added to an allowlist through a manual process. |

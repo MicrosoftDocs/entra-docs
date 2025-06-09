@@ -6,9 +6,9 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 7/5/2022
+ms.date: 05/21/2025
 ms.author: gasinh
-ms.reviewer: ajburnle
+ms.custom: sfi-ga-nochange
 ---
 
 # Best practices for all isolation architectures
@@ -134,7 +134,7 @@ In the following sections are recommendations for Azure solutions. For general g
 
 * All applications onboarded to isolated environments must have explicit Conditional Access policies applied as part of the onboarding process.
 
-* Define Conditional Access policies for [security information registration](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
+* Define Conditional Access policies for [security information registration](~/identity/conditional-access/policy-all-users-security-info-registration.md) that reflects a secure root of trust process on-premises (for example, for workstations in physical locations, identifiable by IP addresses, that employees must visit in person for verification).
 
 * Consider using Conditional Access to restrict workload identities. Create a policy to limit or better control access based on location or other relevant circumstances.
 
@@ -209,6 +209,8 @@ Some approaches you can use for [using secure devices as part of your privileged
 * Regular review of the Microsoft Entra tenants in the billing plane needs to be implemented to detect and discover tenant creation outside the governed process. Refer to the *Inventory and Visibility* section of this document for further details.
 
 * Azure AD B2C tenant creation can be controlled using Azure Policy. The policy executes when an Azure subscription is associated to the B2C tenant (a pre-requisite for billing). Customers can limit the creation of Azure AD B2C tenants to specific management groups.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 * There are no technical controls to subordinate the creation of tenants to an organization. However, the activity is recorded in the Audit log. The onboarding to the billing plane is a compensating control at the gate. This needs to be complemented with monitoring and alerts instead.
 

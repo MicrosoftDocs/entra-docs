@@ -1,21 +1,20 @@
 ---
 title: Use Azure custom roles in PIM
 description: Learn how to use Azure custom roles in Microsoft Entra Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-
+ms.custom: sfi-image-nochange
 ---
 
 # Use Azure custom roles in Privileged Identity Management
 
-You might need to apply stricter just-in-time settings to some users in a privileged role in your organization in Microsoft Entra ID, while providing greater autonomy for others. For example, if your organization hired several contract associates to help develop an application that will run in an Azure subscription.
+You might need to apply stricter just-in-time settings to some users in a privileged role in your organization in Microsoft Entra ID, while providing greater autonomy for others. For example, if your organization hires several contractors to help develop an application that runs in an Azure subscription.
 
 As a resource administrator, you want employees to be eligible for access without requiring approval. However, all contract associates must be approved when they request access to the organization's resources.
 

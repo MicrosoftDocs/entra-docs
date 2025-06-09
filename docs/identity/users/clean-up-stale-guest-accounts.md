@@ -4,8 +4,8 @@ description: Monitor and clean up stale guest accounts using access reviews
 
 author: billmath
 ms.author: billmath
-manager: amycolannino
-ms.date: 06/29/2023
+manager: femila
+ms.date: 12/30/2024
 ms.reviewer: gasinh
 ms.topic: how-to
 ms.service: entra-id
@@ -34,10 +34,9 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 ## Monitor guest accounts at scale with inactive guest insights
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity governance** > **Dashboard**
+1. Browse to **ID Governance** > **Dashboard**
 1. Access the inactive guest account report by navigating to the **Guest access governance** card then select **View inactive guests**.
 1. You will see the inactive guest report which will provide insights about inactive guest users based on 90 days of inactivity. The threshold is set to 90 days by default but can be configured using "Edit inactivity threshold" based on your organization's needs.
 1. The following insights are provided as part of this report:
@@ -184,3 +183,6 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 11. Select **Create**.
 
 Guest users who don't sign into the tenant for the number of days you configured are disabled for 30 days, then deleted. After deletion, you can restore guests for up to 30 days, after which a new invitation is needed.
+
+> [!NOTE]
+> If the access review decisions are not yet applied , the API [accessReviewInstance: stopApplyDecisions](/graph/api/accessreviewinstance-stopapplydecisions) can be used to stop active applying decisions.

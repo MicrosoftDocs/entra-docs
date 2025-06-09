@@ -1,7 +1,7 @@
   items:
-  - name: Application tutorials
+  - name: Application articles
     href: tutorial-list.md
-  - name: Single sign-on tutorials
+  - name: Single sign-on articles
     expanded: true
     items:
     - name: 0 - 9
@@ -66,8 +66,6 @@
         href: adem-tutorial.md
       - name: Adobe Captivate Prime
         href: adobecaptivateprime-tutorial.md
-      - name: Adobe Creative Cloud
-        href: adobe-creative-cloud-tutorial.md
       - name: Adobe Experience Manager
         href: adobeexperiencemanager-tutorial.md
       - name: Adobe Identity Management (SAML)
@@ -278,8 +276,6 @@
         href: autodesk-sso-tutorial.md
       - name: Autotask Endpoint Backup
         href: autotaskendpointbackup-tutorial.md
-      - name: Autotask Workplace
-        href: autotaskworkplace-tutorial.md
       - name: Aventri
         href: etouches-tutorial.md
       - name: Avionte Bold SAML Federated SSO
@@ -292,8 +288,8 @@
         href: aws-clientvpn-tutorial.md
       - name: AWS IAM Identity Center
         href: aws-single-sign-on-tutorial.md
-      - name: Axiad Cloud Connector
-        href: axiad-cloud-connector-tutorial.md
+      - name: Axiad Conductor
+        href: axiad-conductor-tutorial.md
       - name: Axway CSOS
         href: axway-csos-tutorial.md  
     - name: B
@@ -330,8 +326,6 @@
         href: benq-iam-tutorial.md  
       - name: BenSelect
         href: benselect-tutorial.md
-      - name: Bersin
-        href: bersin-tutorial.md
       - name: BetterWorks
         href: betterworks-tutorial.md
       - name: Beyond Identity Admin Console
@@ -370,8 +364,6 @@
         href: blue-access-for-members-tutorial.md
       - name: BlueConic
         href: blueconic-tutorial.md
-      - name: BlueJeans
-        href: bluejeans-tutorial.md
       - name: Blue Ocean Brain
         href: blue-ocean-brain-tutorial.md  
       - name: BeyondTrust Remote Support
@@ -574,7 +566,7 @@
         href: clickup-productivity-platform-tutorial.md
       - name: Clockwork Recruiting
         href: clockwork-recruiting-tutorial.md  
-      - name: Cloud Academy
+      - name: Cloud Academy(renamed QA)
         href: cloud-academy-sso-tutorial.md
       - name: Cloud Management Portal for Microsoft Azure
         href: newsignature-tutorial.md
@@ -854,6 +846,8 @@
         href: drawboard-projects-tutorial.md
       - name: Drift
         href: drift-tutorial.md
+      - name: DriveLock
+        href: drivelock-tutorial.md
       - name: Dropbox Business
         href: dropboxforbusiness-tutorial.md
       - name: DRTrack
@@ -1047,8 +1041,6 @@
         href: fexa-tutorial.md  
       - name: Field iD
         href: field-id-tutorial.md
-      - name: Fidelity NetBenefits
-        href: fidelitynetbenefits-tutorial.md
       - name: Fidelity PlanViewer
         href: fidelity-planviewer-tutorial.md
       - name: Fieldglass
@@ -1171,8 +1163,6 @@
         href: getthere-tutorial.md
       - name: Getty Images
         href: getty-images-tutorial.md
-      - name: GHAE
-        href: ghae-tutorial.md  
       - name: Gigya
         href: gigya-tutorial.md
       - name: GitHub
@@ -1557,8 +1547,6 @@
         href: justlogin-tutorial.md
       - name: Kairos Business
         href: kairos-business-tutorial.md
-      - name: Kallidus
-        href: kallidus-tutorial.md
       - name: KanbanBOX
         href: kanbanbox-tutorial.md
       - name: Kanbanize
@@ -1573,8 +1561,6 @@
         href: kantegassoforfisheyecrucible-tutorial.md
       - name: Kantega SSO for JIRA
         href: kantegassoforjira-tutorial.md
-      - name: Kao Navi
-        href: kao-navi-tutorial.md
       - name: Karlsgate Identity Exchange (KIE) SSO Add-on
         href: karlsgate-identity-exchange-kie-sso-add-on-tutorial.md
       - name: Keepabl
@@ -1699,8 +1685,6 @@
         href: litmus-tutorial.md
       - name: Learnster
         href: learnster-tutorial.md
-      - name: Lines eLibrary Advance
-        href: lines-elibrary-advance-tutorial.md
       - name: LinkedIn Elevate
         href: linkedinelevate-tutorial.md
       - name: LinkedIn Learning
@@ -1721,8 +1705,8 @@
         href: logicmonitor-tutorial.md
       - name: LoginRadius
         href: lr-tutorial.md
-      - name: LogMeIn
-        href: logmein-tutorial.md
+      - name: GoTo
+        href: goto-tutorial.md
       - name: Logz.io - Microsoft Entra Integration
         href: logzio-cloud-observability-for-engineers-tutorial.md
       - name: Looker Analytics Platform
@@ -2443,24 +2427,24 @@
         href: samsung-knox-and-business-services-tutorial.md
       - name: Sansan
         href: sansan-tutorial.md
-      - name: SAP Business ByDesign
-        href: sapbusinessbydesign-tutorial.md
       - name: SAP Analytics Cloud
         href: sapboc-tutorial.md
-      - name: SAP Cloud for Customer
-        href: sap-customer-cloud-tutorial.md
+      - name: SAP Business ByDesign
+        href: sapbusinessbydesign-tutorial.md
       - name: SAP Business Technology Platform
         href: sap-hana-cloud-platform-tutorial.md
+      - name: SAP Cloud for Customer
+        href: sap-customer-cloud-tutorial.md
       - name: SAP Cloud Identity Services
         href: sap-hana-cloud-platform-identity-authentication-tutorial.md
       - name: SAP Fiori
         href: sap-fiori-tutorial.md
       - name: SAP HANA
         href: saphana-tutorial.md
-      - name: Sapient
-        href: sapient-tutorial.md
       - name: SAP NetWeaver
         href: sap-netweaver-tutorial.md
+      - name: Sapient
+        href: sapient-tutorial.md
       - name: SAS Viya SSO
         href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
@@ -2675,8 +2659,6 @@
         href: soloinsight-cloudgate-sso-tutorial.md
       - name: Sonarqube
         href: sonarqube-tutorial.md
-      - name: Soonr Workplace
-        href: soonr-tutorial.md
       - name: SpaceIQ
         href: spaceiq-tutorial.md
       - name: Spacio
@@ -3041,8 +3023,6 @@
         href: vera-suite-tutorial.md
       - name: VergeSense
         href: vergesense-tutorial.md  
-      - name: Veritas Enterprise Vault.cloud SSO
-        href: veritas-tutorial.md
       - name: Verity
         href: verity-tutorial.md
       - name: Verkada Command
@@ -3157,8 +3137,6 @@
         href: wiz-sso-tutorial.md
       - name: Wootric
         href: wootric-tutorial.md
-      - name: Work.com
-        href: work-com-tutorial.md
       - name: Workable
         href: workable-tutorial.md
       - name: WorkBoard
@@ -3289,7 +3267,7 @@
         href: zwayam-tutorial.md
       - name: Zylo
         href: zylo-tutorial.md  
-  - name: User provisioning tutorials
+  - name: User provisioning articles
     expanded: true
     items:
     - name: 0 - 9
@@ -3380,8 +3358,6 @@
         href: blinq-provisioning-tutorial.md
       - name: BlogIn
         href: blogin-provisioning-tutorial.md
-      - name: BlueJeans
-        href: bluejeans-provisioning-tutorial.md
       - name: Bonusly
         href: bonusly-provisioning-tutorial.md
       - name: Box
@@ -3428,7 +3404,7 @@
         href: clearview-trade-provisioning-tutorial.md
       - name: Clebex
         href: clebex-provisioning-tutorial.md
-      - name: Cloud Academy - SSO
+      - name: Cloud Academy(renamed QA)
         href: cloud-academy-sso-provisioning-tutorial.md
       - name: Coda
         href: coda-provisioning-tutorial.md
@@ -3520,8 +3496,6 @@
         href: purecloud-by-genesys-provisioning-tutorial.md
       - name: getAbstract
         href: getabstract-provisioning-tutorial.md
-      - name: GHAE
-        href: ghae-provisioning-tutorial.md  
       - name: GitHub
         href: github-provisioning-tutorial.md
       - name: GitHub AE
@@ -3652,8 +3626,8 @@
         href: logicgate-provisioning-tutorial.md
       - name: Looop
         href: looop-provisioning-tutorial.md
-      - name: LogMeIn
-        href: logmein-provisioning-tutorial.md
+      - name: GoTo
+        href: goto-provisioning-tutorial.md
       - name: M-Files
         href: m-files-provisioning-tutorial.md
       - name: Maptician
@@ -3714,6 +3688,8 @@
         href: open-text-directory-services-provisioning-tutorial.md
       - name: Oracle Cloud Infrastructure Console
         href: oracle-cloud-infrastructure-console-provisioning-tutorial.md
+      - name: Oracle E-Business Suite
+        href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Oracle Fusion ERP
         href: oracle-fusion-erp-provisioning-tutorial.md
       - name: Oracle HCM
@@ -3816,6 +3792,8 @@
         href: sas-viya-sso-provisioning-tutorial.md
       - name: SchoolStream ASA
         href: schoolstream-asa-provisioning-tutorial.md
+      - name: SCIM (cloud)
+        href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SCIM (on-premises)
         href: ~/identity/app-provisioning/on-premises-scim-provisioning.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: ScreenSteps
@@ -3840,6 +3818,8 @@
         href: simple-in-out-provisioning-tutorial.md
       - name: Slack
         href: slack-provisioning-tutorial.md
+      - name: Smartcat
+        href: smartcat-tutorial.md
       - name: Smartfile
         href: smartfile-provisioning-tutorial.md
       - name: Smartsheet
@@ -3848,6 +3828,8 @@
         href: smallstep-ssh-provisioning-tutorial.md
       - name: Snowflake
         href: snowflake-provisioning-tutorial.md
+      - name: SOAP and REST
+        href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Soloinsight-CloudGate SSO
         href: soloinsight-cloudgate-sso-provisioning-tutorial.md
       - name: SoSafe
@@ -3920,7 +3902,7 @@
         href: uber-provisioning-tutorial.md
       - name: UNIFI
         href: unifi-provisioning-tutorial.md
-      - name: uniFlow Online
+      - name: uniFLOW Online
         href: uniflow-online-provisioning-tutorial.md
       - name: Uni-tel A/S
         href: uni-tel-as-provisioning-tutorial.md
@@ -3938,8 +3920,6 @@
         href: visibly-provisioning-tutorial.md
       - name: Visitly
         href: visitly-provisioning-tutorial.md
-      - name: VMware Identity Service
-        href: vmware-identity-service-provisioning-tutorial.md
       - name: Vonage
         href: vonage-provisioning-tutorial.md
       - name: Web Cargo Air
@@ -3976,6 +3956,8 @@
         href: yardione-provisioning-tutorial.md
       - name: Yellowbox
         href: yellowbox-provisioning-tutorial.md
+      - name: Yokoy SSO
+        href: yokoy-sso-tutorial.md
       - name: Zapier
         href: zapier-provisioning-tutorial.md 
       - name: Zello

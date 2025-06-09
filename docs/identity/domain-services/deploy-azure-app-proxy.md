@@ -2,20 +2,20 @@
 title: Deploy Microsoft Entra application proxy for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to provide secure access to internal applications for remote workers by deploying and configuring Microsoft Entra application proxy in a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 01/21/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 ---
 # Deploy Microsoft Entra application proxy for secure access to internal applications in a Microsoft Entra Domain Services managed domain
 
 With Microsoft Entra Domain Services, you can lift-and-shift legacy applications running on-premises into Azure. Microsoft Entra application proxy then helps you support remote workers by securely publishing those internal applications part of a Domain Services managed domain so they can be accessed over the internet.
 
-If you're new to the Microsoft Entra application proxy and want to learn more, see [How to provide secure remote access to internal applications](/azure/active-directory/app-proxy/application-proxy).
+If you're new to the Microsoft Entra application proxy and want to learn more, see [How to provide secure remote access to internal applications](../domain-services/deploy-azure-app-proxy.md).
 
 This article shows you how to create and configure a Microsoft Entra private network connector to provide secure access to applications in a managed domain.
 
@@ -48,7 +48,7 @@ To create a VM for the Microsoft Entra private network connector, complete the f
 
 Perform the following steps to download the Microsoft Entra private network connector. The setup file you download is copied to your application proxy VM in the next section.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Search for and select **Enterprise applications**.
 1. Select **Application proxy** from the menu on the left-hand side. To create your first connector and enable application proxy, select the link to **download a connector**.
 1. On the download page, accept the license terms and privacy agreement, then select **Accept terms & Download**.
@@ -64,12 +64,11 @@ With a VM ready to be used as the Microsoft Entra private network connector, now
 1. Copy the Microsoft Entra private network connector setup file to your VM.
 1. Run the setup file, such as *MicrosoftEntraPrivateNetworkConnectorInstaller.exe*. Accept the software license terms.
 1. During the install, you're prompted to register the connector with the Application Proxy in your Microsoft Entra directory.
-   * Provide the credentials for a Global Administrator in your Microsoft Entra directory. The Microsoft Entra Global Administrator credentials may be different from your  Azure credentials in the portal
 
-        > [!NOTE]
-        > The Global Administrator account used to register the connector must belong to the same directory where you enable the Application Proxy service.
-        >
-        > For example, if the Microsoft Entra domain is *contoso.com*, the Global Administrator should be `admin@contoso.com` or another valid alias on that domain.
+   > [!NOTE]
+   > The account used to register the connector must belong to the same directory where you enable the Application Proxy service.
+   >
+   > For example, if the Microsoft Entra domain is *contoso.com*, the account should be `admin@contoso.com` or another valid alias on that domain.
 
    * If Internet Explorer Enhanced Security Configuration is turned on for the VM where you install the connector, the registration screen might be blocked. To allow access, follow the instructions in the error message, or turn off Internet Explorer Enhanced Security during the install process.
    * If connector registration fails, see [Troubleshoot Application Proxy](/azure/active-directory/app-proxy/application-proxy-troubleshoot).

@@ -1,15 +1,16 @@
 ---
 title: Skip deletion of out of scope users in Microsoft Entra Application Provisioning
 description: Learn how to override the default behavior of deprovisioning out of scope users in Microsoft Entra ID.
-
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Skip deletion of user accounts that go out of scope in Microsoft Entra ID
 
@@ -19,23 +20,20 @@ This article describes how to use the Microsoft Graph API and the Microsoft Grap
 * If ***SkipOutOfScopeDeletions*** is set to 0 (false), accounts that go out of scope are disabled in the target.
 * If ***SkipOutOfScopeDeletions*** is set to 1 (true), accounts that go out of scope aren't disabled in the target. This flag is set at the *Provisioning App* level and can be configured using the Graph API. 
 
-Because this configuration is widely used with the *Workday to Active Directory user provisioning* app, the following steps include screenshots of the Workday application. However, the configuration can also be used with *all other apps*, such as ServiceNow, Salesforce, and Dropbox. To successfully complete this procedure, you must have first set up app provisioning for the app. Each app has its own configuration article. For example, to configure the Workday application, see [Tutorial: Configure Workday to Microsoft Entra user provisioning](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md). SkipOutOfScopeDeletions does not work for cross-tenant synchronization.
+Because this configuration is widely used with the *Workday to Active Directory user provisioning* app, the following steps include screenshots of the Workday application. However, the configuration can also be used with *all other apps*, such as ServiceNow, Salesforce, and Dropbox. To successfully complete this procedure, you must have first set up app provisioning for the app. Each app has its own configuration article. For example, to configure the Workday application, see [Tutorial: Configure Workday to Microsoft Entra user provisioning](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md). SkipOutOfScopeDeletions  doesn't work for cross-tenant synchronization.
 
 ## Step 1: Retrieve your Provisioning App Service Principal ID (Object ID)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. Select your application and go to Properties section of your provisioning app. In this example we are using Workday.
+1. Browse to **Entra ID** > **Enterprise apps**.
+1. Select your application and go to Properties section of your provisioning app. In this example, we're using Workday.
 1. Copy the GUID value in the *Object ID* field. This value is also called the **ServicePrincipalId** of your app and it's used in Graph Explorer operations.
-
-   ![Screenshot of Workday App Service Principal ID.](./media/skip-out-of-scope-deletions/wd_export_01.png)
 
 ## Step 2: Sign into Microsoft Graph Explorer
 
 1. Launch [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)
-1. Click on the "Sign-In with Microsoft" button and sign-in as a user with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
+1. Select the "Sign-In with Microsoft" button and sign-in as a user with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 
     ![Screenshot of Microsoft Graph Explorer Sign-in.](./media/skip-out-of-scope-deletions/wd_export_02.png)
 
@@ -77,7 +75,7 @@ Copy the updated text from Step 3 into the "Request Body".
 
    ![Screenshot of PUT request.](./media/skip-out-of-scope-deletions/skip-05.png)
 
-Click on “Run Query”. 
+Select “Run Query”. 
 
 You should get the output as "Success – Status Code 204". If you receive an error, you may need to check that your account has Read/Write permissions for ServicePrincipalEndpoint. You can find this permission by clicking on the *Modify permissions* tab in Graph Explorer.
 
@@ -89,6 +87,4 @@ You can test this flag results in expected behavior by updating your scoping rul
 
    ![Screenshot that shows the "Add Scoping Filter" section with an example user highlighted.](./media/skip-out-of-scope-deletions/skip-07.png)
 
-In the next provisioning cycle, the Microsoft Entra provisioning service identifies that the user 21173 has gone out of scope. If the `SkipOutOfScopeDeletions` property is enabled, then the synchronization rule for that user displays a message as shown: 
-
-   ![Screenshot of scoping example.](./media/skip-out-of-scope-deletions/skip-08.png)
+In the next provisioning cycle, the Microsoft Entra provisioning service identifies that the user 21173 is out of scope. If the `SkipOutOfScopeDeletions` property is enabled, then the synchronization rule for that user displays a message. 

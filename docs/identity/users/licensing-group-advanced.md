@@ -1,26 +1,28 @@
 ---
 title: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
 description: More scenarios limitations, and known issues for Microsoft Entra group-based licensing
-
-keywords: Azure AD licensing
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: sumitp
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: sfi-image-nochange
 ---
 
 # Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
 
 Use the following information and examples to gain a more advanced understanding of group-based licensing in Microsoft Entra ID, part of Microsoft Entra.
 
+
+
+[!INCLUDE [Microsoft 365 licensing](../../includes/licensing-microsoft-365.md)]
+
+
 ## Usage location
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Some Microsoft services aren't available in all locations. For group license assignment, any users without a usage location specified inherit the location of the directory. If you have users in multiple locations, make sure to reflect that correctly in your user resources before adding users to groups with licenses. Before a license can be assigned to a user, the administrator should specify the **Usage location** property on the user.
 
@@ -35,7 +37,7 @@ Some Microsoft services aren't available in all locations. For group license ass
 1. Select the **Save** button.
 
 > [!NOTE]
-> Group license assignment will never modify an existing usage location value on a user. We recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID (for example, via [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) configuration). Following such a process ensures the result of license assignment is always correct, and users do not receive services in locations that are not allowed.
+> Group license assignment never modifies an existing usage location value on a user. We recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID (for example, via [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) configuration). Following such a process ensures the result of license assignment is always correct, and users don't receive services in locations that aren't allowed.
 
 ## Use group-based licensing with dynamic membership groups
 
@@ -44,7 +46,7 @@ You can use group-based licensing with any security group, including dynamic mem
 You can assign the attribute on-premises and sync it with Microsoft Entra ID, or you can manage the attribute directly in the cloud. 
 
 > [!WARNING]
-> Use caution when modifying an existing group’s membership rule. When a rule is changed, the membership of the group is re-evaluated and users who no longer match the new rule are removed (users who still match the new rule aren't affected during this process). Those users will have their licenses removed during the process which may result in loss of service, or in some cases, loss of data.
+> Use caution when modifying an existing group’s membership rule. When a rule is changed, the membership of the group is re-evaluated. Users who no longer match the new rule are removed (users who still match the new rule aren't affected during this process). Those users have their licenses removed during the process which could result in loss of service, or in some cases, loss of data.
 >
 > If you have a large dynamic group you depend on for license assignment, consider validating any major changes on a smaller test group before applying them to the main group. If you encounter errors during your test, see [Resolve group license problems](licensing-groups-resolve-problems.md).
 
@@ -54,7 +56,7 @@ A user can be a member of multiple groups with licenses. Here are some things to
 
 - Multiple licenses for the same product can overlap, and they result in all enabled services being applied to the user. An example could be that *M365-P1* contains the foundational services to deploy to all users, and *M365-P2* contains the P2 services to deploy only to some users. You can add a user to one or both groups and only use one license for the product.
 
-- Select a license to view more details, including information about which services are enabled for the user by the group license assignment.
+- Select a license to see more details, such as information on the services activated for the user by the group license assignment.
 
 ## Direct licenses coexist with group licenses
 
@@ -75,7 +77,7 @@ When you use direct assignment, the following operations are allowed:
 
 ## Managing new services added to products
 
-When Microsoft adds a new service to a product license plan, it's enabled by default in all groups to which you've assigned the product license. Users in your organization who are subscribed to notifications about product changes will receive emails ahead of time notifying them about the upcoming service additions.
+When Microsoft adds a new service to a product license plan, it's enabled by default in all groups used to assign the product license. Users in your organization who are subscribed to notifications about product changes receive emails ahead of time notifying them about the upcoming service additions.
 
 As an administrator, you can review all groups affected by the change and take action, such as disabling the new service in each group. For example, if you created groups targeting only specific services for deployment, you can revisit those groups and make sure that any newly added services are disabled.
 
@@ -83,26 +85,25 @@ Here's an example of what this process may look like:
 
 1. Originally, you assigned the *Microsoft 365 E5* product to several groups. One of those groups, called *Microsoft 365 E5 - Exchange only* was designed to enable only the *Exchange Online (Plan 2)* service for its members.
 
-1. You received a notification from Microsoft that the E5 product will be extended with a new service - *Microsoft Stream*. When the service becomes available in your organization, you can complete the following steps:
+1. You received a notification from Microsoft that the E5 product is being extended with a new service - *Microsoft Stream*. When the service becomes available in your organization, you can complete the following steps:
 
 1. 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) 
 1. Select Microsoft Entra ID.
 1. Select **Billing** > **Licenses** > **All products** and select *Microsoft 365 Enterprise E5*, then select **Licensed Groups** to view a list of all groups with that product.
 
 1. Select the group you want to review (in this case, *Microsoft 365 E5 - Exchange only*). The **Licenses** tab opens. Select the E5 license to view all enabled services.
-   > [!NOTE]
-   > The *Microsoft Stream* service has been automatically added and enabled in this group, in addition to the *Exchange Online* service:
+
 
    :::image type="content" source="./media/licensing-group-advanced/manage-new-services.png" alt-text="Screenshot of new service added to a group license.":::
 
-1. If you want to disable the new service in this group, select the On/Off toggle next to the service, and select the **Save** button to confirm the change. Microsoft Entra ID will now process all users in the group to apply the change; any new users added to the group won't have the *Microsoft Stream* service enabled.
+1. If you want to disable the new service in this group, select the On/Off toggle next to the service, and select the **Save** button to confirm the change. Microsoft Entra ID now processes all users in the group to apply the change; any new users added to the group won't have the *Microsoft Stream* service enabled.
 
    > [!NOTE]
    > Users may still have the service enabled through some other license assignment (another group they are members of or a direct license assignment).
 
 1. If needed, perform the same steps for other groups with this product assigned.
 
-## Use PowerShell to see who has inherited and direct licenses
+## Use PowerShell to view inherited and direct license assignments
 You can use a PowerShell script to check if users have a license assigned directly or inherited from a group.
 
 1. Run the `Connect-MgGraph -Scopes "Organization.Read.All"` cmdlet to authenticate and connect to your organization using Microsoft Graph.
@@ -147,7 +148,7 @@ To see license changes for a specific user, use the following filters:
 
 ### Find out when group changes started and finished processing
 
-When a license changes on a group, Microsoft Entra ID will start applying the changes to all users, but the changes could take time to process.
+When a license changes on a group, Microsoft Entra ID starts applying the changes to all users, but the changes could take time to process.
 
 1. To see when groups started processing, use the following filters:
     - **Service**: Core Directory
@@ -172,13 +173,13 @@ To see the complete log for how a group was processed, including all user change
 - **Initiated By (Actor)**: Microsoft Entra group-Based Licensing (case-sensitive)
 - **Date Range** (optional): Custom range for when you know a specific group started and finished processing
 
-This sample output shows the start and finish of processing the license change.
+This image shows licensing change processing from stat to finish. 
 
 :::image type="content" source="./media/licensing-group-advanced/audit-log-license-start-finish.png" alt-text="Screenshot of the Microsoft Entra audit log filters and start and end times of license changes.":::
 
 ## Deleting a group with an assigned license
 
-It isn't possible to delete a group with an active license assigned. An administrator could delete a group not realizing that it will cause licenses to be removed from users. For this reason we require any licenses to be removed from the group first, before it can be deleted.
+It isn't possible to delete a group with an active license assigned. The reason is to prevent the unintended deletion of a group used for license assignment. For this reason we require any licenses to be removed from the group first, before it can be deleted.
 
 When trying to delete a group in the portal, you may see an error notification like this:
 

@@ -1,16 +1,15 @@
 ---
 title: 'Microsoft Entra Cloud Governed Management for On-Premises Workloads - Azure'
 description: This topic describes cloud governed management for on-premises workloads.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # How Microsoft Entra ID Delivers Cloud Governed Management for On-Premises Workloads
@@ -56,7 +55,7 @@ Microsoft Entra ID improves the management for an organization's on-premises Act
 
 For many organizations, the first step in managing access from the cloud for on-premises AD-integrated web and remote desktop-based applications is to deploy the [application proxy](/entra/identity/app-proxy) in front of those applications to provide secure remote access.
 
-After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy  provides remote access and single sign-on to Remote Desktop, SharePoint, as well as apps such as Tableau and Qlik, and line of business (LOB) applications. Furthermore, Conditional Access policies can include displaying the [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to them](~/identity/conditional-access/require-tou.md) before being able to access an application.
+After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy  provides remote access and single sign-on to Remote Desktop, SharePoint, as well as apps such as Tableau and Qlik, and line of business (LOB) applications. Furthermore, Conditional Access policies can include displaying the [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to them](~/identity/conditional-access/policy-all-users-require-terms-of-use.md) before being able to access an application.
 
 ![Application proxy architecture](media/cloud-governed-management-for-on-premises/image2.png)
 

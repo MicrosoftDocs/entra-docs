@@ -8,12 +8,12 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 12/20/2023
+ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom:  enterprise-apps
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 
 #customer intent: As an administrator, I want to grant tenant-wide admin consent to an application, so that the application can access the permissions requested on behalf of the whole organization.
 ---
@@ -45,14 +45,13 @@ To grant tenant-wide admin consent, you need:
 
 ## Grant tenant-wide admin consent in Enterprise apps pane
 
-You can grant tenant-wide admin consent through the **Enterprise applications** pane if the application has already been provisioned in your tenant. For example, an app could be provisioned in your tenant if at least one user has already consented to the application. For more information, see [How and why applications are added to Microsoft Entra ID](~/identity-platform/how-applications-are-added.md).
+You can grant tenant-wide admin consent through the **Enterprise applications** pane if the application is already provisioned in your tenant. For example, an app could be provisioned in your tenant if at least one user consents to the application. For more information, see [How and why applications are added to Microsoft Entra ID](~/identity-platform/how-applications-are-added.md).
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To grant tenant-wide admin consent to an app listed in **Enterprise applications** pane:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Select **Permissions** under **Security**.
    :::image type="content" source="media/grant-tenant-wide-admin-consent/grant-tenant-wide-admin-consent.png" alt-text="Screenshot shows how to grant tenant-wide admin consent.":::
@@ -60,11 +59,11 @@ To grant tenant-wide admin consent to an app listed in **Enterprise applications
 
 ## Grant admin consent in App registrations pane
 
-You can grant tenant-wide admin consent from **App registrations** in the Microsoft Entra admin center for applications your organization has developed and registered directly in your Microsoft Entra tenant.
+You can grant tenant-wide admin consent from **App registrations** in the Microsoft Entra admin center for applications your organization develops and registers directly in your Microsoft Entra tenant.
 
 To grant tenant-wide admin consent from **App registrations**:
 
-1. On the Microsoft Entra admin center, browse to **Identity** > **Applications** > **App registrations** > **All applications**.
+1. On the Microsoft Entra admin center, browse to **Entra ID** > **App registrations** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Select **API permissions** under **Manage**.
 1. Carefully review the permissions that the application requires. If you agree, select **Grant admin consent**.
@@ -79,7 +78,7 @@ The tenant-wide admin consent URL follows the following format:
 https://login.microsoftonline.com/{organization}/adminconsent?client_id={client-id}
 ```
 
-where:
+Where:
 
 - `{client-id}` is the application's client ID (also known as app ID).
 - `{organization}` is the tenant ID or any verified domain name of the tenant you want to consent the application in. You can use the value `organizations`that causes the consent to happen in the home tenant of the user you sign in with.
@@ -96,7 +95,7 @@ For more information on constructing the tenant-wide admin consent URL, see [Adm
 
 In this section, you grant delegated permissions to your application. Delegated permissions are permissions your application needs to access an API on behalf of a signed-in user. The permissions are defined by a resource API and granted to your enterprise application, which is the client application. This consent is granted on behalf of all users.
 
-In the following example, the resource API is Microsoft Graph of object ID `11112222-bbbb-3333-cccc-4444dddd5555`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `00001111-aaaa-2222-bbbb-3333cccc4444`.
+In the following example, the resource API is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph API defines the delegated permissions, `User.Read.All`, and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically aren't subject to review or confirmation. They take effect immediately.
@@ -120,7 +119,7 @@ In the following example, the resource API is Microsoft Graph of object ID `1111
    
    "ClientId" = "00001111-aaaa-2222-bbbb-3333cccc4444"
    "ConsentType" = "AllPrincipals"
-   "ResourceId" = "11112222-bbbb-3333-cccc-4444dddd5555"
+   "ResourceId" = "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
    "Scope" = "User.Read.All Group.Read.All"
    }
 
@@ -136,7 +135,7 @@ In the following example, the resource API is Microsoft Graph of object ID `1111
 
 ## Grant admin consent for application permissions using Microsoft Graph PowerShell
 
-In this section, you grant application permissions to your enterprise application. Application permissions are permissions your application needs to access a resource API. The permissions are defined by the resource API and granted to your enterprise application, which is the principal application. After you've granted your application access to the resource API, it runs as a background service or daemon without a signed-in user. Application permissions are also known as app roles.
+In this section, you grant application permissions to your enterprise application. Application permissions are permissions your application needs to access a resource API. The permissions are defined by the resource API and granted to your enterprise application, which is the principal application. After you grant your application access to the resource API, it runs as a background service or daemon without a signed-in user. Application permissions are also known as app roles.
 
 In the following example, you grant the Microsoft Graph application (the principal of ID `aaaaaaaa-bbbb-cccc-1111-222222222222`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource API of ID `11112222-bbbb-3333-cccc-4444dddd5555`.
 
@@ -157,7 +156,7 @@ In the following example, you grant the Microsoft Graph application (the princip
 ```powershell
  $params = @{
   "PrincipalId" ="aaaaaaaa-bbbb-cccc-1111-222222222222"
-  "ResourceId" = "11112222-bbbb-3333-cccc-4444dddd5555"
+  "ResourceId" = "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1"
   "AppRoleId" = "df021288-bdef-4463-88db-98f22de89214"
 }
 
@@ -177,7 +176,7 @@ In this section, you grant delegated permissions to your application. Delegated 
 
 You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-In the following example, the resource API is Microsoft Graph of object ID `11112222-bbbb-3333-cccc-4444dddd5555`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `00001111-aaaa-2222-bbbb-3333cccc4444`.
+In the following example, the resource API is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph API defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `AllPrincipals`, indicating that you're consenting on behalf of all users in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically are not subject to review or confirmation. They take effect immediately.
@@ -197,7 +196,7 @@ In the following example, the resource API is Microsoft Graph of object ID `1111
    {
       "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
       "consentType": "AllPrincipals",
-      "resourceId": "11112222-bbbb-3333-cccc-4444dddd5555",
+      "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
       "scope": "User.Read.All Group.Read.All"
    }
    ```
@@ -210,7 +209,7 @@ In the following example, the resource API is Microsoft Graph of object ID `1111
 
 ## Grant admin consent for application permissions using Microsoft Graph API
 
-In this section, you grant application permissions to your enterprise application. Application permissions are permissions your application needs to access a resource API. The permissions are defined by the resource API and granted to your enterprise application, which is the principal application. After you've granted your application access to the resource API, it runs as a background service or daemon without a signed-in user. Application permissions are also known as app roles.
+In this section, you grant application permissions to your enterprise application. Application permissions are permissions your application needs to access a resource API. The permissions are defined by the resource API and granted to your enterprise application, which is the principal application. After you grant your application access to the resource API, it runs as a background service or daemon without a signed-in user. Application permissions are also known as app roles.
 
 In the following example, you grant the application, Microsoft Graph (the principal of ID `00001111-aaaa-2222-bbbb-3333cccc4444`) an app role (application permission) of ID `df021288-bdef-4463-88db-98f22de89214` that's exposed by a resource enterprise application of ID `11112222-bbbb-3333-cccc-4444dddd5555`.
 
@@ -231,7 +230,7 @@ You need to sign as at least a [Privileged Role Administrator](~/identity/role-b
 
    {
       "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
-      "resourceId": "11112222-bbbb-3333-cccc-4444dddd5555",
+      "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
       "appRoleId": "df021288-bdef-4463-88db-98f22de89214"
    }
    ```

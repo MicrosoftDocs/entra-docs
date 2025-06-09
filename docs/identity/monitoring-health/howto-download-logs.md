@@ -2,16 +2,15 @@
 title: How to download logs in Microsoft Entra ID
 description: How to download the audit, sign-in, and provisioning log data for manual storage in Microsoft Entra ID.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to download the audit, sign-in, and provisioning log data for manual storage in Microsoft Entra ID.
-
 ---
 
 # How to download logs in Microsoft Entra ID
@@ -26,10 +25,11 @@ Microsoft Entra ID stores activity logs for a specific period, depending on your
 
 ## Prerequisites
 
-- For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it.
+    - For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
 - The option to download logs is available in all editions of Microsoft Entra ID.
 - Downloading logs programmatically with Microsoft Graph requires a [premium license](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
-- **Reports Reader** is the least privileged role required to view Microsoft Entra activity logs.
+- [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to view Microsoft Entra activity logs.
 
 ## Log download considerations
 
@@ -61,10 +61,9 @@ For example, if you're in the **Groups** or **Licenses** section of Microsoft En
 
 ### Audit logs
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
 1. Select **Download**.
 1. In the panel that opens, select the **Format**.
 1. Optionally provide a unique file name.
@@ -77,7 +76,7 @@ For example, if you're in the **Groups** or **Licenses** section of Microsoft En
 The options covered in this section align with the preview experience for sign-in logs.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Select the **Download** button and select either **JSON** or **CSV**.
 
     ![Screenshot of the download button options for sign-in logs.](media/howto-download-logs/sign-in-logs-download.png)
@@ -97,7 +96,7 @@ The options covered in this section align with the preview experience for sign-i
 ### Provisioning logs
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Provisioning logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Provisioning logs**.
 1. Select the **Download** button and select either **JSON** or **CSV**.
 1. Optionally provide a unique file name for each file you need to download.
 1. Select the **Download** button for one or more of the logs. The download processes and sends the file to your default download location.

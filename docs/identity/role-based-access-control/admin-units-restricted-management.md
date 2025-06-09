@@ -1,15 +1,14 @@
 ---
 title: Restricted management administrative units in Microsoft Entra ID (Preview)
 description: Use restricted management administrative units for more sensitive resources in Microsoft Entra ID.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: role-based-access-control
-ms.date: 06/13/2024
-ms.author: rolyon
-ms.custom: oldportal;it-pro;
+ms.date: 05/24/2025
+ms.author: barclayn
+ms.custom: oldportal, it-pro;, sfi-ga-nochange
 ---
 
 # Restricted management administrative units in Microsoft Entra ID (Preview)
@@ -25,7 +24,7 @@ Restricted management administrative units allow you to protect specific objects
 Here are some reasons why you might use restricted management administrative units to help manage access in your tenant.
 
 - You want to protect your C-level executive accounts and their devices from Helpdesk Administrators who would otherwise be able to reset their passwords or access BitLocker recovery keys. You can add your C-level user accounts in a restricted management administrative unit and enable a specific trusted set of administrators who can reset their passwords and access BitLocker recovery keys when needed.
-- You're implementing a compliance control to ensure that certain resources can only be managed by administrators in a specific country. You can add those resources in a restricted management administrative unit and assign local administrators to manage those objects. Even Global Administrators won't be allowed to modify the objects unless they assign themselves explicitly to a role scoped to the restricted management administrative unit (which is an auditable event).
+- You're implementing a compliance control to ensure that certain resources can only be managed by administrators in a specific country/region. You can add those resources in a restricted management administrative unit and assign local administrators to manage those objects. Even Global Administrators won't be allowed to modify the objects unless they assign themselves explicitly to a role scoped to the restricted management administrative unit (which is an auditable event).
 - You're using security groups to control access to sensitive applications in your organization, and you don't want to allow your tenant-scoped administrators who can modify groups to be able to control who can access the applications. You can add those security groups to a restricted management administrative unit and then be sure that only the specific administrators you assign can manage them.
 
 > [!NOTE]
@@ -59,6 +58,7 @@ For administrators not explicitly assigned at the restricted management administ
 | Modify email and mailbox settings in Exchange for the user in the restricted management administrative unit |  | :white_check_mark: |
 | Apply policies to a device in a restricted management administrative unit using Intune |  | :white_check_mark: |
 | Add or remove a group as a site owner in SharePoint |  | :white_check_mark: |
+| Assign licenses and update the usage location of users in a restricted management administrative unit |  | :white_check_mark: |
 
 ## Who can modify objects?
 
@@ -79,7 +79,8 @@ Only administrators with an explicit assignment at the scope of a restricted man
 Here are some of the limits and constraints for restricted management administrative units.
 
 - The restricted management setting must be applied during administrative unit creation and can't be changed once the administrative unit is created.
-- Groups in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Microsoft Entra Privileged Identity Management](../../id-governance/privileged-identity-management/groups-discover-groups.md) or [Microsoft Entra entitlement management](../../id-governance/entitlement-management-overview.md).
+- Groups and users in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Privileged Identity Management](../../id-governance/privileged-identity-management/groups-discover-groups.md), [Entitlement management](../../id-governance/entitlement-management-overview.md), [Lifecycle workflows](../../id-governance/what-are-lifecycle-workflows.md) and [Access reviews](../../id-governance/access-reviews-overview.md).
+- When a group is configured to have public membership (by setting the [visibility](/graph/api/resources/group#properties) property to `Public`), users can join the group by using [self-service group membership](../users/groups-self-service-management.md). This configuration is not the default setting, and it is not recommended to configure groups in restricted management administrative units to allow for public membership. This is a temporary limitation and will be removed.
 - Role-assignable groups, when added to a restricted management administrative unit, can't have their membership modified. Group owners aren't allowed to manage groups in restricted management administrative units and only Global Administrators and Privileged Role Administrators (neither of which can be assigned at administrative unit scope) can modify membership.
 - Certain actions might not be possible when an object is in a restricted management administrative unit, if the required role isn't one of the roles that can be assigned at administrative unit scope. For example, a Global Administrator in a restricted management administrative unit can't have their password reset by any other administrator in the system, because there's no admin role that can be assigned at the administrative unit scope that can reset the password of a Global Administrator. In such scenarios, the Global Administrator would need to be removed from the restricted management administrative unit first, and then have their password reset by another Global Administrator or Privileged Role Administrator.
 - When deleting a restricted management administrative unit, it can take up to 30 minutes to remove all protections from the former members.
@@ -96,4 +97,4 @@ Restricted management administrative units require a Microsoft Entra ID P1 licen
 
 - [Create, update, or delete administrative units](admin-units-manage.md)
 - [Add users or groups to an administrative unit](admin-units-members-add.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)

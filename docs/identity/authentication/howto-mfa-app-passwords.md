@@ -6,11 +6,11 @@ description: Learn how to configure and use app passwords for legacy application
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: michmcla
 ---
 # Enforce Microsoft Entra multifactor authentication with legacy applications using app passwords
@@ -76,13 +76,12 @@ In this scenario, you use the following credentials:
 
 ## Allow users to create app passwords
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 By default, users can't create app passwords. The app passwords feature must be enabled before users can use them. To give users the ability to create app passwords, **admin needs** to complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Conditional Access** > **Named locations**.
-5. Click on **"Configure MFA trusted IPs"** in the bar across the top of the *Conditional Access | Named Locations* window.
+5. Select **"Configure MFA trusted IPs"** in the bar across the top of the *Conditional Access | Named Locations* window.
 6. On the **Multifactor authentication** page, select the **Allow users to create app passwords to sign in to non-browser apps** option.
 
     ![Screenshot that shows the service settings for multifactor authentication to allow the user of app passwords](media/concept-authentication-methods/app-password-authentication-method.png)
@@ -91,7 +90,7 @@ By default, users can't create app passwords. The app passwords feature must be 
 >
 > When you disable the ability for users to create app passwords, existing app passwords continue to work. However, users can't manage or delete those existing app passwords once you disable this ability.
 >
-> When you disable the ability to create app passwords, it's also recommended to [create a Conditional Access policy to disable the use of legacy authentication](~/identity/conditional-access/block-legacy-authentication.md). This approach prevents existing app passwords from working, and forces the use of modern authentication methods.
+> When you disable the ability to create app passwords, it's also recommended to [create a Conditional Access policy to disable the use of legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md). This approach prevents existing app passwords from working, and forces the use of modern authentication methods.
 
 ## Create an app password
 

@@ -1,17 +1,14 @@
 ---
 title: Debug SAML-based single sign-on
 description: Debug SAML-based single sign-on to applications in Microsoft Entra ID.
-
 ms.author: alamaral
 author: AllisonAm
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: troubleshooting
-
 ms.date: 06/21/2024
-ms.custom: enterprise-apps
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin troubleshooting SAML-based single sign-on issues in Microsoft Entra ID, I want to gather the necessary information and resolve sign-in errors, so that I can ensure successful single sign-on between Microsoft Entra ID and target applications.
 ---
 
@@ -28,14 +25,13 @@ To download and install the My Apps Secure Sign-in Extension, use one of the fol
 - [Chrome](https://go.microsoft.com/fwlink/?linkid=866367)
 - [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/my-apps-secure-signin-ex/gaaceiggkkiffbfdpmfapegoiohkiipl)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Test SAML-based single sign-on
 
 To test SAML-based single sign-on between Microsoft Entra ID and a target application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. From the list of enterprise applications, select the application for which you want to test single sign-on, and then from the options on the left, select **Single sign-on**.
 1. On the **Select a single sign-on method** pane, select **SAML**.
 1. To open the SAML-based single sign-on testing experience, go to **Test single sign-on** (step 5). If the **Test** button is greyed out, you need to fill out and save the required attributes first in the **Basic SAML Configuration** section.
@@ -98,4 +94,4 @@ To resolve the error, follow these steps, or watch this [short video about how t
 
 ## Next steps
 
-Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml).
+Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](~/identity/conditional-access/policy-all-users-device-compliance.md).

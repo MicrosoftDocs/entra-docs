@@ -1,16 +1,14 @@
 ---
 title: Phone authentication methods
 description: Learn about using phone authentication methods in Microsoft Entra ID to help improve and secure sign-in events
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/01/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
-
+manager: dougeby
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use phone authentication methods in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -49,7 +47,15 @@ Android users can enable RCS on their devices. RCS offers encryption and other i
 
 :::image type="content" source="media/concept-authentication-methods/brand.png" alt-text="Screenshot of Microsoft branding in RCS messages.":::
 
-Some users with phone numbers that have country codes belonging to Indonesia may receive their verification codes in WhatsApp. Like RCS, these messages are similar to SMS, but have more Microsoft branding and a verified checkmark. Only users that have WhatsApp receive verification codes through this channel. To check if a user has WhatsApp, we silently try to deliver them a message in the app by using the phone number they registered for text message verification. If users don't have any internet connectivity or they uninstall WhatsApp, they receive SMS verification codes. The phone number associated with Microsoft's WhatsApp Business Agent is: *+1 (217) 302 1989*.
+Some users may receive their verification codes in WhatsApp. 
+Like RCS, these messages are similar to SMS, but have more Microsoft branding and a verified checkmark. 
+The first time a user receives a verification code in WhatsApp, they're notified by SMS text message of the changed behavior.
+
+Only users that have WhatsApp receive verification codes through this channel. 
+To check if a user has WhatsApp, we silently try to deliver them a message in the app by using the phone number they registered for text message verification. 
+
+If users don't have any internet connectivity or they uninstall WhatsApp, they receive SMS verification codes. 
+The phone number associated with Microsoft's WhatsApp Business Agent is: *+1 (217) 302 1989*.
 
 :::image type="content" border="true" source="media/concept-authentication-methods/code.png" alt-text="Screenshot of confirmation.":::
 
@@ -58,6 +64,9 @@ Some users with phone numbers that have country codes belonging to Indonesia may
 With phone call verification during SSPR or Microsoft Entra multifactor authentication, an automated voice call is made to the phone number registered by the user. To complete the sign-in process, the user is prompted to press # on their keypad.
 
 The calling number that a user receives the voice call from differs for each country. See [phone call settings](howto-mfa-mfasettings.md#phone-call-settings) to view all possible voice call numbers.
+
+> [!NOTE]
+> SSPR can only be completed with a primary phone method or an office phone method. Alternate phone methods are only available for MFA.
 
 ## Office phone verification
 

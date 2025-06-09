@@ -2,13 +2,13 @@
 title: Overview of Microsoft Entra Domain Services | Microsoft Docs
 description: In this overview, learn what Microsoft Entra Domain Services provides and how to use it in your organization to provide identity services to applications and services in the cloud.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: overview
-ms.date: 09/15/2023
+ms.date: 02/05/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT administrator or decision maker, I want to understand what Domain Services is and how it can benefit my organization.
 ---
 
@@ -25,7 +25,7 @@ Domain Services integrates with your existing Microsoft Entra tenant. This integ
 
 Take a look at our short video to learn more about Domain Services.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LblD]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=0a092182-e2de-4538-a6b4-adfcacf1cc54]
 
 <a name='how-does-azure-ad-ds-work'></a>
 

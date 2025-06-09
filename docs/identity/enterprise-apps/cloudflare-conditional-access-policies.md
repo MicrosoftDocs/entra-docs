@@ -39,24 +39,23 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 
 ## Set up an identity provider
 
-Go to developers.cloudflare.com to [set up Microsoft Entra ID as an IdP](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/azuread/#set-up-azure-ad-as-an-identity-provider).
+Go to developers.cloudflare.com to [set up Microsoft Entra ID as an IdP](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/entra-id/#set-up-entra-id-as-an-identity-provider).
 
    > [!NOTE]
    > It's recommended you name the IdP integration in relation to the target application. For example, **Microsoft Entra ID - Customer management portal**.
 
 ## Configure Conditional Access
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations** > **All applications**
+2. Browse to **Entra ID** > **App registrations** > **All applications**
 3. Select the application you created.
 4. Go to **Branding & properties**.
 5. For **Home page URL**, enter the application hostname.
 
    ![Screenshot of options and entries for branding and properties.](./media/cloudflare-conditional-access-policies/branding-properties.png)
 
-7. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+7. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 8. Select your application.
 9. Select **Properties**.
 10. For **Visible to users**, select **Yes**. This action enables the app to appear in App Launcher and in [My Apps](https://myapplications.microsoft.com/).

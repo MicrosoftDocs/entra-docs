@@ -5,14 +5,13 @@ description: Learn how to do a targeted deployment of Microsoft Entra hybrid joi
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 03/01/2024
+ms.date: 11/25/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
 ---
-
 # Microsoft Entra hybrid join targeted deployment
 
 You can validate your [planning and prerequisites](hybrid-join-plan.md) for hybrid Microsoft Entra joining devices using a targeted deployment before enabling it across the entire organization. This article explains how to accomplish a targeted deployment of Microsoft Entra hybrid join.
@@ -21,12 +20,13 @@ You can validate your [planning and prerequisites](hybrid-join-plan.md) for hybr
 > Use caution when modifying values in Active Directory. Making changes in an established environment might have unintended consequences.
 
 <a name='targeted-deployment-of-hybrid-azure-ad-join-on-windows-current-devices'></a>
+<a name='targeted-deployment-of-microsoft-entra-hybrid-join-on-windows-current-devices'></a>
 
-## Targeted deployment of Microsoft Entra hybrid join on Windows current devices
+## Targeted deployment of Microsoft Entra hybrid join on Windows devices
 
-For devices running Windows 10, the minimum supported version is Windows 10 (version 1607) to do hybrid join. As a best practice, upgrade to the latest version of Windows 10 or 11. If you need to support previous operating systems, see the section [Supporting down-level devices](#supporting-down-level-devices).
+For devices running Windows 10, the minimum supported version is Windows 10 (version 1607) to do hybrid join. As a best practice, upgrade to the latest version of Windows 10 or 11. 
 
-To do a targeted deployment of Microsoft Entra hybrid join on Windows current devices, you need to:
+To do a targeted deployment of Microsoft Entra hybrid join on Windows devices, you need to:
 
 1. [Clear the Service Connection Point (SCP) entry from Windows Server Active Directory if it exists](#clear-the-scp-from-ad).
 1. [Configure client-side registry setting for SCP on your domain-joined computers using a Group Policy Object (GPO)](#configure-client-side-registry-setting-for-scp).
@@ -64,7 +64,7 @@ Use the following example to create a Group Policy Object (GPO) to deploy a regi
       1. Key Path: **SOFTWARE\Microsoft\Windows\CurrentVersion\CDJ\AAD**.
       1. Value name: **TenantId**.
       1. Value type: **REG_SZ**.
-      1. Value data: The globally unique identifier (GUID) or **Tenant ID** of your Microsoft Entra tenant, which can be found in **Identity** > **Overview** > **Properties** > **Tenant ID**.
+      1. Value data: The globally unique identifier (GUID) or **Tenant ID** of your Microsoft Entra tenant, which can be found in **Entra ID** > **Overview** > **Properties** > **Tenant ID**.
    1. Select **OK**.
 1. Right-click on the Registry and select **New** > **Registry Item**.
    1. On the **General** tab, configure the following.
@@ -85,26 +85,13 @@ If your Microsoft Entra ID is federated with AD FS, you first need to configure 
 > [!NOTE]
 > If you failed to configure client-side SCP on your AD FS servers, the source for device identities would be considered as on-premises. AD FS will then start deleting device objects from on-premises directory after the stipulated period defined in the AD FS Device Registration's attribute "MaximumInactiveDays". AD FS Device Registration objects can be found using the [Get-AdfsDeviceRegistration cmdlet](/powershell/module/adfs/get-adfsdeviceregistration).
 
-## Supporting down-level devices
-
-To register Windows down-level devices, organizations must install [Microsoft Workplace Join for non-Windows 10 computers](https://www.microsoft.com/download/details.aspx?id=53554) available on the Microsoft Download Center.
-
-You can deploy the package by using a software distribution system like [Microsoft Configuration Manager](/mem/configmgr/). The package supports the standard silent installation options with the quiet parameter. The current branch of Configuration Manager offers benefits over earlier versions, like the ability to track completed registrations.
-
-The installer creates a scheduled task on the system that runs in the user context. The task is triggered when the user signs in to Windows. The task silently joins the device with Microsoft Entra ID with the user credentials after authenticating with Microsoft Entra ID.
-
-To control the device registration, you should deploy the Windows Installer package to your selected group of Windows down-level devices.
-
-> [!NOTE]
-> If a SCP is not configured in Microsoft Windows Server Active Directory, then you should follow the same approach as described to [Configure client-side registry setting for SCP](#configure-client-side-registry-setting-for-scp)) on your domain-joined computers using a Group Policy Object (GPO).
-
 ## Why a device might be in a pending state
 
 When you configure a **Microsoft Entra hybrid join** task in the Microsoft Entra Connect Sync for your on-premises devices, the task syncs device objects to Microsoft Entra ID, and temporarily set the registered state of the devices to "pending" before the device completes the device registration. This pending state is because the device must be added to the Microsoft Entra directory before it can be registered. For more information about the device registration process, see [How it works: Device registration](device-registration-how-it-works.md#hybrid-azure-ad-joined-in-managed-environments).
 
 ## Post validation
 
-After you verify that everything works as expected, you can automatically register the rest of your Windows current and down-level devices with Microsoft Entra ID. Automate Microsoft Entra hybrid join by [configuring the SCP using Microsoft Entra Connect](./how-to-hybrid-join.md).
+After you verify that everything works as expected, you can automatically register the rest of your Windows devices with Microsoft Entra ID. Automate Microsoft Entra hybrid join by [configuring the SCP using Microsoft Entra Connect](./how-to-hybrid-join.md).
 
 ## Related content
 

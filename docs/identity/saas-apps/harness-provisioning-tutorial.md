@@ -1,20 +1,18 @@
 ---
-title: 'Tutorial: Configure Harness for automatic user provisioning with Microsoft Entra ID'
+title: Configure Harness for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Harness.
-
 author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Harness so that I can streamline the user management process and ensure that users have the appropriate access to Harness.
 ---
 
-# Tutorial: Configure Harness for automatic user provisioning
+# Configure Harness for automatic user provisioning with Microsoft Entra ID
 
 In this article, you learn how to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Harness.
 
@@ -27,7 +25,7 @@ In this article, you learn how to configure Microsoft Entra ID to automatically 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Harness tenant](https://harness.io/pricing/)
 * A user account in Harness with *Admin* permissions
 
@@ -67,7 +65,7 @@ Before you configure and enable automatic user provisioning, decide which users 
    
 1. Select **Submit**.
 
-1. Copy the **Key** for later use in this tutorial.
+1. Copy the **Key** for later use in this article.
 
 	![Harness Create Token](media/harness-provisioning-tutorial/token.png)
 
@@ -76,7 +74,7 @@ Before you configure and enable automatic user provisioning, decide which users 
 Before you configure Harness for automatic user provisioning with Microsoft Entra ID, you need to add Harness from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![The "All applications" link](common/enterprise-applications.png)
 
@@ -93,15 +91,15 @@ Before you configure Harness for automatic user provisioning with Microsoft Entr
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users or groups in Harness based on user or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Harness by following the instructions in the [Harness single sign-on tutorial](./harness-tutorial.md). You can configure single sign-on independent of automatic user provisioning, although these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for Harness by following the instructions in the [Harness single sign-on  article](./harness-tutorial.md). You can configure single sign-on independent of automatic user provisioning, although these two features complement each other.
 
 > [!NOTE]
-> To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://docs.harness.io/article/smloyragsm-api-keys) article.
+> To learn more about the Harness SCIM endpoint, see the Harness [API Keys](https://developer.harness.io/docs/platform/automation/api/add-and-manage-api-keys/) article.
 
 To configure automatic user provisioning for Harness in Microsoft Entra ID, do the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -121,9 +119,11 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
  
-   a. In the **Tenant URL** box, enter **`https://app.harness.io/gateway/api/scim/account/<your_harness_account_ID>`**. You can obtain your Harness account ID from the URL in your browser when you are logged into Harness.
-   b. In the **Secret Token** box, enter the SCIM Authentication Token value that you saved in step 6 of the "Set up Harness for provisioning" section.  
-   c. Select **Test Connection** to ensure that Microsoft Entra ID can connect to Harness. If the connection fails, ensure that your Harness account has *Admin* permissions, and then try again.
+   * In the **Tenant URL** box, enter **`https://app.harness.io/gateway/api/scim/account/<your_harness_account_ID>`**. You can obtain your Harness account ID from the URL in your browser when you're logged into Harness.
+
+   * In the **Secret Token** box, enter the SCIM Authentication Token value that you saved in step 6 of the "Set up Harness for provisioning" section. 
+    
+   * Select **Test Connection** to ensure that Microsoft Entra ID can connect to Harness. If the connection fails, ensure that your Harness account has *Admin* permissions, and then try again.
 
 1. In the **Notification Email** box, enter the email address of a person or group that should receive the provisioning error notifications, and then select the **Send an email notification when a failure occurs** check box.
 
@@ -133,15 +133,11 @@ To configure automatic user provisioning for Harness in Microsoft Entra ID, do t
 
 1. Under **Mappings**, select **Synchronize Microsoft Entra users to Harness**.
 
-	![Harness "Synchronize Microsoft Entra users to Harness" link](media/harness-provisioning-tutorial/usermappings.png)
-
 1. Under **Attribute Mappings**, review the user attributes that are synchronized from Microsoft Entra ID to Harness. The attributes selected as *Matching* are used to match the user accounts in Harness for update operations. Select **Save** to commit any changes.
 
 	![Harness user "Attribute Mappings" pane](media/harness-provisioning-tutorial/userattributes.png)
 
 1. Under **Mappings**, select **Synchronize Microsoft Entra groups to Harness**.
-
-	![Harness "Synchronize Microsoft Entra groups to Harness" link](media/harness-provisioning-tutorial/groupmappings.png)
 
 1. Under **Attribute Mappings**, review the group attributes that are synchronized from Microsoft Entra ID to Harness. The attributes selected as *Matching* properties are used to match the groups in Harness for update operations. Select **Save** to commit any changes.
 
@@ -170,6 +166,6 @@ For more information about how to read the Microsoft Entra provisioning logs, se
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
