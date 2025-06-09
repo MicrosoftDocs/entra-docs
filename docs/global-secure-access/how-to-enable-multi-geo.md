@@ -3,7 +3,7 @@ title: Multi-Geo for Microsoft Entra Private Access (Preview)
 description: "Learn how to enable Multi-Geo Capability for Microsoft Entra Private Access to optimize traffic flow from Microsoft Entra Clients to Microsoft Entra Apps."
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to   
 ms.date: 04/30/2025

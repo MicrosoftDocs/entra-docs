@@ -2,7 +2,7 @@
 title: Use Azure Front Door as proxy server for SPA with native auth
 description: Learn how to set up Azure Front Door as a reverse proxy in a production environment for a single-page app that uses native authentication.
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external

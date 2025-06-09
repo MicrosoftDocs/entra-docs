@@ -3,7 +3,7 @@ title: User profile attributes
 description: User profile attributes that you can collect from the user during sign-up, and how to extend user profile attributes by using custom user attributes.
 author: kengaderdus
 ms.author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article

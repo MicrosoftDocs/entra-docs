@@ -2,7 +2,7 @@
 title: Customize the company branding
 description: Learn how to customize the sign-in and sign-up experiences for your customers.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article

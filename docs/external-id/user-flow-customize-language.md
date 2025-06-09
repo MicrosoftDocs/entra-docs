@@ -4,7 +4,7 @@ description: Learn about customizing the language experience in your user flows 
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.service: entra-external-id
 ms.topic: how-to

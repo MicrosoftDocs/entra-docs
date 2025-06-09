@@ -9,7 +9,7 @@ ms.date: 10/08/2024
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As an Azure US Government cloud tenant, I want to know if B2B collaboration is available in my tenant, so that I can determine if I can collaborate with other tenants and social users using Microsoft, Google accounts, or email one-time passcode accounts.

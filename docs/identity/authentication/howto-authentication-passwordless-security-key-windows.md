@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: librown, aakapo
 ---
 # Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID 

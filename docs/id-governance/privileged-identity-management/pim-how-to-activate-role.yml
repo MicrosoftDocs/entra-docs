@@ -4,7 +4,7 @@ metadata:
   description: Learn how to activate Microsoft Entra roles in Privileged Identity Management (PIM).
   author: barclayn
   ms.author: barclayn
-  manager: femila
+  manager: pmwongera
   ms.reviewer: ilyal
   ms.date: 01/06/2025
   ms.service: entra-id-governance

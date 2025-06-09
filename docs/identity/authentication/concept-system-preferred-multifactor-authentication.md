@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 03/19/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: msft-poulomi
 
 # Customer intent: As an identity administrator, I want to encourage users to sign in with the most secure authentication method they registered.

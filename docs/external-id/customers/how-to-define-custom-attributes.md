@@ -3,7 +3,7 @@ title: Define custom attributes
 description: Learn how to create and define new custom attributes to be collected from users during sign-up and sign-in.
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

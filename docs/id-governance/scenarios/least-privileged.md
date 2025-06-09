@@ -5,7 +5,7 @@ ms.service: entra-id-governance
 ms.subservice:
 
 author: billmath
-manager: femila
+manager: dougeby
 
 
 ms.topic: conceptual

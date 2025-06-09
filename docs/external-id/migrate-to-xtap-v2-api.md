@@ -4,7 +4,7 @@ description: Learn how to Migrate to version 2 of the CrossTenantAccessPolicy Mi
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 
 ROBOTS: NOINDEX, NOFOLLOW
