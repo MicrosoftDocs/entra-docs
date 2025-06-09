@@ -72,7 +72,7 @@ and performance highlights.
    - **Review policy changes**: Review the policy changes before applying them.
    - **Policy impact**: Displays a visualization of the potential impact of the policy. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
 
-   :::image type="content" source="media/agent-optimization/agent-optimization-require-mfa-details.png" alt-text="Screenshot showing recent activity of the Conditional Access optimization agent." lightbox="media/agent-optimization/agent-optimization-require-mfa-details.png":::
+   :::image type="content" source="media/agent-optimization/agent-optimization-require-mfa-details.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/agent-optimization-require-mfa-details.png":::
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
