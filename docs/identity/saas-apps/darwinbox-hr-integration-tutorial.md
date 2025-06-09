@@ -85,6 +85,6 @@ Extend your HR-driven provisioning process to automate business processes and se
 -	“X” days after termination, delete user from Microsoft Entra ID.
 
 
-## Next step
+## Related content
 
-> To learn how to monitor the status of your provisioning events, see [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
+> To learn how to monitor the status of your provisioning events, see [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md).
