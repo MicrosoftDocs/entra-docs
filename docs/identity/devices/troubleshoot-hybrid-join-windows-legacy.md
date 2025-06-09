@@ -9,7 +9,7 @@ ms.date: 05/29/2024
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: 
 
 #Customer intent: As an IT admin, I want to fix issues with my Microsoft Entra hybrid joined devices so that I can my users can use this feature.
