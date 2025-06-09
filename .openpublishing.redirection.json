@@ -112,7 +112,7 @@
     },
     {
       "source_path_from_root": "/docs/id-governance/entra-suite-scenario.md",
-      "redirect_url": "docs/id-governance/entitlement-management-global-secure-access-restrict-employee-access",
+      "redirect_url": "/docs/id-governance/entitlement-management-global-secure-access-restrict-employee-access",
       "redirect_document_id": true
     },
     {
