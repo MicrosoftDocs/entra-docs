@@ -255,7 +255,7 @@ Regardless of which API is identified in the authorization request, the consent 
 > [!IMPORTANT]
 > While it's valid to use `scope=openid https://resource/.default` in combined consent flows involving [known client applications](reference-app-manifest.md#knownclientapplications-attribute), you must **not** combine `.default` with other delegated scopes like `User.Read`, `Mail.Read`, `profile`, or `User.ReadWrite.All` in the same request. This will result in `AADSTS70011` errors because `.default` represents pre-consented static permissions, while the others require dynamic user consent at runtime.
 >
-> ✅ `offline_access` is sometimes accepted with `.default` to enable refresh tokens, but should not be combined with any additional delegated scopes. When in doubt, split the token requests to avoid scope-type conflicts.
+> `offline_access` is sometimes accepted with `.default` to enable refresh tokens, but should not be combined with any additional delegated scopes. When in doubt, split the token requests to avoid scope-type conflicts.
 
 
 ### Preauthorized applications
