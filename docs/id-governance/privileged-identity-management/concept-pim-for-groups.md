@@ -45,7 +45,7 @@ To learn more about Microsoft Entra built-in roles and their permissions, see [M
 Microsoft Entra role-assignable group feature is not part of Microsoft Entra Privileged Identity Management (Microsoft Entra PIM). For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md) .
 
 >[!IMPORTANT]
->Guest accounts with default permissions that are owners of a PIM-enabled group will have the same access as regular owners. However, Restricted Guest Users will experience limited access to the Group PIM management. They will not be able to see if the group is already enabled for PIM, and instead, they will see a prompt asking, "Enable PIM for this group?" Additionally, restricted guest accounts will not have visibility into activated roles for other users.
+>Guest accounts with "Guest users have the same access as members (most inclusive)" permissions that are owners of a PIM-enabled group will have the same access as regular owners. However, Limited and Restricted Guest Users will experience limited access when accessing the "Privileged Identity Management" activities in a group. They will not be able to see if the group is already enabled for PIM, and instead, they will see a prompt asking, "Enable PIM for this group?" Additionally, restricted guest accounts will not have visibility into activated roles for other users.
 
 
 ## Relationship between role-assignable groups and PIM for Groups
