@@ -2,11 +2,11 @@
 title: Provision custom security attributes from HR sources
 description: Learn how to provision custom security attributes from HR sources.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 04/30/2025
+ms.date: 06/09/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -36,8 +36,7 @@ To provision custom security attributes, you must meet the following prerequisit
 
 ## Known limitations
 
-- The provisioning service only supports setting custom security attributes of type `String`.
-- Provisioning custom security attributes of type `Integer` and `Boolean` isn't supported.
+- The provisioning service supports setting custom security attributes of type `String`, `Integer`, and `Boolean`.
 - Provisioning multi-valued custom security attributes isn't supported.
 - Provisioning deactivated custom security attributes isn't supported.
 - With the [Attribute Log Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role, you can't view the custom security attribute value in the provisioning logs.
