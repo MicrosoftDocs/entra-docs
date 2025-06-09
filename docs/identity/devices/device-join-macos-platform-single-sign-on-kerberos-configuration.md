@@ -17,9 +17,9 @@ ms.custom: sfi-image-nochange
 
 The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). Platform SSO enables users to Entra join their macOS devices and sign in using a hardware-bound key, smart card, or their Microsoft Entra ID password through a PSSO Primary Refresh Token (PRT). 
 
-In addition to the PSSO PRT, Microsoft Entra also issues both on-premises and cloud-based Kerberos Ticket Granting Tickets (TGTs) which are then shared with the native Kerberos stack in macOS via TGT mapping in PSSO. Customers have the flexibility to determine how these TGTs are utilized in their environment and can configure either the Kerberos SSO extension or the krb5.conf file accordingly. The Kerberos SSO extension, owned and maintained by Apple,  is designed to provide seamless single sign-on for Kerberos-based resources on macOS.
+In addition to the PSSO PRT, Microsoft Entra also issues both on-premises and cloud-based Kerberos Ticket Granting Tickets (TGTs) which are then shared with the native Kerberos stack in macOS via TGT mapping in PSSO. Customers have the flexibility to determine how these TGTs are utilized in their environment and can configure either the Kerberos SSO extension file accordingly. The Kerberos SSO extension, owned and maintained by Apple, is designed to provide seamless single sign-on for Kerberos-based resources on macOS. For any help needed with Kerberos sso extension configuration, please engage with Apple.
 
-This tutorial illustrates how to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. Kerberos SSO is an optional capability within Platform SSO, but it's recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
+This tutorial illustrates how to leverage Platform SSO TGT to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. Kerberos SSO is an optional capability within Platform SSO, but it's recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
 
 ## Customize Kerberos TGT setting
 
@@ -35,6 +35,8 @@ Customers can customize the TGT mapping setting using the below key/value in the
 | `2`    | **Cloud TGT Only** – Maps only the cloud-based TGT.                                                                |
 | `3`    | **No TGTs** – Disables TGT mapping entirely.                                                                       |
 
+
+Configuration example:
 
 ![Screenshot 2025-05-21 at 10 55 37 AM](https://github.com/user-attachments/assets/66130eaf-9d04-4f85-91c4-45d36e22af27)
 
