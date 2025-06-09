@@ -168,11 +168,8 @@ The following example prompts can be used to get SLA information:
 - *What is my SLA for Microsoft Entra authentication?*
 - *What is my Microsoft Entra SLA?*
 - *SLA of Microsoft Entra authentication*
-- *Microsoft Entra SLA*
-- *Show me my tenant's authentication availability*
-- *What is my authentication availability?*
-- *Authentication availability*
-- *Has my tenant had an SLA breach in the last X months?*
+- *Show me my tenant's authentication availability.*
+- *Has my tenant had an SLA breach in the last "X" months?*
 
 ### Microsoft Entra domains
 
