@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Acoustic Connect
+title: Configure Acoustic Connect for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Acoustic Connect.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Acoustic Connect so that I can control who has access to Acoustic Connect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Acoustic Connect
+# Configure Acoustic Connect for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Acoustic Connect with Microsoft Entra ID. Acoustic Connect is platform that helps you create marketing campaigns that resonate with people, build a loyal following, and drive revenue. When you integrate Acoustic Connect with Microsoft Entra ID, you can:
 

@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Infor CloudSuite so that I can streamline the user management process and ensure that users have the appropriate access to Infor CloudSuite.
 ---
 
-# Configure Infor CloudSuite for automatic user provisioning
+# Configure Infor CloudSuite for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in Infor CloudSuite and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Infor CloudSuite.
 

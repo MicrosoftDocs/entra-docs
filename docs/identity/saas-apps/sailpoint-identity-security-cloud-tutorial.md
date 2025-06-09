@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with SailPoint Identity Security Cloud
+title: Configure SailPoint Identity Security Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SailPoint Identity Security Cloud.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SailPoint Identity Security Cloud so that I can control who has access to SailPoint Identity Security Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SailPoint Identity Security Cloud
+# Configure SailPoint Identity Security Cloud for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SailPoint Identity Security Cloud with Microsoft Entra ID. When you integrate SailPoint Identity Security Cloud with Microsoft Entra ID, you can:
 

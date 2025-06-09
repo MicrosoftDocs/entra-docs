@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
 # Customer intent: macOS users, I want to download and install the Global Secure Access client.

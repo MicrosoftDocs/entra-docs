@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Wandera RADAR Admin
+title: Configure Wandera RADAR Admin for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wandera RADAR Admin.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wandera so that I can control who has access to Wandera, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Wandera RADAR Admin with Microsoft Entra ID
+# Configure Wandera RADAR Admin for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Wandera RADAR Admin with Microsoft Entra ID. When you integrate Wandera RADAR Admin with Microsoft Entra ID, you can:
 

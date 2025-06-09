@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Proto.io
+title: Configure Proto.io for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Proto.io.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Proto.io so that I can control who has access to Proto.io, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Proto.io
+# Configure Proto.io for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Proto.io with Microsoft Entra ID. When you integrate Proto.io with Microsoft Entra ID, you can:
 

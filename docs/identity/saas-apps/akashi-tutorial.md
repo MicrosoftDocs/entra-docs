@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with AKASHI
+title: Configure AKASHI for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AKASHI.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AKASHI so that I can control who has access to AKASHI, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with AKASHI
+# Configure AKASHI for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate AKASHI with Microsoft Entra ID. When you integrate AKASHI with Microsoft Entra ID, you can:
 

@@ -2,7 +2,7 @@
 title: Delete a Microsoft Entra tenant
 description: Learn how to prepare a Microsoft Entra tenant, including a self-service tenant, for deletion.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Qlik Sense Enterprise Client-Managed
+title: Configure Qlik Sense Enterprise Client-Managed for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Qlik Sense Enterprise Client-Managed.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Qlik Sense Enterprise so that I can control who has access to Qlik Sense Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Qlik Sense Enterprise Client-Managed
+# Configure Qlik Sense Enterprise Client-Managed for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Qlik Sense Enterprise Client-Managed with Microsoft Entra ID. When you integrate Qlik Sense Enterprise Client-Managed with Microsoft Entra ID, you can:
 

@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 04/29/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 
 1. Locate, then open *auth_config_native_auth.json*.

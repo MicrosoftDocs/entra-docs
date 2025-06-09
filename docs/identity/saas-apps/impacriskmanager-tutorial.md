@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with IMPAC Risk Manager
+title: Configure IMPAC Risk Manager for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and IMPAC Risk Manager.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IMPAC Risk Manager so that I can control who has access to IMPAC Risk Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with IMPAC Risk Manager
+# Configure IMPAC Risk Manager for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate IMPAC Risk Manager with Microsoft Entra ID. When you integrate IMPAC Risk Manager with Microsoft Entra ID, you can:
 

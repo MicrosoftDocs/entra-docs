@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Diffchecker
+title: Configure Diffchecker for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Diffchecker.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Diffchecker so that I can control who has access to Diffchecker, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Diffchecker
+# Configure Diffchecker for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Diffchecker with Microsoft Entra ID. When you integrate Diffchecker with Microsoft Entra ID, you can:
 

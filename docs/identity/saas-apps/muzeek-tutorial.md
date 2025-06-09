@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Muzeek
+title: Configure Muzeek for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Muzeek.
 services: active-directory
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Muzeek
+# Configure Muzeek for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Muzeek with Microsoft Entra ID. When you integrate Muzeek with Microsoft Entra ID, you can:
 

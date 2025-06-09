@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with NICE CXone
+title: Configure NICE CXone for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and NICE CXone.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and NICE CXone so that I can control who has access to NICE CXone, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with NICE CXone
+# Configure NICE CXone for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate NICE CXone with Microsoft Entra ID. When you integrate NICE CXone with Microsoft Entra ID, you can:
 

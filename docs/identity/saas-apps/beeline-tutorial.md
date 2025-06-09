@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Beeline Enterprise
+title: Configure Beeline Enterprise for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Beeline Enterprise.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Beeline Enterprise so that I can control who has access to Beeline Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Beeline Enterprise
+# Configure Beeline Enterprise for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Beeline Enterprise with Microsoft Entra ID. When you integrate Beeline Enterprise with Microsoft Entra ID, you can:
 

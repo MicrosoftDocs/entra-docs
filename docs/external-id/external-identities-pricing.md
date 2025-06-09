@@ -6,7 +6,7 @@ ms.topic: concept-article
 ms.date: 05/19/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra tenant administrator, I want to link my tenant to an Azure subscription, so that I can take advantage of the monthly active users (MAU) billing model and activate MAU billing for guest user collaboration.

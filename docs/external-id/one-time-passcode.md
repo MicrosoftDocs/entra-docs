@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 10/21/2024
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.

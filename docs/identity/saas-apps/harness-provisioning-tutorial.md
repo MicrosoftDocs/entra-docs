@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Harness so that I can streamline the user management process and ensure that users have the appropriate access to Harness.
 ---
 
-# Configure Harness for automatic user provisioning
+# Configure Harness for automatic user provisioning with Microsoft Entra ID
 
 In this article, you learn how to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Harness.
 

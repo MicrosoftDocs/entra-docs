@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with LINE WORKS
+title: Configure LINE WORKS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and LINE WORKS.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LINE WORKS so that I can control who has access to LINE WORKS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with LINE WORKS
+# Configure LINE WORKS for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate LINE WORKS with Microsoft Entra ID.
 Integrating LINE WORKS with Microsoft Entra ID provides you with the following benefits:

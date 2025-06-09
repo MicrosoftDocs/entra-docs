@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Workshop
+title: Configure Workshop for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workshop.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Workshop so that I can control who has access to Workshop, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Workshop
+# Configure Workshop for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Workshop with Microsoft Entra ID. When you integrate Workshop with Microsoft Entra ID, you can:
 

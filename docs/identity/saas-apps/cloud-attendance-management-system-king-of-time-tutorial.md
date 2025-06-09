@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME
+title: Configure CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME so that I can control who has access to CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME
+# Configure CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME with Microsoft Entra ID. CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME is No.1 in the attendance management system market share "KING OF TIME" reached 2.77 million active users as of April 2023. It's a cloud attendance management system with high satisfaction, recognition, and the No. 1 market share.  From offices and stores to teleworking and telecommuting in an emergency. Efficient attendance management that has become complicated by paper time cards and Excel is automatically aggregated. When you integrate CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME with Microsoft Entra ID, you can:
 

@@ -2,7 +2,7 @@
 title: Azure Monitor in external tenants
 description: Learn how to set up Azure Monitor in external tenants to collect and analyze data in your tenant.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

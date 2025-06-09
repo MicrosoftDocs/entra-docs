@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Boomi
+title: Configure Boomi for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Boomi.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Boomi so that I can control who has access to Boomi, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Boomi
+# Configure Boomi for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Boomi with Microsoft Entra ID. When you integrate Boomi with Microsoft Entra ID, you can:
 

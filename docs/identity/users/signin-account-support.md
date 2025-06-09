@@ -3,7 +3,7 @@ title: Does my Microsoft Entra sign-in page accept Microsoft accounts
 description: How on-screen messaging reflects username lookup during sign-in
 
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual

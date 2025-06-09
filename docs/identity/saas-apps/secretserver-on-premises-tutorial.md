@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Secret Server (on-premises)
+title: Configure Secret Server (on-premises) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Secret Server (on-premises).
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Secret Server (On-Premises) so that I can control who has access to Secret Server (On-Premises), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Secret Server (on-premises) with Microsoft Entra ID
+# Configure Secret Server (on-premises) for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Secret Server (on-premises) with Microsoft Entra ID. When you integrate Secret Server (on-premises) with Microsoft Entra ID, you can:
 

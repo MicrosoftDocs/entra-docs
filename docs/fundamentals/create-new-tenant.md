@@ -2,7 +2,7 @@
 title: Quickstart - Access and create new tenant
 description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart

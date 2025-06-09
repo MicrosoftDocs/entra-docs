@@ -4,7 +4,7 @@ description: Learn how to add and manage admin accounts in your external tenant 
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

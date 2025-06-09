@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/02/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: mjsantani
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.

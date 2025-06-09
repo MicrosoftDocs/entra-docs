@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Gainsight
+title: Configure Gainsight for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Gainsight.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Gainsight so that I can control who has access to Gainsight, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Gainsight
+# Configure Gainsight for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Gainsight with Microsoft Entra ID. Use Microsoft Entra ID to manage user access and enable single sign-on with Gainsight. Requires an existing Gainsight subscription. When you integrate Gainsight with Microsoft Entra ID, you can:
 

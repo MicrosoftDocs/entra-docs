@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with TOPdesk - Public
+title: Configure TOPdesk - Public for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and TOPdesk - Public.
 author: nguhiu
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TOPdesk - Public so that I can control who has access to TOPdesk - Public, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with TOPdesk - Public
+# Configure TOPdesk - Public for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate TOPdesk - Public with Microsoft Entra ID. When you integrate TOPdesk - Public with Microsoft Entra ID, you can:
 

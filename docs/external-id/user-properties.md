@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 10/21/2024
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing external collaboration in Microsoft Entra, I want to understand the properties and management options for B2B collaboration users, so that I can effectively invite and manage external users accessing apps and resources in my organization.

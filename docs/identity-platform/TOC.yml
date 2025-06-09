@@ -111,6 +111,8 @@
       items:
         - name: Application security
           href: security-best-practices-for-app-registration.md
+        - name: Identifier URI restrictions
+          href: identifier-uri-restrictions.md
         - name: Least privileged access
           href: secure-least-privileged-access.md
         - name: Secure access control using groups
@@ -560,11 +562,13 @@
       href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: .NET acquire token and call API
-          href: tutorial-dotnet-daemon-call-api.md
+        - name: .NET
+          items: 
+            - name: Acquire token and call API
+              href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
           items:
-            - name: Acquire access token and call API
+            - name: Acquire token and call API
               href: tutorial-daemon-node-call-api-build-app.md
             - name: Call Microsoft Graph API
               href: tutorial-v2-nodejs-console.md

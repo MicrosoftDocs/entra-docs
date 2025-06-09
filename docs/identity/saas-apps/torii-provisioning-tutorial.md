@@ -12,7 +12,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Torii so that I can streamline the user management process and ensure that users have the appropriate access to Torii.
 ---
 
-# Configure Torii for automatic user provisioning
+# Configure Torii for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Torii and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [Torii](https://toriihq.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 

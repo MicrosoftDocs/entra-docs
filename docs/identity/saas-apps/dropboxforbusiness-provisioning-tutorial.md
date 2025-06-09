@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Dropbox Business so that I can streamline the user management process and ensure that users have the appropriate access to Dropbox Business.
 ---
 
-# Configure Dropbox for Business for automatic user provisioning
+# Configure Dropbox for Business for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in Dropbox for Business and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Dropbox for Business.
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with iLOGON_MHA
+title: Configure iLOGON_MHA for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and iLOGON_MHA.
 services: active-directory
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with iLOGON_MHA
+# Configure iLOGON_MHA for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate iLOGON_MHA with Microsoft Entra ID. When you integrate iLOGON_MHA with Microsoft Entra ID, you can:
 

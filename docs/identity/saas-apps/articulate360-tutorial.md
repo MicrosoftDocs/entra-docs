@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Articulate 360
+title: Configure Articulate 360 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Articulate 360.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Articulate 360 so that I can control who has access to Articulate 360, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Articulate 360
+# Configure Articulate 360 for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Articulate 360 with Microsoft Entra ID. When you integrate Articulate 360 with Microsoft Entra ID, you can:
 

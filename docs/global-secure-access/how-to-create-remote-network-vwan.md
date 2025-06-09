@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.reviewer: absinh
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to simulate a virtual wide area network to connect resources in Azure so I can better understand how Global Secure Access can be implemented in my organization.

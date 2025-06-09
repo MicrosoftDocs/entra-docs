@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with TencentCloud IDaaS
+title: Configure TencentCloud IDaaS for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and TencentCloud IDaaS.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TencentCloud IDaaS so that I can control who has access to TencentCloud IDaaS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with TencentCloud IDaaS
+# Configure TencentCloud IDaaS for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate TencentCloud IDaaS with Microsoft Entra ID. Tencent Cloud IDaaS is dedicated to providing enterprises with identity authentication and data management services. When you integrate TencentCloud IDaaS with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Contentstack
+title: Configure Contentstack for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Contentstack.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Contentstack so that I can control who has access to Contentstack, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Contentstack
+# Configure Contentstack for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Contentstack with Microsoft Entra ID. When you integrate Contentstack with Microsoft Entra ID, you can:
 

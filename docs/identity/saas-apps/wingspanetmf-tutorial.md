@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Wingspan eTMF
+title: Configure Wingspan eTMF for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wingspan eTMF.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wingspan eTMF so that I can control who has access to Wingspan eTMF, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Wingspan eTMF
+# Configure Wingspan eTMF for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Wingspan eTMF with Microsoft Entra ID. When you integrate Wingspan eTMF with Microsoft Entra ID, you can:
 

@@ -7,7 +7,7 @@ ms.topic: overview
 ms.date: 05/01/2025
 ms.author: godonnell
 author: garrodonnell
-manager: celested
+manager: dougeby
 
 #Customer intent: As a customer, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices.
 ---

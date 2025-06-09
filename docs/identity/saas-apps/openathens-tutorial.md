@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with OpenAthens
+title: Configure OpenAthens for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and OpenAthens.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenAthens so that I can control who has access to OpenAthens, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with OpenAthens
+# Configure OpenAthens for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate OpenAthens with Microsoft Entra ID. When you integrate OpenAthens with Microsoft Entra ID, you can:
 

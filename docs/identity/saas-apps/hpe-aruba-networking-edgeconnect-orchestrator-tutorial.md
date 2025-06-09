@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with HPE Aruba Networking EdgeConnect Orchestrator
+title: Configure HPE Aruba Networking EdgeConnect Orchestrator for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HPE Aruba Networking EdgeConnect Orchestrator.
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HPE Aruba Networking EdgeConnect Orchestrator so that I can control who has access to HPE Aruba Networking EdgeConnect Orchestrator, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with HPE Aruba Networking EdgeConnect Orchestrator
+# Configure HPE Aruba Networking EdgeConnect Orchestrator for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate HPE Aruba Networking EdgeConnect Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Orchestrator with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Tripwire Enterprise
+title: Configure Tripwire Enterprise for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tripwire Enterprise.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tripwire Enterprise so that I can control who has access to Tripwire Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Tripwire Enterprise
+# Configure Tripwire Enterprise for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Tripwire Enterprise with Microsoft Entra ID. Tripwire Enterprise is the leading compliance monitoring solution, using file integrity monitoring (FIM) and security configuration management (SCM). When you integrate Tripwire Enterprise with Microsoft Entra ID, you can:
 

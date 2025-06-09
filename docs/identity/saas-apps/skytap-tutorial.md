@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Single Sign-on for Skytap
+title: Configure Single Sign-on for Skytap for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Single Sign-on for Skytap.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Single Sign-on for Skytap so that I can control who has access to Single Sign-on for Skytap, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Single Sign-on for Skytap
+# Configure Single Sign-on for Skytap for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Single Sign-on for Skytap with Microsoft Entra ID. When you integrate Single Sign-on for Skytap with Microsoft Entra ID, you can:
 

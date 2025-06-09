@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra integration with Menlo Security
+title: Configure Menlo Security for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Menlo Security.
 author: nguhiu
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Menlo Security so that I can control who has access to Menlo Security, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Menlo Security
+# Configure Menlo Security for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Menlo Security with Microsoft Entra ID. When you integrate Menlo Security with Microsoft Entra ID, you can:
 

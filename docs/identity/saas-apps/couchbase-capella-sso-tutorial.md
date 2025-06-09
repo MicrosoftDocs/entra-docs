@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with Couchbase Capella - SSO
+title: Configure Couchbase Capella - SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Couchbase Capella - SSO.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Couchbase Capella - SSO so that I can control who has access to Couchbase Capella - SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Couchbase Capella - SSO
+# Configure Couchbase Capella - SSO for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Couchbase Capella - SSO with Microsoft Entra ID. The purpose of this app is to integrate Couchbase's Capella cloud database platform with Azure SSO. It’s the easiest and fastest way to begin with Couchbase. When you integrate Couchbase Capella - SSO with Microsoft Entra ID, you can:
 

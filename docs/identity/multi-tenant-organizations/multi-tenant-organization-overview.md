@@ -2,11 +2,11 @@
 title: What is a multitenant organization in Microsoft Entra ID?
 description: Learn about multitenant organizations in Microsoft Entra ID and Microsoft 365.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 03/20/2025
+ms.date: 05/27/2025
 ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -123,7 +123,7 @@ Administrators staying in control of their resources is a guiding principle for 
 
 - Cross-tenant access partner configurations
 
-    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner?view=graph-rest-beta&preserve-view=true).
+    For more information, see [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) and [crossTenantAccessPolicyConfigurationPartner resource type](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner).
 
 - Cross-tenant access identity synchronization
 

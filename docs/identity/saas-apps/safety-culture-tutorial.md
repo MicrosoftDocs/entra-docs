@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra SSO integration with SafetyCulture (formerly iAuditor)
+title: Configure SafetyCulture (formerly iAuditor) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SafetyCulture (formerly iAuditor).
 author: nguhiu
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SafetyCulture so that I can control who has access to SafetyCulture, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SafetyCulture
+# Configure SafetyCulture (formerly iAuditor) for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SafetyCulture (formerly iAuditor) with Microsoft Entra ID. When you integrate SafetyCulture with Microsoft Entra ID, you can:
 
