@@ -89,7 +89,7 @@ procedureSection:
          - **On-premises:** Accounts synced from Windows Server Active Directory include other values not applicable to Microsoft Entra accounts.
 
         > [!NOTE]
-        > For users whose source of authority is Windows Server Active Directory, you must use Windows Server Active Directory to update their identity, contact info, or job info. After making updates, you must wait for the next synchronization cycle to complete before the changes take effect. However, you can update their attributes directly in the Microsoft Entra admin center if you are updating Microsoft Entra ID attributes, such as Usage Location.
+        > For users whose source of authority is Windows Server Active Directory, you must use Windows Server Active Directory to update their identity, contact info, or job info. After making updates, you must wait for the next synchronization cycle to complete before the changes take effect. However, you can update their attributes directly in the Microsoft Entra admin center if you are updating Microsoft Entra ID attributes, such as Usage Location. Some attributes that are synchronized from on-premises, such as User Principal Name, On Premises Immutable ID and Account Enabled, can be updated in Entra ID for users managed from on premises, but we do not recommend managing these attributes in Entra ID other than for emergency purposes.
 
         ## Guidance on user name properties
 
