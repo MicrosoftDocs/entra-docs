@@ -18,19 +18,19 @@ In today's rapidly evolving digital landscape, organizations require robust, and
 
 This guide outlines how to configure and deploy Microsoft Entra solutions alongside Netskope's Security Service Edge (SSE) offerings. By using the strengths of both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
 
-1. **[Configuration 1: Microsoft Entra Private Access with Netskope Internet Access](#Configuration1)**
+1. **[Configuration 1: Microsoft Entra Private Access with Netskope Internet Access](#configuration-1-microsoft-entra-private-access-with-netskope-internet-access)**
 
 In this scenario Global Secure Access will handle private application traffic. Netskope will only capture Internet traffic.
 
-1. **[Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access](#Configuration2)**
+1. **[Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access](#configuration-2-microsoft-entra-private-access-with-netskope-private-access-and-netskope-internet-access)**
 
 In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access. Private applications in Netskope Private Access will be accessed through the Netskope client. Netskope handles Internet traffic.
 
-1. **[Configuration 3: Microsoft Entra Microsoft Access with Netskope Private Access and Netskope Internet Access](#Configuration3)**
+1. **[Configuration 3: Microsoft Entra Microsoft Access with Netskope Private Access and Netskope Internet Access](#configuration-3-microsoft-entra-microsoft-access-with-netskope-private-access-and-netskope-internet-access)**
 
 In this scenario Global Secure Access handles all Microsoft 365 traffic. Netskope handles private application and Internet traffic.
 
-1. **[Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Netskope Private Access](#Configuration4)**
+1. **[Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Netskope Private Access](#configuration-4-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-and-with-netskope-private-access)**
 
 In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Netskope only captures Private application traffic.
 
@@ -176,7 +176,6 @@ Netskope portal configuration
 
 1. Scroll to confirm the Global Secure Access client handled only private application traffic.
 
-<span id="Configuration2" class="anchor"></span>
 ## Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access
 
 In this scenario both clients will handle traffic for separate private applications. Private applications in Microsoft Entra Private Access will be handled by Global Secure Access while private applications in Netskope Private Access will be accessed through the Netskope client. Internet traffic will be handled by Netskope.
