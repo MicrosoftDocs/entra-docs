@@ -5,7 +5,7 @@ keywords: null
 author: cilwerner
 ms.author: cwerner
 manager: pmwongera
-ms.date: 05/30/2025
+ms.date: 06/09/2025
 ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
@@ -131,16 +131,17 @@ For more information, see;
 
 ### Investigate alerts in Scenario Health Monitoring 
 
-External Health Monitoring is a feature in Microsoft Entra that analyzes scenario-specific metrics for each tenant, detects anomalies, and raises alerts. These alerts are sent via the Microsoft Graph API and displayed in the Microsoft Entra admin center UI, enabling tenant admins to proactively investigate and address issues. 
-
-For example, in the multifactor authentication (MFA) scenario, External Health Monitoring tracks metrics such as sign-in success rate, sign-in failure rate, and failure count. If there's a spike in failures, an alert is raised to notify the tenant admin, who can then take appropriate action to resolve the issue. 
+External Health Monitoring is a feature in Microsoft Entra that analyzes scenario-specific metrics for each tenant, detects anomalies, and raises alerts. These alerts are sent via the Microsoft Graph API and displayed in the Microsoft Entra admin center UI, enabling tenant admins to proactively investigate and address issues. For example, in the multifactor authentication (MFA) scenario, External Health Monitoring tracks metrics such as sign-in success rate, sign-in failure rate, and failure count. If there's a spike in failures, an alert is raised to notify the tenant admin, who can then take appropriate action to resolve the issue. 
 
 Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements) and a public cloud tenant.
 
 The following roles can use this feature:
 
-- [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
+- [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader)
+- [Helpdesk Administrator](/entra/identity/role-based-access-control/permissions-reference#helpdesk-administrator)
 - [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader)
+- [Security Operator](/entra/identity/role-based-access-control/permissions-reference#security-operator)
+- [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
 - [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader)
 
 The following example prompts can be used to investigate alerts in Scenario Health Monitoring:
