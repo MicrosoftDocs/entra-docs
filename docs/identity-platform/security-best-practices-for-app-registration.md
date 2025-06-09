@@ -23,7 +23,7 @@ This article describes security best practices for the following application pro
 - Credentials
 - Redirect URIs
 - Implicit flow configuration
-- Application ID URI (a.k.a. identifier URI)
+- Application ID URI (also known as identifier URI)
 - Access token version
 - Application instance lock
 - Application ownership
@@ -36,9 +36,10 @@ Credentials are a vital part of an application when it's used as a confidential 
 
 Consider the following guidance related to certificates and secrets:
 
-- Use a [managed identity](../identity/managed-identities-azure-resources/overview) as a credential whenever possible.  This is strongly recommended, as managed identities are both the most secure option and don't require any ongoing credential management.  Follow [this guidance](../workload-id/workload-identity-federation-config-app-trust-managed-identity) to configure a managed identity as a credential.  However, this option may only be possible if your service' runs on Azure.
-- If a managed identity is not possible, use [certificate credentials](./certificate-credentials.md). **Don't use password credentials, also known as *secrets***. While it's convenient to use password secrets as a credential, password credentials are often mismanaged and can be easily compromised.
-- If a certificate must be used instead of a managed identity, store that certificate in a secure key vault, like [Azure Key Vault](https://azure.microsoft.com/products/key-vault)
+- Use a [managed identity](../identity/managed-identities-azure-resources/overview) as a credential whenever possible. This is strongly recommended, as managed identities are both the most secure option and don't require any ongoing credential management. Follow [this guidance](../workload-id/workload-identity-federation-config-app-trust-managed-identity) to configure a managed identity as a credential. However, this option may only be possible if the service the app is used in runs on Azure.
+- If the service the app is used in doesn't run on Azure, but does run on another platform that offers automated credential management, consider [using an identity from that platform as a credential](../workload-id/workload-identity-federation-create-trust).  For example, a [Github actions workflow can be configured as a credential](../workload-id/workload-identity-federation-create-trust#github-actions), eliminating the need to manage and secure credentials for the Github actions pipeline.  Use caution with this approach and only configure federated credentials from platforms you trust.  An app is only as secure as the identity platform it has configured as a credential.
+- If using a managed identity or other secure external identity provider isn't possible, use [certificate credentials](./certificate-credentials.md). **Don't use password credentials, also known as *secrets***. While it's convenient to use password secrets as a credential, password credentials are often mismanaged and can be easily compromised.
+- If a certificate must be used instead of a managed identity, store that certificate in a secure key vault, like [Azure Key Vault](https://azure.microsoft.com/products/key-vault).
 - Configure [application management policies](/graph/api/resources/applicationauthenticationmethodpolicy) to govern the use of secrets by limiting their lifetimes or blocking their use altogether.
 - If an application is used only as a public or installed client (for example, mobile or desktop apps that are installed on the end user machine), make sure that there are no credentials specified on the application object.
 - Review the credentials used in applications for freshness of use and their expiration. An unused credential on an application can result in a security breach. Rollover credentials frequently and don't share credentials across applications. Don't have many credentials on one application.
@@ -72,13 +73,13 @@ Consider the following guidance related to implicit flow:
 
 ## Application ID URI (also known as Identifier URI)
 
-The **Application ID URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for the scope value in requests to Microsoft Entra. It's also the value of the audience (`aud`) claim in v1.0 access tokens. For multi-tenant applications, the value must also be globally unique. It's also referred to as an **Identifier URI**. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.
+The **Application ID URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for the scope value in requests to Microsoft Entra. It's also the value of the audience (`aud`) claim in v1.0 access tokens. For multitenant applications, the value must also be globally unique. It's also referred to as an **Identifier URI**. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.
 
 :::image type="content" source="./media/application-registration-best-practices/app-id-uri.png" alt-text="Screenshot that shows where the Application I D U R I is located.":::
 
-Best practices for defining the Application ID URI change depending on if the app is issued v1.0 or v2.0 access tokens. If you're unsure whether an app is issued v1.0 access tokens, check the `requestedAccessTokenVersion` of the [app manifest](reference-microsoft-graph-app-manifest.md).  A value of `null` or `1` indicates that the app receives v1.0 access tokens.  A value of `2` indicates that the app receives v2.0 access tokens.
+Best practices for defining the Application ID URI change depending on if the app is issued v1.0 or v2.0 access tokens. If you're unsure whether an app is issued v1.0 access tokens, check the `requestedAccessTokenVersion` of the [app manifest](reference-microsoft-graph-app-manifest.md). A value of `null` or `1` indicates that the app receives v1.0 access tokens. A value of `2` indicates that the app receives v2.0 access tokens.
 
-For applications that are issued v1.0 access tokens, only the default URIs should be used.  The default URIs are `api://<appId>` and `api://<tenantId>/<appId>`. 
+For applications that are issued v1.0 access tokens, only the default URIs should be used. The default URIs are `api://<appId>` and `api://<tenantId>/<appId>`. 
 
 For applications that are issued v2.0 access tokens, use the following guidelines when defining the App ID URI: 
 - The `api` or `https` URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
@@ -89,25 +90,25 @@ For applications that are issued v2.0 access tokens, use the following guideline
 
 ## Access token version
 
-This section is only applicable to resource applications - meaning applications that act as the audience in access tokens.  Resource applications are typically web APIs.  If an application only acts as a client (meaning it acquires tokens to send to resources like Microsoft Graph), then this section doesn't apply to it.
+This section is only applicable to resource applications - meaning applications that act as the audience in access tokens. Resource applications are typically web APIs. If an application only acts as a client (meaning it acquires tokens to send to resources like Microsoft Graph), then this section doesn't apply.
 
-Resource applications that have configured custom [identifier URIs](#application-id-uri-also-known-as-identifier-uri) should use the v2.0 access token format.  To check if an app should use v2.0 access tokens, look at the `identifierUris` property in the [App registrations manifest page](https://aka.ms/ra/prod) for the app. 
+Resource applications that have configured custom [identifier URIs](#application-id-uri-also-known-as-identifier-uri) should use the v2.0 access token format. To check if an app should use v2.0 access tokens, look at the `identifierUris` property in the [App registrations manifest page](https://aka.ms/ra/prod) for the app. 
 
-    :::image type="content" source="media/identifier-uri-restrictions/screenshot-identifier-uri-manifest-configuration-cropped.png" alt-text="Screenshot of identifier URI modification experience in the manifest editor." lightbox="media/identifier-uri-restrictions/screenshot-identifier-uri-manifest-configuration.png":::
+  :::image type="content" source="media/identifier-uri-restrictions/screenshot-identifier-uri-manifest-configuration-cropped.png" alt-text="Screenshot of identifier URI modification experience in the manifest editor." lightbox="media/identifier-uri-restrictions/screenshot-identifier-uri-manifest-configuration.png":::
 
  If there are any values configured there not in the format `api://{appId}` or `api://{tenantId}/{appId}`, then the app should use v2.0 access tokens.
 
- To upgrade to v2.0 access tokens, first ensure the app can handle [v2.0 token claims](../identity-platform/access-token-claims-reference.md).  Then, update the access token version the application is issued using the manifest editor.
+ To upgrade to v2.0 access tokens, first ensure the app can handle [v2.0 token claims](../identity-platform/access-token-claims-reference.md). Then, update the access token version the application is issued using the manifest editor.
 
-    :::image type="content" source="media/identifier-uri-restrictions/update-access-token-version-cropped.png" alt-text="Screenshot of update token version experience." lightbox="media/identifier-uri-restrictions/update-access-token-version.png":::
+  :::image type="content" source="media/identifier-uri-restrictions/update-access-token-version-cropped.png" alt-text="Screenshot of update token version experience." lightbox="media/identifier-uri-restrictions/update-access-token-version.png":::
 
 After the application configuration has been updated to use v2.0 tokens, ensure the application's audience validation logic is modified to **only** accept its `appId`.
 
 ## Application instance property lock
 
-When a multitenant application has a service principal provisioned in a different tenant, that service principal can be customized by a tenant admin.  Those customization abilities can allow for modifications that the app owner didn't expect, leading to security risks.  For example, credentials can be added to the service principal, even though credentials should typically be owned and controlled by the app developer and owner.
+When a multitenant application has a service principal provisioned in a different tenant, that service principal can be customized by a tenant admin. Those customization abilities can allow for modifications that the app owner didn't expect, leading to security risks. For example, credentials can be added to the service principal, even though credentials should typically be owned and controlled by the app developer and owner.
 
-To reduce this risk, multitenant applications - meaning applications that are used in more than one tenant - should always [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md).  When configuring app instance lock, always lock every sensitive property available.
+To reduce this risk, multitenant applications - meaning applications that are used in more than one tenant - should [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md). When configuring app instance lock, always lock every sensitive property available.
 
 ## App ownership configuration
 
