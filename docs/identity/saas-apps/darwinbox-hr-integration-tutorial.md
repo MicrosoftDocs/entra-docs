@@ -86,5 +86,5 @@ Extend your HR-driven provisioning process to automate business processes and se
 
 
 ## Next step
-> [!TIP]
+
 > To learn how to monitor the status of your provisioning events, see [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
