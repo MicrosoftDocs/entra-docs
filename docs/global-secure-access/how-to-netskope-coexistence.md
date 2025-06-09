@@ -20,7 +20,7 @@ This guide outlines how to configure and deploy Microsoft Entra solutions alongs
 
 1. **[Configuration 1: Microsoft Entra Private Access with Netskope Internet Access](#configuration-1-microsoft-entra-private-access-with-netskope-internet-access)**
 
-In this scenario Global Secure Access handles private application traffic. Netskope only capture Internet traffic.
+In this scenario, Global Secure Access handles private application traffic. Netskope only capture Internet traffic.
 
 1. **[Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access](#configuration-2-microsoft-entra-private-access-with-netskope-private-access-and-netskope-internet-access)**
 
@@ -28,7 +28,7 @@ In this scenario, both clients handle traffic for separate private applications.
 
 1. **[Configuration 3: Microsoft Entra Microsoft Access with Netskope Private Access and Netskope Internet Access](#configuration-3-microsoft-entra-microsoft-access-with-netskope-private-access-and-netskope-internet-access)**
 
-In this scenario Global Secure Access handles all Microsoft 365 traffic. Netskope handles private application and Internet traffic.
+In this scenario, Global Secure Access handles all Microsoft 365 traffic. Netskope handles private application and Internet traffic.
 
 1. **[Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Netskope Private Access](#configuration-4-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-and-with-netskope-private-access)**
 
@@ -36,7 +36,7 @@ In this scenario, Global Secure Access handles Internet and Microsoft 365 traffi
 
 ## Prerequisites
 
-To configure Microsoft and Netskope for a unified SASE solution, start by setting up Microsoft Entra Internet Access and Microsoft Entra Private Access. Next, configure Netskope Private Access and Internet Access. Finally, make sure to establish the required FQDN and IP bypasses to ensure smooth integration between the two platforms.
+To configure Microsoft and Netskope for a unified SASE solution, start by setting up Microsoft Entra Internet Access and Microsoft Entra Private Access. Next, configure Netskope Private Access and Internet Access. Finally, make sure to establish the required Fully Qualified Domain Name (FQDN) and IP bypasses to ensure smooth integration between the two platforms.
 
 - Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
 
@@ -46,7 +46,7 @@ To configure Microsoft and Netskope for a unified SASE solution, start by settin
 
 ## Microsoft Global Secure Access
 
-To set up Global Secure Access and test all scenarios in this documentation, perform the following:
+To set up Global Secure Access and test all scenarios in this documentation:
 
 - Enable and disable different Microsoft Global Secure Access traffic forwarding profiles for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding).
 
@@ -63,9 +63,9 @@ To set up Global Secure Access and test all scenarios in this documentation, per
 
 - Configure Netskope Private Apps. To learn more about configuring Netskope Private Access, see [Netskope One Private Access](https://docs.netskope.com/en/netskope-private-access) documentation.
 
-- Configure Netskope Steering Configurations for Private and Internet Access. To learn more about configuring Netskope, see [Netskope Traffic Steering documentation](https://docs.netskope.com/en/creating-a-steering-configuration/). The steps for creating the required steering configurations for each scenario are listed below.
+- Configure Netskope Steering Configurations for Private and Internet Access. To learn more about configuring Netskope, see [Netskope Traffic Steering documentation](https://docs.netskope.com/en/creating-a-steering-configuration/). The steps for creating the required steering configurations for each scenario are listed.
 
-- Setup and configure Netskope Real-time Protection Policies to allow access to Private Apps. For more information see, [Netskope Real-time Protection Policy for Private Apps](https://docs.netskope.com/en/create-a-real-time-protection-policy-for-private-apps/).
+- Setup and configure Netskope Real-time Protection Policies to allow access to Private Apps. For more information, see [Netskope Real-time Protection Policy for Private Apps](https://docs.netskope.com/en/create-a-real-time-protection-policy-for-private-apps/).
 
 - Invite users to Netskope and send them an email containing links to the Netskope client install package. To invite users, navigate to the **Netskope portal** >**Settings** > **Security** **Cloud** **Platform** > **Users**.
 
@@ -73,22 +73,22 @@ To set up Global Secure Access and test all scenarios in this documentation, per
 
 Create network location profiles to bypass Microsoft SSE service Internet Protocol (IP) addresses and Microsoft 365 destination IPs.
 
-**MSFT SSE Service**
+Configure the `Microsoft SSE Service` policy:
 
 1. Navigate to **Policies** > **Profiles** > **Network Location** > **New Network Location** > **Single Object**.
-1. Add the routes and save them as **MSFT SSE Service**:  
+1. Add the routes and save them as `MSFT SSE Service`:  
     `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`.
 
-**MSFT SSE M365**
+Configure the `MSFT SSE M365` policy:
 
-1. Repeat Steps 1 & 2 above to Add Microsoft 365 IPs and save them as **MSFT SSE M365**:  
+1. Repeat Steps 1 & 2 to Add Microsoft 365 IPs and save them as `MSFT SSE M365`:  
     `132.245.0.0/16`, `204.79.197.215/32`, `150.171.32.0/22`, `131.253.33.215/32`, `23.103.160.0/20`, `40.96.0.0/13`, `52.96.0.0/14`, `40.104.0.0/15`, `13.107.128.0/22`, `13.107.18.10/31`, `13.107.6.152/31`, `52.238.78.88/32`, `104.47.0.0/17`, `52.100.0.0/14`, `40.107.0.0/16`, `40.92.0.0/15`, `150.171.40.0/22`, `52.104.0.0/14`, `104.146.128.0/17`, `40.108.128.0/17`, `13.107.136.0/22`, `40.126.0.0/18`, `20.231.128.0/19`, `20.190.128.0/18`, `20.20.32.0/19`.
 
-The *MSFT SSE Service* and *MSFT SSE M365* profiles are used in steering configurations.
+The `MSFT SSE Service` and `MSFT SSE M365` profiles are used in steering configurations.
 
 ## Configuration 1: Microsoft Entra Private Access with Netskope Internet Access
 
-In this scenario Global Secure Access handles private application traffic. Netskope only captures Internet traffic.
+In this scenario, Global Secure Access handles private application traffic. Netskope only captures Internet traffic.
 
 ### Microsoft Entra Private Access configuration
 
@@ -112,9 +112,9 @@ Netskope portal configuration
 
 #### Add Steering Configuration for Internet Access
 
-1. Navigate to **Netskope portal** > **Settings** > **Security Cloud Platform** > **Steering Configuration**> **New Configuration**.
+1. Navigate to **Netskope portal** > **Settings** > **Security Cloud Platform** > **Steering Configuration** > **New Configuration**.
 
-1. Add a **Configuration Name** such as **MSFTSSEWebTraffic**.
+1. Add a Configuration Name such as `MSFTSSEWebTraffic`.
 
 1. Choose a **User Group** or **OU** to apply the configuration to.
 
@@ -128,15 +128,41 @@ Netskope portal configuration
 
 1. Set **Status** to **Disabled** and select **Save**.
 
-1. Select the **MSFTSSEWebTraffic** configuration > **Exceptions** > **New Exception** > **Destination Locations**.
+1. Select the `MSFTSSEWebTraffic` configuration > **Exceptions** > **New Exception** > **Destination Locations**.
 
-1. Select **MSFT SSE Service** (Instructions for creating this object are listed in the Netskope profiles section).
+1. Select `MSFT SSE Service` (Instructions for creating this object are listed in the Netskope profiles section).
 
 1. The action is **Bypass** > check the box for **Treat it like local IP address** > **Add**.
 
 1. Select **New Exception** > **Domains** and add the Global Secure Access domain exception: \*.globalsecureaccess.microsoft.com > **Save**
 
-1. Ensure that the **MSFTSSEWebTraffic** configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
+1. Ensure that the `MSFTSSEWebTraffic` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
+
+1. Go to the system tray to check that Global Secure Access and Netskope clients are enabled.
+
+1. Add a Configuration Name such as `MSFTSSEWebTraffic`.
+
+1. Choose a **User Group** or **OU** to apply the configuration to.
+
+1. Under **Cloud, Web and Firewall** > **Web Traffic**
+
+1. **Bypass exception traffic at** > **Client**
+
+1. Under **Private Apps** > **None**.
+
+1. Under **Borderless SD-WAN Apps** > **None**.
+
+1. Set **Status** to **Disabled** and select **Save**.
+
+1. Select the `MSFTSSEWebTraffic` configuration > **Exceptions** > **New Exception** > **Destination Locations**.
+
+1. Select `MSFT SSE Service` (Instructions for creating this object are listed in the Netskope profiles section).
+
+1. The action is **Bypass** > check the box for **Treat it like local IP address** > **Add**.
+
+1. Select **New Exception** > **Domains** and add the Global Secure Access domain exception: \*.globalsecureaccess.microsoft.com > **Save**
+
+1. Ensure that the `MSFTSSEWebTraffic` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
 
 1. Go to the system tray to check that Global Secure Access and Netskope clients are enabled.
 
@@ -146,7 +172,7 @@ Netskope portal configuration
 
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 
-1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created above. If not click the **Update** link.
+1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration. If not, select the **Update** link.
 
 > [!NOTE]
 > For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
@@ -166,7 +192,7 @@ Netskope portal configuration
 
 1. Sign in to Netskope portal and browse to **Skope IT** > **Events & Alerts** > **Page Events**. Validate traffic related to these sites **is** present in Netskope logs.
 
-1. Access your private application set up in Microsoft Entra Private Access. For example, access a File Share via SMB.
+1. Access your private application set up in Microsoft Entra Private Access. For example, access a File Share via Server Message Block (SMB).
 
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Monitor** > **Traffic logs**. Validate traffic related to File Share **is** captured in the Global Secure Access traffic logs.
 
@@ -178,7 +204,7 @@ Netskope portal configuration
 
 ## Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access
 
-In this scenario both clients handle traffic for separate private applications. Private applications in Microsoft Entra Private Access are handled by Global Secure Access while private applications in Netskope Private Access are accessed through the Netskope client. Internet traffic is handled by Netskope.
+In this scenario both clients handle traffic for separate private applications. Private applications in Microsoft Entra Private Access are handled by Global Secure Access while private applications in Netskope Private Access are accessed through the Netskope client. Netskope handles internet traffic.
 
 > [!NOTE]
 > Known limitation – macOS: When the Global Secure Access client is connected before the Netskope client Global Secure Access functionality is disrupted.
@@ -197,7 +223,7 @@ For this scenario:
 
 ### Netskope Private Access and Netskope Internet Access configuration
 
-For this scenario, perform the following in the Netskope portal
+In the Netskope portal:
 
 - Set up and configure [Netskope Steering Configuration](https://docs.netskope.com/en/steering-configuration/) to steer Web Traffic and Private Apps.
 
@@ -211,7 +237,7 @@ For this scenario, perform the following in the Netskope portal
 
 1. Navigate to **Netskope portal** > **Settings** > **Security Cloud Platform** > **Steering Configuration**> **New Configuration**.
 
-1. Add a **Configuration Name** such as **MSFTSSEWebAndPrivate**.
+1. Add a **Configuration Name** such as `MSFTSSEWebAndPrivate`.
 
 1. Choose a **User Group** or **OU** to apply the configuration to.
 
@@ -227,9 +253,9 @@ For this scenario, perform the following in the Netskope portal
 
 1. Set **Status** to **Disabled** and select **Save**.
 
-1. Select the **MSFTSSEWebAndPrivate** configuration > **Exceptions** > **New Exception** > **Destination Locations**.
+1. Select the `MSFTSSEWebAndPrivate` configuration > **Exceptions** > **New Exception** > **Destination Locations**.
 
-1. Select **MSFT SSE Service** (Instructions for creating this object are listed above in the Netskope profiles section).
+1. Select `MSFT SSE Service` (Instructions for creating this object are listed in the Netskope profiles section).
 
 1. The action is **Bypass** > check the box for **Treat it like local IP address** > Add.
 
@@ -239,15 +265,15 @@ For this scenario, perform the following in the Netskope portal
 
 1. Select **Private App** and select the private application(s) for Netskope to steer > **Add**.
 
-1. Ensure that the **MSFTSSEWebAndPrivate** configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
+1. Ensure that the `MSFTSSEWebAndPrivate` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
 
 #### Add Netskope Private App Real-time Protection Policy
 
 1. Navigate to **Netskope Portal** > **Policies** > **Real-time Protection**.
 
-1. Click **New** **Policy** > **Private** **App** **Access**.
+1. Select **New** **Policy** > **Private** **App** **Access**.
 
-1. In **Source**, select the **Users**, **Groups** or **OUs** to grant access.
+1. In **Source**, select the **Users**, **Groups**, or **OUs** to grant access.
 
 1. Add any required **Criteria**, like OS or Device Classification.
 
@@ -266,7 +292,7 @@ For this scenario, perform the following in the Netskope portal
 
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 
-1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created above. If not click the **Update** link.
+1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created. If not click the **Update** link.
 
 > [!NOTE]
 > For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
@@ -316,7 +342,7 @@ For this scenario:
 
 ### Netskope Private Access and Netskope Internet Access configuration
 
-For this scenario, perform the following in the Netskope portal
+In the Netskope portal:
 
 - Set up and configure [Netskope Steering Configuration](https://docs.netskope.com/en/steering-configuration/) to steer Web Traffic and Private Apps.
 
@@ -330,7 +356,7 @@ For this scenario, perform the following in the Netskope portal
 
 1. Navigate to **Netskope portal** > **Settings** > **Security Cloud Platform** > **Steering Configuration**> **New Configuration**.
 
-1. Add a **Configuration Name** such as **MSFTSSEWebAndPrivate-NoM365**.
+1. Add a **Configuration Name** such as `MSFTSSEWebAndPrivate-NoM365`.
 
 1. Choose a User Group or OU to apply the configuration to.
 
@@ -346,24 +372,24 @@ For this scenario, perform the following in the Netskope portal
 
 1. Set **Status** to **Disabled** and select **Save**.
 
-1. Select the **MSFTSSEWebAndPrivate-NoM365** configuration > **Exceptions** > **New Exception** > **Destination Locations**.
-1. Select **MSFT SSE Service and MSFT SSE M365** (Instructions for creating this object are listed above in the Netskope profiles section).
+1. Select the `MSFTSSEWebAndPrivate-NoM365` configuration > **Exceptions** > **New Exception** > **Destination Locations**.
+1. Select `MSFT SSE Service` and `MSFT SSE M365` (Instructions for creating this object are listed in the Netskope profiles section).
 
 1. Select **Bypass** and **Treat it like local IP address** options.
 
 1. Select **Exceptions** > **New Exception** > **Domains** and add these exceptions: `*.globalsecureaccess.microsoft.com`, `*.auth.microsoft.com`, `*.msftidentity.com`, `*.msidentity.com`, `*.onmicrosoft.com`, `*.outlook.com`, `*.protection.outlook.com`, `*.sharepoint.com`, `*.sharepointonline.com`, `*.svc.ms`, `*.wns.windows.com`, `account.activedirectory.windowsazure.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.cloud.microsoft`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`.
 
-1. Click **Add Steered Item** > Select **Private App** and select the private application(s) for Netskope to steer > **Add**.
+1. Select **Add Steered Item** > Select **Private App** and select the private applications for Netskope to steer > **Add**.
 
-1. Ensure that the **MSFTSSEWebAndPrivate-NoM365** configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
+1. Ensure that the `MSFTSSEWebAndPrivate-NoM365` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
 
 #### Add Netskope Private App Real-time Protection Policy
 
 1. Navigate to **Netskope Portal** > **Policies** > **Real-time Protection**.
 
-1. Click **New** **Policy** > **Private** **App** **Access**.
+1. Select **New** **Policy** > **Private** **App** **Access**.
 
-1. In **Source**, select the **Users**, **Groups** or **OUs** to grant access.
+1. In **Source**, select the **Users**, **Groups**, or **OUs** to grant access.
 
 1. Add any required **Criteria**, like OS or Device Classification.
 
@@ -382,7 +408,7 @@ For this scenario, perform the following in the Netskope portal
 
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 
-1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created above. If not click the **Update** link.
+1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created. If not, select the **Update** link.
 
 > [!NOTE]
 > For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
@@ -423,7 +449,7 @@ For this scenario, perform the following in the Netskope portal
 
 ## Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access and with Netskope Private Access
 
-In this scenario Netskope only capture private application traffic. All other traffic is handled by Global Secure Access.
+In this scenario Netskope only capture private application traffic. Global Secure Access handles all other traffic.
 
 ### Microsoft Entra Private Access configuration
 
@@ -443,7 +469,7 @@ For this scenario:
 
 1. Leave destination type **FQDN** and in Destination enter **\*.goskope.com** > **Save**
 
-1. Select **Add rule** again > **IP Range** > **Add** the following IP ranges (each range is a new rule): `163.116.128.0..163.116.255.255`, `162.10.0.0..162.10.127.255`, `31.186.239.0..31.186.239.255`, `8.39.144.0..8.39.144.255`, `8.36.116.0..8.36.116.255`
+1. Select **Add rule** again > **IP Range** > **Add** the IP ranges (each range is a new rule): `163.116.128.0..163.116.255.255`, `162.10.0.0..162.10.127.255`, `31.186.239.0..31.186.239.255`, `8.39.144.0..8.39.144.255`, `8.36.116.0..8.36.116.255`
 
 1. Select **Save**.
 
@@ -463,7 +489,7 @@ In the Netskope portal:
 
 1. Navigate to **Netskope portal** > **Settings** > **Security Cloud Platform** > **Steering Configuration**> **New Configuration**.
 
-1. Add a **Configuration Name** such as **MSFTSSEPrivate**.
+1. Add a **Configuration Name** such as `MSFTSSEPrivate`.
 
 1. Choose a User Group or OU to apply the configuration to.
 
@@ -479,24 +505,24 @@ In the Netskope portal:
 
 1. Set **Status** to **Disabled** and select **Save**.
 
-1. Select the **MSFTSSEPrivate** configuration > **Exceptions** > **New Exception** > **Destination Locations**.
-1. Select **MSFT SSE Service and MSFT SSE M365** (Instructions for creating this object are listed above in the Netskope profiles section).
+1. Select the `MSFTSSEPrivate` configuration > **Exceptions** > **New Exception** > **Destination Locations**.
+1. Select `MSFT SSE Service` and `MSFT SSE M365` (Instructions for creating this object are listed in the Netskope profiles section).
 
 1. Select **Bypass** and **Treat it like local IP address** options.
 
 1. Select **Exceptions** > **New Exception** > **Domains** and add these exceptions: `*.globalsecureaccess.microsoft.com`, `*.auth.microsoft.com`, `*.msftidentity.com`, `*.msidentity.com`, `*.onmicrosoft.com`, `*.outlook.com`, `*.protection.outlook.com`, `*.sharepoint.com`, `*.sharepointonline.com`, `*.svc.ms`, `*.wns.windows.com`, `account.activedirectory.windowsazure.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.cloud.microsoft`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`.
 
-1. Click **Add Steered Item** > Select **Private App** and select the private application(s) for Netskope to steer > **Add**.
+1. Select **Add Steered Item** > Select **Private App** and select the private applications for Netskope to steer > **Add**.
 
-1. Ensure that the **MSFTSSEPrivate** configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration
+1. Ensure that the `MSFTSSEPrivate` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration
 
 #### Add Netskope Private App Real-time Protection Policy
 
 1. Navigate to **Netskope Portal** > **Policies** > **Real-time Protection**.
 
-1. Click **New** **Policy** > **Private** **App** **Access**.
+1. Select **New** **Policy** > **Private** **App** **Access**.
 
-1. In **Source**, select the **Users**, **Groups** or **OUs** to grant access.
+1. In **Source**, select the **Users**, **Groups**, or **OUs** to grant access.
 
 1. Add any required **Criteria**, like OS or Device Classification.
 
@@ -516,7 +542,7 @@ Go to the system tray to check that Global Secure Access and Netskope clients ar
 
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 
-1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created above. If not click the **Update** link.
+1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created. If not, select the **Update** link.
 
 > [!NOTE]
 > For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
