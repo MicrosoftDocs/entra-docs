@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 10/21/2024
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
 ---
