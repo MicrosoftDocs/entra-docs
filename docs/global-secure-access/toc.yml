@@ -37,7 +37,7 @@ items:
   - name: Bypass internet destinations from the internet access profile
     href: ./scripts/powershell-bypassscript.md
   - name: Bypass Intune endpoints from the Internet Access profile
-    href: ./scripts/add-ia-deficecompliance-bypassses.ps1 
+    href: ./scripts/add-ia-devicecompliance-bypassses.ps1 
 - name: Concepts
   expanded: true
   items: 

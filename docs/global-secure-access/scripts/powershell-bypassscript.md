@@ -1,6 +1,6 @@
 ---
 title: PowerShell sample - Add a custom bypass rule to internet access forwarding profile
-description: PowerShell example that bypasses a certain fqdn or IP from being acquired by the GSA Client in the Internet Access forwarding profile.
+description: PowerShell example that bypasses a certain fqdn or IP from being acquired by the Global Secure Access Client in the Internet Access forwarding profile.
 author: fgomulka
 manager: ashishj
 ms.service: global-secure-access
@@ -18,7 +18,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 
 ## Important considerations
 - Run the PowerShell script as an Administrator from an elevated PowerShell session.
-- Make sure you have installed the Microsoft.Graph.Beta module:
+- Make sure you install the Microsoft.Graph.Beta module:
   ```powershell
   Install-Module Microsoft.Graph.Beta -AllowClobber -Force
   ```
