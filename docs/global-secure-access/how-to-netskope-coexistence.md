@@ -204,10 +204,10 @@ Netskope portal configuration
 
 ## Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access
 
-In this scenario both clients handle traffic for separate private applications. Private applications in Microsoft Entra Private Access are handled by Global Secure Access while private applications in Netskope Private Access are accessed through the Netskope client. Netskope handles internet traffic.
+In this scenario, both clients handle traffic for separate private applications. The Global Secure Access client handles private applications in Microsoft Entra Private Access and the Netskope client handles private applications in Netskope Private Access. Netskope handles internet traffic.
 
 > [!NOTE]
-> Known limitation – macOS: When the Global Secure Access client is connected before the Netskope client Global Secure Access functionality is disrupted.
+> Known limitation – When the macOS Global Secure Access client is connected before the Netskope client Global Secure Access functionality is disrupted.
 
 ### Microsoft Entra Private Access configuration
 
@@ -261,9 +261,9 @@ In the Netskope portal:
 
 1. Select **New Exception** > **Domains** and add the Global Secure Access domain exception: \*.globalsecureaccess.microsoft.com > **Save**.
 
-1. Click **Add Steered Item**.
+1. Select **Add Steered Item**.
 
-1. Select **Private App** and select the private application(s) for Netskope to steer > **Add**.
+1. Select **Private App** and select the private applications for Netskope to steer > **Add**.
 
 1. Ensure that the `MSFTSSEWebAndPrivate` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
 
@@ -281,7 +281,7 @@ In the Netskope portal:
 
 1. In **Profile & Action** > **Allow**.
 
-1. Give the policy a name such as ‘**Private Apps**’ and put it in the **Default** group.
+1. Give the policy a name such as `Private Apps` and put it in the **Default** group.
 
 1. Set **Status** to Enabled.
 1. Go to the system tray to check that Global Secure Access and Netskope clients are enabled.
@@ -292,7 +292,7 @@ In the Netskope portal:
 
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 
-1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created. If not click the **Update** link.
+1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created. If not, select the **Update** link.
 
 > [!NOTE]
 > For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
@@ -323,14 +323,14 @@ In the Netskope portal:
 
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
 
-1. Scroll to confirm the Global Secure Access client handled private application traffic for the SMB file share and did not handle the RDP session traffic.
+1. Scroll to confirm the Global Secure Access client handled private application traffic for the SMB file share and didn't handle the RDP session traffic.
 
 ## Configuration 3: Microsoft Entra Microsoft Access with Netskope Private Access and Netskope Internet Access
 
-In this scenario Global Secure Access handles all Microsoft 365 traffic. Netskope Private Access handles Private application traffic and Netskope Internet Access handles Internet traffic.
+In this scenario, Global Secure Access handles all Microsoft 365 traffic. Netskope Private Access handles Private application traffic and Netskope Internet Access handles Internet traffic.
 
 > [!NOTE]
-> Known limitation – macOS: When the Global Secure Access client is connected before the Netskope client Global Secure Access functionality is disrupted.
+> Known limitation – When the macOS Global Secure Access client is connected before the Netskope client Global Secure Access functionality is disrupted.
 
 ### Microsoft Entra Microsoft Access configuration
 
@@ -397,7 +397,7 @@ In the Netskope portal:
 
 1. In **Profile & Action** > **Allow**.
 
-1. Give the policy a name such as ‘Private Apps’ and put it in the **Default** group.
+1. Give the policy a name such as `Private Apps` and put it in the **Default** group.
 
 1. Set **Status** to Enabled.
 1. Go to the system tray to check that Global Secure Access and Netskope clients are enabled.
@@ -463,11 +463,12 @@ For this scenario:
 
 #### Add a custom bypass for Netskope in Global Secure Access
 
-1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Internet access profile** > Under **Internet access policies** > Select “**View**”.
+1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Internet access profile**.
+1. Under **Internet access policies** > Select **View**.
 
 1. Expand **Custom Bypass** > Select **Add rule**
 
-1. Leave destination type **FQDN** and in Destination enter **\*.goskope.com** > **Save**
+1. Leave destination type **FQDN** and in Destination enter `*.goskope.com` > **Save**
 
 1. Select **Add rule** again > **IP Range** > **Add** the IP ranges (each range is a new rule): `163.116.128.0..163.116.255.255`, `162.10.0.0..162.10.127.255`, `31.186.239.0..31.186.239.255`, `8.39.144.0..8.39.144.255`, `8.36.116.0..8.36.116.255`
 
@@ -530,7 +531,7 @@ In the Netskope portal:
 
 1. In **Profile & Action** > **Allow**.
 
-1. Give the policy a name such as ‘Private Apps’ and put it in the **Default** group.
+1. Give the policy a name such as `Private Apps` and put it in the **Default** group.
 
 1. Set **Status** to Enabled.
 
