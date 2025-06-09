@@ -30,7 +30,7 @@ When this setting is enabled, the secure patterns are strictly enforced.   When 
 
 ```Failed to add identifier URI {uri}. All newly added URIs must contain a tenant verified domain, tenant ID, or app ID, as per the default tenant policy of your organization. See https://aka.ms/identifier-uri-addition-error for more information on this error.```
 
-Applications that are configured to use v2.0 Entra ID tokens, by setting the `api.requestedAccessTokenVersion` of the application to `2`, are exempted by default.  Applications that are configured to use the SAML protocol for SSO, by setting the `preferredSingleSignOnMode` property of the service principal to `SAML`, are also exempted by default.
+Applications that are configured to use v2.0 Entra ID tokens, by setting the `api.requestedAccessTokenVersion` property of the application to `2`, are exempted by default.  Applications that are configured to use the SAML protocol for SSO, by setting the `preferredSingleSignOnMode` property of the service principal to `SAML`, are also exempted by default.
 
 Existing identifier URIs already configured on the app won't be affected, and all apps will continue to function as normal. This will only affect new updates to Microsoft Entra app configurations.
 
