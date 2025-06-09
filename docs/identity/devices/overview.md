@@ -9,7 +9,7 @@ ms.date: 05/09/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo, jogro, jploegert
 ---
 # What is a device identity?
