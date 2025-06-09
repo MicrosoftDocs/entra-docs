@@ -2,12 +2,12 @@
 title: Integrate Darwinbox HR With Microsoft Entra ID
 description: Learn how to integrate Darwinbox HR with Microsoft Entra ID to automate user provisioning, manage lifecycle workflows, and streamline HR-driven processes. 
 author: jenniferf-skc
-manager: femila
-ms.reviewer: rahuln3223
+manager: pmwongera
+ms.reviewer: cmmdesai
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 05/07/2025
+ms.date: 06/09/2025
 ms.author: jfields
 ms.custom: ai-gen-description
 ai-usage: ai-assisted
@@ -22,21 +22,22 @@ The document provides a step-by-step guide for integrating Darwinbox with Micros
 
 For detailed guidance on how to integrate your Darwinbox environment, reference the Dawinbox guide here. Select the Help docs link next to the application name.
 
-Here are the high-level steps for configuring the app integration with Microsoft Entra ID in the Darwinbox Portal:
+Follow these high-level steps for configuring the app integration with Microsoft Entra ID in the Darwinbox Portal.
 
 
 ## Install connectors in Darwinbox Studio
-Open Darwinbox studio and navigate to Connector Library. Search for and install the “Microsoft” and “Microsoft Entra” connectors: 
+Open Darwinbox studio and navigate to **Connector Library**. Search for and install the **Microsoft** and **Microsoft Entra** connectors 
 
 :::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of the Darwinbox Studio.":::
 
 ## Create single-tenant app registration
-Next, create a single-tenant app registration and provide the credentials to Darwinbox so they can perform actions like creating the provisioning job and sending user data to your Entra tenant.
-Go to the Entra portal, select **App Registrations**, and then select **New registration**. Create a single-tenant app as shown below:
+Next, create a single-tenant app registration and provide the credentials to Darwinbox so they can perform actions such as creating the provisioning job and sending user data to your Entra tenant.
+
+Go to the Entra portal, select **App Registrations**, and then select **New registration**. Create a single-tenant app as shown below.
 
 :::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/entra-id-darwinbox-register.png" alt-text="Screenshot of Microsoft Entra ID Register an application page.":::
 
-Add the following three Microsoft Graph application permissions to let Darwinbox create the provisioning job, send user data, and review the provisioning logs:
+Add the following three Microsoft Graph application permissions to let Darwinbox create the provisioning job: `Application.ReadWrite.OwnedBy`, send user data `SyncrhonizationData-User.Upload.OwnedBy`, and review the provisioning logs `ProvisioningLog.Read.All`.
 
 :::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/entra-id-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox.":::
 
@@ -52,7 +53,7 @@ To sync custom attributes from Darwinbox to Entra, update the attribute mapping 
 
 :::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/entra-id-attribute-mapping.png" alt-text="Screenshot of Microsoft Entra ID mapping page.":::
 
-Then upload a CSV file with these mappings to Darwinbox.
+Upload a CSV file with these mappings to Darwinbox.
 
 :::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/darwinbox-key-entra-key.png" alt-text="Image of CSV file showing key mapping from Entra ID to Darwinbox.":::
 
@@ -68,14 +69,15 @@ Configure the recipes based on your needs to enable the creation, updating, and 
 
 ### Monitoring provisioning
 
-To monitor the status of your provisioning events, go to the provisioning logs or use the provisioning workbook. For documentation on how to use each, see:
+To monitor the status of your provisioning events, go to the provisioning logs or use the provisioning workbook.
+
 -	[User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
 -	[How to analyze the Microsoft Entra provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md)
 -	[Quickstart for API-driven inbound provisioning with cURL](~/identity/app-provisioning/inbound-provisioning-api-curl-tutorial.md#verify-processing-of-the-bulk-request-payload)
 
 ### Manage Joiner-Mover-Leaver lifecycle workflows
 
-Extend your HR-driven provisioning process to automate business processes and security controls for new hires, employment changes, and termination. With [Microsoft Entra ID Governance Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md), configure Joiner-Mover-Leaver workflows such as:
+Extend your HR-driven provisioning process to automate business processes and security controls for new hires, employment changes, and termination. With [Microsoft Entra ID Governance Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md), configure Joiner-Mover-Leaver workflows such as the following:
 
 -	“X” days before the new hire joins, send an email to the manager, add the user to groups, and generate a temporary access pass for first-time login.
 -	When there's a change in the user’s department, job title, or group membership, launch a custom task.
@@ -85,6 +87,4 @@ Extend your HR-driven provisioning process to automate business processes and se
 
 ## Next step
 > [!TIP]
-> Monitor the status of your provisioning events: 
-> 
-> - [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
+> To learn how to monitor the status of your provisioning events, see [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
