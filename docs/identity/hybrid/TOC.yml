@@ -621,13 +621,19 @@
     items:
     - name: SOA overview
       href: source-of-authority/concept-source-of-authority-overview.md
+    - name: Group SOA best practices
+      href: source-of-authority/group-source-of-authority-guidance.md
+    - name: Group SOA FAQ
+      href: source-of-authority/group-source-of-authority-faq.yml
   - name: How-to guides
     items: 
     - name: How to configure Group SOA 
       href: source-of-authority/how-to-group-source-of-authority.md
+    - name: How to audit and monitor Group SOA 
+      href: source-of-authority/source-of-authority-auditing-monitoring.md
   - name: Reference
     items:
     - name: Group types
-      href: source-of-authority/how-to-group-source-of-authority.md
+      href: source-of-authority/reference-group-types.md
 
 
