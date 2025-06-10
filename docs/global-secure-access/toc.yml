@@ -35,9 +35,9 @@ items:
   - name: Restore traffic forwarding and compliant network requirement after a break glass operation
     href: ./scripts/powershell-break-glass-recovery.md
   - name: Bypass internet destinations from the internet access profile
-    href: ./scripts/powershell-bypassscript.md
+    href: ./scripts/powershell-bypass-script.md
   - name: Bypass Intune endpoints from the Internet Access profile
-    href: ./scripts/powershell-add-ia-devicecompliance-bypasses.md
+    href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
 - name: Concepts
   expanded: true
   items: 
