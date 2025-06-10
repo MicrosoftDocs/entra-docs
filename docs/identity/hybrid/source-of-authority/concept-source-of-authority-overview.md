@@ -120,13 +120,6 @@ If your organization is using AD management tools such as Active Directory Users
 
 If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to a SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are sent to Microsoft Entra and then to Active Directory where needed. For more information, see Prep your MIM setup.
 
-### Applications (User SOA only)
-
-Your application must be modernized and should leverage [cloud authentication](/entra/architecture/authenticate-applications-and-users) in order for your source of authority to change user objects to work. If you need to access on-premises resources, you can leverage Microsoft Entra Kerberos and [Entra Private Access](/entra/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend customers use Microsoft Entra Domain Services.
-
-### Devices (User SOA Only)
-
-We recommend that customers migrate their devices to the cloud and use Entra Joined Device setup in order to fully leverage SOA capabilities for users. For groups, there’s no pre-requisites around devices.
 
 ### Microsoft Exchange
 
@@ -134,7 +127,6 @@ All Customers who have migrated all their mailboxes to EXO and have a strategy a
 
 Security groups with no mail enabled features don’t have any pre-requisites related to Exchange and can be switched.
 
-### Credentials (User SOA only)
 
 ## Prepare your IT Environment for SOA
 
@@ -166,23 +158,6 @@ be managed using Active Directory Users and Computers, Active Directory
 Module for PowerShell, or other AD management tools. After creating an
 OU, move the objects to that OU. For more information, see
 [Move-ADObject](/powershell/module/activedirectory/move-adobject).
-
-### Shift your HR integration to the cloud (only for User SOA)
-
-The first step in setting up SOA is to determine your provisioning
-strategy for your HR system. Ideally, you’re already provisioning new
-employees from your cloud HR system into Entra ID directly and have
-identified all the users that are no longer needed in Active Directory.
-If not, our recommendation is to determine your HR strategy first before
-planning your source of authority change project.
-
-:::image type="content" source="media/concept-source-of-authority-overview/image6.png" alt-text="Screenshot of the HR integration setup.":::
-
-This section assumes you have Microsoft Entra cloud integrations with
-your HR sources, such as Workday or SuccessFactors. If you’re using MIM
-and have your HR systems connected through MIM, follow the steps in [Prepare your MIM setup](#prepare-your-mim-setup).
-
-:::image type="content" source="media/concept-source-of-authority-overview/image7.png" alt-text="Screenshot of the steps for shifting HR integration to the cloud.":::
 
 ### Steps for shifting your HR integration to the cloud
 
