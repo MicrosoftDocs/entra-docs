@@ -1,9 +1,9 @@
 ---
-author: billmath
+author: justinha
 ms.service: entra-id-governance
 ms.topic: include
-ms.date: 08/25/2024
-ms.author: billmath
+ms.date: 06/09/2025
+ms.author: justinha
 # Used by articles entra governance
 ---
 
