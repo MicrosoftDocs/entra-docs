@@ -46,10 +46,10 @@ The following table contains a list of currently billable actions for **guest us
 | Entitlement Management  | [Guest policy assigned with custom extension](entitlement-management-logic-apps-integration.md) | Bill on successful request creation when a custom extension is included in the assignment policy.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when a custom extension is included in the assignment policy.  | User requests access package assignment, Create access package assignment user update request.  |
 | Entitlement Management| [Guest is granted an auto-assignment policy](entitlement-management-access-package-auto-assignment-policy.md)  | Bill on successful request creation with an auto-assignment policy.  | Entitlement Management creates access package assignment request for user.  |
 | Entitlement Management  | [Directly assign any user](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)  | Bill on successful request creation when using directly assigning an access package to a user not yet in the directory.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when using requestType "*AdminAdd*" for a user who doesn’t exist in the directory.  | Administrator directly assigns user to access package.  |
-| Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Bill on conversion to governed user.<br>**API**<br> https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/subjects where subjectLifecycle is set to "governed".  | Update access package user lifecycle. |
+| Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Bill on conversion to governed user.<br>**API**<br> https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/subjects where *"subjectLifecycle"* is set to "governed".  | Update access package user lifecycle. |
 | Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Bill on workflow execution.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/{workflowId}/activate  | Workflow execution started for user.  |
-| Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill on access review start date. | Available after 8/1/2025  |
-| Access Reviews    | [Access Review – inactive users](review-recommendations-access-reviews.md#inactive-user-recommendations) | Bill on access review start date. | Available after 8/1/2025  |
+| Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill on access review decision or review end date if no decision. <br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings is enabled in a group review. | Available after 8/1/2025  |
+| Access Reviews    | [Access Review – inactive users](review-recommendations-access-reviews.md#inactive-user-recommendations) | Bill on access review decision or review end date if no decision.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Available after 8/1/2025  |
 
 
 ## Guest billing in multitenant organizations
@@ -144,6 +144,10 @@ Yes. While you don’t need a subscription for your guest users, you need to hav
 
 Governance features included with Microsoft Entra P2 including basic access reviews and entitlement management capabilities won't be
 billed to the governance guest add-on. Only governance features that are exclusive to Microsoft Entra Suite or standalone Microsoft Entra ID Governance will be billed to the meter. See the billable tables action on this page for details.
+
+**Does Governance guest billing apply to all guest users, including those within the first 50,000 Monthly Active Users (MAU)?**
+
+Yes, there is no free tier for governance billing. Governance guest billing applies to all guest users, even those within the first 50,000 MAU.
 
 
 ## Related content
