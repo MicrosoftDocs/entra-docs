@@ -216,9 +216,6 @@
       items:
         - name: Use password hash sync for hybrid identity in Active Directory
           href: connect/tutorial-password-hash-sync.md
-          items:
-            - name: SOA overview
-              href: concept-source-of-authority-overview.md
         - name: Use pass-through authentication for hybrid identity in Active Directory
           href: connect/tutorial-passthrough-authentication.md
         - name: Use federation for hybrid identity in Active Directory
@@ -621,13 +618,4 @@
     items:
     - name: SOA overview
       href: source-of-authority/concept-source-of-authority-overview.md
-  - name: How-to guides
-    items: 
-    - name: How to configure Group SOA 
-      href: source-of-authority/how-to-group-source-of-authority.md
-  - name: Reference
-    items:
-    - name: Group types
-      href: source-of-authority/how-to-group-source-of-authority.md
-
 
