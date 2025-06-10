@@ -60,7 +60,17 @@ The PRT is issued during user authentication on a Windows 10 or newer device in 
 
 In Microsoft Entra registered device scenarios, the Microsoft Entra WAM plugin is the primary authority for the PRT since Windows sign in isn't happening with this Microsoft Entra account.
 
-### [iOS, macOS and Android](#tab/other-prt-issued)
+### [macOS](#tab/macos-prt-issued)
+
+The PSSO Primary Refresh Token (PRT) is issued exclusively to Entra-joined macOS devices that have successfully completed Platform SSO registration. During this registration process, macOS generates secure enclave–backed cryptographic key pairs: one for device signing and another for device encryption. The public key references are shared with the SSO extension. 
+
+The SSO extension uses these keys to complete device registration with the Azure Device Registration Service. It then configures Apple’s loginConfiguration API with the necessary parameters for PRT acquisition. 
+
+Once registration is successfully completed, macOS initiates a login request signed with the Device Signing key. Entra ID validates the request, device signing key and associated parameters, and issues PRT response. macOS decrypts this response using Device Encryption key, stores the PRT and makes it available to the SSO extension.  
+The login request is sent during user authentication on PSSO registered macOS.  
+
+
+### [iOS and Android](#tab/other-prt-issued)
 
 **iOS, macOS, and Android** support two types of PRT artifacts.
 
@@ -103,7 +113,11 @@ A PRT is used by two key components in Windows:
   > [!NOTE]
   >  In instances where a user has two accounts from the same Microsoft Entra tenant signed in to a browser application, the device authentication provided by the PRT of the primary account is automatically applied to the second account as well. As a result, the second account also satisfies any device-based Conditional Access policy on the tenant.
 
-### [iOS, macOS, and Android](#tab/other-prt-used)
+### [macOS](#tab/macos-prt-used)
+
+A PSSO PRT is used by sso extension to provide SSO on to apps and websites. PRT is used to request refresh and access tokens for applications that rely on SSO extension for token requests. It also enables SSO on browsers by injecting the PRT into browser requests.  
+
+### [iOS and Android](#tab/other-prt-used)
 
 PRT is used in a similar manner to the description of the “Microsoft Entra WAM plugin” for native apps. The only browsers that support Browser SSO are Safari and Microsoft Edge.
 
@@ -134,9 +148,15 @@ Windows transport endpoints are required for password authentication only when a
 
 - In Microsoft Entra joined and Microsoft Entra hybrid joined devices, the CloudAP plugin is the primary authority for a PRT. If a PRT is renewed during a WAM-based token request, the PRT is sent back to CloudAP plugin, which verifies the validity of the PRT with Microsoft Entra ID before accepting it.
 
-### [iOS / macOS](#tab/other-prt-renewal)
+### [macOS](#tab/macos-prt-renewal)
 
-Renewal happens opportunistically on token requests, but not more often than once every 11 hours. On iOS, there’s also an opportunistic update when device is charging, happening not more often than once every two days, subject to resources allocation by the iOS operating system. Similarly to other platforms, a PRT is valid for 90 days if in use, and if not renewed, only valid for 14 days. 
+macOS renews the PSSO Primary Refresh Token (PRT) every 4 hours, or sooner if the SSO tokens are missing or have expired. 
+
+Microsoft Entra Conditional Access policies aren't evaluated when PRTs are renewed. 
+
+### [iOS](#tab/iOS-prt-renewal)
+
+On iOS, there’s also an opportunistic update when device is charging, happening not more often than once every two days, subject to resources allocation by the iOS operating system. Similarly to other platforms, a PRT is valid for 90 days if in use, and if not renewed, only valid for 14 days. 
 
 ### [Linux](#tab/linux-prt-renewal)
 
@@ -144,7 +164,7 @@ A PRT is valid for 90 days and is renewed every 4 hours if the device is in use.
 
 ### [Android](#tab/android-prt-renewal)
 
-- A PRT is valid for 90 days and is renewed every 4 hours if the device is in use. However, it's only valid for 14 days if the device isn't in use.
+- A PRT is valid for 90 days and is continuously renewed as long as the device is in use. However, it's only valid for 14 days if the device isn't in use. 
 - A PRT is only issued and renewed during native app authentication. A PRT isn't renewed or issued during a browser session.
 - It's possible to obtain a PRT without the need for device registration ([Workplace Join](/windows-server/identity/ad-fs/operations/walkthrough--workplace-join-to-an-android-device)) and enable SSO.
 - PRTs obtained without device registration can't satisfy the authorization criteria for Conditional Access that relies on the device's status or compliance.
@@ -167,6 +187,17 @@ Microsoft Entra ID and Windows 10 or newer enable PRT protection through the fol
 
 By securing these keys with the TPM, we enhance the security for PRT from malicious actors trying to steal the keys or replay the PRT. So, using a TPM greatly enhances the security of Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered devices against credential theft. For performance and reliability, TPM 2.0 is the recommended version for all Microsoft Entra device registration scenarios on Windows 10 or newer. After the Windows 10, 1903 update, Microsoft Entra ID doesn't use TPM 1.2 for any of the above keys due to reliability issues.
 
+
+### [macOS](#tab/macOS-prt-protection)
+
+A Primary Refresh Token (PRT) is securely bound to the device on which the user signs in. Microsoft Entra ID and macOS enforce this protection through several mechanisms: 
+
+The PRT is issued only after a request is signed using a secure enclave–backed Device Signing Key, which is cryptographically generated during device registration. If the signature from this key cannot be validated, the PRT will not be issued. 
+
+Along with the PRT, Microsoft Entra ID issues a session key encrypted with the public Device Encryption key that was shared during registration. This session key can only be decrypted using the corresponding private key stored in the secure enclave. 
+
+This session key acts as a Proof-of-Possession (POP) key for all subsequent requests to Microsoft Entra ID. Any request not signed with this session key is rejected, ensuring that only the registered device can use the PRT. 
+
 ---
 
 ## How are App Tokens protected?
@@ -179,10 +210,10 @@ For an overview of how tokens are protected in general, refer to [Protecting tok
   - WAM securely uses the refresh token by signing requests with the session key to issue further access tokens. The DPAPI key is secured by a Microsoft Entra ID based symmetric key in Microsoft Entra itself. 
   - When the device needs to decrypt the user profile with the DPAPI key, Microsoft Entra ID provides the DPAPI key encrypted by the session key, which CloudAP plugin requests TPM to decrypt. This functionality ensures consistency in securing refresh tokens and avoids applications implementing their own protection mechanisms.
 
-### [iOS](#tab/iOS-prt-apptokens)
+### [macOS & iOS](#tab/iOSMacOS-prt-apptokens)
 
-- **iOS unmanaged**: On devices without MDM SSO extension profile, broker returns both the access token and the refresh token to the calling app. Calling app will use refresh token for subsequent refreshes and that refresh token won’t be protected. 
-- **iOS managed**: On devices with MDM SSO extension profile, broker returns only the access token to the calling app. Broker uses PRT for any subsequent token refresh and doesn't use unprotected refresh token. We recommend customers to use this configuration over the unmanaged one due to the additional protection it provides. 
+- **macOS/iOS unmanaged**: On devices without MDM SSO extension profile, broker returns both the access token and the refresh token to the calling app. Calling app will use refresh token for subsequent refreshes and that refresh token won’t be protected. 
+- **macOS/iOS managed**: On devices with MDM SSO extension profile, broker returns only the access token to the calling app. Broker uses PRT for any subsequent token refresh and doesn't use unprotected refresh token. We recommend customers to use this configuration over the unmanaged one due to the additional protection it provides. 
 
 ### [Android](#tab/android-apptokens)
 
