@@ -1,7 +1,7 @@
 ---
 title: Configure multiple IdP connections on Coupa for Single sign-on with Microsoft Entra ID
 description: Learn how to configure multiple IdP connections for single sign-on between Microsoft Entra ID and Coupa.
-author: 
+author: herambkadam
 manager: 
 ms.reviewer: 
 ms.service: entra-id
@@ -97,9 +97,8 @@ Follow these steps to enable Microsoft Entra SSO.
     a. In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<companyname>.coupahost.com`
 
-> [!NOTE]
-> The Sign-on URL value isn't real. Update this value with the actual Sign-On URL from Coupa SP Metadata downloaded in **[Download Coupa SP  Metadata](#download-coupa-sp-metadata)** above. Contact [Coupa Client support team](https://compass.coupa.com/en-us/support) to get this value.
-
+    > [!NOTE]
+    > The Sign-on URL value isn't real. Update this value with the actual Sign-On URL from Coupa SP Metadata downloaded in **[Download Coupa SP  Metadata](#download-coupa-sp-metadata)** above. Contact [Coupa Client support team](https://compass.coupa.com/en-us/support) to get this value.
 
     b. In the **Identifier** box, type the URL:
 

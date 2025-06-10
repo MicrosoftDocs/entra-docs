@@ -232,7 +232,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Couchbase Capella - SSO](../identity/saas-apps/couchbase-capella-sso-tutorial.md) |  | ● |
 | [Couchbase Server - SSO](../identity/saas-apps/couchbase-server-sso-tutorial.md) |  | ● |
 | [Coupa Risk Assess](../identity/saas-apps/coupa-risk-assess-tutorial.md) |  | ● |
-| [Coupa](../identity/saas-apps/coupa-tutorial.md) |  | ● |
+| [Coupa](../identity/saas-apps/coupa-sso-tutorial.md) |  | ● |
 | [courses.work](../identity/saas-apps/courseswork-tutorial.md) |  | ● |
 | [Crayon](../identity/saas-apps/crayon-tutorial.md) |  | ● |
 | [CultureHQ](../identity/saas-apps/culturehq-provisioning-tutorial.md) | ● | ● |
