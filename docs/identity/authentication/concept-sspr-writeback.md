@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: tilarso
 ---
 # How does self-service password reset writeback work in Microsoft Entra ID?

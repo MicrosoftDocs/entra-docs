@@ -3,7 +3,7 @@ title: "Quickstart: Call an ASP.NET web API that is protected by the Microsoft i
 description: In this quickstart, learn how to call an ASP.NET web API that's protected by the Microsoft identity platform from a Windows Desktop (WPF) application.
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.custom:
 ms.date: 08/16/2022

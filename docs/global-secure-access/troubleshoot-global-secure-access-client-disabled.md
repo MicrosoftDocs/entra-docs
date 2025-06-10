@@ -6,7 +6,7 @@ ms.topic: troubleshooting
 ms.date: 03/10/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.reviewer: lirazbarak
 
 

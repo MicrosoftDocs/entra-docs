@@ -2,7 +2,7 @@
 title: Customize your branding for your customers
 description: Learn how to customize the look and feel of your customers' sign-in experiences.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
