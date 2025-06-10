@@ -16,7 +16,7 @@ ms.collection: ce-skilling-ai-copilot
 # Customer intent: As a SOC analyst or IT admin, I want to learn how to use the Microsoft Entra skills in Microsoft Security Copilot so that I can proactively identify potential app risks.
 ---
 
-# Assess application risks using Microsoft Security Copilot in Microsoft Entra (Preview)
+# Assess application risks using Microsoft Security Copilot in Microsoft Entra
 
 [Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) gets insights from your Microsoft Entra data through many different skills, such as Investigate identity risks with Entra ID Protection and Explore Microsoft Entra audit log details. App risk skills allow identity admins and security analysts who manage applications or workload identities in Microsoft Entra to identify and understand risks through natural language prompts. By using prompts like, "List risky app details for my tenant", the analyst gets a better picture of the risk from application identities and can discover other application details in Microsoft Entra - including permissions granted (especially those that might be considered high privileged), unused apps in their tenant, and apps from outside their tenant. Security Copilot then uses prompt context to respond, such as with a list of apps or permissions, then surface links to the Microsoft Entra admin center so that admins can see a full list and take the appropriate remediation actions for their risky apps. IT admins and security operations center (SOC) analysts can use these skills and others to gain the right context to help investigate and remediate identity-based incidents using natural language prompts. 
 
