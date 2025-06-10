@@ -2384,6 +2384,32 @@
       "source_path": "docs/identity-platform/scenario-spa-app-registration.md",
       "redirect_url": "/entra/identity-platform/scenario-spa-app-configuration",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/webmethods-integration-cloud-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/veritas-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/promapp-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/illumio-sso-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/saas-apps/kontiki-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
     }
   ]
 }
+
