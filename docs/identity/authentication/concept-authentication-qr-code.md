@@ -11,7 +11,7 @@ ms.author: justinha
 author: aanjusingh
 contributors: minatoruan
 ms.reviewer: anjusingh
-manager: femila
+manager: dougeby
 
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---

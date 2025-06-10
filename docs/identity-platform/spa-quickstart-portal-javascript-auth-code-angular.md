@@ -3,7 +3,7 @@ title: "Quickstart: Sign in users in JavaScript Angular single-page apps (SPA) w
 description: In this quickstart, learn how a JavaScript Angular single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.custom:
 ms.date: 08/16/2022

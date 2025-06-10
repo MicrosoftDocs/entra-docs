@@ -2,7 +2,7 @@
 title: Share link to request an access package in entitlement management
 description: Learn how to share link to request an access package in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to

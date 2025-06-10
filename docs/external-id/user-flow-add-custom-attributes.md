@@ -4,7 +4,7 @@ description: Learn how to add custom attributes to self-service sign-up flows in
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.service: entra-external-id
 ms.topic: how-to

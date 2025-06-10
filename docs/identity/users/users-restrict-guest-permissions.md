@@ -3,7 +3,7 @@ title: Restrict guest user access permissions
 description: Restrict guest user access permissions using the Azure portal, PowerShell, or Microsoft Graph in Microsoft Entra ID
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id

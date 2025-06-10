@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 08/201/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 
 ## Configure custom claims provider

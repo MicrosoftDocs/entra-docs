@@ -3,7 +3,7 @@ title: Add Google as an identity provider
 description: Learn how to add Google as an identity provider for your external tenant.
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
