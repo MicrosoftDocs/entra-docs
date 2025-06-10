@@ -589,9 +589,9 @@
   - name: Concepts
     items:
     - name: SOA overview
-      href: concept-source-of-authority-overview.md
+      href: source-of-authority/concept-source-of-authority-overview.md
   - name: How-to guides
-    items:
+    items: source-of-authority/how-to-group-source-of-authority.md
   - name: Reference
     items:
 
