@@ -2,7 +2,7 @@
 title: Scoped synchronization for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to use the Microsoft Entra admin center to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.assetid: 9389cf0f-0036-4b17-95da-80838edd2225
 ms.service: entra-id

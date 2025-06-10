@@ -4,7 +4,7 @@ description: To protect customers, some regions require you to enable the countr
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

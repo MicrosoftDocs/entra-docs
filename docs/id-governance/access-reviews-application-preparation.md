@@ -2,7 +2,7 @@
 title: Preparing for an access review of users' access to an application
 description: Planning for a successful access reviews campaign for a particular application starts with understanding how to model access for that application in Microsoft Entra ID.
 author: markwahl-msft
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to

@@ -1,9 +1,9 @@
 ---
 title: Create a custom role in Microsoft Entra ID
 description: Learn how to create a custom role to manage access to Microsoft Entra resources using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API
-author: rolyon
-ms.author: rolyon
-manager: femila
+author: barclayn
+ms.author: barclayn
+manager: pmwongera
 ms.reviewer: vincesm
 ms.date: 05/19/2025
 ms.service: entra-id

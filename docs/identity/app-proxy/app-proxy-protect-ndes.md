@@ -2,7 +2,7 @@
 title: Use Microsoft Entra application proxy with a Network Device Enrollment Service (NDES) server
 description: Learn how to use Microsoft Entra application proxy to protect your Network Device Enrollment Service (NDES).
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to

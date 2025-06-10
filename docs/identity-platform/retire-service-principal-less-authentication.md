@@ -17,15 +17,18 @@ From March 2026, Microsoft Entra ID will no longer support service principal-les
 
 Microsoft Entra ID will block authentication for multitenant applications that don't have an enterprise application registration in the resource tenant. This scenario is also known as service principal-less authentication. This behavior has already been blocked for most resources. This change will address a few remaining exceptions. Service principal-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
 
-This change to service principal-less authentication will make client service principal a requirement for all applications in order to improve our “Security by default” ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). Service principal-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations. Microsoft has verified that validations aren't vulnerable to service principal-less authentication. However, with this action, the risk of this gap re-appearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
+This change to service principal-less authentication will make client service principal a requirement for all applications in order to improve our "Security by default" ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). Service principal-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations. Microsoft has verified that validations aren't vulnerable to service principal-less authentication. However, with this action, the risk of this gap reappearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
 
 Additionally, by enforcing the requirement that applications must be registered in every tenant where they authenticate, we reinforce tenant administrator’s governance of all access, including the ability to write conditional access policies for these applications. 
 
 You must act **before March 31, 2026**, to avoid authentication failure of applications. 
 
-If you identified traffic using service principal-less authentication between **February 11th and March 11th, 2025**, it will continue to work until **March 2026**. However, any traffic that wasn't detected during this period or any new traffic starting after **March 11, 2025** will be blocked starting **April 2025**.
+In February-March 2025, we froze most resource apps accessed by service principal-less client apps. We allowed traffic where the client app home tenant and resource tenant matched if it was observed between **February 11th and March 11th, 2025**, which will continue to work until March 2026. However, any traffic that wasn't identified during this period or new traffic after March 11 was blocked starting April 2025.
 
 ## Use sign-in logs to find service principal-less applications
+
+> [!NOTE]
+> Action is only required for apps authenticating without a service principal found in the "Service principal sign-ins" (app-only) sign-in logs. *User* sign-in logs will include Microsoft applications and services that are authenticating without a service principal. Sign-ins and authentication without a service principal by Microsoft apps is expected, and no action is required by customers.
 
 First, you'll need to verify that access by the named applications to the resources listed is necessary. The application’s sign-in activity can be reviewed by the resource tenant’s administrator via [sign-in logs](../identity/monitoring-health/concept-sign-ins.md). The service principal ID of an application making a service principal-less authentication is shown as `00000000-0000-0000-0000-000000000000` in the sign-in logs of the resource tenant.  
 

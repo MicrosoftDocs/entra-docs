@@ -2,7 +2,7 @@
 title: Show suggested access packages for My Access in entitlement management (preview)
 description: Learn how to show suggested access packages to users in My Access so they can quickly find the most relevant access packages.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
