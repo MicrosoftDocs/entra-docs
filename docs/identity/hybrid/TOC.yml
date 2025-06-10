@@ -591,9 +591,13 @@
     - name: SOA overview
       href: source-of-authority/concept-source-of-authority-overview.md
   - name: How-to guides
-    items: source-of-authority/how-to-group-source-of-authority.md
+    items: 
+    - name: How to configure Group SOA 
+      href: source-of-authority/how-to-group-source-of-authority.md
   - name: Reference
     items:
+    - name: Group types
+      href: source-of-authority/how-to-group-source-of-authority.md
 
          
 
