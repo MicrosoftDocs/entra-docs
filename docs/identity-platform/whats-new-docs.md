@@ -26,10 +26,10 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Custom claims provider reference](custom-claims-provider-reference.md) - The update improved content clarity.
 - [Application configuration options](msal-client-application-configuration.md) - The update improved content clarity.
 - [Custom authentication extensions overview](custom-extension-overview.md) - The update improved content clarity.
-- [Single-page application: Acquire a token to call an API](scenario-spa-acquire-token.md) - [DevEx] The update improved content clarity.
-- [Single-page application: Code configuration](scenario-spa-app-configuration.md) - [DevEx] The update improved content clarity.
-- [Single-page application: Add sign-in and sign-out code](scenario-spa-sign-in.md) - [DevEx] The update improved content clarity.
-- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Add and partially update error code
+- [Single-page application: Acquire a token to call an API](scenario-spa-acquire-token.md) - The update improved content clarity.
+- [Single-page application: Code configuration](scenario-spa-app-configuration.md) - The update improved content clarity.
+- [Single-page application: Add sign-in and sign-out code](scenario-spa-sign-in.md) - The update improved content clarity.
+- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Partially update error code.
 
 ## April 2025
 
