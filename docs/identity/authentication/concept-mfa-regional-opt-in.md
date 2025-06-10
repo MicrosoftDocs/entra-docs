@@ -36,7 +36,7 @@ These protections help detect:
 
 When a transaction is flagged as potentially abusive: 
 - The transaction may be throttled, preventing immediate delivery of the SMS or voice call.
-- The user may receive a message to try again later, indicating that the request was temporarily blocked.
+- The user may see a "Sorry, we're having trouble verifying your account" 
 - The user can choose an alternative authentication method, such as using the Microsoft Authenticator app or another registered method.
 
 New tenants are subject to additional safeguards to prevent abuse from newly created or compromised tenants. Specifically, telephony activity is throttled for the first few days of the tenant's creation to limit excess telecom usage and reduce fraud exposure during this high-risk window. 
@@ -58,9 +58,13 @@ The most common way to conduct IRSF is through an end-user experience that requi
 
 IRSF poses a significant threat to online businesses and can cause reputational damage. By understanding IRSF, you can be more aware of the problem and can engage in implementing preventive measures such as regional restrictions, rate limiting, and phone number verification.  
 
-## SMS and Voice verification
- 
+## Regions that need to opt-in for MFA telephony verification 
+
 For SMS and Voice verification, the following region codes require an opt-in. This means that if you'd like to use telecom in these regions, you'll have to reach out to support.
+
+Note: We always recommend that customers figure more than one authentication, with at least one being a non-telecom method. 
+
+Note: If a user has previously received SMS or voice calls in the country and stopped receiving them, they may be temporarily throttled. PLease retry after some time. If users of a tenant are not receiving SMS or voice calls in a specific country, and the country is listed in the opt-in list, it may indicate that the customer/tenant is not enabled for telecom authentication in that country and may need to opt-in. In such cases we recommend that the user use an alternative authentication method to immediately unblock themselves. If telecom is required and they are unable to use an alternative authentication method for some reason, suggest opening a support ticket. 
 
 Region Code | Region Name 
 ------------|------------
