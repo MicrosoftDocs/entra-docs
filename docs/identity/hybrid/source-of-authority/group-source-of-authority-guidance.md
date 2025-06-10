@@ -87,38 +87,5 @@ Administrators can revert changes to Group SOA operations. In this scenario, the
 
 For step-by-step details and instructions on how to use this feature, see [How to use Group Source of Authority](https://microsoft.sharepoint.com/:w:/t/APEXIdentityContent/EQRNPZ3H-fpFjEsPy46mN8YBJWgbxXmrsEIncXlIFU3EhQ?e=dKl7MU).<span id="_How_AD_groups" class="anchor"></span>
 
-## Frequently Asked Questions
-
-**How can I transition my group management capabilities to the cloud and use Microsoft Entra ID Governance to manage and govern all groups, including Distribution Lists (DLs) and Mail-Enabled Security Groups (MESGs)?**
-
-Microsoft Entra ID Governance supports governance of groups that are manageable with Microsoft Entra ID, i.e. cloud security groups and Microsoft 365 groups. While Distribution Lists (DLs) and Mail-Enabled Security Groups (MESGs) can exist in the cloud, they are Exchange concepts and cannot be managed through the Entra admin center or MS Graph.
-
-Customers should consider replacing DLs and MESGs with Microsoft 365 groups for collaboration and access management scenarios, as they offer built-in capabilities for governance, collaboration, and self-service. In most cases, DLs and MESGs will need to be recreated as Microsoft 365 groups. However, simple, non-nested cloud managed DLs can be directly upgraded to Microsoft 365 groups. [Learn More.](/exchange/recipients-in-exchange-online/manage-distribution-groups/upgrade-distribution-lists)
-
-### I use self-service group management in Microsoft Identity Manager or other services to manage on-premises AD groups. When I transition to Group SOA and utilize Microsoft Entra ID Governance, can I replicate these functionalities in a cloud environment?
-
-Microsoft Entra ID provides self-service group management through My Groups for Microsoft 365 and non-mail-enabled security groups. Microsoft Entra ID Governance enables access management through My Access, where you can manage groups with access packages. This allows users to request access to groups as part of a structured governance framework.  However, these solutions don’t exactly replicate the self-service group management capabilities in Microsoft Identity Manager due to differences in on-prem and cloud solutions.
-
-To transition from on-premises AD groups, you can modernize applications and leverage cloud-based security groups and Microsoft 365 groups.
-
-### I want to use Microsoft 365 groups to manage my on-premises AD apps. How can I manage and govern AD-based apps tied to Microsoft 365 groups (Universal groups)?
-
-Currently, customers can provision Microsoft 365 groups to AD with Group Writeback V1 (GWB) in Microsoft Entra Connect sync. However, admins can’t choose the groups they want to provision to AD.
-
-### What happens if I provision cloud security groups to AD and someone with permissions makes a change directly to the AD group?
-
-Any changes made directly in AD to a group provisioned from Microsoft Entra ID are overwritten the next time you provision the cloud group to AD (typically upon the next change to the cloud group). A local AD change doesn’t reflect in Microsoft Entra ID (there’s no reconciliation feature available yet).
-
-### I use Group Provisioning to AD to provision a security group. This security group had its source of authority transferred and is nested under an on-premises AD group. How does this scenario affect group membership management in Microsoft Entra ID for the transferred group?
-
-Once you start managing group memberships in Microsoft Entra ID for a transferred group (such as CloudGroupA) and use Group Provisioning to AD to provision it as a nested group within an on-premises group (such as OnPremGroupB), the membership reference for CloudGroupA doesn’t sync when the AD to Microsoft Entra ID sync configuration runs for OnPremGroupB that is in-scope for that sync. By design, the sync client doesn’t recognize the cloud group membership references.
-
-### How does SOA apply to nested groups in AD?
-
-SOA applies only to the specified direct individual group object without recursion. If you apply SOA to nested groups within the group, on-prem continues to manage them. Because this methodology is by design, explicitly apply SOA to each group that you want to convert. You might start with the group in the lowest hierarchy and move up the tree.
-
-### I currently use the custom LDAP connector in Microsoft Entra Connect Sync to sync identities and groups into Microsoft Entra ID. Does Group SOA work for this scenario?
-
-This scenario is currently unsupported. We only support transfer of Source of Authority of objects and (users and groups) that sync from AD to Microsoft Entra ID to be cloud objects. Rollback of the source of authority operations will also only work if the original source of authority of the object is Active Directory.
 
 ## Related content
