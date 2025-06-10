@@ -571,14 +571,63 @@
           href: connect/reference-connect-version-history-archive.md
         - name: How to use BypassDirSyncOverrides
           href: connect/how-to-bypassdirsyncoverrides.md
-- name: Source of Authoity reference
+    - name: Hybrid Identity Required Ports and Protocols
+      href: connect/reference-connect-ports.md
+    - name: Microsoft Entra Connect version history
+      href: connect/reference-connect-version-history.md
+    - name: Microsoft Entra Connect Health version history
+      href: connect/reference-connect-health-version-history.md
+    - name: Microsoft Entra pass-through authentication agent version history
+      href: connect/reference-connect-pta-version-history.md
+    - name: Connector version history
+      href: /microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history
+    - name: Accounts and permissions
+      href: connect/reference-connect-accounts-permissions.md
+    - name: Microsoft Entra Connect FAQ
+      href: connect/reference-connect-faq.yml
+    - name: Microsoft Entra Connect Health FAQ
+      href: connect/reference-connect-health-faq.yml
+    - name: Hybrid identity considerations for Azure Government 
+      href: connect/reference-connect-government-cloud.md
+    - name: Microsoft Entra Connect user privacy
+      href: connect/reference-connect-user-privacy.md
+    - name: Microsoft Entra Connect Health user privacy
+      href: connect/reference-connect-health-user-privacy.md
+    - name: Attributes synchronized
+      href: connect/reference-connect-sync-attributes-synchronized.md
+    - name: Functions Reference
+      href: connect/reference-connect-sync-functions-reference.md
+    - name: Microsoft Entra federation compatibility list
+      href: connect/how-to-connect-fed-compatibility.md
+    - name: TLS 1.2 enforcement
+      href: connect/reference-connect-tls-enforcement.md
+    - name: ADSync Reference
+      href: connect/reference-connect-adsync.md
+    - name: ADSyncConfig Reference
+      href: connect/reference-connect-adsyncconfig.md
+    - name: ADSyncTools Reference
+      href: connect/reference-connect-adsynctools.md
+    - name: ADConnectivityTools Reference
+      href: connect/reference-connect-adconnectivitytools.md
+    - name: msExchUserHoldPolicies and cloudMSExchUserHoldPolicies
+      href: connect/reference-connect-msexchuserholdpolicies.md
+    - name: Microsoft Entra Connect version history archive
+      href: connect/reference-connect-version-history-archive.md
+    - name: How to use BypassDirSyncOverrides
+      href: connect/how-to-bypassdirsyncoverrides.md
+- name: Source of Authority reference
   items:
   - name: Concepts
     items:
     - name: SOA overview
-      href: concept-source-of-authority-overview.md
+      href: source-of-authority/concept-source-of-authority-overview.md
   - name: How-to guides
-    items:
+    items: 
+    - name: How to configure Group SOA 
+      href: source-of-authority/how-to-group-source-of-authority.md
   - name: Reference
     items:
+    - name: Group types
+      href: source-of-authority/how-to-group-source-of-authority.md
+
 
