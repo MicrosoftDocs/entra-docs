@@ -66,8 +66,8 @@ The PSSO Primary Refresh Token (PRT) is issued exclusively to Entra-joined macOS
 
 The SSO extension uses these keys to complete device registration with the Azure Device Registration Service. It then configures Apple’s loginConfiguration API with the necessary parameters for PRT acquisition. 
 
-Once registration is successfully completed, macOS initiates a login request signed with the Device Signing key. Entra ID validates the request, device signing key and associated parameters, and issues PRT response. macOS decrypts this response using Device Encryption key, stores the PRT and makes it available to the SSO extension.  
-The login request is sent during user authentication on PSSO registered macOS.  
+Once registration is successfully completed, macOS initiates a sign in request signed with the Device Signing key. Microsoft Entra ID validates the request, device signing key and associated parameters, and issues PRT response. macOS decrypts this response using Device Encryption key, stores the PRT and makes it available to the SSO extension.  
+The sign in request is sent during user authentication on PSSO registered macOS.  
 
 
 ### [iOS and Android](#tab/other-prt-issued)
@@ -150,7 +150,7 @@ Windows transport endpoints are required for password authentication only when a
 
 ### [macOS](#tab/macos-prt-renewal)
 
-macOS renews the PSSO Primary Refresh Token (PRT) every 4 hours, or sooner if the SSO tokens are missing or have expired. 
+macOS renews the PSSO Primary Refresh Token (PRT) every 4 hours, or sooner if the SSO tokens are missing or has expired. 
 
 Microsoft Entra Conditional Access policies aren't evaluated when PRTs are renewed. 
 
@@ -192,7 +192,7 @@ By securing these keys with the TPM, we enhance the security for PRT from malici
 
 A Primary Refresh Token (PRT) is securely bound to the device on which the user signs in. Microsoft Entra ID and macOS enforce this protection through several mechanisms: 
 
-The PRT is issued only after a request is signed using a secure enclave–backed Device Signing Key, which is cryptographically generated during device registration. If the signature from this key cannot be validated, the PRT will not be issued. 
+The PRT is issued only after a request is signed using a secure enclave–backed Device Signing Key, which is cryptographically generated during device registration. If the signature from this key can't be validated, the PRT won't be issued. 
 
 Along with the PRT, Microsoft Entra ID issues a session key encrypted with the public Device Encryption key that was shared during registration. This session key can only be decrypted using the corresponding private key stored in the secure enclave. 
 
@@ -202,7 +202,7 @@ This session key acts as a Proof-of-Possession (POP) key for all subsequent requ
 
 ## How are App Tokens protected?
 
-For an overview of how tokens are protected in general, refer to [Protecting tokens in Microsoft Entra Id](../protecting-tokens-microsoft-entra-id.md)
+For an overview of how tokens are protected in general, refer to [Protecting tokens in Microsoft Entra ID](./protecting-tokens-microsoft-entra-id.md)
 
 ### [Windows](#tab/windows-apptokens)
 
@@ -213,7 +213,7 @@ For an overview of how tokens are protected in general, refer to [Protecting tok
 ### [macOS & iOS](#tab/iOSMacOS-prt-apptokens)
 
 - **macOS/iOS unmanaged**: On devices without MDM SSO extension profile, broker returns both the access token and the refresh token to the calling app. Calling app will use refresh token for subsequent refreshes and that refresh token won’t be protected. 
-- **macOS/iOS managed**: On devices with MDM SSO extension profile, broker returns only the access token to the calling app. Broker uses PRT for any subsequent token refresh and doesn't use unprotected refresh token. We recommend customers to use this configuration over the unmanaged one due to the additional protection it provides. 
+- **macOS/iOS managed**: On devices with MDM SSO extension profile, broker returns only the access token to the calling app. Broker uses PRT for any subsequent token refresh and doesn't use unprotected refresh token. We recommend customers to use this configuration over the unmanaged one due to the extra protection it provides. 
 
 ### [Android](#tab/android-apptokens)
 
@@ -289,7 +289,7 @@ The following diagrams illustrate the underlying details in issuing, renewing, a
 ![PRT issuance during first sign in detailed flow](./media/concept-primary-refresh-token/prt-initial-sign-in.png)
 
 > [!NOTE]
-> In Microsoft Entra joined devices, Microsoft Entra PRT issuance (steps A-F) happens synchronously before the user can sign in to Windows. In Microsoft Entra hybrid joined devices, on-premises Active Directory is the primary authority. So, the user is able to sign in Microsoft Entra hybrid joined Windows after they can acquire a TGT to log in, while the PRT issuance happens asynchronously. This scenario doesn't apply to Microsoft Entra registered devices as sign in doesn't use Microsoft Entra credentials.
+> In Microsoft Entra joined devices, Microsoft Entra PRT issuance (steps A-F) happens synchronously before the user can sign in to Windows. In Microsoft Entra hybrid joined devices, on-premises Active Directory is the primary authority. So, the user is able to sign in Microsoft Entra hybrid joined Windows after they can acquire a TGT to sign-in, while the PRT issuance happens asynchronously. This scenario doesn't apply to Microsoft Entra registered devices as sign in doesn't use Microsoft Entra credentials.
 
 > [!NOTE]
 > In a Microsoft Entra hybrid joined Windows environment, the issuance of the PRT occurs asynchronously. The issuance of the PRT might fail due to issues with the federation provider. This failure can result in sign-on issues when users try to access cloud resources. It's important to troubleshoot this scenario with the federation provider.
