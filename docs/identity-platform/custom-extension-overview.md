@@ -134,7 +134,7 @@ The token issuance start event, **OnTokenIssuanceStart** is triggered when a tok
 
 ### One time passcode send
  
-The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up, reset their password, or sign-in with email and one-time passcode.
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up with email address, sign-in with email one-time passcode (Email OTP), reset their password using email one-time-passcode, or user Email OTP for multifactor authentication (MFA).
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
 
