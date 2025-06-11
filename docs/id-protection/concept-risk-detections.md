@@ -5,7 +5,7 @@ description: Learn about risk detections and risk levels, including the differen
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 06/05/2025
+ms.date: 06/11/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -16,7 +16,7 @@ ms.reviewer: cokoopma
 
 # What are risk detections?
 
-Microsoft Entra ID Protection provides organizations with information about suspicious activity in their tenant and allows you to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
+Microsoft Entra ID Protection provides organizations with information about suspicious activity in their tenant and allows you to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to user accounts and service principals in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
 
 User risk detections might flag a legitimate user account as at risk, when a potential threat actor gains access to an account by compromising their credentials or when anomalous user activity is detected. Sign-in risk detections represent the probability that a given authentication request isn't the authorized owner of the account. Having the ability to identify risk at the user and sign-in level is critical for customers to be empowered to secure their tenant.
 
@@ -40,7 +40,7 @@ A risk detecion with risk level of:
 
 - **High** signifies that Microsoft is highly confident that the account is compromised. Signals such as threat intelligence and known attack patterns factor into the confidence level of the risk detection.
 - **Medium** indicates that one or more moderate-severity anomalies were detected, but there's less confidence that the account is compromised. Sign-in patterns, behaviors, and other signals factor into the confidence level of the risk detection.
-- **Low** signifies that anomalies are present in the sign-in or a user's credential, but we're confident the account hasn't been compromised. Sign-in patterns before and during the sign-in are used to determine if there's a pattern or if the sign-in is an anomaly.
+- **Low** signifies that anomalies are present in the sign-in or a user's credential, but we're less confident the account hasn't been compromised. Sign-in patterns before and during the sign-in are used to determine if there's a pattern or if the sign-in is an anomaly.
 
 ## Real-time and offline detections
 
@@ -53,7 +53,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 | Detection type | Sign-in risk | User risk |
 |----------------|--------------|-----------|
 | **Real-time**      | Suspicious sign-in is detected and can be remediated in real-time through a Conditional Access policy, such as to require MFA. | User risk is detected and can be remediated through a Conditional Access policy, such as to force a secure password change in real-time. |
-| **Offline**        | Sign-in risk is identified after sign-in. If not remediated this risk might escalate into user risk if more risks are detected and aggregated into user risk. | User is deemed risky after sign-in and is blocked until they perform self-service password reset the next time they authenticate. |
+| **Offline**        | Sign-in risk is identified after sign-in. If not remediated this risk might escalate into user risk if more risks are detected and aggregated into user risk. | User is deemed risky after sign-in. If Conditional Access policy is configured, the user is blocked until they perform self-service password reset the next time they authenticate. |
 
 > [!NOTE]
 > Our system might determine that the risk event that contributed to user risk score was either: 
