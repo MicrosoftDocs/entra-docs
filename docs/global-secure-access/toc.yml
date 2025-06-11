@@ -150,7 +150,7 @@ items:
         href: how-to-use-with-azure-sql-service-endpoint.md
       - name: Use with Azure Private Link
         href: how-to-use-private-link-with-private-access.md
-      - name: How to configure Domain Controllers
+      - name: How to configure Private Access for Domain Controllers
         href: how-to-configure-domain-controllers.md
   - name: Internet Access
     expanded: true
