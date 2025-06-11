@@ -30,9 +30,9 @@ In newly created external tenants, the following core security features are enab
 |Account Protection                | Guards against unauthorized account access to protect user data and prevent account breaches.   |
 |Access Control                    | Controls access to applications and resources so that only authorized users can access sensitive information.  |
  
-## Conditional Access and MFA
+## Conditional Access and multifactor authentication (MFA)
 
-Customizable policies and multifactor authentication enhance security by reducing unauthorized access to applications and resources.
+Customizable policies and MFA enhance security by reducing unauthorized access to applications and resources.
 
 |Feature Name	|Description |
 |---------------|------------| 
