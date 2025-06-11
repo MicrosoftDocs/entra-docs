@@ -50,6 +50,7 @@ This article outlines step to configure and test Coupa with Microsoft Entra sing
 4. Enter **IdP Name** and **Email Domains**. These email domains will be used to redirect the users the IdP for SSO login. Multiple Email domains can be specified as comma-seperated.
 > [!NOTE]
 > Email domains are used just to redirect users to the configured IdP. It doesn't enforce that users login only using the configured IdP.
+
 ![coupa add identity provider](./media/coupa-multi-sso-tutorial/coupa-add-identity-provider.png)
 5. Select **Create**. Which will take you to edit page. 
 6. Download the **Coupa SP metadata** for the IdP.
