@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 06/09/2025
+ms.date: 06/11/2025
 ms.custom: it-pro
 ---
 
@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Microsoft Entra External ID external tenants include several baseline security features to help immediately secure customer data. Default settings provide initial protection against threats like brute force attacks and network layer attacks. These protections serve as a starting point as you develop your own identity security plan and add Microsoft Entra premium security features.
+Microsoft Entra External ID provides baseline security features for external tenants, offering immediate protection against threats like brute force and network layer attacks. These default settings serve as a foundation for developing your own identity security plan. From this starting point, you can implement real-time and offline protection through Microsoft Entra premium security features.
 
 ## Built-in security controls
 
@@ -25,28 +25,19 @@ In newly created external tenants, the following core security features are enab
 
 |Feature Name  |Description  |
 |--------------|-------------|
-|Brute force protection            | Mitigates brute force attacks by limiting the number of login attempts to prevent unauthorized access through repeated password guessing. |
+|Brute force protection            | Mitigates brute force attacks by limiting the number of sign-in attempts to prevent unauthorized access through repeated password guessing. |
 |Common networking HTTP Protection | Provides protection against common network-layer attacks and timing-based attacks, protecting against attempts to overwhelm your service with excessive requests.|
-|Account Protection                | Ensures accounts are protected from unauthorized access to safeguard user data and prevent account compromise.   |
-|Access Control                    | Controls access to applications and resources, ensuring only authorized users can access sensitive information.  |
+|Account Protection                | Guards against unauthorized account access to protect user data and prevent account breaches.   |
+|Access Control                    | Controls access to applications and resources so that only authorized users can access sensitive information.  |
  
-## Real-time and offline protection
-
-Microsoft Entra External ID detects and mitigates abnormal traffic patterns and malicious activities, allowing legitimate requests to be processed while harmful traffic is filtered out.
-
-|Feature Name	|Description |
-|---------------|------------|    
-|Real-time protection	|Detects abnormal traffic patterns and activates mitigation protocols in real-time, filtering out malicious traffic while allowing legitimate requests. |
-|Offline Protection	    |Filters out malicious traffic while allowing legitimate requests even when real-time measures are not active.                  |
-
 ## Conditional Access and MFA
 
-Customizable policies and multifactor authentication enhance security by reducing unauthorized access and ensuring only legitimate users can access applications and resources.
+Customizable policies and multifactor authentication enhance security by reducing unauthorized access to applications and resources.
 
 |Feature Name	|Description |
 |---------------|------------| 
 |Conditional Access policies	    |Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. [Learn more](~/identity/conditional-access/overview.md)   |
-|Multifactor authentication (MFA)	|MFA methods configured to ensure only legitimate users can access applications, significantly reducing the risk of unauthorized access. [Learn more](concept-multifactor-authentication-customers.md)|
+|Multifactor authentication (MFA)	|MFA methods configured to ensure only legitimate users can access applications, significantly reducing the risk of unauthorized access. [Learn more](concept-multifactor-authentication-customers.md)     |
 
 ## Related content
 
