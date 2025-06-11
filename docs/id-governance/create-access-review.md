@@ -29,6 +29,9 @@ This article describes how to create one or more access reviews for group member
 - To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
 
+> [!NOTE]
+> Groups and users in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Access reviews](access-reviews-overview.md).
+
 ## Prerequisites
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
