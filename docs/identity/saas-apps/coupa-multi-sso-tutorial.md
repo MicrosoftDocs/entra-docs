@@ -24,7 +24,7 @@ In this article,  you learn how to integrate multiple IdP connections on Coupa w
 
 This article's presumes that you have the following prerequisites already in place:
 
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+[!INCLUDE [common-prerequisites](includes/common-prerequisites.md)]
 * Coupa single sign-on (SSO) enabled subscription.
 * Single sign-on (SSO) is configured for you instance. [coupa-sso-tutorial.md](./coupa-sso-tutorial.md)
 * Coupa Multi sign-on (SSO) enabled subscription.
@@ -42,16 +42,18 @@ This article outlines step to configure and test Coupa with Microsoft Entra sing
 1. Sign on to your Coupa company site as an administrator.
 2. Go to Setup > **Multi SSO**.
 
-![coupa-multi-sso-setup](./media/coupa-multi-sso-tutorial/coupa-multi-sso-setup.png)
+![coupa multi sso setup](./media/coupa-multi-sso-tutorial/coupa-multi-sso-setup.png)
 
-![coupa-identity-providers](./media/coupa-multi-sso-tutorial/coupa-identity-provider.png)
+![coupa identity providers](./media/coupa-multi-sso-tutorial/coupa-identity-provider.png)
 
 3. Select **Create**.
 4. Enter **IdP Name** and **Email Domains**. These email domains will be used to redirect the users the IdP for SSO login. Multiple Email domains can be specified as comma-seperated.
-![coupa-add-identity-provider](./media/coupa-multi-sso-tutorial/coupa-add-identity-provider.png)
+> [!NOTE]
+> Email domains are used just to redirect users to the configured IdP. It doesn't enforce that users login only using the configured IdP.
+![coupa add identity provider](./media/coupa-multi-sso-tutorial/coupa-add-identity-provider.png)
 5. Select **Create**. Which will take you to edit page. 
 6. Download the **Coupa SP metadata** for the IdP.
-![coupa-sp-metadata](./media/coupa-multi-sso-tutorial/coupa-sp-metadata.png)
+![coupa sp metadata](./media/coupa-multi-sso-tutorial/coupa-sp-metadata.png)
 
 ## Add Coupa from the gallery
 
@@ -62,7 +64,7 @@ To configure the integration of Coupa into Microsoft Entra ID, you need to add C
 1. In the **Add from the gallery** section, type **Coupa** in the search box.
 1. Select **Coupa** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- [!INCLUDE [sso-wizard.md](./includes/sso-wizard.md)]
+[!INCLUDE [sso-wizard](includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-coupa'></a>
 
@@ -72,12 +74,12 @@ Configure and test Microsoft Entra SSO with Coupa using a test user called **B.S
 
 To configure and test Microsoft Entra SSO with Coupa, perform the following steps:
 
-1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
+1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Coupa SSO](#configure-coupa-sso)** - to configure the single sign-on settings on application side.
+1. **[Configure Coupa SSO for respective IdP](#configure-coupa-sso-for-respective-idp)** - to configure the single sign-on settings on application side.
     1. **[Create Coupa test user](#create-coupa-test-user)** - to have a counterpart of B.Simon inCoupa that's linked to the Microsoft Entra representation of user.
-1. **[Test SSO](#download-coupa-sp-metadata)** - to verify whether the configuration works.
+1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
 
@@ -122,10 +124,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
+[!INCLUDE [create-assign-users-sso](includes/create-assign-users-sso.md)]
+
+
 
 ## Configure Coupa SSO for respective IdP
-
 1. In Coupa Company site, Goto the edit page of the IdP created in the step **[Download Coupa SP  Metadata](#download-coupa-sp-metadata)** above.
 2. Upload the IdP Metadata downloaded above in **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)**. Select **Save**.
 
