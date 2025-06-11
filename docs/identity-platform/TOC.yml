@@ -151,8 +151,14 @@
               href: quickstart-single-page-app-sign-in.md?pivots=workforce
           - name: Native authentication
             items:
-              - name: Sign in users
-                href: quickstart-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
+              - name: Use native authentication API
+                items:
+                  - name: Sign in users
+                    href: quickstart-native-authentication-single-page-app-react-sign-in.md
+              - name: Use native authentication API SDK
+                items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-single-page-app-react-sign-in.md
     - name: Tutorials
       items:
         - name: JavaScript
@@ -175,14 +181,26 @@
                 href: tutorial-single-page-app-react-sign-in-sign-out.md
             - name: Native authentication
               items:
-                - name: Sign up
-                  href: tutorial-native-authentication-single-page-app-react-sign-up.md
-                - name: Set up local CORS
-                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
-                - name: Sign in
-                  href: tutorial-native-authentication-single-page-app-react-sign-in.md
-                - name: Reset password
-                  href: tutorial-native-authentication-single-page-app-react-reset-password.md
+                - name: Use native authentication API
+                  items:
+                  - name: Sign up
+                    href: tutorial-native-authentication-single-page-app-react-sign-up.md
+                  - name: Set up local CORS
+                    href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
+                  - name: Sign in
+                    href: tutorial-native-authentication-single-page-app-react-sign-in.md
+                  - name: Reset password
+                    href: tutorial-native-authentication-single-page-app-react-reset-password.md
+                - name: Use native authentication SDK
+                  items:
+                  - name: Sign up
+                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-up.md
+                  - name: Set up local CORS
+                    href: tutorial-native-authentication-single-page-app-react-sdk-set-up-local-cors.md
+                  - name: Sign in
+                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-in.md
+                  - name: Reset password
+                    href: tutorial-native-authentication-single-page-app-react-sdk-reset-password.md
         - name: Angular
           items:
           - name: Prepare your app
