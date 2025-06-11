@@ -29,8 +29,7 @@ This article describes how to create one or more access reviews for group member
 - To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
 
-> [!NOTE]
-> Groups and users in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Access reviews](access-reviews-overview.md).
+
 
 ## Prerequisites
 
@@ -320,6 +319,9 @@ After one or more access reviews have started, you might want to modify or updat
 
 > [!NOTE]
 > Once the access review is initiated, you can use the [contactedReviewers](/graph/api/accessreviewinstance-list-contactedreviewers) API call to see the list of all reviewers notified, or who would be if notifications are turned off, via email for an access review. Time stamps for when these users were notified are also provided.
+
+> [!NOTE]
+> Groups and users in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Access reviews](access-reviews-overview.md).
 
 ## Next steps
 
