@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: overview
-ms.date:  03/12/2025
+ms.date: 06/11/2025
 ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
@@ -107,7 +107,6 @@ Conditional Access policies are enforced after the user has completed first-fact
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
 > 
 > To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and multifactor authentication” use case.
-
 ### Multifactor authentication (MFA)
 
 Microsoft Entra MFA helps safeguard access to data and applications while maintaining simplicity for your users. Microsoft Entra External ID integrates directly with Microsoft Entra MFA so you can add security to your sign-up and sign-in experiences by requiring a second form of authentication. You can fine-tune MFA depending on the extent of security you want to apply to your apps. Consider the following scenarios:
@@ -117,18 +116,6 @@ Microsoft Entra MFA helps safeguard access to data and applications while mainta
 - You offer multiple apps to your customers, but you don't require MFA for every application. For example, the customer can sign into an auto insurance application with a social or local account, but must verify the phone number before accessing the home insurance application registered in the same directory. In your Conditional Access policy, you can target all users but just those apps for which you want to enforce MFA.
 
 Learn more about [MFA in external tenants](concept-multifactor-authentication-customers.md) or see [how to enable multifactor authentication](how-to-multifactor-authentication-customers.md).
-
-### Identity protection
-
-Microsoft Entra [Identity Protection](~/id-protection/overview-identity-protection.md) provides ongoing risk detection for your external tenant. It allows you to discover, investigate, and remediate identity-based risks. Identity Protection allows organizations to accomplish three key tasks:
-
-- Automate the detection and remediation of identity-based risks.
-
-- Investigate risks using data in the portal.
-
-- Export risk detection data to other tools.
-
-Identity Protection comes with risk reports that can be used to investigate identity risks in external tenants. For details, see [Investigate risk with Identity Protection in Microsoft Entra External ID](how-to-identity-protection-customers.md).
 
 ### Microsoft Entra reliability and scalability
 
@@ -142,7 +129,7 @@ Learn more about the [application user activity dashboards](how-to-user-insights
 
 ## About Azure AD B2C
 
-If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID. Effective May 1, 2025, Azure AD B2C will no longer be available to purchase for new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID represents the future of CIAM for Microsoft, and new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture.
+Effective May 1, 2025, [Azure AD B2C](/azure/active-directory-b2c/) is no longer available for purchase by new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID is the next-generation CIAM solution from Microsoft, with all new features and capabilities being built on this platform.
 
 ## Next steps
 
