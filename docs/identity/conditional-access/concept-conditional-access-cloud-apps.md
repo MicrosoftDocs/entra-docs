@@ -27,8 +27,6 @@ Target resources (formerly Cloud apps, actions, and authentication context) are 
 
 ## Microsoft cloud applications
 
-Many of the existing Microsoft cloud applications are included in the list of applications you can select from.
-
 Administrators can assign a Conditional Access policy to cloud apps from Microsoft as long as the service principal appears in their tenant. Some apps like [Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new supported Microsoft cloud applications are created, they appear in the app picker list.
 
 ### Office 365
