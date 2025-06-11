@@ -2,7 +2,7 @@
 title: "Tutorial: Create a Node.js CLI app for authentication"
 description: Learn how to build a Node.js CLI app that signs in users in an external tenant
 author: Dickson-Mwendia
-manager: mwongerapk
+manager: dougeby
 ms.author: dmwendia
 ms.service: identity-platform
 ms.topic: tutorial

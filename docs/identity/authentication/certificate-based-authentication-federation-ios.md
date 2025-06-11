@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ---
 # Microsoft Entra certificate-based authentication with federation on iOS
 

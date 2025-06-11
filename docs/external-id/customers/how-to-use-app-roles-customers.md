@@ -3,7 +3,7 @@ title: Using role-based access control for apps
 description: Learn how to define application roles for your consumer and business customer applications and assign those roles to users and groups in external tenants.
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

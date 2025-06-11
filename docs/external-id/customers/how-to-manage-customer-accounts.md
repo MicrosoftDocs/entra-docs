@@ -4,7 +4,7 @@ description: Learn how to add and manage customer accounts in Microsoft Entra Ex
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

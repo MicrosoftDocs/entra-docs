@@ -41,7 +41,7 @@ Data about a person is automatically removed from the Microsoft Entra Connect da
 <a name='delete-the-azure-ad-connect-installation-log-file-folder-contents'></a>
 
 ## Delete the Microsoft Entra Connect installation log file folder contents
-Regularly check and delete the contents of **c:\programdata\aadconnect** folder – except for the **PersistedState.Xml** file. This file maintains the state of the previous installation of Azure A Connect and is used when an upgrade installation is performed. This file doesn't contain any data about a person and shouldn't be deleted.
+Regularly check and delete the contents of **c:\programdata\aadconnect** folder – except for the **PersistedState.Xml** file. This file maintains the state of the previous installation of Microsoft Entra Connect and is used when an upgrade installation is performed. This file doesn't contain any data about a person and shouldn't be deleted.
 
 >[!IMPORTANT]
 >Do not delete the PersistedState.xml file.  This file contains no user information and maintains the state of the previous installation.

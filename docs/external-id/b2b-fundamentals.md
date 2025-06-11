@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.date: 05/07/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 

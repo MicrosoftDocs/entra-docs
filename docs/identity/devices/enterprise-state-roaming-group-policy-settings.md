@@ -9,7 +9,7 @@ ms.date: 08/01/2024
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sempofu, micrider
 ---
 # Group Policy and MDM settings

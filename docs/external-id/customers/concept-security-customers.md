@@ -4,7 +4,7 @@ description: Learn about security and governance in Microsoft Entra External ID.
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

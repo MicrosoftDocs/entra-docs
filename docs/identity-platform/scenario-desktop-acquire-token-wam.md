@@ -2,7 +2,7 @@
 title: Acquire a token to call a web API by using Web Account Manager (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app by using Web Account Manager.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.custom: 
 ms.date: 01/15/2024

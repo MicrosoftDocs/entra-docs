@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: vimrang
-manager: femila
+manager: dougeby
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
