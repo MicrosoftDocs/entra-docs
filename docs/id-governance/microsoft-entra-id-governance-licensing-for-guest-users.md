@@ -33,7 +33,7 @@ You can identify actions that will be billed to the Microsoft Entra ID Governanc
 
 1. GovernanceLicenseFeatureUsed: True
 
-The following table contains a list of currently billable actions for **guest users**. This list will change as additional features are added to Microsoft Entra ID Governance.
+The following table contains a list of currently billable actions for **guest users**. This list might change as additional features are added to Microsoft Entra ID Governance.
 
 
 | Service  | Action | Billable event & API  | Audit Log Where TargetUserType is Guest and GovernanceLicenseFeatureUsed is True  |
@@ -48,8 +48,8 @@ The following table contains a list of currently billable actions for **guest us
 | Entitlement Management  | [Directly assign any user](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)  | Bill on successful request creation when using directly assigning an access package to a user not yet in the directory.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when using requestType "*AdminAdd*" for a user who doesn’t exist in the directory.  | Administrator directly assigns user to access package.  |
 | Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Bill on conversion to governed user.<br>**API**<br> https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/subjects where *"subjectLifecycle"* is set to "governed".  | Update access package user lifecycle. |
 | Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Bill on workflow execution.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/{workflowId}/activate  | Workflow execution started for user.  |
-| Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill on access review decision or review end date if no decision. <br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings is enabled in a group review. | Available after 8/1/2025  |
-| Access Reviews    | [Access Review – inactive users](review-recommendations-access-reviews.md#inactive-user-recommendations) | Bill on access review decision or review end date if no decision.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Available after 8/1/2025  |
+| Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill when guest user is included in review. <br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings is enabled in a group review. | Available after 8/1/2025  |
+| Access Reviews    | [Access Review – inactive users](review-recommendations-access-reviews.md#inactive-user-recommendations) | Bill when guest user is included in review.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where inactive guest reviews are included in the policy for a group resource.  | Available after 8/1/2025  |
 
 
 ## Guest billing in multitenant organizations
