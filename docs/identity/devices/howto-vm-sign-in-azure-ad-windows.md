@@ -4,7 +4,7 @@ description: Learn how to sign in to an Azure VM that's running Windows by using
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 06/11/2025
 ms.author: owinfrey
 author: owinfreyATL
 manager: dougeby
@@ -51,6 +51,9 @@ This feature is now available in the following Azure clouds:
 - Azure Global
 - Azure Government
 - Microsoft Azure operated by 21Vianet
+
+> [!NOTE]
+> CIS hardened images support Microsoft Entra ID authentication for Microsoft Windows Enterprise and Microsoft Windows Server offerings. For more information, see: [CIS Hardened Images on Microsoft Windows Enterprise](https://azuremarketplace.microsoft.com/marketplace/apps/center-for-internet-security-inc.cis-windows-server).
 
 ### Network requirements
 
