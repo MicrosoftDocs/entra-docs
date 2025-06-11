@@ -52,6 +52,9 @@ This feature is now available in the following Azure clouds:
 - Azure Government
 - Microsoft Azure operated by 21Vianet
 
+> [!NOTE]
+> CIS hardened images support Microsoft Entra ID authentication for Microsoft Windows Enterprise and Microsoft Windows Server offerings. For more information, see: [CIS Hardened Images on Microsoft Windows Enterprise](https://azuremarketplace.microsoft.com/marketplace/apps/center-for-internet-security-inc.cis-windows-server).
+
 ### Network requirements
 
 To enable Microsoft Entra authentication for your Windows VMs in Azure, you need to ensure that your VM's network configuration permits outbound access to the following endpoints over TCP port 443.
