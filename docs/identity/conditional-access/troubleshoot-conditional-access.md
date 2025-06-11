@@ -18,7 +18,7 @@ Use this article to fix unexpected sign-in outcomes related to Conditional Acces
 
 ## Select "all" consequences
 
-The Conditional Access framework gives you a lot of configuration flexibility. But this flexibility means you need to carefully review each configuration policy before releasing it to avoid unwanted results. In this context, pay special attention to assignments that affect complete sets like **all users / groups / cloud apps**.
+The Conditional Access framework gives you a lot of configuration flexibility. But this flexibility means you need to carefully review each configuration policy before releasing it to avoid unwanted results. In this context, pay special attention to assignments that affect complete sets like **all users / groups / resources**.
 
 Don't use the following configurations:
 
@@ -27,7 +27,7 @@ Don't use the following configurations:
 - **Block access** - This configuration blocks the entire organization.
 - **Require device to be marked as compliant** - For users who haven't enrolled their devices yet, this policy blocks all access, including access to the Intune portal. If you're an admin without an enrolled device, this policy blocks you from getting back in to change the policy.
 - **Require Hybrid Microsoft Entra domain joined device** - This policy can also block access for all users in your organization if they don't have a Microsoft Entra hybrid joined device.
-- **Require app protection policy** - This policy can also block access for all users in your organization if you don't have an Intune policy. If you're an admin without a client app that has an Intune app protection policy, this policy blocks you from getting back into portals like Intune and Azure.
+- **Require app protection policy** - This policy can also block access for all users in your organization if you don't have an Intune policy. If you're an admin without a client app that has an [Intune app protection policy](/intune/intune-service/apps/app-protection-policy), this policy blocks you from getting back into portals like Intune and Azure.
 
 **For all users, all resources, all device platforms:**
 
