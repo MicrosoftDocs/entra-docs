@@ -402,7 +402,7 @@
     href: governance-service-limits.md  
   - name: Licensing fundamentals
     href: licensing-fundamentals.md
-  - name: Licensing for Guest Users
+  - name: Licensing for guest users
     href: microsoft-entra-id-governance-licensing-for-guest-users.md  
   - name: Services and integration partners
     href: services-and-integration-partners.md

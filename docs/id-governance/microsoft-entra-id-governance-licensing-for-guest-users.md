@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Governance Licensing for Guest Users 
+title: Microsoft Entra ID Governance licensing for guest users 
 description: Learn how Microsoft Entra ID is licensed for guest users.
 author: owinfreyatl
 manager: dougeby
@@ -11,9 +11,9 @@ ms.author: owinfrey
 ms.reviewer: jercon
 ---
 
-# Microsoft Entra ID Governance Licensing for Guest Users
+# Microsoft Entra ID Governance licensing for guest users
 
-This article outlines the pricing structure for Microsoft Entra Governance ID for guests add-on and describes how to link your tenant to an Azure subscription to ensure correct billing and feature access.
+This article outlines the pricing structure for Microsoft Entra ID Governance for guests add-on and describes how to link your tenant to an Azure subscription to ensure correct billing and feature access.
 
 ## Monthly active users (MAU) billing model
 
@@ -27,11 +27,11 @@ Guest users are only billed when they actively use features that are exclusive t
 
 You can identify actions that will be billed to the Microsoft Entra ID Governance for guests add-on by looking at your audit logs. Specifically, each billable action has these properties included:
 
-1. TargetId: object ID of the target user
+- TargetId: object ID of the target user
 
-1. TargetUserType: Guest
+- TargetUserType: Guest
 
-1. GovernanceLicenseFeatureUsed: True
+- GovernanceLicenseFeatureUsed: True
 
 The following table contains a list of currently billable actions for **guest users**. This list might change as additional features are added to Microsoft Entra ID Governance.
 
